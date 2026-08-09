@@ -7,6 +7,7 @@
 #include "system/audio/sfx.h"
 #include "core/game.h"
 #include "core/inventory.h"
+#include "core/objective.h"        // OBJECTIVE_addCollected (objetivo COLETAR)
 
 Item items[MAX_ITEMS];
 
@@ -98,6 +99,7 @@ void ITEMS_update(void)
             if (ITEM_IS_INVENTORY(it->type)) INV_add(it->type);
             else                             ITEM_DEFS[it->type]->apply();
             sfxItemPickup();
+            OBJECTIVE_addCollected(it->type);   // COLETAR conta só o item-alvo
             it->active = FALSE;
         }
     }

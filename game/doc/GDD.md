@@ -86,7 +86,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 ## Tela-título, splash e ajuda
 
 - **Splash** (`splash.c`): logo da desenvolvedora (FinalQuest) recriado por char-map.
-- **Título** (`title.c`): arte de fundo em tile-art derivada de `src/img/bg.jpg` (`titlebg_data.h`, 2 paletas de 16 cores por cluster de tiles) + menu **NOVO JOGO / FASE TESTE / COMO JOGAR**. Sem música (ver Áudio).
+- **Título** (`title.c`): arte de fundo em tile-art derivada de `src/img/bg.jpg` (`titlebg_data.h`, 2 paletas de 16 cores por cluster de tiles) + menu **NOVO JOGO / FASE TESTE / COMO JOGAR**. A música dark toca calma aqui (ver Áudio).
 - **Como Jogar** (`help.c`): **5 páginas** navegáveis com ←/→ — controles, inimigos (cor/forma, com os sprites reais), a elite (pentágonos), itens diretos e itens de inventário.
 
 ## HUD (linha 0)
@@ -279,7 +279,7 @@ Soma dos pesos = 100 (coincidência atual; o sorteio usa a soma real).
 
 ## Estrutura
 
-`LEVEL_COUNT` = **16** (1–15 campanha + 16 = chefe). Cada fase é um `LevelDef` (dados puros) em `levels/defs/levelNN.c`: terreno (`lava`/`mud`, retângulos em tiles), `killTarget`, `spawnSeconds`, `spawnCount`, o **roster** de tipos e o **chão** (`floor`). A arte dos inimigos do roster é gerada **por fase** na VRAM (ver §6).
+`LEVEL_COUNT` = **16** (1–15 campanha + 16 = chefe). Cada fase é um `LevelDef` (dados puros) em `levels/defs/levelNN.c`: terreno (`lava`/`mud`, retângulos em tiles), `killTarget`, `spawnSeconds`, `spawnCount`, o **roster** de tipos, o **chão** (`floor`) e a **curva de música** por fase (`musCalmUntil`/`musEnemyMax`/`musStepCalm`/`musStepHot`; ver §6). A arte dos inimigos do roster é gerada **por fase** na VRAM (ver §6).
 
 ## Tabela das fases
 
@@ -341,20 +341,38 @@ Lentidão progressiva **individual** (cada entidade acumula seu tempo): jogador 
 
 ## Áudio
 
-**Todo o áudio atual é PSG (SN76489)**, sintetizado em tempo real — sem amostras.
+**Todo o áudio é PSG (SN76489)**, sintetizado em tempo real — sem amostras. Música de fundo e efeitos coexistem nos 4 canais por meio de um **árbitro** central.
 
-> **Música de fundo: desligada.** O driver XGM corrompe a VRAM neste projeto (conflito com o uso intenso de DMA) e o driver PCM/DAC desregula com DMA ativa. `music.c` está stub. Caminho futuro: PCM com transferências por CPU (que não pausam o Z80).
+> **Por que PSG, e não XGM/PCM:** o driver XGM corrompe a VRAM neste projeto (conflito com o uso intenso de DMA) e o driver PCM/DAC desregula com DMA ativa. O PSG é escrito direto pelo 68000 (sem Z80/DMA), então a música toca de forma estável — daí toda a trilha ser sintetizada no PSG.
 
-| Função | Canal | Som |
+### Árbitro (`system/audio/audio.c`)
+
+Única via de escrita no PSG. Música e SFX **não** tocam nos registradores direto: a cada quadro apenas **requisitam** voz (tom ou ruído) com uma **prioridade**; o árbitro escolhe, por canal, o pedido de maior prioridade e escreve o PSG **uma vez por canal**. Isso elimina a antiga disputa por "ordem de escrita" e centraliza as defesas contra chiado: `PSG_setNoise`/frequência só são reescritos **quando mudam** (reescrever o ruído todo quadro reiniciava o gerador → chiado), e o canal ocioso é silenciado uma única vez.
+
+- **Ordem por quadro**: `AUDIO_frameBegin()` → `MUSIC_update()` → `SFX_update()` → `AUDIO_frameEnd()`.
+- **Prioridades**: `AMBIENT(1) < MUSIC(4) < SFX(8) < ALERT(12)`.
+- **Anti-nota-presa**: `AUDIO_silenceAll()` é chamado antes de toda carga bloqueante (troca de fase, tela de título/pausa) para não deixar uma nota soando durante o intervalo sem quadros; a música retoma sozinha no quadro seguinte.
+
+### Música (`system/audio/music.c` + `song_data.h`)
+
+Chiptune **original**, tom **dark**, em Ré menor harmônico (cadência andaluza Dm–C–Bb–A); sequenciador de **64 passos** (16 × 4 compassos) em loop. Vozes: **melodia** (ch0), **arpejo** (ch1), **baixo** (ch2), **bateria** de ruído (ch3, bumbo + caixa).
+
+**BPM dinâmico por ameaça**: o andamento sobe conforme os inimigos vivos (`MUSIC_setEnemies`), com *glide* suave (sem saltos). A curva é **configurável por fase** no `LevelDef` — `musCalmUntil`, `musEnemyMax`, `musStepCalm`, `musStepHot` (0 em cada campo = usa o padrão global de `music.h`); `startPhase`/`startTest` aplicam via `MUSIC_setRamp`. Padrão: calmo (~75 BPM) até 4 inimigos, subindo até ~225 BPM em 15. O **chefe** (fase 16) já começa acelerado (curva própria). BPM = 900 / frames-por-passo.
+
+### Efeitos (`system/audio/sfx.c`)
+
+Cada evento arma um timer; `SFX_update` requisita a voz ao árbitro com prioridade acima da música (que retoma o canal ao soltar). O **ambiente de terreno** é um **leito de ruído** de prioridade mínima no ch3 — a bateria e o combate passam por cima dele —, o que mantém a **melodia (ch0) sempre limpa** (antes o crepitar era um tom aleatório no ch0, que "roubava" a melodia).
+
+| Função | Canal / prio | Som |
 |---|---|---|
-| `SFX_playerShot` | 1 (tom) | Tiro: pitch caindo de ~1400 Hz, 10 frames |
-| `sfxItemPickup` | 2 (tom) | Coleta: blip **ascendente** 600→1400 Hz, 8 frames |
-| `SFX_playerHit` | 2 (tom) | **Dano sofrido** (só de inimigo): tom **grave descendente** ~300→110 Hz, 14 frames; tem prioridade sobre a coleta |
-| `SFX_enemyShot` | 3 (ruído) | Ruído branco curto, 8 frames |
-| `SFX_bombBlast` | 3 (ruído) | Explosão: ruído grave, 30 frames, prioridade sobre o tiro inimigo |
-| `SFX_ambient` | 0 (tom) | Lava (crepitar trêmulo ~900 Hz) / lama (squelch grave periódico) |
+| `SFX_playerShot` | 1 (tom) / SFX | Tiro: pitch caindo de ~1400 Hz, 10 frames |
+| `sfxItemPickup` | 2 (tom) / SFX | Coleta: blip **ascendente** 600→1400 Hz, 8 frames |
+| `SFX_playerHit` | 2 (tom) / ALERT | **Dano sofrido** (só de inimigo): tom **grave descendente** ~300→110 Hz, 14 frames |
+| `SFX_enemyShot` | 3 (ruído) / SFX | Ruído branco curto, 8 frames |
+| `SFX_bombBlast` | 3 (ruído) / ALERT | Explosão: ruído grave, 30 frames |
+| `SFX_ambient` | 3 (ruído) / AMBIENT | Lava (crepitar de ruído trêmulo) / lama (squelch periódico) — leito sob a bateria |
 
-`SFX_update` processa decaimentos por frame; `SFX_silence` zera tudo (usado nas transições).
+`SFX_silence` zera os timers e chama `AUDIO_silenceAll` (usado nas transições).
 
 ## Gráficos
 

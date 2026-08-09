@@ -6,6 +6,7 @@
 #include "system/video/sprites/tiles.h"
 #include "system/video/enemygfx.h"
 #include "core/game.h"
+#include "core/objective.h"        // OBJECTIVE_prepText (texto da meta na preparação)
 #include "elements/lava.h"
 #include "elements/mud.h"
 
@@ -23,10 +24,24 @@ static const LevelDef *const levelDefs[LEVEL_COUNT] =
 
 // dados das fases teste (TEST_def / TEST2_def) vivem em levels/defs/test.c
 
+// def da fase teste pelo estágio atual (independe de currentLevel — usado também
+// pelo LEVEL_loadGfx, que roda ANTES de currentLevel virar 0)
+static const LevelDef *testDef(void)
+{
+    switch (testStage)
+    {
+        case 6:  return &TEST6_def;
+        case 5:  return &TEST5_def;
+        case 4:  return &TEST4_def;
+        case 3:  return &TEST3_def;
+        case 2:  return &TEST2_def;
+        default: return &TEST_def;
+    }
+}
+
 const LevelDef *LEVEL_current(void)
 {
-    if (currentLevel == 0)
-        return (testStage == 3) ? &TEST3_def : (testStage == 2) ? &TEST2_def : &TEST_def;
+    if (currentLevel == 0) return testDef();
     return levelDefs[currentLevel - 1];
 }
 
@@ -81,9 +96,9 @@ const u8 *LEVEL_typeLastPhase(void)
 // (0 = fase teste, pelo testStage atual). Reuso + descarte no ENEMYGFX.
 void LEVEL_loadGfx(u8 n)
 {
-    const LevelDef *def =
-        (n == 0) ? ((testStage == 3) ? &TEST3_def : (testStage == 2) ? &TEST2_def : &TEST_def)
-                 : levelDefs[n - 1];
+    // usa testDef() (por testStage), não LEVEL_current(): currentLevel ainda não
+    // é 0 aqui (LEVEL_load só o zera depois), o que faria carregar o roster errado
+    const LevelDef *def = (n == 0) ? testDef() : levelDefs[n - 1];
     // fase teste roda "fora da campanha": 0xFF libera o descarte de qualquer tipo
     ENEMYGFX_loadForPhase(n == 0 ? 0xFF : n, def->enemyTypes, def->enemyTypeCount);
 }
@@ -122,7 +137,7 @@ void LEVEL_drawInfo(u8 n, u16 x, u16 y)
     const LevelDef *def = (n == 0) ? LEVEL_current() : levelDefs[n - 1];
     char buf[40];
 
-    sprintf(buf, "META: MATE %d INIMIGOS", def->killTarget);
+    OBJECTIVE_prepText(buf, def);           // "META: ..." conforme o objetivo da fase
     VDP_drawText(buf, x, y);
 
     sprintf(buf, "INTERVALO DE SPAWN: %d S", def->spawnSeconds);

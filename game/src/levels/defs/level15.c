@@ -14,5 +14,7 @@ const LevelDef LEVEL15_def =
     .mud = COMBO_MUD, 
     .floor = FLOOR_MIX,
     .mudCount = LAYOUT_RECTS,
+    // musica (BPM x ameaca): padrao global; ajuste por fase se quiser
+    .musCalmUntil = 4, .musEnemyMax = 15, .musStepCalm = 12, .musStepHot = 4,
     LVL_ROSTER(roster),
 };

@@ -10,5 +10,7 @@ const LevelDef LEVEL11_def =
     .lava = COMBO_LAVA, .lavaCount = LAYOUT_RECTS,
     .mud = COMBO_MUD, .mudCount = LAYOUT_RECTS,
     .floor = FLOOR_MIX,
+    // musica (BPM x ameaca): padrao global; ajuste por fase se quiser
+    .musCalmUntil = 4, .musEnemyMax = 15, .musStepCalm = 12, .musStepHot = 4,
     LVL_ROSTER(roster),
 };

@@ -11,5 +11,8 @@ const LevelDef LEVEL16_def =
 {
     .killTarget = 1, .spawnSeconds = 99, .spawnCount = 0,
     .floor = FLOOR_CAVE,        // covil do chefe: rocha úmida
+    // música: tensão alta o tempo todo — já começa acelerada e chega ao pico
+    // com poucos lacaios (o combate contra o chefe é intenso do início ao fim).
+    .musCalmUntil = 1, .musEnemyMax = 6, .musStepCalm = 8, .musStepHot = 4,
     LVL_ROSTER(roster),
 };

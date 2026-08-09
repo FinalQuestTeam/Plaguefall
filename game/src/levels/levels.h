@@ -8,6 +8,12 @@
 
 #define LEVEL_COUNT     16      // 1..15 campanha + 16 = chefe (Lacraia)
 
+// objetivos de fase (campo LevelDef.objective; ver core/objective.c)
+#define OBJ_KILL        0       // matar killTarget inimigos (padrão)
+#define OBJ_SURVIVE     1       // sobreviver objTarget segundos
+#define OBJ_COLLECT     2       // coletar objTarget itens
+#define OBJ_PROTECT     3       // proteger o aliado (NPC) por objTarget segundos
+
 // descrição de uma fase: elementos, condições de vitória e regras de spawn
 typedef struct
 {
@@ -21,6 +27,17 @@ typedef struct
     const u8 *enemyTypes;   // tipos de inimigo que aparecem na fase
     u8 enemyTypeCount;
     u8 floor;               // chão da arena: FLOOR_STONE (0, padrão) ou FLOOR_FOREST
+    u8 objective;           // OBJ_* (0 = OBJ_KILL, padrão)
+    u16 objTarget;          // segundos (SURVIVE/PROTECT) ou itens (COLLECT)
+    u8 collectItem;         // OBJ_COLLECT: qual item conta (ITEM_*); só ele conta
+    s16 npcX, npcY;         // posição do aliado (OBJ_PROTECT; 0,0 = centro)
+    u16 npcHp;              // vida do aliado (OBJ_PROTECT; 0 = padrão)
+    // curva de BPM da música (0 em cada campo = usa o padrão global de music.h).
+    // Deixa ajustar o "perigo" sonoro por fase (ex.: chefe já começa agressivo).
+    u8 musCalmUntil;       // inimigos até a música ficar calma
+    u8 musEnemyMax;        // inimigos que leva ao BPM máximo
+    u8 musStepCalm;        // frames/passo calmo   (BPM = 900/frames; maior = + lento)
+    u8 musStepHot;         // frames/passo no perigo (menor = + rápido)
 } LevelDef;
 
 // uma fase por arquivo em levels/defs/ (level01.c .. level16.c)
@@ -31,7 +48,7 @@ extern const LevelDef
     LEVEL16_def;
 
 // fases teste (dados em levels/defs/test.c; lógica em levels/test.c)
-extern const LevelDef TEST_def, TEST2_def, TEST3_def;
+extern const LevelDef TEST_def, TEST2_def, TEST3_def, TEST4_def, TEST5_def, TEST6_def;
 
 // terrenos reutilizáveis (definidos em levels/layouts.c) — todos com 2 retângulos.
 // LAVA/MUD_PAIR: um elemento por fase. COMBO_*: lava e lama juntas (cantos opostos).

@@ -15,6 +15,14 @@ static void enemyDie(Enemy *e);     // fwd: usado pela queimadura antes de defin
 
 Enemy enemies[MAX_ENEMIES];
 
+// alvo (centro) da perseguição: por padrão o jogador; o objetivo PROTEGER aponta
+// para o NPC. Atualizado por quadro em flow.c antes de ENEMIES_update.
+s16 chaseX, chaseY;
+void ENEMIES_setChaseTarget(s16 cx, s16 cy) { chaseX = cx; chaseY = cy; }
+
+static u8 aggroSplit;       // PROTEGER: 1/aggroSplit dos inimigos persegue o jogador
+void ENEMIES_setAggroSplit(u8 n) { aggroSplit = n; }
+
 // configurações dos inimigos — uma por arquivo em enemies/defs/
 extern const EnemyDef
     ENEMYDEF_sq_red,  ENEMYDEF_sq_yellow,  ENEMYDEF_sq_purple,  ENEMYDEF_sq_orange,
@@ -54,6 +62,8 @@ static void initEnemy(Enemy *e, u8 type, s16 x, s16 y)
     e->type = type;
     e->hp = ENEMY_DEFS[type]->hp;
     e->fireTimer = ENEMY_CD / 2 + (random() % fps);
+    // aggro dividido (PROTEGER): parte dos inimigos persegue o jogador, não o aliado
+    e->aggroPlayer = aggroSplit && ((random() % aggroSplit) == 0);
     e->active = TRUE;
 }
 
@@ -134,8 +144,11 @@ void ENEMIES_chase(Enemy *e, u16 speedFp)
     if (e->retarget) e->retarget--;
     else
     {
-        s16 dx = (px + 8) - (e->x + half);
-        s16 dy = (py + 8) - (e->y + half);
+        // alvo: o aliado (chaseX/Y) ou o JOGADOR (aggro dividido no PROTEGER)
+        const s16 tx = e->aggroPlayer ? (s16) (px + 8) : chaseX;
+        const s16 ty = e->aggroPlayer ? (s16) (py + 8) : chaseY;
+        s16 dx = tx - (e->x + half);
+        s16 dy = ty - (e->y + half);
         u32 dist = getApproximatedDistance(dx, dy);
         if (dist == 0) dist = 1;
         e->vx = (s16) (((s32) dx * speedFp) / (s32) dist);
@@ -249,6 +262,31 @@ static void ENEMIES_separate(void)
     }
 }
 
+// empurra o inimigo PARA LONGE de (fromX,fromY) a 2x a velocidade, com stun.
+// Reusado no contato com o jogador, no recuo ao encostar no aliado (PROTEGER) e
+// na onda de choque da antena. Fixos (speedFp 0) não recuam. Sem divisão (tabela).
+void ENEMIES_knockbackFrom(Enemy *e, s16 fromX, s16 fromY)
+{
+    const EnemyDef *def = ENEMY_DEF(e);
+    if (def->speedFp == 0) return;
+
+    const s16 half = ENEMY_SIZE(e) / 2;
+    s16 dx = (e->x + half) - fromX;
+    s16 dy = (e->y + half) - fromY;
+    s16 adx = dx < 0 ? -dx : dx;
+    s16 ady = dy < 0 ? -dy : dy;
+    s16 dist = (adx >= ady) ? (s16) (adx + (ady >> 1)) : (s16) (ady + (adx >> 1));
+    if (dist == 0) { dx = 1; dist = 1; }
+    else if (dist > 31) dist = 31;              // limite do índice da tabela
+
+    const u16 kbSpeed = 2 * def->speedFp;       // recua a 2x a velocidade
+    const s16 k = (s16) (kbSpeed * SEP_RECIP[dist]);
+    e->vx = (s16) (((s32) dx * k) >> 6);
+    e->vy = (s16) (((s32) dy * k) >> 6);
+    e->stun = fps / 3;
+    e->mode = 0;                                // cancela dash em curso
+}
+
 u16 ENEMIES_update(void)
 {
     u16 burnKills = 0;
@@ -292,26 +330,8 @@ u16 ENEMIES_update(void)
             if (gameOver) return burnKills;
 
             // inimigos que se movem recuam após a colisão (evita dano contínuo);
-            // os fixos (speedFp 0, ex.: Torreão) não recuam. Normalização SEM
-            // divisão (distância inline + tabela de recíproco), como na separação.
-            if (def->speedFp > 0)
-            {
-                const s16 half = size / 2;
-                s16 dx = (e->x + half) - (px + 8);
-                s16 dy = (e->y + half) - (py + 8);
-                s16 adx = dx < 0 ? -dx : dx;
-                s16 ady = dy < 0 ? -dy : dy;
-                s16 dist = (adx >= ady) ? (s16) (adx + (ady >> 1)) : (s16) (ady + (adx >> 1));
-                if (dist == 0) { dx = 1; dist = 1; }
-                else if (dist > 31) dist = 31;          // limite do índice da tabela
-
-                const u16 kbSpeed = 2 * def->speedFp;   // recua a 2x a velocidade
-                const s16 k = (s16) (kbSpeed * SEP_RECIP[dist]); // kbSpeed * (64/dist)
-                e->vx = (s16) (((s32) dx * k) >> 6);
-                e->vy = (s16) (((s32) dy * k) >> 6);
-                e->stun = fps / 3;
-                e->mode = 0;                            // cancela dash em curso
-            }
+            // os fixos (speedFp 0, ex.: Torreão) não recuam
+            ENEMIES_knockbackFrom(e, px + 8, py + 8);
         }
     }
 

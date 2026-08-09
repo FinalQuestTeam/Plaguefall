@@ -7,5 +7,7 @@ static const u8 roster[] = { ENEMY_SQ_RED, ENEMY_SQ_YEL };
 const LevelDef LEVEL01_def =
 {
     .killTarget = 10, .spawnSeconds = 5, .spawnCount = 1,
+    // musica (BPM x ameaca): padrao global; ajuste por fase se quiser
+    .musCalmUntil = 4, .musEnemyMax = 15, .musStepCalm = 12, .musStepHot = 4,
     LVL_ROSTER(roster),
 };

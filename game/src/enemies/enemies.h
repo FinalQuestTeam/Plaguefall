@@ -97,6 +97,7 @@ typedef struct
     u16 hitFlash;           // frames restantes do brilho branco ao tomar dano
     u16 burnFlash;          // frames restantes do pulso vermelho a cada dano do fogo
     bool shielded;          // roxo: invulnerável enquanto o escudo está erguido
+    bool aggroPlayer;       // PROTEGER: persegue o JOGADOR em vez do aliado (aggro dividido)
     bool active;
 } Enemy;
 
@@ -137,6 +138,16 @@ void ENEMIES_spawnAt(u8 type, s16 x, s16 y);
 
 // quantos inimigos estão ativos (usado pela fase teste)
 u16 ENEMIES_activeCount(void);
+
+// centro do alvo de perseguição (jogador por padrão; NPC no objetivo PROTEGER)
+extern s16 chaseX, chaseY;
+void ENEMIES_setChaseTarget(s16 cx, s16 cy);
+
+// PROTEGER: 1 a cada `n` inimigos persegue o JOGADOR em vez do aliado (0 = nenhum)
+void ENEMIES_setAggroSplit(u8 n);
+
+// empurra o inimigo para longe de (fromX,fromY) com stun (recuo/onda de choque)
+void ENEMIES_knockbackFrom(Enemy *e, s16 fromX, s16 fromY);
 
 // comportamento de todos os inimigos ativos + dano por contato + status
 // (congelado/queimando). Retorna quantos morreram pela QUEIMADURA neste frame.

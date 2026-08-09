@@ -12,6 +12,7 @@
 #include "actors/shots.h"
 #include "enemies/enemies.h"
 #include "items/items.h"
+#include "actors/npc.h"
 
 // direção do mech do jogador (0..7, horário a partir de cima) a partir de
 // faceX/faceY (ambos em {-1,0,1}); índice [faceY+1][faceX+1]
@@ -133,6 +134,14 @@ void SPRITES_draw(void)
                 TILE_ATTR_FULL(PAL0, TRUE, FALSE, TRUE, TILE_USER_INDEX + TILE_STATUS), n + 1);
             n++;
         }
+    }
+
+    // aliado (objetivo PROTEGER): antena 24x24; pisca enquanto invulnerável
+    if (NPC_active() && !NPC_hidden())
+    {
+        VDP_setSpriteFull(n, npcX, npcY, SPRITE_SIZE(3, 3),
+            TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, TILE_USER_INDEX + TILE_ANTENNA), n + 1);
+        n++;
     }
 
     n = ITEMS_draw(n);

@@ -73,6 +73,29 @@ static void buildTiles(void)
 
     buildTile8(TILE_BOLT, ICON_BOLT_ART, '#', 4);           // raio — amarelo
 
+    // ícones do HUD de objetivo (o coração fica branco quando desenhado com PAL0)
+    buildTile8(TILE_ICON_HEART, ICON_HEART_ART, '#', 3);    // coração (índice 3)
+    buildTile8(TILE_CLOCK, ICON_CLOCK_ART, '#', 1);         // relógio claro
+    buildTile8(TILE_ICON_ANTENNA, ICON_ANTENNA_ART, '#', 1);// antena (HUD do aliado)
+
+    // antena 24x24 (aliado do PROTEGER) — pintada como os itens (setPix, colTiles=3)
+    for (u16 y = 0; y < 24; y++)
+        for (u16 x = 0; x < 24; x++)
+        {
+            u16 c;
+            switch (ANTENNA24_ART[y][x])
+            {
+                case 'r': c = 3;  break;    // topo vermelho
+                case '5': c = 12; break;    // brilho laranja
+                case 'p': c = 6;  break;    // mastro (cinza)
+                case 'l': c = 7;  break;    // treliça (cinza claro)
+                case 'b': c = 11; break;    // base (escura)
+                case 'w': c = 1;  break;    // ondas (branco)
+                default:  continue;
+            }
+            setPix(TILE_ANTENNA, x, y, c, 3);
+        }
+
     // porta 8x8 (área de passagem entre as fases teste): painel verde com
     // borda clara — ladrilhado num retângulo, forma um portão/portal
     for (u16 y = 0; y < 8; y++)

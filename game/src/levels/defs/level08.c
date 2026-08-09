@@ -11,5 +11,7 @@ const LevelDef LEVEL08_def =
     .spawnCount = 2,
     .lava = LAVA_PAIR, 
     .lavaCount = LAYOUT_RECTS,
+    // musica (BPM x ameaca): padrao global; ajuste por fase se quiser
+    .musCalmUntil = 4, .musEnemyMax = 15, .musStepCalm = 12, .musStepHot = 4,
     LVL_ROSTER(roster),
 };

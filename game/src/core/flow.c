@@ -17,8 +17,11 @@
 #include "system/video/screens/hud.h"
 #include "system/video/screens/pause.h"
 #include "core/inventory.h"
+#include "core/objective.h"
+#include "actors/npc.h"
 #include "system/audio/sfx.h"
 #include "system/audio/music.h"
+#include "system/audio/audio.h"
 #include "actors/player.h"
 #include "actors/shots.h"
 #include "actors/bomb.h"
@@ -58,6 +61,7 @@ static void showPrep(u8 level)
     pendingLevel = level;
     state = ST_PREP;
     SFX_silence();
+    MUSIC_setEnemies(0);        // preparação: música calma
 
     // some com os sprites da fase anterior ANTES da limpeza e da geração de
     // arte (LEVEL_loadGfx é pesado): sem o flush, os inimigos congelados
@@ -80,6 +84,7 @@ static void showPrep(u8 level)
 // começa (ou recomeça) uma fase; a vida NÃO reseta (persiste entre fases)
 static void startPhase(u8 level)
 {
+    AUDIO_silenceAll();         // cala o PSG antes da carga pesada (sem nota presa)
     LEVEL_load(level);
     FLOOR_draw(LEVEL_current()->floor);     // chão configurado por fase (def)
     ENEMIES_clear();
@@ -98,7 +103,11 @@ static void startPhase(u8 level)
 
     SFX_silence();
     FLASH_stop();
-    HUD_drawKills(kills, LEVEL_current()->killTarget);
+    const LevelDef *def = LEVEL_current();
+    OBJECTIVE_start(def);                    // objetivo da fase (timer/NPC/contagem)
+    MUSIC_setRamp(def->musCalmUntil, def->musEnemyMax,   // curva de BPM da fase
+                  def->musStepCalm,  def->musStepHot);
+    OBJECTIVE_drawHUD(kills);
     HUD_drawLife(hp);
     HUD_drawInventory();
     state = ST_PLAY;
@@ -108,6 +117,7 @@ static void startPhase(u8 level)
 // sandbox (porta, inimigos, infos) fica em levels/test.c.
 static void startTest(u8 stage)
 {
+    AUDIO_silenceAll();         // cala o PSG antes da carga pesada (sem nota presa)
     testStage = stage;
     LEVEL_load(0);              // arena + HUD "FASE TESTE n"
     FLOOR_draw(LEVEL_current()->floor);     // chão configurado por fase (def)
@@ -115,7 +125,7 @@ static void startTest(u8 stage)
     ITEMS_clear();
     SHOTS_clear();
     PLAYER_reset();
-    CHARS_load(PLAYER_CHAR);    // mech do jogador: 8 direções na VRAM + paleta (PAL2)
+    CHARS_load(PLAYER_CHAR);    // mech do jogador: 3 direções na VRAM + paleta (PAL2)
     PLAYER_fullHp();
     BOMB_reset();
     SHOTS_resetPower();
@@ -129,7 +139,11 @@ static void startTest(u8 stage)
     SFX_silence();
     FLASH_stop();
     TEST_draw();               // porta + timer de aparição dos alvos
-    HUD_drawKills(kills, LEVEL_current()->killTarget);
+    const LevelDef *def = LEVEL_current();
+    OBJECTIVE_start(def);                    // estágios 4/5/6 têm objetivo
+    MUSIC_setRamp(def->musCalmUntil, def->musEnemyMax,   // curva de BPM da fase
+                  def->musStepCalm,  def->musStepHot);
+    OBJECTIVE_drawHUD(kills);
     HUD_drawLife(hp);
     HUD_drawInventory();
     state = ST_PLAY;
@@ -165,19 +179,16 @@ static void updatePlay(u16 joy, u16 pressed)
     LEVEL_update();                 // elementos da fase (ex.: lava/lama)
     if (gameOver) return;
 
-    const u16 shotKills = SHOTS_updatePlayer();
-    if (shotKills)          // só redesenha o contador (sprintf) quando muda
-    {
-        kills += shotKills;
-        HUD_drawKills(kills, LEVEL_current()->killTarget);
-    }
+    // alvo da perseguição dos inimigos: o aliado no PROTEGER, senão o jogador
+    if (LEVEL_current()->objective == OBJ_PROTECT && NPC_active())
+        ENEMIES_setChaseTarget(npcX + NPC_SIZE / 2, npcY + NPC_SIZE / 2);
+    else
+        ENEMIES_setChaseTarget(px + 8, py + 8);
+
+    kills += SHOTS_updatePlayer();
     SHOTS_updateEnemy();
-    const u16 burnKills = ENEMIES_update();     // mortes pela queimadura (fogo)
-    if (burnKills)
-    {
-        kills += burnKills;
-        HUD_drawKills(kills, LEVEL_current()->killTarget);
-    }
+    kills += ENEMIES_update();      // + mortes pela queimadura (fogo)
+    MUSIC_setEnemies(ENEMIES_activeCount());   // + inimigos = BPM sobe (perigo)
     ITEMS_update();
 
     if (gameOver) return;
@@ -187,7 +198,16 @@ static void updatePlay(u16 joy, u16 pressed)
     if (currentLevel == 0)
     {
         const u8 next = TEST_update();
-        if (next) startTest(next);
+        if (next) { startTest(next); return; }
+
+        // estágios de objetivo (4/5/6): roda a meta e reinicia o estágio ao
+        // concluir/falhar (é uma demonstração em loop, sem prep nem game over)
+        if (LEVEL_current()->objective != OBJ_KILL)
+        {
+            const u8 st = OBJECTIVE_update(kills);
+            OBJECTIVE_drawHUD(kills);
+            if (st != OBJ_ONGOING) startTest(testStage);
+        }
         return;
     }
 
@@ -208,7 +228,10 @@ static void updatePlay(u16 joy, u16 pressed)
         return;
     }
 
-    if (kills >= LEVEL_current()->killTarget)
+    // objetivo da fase (matar N / sobreviver / coletar / proteger o aliado)
+    const u8 obj = OBJECTIVE_update(kills);
+    OBJECTIVE_drawHUD(kills);
+    if (obj == OBJ_WON)
     {
         // fase completa: mensagem por 3 s antes da próxima tela; os itens no
         // chão somem na hora (não dá mais para coletar na cena congelada)
@@ -216,7 +239,16 @@ static void updatePlay(u16 joy, u16 pressed)
         doneTimer = fps * 3;
         SFX_silence();
         ITEMS_clear();
+        NPC_clear();
         VDP_drawText("FASE CONCLUIDA!", 12, 13);
+        return;
+    }
+    if (obj == OBJ_LOST)            // aliado caiu: falha (recomeça a fase pelo START)
+    {
+        SFX_silence();
+        VDP_drawText("O ALIADO CAIU!", 13, 12);
+        VDP_drawText("APERTE START", 14, 14);
+        gameOver = TRUE;            // o laço ST_PLAY vê gameOver e vai p/ ST_OVER
         return;
     }
 
@@ -257,6 +289,7 @@ void FLOW_run(void)
     while (TRUE)
     {
         FLOOR_clear();          // menu/título sem o chão da arena
+        MUSIC_setEnemies(0);    // título/menu: música calma
         const u8 choice = TITLE_run();
 
         VDP_setTextPlane(BG_A);
@@ -328,6 +361,7 @@ void FLOW_run(void)
 
                     if (pressed & BUTTON_START)     // pausa com as infos da fase
                     {
+                        AUDIO_silenceAll();         // sem nota presa enquanto desenha a pausa
                         PAUSE_show();
                         state = ST_PAUSE;
                         break;
@@ -384,8 +418,10 @@ void FLOW_run(void)
                     break;
             }
 
+            AUDIO_frameBegin();     // árbitro: música e SFX só REQUISITAM voz...
             MUSIC_update();
             SFX_update();
+            AUDIO_frameEnd();       // ...e o árbitro escreve o PSG (1x por canal)
             FLASH_update();
             SYS_doVBlankProcess();
         }

@@ -1,10 +1,11 @@
-// Fase teste (sandbox): a porta entre os estágios, a manutenção dos inimigos de
+// Fase teste (sandbox): portas entre os estágios, a manutenção dos inimigos de
 // cada estágio e a caixa de infos do jogador. Fica aqui (e não em main.c) para
 // seguir o padrão das demais fases — main.c cuida só da máquina de estados.
 //
-//   estágio 1: um dummy resistente que reaparece na hora (testa tiros/lava).
-//   estágio 2: 3 alvos frágeis agrupados, que reaparecem a cada 2 s (testa a
-//              reação em cadeia do item raio).
+//   1: dummy resistente (testa tiros/lava/lama).   2: alvos frágeis (raio em cadeia).
+//   3: chefe.   4: SOBREVIVER.   5: COLETAR.   6: PROTEGER.
+// Os estágios 4/5/6 demonstram os objetivos novos: inimigos surgem continuamente
+// e a meta/HUD é avaliada em core/flow.c (reinicia o estágio ao concluir/falhar).
 
 #include "levels/test.h"
 #include "system/video/sprites/tiles.h"
@@ -14,20 +15,27 @@
 #include "items/items.h"
 #include "actors/shots.h"
 #include "actors/player.h"
+#include "core/objective.h"     // OBJECTIVE_prepText (meta dos estágios 4/5/6)
 
 // posições fixas dos 3 alvos da teste 2 (canto sup. esq. do sprite 24x24)
 static const struct { s16 x, y; } SPOTS[3] = { { 130, 64 }, { 160, 64 }, { 190, 64 } };
 
-// portas (em tiles): à direita na teste 1 (→ teste 2), à esquerda na teste 2
+// portas (em tiles): cadeia linear 1..6 (esquerda = anterior, direita = próximo)
 #define DOOR_W          3
 #define DOOR_H          4
 #define DOOR_Y          10          // linha do topo da porta
-#define DOOR1_X         35          // teste 1: porta à direita
-#define DOOR2_X         2           // teste 2: porta à esquerda
+#define DOOR1_X         35          // porta à direita (→ próximo estágio)
+#define DOOR2_X         2           // porta à esquerda (→ estágio anterior)
 
 #define TEST2_SPAWN_S   2           // intervalo de aparição dos alvos (teste 2)
+#define OBJ_ENEMY_CAP   8           // teto de inimigos nos estágios de objetivo
 
-static u16 spawnTimer;              // contagem p/ reaparecer os alvos (teste 2)
+// nome curto de cada estágio (índice = testStage)
+static const char *const STAGE_NAME[7] =
+    { "", "TESTE 1", "TESTE 2", "CHEFE", "SOBREVIVER", "COLETAR", "PROTEGER" };
+
+static u16 spawnTimer;              // reaparecer alvos (teste 2)
+static u16 objSpawnTimer;           // aparição de inimigos (estágios 4/5/6)
 
 // o jogador (16x16 em px,py) encosta no retângulo de tiles [tx,ty]+[tw,th]?
 static bool playerOnTiles(u16 tx, u16 ty, u16 tw, u16 th)
@@ -40,40 +48,40 @@ static bool playerOnTiles(u16 tx, u16 ty, u16 tw, u16 th)
 void TEST_draw(void)
 {
     const u16 attr = TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, TILE_USER_INDEX + TILE_DOOR);
-    spawnTimer = TEST2_SPAWN_S * fps;   // 1ª leva de alvos após o intervalo
+    char buf[32];
+    spawnTimer = TEST2_SPAWN_S * fps;
+    objSpawnTimer = fps;
 
-    if (testStage == 2)
+    // validação no início: a meta do estágio de objetivo (4/5/6)
+    if (testStage >= 4)
     {
-        VDP_fillTileMapRect(BG_A, attr, DOOR2_X, DOOR_Y, DOOR_W, DOOR_H);  // esq → teste 1
-        VDP_drawText("<- TESTE 1", 2, 8);
-        VDP_fillTileMapRect(BG_A, attr, DOOR1_X, DOOR_Y, DOOR_W, DOOR_H);  // dir → CHEFE
-        VDP_drawText("CHEFE ->", 30, 8);
+        OBJECTIVE_prepText(buf, LEVEL_current());
+        VDP_drawText(buf, 2, 6);
     }
-    else if (testStage == 3)
+
+    // porta à esquerda (estágio anterior)
+    if (testStage > 1)
     {
-        VDP_fillTileMapRect(BG_A, attr, DOOR2_X, DOOR_Y, DOOR_W, DOOR_H);  // esq → teste 2
-        VDP_drawText("<- TESTE 2", 2, 8);
-        VDP_drawText("CHEFE: BESOURO", 13, 3);
+        VDP_fillTileMapRect(BG_A, attr, DOOR2_X, DOOR_Y, DOOR_W, DOOR_H);
+        sprintf(buf, "<- %s", STAGE_NAME[testStage - 1]);
+        VDP_drawText(buf, 2, 8);
     }
-    else
+    // porta à direita (próximo estágio)
+    if (testStage < 6)
     {
-        VDP_fillTileMapRect(BG_A, attr, DOOR1_X, DOOR_Y, DOOR_W, DOOR_H);  // dir → teste 2
-        VDP_drawText("TESTE 2 ->", 28, 8);
+        VDP_fillTileMapRect(BG_A, attr, DOOR1_X, DOOR_Y, DOOR_W, DOOR_H);
+        sprintf(buf, "%s ->", STAGE_NAME[testStage + 1]);
+        VDP_drawText(buf, 26, 8);
     }
 }
 
 u8 TEST_update(void)
 {
-    // portas: pisar na área de passagem troca de estágio de teste
-    if (testStage == 1 && playerOnTiles(DOOR1_X, DOOR_Y, DOOR_W, DOOR_H)) return 2;
-    if (testStage == 2)
-    {
-        if (playerOnTiles(DOOR2_X, DOOR_Y, DOOR_W, DOOR_H)) return 1;   // esq → teste 1
-        if (playerOnTiles(DOOR1_X, DOOR_Y, DOOR_W, DOOR_H)) return 3;   // dir → CHEFE
-    }
-    if (testStage == 3 && playerOnTiles(DOOR2_X, DOOR_Y, DOOR_W, DOOR_H)) return 2;
+    // portas: pisar na área de passagem troca de estágio (cadeia 1..6)
+    if (testStage > 1 && playerOnTiles(DOOR2_X, DOOR_Y, DOOR_W, DOOR_H)) return testStage - 1;
+    if (testStage < 6 && playerOnTiles(DOOR1_X, DOOR_Y, DOOR_W, DOOR_H)) return testStage + 1;
 
-    // inimigos do estágio
+    // inimigos / itens de cada estágio
     if (testStage == 2)
     {
         // alvos frágeis: quando todos caem, reaparecem após o intervalo
@@ -87,18 +95,32 @@ u8 TEST_update(void)
                 spawnTimer = TEST2_SPAWN_S * fps;
             }
         }
+        ITEMS_testEnsure();
     }
     else if (testStage == 3)
     {
-        // arena do chefe: (re)aparece quando não há mais nada vivo
         if (ENEMIES_activeCount() == 0) ENEMIES_spawnAt(ENEMY_BOSS, 144, 48);
+    }
+    else if (testStage >= 4)
+    {
+        // objetivos: inimigos surgem continuamente até o teto
+        if (ENEMIES_activeCount() < OBJ_ENEMY_CAP)
+        {
+            if (objSpawnTimer) objSpawnTimer--;
+            else
+            {
+                const LevelDef *d = LEVEL_current();
+                ENEMIES_trySpawn(d->enemyTypes, d->enemyTypeCount);
+                objSpawnTimer = fps;
+            }
+        }
+        if (testStage == 5) ITEMS_testEnsure();     // itens para coletar
     }
     else
     {
         if (ENEMIES_activeCount() == 0) ENEMIES_spawnAt(ENEMY_DUMMY, 148, 80);
+        ITEMS_testEnsure();
     }
-
-    ITEMS_testEnsure();
 
     // caixa de infos do jogador (evolução de tiros/velocidade no sandbox)
     char buf[20];
@@ -112,7 +134,7 @@ u8 TEST_update(void)
 
 void TEST_drawPauseText(void)
 {
-    VDP_drawText(testStage == 3 ? "PAUSA - CHEFE (TESTE)"
-               : testStage == 2 ? "PAUSA - FASE TESTE 2"
-                                : "PAUSA - FASE TESTE 1", 10, 9);
+    char buf[24];
+    sprintf(buf, "PAUSA - %s", STAGE_NAME[testStage]);
+    VDP_drawText(buf, 10, 9);
 }

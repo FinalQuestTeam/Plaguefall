@@ -48,7 +48,14 @@
 // overlay de status (bloco 4x4 xadrez, índice 2) sobre o inimigo:
 // gelo (ciano, PAL1) / fogo (vermelho, PAL0)
 #define TILE_STATUS     54  // 16 tiles
-#define NUM_TILES       70
+
+// ícones 8x8 do HUD de objetivo (contador da linha 0)
+#define TILE_ICON_HEART 70  // coração (COLETAR corações)
+#define TILE_CLOCK      71  // relógio (tempo restante: SOBREVIVER / PROTEGER)
+// aliado do objetivo PROTEGER: antena 24x24 (sprite) + ícone 8x8 (HUD)
+#define TILE_ANTENNA    72  // 9 tiles (24x24, estilo dos itens) — sprite do aliado
+#define TILE_ICON_ANTENNA 81 // 1 tile (8x8) — indicador do aliado no HUD
+#define NUM_TILES       82
 
 // Região das rotações dos inimigos: cada tipo tem 8 direções (como o mech),
 // geradas no boot por system/video/enemygfx.c, logo após os tiles base.

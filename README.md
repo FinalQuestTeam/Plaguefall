@@ -27,6 +27,7 @@ Você pilota um mech numa arena de tela única. Inimigos surgem em ondas; a meta
 - **Inventário de 4 posições** (bomba na posição 0): itens coletados entram na lista; C seleciona, B ativa. Duplicatas ocupam posições próprias.
 - **8 itens**: coração (cura), bala (leque até 5), botinha (velocidade), escudo (invencibilidade), raio (reação em cadeia), **gelo** (congela 5 s), **fogo** (queimadura por tempo), bomba (limpa a tela).
 - **Feedback**: poça de sangue verde ao matar, flash de tela na bomba, som de dano ao ser atingido por inimigo, contagem "PREPARE-SE" no início da fase.
+- **Trilha dinâmica**: chiptune dark original no PSG cujo **BPM sobe com a ameaça** (mais inimigos = mais rápido), com curva ajustável por fase; efeitos e música dividem os canais via um árbitro que evita chiado e nota presa.
 - **Fase teste** (sandbox, no menu): 3 estágios ligados por portas — dummies, alvos para o raio e a arena do chefe.
 
 ## Assets
@@ -59,7 +60,7 @@ Legenda típica: `o` contorno, `b` corpo (cor da família), `h` brilho, `e` olho
 
 Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (rotações dos insetos em 8 direções, com pools de VRAM por tamanho e descarte por fase), `chars.c` (rotações do mech).
 
-**Áudio**: efeitos sonoros direto no PSG (SN76489) — tiro, explosão, coleta, dano, ambientes de lava/lama (`system/audio/sfx.c`). Sem música de fundo por ora (drivers XGM/PCM conflitam com o uso intenso de DMA; ver memórias do projeto).
+**Áudio**: tudo no PSG (SN76489), sintetizado em tempo real. Um **árbitro** (`system/audio/audio.c`) é a única via de escrita nos 4 canais — música e SFX apenas *requisitam* voz por prioridade a cada quadro, o que resolve as disputas de canal e o chiado. A **música** (`music.c` + `song_data.h`) é um chiptune dark original com **BPM dinâmico** que sobe com a ameaça (nº de inimigos), configurável **por fase**. Os **SFX** (`sfx.c`) — tiro, explosão, coleta, dano e o leito de ruído de lava/lama — preemptam a música e a devolvem ao soltar. Optou-se pelo PSG porque os drivers XGM/PCM conflitam com o uso intenso de DMA (ver §6 do GDD).
 
 ## Documentação de design
 
@@ -96,7 +97,7 @@ game/src/
 ├── levels/                 # dispatcher, layouts, fase teste; defs/ = uma fase por arquivo
 ├── elements/               # terreno: lava, lama
 └── system/
-    ├── audio/              # SFX PSG (música desligada)
+    ├── audio/              # árbitro do PSG + música (BPM dinâmico) + SFX
     └── video/              # tilegen, sprites/, telas (título, HUD, pausa, ajuda...)
 ```
 

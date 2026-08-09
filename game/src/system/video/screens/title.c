@@ -11,6 +11,7 @@
 #include "system/video/screens/chardemo.h"
 #include "system/video/titlebg.h"
 #include "system/audio/music.h"
+#include "system/audio/audio.h"
 #include "core/game.h"     // fps
 
 // ordem do menu (Fase Teste por último); cada posição mapeia p/ uma ação TITLE_*
@@ -40,7 +41,8 @@ static void drawMenu(void)
 
 u8 TITLE_run(void)
 {
-    VDP_setScreenWidth320();
+    AUDIO_silenceAll();         // cala o PSG antes da carga do fundo (sem nota presa
+    VDP_setScreenWidth320();    // ao voltar da fase/pausa); a música retoma no loop
     TITLEBG_load();             // arte do fundo na VRAM (PAL1/PAL2) ...
     TITLEBG_draw();             // ... e no BG_B, atrás do menu
     drawMenu();
@@ -55,7 +57,9 @@ u8 TITLE_run(void)
         const u16 pressed = joy & ~prev;
         prev = joy;             // atualizado sempre: botão segurado não dispara
 
-        MUSIC_update();         // engata o loop ao fim da intro
+        AUDIO_frameBegin();     // engata o loop ao fim da intro (via árbitro)
+        MUSIC_update();
+        AUDIO_frameEnd();
 
         if (lock)
         {

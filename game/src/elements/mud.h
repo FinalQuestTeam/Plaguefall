@@ -5,12 +5,12 @@
 #include "elements/elements.h"
 
 // lentidão progressiva: BASE% imediato ao entrar, +STEP% a cada segundo, até MAX%
-#define MUD_PLAYER_BASE     30
-#define MUD_PLAYER_STEP     10
-#define MUD_PLAYER_MAX      70
-#define MUD_ENEMY_BASE      3
-#define MUD_ENEMY_STEP      3
-#define MUD_ENEMY_MAX       30
+#define MUD_PLAYER_BASE     50
+#define MUD_PLAYER_STEP     15
+#define MUD_PLAYER_MAX      85
+#define MUD_ENEMY_BASE      15
+#define MUD_ENEMY_STEP      10
+#define MUD_ENEMY_MAX       45
 
 // desenha o padrão do tile TILE_MUD no buffer de tiles procedurais
 void MUD_buildTile(u32 *tileBuf);
