@@ -7,6 +7,7 @@
 #include "system/video/sprites/tiles.h"
 #include "system/video/enemygfx.h"
 #include "system/audio/music.h"
+#include "system/audio/audio.h"
 #include "core/game.h"
 #include "enemies/enemies.h"
 
@@ -153,7 +154,9 @@ void HELP_run(void)
         const u16 pressed = joy & ~prev;
         prev = joy;
 
-        MUSIC_update();     // mantém o loop da música tocando
+        AUDIO_frameBegin(); // mantém o loop da música tocando (via árbitro)
+        MUSIC_update();
+        AUDIO_frameEnd();
 
         if (pressed & BUTTON_RIGHT) { page = (page + 1) % PAGES;         drawPage(page); }
         if (pressed & BUTTON_LEFT)  { page = (page + PAGES - 1) % PAGES; drawPage(page); }

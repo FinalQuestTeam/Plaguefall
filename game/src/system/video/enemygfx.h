@@ -20,10 +20,11 @@ void ENEMYGFX_loadForPhase(u8 phase, const u8 *types, u16 count);
 // do título) e todo tipo residente precisa ser gerado de novo na próxima fase
 void ENEMYGFX_reset(void);
 
-// tile base da direção `dir` (0=cima, horário até 7) do tipo de inimigo. Só 3
-// direções são geradas (N/NE/E); as outras 5 reaproveitam essas espelhadas, então
-// combine com ENEMYGFX_dirFlipH/V ao montar o sprite. (O chefe tem as 8 geradas.)
-u16 ENEMYGFX_dirTile(u8 type, u8 dir);
+// tile base da direção `dir` (0=cima, horário até 7) e `frame` de animação do
+// tipo. Só 3 direções são geradas (N/NE/E); as outras 5 reaproveitam espelhadas,
+// então combine com ENEMYGFX_dirFlipH/V. Comuns têm ANIM_FRAMES quadros; o chefe
+// não anima (passe frame=0). (O chefe tem as 8 direções geradas.)
+u16 ENEMYGFX_dirTile(u8 type, u8 dir, u8 frame);
 
 // bits de espelhamento (0/1) da direção — passe a TILE_ATTR_FULL(flipH/flipV)
 u8 ENEMYGFX_dirFlipH(u8 type, u8 dir);

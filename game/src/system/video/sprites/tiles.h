@@ -55,20 +55,22 @@
 // aliado do objetivo PROTEGER: antena 24x24 (sprite) + ícone 8x8 (HUD)
 #define TILE_ANTENNA    72  // 9 tiles (24x24, estilo dos itens) — sprite do aliado
 #define TILE_ICON_ANTENNA 81 // 1 tile (8x8) — indicador do aliado no HUD
-#define NUM_TILES       82
+#define TILE_ANTENNA_BEACON 82 // 1 tile (8x8) — farol ROXO (overlay do topo da antena)
+#define NUM_TILES       83
 
 // Região das rotações dos inimigos: cada tipo tem 8 direções (como o mech),
 // geradas no boot por system/video/enemygfx.c, logo após os tiles base.
 #define ENEMY_ROT_BASE  NUM_TILES
-#define ENEMY_ROT_COUNT 237 // pools de slots por tamanho (5×12 + 3×27 + 2×48). Só 3
-                            // direções (N/NE/E) são geradas; as outras 5 saem por
-                            // flip H/V de hardware (enemygfx.c). Cada tipo gerado 1×,
-                            // reaproveitado; slot de tipo "morto" é reciclado.
+#define ENEMY_ROT_COUNT 474 // pools de slots por tamanho × ANIM_FRAMES (enemygfx.c):
+                            // 2 quadros de animação × 3 direções (N/NE/E) por tipo;
+                            // 5×24 + 3×54 + 2×96 = 474. As outras 5 direções saem por
+                            // flip H/V de hardware. Cada tipo gerado 1×, reaproveitado;
+                            // slot de tipo "morto" é reciclado. (1 quadro seria 237.)
 
 // região dedicada do CHEFE (48x48): 8 direções × (48/8)² = 8 × 36 = 288 tiles.
 // Grande demais para os pools; fica logo após a região dos inimigos.
 #define BOSS_ROT_BASE   (ENEMY_ROT_BASE + ENEMY_ROT_COUNT)
-#define BOSS_ROT_COUNT  288
+#define BOSS_ROT_COUNT  576 // 2 quadros de animação × 8 direções × 36 = 576
 #define BOSS_DIR_TILES  36  // (48/8)² tiles por direção
 
 #endif // TILES_H

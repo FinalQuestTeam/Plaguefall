@@ -31,6 +31,9 @@ static void drawMenu(void)
 {
     VDP_setTextPlane(BG_A);
     VDP_setTextPalette(PAL0);
+    // texto do menu em PRETO (fonte = índice 15 da PAL0). Vale só no menu; ao sair
+    // do título, TITLEBG_release()->TILEGEN_palette() devolve o branco ao jogo.
+    PAL_setColor(15, RGB24_TO_VDPCOLOR(0x000000));
     VDP_clearPlane(BG_A, TRUE);
 
     VDP_drawText("R E D R E X", 15, 6);

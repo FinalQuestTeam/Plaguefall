@@ -66,7 +66,10 @@ void SPRITES_draw(void)
         // CHEFE (48x48): 4 quadrantes 24x24 (limite de 32px do hardware)
         if (d->size == 48)
         {
-            const u16 base = TILE_USER_INDEX + ENEMYGFX_dirTile(enemies[i].type, edir);
+            // rastejar: alterna o quadro a cada ~10 quadros (mais lento que os
+            // comuns, dá peso); congelado (gelo) trava no quadro 0
+            const u8 baf = enemies[i].frozen ? 0 : (u8) ((frame / 10) & 1);
+            const u16 base = TILE_USER_INDEX + ENEMYGFX_dirTile(enemies[i].type, edir, baf);
             for (u16 q = 0; q < 4; q++)
             {
                 const s16 qx = (s16) ((q & 1) * 24), qy = (s16) ((q >> 1) * 24);
@@ -109,9 +112,12 @@ void SPRITES_draw(void)
         // 3 direções geradas; as outras 5 saem espelhando por hardware (H/V-flip)
         const u8 fh = ENEMYGFX_dirFlipH(enemies[i].type, edir);
         const u8 fv = ENEMYGFX_dirFlipV(enemies[i].type, edir);
+        // quadro de animação: alterna a cada ~8 quadros, defasado por inimigo (i)
+        // p/ não andarem em sincronia; congelado (gelo) trava no quadro 0
+        const u8 af = enemies[i].frozen ? 0 : (u8) (((frame >> 3) + i) & 1);
         VDP_setSpriteFull(n, enemies[i].x, enemies[i].y, size,
             TILE_ATTR_FULL(epal, TRUE, fv, fh,
-                TILE_USER_INDEX + ENEMYGFX_dirTile(enemies[i].type, edir)), n + 1);
+                TILE_USER_INDEX + ENEMYGFX_dirTile(enemies[i].type, edir, af)), n + 1);
         n++;
 
         // overlay de status (mesmo tile TILE_STATUS, a paleta define a cor):
@@ -136,9 +142,18 @@ void SPRITES_draw(void)
         }
     }
 
-    // aliado (objetivo PROTEGER): antena 24x24; pisca enquanto invulnerável
+    // aliado (objetivo PROTEGER): antena 24x24; some ao piscar (invulnerável)
     if (NPC_active() && !NPC_hidden())
     {
+        // FAROL: alterna SÓ o topo (amarelo -> roxo) sobrepondo 1 tile roxo sobre
+        // a luz, ~0,5 s em cada cor. Desenhado ANTES do corpo (link menor = POR
+        // CIMA no MD). Corpo intacto; sem ciclo de paleta.
+        if ((frame % 60) >= 30)
+        {
+            VDP_setSpriteFull(n, npcX + 8, npcY, SPRITE_SIZE(1, 1),
+                TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, TILE_USER_INDEX + TILE_ANTENNA_BEACON), n + 1);
+            n++;
+        }
         VDP_setSpriteFull(n, npcX, npcY, SPRITE_SIZE(3, 3),
             TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, TILE_USER_INDEX + TILE_ANTENNA), n + 1);
         n++;

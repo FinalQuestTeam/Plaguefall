@@ -4,6 +4,7 @@
 #include "system/video/screens/chardemo.h"
 #include "system/video/chars.h"
 #include "system/audio/music.h"
+#include "system/audio/audio.h"
 #include "core/game.h"     // fps
 
 // posição (canto sup. esq. do sprite 32x32) de cada direção, ao redor do centro
@@ -55,7 +56,9 @@ void CHARDEMO_run(void)
         const u16 pressed = joy & ~prev;
         prev = joy;
 
+        AUDIO_frameBegin();
         MUSIC_update();
+        AUDIO_frameEnd();
 
         if (pressed & BUTTON_RIGHT) { which = (which + 1) % CHARS_COUNT;              CHARS_load(which); drawLabels(which); }
         if (pressed & BUTTON_LEFT)  { which = (which + CHARS_COUNT - 1) % CHARS_COUNT; CHARS_load(which); drawLabels(which); }

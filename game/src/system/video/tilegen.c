@@ -85,8 +85,8 @@ static void buildTiles(void)
             u16 c;
             switch (ANTENNA24_ART[y][x])
             {
-                case 'r': c = 3;  break;    // topo vermelho
-                case '5': c = 12; break;    // brilho laranja
+                case 'r': c = 4;  break;    // topo AMARELO (idx 4)
+                case '5': c = 4;  break;    // brilho amarelo
                 case 'p': c = 6;  break;    // mastro (cinza)
                 case 'l': c = 7;  break;    // treliça (cinza claro)
                 case 'b': c = 11; break;    // base (escura)
@@ -94,6 +94,17 @@ static void buildTiles(void)
                 default:  continue;
             }
             setPix(TILE_ANTENNA, x, y, c, 3);
+        }
+
+    // farol: overlay ROXO (idx 8) só nos pixels da LUZ do topo ('r'/'5'), num
+    // único tile 8x8 (coluna do meio, linha 0 da antena). Sobreposto ao topo
+    // amarelo num timer (spritelist), alterna o farol amarelo->roxo sem tocar na
+    // paleta (que está cheia) — logo, sem afetar a cor dos inimigos.
+    for (u16 y = 0; y < 8; y++)
+        for (u16 x = 8; x < 16; x++)
+        {
+            const char ch = ANTENNA24_ART[y][x];
+            if ((ch == 'r') || (ch == '5')) setPix(TILE_ANTENNA_BEACON, x - 8, y, 8, 1);
         }
 
     // porta 8x8 (área de passagem entre as fases teste): painel verde com

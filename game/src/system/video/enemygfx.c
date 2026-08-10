@@ -31,9 +31,13 @@ static const u8 DIR_VFLIP[8] = { 0,  0,  0,  1,  1,  1,  0,  0 };
 // direções por tipo — ver topo do arquivo):
 //   pequenos(12t): 5   médios(27t): 3   grandes(48t): 2
 //   → 5×12 + 3×27 + 2×48 = 237 tiles = ENEMY_ROT_COUNT
-#define SLOT_TILES_S    (GEN_DIRS * 4)      // 16px: 3 dir × 4 tiles = 12
-#define SLOT_TILES_M    (GEN_DIRS * 9)      // 24px: 3 × 9 = 27
-#define SLOT_TILES_L    (GEN_DIRS * 16)     // 32px: 3 × 16 = 48
+// Quadros de animação por direção. Cada tipo comum guarda ANIM_FRAMES quadros
+// (layout: quadro-maior, depois direção). Protótipo: só o besouro tem 2º quadro
+// distinto; os demais duplicam o quadro A (custam a VRAM, mas não animam ainda).
+#define ANIM_FRAMES     2
+#define SLOT_TILES_S    (ANIM_FRAMES * GEN_DIRS * 4)      // 16px: 2×3×4  = 24
+#define SLOT_TILES_M    (ANIM_FRAMES * GEN_DIRS * 9)      // 24px: 2×3×9  = 54
+#define SLOT_TILES_L    (ANIM_FRAMES * GEN_DIRS * 16)     // 32px: 2×3×16 = 96
 #define SLOTS_S 5
 #define SLOTS_M 3
 #define SLOTS_L 2
@@ -69,6 +73,21 @@ static const char *const *pickArt(u8 shape, u16 size)
         case SHAPE_PENTAGON: return (size >= 32) ? INS_SPIDER32 : INS_SPIDER24;
         default:             return (size >= 32) ? INS_BEETLE32
                                   : (size >= 24) ? INS_BEETLE24 : INS_BEETLE16;
+    }
+}
+
+// char-map de um QUADRO de animação. Quadro 0 = pose base (pickArt). Quadro 1 =
+// pose alternada por forma: besouro/aranha = pernas retraídas, mosca = asas
+// erguidas. (O chefe não passa por aqui: 1 quadro só.)
+static const char *const *frameArt(u8 shape, u16 size, u8 frame)
+{
+    if (frame == 0) return pickArt(shape, size);
+    switch (shape)
+    {
+        case SHAPE_TRIANGLE: return INS_FLY16_B;                 // mosca
+        case SHAPE_PENTAGON: return (size >= 32) ? INS_SPIDER32_B : INS_SPIDER24_B;
+        default:             return (size >= 32) ? INS_BEETLE32_B
+                                  : (size >= 24) ? INS_BEETLE24_B : INS_BEETLE16_B;
     }
 }
 
@@ -161,16 +180,22 @@ static void genType(u8 t)
     const EnemyDef *d = ENEMY_DEFS[t];
     const u16 size = d->size;
     const u16 tpd  = (size / 8) * (size / 8);   // tiles por direção
+    // chefe: 8 direções (sem flip); comuns: 3 direções (N/NE/E). Ambos ANIM_FRAMES.
     const u8  ndir = (t == ENEMY_BOSS) ? 8 : GEN_DIRS;
-    const u16 count = ndir * tpd;
+    const u8  nfr  = ANIM_FRAMES;
+    const u16 count = nfr * ndir * tpd;
 
-    const char *const *art = (t == ENEMY_BOSS) ? INS_BOSS48 : pickArt(d->shape, size);
     const u16 body = bodyColor(d->color);
 
     u32 *buf = MEM_alloc(count * 8 * (u16) sizeof(u32));
     memset(buf, 0, count * 8 * (u16) sizeof(u32));
-    for (u8 dir = 0; dir < ndir; dir++)
-        paintRot(buf, dir * tpd, art, size, body, dir);
+    for (u8 f = 0; f < nfr; f++)
+    {
+        const char *const *art = (t == ENEMY_BOSS) ? (f ? INS_BOSS48_B : INS_BOSS48)
+                                                    : frameArt(d->shape, size, f);
+        for (u8 dir = 0; dir < ndir; dir++)
+            paintRot(buf, (f * ndir + dir) * tpd, art, size, body, dir);
+    }
     VDP_loadTileData(buf, TILE_USER_INDEX + enemyBase[t], count, DMA);
     MEM_free(buf);
 }
@@ -212,13 +237,14 @@ void ENEMYGFX_reset(void)
     for (u16 t = 0; t < ENEMY_TYPES; t++) resident[t] = FALSE;
 }
 
-u16 ENEMYGFX_dirTile(u8 type, u8 dir)
+u16 ENEMYGFX_dirTile(u8 type, u8 dir, u8 frame)
 {
     const u16 size = ENEMY_DEFS[type]->size;
     const u16 tpd = (size / 8) * (size / 8);
-    // chefe: 8 direções diretas; demais: 3 geradas (as outras 5 via flip)
-    const u8 slot = (type == ENEMY_BOSS) ? dir : DIR_SLOT[dir];
-    return enemyBase[type] + slot * tpd;
+    // chefe: 8 direções diretas (layout quadro-maior, depois direção)
+    if (type == ENEMY_BOSS) return enemyBase[type] + (frame * 8 + dir) * tpd;
+    // demais: 3 direções geradas (5 via flip), layout quadro-maior, depois direção
+    return enemyBase[type] + (frame * GEN_DIRS + DIR_SLOT[dir]) * tpd;
 }
 
 // bits de espelhamento da direção (0 no chefe, que tem as 8 direções geradas)
@@ -228,7 +254,7 @@ u8 ENEMYGFX_dirFlipV(u8 type, u8 dir) { return (type == ENEMY_BOSS) ? 0 : DIR_VF
 void ENEMYGFX_drawOnMap(u8 type, u16 col, u16 row)
 {
     const u16 nt = ENEMY_DEFS[type]->size / 8;      // tiles por lado (2/3/4)
-    const u16 base = ENEMYGFX_dirTile(type, 0);     // direção 0 = de frente
+    const u16 base = ENEMYGFX_dirTile(type, 0, 0);  // direção 0, quadro 0 = de frente
     for (u16 tc = 0; tc < nt; tc++)
         for (u16 tr = 0; tr < nt; tr++)
             VDP_setTileMapXY(BG_A,

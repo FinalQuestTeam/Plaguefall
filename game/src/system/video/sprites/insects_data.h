@@ -89,6 +89,94 @@ static const char *const INS_BEETLE32[32] =
     "...............oo...............",
 };
 
+// --- Quadro B de animação do BESOURO (pernas retraídas) ---------------------
+// Alternado com o quadro A (acima) dá um "andar/escurrir". Gerado por script
+// (retrai cada perna 1 coluna em direção ao corpo). Protótipo: só o besouro
+// tem 2º quadro distinto; os demais insetos duplicam o quadro A na geração.
+static const char *const INS_BEETLE16_B[16] =
+{
+    ".....l....l.....",
+    "......looll.....",
+    "......ebeo......",
+    ".....obbbbo.....",
+    ".....oobooo.....",
+    "....oooooooo....",
+    "....ohhbobbo....",
+    "..loohhbobbool..",
+    ".llobhhbobbboll.",
+    "...obbbbobbbo...",
+    "...obbbbobbbo...",
+    "..lobbbbobbbol..",
+    ".ll.obbbobbo.ll.",
+    "....obbbobbo....",
+    ".....obbobo.....",
+    "......oooo......",
+};
+
+static const char *const INS_BEETLE24_B[24] =
+{
+    ".......l........l.......",
+    "........ll.oo.ll........",
+    ".........lobbol.........",
+    "........oobbbboo........",
+    "........oebbbebo........",
+    "........obbbbbbo........",
+    "........obbbobbo........",
+    ".......oboobooobo.......",
+    "......obhhboobbbbo......",
+    ".....lohhhbbobbbbol.....",
+    "...llobhhhhbobbbbboll...",
+    ".llllobhhhbbobbbbbollll.",
+    ".lll.obbhhbbobbbbbolll..",
+    ".....obbbbbbobbbbbo.....",
+    ".....obbbbbbobbbbbo.....",
+    "....lobbbbbbobbbbbo.....",
+    "...llobbbbbbobbbbboll...",
+    ".llllobbbbbbobbbbbollll.",
+    ".lll..obbbbbobbbbo.lll..",
+    "......obbbbbobbbbo......",
+    ".......obbbbobbbo.......",
+    ".......oobbbobboo.......",
+    "........oobboboo........",
+    "..........oooo..........",
+};
+
+static const char *const INS_BEETLE32_B[32] =
+{
+    ".........l............l.........",
+    "..........l..........l..........",
+    "...........llooooooll...........",
+    "............lbbbbbbl............",
+    "...........obbbbbbbbo...........",
+    "...........oebbbbbebo...........",
+    "...........obbbbbbbbo...........",
+    "...........obbbbbbbbo...........",
+    "..........oobbbbobbboo..........",
+    ".........oobobbbobboboo.........",
+    ".........obbboooooobbbo.........",
+    "........obhhhbbbobbbbbbo........",
+    ".......lobhhhhbbobbbbbbo........",
+    "......lobbhhhhbbobbbbbbbol......",
+    "....lllobbhhhhbbobbbbbbbolll....",
+    "..lllllobbhhhhbbobbbbbbbolllll..",
+    ".llll..obbhhhbbbobbbbbbbo.llll..",
+    ".ll...obbbbbbbbbobbbbbbbbo..ll..",
+    "......obbbbbbbbbobbbbbbbbo......",
+    "......obbbbbbbbbobbbbbbbbo......",
+    "......obbbbbbbbbobbbbbbbbo......",
+    ".....llobbbbbbbbobbbbbbboll.....",
+    "...llllobbbbbbbbobbbbbbbollll...",
+    ".lllll.obbbbbbbbobbbbbbbolllll..",
+    ".lll...obbbbbbbbobbbbbbbo..lll..",
+    "........obbbbbbbobbbbbbo........",
+    "........oobbbbbbobbbbboo........",
+    ".........obbbbbbobbbbbo.........",
+    "..........obbbbbobbbbo..........",
+    "...........obbbbobbbo...........",
+    "............ooobbooo............",
+    "...............oo...............",
+};
+
 static const char *const INS_FLY16[16] =
 {
     "................",
@@ -174,6 +262,94 @@ static const char *const INS_SPIDER32[32] =
 };
 
 
+// --- Quadros B de animação (mosca e aranhas) --------------------------------
+// Mosca: asas erguidas 1 linha (bater de asas) + pernas juntas. Aranhas: pernas
+// retraídas 1 coluna em direção ao corpo (passo). Gerados por script, alternam
+// com os quadros A dando movimento. (Besouro tem os seus mais acima.)
+static const char *const INS_FLY16_B[16] =
+{
+    "................",
+    ".......oo.......",
+    ".....ooeeoo.....",
+    "...wwoeoeeoww...",
+    "...wwoeeeeoww...",
+    "..wwwwoooowwww..",
+    ".wwwwwobbowwwww.",
+    "www...obbo...www",
+    ".w...obbbbo...w.",
+    ".....oooooo.....",
+    ".....obbbbo.....",
+    "......obbo......",
+    ".....oooooo.....",
+    "......obbo......",
+    ".......ll.......",
+    ".......ll.......",
+};
+
+static const char *const INS_SPIDER24_B[24] =
+{
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "..lllll..........lllll..",
+    ".......l.oooooo.l.......",
+    ".......lobbbbbbol.......",
+    ".......obebebebbo.......",
+    ".llllllobbbbbbbbollllll.",
+    "......lobbbbbbbbol......",
+    ".......oobbbbbboo.......",
+    "......ooboobbooboo......",
+    "...lllobbboooobbbollll..",
+    ".ll...obbbbhhbbbbo...ll.",
+    ".....obbbbhhhhbbbbo.....",
+    ".....obbbbhhhhbbbbo.....",
+    "....lobbbbhhhhbbbbol....",
+    "...ll.obbbbhhbbbbo.ll...",
+    "..l...obbbbbbbbbbo...l..",
+    "......oobbbbbbbboo......",
+    ".......oobbbbbboo.......",
+    "........ooobbooo........",
+    "...........oo...........",
+    "........................",
+};
+
+static const char *const INS_SPIDER32_B[32] =
+{
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "..lllllll.............lllllll...",
+    "..llllllll...........llllllll...",
+    "........lll..oooooo.lll.........",
+    ".........lllobbbbbbolll.........",
+    "..........lobbbbbbbbol..........",
+    "..........obebbebbebbo..........",
+    ".llllllll.obbbbbbbbbbolllllllll.",
+    ".lllllllllobbbbbbbbbbollllllllll",
+    "........llobbbbbbbbbboll........",
+    "..........obbbbbbbbbbo..........",
+    ".........obobbbbbbbbobo.........",
+    "........obbboobbbboobbbo........",
+    ".lllllllobbbbboooobbbbbollllllll",
+    ".llllllobbbbbbhhhhbbbbbbolllllll",
+    ".......obbbbbbhhhhbbbbbbo.......",
+    ".......obbbbbbhhhhbbbbbbo.......",
+    ".......obbbbbbhhhhbbbbbbo.......",
+    "......lobbbbbbhhhhbbbbbbol......",
+    "....lllobbbbbbhhhhbbbbbbolll....",
+    "..lllll.obbbbbbhhbbbbbbolllll...",
+    "..lll...obbbbbbbbbbbbbbo..lll...",
+    "........oobbbbbbbbbbbboo........",
+    ".........obbbbbbbbbbbbo.........",
+    "..........oobbbbbbbboo..........",
+    "...........oobbbbbboo...........",
+    ".............oooooo.............",
+    "................................",
+    "................................",
+};
+
 // ---- CHEFE: lacraia com chifres (48x48; desenhada em 4 quadrantes) ----
 static const char *const INS_BOSS48[48] =
 {
@@ -225,6 +401,61 @@ static const char *const INS_BOSS48[48] =
     "................llllobhhhhbolll.................",
     "................llllobbbbbbolll.................",
     "................llllobbbbbbolll.................",
+};
+
+// Quadro B do CHEFE: ONDA de pernas ao longo do corpo (faixas alternadas afastam
+// /aproximam do corpo) + antenas do topo inclinadas. Alternado com o quadro A dá
+// a lacraia "rastejando" — animação mais rica, por ser o inimigo final.
+static const char *const INS_BOSS48_B[48] =
+{
+    "............oo........oo...oo........oo.........",
+    ".............oo.....................oo..........",
+    ".....................oo.....oo..................",
+    "...............oo.................oo............",
+    ".....................oo.....oo..................",
+    ".................oo.............oo..............",
+    "....................oooooooo....................",
+    "..................ooobbbbbboooo.................",
+    "................oobbbbbbbbbbbboo................",
+    "...............oobbbbbbbbbbbbbboo...............",
+    "..............oobbbbhhhhhhhhbbbboo..............",
+    "..............obbbbbbbbbbbbbbbbbbo..............",
+    "..............obbbbhebbbbbbbhebbbo..............",
+    "..............obbbbeebbbbbbbeebbbo..............",
+    "..............obbbbbbbbbbbbbbbbbbo..............",
+    "..............obbbbbbbbbbbbbbbbbbo..............",
+    "..............oobbbbbbbbbbbbbbbboo..............",
+    "...............oobbbbbbbbbbbbbboo...............",
+    "................oobbbbbbbbbbbboo................",
+    "...............oobbbhhhhhhhhbbboo...............",
+    "..........llll.obbbbbbbbbbbbbbbbo.lll...........",
+    "............lloobbbbbbbbbbbbbbbbooll............",
+    "............lllobbbbbbbbbbbbbbbbolll............",
+    "...............oobbbbbbbbbbbbbboo...............",
+    "................oobbbbbbbbbbbboo................",
+    "................oobbhhhhhhhhbboo................",
+    "...........llll.obbbbbbbbbbbbbbo.lll............",
+    ".............lloobbbbbbbbbbbbbbooll.............",
+    ".............lllobbbbbbbbbbbbbbolll.............",
+    "................oobbbbbbbbbbbboo................",
+    "..................oobbbbbbbboo..................",
+    "...........llll..obbbhhhhhhbbbo.llll............",
+    "...........llll.obbbbbbbbbbbbbbo.lll............",
+    ".............lllobbbbbbbbbbbbbbolll.............",
+    ".................obbbbbbbbbbbbo.................",
+    "..................oobbbbbbbboo..................",
+    "..................obbhhhhhhbbo..................",
+    "............llll.obbbbbbbbbbbbo.lll.............",
+    "............llll.obbbbbbbbbbbbo.lll.............",
+    "..............llllobbbbbbbbbbollll..............",
+    "....................obhhhhbo....................",
+    "...............llllobbbbbbbbollll...............",
+    ".............llll..bbbbbbbbbb.llll..............",
+    ".............llll..obbbbbbbbo.llll..............",
+    "....................obbbbbbo....................",
+    ".................lllobhhhhbolll.................",
+    ".................lllobbbbbbolll.................",
+    ".................lllobbbbbbolll.................",
 };
 
 #endif // INSECTS_DATA_H
