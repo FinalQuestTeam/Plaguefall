@@ -6,7 +6,9 @@
 #include "enemies/enemies.h"
 #include "system/video/floor.h"        // FLOOR_STONE / FLOOR_FOREST
 
-#define LEVEL_COUNT     16      // 1..15 campanha + 16 = chefe (Lacraia)
+// A ORDEM das fases (e as bifurcações) vive no grafo da campanha — ver
+// levels/graph.h e a tabela em levels/graph.c. Aqui ficam só as DEFS (dados
+// de cada fase) e o dispatcher de carga/desenho, indexado por nó do grafo.
 
 // objetivos de fase (campo LevelDef.objective; ver core/objective.c)
 #define OBJ_KILL        0       // matar killTarget inimigos (padrão)
@@ -14,7 +16,10 @@
 #define OBJ_COLLECT     2       // coletar objTarget itens
 #define OBJ_PROTECT     3       // proteger o aliado (NPC) por objTarget segundos
 
-// descrição de uma fase: elementos, condições de vitória e regras de spawn
+// descrição de uma fase: elementos, condições de vitória e regras de spawn.
+// CAMPO OMITIDO = padrão: objetivo MATAR (usa killTarget), sem lava/lama,
+// chão de pedra, 1 inimigo por onda e curva de música global (music.h).
+// Só declare o que a fase tem de diferente disso.
 typedef struct
 {
     const TileRect *lava;   // retângulos de lava (NULL se não houver)
@@ -40,12 +45,16 @@ typedef struct
     u8 musStepHot;         // frames/passo no perigo (menor = + rápido)
 } LevelDef;
 
-// uma fase por arquivo em levels/defs/ (level01.c .. level16.c)
+// uma fase por arquivo em levels/defs/ (level01.c .. level16.c); o grafo
+// (levels/graph.c) referencia estas defs — uma def pode aparecer em mais de
+// um nó, e nós alternativos (2A/2B) podem usar defs novas
 extern const LevelDef
     LEVEL01_def, LEVEL02_def, LEVEL03_def, LEVEL04_def, LEVEL05_def,
     LEVEL06_def, LEVEL07_def, LEVEL08_def, LEVEL09_def, LEVEL10_def,
     LEVEL11_def, LEVEL12_def, LEVEL13_def, LEVEL14_def, LEVEL15_def,
-    LEVEL16_def;
+    LEVEL16_def,
+    // rotas alternativas (level02b.c, level06b.c, ...)
+    LEVEL02B_def, LEVEL06B_def, LEVEL10B_def, LEVEL13B_def;
 
 // fases teste (dados em levels/defs/test.c; lógica em levels/test.c)
 extern const LevelDef TEST_def, TEST2_def, TEST3_def, TEST4_def, TEST5_def, TEST6_def;
@@ -59,7 +68,7 @@ extern const TileRect COMBO_LAVA[LAYOUT_RECTS], COMBO_MUD[LAYOUT_RECTS];
 // atalho para preencher o roster de inimigos de uma fase
 #define LVL_ROSTER(a)   .enemyTypes = (a), .enemyTypeCount = (sizeof(a) / sizeof((a)[0]))
 
-extern u8 currentLevel;         // 1..LEVEL_COUNT (0 = fase teste)
+extern u8 currentLevel;         // nó do grafo: 1..NODE_COUNT (0 = fase teste)
 extern u8 testStage;            // fase teste: 1 (dummy) ou 2 (alvos p/ o raio)
 
 // definição da fase atual
@@ -74,10 +83,6 @@ void LEVEL_load(u8 n);
 // gera na VRAM só a arte dos inimigos da fase n (por etapas; use antes de mostrar
 // os sprites da fase, ex.: na tela de preparação). LEVEL_load já chama isto.
 void LEVEL_loadGfx(u8 n);
-
-// vetor [ENEMY_TYPES]: última fase (1..LEVEL_COUNT) em que cada tipo aparece
-// (0 = nunca). Usado pelo descarte de sprites de inimigo por vida (enemygfx.c).
-const u8 *LEVEL_typeLastPhase(void);
 
 // atualização por frame dos elementos da fase atual (ex.: dano da lava)
 void LEVEL_update(void);

@@ -6,15 +6,13 @@ static const u8 roster[] = { ENEMY_SQ_ORG, ENEMY_TRI_RED, ENEMY_TRI_YEL, ENEMY_T
 
 const LevelDef LEVEL15_def =
 {
-    .killTarget = 40, 
-    .spawnSeconds = 2, 
-    .spawnCount = 3,
-    .lava = COMBO_LAVA, 
-    .lavaCount = LAYOUT_RECTS,
-    .mud = COMBO_MUD, 
-    .floor = FLOOR_MIX,
-    .mudCount = LAYOUT_RECTS,
-    // musica (BPM x ameaca): padrao global; ajuste por fase se quiser
-    .musCalmUntil = 4, .musEnemyMax = 15, .musStepCalm = 12, .musStepHot = 4,
+    .killTarget   = 40,
+    .spawnSeconds = 2,
+    .spawnCount   = 3,
+    .lava         = COMBO_LAVA,
+    .lavaCount    = LAYOUT_RECTS,
+    .mud          = COMBO_MUD,
+    .mudCount     = LAYOUT_RECTS,
+    .floor        = FLOOR_MIX,
     LVL_ROSTER(roster),
 };

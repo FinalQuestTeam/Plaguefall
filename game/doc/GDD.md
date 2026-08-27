@@ -57,7 +57,9 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 | `ST_PLAY` | Jogo ativo (inclui a contagem "PREPARE-SE" de 3 s congelada). |
 | `ST_PAUSE` | Pausa: infos da fase; START retoma, B sai ao título. |
 | `ST_OVER` | Game over: START **recomeça a fase atual** com vida/bombas restauradas. |
-| `ST_DONE` | "FASE CONCLUIDA!" por 3 s antes da preparação da próxima fase. |
+| `ST_DONE` | "FASE CONCLUIDA!" por 3 s; a saída do grafo é resolvida (`GRAPH_resolve`) e vai ao mapa. |
+| `ST_MAP` | **Mapa de rotas** (`routemap.c`): o grafo desenhado dos próprios dados (nós `mapCol/mapRow`, ligações das saídas), caminho percorrido "O", próxima fase "*" piscando, resto "."; A/START segue à preparação. |
+| `ST_STORY` | **História** (`screens/story.c` + roteiro em `levels/story.c`): diálogo com retratos 48x48 (esq. em cima, dir. embaixo), máquina de escrever; A avança/completa, START pula. Toca 1x por run, nos momentos ANTES (chegada ao nó, antes da preparação) e DEPOIS (vitória, antes do mapa/fim). |
 | `ST_END` | Fim de jogo (chefe derrotado): "PARABENS! FIM"; START volta ao título. |
 
 ### Fluxo geral
@@ -65,7 +67,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 1. **Splash** (logo FinalQuest) → **Tela-título** (fundo em bitmap-art + menu: **NOVO JOGO / FASE TESTE / COMO JOGAR**).
 2. **Preparação** (`ST_PREP`) → A para começar.
 3. **"PREPARE-SE 3-2-1"** (3 s congelado) → jogo ativo.
-4. Meta atingida → `ST_DONE` → preparação da próxima. Morte → `ST_OVER` → recomeça a mesma fase.
+4. Meta atingida → `ST_DONE` → história do DEPOIS (se houver) → **mapa de rotas** (`ST_MAP`) → história do ANTES do nó destino (se houver) → preparação da próxima (decidida pelas condições de saída do grafo). Morte → `ST_OVER` → recomeça a mesma fase. Objetivo falhado em nó **com rota de falha** (`OBJ_FALHOU`) → "A MISSAO CONTINUA..." → segue pela rota de falha (sem game over).
 5. **Fase 16**: o chefe é gerado no início; derrotá-lo → `ST_END` → título.
 
 ### Temporizações (60 fps NTSC)
@@ -279,25 +281,29 @@ Soma dos pesos = 100 (coincidência atual; o sorteio usa a soma real).
 
 ## Estrutura
 
-`LEVEL_COUNT` = **16** (1–15 campanha + 16 = chefe). Cada fase é um `LevelDef` (dados puros) em `levels/defs/levelNN.c`: terreno (`lava`/`mud`, retângulos em tiles), `killTarget`, `spawnSeconds`, `spawnCount`, o **roster** de tipos, o **chão** (`floor`) e a **curva de música** por fase (`musCalmUntil`/`musEnemyMax`/`musStepCalm`/`musStepHot`; ver §6). A arte dos inimigos do roster é gerada **por fase** na VRAM (ver §6).
+A **ordem da campanha vive no grafo de rotas** (`levels/graph.c`): cada fase é um nó (`NODE_COUNT` = **16**; 1–15 campanha + 16 = chefe, nó **final** = sem saídas) com **saídas condicionais** avaliadas ao vencer (bomba/dano/tempo/falha do objetivo — bifurcações ativas: **1→2A/2B** (sem bomba/com bomba), **5→6A/6B** (a fase 5 é PROTEGER o aliado 30 s; falhar NÃO é game over — vai à 6B "retirada" via `OBJ_FALHOU`), **9→10A/10B** (sem dano/com dano) e **12→13A/13B** (venceu em <60 s/não); cada par reconverge na fase seguinte). As condições leem as **estatísticas da fase** (`core/stats.c`: bombas usadas, dano sofrido, tempo, objetivo falhado), zeradas a cada início de fase. Plano completo em `doc/plano-rotas.md`. Cada fase é um `LevelDef` (dados puros) em `levels/defs/levelNN.c`: terreno (`lava`/`mud`, retângulos em tiles), `killTarget`, `spawnSeconds`, `spawnCount`, o **roster** de tipos, o **chão** (`floor`) e a **curva de música** por fase (`musCalmUntil`/`musEnemyMax`/`musStepCalm`/`musStepHot`; ver §6). A arte dos inimigos do roster é gerada **por fase** na VRAM (ver §6).
 
 ## Tabela das fases
 
 | Fase | Meta | Spawn (s) | Por onda | Terreno | Chão | Roster |
 |---|---|---|---|---|---|---|
 | 1 | 10 | 5 | 1 | — | pedra | Torreão, Batedor |
-| 2 | 12 | 5 | 1 | — | pedra | + Aríete |
+| 2A | 12 | 5 | 1 | — | pedra | + Aríete *(rota sem bomba na 1)* |
+| 2B | 12 | 5 | 1 | Lama | floresta | Torreão, Batedor, Aríete *(rota com bomba na 1)* |
 | 3 | 14 | 4 | 1 | Lava | pedra | Batedor, Baluarte, Aríete |
 | 4 | 16 | 4 | 1 | Lama | floresta | Torreão, Baluarte, **Caçador** |
-| 5 | 18 | 4 | 1 | — | pedra | **Fuzileiro**, Caçador, Aríete |
-| 6 | 20 | 3 | 1 | Lava | pedra | Fuzileiro, Caçador, **Adaga** |
+| 5 | **proteger o aliado 30 s** | 4 | 1 | — | pedra | **Fuzileiro**, Caçador, Aríete |
+| 6A | 20 | 3 | 1 | Lava | pedra | Fuzileiro, Caçador, **Adaga** *(protegeu o aliado)* |
+| 6B | 20 | **2** | 1 | Lava | pedra | Fuzileiro, Caçador, Adaga *(retirada: o aliado caiu; música já tensa)* |
 | 7 | 22 | 3 | **2** | Lama | floresta | Caçador, **Escudeiro**, Baluarte |
 | 8 | 24 | 3 | 2 | Lava | pedra | Fuzileiro, Caçador, Adaga, Aríete |
 | 9 | 24 | 4 | 1 | — | pedra | **Artilheiro, Alcateia**, Caçador |
-| 10 | 26 | 3 | 2 | Lama | floresta | Alcateia, **Meteoro**, Adaga |
+| 10A | 26 | 3 | 2 | Lama | floresta | Alcateia, **Meteoro**, Adaga *(venceu a 9 sem dano)* |
+| 10B | 26 | 3 | 2 | **Lava+lama** | mix | Alcateia, Meteoro, Adaga *(levou dano na 9)* |
 | 11 | 28 | 3 | 2 | Lava+lama | mix | Artilheiro, **Fortaleza**, Caçador |
 | 12 | 30 | 3 | 2 | Lava+lama | mix | Meteoro, Fuzileiro, Caçador, Baluarte |
-| 13 | 34 | 2 | 2 | Lava | pedra | Baluarte, Caçador, Adaga, Artilheiro, Alcateia |
+| 13A | 34 | 2 | 2 | Lava | pedra | Baluarte, Caçador, Adaga, Artilheiro, Alcateia *(venceu a 12 em <60 s)* |
+| 13B | 34 | 2 | 2 | **Lama** | floresta | Baluarte, Caçador, Adaga, Artilheiro, Alcateia *(demorou na 12)* |
 | 14 | 37 | 2 | **3** | Lava+lama | mix | Fortaleza, Meteoro, Alcateia, Caçador |
 | 15 | 40 | 2 | 3 | Lava+lama | mix | Aríete, Fuzileiro, Caçador, Adaga, Artilheiro, Fortaleza, Meteoro |
 | **16** | **chefe** | — | — | — | caverna | **Lacraia** (+ Caçadores invocados) |
@@ -382,7 +388,7 @@ Não há bitmaps no build (exceto a derivação offline do fundo do título). To
 
 - `tilegen.c` — tiles fixos + os ícones 8×8 de `icons_data.h` (caveira, bomba, raio, faísca, escudo, gelo, fogo).
 - `chars.c` — mech 32×32 (1 dos 9 personagens carregado por vez), **3 direções geradas** (N/NE/E) + 5 por flip = **48 tiles**; PAL2.
-- `enemygfx.c` — insetos, **gerados por fase**, **3 direções** cada + 5 por flip. **Pools por tamanho** com descarte por vida útil: 5 slots de 16 px + 3 de 24 px + 2 de 32 px = **237 tiles** (`ENEMY_ROT_COUNT`). O chefe tem região própria (`BOSS_ROT`, 288 tiles, ainda em 8 direções — quadrantes manuais não flipam).
+- `enemygfx.c` — insetos, **gerados por fase**, **3 direções** cada + 5 por flip. **Pools por tamanho** com descarte por vida útil (um tipo cede o slot quando sai do **alcance do nó atual no grafo** — `GRAPH_reachableTypes`, alcançabilidade real, funciona com bifurcações): 5 slots de 16 px + 3 de 24 px + 2 de 32 px = **237 tiles** (`ENEMY_ROT_COUNT`). O chefe tem região própria (`BOSS_ROT`, 288 tiles, ainda em 8 direções — quadrantes manuais não flipam).
 - `floor.c` — chão 32×32 no **BG_B** (PAL3), 3 variantes simples + 2 tilesets do mix = **80 tiles**.
 - `titlebg.c` — fundo do título (índice 0 reservado — no MD ele rende a cor de fundo, não a da paleta).
 

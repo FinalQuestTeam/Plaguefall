@@ -8,17 +8,21 @@
 // sprites/tiles.h). Isso deixa o start instantâneo e economiza VRAM. Cada inimigo
 // encara o jogador ao se mover, como o mech do jogador.
 
-// garante na VRAM a arte dos `count` tipos em `types` para a fase `phase`. Cada
-// tipo é gerado no máximo 1× e reaproveitado; slots são organizados em pools por
-// tamanho e um tipo "morto" (que não aparece em nenhuma fase >= phase) pode ceder
-// seu slot. Idempotente: rechamar com o mesmo roster não regenera nada.
-// Use phase=0xFF para "fora da campanha" (fase teste, tela de ajuda): todos os
-// tipos de campanha ficam elegíveis a descarte.
+// garante na VRAM a arte dos `count` tipos em `types` para o nó `phase` do
+// grafo da campanha. Cada tipo é gerado no máximo 1× e reaproveitado; slots são
+// organizados em pools por tamanho e um tipo "morto" (fora do alcance do nó —
+// GRAPH_reachableTypes) pode ceder seu slot. Idempotente: rechamar com o mesmo
+// roster não regenera nada. Use phase=0xFF para "fora da campanha" (fase teste,
+// tela de ajuda): todos os tipos de campanha ficam elegíveis a descarte.
 void ENEMYGFX_loadForPhase(u8 phase, const u8 *types, u16 count);
 
 // invalida o cache: a região ENEMY_ROT foi usada por outra coisa (a arte de fundo
 // do título) e todo tipo residente precisa ser gerado de novo na próxima fase
 void ENEMYGFX_reset(void);
+
+// invalida SÓ o chefe: a tela de história usa a região BOSS_ROT como rascunho
+// dos retratos; a arte do chefe regenera quando ele voltar a ser preciso
+void ENEMYGFX_dropBoss(void);
 
 // tile base da direção `dir` (0=cima, horário até 7) e `frame` de animação do
 // tipo. Só 3 direções são geradas (N/NE/E); as outras 5 reaproveitam espelhadas,

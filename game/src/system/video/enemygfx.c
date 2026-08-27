@@ -12,7 +12,7 @@
 #include "system/video/sprites/tiles.h"
 #include "system/video/sprites/insects_data.h"
 #include "enemies/enemies.h"
-#include "levels/levels.h"              // LEVEL_typeLastPhase()
+#include "levels/graph.h"               // GRAPH_reachableTypes()
 
 static const s16 COS8[8] = { 256, 181,   0, -181, -256, -181,    0,  181 };
 static const s16 SIN8[8] = {   0, 181, 256,  181,    0, -181, -256, -181 };
@@ -161,16 +161,14 @@ static Slot *poolFor(u16 size, u8 *n)
     *n = SLOTS_L; return slotsL;
 }
 
-// escolhe um slot no pool para a fase `phase`: 1) vazio; 2) ocupante MORTO
-// (última fase < phase → nunca mais aparece); 3) segurança: o de menor "última
-// fase" (regenera depois se voltar — não deve ocorrer com os pools dimensionados)
-static Slot *pickSlot(Slot *pool, u8 n, u8 phase, const u8 *last)
+// escolhe um slot no pool: 1) vazio; 2) ocupante MORTO (tipo fora da máscara
+// de alcance `reach` do nó atual → não aparece mais neste run); 3) segurança:
+// o primeiro (regenera depois se voltar — não ocorre com os pools dimensionados)
+static Slot *pickSlot(Slot *pool, u8 n, u16 reach)
 {
     for (u8 i = 0; i < n; i++) if (pool[i].occ == NO_OCC) return &pool[i];
-    for (u8 i = 0; i < n; i++) if (last[pool[i].occ] < phase) return &pool[i];
-    Slot *worst = &pool[0];
-    for (u8 i = 1; i < n; i++) if (last[pool[i].occ] < last[worst->occ]) worst = &pool[i];
-    return worst;
+    for (u8 i = 0; i < n; i++) if (!(reach & ((u16) 1 << pool[i].occ))) return &pool[i];
+    return &pool[0];
 }
 
 // gera as rotações de UM tipo no seu slot atual (enemyBase[t]): 3 direções
@@ -203,7 +201,9 @@ static void genType(u8 t)
 void ENEMYGFX_loadForPhase(u8 phase, const u8 *types, u16 count)
 {
     if (!poolsReady) initPools();
-    const u8 *last = LEVEL_typeLastPhase();     // última fase de cada tipo (0 = nunca)
+    // tipos ainda alcançáveis a partir do nó atual do grafo; fora da campanha
+    // (phase = 0xFF, fase teste/ajuda) a máscara vazia libera qualquer descarte
+    const u16 reach = (phase == 0xFF) ? 0 : GRAPH_reachableTypes(phase);
 
     for (u16 i = 0; i < count; i++)
     {
@@ -221,7 +221,7 @@ void ENEMYGFX_loadForPhase(u8 phase, const u8 *types, u16 count)
 
         u8 n;
         Slot *pool = poolFor(ENEMY_DEFS[t]->size, &n);
-        Slot *s = pickSlot(pool, n, phase, last);
+        Slot *s = pickSlot(pool, n, reach);
         if (s->occ != NO_OCC) resident[s->occ] = FALSE;   // descarta o ocupante
 
         enemyBase[t] = s->base;
@@ -229,6 +229,11 @@ void ENEMYGFX_loadForPhase(u8 phase, const u8 *types, u16 count)
         s->occ = t;
         resident[t] = TRUE;
     }
+}
+
+void ENEMYGFX_dropBoss(void)
+{
+    resident[ENEMY_BOSS] = FALSE;
 }
 
 void ENEMYGFX_reset(void)

@@ -6,11 +6,13 @@ static const u8 roster[] = { ENEMY_PEN_PUR, ENEMY_PEN_ORG, ENEMY_PEN_YEL, ENEMY_
 
 const LevelDef LEVEL14_def =
 {
-    .killTarget = 37, .spawnSeconds = 2, .spawnCount = 3,
-    .lava = COMBO_LAVA, .lavaCount = LAYOUT_RECTS,
-    .mud = COMBO_MUD, .mudCount = LAYOUT_RECTS,
-    .floor = FLOOR_MIX,
-    // musica (BPM x ameaca): padrao global; ajuste por fase se quiser
-    .musCalmUntil = 4, .musEnemyMax = 15, .musStepCalm = 12, .musStepHot = 4,
+    .killTarget   = 37,
+    .spawnSeconds = 2,
+    .spawnCount   = 3,
+    .lava         = COMBO_LAVA,
+    .lavaCount    = LAYOUT_RECTS,
+    .mud          = COMBO_MUD,
+    .mudCount     = LAYOUT_RECTS,
+    .floor        = FLOOR_MIX,
     LVL_ROSTER(roster),
 };

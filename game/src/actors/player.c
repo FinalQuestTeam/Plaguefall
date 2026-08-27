@@ -2,6 +2,7 @@
 
 #include "actors/player.h"
 #include "core/game.h"
+#include "core/stats.h"
 #include "system/audio/sfx.h"
 #include "system/video/screens/hud.h"
 #include "actors/shots.h"
@@ -53,6 +54,7 @@ void loseHp(u16 dmg)
     if (shieldTimer) return;            // escudo: imune inclusive à lava
 
     hp -= dmg;
+    phaseStats.damageTaken += dmg;      // condições de saída do grafo (SEM_DANO)
     HUD_drawLife(hp);
 
     if (hp <= 0)

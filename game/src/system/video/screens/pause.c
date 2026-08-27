@@ -3,7 +3,9 @@
 
 #include "system/video/screens/pause.h"
 #include "core/game.h"
+#include "core/objective.h"     // OBJECTIVE_forceHUD (HUD conforme o objetivo)
 #include "levels/levels.h"
+#include "levels/graph.h"
 #include "levels/test.h"
 #include "system/video/screens/hud.h"
 #include "actors/player.h"      // hp
@@ -18,7 +20,7 @@ void PAUSE_show(void)
     else
     {
         char buf[16];
-        sprintf(buf, "PAUSA - FASE %d", currentLevel);
+        sprintf(buf, "PAUSA - FASE %s", GRAPH[currentLevel].name);
         VDP_drawText(buf, 13, 5);
         LEVEL_drawInfo(currentLevel, 8, 7);     // inclui os sprites dos inimigos
     }
@@ -30,7 +32,7 @@ void PAUSE_resume(u16 kills)
 {
     LEVEL_draw(currentLevel);
     if (currentLevel == 0) TEST_draw();     // porta é redesenhada com a arena
-    HUD_drawKills(kills, LEVEL_current()->killTarget);
+    OBJECTIVE_forceHUD(kills);      // mortes, tempo, coleta ou proteção
     HUD_drawLife(hp);
     HUD_drawInventory();
 }

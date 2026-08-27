@@ -2,6 +2,7 @@
 // todos os inimigos). O item de coleta (items/item_bomb.c) chama BOMB_add.
 
 #include "actors/bomb.h"
+#include "core/stats.h"
 #include "system/video/screens/hud.h"
 #include "system/audio/sfx.h"
 #include "system/video/flash.h"
@@ -26,6 +27,7 @@ u16 BOMB_use(void)
     if (bombs == 0) return 0;
 
     bombs--;
+    phaseStats.bombsUsed++;     // condições de saída do grafo (SEM/USOU_BOMBA)
     SFX_bombBlast();
     FLASH_trigger();
 

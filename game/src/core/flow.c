@@ -16,6 +16,8 @@
 #include "system/video/flash.h"
 #include "system/video/screens/hud.h"
 #include "system/video/screens/pause.h"
+#include "system/video/screens/routemap.h"
+#include "system/video/screens/story.h"
 #include "core/inventory.h"
 #include "core/objective.h"
 #include "actors/npc.h"
@@ -26,12 +28,19 @@
 #include "actors/shots.h"
 #include "actors/bomb.h"
 #include "levels/levels.h"
+#include "levels/graph.h"
+#include "core/stats.h"
 #include "levels/test.h"
 #include "enemies/enemies.h"
 #include "items/items.h"
 
 // estados do jogo (a tela-título/splash rodam antes)
-typedef enum { ST_PREP, ST_PLAY, ST_PAUSE, ST_OVER, ST_DONE, ST_END } GameState;
+typedef enum { ST_PREP, ST_PLAY, ST_PAUSE, ST_OVER, ST_DONE, ST_MAP, ST_STORY, ST_END } GameState;
+
+// para onde ir quando a cena de história terminar (ST_STORY)
+#define STORY_TO_PREP   0   // preparação do pendingLevel (cena de ANTES)
+#define STORY_TO_MAP    1   // mapa de rotas (cena de DEPOIS)
+#define STORY_TO_END    2   // tela de fim (cena após o chefe)
 
 bool bossDefeated;      // chefe morto (fase 16) — dispara a tela de fim
 
@@ -43,7 +52,8 @@ u16 fps;
 u16 ENEMY_CD;                   // 1 tiro inimigo a cada 2 s
 
 static GameState state;
-static u8 pendingLevel;         // fase mostrada na tela de preparação
+static u8 pendingLevel;         // nó do grafo mostrado na tela de preparação
+static u8 storyThen;            // STORY_TO_*: destino ao fim da cena de história
 
 static u16 kills;
 static u16 spawnTimer;
@@ -75,10 +85,41 @@ static void showPrep(u8 level)
     LEVEL_loadGfx(level);               // gera a arte dos inimigos desta fase (VRAM)
 
     char buf[12];
-    sprintf(buf, "FASE %d", level);
+    sprintf(buf, "FASE %s", GRAPH[level].name);
     VDP_drawText(buf, 17, 5);
     LEVEL_drawInfo(level, 8, 8);        // inclui os sprites dos inimigos (linha y+8)
     VDP_drawText("APERTE A PARA COMECAR", 9, 20);
+}
+
+// mapa de rotas (após a fase concluída/história): destaca o pendingLevel
+static void showMap(void)
+{
+    SPRITES_hide();
+    SYS_doVBlankProcess();      // aplica a lista vazia já neste quadro
+    VDP_clearPlane(BG_A, TRUE);
+    FLOOR_clear();
+    ROUTEMAP_show(pendingLevel);
+    state = ST_MAP;
+}
+
+// tela de fim de jogo (chefe derrotado)
+static void showEnd(void)
+{
+    FLOOR_clear();
+    VDP_clearPlane(BG_A, TRUE);
+    VDP_drawText("PARABENS! FIM", 13, 9);
+    VDP_drawText("VOCE DERROTOU A LACRAIA!", 8, 12);
+    VDP_drawText("APERTE START", 14, 15);
+    state = ST_END;
+}
+
+// vai para a preparação do nó — tocando antes a HISTÓRIA de chegada, se o nó
+// tem cena de ANTES inédita neste run (levels/story.c)
+static void gotoPrep(u8 node)
+{
+    pendingLevel = node;
+    if (STORYSCR_start(node, ANTES)) { storyThen = STORY_TO_PREP; state = ST_STORY; }
+    else showPrep(node);
 }
 
 // começa (ou recomeça) uma fase; a vida NÃO reseta (persiste entre fases)
@@ -96,7 +137,9 @@ static void startPhase(u8 level)
     kills = 0;
     gameOver = FALSE;
     bossDefeated = FALSE;
-    if (level == LEVEL_COUNT)   // fase 16: só o chefe (gerado uma vez)
+    STATS_reset();              // estatísticas da fase (condições de saída do grafo)
+    ROUTEMAP_markVisited(level);    // caminho percorrido (mapa de rotas)
+    if (GRAPH_isFinal(level))   // nó final = fase do chefe (gerado uma vez)
         ENEMIES_spawnAt(ENEMY_BOSS, 140, 40);
     spawnTimer = FIRST_SPAWN_S * fps;   // 1º inimigo aparece logo no início
     freezeTimer = fps * 3;      // 3 s de contagem antes de o jogador assumir
@@ -134,6 +177,7 @@ static void startTest(u8 stage)
 
     kills = 0;
     gameOver = FALSE;
+    STATS_reset();             // os estágios de objetivo (4/5/6) também zeram
     freezeTimer = 0;           // sem contagem regressiva no teste
 
     SFX_silence();
@@ -175,6 +219,7 @@ static void updatePlay(u16 joy, u16 pressed)
 {
     (void) pressed;             // B (bomba) agora é ativação do inventário (flow)
 
+    STATS_tick();               // tempo de fase (condições de saída por tempo)
     PLAYER_update(joy);
     LEVEL_update();                 // elementos da fase (ex.: lava/lama)
     if (gameOver) return;
@@ -211,19 +256,17 @@ static void updatePlay(u16 joy, u16 pressed)
         return;
     }
 
-    // FASE 16 (chefe): vencer = derrotar o chefe → tela de fim e volta ao título.
-    // Sem meta por contagem nem spawn regular (só o chefe e seus lacaios).
-    if (currentLevel == LEVEL_COUNT)
+    // NÓ FINAL (chefe): vencer = derrotar o chefe → tela de fim e volta ao
+    // título. Sem meta por contagem nem spawn regular (só o chefe e lacaios).
+    if (GRAPH_isFinal(currentLevel))
     {
         if (bossDefeated)
         {
             SFX_silence();
-            FLOOR_clear();
-            VDP_clearPlane(BG_A, TRUE);
-            VDP_drawText("PARABENS! FIM", 13, 9);
-            VDP_drawText("VOCE DERROTOU A LACRAIA!", 8, 12);
-            VDP_drawText("APERTE START", 14, 15);
-            state = ST_END;
+            // história do fim (se inédita) antes da tela de parabéns
+            if (STORYSCR_start(currentLevel, DEPOIS))
+            { storyThen = STORY_TO_END; state = ST_STORY; }
+            else showEnd();
         }
         return;
     }
@@ -243,10 +286,24 @@ static void updatePlay(u16 joy, u16 pressed)
         VDP_drawText("FASE CONCLUIDA!", 12, 13);
         return;
     }
-    if (obj == OBJ_LOST)            // aliado caiu: falha (recomeça a fase pelo START)
+    if (obj == OBJ_LOST)            // objetivo falhou (ex.: aliado caiu)
     {
         SFX_silence();
         VDP_drawText("O ALIADO CAIU!", 13, 12);
+
+        // se o nó tem rota de falha (EXIT OBJ_FALHOU no grafo), a falha NÃO é
+        // game over: a fase encerra e o GRAPH_resolve segue por essa saída
+        if (GRAPH_hasFailExit(currentLevel))
+        {
+            VDP_drawText("A MISSAO CONTINUA...", 10, 14);
+            phaseStats.objFailed = TRUE;
+            state = ST_DONE;
+            doneTimer = fps * 3;
+            ITEMS_clear();
+            NPC_clear();
+            return;
+        }
+
         VDP_drawText("APERTE START", 14, 14);
         gameOver = TRUE;            // o laço ST_PLAY vê gameOver e vai p/ ST_OVER
         return;
@@ -300,9 +357,11 @@ void FLOW_run(void)
         SHOTS_resetChain();
         PLAYER_resetSpeed();
         INV_clear();                            // inventário zerado a cada jogo novo
+        ROUTEMAP_reset();                       // novo run: caminho do mapa zerado
+        STORYSCR_reset();                       // novo run: cenas de história de novo
 
         if (choice == TITLE_TEST) startTest(1); // fase teste (começa no estágio 1)
-        else showPrep(1);                       // novo jogo (fase 1)
+        else gotoPrep(1);                       // novo jogo (história + fase 1)
 
         // sincroniza o joypad: o START/A usado no menu não vaza como toque novo
         prevJoy = JOY_readJoypad(JOY_1);
@@ -325,8 +384,8 @@ void FLOW_run(void)
             {
                 case ST_PREP:
                     if (pressed & BUTTON_A) startPhase(pendingLevel);
-                    else if (pressed & BUTTON_C)    // C: avança de fase na preparação
-                        showPrep((pendingLevel % LEVEL_COUNT) + 1);
+                    else if (pressed & BUTTON_C)    // C: percorre os nós (debug)
+                        showPrep((pendingLevel % NODE_COUNT) + 1);
                     SPRITES_hide();
                     break;
 
@@ -343,7 +402,9 @@ void FLOW_run(void)
                         if (!comboDone)
                         {
                             comboDone = TRUE;
-                            startPhase((currentLevel % LEVEL_COUNT) + 1);
+                            // segue a rota padrão (SENAO); do nó final volta ao 1
+                            const u8 nx = GRAPH_defaultNext(currentLevel);
+                            startPhase(nx ? nx : 1);
                             break;
                         }
                     }
@@ -355,7 +416,10 @@ void FLOW_run(void)
                         if (pressed & BUTTON_B)
                         {
                             const u16 bk = INV_activate();      // bomba devolve mortes
-                            if (bk) { kills += bk; HUD_drawKills(kills, LEVEL_current()->killTarget); }
+                            // o HUD do objetivo se atualiza no updatePlay
+                            // deste mesmo quadro (não desenhar mortes aqui:
+                            // a fase pode ter objetivo de tempo/coleta)
+                            if (bk) kills += bk;
                         }
                     }
 
@@ -398,7 +462,7 @@ void FLOW_run(void)
                             SHOTS_resetChain();
                             PLAYER_resetSpeed();
                             INV_clear();
-                            showPrep(currentLevel);
+                            gotoPrep(currentLevel);     // cena já vista: vai direto
                         }
                     }
                     SPRITES_draw();
@@ -408,7 +472,38 @@ void FLOW_run(void)
                     // cena congelada com a mensagem de conclusão; no quadro da
                     // transição NÃO redesenha (showPrep acabou de esconder tudo)
                     if (doneTimer) { doneTimer--; SPRITES_draw(); }
-                    else showPrep((currentLevel % LEVEL_COUNT) + 1);
+                    else
+                    {
+                        // saída do grafo conforme as estatísticas da fase
+                        // (bomba/dano/tempo/falha); nó final não passa por aqui
+                        pendingLevel = GRAPH_resolve(currentLevel);
+                        if (!pendingLevel) pendingLevel = 1;
+
+                        // história do DEPOIS (se inédita), depois o mapa
+                        if (STORYSCR_start(currentLevel, DEPOIS))
+                        { storyThen = STORY_TO_MAP; state = ST_STORY; }
+                        else showMap();
+                    }
+                    break;
+
+                case ST_STORY:
+                    // cena de diálogo; ao terminar (ou pular), segue o destino
+                    if (STORYSCR_update(pressed))
+                    {
+                        if (storyThen == STORY_TO_PREP)     showPrep(pendingLevel);
+                        else if (storyThen == STORY_TO_MAP) showMap();
+                        else                                showEnd();
+                    }
+                    SPRITES_hide();
+                    break;
+
+                case ST_MAP:
+                    // mapa de rotas: A (ou START) segue (história de ANTES,
+                    // se o nó destino tiver, e então a preparação)
+                    ROUTEMAP_update();              // pisca a próxima fase
+                    if (pressed & (BUTTON_A | BUTTON_START))
+                        gotoPrep(pendingLevel);
+                    SPRITES_hide();
                     break;
 
                 case ST_END:

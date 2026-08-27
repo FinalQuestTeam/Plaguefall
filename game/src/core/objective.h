@@ -21,6 +21,7 @@ void OBJECTIVE_start(const LevelDef *def);      // início da fase: zera timers/
 u8   OBJECTIVE_update(u16 kills);               // por quadro: avança e avalia
 void OBJECTIVE_addCollected(u8 itemType);       // hook: item coletado (só o alvo conta)
 void OBJECTIVE_drawHUD(u16 kills);              // readout do objetivo (linha 0), com gate
+void OBJECTIVE_forceHUD(u16 kills);             // idem, SEM o gate (redesenho garantido)
 void OBJECTIVE_prepText(char *buf, const LevelDef *def);  // 1 linha p/ a preparação
 
 #endif // OBJECTIVE_H

@@ -151,6 +151,15 @@ void OBJECTIVE_drawHUD(u16 kills)
     }
 }
 
+// redesenho incondicional (invalida o gate): para quando outro código pode ter
+// escrito na linha 0 (ex.: volta da pausa) — desenha o HUD do objetivo ATIVO,
+// seja ele mortes, tempo, coleta ou proteção
+void OBJECTIVE_forceHUD(u16 kills)
+{
+    hudLast = 0xFFFF;
+    OBJECTIVE_drawHUD(kills);
+}
+
 void OBJECTIVE_prepText(char *buf, const LevelDef *def)
 {
     switch (def->objective)

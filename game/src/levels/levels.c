@@ -3,6 +3,7 @@
 // arquivo); os terrenos reutilizáveis em levels/layouts.c.
 
 #include "levels/levels.h"
+#include "levels/graph.h"
 #include "system/video/sprites/tiles.h"
 #include "system/video/enemygfx.h"
 #include "core/game.h"
@@ -13,14 +14,8 @@
 u8 currentLevel = 1;
 u8 testStage = 1;
 
-// registro das 15 fases (uma por arquivo em levels/defs/)
-static const LevelDef *const levelDefs[LEVEL_COUNT] =
-{
-    &LEVEL01_def, &LEVEL02_def, &LEVEL03_def, &LEVEL04_def, &LEVEL05_def,
-    &LEVEL06_def, &LEVEL07_def, &LEVEL08_def, &LEVEL09_def, &LEVEL10_def,
-    &LEVEL11_def, &LEVEL12_def, &LEVEL13_def, &LEVEL14_def, &LEVEL15_def,
-    &LEVEL16_def,
-};
+// o registro das fases é o GRAFO da campanha (levels/graph.c): aqui o número
+// da fase n é o número do NÓ (GRAPH[n]), e a def vem do nó
 
 // dados das fases teste (TEST_def / TEST2_def) vivem em levels/defs/test.c
 
@@ -42,7 +37,7 @@ static const LevelDef *testDef(void)
 const LevelDef *LEVEL_current(void)
 {
     if (currentLevel == 0) return testDef();
-    return levelDefs[currentLevel - 1];
+    return GRAPH[currentLevel].def;
 }
 
 static void drawBorder(void)
@@ -72,25 +67,8 @@ void LEVEL_draw(u8 n)
     //  mostrada na tela de preparação e na pausa)
 }
 
-// última fase (1..LEVEL_COUNT) em que cada tipo de inimigo aparece; 0 = nunca
-// (inclui os alvos de teste, que não estão em nenhuma fase da campanha). Calculado
-// a partir dos rosters, então acompanha edições das fases sem número mágico.
-const u8 *LEVEL_typeLastPhase(void)
-{
-    static u8 last[ENEMY_TYPES];
-    static bool ready;
-    if (!ready)
-    {
-        for (u8 n = 1; n <= LEVEL_COUNT; n++)
-        {
-            const LevelDef *d = levelDefs[n - 1];
-            for (u16 i = 0; i < d->enemyTypeCount; i++)
-                last[d->enemyTypes[i]] = n;     // n cresce → fica a ÚLTIMA fase
-        }
-        ready = TRUE;
-    }
-    return last;
-}
+// (o descarte de arte de inimigo por vida útil usa GRAPH_reachableTypes, em
+//  levels/graph.c — alcançabilidade real no grafo, e não o número do nó)
 
 // carrega na VRAM a arte (8 direções) só dos inimigos que aparecem na fase n
 // (0 = fase teste, pelo testStage atual). Reuso + descarte no ENEMYGFX.
@@ -98,7 +76,7 @@ void LEVEL_loadGfx(u8 n)
 {
     // usa testDef() (por testStage), não LEVEL_current(): currentLevel ainda não
     // é 0 aqui (LEVEL_load só o zera depois), o que faria carregar o roster errado
-    const LevelDef *def = (n == 0) ? testDef() : levelDefs[n - 1];
+    const LevelDef *def = (n == 0) ? testDef() : GRAPH[n].def;
     // fase teste roda "fora da campanha": 0xFF libera o descarte de qualquer tipo
     ENEMYGFX_loadForPhase(n == 0 ? 0xFF : n, def->enemyTypes, def->enemyTypeCount);
 }
@@ -134,7 +112,7 @@ static void drawEnemyOnMap(u8 type, u16 col, u16 rowBase, u8 size)
 
 void LEVEL_drawInfo(u8 n, u16 x, u16 y)
 {
-    const LevelDef *def = (n == 0) ? LEVEL_current() : levelDefs[n - 1];
+    const LevelDef *def = (n == 0) ? LEVEL_current() : GRAPH[n].def;
     char buf[40];
 
     OBJECTIVE_prepText(buf, def);           // "META: ..." conforme o objetivo da fase
