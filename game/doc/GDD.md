@@ -22,6 +22,156 @@
 
 # 1. Visão geral, controles, fluxo e HUD
 
+## Gameplay Loop
+
+O jogador tenta matar os insetos que aparecem na tela antes que estes o matem. Caso o jogador não seja rápido o suficiente eles formam um enxame, tornando o jogo mais difícil. Ao completar o objetivo estabelecido no início de cada partida, o jogador passa para a próxima fase.
+
+## Dificuldade: Inseto e Enxame
+
+Em seu modo mais simples, enfrentar um inseto é mais fácil que enfrentar um enxame. Evitar a formação e combater enxames é a parte central da mecânica do jogo. Essa lógica pode ser invertida com insetos mais poderosos, como chefões, que representam um desafio maior que um enxame.
+
+O jogo é dividido em fases que ficam cada vez mais difíceis. Para o level design é indicado reservar cenários mais desafiadores para fases mais avançadas. Alguns cenários de dificuldade crescente dentro do jogo:
+
+1. Enfrentar insetos fracos  
+2. Enfrentar insetos fortes  
+3. Enfrentar um enxame de insetos fracos  
+4. Enfrentar um enxame de insetos fracos e insetos fortes  
+5. Enfrentar um enxame de insetos fortes  
+6. Enfrentar um chefão  
+7. Enfrentar um chefão e insetos fracos  
+8. Enfrentar um chefão e insetos fortes  
+9. Enfrentar um chefão e um enxame de insetos fracos
+
+### Balanceamento de dificuldade
+
+É a dinâmica entre insetos e enxames que torna o jogo **entediante, divertido ou frustrante**:
+
+1. Se eliminar insetos for muito fácil o enxame nunca se forma e o jogo fica **entediante**.  
+2. Se eliminar insetos for desafiador na medida certa o enxame se forma mas é possível derrotá-lo, tornando o jogo **divertido**.  
+3. Se eliminar insetos for muito difícil o enxame fica muito desafiador e o jogo fica **frustrante**.  
+   
+
+Controlar a dificuldade de enfrentar enxames é a melhor forma de balancear a dificuldade do jogo.
+
+É possível alterar o poder e durabilidade dos insetos para criar diferentes dificuldades no jogo: **Fácil, Médio ou Difícil.**
+
+O modo de jogo **Difícil** também pode oferecer menos itens ao jogador. É importante para que o jogo não fique muito frustrante **ser possível passar todas as fases sem usar itens e poderes.**
+
+## Condições de vitória
+
+### Eliminar uma quantidade específica de insetos
+
+A condição de vitória mais simples no jogo é eliminar uma quantidade específica de inimigos. Esse objetivo pode ser fácil ou difícil dependendo do tempo de spawn dos insetos.
+
+### Sobreviver por um tempo específico
+
+Em vez de matar um determinado número de inimigos, o jogador precisa sobreviver por um tempo específico. Ainda é importante matar insetos para evitar ou reduzir enxames, o que facilita sobreviver por mais tempo.
+
+### Proteger NPC por um tempo específico
+
+Típica missão de resgate, um NPC precisa ser protegido por um tempo específico. O jogo pode apresentar ocasiões onde insetos são aliados do jogador e além de atacar podem ser derrotados. Essa dinâmica pode ser incorporada na narrativa.
+
+### Achar um item específico
+
+Ao derrotar um inimigo é possível que apareça um item. Qual item aparece também é algo aleatório. Achar um item específico pode ser uma condição de vitória.
+
+### Matar todos os insetos
+
+Em vez de matar um número específico de insetos, uma condição de vitória pode ser a de matar todos os insetos na fase.
+
+### Matar o chefão
+
+Nas fases com chefão a condição é matar apenas um inimigo.
+
+## Rejogabilidade
+
+### Rumores e “Internet Old School”
+
+A época dos cartuchos precedeu a internet e o acesso à informação sobre determinados jogos era escassa. Nos primórdios da internet, os fãs conversavam sobre um jogo em fóruns onde existiam vários rumores e lendas urbanas sobre aspectos raros de um jogo.
+
+Um fator de rejogabilidade pode ser criado ao reinventar esse efeito. Cada cartucho pode conter particularidades geradas por meio de códigos únicos em cada versão. Isso é mantido em segredo e, como a mesma coisa não pode ser reproduzida por todos, muitos vão acusar um jogador que alega descobrir um desses segredos de estar mentindo.
+
+Isso pode fomentar rumores e testes para descobrir esses segredos, fomentando uma espécie de “internet old school” moderna.
+
+### Personalização
+
+Se for possível jogar de maneiras diferentes, alguns jogadores vão querer jogar o jogo várias vezes para descobrir tudo que é possível.
+
+#### Código Konami
+
+O uso do código Konami deve fazer algo. ↑ ↑ ↓ ↓ ← → ← → B A. Uma opção é gerar um item na tela. Esse tipo de mecânica pode fazer com que o jogador queira explorar mais o jogo.
+
+#### Cartuchos personalizados
+
+Cada cartucho pode gerar códigos específicos para propósitos específicos. Gerar um código como forma de save state, por exemplo. Individualizar a geração de código irá prevenir que esses sejam espalhados na internet.
+
+### Personagens
+
+O jogo possui diferentes personagens que podem apresentar diferenças entre eles. Uma opção é fazer com que um novo personagem seja liberado após finalizar o jogo uma vez. O personagem pode começar com tiro duplo em vez de tiro comum.
+
+### Códigos Colecionáveis
+
+Pode existir uma área no jogo para inserir códigos, alguns comuns em todo jogo e outros exclusivos para cada cartucho que precisam ser descobertos jogando. Esses códigos podem liberar algo no jogo, talvez itens colecionáveis.
+
+### História não linear
+
+A história se adapta à forma como o jogador joga. Ver novas versões da história incentiva rejogabilidade.
+
+# Atmosfera e ambientação
+
+A premissa narrativa é que o jogador é um soldado em treinamento e o jogo é uma ferramenta de avaliação. A humanidade está em guerra contra uma raça alienígena e toda ação do jogador será julgada pelo comando do exército para determinar se ele está preparado para o combate.
+
+O uso de um jogo como forma de treinamento para uma guerra intergalática contra uma raça de insetos alienígenas é um *trope* comum no gênero de ficção científica. A história é montada tendo como inspiração obras que seguem essa convenção. As principais referências narrativas para o jogo são Starship Troopers e Ender’s Game.
+
+Em Starship Troopers a história segue um grupo de soldados treinando para enfrentar insetos alienígenas e em Ender’s Game a história segue um menino sendo treinado para comandar o exército que irá combater insetos alienígenas.
+
+Há várias semelhanças entre as histórias e várias convenções narrativas que se estabeleceram no gênero ao longo dos anos. Os slides que contam a história do jogo farão referências à essas obras e contarão uma versão mais simplificada desse tipo de história.
+
+# História
+
+O jogo é dividido em **fases** e a história transcorre entre essas fases por meio de **slides**. As ações do jogador impactam a narrativa e as fases do jogo de formas diferentes. Toda fase possui duas estruturas condicionais baseadas em ações do jogador, uma estrutura determina a fase e a outra determina o slide.
+
+Algumas estruturas condicionais são:
+
+1. Uso de bomba: Uma estrutura condicional é o uso, ou não, de bombas na fase anterior.  
+2. Morte: Uma estrutura condicional é se o jogador perdeu uma vida na fase anterior.  
+3. Quantidade do item X: Uma estrutura condicional é a quantidade de determinado item no inventário do jogador.  
+4. Quantidade de corações: Uma estrutura condicional é quantas vidas o jogador possui.
+
+Não há uma regra para o que determina a fase ou o slide. Por exemplo, o uso de bombas pode ser usado para determinar qual é a fase 3 e na fase 5 o uso de bombas determina qual o slide em vez de determinar a fase. 
+
+A única regra é que toda fase possui duas estruturas condicionais diferentes. A mesma estrutura condicional não pode ser usada para determinar tanto a fase quanto o slide.
+
+## Estrutura Condicional de Fases
+
+Na perspectiva do jogador, há uma sequência linear de fases mas na realidade há diferentes versões da mesma fase. O que determina a fase é uma estrutura condicional às ações do jogador.
+
+![diagrama01](https://i.imgur.com/iNfavIw.jpeg)
+
+Cada linha no fluxograma acima representa uma estrutura condicional que determina a próxima fase. Como exemplo, na Fase 1 a estrutura condicional pode ser “Uso de Bombas” que determina se o jogador irá para a fase 2A (onde usou bomba) ou para a fase 2B (onde não usou bomba).
+
+A Fase 3 é um exemplo de condições convergentes. Independente do fato do jogador ter ido para fase 2A ou 2B ele irá acabar na mesma Fase 3, que possui uma única versão.
+
+As fases 4A, 4B e 4C são um exemplo de estrutura não binária. Não é possível usar uma condição binária como na fase anterior (usou bomba ou não) pois há três versões da fase 4\. Um exemplo de estrutura condicional que funciona aqui é o número de itens. Se o jogador possui mais de 2 bombas ao vencer a fase 3 ele irá para a Fase 4A, se o jogador possui duas bombas ele irá para a fase 4B e se o jogador possui menos de duas bombas ele irá para a Fase 4C. 
+
+As fases 5A, 5B e 5C são exemplo de condições convergentes determinadas por uma estrutura condicional prévia. Se a fase anterior é 4A, a próxima será 5A. Nesse exemplo as ações do jogador na fase 3 determinaram não apenas a fase a mas também a fase 5\.
+
+A Fase 6 demonstra a importância de usar uma condição convergente como na fase 3 ao chegar próximo do final do jogo. É importante para fins imersivos e narrativos que existam múltiplos finais, mas sem uma condição convergente anterior à esse final a tarefa seria inviável.
+
+## Estrutura Condicional de Slides
+
+Para simplificar visualmente a explicação de como funcionam as diferentes fases do jogo foi usado no fluxograma anterior apenas uma linha entre as fases. Mas se entre as fases há um slide com a história do jogo, e esse slide é determinado por uma segunda estrutura condicional, uma forma mais precisa de indicar isso seria com o seguinte diagrama.
+
+![diagrama02](https://i.imgur.com/bOjZXbk.jpeg)
+
+No diagrama acima, há múltiplas linhas entre as fases. Cada linha representa uma estrutura condicional que determina o slide com a história do jogo. Não importa qual a versão da fase (2A ou 2B; 4A ou 4B ou 4C) porque a estrutura condicional dos slides é diferente da estrutura condicional das fases.
+
+A natureza dessas estruturas condicionais é igual a estrutura já descrita para determinar as diferentes fases. Entre a fase 1 e 2 pode ser o número de bombas, entre 2 e 3 pode ser o uso ou não de uma bomba, entre 3 e 4 o número de corações e entre 4 e 5 pode haver uma convergência, a história sempre incorpora esse slide.
+
+É interessante notar que mesmo no caso de uma fase convergente (no exemplo anterior havia apenas uma versão da Fase 3 por exemplo) não é necessário o mesmo com os slides. Várias versões de uma fase podem gerar o mesmo slide e o mesmo slide pode ocorrer entre várias versões da mesma fase..
+
+A única regra é que a estrutura condicional entre fases não pode ser a mesma que determina o slide entre as fases.
+
 ## Visão geral
 
 **RedRex** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Rex, humano cibernético32×48** (hitbox 16×16) numa arena de tela única, eliminando insetos gigantes que surgem em ondas. Em cada fase da campanha o objetivo é **matar N inimigos** (`killTarget`); na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
