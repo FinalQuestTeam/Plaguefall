@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "sprite_size": [
+    24,
+    24
+  ],
+  "frame_count": 1,
+  "visible_colors": 11,
+  "transparent_index": 0,
+  "binary_alpha": true,
+  "shared_palette": "PAL1, identical to insects/objects",
+  "body_tiles": 9,
+  "hud_tiles": 1,
+  "glow_tiles": 1,
+  "total_tiles": 11,
+  "vram_delta_bytes": 0,
+  "additional_runtime_ram_bytes": 0,
+  "sprite_pieces": "1 body + existing optional8x8 glow",
+  "npc_hitbox": [
+    24,
+    24
+  ],
+  "npc_logic_changed": false,
+  "source_crop": [
+    255,
+    276,
+    1000,
+    1076
+  ],
+  "native_bounds": [
+    2,
+    1,
+    22,
+    23
+  ],
+  "technical_export": "Generated enlarged art cropped, nearest-neighbour registered to native size and palette indexed; no procedural drawing.",
+  "camera": "Visual high camera target60deg above ground; exact3D angle cannot be measured from raster.",
+  "source_sha256": "16f1c5ce4709918bf90dc83767db730e93dd578f33e84fa19ecd220e69ccc7a2",
+  "header_sha256": "8fc1c972bb77f13a13f3c7b7e9774f5dd0129011f9730341d8473a3ebc09249e"
+}

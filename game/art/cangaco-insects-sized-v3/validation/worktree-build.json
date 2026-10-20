@@ -1,0 +1,43 @@
+{
+  "worktree": "/Users/fabiocantarimmelo/.codex/worktrees/cangaco-sprites-60/MegaDrive",
+  "branch": "codex/cangaco-sprites-60",
+  "base_commit": "c133b29c74e0727878f91db1f7b46197543b73a9",
+  "sdk": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/SGDK",
+  "clean_build_passed": true,
+  "build_command": "make -C game clean && make -C game -j4",
+  "rom": "game/out/rom.bin",
+  "rom_bytes": 524288,
+  "rom_sha256": "b3281bf4fa08aa695882547305607524e148a9988b5c4c224bebc7a69014d241",
+  "sprite_resource_sha256": {
+    "game/res/heroi/palette.bin": "d2514b9093cf419358bd028937fd0e5e33d0bb0d4667e7935896e5aba5c7f75f",
+    "game/res/heroi/frames.bin": "815e8fa2930cd4fe099a8c7e0b90d4b22d3b8e5d097fdbf9b6419c32e466a995",
+    "game/res/insects/palette.bin": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288",
+    "game/res/insects/icons.bin": "a5c82c6995c590190110e8dfa833cc8cab8024357cd55d78b5d1b353e317840e",
+    "game/res/insects/frames.bin": "43834017e016788138980a1a4e45f4754c160fab50060f234085b076fc09883c"
+  },
+  "png_and_render_tests_passed": true,
+  "host_stress_frames": 600,
+  "emulator_frames": 1159,
+  "heap_free_bytes": 47332,
+  "changes_committed": true,
+  "ram_static_total_bytes": 6165,
+  "performance_report": "performance/README.md",
+  "performance_status": "native size and hitbox alignment validated;8 enemies60FPS,15 enemies31.75FPS in full controlled sandbox",
+  "animation_layout": "game/res/actor_animation.json",
+  "runtime_idle_frames": 2,
+  "runtime_run_frames": 4,
+  "enemy_art": "game/art/cangaco-insects-sized-v3",
+  "hero_art": "game/art/cangaco-protagonista-iso60-v2",
+  "enemy_vram_pool_bytes": 10240,
+  "emulator_collision_cases": 600,
+  "host_collision_cases": 1380,
+  "saint_art": "game/art/santa-aparecida-v1",
+  "saint_native_size": [
+    24,
+    24
+  ],
+  "saint_vram_delta_bytes": 0,
+  "saint_emulator_report": "../santa-aparecida-v1/emulator.json",
+  "partner_status": "concept_only_awaiting_approval",
+  "main_update_preserved": "origin/main2f421d2 includes150 new GDD lines"
+}

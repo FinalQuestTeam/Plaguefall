@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "rom_sha256": "b3281bf4fa08aa695882547305607524e148a9988b5c4c224bebc7a69014d241",
+  "collision_cases": 600,
+  "types": 15,
+  "directions": 8,
+  "scenarios": [
+    "hit",
+    "miss",
+    "shield",
+    "ice",
+    "fire"
+  ],
+  "sat_geometry_checks": 120,
+  "hud_changes_immediate": true,
+  "method": "Actual 68000 ROM: injected stationary targets/projectiles in volatile emulator RAM; checked HP, projectile consumption, status and actual SAT rectangles."
+}

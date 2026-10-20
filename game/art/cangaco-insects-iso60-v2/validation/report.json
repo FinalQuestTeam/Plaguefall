@@ -1,0 +1,2488 @@
+{
+  "technical_checks_passed": true,
+  "camera_art_review_accepted": true,
+  "camera_review": "../camera-60-redraw-v2/README.md",
+  "enemies": 13,
+  "directions": 104,
+  "animation_rows": 208,
+  "frames_exported": 1040,
+  "runtime_canonical_frames": 390,
+  "runtime_source_poses": [
+    0,
+    2,
+    4,
+    6,
+    7,
+    9
+  ],
+  "runtime_idle_frames": 2,
+  "runtime_run_frames": 4,
+  "png_cell": [
+    32,
+    48
+  ],
+  "png_sheet": [
+    192,
+    768
+  ],
+  "per_direction_sheet": [
+    192,
+    96
+  ],
+  "frame_tile_count": 24,
+  "palette_visible_max": 15,
+  "alpha": [
+    0,
+    255
+  ],
+  "renderer_stress": {
+    "horizontal_mirror_without_DMA": true,
+    "deferred_random_frames": 128,
+    "frames_stressed": 600,
+    "peak_runtime_sat": 77,
+    "peak_scanline_sprites": 20,
+    "peak_scanline_pixels": 320,
+    "global_and_dma_failure_tests": true
+  },
+  "raw_frame_rom_bytes": 299520,
+  "menu_icon_rom_bytes": 7680,
+  "manual_renderer_vdp_pieces": 2,
+  "source_art_tool": "image_gen built-in",
+  "perspective_note": "Redrawn against an analytical 60-degree-above-ground camera guide. Visual comparison per asset; actual elevation is not numerically measurable from these rasters alone.",
+  "cycle_note": "Pixel differences include the loop seam; visual gait still needs art review.",
+  "assets": [
+    {
+      "id": "sq_red",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            351,
+            326,
+            331,
+            305,
+            246,
+            340
+          ],
+          "runtime_cyclic_pixel_differences": [
+            294,
+            331,
+            321,
+            340
+          ],
+          "seam_to_mean_ratio": 1.074
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            270,
+            260,
+            241,
+            274,
+            277,
+            342
+          ],
+          "runtime_cyclic_pixel_differences": [
+            291,
+            241,
+            308,
+            342
+          ],
+          "seam_to_mean_ratio": 1.233
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            328,
+            326,
+            359,
+            250,
+            333,
+            352
+          ],
+          "runtime_cyclic_pixel_differences": [
+            365,
+            359,
+            348,
+            352
+          ],
+          "seam_to_mean_ratio": 1.084
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            314,
+            264,
+            293,
+            324,
+            321,
+            340
+          ],
+          "runtime_cyclic_pixel_differences": [
+            309,
+            293,
+            261,
+            340
+          ],
+          "seam_to_mean_ratio": 1.099
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            322,
+            350,
+            273,
+            324,
+            309,
+            377
+          ],
+          "runtime_cyclic_pixel_differences": [
+            289,
+            273,
+            386,
+            377
+          ],
+          "seam_to_mean_ratio": 1.157
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            314,
+            264,
+            293,
+            324,
+            321,
+            340
+          ],
+          "runtime_cyclic_pixel_differences": [
+            309,
+            293,
+            261,
+            340
+          ],
+          "seam_to_mean_ratio": 1.099
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            328,
+            326,
+            359,
+            250,
+            333,
+            352
+          ],
+          "runtime_cyclic_pixel_differences": [
+            365,
+            359,
+            348,
+            352
+          ],
+          "seam_to_mean_ratio": 1.084
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            270,
+            260,
+            241,
+            274,
+            277,
+            342
+          ],
+          "runtime_cyclic_pixel_differences": [
+            291,
+            241,
+            308,
+            342
+          ],
+          "seam_to_mean_ratio": 1.233
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Dorso largo permanece vis\u00edvel em L/O; vista lateral baixa substitu\u00edda.",
+          "Cabe\u00e7a/antenas e abd\u00f4men ocupam posi\u00e7\u00f5es opostas em N/S."
+        ]
+      }
+    },
+    {
+      "id": "sq_yellow",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            436,
+            416,
+            376,
+            357,
+            360,
+            432
+          ],
+          "runtime_cyclic_pixel_differences": [
+            330,
+            376,
+            358,
+            432
+          ],
+          "seam_to_mean_ratio": 1.09
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            343,
+            362,
+            319,
+            307,
+            314,
+            345
+          ],
+          "runtime_cyclic_pixel_differences": [
+            297,
+            319,
+            336,
+            345
+          ],
+          "seam_to_mean_ratio": 1.04
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            309,
+            342,
+            353,
+            284,
+            404,
+            410
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            353,
+            431,
+            410
+          ],
+          "seam_to_mean_ratio": 1.17
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            345,
+            319,
+            345,
+            336,
+            356,
+            387
+          ],
+          "runtime_cyclic_pixel_differences": [
+            344,
+            345,
+            319,
+            387
+          ],
+          "seam_to_mean_ratio": 1.112
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            362,
+            395,
+            367,
+            410,
+            359,
+            440
+          ],
+          "runtime_cyclic_pixel_differences": [
+            327,
+            367,
+            442,
+            440
+          ],
+          "seam_to_mean_ratio": 1.132
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            345,
+            319,
+            345,
+            336,
+            356,
+            387
+          ],
+          "runtime_cyclic_pixel_differences": [
+            344,
+            345,
+            319,
+            387
+          ],
+          "seam_to_mean_ratio": 1.112
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            309,
+            342,
+            353,
+            284,
+            404,
+            410
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            353,
+            431,
+            410
+          ],
+          "seam_to_mean_ratio": 1.17
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            343,
+            362,
+            319,
+            307,
+            314,
+            345
+          ],
+          "runtime_cyclic_pixel_differences": [
+            297,
+            319,
+            336,
+            345
+          ],
+          "seam_to_mean_ratio": 1.04
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Dorso largo permanece vis\u00edvel em L/O; vista lateral baixa substitu\u00edda.",
+          "Cabe\u00e7a/antenas e abd\u00f4men ocupam posi\u00e7\u00f5es opostas em N/S."
+        ]
+      }
+    },
+    {
+      "id": "sq_purple",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            481,
+            414,
+            390,
+            415,
+            347,
+            410
+          ],
+          "runtime_cyclic_pixel_differences": [
+            414,
+            390,
+            432,
+            410
+          ],
+          "seam_to_mean_ratio": 1.001
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            365,
+            324,
+            331,
+            261,
+            352,
+            379
+          ],
+          "runtime_cyclic_pixel_differences": [
+            317,
+            331,
+            355,
+            379
+          ],
+          "seam_to_mean_ratio": 1.13
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            287,
+            262,
+            335,
+            282,
+            359,
+            400
+          ],
+          "runtime_cyclic_pixel_differences": [
+            256,
+            335,
+            339,
+            400
+          ],
+          "seam_to_mean_ratio": 1.247
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            406,
+            333,
+            284,
+            310,
+            367,
+            326
+          ],
+          "runtime_cyclic_pixel_differences": [
+            424,
+            284,
+            381,
+            326
+          ],
+          "seam_to_mean_ratio": 0.965
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            383,
+            326,
+            366,
+            379,
+            271,
+            387
+          ],
+          "runtime_cyclic_pixel_differences": [
+            382,
+            366,
+            384,
+            387
+          ],
+          "seam_to_mean_ratio": 1.099
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            406,
+            333,
+            284,
+            310,
+            367,
+            326
+          ],
+          "runtime_cyclic_pixel_differences": [
+            424,
+            284,
+            381,
+            326
+          ],
+          "seam_to_mean_ratio": 0.965
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            287,
+            262,
+            335,
+            282,
+            359,
+            400
+          ],
+          "runtime_cyclic_pixel_differences": [
+            256,
+            335,
+            339,
+            400
+          ],
+          "seam_to_mean_ratio": 1.247
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            365,
+            324,
+            331,
+            261,
+            352,
+            379
+          ],
+          "runtime_cyclic_pixel_differences": [
+            317,
+            331,
+            355,
+            379
+          ],
+          "seam_to_mean_ratio": 1.13
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Dorso largo permanece vis\u00edvel em L/O; vista lateral baixa substitu\u00edda.",
+          "Cabe\u00e7a/antenas e abd\u00f4men ocupam posi\u00e7\u00f5es opostas em N/S."
+        ]
+      }
+    },
+    {
+      "id": "sq_orange",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            365,
+            344,
+            308,
+            362,
+            405,
+            443
+          ],
+          "runtime_cyclic_pixel_differences": [
+            317,
+            308,
+            391,
+            443
+          ],
+          "seam_to_mean_ratio": 1.194
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            389,
+            339,
+            288,
+            289,
+            299,
+            364
+          ],
+          "runtime_cyclic_pixel_differences": [
+            354,
+            288,
+            276,
+            364
+          ],
+          "seam_to_mean_ratio": 1.11
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            332,
+            360,
+            333,
+            287,
+            350,
+            400
+          ],
+          "runtime_cyclic_pixel_differences": [
+            259,
+            333,
+            348,
+            400
+          ],
+          "seam_to_mean_ratio": 1.164
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            309,
+            305,
+            314,
+            330,
+            334,
+            334
+          ],
+          "runtime_cyclic_pixel_differences": [
+            322,
+            314,
+            294,
+            334
+          ],
+          "seam_to_mean_ratio": 1.04
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            306,
+            400,
+            300,
+            331,
+            322,
+            360
+          ],
+          "runtime_cyclic_pixel_differences": [
+            364,
+            300,
+            265,
+            360
+          ],
+          "seam_to_mean_ratio": 1.07
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            309,
+            305,
+            314,
+            330,
+            334,
+            334
+          ],
+          "runtime_cyclic_pixel_differences": [
+            322,
+            314,
+            294,
+            334
+          ],
+          "seam_to_mean_ratio": 1.04
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            332,
+            360,
+            333,
+            287,
+            350,
+            400
+          ],
+          "runtime_cyclic_pixel_differences": [
+            259,
+            333,
+            348,
+            400
+          ],
+          "seam_to_mean_ratio": 1.164
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            389,
+            339,
+            288,
+            289,
+            299,
+            364
+          ],
+          "runtime_cyclic_pixel_differences": [
+            354,
+            288,
+            276,
+            364
+          ],
+          "seam_to_mean_ratio": 1.11
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Dorso largo permanece vis\u00edvel em L/O; vista lateral baixa substitu\u00edda.",
+          "Cabe\u00e7a/antenas e abd\u00f4men ocupam posi\u00e7\u00f5es opostas em N/S."
+        ]
+      }
+    },
+    {
+      "id": "tri_red",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            318,
+            306,
+            341,
+            359,
+            337,
+            395
+          ],
+          "runtime_cyclic_pixel_differences": [
+            396,
+            341,
+            396,
+            395
+          ],
+          "seam_to_mean_ratio": 1.153
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            314,
+            396,
+            350,
+            321,
+            373,
+            396
+          ],
+          "runtime_cyclic_pixel_differences": [
+            359,
+            350,
+            387,
+            396
+          ],
+          "seam_to_mean_ratio": 1.105
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            451,
+            395,
+            273,
+            261,
+            336,
+            428
+          ],
+          "runtime_cyclic_pixel_differences": [
+            391,
+            273,
+            277,
+            428
+          ],
+          "seam_to_mean_ratio": 1.198
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            318,
+            333,
+            383,
+            341,
+            288,
+            304
+          ],
+          "runtime_cyclic_pixel_differences": [
+            318,
+            383,
+            321,
+            304
+          ],
+          "seam_to_mean_ratio": 0.927
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            308,
+            262,
+            279,
+            309,
+            339,
+            282
+          ],
+          "runtime_cyclic_pixel_differences": [
+            322,
+            279,
+            265,
+            282
+          ],
+          "seam_to_mean_ratio": 0.951
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            318,
+            333,
+            383,
+            341,
+            288,
+            304
+          ],
+          "runtime_cyclic_pixel_differences": [
+            318,
+            383,
+            321,
+            304
+          ],
+          "seam_to_mean_ratio": 0.927
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            451,
+            395,
+            273,
+            261,
+            336,
+            428
+          ],
+          "runtime_cyclic_pixel_differences": [
+            391,
+            273,
+            277,
+            428
+          ],
+          "seam_to_mean_ratio": 1.198
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            314,
+            396,
+            350,
+            321,
+            373,
+            396
+          ],
+          "runtime_cyclic_pixel_differences": [
+            359,
+            350,
+            387,
+            396
+          ],
+          "seam_to_mean_ratio": 1.105
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Cabe\u00e7a com olhos compostos e antenas curtas; t\u00f3rax/abd\u00f4men e asas vistos por cima tamb\u00e9m em L/O.",
+          "Orienta\u00e7\u00e3o da cabe\u00e7a e do abd\u00f4men muda coerentemente entre N e S."
+        ]
+      }
+    },
+    {
+      "id": "tri_yellow",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            471,
+            447,
+            408,
+            417,
+            431,
+            472
+          ],
+          "runtime_cyclic_pixel_differences": [
+            405,
+            408,
+            391,
+            472
+          ],
+          "seam_to_mean_ratio": 1.07
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            431,
+            376,
+            414,
+            338,
+            263,
+            324
+          ],
+          "runtime_cyclic_pixel_differences": [
+            434,
+            414,
+            324,
+            324
+          ],
+          "seam_to_mean_ratio": 0.906
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            337,
+            237,
+            254,
+            346,
+            201,
+            377
+          ],
+          "runtime_cyclic_pixel_differences": [
+            303,
+            254,
+            329,
+            377
+          ],
+          "seam_to_mean_ratio": 1.291
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            377,
+            304,
+            323,
+            296,
+            335,
+            325
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            323,
+            373,
+            325
+          ],
+          "seam_to_mean_ratio": 0.995
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            493,
+            361,
+            429,
+            324,
+            368,
+            316
+          ],
+          "runtime_cyclic_pixel_differences": [
+            423,
+            429,
+            318,
+            316
+          ],
+          "seam_to_mean_ratio": 0.828
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            377,
+            304,
+            323,
+            296,
+            335,
+            325
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            323,
+            373,
+            325
+          ],
+          "seam_to_mean_ratio": 0.995
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            337,
+            237,
+            254,
+            346,
+            201,
+            377
+          ],
+          "runtime_cyclic_pixel_differences": [
+            303,
+            254,
+            329,
+            377
+          ],
+          "seam_to_mean_ratio": 1.291
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            431,
+            376,
+            414,
+            338,
+            263,
+            324
+          ],
+          "runtime_cyclic_pixel_differences": [
+            434,
+            414,
+            324,
+            324
+          ],
+          "seam_to_mean_ratio": 0.906
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Cabe\u00e7a com olhos compostos e antenas curtas; t\u00f3rax/abd\u00f4men e asas vistos por cima tamb\u00e9m em L/O.",
+          "Orienta\u00e7\u00e3o da cabe\u00e7a e do abd\u00f4men muda coerentemente entre N e S."
+        ]
+      }
+    },
+    {
+      "id": "tri_purple",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            291,
+            372,
+            337,
+            224,
+            305,
+            300
+          ],
+          "runtime_cyclic_pixel_differences": [
+            362,
+            337,
+            305,
+            300
+          ],
+          "seam_to_mean_ratio": 0.984
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            284,
+            370,
+            356,
+            331,
+            296,
+            370
+          ],
+          "runtime_cyclic_pixel_differences": [
+            389,
+            356,
+            336,
+            370
+          ],
+          "seam_to_mean_ratio": 1.106
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            296,
+            273,
+            242,
+            296,
+            441,
+            413
+          ],
+          "runtime_cyclic_pixel_differences": [
+            295,
+            242,
+            440,
+            413
+          ],
+          "seam_to_mean_ratio": 1.264
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            328,
+            336,
+            315,
+            313,
+            297,
+            293
+          ],
+          "runtime_cyclic_pixel_differences": [
+            294,
+            315,
+            247,
+            293
+          ],
+          "seam_to_mean_ratio": 0.934
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            260,
+            389,
+            275,
+            250,
+            229,
+            327
+          ],
+          "runtime_cyclic_pixel_differences": [
+            394,
+            275,
+            249,
+            327
+          ],
+          "seam_to_mean_ratio": 1.134
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            328,
+            336,
+            315,
+            313,
+            297,
+            293
+          ],
+          "runtime_cyclic_pixel_differences": [
+            294,
+            315,
+            247,
+            293
+          ],
+          "seam_to_mean_ratio": 0.934
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            296,
+            273,
+            242,
+            296,
+            441,
+            413
+          ],
+          "runtime_cyclic_pixel_differences": [
+            295,
+            242,
+            440,
+            413
+          ],
+          "seam_to_mean_ratio": 1.264
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            284,
+            370,
+            356,
+            331,
+            296,
+            370
+          ],
+          "runtime_cyclic_pixel_differences": [
+            389,
+            356,
+            336,
+            370
+          ],
+          "seam_to_mean_ratio": 1.106
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Cabe\u00e7a com olhos compostos e antenas curtas; t\u00f3rax/abd\u00f4men e asas vistos por cima tamb\u00e9m em L/O.",
+          "Orienta\u00e7\u00e3o da cabe\u00e7a e do abd\u00f4men muda coerentemente entre N e S."
+        ]
+      }
+    },
+    {
+      "id": "tri_orange",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            277,
+            292,
+            339,
+            408,
+            511,
+            506
+          ],
+          "runtime_cyclic_pixel_differences": [
+            277,
+            339,
+            424,
+            506
+          ],
+          "seam_to_mean_ratio": 1.301
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            439,
+            330,
+            385,
+            313,
+            302,
+            429
+          ],
+          "runtime_cyclic_pixel_differences": [
+            480,
+            385,
+            373,
+            429
+          ],
+          "seam_to_mean_ratio": 1.171
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            322,
+            352,
+            383,
+            356,
+            405,
+            356
+          ],
+          "runtime_cyclic_pixel_differences": [
+            355,
+            383,
+            412,
+            356
+          ],
+          "seam_to_mean_ratio": 0.983
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            321,
+            339,
+            313,
+            317,
+            361,
+            347
+          ],
+          "runtime_cyclic_pixel_differences": [
+            305,
+            313,
+            403,
+            347
+          ],
+          "seam_to_mean_ratio": 1.042
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            420,
+            445,
+            333,
+            403,
+            336,
+            449
+          ],
+          "runtime_cyclic_pixel_differences": [
+            365,
+            333,
+            412,
+            449
+          ],
+          "seam_to_mean_ratio": 1.129
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            321,
+            339,
+            313,
+            317,
+            361,
+            347
+          ],
+          "runtime_cyclic_pixel_differences": [
+            305,
+            313,
+            403,
+            347
+          ],
+          "seam_to_mean_ratio": 1.042
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            322,
+            352,
+            383,
+            356,
+            405,
+            356
+          ],
+          "runtime_cyclic_pixel_differences": [
+            355,
+            383,
+            412,
+            356
+          ],
+          "seam_to_mean_ratio": 0.983
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            439,
+            330,
+            385,
+            313,
+            302,
+            429
+          ],
+          "runtime_cyclic_pixel_differences": [
+            480,
+            385,
+            373,
+            429
+          ],
+          "seam_to_mean_ratio": 1.171
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Cabe\u00e7a com olhos compostos e antenas curtas; t\u00f3rax/abd\u00f4men e asas vistos por cima tamb\u00e9m em L/O.",
+          "Orienta\u00e7\u00e3o da cabe\u00e7a e do abd\u00f4men muda coerentemente entre N e S."
+        ]
+      }
+    },
+    {
+      "id": "pen_red",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            307,
+            252,
+            319,
+            254,
+            252,
+            309
+          ],
+          "runtime_cyclic_pixel_differences": [
+            284,
+            319,
+            270,
+            309
+          ],
+          "seam_to_mean_ratio": 1.095
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            310,
+            338,
+            299,
+            318,
+            358,
+            271
+          ],
+          "runtime_cyclic_pixel_differences": [
+            386,
+            299,
+            288,
+            271
+          ],
+          "seam_to_mean_ratio": 0.859
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            341,
+            291,
+            310,
+            288,
+            387,
+            384
+          ],
+          "runtime_cyclic_pixel_differences": [
+            337,
+            310,
+            386,
+            384
+          ],
+          "seam_to_mean_ratio": 1.151
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            242,
+            290,
+            223,
+            280,
+            251,
+            267
+          ],
+          "runtime_cyclic_pixel_differences": [
+            293,
+            223,
+            262,
+            267
+          ],
+          "seam_to_mean_ratio": 1.032
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            195,
+            222,
+            178,
+            215,
+            161,
+            219
+          ],
+          "runtime_cyclic_pixel_differences": [
+            186,
+            178,
+            219,
+            219
+          ],
+          "seam_to_mean_ratio": 1.104
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            242,
+            290,
+            223,
+            280,
+            251,
+            267
+          ],
+          "runtime_cyclic_pixel_differences": [
+            293,
+            223,
+            262,
+            267
+          ],
+          "seam_to_mean_ratio": 1.032
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            341,
+            291,
+            310,
+            288,
+            387,
+            384
+          ],
+          "runtime_cyclic_pixel_differences": [
+            337,
+            310,
+            386,
+            384
+          ],
+          "seam_to_mean_ratio": 1.151
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            310,
+            338,
+            299,
+            318,
+            358,
+            271
+          ],
+          "runtime_cyclic_pixel_differences": [
+            386,
+            299,
+            288,
+            271
+          ],
+          "seam_to_mean_ratio": 0.859
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Vista L refeita com cabe\u00e7a, t\u00f3rax e abd\u00f4men expostos por cima; pernas distribu\u00eddas dos dois lados.",
+          "Escala uniforme entre poses do mesmo personagem; N/S preservam os lados anterior e posterior."
+        ]
+      }
+    },
+    {
+      "id": "pen_yellow",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            201,
+            169,
+            173,
+            232,
+            155,
+            147
+          ],
+          "runtime_cyclic_pixel_differences": [
+            216,
+            173,
+            220,
+            147
+          ],
+          "seam_to_mean_ratio": 0.819
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            168,
+            165,
+            191,
+            197,
+            220,
+            202
+          ],
+          "runtime_cyclic_pixel_differences": [
+            204,
+            191,
+            165,
+            202
+          ],
+          "seam_to_mean_ratio": 1.06
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            203,
+            185,
+            142,
+            163,
+            310,
+            303
+          ],
+          "runtime_cyclic_pixel_differences": [
+            162,
+            142,
+            318,
+            303
+          ],
+          "seam_to_mean_ratio": 1.392
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            172,
+            128,
+            187,
+            130,
+            143,
+            191
+          ],
+          "runtime_cyclic_pixel_differences": [
+            171,
+            187,
+            164,
+            191
+          ],
+          "seam_to_mean_ratio": 1.205
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            188,
+            135,
+            194,
+            190,
+            164,
+            190
+          ],
+          "runtime_cyclic_pixel_differences": [
+            165,
+            194,
+            195,
+            190
+          ],
+          "seam_to_mean_ratio": 1.074
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            172,
+            128,
+            187,
+            130,
+            143,
+            191
+          ],
+          "runtime_cyclic_pixel_differences": [
+            171,
+            187,
+            164,
+            191
+          ],
+          "seam_to_mean_ratio": 1.205
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            203,
+            185,
+            142,
+            163,
+            310,
+            303
+          ],
+          "runtime_cyclic_pixel_differences": [
+            162,
+            142,
+            318,
+            303
+          ],
+          "seam_to_mean_ratio": 1.392
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            168,
+            165,
+            191,
+            197,
+            220,
+            202
+          ],
+          "runtime_cyclic_pixel_differences": [
+            204,
+            191,
+            165,
+            202
+          ],
+          "seam_to_mean_ratio": 1.06
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Vista L refeita com cabe\u00e7a, t\u00f3rax e abd\u00f4men expostos por cima; pernas distribu\u00eddas dos dois lados.",
+          "Escala uniforme entre poses do mesmo personagem; N/S preservam os lados anterior e posterior."
+        ]
+      }
+    },
+    {
+      "id": "pen_purple",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            249,
+            202,
+            293,
+            274,
+            219,
+            259
+          ],
+          "runtime_cyclic_pixel_differences": [
+            260,
+            293,
+            261,
+            259
+          ],
+          "seam_to_mean_ratio": 1.039
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            282,
+            306,
+            236,
+            291,
+            278,
+            293
+          ],
+          "runtime_cyclic_pixel_differences": [
+            291,
+            236,
+            266,
+            293
+          ],
+          "seam_to_mean_ratio": 1.043
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            237,
+            256,
+            252,
+            189,
+            229,
+            252
+          ],
+          "runtime_cyclic_pixel_differences": [
+            219,
+            252,
+            232,
+            252
+          ],
+          "seam_to_mean_ratio": 1.069
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            316,
+            267,
+            266,
+            234,
+            271,
+            313
+          ],
+          "runtime_cyclic_pixel_differences": [
+            263,
+            266,
+            275,
+            313
+          ],
+          "seam_to_mean_ratio": 1.127
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            236,
+            392,
+            375,
+            207,
+            346,
+            366
+          ],
+          "runtime_cyclic_pixel_differences": [
+            399,
+            375,
+            355,
+            366
+          ],
+          "seam_to_mean_ratio": 1.143
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            316,
+            267,
+            266,
+            234,
+            271,
+            313
+          ],
+          "runtime_cyclic_pixel_differences": [
+            263,
+            266,
+            275,
+            313
+          ],
+          "seam_to_mean_ratio": 1.127
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            237,
+            256,
+            252,
+            189,
+            229,
+            252
+          ],
+          "runtime_cyclic_pixel_differences": [
+            219,
+            252,
+            232,
+            252
+          ],
+          "seam_to_mean_ratio": 1.069
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            282,
+            306,
+            236,
+            291,
+            278,
+            293
+          ],
+          "runtime_cyclic_pixel_differences": [
+            291,
+            236,
+            266,
+            293
+          ],
+          "seam_to_mean_ratio": 1.043
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Vista L refeita com cabe\u00e7a, t\u00f3rax e abd\u00f4men expostos por cima; pernas distribu\u00eddas dos dois lados.",
+          "Escala uniforme entre poses do mesmo personagem; N/S preservam os lados anterior e posterior.",
+          "Seis poses dedicadas foram geradas para a corrida L/O, separadas das quatro poses de repouso."
+        ]
+      }
+    },
+    {
+      "id": "pen_orange",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            294,
+            247,
+            274,
+            281,
+            326,
+            233
+          ],
+          "runtime_cyclic_pixel_differences": [
+            278,
+            274,
+            309,
+            233
+          ],
+          "seam_to_mean_ratio": 0.845
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            257,
+            335,
+            311,
+            307,
+            355,
+            253
+          ],
+          "runtime_cyclic_pixel_differences": [
+            298,
+            311,
+            286,
+            253
+          ],
+          "seam_to_mean_ratio": 0.835
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            331,
+            394,
+            312,
+            291,
+            276,
+            332
+          ],
+          "runtime_cyclic_pixel_differences": [
+            339,
+            312,
+            299,
+            332
+          ],
+          "seam_to_mean_ratio": 1.029
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            363,
+            388,
+            226,
+            269,
+            227,
+            218
+          ],
+          "runtime_cyclic_pixel_differences": [
+            286,
+            226,
+            248,
+            218
+          ],
+          "seam_to_mean_ratio": 0.774
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            215,
+            203,
+            194,
+            232,
+            265,
+            207
+          ],
+          "runtime_cyclic_pixel_differences": [
+            174,
+            194,
+            217,
+            207
+          ],
+          "seam_to_mean_ratio": 0.944
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            363,
+            388,
+            226,
+            269,
+            227,
+            218
+          ],
+          "runtime_cyclic_pixel_differences": [
+            286,
+            226,
+            248,
+            218
+          ],
+          "seam_to_mean_ratio": 0.774
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            331,
+            394,
+            312,
+            291,
+            276,
+            332
+          ],
+          "runtime_cyclic_pixel_differences": [
+            339,
+            312,
+            299,
+            332
+          ],
+          "seam_to_mean_ratio": 1.029
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            257,
+            335,
+            311,
+            307,
+            355,
+            253
+          ],
+          "runtime_cyclic_pixel_differences": [
+            298,
+            311,
+            286,
+            253
+          ],
+          "seam_to_mean_ratio": 0.835
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Vista L refeita com cabe\u00e7a, t\u00f3rax e abd\u00f4men expostos por cima; pernas distribu\u00eddas dos dois lados.",
+          "Escala uniforme entre poses do mesmo personagem; N/S preservam os lados anterior e posterior.",
+          "Uma pose neutra \u00e9 compartilhada entre repouso e passagem da corrida lateral; o quadro cortado da fonte foi descartado."
+        ]
+      }
+    },
+    {
+      "id": "boss",
+      "directions": [
+        {
+          "direction": "N",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            329,
+            470,
+            388,
+            422,
+            376,
+            370
+          ],
+          "runtime_cyclic_pixel_differences": [
+            457,
+            388,
+            414,
+            370
+          ],
+          "seam_to_mean_ratio": 0.943
+        },
+        {
+          "direction": "NE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            351,
+            379,
+            360,
+            312,
+            400,
+            336
+          ],
+          "runtime_cyclic_pixel_differences": [
+            331,
+            360,
+            351,
+            336
+          ],
+          "seam_to_mean_ratio": 0.943
+        },
+        {
+          "direction": "L",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            281,
+            358,
+            382,
+            389,
+            289,
+            319
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            382,
+            363,
+            319
+          ],
+          "seam_to_mean_ratio": 0.948
+        },
+        {
+          "direction": "SE",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            377,
+            394,
+            438,
+            396,
+            316,
+            364
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            438,
+            431,
+            364
+          ],
+          "seam_to_mean_ratio": 0.956
+        },
+        {
+          "direction": "S",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            366,
+            377,
+            332,
+            368,
+            423,
+            345
+          ],
+          "runtime_cyclic_pixel_differences": [
+            438,
+            332,
+            398,
+            345
+          ],
+          "seam_to_mean_ratio": 0.936
+        },
+        {
+          "direction": "SO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            377,
+            394,
+            438,
+            396,
+            316,
+            364
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            438,
+            431,
+            364
+          ],
+          "seam_to_mean_ratio": 0.956
+        },
+        {
+          "direction": "O",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            281,
+            358,
+            382,
+            389,
+            289,
+            319
+          ],
+          "runtime_cyclic_pixel_differences": [
+            358,
+            382,
+            363,
+            319
+          ],
+          "seam_to_mean_ratio": 0.948
+        },
+        {
+          "direction": "NO",
+          "idle_unique": 4,
+          "movement_unique": 6,
+          "baseline": 46,
+          "cyclic_pixel_differences": [
+            351,
+            379,
+            360,
+            312,
+            400,
+            336
+          ],
+          "runtime_cyclic_pixel_differences": [
+            331,
+            360,
+            351,
+            336
+          ],
+          "seam_to_mean_ratio": 0.943
+        }
+      ],
+      "camera_validation": {
+        "required_elevation_degrees": 60,
+        "method": "visual comparison against analytically projected orthographic reference",
+        "status": "visually_matches_60_degree_reference",
+        "approved": true,
+        "measured_elevation_degrees": null,
+        "limitation": "Exact numeric elevation cannot be certified from a stylized 2D raster alone.",
+        "audit": "../camera-60-redraw-v2/README.md",
+        "sha256_matches_review": true,
+        "findings": [
+          "Dorso, pin\u00e7as e liga\u00e7\u00e3o posterior da cauda permanecem expostos por cima nas cinco vistas.",
+          "N/S mant\u00eam pin\u00e7as na frente e cauda atr\u00e1s; sem fundo de apresenta\u00e7\u00e3o no PNG exportado."
+        ]
+      }
+    }
+  ]
+}

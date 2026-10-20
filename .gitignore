@@ -1,3 +1,10 @@
 .DS_Store
 DS_Store
 music-test/out/
+
+# Subprodutos locais da exportação e testes de arte.
+__pycache__/
+*.py[cod]
+game/art/**/*.zip
+game/art/**/*.ppm
+game/art/**/validation/*.s

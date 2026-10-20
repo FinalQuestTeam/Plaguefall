@@ -1,0 +1,198 @@
+{
+  "status": "technical-export-validated-8-directions",
+  "generator": "built-in image_gen",
+  "camera": {
+    "projection": "orthographic",
+    "elevation_degrees_above_ground": 60,
+    "validation": "art target, not a calibrated 3D render"
+  },
+  "palette": [
+    "transparent",
+    "#000000",
+    "#242424",
+    "#494949",
+    "#6D6D6D",
+    "#929292",
+    "#DBDBB6",
+    "#492400",
+    "#926D24",
+    "#DBB649",
+    "#6D0000",
+    "#DB2424",
+    "#DBDB24",
+    "#49246D",
+    "#9249B6",
+    "#DB6D00"
+  ],
+  "directions": [
+    "N",
+    "NE",
+    "L",
+    "SE",
+    "S",
+    "SO",
+    "O",
+    "NO"
+  ],
+  "direction_ids": "same order as ENEMYGFX_faceDir / FACE_DIR in game code",
+  "cell_size": [
+    32,
+    48
+  ],
+  "per_direction_sheet_size": [
+    192,
+    96
+  ],
+  "combined_sheet_size": [
+    192,
+    768
+  ],
+  "animation_frames": [
+    4,
+    6
+  ],
+  "enemies": [
+    {
+      "id": "torreao",
+      "name": "Torreão",
+      "role": "red heavy stationary gunner",
+      "description": "bulky scarab-shaped plated power armor, compact shoulder cannon facing right, domed riveted helmet, brass boiler backpack and pipes, thick boots",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-0fd3a432-affc-4dcb-af88-5992424113fb.png",
+      "reference": "../darkspace-iso60-v2/originals/torreao.png"
+    },
+    {
+      "id": "batedor",
+      "name": "Batedor",
+      "role": "yellow relentless pursuer",
+      "description": "squat scout marine in scarab-shaped yellow armored suit, brass respirator, riveted shoulder plates, compact steam piston backpack, heavy marching boots, fists ready",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-d95da002-f556-4558-be56-173689c3249b.png",
+      "reference": "../darkspace-iso60-v2/originals/batedor.png"
+    },
+    {
+      "id": "baluarte",
+      "name": "Baluarte",
+      "role": "purple armored slow tank",
+      "description": "very broad compact purple siege marine with domed beetle carapace, huge layered pauldrons, enclosed visor, copper furnace vents, dense armor and small shield projector",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-7f8b8797-8c86-47ff-8332-8dbe8b07fdb5.png",
+      "reference": "../darkspace-iso60-v2/originals/baluarte.png"
+    },
+    {
+      "id": "ariete",
+      "name": "Aríete",
+      "role": "orange charging bruiser",
+      "description": "orange armored shock trooper, beetle-inspired wedge helmet and reinforced ram shoulder, compact brass steam pistons on back and legs, forward charging posture",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1361bb4e-b684-4017-84b3-1816439d0ca1.png",
+      "reference": "../darkspace-iso60-v2/originals/ariete.png"
+    },
+    {
+      "id": "fuzileiro",
+      "name": "Fuzileiro",
+      "role": "red agile rifleman",
+      "description": "slim red armored marine, fly-inspired angular helmet and folded mechanical wing-shaped backpack vanes, compact short rifle pointing right, brass receiver and breathing hose",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-270ea397-c299-4fb2-8ece-b044cf2302d5.png",
+      "reference": "../darkspace-iso60-v2/originals/fuzileiro.png",
+      "before_cleanup_source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-4d77ea64-adf9-4209-bb42-5b810a348368.png",
+      "cleanup_prompt": "Perform ONLY a cleanup on this existing pixel-art sprite atlas. Preserve every character pose, facing, anatomy, equipment, camera, row and column placement, count and artwork. Remove ALL detached tiny red/brown marks, short horizontal red streaks, ground shadows, ground marks and stray pixels beneath the feet or between the characters. Keep only the actual soldier silhouettes, weapons, brass pipes and boots on a genuinely transparent background. Especially remove red horizontal fragments BELOW the feet in the lower-left-facing rows. No floor, no cast shadows, no effects, no red dust or presentation marks. Keep all eight directional rows exactly in place: north/back, northeast/back-right, east/right, southeast/front-right, south/front, southwest/front-left, west/left, northwest/back-left. Do not rotate or change poses. Do not add new poses. Preserve all pixels belonging to the actual characters as closely as possible, and make everything else transparent. Hard pixel-art edges, no antialiasing."
+    },
+    {
+      "id": "cacador",
+      "name": "Caçador",
+      "role": "yellow fast hunter",
+      "description": "slim yellow interceptor marine, fly-inspired angular helmet, twin folded bronze wing vanes and spring piston legs, compact forearm blades, very dynamic sprint",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-e32f7582-b658-497f-8b9f-c10f58ce420a.png",
+      "reference": "../darkspace-iso60-v2/originals/cacador.png"
+    },
+    {
+      "id": "escudeiro",
+      "name": "Escudeiro",
+      "role": "purple agile shield bearer",
+      "description": "slim purple interceptor marine, fly-shaped angular visor, compact circular forearm buckler with violet emitter, bronze spring piston boots, folded wing backpack",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1c5ac119-8206-480a-8503-131b5d5e5865.png",
+      "reference": "../darkspace-iso60-v2/originals/escudeiro.png"
+    },
+    {
+      "id": "adaga",
+      "name": "Adaga",
+      "role": "orange rapid dash assassin",
+      "description": "lean orange powered assassin, pointed fly-inspired helmet, paired short forearm daggers, brass pressure tanks and steam-driven legs, sharp compact running poses",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-7ce0965c-d469-474d-9600-9ee4790f6e22.png",
+      "reference": "../darkspace-iso60-v2/originals/adaga.png"
+    },
+    {
+      "id": "artilheiro",
+      "name": "Artilheiro",
+      "role": "red elite spread-shot gunner",
+      "description": "red elite marine in compact spider-inspired angular plate armor, three-barrel short scatter cannon pointing right, four folded mechanical backpack struts, brass piping, masked face",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-f4d5f5dd-82dd-4acb-ae57-7ea35bd906ab.png",
+      "reference": "../darkspace-iso60-v2/originals/artilheiro.png"
+    },
+    {
+      "id": "alcateia",
+      "name": "Alcateia",
+      "role": "yellow elite splitting pack leader",
+      "description": "yellow elite marine in spider-like segmented armor, two compact detachable drone capsules on shoulders, folded articulated bronze back struts, compact claw gauntlets",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-fadaacf4-8e85-4007-b222-682f009342f2.png",
+      "reference": "../darkspace-iso60-v2/originals/alcateia.png"
+    },
+    {
+      "id": "fortaleza",
+      "name": "Fortaleza",
+      "role": "purple elite armored summoner",
+      "description": "massive compact purple spider-armored siege commander, layered pentagonal pauldrons, small paired drone pods and folded brass spider struts, violet shield projector, brass boiler",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1e7ef3e9-ac44-4e26-9070-8fcbac95449e.png",
+      "reference": "../darkspace-iso60-v2/originals/fortaleza.png"
+    },
+    {
+      "id": "meteoro",
+      "name": "Meteoro",
+      "role": "orange elite teleporting charger",
+      "description": "orange elite spider-armored shock commander, compact circular bronze teleport coil on back, folded mechanical struts and piston legs, wedge visor and compact heavy fists",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-723b6278-a76b-40b1-9a1b-1c65a0a030ed.png",
+      "reference": "../darkspace-iso60-v2/originals/meteoro.png"
+    },
+    {
+      "id": "dummy",
+      "name": "Dummy",
+      "role": "gray durable stationary practice target",
+      "description": "gray humanoid training automaton shaped like a chunky scarab marine, round bronze target plate on chest without numerals, riveted head, brass joint pistons, sealed boiler backpack",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-58811d69-e5e2-47f8-a997-37be8e9b27b1.png",
+      "reference": "../darkspace-iso60-v2/originals/dummy.png"
+    },
+    {
+      "id": "alvo",
+      "name": "Alvo",
+      "role": "gray fragile practice target",
+      "description": "lighter gray humanoid target automaton, narrow scarab helmet, thin armor and exposed bronze joints, small concentric target plate without numbers, tiny steam canister",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-740dc9fc-aa76-4d1b-b8d9-05b75382e021.png",
+      "reference": "../darkspace-iso60-v2/originals/alvo.png"
+    },
+    {
+      "id": "lacraia",
+      "name": "Lacraia",
+      "role": "red final boss compact centipede warlord",
+      "description": "intimidating red armored centipede warlord in upright compact exosuit, horned segmented helmet, layered chitin-like crimson plates, multiple folded bronze mechanical limbs hugging torso, brass reactor and piston boots; strongest broadest silhouette while entirely inside 32x48 cell",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1ecb5882-ad4a-48ef-9d08-087fc8170671.png",
+      "reference": "../darkspace-iso60-v2/originals/lacraia.png"
+    }
+  ],
+  "prompt_reconstruction": "Concatenate common_prompt + enemy_prompt_suffixes[id] to recover each exact submitted prompt.",
+  "common_prompt": "Use case: identity-preserve, multi-direction pixel-art game sprite animation atlas.\nRedraw the SAME enemy from reference in ALL EIGHT compass directions, for an arena shooter viewed by an orthographic camera elevated60degrees ABOVE THE GROUND. Camera remains fixed for whole sheet; only character's physical facing changes in3D. High-angle RTS units like StarCraft, dark military sci-fi with brass/copper steam machinery, native MegaDrive pixel clusters. Preserve the referenced armor, materials, color, boiler, weapon, proportions.\nONE ATLAS: EXACTLY TEN COLUMNS and EIGHT ROWS. Intended native canvas320x384pixels, eachcell32x48. No gutters, no margins. EXACTLY80complete compact poses of ONE enemy. Every row is ONE fixed orientation with10poses. First4columns(idle0..3), last6columns(run0..5), full cyclic motion in place. Row order is mandatory:\nROW0 NORTH: walking/shooting UPscreen, DIRECT REAR VIEW; helmet BACK, back armor and boiler visible, face and visor must NOT be visible. Gun aimsUP.\nROW1 NORTHEAST: UP-RIGHTscreen, rear3/4 view; back and right side visible, mostly BACK of helmet; gunUP-RIGHT.\nROW2 EAST/L: RIGHTscreen, right-facing elevated SIDE VIEW; gunRIGHT.\nROW3 SOUTHEAST: DOWN-RIGHTscreen, front3/4 view matching reference, helmet visor and front armor visible; gunDOWN-RIGHT.\nROW4 SOUTH: DOWNscreen, DIRECT FRONT VIEW from high above, symmetric shoulder tops around head, front visor visible, chest and gun foreshortened; gunDOWN.\nROW5 SOUTHWEST: DOWN-LEFTscreen, front3/4LEFT view; gunDOWN-LEFT.\nROW6 WEST/O: LEFTscreen, left-facing elevated SIDE VIEW; gunLEFT.\nROW7 NORTHWEST: UP-LEFTscreen, rear3/4LEFT view; back boiler and helmetback visible; gunUP-LEFT.\nAbsolutely distinguish NORTH/back and SOUTH/front! Draw the character physically turning, NOT rotating or vertically flipping a flat sprite. Top of helmet remains top on screen for every direction; NEVER upside down. Camera elevation stays60degreesaboveground throughALL80poses. See large upper planes of helmet, shoulders and boiler. Face only a small rim in frontal views; no face visible on rear view. Body anatomy and equipment stay fixed. Only horizontal mirroring is acceptable for corresponding left/rightfacings. Idle subtle breathing4poses feet stable. Run6distinctposes with alternating legs contact/push/passing/suspension/opposite-contact/recovery and a loopback. No global drift.\nEach pose fully fits its32x48cell; consistent scale acrossALL8directions and poses, feet pivotlocal(16,46), compact limbs and weapons. All80cells occupied, no missing frames. No texts/numbers/arrows/directionlabels/gridlines/floor/background/scenery/shadows/watermarks. True transparent PNG background.\nDraw directly at FINALPIXELARTscale, no antialiasing/blur/gradient/glow/sem-transparentedges. Explicit flat pixelclusters and economical2tone shading. SINGLEsharedpalette index0transparent +15opaquevisiblecolorsONLY: #000000, #242424, #494949, #6D6D6D, #929292, #DBDBB6, #492400, #926D24, #DBB649, #6D0000, #DB2424, #DBDB24, #49246D, #9249B6, #DB6D00. Keep enough light pixels for darkscenery readability.",
+  "enemy_prompt_suffixes": {
+    "torreao": "\nENEMY IDENTITY: TORREAO, heavy red scarab-armored space infantry gunner, brass steam boiler backpack with round cap and pipes, domed armored helmet with small yellow visor, short heavy machine cannon, massive shoulder plates and boots. REDdominantarmor, blackgunmetal and brass. Preserve design from reference. REARviews must show brass boiler mounted behind helmet and red segmented backplate; FRONTviews show visor and chest, not the backplate.",
+    "batedor": "\nENEMY: Batedor, yellow relentless pursuer. squat scout marine in scarab-shaped yellow armored suit, brass respirator, riveted shoulder plates, compact steam piston backpack, heavy marching boots, fists ready. Dominant armor yellow. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "baluarte": "\nENEMY: Baluarte, purple armored slow tank. very broad compact purple siege marine with domed beetle carapace, huge layered pauldrons, enclosed visor, copper furnace vents, dense armor and small shield projector. Dominant armor purple. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "ariete": "\nENEMY: Aríete, orange charging bruiser. orange armored shock trooper, beetle-inspired wedge helmet and reinforced ram shoulder, compact brass steam pistons on back and legs, forward charging posture. Dominant armor orange. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "fuzileiro": "\nENEMY: Fuzileiro, red agile rifleman. slim red armored marine, fly-inspired angular helmet and folded mechanical wing-shaped backpack vanes, compact short rifle pointing right, brass receiver and breathing hose. Dominant armor red. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "cacador": "\nENEMY: Caçador, yellow fast hunter. slim yellow interceptor marine, fly-inspired angular helmet, twin folded bronze wing vanes and spring piston legs, compact forearm blades, very dynamic sprint. Dominant armor yellow. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "escudeiro": "\nENEMY: Escudeiro, purple agile shield bearer. slim purple interceptor marine, fly-shaped angular visor, compact circular forearm buckler with violet emitter, bronze spring piston boots, folded wing backpack. Dominant armor purple. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "adaga": "\nENEMY: Adaga, orange rapid dash assassin. lean orange powered assassin, pointed fly-inspired helmet, paired short forearm daggers, brass pressure tanks and steam-driven legs, sharp compact running poses. Dominant armor orange. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "artilheiro": "\nENEMY: Artilheiro, red elite spread-shot gunner. red elite marine in compact spider-inspired angular plate armor, three-barrel short scatter cannon pointing right, four folded mechanical backpack struts, brass piping, masked face. Dominant armor red. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "alcateia": "\nENEMY: Alcateia, yellow elite splitting pack leader. yellow elite marine in spider-like segmented armor, two compact detachable drone capsules on shoulders, folded articulated bronze back struts, compact claw gauntlets. Dominant armor yellow. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "fortaleza": "\nENEMY: Fortaleza, purple elite armored summoner. massive compact purple spider-armored siege commander, layered pentagonal pauldrons, small paired drone pods and folded brass spider struts, violet shield projector, brass boiler. Dominant armor purple. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "meteoro": "\nENEMY: Meteoro, orange elite teleporting charger. orange elite spider-armored shock commander, compact circular bronze teleport coil on back, folded mechanical struts and piston legs, wedge visor and compact heavy fists. Dominant armor orange. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "dummy": "\nENEMY: Dummy, gray durable stationary practice target. gray humanoid training automaton shaped like a chunky scarab marine, round bronze target plate on chest without numerals, riveted head, brass joint pistons, sealed boiler backpack. Dominant armor gray. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "alvo": "\nENEMY: Alvo, gray fragile practice target. lighter gray humanoid target automaton, narrow scarab helmet, thin armor and exposed bronze joints, small concentric target plate without numbers, tiny steam canister. Dominant armor gray. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "lacraia": "\nENEMY: Lacraia, red final boss compact centipede warlord. intimidating red armored centipede warlord in upright compact exosuit, horned segmented helmet, layered chitin-like crimson plates, multiple folded bronze mechanical limbs hugging torso, brass reactor and piston boots; strongest broadest silhouette while entirely inside 32x48 cell. Dominant armor red. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run."
+  },
+  "runtime_integration": false
+}

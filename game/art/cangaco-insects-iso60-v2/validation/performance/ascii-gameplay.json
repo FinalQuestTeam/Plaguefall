@@ -1,0 +1,47 @@
+{
+  "rom": "/private/tmp/redrex-ascii-perf-uq_3o21q/game/out/release/rom.bin",
+  "rom_sha256": "e978ce0cca4494af5aab5e8badb3c97c544726bdcfa4539409e82d618834f513",
+  "method": "Count SPRITES_draw frame counter vs VBlank; SGDK 8-frame CPU load; moving sprites in controlled sandbox, same type, no scanline congestion. Gameplay logic active: True.",
+  "cases": [
+    {
+      "enemies": 1,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 38.42,
+      "cpu_load_p95_pct": 39.31
+    },
+    {
+      "enemies": 3,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 44.65,
+      "cpu_load_p95_pct": 45.31
+    },
+    {
+      "enemies": 8,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 63.88,
+      "cpu_load_p95_pct": 65.14
+    },
+    {
+      "enemies": 15,
+      "physical_frames": 240,
+      "game_frames": 160,
+      "game_fps_at_60hz": 40.0,
+      "cpu_load_mean_pct": 90.01,
+      "cpu_load_p95_pct": 90.82
+    },
+    {
+      "enemies": 16,
+      "physical_frames": 240,
+      "game_frames": 160,
+      "game_fps_at_60hz": 40.0,
+      "cpu_load_mean_pct": 91.57,
+      "cpu_load_p95_pct": 92.72
+    }
+  ]
+}

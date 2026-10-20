@@ -5,10 +5,10 @@
 
 // Aliado (NPC) do objetivo PROTEGER: fica parado num ponto da arena, tem vida e
 // sofre dano ao ser encostado por inimigos (que o perseguem). Se a vida zera, a
-// fase é perdida. Um único NPC por vez. Desenhado com o tile do coração (PAL1).
+// fase é perdida. Um único NPC por vez. Desenhado como Nossa Senhora Aparecida (PAL1).
 
 #define NPC_DEFAULT_HP  100     // vida do aliado quando o def não especifica
-#define NPC_SIZE        24      // lado do aliado (antena 24x24)
+#define NPC_SIZE        24      // lado do aliado (santa24x24, mesmo tamanho da antiga antena)
 
 extern s16 npcX, npcY;          // canto superior esquerdo (24x24), quando ativo
 extern s16 npcHp;               // vida atual (<=0 = caiu)

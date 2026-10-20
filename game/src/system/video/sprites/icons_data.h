@@ -122,47 +122,4 @@ static const char *const ICON_CLOCK_ART[8] =
     "..####..",
 };
 
-// antena 24x24 (aliado do objetivo PROTEGER) — no estilo dos itens, bem visível.
-// legenda: r=topo vermelho  5=brilho laranja  p=mastro  l=treliça  b=base  w=onda
-static const char *const ANTENNA24_ART[24] =
-{
-    "...........rr...........",
-    "..........r55r..........",
-    ".........r5555r.........",
-    ".ww......r5555r......ww.",
-    "..ww.....r5555r.....ww..",
-    "...ww....r5555r....ww...",
-    "....ww...r5555r...ww....",
-    ".....ww...r55r...ww.....",
-    "......ww...pp...ww......",
-    ".......ww..pp..ww.......",
-    "........ww.pp.ww........",
-    ".........wlpplw.........",
-    "..........lppl..........",
-    ".........llppll.........",
-    ".........llppll.........",
-    "........ll.pp.ll........",
-    "........ll.pp.ll........",
-    ".......ll..pp..ll.......",
-    ".......ll..pp..ll.......",
-    "......ll...pp...ll......",
-    "......ll...pp...ll......",
-    ".....ll...pppp...ll.....",
-    "....bbbbbbbbbbbbbbbb....",
-    "....bbbbbbbbbbbbbbbb....",
-};
-
-// antena 8x8 (indicador do aliado no HUD)
-static const char *const ICON_ANTENNA_ART[8] =
-{
-    "...##...",
-    "..#..#..",
-    "...##...",
-    "...#....",
-    "...#....",
-    "..###...",
-    ".#...#..",
-    "........",
-};
-
 #endif // ICONS_DATA_H

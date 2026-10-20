@@ -1,0 +1,4740 @@
+{
+  "technical_checks_passed": true,
+  "enemy_count": 15,
+  "direction_count": 8,
+  "per_direction_sheets": 120,
+  "combined_sheets": 15,
+  "compiled_animations": 240,
+  "compiled_frame_references": 1200,
+  "shared_palette": true,
+  "transparency_index": 0,
+  "hardware_sprites_per_frame": [
+    1,
+    3
+  ],
+  "sgdk_rescomp_returncode": 0,
+  "runtime_integration_tested": false,
+  "camera": {
+    "projection": "orthographic",
+    "elevation_degrees_above_ground": 60,
+    "validation": "art target, not a calibrated 3D render"
+  },
+  "art_limitations": [
+    "2D camera elevation is an art target, not a calibrated render.",
+    "Originals generated above native resolution; final files use nearest-neighbour reduction.",
+    "Subtle yaw/anatomy and weapon alignment can drift in running poses; visual cleanup remains necessary.",
+    "Pixel and compiler checks do not certify directional or anatomical accuracy of every drawn pose."
+  ],
+  "sheets": [
+    {
+      "id": "sq_red",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            599,
+            365,
+            533,
+            538,
+            470,
+            585
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            385,
+            388,
+            495,
+            548,
+            447,
+            386
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            234,
+            307,
+            467,
+            500,
+            454,
+            388
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            397,
+            259,
+            582,
+            612,
+            560,
+            537
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            465,
+            362,
+            533,
+            518,
+            494,
+            488
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            385,
+            399,
+            631,
+            627,
+            569,
+            569
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            283,
+            346,
+            467,
+            493,
+            464,
+            384
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            488,
+            532,
+            615,
+            613,
+            531,
+            403
+          ]
+        }
+      ],
+      "sha256": "493b2a1dd7c57753f0e16c8e34d4db952dee63c410b6af059115a766a171f960"
+    },
+    {
+      "id": "sq_yellow",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            343,
+            498,
+            486,
+            538,
+            479,
+            501
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            452,
+            549,
+            473,
+            548,
+            609,
+            450
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            490,
+            538,
+            667,
+            651,
+            608,
+            657
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            428,
+            571,
+            659,
+            673,
+            524,
+            566
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            509,
+            513,
+            564,
+            603,
+            641,
+            594
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            500,
+            450,
+            559,
+            641,
+            414,
+            562
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            435,
+            631,
+            634,
+            660,
+            450,
+            623
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            428,
+            355,
+            550,
+            569,
+            370,
+            470
+          ]
+        }
+      ],
+      "sha256": "b772b786ff87d6c48f51ff16e2f56e556873dfb01f5cc94ade89459e7677a010"
+    },
+    {
+      "id": "sq_purple",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            351,
+            447,
+            484,
+            521,
+            362,
+            356
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            382,
+            408,
+            515,
+            597,
+            302,
+            523
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            439,
+            463,
+            496,
+            653,
+            488,
+            507
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            651,
+            647,
+            561,
+            607,
+            341,
+            388
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            383,
+            604,
+            611,
+            632,
+            403,
+            274
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            557,
+            568,
+            556,
+            636,
+            538,
+            564
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            370,
+            466,
+            486,
+            593,
+            516,
+            496
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            277,
+            352,
+            473,
+            552,
+            423,
+            516
+          ]
+        }
+      ],
+      "sha256": "801d2107c5b5a195f1daf779440037d9454f9f59021f80cf0c1c2e602be8be92"
+    },
+    {
+      "id": "sq_orange",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            523,
+            425,
+            563,
+            500,
+            482,
+            545
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            432,
+            496,
+            490,
+            494,
+            440,
+            424
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            619,
+            584,
+            378,
+            386,
+            254,
+            362
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            381,
+            501,
+            456,
+            490,
+            430,
+            536
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            399,
+            257,
+            456,
+            600,
+            596,
+            486
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            367,
+            423,
+            486,
+            508,
+            511,
+            331
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            222,
+            472,
+            477,
+            512,
+            318,
+            362
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            301,
+            376,
+            422,
+            521,
+            542,
+            461
+          ]
+        }
+      ],
+      "sha256": "5bc9598c9d93bbe232bb58c2ca957bed3948be4dfb54a4e1ac268b7be8afafe1"
+    },
+    {
+      "id": "tri_red",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            552,
+            491,
+            503,
+            568,
+            404,
+            386
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            378,
+            456,
+            462,
+            499,
+            435,
+            375
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            364,
+            387,
+            551,
+            563,
+            373,
+            395
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            433,
+            516,
+            597,
+            596,
+            411,
+            342
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            461,
+            448,
+            541,
+            565,
+            466,
+            492
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            467,
+            606,
+            442,
+            518,
+            431,
+            330
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            529,
+            416,
+            562,
+            583,
+            511,
+            549
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            424,
+            535,
+            587,
+            597,
+            367,
+            387
+          ]
+        }
+      ],
+      "sha256": "10ebd72b8b7fbc9d196aa0c4dc2423526004e0dbd79c5d985682430673c515fc"
+    },
+    {
+      "id": "tri_yellow",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            376,
+            450,
+            397,
+            499,
+            527,
+            495
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            351,
+            409,
+            422,
+            470,
+            572,
+            581
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            505,
+            499,
+            499,
+            559,
+            426,
+            415
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            493,
+            566,
+            510,
+            542,
+            466,
+            476
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            510,
+            441,
+            453,
+            545,
+            571,
+            550
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            413,
+            345,
+            488,
+            535,
+            555,
+            525
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            481,
+            397,
+            451,
+            498,
+            393,
+            406
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            392,
+            332,
+            289,
+            492,
+            473,
+            503
+          ]
+        }
+      ],
+      "sha256": "12916683288e5a4f068371f4af5c7d6c6ec1f54b26eb9a2b8b010ebff930981d"
+    },
+    {
+      "id": "tri_purple",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            480,
+            401,
+            467,
+            588,
+            363,
+            399
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            385,
+            321,
+            571,
+            531,
+            382,
+            478
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            400,
+            508,
+            476,
+            522,
+            446,
+            523
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            311,
+            549,
+            463,
+            515,
+            338,
+            419
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            331,
+            379,
+            451,
+            488,
+            290,
+            383
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            324,
+            595,
+            513,
+            612,
+            485,
+            531
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            299,
+            569,
+            477,
+            530,
+            316,
+            529
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            430,
+            540,
+            516,
+            531,
+            441,
+            505
+          ]
+        }
+      ],
+      "sha256": "85ea610428dd0fd4c65ef5811c3e269b31c348536d84e61080c3098bc2310f5c"
+    },
+    {
+      "id": "tri_orange",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            354,
+            338,
+            439,
+            503,
+            402,
+            377
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            379,
+            325,
+            442,
+            540,
+            238,
+            352
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            306,
+            470,
+            545,
+            549,
+            407,
+            425
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            338,
+            334,
+            517,
+            538,
+            374,
+            553
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            382,
+            348,
+            419,
+            428,
+            415,
+            348
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            561,
+            572,
+            481,
+            527,
+            275,
+            347
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            303,
+            444,
+            352,
+            464,
+            323,
+            400
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            316,
+            435,
+            447,
+            530,
+            358,
+            365
+          ]
+        }
+      ],
+      "sha256": "def1c301a0f74ac0396d939d9914d99f4d3f9705183de12651b0c95de75658af"
+    },
+    {
+      "id": "pen_red",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            580,
+            623,
+            643,
+            564,
+            340,
+            296
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            629,
+            658,
+            698,
+            680,
+            602,
+            604
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            280,
+            520,
+            542,
+            619,
+            469,
+            497
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            582,
+            489,
+            497,
+            488,
+            414,
+            558
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            368,
+            591,
+            634,
+            617,
+            454,
+            582
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            414,
+            438,
+            578,
+            628,
+            543,
+            452
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            271,
+            459,
+            442,
+            487,
+            369,
+            448
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            271,
+            423,
+            544,
+            525,
+            352,
+            452
+          ]
+        }
+      ],
+      "sha256": "ddf8b06af7a9a5635ecd2ed59cf659a048121f6f98615714581595164e49537a"
+    },
+    {
+      "id": "pen_yellow",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            465,
+            563,
+            578,
+            521,
+            421,
+            452
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            467,
+            456,
+            481,
+            493,
+            370,
+            475
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            474,
+            677,
+            456,
+            672,
+            645,
+            595
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            570,
+            558,
+            583,
+            588,
+            535,
+            599
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            476,
+            555,
+            584,
+            560,
+            575,
+            549
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            504,
+            616,
+            463,
+            545,
+            470,
+            612
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            580,
+            461,
+            652,
+            521,
+            572,
+            469
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            467,
+            465,
+            465,
+            578,
+            545,
+            550
+          ]
+        }
+      ],
+      "sha256": "cf1ebdae6bc502c0222c7e24c79120ff8ad529f726c8e287867c726c28250776"
+    },
+    {
+      "id": "pen_purple",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            472,
+            297,
+            418,
+            427,
+            417,
+            410
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            474,
+            416,
+            427,
+            468,
+            404,
+            422
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            456,
+            411,
+            470,
+            550,
+            412,
+            364
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            424,
+            436,
+            569,
+            609,
+            557,
+            550
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            405,
+            484,
+            577,
+            589,
+            425,
+            463
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            533,
+            327,
+            598,
+            606,
+            478,
+            460
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            479,
+            314,
+            432,
+            488,
+            434,
+            372
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            480,
+            494,
+            530,
+            561,
+            343,
+            455
+          ]
+        }
+      ],
+      "sha256": "87834aac7e918273aa2feec779020f063ff50901dc2b2007e417800b7b1a9acc"
+    },
+    {
+      "id": "pen_orange",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            530,
+            517,
+            437,
+            537,
+            339,
+            510
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            429,
+            392,
+            550,
+            619,
+            521,
+            526
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            598,
+            564,
+            475,
+            580,
+            483,
+            594
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            450,
+            414,
+            582,
+            669,
+            386,
+            340
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            392,
+            427,
+            416,
+            531,
+            398,
+            484
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            473,
+            433,
+            406,
+            591,
+            580,
+            463
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            493,
+            413,
+            607,
+            592,
+            618,
+            617
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            492,
+            407,
+            498,
+            565,
+            580,
+            471
+          ]
+        }
+      ],
+      "sha256": "fc368e1ef2f3de4f1b16f6e70e1ba2e4c5e8fb9ec707435df08243f945b4ce87"
+    },
+    {
+      "id": "dummy",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            373,
+            415,
+            439,
+            561,
+            465,
+            305
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            458,
+            282,
+            542,
+            592,
+            352,
+            439
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            566,
+            527,
+            590,
+            566,
+            399,
+            580
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            492,
+            628,
+            631,
+            556,
+            528,
+            529
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            279,
+            616,
+            567,
+            630,
+            291,
+            520
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            363,
+            476,
+            718,
+            629,
+            669,
+            503
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            331,
+            411,
+            591,
+            542,
+            432,
+            505
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            443,
+            448,
+            532,
+            662,
+            527,
+            593
+          ]
+        }
+      ],
+      "sha256": "3fd407f9bb8cdd3715e39136449aba2ca75575fde80a3784c33a4ac671f87648"
+    },
+    {
+      "id": "target",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            611,
+            621,
+            604,
+            394,
+            359,
+            618
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            286,
+            415,
+            596,
+            531,
+            415,
+            588
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            560,
+            604,
+            527,
+            573,
+            402,
+            518
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            552,
+            540,
+            587,
+            666,
+            591,
+            485
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            539,
+            553,
+            534,
+            593,
+            388,
+            532
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            545,
+            589,
+            535,
+            685,
+            577,
+            567
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            472,
+            512,
+            591,
+            601,
+            421,
+            545
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            411,
+            529,
+            484,
+            421,
+            542,
+            560
+          ]
+        }
+      ],
+      "sha256": "c950e628871f5e10622edbe55f78a5a6e31e59a1be4dc54172323eaeb847fcd8"
+    },
+    {
+      "id": "boss",
+      "size": [
+        192,
+        768
+      ],
+      "directions": [
+        {
+          "direction": 0,
+          "label": "N",
+          "animations": [
+            0,
+            1
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            490,
+            401,
+            472,
+            513,
+            419,
+            506
+          ]
+        },
+        {
+          "direction": 1,
+          "label": "NE",
+          "animations": [
+            2,
+            3
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            352,
+            432,
+            481,
+            511,
+            411,
+            468
+          ]
+        },
+        {
+          "direction": 2,
+          "label": "L",
+          "animations": [
+            4,
+            5
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            461,
+            346,
+            546,
+            542,
+            334,
+            480
+          ]
+        },
+        {
+          "direction": 3,
+          "label": "SE",
+          "animations": [
+            6,
+            7
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            468,
+            473,
+            588,
+            594,
+            411,
+            475
+          ]
+        },
+        {
+          "direction": 4,
+          "label": "S",
+          "animations": [
+            8,
+            9
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            281,
+            523,
+            448,
+            557,
+            455,
+            497
+          ]
+        },
+        {
+          "direction": 5,
+          "label": "SO",
+          "animations": [
+            10,
+            11
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            426,
+            472,
+            424,
+            512,
+            363,
+            446
+          ]
+        },
+        {
+          "direction": 6,
+          "label": "O",
+          "animations": [
+            12,
+            13
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            389,
+            446,
+            532,
+            550,
+            372,
+            488
+          ]
+        },
+        {
+          "direction": 7,
+          "label": "NO",
+          "animations": [
+            14,
+            15
+          ],
+          "frames": [
+            4,
+            6
+          ],
+          "unique_idle_poses": 4,
+          "unique_run_poses": 6,
+          "baselines": [
+            [
+              46,
+              46,
+              46,
+              46
+            ],
+            [
+              46,
+              46,
+              45,
+              43,
+              46,
+              45
+            ]
+          ],
+          "run_pixel_differences_including_seam": [
+            533,
+            313,
+            497,
+            498,
+            479,
+            508
+          ]
+        }
+      ],
+      "sha256": "befcdc05606c76a35ab7201a5f730544d294f8844265f4d100715b6d37a98f98"
+    }
+  ]
+}

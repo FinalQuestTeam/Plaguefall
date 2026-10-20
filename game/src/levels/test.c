@@ -35,6 +35,8 @@ static const char *const STAGE_NAME[7] =
     { "", "TESTE 1", "TESTE 2", "CHEFE", "SOBREVIVER", "COLETAR", "PROTEGER" };
 
 static u16 spawnTimer;              // reaparecer alvos (teste 2)
+static u8 infoTicks;
+static u8 infoPower=255,infoBonus=255;
 static u16 objSpawnTimer;           // aparição de inimigos (estágios 4/5/6)
 
 // o jogador (16x16 em px,py) encosta no retângulo de tiles [tx,ty]+[tw,th]?
@@ -47,6 +49,7 @@ static bool playerOnTiles(u16 tx, u16 ty, u16 tw, u16 th)
 
 void TEST_draw(void)
 {
+    infoTicks=0;infoPower=infoBonus=255;
     const u16 attr = TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, TILE_USER_INDEX + TILE_DOOR);
     char buf[32];
     spawnTimer = TEST2_SPAWN_S * fps;
@@ -122,12 +125,17 @@ u8 TEST_update(void)
         ITEMS_testEnsure();
     }
 
-    // caixa de infos do jogador (evolução de tiros/velocidade no sandbox)
+    // Text/decimal formatting and direct VRAM writes were repeated every frame.
+    // Refresh unchanged info at10Hz; pickups update it immediately. Periodic
+    // refresh also repairs any floor/decal drawing underneath this overlay.
+    const u8 power=SHOTS_power(),bonus=PLAYER_speedBonus();
+    if(infoTicks && power==infoPower && bonus==infoBonus){infoTicks--;return 0;}
+    infoTicks=fps==50 ? 4 : 5;infoPower=power;infoBonus=bonus;
     char buf[20];
     VDP_drawText("-- JOGADOR --", 2, 3);
-    sprintf(buf, "BALAS:    %d", SHOTS_power());
+    sprintf(buf, "BALAS:    %d", power);
     VDP_drawText(buf, 2, 4);
-    sprintf(buf, "VELOC: +%3d%%", PLAYER_speedBonus());
+    sprintf(buf, "VELOC: +%3d%%", bonus);
     VDP_drawText(buf, 2, 5);
     return 0;
 }

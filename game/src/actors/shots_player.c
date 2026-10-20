@@ -54,12 +54,9 @@ void SHOTS_firePlayer(void)
     const s32 bvx = ((s32) dx * spd) / (s32) mag;
     const s32 bvy = ((s32) dy * spd) / (s32) mag;
 
-    // ponto de saída na boca da arma: parte do centro da hitbox (px+8,py+8) e
-    // desloca à frente (faceX,faceY) e à direita (perpendicular = -faceY,faceX).
-    // O mech só gera 3 direções; as outras 5 são ESPELHADAS por hardware
-    // (hflip=faceX<0, vflip=faceY>0), o que troca o lado da arma. Um número ímpar
-    // de flips inverte a perpendicular — senão a boca ficava no lado errado.
-    const s16 rs = ((faceX < 0) != (faceY > 0)) ? -1 : 1;
+    // The eight human views use horizontal mirroring only. N/S are distinct
+    // drawings; a south-facing aim must not apply the old mech vertical flip.
+    const s16 rs = faceX < 0 ? -1 : 1;
     const s16 rp = (s16) (PSHOT_MUZZLE_RIGHT * rs);
     const s16 mx = (s16) (px + 8 + faceX * PSHOT_MUZZLE_FWD - faceY * rp);
     const s16 my = (s16) (py + 8 + faceY * PSHOT_MUZZLE_FWD + faceX * rp);

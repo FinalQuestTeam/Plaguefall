@@ -1,0 +1,1467 @@
+{
+  "technical_checks_passed": true,
+  "enemy_count": 15,
+  "total_frames": 150,
+  "shared_palette": true,
+  "sgdk_rescomp_returncode": 0,
+  "hardware_sprites_per_frame": [
+    1,
+    3
+  ],
+  "runtime_integration_tested": false,
+  "artistic_limitations": [
+    "AI source art was larger than native resolution; final files are nearest-neighbour reductions.",
+    "Technical validation does not prove anatomical consistency or flawless motion; review animation previews before production.",
+    "Camera elevation 60 degrees is an art target, not a measured 3D render calibration.",
+    "Existing game renderer rotates square character maps; these southeast-facing 32x48 elevated-view sheets need a separate renderer integration."
+  ],
+  "camera_art_target": {
+    "projection": "orthographic",
+    "elevation_degrees_above_ground": 60,
+    "azimuth_degrees": 45,
+    "facing": "screen southeast / down-right",
+    "validation": "art direction target; exact angle cannot be certified from 2D generated images"
+  },
+  "sheets": [
+    {
+      "id": "torreao",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            4,
+            14,
+            31,
+            47
+          ],
+          [
+            4,
+            14,
+            31,
+            47
+          ],
+          [
+            4,
+            14,
+            31,
+            47
+          ],
+          [
+            2,
+            14,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            13,
+            31,
+            47
+          ],
+          [
+            3,
+            14,
+            31,
+            47
+          ],
+          [
+            2,
+            15,
+            31,
+            46
+          ],
+          [
+            2,
+            11,
+            31,
+            44
+          ],
+          [
+            2,
+            14,
+            31,
+            47
+          ],
+          [
+            1,
+            12,
+            29,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        491,
+        514,
+        628,
+        592,
+        540,
+        537
+      ],
+      "sha256": "ccc21be73f6fc88a39181ef3150b4e359b4227d3c0a4410e46e63ae336412007"
+    },
+    {
+      "id": "batedor",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            2,
+            12,
+            30,
+            47
+          ],
+          [
+            1,
+            12,
+            30,
+            47
+          ],
+          [
+            2,
+            13,
+            30,
+            47
+          ],
+          [
+            2,
+            12,
+            30,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            11,
+            29,
+            47
+          ],
+          [
+            1,
+            10,
+            28,
+            47
+          ],
+          [
+            1,
+            10,
+            29,
+            46
+          ],
+          [
+            4,
+            13,
+            31,
+            44
+          ],
+          [
+            1,
+            10,
+            31,
+            47
+          ],
+          [
+            1,
+            10,
+            27,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        468,
+        538,
+        638,
+        594,
+        413,
+        534
+      ],
+      "sha256": "d32e8576ceeea85ac5cc11960c43f04b97fb40f191d7d62aaa946f9268cbeb48"
+    },
+    {
+      "id": "baluarte",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 15,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            2,
+            13,
+            31,
+            47
+          ],
+          [
+            2,
+            12,
+            31,
+            47
+          ],
+          [
+            2,
+            13,
+            31,
+            47
+          ],
+          [
+            1,
+            13,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            11,
+            30,
+            47
+          ],
+          [
+            1,
+            11,
+            31,
+            47
+          ],
+          [
+            1,
+            11,
+            30,
+            46
+          ],
+          [
+            1,
+            11,
+            31,
+            44
+          ],
+          [
+            1,
+            12,
+            31,
+            47
+          ],
+          [
+            2,
+            10,
+            31,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        524,
+        567,
+        449,
+        543,
+        504,
+        605
+      ],
+      "sha256": "f74ae92bcb2c658545da69cf923a7bc0f0b5159c195784a743836387fba30299"
+    },
+    {
+      "id": "ariete",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            4,
+            13,
+            31,
+            47
+          ],
+          [
+            4,
+            13,
+            31,
+            47
+          ],
+          [
+            3,
+            13,
+            31,
+            47
+          ],
+          [
+            3,
+            13,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            2,
+            12,
+            30,
+            47
+          ],
+          [
+            3,
+            10,
+            31,
+            47
+          ],
+          [
+            1,
+            12,
+            31,
+            46
+          ],
+          [
+            2,
+            11,
+            31,
+            44
+          ],
+          [
+            3,
+            11,
+            31,
+            47
+          ],
+          [
+            2,
+            11,
+            30,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        586,
+        663,
+        576,
+        540,
+        533,
+        541
+      ],
+      "sha256": "af15e8e0e3453ba6dcc315859dd9e3673cde615d8fcb351e0d752d3bf7cb1499"
+    },
+    {
+      "id": "fuzileiro",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            4,
+            16,
+            31,
+            47
+          ],
+          [
+            4,
+            16,
+            31,
+            47
+          ],
+          [
+            3,
+            16,
+            31,
+            47
+          ],
+          [
+            3,
+            16,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            2,
+            16,
+            31,
+            47
+          ],
+          [
+            1,
+            14,
+            31,
+            47
+          ],
+          [
+            2,
+            18,
+            31,
+            46
+          ],
+          [
+            1,
+            13,
+            31,
+            44
+          ],
+          [
+            1,
+            14,
+            31,
+            47
+          ],
+          [
+            3,
+            16,
+            31,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        491,
+        547,
+        626,
+        555,
+        492,
+        483
+      ],
+      "sha256": "69ce428d0f74f172724d649535ecf8d1b872d6e1a18cf4306cc5d25a12122d1b"
+    },
+    {
+      "id": "cacador",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            2,
+            10,
+            31,
+            47
+          ],
+          [
+            4,
+            9,
+            31,
+            47
+          ],
+          [
+            4,
+            9,
+            31,
+            47
+          ],
+          [
+            3,
+            9,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            7,
+            31,
+            47
+          ],
+          [
+            2,
+            13,
+            31,
+            47
+          ],
+          [
+            3,
+            11,
+            31,
+            46
+          ],
+          [
+            4,
+            11,
+            31,
+            44
+          ],
+          [
+            1,
+            8,
+            31,
+            47
+          ],
+          [
+            1,
+            6,
+            30,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        671,
+        540,
+        525,
+        616,
+        604,
+        500
+      ],
+      "sha256": "222d79aef320f2f8d1f4a07fb99c4a3089ad45510724aec61084d075005e3703"
+    },
+    {
+      "id": "escudeiro",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 15,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            3,
+            11,
+            31,
+            47
+          ],
+          [
+            3,
+            11,
+            31,
+            47
+          ],
+          [
+            2,
+            11,
+            31,
+            47
+          ],
+          [
+            2,
+            11,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            7,
+            31,
+            47
+          ],
+          [
+            2,
+            8,
+            31,
+            47
+          ],
+          [
+            1,
+            9,
+            31,
+            46
+          ],
+          [
+            1,
+            5,
+            30,
+            44
+          ],
+          [
+            1,
+            9,
+            30,
+            47
+          ],
+          [
+            1,
+            7,
+            30,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        643,
+        505,
+        736,
+        743,
+        641,
+        523
+      ],
+      "sha256": "419c4bc2d5d953ba2a2809ece288c099c99f3d7c53a90f3effcf9e282206b05a"
+    },
+    {
+      "id": "adaga",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            6,
+            13,
+            29,
+            47
+          ],
+          [
+            8,
+            13,
+            31,
+            47
+          ],
+          [
+            8,
+            13,
+            31,
+            47
+          ],
+          [
+            6,
+            14,
+            29,
+            47
+          ]
+        ],
+        [
+          [
+            7,
+            18,
+            31,
+            47
+          ],
+          [
+            3,
+            17,
+            31,
+            47
+          ],
+          [
+            2,
+            14,
+            31,
+            46
+          ],
+          [
+            2,
+            14,
+            31,
+            44
+          ],
+          [
+            1,
+            15,
+            31,
+            47
+          ],
+          [
+            8,
+            14,
+            28,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        414,
+        482,
+        400,
+        430,
+        446,
+        467
+      ],
+      "sha256": "b707a24996ef8d248749657850f48a95a62ff92b788321a568d28552bf98dfd6"
+    },
+    {
+      "id": "artilheiro",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            3,
+            12,
+            31,
+            47
+          ],
+          [
+            2,
+            12,
+            31,
+            47
+          ],
+          [
+            2,
+            12,
+            31,
+            47
+          ],
+          [
+            2,
+            12,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            12,
+            31,
+            47
+          ],
+          [
+            2,
+            11,
+            31,
+            47
+          ],
+          [
+            1,
+            12,
+            31,
+            46
+          ],
+          [
+            1,
+            9,
+            30,
+            44
+          ],
+          [
+            1,
+            11,
+            31,
+            47
+          ],
+          [
+            3,
+            11,
+            31,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        504,
+        500,
+        632,
+        628,
+        547,
+        528
+      ],
+      "sha256": "bf66473cef26b2d32f8057d2e0f27519cd128618f778317776995a8aa2fed4b5"
+    },
+    {
+      "id": "alcateia",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            5,
+            6,
+            31,
+            47
+          ],
+          [
+            6,
+            6,
+            31,
+            47
+          ],
+          [
+            6,
+            7,
+            31,
+            47
+          ],
+          [
+            6,
+            6,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            6,
+            27,
+            47
+          ],
+          [
+            1,
+            8,
+            26,
+            47
+          ],
+          [
+            1,
+            7,
+            27,
+            46
+          ],
+          [
+            1,
+            6,
+            31,
+            44
+          ],
+          [
+            2,
+            10,
+            31,
+            47
+          ],
+          [
+            1,
+            7,
+            26,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        583,
+        527,
+        745,
+        711,
+        736,
+        527
+      ],
+      "sha256": "da1d8bdafc236c276f69740c7edcd9cf55f2c140ad3553b156f53f567f5e2efa"
+    },
+    {
+      "id": "fortaleza",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 15,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            2,
+            10,
+            31,
+            47
+          ],
+          [
+            1,
+            10,
+            31,
+            47
+          ],
+          [
+            2,
+            10,
+            31,
+            47
+          ],
+          [
+            1,
+            10,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            2,
+            9,
+            31,
+            47
+          ],
+          [
+            1,
+            8,
+            31,
+            47
+          ],
+          [
+            1,
+            9,
+            31,
+            46
+          ],
+          [
+            1,
+            9,
+            31,
+            44
+          ],
+          [
+            1,
+            7,
+            31,
+            47
+          ],
+          [
+            1,
+            8,
+            30,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        581,
+        595,
+        523,
+        662,
+        572,
+        543
+      ],
+      "sha256": "c0851ffceec18ae517b3e718ca5de17bed2cb05a4f8400b335ef0097daa6bd34"
+    },
+    {
+      "id": "meteoro",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            3,
+            11,
+            31,
+            47
+          ],
+          [
+            3,
+            12,
+            31,
+            47
+          ],
+          [
+            2,
+            12,
+            29,
+            47
+          ],
+          [
+            3,
+            11,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            11,
+            31,
+            47
+          ],
+          [
+            3,
+            10,
+            31,
+            47
+          ],
+          [
+            1,
+            10,
+            28,
+            46
+          ],
+          [
+            4,
+            11,
+            31,
+            44
+          ],
+          [
+            3,
+            11,
+            31,
+            47
+          ],
+          [
+            1,
+            11,
+            29,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        551,
+        605,
+        604,
+        458,
+        611,
+        501
+      ],
+      "sha256": "87b52575e63e0b4266a5bcc8f344d1713a6c95c274bf2c9139d5888f00844eac"
+    },
+    {
+      "id": "dummy",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 11,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            4,
+            13,
+            31,
+            47
+          ],
+          [
+            4,
+            13,
+            31,
+            47
+          ],
+          [
+            3,
+            13,
+            31,
+            47
+          ],
+          [
+            3,
+            13,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            12,
+            31,
+            47
+          ],
+          [
+            4,
+            11,
+            31,
+            47
+          ],
+          [
+            2,
+            12,
+            30,
+            46
+          ],
+          [
+            1,
+            14,
+            30,
+            44
+          ],
+          [
+            1,
+            11,
+            29,
+            47
+          ],
+          [
+            3,
+            10,
+            31,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        562,
+        586,
+        505,
+        583,
+        536,
+        571
+      ],
+      "sha256": "3c2347da81b218fc0e1fde99e0e85c4e78b9342f61f61be86e66bab7503a29d0"
+    },
+    {
+      "id": "alvo",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 12,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            4,
+            12,
+            31,
+            47
+          ],
+          [
+            4,
+            12,
+            31,
+            47
+          ],
+          [
+            5,
+            12,
+            31,
+            47
+          ],
+          [
+            4,
+            13,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            10,
+            31,
+            47
+          ],
+          [
+            4,
+            11,
+            31,
+            47
+          ],
+          [
+            1,
+            9,
+            30,
+            46
+          ],
+          [
+            2,
+            9,
+            31,
+            44
+          ],
+          [
+            3,
+            11,
+            31,
+            47
+          ],
+          [
+            1,
+            9,
+            30,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        572,
+        632,
+        571,
+        576,
+        638,
+        552
+      ],
+      "sha256": "277ee68127d8efc34b0e910e67973ddc9d6ee755c3ed1c35ef16cf1eafea25f7"
+    },
+    {
+      "id": "lacraia",
+      "size": [
+        192,
+        96
+      ],
+      "mode": "P",
+      "bit_depth": 4,
+      "visible_colors_used": 13,
+      "transparency_index": 0,
+      "frames": [
+        4,
+        6
+      ],
+      "idle_baseline": [
+        46,
+        46,
+        46,
+        46
+      ],
+      "frame_bounds": [
+        [
+          [
+            4,
+            12,
+            31,
+            47
+          ],
+          [
+            4,
+            14,
+            31,
+            47
+          ],
+          [
+            5,
+            12,
+            31,
+            47
+          ],
+          [
+            4,
+            12,
+            31,
+            47
+          ]
+        ],
+        [
+          [
+            1,
+            13,
+            31,
+            47
+          ],
+          [
+            4,
+            15,
+            31,
+            47
+          ],
+          [
+            1,
+            12,
+            29,
+            46
+          ],
+          [
+            1,
+            9,
+            28,
+            44
+          ],
+          [
+            1,
+            12,
+            29,
+            47
+          ],
+          [
+            1,
+            11,
+            29,
+            46
+          ]
+        ]
+      ],
+      "run_pixel_differences_including_seam": [
+        469,
+        571,
+        554,
+        566,
+        469,
+        558
+      ],
+      "sha256": "fb3a19b5f6c3f95683a292683b04ba18ee66be856736cfaa248ad486124be6e4"
+    }
+  ]
+}

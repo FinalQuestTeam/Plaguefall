@@ -1,0 +1,51 @@
+{
+  "layout": {
+    "idle_source_poses": [
+      0,
+      2
+    ],
+    "run_source_poses": [
+      4,
+      6,
+      7,
+      9
+    ],
+    "canonical_directions": [
+      "N",
+      "NE",
+      "L",
+      "SE",
+      "S"
+    ],
+    "horizontal_mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    },
+    "idle_step_fps_ratio": [
+      2,
+      5
+    ],
+    "run_step_fps_ratio": [
+      3,
+      20
+    ],
+    "enemy_art_directory": "art/cangaco-insects-sized-v3"
+  },
+  "actors": {
+    "insects": {
+      "characters": 13,
+      "canonical_frames": 390,
+      "rom_bytes": 118080,
+      "previous_rom_bytes": 499200,
+      "sha256": "43834017e016788138980a1a4e45f4754c160fab50060f234085b076fc09883c"
+    },
+    "heroi": {
+      "characters": 1,
+      "canonical_frames": 30,
+      "rom_bytes": 23040,
+      "previous_rom_bytes": 38400,
+      "sha256": "815e8fa2930cd4fe099a8c7e0b90d4b22d3b8e5d097fdbf9b6419c32e466a995"
+    }
+  }
+}

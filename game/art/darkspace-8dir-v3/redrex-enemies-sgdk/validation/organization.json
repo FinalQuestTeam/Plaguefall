@@ -1,0 +1,1097 @@
+{
+  "project_order": [
+    "sq_red",
+    "sq_yellow",
+    "sq_purple",
+    "sq_orange",
+    "tri_red",
+    "tri_yellow",
+    "tri_purple",
+    "tri_orange",
+    "pen_red",
+    "pen_yellow",
+    "pen_purple",
+    "pen_orange",
+    "dummy",
+    "target",
+    "boss"
+  ],
+  "moved_files": [
+    {
+      "before": "gfx/torreao.png",
+      "after": "enemies/sq_red/sq_red.png",
+      "sha256": "493b2a1dd7c57753f0e16c8e34d4db952dee63c410b6af059115a766a171f960"
+    },
+    {
+      "before": "gfx/turntables/torreao.png",
+      "after": "enemies/sq_red/sq_red_turntable.png",
+      "sha256": "0daa971c3b2affef3f8fd61af9622434080526c985c1609ecc473601547488e0"
+    },
+    {
+      "before": "originals/torreao.png",
+      "after": "enemies/sq_red/originals/sq_red.png",
+      "sha256": "3b13862752f127c2287b5b0cae6b35797a83ecb89dbb4865e2ec5ff9c513d65b"
+    },
+    {
+      "before": "previews/torreao-turntable.gif",
+      "after": "enemies/sq_red/previews/sq_red_turntable.gif",
+      "sha256": "1ca3f481b6d98e9079251984e26f75746cbd566c469433575ff82fa85c8397b7"
+    },
+    {
+      "before": "previews/torreao-run.gif",
+      "after": "enemies/sq_red/previews/sq_red_run.gif",
+      "sha256": "9c832d595a9a95027caa4ec66876ec6ad3f153ae29b4638093dffab47d1879b2"
+    },
+    {
+      "before": "gfx/directions/torreao_N.png",
+      "after": "enemies/sq_red/directions/sq_red_N.png",
+      "sha256": "f2588ed886e6fb70868d565a8a365fe6b3c33ab49d0a7a2ee919e86639668a62"
+    },
+    {
+      "before": "gfx/directions/torreao_NE.png",
+      "after": "enemies/sq_red/directions/sq_red_NE.png",
+      "sha256": "12158c35c9c808ebf6d0912ad0a84c3e6c9d2619786fd910a5bc0791d98ce5d0"
+    },
+    {
+      "before": "gfx/directions/torreao_L.png",
+      "after": "enemies/sq_red/directions/sq_red_L.png",
+      "sha256": "ba85a8d3833bc068cee0eced37d8942952b832eefd784dafec957aaff8dcd9e3"
+    },
+    {
+      "before": "gfx/directions/torreao_SE.png",
+      "after": "enemies/sq_red/directions/sq_red_SE.png",
+      "sha256": "dff991efb866afdadaeb864aed0c47dfdaabe1767f8e15343f7ec9ea147f6eb2"
+    },
+    {
+      "before": "gfx/directions/torreao_S.png",
+      "after": "enemies/sq_red/directions/sq_red_S.png",
+      "sha256": "9eaae0e996d115baec48458b4bba23f32c4bc765ace654844519576424290706"
+    },
+    {
+      "before": "gfx/directions/torreao_SO.png",
+      "after": "enemies/sq_red/directions/sq_red_SO.png",
+      "sha256": "00ad383f54d6acfa566eeaed9d10ccf5728882e1dd1e29c349a2799cb3916859"
+    },
+    {
+      "before": "gfx/directions/torreao_O.png",
+      "after": "enemies/sq_red/directions/sq_red_O.png",
+      "sha256": "871d1b5982de30113a95f9224acc76ae507895e5532d8239210b39a4ca763244"
+    },
+    {
+      "before": "gfx/directions/torreao_NO.png",
+      "after": "enemies/sq_red/directions/sq_red_NO.png",
+      "sha256": "ab3fde56855e6e4393bab1997a070c0e320fcfe21cabed4d2c76abc2d0763362"
+    },
+    {
+      "before": "validation/torreao_opt.png",
+      "after": "enemies/sq_red/validation/sq_red_opt.png",
+      "sha256": "fc65b64cbe4a34abed57488d6833107178d2b23500af492d14b38ef50d3944f9"
+    },
+    {
+      "before": "gfx/batedor.png",
+      "after": "enemies/sq_yellow/sq_yellow.png",
+      "sha256": "b772b786ff87d6c48f51ff16e2f56e556873dfb01f5cc94ade89459e7677a010"
+    },
+    {
+      "before": "gfx/turntables/batedor.png",
+      "after": "enemies/sq_yellow/sq_yellow_turntable.png",
+      "sha256": "9b16936e83db6fa200dd1b28bb086b2bfb070a8bef81d110f2183063e719e8ee"
+    },
+    {
+      "before": "originals/batedor.png",
+      "after": "enemies/sq_yellow/originals/sq_yellow.png",
+      "sha256": "b09abc108605f4ee20dfbdd2686cadd5836de2d4ec5286e51a15bbd107feb7a5"
+    },
+    {
+      "before": "previews/batedor-turntable.gif",
+      "after": "enemies/sq_yellow/previews/sq_yellow_turntable.gif",
+      "sha256": "b64375a19471e182bb0293d63ad1471155bc04c425a37251895ad212b34644e0"
+    },
+    {
+      "before": "previews/batedor-run.gif",
+      "after": "enemies/sq_yellow/previews/sq_yellow_run.gif",
+      "sha256": "eb737ddd52f7a58f3b4877eb661196d91a0ed455cb2c6343d98cbe028752e62b"
+    },
+    {
+      "before": "gfx/directions/batedor_N.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_N.png",
+      "sha256": "8a0a62a8f70c7a51c1b12dc0a803d51c22f3c677acc37b0a3ddd54ec4d031921"
+    },
+    {
+      "before": "gfx/directions/batedor_NE.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_NE.png",
+      "sha256": "dfc627366ebab8a5da57ada5b2ab77651d0573fe1e5775f501d0f30d76fc6951"
+    },
+    {
+      "before": "gfx/directions/batedor_L.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_L.png",
+      "sha256": "c95914691ff03b955a7a5168f23eda183cd381b200a8dce03aab0bed53d9c981"
+    },
+    {
+      "before": "gfx/directions/batedor_SE.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_SE.png",
+      "sha256": "11eb4949582e7a277ea499f9e03a7f2fd0cca7a5a76c356251ebc50796af988c"
+    },
+    {
+      "before": "gfx/directions/batedor_S.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_S.png",
+      "sha256": "65d0184038a55700609ef8f184ba7eca10ca7000fb3e5e203eaf45dedd3ef6a7"
+    },
+    {
+      "before": "gfx/directions/batedor_SO.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_SO.png",
+      "sha256": "a4fabc76225aaba2859d8b5b876acde43a6bd6ea21c2f9e37e6b880aa8bf407b"
+    },
+    {
+      "before": "gfx/directions/batedor_O.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_O.png",
+      "sha256": "f1e7248b94baa67fc8dfa30e09e534a265850f675730cdcb7671baac9c1ee2e2"
+    },
+    {
+      "before": "gfx/directions/batedor_NO.png",
+      "after": "enemies/sq_yellow/directions/sq_yellow_NO.png",
+      "sha256": "74b0188d1a0eecf965c2fb5051fa088f8a06c594f762033299cac5118127dc6d"
+    },
+    {
+      "before": "validation/batedor_opt.png",
+      "after": "enemies/sq_yellow/validation/sq_yellow_opt.png",
+      "sha256": "86c5c3238689cdca9a76a3c7af8d5b7a3f47dd69f839b357e7bdf8bf5be59393"
+    },
+    {
+      "before": "gfx/baluarte.png",
+      "after": "enemies/sq_purple/sq_purple.png",
+      "sha256": "801d2107c5b5a195f1daf779440037d9454f9f59021f80cf0c1c2e602be8be92"
+    },
+    {
+      "before": "gfx/turntables/baluarte.png",
+      "after": "enemies/sq_purple/sq_purple_turntable.png",
+      "sha256": "08ac4097bdb2e7d28ac33fbcdf61f0304ae04059492d22ec38a93397f9a16d87"
+    },
+    {
+      "before": "originals/baluarte.png",
+      "after": "enemies/sq_purple/originals/sq_purple.png",
+      "sha256": "aafe31bf3e2920abba9060cb9f554df469beef05631e0a2f59eceeba55a5e6f5"
+    },
+    {
+      "before": "previews/baluarte-turntable.gif",
+      "after": "enemies/sq_purple/previews/sq_purple_turntable.gif",
+      "sha256": "917d1ed5c5aae2609f52722ec53c40e9bd2e39a25f9a759776389969586cd48f"
+    },
+    {
+      "before": "previews/baluarte-run.gif",
+      "after": "enemies/sq_purple/previews/sq_purple_run.gif",
+      "sha256": "b0fabe01cacd891c4faa9aa433434788ade4ab2e42d7311b956703b80a45cf3a"
+    },
+    {
+      "before": "gfx/directions/baluarte_N.png",
+      "after": "enemies/sq_purple/directions/sq_purple_N.png",
+      "sha256": "85029a8ceaa3eee6c74c784e1dc0419cdd687fd25c47e9e25c1c616433c973ed"
+    },
+    {
+      "before": "gfx/directions/baluarte_NE.png",
+      "after": "enemies/sq_purple/directions/sq_purple_NE.png",
+      "sha256": "10c3cbdaee9c4310cd39243fb7d179bd3001f132a2b5d563be7c370a03c1dc8e"
+    },
+    {
+      "before": "gfx/directions/baluarte_L.png",
+      "after": "enemies/sq_purple/directions/sq_purple_L.png",
+      "sha256": "028d1d576eb4febe988d9eadbceb7393ee096176e6d6708e3fe807eba0307c7e"
+    },
+    {
+      "before": "gfx/directions/baluarte_SE.png",
+      "after": "enemies/sq_purple/directions/sq_purple_SE.png",
+      "sha256": "3430055be73d94a742926bea26a04b2afb8c500afb4dffaa7c05b803d6066f96"
+    },
+    {
+      "before": "gfx/directions/baluarte_S.png",
+      "after": "enemies/sq_purple/directions/sq_purple_S.png",
+      "sha256": "468a8f30bfc5b780ea87a62d2d112bf4acad5035f6781c43466a54621a146a62"
+    },
+    {
+      "before": "gfx/directions/baluarte_SO.png",
+      "after": "enemies/sq_purple/directions/sq_purple_SO.png",
+      "sha256": "35ac6da3ed777bf89baaa6d9cc26d482d219e778316570f6b50fc5b2f0e908ef"
+    },
+    {
+      "before": "gfx/directions/baluarte_O.png",
+      "after": "enemies/sq_purple/directions/sq_purple_O.png",
+      "sha256": "54098a9aee4dab8ea7b2d629cbb422eb1ab5a69b01fb02530ec80f8e1426c65b"
+    },
+    {
+      "before": "gfx/directions/baluarte_NO.png",
+      "after": "enemies/sq_purple/directions/sq_purple_NO.png",
+      "sha256": "5a20cc2562aeeb97e34c6a45918ece2788509a3a8f583c5e9edc09640b5de5cd"
+    },
+    {
+      "before": "validation/baluarte_opt.png",
+      "after": "enemies/sq_purple/validation/sq_purple_opt.png",
+      "sha256": "8c524f1b7aedc8a371fd1c98717e6e3690d8e38c87571f5be2a8f4a513395968"
+    },
+    {
+      "before": "gfx/ariete.png",
+      "after": "enemies/sq_orange/sq_orange.png",
+      "sha256": "5bc9598c9d93bbe232bb58c2ca957bed3948be4dfb54a4e1ac268b7be8afafe1"
+    },
+    {
+      "before": "gfx/turntables/ariete.png",
+      "after": "enemies/sq_orange/sq_orange_turntable.png",
+      "sha256": "3337d6119e3d9b73e1470fb9c09f0fefa649be5a14f37831c1405d3b8004cfc5"
+    },
+    {
+      "before": "originals/ariete.png",
+      "after": "enemies/sq_orange/originals/sq_orange.png",
+      "sha256": "45a6b85bca469e2b40a52dc5d815ff767f25ece81900b53e2e6e0276d746ddcd"
+    },
+    {
+      "before": "previews/ariete-turntable.gif",
+      "after": "enemies/sq_orange/previews/sq_orange_turntable.gif",
+      "sha256": "665ddc786fe4aa7da17c7c0bb0f20e134486b30b1e9e83a16adb7d976ec8fa04"
+    },
+    {
+      "before": "previews/ariete-run.gif",
+      "after": "enemies/sq_orange/previews/sq_orange_run.gif",
+      "sha256": "cbcafa03f00261a431901169b818a45aac079d5d8c8ea57324182ed6c70a87db"
+    },
+    {
+      "before": "gfx/directions/ariete_N.png",
+      "after": "enemies/sq_orange/directions/sq_orange_N.png",
+      "sha256": "49874e4af4764b031af2320fb0a09609203d1066eef681b81c05c6dc53090119"
+    },
+    {
+      "before": "gfx/directions/ariete_NE.png",
+      "after": "enemies/sq_orange/directions/sq_orange_NE.png",
+      "sha256": "f8969d0d22c6733b67a24bc985346c44f38a0aea04d343dfd2d05e354004955e"
+    },
+    {
+      "before": "gfx/directions/ariete_L.png",
+      "after": "enemies/sq_orange/directions/sq_orange_L.png",
+      "sha256": "befe1ac976e94361f24bf075f88c61ac78aa5d755596e4838f9ae06ce562cf58"
+    },
+    {
+      "before": "gfx/directions/ariete_SE.png",
+      "after": "enemies/sq_orange/directions/sq_orange_SE.png",
+      "sha256": "4f3016f1d6e5d1b01a7c08c6f224349af604aca7f579ed188b1e16578fe3aeee"
+    },
+    {
+      "before": "gfx/directions/ariete_S.png",
+      "after": "enemies/sq_orange/directions/sq_orange_S.png",
+      "sha256": "9fecf6e2a655f52e6e71bb6160575e9b91ad0785bd421563ff5e1f3fb1210818"
+    },
+    {
+      "before": "gfx/directions/ariete_SO.png",
+      "after": "enemies/sq_orange/directions/sq_orange_SO.png",
+      "sha256": "ac001fcf43a7778160942a3d968d1e22e9a866db0b5e091ed5ebc9d0e1b1e61a"
+    },
+    {
+      "before": "gfx/directions/ariete_O.png",
+      "after": "enemies/sq_orange/directions/sq_orange_O.png",
+      "sha256": "deefe5d5be69a044db6ccf6e16f8487e29911e2896823f8f6e07bb7156a7c4a2"
+    },
+    {
+      "before": "gfx/directions/ariete_NO.png",
+      "after": "enemies/sq_orange/directions/sq_orange_NO.png",
+      "sha256": "2c01025493a86e94e3e1cb883326d3a580f68a4a98386ea98137d575ef064441"
+    },
+    {
+      "before": "validation/ariete_opt.png",
+      "after": "enemies/sq_orange/validation/sq_orange_opt.png",
+      "sha256": "13904a12793ffc9fc55aec5b5f2d7e028e79b79a3347d277fa55ee2a9838a175"
+    },
+    {
+      "before": "gfx/fuzileiro.png",
+      "after": "enemies/tri_red/tri_red.png",
+      "sha256": "10ebd72b8b7fbc9d196aa0c4dc2423526004e0dbd79c5d985682430673c515fc"
+    },
+    {
+      "before": "gfx/turntables/fuzileiro.png",
+      "after": "enemies/tri_red/tri_red_turntable.png",
+      "sha256": "0b1a354bf9c9a860f6da4510117b0d930272803a649d37a330da07a0fcf039b3"
+    },
+    {
+      "before": "originals/fuzileiro.png",
+      "after": "enemies/tri_red/originals/tri_red.png",
+      "sha256": "17402de55c3107b58d326abcf8edb6b12543d90087fec705f77043175540a2f3"
+    },
+    {
+      "before": "previews/fuzileiro-turntable.gif",
+      "after": "enemies/tri_red/previews/tri_red_turntable.gif",
+      "sha256": "7f4352eb11428f7c5ca2484b9179582937f604ee2521cb68fdc1e0defcab5baf"
+    },
+    {
+      "before": "previews/fuzileiro-run.gif",
+      "after": "enemies/tri_red/previews/tri_red_run.gif",
+      "sha256": "9f9f4670e189f22b6ba0387adbbd3f47a5756f6259cf5c17a7446f99f4b7ed45"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_N.png",
+      "after": "enemies/tri_red/directions/tri_red_N.png",
+      "sha256": "be6a484742a23a7a3f1cba9d7e1d0e84fa08b1fc43f83673f4b5663f5759aa62"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_NE.png",
+      "after": "enemies/tri_red/directions/tri_red_NE.png",
+      "sha256": "fc9cb2eaf2caec0617afb3665c1f650b8bc8c53324dc13063f895996e74cd9ea"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_L.png",
+      "after": "enemies/tri_red/directions/tri_red_L.png",
+      "sha256": "81a822dcd9142f0e5737bb6dfa0dfa914c725c59a95937c1efdac47c985cdf50"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_SE.png",
+      "after": "enemies/tri_red/directions/tri_red_SE.png",
+      "sha256": "aaf2555dabe7a8e35b3e9f1e61a709108b2d3bec4c1e45e9394441e59047d6d1"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_S.png",
+      "after": "enemies/tri_red/directions/tri_red_S.png",
+      "sha256": "a0256a84689e8cac3f7f04743b6b2c40a0a132dc8fae7e4c1b1f2ad4f62f6e25"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_SO.png",
+      "after": "enemies/tri_red/directions/tri_red_SO.png",
+      "sha256": "33405ea7e2f868ba040fb65499bdac262a0fa6d2203481b82e76bb53e9ecfbe8"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_O.png",
+      "after": "enemies/tri_red/directions/tri_red_O.png",
+      "sha256": "0bbe49657daa342d26497892db9277a402b7c78ef29d9d76aff9859d27d06cf0"
+    },
+    {
+      "before": "gfx/directions/fuzileiro_NO.png",
+      "after": "enemies/tri_red/directions/tri_red_NO.png",
+      "sha256": "5ade4617e25b6cc05d71174548afb8e35550e8316b4cf361eddd16d178077a7d"
+    },
+    {
+      "before": "validation/fuzileiro_opt.png",
+      "after": "enemies/tri_red/validation/tri_red_opt.png",
+      "sha256": "c6385495511de2adf9f2bffd1a68e3c99aa81c992cb4ca73357b5aea1e280961"
+    },
+    {
+      "before": "originals/fuzileiro-before-cleanup.png",
+      "after": "enemies/tri_red/originals/tri_red_before_cleanup.png",
+      "sha256": "9cd5daccdd8d17cdd71dff1f67466db2c0826fadd9bd6bb34b66141aa30e4fd8"
+    },
+    {
+      "before": "gfx/cacador.png",
+      "after": "enemies/tri_yellow/tri_yellow.png",
+      "sha256": "12916683288e5a4f068371f4af5c7d6c6ec1f54b26eb9a2b8b010ebff930981d"
+    },
+    {
+      "before": "gfx/turntables/cacador.png",
+      "after": "enemies/tri_yellow/tri_yellow_turntable.png",
+      "sha256": "1f50e732e90af1d5c3c955e774b73b8a2aa1d3b4f8331a76d8486e3c33fb7415"
+    },
+    {
+      "before": "originals/cacador.png",
+      "after": "enemies/tri_yellow/originals/tri_yellow.png",
+      "sha256": "c23c9e8f0cdb43bd0facb485da405f74ad0b2a2bfc22b598eabcea285bbb4116"
+    },
+    {
+      "before": "previews/cacador-turntable.gif",
+      "after": "enemies/tri_yellow/previews/tri_yellow_turntable.gif",
+      "sha256": "ecd457e5717372b9e02cd7a8964c757340fb6ba4f67e16ca9e10238721bb2d92"
+    },
+    {
+      "before": "previews/cacador-run.gif",
+      "after": "enemies/tri_yellow/previews/tri_yellow_run.gif",
+      "sha256": "9afdb94d3b0b16b398161e9807541262b9bec3f06d4a107e386dabfe8e30f016"
+    },
+    {
+      "before": "gfx/directions/cacador_N.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_N.png",
+      "sha256": "9e3e7e7034ce7b18c9305c0730ca638ff754e3a99b70fb3439ce4a276e28d4c5"
+    },
+    {
+      "before": "gfx/directions/cacador_NE.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_NE.png",
+      "sha256": "4636247571f7c9e7197a19fa5a985071fedead3babcbb2f5a96970fbafdcbbf2"
+    },
+    {
+      "before": "gfx/directions/cacador_L.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_L.png",
+      "sha256": "d8f81bdf1d0c04f7e698cd3cc6ebc2827bd67045227b1a41e9714af4635512a7"
+    },
+    {
+      "before": "gfx/directions/cacador_SE.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_SE.png",
+      "sha256": "13d18e8d4e7a698e139c6a0a413006ef7a8f0ab50eec4643c4e4c221631cce75"
+    },
+    {
+      "before": "gfx/directions/cacador_S.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_S.png",
+      "sha256": "6a87aaeb6b883ebd9f0dc9b3210b8e94655b26526125303f79ccac7b6934624c"
+    },
+    {
+      "before": "gfx/directions/cacador_SO.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_SO.png",
+      "sha256": "31b7f773defae96a85ba37240e0b79f002fb402ecc4b724d35919a169301b992"
+    },
+    {
+      "before": "gfx/directions/cacador_O.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_O.png",
+      "sha256": "64ffd2f4e6467e4c43c68772cc4440b1b83604f51f1757820464f08f2b4db17a"
+    },
+    {
+      "before": "gfx/directions/cacador_NO.png",
+      "after": "enemies/tri_yellow/directions/tri_yellow_NO.png",
+      "sha256": "f143f27e6001d968eec83e996a8d08b05129d5f146d6c50f63aa008d8e478921"
+    },
+    {
+      "before": "validation/cacador_opt.png",
+      "after": "enemies/tri_yellow/validation/tri_yellow_opt.png",
+      "sha256": "eab76ca0ea41283d1e7c02d1fe1fa52b1686fc23ade6c2af4eb3416f193b574f"
+    },
+    {
+      "before": "gfx/escudeiro.png",
+      "after": "enemies/tri_purple/tri_purple.png",
+      "sha256": "85ea610428dd0fd4c65ef5811c3e269b31c348536d84e61080c3098bc2310f5c"
+    },
+    {
+      "before": "gfx/turntables/escudeiro.png",
+      "after": "enemies/tri_purple/tri_purple_turntable.png",
+      "sha256": "bc2334162fa242e7d84a812d666919c4e5e034cffe3e35499fc5e7904855779c"
+    },
+    {
+      "before": "originals/escudeiro.png",
+      "after": "enemies/tri_purple/originals/tri_purple.png",
+      "sha256": "3e013c1d6e1d9eb46b235fc06ad98276ba06ea837be9ccf73bcb064fdc0574a5"
+    },
+    {
+      "before": "previews/escudeiro-turntable.gif",
+      "after": "enemies/tri_purple/previews/tri_purple_turntable.gif",
+      "sha256": "6565422cf6cb694888ab3cbe498a27d71ac6c71a3cc84ab0ffa847ef8e00f24c"
+    },
+    {
+      "before": "previews/escudeiro-run.gif",
+      "after": "enemies/tri_purple/previews/tri_purple_run.gif",
+      "sha256": "6e8f0b25e5b5ab8b1362f3c571021c311e9c82efdbe899ca1394ad947cac8c97"
+    },
+    {
+      "before": "gfx/directions/escudeiro_N.png",
+      "after": "enemies/tri_purple/directions/tri_purple_N.png",
+      "sha256": "ff9cb3b50ff93de1c736e8ed0f977b9461143899bdbca3b3d9149e17b6351fc3"
+    },
+    {
+      "before": "gfx/directions/escudeiro_NE.png",
+      "after": "enemies/tri_purple/directions/tri_purple_NE.png",
+      "sha256": "d7f8c49c1dbba140a9cbd2ac8a42c91e8b634216edb4e75f21b9345eb0c8b79e"
+    },
+    {
+      "before": "gfx/directions/escudeiro_L.png",
+      "after": "enemies/tri_purple/directions/tri_purple_L.png",
+      "sha256": "5f54b8387bc7bb2c0c38f561455ad5b6b3286a804f6443e170a9013384d55038"
+    },
+    {
+      "before": "gfx/directions/escudeiro_SE.png",
+      "after": "enemies/tri_purple/directions/tri_purple_SE.png",
+      "sha256": "5d2fac6a21342f33cbb4b2704d6dc3c7537c3d50ab26506313cf0840a5c7a026"
+    },
+    {
+      "before": "gfx/directions/escudeiro_S.png",
+      "after": "enemies/tri_purple/directions/tri_purple_S.png",
+      "sha256": "906b01169426f2f3f0945b026f69487d9b7e6a241df1aa6d1026c182813c727e"
+    },
+    {
+      "before": "gfx/directions/escudeiro_SO.png",
+      "after": "enemies/tri_purple/directions/tri_purple_SO.png",
+      "sha256": "753f34de84c5430d388cba0bbc4e985fcfdbc91a4bc31aa4efba52f2e65bb7d7"
+    },
+    {
+      "before": "gfx/directions/escudeiro_O.png",
+      "after": "enemies/tri_purple/directions/tri_purple_O.png",
+      "sha256": "d8c9f5000ece940e37a18a81463558d343a6a4fbe68e81c54e3305079ea12663"
+    },
+    {
+      "before": "gfx/directions/escudeiro_NO.png",
+      "after": "enemies/tri_purple/directions/tri_purple_NO.png",
+      "sha256": "0ff0899d7a55f38f5248e0d71f85ab0ec7a971ad048358fd2071acead13bd756"
+    },
+    {
+      "before": "validation/escudeiro_opt.png",
+      "after": "enemies/tri_purple/validation/tri_purple_opt.png",
+      "sha256": "d3880c7ff823b1ecee7af990243a65b09e2aa676602a1cd159767ddad425a50f"
+    },
+    {
+      "before": "gfx/adaga.png",
+      "after": "enemies/tri_orange/tri_orange.png",
+      "sha256": "def1c301a0f74ac0396d939d9914d99f4d3f9705183de12651b0c95de75658af"
+    },
+    {
+      "before": "gfx/turntables/adaga.png",
+      "after": "enemies/tri_orange/tri_orange_turntable.png",
+      "sha256": "2ca373c008de2fb88b64305a4eff10776eb4f084c8b6802aae2f0b57b0cd9e0b"
+    },
+    {
+      "before": "originals/adaga.png",
+      "after": "enemies/tri_orange/originals/tri_orange.png",
+      "sha256": "bb9874bd67a6dce0996fbb602d87b31b7d9afdc598021494bafda8751a94b451"
+    },
+    {
+      "before": "previews/adaga-turntable.gif",
+      "after": "enemies/tri_orange/previews/tri_orange_turntable.gif",
+      "sha256": "044570be6f611f88d91d671e6a81425f5aa16f2e736dc6f16c55e9a22426a11f"
+    },
+    {
+      "before": "previews/adaga-run.gif",
+      "after": "enemies/tri_orange/previews/tri_orange_run.gif",
+      "sha256": "4418299b341e1ec5af5109d319aa642b394a01034de7bff4810dbac119e2a97c"
+    },
+    {
+      "before": "gfx/directions/adaga_N.png",
+      "after": "enemies/tri_orange/directions/tri_orange_N.png",
+      "sha256": "9fe0044e79809c29dc447952b2672e7fd16d52ac7a34c55ff496a15080f7dfe4"
+    },
+    {
+      "before": "gfx/directions/adaga_NE.png",
+      "after": "enemies/tri_orange/directions/tri_orange_NE.png",
+      "sha256": "17820111b94d2defb16f1584af0751c5b90d474397d26eb4fc82932f96ba77fe"
+    },
+    {
+      "before": "gfx/directions/adaga_L.png",
+      "after": "enemies/tri_orange/directions/tri_orange_L.png",
+      "sha256": "1535b1fd619cf679ccf41fefb22ee4993d67686160b87bb5f9e72b178aeeabb4"
+    },
+    {
+      "before": "gfx/directions/adaga_SE.png",
+      "after": "enemies/tri_orange/directions/tri_orange_SE.png",
+      "sha256": "afcf34ac91247c432a0a369105c525cd885859930185d2ea3f12358f4a901f6f"
+    },
+    {
+      "before": "gfx/directions/adaga_S.png",
+      "after": "enemies/tri_orange/directions/tri_orange_S.png",
+      "sha256": "d31a06177154ed39a75d58423789427c65e165d93b25249a16e83514e3eac71b"
+    },
+    {
+      "before": "gfx/directions/adaga_SO.png",
+      "after": "enemies/tri_orange/directions/tri_orange_SO.png",
+      "sha256": "0c008dfca4cd358be4984d011b2f719489f39a9c5293611f05aef26f9b425274"
+    },
+    {
+      "before": "gfx/directions/adaga_O.png",
+      "after": "enemies/tri_orange/directions/tri_orange_O.png",
+      "sha256": "b391e67472bc58d6c86e9b6737a72398573e133f1170ea2941da101e14f65c63"
+    },
+    {
+      "before": "gfx/directions/adaga_NO.png",
+      "after": "enemies/tri_orange/directions/tri_orange_NO.png",
+      "sha256": "f77d7e8561175df27fb0c20f9f3b72a70f6c37c0e9e8bea356701e2292344d6b"
+    },
+    {
+      "before": "validation/adaga_opt.png",
+      "after": "enemies/tri_orange/validation/tri_orange_opt.png",
+      "sha256": "5d4fc1bf42dcb95e4997929d46806e5d315faac02726ea2bd12316a5c5a1d2ef"
+    },
+    {
+      "before": "gfx/artilheiro.png",
+      "after": "enemies/pen_red/pen_red.png",
+      "sha256": "ddf8b06af7a9a5635ecd2ed59cf659a048121f6f98615714581595164e49537a"
+    },
+    {
+      "before": "gfx/turntables/artilheiro.png",
+      "after": "enemies/pen_red/pen_red_turntable.png",
+      "sha256": "1f059637a41736e9b12f969e3db5302c6e9eecc3d68050c7c308ab7fa642df4c"
+    },
+    {
+      "before": "originals/artilheiro.png",
+      "after": "enemies/pen_red/originals/pen_red.png",
+      "sha256": "4a2a21dee47d82b7b0bc049067873084dfe60114b4d3717c317dd2c92a85c745"
+    },
+    {
+      "before": "previews/artilheiro-turntable.gif",
+      "after": "enemies/pen_red/previews/pen_red_turntable.gif",
+      "sha256": "e41dc830c28bc45720e10d7f6035fb3469391816eda89df2551e56c1a9a7ee52"
+    },
+    {
+      "before": "previews/artilheiro-run.gif",
+      "after": "enemies/pen_red/previews/pen_red_run.gif",
+      "sha256": "acbefd467c8984fc223497b9f1bd5cf01f4248df6d63392980739d560f4aa83c"
+    },
+    {
+      "before": "gfx/directions/artilheiro_N.png",
+      "after": "enemies/pen_red/directions/pen_red_N.png",
+      "sha256": "7caf6323cb8e49c8e08279ff4fc5eda85698a5f56dd276e05d16830f2e437b53"
+    },
+    {
+      "before": "gfx/directions/artilheiro_NE.png",
+      "after": "enemies/pen_red/directions/pen_red_NE.png",
+      "sha256": "e196df81b721517cc65d7afe6b84f6c4077a258c26b8d59fc167f16ddc718013"
+    },
+    {
+      "before": "gfx/directions/artilheiro_L.png",
+      "after": "enemies/pen_red/directions/pen_red_L.png",
+      "sha256": "593e062cfcacdebeba0b5103727eaeaa7509b2c955d850bec850e4e71a075edd"
+    },
+    {
+      "before": "gfx/directions/artilheiro_SE.png",
+      "after": "enemies/pen_red/directions/pen_red_SE.png",
+      "sha256": "2bdcb093d7bf8246c7d39a85c0845abefb52bf02350ea7b3c7f4bcb2b730e1bf"
+    },
+    {
+      "before": "gfx/directions/artilheiro_S.png",
+      "after": "enemies/pen_red/directions/pen_red_S.png",
+      "sha256": "141cb0fda3ffab74908eccea5888a1860fa050c4222acd83ca321341cae74c3f"
+    },
+    {
+      "before": "gfx/directions/artilheiro_SO.png",
+      "after": "enemies/pen_red/directions/pen_red_SO.png",
+      "sha256": "a80568446110dcaa844adca7fa58908a749f184b1f9a6ddea4bb6207ce8cad85"
+    },
+    {
+      "before": "gfx/directions/artilheiro_O.png",
+      "after": "enemies/pen_red/directions/pen_red_O.png",
+      "sha256": "2dbf2b11d35df4c052991ca22d3c7f4b964af6e685bdcad812866ce541ad54cd"
+    },
+    {
+      "before": "gfx/directions/artilheiro_NO.png",
+      "after": "enemies/pen_red/directions/pen_red_NO.png",
+      "sha256": "026436092940796e2834ef74917b07dc830f366367a771d426706ece89b36fb8"
+    },
+    {
+      "before": "validation/artilheiro_opt.png",
+      "after": "enemies/pen_red/validation/pen_red_opt.png",
+      "sha256": "3bf9ee88508361631e164c6d85b1b633e36f1f862f23999b2c8590d3ae222abe"
+    },
+    {
+      "before": "gfx/alcateia.png",
+      "after": "enemies/pen_yellow/pen_yellow.png",
+      "sha256": "cf1ebdae6bc502c0222c7e24c79120ff8ad529f726c8e287867c726c28250776"
+    },
+    {
+      "before": "gfx/turntables/alcateia.png",
+      "after": "enemies/pen_yellow/pen_yellow_turntable.png",
+      "sha256": "16baaaa17c1a677d20ce2f39c2b0a2a9afbf4ce7ac43b64f8d71a042fc0c8256"
+    },
+    {
+      "before": "originals/alcateia.png",
+      "after": "enemies/pen_yellow/originals/pen_yellow.png",
+      "sha256": "a514a0772f62fcb47c9f13aba78ba3a61c2ebf93acad04a764b21cc885956117"
+    },
+    {
+      "before": "previews/alcateia-turntable.gif",
+      "after": "enemies/pen_yellow/previews/pen_yellow_turntable.gif",
+      "sha256": "fdaa25c43b382686da5fe79eb8544bb369122648abe7f5bac4fd97f5761a9f7b"
+    },
+    {
+      "before": "previews/alcateia-run.gif",
+      "after": "enemies/pen_yellow/previews/pen_yellow_run.gif",
+      "sha256": "405bd2fd5cada34321b1541b4236def59de4127f1dacd532dca9b076a84b5101"
+    },
+    {
+      "before": "gfx/directions/alcateia_N.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_N.png",
+      "sha256": "44dadb326793113ea9514b8d07ac9e59b1489776d7505023cd596708f6f1e977"
+    },
+    {
+      "before": "gfx/directions/alcateia_NE.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_NE.png",
+      "sha256": "5427e8f31d39a38d5d46add95237ff5a9ed95b453ac4835724e679d00c2f9b51"
+    },
+    {
+      "before": "gfx/directions/alcateia_L.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_L.png",
+      "sha256": "f52ec4b6bd5a1f8d761ade80dc141326a969d6e740d6ecbe6db1dd44f07f6a14"
+    },
+    {
+      "before": "gfx/directions/alcateia_SE.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_SE.png",
+      "sha256": "22a3b49c0da89b9215c43dee6c116fedb8036d8be709cdb079327c2a8058f410"
+    },
+    {
+      "before": "gfx/directions/alcateia_S.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_S.png",
+      "sha256": "c1209e13e2fa028ee0bdea1ee782aea327d54344cadc8580b8fba642efedd3d4"
+    },
+    {
+      "before": "gfx/directions/alcateia_SO.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_SO.png",
+      "sha256": "3e5f416f7df2cc7cc2a9e4455b8f96c8a85e581a7c4ec17a7fc7b1348f976fc1"
+    },
+    {
+      "before": "gfx/directions/alcateia_O.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_O.png",
+      "sha256": "1e68855b9d5095f2097cac3c97e5a7ab2569d2c97a68fe7c336df8e1d1c87dfa"
+    },
+    {
+      "before": "gfx/directions/alcateia_NO.png",
+      "after": "enemies/pen_yellow/directions/pen_yellow_NO.png",
+      "sha256": "882151185f13edb2f31a34e36f5505c5e10da594f043c9af2da692ee265757c8"
+    },
+    {
+      "before": "validation/alcateia_opt.png",
+      "after": "enemies/pen_yellow/validation/pen_yellow_opt.png",
+      "sha256": "90eda455d2f0c73ff5e3077d9652f853acec66245c5afd25514a67b0b6b9845c"
+    },
+    {
+      "before": "gfx/fortaleza.png",
+      "after": "enemies/pen_purple/pen_purple.png",
+      "sha256": "87834aac7e918273aa2feec779020f063ff50901dc2b2007e417800b7b1a9acc"
+    },
+    {
+      "before": "gfx/turntables/fortaleza.png",
+      "after": "enemies/pen_purple/pen_purple_turntable.png",
+      "sha256": "820eb10aafe99df132829050b7ffd5666cf984570ff46092b721972b9c59756b"
+    },
+    {
+      "before": "originals/fortaleza.png",
+      "after": "enemies/pen_purple/originals/pen_purple.png",
+      "sha256": "daf843ae715dec8dec1fe242467486ee15d375f338b8bb8760644eb59434cdd5"
+    },
+    {
+      "before": "previews/fortaleza-turntable.gif",
+      "after": "enemies/pen_purple/previews/pen_purple_turntable.gif",
+      "sha256": "f9c6bc2487badf858df37917afd8a58dd01056018b985280919e3b95d8fd55b2"
+    },
+    {
+      "before": "previews/fortaleza-run.gif",
+      "after": "enemies/pen_purple/previews/pen_purple_run.gif",
+      "sha256": "979e7bf62c6a98e8aa862dc9b3e7989ac0a5bc572b6336fad015ada728a3d1f9"
+    },
+    {
+      "before": "gfx/directions/fortaleza_N.png",
+      "after": "enemies/pen_purple/directions/pen_purple_N.png",
+      "sha256": "ef3ec6de504ec567a7041cfe992b5d0b084f29c27d52ae898af7faab8e7e2cbe"
+    },
+    {
+      "before": "gfx/directions/fortaleza_NE.png",
+      "after": "enemies/pen_purple/directions/pen_purple_NE.png",
+      "sha256": "1ab34f3883078ed8d7cbc3366a8ad0106eb64892bf65aea7fa6c6984ddd177ae"
+    },
+    {
+      "before": "gfx/directions/fortaleza_L.png",
+      "after": "enemies/pen_purple/directions/pen_purple_L.png",
+      "sha256": "22133ed5eba5aa660a5b9755ccc7dcc3076e8414cbfd954d896326bd2f30c3d0"
+    },
+    {
+      "before": "gfx/directions/fortaleza_SE.png",
+      "after": "enemies/pen_purple/directions/pen_purple_SE.png",
+      "sha256": "30de589ad45ce6106b9294eed646f7274211504829ac569d893033d2ce13b7d5"
+    },
+    {
+      "before": "gfx/directions/fortaleza_S.png",
+      "after": "enemies/pen_purple/directions/pen_purple_S.png",
+      "sha256": "127524705c7117150e963445792ceed7528ec745461637c9675c82313ade24ed"
+    },
+    {
+      "before": "gfx/directions/fortaleza_SO.png",
+      "after": "enemies/pen_purple/directions/pen_purple_SO.png",
+      "sha256": "58b38e488790eef8a8e38918a704651f9e314050e88e3c2dc56eff6ed1f7d8ec"
+    },
+    {
+      "before": "gfx/directions/fortaleza_O.png",
+      "after": "enemies/pen_purple/directions/pen_purple_O.png",
+      "sha256": "a5e8b66e702727e27e40bd45dda245d218aec76b0207833c163ebacc1a9de28d"
+    },
+    {
+      "before": "gfx/directions/fortaleza_NO.png",
+      "after": "enemies/pen_purple/directions/pen_purple_NO.png",
+      "sha256": "47cfde58e07a159863bba54659016e7715d8b817211679e2cb5c0c40d850eb94"
+    },
+    {
+      "before": "validation/fortaleza_opt.png",
+      "after": "enemies/pen_purple/validation/pen_purple_opt.png",
+      "sha256": "413ba1b06d463823c168bbbbb63cb8cbbf58a5954f39262dd835b058be93705a"
+    },
+    {
+      "before": "gfx/meteoro.png",
+      "after": "enemies/pen_orange/pen_orange.png",
+      "sha256": "fc368e1ef2f3de4f1b16f6e70e1ba2e4c5e8fb9ec707435df08243f945b4ce87"
+    },
+    {
+      "before": "gfx/turntables/meteoro.png",
+      "after": "enemies/pen_orange/pen_orange_turntable.png",
+      "sha256": "30046525372c84632662c0ff7ea64df12cc4f24bf633128ea622f3016704971c"
+    },
+    {
+      "before": "originals/meteoro.png",
+      "after": "enemies/pen_orange/originals/pen_orange.png",
+      "sha256": "3ee80592d6300329ff9fecae6a44d3525b399ba470f5f884369b686b37d732d8"
+    },
+    {
+      "before": "previews/meteoro-turntable.gif",
+      "after": "enemies/pen_orange/previews/pen_orange_turntable.gif",
+      "sha256": "9ecb4bc5cfaa37d96057650f04f315dd213fe8014cdd54c06f3d9c605097dd8d"
+    },
+    {
+      "before": "previews/meteoro-run.gif",
+      "after": "enemies/pen_orange/previews/pen_orange_run.gif",
+      "sha256": "54faee654e6013d63721e39a09dfbec9cb0e2258a9c741236a7f91c99390bfb2"
+    },
+    {
+      "before": "gfx/directions/meteoro_N.png",
+      "after": "enemies/pen_orange/directions/pen_orange_N.png",
+      "sha256": "b9438dfffd58e5c744493268284d875c5001bb428e6d542da222a475aaa95abc"
+    },
+    {
+      "before": "gfx/directions/meteoro_NE.png",
+      "after": "enemies/pen_orange/directions/pen_orange_NE.png",
+      "sha256": "795b6fa5f210d787ac9acf1f022fb761d0b86d13f61e8a939c13be6585769eaa"
+    },
+    {
+      "before": "gfx/directions/meteoro_L.png",
+      "after": "enemies/pen_orange/directions/pen_orange_L.png",
+      "sha256": "0e3afa61a77d3e505acbe5e8f12b185775aec180d15614b83c78833a664b136a"
+    },
+    {
+      "before": "gfx/directions/meteoro_SE.png",
+      "after": "enemies/pen_orange/directions/pen_orange_SE.png",
+      "sha256": "78664af90b9362dfe1d1e5b06c7ae235ab4a13d8034f57bb1cf1ad3b8b89e37c"
+    },
+    {
+      "before": "gfx/directions/meteoro_S.png",
+      "after": "enemies/pen_orange/directions/pen_orange_S.png",
+      "sha256": "d98e0b855c28bdd0a5f28e5107a218d89d69a7fdc69596494fd60d65c2ddf03a"
+    },
+    {
+      "before": "gfx/directions/meteoro_SO.png",
+      "after": "enemies/pen_orange/directions/pen_orange_SO.png",
+      "sha256": "dcc17614443dd8bfcaa96d0efb4b13fe555b9a445cc62ce98cdd33d2d471419b"
+    },
+    {
+      "before": "gfx/directions/meteoro_O.png",
+      "after": "enemies/pen_orange/directions/pen_orange_O.png",
+      "sha256": "9464b49e717abcc614ff69d48bac1205d14db7fb48be9191ef408290a5a61846"
+    },
+    {
+      "before": "gfx/directions/meteoro_NO.png",
+      "after": "enemies/pen_orange/directions/pen_orange_NO.png",
+      "sha256": "3d25480e1f4212633229ad95457f127e87c8ffc6c5d105f37fdd43562b4ddc98"
+    },
+    {
+      "before": "validation/meteoro_opt.png",
+      "after": "enemies/pen_orange/validation/pen_orange_opt.png",
+      "sha256": "b841a6c7b08f152a2ed17e803664008874c0a2e527b1832103b7cd6585bd1898"
+    },
+    {
+      "before": "gfx/dummy.png",
+      "after": "enemies/dummy/dummy.png",
+      "sha256": "3fd407f9bb8cdd3715e39136449aba2ca75575fde80a3784c33a4ac671f87648"
+    },
+    {
+      "before": "gfx/turntables/dummy.png",
+      "after": "enemies/dummy/dummy_turntable.png",
+      "sha256": "6077a28252e0922ea5c0b490b6431630426aeb9d4e1b58e626fed6ce96b429ec"
+    },
+    {
+      "before": "originals/dummy.png",
+      "after": "enemies/dummy/originals/dummy.png",
+      "sha256": "20a906aa851bd437f4026987f8ccfd34da85e62886c09435ef839ea521c90819"
+    },
+    {
+      "before": "previews/dummy-turntable.gif",
+      "after": "enemies/dummy/previews/dummy_turntable.gif",
+      "sha256": "e6e73353094d5e14b27855f816c5c94be292f5d39faca60033f6d7c54cc61009"
+    },
+    {
+      "before": "previews/dummy-run.gif",
+      "after": "enemies/dummy/previews/dummy_run.gif",
+      "sha256": "af8533e2eca3b3685c610ddd51ca6a909a5cba6e62b915dec0b68c3a0e4cca43"
+    },
+    {
+      "before": "gfx/directions/dummy_N.png",
+      "after": "enemies/dummy/directions/dummy_N.png",
+      "sha256": "945881e82c39e354625a6ded71e957925361e51fe10db78cc19d3df2e1ac842a"
+    },
+    {
+      "before": "gfx/directions/dummy_NE.png",
+      "after": "enemies/dummy/directions/dummy_NE.png",
+      "sha256": "2f5b1f79a4700123a543494e4cd1667e7288f6073b23cbe19fb8d496ea859548"
+    },
+    {
+      "before": "gfx/directions/dummy_L.png",
+      "after": "enemies/dummy/directions/dummy_L.png",
+      "sha256": "da53e2ce0921336877ad583001e7e6549b92270e202bf7f20a1d50f64e8fae35"
+    },
+    {
+      "before": "gfx/directions/dummy_SE.png",
+      "after": "enemies/dummy/directions/dummy_SE.png",
+      "sha256": "afac0f1df54eb01fcad64090102ddf4ee95fc1511263469978ee6c4375709c70"
+    },
+    {
+      "before": "gfx/directions/dummy_S.png",
+      "after": "enemies/dummy/directions/dummy_S.png",
+      "sha256": "94342c053aafdd88aa843030215441b51a017f2c9e7f56f8fe1cfca40a69791f"
+    },
+    {
+      "before": "gfx/directions/dummy_SO.png",
+      "after": "enemies/dummy/directions/dummy_SO.png",
+      "sha256": "7dc7f08ec193e81ae4b8db2d3dff9805a6b9a8a4a1f07517f7c19eb5b7b4f150"
+    },
+    {
+      "before": "gfx/directions/dummy_O.png",
+      "after": "enemies/dummy/directions/dummy_O.png",
+      "sha256": "8deae7c4fdd0e17998bca158cd6dd76f5411298076e9a6ad98ec77f94d462d2d"
+    },
+    {
+      "before": "gfx/directions/dummy_NO.png",
+      "after": "enemies/dummy/directions/dummy_NO.png",
+      "sha256": "63d6981e0839fdba51cd40fc2397f3ebb5961d2e8d925ac4708a7333d1e4ae08"
+    },
+    {
+      "before": "validation/dummy_opt.png",
+      "after": "enemies/dummy/validation/dummy_opt.png",
+      "sha256": "562efeab783c3ee3f8484b2a4b526d6dc0c585a2c9dfbde79b9c25d156b1e350"
+    },
+    {
+      "before": "gfx/alvo.png",
+      "after": "enemies/target/target.png",
+      "sha256": "c950e628871f5e10622edbe55f78a5a6e31e59a1be4dc54172323eaeb847fcd8"
+    },
+    {
+      "before": "gfx/turntables/alvo.png",
+      "after": "enemies/target/target_turntable.png",
+      "sha256": "01b82b93d700d0f59b44cd7412ffebec8483990c55683f936763f1904d4ccd5b"
+    },
+    {
+      "before": "originals/alvo.png",
+      "after": "enemies/target/originals/target.png",
+      "sha256": "fbcdfeeb447286bb988a1451736d3c16a57a36f7af43380c2b518aa4c91e973a"
+    },
+    {
+      "before": "previews/alvo-turntable.gif",
+      "after": "enemies/target/previews/target_turntable.gif",
+      "sha256": "5750948ac4eafc3221fd6cd523e9675db30aa5d7bd4286a295faa40519783919"
+    },
+    {
+      "before": "previews/alvo-run.gif",
+      "after": "enemies/target/previews/target_run.gif",
+      "sha256": "f6907f72aaaa6dfbed5b8150fd0f54bb01710bad21192d34471a94ea88efff82"
+    },
+    {
+      "before": "gfx/directions/alvo_N.png",
+      "after": "enemies/target/directions/target_N.png",
+      "sha256": "2a39e67d798d7c2d5859943cb8eeaf4794c1f3c4ea86ee7c9021223031d9c275"
+    },
+    {
+      "before": "gfx/directions/alvo_NE.png",
+      "after": "enemies/target/directions/target_NE.png",
+      "sha256": "9d638163c73eb3f481b4690436df614a4418afd9023530c5628fe9b46bc0f39a"
+    },
+    {
+      "before": "gfx/directions/alvo_L.png",
+      "after": "enemies/target/directions/target_L.png",
+      "sha256": "9caceeadf995b0aec9e43bb3be6e24cc63109844c4e6c5207f53b57eb46a235e"
+    },
+    {
+      "before": "gfx/directions/alvo_SE.png",
+      "after": "enemies/target/directions/target_SE.png",
+      "sha256": "c640100db2d43b5228509968a800db4fb690bdbb27955d5d0e0cefdba67af0fb"
+    },
+    {
+      "before": "gfx/directions/alvo_S.png",
+      "after": "enemies/target/directions/target_S.png",
+      "sha256": "0de422878003b53d9b1513224a6108ee19476e2ef05be584b93a49d583d46596"
+    },
+    {
+      "before": "gfx/directions/alvo_SO.png",
+      "after": "enemies/target/directions/target_SO.png",
+      "sha256": "73a61b230e08f969adb5d65a7fdf0ee83f7cd111e64cb13377331b1e330a35a1"
+    },
+    {
+      "before": "gfx/directions/alvo_O.png",
+      "after": "enemies/target/directions/target_O.png",
+      "sha256": "04a26584bf1440371332ffa9120e1114e9b693e6988d88d53e8fbb34a53e7b6a"
+    },
+    {
+      "before": "gfx/directions/alvo_NO.png",
+      "after": "enemies/target/directions/target_NO.png",
+      "sha256": "0ca4d88649730700db23fb1068d132b5a08a5ba1869912d3be6734a7a5df8c47"
+    },
+    {
+      "before": "validation/alvo_opt.png",
+      "after": "enemies/target/validation/target_opt.png",
+      "sha256": "50dc8688696cf0a509c73f60f6763e4731daeadd5b83803610ce1e1074449ee6"
+    },
+    {
+      "before": "gfx/lacraia.png",
+      "after": "enemies/boss/boss.png",
+      "sha256": "befcdc05606c76a35ab7201a5f730544d294f8844265f4d100715b6d37a98f98"
+    },
+    {
+      "before": "gfx/turntables/lacraia.png",
+      "after": "enemies/boss/boss_turntable.png",
+      "sha256": "23afe2e1d3cee502435d2ccab0cecf4feeab3939d11895136888eb585fe89343"
+    },
+    {
+      "before": "originals/lacraia.png",
+      "after": "enemies/boss/originals/boss.png",
+      "sha256": "fa24dd0dc167a5b3f01b2c1742ab39568370690f9380c84b10bfbfb16a866871"
+    },
+    {
+      "before": "previews/lacraia-turntable.gif",
+      "after": "enemies/boss/previews/boss_turntable.gif",
+      "sha256": "cdfe789ec3b66eeef2af96e35636725bb683d7d54c40ff6e3ddca7ef994d37e7"
+    },
+    {
+      "before": "previews/lacraia-run.gif",
+      "after": "enemies/boss/previews/boss_run.gif",
+      "sha256": "cb1f778d811c5414a6f8729fbd235628d8ac3e88821b52fa8501b05e31e11190"
+    },
+    {
+      "before": "gfx/directions/lacraia_N.png",
+      "after": "enemies/boss/directions/boss_N.png",
+      "sha256": "24430dee3d3bcb5d5cbfec8ce64912bfe90784c0a3ba105b98566cfe792f1f14"
+    },
+    {
+      "before": "gfx/directions/lacraia_NE.png",
+      "after": "enemies/boss/directions/boss_NE.png",
+      "sha256": "d89d3996618f6c81abde7b188a02fe6a2c65fd97c0724f4d07f83039d89d5986"
+    },
+    {
+      "before": "gfx/directions/lacraia_L.png",
+      "after": "enemies/boss/directions/boss_L.png",
+      "sha256": "1f4ffaf4053b3b45c7183a2c98eb34a6d2bd5e0f012506d2788bbf99259a383e"
+    },
+    {
+      "before": "gfx/directions/lacraia_SE.png",
+      "after": "enemies/boss/directions/boss_SE.png",
+      "sha256": "da0e078cfeb784e146b8403df5d46a858cefce7c0f643829b5ed32f926539505"
+    },
+    {
+      "before": "gfx/directions/lacraia_S.png",
+      "after": "enemies/boss/directions/boss_S.png",
+      "sha256": "16c37967f8fa509cdb35ecadd2f9d09428bb27830f38ed1adb07cb4f01745672"
+    },
+    {
+      "before": "gfx/directions/lacraia_SO.png",
+      "after": "enemies/boss/directions/boss_SO.png",
+      "sha256": "a213529d13a473b4647607f225662efc4dcdc2a3d3cd71a3f3b8f04823d45cb5"
+    },
+    {
+      "before": "gfx/directions/lacraia_O.png",
+      "after": "enemies/boss/directions/boss_O.png",
+      "sha256": "66514bed702d46f06c7cde87ee090d873b291e870c840747f5a7070127d0236d"
+    },
+    {
+      "before": "gfx/directions/lacraia_NO.png",
+      "after": "enemies/boss/directions/boss_NO.png",
+      "sha256": "ab6e65ad365d1e68f8c84afeacc95a61710abc5b8952a8b46e12e75bbd794118"
+    },
+    {
+      "before": "validation/lacraia_opt.png",
+      "after": "enemies/boss/validation/boss_opt.png",
+      "sha256": "f4c496a7ed229c83c48fe3146de029f6eb8723aeac3e38e57ef75e77e3b1dc74"
+    },
+    {
+      "before": "previews/directions-1.png",
+      "after": "previews/catalog_01.png",
+      "sha256": "56c45b3e0906dec72c94a875b14f351e78330009c28e74608fe33960034f8936"
+    },
+    {
+      "before": "previews/directions-2.png",
+      "after": "previews/catalog_02.png",
+      "sha256": "da2e6e4647ca572e1a664bca95403b787741da8a18b7dda7ec18e70a4c54bdeb"
+    },
+    {
+      "before": "previews/directions-3.png",
+      "after": "previews/catalog_03.png",
+      "sha256": "4a89e625279920f5d15916e93a9b4182550bf6a90edcf5f4abfa789d946e6b1c"
+    },
+    {
+      "before": "darkspace-enemies-8directions-sgdk.zip",
+      "after": "validation/darkspace-enemies-before-organization.zip",
+      "sha256": "71db5c9e1a678aff5e7cb5777b9204d507c841d3956dde986dcbaaa857974647"
+    }
+  ],
+  "image_bytes_preserved": true
+}

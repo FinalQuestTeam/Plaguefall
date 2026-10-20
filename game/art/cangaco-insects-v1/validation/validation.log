@@ -1,0 +1,38 @@
+{
+  "enemies": 13,
+  "directions": 104,
+  "animation_rows": 208,
+  "frames_exported": 1040,
+  "runtime_canonical_frames": 650,
+  "png_cell": [
+    32,
+    48
+  ],
+  "png_sheet": [
+    192,
+    768
+  ],
+  "per_direction_sheet": [
+    192,
+    96
+  ],
+  "frame_tile_count": 24,
+  "palette_visible_max": 15,
+  "alpha": [
+    0,
+    255
+  ],
+  "renderer_stress": {
+    "frames_stressed": 600,
+    "peak_runtime_sat": 66,
+    "peak_scanline_sprites": 20,
+    "peak_scanline_pixels": 320,
+    "global_and_dma_failure_tests": true
+  },
+  "raw_frame_rom_bytes": 499200,
+  "menu_icon_rom_bytes": 7680,
+  "manual_renderer_vdp_pieces": 2,
+  "source_art_tool": "image_gen built-in",
+  "perspective_note": "60 degrees is a 2D art target, not a measured 3D projection.",
+  "cycle_note": "Pixel differences include the loop seam; visual gait still needs art review."
+}

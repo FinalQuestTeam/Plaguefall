@@ -1,0 +1,48 @@
+{
+  "rom": "/Users/fabiocantarimmelo/.codex/worktrees/cangaco-sprites-60/MegaDrive/game/out/release/rom.bin",
+  "rom_sha256": "2bbe67bbffbf1b186ad08598b2ee6611c0d8e81c5a442b602b711905fce2f7aa",
+  "enemy_type": 1,
+  "method": "Count SPRITES_draw frame counter vs VBlank; SGDK 8-frame CPU load; moving sprites in controlled sandbox, same type, no scanline congestion. Gameplay logic active: True.",
+  "cases": [
+    {
+      "enemies": 1,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 55.03,
+      "cpu_load_p95_pct": 55.76
+    },
+    {
+      "enemies": 3,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 64.3,
+      "cpu_load_p95_pct": 65.48
+    },
+    {
+      "enemies": 8,
+      "physical_frames": 240,
+      "game_frames": 207,
+      "game_fps_at_60hz": 51.75,
+      "cpu_load_mean_pct": 89.56,
+      "cpu_load_p95_pct": 91.94
+    },
+    {
+      "enemies": 15,
+      "physical_frames": 240,
+      "game_frames": 120,
+      "game_fps_at_60hz": 30.0,
+      "cpu_load_mean_pct": 128.89,
+      "cpu_load_p95_pct": 130.57
+    },
+    {
+      "enemies": 16,
+      "physical_frames": 240,
+      "game_frames": 120,
+      "game_fps_at_60hz": 30.0,
+      "cpu_load_mean_pct": 134.75,
+      "cpu_load_p95_pct": 136.28
+    }
+  ]
+}

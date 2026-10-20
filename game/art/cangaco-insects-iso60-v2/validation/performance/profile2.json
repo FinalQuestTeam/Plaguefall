@@ -1,0 +1,35 @@
+{
+  "rom": "/private/tmp/redrex-render-profile-rjtphmgp/game/out/release/rom.bin",
+  "rom_sha256": "d1102328a0d5948375c05c9b0d159abd235f6da2a6d42125f1f56021012e1867",
+  "method": "Count SPRITES_draw frame counter vs VBlank; SGDK 8-frame CPU load; moving sprites in controlled sandbox, same type, no scanline congestion. Gameplay logic active: False.",
+  "cases": [
+    {
+      "enemies": 0,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 39.19,
+      "cpu_load_p95_pct": 39.99,
+      "render_stage_subticks": [
+        0,
+        29.04,
+        91.25,
+        242.62
+      ]
+    },
+    {
+      "enemies": 15,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 89.07,
+      "cpu_load_p95_pct": 90.38,
+      "render_stage_subticks": [
+        42.5,
+        12.44,
+        229.48,
+        664.83
+      ]
+    }
+  ]
+}

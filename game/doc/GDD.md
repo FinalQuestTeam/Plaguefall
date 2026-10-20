@@ -5,6 +5,8 @@
 > **Documento gerado a partir do código-fonte** (`game/src/`) — os valores refletem a implementação real.
 > Tempos convertidos assumindo **60 fps (NTSC)**; em PAL (`fps` = 50) as cadências se ajustam automaticamente.
 
+> **Nova direção visual:** cangaço cyberpunk brasileiro, com figuras humanas, implantes cibernéticos, pedaços de armadura sobre tecido e tecnologia adaptada de objetos cotidianos. O protagonista usa arma de fogo; o [guerreiro Rex](../art/cangaco-protagonista-iso60-v2/README.md) já substitui o mech, com animação e oito direções. Os [13 inimigos nas resoluções nativas](../art/cangaco-insects-sized-v3/README.md) já foram convertidos em sprites e integrados, com auditoria de memória. A câmera ortográfica elevada a **60° acima do chão** continua sendo requisito: Rex e os 13 inimigos receberam um [redesenho na versão 2](../art/camera-60-redraw-v2/README.md), comparado visualmente a guias geométricos dessa câmera. A elevação exata de uma câmera 3D não é medida a partir dos PNGs 2D. Mantêm-se as direções `0=N, 1=NE, 2=L, 3=SE, 4=S, 5=SO, 6=O, 7=NO`. As folhas de robôs em `art/darkspace-8dir-v3/` são estudos anteriores. Nossa Senhora Aparecida substitui a antena no objetivo PROTEGER, mantendo24×24 e todas as regras do NPC. A parceira feminina está somente em concept, aguardando aprovação; não existe sprite ou segundo NPC integrado. [Inventário e pendências](../art/INVENTARIO-SPRITES.md).
+
 ---
 
 ## Sumário
@@ -22,7 +24,7 @@
 
 ## Visão geral
 
-**RedRex** é um shooter de arena *top-down* para Mega Drive. O jogador pilota um **mech 32×32** (hitbox 16×16) numa arena de tela única, eliminando insetos-máquina que surgem em ondas. Em cada fase da campanha o objetivo é **matar N inimigos** (`killTarget`); na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
+**RedRex** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Rex, humano cibernético32×48** (hitbox 16×16) numa arena de tela única, eliminando insetos gigantes que surgem em ondas. Em cada fase da campanha o objetivo é **matar N inimigos** (`killTarget`); na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
 
 A arena ocupa a tela inteira; a linha 0 de tiles é o HUD.
 
@@ -108,7 +110,7 @@ O inventário é redesenhado **só quando o estado muda** (`HUD_drawInventoryIfD
 
 ## O jogador
 
-Mech **32×32** (sprite, PAL2, 8 direções — encara a direção do movimento) com **hitbox 16×16**. Movimento em **fixed-point 26.6**. Só **3 direções** são geradas na VRAM (N/NE/E); as outras 5 saem por **espelhamento de hardware** (H/V-flip) — ver §6.
+Rex **32×48** (sprite em duas peças, PAL2, oito direções) mantém a **hitbox16×16**. Movimento em **fixed-point26.6**. Cinco vistas canônicas N/NE/L/SE/S; SO/O/NO usam somente HFLIP. Runtime com dois quadros de repouso e quatro de movimento, transmitidos para um frame em VRAM — ver §6.
 
 | Parâmetro | Constante | Valor |
 |---|---|---|
@@ -136,7 +138,7 @@ A direção de tiro (`faceX/faceY`) segue a última direção pressionada (8 dir
 | Máx. simultâneos (`MAX_PSHOTS`) | 16 |
 | Potência (leque) | 1 a `SHOTS_MAX_POWER` = 5 balas por disparo (item bala) |
 | Abertura do leque | cisalhamento `SHOTS_ARC_SHEAR` = 8 |
-| Origem | boca do mech (`PSHOT_MUZZLE_FWD` = 13 px à frente, 5 px à direita) |
+| Origem | arma de Rex (`PSHOT_MUZZLE_FWD` = 13 px à frente, 5 px à direita) |
 | Dano | 1 por bala (HP dos inimigos é medido em tiros) |
 
 **Modos de tiro** (ativados pelo inventário; a carga é consumida **a cada disparo**, mesmo errando):
@@ -178,7 +180,7 @@ Fixed-point 26.6, mirados no centro do jogador no instante do disparo (`getAppro
 
 ## A matriz forma × cor
 
-Cada inimigo combina uma **forma** (perfil de resistência) com uma **cor** (comportamento). Todos são insetos-máquina com arte própria (besouro/mosca/aranha) que **encara o jogador** nas 8 direções — 3 geradas, 5 espelhadas por hardware (§6).
+Cada inimigo combina uma **forma** (perfil de resistência) com uma **cor** (comportamento). As famílias visuais atuais são serra-pau (quadrado), mutuca (triângulo) e saúva (pentágono), com implantes e placas reaproveitadas. O chefe usa o concept do escorpião, preservando o nome Lacraia. Há oito direções, com cinco vistas desenhadas e três por espelhamento horizontal (§6).
 
 | | **Vermelho** (atira) | **Amarelo** (persegue) | **Roxo** (escudo cíclico) | **Laranja** (investida) |
 |---|---|---|---|---|
@@ -217,7 +219,7 @@ Velocidade em unidades 26.6 por frame (`ENEMY_SPEED_FP` = 40 ≈ 0,63 px/frame).
 
 ## O chefe: Lacraia (`enemy_boss.c`)
 
-Centopeia vermelha **48×48** (arte própria `INS_BOSS48`, desenhada como 4 sprites de 24×24). Aparece na **fase 16** (e na arena de teste, estágio 3). Contador mestre `tA` dirige todos os ciclos:
+Escorpião **48×48** (ID `boss`, nome Lacraia preservado; quatro peças de32×32,32×16,16×32 e16×16). Aparece na **fase 16** (e na arena de teste, estágio 3). Contador mestre `tA` dirige todos os ciclos:
 
 | Mecânica | Valor |
 |---|---|
@@ -382,28 +384,35 @@ Cada evento arma um timer; `SFX_update` requisita a voz ao árbitro com priorida
 
 ## Gráficos
 
-### Arte procedural por char-maps
+### Arte e carregamento
 
-Não há bitmaps no build (exceto a derivação offline do fundo do título). Toda a arte vem de **char-maps** em `system/video/sprites/*.h`, pintados em tiles 4bpp no boot ou por fase. Os tiles base são só os **70** elementos fixos (projéteis, parede, porta, sombra, `TILE_STATUS`, poça de sangue, itens, ícones); os sprites de personagem/inimigo ficam nas regiões rotacionadas.
+Os 13 inimigos usam PNGs indexados exportados offline e BINs 4bpp em res/insects.res.
+Inimigos nativos16×16,24×24,32×32 e chefe48×48; Rex permanece32×48. O runtime usa dois frames de repouso e quatro de movimento. As matrizes históricas32×48 permanecem arquivadas.
+Os demais elementos continuam procedurais por char-maps.
 
-- `tilegen.c` — tiles fixos + os ícones 8×8 de `icons_data.h` (caveira, bomba, raio, faísca, escudo, gelo, fogo).
-- `chars.c` — mech 32×32 (1 dos 9 personagens carregado por vez), **3 direções geradas** (N/NE/E) + 5 por flip = **48 tiles**; PAL2.
-- `enemygfx.c` — insetos, **gerados por fase**, **3 direções** cada + 5 por flip. **Pools por tamanho** com descarte por vida útil (um tipo cede o slot quando sai do **alcance do nó atual no grafo** — `GRAPH_reachableTypes`, alcançabilidade real, funciona com bifurcações): 5 slots de 16 px + 3 de 24 px + 2 de 32 px = **237 tiles** (`ENEMY_ROT_COUNT`). O chefe tem região própria (`BOSS_ROT`, 288 tiles, ainda em 8 direções — quadrantes manuais não flipam).
-- `floor.c` — chão 32×32 no **BG_B** (PAL3), 3 variantes simples + 2 tilesets do mix = **80 tiles**.
-- `titlebg.c` — fundo do título (índice 0 reservado — no MD ele rende a cor de fundo, não a da paleta).
+- tilegen.c: 83 tiles fixos e PAL1 compartilhada entre objetos e inimigos.
+- enemygfx.c: pool limitado de320 tiles (10240 bytes), com blocos de4 tiles, liberação e reutilização por entidade, mais
+  15 slots de 16 tiles para ícones. Até quatro frames por VBlank (128/288/512/1152 bytes por frame conforme tamanho),
+  com fila circular e adiamento das atualizações excedentes.
+- ROM: 390 frames canônicos, cinco direções × seis poses × treze tipos.
+  As três vistas ocidentais usam apenas HFLIP. Frente e costas são distintas.
+- BOSS_ROT: 72 tiles reservados aos dois retratos de história, separados do cache.
+- herogfx.c: Rex 32×48 em duas peças, um frame de 24 tiles dentro da reserva existente de 48 tiles, PAL2. Cinco vistas desenhadas e três por HFLIP; repouso de dois frames e corrida de quatro. Até 768 bytes adicionais de DMA por quadro, com prioridade sobre os inimigos.
+- chars.c: nove mechs históricos, mantidos apenas na galeria.
+- floor.c: 80 tiles no BG_B, PAL3. Cenário e projeção de mapa ainda são os anteriores.
 
-### Espelhamento de hardware (flip H/V)
-
-Mech e inimigos só geram **3 das 8 direções** (N, NE, E); as outras 5 são reflexões, obtidas ligando os bits `HFLIP`/`VFLIP` do sprite (S=vflip(N), W=hflip(E), NW=hflip(NE), SW=hflip+vflip(NE), etc.). Corta o custo de VRAM dessas rotações em **62%**.
-
-**Orçamento de VRAM**: ~**835** tiles usados no pico de gameplay, de **1408** disponíveis (tilemaps em 0xB000) — ~**570 livres**. Chegou aí removendo ~100 tiles de arte legada (quadrados/base antigos) e adotando o flip. Cargas grandes usam **display desligado** (DMA com display ativo trunca).
+**Build auditada:** ROM de524288 bytes dentro de 1 MiB; RAM estática de6165 bytes;
+47332 bytes de heap livre observados. Os tiles de gameplay terminam no byte27488,
+a fonte começa no byte 46080 e há 18592 bytes de intervalo livre.
+Relatórios e capturas em art/cangaco-insects-sized-v3/validation/.
+O relatório performance/README.md separa os testes de memória dos FPS; quinze inimigos com lógica completa ainda ficam abaixo da referência ASCII.
 
 ### Lista de sprites (`spritelist.c`)
 
 Reconstruída a cada frame, encadeada por link, enviada via `DMA_QUEUE`:
 
-1. **Jogador** (32×32, fixo no link 0 — nunca descartado pelo VDP; usa flip conforme a direção).
-2. **Inimigos**, com **rotação de flicker**: a varredura começa em um índice diferente por quadro, distribuindo o descarte do VDP (limite de 20 sprites/320 px por linha) entre todos — o piscar em cena cheia fica uniforme. Cada inimigo usa o slot da direção + os bits de flip. Blindados piscam de propósito; ao tomar dano brilham branco. Chefe = 4 sprites 24×24. Overlays de status por cima: **ciano contínuo** (gelo) e **pulso vermelho no tique** (fogo).
+1. **Jogador Rex** (32×48, duas peças 32×32 e 32×16, nos primeiros links; HFLIP nas vistas ocidentais).
+2. **Inimigos**, com **rotação de flicker**: a varredura começa em um índice diferente por quadro, distribuindo o descarte do VDP (limite de 20 sprites/320 px por linha) entre todos — o piscar em cena cheia fica uniforme. Os inimigos comuns usam uma peça16/24/32; o chefe usa quatro peças (32×32,32×16,16×32,16×16) com espelhamento que reposiciona as colunas. A admissão por software respeita 80 sprites totais, 20 por linha e 320 pixels por linha. Blindados piscam de propósito; ao tomar dano brilham branco. O chefe usa célula48×48. Overlays de status por cima: **ciano contínuo** (gelo) e **pulso vermelho no tique** (fogo).
 3. **Itens**, **projéteis**, **arcos do raio**.
 4. **Sombra do jogador** (prioridade baixa, sob os demais).
 
@@ -418,7 +427,7 @@ Reconstruída a cada frame, encadeada por link, enviada via `DMA_QUEUE`:
 |---|---|
 | PAL0 | Texto/HUD (letras no índice 15). Índices 1–14 = **paleta de flash**: brancos (dano) exceto o **índice 2 = vermelho** (pulso de fogo). Reaproveitada sem custo de VRAM |
 | PAL1 | Objetos (1 contorno claro, 2 ciano/gelo, 3 vermelho, 4 amarelo, 5 tiro inimigo, 6/7 parede, 8 roxo, 9/10 lama, 11 escuro, 12 laranja, 13 cinza, 14 verde, 15 azul) |
-| PAL2 | Mech do jogador |
+| PAL2 | Rex / galeria histórica |
 | PAL3 | Chão (varia por fase; alvo do flash da bomba) |
 
 > **Flash sem gastar VRAM**: o corpo do inimigo desenhado com **PAL0** fica todo branco (dano); o `TILE_STATUS` desenhado com PAL0 (índice 2 = vermelho) vira o overlay de fogo; com PAL1 (índice 2 = ciano) vira o gelo. Um tile, três efeitos, pela troca de paleta.

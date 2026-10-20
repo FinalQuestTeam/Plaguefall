@@ -4,6 +4,7 @@
 
 #include "items/items.h"
 #include "system/video/sprites/tiles.h"
+#include "system/video/spritelist.h"
 #include "system/audio/sfx.h"
 #include "core/game.h"
 #include "core/inventory.h"
@@ -116,9 +117,8 @@ u16 ITEMS_draw(u16 n)
         if ((it->ttl < fps * 2) && ((it->ttl >> 2) & 1)) continue;
 
         const u16 tile = ITEM_DEFS[it->type]->tile;
-        VDP_setSpriteFull(n, it->x, it->y, SPRITE_SIZE(2, 2),
-            TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, TILE_USER_INDEX + tile), n + 1);
-        n++;
+        SPRITES_emit(&n, it->x, it->y, SPRITE_SIZE(2, 2),
+            TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, TILE_USER_INDEX + tile));
     }
     return n;
 }

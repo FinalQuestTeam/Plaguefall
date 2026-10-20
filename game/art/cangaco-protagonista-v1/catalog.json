@@ -1,0 +1,26 @@
+{
+  "id": "heroi",
+  "name": "Rex",
+  "cell": [
+    32,
+    48
+  ],
+  "sheet": "heroi/heroi.png",
+  "directions": [
+    "N",
+    "NE",
+    "L",
+    "SE",
+    "S",
+    "SO",
+    "O",
+    "NO"
+  ],
+  "animations": {
+    "idle": 4,
+    "run": 6
+  },
+  "palette": "palette.json",
+  "resource": "heroi.res",
+  "prompt": "prompts/heroi.txt"
+}

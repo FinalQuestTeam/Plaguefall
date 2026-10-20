@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "pass_scope": "native_assets_hardware_limits_and_combat",
+  "source_tool": "image_gen built-in",
+  "enemies": 13,
+  "directions": 104,
+  "runtime_canonical_frames": 390,
+  "frame_references": 624,
+  "idle_frames": 2,
+  "run_frames": 4,
+  "native_sizes": [
+    16,
+    24,
+    32,
+    48
+  ],
+  "enemy_animation_rom_bytes": 118080,
+  "enemy_vram_pool_bytes": 10240,
+  "per_enemy_tiles": {
+    "sq_red": 4,
+    "sq_yellow": 4,
+    "sq_purple": 16,
+    "sq_orange": 4,
+    "tri_red": 4,
+    "tri_yellow": 4,
+    "tri_purple": 4,
+    "tri_orange": 4,
+    "pen_red": 9,
+    "pen_yellow": 9,
+    "pen_purple": 16,
+    "pen_orange": 9,
+    "boss": 36
+  },
+  "palette_visible_max": 15,
+  "transparent_index": 0,
+  "raw_sha256": "43834017e016788138980a1a4e45f4754c160fab50060f234085b076fc09883c",
+  "runtime": {
+    "native_projection_all_types": true,
+    "cache_churn_frames": 1024,
+    "boss_composite_mirror": true,
+    "horizontal_mirror_without_DMA": true,
+    "deferred_random_frames": 128,
+    "frames_stressed": 600,
+    "peak_runtime_sat": 65,
+    "peak_scanline_sprites": 20,
+    "peak_scanline_pixels": 320,
+    "global_and_dma_failure_tests": true
+  },
+  "combat": {
+    "passed": true,
+    "collision_cases": 1380,
+    "types": 15,
+    "directions": 8,
+    "native_size_and_projection": true,
+    "shield_freeze_burn_and_death": true
+  },
+  "camera_review": "Visual elevated-camera review; source and native PNGs checked. No exact 3D camera angle can be certified from these 2D rasters.",
+  "projection": "Native enemy square and ground hitbox have identical dimensions; bodies, both projectile pools and chain arcs share VIDEO_HEIGHT_OFFSET=16. Contact/AI coordinates unchanged."
+}

@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "rom_bytes": 917504,
+  "rom_header_capacity_bytes": 1048576,
+  "rom_headroom_bytes": 131072,
+  "rom_sha256": "8ea53f5514a6b465b7aeb84085ad88bd21d46a69352b61f48cbb4f9cd8549dfd",
+  "linked_rom_text_bytes": 818264,
+  "ram_initialized_bytes": 84,
+  "ram_bss_bytes": 5040,
+  "ram_static_total_bytes": 5124,
+  "ram_static_growth_bytes": 738,
+  "ram_stack_reserved_bytes": 2560,
+  "heap_free_bytes_observed": 48374,
+  "heap_largest_free_block_observed": 47860,
+  "animation_ROM_bytes": 499200,
+  "icon_ROM_bytes": 7680,
+  "palette_ROM_bytes": 32,
+  "enemy_live_frame_VRAM_bytes": 12288,
+  "max_enemy_DMA_bytes_per_frame": 3072,
+  "vram_gameplay_end_byte_exclusive": 29536,
+  "vram_font_start_byte": 46080,
+  "vram_free_before_font_bytes": 16544,
+  "vram_title_end_byte_exclusive": 39008,
+  "vram_gameplay_savings_bytes": 11328,
+  "vram_regions": [
+    {
+      "name": "fixed gameplay tiles",
+      "start_tile": 16,
+      "tiles": 83,
+      "start_byte": 512,
+      "end_byte_exclusive": 3168
+    },
+    {
+      "name": "16 live enemy frames",
+      "start_tile": 99,
+      "tiles": 384,
+      "start_byte": 3168,
+      "end_byte_exclusive": 15456
+    },
+    {
+      "name": "15 menu icon slots",
+      "start_tile": 483,
+      "tiles": 240,
+      "start_byte": 15456,
+      "end_byte_exclusive": 23136
+    },
+    {
+      "name": "story portrait scratch",
+      "start_tile": 723,
+      "tiles": 72,
+      "start_byte": 23136,
+      "end_byte_exclusive": 25440
+    },
+    {
+      "name": "player",
+      "start_tile": 795,
+      "tiles": 48,
+      "start_byte": 25440,
+      "end_byte_exclusive": 26976
+    },
+    {
+      "name": "all floor variants",
+      "start_tile": 843,
+      "tiles": 80,
+      "start_byte": 26976,
+      "end_byte_exclusive": 29536
+    }
+  ],
+  "palette_slots_total": 4,
+  "new_enemy_palette_slot": "PAL1 (shared with existing objects)",
+  "emulator": {
+    "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+    "frames": 1159,
+    "rom_sha256": "8ea53f5514a6b465b7aeb84085ad88bd21d46a69352b61f48cbb4f9cd8549dfd",
+    "actual_sat_peak": 37,
+    "actual_scanline_sprite_peak": 13,
+    "actual_scanline_pixel_peak": 272,
+    "heap_free_bytes": 48374,
+    "heap_largest_free_bytes": 47860,
+    "heap_blocks": 4,
+    "hero_directions_tested": [
+      "N",
+      "NE",
+      "L",
+      "SE",
+      "S",
+      "SO",
+      "O",
+      "NO"
+    ],
+    "all_new_types": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14
+    ],
+    "enemy_struct_bytes": 46,
+    "ram_word_swapped": true,
+    "screenshots": 11,
+    "bga_addr": 57344,
+    "bgb_addr": 49152,
+    "window_addr": 53248,
+    "hscrl_addr": 61440,
+    "slist_addr": 62464
+  },
+  "limitations": [
+    "Observed heap figures describe the controlled smoke run, not a proof for future code changes.",
+    "The software culls lower-priority sprites when scanline/global budgets are full.",
+    "Under sustained DMA pressure, frame/direction updates can be deferred; new slots wait until loaded.",
+    "60-degree elevation is a 2D art target for hero/enemies; the background map is still the previous renderer."
+  ],
+  "hero_animation_ROM_bytes": 38400,
+  "hero_palette_ROM_bytes": 32,
+  "hero_live_frame_VRAM_bytes": 768,
+  "hero_extra_reserved_VRAM_bytes": 0,
+  "max_combined_actor_DMA_bytes_per_frame": 3840,
+  "hero_palette_slot": "PAL2"
+}

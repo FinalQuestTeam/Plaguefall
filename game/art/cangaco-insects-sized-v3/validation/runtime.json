@@ -1,0 +1,12 @@
+{
+  "native_projection_all_types": true,
+  "cache_churn_frames": 1024,
+  "boss_composite_mirror": true,
+  "horizontal_mirror_without_DMA": true,
+  "deferred_random_frames": 128,
+  "frames_stressed": 600,
+  "peak_runtime_sat": 65,
+  "peak_scanline_sprites": 20,
+  "peak_scanline_pixels": 320,
+  "global_and_dma_failure_tests": true
+}

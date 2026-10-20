@@ -1,0 +1,31 @@
+{
+  "worktree": "/Users/fabiocantarimmelo/.codex/worktrees/cangaco-sprites-60/MegaDrive",
+  "branch": "codex/cangaco-sprites-60",
+  "base_commit": "c133b29c74e0727878f91db1f7b46197543b73a9",
+  "sdk": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/SGDK",
+  "clean_build_passed": true,
+  "build_command": "make -C game clean && make -C game -j4",
+  "rom": "game/out/rom.bin",
+  "rom_bytes": 655360,
+  "rom_sha256": "a9fd09684371ed1df0bc5813a04ac6f10b99f08e9f43aca1040a9c256ef36b40",
+  "sprite_resource_sha256": {
+    "game/res/heroi/palette.bin": "d2514b9093cf419358bd028937fd0e5e33d0bb0d4667e7935896e5aba5c7f75f",
+    "game/res/heroi/frames.bin": "815e8fa2930cd4fe099a8c7e0b90d4b22d3b8e5d097fdbf9b6419c32e466a995",
+    "game/res/insects/palette.bin": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288",
+    "game/res/insects/icons.bin": "07a83399fd0093edbfe2d34b91fa34ff1ac5407146450bd94a8c9ce9ca5f9359",
+    "game/res/insects/frames.bin": "48a8d9d60377405c22acfbf8a54568384826e03a00f6aa94c3446adb66b71897"
+  },
+  "png_and_render_tests_passed": true,
+  "host_stress_frames": 600,
+  "emulator_frames": 1159,
+  "heap_free_bytes": 47490,
+  "changes_committed": false,
+  "ram_static_total_bytes": 6008,
+  "performance_report": "performance/README.md",
+  "performance_status": "reduced animation; 15 enemies still 30 FPS in full controlled gameplay",
+  "animation_layout": "game/res/actor_animation.json",
+  "runtime_idle_frames": 2,
+  "runtime_run_frames": 4,
+  "historical_report": true,
+  "active_report": "../../cangaco-insects-sized-v3/validation/worktree-build.json"
+}

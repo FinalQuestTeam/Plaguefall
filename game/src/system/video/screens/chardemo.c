@@ -3,6 +3,7 @@
 
 #include "system/video/screens/chardemo.h"
 #include "system/video/chars.h"
+#include "system/video/herogfx.h"
 #include "system/audio/music.h"
 #include "system/audio/audio.h"
 #include "core/game.h"     // fps
@@ -24,12 +25,12 @@ static const struct { s16 x, y; } COMPASS[8] =
 static void drawLabels(u8 which)
 {
     VDP_clearTextArea(0, 13, 40, 1);        // limpa a linha do nome (centro)
-    const char *name = CHARS_NAME[which];
+    const char *name = which==CHARS_COUNT ? "REX" : CHARS_NAME[which];
     u16 len = 0; while (name[len]) len++;
     VDP_drawText(name, (40 - len) / 2, 13);
 
     char buf[8];
-    sprintf(buf, "%d/%d", which + 1, CHARS_COUNT);
+    sprintf(buf, "%d/%d", which==CHARS_COUNT ? 1 : which+2, CHARS_COUNT+1);
     VDP_drawText(buf, 19, 15);
 }
 
@@ -44,8 +45,8 @@ void CHARDEMO_run(void)
     VDP_drawText("PERSONAGENS - 8 DIRECOES", 8, 0);
     VDP_drawText("ESQ/DIR: TROCAR   B: SAIR", 8, 26);
 
-    u8 which = 0;
-    CHARS_load(which);
+    u8 which = CHARS_COUNT;
+    HERO_loadPreview();
     drawLabels(which);
 
     u16 prev = JOY_readJoypad(JOY_1);
@@ -60,14 +61,28 @@ void CHARDEMO_run(void)
         MUSIC_update();
         AUDIO_frameEnd();
 
-        if (pressed & BUTTON_RIGHT) { which = (which + 1) % CHARS_COUNT;              CHARS_load(which); drawLabels(which); }
-        if (pressed & BUTTON_LEFT)  { which = (which + CHARS_COUNT - 1) % CHARS_COUNT; CHARS_load(which); drawLabels(which); }
+        if (pressed & (BUTTON_RIGHT|BUTTON_LEFT))
+        {
+            which=(which+((pressed&BUTTON_RIGHT) ? 1 : CHARS_COUNT))%(CHARS_COUNT+1);
+            if(which==CHARS_COUNT)HERO_loadPreview();else CHARS_load(which);
+            drawLabels(which);
+        }
         if (pressed & (BUTTON_A | BUTTON_B | BUTTON_START)) break;
 
         // os 8 sprites (uma direção em cada ponto da bússola)
         u16 n = 0;
         for (u8 d = 0; d < 8; d++)
         {
+            if(which==CHARS_COUNT)
+            {
+                const u16 tile=TILE_USER_INDEX+HERO_previewTile(d);
+                const u8 flip=HERO_previewFlipH(d);
+                VDP_setSpriteFull(n,COMPASS[d].x,COMPASS[d].y-16,SPRITE_SIZE(4,4),
+                    TILE_ATTR_FULL(PAL2,TRUE,FALSE,flip,tile),n+1);n++;
+                VDP_setSpriteFull(n,COMPASS[d].x,COMPASS[d].y+16,SPRITE_SIZE(4,2),
+                    TILE_ATTR_FULL(PAL2,TRUE,FALSE,flip,tile+16),n+1);n++;
+                continue;
+            }
             VDP_setSpriteFull(n, COMPASS[d].x, COMPASS[d].y, SPRITE_SIZE(4, 4),
                 TILE_ATTR_FULL(PAL2, TRUE, CHARS_dirFlipV(d), CHARS_dirFlipH(d),
                     TILE_USER_INDEX + CHARS_dirTile(d)), n + 1);

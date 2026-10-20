@@ -1,0 +1,39 @@
+{
+  "rom": "/Users/fabiocantarimmelo/.codex/worktrees/cangaco-sprites-60/MegaDrive/game/out/release/rom.bin",
+  "rom_sha256": "a9fd09684371ed1df0bc5813a04ac6f10b99f08e9f43aca1040a9c256ef36b40",
+  "method": "Count SPRITES_draw frame counter vs VBlank; SGDK 8-frame CPU load; moving sprites in controlled sandbox, same type, no scanline congestion. Gameplay logic active: True.",
+  "cases": [
+    {
+      "enemies": 3,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 63.94,
+      "cpu_load_p95_pct": 65.28
+    },
+    {
+      "enemies": 8,
+      "physical_frames": 240,
+      "game_frames": 162,
+      "game_fps_at_60hz": 40.5,
+      "cpu_load_mean_pct": 97.22,
+      "cpu_load_p95_pct": 98.44
+    },
+    {
+      "enemies": 15,
+      "physical_frames": 240,
+      "game_frames": 120,
+      "game_fps_at_60hz": 30.0,
+      "cpu_load_mean_pct": 129.42,
+      "cpu_load_p95_pct": 131.45
+    },
+    {
+      "enemies": 16,
+      "physical_frames": 240,
+      "game_frames": 120,
+      "game_fps_at_60hz": 30.0,
+      "cpu_load_mean_pct": 136.19,
+      "cpu_load_p95_pct": 137.94
+    }
+  ]
+}
