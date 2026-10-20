@@ -1,6 +1,6 @@
 # RedRex — arte do projeto
 
-**Arte ativa:** [Rex](cangaco-protagonista-iso60-v2/README.md), [13 inimigos em resoluções nativas](cangaco-insects-sized-v3/README.md) e [Nossa Senhora Aparecida](santa-aparecida-v1/README.md), substituindo a antena. Câmera visual elevada a 60° acima do chão. O [inventário completo e pendências](INVENTARIO-SPRITES.md) separa arte integrada e legado. A [parceira feminina](concepts/parceira/README.md) está somente em concept, aguardando aprovação antes da criação de sprites. A ROM atual tem512 KiB; os relatórios distinguem orçamento de memória de desempenho de CPU.
+**Arte ativa:** [Rex](cangaco-protagonista-iso60-v2/README.md), [13 inimigos em resoluções nativas](cangaco-insects-sized-v3/README.md) e [Nossa Senhora Aparecida](santa-aparecida-v1/README.md), substituindo a antena. Câmera visual elevada a 60° acima do chão. O [inventário completo e pendências](INVENTARIO-SPRITES.md) separa arte integrada e legado. A [parceira feminina](cangaco-parceira-iso60-v1/README.md) tem sprites32×48, oito direções e as mesmas animações de Rex, prontos para integração. A ROM atual tem512 KiB; os relatórios distinguem orçamento de memória de desempenho de CPU.
 
 ## Direção atual: cangaço cyberpunk brasileiro
 

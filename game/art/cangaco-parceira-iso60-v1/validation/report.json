@@ -1,0 +1,244 @@
+{
+  "passed": true,
+  "source_tool": "image_gen built-in",
+  "pass_scope": "native_assets_packing_and_ResComp_only",
+  "integrated_in_game": false,
+  "native_pngs": [
+    "parceira/directions/parceira_L.png",
+    "parceira/directions/parceira_L_compacta.png",
+    "parceira/directions/parceira_N.png",
+    "parceira/directions/parceira_NE.png",
+    "parceira/directions/parceira_NE_compacta.png",
+    "parceira/directions/parceira_NO.png",
+    "parceira/directions/parceira_NO_compacta.png",
+    "parceira/directions/parceira_N_compacta.png",
+    "parceira/directions/parceira_O.png",
+    "parceira/directions/parceira_O_compacta.png",
+    "parceira/directions/parceira_S.png",
+    "parceira/directions/parceira_SE.png",
+    "parceira/directions/parceira_SE_compacta.png",
+    "parceira/directions/parceira_SO.png",
+    "parceira/directions/parceira_SO_compacta.png",
+    "parceira/directions/parceira_S_compacta.png",
+    "parceira/parceira-compacta.png",
+    "parceira/parceira.png",
+    "parceira/parceira_turntable.png"
+  ],
+  "cell": [
+    32,
+    48
+  ],
+  "master": [
+    192,
+    768
+  ],
+  "directional_sheet": [
+    192,
+    96
+  ],
+  "directions": [
+    "N",
+    "NE",
+    "L",
+    "SE",
+    "S",
+    "SO",
+    "O",
+    "NO"
+  ],
+  "full_frame_references": 80,
+  "compact_frame_references": 48,
+  "runtime_canonical_frames": 30,
+  "runtime_rom_frames_bytes": 23040,
+  "palette_file_bytes": 32,
+  "palette_identical_to_Rex": true,
+  "new_palette_slots_needed": 0,
+  "transparent_index": 0,
+  "alpha": [
+    0,
+    255
+  ],
+  "visible_colors": 15,
+  "runtime_frame_vram_bytes": 768,
+  "runtime_hardware_pieces": [
+    [
+      32,
+      32
+    ],
+    [
+      32,
+      16
+    ]
+  ],
+  "ResComp_auto_optimized_piece_range": [
+    2,
+    3
+  ],
+  "frame_timing_ntsc": {
+    "idle": 24,
+    "run": 9
+  },
+  "frame_timing_pal": {
+    "idle": 20,
+    "run": 7
+  },
+  "memory_note": "Asset candidate only; not linked into the ROM. Adding one simultaneously displayed actor needs a live768-byte frame, two manual SAT entries and up to768 bytes per frame change. Actual runtime integration/performance must be measured separately.",
+  "red_brown_visible_fraction": 0.5504353219544692,
+  "Rex_red_brown_visible_fraction": 0.17579340385812073,
+  "native_sha256": "55d330f8dbf2591b9d4c63afcda7ce002d4267385995f5001908585acdba1a82",
+  "compact_binary_sha256": "ff03190b02c7873585eef75bd256a8e78dca7a98b9138bbc198dddd706a3fc6f",
+  "animations": [
+    {
+      "direction": "N",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.7598484848484848,
+      "runtime_loop_pixel_deltas": [
+        428,
+        389,
+        375,
+        420
+      ]
+    },
+    {
+      "direction": "NE",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.9166666666666661,
+      "runtime_loop_pixel_deltas": [
+        551,
+        570,
+        539,
+        529
+      ]
+    },
+    {
+      "direction": "L",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.2512218963831856,
+      "runtime_loop_pixel_deltas": [
+        395,
+        396,
+        530,
+        458
+      ]
+    },
+    {
+      "direction": "SE",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.3095238095238102,
+      "runtime_loop_pixel_deltas": [
+        587,
+        563,
+        458,
+        467
+      ]
+    },
+    {
+      "direction": "S",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.6833333333333336,
+      "runtime_loop_pixel_deltas": [
+        585,
+        575,
+        386,
+        427
+      ]
+    },
+    {
+      "direction": "SO",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.3095238095238102,
+      "runtime_loop_pixel_deltas": [
+        587,
+        563,
+        458,
+        467
+      ]
+    },
+    {
+      "direction": "O",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.2512218963831856,
+      "runtime_loop_pixel_deltas": [
+        395,
+        396,
+        530,
+        458
+      ]
+    },
+    {
+      "direction": "NO",
+      "full_frames": [
+        4,
+        6
+      ],
+      "runtime_frames": [
+        2,
+        4
+      ],
+      "feet_baseline": 46,
+      "idle_foot_centroid_spread": 0.9166666666666679,
+      "runtime_loop_pixel_deltas": [
+        551,
+        570,
+        539,
+        529
+      ]
+    }
+  ]
+}

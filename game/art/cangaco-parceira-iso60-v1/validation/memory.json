@@ -1,0 +1,30 @@
+{
+  "scope": "asset_size_and_future_integration_budget_only",
+  "integrated": false,
+  "ROM_unchanged_by_this_asset": true,
+  "current_ROM_bytes": 524288,
+  "current_ROM_sha256": "b3281bf4fa08aa695882547305607524e148a9988b5c4c224bebc7a69014d241",
+  "compact_frames_bytes": 23040,
+  "supplied_palette_bytes": 32,
+  "palette_reusable_from_Rex": true,
+  "frame_VRAM_bytes": 768,
+  "frame_tiles": 24,
+  "manual_SAT_entries": 2,
+  "additional_entries_per_covered_scanline": 1,
+  "additional_sprite_pixels_per_covered_scanline": 32,
+  "worst_frame_upload_bytes": 768,
+  "extra_palette_slots": 0,
+  "existing_player_region_tiles": 48,
+  "Rex_uses_tiles": 24,
+  "potential_unused_player_tiles": 24,
+  "potential_fixed_VRAM_region_growth_bytes_if_reused": 0,
+  "integration_required": [
+    "Allocate the second live frame without overwriting Rex or the floor.",
+    "Add animation state, admission of two SAT pieces and DMA queue budget for the new actor.",
+    "Choose companion gameplay/hitbox semantics and measure actual CPU/RAM/VRAM/FPS in the integrated ROM."
+  ],
+  "limitations": [
+    "The current sprite files are not proof of console or emulator performance for an additional actor.",
+    "All palette, sprite and DMA budgets are shared with enemies, shots and effects."
+  ]
+}

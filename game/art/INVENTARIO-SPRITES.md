@@ -1,6 +1,6 @@
 # Inventário de sprites — direção cangaço cyberpunk
 
-Organizado pelos identificadores usados no código. A parceira ainda depende de aprovação do concept.
+Organizado pelos identificadores usados no código. O concept v2 da parceira foi aprovado e os sprites estão prontos para integração.
 
 ## Arte atual da partida
 
@@ -17,11 +17,11 @@ Organizado pelos identificadores usados no código. A parceira ainda depende de 
 
 Os 13 inimigos também têm oito direções, 2 quadros de repouso e 4 de movimento. As cinco vistas canônicas usam HFLIP para as três direções ocidentais.
 
-## Ainda faltam personagens / objetos centrais
+## Pendências de integração e de arte
 
 | ID / recurso | Nome | Tamanho atual | Pendência |
 |---|---|---|---|
-| futura parceira (ainda sem ID de runtime) | Parceira feminina | Não definido | [Concept v1](concepts/parceira/README.md) aguardando aprovação; criar sprite e definir comportamento depois |
+| `parceira` (asset; ainda sem ator de runtime) | Parceira feminina |32×48 | [Sprites criados](cangaco-parceira-iso60-v1/README.md), oito direções,2/4 quadros como Rex; comportamento e integração pendentes |
 | `ENEMY_DUMMY` / `dummy` | Boneco de treino | 24×24 | Char-map antigo `INS_BEETLE24` |
 | `ENEMY_TARGET` / `target` | Alvo | 24×24 | Mesmo char-map antigo do dummy |
 
@@ -42,4 +42,4 @@ Piso, parede, lava, lama, portas, título e logo também mantêm a apresentaçã
 - [Inimigos atuais por nome e resolução](cangaco-insects-sized-v3/README.md)
 - [Rex](cangaco-protagonista-iso60-v2/README.md)
 - [Santa](santa-aparecida-v1/README.md)
-- [Parceira — somente concept](concepts/parceira/README.md)
+- [Parceira — sprites prontos para integração](cangaco-parceira-iso60-v1/README.md)

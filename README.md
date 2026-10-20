@@ -4,7 +4,7 @@
 
 **Nova direção visual:** cangaço cyberpunk brasileiro. Os [13 inimigos gigantes](game/art/cangaco-insects-sized-v3/README.md) agora usam tamanhos nativos de 16×16, 24×24 e 32×32 (chefe48×48), oito direções, repouso e movimento, com [redesenho da perspectiva na versão 2](game/art/camera-60-redraw-v2/README.md), comparado visualmente a guias de câmera ortográfica a 60° acima do chão. A ROM foi recompilada e auditada: **512 KiB**, cache de inimigos de **10 KiB de VRAM** e **47332 bytes de heap livre** observados no emulador. O [protagonista humano Rex](game/art/cangaco-protagonista-iso60-v2/README.md) já substitui o mech na partida e é a opção inicial da galeria, com oito direções e animações. O cenário e a projeção do mapa ainda usam a implementação anterior. As folhas darkspace são estudos históricos.
 
-Nossa Senhora Aparecida substitui a antena24×24 no objetivo PROTEGER, com a mesma lógica e sem aumentar VRAM/RAM. A [parceira feminina está em concept](game/art/concepts/parceira/README.md), aguardando aprovação antes da criação do sprite. Consulte o [inventário de sprites e pendências](game/art/INVENTARIO-SPRITES.md).
+Nossa Senhora Aparecida substitui a antena24×24 no objetivo PROTEGER, com a mesma lógica e sem aumentar VRAM/RAM. A [parceira feminina tem sprites32×48 e oito direções](game/art/cangaco-parceira-iso60-v1/README.md), prontos para integração. Consulte o [inventário de sprites e pendências](game/art/INVENTARIO-SPRITES.md).
 
 > ROM: `game/out/release/rom.bin` — roda em qualquer emulador de Mega Drive (testado no RetroArch + Genesis Plus GX) e, em teoria, no hardware real.
 

@@ -1,0 +1,20 @@
+{
+  "reviewed": true,
+  "reviewer": "Codex visual review, not a numeric3D camera measurement",
+  "target_elevation_degrees_above_ground": 60,
+  "geometry_guide": "../camera-60-redraw-v2/orthographic-60-guide.png",
+  "scale_reference": "../cangaco-protagonista-iso60-v2/heroi/heroi.png",
+  "native_master_sha256": "55d330f8dbf2591b9d4c63afcda7ce002d4267385995f5001908585acdba1a82",
+  "reviewed_poses": {
+    "canonical": 50,
+    "mirrors": 30
+  },
+  "observations": [
+    "Top of hat and shoulders shown in all5 drawn directions, including lateral view; shortened torso/legs follow the elevated Rex reference.",
+    "N shows back, NE shows back/right diagonal; L shows right side, SE front/right diagonal, S front. Western poses verified as HFLIP.",
+    "NE idle and run separately corrected against the same guide to retain diagonal gun orientation and planted idle feet.",
+    "Red/brown clothing blocks differ visibly from Rex in the equal-scale native comparison.",
+    "Run contact/passing poses and loop transitions inspected in the canonical contact sheet; pixel deltas and GIF timing separately verified."
+  ],
+  "limitation": "A precise camera elevation cannot be recovered or certified from stylized2D rasters. The ground renderer was not changed."
+}

@@ -1,0 +1,81 @@
+{
+  "id": "parceira",
+  "name": "Parceira",
+  "concept": "../concepts/parceira/parceira-cangaco-cyberpunk-v2.png",
+  "cell": [
+    32,
+    48
+  ],
+  "directions": [
+    "N",
+    "NE",
+    "L",
+    "SE",
+    "S",
+    "SO",
+    "O",
+    "NO"
+  ],
+  "canonical_directions": [
+    "N",
+    "NE",
+    "L",
+    "SE",
+    "S"
+  ],
+  "horizontal_mirrors": {
+    "SO": "SE",
+    "O": "L",
+    "NO": "NE"
+  },
+  "full": {
+    "sheet": "parceira/parceira.png",
+    "frames_per_direction": {
+      "idle": 4,
+      "run": 6
+    },
+    "blank_cells": {
+      "idle_row": [
+        4,
+        5
+      ]
+    },
+    "source_frame_references": 80
+  },
+  "compact": {
+    "sheet": "parceira/parceira-compacta.png",
+    "frames_per_direction": {
+      "idle": 2,
+      "run": 4
+    },
+    "source_poses": [
+      0,
+      2,
+      4,
+      6,
+      7,
+      9
+    ],
+    "blank_cells": {
+      "idle_row": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "run_row": [
+        4,
+        5
+      ]
+    },
+    "source_frame_references": 48,
+    "runtime_canonical_frames": 30,
+    "raw": "runtime/frames.bin"
+  },
+  "shared_palette": "Rex PAL2",
+  "palette": "palette.json",
+  "sprite_resources": "parceira.res",
+  "binary_resources": "runtime/parceira.res",
+  "source_tool": "image_gen built-in",
+  "status": "sprites_created_not_yet_integrated_in_game"
+}
