@@ -1,0 +1,385 @@
+ResComp 4.02 - SGDK Resource Compiler - Copyright 2026 (Stephane Dallongeville)
+
+Resource: SPRITE enemy_torreao "gfx/torreao.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Sprite frame 'enemy_torreao_animation0_frame0' - 1 VDP sprites and 12 tiles
+Sprite frame 'enemy_torreao_animation0_frame1' - 1 VDP sprites and 12 tiles
+Sprite frame 'enemy_torreao_animation0_frame2' - 1 VDP sprites and 12 tiles
+Sprite frame 'enemy_torreao_animation0_frame3' - 1 VDP sprites and 12 tiles
+Sprite frame 'enemy_torreao_animation1_frame0' - 2 VDP sprites and 12 tiles
+Sprite frame 'enemy_torreao_animation1_frame1' - 2 VDP sprites and 11 tiles
+Sprite frame 'enemy_torreao_animation1_frame2' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_torreao_animation1_frame3' - 2 VDP sprites and 12 tiles
+Sprite frame 'enemy_torreao_animation1_frame4' - 1 VDP sprites and 12 tiles
+Sprite frame 'enemy_torreao_animation1_frame5' - 1 VDP sprites and 12 tiles
+ 'enemy_torreao' raw size: 4310 bytes
+Resource: SPRITE enemy_batedor "gfx/batedor.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_batedor_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_batedor_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_batedor_animation0_frame0' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_batedor_animation0_frame1' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_batedor_animation0_frame2' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_batedor_animation0_frame3' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_batedor_animation1_frame0' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_batedor_animation1_frame1' - 2 VDP sprites and 14 tiles
+Sprite frame 'enemy_batedor_animation1_frame2' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_batedor_animation1_frame3' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_batedor_animation1_frame4' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_batedor_animation1_frame5' - 2 VDP sprites and 17 tiles
+ 'enemy_batedor' raw size: 6368 bytes
+Resource: SPRITE enemy_baluarte "gfx/baluarte.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_baluarte_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_baluarte_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_baluarte_animation0_frame0' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_baluarte_animation0_frame1' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_baluarte_animation0_frame2' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_baluarte_animation0_frame3' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_baluarte_animation1_frame0' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_baluarte_animation1_frame1' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_baluarte_animation1_frame2' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_baluarte_animation1_frame3' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_baluarte_animation1_frame4' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_baluarte_animation1_frame5' - 1 VDP sprites and 12 tiles
+ 'enemy_baluarte' raw size: 5512 bytes
+Resource: SPRITE enemy_ariete "gfx/ariete.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_ariete_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_ariete_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_ariete_animation0_frame0' - 2 VDP sprites and 13 tiles
+Sprite frame 'enemy_ariete_animation0_frame1' - 2 VDP sprites and 14 tiles
+Sprite frame 'enemy_ariete_animation0_frame2' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_ariete_animation0_frame3' - 2 VDP sprites and 14 tiles
+Sprite frame 'enemy_ariete_animation1_frame0' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_ariete_animation1_frame1' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_ariete_animation1_frame2' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_ariete_animation1_frame3' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_ariete_animation1_frame4' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_ariete_animation1_frame5' - 2 VDP sprites and 17 tiles
+ 'enemy_ariete' raw size: 5344 bytes
+Resource: SPRITE enemy_fuzileiro "gfx/fuzileiro.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_fuzileiro_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_fuzileiro_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_fuzileiro_animation0_frame0' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_fuzileiro_animation0_frame1' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_fuzileiro_animation0_frame2' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_fuzileiro_animation0_frame3' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_fuzileiro_animation1_frame0' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_fuzileiro_animation1_frame1' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_fuzileiro_animation1_frame2' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_fuzileiro_animation1_frame3' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_fuzileiro_animation1_frame4' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_fuzileiro_animation1_frame5' - 2 VDP sprites and 20 tiles
+ 'enemy_fuzileiro' raw size: 5562 bytes
+Resource: SPRITE enemy_cacador "gfx/cacador.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_cacador_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_cacador_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_cacador_animation0_frame0' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_cacador_animation0_frame1' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_cacador_animation0_frame2' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_cacador_animation0_frame3' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_cacador_animation1_frame0' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_cacador_animation1_frame1' - 2 VDP sprites and 13 tiles
+Sprite frame 'enemy_cacador_animation1_frame2' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_cacador_animation1_frame3' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_cacador_animation1_frame4' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_cacador_animation1_frame5' - 2 VDP sprites and 15 tiles
+ 'enemy_cacador' raw size: 5466 bytes
+Resource: SPRITE enemy_escudeiro "gfx/escudeiro.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_escudeiro_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_escudeiro_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_escudeiro_animation0_frame0' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_escudeiro_animation0_frame1' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_escudeiro_animation0_frame2' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_escudeiro_animation0_frame3' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_escudeiro_animation1_frame0' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_escudeiro_animation1_frame1' - 3 VDP sprites and 14 tiles
+Sprite frame 'enemy_escudeiro_animation1_frame2' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_escudeiro_animation1_frame3' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_escudeiro_animation1_frame4' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_escudeiro_animation1_frame5' - 2 VDP sprites and 18 tiles
+ 'enemy_escudeiro' raw size: 6246 bytes
+Resource: SPRITE enemy_adaga "gfx/adaga.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_adaga_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_adaga_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_adaga_animation0_frame0' - 2 VDP sprites and 13 tiles
+Sprite frame 'enemy_adaga_animation0_frame1' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_adaga_animation0_frame2' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_adaga_animation0_frame3' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_adaga_animation1_frame0' - 2 VDP sprites and 11 tiles
+Sprite frame 'enemy_adaga_animation1_frame1' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_adaga_animation1_frame2' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_adaga_animation1_frame3' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_adaga_animation1_frame4' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_adaga_animation1_frame5' - 1 VDP sprites and 12 tiles
+ 'enemy_adaga' raw size: 5026 bytes
+Resource: SPRITE enemy_artilheiro "gfx/artilheiro.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_artilheiro_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_artilheiro_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_artilheiro_animation0_frame0' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_artilheiro_animation0_frame1' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_artilheiro_animation0_frame2' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_artilheiro_animation0_frame3' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_artilheiro_animation1_frame0' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_artilheiro_animation1_frame1' - 3 VDP sprites and 14 tiles
+Sprite frame 'enemy_artilheiro_animation1_frame2' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_artilheiro_animation1_frame3' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_artilheiro_animation1_frame4' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_artilheiro_animation1_frame5' - 2 VDP sprites and 18 tiles
+ 'enemy_artilheiro' raw size: 6022 bytes
+Resource: SPRITE enemy_alcateia "gfx/alcateia.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_alcateia_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_alcateia_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_alcateia_animation0_frame0' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_alcateia_animation0_frame1' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_alcateia_animation0_frame2' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_alcateia_animation0_frame3' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_alcateia_animation1_frame0' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_alcateia_animation1_frame1' - 2 VDP sprites and 14 tiles
+Sprite frame 'enemy_alcateia_animation1_frame2' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_alcateia_animation1_frame3' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_alcateia_animation1_frame4' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_alcateia_animation1_frame5' - 2 VDP sprites and 14 tiles
+ 'enemy_alcateia' raw size: 5464 bytes
+Resource: SPRITE enemy_fortaleza "gfx/fortaleza.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_fortaleza_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_fortaleza_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_fortaleza_animation0_frame0' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_fortaleza_animation0_frame1' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_fortaleza_animation0_frame2' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_fortaleza_animation0_frame3' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_fortaleza_animation1_frame0' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_fortaleza_animation1_frame1' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_fortaleza_animation1_frame2' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_fortaleza_animation1_frame3' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_fortaleza_animation1_frame4' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_fortaleza_animation1_frame5' - 2 VDP sprites and 15 tiles
+ 'enemy_fortaleza' raw size: 5708 bytes
+Resource: SPRITE enemy_meteoro "gfx/meteoro.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_meteoro_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_meteoro_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_meteoro_animation0_frame0' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_meteoro_animation0_frame1' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_meteoro_animation0_frame2' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_meteoro_animation0_frame3' - 3 VDP sprites and 15 tiles
+Sprite frame 'enemy_meteoro_animation1_frame0' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_meteoro_animation1_frame1' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_meteoro_animation1_frame2' - 2 VDP sprites and 20 tiles
+Sprite frame 'enemy_meteoro_animation1_frame3' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_meteoro_animation1_frame4' - 2 VDP sprites and 14 tiles
+Sprite frame 'enemy_meteoro_animation1_frame5' - 2 VDP sprites and 20 tiles
+ 'enemy_meteoro' raw size: 5816 bytes
+Resource: SPRITE enemy_dummy "gfx/dummy.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_dummy_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_dummy_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_dummy_animation0_frame0' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_dummy_animation0_frame1' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_dummy_animation0_frame2' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_dummy_animation0_frame3' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_dummy_animation1_frame0' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_dummy_animation1_frame1' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_dummy_animation1_frame2' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_dummy_animation1_frame3' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_dummy_animation1_frame4' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_dummy_animation1_frame5' - 2 VDP sprites and 17 tiles
+ 'enemy_dummy' raw size: 6100 bytes
+Resource: SPRITE enemy_alvo "gfx/alvo.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_alvo_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_alvo_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_alvo_animation0_frame0' - 2 VDP sprites and 13 tiles
+Sprite frame 'enemy_alvo_animation0_frame1' - 2 VDP sprites and 13 tiles
+Sprite frame 'enemy_alvo_animation0_frame2' - 2 VDP sprites and 13 tiles
+Sprite frame 'enemy_alvo_animation0_frame3' - 2 VDP sprites and 13 tiles
+Sprite frame 'enemy_alvo_animation1_frame0' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_alvo_animation1_frame1' - 1 VDP sprites and 12 tiles
+Sprite frame 'enemy_alvo_animation1_frame2' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_alvo_animation1_frame3' - 2 VDP sprites and 15 tiles
+Sprite frame 'enemy_alvo_animation1_frame4' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_alvo_animation1_frame5' - 2 VDP sprites and 15 tiles
+ 'enemy_alvo' raw size: 4922 bytes
+Resource: SPRITE enemy_lacraia "gfx/lacraia.png" 4 6 FAST 6 NONE BALANCED FAST
+--> executing plugin SPRITE...
+Info: 'enemy_lacraia_palette_data' has same content as 'enemy_torreao_palette_data'
+Info: 'enemy_lacraia_palette' has same content as 'enemy_torreao_palette'
+Sprite frame 'enemy_lacraia_animation0_frame0' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_lacraia_animation0_frame1' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_lacraia_animation0_frame2' - 2 VDP sprites and 14 tiles
+Sprite frame 'enemy_lacraia_animation0_frame3' - 2 VDP sprites and 18 tiles
+Sprite frame 'enemy_lacraia_animation1_frame0' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_lacraia_animation1_frame1' - 1 VDP sprites and 16 tiles
+Sprite frame 'enemy_lacraia_animation1_frame2' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_lacraia_animation1_frame3' - 2 VDP sprites and 17 tiles
+Sprite frame 'enemy_lacraia_animation1_frame4' - 2 VDP sprites and 19 tiles
+Sprite frame 'enemy_lacraia_animation1_frame5' - 2 VDP sprites and 20 tiles
+ 'enemy_lacraia' raw size: 6042 bytes
+
+'enemy_torreao_animation0_frame0_tileset_data' packed with LZ4W, size = 296 (77% - origin size = 384)
+'enemy_torreao_animation0_frame1_tileset_data' packed with LZ4W, size = 310 (81% - origin size = 384)
+'enemy_torreao_animation0_frame2_tileset_data' packed with LZ4W, size = 288 (75% - origin size = 384)
+'enemy_torreao_animation0_frame3_tileset_data' packed with LZ4W, size = 300 (78% - origin size = 384)
+'enemy_torreao_animation1_frame0_tileset_data' not packed (size = 384)
+'enemy_torreao_animation1_frame1_tileset_data' packed with LZ4W, size = 258 (73% - origin size = 352)
+'enemy_torreao_animation1_frame2_tileset_data' packed with LZ4W, size = 306 (60% - origin size = 512)
+'enemy_torreao_animation1_frame3_tileset_data' packed with LZ4W, size = 286 (74% - origin size = 384)
+'enemy_torreao_animation1_frame4_tileset_data' packed with LZ4W, size = 288 (75% - origin size = 384)
+'enemy_torreao_animation1_frame5_tileset_data' packed with LZ4W, size = 276 (72% - origin size = 384)
+'enemy_batedor_animation0_frame0_tileset_data' packed with LZ4W, size = 466 (77% - origin size = 608)
+'enemy_batedor_animation0_frame1_tileset_data' packed with LZ4W, size = 428 (70% - origin size = 608)
+'enemy_batedor_animation0_frame2_tileset_data' packed with LZ4W, size = 422 (69% - origin size = 608)
+'enemy_batedor_animation0_frame3_tileset_data' packed with LZ4W, size = 430 (71% - origin size = 608)
+'enemy_batedor_animation1_frame0_tileset_data' packed with LZ4W, size = 464 (73% - origin size = 640)
+'enemy_batedor_animation1_frame1_tileset_data' not packed (size = 448)
+'enemy_batedor_animation1_frame2_tileset_data' packed with LZ4W, size = 438 (68% - origin size = 640)
+'enemy_batedor_animation1_frame3_tileset_data' packed with LZ4W, size = 490 (81% - origin size = 608)
+'enemy_batedor_animation1_frame4_tileset_data' packed with LZ4W, size = 478 (75% - origin size = 640)
+'enemy_batedor_animation1_frame5_tileset_data' packed with LZ4W, size = 434 (80% - origin size = 544)
+'enemy_baluarte_animation0_frame0_tileset_data' packed with LZ4W, size = 438 (72% - origin size = 608)
+'enemy_baluarte_animation0_frame1_tileset_data' packed with LZ4W, size = 414 (86% - origin size = 480)
+'enemy_baluarte_animation0_frame2_tileset_data' not packed (size = 480)
+'enemy_baluarte_animation0_frame3_tileset_data' packed with LZ4W, size = 430 (71% - origin size = 608)
+'enemy_baluarte_animation1_frame0_tileset_data' packed with LZ4W, size = 412 (80% - origin size = 512)
+'enemy_baluarte_animation1_frame1_tileset_data' packed with LZ4W, size = 374 (73% - origin size = 512)
+'enemy_baluarte_animation1_frame2_tileset_data' packed with LZ4W, size = 378 (74% - origin size = 512)
+'enemy_baluarte_animation1_frame3_tileset_data' packed with LZ4W, size = 352 (69% - origin size = 512)
+'enemy_baluarte_animation1_frame4_tileset_data' packed with LZ4W, size = 374 (73% - origin size = 512)
+'enemy_baluarte_animation1_frame5_tileset_data' not packed (size = 384)
+'enemy_ariete_animation0_frame0_tileset_data' not packed (size = 416)
+'enemy_ariete_animation0_frame1_tileset_data' not packed (size = 448)
+'enemy_ariete_animation0_frame2_tileset_data' packed with LZ4W, size = 412 (86% - origin size = 480)
+'enemy_ariete_animation0_frame3_tileset_data' not packed (size = 448)
+'enemy_ariete_animation1_frame0_tileset_data' packed with LZ4W, size = 410 (75% - origin size = 544)
+'enemy_ariete_animation1_frame1_tileset_data' packed with LZ4W, size = 362 (71% - origin size = 512)
+'enemy_ariete_animation1_frame2_tileset_data' packed with LZ4W, size = 452 (78% - origin size = 576)
+'enemy_ariete_animation1_frame3_tileset_data' packed with LZ4W, size = 338 (70% - origin size = 480)
+'enemy_ariete_animation1_frame4_tileset_data' packed with LZ4W, size = 392 (82% - origin size = 480)
+'enemy_ariete_animation1_frame5_tileset_data' packed with LZ4W, size = 354 (65% - origin size = 544)
+'enemy_fuzileiro_animation0_frame0_tileset_data' packed with LZ4W, size = 320 (67% - origin size = 480)
+'enemy_fuzileiro_animation0_frame1_tileset_data' packed with LZ4W, size = 400 (83% - origin size = 480)
+'enemy_fuzileiro_animation0_frame2_tileset_data' packed with LZ4W, size = 378 (79% - origin size = 480)
+'enemy_fuzileiro_animation0_frame3_tileset_data' packed with LZ4W, size = 364 (76% - origin size = 480)
+'enemy_fuzileiro_animation1_frame0_tileset_data' packed with LZ4W, size = 366 (67% - origin size = 544)
+'enemy_fuzileiro_animation1_frame1_tileset_data' packed with LZ4W, size = 302 (59% - origin size = 512)
+'enemy_fuzileiro_animation1_frame2_tileset_data' packed with LZ4W, size = 342 (67% - origin size = 512)
+'enemy_fuzileiro_animation1_frame3_tileset_data' packed with LZ4W, size = 348 (68% - origin size = 512)
+'enemy_fuzileiro_animation1_frame4_tileset_data' packed with LZ4W, size = 356 (70% - origin size = 512)
+'enemy_fuzileiro_animation1_frame5_tileset_data' packed with LZ4W, size = 360 (56% - origin size = 640)
+'enemy_cacador_animation0_frame0_tileset_data' not packed (size = 480)
+'enemy_cacador_animation0_frame1_tileset_data' not packed (size = 480)
+'enemy_cacador_animation0_frame2_tileset_data' packed with LZ4W, size = 412 (86% - origin size = 480)
+'enemy_cacador_animation0_frame3_tileset_data' packed with LZ4W, size = 408 (85% - origin size = 480)
+'enemy_cacador_animation1_frame0_tileset_data' packed with LZ4W, size = 398 (62% - origin size = 640)
+'enemy_cacador_animation1_frame1_tileset_data' packed with LZ4W, size = 284 (68% - origin size = 416)
+'enemy_cacador_animation1_frame2_tileset_data' packed with LZ4W, size = 360 (66% - origin size = 544)
+'enemy_cacador_animation1_frame3_tileset_data' packed with LZ4W, size = 338 (66% - origin size = 512)
+'enemy_cacador_animation1_frame4_tileset_data' packed with LZ4W, size = 358 (66% - origin size = 544)
+'enemy_cacador_animation1_frame5_tileset_data' packed with LZ4W, size = 334 (70% - origin size = 480)
+'enemy_escudeiro_animation0_frame0_tileset_data' packed with LZ4W, size = 426 (74% - origin size = 576)
+'enemy_escudeiro_animation0_frame1_tileset_data' packed with LZ4W, size = 448 (74% - origin size = 608)
+'enemy_escudeiro_animation0_frame2_tileset_data' packed with LZ4W, size = 430 (71% - origin size = 608)
+'enemy_escudeiro_animation0_frame3_tileset_data' packed with LZ4W, size = 404 (70% - origin size = 576)
+'enemy_escudeiro_animation1_frame0_tileset_data' packed with LZ4W, size = 466 (73% - origin size = 640)
+'enemy_escudeiro_animation1_frame1_tileset_data' not packed (size = 448)
+'enemy_escudeiro_animation1_frame2_tileset_data' packed with LZ4W, size = 418 (73% - origin size = 576)
+'enemy_escudeiro_animation1_frame3_tileset_data' packed with LZ4W, size = 430 (71% - origin size = 608)
+'enemy_escudeiro_animation1_frame4_tileset_data' packed with LZ4W, size = 440 (72% - origin size = 608)
+'enemy_escudeiro_animation1_frame5_tileset_data' packed with LZ4W, size = 408 (71% - origin size = 576)
+'enemy_adaga_animation0_frame0_tileset_data' not packed (size = 416)
+'enemy_adaga_animation0_frame1_tileset_data' packed with LZ4W, size = 364 (76% - origin size = 480)
+'enemy_adaga_animation0_frame2_tileset_data' packed with LZ4W, size = 362 (75% - origin size = 480)
+'enemy_adaga_animation0_frame3_tileset_data' packed with LZ4W, size = 356 (74% - origin size = 480)
+'enemy_adaga_animation1_frame0_tileset_data' not packed (size = 352)
+'enemy_adaga_animation1_frame1_tileset_data' packed with LZ4W, size = 344 (67% - origin size = 512)
+'enemy_adaga_animation1_frame2_tileset_data' packed with LZ4W, size = 316 (62% - origin size = 512)
+'enemy_adaga_animation1_frame3_tileset_data' packed with LZ4W, size = 306 (60% - origin size = 512)
+'enemy_adaga_animation1_frame4_tileset_data' packed with LZ4W, size = 352 (69% - origin size = 512)
+'enemy_adaga_animation1_frame5_tileset_data' packed with LZ4W, size = 274 (71% - origin size = 384)
+'enemy_artilheiro_animation0_frame0_tileset_data' not packed (size = 480)
+'enemy_artilheiro_animation0_frame1_tileset_data' packed with LZ4W, size = 426 (70% - origin size = 608)
+'enemy_artilheiro_animation0_frame2_tileset_data' packed with LZ4W, size = 420 (69% - origin size = 608)
+'enemy_artilheiro_animation0_frame3_tileset_data' packed with LZ4W, size = 428 (70% - origin size = 608)
+'enemy_artilheiro_animation1_frame0_tileset_data' packed with LZ4W, size = 408 (67% - origin size = 608)
+'enemy_artilheiro_animation1_frame1_tileset_data' packed with LZ4W, size = 366 (82% - origin size = 448)
+'enemy_artilheiro_animation1_frame2_tileset_data' packed with LZ4W, size = 368 (72% - origin size = 512)
+'enemy_artilheiro_animation1_frame3_tileset_data' packed with LZ4W, size = 376 (69% - origin size = 544)
+'enemy_artilheiro_animation1_frame4_tileset_data' packed with LZ4W, size = 398 (65% - origin size = 608)
+'enemy_artilheiro_animation1_frame5_tileset_data' packed with LZ4W, size = 396 (69% - origin size = 576)
+'enemy_alcateia_animation0_frame0_tileset_data' not packed (size = 480)
+'enemy_alcateia_animation0_frame1_tileset_data' not packed (size = 480)
+'enemy_alcateia_animation0_frame2_tileset_data' not packed (size = 480)
+'enemy_alcateia_animation0_frame3_tileset_data' not packed (size = 480)
+'enemy_alcateia_animation1_frame0_tileset_data' packed with LZ4W, size = 454 (71% - origin size = 640)
+'enemy_alcateia_animation1_frame1_tileset_data' not packed (size = 448)
+'enemy_alcateia_animation1_frame2_tileset_data' packed with LZ4W, size = 398 (73% - origin size = 544)
+'enemy_alcateia_animation1_frame3_tileset_data' packed with LZ4W, size = 410 (75% - origin size = 544)
+'enemy_alcateia_animation1_frame4_tileset_data' not packed (size = 480)
+'enemy_alcateia_animation1_frame5_tileset_data' not packed (size = 448)
+'enemy_fortaleza_animation0_frame0_tileset_data' packed with LZ4W, size = 400 (83% - origin size = 480)
+'enemy_fortaleza_animation0_frame1_tileset_data' packed with LZ4W, size = 412 (86% - origin size = 480)
+'enemy_fortaleza_animation0_frame2_tileset_data' packed with LZ4W, size = 392 (82% - origin size = 480)
+'enemy_fortaleza_animation0_frame3_tileset_data' packed with LZ4W, size = 400 (83% - origin size = 480)
+'enemy_fortaleza_animation1_frame0_tileset_data' packed with LZ4W, size = 454 (79% - origin size = 576)
+'enemy_fortaleza_animation1_frame1_tileset_data' packed with LZ4W, size = 428 (74% - origin size = 576)
+'enemy_fortaleza_animation1_frame2_tileset_data' packed with LZ4W, size = 412 (72% - origin size = 576)
+'enemy_fortaleza_animation1_frame3_tileset_data' packed with LZ4W, size = 404 (70% - origin size = 576)
+'enemy_fortaleza_animation1_frame4_tileset_data' packed with LZ4W, size = 384 (67% - origin size = 576)
+'enemy_fortaleza_animation1_frame5_tileset_data' packed with LZ4W, size = 400 (83% - origin size = 480)
+'enemy_meteoro_animation0_frame0_tileset_data' not packed (size = 480)
+'enemy_meteoro_animation0_frame1_tileset_data' not packed (size = 480)
+'enemy_meteoro_animation0_frame2_tileset_data' not packed (size = 480)
+'enemy_meteoro_animation0_frame3_tileset_data' packed with LZ4W, size = 402 (84% - origin size = 480)
+'enemy_meteoro_animation1_frame0_tileset_data' packed with LZ4W, size = 452 (71% - origin size = 640)
+'enemy_meteoro_animation1_frame1_tileset_data' packed with LZ4W, size = 406 (75% - origin size = 544)
+'enemy_meteoro_animation1_frame2_tileset_data' packed with LZ4W, size = 432 (68% - origin size = 640)
+'enemy_meteoro_animation1_frame3_tileset_data' packed with LZ4W, size = 434 (80% - origin size = 544)
+'enemy_meteoro_animation1_frame4_tileset_data' not packed (size = 448)
+'enemy_meteoro_animation1_frame5_tileset_data' packed with LZ4W, size = 472 (74% - origin size = 640)
+'enemy_dummy_animation0_frame0_tileset_data' packed with LZ4W, size = 412 (68% - origin size = 608)
+'enemy_dummy_animation0_frame1_tileset_data' packed with LZ4W, size = 394 (65% - origin size = 608)
+'enemy_dummy_animation0_frame2_tileset_data' packed with LZ4W, size = 380 (63% - origin size = 608)
+'enemy_dummy_animation0_frame3_tileset_data' packed with LZ4W, size = 404 (66% - origin size = 608)
+'enemy_dummy_animation1_frame0_tileset_data' packed with LZ4W, size = 366 (64% - origin size = 576)
+'enemy_dummy_animation1_frame1_tileset_data' packed with LZ4W, size = 334 (65% - origin size = 512)
+'enemy_dummy_animation1_frame2_tileset_data' packed with LZ4W, size = 386 (71% - origin size = 544)
+'enemy_dummy_animation1_frame3_tileset_data' packed with LZ4W, size = 320 (63% - origin size = 512)
+'enemy_dummy_animation1_frame4_tileset_data' packed with LZ4W, size = 370 (64% - origin size = 576)
+'enemy_dummy_animation1_frame5_tileset_data' packed with LZ4W, size = 366 (67% - origin size = 544)
+'enemy_alvo_animation0_frame0_tileset_data' packed with LZ4W, size = 308 (74% - origin size = 416)
+'enemy_alvo_animation0_frame1_tileset_data' packed with LZ4W, size = 300 (72% - origin size = 416)
+'enemy_alvo_animation0_frame2_tileset_data' packed with LZ4W, size = 278 (67% - origin size = 416)
+'enemy_alvo_animation0_frame3_tileset_data' packed with LZ4W, size = 304 (73% - origin size = 416)
+'enemy_alvo_animation1_frame0_tileset_data' packed with LZ4W, size = 308 (64% - origin size = 480)
+'enemy_alvo_animation1_frame1_tileset_data' packed with LZ4W, size = 270 (70% - origin size = 384)
+'enemy_alvo_animation1_frame2_tileset_data' packed with LZ4W, size = 330 (69% - origin size = 480)
+'enemy_alvo_animation1_frame3_tileset_data' packed with LZ4W, size = 308 (64% - origin size = 480)
+'enemy_alvo_animation1_frame4_tileset_data' packed with LZ4W, size = 320 (59% - origin size = 544)
+'enemy_alvo_animation1_frame5_tileset_data' packed with LZ4W, size = 292 (61% - origin size = 480)
+'enemy_lacraia_animation0_frame0_tileset_data' packed with LZ4W, size = 416 (72% - origin size = 576)
+'enemy_lacraia_animation0_frame1_tileset_data' packed with LZ4W, size = 416 (72% - origin size = 576)
+'enemy_lacraia_animation0_frame2_tileset_data' not packed (size = 448)
+'enemy_lacraia_animation0_frame3_tileset_data' packed with LZ4W, size = 402 (70% - origin size = 576)
+'enemy_lacraia_animation1_frame0_tileset_data' packed with LZ4W, size = 412 (68% - origin size = 608)
+'enemy_lacraia_animation1_frame1_tileset_data' packed with LZ4W, size = 378 (74% - origin size = 512)
+'enemy_lacraia_animation1_frame2_tileset_data' packed with LZ4W, size = 416 (76% - origin size = 544)
+'enemy_lacraia_animation1_frame3_tileset_data' packed with LZ4W, size = 382 (70% - origin size = 544)
+'enemy_lacraia_animation1_frame4_tileset_data' packed with LZ4W, size = 404 (66% - origin size = 608)
+'enemy_lacraia_animation1_frame5_tileset_data' packed with LZ4W, size = 416 (65% - origin size = 640)
+
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/darkspace-v1/enemies.res summary:
+-------------
+Binary data: 58774 bytes
+  Unpacked: 11328 bytes
+  Packed: 47446 bytes (71% - origin size: 66432 bytes)
+Sprite metadata (all but tiles and palette data): 4410 bytes
+Misc metadata (map, bitmap, image, tilemap, tileset, palette..): 1206 bytes
+Total: 64390 bytes (63 KB)

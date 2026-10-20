@@ -1,0 +1,543 @@
+{
+  "status": "organized-by-project-identifiers-and-resource-validated",
+  "generator": "built-in image_gen",
+  "camera": {
+    "projection": "orthographic",
+    "elevation_degrees_above_ground": 60,
+    "validation": "art target, not a calibrated 3D render"
+  },
+  "palette": [
+    "transparent",
+    "#000000",
+    "#242424",
+    "#494949",
+    "#6D6D6D",
+    "#929292",
+    "#DBDBB6",
+    "#492400",
+    "#926D24",
+    "#DBB649",
+    "#6D0000",
+    "#DB2424",
+    "#DBDB24",
+    "#49246D",
+    "#9249B6",
+    "#DB6D00"
+  ],
+  "directions": [
+    "N",
+    "NE",
+    "L",
+    "SE",
+    "S",
+    "SO",
+    "O",
+    "NO"
+  ],
+  "direction_ids": "same order as ENEMYGFX_faceDir / FACE_DIR in game code",
+  "cell_size": [
+    32,
+    48
+  ],
+  "per_direction_sheet_size": [
+    192,
+    96
+  ],
+  "combined_sheet_size": [
+    192,
+    768
+  ],
+  "animation_frames": [
+    4,
+    6
+  ],
+  "enemies": [
+    {
+      "id": "sq_red",
+      "name": "Torreao",
+      "role": "red heavy stationary gunner",
+      "description": "bulky scarab-shaped plated power armor, compact shoulder cannon facing right, domed riveted helmet, brass boiler backpack and pipes, thick boots",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-0fd3a432-affc-4dcb-af88-5992424113fb.png",
+      "reference": "../darkspace-iso60-v2/originals/torreao.png",
+      "legacy_art_id": "torreao",
+      "definition_file": "../../src/enemies/defs/sq_red.c",
+      "definition_symbol": "ENEMYDEF_sq_red",
+      "enemy_type_symbol": "ENEMY_SQ_RED",
+      "enemy_type_index": 0,
+      "sprite_symbol": "enemy8_sq_red",
+      "assets": {
+        "sheet": "enemies/sq_red/sq_red.png",
+        "turntable": "enemies/sq_red/sq_red_turntable.png",
+        "original": "enemies/sq_red/originals/sq_red.png",
+        "preview_turntable": "enemies/sq_red/previews/sq_red_turntable.gif",
+        "preview_run": "enemies/sq_red/previews/sq_red_run.gif",
+        "directions": {
+          "N": "enemies/sq_red/directions/sq_red_N.png",
+          "NE": "enemies/sq_red/directions/sq_red_NE.png",
+          "L": "enemies/sq_red/directions/sq_red_L.png",
+          "SE": "enemies/sq_red/directions/sq_red_SE.png",
+          "S": "enemies/sq_red/directions/sq_red_S.png",
+          "SO": "enemies/sq_red/directions/sq_red_SO.png",
+          "O": "enemies/sq_red/directions/sq_red_O.png",
+          "NO": "enemies/sq_red/directions/sq_red_NO.png"
+        }
+      }
+    },
+    {
+      "id": "sq_yellow",
+      "name": "Batedor",
+      "role": "yellow relentless pursuer",
+      "description": "squat scout marine in scarab-shaped yellow armored suit, brass respirator, riveted shoulder plates, compact steam piston backpack, heavy marching boots, fists ready",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-d95da002-f556-4558-be56-173689c3249b.png",
+      "reference": "../darkspace-iso60-v2/originals/batedor.png",
+      "legacy_art_id": "batedor",
+      "definition_file": "../../src/enemies/defs/sq_yellow.c",
+      "definition_symbol": "ENEMYDEF_sq_yellow",
+      "enemy_type_symbol": "ENEMY_SQ_YEL",
+      "enemy_type_index": 1,
+      "sprite_symbol": "enemy8_sq_yellow",
+      "assets": {
+        "sheet": "enemies/sq_yellow/sq_yellow.png",
+        "turntable": "enemies/sq_yellow/sq_yellow_turntable.png",
+        "original": "enemies/sq_yellow/originals/sq_yellow.png",
+        "preview_turntable": "enemies/sq_yellow/previews/sq_yellow_turntable.gif",
+        "preview_run": "enemies/sq_yellow/previews/sq_yellow_run.gif",
+        "directions": {
+          "N": "enemies/sq_yellow/directions/sq_yellow_N.png",
+          "NE": "enemies/sq_yellow/directions/sq_yellow_NE.png",
+          "L": "enemies/sq_yellow/directions/sq_yellow_L.png",
+          "SE": "enemies/sq_yellow/directions/sq_yellow_SE.png",
+          "S": "enemies/sq_yellow/directions/sq_yellow_S.png",
+          "SO": "enemies/sq_yellow/directions/sq_yellow_SO.png",
+          "O": "enemies/sq_yellow/directions/sq_yellow_O.png",
+          "NO": "enemies/sq_yellow/directions/sq_yellow_NO.png"
+        }
+      }
+    },
+    {
+      "id": "sq_purple",
+      "name": "Baluarte",
+      "role": "purple armored slow tank",
+      "description": "very broad compact purple siege marine with domed beetle carapace, huge layered pauldrons, enclosed visor, copper furnace vents, dense armor and small shield projector",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-7f8b8797-8c86-47ff-8332-8dbe8b07fdb5.png",
+      "reference": "../darkspace-iso60-v2/originals/baluarte.png",
+      "legacy_art_id": "baluarte",
+      "definition_file": "../../src/enemies/defs/sq_purple.c",
+      "definition_symbol": "ENEMYDEF_sq_purple",
+      "enemy_type_symbol": "ENEMY_SQ_PUR",
+      "enemy_type_index": 2,
+      "sprite_symbol": "enemy8_sq_purple",
+      "assets": {
+        "sheet": "enemies/sq_purple/sq_purple.png",
+        "turntable": "enemies/sq_purple/sq_purple_turntable.png",
+        "original": "enemies/sq_purple/originals/sq_purple.png",
+        "preview_turntable": "enemies/sq_purple/previews/sq_purple_turntable.gif",
+        "preview_run": "enemies/sq_purple/previews/sq_purple_run.gif",
+        "directions": {
+          "N": "enemies/sq_purple/directions/sq_purple_N.png",
+          "NE": "enemies/sq_purple/directions/sq_purple_NE.png",
+          "L": "enemies/sq_purple/directions/sq_purple_L.png",
+          "SE": "enemies/sq_purple/directions/sq_purple_SE.png",
+          "S": "enemies/sq_purple/directions/sq_purple_S.png",
+          "SO": "enemies/sq_purple/directions/sq_purple_SO.png",
+          "O": "enemies/sq_purple/directions/sq_purple_O.png",
+          "NO": "enemies/sq_purple/directions/sq_purple_NO.png"
+        }
+      }
+    },
+    {
+      "id": "sq_orange",
+      "name": "Ariete",
+      "role": "orange charging bruiser",
+      "description": "orange armored shock trooper, beetle-inspired wedge helmet and reinforced ram shoulder, compact brass steam pistons on back and legs, forward charging posture",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1361bb4e-b684-4017-84b3-1816439d0ca1.png",
+      "reference": "../darkspace-iso60-v2/originals/ariete.png",
+      "legacy_art_id": "ariete",
+      "definition_file": "../../src/enemies/defs/sq_orange.c",
+      "definition_symbol": "ENEMYDEF_sq_orange",
+      "enemy_type_symbol": "ENEMY_SQ_ORG",
+      "enemy_type_index": 3,
+      "sprite_symbol": "enemy8_sq_orange",
+      "assets": {
+        "sheet": "enemies/sq_orange/sq_orange.png",
+        "turntable": "enemies/sq_orange/sq_orange_turntable.png",
+        "original": "enemies/sq_orange/originals/sq_orange.png",
+        "preview_turntable": "enemies/sq_orange/previews/sq_orange_turntable.gif",
+        "preview_run": "enemies/sq_orange/previews/sq_orange_run.gif",
+        "directions": {
+          "N": "enemies/sq_orange/directions/sq_orange_N.png",
+          "NE": "enemies/sq_orange/directions/sq_orange_NE.png",
+          "L": "enemies/sq_orange/directions/sq_orange_L.png",
+          "SE": "enemies/sq_orange/directions/sq_orange_SE.png",
+          "S": "enemies/sq_orange/directions/sq_orange_S.png",
+          "SO": "enemies/sq_orange/directions/sq_orange_SO.png",
+          "O": "enemies/sq_orange/directions/sq_orange_O.png",
+          "NO": "enemies/sq_orange/directions/sq_orange_NO.png"
+        }
+      }
+    },
+    {
+      "id": "tri_red",
+      "name": "Fuzileiro",
+      "role": "red agile rifleman",
+      "description": "slim red armored marine, fly-inspired angular helmet and folded mechanical wing-shaped backpack vanes, compact short rifle pointing right, brass receiver and breathing hose",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-270ea397-c299-4fb2-8ece-b044cf2302d5.png",
+      "reference": "../darkspace-iso60-v2/originals/fuzileiro.png",
+      "before_cleanup_source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-4d77ea64-adf9-4209-bb42-5b810a348368.png",
+      "cleanup_prompt": "Perform ONLY a cleanup on this existing pixel-art sprite atlas. Preserve every character pose, facing, anatomy, equipment, camera, row and column placement, count and artwork. Remove ALL detached tiny red/brown marks, short horizontal red streaks, ground shadows, ground marks and stray pixels beneath the feet or between the characters. Keep only the actual soldier silhouettes, weapons, brass pipes and boots on a genuinely transparent background. Especially remove red horizontal fragments BELOW the feet in the lower-left-facing rows. No floor, no cast shadows, no effects, no red dust or presentation marks. Keep all eight directional rows exactly in place: north/back, northeast/back-right, east/right, southeast/front-right, south/front, southwest/front-left, west/left, northwest/back-left. Do not rotate or change poses. Do not add new poses. Preserve all pixels belonging to the actual characters as closely as possible, and make everything else transparent. Hard pixel-art edges, no antialiasing.",
+      "legacy_art_id": "fuzileiro",
+      "definition_file": "../../src/enemies/defs/tri_red.c",
+      "definition_symbol": "ENEMYDEF_tri_red",
+      "enemy_type_symbol": "ENEMY_TRI_RED",
+      "enemy_type_index": 4,
+      "sprite_symbol": "enemy8_tri_red",
+      "assets": {
+        "sheet": "enemies/tri_red/tri_red.png",
+        "turntable": "enemies/tri_red/tri_red_turntable.png",
+        "original": "enemies/tri_red/originals/tri_red.png",
+        "preview_turntable": "enemies/tri_red/previews/tri_red_turntable.gif",
+        "preview_run": "enemies/tri_red/previews/tri_red_run.gif",
+        "directions": {
+          "N": "enemies/tri_red/directions/tri_red_N.png",
+          "NE": "enemies/tri_red/directions/tri_red_NE.png",
+          "L": "enemies/tri_red/directions/tri_red_L.png",
+          "SE": "enemies/tri_red/directions/tri_red_SE.png",
+          "S": "enemies/tri_red/directions/tri_red_S.png",
+          "SO": "enemies/tri_red/directions/tri_red_SO.png",
+          "O": "enemies/tri_red/directions/tri_red_O.png",
+          "NO": "enemies/tri_red/directions/tri_red_NO.png"
+        }
+      }
+    },
+    {
+      "id": "tri_yellow",
+      "name": "Cacador",
+      "role": "yellow fast hunter",
+      "description": "slim yellow interceptor marine, fly-inspired angular helmet, twin folded bronze wing vanes and spring piston legs, compact forearm blades, very dynamic sprint",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-e32f7582-b658-497f-8b9f-c10f58ce420a.png",
+      "reference": "../darkspace-iso60-v2/originals/cacador.png",
+      "legacy_art_id": "cacador",
+      "definition_file": "../../src/enemies/defs/tri_yellow.c",
+      "definition_symbol": "ENEMYDEF_tri_yellow",
+      "enemy_type_symbol": "ENEMY_TRI_YEL",
+      "enemy_type_index": 5,
+      "sprite_symbol": "enemy8_tri_yellow",
+      "assets": {
+        "sheet": "enemies/tri_yellow/tri_yellow.png",
+        "turntable": "enemies/tri_yellow/tri_yellow_turntable.png",
+        "original": "enemies/tri_yellow/originals/tri_yellow.png",
+        "preview_turntable": "enemies/tri_yellow/previews/tri_yellow_turntable.gif",
+        "preview_run": "enemies/tri_yellow/previews/tri_yellow_run.gif",
+        "directions": {
+          "N": "enemies/tri_yellow/directions/tri_yellow_N.png",
+          "NE": "enemies/tri_yellow/directions/tri_yellow_NE.png",
+          "L": "enemies/tri_yellow/directions/tri_yellow_L.png",
+          "SE": "enemies/tri_yellow/directions/tri_yellow_SE.png",
+          "S": "enemies/tri_yellow/directions/tri_yellow_S.png",
+          "SO": "enemies/tri_yellow/directions/tri_yellow_SO.png",
+          "O": "enemies/tri_yellow/directions/tri_yellow_O.png",
+          "NO": "enemies/tri_yellow/directions/tri_yellow_NO.png"
+        }
+      }
+    },
+    {
+      "id": "tri_purple",
+      "name": "Escudeiro",
+      "role": "purple agile shield bearer",
+      "description": "slim purple interceptor marine, fly-shaped angular visor, compact circular forearm buckler with violet emitter, bronze spring piston boots, folded wing backpack",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1c5ac119-8206-480a-8503-131b5d5e5865.png",
+      "reference": "../darkspace-iso60-v2/originals/escudeiro.png",
+      "legacy_art_id": "escudeiro",
+      "definition_file": "../../src/enemies/defs/tri_purple.c",
+      "definition_symbol": "ENEMYDEF_tri_purple",
+      "enemy_type_symbol": "ENEMY_TRI_PUR",
+      "enemy_type_index": 6,
+      "sprite_symbol": "enemy8_tri_purple",
+      "assets": {
+        "sheet": "enemies/tri_purple/tri_purple.png",
+        "turntable": "enemies/tri_purple/tri_purple_turntable.png",
+        "original": "enemies/tri_purple/originals/tri_purple.png",
+        "preview_turntable": "enemies/tri_purple/previews/tri_purple_turntable.gif",
+        "preview_run": "enemies/tri_purple/previews/tri_purple_run.gif",
+        "directions": {
+          "N": "enemies/tri_purple/directions/tri_purple_N.png",
+          "NE": "enemies/tri_purple/directions/tri_purple_NE.png",
+          "L": "enemies/tri_purple/directions/tri_purple_L.png",
+          "SE": "enemies/tri_purple/directions/tri_purple_SE.png",
+          "S": "enemies/tri_purple/directions/tri_purple_S.png",
+          "SO": "enemies/tri_purple/directions/tri_purple_SO.png",
+          "O": "enemies/tri_purple/directions/tri_purple_O.png",
+          "NO": "enemies/tri_purple/directions/tri_purple_NO.png"
+        }
+      }
+    },
+    {
+      "id": "tri_orange",
+      "name": "Adaga",
+      "role": "orange rapid dash assassin",
+      "description": "lean orange powered assassin, pointed fly-inspired helmet, paired short forearm daggers, brass pressure tanks and steam-driven legs, sharp compact running poses",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-7ce0965c-d469-474d-9600-9ee4790f6e22.png",
+      "reference": "../darkspace-iso60-v2/originals/adaga.png",
+      "legacy_art_id": "adaga",
+      "definition_file": "../../src/enemies/defs/tri_orange.c",
+      "definition_symbol": "ENEMYDEF_tri_orange",
+      "enemy_type_symbol": "ENEMY_TRI_ORG",
+      "enemy_type_index": 7,
+      "sprite_symbol": "enemy8_tri_orange",
+      "assets": {
+        "sheet": "enemies/tri_orange/tri_orange.png",
+        "turntable": "enemies/tri_orange/tri_orange_turntable.png",
+        "original": "enemies/tri_orange/originals/tri_orange.png",
+        "preview_turntable": "enemies/tri_orange/previews/tri_orange_turntable.gif",
+        "preview_run": "enemies/tri_orange/previews/tri_orange_run.gif",
+        "directions": {
+          "N": "enemies/tri_orange/directions/tri_orange_N.png",
+          "NE": "enemies/tri_orange/directions/tri_orange_NE.png",
+          "L": "enemies/tri_orange/directions/tri_orange_L.png",
+          "SE": "enemies/tri_orange/directions/tri_orange_SE.png",
+          "S": "enemies/tri_orange/directions/tri_orange_S.png",
+          "SO": "enemies/tri_orange/directions/tri_orange_SO.png",
+          "O": "enemies/tri_orange/directions/tri_orange_O.png",
+          "NO": "enemies/tri_orange/directions/tri_orange_NO.png"
+        }
+      }
+    },
+    {
+      "id": "pen_red",
+      "name": "Artilheiro",
+      "role": "red elite spread-shot gunner",
+      "description": "red elite marine in compact spider-inspired angular plate armor, three-barrel short scatter cannon pointing right, four folded mechanical backpack struts, brass piping, masked face",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-f4d5f5dd-82dd-4acb-ae57-7ea35bd906ab.png",
+      "reference": "../darkspace-iso60-v2/originals/artilheiro.png",
+      "legacy_art_id": "artilheiro",
+      "definition_file": "../../src/enemies/defs/pen_red.c",
+      "definition_symbol": "ENEMYDEF_pen_red",
+      "enemy_type_symbol": "ENEMY_PEN_RED",
+      "enemy_type_index": 8,
+      "sprite_symbol": "enemy8_pen_red",
+      "assets": {
+        "sheet": "enemies/pen_red/pen_red.png",
+        "turntable": "enemies/pen_red/pen_red_turntable.png",
+        "original": "enemies/pen_red/originals/pen_red.png",
+        "preview_turntable": "enemies/pen_red/previews/pen_red_turntable.gif",
+        "preview_run": "enemies/pen_red/previews/pen_red_run.gif",
+        "directions": {
+          "N": "enemies/pen_red/directions/pen_red_N.png",
+          "NE": "enemies/pen_red/directions/pen_red_NE.png",
+          "L": "enemies/pen_red/directions/pen_red_L.png",
+          "SE": "enemies/pen_red/directions/pen_red_SE.png",
+          "S": "enemies/pen_red/directions/pen_red_S.png",
+          "SO": "enemies/pen_red/directions/pen_red_SO.png",
+          "O": "enemies/pen_red/directions/pen_red_O.png",
+          "NO": "enemies/pen_red/directions/pen_red_NO.png"
+        }
+      }
+    },
+    {
+      "id": "pen_yellow",
+      "name": "Alcateia",
+      "role": "yellow elite splitting pack leader",
+      "description": "yellow elite marine in spider-like segmented armor, two compact detachable drone capsules on shoulders, folded articulated bronze back struts, compact claw gauntlets",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-fadaacf4-8e85-4007-b222-682f009342f2.png",
+      "reference": "../darkspace-iso60-v2/originals/alcateia.png",
+      "legacy_art_id": "alcateia",
+      "definition_file": "../../src/enemies/defs/pen_yellow.c",
+      "definition_symbol": "ENEMYDEF_pen_yellow",
+      "enemy_type_symbol": "ENEMY_PEN_YEL",
+      "enemy_type_index": 9,
+      "sprite_symbol": "enemy8_pen_yellow",
+      "assets": {
+        "sheet": "enemies/pen_yellow/pen_yellow.png",
+        "turntable": "enemies/pen_yellow/pen_yellow_turntable.png",
+        "original": "enemies/pen_yellow/originals/pen_yellow.png",
+        "preview_turntable": "enemies/pen_yellow/previews/pen_yellow_turntable.gif",
+        "preview_run": "enemies/pen_yellow/previews/pen_yellow_run.gif",
+        "directions": {
+          "N": "enemies/pen_yellow/directions/pen_yellow_N.png",
+          "NE": "enemies/pen_yellow/directions/pen_yellow_NE.png",
+          "L": "enemies/pen_yellow/directions/pen_yellow_L.png",
+          "SE": "enemies/pen_yellow/directions/pen_yellow_SE.png",
+          "S": "enemies/pen_yellow/directions/pen_yellow_S.png",
+          "SO": "enemies/pen_yellow/directions/pen_yellow_SO.png",
+          "O": "enemies/pen_yellow/directions/pen_yellow_O.png",
+          "NO": "enemies/pen_yellow/directions/pen_yellow_NO.png"
+        }
+      }
+    },
+    {
+      "id": "pen_purple",
+      "name": "Fortaleza",
+      "role": "purple elite armored summoner",
+      "description": "massive compact purple spider-armored siege commander, layered pentagonal pauldrons, small paired drone pods and folded brass spider struts, violet shield projector, brass boiler",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1e7ef3e9-ac44-4e26-9070-8fcbac95449e.png",
+      "reference": "../darkspace-iso60-v2/originals/fortaleza.png",
+      "legacy_art_id": "fortaleza",
+      "definition_file": "../../src/enemies/defs/pen_purple.c",
+      "definition_symbol": "ENEMYDEF_pen_purple",
+      "enemy_type_symbol": "ENEMY_PEN_PUR",
+      "enemy_type_index": 10,
+      "sprite_symbol": "enemy8_pen_purple",
+      "assets": {
+        "sheet": "enemies/pen_purple/pen_purple.png",
+        "turntable": "enemies/pen_purple/pen_purple_turntable.png",
+        "original": "enemies/pen_purple/originals/pen_purple.png",
+        "preview_turntable": "enemies/pen_purple/previews/pen_purple_turntable.gif",
+        "preview_run": "enemies/pen_purple/previews/pen_purple_run.gif",
+        "directions": {
+          "N": "enemies/pen_purple/directions/pen_purple_N.png",
+          "NE": "enemies/pen_purple/directions/pen_purple_NE.png",
+          "L": "enemies/pen_purple/directions/pen_purple_L.png",
+          "SE": "enemies/pen_purple/directions/pen_purple_SE.png",
+          "S": "enemies/pen_purple/directions/pen_purple_S.png",
+          "SO": "enemies/pen_purple/directions/pen_purple_SO.png",
+          "O": "enemies/pen_purple/directions/pen_purple_O.png",
+          "NO": "enemies/pen_purple/directions/pen_purple_NO.png"
+        }
+      }
+    },
+    {
+      "id": "pen_orange",
+      "name": "Meteoro",
+      "role": "orange elite teleporting charger",
+      "description": "orange elite spider-armored shock commander, compact circular bronze teleport coil on back, folded mechanical struts and piston legs, wedge visor and compact heavy fists",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-723b6278-a76b-40b1-9a1b-1c65a0a030ed.png",
+      "reference": "../darkspace-iso60-v2/originals/meteoro.png",
+      "legacy_art_id": "meteoro",
+      "definition_file": "../../src/enemies/defs/pen_orange.c",
+      "definition_symbol": "ENEMYDEF_pen_orange",
+      "enemy_type_symbol": "ENEMY_PEN_ORG",
+      "enemy_type_index": 11,
+      "sprite_symbol": "enemy8_pen_orange",
+      "assets": {
+        "sheet": "enemies/pen_orange/pen_orange.png",
+        "turntable": "enemies/pen_orange/pen_orange_turntable.png",
+        "original": "enemies/pen_orange/originals/pen_orange.png",
+        "preview_turntable": "enemies/pen_orange/previews/pen_orange_turntable.gif",
+        "preview_run": "enemies/pen_orange/previews/pen_orange_run.gif",
+        "directions": {
+          "N": "enemies/pen_orange/directions/pen_orange_N.png",
+          "NE": "enemies/pen_orange/directions/pen_orange_NE.png",
+          "L": "enemies/pen_orange/directions/pen_orange_L.png",
+          "SE": "enemies/pen_orange/directions/pen_orange_SE.png",
+          "S": "enemies/pen_orange/directions/pen_orange_S.png",
+          "SO": "enemies/pen_orange/directions/pen_orange_SO.png",
+          "O": "enemies/pen_orange/directions/pen_orange_O.png",
+          "NO": "enemies/pen_orange/directions/pen_orange_NO.png"
+        }
+      }
+    },
+    {
+      "id": "dummy",
+      "name": "Dummy",
+      "role": "gray durable stationary practice target",
+      "description": "gray humanoid training automaton shaped like a chunky scarab marine, round bronze target plate on chest without numerals, riveted head, brass joint pistons, sealed boiler backpack",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-58811d69-e5e2-47f8-a997-37be8e9b27b1.png",
+      "reference": "../darkspace-iso60-v2/originals/dummy.png",
+      "legacy_art_id": "dummy",
+      "definition_file": "../../src/enemies/defs/dummy.c",
+      "definition_symbol": "ENEMYDEF_dummy",
+      "enemy_type_symbol": "ENEMY_DUMMY",
+      "enemy_type_index": 12,
+      "sprite_symbol": "enemy8_dummy",
+      "assets": {
+        "sheet": "enemies/dummy/dummy.png",
+        "turntable": "enemies/dummy/dummy_turntable.png",
+        "original": "enemies/dummy/originals/dummy.png",
+        "preview_turntable": "enemies/dummy/previews/dummy_turntable.gif",
+        "preview_run": "enemies/dummy/previews/dummy_run.gif",
+        "directions": {
+          "N": "enemies/dummy/directions/dummy_N.png",
+          "NE": "enemies/dummy/directions/dummy_NE.png",
+          "L": "enemies/dummy/directions/dummy_L.png",
+          "SE": "enemies/dummy/directions/dummy_SE.png",
+          "S": "enemies/dummy/directions/dummy_S.png",
+          "SO": "enemies/dummy/directions/dummy_SO.png",
+          "O": "enemies/dummy/directions/dummy_O.png",
+          "NO": "enemies/dummy/directions/dummy_NO.png"
+        }
+      }
+    },
+    {
+      "id": "target",
+      "name": "Alvo",
+      "role": "gray fragile practice target",
+      "description": "lighter gray humanoid target automaton, narrow scarab helmet, thin armor and exposed bronze joints, small concentric target plate without numbers, tiny steam canister",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-740dc9fc-aa76-4d1b-b8d9-05b75382e021.png",
+      "reference": "../darkspace-iso60-v2/originals/alvo.png",
+      "legacy_art_id": "alvo",
+      "definition_file": "../../src/enemies/defs/target.c",
+      "definition_symbol": "ENEMYDEF_target",
+      "enemy_type_symbol": "ENEMY_TARGET",
+      "enemy_type_index": 13,
+      "sprite_symbol": "enemy8_target",
+      "assets": {
+        "sheet": "enemies/target/target.png",
+        "turntable": "enemies/target/target_turntable.png",
+        "original": "enemies/target/originals/target.png",
+        "preview_turntable": "enemies/target/previews/target_turntable.gif",
+        "preview_run": "enemies/target/previews/target_run.gif",
+        "directions": {
+          "N": "enemies/target/directions/target_N.png",
+          "NE": "enemies/target/directions/target_NE.png",
+          "L": "enemies/target/directions/target_L.png",
+          "SE": "enemies/target/directions/target_SE.png",
+          "S": "enemies/target/directions/target_S.png",
+          "SO": "enemies/target/directions/target_SO.png",
+          "O": "enemies/target/directions/target_O.png",
+          "NO": "enemies/target/directions/target_NO.png"
+        }
+      }
+    },
+    {
+      "id": "boss",
+      "name": "Lacraia",
+      "role": "red final boss compact centipede warlord",
+      "description": "intimidating red armored centipede warlord in upright compact exosuit, horned segmented helmet, layered chitin-like crimson plates, multiple folded bronze mechanical limbs hugging torso, brass reactor and piston boots; strongest broadest silhouette while entirely inside 32x48 cell",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a14fd6-90fc-7761-b49a-e25f61bbab47/exec-1ecb5882-ad4a-48ef-9d08-087fc8170671.png",
+      "reference": "../darkspace-iso60-v2/originals/lacraia.png",
+      "legacy_art_id": "lacraia",
+      "definition_file": "../../src/enemies/defs/boss.c",
+      "definition_symbol": "ENEMYDEF_boss",
+      "enemy_type_symbol": "ENEMY_BOSS",
+      "enemy_type_index": 14,
+      "sprite_symbol": "enemy8_boss",
+      "assets": {
+        "sheet": "enemies/boss/boss.png",
+        "turntable": "enemies/boss/boss_turntable.png",
+        "original": "enemies/boss/originals/boss.png",
+        "preview_turntable": "enemies/boss/previews/boss_turntable.gif",
+        "preview_run": "enemies/boss/previews/boss_run.gif",
+        "directions": {
+          "N": "enemies/boss/directions/boss_N.png",
+          "NE": "enemies/boss/directions/boss_NE.png",
+          "L": "enemies/boss/directions/boss_L.png",
+          "SE": "enemies/boss/directions/boss_SE.png",
+          "S": "enemies/boss/directions/boss_S.png",
+          "SO": "enemies/boss/directions/boss_SO.png",
+          "O": "enemies/boss/directions/boss_O.png",
+          "NO": "enemies/boss/directions/boss_NO.png"
+        }
+      }
+    }
+  ],
+  "prompt_reconstruction": "Concatenate common_prompt + enemy_prompt_suffixes[id] to recover each exact submitted prompt.",
+  "common_prompt": "Use case: identity-preserve, multi-direction pixel-art game sprite animation atlas.\nRedraw the SAME enemy from reference in ALL EIGHT compass directions, for an arena shooter viewed by an orthographic camera elevated60degrees ABOVE THE GROUND. Camera remains fixed for whole sheet; only character's physical facing changes in3D. High-angle RTS units like StarCraft, dark military sci-fi with brass/copper steam machinery, native MegaDrive pixel clusters. Preserve the referenced armor, materials, color, boiler, weapon, proportions.\nONE ATLAS: EXACTLY TEN COLUMNS and EIGHT ROWS. Intended native canvas320x384pixels, eachcell32x48. No gutters, no margins. EXACTLY80complete compact poses of ONE enemy. Every row is ONE fixed orientation with10poses. First4columns(idle0..3), last6columns(run0..5), full cyclic motion in place. Row order is mandatory:\nROW0 NORTH: walking/shooting UPscreen, DIRECT REAR VIEW; helmet BACK, back armor and boiler visible, face and visor must NOT be visible. Gun aimsUP.\nROW1 NORTHEAST: UP-RIGHTscreen, rear3/4 view; back and right side visible, mostly BACK of helmet; gunUP-RIGHT.\nROW2 EAST/L: RIGHTscreen, right-facing elevated SIDE VIEW; gunRIGHT.\nROW3 SOUTHEAST: DOWN-RIGHTscreen, front3/4 view matching reference, helmet visor and front armor visible; gunDOWN-RIGHT.\nROW4 SOUTH: DOWNscreen, DIRECT FRONT VIEW from high above, symmetric shoulder tops around head, front visor visible, chest and gun foreshortened; gunDOWN.\nROW5 SOUTHWEST: DOWN-LEFTscreen, front3/4LEFT view; gunDOWN-LEFT.\nROW6 WEST/O: LEFTscreen, left-facing elevated SIDE VIEW; gunLEFT.\nROW7 NORTHWEST: UP-LEFTscreen, rear3/4LEFT view; back boiler and helmetback visible; gunUP-LEFT.\nAbsolutely distinguish NORTH/back and SOUTH/front! Draw the character physically turning, NOT rotating or vertically flipping a flat sprite. Top of helmet remains top on screen for every direction; NEVER upside down. Camera elevation stays60degreesaboveground throughALL80poses. See large upper planes of helmet, shoulders and boiler. Face only a small rim in frontal views; no face visible on rear view. Body anatomy and equipment stay fixed. Only horizontal mirroring is acceptable for corresponding left/rightfacings. Idle subtle breathing4poses feet stable. Run6distinctposes with alternating legs contact/push/passing/suspension/opposite-contact/recovery and a loopback. No global drift.\nEach pose fully fits its32x48cell; consistent scale acrossALL8directions and poses, feet pivotlocal(16,46), compact limbs and weapons. All80cells occupied, no missing frames. No texts/numbers/arrows/directionlabels/gridlines/floor/background/scenery/shadows/watermarks. True transparent PNG background.\nDraw directly at FINALPIXELARTscale, no antialiasing/blur/gradient/glow/sem-transparentedges. Explicit flat pixelclusters and economical2tone shading. SINGLEsharedpalette index0transparent +15opaquevisiblecolorsONLY: #000000, #242424, #494949, #6D6D6D, #929292, #DBDBB6, #492400, #926D24, #DBB649, #6D0000, #DB2424, #DBDB24, #49246D, #9249B6, #DB6D00. Keep enough light pixels for darkscenery readability.",
+  "enemy_prompt_suffixes": {
+    "sq_red": "\nENEMY IDENTITY: TORREAO, heavy red scarab-armored space infantry gunner, brass steam boiler backpack with round cap and pipes, domed armored helmet with small yellow visor, short heavy machine cannon, massive shoulder plates and boots. REDdominantarmor, blackgunmetal and brass. Preserve design from reference. REARviews must show brass boiler mounted behind helmet and red segmented backplate; FRONTviews show visor and chest, not the backplate.",
+    "sq_yellow": "\nENEMY: Batedor, yellow relentless pursuer. squat scout marine in scarab-shaped yellow armored suit, brass respirator, riveted shoulder plates, compact steam piston backpack, heavy marching boots, fists ready. Dominant armor yellow. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "sq_purple": "\nENEMY: Baluarte, purple armored slow tank. very broad compact purple siege marine with domed beetle carapace, huge layered pauldrons, enclosed visor, copper furnace vents, dense armor and small shield projector. Dominant armor purple. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "sq_orange": "\nENEMY: Aríete, orange charging bruiser. orange armored shock trooper, beetle-inspired wedge helmet and reinforced ram shoulder, compact brass steam pistons on back and legs, forward charging posture. Dominant armor orange. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "tri_red": "\nENEMY: Fuzileiro, red agile rifleman. slim red armored marine, fly-inspired angular helmet and folded mechanical wing-shaped backpack vanes, compact short rifle pointing right, brass receiver and breathing hose. Dominant armor red. All eight facings as specified: draw DIRECT BACK in row0 and DIRECT FRONT in row4. Exactly10poses per row, not11, and exactly8rows. Preserve own design from reference, with consistent silhouette between front/side/rear.",
+    "tri_yellow": "\nENEMY: Caçador, yellow fast hunter. slim yellow interceptor marine, fly-inspired angular helmet, twin folded bronze wing vanes and spring piston legs, compact forearm blades, very dynamic sprint. Dominant armor yellow. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "tri_purple": "\nENEMY: Escudeiro, purple agile shield bearer. slim purple interceptor marine, fly-shaped angular visor, compact circular forearm buckler with violet emitter, bronze spring piston boots, folded wing backpack. Dominant armor purple. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "tri_orange": "\nENEMY: Adaga, orange rapid dash assassin. lean orange powered assassin, pointed fly-inspired helmet, paired short forearm daggers, brass pressure tanks and steam-driven legs, sharp compact running poses. Dominant armor orange. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "pen_red": "\nENEMY: Artilheiro, red elite spread-shot gunner. red elite marine in compact spider-inspired angular plate armor, three-barrel short scatter cannon pointing right, four folded mechanical backpack struts, brass piping, masked face. Dominant armor red. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "pen_yellow": "\nENEMY: Alcateia, yellow elite splitting pack leader. yellow elite marine in spider-like segmented armor, two compact detachable drone capsules on shoulders, folded articulated bronze back struts, compact claw gauntlets. Dominant armor yellow. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "pen_purple": "\nENEMY: Fortaleza, purple elite armored summoner. massive compact purple spider-armored siege commander, layered pentagonal pauldrons, small paired drone pods and folded brass spider struts, violet shield projector, brass boiler. Dominant armor purple. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "pen_orange": "\nENEMY: Meteoro, orange elite teleporting charger. orange elite spider-armored shock commander, compact circular bronze teleport coil on back, folded mechanical struts and piston legs, wedge visor and compact heavy fists. Dominant armor orange. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "dummy": "\nENEMY: Dummy, gray durable stationary practice target. gray humanoid training automaton shaped like a chunky scarab marine, round bronze target plate on chest without numerals, riveted head, brass joint pistons, sealed boiler backpack. Dominant armor gray. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "target": "\nENEMY: Alvo, gray fragile practice target. lighter gray humanoid target automaton, narrow scarab helmet, thin armor and exposed bronze joints, small concentric target plate without numbers, tiny steam canister. Dominant armor gray. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run.",
+    "boss": "\nENEMY: Lacraia, red final boss compact centipede warlord. intimidating red armored centipede warlord in upright compact exosuit, horned segmented helmet, layered chitin-like crimson plates, multiple folded bronze mechanical limbs hugging torso, brass reactor and piston boots; strongest broadest silhouette while entirely inside 32x48 cell. Dominant armor red. All eight facings mandatory: row0DIRECTBACK, row1REAR-RIGHT, row2RIGHTSIDE, row3FRONT-RIGHT, row4DIRECTFRONT, row5FRONT-LEFT, row6LEFTSIDE, row7REAR-LEFT. All directions point exactly to their compass vectors. NORTH and SOUTH must be different drawn views, not flat rotations. Exactly10poses per row,80total,4idle+6run."
+  },
+  "runtime_integration": false
+}

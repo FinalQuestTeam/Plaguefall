@@ -1,0 +1,50 @@
+{
+  "layout": {
+    "idle_source_poses": [
+      0,
+      2
+    ],
+    "run_source_poses": [
+      4,
+      6,
+      7,
+      9
+    ],
+    "canonical_directions": [
+      "N",
+      "NE",
+      "L",
+      "SE",
+      "S"
+    ],
+    "horizontal_mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    },
+    "idle_step_fps_ratio": [
+      2,
+      5
+    ],
+    "run_step_fps_ratio": [
+      3,
+      20
+    ]
+  },
+  "actors": {
+    "insects": {
+      "characters": 13,
+      "canonical_frames": 390,
+      "rom_bytes": 299520,
+      "previous_rom_bytes": 499200,
+      "sha256": "48a8d9d60377405c22acfbf8a54568384826e03a00f6aa94c3446adb66b71897"
+    },
+    "heroi": {
+      "characters": 1,
+      "canonical_frames": 30,
+      "rom_bytes": 23040,
+      "previous_rom_bytes": 38400,
+      "sha256": "815e8fa2930cd4fe099a8c7e0b90d4b22d3b8e5d097fdbf9b6419c32e466a995"
+    }
+  }
+}

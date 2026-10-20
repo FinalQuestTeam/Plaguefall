@@ -129,7 +129,7 @@ void ENEMIES_chase(Enemy *e, u16 speedFp)
     const s16 half = ENEMY_SIZE(e) / 2;
 
     // lentidão aplicada por elementos da fase (ex.: lama)
-    if (e->slowPct) speedFp = (u16) (((u32) speedFp * (100 - e->slowPct)) / 100);
+    if (e->slowPct) speedFp = divu((u32) speedFp * (100 - e->slowPct), 100);
 
     // recuando após colisão: mantém a velocidade de recuo
     if (e->stun)
@@ -151,8 +151,10 @@ void ENEMIES_chase(Enemy *e, u16 speedFp)
         s16 dy = ty - (e->y + half);
         u32 dist = getApproximatedDistance(dx, dy);
         if (dist == 0) dist = 1;
-        e->vx = (s16) (((s32) dx * speedFp) / (s32) dist);
-        e->vy = (s16) (((s32) dy * speedFp) / (s32) dist);
+        // Arena distances are <512 and speeds <=90: the signed quotient
+        // fits 16 bits, so DIVS preserves C truncation without a software divide.
+        e->vx = divs((s32) dx * speedFp, (s16) dist);
+        e->vy = divs((s32) dy * speedFp, (s16) dist);
         e->retarget = RETARGET_FRAMES;
     }
 

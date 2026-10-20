@@ -44,7 +44,7 @@ static bool isOn(const TileRect *rects, u16 count, s16 cx, s16 cy)
 // lentidão em %: BASE% imediato ao entrar, +STEP% a cada segundo, teto MAX%
 static u16 slowFromTime(u16 time, u16 base, u16 step, u16 max)
 {
-    u16 slow = base + step * (time / fps);
+    u16 slow = base + step * divu(time, fps);
     return (slow > max) ? max : slow;
 }
 

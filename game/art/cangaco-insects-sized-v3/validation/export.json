@@ -1,0 +1,643 @@
+[
+  {
+    "id": "sq_red",
+    "name": "Torre\u00e3o",
+    "family": "sq",
+    "animal": "besouro serra-pau",
+    "color": "vermelho queimado",
+    "detail": "um pequeno canh\u00e3o reaproveitado sobre o t\u00f3rax; corpo robusto e antenas longas",
+    "source_horizontal_flip_rows": [],
+    "size": 16,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 4,
+    "bytes_per_frame": 128,
+    "rom_offset": 0,
+    "rom_bytes": 3840,
+    "scale": 0.07291666666666667,
+    "source_sha256": "22edd6e2c5aa90cbbc9bd1f537324c92a5a7adbeb1ee07ef2b3ee9f77584a95b",
+    "native_sha256": "4fff44a86df6a31e1e0723c02f871a5e75476734b6d062534fde5d606bf1f6a7",
+    "source_rows": [
+      0,
+      231,
+      459,
+      687,
+      905,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "sq_yellow",
+    "name": "Batedor",
+    "family": "sq",
+    "animal": "besouro serra-pau",
+    "color": "amarelo ocre",
+    "detail": "corpo leve, pequeno sensor dorsal, antenas longas",
+    "source_horizontal_flip_rows": [],
+    "size": 16,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 4,
+    "bytes_per_frame": 128,
+    "rom_offset": 3840,
+    "rom_bytes": 3840,
+    "scale": 0.0707070707070707,
+    "source_sha256": "2d6f70752256d07b8f053eaf00137efcab624091f9859cec83e682b332202278",
+    "native_sha256": "fffad86a02c19057961e174fe091d957b4fca9af3f0ba9560dc1cf91e2d99253",
+    "source_rows": [
+      0,
+      231,
+      458,
+      687,
+      906,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "sq_purple",
+    "name": "Baluarte",
+    "family": "sq",
+    "animal": "besouro serra-pau",
+    "color": "roxo apagado",
+    "detail": "corpo largo com placas met\u00e1licas sobrepostas e pequeno emissor defensivo dorsal",
+    "source_horizontal_flip_rows": [],
+    "size": 32,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 16,
+    "bytes_per_frame": 512,
+    "rom_offset": 7680,
+    "rom_bytes": 15360,
+    "scale": 0.14634146341463414,
+    "source_sha256": "c9731e52efe4ae7fe000cacb440212ec7dad7756b21dcba65569d97e49fd56b6",
+    "native_sha256": "9b67adb894191c595329a8f193d22a04310318a25b50edf24c20310728a59d7d",
+    "source_rows": [
+      0,
+      229,
+      458,
+      687,
+      907,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "sq_orange",
+    "name": "Ar\u00edete",
+    "family": "sq",
+    "animal": "besouro serra-pau",
+    "color": "laranja gasto",
+    "detail": "mand\u00edbulas refor\u00e7adas e cunha met\u00e1lica frontal compacta",
+    "source_horizontal_flip_rows": [],
+    "size": 16,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 4,
+    "bytes_per_frame": 128,
+    "rom_offset": 23040,
+    "rom_bytes": 3840,
+    "scale": 0.06572769953051644,
+    "source_sha256": "e1dbb3ca36ab94caf678f4578481d1d237e802bcab3bf8a6e1e254ee7dd2db20",
+    "native_sha256": "21922441df8321ab0d338823c47d9c995cf04af4fd027d15760f09bd67c2d391",
+    "source_rows": [
+      0,
+      233,
+      460,
+      687,
+      898,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "tri_red",
+    "name": "Fuzileiro",
+    "family": "tri",
+    "animal": "mutuca",
+    "color": "vermelho queimado",
+    "detail": "um pequeno dispositivo de disparo lateral no t\u00f3rax",
+    "source_horizontal_flip_rows": [],
+    "size": 16,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 4,
+    "bytes_per_frame": 128,
+    "rom_offset": 26880,
+    "rom_bytes": 3840,
+    "scale": 0.07216494845360824,
+    "source_sha256": "c1472846bf50d03121b8a4f637ef2c23decb7310f84a1d440b2de2bcfa45a526",
+    "native_sha256": "48630b36a6992dbe7980ed8dad85400e1bb2e70406bed1881825efd070f203fd",
+    "source_rows": [
+      0,
+      242,
+      470,
+      687,
+      909,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "tri_yellow",
+    "name": "Ca\u00e7ador",
+    "family": "tri",
+    "animal": "mutuca",
+    "color": "amarelo ocre",
+    "detail": "corpo leve com pouca prote\u00e7\u00e3o e asas bem vis\u00edveis",
+    "source_horizontal_flip_rows": [],
+    "size": 16,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 4,
+    "bytes_per_frame": 128,
+    "rom_offset": 30720,
+    "rom_bytes": 3840,
+    "scale": 0.07777777777777778,
+    "source_sha256": "b90b3a0433c49429abd692f7f034cf42e26fbca605dd7a000f304ed30396c1b7",
+    "native_sha256": "da434e792f8effcca696bbabfd39305d852340aed974cd3da04de521af319bf1",
+    "source_rows": [
+      0,
+      233,
+      458,
+      687,
+      900,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "tri_purple",
+    "name": "Escudeiro",
+    "family": "tri",
+    "animal": "mutuca",
+    "color": "roxo apagado",
+    "detail": "placas tor\u00e1cicas pequenas e pequeno m\u00f3dulo defensivo",
+    "source_horizontal_flip_rows": [],
+    "size": 16,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 4,
+    "bytes_per_frame": 128,
+    "rom_offset": 34560,
+    "rom_bytes": 3840,
+    "scale": 0.07526881720430108,
+    "source_sha256": "ac20375fb2e9f2c2608bd14f569915721c2365704205841505f3ca73400aff6a",
+    "native_sha256": "07b29d3fb6e6328c337dbf86a4d8469a47baeabe7de9fa1b45fdfc5719ab97fa",
+    "source_rows": [
+      0,
+      229,
+      458,
+      687,
+      916,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "tri_orange",
+    "name": "Adaga",
+    "family": "tri",
+    "animal": "mutuca",
+    "color": "laranja gasto",
+    "detail": "frente com pequena placa refor\u00e7ada, corpo \u00e1gil",
+    "source_horizontal_flip_rows": [],
+    "size": 16,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 4,
+    "bytes_per_frame": 128,
+    "rom_offset": 38400,
+    "rom_bytes": 3840,
+    "scale": 0.08433734939759036,
+    "source_sha256": "b4c1b132ac88087712192715cc14c1ed9b7a0686150aee3ddf1ef7e425c48928",
+    "native_sha256": "7b5fb6786ceb4ca57de112265ca505dbccc644ad125e07a191a3e6dbaa7e197d",
+    "source_rows": [
+      0,
+      229,
+      458,
+      687,
+      901,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "pen_red",
+    "name": "Artilheiro",
+    "family": "pen",
+    "animal": "formiga sa\u00fava-soldado",
+    "color": "vermelho queimado",
+    "detail": "cabe\u00e7a grande e tr\u00eas pequenos canos de artilharia paralelos no dorso",
+    "source_horizontal_flip_rows": [],
+    "size": 24,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 9,
+    "bytes_per_frame": 288,
+    "rom_offset": 42240,
+    "rom_bytes": 8640,
+    "scale": 0.11956521739130435,
+    "source_sha256": "18d264357e64d47e9bbd511b443640d24cde950ed4dba61d62aeb1f6a48a8181",
+    "native_sha256": "3d01a6782645a668beb3b2c3022972bf9a0c66c0e72040ef1a215e8df4097f25",
+    "source_rows": [
+      0,
+      229,
+      458,
+      687,
+      913,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "pen_yellow",
+    "name": "Alcateia",
+    "family": "pen",
+    "animal": "formiga sa\u00fava-soldado",
+    "color": "amarelo ocre",
+    "detail": "cabe\u00e7a grande, antenas cotoveladas, pequeno m\u00f3dulo de r\u00e1dio dorsal",
+    "source_horizontal_flip_rows": [],
+    "size": 24,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 9,
+    "bytes_per_frame": 288,
+    "rom_offset": 50880,
+    "rom_bytes": 8640,
+    "scale": 0.11891891891891893,
+    "source_sha256": "5566e57f827993c5b074563fbf2bbbfcc3a3134c5cb7a29c1512536b05a2dbce",
+    "native_sha256": "7072c2e949d730a6d9921ea86934a33532b5fb9889b4d3b4dd7464cbe1021af5",
+    "source_rows": [
+      0,
+      229,
+      458,
+      687,
+      913,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "pen_purple",
+    "name": "Fortaleza",
+    "family": "pen",
+    "animal": "formiga sa\u00fava-soldado",
+    "color": "roxo apagado",
+    "detail": "cabe\u00e7a grande e placas sobrepostas no abd\u00f4men com m\u00f3dulo defensivo dorsal",
+    "source_horizontal_flip_rows": [
+      1,
+      2,
+      3
+    ],
+    "size": 32,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 16,
+    "bytes_per_frame": 512,
+    "rom_offset": 59520,
+    "rom_bytes": 15360,
+    "scale": 0.16483516483516483,
+    "source_sha256": "0433be214d4c62b0548ceab919aa52f9b3ba35f06c672afbf6ef94c6662ed3ce",
+    "native_sha256": "57c5163df7aca6cb7c6ac98ae874f33b4eb7eae3d3ca196f8124d02696f4e836",
+    "source_rows": [
+      0,
+      229,
+      458,
+      687,
+      916,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "pen_orange",
+    "name": "Meteoro",
+    "family": "pen",
+    "animal": "formiga sa\u00fava-soldado",
+    "color": "laranja gasto",
+    "detail": "cabe\u00e7a grande, abd\u00f4men org\u00e2nico exposto e pequeno m\u00f3dulo el\u00e9trico dorsal",
+    "source_horizontal_flip_rows": [],
+    "size": 24,
+    "frames": 30,
+    "hardware_pieces": 1,
+    "tiles_per_frame": 9,
+    "bytes_per_frame": 288,
+    "rom_offset": 74880,
+    "rom_bytes": 8640,
+    "scale": 0.11398963730569948,
+    "source_sha256": "ae68670c814745aa92f39f143424b08eb144778b14d41adeaa1655c38a2962e8",
+    "native_sha256": "2444a40e3c06b2a819affa9facb5ac92dbcddc5d637273fbb325c935fe0c8d02",
+    "source_rows": [
+      0,
+      229,
+      460,
+      687,
+      916,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  },
+  {
+    "id": "boss",
+    "name": "Lacraia",
+    "family": "boss",
+    "animal": "escorpi\u00e3o-amarelo-do-Nordeste",
+    "color": "amarelo ocre e azul petr\u00f3leo",
+    "detail": "duas pin\u00e7as grandes, oito pernas e cauda segmentada arqueada com ferr\u00e3o, reparo met\u00e1lico assim\u00e9trico em uma pin\u00e7a e implante perto do ferr\u00e3o",
+    "source_horizontal_flip_rows": [],
+    "size": 48,
+    "frames": 30,
+    "hardware_pieces": 4,
+    "tiles_per_frame": 36,
+    "bytes_per_frame": 1152,
+    "rom_offset": 83520,
+    "rom_bytes": 34560,
+    "scale": 0.2072072072072072,
+    "source_sha256": "e8d3d85ae2fa869bfed8b207a4044f55cb6b8108b098ef02bf460f99eb4e30db",
+    "native_sha256": "81cb7b57c2538a9b0b3024b156ba85095d977f10b9c0bb97939cce3657356c72",
+    "source_rows": [
+      0,
+      230,
+      458,
+      669,
+      890,
+      1145
+    ],
+    "unique_poses_per_direction": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ]
+  }
+]

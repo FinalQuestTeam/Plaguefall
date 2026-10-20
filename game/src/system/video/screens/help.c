@@ -65,15 +65,15 @@ static void drawEnemies(void)
     drawIcon8(3, 13, TILE_ICON_ORG); VDP_drawText("LARANJA   INVESTIDA RAPIDA", 5, 13);
 
     VDP_drawText("O INSETO MOSTRA A FAMILIA", 2, 15);
-    drawEnemyIcon(3, 17, ENEMY_SQ_RED);  VDP_drawText("BESOURO  RESISTENTE", 7, 17);
-    drawEnemyIcon(3, 19, ENEMY_TRI_RED); VDP_drawText("MOSCA    FRAGIL E AGRESSIVA", 7, 19);
-    drawEnemyIcon(3, 21, ENEMY_PEN_RED); VDP_drawText("ARANHA   ELITE COM TRUQUE", 7, 21);
+    drawEnemyIcon(3, 17, ENEMY_SQ_RED);  VDP_drawText("SERRA-PAU RESISTENTE", 7, 17);
+    drawEnemyIcon(3, 19, ENEMY_TRI_RED); VDP_drawText("MUTUCA    FRAGIL E AGRESSIVA", 7, 19);
+    drawEnemyIcon(3, 21, ENEMY_PEN_RED); VDP_drawText("SAUVA     ELITE COM TRUQUE", 7, 21);
 }
 
 // PÁGINA 3 — a elite: truques dos pentágonos
 static void drawElite(void)
 {
-    VDP_drawText("INIMIGOS ELITE - ARANHAS", 2, 3);
+    VDP_drawText("INIMIGOS ELITE - SAUVAS", 2, 3);
     VDP_drawText("CADA UMA TEM UM TRUQUE:", 2, 5);
 
     drawIcon8(3, 7,  TILE_ICON_RED); VDP_drawText("ARTILHEIRO  LEQUE DE TIROS", 5, 7);

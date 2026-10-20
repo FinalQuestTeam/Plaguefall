@@ -1,0 +1,198 @@
+[
+  {
+    "id": "heroi",
+    "name": "Rex",
+    "sprite": "game/art/cangaco-protagonista-v1/heroi/heroi.png",
+    "sha256": "0e9b2b6868c150e7524824c34430f5cffce7c45262f87acb9f1ed0a26859ac1a",
+    "contact_sheet": "contact-sheets/heroi.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "sq_red",
+    "name": "Torreão",
+    "sprite": "game/art/cangaco-insects-v1/enemies/sq_red/sq_red.png",
+    "sha256": "17771b18a41f4d4875951002f44e1c75cc2182cde09969342b1d48361c46f72d",
+    "contact_sheet": "contact-sheets/sq_red.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "sq_yellow",
+    "name": "Batedor",
+    "sprite": "game/art/cangaco-insects-v1/enemies/sq_yellow/sq_yellow.png",
+    "sha256": "9ac5360610cfa1fefbafe711ca1f98d4136f1e7a415918700a6228cf7fb39de7",
+    "contact_sheet": "contact-sheets/sq_yellow.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "sq_purple",
+    "name": "Baluarte",
+    "sprite": "game/art/cangaco-insects-v1/enemies/sq_purple/sq_purple.png",
+    "sha256": "c0044510e4cdea075cc7223d8e3f579d2f3060d513cc9dc3d05926f55228207c",
+    "contact_sheet": "contact-sheets/sq_purple.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "sq_orange",
+    "name": "Aríete",
+    "sprite": "game/art/cangaco-insects-v1/enemies/sq_orange/sq_orange.png",
+    "sha256": "9024fde9fc7c4775ffdbd6bc2ae8671769f1a5a0b80c863865f4ee6a8cbc940e",
+    "contact_sheet": "contact-sheets/sq_orange.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "tri_red",
+    "name": "Fuzileiro",
+    "sprite": "game/art/cangaco-insects-v1/enemies/tri_red/tri_red.png",
+    "sha256": "64f7866cf27c83fee03c91f4944cd5b9a28ec09451242aeeb1494046435b7406",
+    "contact_sheet": "contact-sheets/tri_red.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "tri_yellow",
+    "name": "Caçador",
+    "sprite": "game/art/cangaco-insects-v1/enemies/tri_yellow/tri_yellow.png",
+    "sha256": "57b0c5112c7983b6f8cacb1a40e529803f9c9c3dd61c29c891493a787077a4c2",
+    "contact_sheet": "contact-sheets/tri_yellow.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "tri_purple",
+    "name": "Escudeiro",
+    "sprite": "game/art/cangaco-insects-v1/enemies/tri_purple/tri_purple.png",
+    "sha256": "bae93513c4c6078c6bbcc8549afd325615af07275afe669cdebe89b444ee7abf",
+    "contact_sheet": "contact-sheets/tri_purple.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "tri_orange",
+    "name": "Adaga",
+    "sprite": "game/art/cangaco-insects-v1/enemies/tri_orange/tri_orange.png",
+    "sha256": "9ef1f12ab87355a2e5545e83569840898406927548ab360c800bb5b4784c6d50",
+    "contact_sheet": "contact-sheets/tri_orange.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "pen_red",
+    "name": "Artilheiro",
+    "sprite": "game/art/cangaco-insects-v1/enemies/pen_red/pen_red.png",
+    "sha256": "94a89bd3143488b4853288d08abe9a35174e62056f3e9394f33a147df8933929",
+    "contact_sheet": "contact-sheets/pen_red.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "pen_yellow",
+    "name": "Alcateia",
+    "sprite": "game/art/cangaco-insects-v1/enemies/pen_yellow/pen_yellow.png",
+    "sha256": "47f8cff9b984deecedd3daf7ff544249c3464f5a4eb7a605dd007c5151d3be7d",
+    "contact_sheet": "contact-sheets/pen_yellow.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "pen_purple",
+    "name": "Fortaleza",
+    "sprite": "game/art/cangaco-insects-v1/enemies/pen_purple/pen_purple.png",
+    "sha256": "6c21f064b891b854e6a9644b90c3c31e1fe135c157d5a2be59de4101bcf6b317",
+    "contact_sheet": "contact-sheets/pen_purple.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "pen_orange",
+    "name": "Meteoro",
+    "sprite": "game/art/cangaco-insects-v1/enemies/pen_orange/pen_orange.png",
+    "sha256": "22f3862701275009920747f61a98b46cd8d23d166fd5a8bc15e157c80a915dbb",
+    "contact_sheet": "contact-sheets/pen_orange.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  },
+  {
+    "id": "boss",
+    "name": "Lacraia",
+    "sprite": "game/art/cangaco-insects-v1/enemies/boss/boss.png",
+    "sha256": "09e9fc5f89490fc4cf33e9ea7ee3800a925e519cccdd26497252a78e57cd3b70",
+    "contact_sheet": "contact-sheets/boss.png",
+    "drawn_frames": 50,
+    "exported_frames": 80,
+    "mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    }
+  }
+]

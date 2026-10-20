@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "stage": "concept-art",
+  "reference": "../protagonista/protagonista-cangaco-cyberpunk-v3.png",
+  "generation_tool": "image_gen built-in",
+  "note": "Estudos artísticos de artrópodes gigantes. Não são sprites; escala, perspectiva e anatomia não foram validadas como documentação biológica. Sem alterações na ROM.",
+  "enemies": [
+    {
+      "id": "sq_red",
+      "name": "Torreão",
+      "family": "serra-pau",
+      "concept": "sq/sq-serra-pau-v1.png",
+      "position": "principal à esquerda"
+    },
+    {
+      "id": "sq_yellow",
+      "name": "Batedor",
+      "family": "serra-pau",
+      "concept": "sq/sq-serra-pau-v1.png",
+      "position": "direita superior"
+    },
+    {
+      "id": "sq_purple",
+      "name": "Baluarte",
+      "family": "serra-pau",
+      "concept": "sq/sq-serra-pau-v1.png",
+      "position": "direita central"
+    },
+    {
+      "id": "sq_orange",
+      "name": "Aríete",
+      "family": "serra-pau",
+      "concept": "sq/sq-serra-pau-v1.png",
+      "position": "direita inferior"
+    },
+    {
+      "id": "tri_red",
+      "name": "Fuzileiro",
+      "family": "mutuca",
+      "concept": "tri/tri-mutuca-v1.png",
+      "position": "principal à esquerda"
+    },
+    {
+      "id": "tri_yellow",
+      "name": "Caçador",
+      "family": "mutuca",
+      "concept": "tri/tri-mutuca-v1.png",
+      "position": "direita superior"
+    },
+    {
+      "id": "tri_purple",
+      "name": "Escudeiro",
+      "family": "mutuca",
+      "concept": "tri/tri-mutuca-v1.png",
+      "position": "direita central"
+    },
+    {
+      "id": "tri_orange",
+      "name": "Adaga",
+      "family": "mutuca",
+      "concept": "tri/tri-mutuca-v1.png",
+      "position": "direita inferior"
+    },
+    {
+      "id": "pen_red",
+      "name": "Artilheiro",
+      "family": "sauva-soldado",
+      "concept": "pen/pen-sauva-soldado-v1.png",
+      "position": "principal à esquerda"
+    },
+    {
+      "id": "pen_yellow",
+      "name": "Alcateia",
+      "family": "sauva-soldado",
+      "concept": "pen/pen-sauva-soldado-v1.png",
+      "position": "direita superior"
+    },
+    {
+      "id": "pen_purple",
+      "name": "Fortaleza",
+      "family": "sauva-soldado",
+      "concept": "pen/pen-sauva-soldado-v1.png",
+      "position": "direita central"
+    },
+    {
+      "id": "pen_orange",
+      "name": "Meteoro",
+      "family": "sauva-soldado",
+      "concept": "pen/pen-sauva-soldado-v1.png",
+      "position": "direita inferior"
+    },
+    {
+      "id": "boss",
+      "name": "Lacraia",
+      "family": "escorpiao-chefe",
+      "concept": "boss/boss-escorpiao-nordeste-v1.png",
+      "position": "vista principal à esquerda; vistas complementares à direita"
+    }
+  ]
+}

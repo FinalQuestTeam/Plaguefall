@@ -1,0 +1,47 @@
+{
+  "rom": "game/art/cangaco-insects-iso60-v2/validation/performance/before-rom.bin",
+  "rom_sha256": "581b2d4a950e94d4ff218d832e3071d992fc735771db13ce6450c738bfd96771",
+  "method": "Count SPRITES_draw frame counter vs VBlank; SGDK 8-frame CPU load; moving sprites in controlled sandbox, same type, no scanline congestion. Gameplay logic active: True.",
+  "cases": [
+    {
+      "enemies": 1,
+      "physical_frames": 240,
+      "game_frames": 240,
+      "game_fps_at_60hz": 60.0,
+      "cpu_load_mean_pct": 88.62,
+      "cpu_load_p95_pct": 89.36
+    },
+    {
+      "enemies": 3,
+      "physical_frames": 240,
+      "game_frames": 120,
+      "game_fps_at_60hz": 30.0,
+      "cpu_load_mean_pct": 119.56,
+      "cpu_load_p95_pct": 120.61
+    },
+    {
+      "enemies": 8,
+      "physical_frames": 240,
+      "game_frames": 97,
+      "game_fps_at_60hz": 24.25,
+      "cpu_load_mean_pct": 198.08,
+      "cpu_load_p95_pct": 202.15
+    },
+    {
+      "enemies": 15,
+      "physical_frames": 240,
+      "game_frames": 64,
+      "game_fps_at_60hz": 16.0,
+      "cpu_load_mean_pct": 312.96,
+      "cpu_load_p95_pct": 317.19
+    },
+    {
+      "enemies": 16,
+      "physical_frames": 240,
+      "game_frames": 61,
+      "game_fps_at_60hz": 15.25,
+      "cpu_load_mean_pct": 327.17,
+      "cpu_load_p95_pct": 330.71
+    }
+  ]
+}

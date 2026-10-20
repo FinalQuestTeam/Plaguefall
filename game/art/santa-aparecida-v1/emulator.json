@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "rom_sha256": "b3281bf4fa08aa695882547305607524e148a9988b5c4c224bebc7a69014d241",
+  "protect_stage": 6,
+  "native_size": [
+    24,
+    24
+  ],
+  "body_sat_checks": 70,
+  "glow_both_phases_verified": true,
+  "hp_initial": 60,
+  "contact_damage": 12,
+  "invulnerability_preserved": true,
+  "damage_after_invulnerability": true,
+  "npc_position": [
+    147,
+    103
+  ],
+  "method": "Normal door transitions into actual protect level; real SAT rectangles and HP observed, controlled enemy placement in volatile emulator RAM."
+}

@@ -52,25 +52,23 @@
 // ícones 8x8 do HUD de objetivo (contador da linha 0)
 #define TILE_ICON_HEART 70  // coração (COLETAR corações)
 #define TILE_CLOCK      71  // relógio (tempo restante: SOBREVIVER / PROTEGER)
-// aliado do objetivo PROTEGER: antena 24x24 (sprite) + ícone 8x8 (HUD)
-#define TILE_ANTENNA    72  // 9 tiles (24x24, estilo dos itens) — sprite do aliado
-#define TILE_ICON_ANTENNA 81 // 1 tile (8x8) — indicador do aliado no HUD
-#define TILE_ANTENNA_BEACON 82 // 1 tile (8x8) — farol ROXO (overlay do topo da antena)
+// objetivo PROTEGER: santa24x24 + ícone e brilho8x8 (mesmos endereços)
+#define TILE_SAINT      72  // 9 tiles24x24 — Nossa Senhora Aparecida
+#define TILE_ICON_SAINT 81  // 1 tile8x8 — indicador no HUD
+#define TILE_SAINT_GLOW 82  // 1 tile8x8 — brilho da coroa, overlay existente
 #define NUM_TILES       83
 
-// Região das rotações dos inimigos: cada tipo tem 8 direções (como o mech),
-// geradas no boot por system/video/enemygfx.c, logo após os tiles base.
+// Streamed enemy animation cache followed by independent menu icons.
 #define ENEMY_ROT_BASE  NUM_TILES
-#define ENEMY_ROT_COUNT 474 // pools de slots por tamanho × ANIM_FRAMES (enemygfx.c):
-                            // 2 quadros de animação × 3 direções (N/NE/E) por tipo;
-                            // 5×24 + 3×54 + 2×96 = 474. As outras 5 direções saem por
-                            // flip H/V de hardware. Cada tipo gerado 1×, reaproveitado;
-                            // slot de tipo "morto" é reciclado. (1 quadro seria 237.)
+#define ENEMY_MAX_FRAME_TILES 36 // largest frame: boss 48x48
+#define ENEMY_DMA_FRAMES 4
+#define ENEMY_CACHE_TILES 320 // bounded pool, 10KiB, allocated in 4-tile blocks
+#define ENEMY_ICON_TILES 16
+#define ENEMY_ICON_BASE (ENEMY_ROT_BASE + ENEMY_CACHE_TILES)
+#define ENEMY_ROT_COUNT (ENEMY_CACHE_TILES + 15 * ENEMY_ICON_TILES)
 
-// região dedicada do CHEFE (48x48): 8 direções × (48/8)² = 8 × 36 = 288 tiles.
-// Grande demais para os pools; fica logo após a região dos inimigos.
 #define BOSS_ROT_BASE   (ENEMY_ROT_BASE + ENEMY_ROT_COUNT)
-#define BOSS_ROT_COUNT  576 // 2 quadros de animação × 8 direções × 36 = 576
+#define BOSS_ROT_COUNT  72 // scratch only: two 48x48 story portraits
 #define BOSS_DIR_TILES  36  // (48/8)² tiles por direção
 
 #endif // TILES_H

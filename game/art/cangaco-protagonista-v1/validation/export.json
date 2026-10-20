@@ -1,0 +1,982 @@
+{
+  "id": "heroi",
+  "original": "originals/heroi.png",
+  "source_size": [
+    1448,
+    1086
+  ],
+  "source_row_bounds": [
+    0,
+    217,
+    434,
+    652,
+    865,
+    1086
+  ],
+  "scale": 0.20833333333333334,
+  "cells": [
+    {
+      "dir": 0,
+      "pose": 0,
+      "source_cell": [
+        0,
+        0,
+        145,
+        217
+      ],
+      "trim": [
+        41,
+        14,
+        143,
+        205
+      ],
+      "source_pose": 0,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 1,
+      "source_cell": [
+        145,
+        0,
+        290,
+        217
+      ],
+      "trim": [
+        26,
+        13,
+        128,
+        204
+      ],
+      "source_pose": 1,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 2,
+      "source_cell": [
+        290,
+        0,
+        434,
+        217
+      ],
+      "trim": [
+        23,
+        14,
+        125,
+        205
+      ],
+      "source_pose": 2,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 3,
+      "source_cell": [
+        434,
+        0,
+        579,
+        217
+      ],
+      "trim": [
+        16,
+        17,
+        118,
+        205
+      ],
+      "source_pose": 3,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 4,
+      "source_cell": [
+        579,
+        0,
+        724,
+        217
+      ],
+      "trim": [
+        20,
+        13,
+        124,
+        211
+      ],
+      "source_pose": 4,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 5,
+      "source_cell": [
+        724,
+        0,
+        869,
+        217
+      ],
+      "trim": [
+        20,
+        6,
+        128,
+        207
+      ],
+      "source_pose": 5,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 6,
+      "source_cell": [
+        869,
+        0,
+        1014,
+        217
+      ],
+      "trim": [
+        15,
+        6,
+        119,
+        210
+      ],
+      "source_pose": 6,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 7,
+      "source_cell": [
+        1014,
+        0,
+        1158,
+        217
+      ],
+      "trim": [
+        13,
+        7,
+        123,
+        210
+      ],
+      "source_pose": 7,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 8,
+      "source_cell": [
+        1158,
+        0,
+        1303,
+        217
+      ],
+      "trim": [
+        17,
+        9,
+        127,
+        211
+      ],
+      "source_pose": 8,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 0,
+      "pose": 9,
+      "source_cell": [
+        1303,
+        0,
+        1448,
+        217
+      ],
+      "trim": [
+        17,
+        14,
+        121,
+        211
+      ],
+      "source_pose": 9,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 0,
+      "source_cell": [
+        0,
+        217,
+        145,
+        434
+      ],
+      "trim": [
+        26,
+        14,
+        145,
+        205
+      ],
+      "source_pose": 0,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 1,
+      "source_cell": [
+        145,
+        217,
+        290,
+        434
+      ],
+      "trim": [
+        17,
+        14,
+        136,
+        205
+      ],
+      "source_pose": 1,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 18
+    },
+    {
+      "dir": 1,
+      "pose": 2,
+      "source_cell": [
+        290,
+        217,
+        434,
+        434
+      ],
+      "trim": [
+        12,
+        14,
+        129,
+        205
+      ],
+      "source_pose": 2,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 3,
+      "source_cell": [
+        434,
+        217,
+        579,
+        434
+      ],
+      "trim": [
+        5,
+        13,
+        124,
+        204
+      ],
+      "source_pose": 3,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 4,
+      "source_cell": [
+        579,
+        217,
+        724,
+        434
+      ],
+      "trim": [
+        6,
+        14,
+        127,
+        209
+      ],
+      "source_pose": 4,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 5,
+      "source_cell": [
+        724,
+        217,
+        869,
+        434
+      ],
+      "trim": [
+        11,
+        12,
+        127,
+        210
+      ],
+      "source_pose": 5,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 6,
+      "source_cell": [
+        869,
+        217,
+        1014,
+        434
+      ],
+      "trim": [
+        0,
+        14,
+        128,
+        212
+      ],
+      "source_pose": 6,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 7,
+      "source_cell": [
+        1014,
+        217,
+        1158,
+        434
+      ],
+      "trim": [
+        5,
+        14,
+        125,
+        214
+      ],
+      "source_pose": 7,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 8,
+      "source_cell": [
+        1158,
+        217,
+        1303,
+        434
+      ],
+      "trim": [
+        14,
+        12,
+        133,
+        217
+      ],
+      "source_pose": 8,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 1,
+      "pose": 9,
+      "source_cell": [
+        1303,
+        217,
+        1448,
+        434
+      ],
+      "trim": [
+        3,
+        13,
+        138,
+        196
+      ],
+      "source_pose": 9,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 2,
+      "pose": 0,
+      "source_cell": [
+        0,
+        434,
+        145,
+        652
+      ],
+      "trim": [
+        26,
+        15,
+        145,
+        202
+      ],
+      "source_pose": 0,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 2,
+      "pose": 1,
+      "source_cell": [
+        145,
+        434,
+        290,
+        652
+      ],
+      "trim": [
+        22,
+        11,
+        145,
+        202
+      ],
+      "source_pose": 1,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 26
+    },
+    {
+      "dir": 2,
+      "pose": 2,
+      "source_cell": [
+        290,
+        434,
+        434,
+        652
+      ],
+      "trim": [
+        15,
+        10,
+        138,
+        202
+      ],
+      "source_pose": 2,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 5
+    },
+    {
+      "dir": 2,
+      "pose": 3,
+      "source_cell": [
+        434,
+        434,
+        579,
+        652
+      ],
+      "trim": [
+        8,
+        14,
+        130,
+        202
+      ],
+      "source_pose": 3,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 2,
+      "pose": 4,
+      "source_cell": [
+        579,
+        434,
+        724,
+        652
+      ],
+      "trim": [
+        6,
+        14,
+        126,
+        199
+      ],
+      "source_pose": 4,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 330
+    },
+    {
+      "dir": 2,
+      "pose": 5,
+      "source_cell": [
+        724,
+        434,
+        869,
+        652
+      ],
+      "trim": [
+        0,
+        15,
+        127,
+        202
+      ],
+      "source_pose": 5,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 346
+    },
+    {
+      "dir": 2,
+      "pose": 6,
+      "source_cell": [
+        869,
+        434,
+        1014,
+        652
+      ],
+      "trim": [
+        0,
+        20,
+        132,
+        202
+      ],
+      "source_pose": 6,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 245
+    },
+    {
+      "dir": 2,
+      "pose": 7,
+      "source_cell": [
+        1014,
+        434,
+        1158,
+        652
+      ],
+      "trim": [
+        0,
+        15,
+        135,
+        199
+      ],
+      "source_pose": 7,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 55
+    },
+    {
+      "dir": 2,
+      "pose": 8,
+      "source_cell": [
+        1158,
+        434,
+        1303,
+        652
+      ],
+      "trim": [
+        0,
+        13,
+        144,
+        192
+      ],
+      "source_pose": 8,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 2,
+      "pose": 9,
+      "source_cell": [
+        1303,
+        434,
+        1448,
+        652
+      ],
+      "trim": [
+        9,
+        14,
+        138,
+        197
+      ],
+      "source_pose": 9,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 0,
+      "source_cell": [
+        0,
+        652,
+        145,
+        865
+      ],
+      "trim": [
+        25,
+        11,
+        127,
+        189
+      ],
+      "source_pose": 0,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 1,
+      "source_cell": [
+        145,
+        652,
+        290,
+        865
+      ],
+      "trim": [
+        17,
+        7,
+        120,
+        190
+      ],
+      "source_pose": 1,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 2,
+      "source_cell": [
+        290,
+        652,
+        434,
+        865
+      ],
+      "trim": [
+        13,
+        9,
+        115,
+        186
+      ],
+      "source_pose": 2,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 3,
+      "source_cell": [
+        434,
+        652,
+        579,
+        865
+      ],
+      "trim": [
+        5,
+        8,
+        107,
+        189
+      ],
+      "source_pose": 3,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 4,
+      "source_cell": [
+        579,
+        652,
+        724,
+        865
+      ],
+      "trim": [
+        9,
+        5,
+        111,
+        196
+      ],
+      "source_pose": 4,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 5,
+      "source_cell": [
+        724,
+        652,
+        869,
+        865
+      ],
+      "trim": [
+        8,
+        5,
+        113,
+        196
+      ],
+      "source_pose": 5,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 6,
+      "source_cell": [
+        869,
+        652,
+        1014,
+        865
+      ],
+      "trim": [
+        4,
+        7,
+        110,
+        196
+      ],
+      "source_pose": 6,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 7,
+      "source_cell": [
+        1014,
+        652,
+        1158,
+        865
+      ],
+      "trim": [
+        7,
+        3,
+        118,
+        194
+      ],
+      "source_pose": 7,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 8,
+      "source_cell": [
+        1158,
+        652,
+        1303,
+        865
+      ],
+      "trim": [
+        14,
+        5,
+        120,
+        194
+      ],
+      "source_pose": 8,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 3,
+      "pose": 9,
+      "source_cell": [
+        1303,
+        652,
+        1448,
+        865
+      ],
+      "trim": [
+        14,
+        7,
+        118,
+        193
+      ],
+      "source_pose": 9,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 0,
+      "source_cell": [
+        0,
+        865,
+        145,
+        1086
+      ],
+      "trim": [
+        25,
+        2,
+        121,
+        186
+      ],
+      "source_pose": 0,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 1,
+      "source_cell": [
+        145,
+        865,
+        290,
+        1086
+      ],
+      "trim": [
+        17,
+        1,
+        114,
+        184
+      ],
+      "source_pose": 1,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 2,
+      "source_cell": [
+        290,
+        865,
+        434,
+        1086
+      ],
+      "trim": [
+        9,
+        1,
+        107,
+        184
+      ],
+      "source_pose": 2,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 3,
+      "source_cell": [
+        434,
+        865,
+        579,
+        1086
+      ],
+      "trim": [
+        5,
+        2,
+        104,
+        186
+      ],
+      "source_pose": 3,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 4,
+      "source_cell": [
+        579,
+        865,
+        724,
+        1086
+      ],
+      "trim": [
+        1,
+        1,
+        103,
+        198
+      ],
+      "source_pose": 4,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 29
+    },
+    {
+      "dir": 4,
+      "pose": 5,
+      "source_cell": [
+        724,
+        865,
+        869,
+        1086
+      ],
+      "trim": [
+        0,
+        2,
+        104,
+        194
+      ],
+      "source_pose": 5,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 6,
+      "source_cell": [
+        869,
+        865,
+        1014,
+        1086
+      ],
+      "trim": [
+        4,
+        4,
+        111,
+        194
+      ],
+      "source_pose": 6,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 7,
+      "source_cell": [
+        1014,
+        865,
+        1158,
+        1086
+      ],
+      "trim": [
+        12,
+        1,
+        115,
+        198
+      ],
+      "source_pose": 7,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 8,
+      "source_cell": [
+        1158,
+        865,
+        1303,
+        1086
+      ],
+      "trim": [
+        16,
+        2,
+        121,
+        196
+      ],
+      "source_pose": 8,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    },
+    {
+      "dir": 4,
+      "pose": 9,
+      "source_cell": [
+        1303,
+        865,
+        1448,
+        1086
+      ],
+      "trim": [
+        15,
+        1,
+        114,
+        194
+      ],
+      "source_pose": 9,
+      "source_file": "originals/heroi.png",
+      "detached_source_pixels_removed": 0
+    }
+  ],
+  "canonical_directions": [
+    "N",
+    "NE",
+    "L",
+    "SE",
+    "S"
+  ],
+  "horizontal_mirrors": {
+    "SO": "SE",
+    "O": "L",
+    "NO": "NE"
+  },
+  "source_sha256": "6c4e399f921096ecff65e96beecc0a2825ea081f82a788c673247677a4b15ed9"
+}

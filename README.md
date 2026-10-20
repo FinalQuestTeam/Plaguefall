@@ -2,6 +2,10 @@
 
 **Shooter de arena top-down para Sega Mega Drive / Genesis**, escrito em C com o [SGDK 2.11+](https://github.com/Stephane-D/SGDK). Sobreviva a ondas de insetos-máquina em 15 fases de campanha e enfrente a **Lacraia**, o chefe da fase final.
 
+**Nova direção visual:** cangaço cyberpunk brasileiro. Os [13 inimigos gigantes](game/art/cangaco-insects-sized-v3/README.md) agora usam tamanhos nativos de 16×16, 24×24 e 32×32 (chefe48×48), oito direções, repouso e movimento, com [redesenho da perspectiva na versão 2](game/art/camera-60-redraw-v2/README.md), comparado visualmente a guias de câmera ortográfica a 60° acima do chão. A ROM foi recompilada e auditada: **512 KiB**, cache de inimigos de **10 KiB de VRAM** e **47332 bytes de heap livre** observados no emulador. O [protagonista humano Rex](game/art/cangaco-protagonista-iso60-v2/README.md) já substitui o mech na partida e é a opção inicial da galeria, com oito direções e animações. O cenário e a projeção do mapa ainda usam a implementação anterior. As folhas darkspace são estudos históricos.
+
+Nossa Senhora Aparecida substitui a antena24×24 no objetivo PROTEGER, com a mesma lógica e sem aumentar VRAM/RAM. A [parceira feminina está em concept](game/art/concepts/parceira/README.md), aguardando aprovação antes da criação do sprite. Consulte o [inventário de sprites e pendências](game/art/INVENTARIO-SPRITES.md).
+
 > ROM: `game/out/release/rom.bin` — roda em qualquer emulador de Mega Drive (testado no RetroArch + Genesis Plus GX) e, em teoria, no hardware real.
 
 ## O jogo
@@ -50,7 +54,7 @@ Legenda típica: `o` contorno, `b` corpo (cor da família), `h` brilho, `e` olho
 | Asset | Onde | O que é |
 |---|---|---|
 | Mechs do jogador | `sprites/chars_data.h` | 9 personagens 32×32 (3 famílias × 3 portes), rotacionados em 8 direções na VRAM |
-| Insetos (inimigos) | `sprites/insects_data.h` | Besouro/mosca/aranha em 16/24/32 px + a Lacraia 48×48; a cor vem da família |
+| Insetos (inimigos) | `res/insects.res` + `art/cangaco-insects-v1/` | Serra-pau/mutuca/saúva/escorpião em 32×48, 8 direções, 4 frames de repouso e 6 de movimento |
 | Itens | `sprites/items_data.h` | Char-maps 16×16 dos 8 itens |
 | Ícones de HUD | `sprites/icons_data.h` | Caveira, bomba, raio, faísca, escudo, gelo, fogo (8×8) |
 | Chão da arena | `sprites/floor_data.h` | Padrão 32×32 ladrilhado no BG_B (PAL3) |
@@ -58,7 +62,7 @@ Legenda típica: `o` contorno, `b` corpo (cor da família), `h` brilho, `e` olho
 | Logo da splash | `sprites/logo_data.h` | Logo da desenvolvedora |
 | Mapa de VRAM | `sprites/tiles.h` | Índice de todos os tiles + regiões (rotações de inimigo, chefe, chars) |
 
-Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (rotações dos insetos em 8 direções, com pools de VRAM por tamanho e descarte por fase), `chars.c` (rotações do mech).
+Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (cache de frames dos insetos, streaming da ROM e cinco vistas canônicas com simetria horizontal), `chars.c` (rotações do mech).
 
 **Áudio**: tudo no PSG (SN76489), sintetizado em tempo real. Um **árbitro** (`system/audio/audio.c`) é a única via de escrita nos 4 canais — música e SFX apenas *requisitam* voz por prioridade a cada quadro, o que resolve as disputas de canal e o chiado. A **música** (`music.c` + `song_data.h`) é um chiptune dark original com **BPM dinâmico** que sobe com a ameaça (nº de inimigos), configurável **por fase**. Os **SFX** (`sfx.c`) — tiro, explosão, coleta, dano e o leito de ruído de lava/lama — preemptam a música e a devolvem ao soltar. Optou-se pelo PSG porque os drivers XGM/PCM conflitam com o uso intenso de DMA (ver §6 do GDD).
 

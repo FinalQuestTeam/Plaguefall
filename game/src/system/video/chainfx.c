@@ -3,8 +3,10 @@
 // ponto do tiro ao inimigo. Cintila por alguns quadros e some.
 
 #include "system/video/chainfx.h"
+#include "system/video/spritelist.h"
 #include "system/video/sprites/tiles.h"
 #include "core/game.h"
+#include "system/video/projection.h"
 
 #define MAX_ARCS    6       // arcos simultâneos (chain atinge até 3 por tiro)
 #define ARC_LIFE    9       // ~0,15 s de duração
@@ -64,9 +66,8 @@ u16 CHAINFX_draw(u16 n)
             const s16 sx = a->x0 + (s16) ((s32) dx * s / (ARC_SPARKS + 1)) + offX * sign - 4;
             const s16 sy = a->y0 + (s16) ((s32) dy * s / (ARC_SPARKS + 1)) + offY * sign - 4;
 
-            VDP_setSpriteFull(n, sx, sy, SPRITE_SIZE(1, 1),
-                TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, TILE_USER_INDEX + TILE_SPARK), n + 1);
-            n++;
+            SPRITES_emit(&n, sx, VIDEO_PROJECT_Y(sy), SPRITE_SIZE(1, 1),
+                TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, TILE_USER_INDEX + TILE_SPARK));
         }
     }
     return n;

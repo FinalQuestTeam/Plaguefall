@@ -135,7 +135,7 @@ void OBJECTIVE_drawHUD(u16 kills)
             const u16 sig = (u16) (secsLeft() * 512 + hp);
             if (sig == hudLast) return;
             hudLast = sig;
-            icon(TILE_ICON_ANTENNA, 1, PAL0);   // antena BRANCA (aliado) + vida
+            icon(TILE_ICON_SAINT, 1, PAL0);   // santa BRANCA (objetivo) + vida
             sprintf(buf, "%03d", hp);
             VDP_drawText(buf, 3, 0);
             icon(TILE_CLOCK, 7, PAL1);          // relógio + tempo

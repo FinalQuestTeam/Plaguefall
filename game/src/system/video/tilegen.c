@@ -5,10 +5,12 @@
 #include "system/video/tilegen.h"
 #include "system/video/sprites/tiles.h"
 #include "system/video/sprites/icons_data.h"
+#include "system/video/sprites/saint_data.h"
 #include "core/game.h"
 #include "elements/lava.h"
 #include "elements/mud.h"
 #include "items/items.h"
+#include "insects.h"
 
 #define TILEBUF_BYTES   (NUM_TILES * 8 * (u16) sizeof(u32))
 static u32 *tileBuf;
@@ -35,7 +37,7 @@ static void buildTiles(void)
     tileBuf = MEM_alloc(TILEBUF_BYTES);
     memset(tileBuf, 0, TILEBUF_BYTES);
 
-    // o jogador (mech) e os inimigos (insetos) são gerados por direção em
+    // o jogador (Rex) e os inimigos (insetos) são gerados por direção em
     // chars.c / enemygfx.c (regiões CHARS / ENEMY_ROT), não aqui.
 
     // projéteis 8x8 (tile único)
@@ -76,36 +78,11 @@ static void buildTiles(void)
     // ícones do HUD de objetivo (o coração fica branco quando desenhado com PAL0)
     buildTile8(TILE_ICON_HEART, ICON_HEART_ART, '#', 3);    // coração (índice 3)
     buildTile8(TILE_CLOCK, ICON_CLOCK_ART, '#', 1);         // relógio claro
-    buildTile8(TILE_ICON_ANTENNA, ICON_ANTENNA_ART, '#', 1);// antena (HUD do aliado)
-
-    // antena 24x24 (aliado do PROTEGER) — pintada como os itens (setPix, colTiles=3)
-    for (u16 y = 0; y < 24; y++)
-        for (u16 x = 0; x < 24; x++)
-        {
-            u16 c;
-            switch (ANTENNA24_ART[y][x])
-            {
-                case 'r': c = 4;  break;    // topo AMARELO (idx 4)
-                case '5': c = 4;  break;    // brilho amarelo
-                case 'p': c = 6;  break;    // mastro (cinza)
-                case 'l': c = 7;  break;    // treliça (cinza claro)
-                case 'b': c = 11; break;    // base (escura)
-                case 'w': c = 1;  break;    // ondas (branco)
-                default:  continue;
-            }
-            setPix(TILE_ANTENNA, x, y, c, 3);
-        }
-
-    // farol: overlay ROXO (idx 8) só nos pixels da LUZ do topo ('r'/'5'), num
-    // único tile 8x8 (coluna do meio, linha 0 da antena). Sobreposto ao topo
-    // amarelo num timer (spritelist), alterna o farol amarelo->roxo sem tocar na
-    // paleta (que está cheia) — logo, sem afetar a cor dos inimigos.
-    for (u16 y = 0; y < 8; y++)
-        for (u16 x = 8; x < 16; x++)
-        {
-            const char ch = ANTENNA24_ART[y][x];
-            if ((ch == 'r') || (ch == '5')) setPix(TILE_ANTENNA_BEACON, x - 8, y, 8, 1);
-        }
+    // Santa24x24, indicador e brilho: mesmos11 tiles da antiga antena.
+    // Arte indexada exportada; nenhuma paleta, alocação ou peça extra.
+    memcpy(tileBuf + TILE_SAINT * 8, SAINT24_DATA, sizeof SAINT24_DATA);
+    memcpy(tileBuf + TILE_ICON_SAINT * 8, SAINT_ICON_DATA, sizeof SAINT_ICON_DATA);
+    memcpy(tileBuf + TILE_SAINT_GLOW * 8, SAINT_HALO_DATA, sizeof SAINT_HALO_DATA);
 
     // porta 8x8 (área de passagem entre as fases teste): painel verde com
     // borda clara — ladrilhado num retângulo, forma um portão/portal
@@ -210,25 +187,12 @@ void TILEGEN_palette(void)
 
     // exceção: PAL0 índice 2 = VERMELHO. Os tiles do overlay (TILE_STATUS, xadrez
     // no índice 2) desenhados com PAL0 saem vermelhos → overlay de "queimando",
-    // igual ao ciano do gelo mas em vermelho. O corpo dos inimigos não usa o
-    // índice 2, então o flash branco de dano não é afetado.
+    // igual ao ciano do gelo mas em vermelho. Os pequenos implantes ciano dos
+    // inimigos também ficam vermelhos durante o flash de dano.
     PAL_setColor(2, RGB24_TO_VDPCOLOR(0xE02020));
 
-    PAL_setColor(17, RGB24_TO_VDPCOLOR(0xF0F0F0));  // 1: contorno claro
-    PAL_setColor(18, RGB24_TO_VDPCOLOR(0x20C0E0));  // 2: jogador (ciano)
-    PAL_setColor(19, RGB24_TO_VDPCOLOR(0xD02020));  // 3: inimigo vermelho
-    PAL_setColor(20, RGB24_TO_VDPCOLOR(0xF0E040));  // 4: inimigo amarelo / tiro do jogador
-    PAL_setColor(21, RGB24_TO_VDPCOLOR(0xF08020));  // 5: tiro inimigo
-    PAL_setColor(22, RGB24_TO_VDPCOLOR(0x506070));  // 6: parede
-    PAL_setColor(23, RGB24_TO_VDPCOLOR(0x8098A8));  // 7: brilho da parede
-    PAL_setColor(24, RGB24_TO_VDPCOLOR(0x6820B0));  // 8: inimigo roxo (mais escuro p/ o contorno branco aparecer)
-    PAL_setColor(25, RGB24_TO_VDPCOLOR(0x8A5A28));  // 9: lama (marrom)
-    PAL_setColor(26, RGB24_TO_VDPCOLOR(0x5A3A14));  // 10: lama (torrões escuros)
-    PAL_setColor(27, RGB24_TO_VDPCOLOR(0x282830));  // 11: corpo da bomba
-    PAL_setColor(28, RGB24_TO_VDPCOLOR(0xF08000));  // 12: inimigo laranja
-    PAL_setColor(29, RGB24_TO_VDPCOLOR(0x909090));  // 13: dummy de teste (cinza)
-    PAL_setColor(30, RGB24_TO_VDPCOLOR(0x40D040));  // 14: botinha (verde)
-    PAL_setColor(31, RGB24_TO_VDPCOLOR(0x3060E0));  // 15: escudo (azul)
+    // Shared object/enemy PAL1 keeps semantic item/status indices.
+    PAL_setColors(PAL1 * 16, (const u16 *) insect_palette, 16, DMA);
 }
 
 void TILEGEN_init(void)

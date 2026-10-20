@@ -11,6 +11,7 @@
 #include "system/video/tilegen.h"
 #include "system/video/spritelist.h"
 #include "system/video/chars.h"
+#include "system/video/herogfx.h"
 #include "system/video/enemygfx.h"
 #include "system/video/floor.h"
 #include "system/video/flash.h"
@@ -132,7 +133,7 @@ static void startPhase(u8 level)
     ITEMS_clear();
     SHOTS_clear();
     PLAYER_reset();
-    CHARS_load(PLAYER_CHAR);    // mech do jogador: 3 direções na VRAM + paleta (PAL2)
+    HERO_load();               // human protagonist: streamed 32x48 frame + PAL2
 
     kills = 0;
     gameOver = FALSE;
@@ -168,7 +169,7 @@ static void startTest(u8 stage)
     ITEMS_clear();
     SHOTS_clear();
     PLAYER_reset();
-    CHARS_load(PLAYER_CHAR);    // mech do jogador: 3 direções na VRAM + paleta (PAL2)
+    HERO_load();               // human protagonist: streamed 32x48 frame + PAL2
     PLAYER_fullHp();
     BOMB_reset();
     SHOTS_resetPower();

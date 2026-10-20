@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "id": "heroi",
+  "project_character": "Rex",
+  "directions": 8,
+  "animations": 16,
+  "frames_exported": 80,
+  "runtime_canonical_frames": 50,
+  "cell": [
+    32,
+    48
+  ],
+  "sheet": [
+    192,
+    768
+  ],
+  "directional_sheet": [
+    192,
+    96
+  ],
+  "alpha": [
+    0,
+    255
+  ],
+  "transparent_index": 0,
+  "palette_visible_max": 15,
+  "palette_slot": "PAL2",
+  "runtime_rom_bytes": 38432,
+  "runtime_vram_frame_bytes": 768,
+  "runtime_extra_reserved_vram_bytes": 0,
+  "runtime_hardware_pieces": 2,
+  "extra_palette_slots": 0,
+  "runtime_stress": {
+    "frames_stressed": 600,
+    "peak_runtime_sat": 80,
+    "peak_scanline_sprites": 20,
+    "peak_scanline_pixels": 320,
+    "global_and_dma_failure_tests": true
+  },
+  "source_art_tool": "image_gen built-in",
+  "camera": "60 degrees above ground as 2D art direction",
+  "note": "Five drawn views, three horizontal mirrors; equipment symmetry also mirrors."
+}

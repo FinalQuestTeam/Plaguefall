@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "pass_scope": "memory_and_hardware_sprite_limits_only",
+  "performance_report": "performance/README.md",
+  "rom_bytes": 524288,
+  "rom_header_capacity_bytes": 1048576,
+  "rom_headroom_bytes": 524288,
+  "rom_sha256": "b3281bf4fa08aa695882547305607524e148a9988b5c4c224bebc7a69014d241",
+  "linked_rom_text_bytes": 425692,
+  "ram_initialized_bytes": 88,
+  "ram_bss_bytes": 6077,
+  "ram_static_total_bytes": 6165,
+  "ram_static_growth_bytes": 1779,
+  "ram_stack_reserved_bytes": 2560,
+  "heap_free_bytes_observed": 47332,
+  "heap_largest_free_block_observed": 46818,
+  "animation_ROM_bytes": 118080,
+  "icon_ROM_bytes": 7680,
+  "palette_ROM_bytes": 32,
+  "enemy_live_frame_VRAM_bytes": 10240,
+  "max_enemy_DMA_bytes_per_frame": 4608,
+  "vram_gameplay_end_byte_exclusive": 27488,
+  "vram_font_start_byte": 46080,
+  "vram_free_before_font_bytes": 18592,
+  "vram_title_end_byte_exclusive": 39008,
+  "vram_gameplay_savings_bytes": 13376,
+  "vram_regions": [
+    {
+      "name": "fixed gameplay tiles",
+      "start_tile": 16,
+      "tiles": 83,
+      "start_byte": 512,
+      "end_byte_exclusive": 3168
+    },
+    {
+      "name": "bounded enemy frame pool",
+      "start_tile": 99,
+      "tiles": 320,
+      "start_byte": 3168,
+      "end_byte_exclusive": 13408
+    },
+    {
+      "name": "15 menu icon slots",
+      "start_tile": 419,
+      "tiles": 240,
+      "start_byte": 13408,
+      "end_byte_exclusive": 21088
+    },
+    {
+      "name": "story portrait scratch",
+      "start_tile": 659,
+      "tiles": 72,
+      "start_byte": 21088,
+      "end_byte_exclusive": 23392
+    },
+    {
+      "name": "player",
+      "start_tile": 731,
+      "tiles": 48,
+      "start_byte": 23392,
+      "end_byte_exclusive": 24928
+    },
+    {
+      "name": "all floor variants",
+      "start_tile": 779,
+      "tiles": 80,
+      "start_byte": 24928,
+      "end_byte_exclusive": 27488
+    }
+  ],
+  "palette_slots_total": 4,
+  "new_enemy_palette_slot": "PAL1 (shared with existing objects)",
+  "emulator": {
+    "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+    "frames": 1159,
+    "rom_sha256": "b3281bf4fa08aa695882547305607524e148a9988b5c4c224bebc7a69014d241",
+    "actual_sat_peak": 27,
+    "actual_scanline_sprite_peak": 12,
+    "actual_scanline_pixel_peak": 232,
+    "heap_free_bytes": 47332,
+    "heap_largest_free_bytes": 46818,
+    "heap_blocks": 4,
+    "hero_directions_tested": [
+      "N",
+      "NE",
+      "L",
+      "SE",
+      "S",
+      "SO",
+      "O",
+      "NO"
+    ],
+    "all_new_types": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14
+    ],
+    "enemy_struct_bytes": 46,
+    "ram_word_swapped": true,
+    "screenshots": 11,
+    "bga_addr": 57344,
+    "bgb_addr": 49152,
+    "window_addr": 53248,
+    "hscrl_addr": 61440,
+    "slist_addr": 62464
+  },
+  "limitations": [
+    "Observed heap figures describe the controlled smoke run, not a proof for future code changes.",
+    "The software culls lower-priority sprites when scanline/global budgets are full.",
+    "Under sustained DMA pressure, frame/direction updates can be deferred; new slots wait until loaded.",
+    "Redrawn hero/enemies were visually compared with an analytical 60-degree camera guide; raster artwork is not an exact measured 3D render. The background map is still the previous renderer."
+  ],
+  "hero_animation_ROM_bytes": 23040,
+  "hero_palette_ROM_bytes": 32,
+  "hero_live_frame_VRAM_bytes": 768,
+  "hero_extra_reserved_VRAM_bytes": 0,
+  "max_combined_actor_DMA_bytes_per_frame": 5376,
+  "hero_palette_slot": "PAL2"
+}

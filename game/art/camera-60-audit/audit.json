@@ -1,0 +1,328 @@
+{
+  "date": "2026-10-19",
+  "required_camera": {
+    "projection": "orthographic",
+    "elevation_above_ground_degrees": 60,
+    "angle_from_vertical_degrees": 30
+  },
+  "method": "Manual visual review of every canonical idle/movement pose in contact sheets; remaining directions are exact per-cell horizontal mirrors verified by technical validators.",
+  "limitations": "Raster silhouettes alone do not determine an exact numeric camera elevation. Verdict rejects visual inconsistency; it does not estimate an actual angle for any sprite.",
+  "counts": {
+    "current_characters": 14,
+    "directions": 112,
+    "exported_frames": 1120,
+    "drawn_frames_reviewed": 700,
+    "mirrored_frames": 420,
+    "camera_approved_characters": 0
+  },
+  "assets": [
+    {
+      "id": "heroi",
+      "name": "Rex",
+      "sprite": "game/art/cangaco-protagonista-v1/heroi/heroi.png",
+      "sha256": "0e9b2b6868c150e7524824c34430f5cffce7c45262f87acb9f1ed0a26859ac1a",
+      "contact_sheet": "contact-sheets/heroi.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "Rosto e tronco permanecem muito frontais; o topo do chapéu aparece estreito.",
+        "L/O mostram perfil quase lateral e pernas longas, sem o encurtamento esperado da câmera elevada.",
+        "A relação entre o topo da cabeça, ombros e pés varia entre direções e poses."
+      ]
+    },
+    {
+      "id": "sq_red",
+      "name": "Torreão",
+      "sprite": "game/art/cangaco-insects-v1/enemies/sq_red/sq_red.png",
+      "sha256": "17771b18a41f4d4875951002f44e1c75cc2182cde09969342b1d48361c46f72d",
+      "contact_sheet": "contact-sheets/sq_red.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "N/S exibem bastante dorso, mas L/O expõem um perfil muito mais baixo.",
+        "As diagonais e a corrida não preservam uma elevação de câmera consistente."
+      ]
+    },
+    {
+      "id": "sq_yellow",
+      "name": "Batedor",
+      "sprite": "game/art/cangaco-insects-v1/enemies/sq_yellow/sq_yellow.png",
+      "sha256": "9ac5360610cfa1fefbafe711ca1f98d4136f1e7a415918700a6228cf7fb39de7",
+      "contact_sheet": "contact-sheets/sq_yellow.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "L/O têm corpo quase horizontal de perfil e pouca área dorsal.",
+        "N/S e diagonais apresentam outra leitura de elevação."
+      ]
+    },
+    {
+      "id": "sq_purple",
+      "name": "Baluarte",
+      "sprite": "game/art/cangaco-insects-v1/enemies/sq_purple/sq_purple.png",
+      "sha256": "c0044510e4cdea075cc7223d8e3f579d2f3060d513cc9dc3d05926f55228207c",
+      "contact_sheet": "contact-sheets/sq_purple.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "Área visível das placas dorsais muda muito de N/NE para L/O.",
+        "A proporção entre casco e pernas varia durante o ciclo lateral."
+      ]
+    },
+    {
+      "id": "sq_orange",
+      "name": "Aríete",
+      "sprite": "game/art/cangaco-insects-v1/enemies/sq_orange/sq_orange.png",
+      "sha256": "9024fde9fc7c4775ffdbd6bc2ae8671769f1a5a0b80c863865f4ee6a8cbc940e",
+      "contact_sheet": "contact-sheets/sq_orange.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "As vistas laterais achatam o dorso e mostram o corpo de perfil.",
+        "As diagonais mostram mais as laterais do corpo do que uma vista elevada consistente."
+      ]
+    },
+    {
+      "id": "tri_red",
+      "name": "Fuzileiro",
+      "sprite": "game/art/cangaco-insects-v1/enemies/tri_red/tri_red.png",
+      "sha256": "64f7866cf27c83fee03c91f4944cd5b9a28ec09451242aeeb1494046435b7406",
+      "contact_sheet": "contact-sheets/tri_red.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "L/O mostram tórax e abdômen de perfil; as vistas N/S têm maior leitura dorsal.",
+        "A abertura das asas dificulta a leitura, mas a inconsistência também aparece no corpo."
+      ]
+    },
+    {
+      "id": "tri_yellow",
+      "name": "Caçador",
+      "sprite": "game/art/cangaco-insects-v1/enemies/tri_yellow/tri_yellow.png",
+      "sha256": "57b0c5112c7983b6f8cacb1a40e529803f9c9c3dd61c29c891493a787077a4c2",
+      "contact_sheet": "contact-sheets/tri_yellow.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "L/O e SE/SO mantêm uma elevação visual baixa do corpo.",
+        "O movimento das asas não fornece uma referência geométrica para certificar 60°."
+      ]
+    },
+    {
+      "id": "tri_purple",
+      "name": "Escudeiro",
+      "sprite": "game/art/cangaco-insects-v1/enemies/tri_purple/tri_purple.png",
+      "sha256": "bae93513c4c6078c6bbcc8549afd325615af07275afe669cdebe89b444ee7abf",
+      "contact_sheet": "contact-sheets/tri_purple.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "A proporção dorsal/lateral do tórax muda entre direções e quadros.",
+        "L/O continuam próximos de perfil e não sustentam a câmera elevada."
+      ]
+    },
+    {
+      "id": "tri_orange",
+      "name": "Adaga",
+      "sprite": "game/art/cangaco-insects-v1/enemies/tri_orange/tri_orange.png",
+      "sha256": "9ef1f12ab87355a2e5545e83569840898406927548ab360c800bb5b4784c6d50",
+      "contact_sheet": "contact-sheets/tri_orange.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "As vistas laterais mostram mais flanco do que dorso.",
+        "A elevação aparente do corpo não acompanha consistentemente as vistas N/S."
+      ]
+    },
+    {
+      "id": "pen_red",
+      "name": "Artilheiro",
+      "sprite": "game/art/cangaco-insects-v1/enemies/pen_red/pen_red.png",
+      "sha256": "94a89bd3143488b4853288d08abe9a35174e62056f3e9394f33a147df8933929",
+      "contact_sheet": "contact-sheets/pen_red.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "Cabeça e abdômen aparecem de perfil em L/O, com pernas altas sob o corpo.",
+        "N/S mostram outra exposição do dorso; a troca de direção altera a elevação aparente."
+      ]
+    },
+    {
+      "id": "pen_yellow",
+      "name": "Alcateia",
+      "sprite": "game/art/cangaco-insects-v1/enemies/pen_yellow/pen_yellow.png",
+      "sha256": "47f8cff9b984deecedd3daf7ff544249c3464f5a4eb7a605dd007c5151d3be7d",
+      "contact_sheet": "contact-sheets/pen_yellow.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "L/O mostram o corpo baixo de perfil, enquanto N/S exibem o topo do abdômen.",
+        "Cabeça, tórax e abdômen não mantêm a mesma projeção entre as vistas."
+      ]
+    },
+    {
+      "id": "pen_purple",
+      "name": "Fortaleza",
+      "sprite": "game/art/cangaco-insects-v1/enemies/pen_purple/pen_purple.png",
+      "sha256": "6c21f064b891b854e6a9644b90c3c31e1fe135c157d5a2be59de4101bcf6b317",
+      "contact_sheet": "contact-sheets/pen_purple.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "Placas do abdômen e a grande cabeça mudam de exposição entre N/NE e L/O.",
+        "O ciclo lateral varia a proporção dos volumes, além do movimento das pernas."
+      ]
+    },
+    {
+      "id": "pen_orange",
+      "name": "Meteoro",
+      "sprite": "game/art/cangaco-insects-v1/enemies/pen_orange/pen_orange.png",
+      "sha256": "22f3862701275009920747f61a98b46cd8d23d166fd5a8bc15e157c80a915dbb",
+      "contact_sheet": "contact-sheets/pen_orange.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "O corpo em L/O permanece quase de perfil.",
+        "N/S e diagonais não mantêm uma projeção elevada uniforme do abdômen e cabeça."
+      ]
+    },
+    {
+      "id": "boss",
+      "name": "Lacraia",
+      "sprite": "game/art/cangaco-insects-v1/enemies/boss/boss.png",
+      "sha256": "09e9fc5f89490fc4cf33e9ea7ee3800a925e519cccdd26497252a78e57cd3b70",
+      "contact_sheet": "contact-sheets/boss.png",
+      "drawn_frames": 50,
+      "exported_frames": 80,
+      "mirrors": {
+        "SO": "SE",
+        "O": "L",
+        "NO": "NE"
+      },
+      "status": "rejected_inconsistent_camera",
+      "measured_elevation_degrees": null,
+      "findings": [
+        "N/NE têm leitura dorsal mais elevada, mas L/O mostram cauda e corpo de perfil.",
+        "A relação projetada entre cauda vertical, pinças e dorso muda entre os conjuntos de vistas."
+      ]
+    }
+  ],
+  "legacy": [
+    {
+      "ids": [
+        "AZUL PEQ",
+        "AZUL MED",
+        "AZUL ELITE",
+        "VERM PEQ",
+        "VERM MED",
+        "VERM ELITE",
+        "VERDE PEQ",
+        "VERDE MED",
+        "VERDE ELITE"
+      ],
+      "status": "not_a_calibrated_60_degree_projection",
+      "evidence": "game/src/system/video/chars.c: paint32 rotates one flat raster for N/NE/L; DIR_VFLIP reuses it for southern directions. These are retained gallery studies, not the human protagonist."
+    },
+    {
+      "ids": [
+        "dummy",
+        "target"
+      ],
+      "status": "legacy_test_placeholder_no_60_degree_views",
+      "evidence": "game/src/system/video/enemygfx.c retains INS_BEETLE24 for test placeholders; no new eight-view art set."
+    }
+  ],
+  "runtime_change": false,
+  "memory_change_bytes": 0
+}

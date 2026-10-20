@@ -56,7 +56,7 @@ void NPC_update(void)
     const bool vulnerable = (invTimer == 0);
     if (invTimer) invTimer--;
 
-    // todos os inimigos que encostam QUICAM (recuo) — não acampam sobre a antena,
+    // todos os inimigos que encostam QUICAM (recuo) — não acampam sobre a santa,
     // nem durante a invulnerabilidade; a fase vira ondas em vez de um monte grudado
     bool contact = FALSE;
     for (u16 i = 0; i < MAX_ENEMIES; i++)
