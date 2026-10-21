@@ -3,8 +3,10 @@
 
 #include <genesis.h>
 
-// Tela de explicação (paginada): controles, chave de inimigos, elite e itens.
-// Roda seu próprio laço e volta ao menu quando o jogador sai (B/START).
+// Seis páginas: controles, coleta, inventário, inimigos, elite e missões/rotas.
+// HELP_run: laço do título. HELP_open/update: consulta dentro do pause.
 void HELP_run(void);
+void HELP_open(void);
+bool HELP_update(u16 pressed);
 
 #endif // HELP_H

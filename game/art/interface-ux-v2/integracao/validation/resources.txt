@@ -1,0 +1,5 @@
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:12: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  colors=list(dict.fromkeys(snap(p) for p in Image.open(ROOT/'source/painel-nativo.png').convert('RGB').getdata()))
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:16: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  px=list(map(index,im.getdata()));tiles=[];lookup={};mapping=[]
+Interface: 545 tiles / 17440 bytes; 15 opaque colors; 20 mission records.

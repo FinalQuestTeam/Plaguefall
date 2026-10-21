@@ -18,6 +18,8 @@
 #include "system/video/flash.h"
 #include "system/video/screens/hud.h"
 #include "system/video/screens/pause.h"
+#include "system/video/screens/panel.h"
+#include "system/video/screens/mission.h"
 #include "system/video/screens/routemap.h"
 #include "system/video/screens/story.h"
 #include "core/inventory.h"
@@ -82,16 +84,7 @@ static void showPrep(u8 level)
     SPRITES_hide();
     SYS_doVBlankProcess();      // aplica a lista vazia já neste quadro
 
-    VDP_clearPlane(BG_A, TRUE);
-    FLOOR_clear();              // tela de preparação sem o chão
-
-    LEVEL_loadGfx(level);               // gera a arte dos inimigos desta fase (VRAM)
-
-    char buf[12];
-    sprintf(buf, "FASE %s", GRAPH[level].name);
-    VDP_drawText(buf, 17, 5);
-    LEVEL_drawInfo(level, 8, 8);        // inclui os sprites dos inimigos (linha y+8)
-    VDP_drawText("APERTE A PARA COMECAR", 9, 20);
+    if(PANEL_begin())MISSION_show(level);
 }
 
 // mapa de rotas (após a fase concluída/história): destaca o pendingLevel
@@ -132,6 +125,7 @@ static void gotoPrep(u8 node)
 // começa (ou recomeça) uma fase; a vida NÃO reseta (persiste entre fases)
 static void startPhase(u8 level)
 {
+    PANEL_end();
     AUDIO_silenceAll();         // cala o PSG antes da carga pesada (sem nota presa)
     LEVEL_load(level);
     FLOOR_draw(LEVEL_current()->floor);     // chão configurado por fase (def)
@@ -388,8 +382,10 @@ void FLOW_run(void)
         prevJoy = JOY_readJoypad(JOY_1);
 
         // C troca a seleção do inventário; B ativa o item selecionado.
-        // Pular fase (debug) virou combo A+B+C.
+        // Atalhos de desenvolvimento exigem DEV_SHORTCUTS; ausentes no release.
+#ifdef DEV_SHORTCUTS
         bool comboDone = FALSE;
+#endif
 
         bool backToTitle = FALSE;
         while (!backToTitle)
@@ -401,12 +397,15 @@ void FLOW_run(void)
             // por padrão sem ambiente; lava/lama religam durante o jogo ativo
             SFX_ambient(SFX_AMB_NONE);
 
+            const GameState frameState=state;
             switch (state)
             {
                 case ST_PREP:
                     if (pressed & BUTTON_A) startPhase(pendingLevel);
+#ifdef DEV_SHORTCUTS
                     else if (pressed & BUTTON_C)    // C: percorre os nós (debug)
                         showPrep((pendingLevel % NODE_COUNT) + 1);
+#endif
                     SPRITES_hide();
                     break;
 
@@ -417,6 +416,7 @@ void FLOW_run(void)
                         break;
                     }
 
+#ifdef DEV_SHORTCUTS
                     // pular fase (debug): combo A+B+C segurados (uma vez por combo)
                     if ((joy & BUTTON_A) && (joy & BUTTON_B) && (joy & BUTTON_C))
                     {
@@ -432,6 +432,9 @@ void FLOW_run(void)
                     else
                     {
                         comboDone = FALSE;
+#else
+                    {
+#endif
                         // inventário: C troca a seleção; B ativa o selecionado
                         if (pressed & BUTTON_C) INV_cycle();
                         if (pressed & BUTTON_B)
@@ -447,8 +450,7 @@ void FLOW_run(void)
                     if (pressed & BUTTON_START)     // pausa com as infos da fase
                     {
                         AUDIO_silenceAll();         // sem nota presa enquanto desenha a pausa
-                        PAUSE_show();
-                        state = ST_PAUSE;
+                        if(PAUSE_show(kills))state = ST_PAUSE;
                         break;
                     }
 
@@ -459,17 +461,13 @@ void FLOW_run(void)
                     break;
 
                 case ST_PAUSE:
-                    if (pressed & BUTTON_START)             // retoma o jogo
-                    {
-                        PAUSE_resume(kills);
-                        state = ST_PLAY;
-                    }
-                    else if (pressed & BUTTON_B)            // sair ao título
-                    {
-                        backToTitle = TRUE;
-                    }
+                {
+                    const u8 action=PAUSE_update(pressed);
+                    if(action==PAUSE_RESUME)state=ST_PLAY;
+                    else if(action==PAUSE_EXIT)backToTitle=TRUE;
                     SPRITES_hide();
                     break;
+                }
 
                 case ST_OVER:
                     if (pressed & BUTTON_START)
@@ -539,7 +537,9 @@ void FLOW_run(void)
             MUSIC_update();
             SFX_update();
             AUDIO_frameEnd();       // ...e o árbitro escreve o PSG (1x por canal)
-            FLASH_update();
+            // Pause/guide/panel palettes stay stable; gameplay feedback still
+            // decays on the frozen victory and game-over views.
+            if((frameState==ST_PLAY && state==ST_PLAY) || state==ST_DONE || state==ST_OVER)FLASH_update();
             SYS_doVBlankProcess();
         }
     }

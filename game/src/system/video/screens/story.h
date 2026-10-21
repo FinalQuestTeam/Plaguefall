@@ -5,7 +5,7 @@
 #include "levels/story.h"       // ANTES/DEPOIS (momentos da cena)
 
 // Tela de HISTÓRIA (diálogos entre fases) — toca as cenas do roteiro em
-// levels/story.c: retrato 48x48 esquerdo em cima / direito embaixo, texto em
+// levels/story.c: um retrato 48x48 e uma caixa fixa no painel de campanha, texto em
 // máquina de escrever. A avança/completa a fala; START pula a cena inteira.
 // Cada cena toca UMA vez por run (bitmask interna).
 

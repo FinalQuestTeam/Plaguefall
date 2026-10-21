@@ -1,0 +1,3378 @@
+{
+  "status": "proposal_only",
+  "romChanged": false,
+  "romSHA256": "32ba29b1ce99b9c9d9623df319f756f4a3f11c0bd3243e596e096e1552f5d6d0",
+  "artDirection": "Resistance field panel: aged ochre paper, rusty steel, olive brackets, copper radio wiring; image_gen reference-based backing, separate 8x8 text.",
+  "basis": "Source inspection plus 38 current-ROM screenshots using controls only, including all 20 preparation cards. Heuristic review, not a user study.",
+  "findings": [
+    {
+      "priority": "Alta",
+      "screen": "Como jogar",
+      "problem": "Informação incorreta sobre a campanha.",
+      "evidence": "A página 1 diz 15 fases e orienta eliminar inimigos em todas. O grafo tem 16 etapas por partida, proteção na 5 e chefe na 16.",
+      "change": "Corrigir para 16 etapas e explicar os três objetivos presentes na campanha.",
+      "source": "src/system/video/screens/help.c:50"
+    },
+    {
+      "priority": "Alta",
+      "screen": "Como jogar",
+      "problem": "O controle C perde texto na borda direita.",
+      "evidence": "TROCAR ITEM (INVENTARIO) começa na coluna 18 e ultrapassa as 40 colunas; o corte aparece na captura.",
+      "change": "Trocar por SELECIONAR ITEM e reservar margem de 16 px.",
+      "source": "src/system/video/screens/help.c:46"
+    },
+    {
+      "priority": "Alta",
+      "screen": "Preparação",
+      "problem": "A fase final apresenta uma regra que não representa a luta.",
+      "evidence": "FASE 16 mostra META: MATE 1 INIMIGOS e INTERVALO DE SPAWN: 99 S. O chefe é criado no começo; não há spawn regular nessa fase. Seu ícone é ignorado por ser maior que 32 px.",
+      "change": "DERROTE O ESCORPIAO. Mostrar chefe e lacaios como ameaça; retirar intervalo de spawn.",
+      "source": "src/levels/defs/level16.c:12"
+    },
+    {
+      "priority": "Alta",
+      "screen": "Pause",
+      "problem": "Um toque em B abandona a partida.",
+      "evidence": "ST_PAUSE volta ao título ao receber B, sem confirmação; B é também o botão de usar item no combate.",
+      "change": "Menu com continuar selecionado; B/START retomam. Confirmar somente a saída para o título.",
+      "source": "src/core/flow.c:464"
+    },
+    {
+      "priority": "Alta",
+      "screen": "Preparação",
+      "problem": "Atalhos de desenvolvimento ficam ativos na partida.",
+      "evidence": "C percorre preparações e A+B+C pula a fase durante o jogo. O combo coincide com os três comandos normais de combate.",
+      "change": "Separar atalhos por flag de desenvolvimento e desativá-los na versão do jogador; manter o modo de teste no ambiente de desenvolvimento.",
+      "source": "src/core/flow.c:407"
+    },
+    {
+      "priority": "Média",
+      "screen": "Pause",
+      "problem": "A tela não responde quanto falta para vencer.",
+      "evidence": "Mostra a meta inicial e o intervalo de spawn, sem progresso de mortes, segundos restantes ou vida do sinalizador.",
+      "change": "Compartilhar um resumo do objetivo entre HUD, preparação e pause; no pause exibir o estado congelado.",
+      "source": "src/system/video/screens/pause.c:27"
+    },
+    {
+      "priority": "Média",
+      "screen": "Pause",
+      "problem": "Inimigos aparece como uma seção vazia.",
+      "evidence": "LEVEL_drawInfo retorna quando arenaActive está ligado, após desenhar o rótulo INIMIGOS. O fundo também compete com o texto.",
+      "change": "Retirar a seção do pause e usar um painel opaco com objetivo, progresso, recursos e ações.",
+      "source": "src/levels/levels.c:130"
+    },
+    {
+      "priority": "Média",
+      "screen": "Preparação",
+      "problem": "Dados internos ocupam espaço de informação tática.",
+      "evidence": "INTERVALO DE SPAWN não explica o que fazer; perigos do terreno e condições das bifurcações não aparecem no briefing.",
+      "change": "Priorizar nome do lugar, objetivo concreto, perigo e dica de rota. Derivar objetivos da definição da fase, sem duplicar números manualmente.",
+      "source": "src/levels/levels.c:125"
+    },
+    {
+      "priority": "Média",
+      "screen": "Como jogar",
+      "problem": "Consulta longe do momento de necessidade.",
+      "evidence": "Ajuda só abre pelo título; no pause é preciso sair da partida para consultar. Não explica a mira diagonal parada nem a diferença entre estoque e cargas de tiro.",
+      "change": "Oferecer consulta no pause, voltar à tela de origem e ensinar mover/mirar, C seleciona, B ativa e A dispara.",
+      "source": "src/system/video/screens/title.c:98"
+    },
+    {
+      "priority": "Média",
+      "screen": "Diálogos",
+      "problem": "O olhar muda de canto e os comandos são pouco específicos.",
+      "evidence": "Retratos e falas alternam topo esquerdo/fundo direito, deixando grande área vazia. A AVANCA também completa texto em digitação; os comandos ficam na última linha.",
+      "change": "Um retrato e uma caixa fixos; PADRE / RADIO em vez de COMANDO; contador de falas e legenda que acompanha a ação. Manter o texto autoral.",
+      "source": "src/system/video/screens/story.c:23"
+    },
+    {
+      "priority": "Baixa",
+      "screen": "Fluxo",
+      "problem": "A sequência exige várias confirmações antes de voltar à ação.",
+      "evidence": "Entre fases há conclusão, mapa/viagem, diálogo, preparação e contagem de 3 segundos. O mapa já foi aprovado e permanece como referência.",
+      "change": "Manter leitura sob controle do jogador. No último diálogo sinalizar VER MISSAO; avaliar reduzir a contagem para 1 segundo somente após teste de jogo.",
+      "source": "src/core/flow.c:153"
+    }
+  ],
+  "phases": [
+    {
+      "id": "1",
+      "node": 1,
+      "name": "PATIO DA IGREJA",
+      "step": 1,
+      "goal": "ELIMINE 10 INIMIGOS.",
+      "attention": "MANTENHA ESPACO PARA DESVIAR.",
+      "route": "BOMBA DANIFICA A IGREJA.",
+      "roster": [
+        "ENEMY_SQ_RED",
+        "ENEMY_SQ_YEL"
+      ],
+      "source": "src/levels/defs/level01.c"
+    },
+    {
+      "id": "2A",
+      "node": 2,
+      "name": "RUA DE SERVICO",
+      "step": 2,
+      "goal": "ELIMINE 12 INIMIGOS.",
+      "attention": "OS LARANJAS AVANCAM RAPIDO.",
+      "route": null,
+      "roster": [
+        "ENEMY_SQ_RED",
+        "ENEMY_SQ_YEL",
+        "ENEMY_SQ_ORG"
+      ],
+      "source": "src/levels/defs/level02.c"
+    },
+    {
+      "id": "2B",
+      "node": 3,
+      "name": "BAIXIO DA IGREJA",
+      "step": 2,
+      "goal": "ELIMINE 12 INIMIGOS.",
+      "attention": "A LAMA REDUZ SEU MOVIMENTO.",
+      "route": null,
+      "roster": [
+        "ENEMY_SQ_RED",
+        "ENEMY_SQ_YEL",
+        "ENEMY_SQ_ORG"
+      ],
+      "source": "src/levels/defs/level02b.c"
+    },
+    {
+      "id": "3",
+      "node": 4,
+      "name": "ABRIGO DE MANUTENCAO",
+      "step": 3,
+      "goal": "ELIMINE 14 INIMIGOS.",
+      "attention": "DESVIE DOS VAZAMENTOS QUENTES.",
+      "route": null,
+      "roster": [
+        "ENEMY_SQ_YEL",
+        "ENEMY_SQ_PUR",
+        "ENEMY_SQ_ORG"
+      ],
+      "source": "src/levels/defs/level03.c"
+    },
+    {
+      "id": "4",
+      "node": 5,
+      "name": "TUNEIS DE MANUTENCAO",
+      "step": 4,
+      "goal": "ELIMINE 16 INIMIGOS.",
+      "attention": "ESPERE O ESCUDO DOS ROXOS BAIXAR.",
+      "route": null,
+      "roster": [
+        "ENEMY_SQ_RED",
+        "ENEMY_SQ_PUR",
+        "ENEMY_TRI_YEL"
+      ],
+      "source": "src/levels/defs/level04.c"
+    },
+    {
+      "id": "5",
+      "node": 6,
+      "name": "SINALIZADOR NA SANTA",
+      "step": 5,
+      "goal": "PROTEJA O SINALIZADOR POR 30 S.",
+      "attention": "OS INSETOS ATACAM A SANTA.",
+      "route": "SE O SINAL CAIR, A FUGA SEGUE POR TERRA.",
+      "roster": [
+        "ENEMY_TRI_RED",
+        "ENEMY_TRI_YEL",
+        "ENEMY_SQ_ORG"
+      ],
+      "source": "src/levels/defs/level05.c"
+    },
+    {
+      "id": "6A",
+      "node": 7,
+      "name": "PERIMETRO DO RESGATE",
+      "step": 6,
+      "goal": "ELIMINE 20 INIMIGOS.",
+      "attention": "O PISO QUENTE CAUSA DANO.",
+      "route": null,
+      "roster": [
+        "ENEMY_TRI_RED",
+        "ENEMY_TRI_YEL",
+        "ENEMY_TRI_ORG"
+      ],
+      "source": "src/levels/defs/level06.c"
+    },
+    {
+      "id": "6B",
+      "node": 8,
+      "name": "RETIRADA POR TERRA",
+      "step": 6,
+      "goal": "ELIMINE 20 INIMIGOS.",
+      "attention": "O PISO QUENTE CAUSA DANO.",
+      "route": null,
+      "roster": [
+        "ENEMY_TRI_RED",
+        "ENEMY_TRI_YEL",
+        "ENEMY_TRI_ORG"
+      ],
+      "source": "src/levels/defs/level06b.c"
+    },
+    {
+      "id": "7",
+      "node": 9,
+      "name": "REDE DE ANTENAS",
+      "step": 7,
+      "goal": "ELIMINE 22 INIMIGOS.",
+      "attention": "OS ROXOS ERGUEM ESCUDOS EM CICLOS.",
+      "route": null,
+      "roster": [
+        "ENEMY_TRI_YEL",
+        "ENEMY_TRI_PUR",
+        "ENEMY_SQ_PUR"
+      ],
+      "source": "src/levels/defs/level07.c"
+    },
+    {
+      "id": "8",
+      "node": 10,
+      "name": "FORNALHA",
+      "step": 8,
+      "goal": "ELIMINE 24 INIMIGOS.",
+      "attention": "NAO FIQUE PARADO JUNTO AO CALOR.",
+      "route": null,
+      "roster": [
+        "ENEMY_TRI_RED",
+        "ENEMY_TRI_YEL",
+        "ENEMY_TRI_ORG",
+        "ENEMY_SQ_ORG"
+      ],
+      "source": "src/levels/defs/level08.c"
+    },
+    {
+      "id": "9",
+      "node": 11,
+      "name": "ALFANDEGA",
+      "step": 9,
+      "goal": "ELIMINE 24 INIMIGOS.",
+      "attention": "DANO CURADO TAMBEM CONTA NA ROTA.",
+      "route": "SEM PERDER VIDA: ACESSO DOS TECNICOS.",
+      "roster": [
+        "ENEMY_PEN_RED",
+        "ENEMY_PEN_YEL",
+        "ENEMY_TRI_YEL"
+      ],
+      "source": "src/levels/defs/level09.c"
+    },
+    {
+      "id": "10A",
+      "node": 12,
+      "name": "ACESSO DOS TECNICOS",
+      "step": 10,
+      "goal": "ELIMINE 26 INIMIGOS.",
+      "attention": "CUIDADO COM AS INVESTIDAS.",
+      "route": null,
+      "roster": [
+        "ENEMY_PEN_YEL",
+        "ENEMY_PEN_ORG",
+        "ENEMY_TRI_ORG"
+      ],
+      "source": "src/levels/defs/level10.c"
+    },
+    {
+      "id": "10B",
+      "node": 13,
+      "name": "DRENO TERMICO",
+      "step": 10,
+      "goal": "ELIMINE 26 INIMIGOS.",
+      "attention": "DESVIE DO CALOR E DA LAMA.",
+      "route": null,
+      "roster": [
+        "ENEMY_PEN_YEL",
+        "ENEMY_PEN_ORG",
+        "ENEMY_TRI_ORG"
+      ],
+      "source": "src/levels/defs/level10b.c"
+    },
+    {
+      "id": "11",
+      "node": 14,
+      "name": "DEPOSITO DE DEMOLICAO",
+      "step": 11,
+      "goal": "ELIMINE 28 INIMIGOS.",
+      "attention": "AS SAUVAS ROXAS CHAMAM LACAIOS.",
+      "route": null,
+      "roster": [
+        "ENEMY_PEN_RED",
+        "ENEMY_PEN_PUR",
+        "ENEMY_TRI_YEL"
+      ],
+      "source": "src/levels/defs/level11.c"
+    },
+    {
+      "id": "12",
+      "node": 15,
+      "name": "COMPORTA DE CARGA",
+      "step": 12,
+      "goal": "ELIMINE 30 INIMIGOS.",
+      "attention": "CALOR E LAMA ATRAPALHAM A PASSAGEM.",
+      "route": "ANTES DE 60 S: PASSAGEM DIRETA.",
+      "roster": [
+        "ENEMY_PEN_ORG",
+        "ENEMY_TRI_RED",
+        "ENEMY_TRI_YEL",
+        "ENEMY_SQ_PUR"
+      ],
+      "source": "src/levels/defs/level12.c"
+    },
+    {
+      "id": "13A",
+      "node": 16,
+      "name": "LINHA QUENTE",
+      "step": 13,
+      "goal": "ELIMINE 34 INIMIGOS.",
+      "attention": "O PISO QUENTE CAUSA DANO.",
+      "route": null,
+      "roster": [
+        "ENEMY_SQ_PUR",
+        "ENEMY_TRI_YEL",
+        "ENEMY_TRI_ORG",
+        "ENEMY_PEN_RED",
+        "ENEMY_PEN_YEL"
+      ],
+      "source": "src/levels/defs/level13.c"
+    },
+    {
+      "id": "13B",
+      "node": 17,
+      "name": "DECANTACAO",
+      "step": 13,
+      "goal": "ELIMINE 34 INIMIGOS.",
+      "attention": "A LAMA REDUZ SEU MOVIMENTO.",
+      "route": null,
+      "roster": [
+        "ENEMY_SQ_PUR",
+        "ENEMY_TRI_YEL",
+        "ENEMY_TRI_ORG",
+        "ENEMY_PEN_RED",
+        "ENEMY_PEN_YEL"
+      ],
+      "source": "src/levels/defs/level13b.c"
+    },
+    {
+      "id": "14",
+      "node": 18,
+      "name": "PATIO DOS ENXAMES",
+      "step": 14,
+      "goal": "ELIMINE 37 INIMIGOS.",
+      "attention": "AS SAUVAS PODEM DIVIDIR OU INVOCAR.",
+      "route": null,
+      "roster": [
+        "ENEMY_PEN_PUR",
+        "ENEMY_PEN_ORG",
+        "ENEMY_PEN_YEL",
+        "ENEMY_TRI_YEL"
+      ],
+      "source": "src/levels/defs/level14.c"
+    },
+    {
+      "id": "15",
+      "node": 19,
+      "name": "GALERIAS DOS NINHOS",
+      "step": 15,
+      "goal": "ELIMINE 40 INIMIGOS.",
+      "attention": "NAO DEIXE O ENXAME CERCAR VOCE.",
+      "route": null,
+      "roster": [
+        "ENEMY_SQ_ORG",
+        "ENEMY_TRI_RED",
+        "ENEMY_TRI_YEL",
+        "ENEMY_TRI_ORG",
+        "ENEMY_PEN_RED",
+        "ENEMY_PEN_PUR",
+        "ENEMY_PEN_ORG"
+      ],
+      "source": "src/levels/defs/level15.c"
+    },
+    {
+      "id": "16",
+      "node": 20,
+      "name": "CAMARA DO ESCORPIAO",
+      "step": 16,
+      "goal": "DERROTE O ESCORPIAO.",
+      "attention": "DESVIE DOS TIROS E DOS LACAIOS.",
+      "route": null,
+      "roster": [
+        "ENEMY_BOSS",
+        "ENEMY_TRI_YEL"
+      ],
+      "source": "src/levels/defs/level16.c"
+    }
+  ],
+  "cases": [
+    {
+      "id": "prep-1",
+      "group": "Fases",
+      "label": "1 / PATIO DA IGREJA",
+      "before": "../interface-ux-v1/propostas/prep-1.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-1.png",
+      "after": "propostas/prep-1.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 1",
+          "x": 2,
+          "y": 2,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 1/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "PATIO DA IGREJA",
+          "x": 2,
+          "y": 5,
+          "length": 15,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 10 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "MANTENHA ESPACO PARA DESVIAR.",
+          "x": 2,
+          "y": 15,
+          "length": 29,
+          "palette": "body"
+        },
+        {
+          "text": "BOMBA DANIFICA A IGREJA.",
+          "x": 2,
+          "y": 17,
+          "length": 24,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-2A",
+      "group": "Fases",
+      "label": "2A / RUA DE SERVICO",
+      "before": "../interface-ux-v1/propostas/prep-2A.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-2A.png",
+      "after": "propostas/prep-2A.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 2A",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 2/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "RUA DE SERVICO",
+          "x": 2,
+          "y": 5,
+          "length": 14,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 12 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "OS LARANJAS AVANCAM RAPIDO.",
+          "x": 2,
+          "y": 15,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-2B",
+      "group": "Fases",
+      "label": "2B / BAIXIO DA IGREJA",
+      "before": "../interface-ux-v1/propostas/prep-2B.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-2B.png",
+      "after": "propostas/prep-2B.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 2B",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 2/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "BAIXIO DA IGREJA",
+          "x": 2,
+          "y": 5,
+          "length": 16,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 12 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A LAMA REDUZ SEU MOVIMENTO.",
+          "x": 2,
+          "y": 15,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-3",
+      "group": "Fases",
+      "label": "3 / ABRIGO DE MANUTENCAO",
+      "before": "../interface-ux-v1/propostas/prep-3.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-3.png",
+      "after": "propostas/prep-3.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 3",
+          "x": 2,
+          "y": 2,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 3/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "ABRIGO DE MANUTENCAO",
+          "x": 2,
+          "y": 5,
+          "length": 20,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 14 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "DESVIE DOS VAZAMENTOS QUENTES.",
+          "x": 2,
+          "y": 15,
+          "length": 30,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-4",
+      "group": "Fases",
+      "label": "4 / TUNEIS DE MANUTENCAO",
+      "before": "../interface-ux-v1/propostas/prep-4.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-4.png",
+      "after": "propostas/prep-4.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 4",
+          "x": 2,
+          "y": 2,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 4/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "TUNEIS DE MANUTENCAO",
+          "x": 2,
+          "y": 5,
+          "length": 20,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 16 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ESPERE O ESCUDO DOS ROXOS BAIXAR.",
+          "x": 2,
+          "y": 15,
+          "length": 33,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-5",
+      "group": "Fases",
+      "label": "5 / SINALIZADOR NA SANTA",
+      "before": "../interface-ux-v1/propostas/prep-5.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-5.png",
+      "after": "propostas/prep-5.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 5",
+          "x": 2,
+          "y": 2,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 5/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "SINALIZADOR NA SANTA",
+          "x": 2,
+          "y": 5,
+          "length": 20,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "PROTEJA O SINALIZADOR POR 30 S.",
+          "x": 2,
+          "y": 10,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "OS INSETOS ATACAM A SANTA.",
+          "x": 2,
+          "y": 15,
+          "length": 26,
+          "palette": "body"
+        },
+        {
+          "text": "SE O SINAL CAIR, A FUGA SEGUE POR",
+          "x": 2,
+          "y": 17,
+          "length": 33,
+          "palette": "body"
+        },
+        {
+          "text": "TERRA.",
+          "x": 2,
+          "y": 18,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-6A",
+      "group": "Fases",
+      "label": "6A / PERIMETRO DO RESGATE",
+      "before": "../interface-ux-v1/propostas/prep-6A.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-6A.png",
+      "after": "propostas/prep-6A.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 6A",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 6/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "PERIMETRO DO RESGATE",
+          "x": 2,
+          "y": 5,
+          "length": 20,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 20 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "O PISO QUENTE CAUSA DANO.",
+          "x": 2,
+          "y": 15,
+          "length": 25,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-6B",
+      "group": "Fases",
+      "label": "6B / RETIRADA POR TERRA",
+      "before": "../interface-ux-v1/propostas/prep-6B.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-6B.png",
+      "after": "propostas/prep-6B.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 6B",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 6/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "RETIRADA POR TERRA",
+          "x": 2,
+          "y": 5,
+          "length": 18,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 20 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "O PISO QUENTE CAUSA DANO.",
+          "x": 2,
+          "y": 15,
+          "length": 25,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-7",
+      "group": "Fases",
+      "label": "7 / REDE DE ANTENAS",
+      "before": "../interface-ux-v1/propostas/prep-7.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-7.png",
+      "after": "propostas/prep-7.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 7",
+          "x": 2,
+          "y": 2,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 7/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "REDE DE ANTENAS",
+          "x": 2,
+          "y": 5,
+          "length": 15,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 22 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "OS ROXOS ERGUEM ESCUDOS EM CICLOS.",
+          "x": 2,
+          "y": 15,
+          "length": 34,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-8",
+      "group": "Fases",
+      "label": "8 / FORNALHA",
+      "before": "../interface-ux-v1/propostas/prep-8.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-8.png",
+      "after": "propostas/prep-8.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 8",
+          "x": 2,
+          "y": 2,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 8/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "FORNALHA",
+          "x": 2,
+          "y": 5,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 24 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "NAO FIQUE PARADO JUNTO AO CALOR.",
+          "x": 2,
+          "y": 15,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-9",
+      "group": "Fases",
+      "label": "9 / ALFANDEGA",
+      "before": "../interface-ux-v1/propostas/prep-9.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-9.png",
+      "after": "propostas/prep-9.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 9",
+          "x": 2,
+          "y": 2,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 9/16",
+          "x": 28,
+          "y": 2,
+          "length": 10,
+          "palette": "body"
+        },
+        {
+          "text": "ALFANDEGA",
+          "x": 2,
+          "y": 5,
+          "length": 9,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 24 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "DANO CURADO TAMBEM CONTA NA ROTA.",
+          "x": 2,
+          "y": 15,
+          "length": 33,
+          "palette": "body"
+        },
+        {
+          "text": "SEM PERDER VIDA: ACESSO DOS",
+          "x": 2,
+          "y": 17,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "TECNICOS.",
+          "x": 2,
+          "y": 18,
+          "length": 9,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-10A",
+      "group": "Fases",
+      "label": "10A / ACESSO DOS TECNICOS",
+      "before": "../interface-ux-v1/propostas/prep-10A.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-10A.png",
+      "after": "propostas/prep-10A.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 10A",
+          "x": 2,
+          "y": 2,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 10/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "ACESSO DOS TECNICOS",
+          "x": 2,
+          "y": 5,
+          "length": 19,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 26 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "CUIDADO COM AS INVESTIDAS.",
+          "x": 2,
+          "y": 15,
+          "length": 26,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-10B",
+      "group": "Fases",
+      "label": "10B / DRENO TERMICO",
+      "before": "../interface-ux-v1/propostas/prep-10B.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-10B.png",
+      "after": "propostas/prep-10B.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 10B",
+          "x": 2,
+          "y": 2,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 10/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "DRENO TERMICO",
+          "x": 2,
+          "y": 5,
+          "length": 13,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 26 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "DESVIE DO CALOR E DA LAMA.",
+          "x": 2,
+          "y": 15,
+          "length": 26,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-11",
+      "group": "Fases",
+      "label": "11 / DEPOSITO DE DEMOLICAO",
+      "before": "../interface-ux-v1/propostas/prep-11.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-11.png",
+      "after": "propostas/prep-11.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 11",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 11/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "DEPOSITO DE DEMOLICAO",
+          "x": 2,
+          "y": 5,
+          "length": 21,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 28 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "AS SAUVAS ROXAS CHAMAM LACAIOS.",
+          "x": 2,
+          "y": 15,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-12",
+      "group": "Fases",
+      "label": "12 / COMPORTA DE CARGA",
+      "before": "../interface-ux-v1/propostas/prep-12.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-12.png",
+      "after": "propostas/prep-12.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 12",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 12/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "COMPORTA DE CARGA",
+          "x": 2,
+          "y": 5,
+          "length": 17,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 30 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "CALOR E LAMA ATRAPALHAM A PASSAGEM.",
+          "x": 2,
+          "y": 15,
+          "length": 35,
+          "palette": "body"
+        },
+        {
+          "text": "ANTES DE 60 S: PASSAGEM DIRETA.",
+          "x": 2,
+          "y": 17,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-13A",
+      "group": "Fases",
+      "label": "13A / LINHA QUENTE",
+      "before": "../interface-ux-v1/propostas/prep-13A.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-13A.png",
+      "after": "propostas/prep-13A.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 13A",
+          "x": 2,
+          "y": 2,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 13/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "LINHA QUENTE",
+          "x": 2,
+          "y": 5,
+          "length": 12,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 34 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "O PISO QUENTE CAUSA DANO.",
+          "x": 2,
+          "y": 15,
+          "length": 25,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-13B",
+      "group": "Fases",
+      "label": "13B / DECANTACAO",
+      "before": "../interface-ux-v1/propostas/prep-13B.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-13B.png",
+      "after": "propostas/prep-13B.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 13B",
+          "x": 2,
+          "y": 2,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 13/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "DECANTACAO",
+          "x": 2,
+          "y": 5,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 34 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A LAMA REDUZ SEU MOVIMENTO.",
+          "x": 2,
+          "y": 15,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-14",
+      "group": "Fases",
+      "label": "14 / PATIO DOS ENXAMES",
+      "before": "../interface-ux-v1/propostas/prep-14.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-14.png",
+      "after": "propostas/prep-14.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 14",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 14/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "PATIO DOS ENXAMES",
+          "x": 2,
+          "y": 5,
+          "length": 17,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 37 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "AS SAUVAS PODEM DIVIDIR OU INVOCAR.",
+          "x": 2,
+          "y": 15,
+          "length": 35,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-15",
+      "group": "Fases",
+      "label": "15 / GALERIAS DOS NINHOS",
+      "before": "../interface-ux-v1/propostas/prep-15.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-15.png",
+      "after": "propostas/prep-15.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 15",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 15/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "GALERIAS DOS NINHOS",
+          "x": 2,
+          "y": 5,
+          "length": 19,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 40 INIMIGOS.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "NAO DEIXE O ENXAME CERCAR VOCE.",
+          "x": 2,
+          "y": 15,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "prep-16",
+      "group": "Fases",
+      "label": "16 / CAMARA DO ESCORPIAO",
+      "before": "../interface-ux-v1/propostas/prep-16.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/prep-16.png",
+      "after": "propostas/prep-16.png",
+      "note": "Objetivo e perigos vêm da fase real. A dica de rota aparece apenas nas quatro bifurcações. A faixa de inimigos usa a arte residente; o chefe recebe identificação explícita.",
+      "lines": [
+        {
+          "text": "FASE 16",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ETAPA 16/16",
+          "x": 27,
+          "y": 2,
+          "length": 11,
+          "palette": "body"
+        },
+        {
+          "text": "CAMARA DO ESCORPIAO",
+          "x": 2,
+          "y": 5,
+          "length": 19,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 8,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "DERROTE O ESCORPIAO.",
+          "x": 2,
+          "y": 10,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "ATENCAO",
+          "x": 2,
+          "y": 13,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "DESVIE DOS TIROS E DOS LACAIOS.",
+          "x": 2,
+          "y": 15,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "AMEACAS",
+          "x": 2,
+          "y": 20,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "ESCORPIAO E LACAIOS",
+          "x": 2,
+          "y": 23,
+          "length": 19,
+          "palette": "body"
+        },
+        {
+          "text": "A: COMECAR",
+          "x": 28,
+          "y": 26,
+          "length": 10,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "pause-1",
+      "group": "Pause",
+      "label": "Pause / fase 1",
+      "before": "../interface-ux-v1/propostas/pause-1.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/pause-1.png",
+      "after": "propostas/pause-1.png",
+      "note": "Progresso e recursos ilustrativos, não lidos desta captura. Continuar é a seleção inicial. B e START retomam; sair exige selecionar a opção e confirmar. Sem redesenhar os inimigos aqui.",
+      "lines": [
+        {
+          "text": "PAUSADO",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "FASE 1",
+          "x": 32,
+          "y": 2,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "PATIO DA IGREJA",
+          "x": 2,
+          "y": 5,
+          "length": 15,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 7,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 10 INIMIGOS.",
+          "x": 2,
+          "y": 8,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "EM ANDAMENTO",
+          "x": 2,
+          "y": 11,
+          "length": 12,
+          "palette": "accent"
+        },
+        {
+          "text": "INIMIGOS: 06 DE 10",
+          "x": 2,
+          "y": 12,
+          "length": 18,
+          "palette": "body"
+        },
+        {
+          "text": "VIDA: 084/100     BOMBAS: 2",
+          "x": 2,
+          "y": 14,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "ITEM SELECIONADO: GELO (3 TIROS)",
+          "x": 2,
+          "y": 15,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "> CONTINUAR",
+          "x": 2,
+          "y": 17,
+          "length": 11,
+          "palette": "light"
+        },
+        {
+          "text": "  COMO JOGAR",
+          "x": 2,
+          "y": 19,
+          "length": 12,
+          "palette": "body"
+        },
+        {
+          "text": "  VOLTAR AO TITULO",
+          "x": 2,
+          "y": 21,
+          "length": 18,
+          "palette": "body"
+        },
+        {
+          "text": "CIMA/BAIXO: ESCOLHER",
+          "x": 2,
+          "y": 24,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "A: CONFIRMAR   B/START: RETOMAR",
+          "x": 7,
+          "y": 26,
+          "length": 31,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "pause-5",
+      "group": "Pause",
+      "label": "Pause / fase 5",
+      "before": "../interface-ux-v1/propostas/pause-5.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/pause-5.png",
+      "after": "propostas/pause-5.png",
+      "note": "Progresso e recursos ilustrativos, não lidos desta captura. Continuar é a seleção inicial. B e START retomam; sair exige selecionar a opção e confirmar. Sem redesenhar os inimigos aqui.",
+      "lines": [
+        {
+          "text": "PAUSADO",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "FASE 5",
+          "x": 32,
+          "y": 2,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "SINALIZADOR NA SANTA",
+          "x": 2,
+          "y": 5,
+          "length": 20,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 7,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "PROTEJA O SINALIZADOR POR 30 S.",
+          "x": 2,
+          "y": 8,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "EM ANDAMENTO",
+          "x": 2,
+          "y": 11,
+          "length": 12,
+          "palette": "accent"
+        },
+        {
+          "text": "FALTAM 23 S / SINAL: 76 DE 100",
+          "x": 2,
+          "y": 12,
+          "length": 30,
+          "palette": "body"
+        },
+        {
+          "text": "VIDA: 084/100     BOMBAS: 2",
+          "x": 2,
+          "y": 14,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "ITEM SELECIONADO: GELO (3 TIROS)",
+          "x": 2,
+          "y": 15,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "> CONTINUAR",
+          "x": 2,
+          "y": 17,
+          "length": 11,
+          "palette": "light"
+        },
+        {
+          "text": "  COMO JOGAR",
+          "x": 2,
+          "y": 19,
+          "length": 12,
+          "palette": "body"
+        },
+        {
+          "text": "  VOLTAR AO TITULO",
+          "x": 2,
+          "y": 21,
+          "length": 18,
+          "palette": "body"
+        },
+        {
+          "text": "CIMA/BAIXO: ESCOLHER",
+          "x": 2,
+          "y": 24,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "A: CONFIRMAR   B/START: RETOMAR",
+          "x": 7,
+          "y": 26,
+          "length": 31,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "pause-9",
+      "group": "Pause",
+      "label": "Pause / fase 9",
+      "before": "../interface-ux-v1/propostas/pause-9.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/pause-9.png",
+      "after": "propostas/pause-9.png",
+      "note": "Progresso e recursos ilustrativos, não lidos desta captura. Continuar é a seleção inicial. B e START retomam; sair exige selecionar a opção e confirmar. Sem redesenhar os inimigos aqui.",
+      "lines": [
+        {
+          "text": "PAUSADO",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "FASE 9",
+          "x": 32,
+          "y": 2,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "ALFANDEGA",
+          "x": 2,
+          "y": 5,
+          "length": 9,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 7,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 24 INIMIGOS.",
+          "x": 2,
+          "y": 8,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "EM ANDAMENTO",
+          "x": 2,
+          "y": 11,
+          "length": 12,
+          "palette": "accent"
+        },
+        {
+          "text": "INIMIGOS: 12/24 / DANO NA FASE: 0",
+          "x": 2,
+          "y": 12,
+          "length": 33,
+          "palette": "body"
+        },
+        {
+          "text": "VIDA: 084/100     BOMBAS: 2",
+          "x": 2,
+          "y": 14,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "ITEM SELECIONADO: GELO (3 TIROS)",
+          "x": 2,
+          "y": 15,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "> CONTINUAR",
+          "x": 2,
+          "y": 17,
+          "length": 11,
+          "palette": "light"
+        },
+        {
+          "text": "  COMO JOGAR",
+          "x": 2,
+          "y": 19,
+          "length": 12,
+          "palette": "body"
+        },
+        {
+          "text": "  VOLTAR AO TITULO",
+          "x": 2,
+          "y": 21,
+          "length": 18,
+          "palette": "body"
+        },
+        {
+          "text": "CIMA/BAIXO: ESCOLHER",
+          "x": 2,
+          "y": 24,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "A: CONFIRMAR   B/START: RETOMAR",
+          "x": 7,
+          "y": 26,
+          "length": 31,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "pause-12",
+      "group": "Pause",
+      "label": "Pause / fase 12",
+      "before": "../interface-ux-v1/propostas/pause-12.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/pause-12.png",
+      "after": "propostas/pause-12.png",
+      "note": "Progresso e recursos ilustrativos, não lidos desta captura. Continuar é a seleção inicial. B e START retomam; sair exige selecionar a opção e confirmar. Sem redesenhar os inimigos aqui.",
+      "lines": [
+        {
+          "text": "PAUSADO",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "FASE 12",
+          "x": 31,
+          "y": 2,
+          "length": 7,
+          "palette": "body"
+        },
+        {
+          "text": "COMPORTA DE CARGA",
+          "x": 2,
+          "y": 5,
+          "length": 17,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 7,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "ELIMINE 30 INIMIGOS.",
+          "x": 2,
+          "y": 8,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "EM ANDAMENTO",
+          "x": 2,
+          "y": 11,
+          "length": 12,
+          "palette": "accent"
+        },
+        {
+          "text": "INIMIGOS: 18/30 / TEMPO: 38 S",
+          "x": 2,
+          "y": 12,
+          "length": 29,
+          "palette": "body"
+        },
+        {
+          "text": "VIDA: 084/100     BOMBAS: 2",
+          "x": 2,
+          "y": 14,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "ITEM SELECIONADO: GELO (3 TIROS)",
+          "x": 2,
+          "y": 15,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "> CONTINUAR",
+          "x": 2,
+          "y": 17,
+          "length": 11,
+          "palette": "light"
+        },
+        {
+          "text": "  COMO JOGAR",
+          "x": 2,
+          "y": 19,
+          "length": 12,
+          "palette": "body"
+        },
+        {
+          "text": "  VOLTAR AO TITULO",
+          "x": 2,
+          "y": 21,
+          "length": 18,
+          "palette": "body"
+        },
+        {
+          "text": "CIMA/BAIXO: ESCOLHER",
+          "x": 2,
+          "y": 24,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "A: CONFIRMAR   B/START: RETOMAR",
+          "x": 7,
+          "y": 26,
+          "length": 31,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "pause-16",
+      "group": "Pause",
+      "label": "Pause / fase 16",
+      "before": "../interface-ux-v1/propostas/pause-16.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/pause-16.png",
+      "after": "propostas/pause-16.png",
+      "note": "Progresso e recursos ilustrativos, não lidos desta captura. Continuar é a seleção inicial. B e START retomam; sair exige selecionar a opção e confirmar. Sem redesenhar os inimigos aqui.",
+      "lines": [
+        {
+          "text": "PAUSADO",
+          "x": 2,
+          "y": 2,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "FASE 16",
+          "x": 31,
+          "y": 2,
+          "length": 7,
+          "palette": "body"
+        },
+        {
+          "text": "CAMARA DO ESCORPIAO",
+          "x": 2,
+          "y": 5,
+          "length": 19,
+          "palette": "accent"
+        },
+        {
+          "text": "OBJETIVO",
+          "x": 2,
+          "y": 7,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "DERROTE O ESCORPIAO.",
+          "x": 2,
+          "y": 8,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "EM ANDAMENTO",
+          "x": 2,
+          "y": 11,
+          "length": 12,
+          "palette": "accent"
+        },
+        {
+          "text": "ESCORPIAO: 18 DE 25 DE VIDA",
+          "x": 2,
+          "y": 12,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "VIDA: 084/100     BOMBAS: 2",
+          "x": 2,
+          "y": 14,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "ITEM SELECIONADO: GELO (3 TIROS)",
+          "x": 2,
+          "y": 15,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "> CONTINUAR",
+          "x": 2,
+          "y": 17,
+          "length": 11,
+          "palette": "light"
+        },
+        {
+          "text": "  COMO JOGAR",
+          "x": 2,
+          "y": 19,
+          "length": 12,
+          "palette": "body"
+        },
+        {
+          "text": "  VOLTAR AO TITULO",
+          "x": 2,
+          "y": 21,
+          "length": 18,
+          "palette": "body"
+        },
+        {
+          "text": "CIMA/BAIXO: ESCOLHER",
+          "x": 2,
+          "y": 24,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "A: CONFIRMAR   B/START: RETOMAR",
+          "x": 7,
+          "y": 26,
+          "length": 31,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "pause-sair",
+      "group": "Pause",
+      "label": "Confirmação de saída",
+      "before": "../interface-ux-v1/propostas/pause-sair.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/pause-1.png",
+      "after": "propostas/pause-sair.png",
+      "note": "Confirmação apenas para abandonar a partida. Foco inicial na opção que preserva o progresso; B/START cancelam e retornam ao pause.",
+      "lines": [
+        {
+          "text": "SAIR DA PARTIDA?",
+          "x": 2,
+          "y": 2,
+          "length": 16,
+          "palette": "accent"
+        },
+        {
+          "text": "O PROGRESSO DESTA PARTIDA",
+          "x": 2,
+          "y": 8,
+          "length": 25,
+          "palette": "body"
+        },
+        {
+          "text": "SERA PERDIDO.",
+          "x": 2,
+          "y": 10,
+          "length": 13,
+          "palette": "body"
+        },
+        {
+          "text": "> CONTINUAR JOGANDO",
+          "x": 2,
+          "y": 16,
+          "length": 19,
+          "palette": "light"
+        },
+        {
+          "text": "  SAIR PARA O TITULO",
+          "x": 2,
+          "y": 19,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "CIMA/BAIXO: ESCOLHER",
+          "x": 2,
+          "y": 24,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "A: CONFIRMAR   B/START: CANCELAR",
+          "x": 6,
+          "y": 26,
+          "length": 32,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "help-controles",
+      "group": "Como jogar",
+      "label": "1 / Controles",
+      "before": "../interface-ux-v1/propostas/help-controles.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/help-1.png",
+      "after": "propostas/help-controles.png",
+      "note": "Corrige o corte na borda e explica a mira parada, inclusive diagonal. A passa à próxima página; B/START voltam à origem: menu ou pause.",
+      "lines": [
+        {
+          "text": "COMO JOGAR",
+          "x": 2,
+          "y": 2,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "1/6",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "CONTROLES",
+          "x": 2,
+          "y": 5,
+          "length": 9,
+          "palette": "accent"
+        },
+        {
+          "text": "ESQ/DIR: PAGINA   A: PROXIMA",
+          "x": 2,
+          "y": 24,
+          "length": 28,
+          "palette": "body"
+        },
+        {
+          "text": "B/START: VOLTAR",
+          "x": 23,
+          "y": 26,
+          "length": 15,
+          "palette": "light"
+        },
+        {
+          "text": "DIRECIONAL",
+          "x": 2,
+          "y": 8,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "MOVER E MIRAR",
+          "x": 14,
+          "y": 8,
+          "length": 13,
+          "palette": "body"
+        },
+        {
+          "text": "A",
+          "x": 2,
+          "y": 10,
+          "length": 1,
+          "palette": "accent"
+        },
+        {
+          "text": "ATIRAR (SEGURE)",
+          "x": 14,
+          "y": 10,
+          "length": 15,
+          "palette": "body"
+        },
+        {
+          "text": "C",
+          "x": 2,
+          "y": 12,
+          "length": 1,
+          "palette": "accent"
+        },
+        {
+          "text": "SELECIONAR ITEM",
+          "x": 14,
+          "y": 12,
+          "length": 15,
+          "palette": "body"
+        },
+        {
+          "text": "B",
+          "x": 2,
+          "y": 14,
+          "length": 1,
+          "palette": "accent"
+        },
+        {
+          "text": "USAR ITEM",
+          "x": 14,
+          "y": 14,
+          "length": 9,
+          "palette": "body"
+        },
+        {
+          "text": "START",
+          "x": 2,
+          "y": 16,
+          "length": 5,
+          "palette": "accent"
+        },
+        {
+          "text": "PAUSAR",
+          "x": 14,
+          "y": 16,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "MIRE EM UMA DAS 8 DIRECOES.",
+          "x": 2,
+          "y": 19,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "SOLTE O DIRECIONAL PARA PARAR.",
+          "x": 2,
+          "y": 20,
+          "length": 30,
+          "palette": "body"
+        },
+        {
+          "text": "O TIRO MANTEM A ULTIMA DIRECAO.",
+          "x": 2,
+          "y": 21,
+          "length": 31,
+          "palette": "body"
+        }
+      ]
+    },
+    {
+      "id": "help-coletar",
+      "group": "Como jogar",
+      "label": "2 / Efeitos ao coletar",
+      "before": "../interface-ux-v1/propostas/help-coletar.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/help-4.png",
+      "after": "propostas/help-coletar.png",
+      "note": "Efeito aparece junto do item, antes de qualquer nome narrativo longo. Mantém valores reais e reforça a diferença entre coletar e ativar.",
+      "lines": [
+        {
+          "text": "COMO JOGAR",
+          "x": 2,
+          "y": 2,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "2/6",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "ITENS / AO COLETAR",
+          "x": 2,
+          "y": 5,
+          "length": 18,
+          "palette": "accent"
+        },
+        {
+          "text": "ESQ/DIR: PAGINA   A: PROXIMA",
+          "x": 2,
+          "y": 24,
+          "length": 28,
+          "palette": "body"
+        },
+        {
+          "text": "B/START: VOLTAR",
+          "x": 23,
+          "y": 26,
+          "length": 15,
+          "palette": "light"
+        },
+        {
+          "text": "MARMITA",
+          "x": 5,
+          "y": 8,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "CURA 15 DE VIDA (MAX. 100)",
+          "x": 5,
+          "y": 9,
+          "length": 26,
+          "palette": "body"
+        },
+        {
+          "text": "DIVISOR DE DISPARO",
+          "x": 5,
+          "y": 12,
+          "length": 18,
+          "palette": "accent"
+        },
+        {
+          "text": "+1 BALA POR TIRO (MAX. 5)",
+          "x": 5,
+          "y": 13,
+          "length": 25,
+          "palette": "body"
+        },
+        {
+          "text": "SERVO DE PASSADA",
+          "x": 5,
+          "y": 16,
+          "length": 16,
+          "palette": "accent"
+        },
+        {
+          "text": "+20% DE VELOCIDADE (MAX. +100%)",
+          "x": 5,
+          "y": 17,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "ESTES EFEITOS NAO PRECISAM DO B.",
+          "x": 2,
+          "y": 20,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "A VIDA ATUAL PASSA PARA OUTRA FASE.",
+          "x": 2,
+          "y": 21,
+          "length": 35,
+          "palette": "body"
+        }
+      ]
+    },
+    {
+      "id": "help-inventario",
+      "group": "Como jogar",
+      "label": "3 / Inventário",
+      "before": "../interface-ux-v1/propostas/help-inventario.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/help-5.png",
+      "after": "propostas/help-inventario.png",
+      "note": "Distingue quantidade guardada e disparos especiais. A regra de gastar carga refere-se a raio/gelo/fogo. Sem espaço, o item coletado é perdido; explicar isso no índice de itens e com feedback contextual, sem mais texto nesta página.",
+      "lines": [
+        {
+          "text": "COMO JOGAR",
+          "x": 2,
+          "y": 2,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "3/6",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "INVENTARIO / C ESCOLHE, B USA",
+          "x": 2,
+          "y": 5,
+          "length": 29,
+          "palette": "accent"
+        },
+        {
+          "text": "ESQ/DIR: PAGINA   A: PROXIMA",
+          "x": 2,
+          "y": 24,
+          "length": 28,
+          "palette": "body"
+        },
+        {
+          "text": "B/START: VOLTAR",
+          "x": 23,
+          "y": 26,
+          "length": 15,
+          "palette": "light"
+        },
+        {
+          "text": "BOMBA / CARGA DE DESMONTE",
+          "x": 5,
+          "y": 7,
+          "length": 25,
+          "palette": "accent"
+        },
+        {
+          "text": "LIMPA A TELA",
+          "x": 5,
+          "y": 8,
+          "length": 12,
+          "palette": "body"
+        },
+        {
+          "text": "ESCUDO / CAPACITOR",
+          "x": 5,
+          "y": 10,
+          "length": 18,
+          "palette": "accent"
+        },
+        {
+          "text": "3 S SEM SOFRER DANO",
+          "x": 5,
+          "y": 11,
+          "length": 19,
+          "palette": "body"
+        },
+        {
+          "text": "RAIO / BOBINA",
+          "x": 5,
+          "y": 13,
+          "length": 13,
+          "palette": "accent"
+        },
+        {
+          "text": "5 DISPAROS EM CADEIA",
+          "x": 5,
+          "y": 14,
+          "length": 20,
+          "palette": "body"
+        },
+        {
+          "text": "GELO / REFIL FRIO",
+          "x": 5,
+          "y": 16,
+          "length": 17,
+          "palette": "accent"
+        },
+        {
+          "text": "3 DISPAROS / CONGELA POR 5 S",
+          "x": 5,
+          "y": 17,
+          "length": 28,
+          "palette": "body"
+        },
+        {
+          "text": "FOGO / REFIL QUENTE",
+          "x": 5,
+          "y": 19,
+          "length": 19,
+          "palette": "accent"
+        },
+        {
+          "text": "4 DISPAROS / QUEIMA POR 6 S",
+          "x": 5,
+          "y": 20,
+          "length": 27,
+          "palette": "body"
+        },
+        {
+          "text": "RAIO/GELO/FOGO: 1 CARGA POR DISPARO.",
+          "x": 2,
+          "y": 22,
+          "length": 36,
+          "palette": "body"
+        }
+      ]
+    },
+    {
+      "id": "help-inimigos",
+      "group": "Como jogar",
+      "label": "4 / Inimigos",
+      "before": "../interface-ux-v1/propostas/help-inimigos.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/help-2.png",
+      "after": "propostas/help-inimigos.png",
+      "note": "Nomes, arte e comportamento se complementam; a cor não é a única pista. Os ícones das famílias são os insetos reais, sem voltar à nomenclatura antiga de formas geométricas.",
+      "lines": [
+        {
+          "text": "COMO JOGAR",
+          "x": 2,
+          "y": 2,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "4/6",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "INIMIGOS / COR E FAMILIA",
+          "x": 2,
+          "y": 5,
+          "length": 24,
+          "palette": "accent"
+        },
+        {
+          "text": "ESQ/DIR: PAGINA   A: PROXIMA",
+          "x": 2,
+          "y": 24,
+          "length": 28,
+          "palette": "body"
+        },
+        {
+          "text": "B/START: VOLTAR",
+          "x": 23,
+          "y": 26,
+          "length": 15,
+          "palette": "light"
+        },
+        {
+          "text": "VERMELHO: TIRO A DISTANCIA",
+          "x": 4,
+          "y": 8,
+          "length": 26,
+          "palette": "body"
+        },
+        {
+          "text": "AMARELO: PERSEGUE VOCE",
+          "x": 4,
+          "y": 10,
+          "length": 22,
+          "palette": "body"
+        },
+        {
+          "text": "ROXO: ESCUDO EM CICLOS",
+          "x": 4,
+          "y": 12,
+          "length": 22,
+          "palette": "body"
+        },
+        {
+          "text": "LARANJA: INVESTIDA RAPIDA",
+          "x": 4,
+          "y": 14,
+          "length": 25,
+          "palette": "body"
+        },
+        {
+          "text": "SERRA-PAU / RESISTENTE",
+          "x": 7,
+          "y": 17,
+          "length": 22,
+          "palette": "body"
+        },
+        {
+          "text": "MUTUCA / MENOS VIDA",
+          "x": 7,
+          "y": 19,
+          "length": 19,
+          "palette": "body"
+        },
+        {
+          "text": "SAUVA / HABILIDADE ESPECIAL",
+          "x": 7,
+          "y": 21,
+          "length": 27,
+          "palette": "body"
+        }
+      ]
+    },
+    {
+      "id": "help-elite",
+      "group": "Como jogar",
+      "label": "5 / Sauvas",
+      "before": "../interface-ux-v1/propostas/help-elite.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/help-3.png",
+      "after": "propostas/help-elite.png",
+      "note": "Mantém as quatro habilidades em consulta opcional, com uma ação que ajuda a lidar com a ameaça.",
+      "lines": [
+        {
+          "text": "COMO JOGAR",
+          "x": 2,
+          "y": 2,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "5/6",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "SAUVAS / HABILIDADES",
+          "x": 2,
+          "y": 5,
+          "length": 20,
+          "palette": "accent"
+        },
+        {
+          "text": "ESQ/DIR: PAGINA   A: PROXIMA",
+          "x": 2,
+          "y": 24,
+          "length": 28,
+          "palette": "body"
+        },
+        {
+          "text": "B/START: VOLTAR",
+          "x": 23,
+          "y": 26,
+          "length": 15,
+          "palette": "light"
+        },
+        {
+          "text": "ARTILHEIRO",
+          "x": 4,
+          "y": 8,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "ABRE UM LEQUE DE TIROS",
+          "x": 4,
+          "y": 9,
+          "length": 22,
+          "palette": "body"
+        },
+        {
+          "text": "ALCATEIA",
+          "x": 4,
+          "y": 11,
+          "length": 8,
+          "palette": "accent"
+        },
+        {
+          "text": "SE DIVIDE EM DOIS",
+          "x": 4,
+          "y": 12,
+          "length": 17,
+          "palette": "body"
+        },
+        {
+          "text": "FORTALEZA",
+          "x": 4,
+          "y": 14,
+          "length": 9,
+          "palette": "accent"
+        },
+        {
+          "text": "INVOCA LACAIOS",
+          "x": 4,
+          "y": 15,
+          "length": 14,
+          "palette": "body"
+        },
+        {
+          "text": "METEORO",
+          "x": 4,
+          "y": 17,
+          "length": 7,
+          "palette": "accent"
+        },
+        {
+          "text": "TELEPORTA E AVANCA",
+          "x": 4,
+          "y": 18,
+          "length": 18,
+          "palette": "body"
+        },
+        {
+          "text": "ROXOS: ATAQUE COM O ESCUDO BAIXO.",
+          "x": 2,
+          "y": 21,
+          "length": 33,
+          "palette": "body"
+        }
+      ]
+    },
+    {
+      "id": "help-rotas",
+      "group": "Como jogar",
+      "label": "6 / Missões e rotas",
+      "before": "../interface-ux-v1/propostas/help-rotas.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/help-1.png",
+      "after": "propostas/help-rotas.png",
+      "note": "Explica as 16 etapas por partida e as ações que decidem rotas. As 20 localidades possíveis não são 20 fases numa única partida. A frase sobre chefes vale para o final atual; não sugere objetivos ainda ausentes da campanha.",
+      "lines": [
+        {
+          "text": "COMO JOGAR",
+          "x": 2,
+          "y": 2,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "6/6",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "MISSOES E ROTAS",
+          "x": 2,
+          "y": 5,
+          "length": 15,
+          "palette": "accent"
+        },
+        {
+          "text": "ESQ/DIR: PAGINA   A: PROXIMA",
+          "x": 2,
+          "y": 24,
+          "length": 28,
+          "palette": "body"
+        },
+        {
+          "text": "B/START: VOLTAR",
+          "x": 23,
+          "y": 26,
+          "length": 15,
+          "palette": "light"
+        },
+        {
+          "text": "16 ETAPAS. O CAMINHO PODE MUDAR.",
+          "x": 2,
+          "y": 8,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "ELIMINE A META, PROTEJA O SINAL",
+          "x": 2,
+          "y": 10,
+          "length": 31,
+          "palette": "body"
+        },
+        {
+          "text": "OU DERROTE O CHEFE DA FASE FINAL.",
+          "x": 2,
+          "y": 11,
+          "length": 33,
+          "palette": "body"
+        },
+        {
+          "text": "CONFIRA A MISSAO ANTES DE COMECAR.",
+          "x": 2,
+          "y": 13,
+          "length": 34,
+          "palette": "body"
+        },
+        {
+          "text": "1: BOMBAS AFETAM A IGREJA.",
+          "x": 2,
+          "y": 16,
+          "length": 26,
+          "palette": "body"
+        },
+        {
+          "text": "5: PROTEJA O SINALIZADOR.",
+          "x": 2,
+          "y": 17,
+          "length": 25,
+          "palette": "body"
+        },
+        {
+          "text": "9: EVITE PERDER VIDA.",
+          "x": 2,
+          "y": 18,
+          "length": 21,
+          "palette": "body"
+        },
+        {
+          "text": "12: TERMINE ANTES DE 60 S.",
+          "x": 2,
+          "y": 19,
+          "length": 26,
+          "palette": "body"
+        },
+        {
+          "text": "A ROTA E AUTOMATICA. NAO HA ESCOLHA.",
+          "x": 2,
+          "y": 21,
+          "length": 36,
+          "palette": "body"
+        }
+      ]
+    },
+    {
+      "id": "dialogue-padre",
+      "group": "Diálogos",
+      "label": "Padre / Radio",
+      "before": "../interface-ux-v1/propostas/dialogue-padre.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/dialogue-padre.png",
+      "after": "propostas/dialogue-padre.png",
+      "note": "Mantém as falas e os retratos existentes. Um único foco de leitura, até 34 colunas e quatro linhas, nome do padre e progresso. Durante a digitação, a legenda seria A: MOSTRAR TEXTO; após completar, A: AVANCAR ou A: VER MISSAO.",
+      "lines": [
+        {
+          "text": "PATIO DA IGREJA",
+          "x": 2,
+          "y": 2,
+          "length": 15,
+          "palette": "accent"
+        },
+        {
+          "text": "1/2",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "PADRE / RADIO",
+          "x": 10,
+          "y": 7,
+          "length": 13,
+          "palette": "accent"
+        },
+        {
+          "text": "FASE 1",
+          "x": 10,
+          "y": 9,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "DAMIAO, AQUI E O PADRE. SEGURE O",
+          "x": 2,
+          "y": 14,
+          "length": 32,
+          "palette": "body"
+        },
+        {
+          "text": "PATIO. TEM GENTE FUGINDO PELO",
+          "x": 2,
+          "y": 16,
+          "length": 29,
+          "palette": "body"
+        },
+        {
+          "text": "FUNDO.",
+          "x": 2,
+          "y": 18,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "A: AVANCAR",
+          "x": 2,
+          "y": 24,
+          "length": 10,
+          "palette": "accent"
+        },
+        {
+          "text": "START: PULAR CENA",
+          "x": 21,
+          "y": 26,
+          "length": 17,
+          "palette": "light"
+        }
+      ]
+    },
+    {
+      "id": "dialogue-damiao",
+      "group": "Diálogos",
+      "label": "Damiao",
+      "before": "../interface-ux-v1/propostas/dialogue-damiao.png",
+      "rom": "../interface-ux-v1/atuais/ntsc/dialogue-damiao.png",
+      "after": "propostas/dialogue-damiao.png",
+      "note": "Mantém as falas e os retratos existentes. Um único foco de leitura, até 34 colunas e quatro linhas, nome do padre e progresso. Durante a digitação, a legenda seria A: MOSTRAR TEXTO; após completar, A: AVANCAR ou A: VER MISSAO.",
+      "lines": [
+        {
+          "text": "PATIO DA IGREJA",
+          "x": 2,
+          "y": 2,
+          "length": 15,
+          "palette": "accent"
+        },
+        {
+          "text": "2/2",
+          "x": 35,
+          "y": 2,
+          "length": 3,
+          "palette": "body"
+        },
+        {
+          "text": "DAMIAO",
+          "x": 10,
+          "y": 7,
+          "length": 6,
+          "palette": "accent"
+        },
+        {
+          "text": "FASE 1",
+          "x": 10,
+          "y": 9,
+          "length": 6,
+          "palette": "body"
+        },
+        {
+          "text": "TO INDO. HOJE NINGUEM VAI PRO CEU",
+          "x": 2,
+          "y": 14,
+          "length": 33,
+          "palette": "body"
+        },
+        {
+          "text": "ANTES DA HORA.",
+          "x": 2,
+          "y": 16,
+          "length": 14,
+          "palette": "body"
+        },
+        {
+          "text": "A: VER MISSAO",
+          "x": 2,
+          "y": 24,
+          "length": 13,
+          "palette": "accent"
+        },
+        {
+          "text": "START: PULAR CENA",
+          "x": 21,
+          "y": 26,
+          "length": 17,
+          "palette": "light"
+        }
+      ]
+    }
+  ],
+  "navigation": {
+    "pause": "Cima/baixo escolhe; A confirma; B/START retoma. Saída abre confirmação com continuar selecionado.",
+    "help": "ESQ/DIR ou A percorrem; B/START voltam ao menu ou ao pause, conforme a origem. Página/tópico visível.",
+    "story": "A mostra texto / avança / abre missão. START pula a cena. Nunca pula a preparação.",
+    "prep": "A começa. Texto não avança por tempo. Dicas descrevem ações reais e não prometem resgate jogável."
+  },
+  "implementation": [
+    "Nenhuma mudança em fonte do jogo, ROM, balanceamento ou controles foi aplicada nesta proposta.",
+    "Fonte 8x8 existente, agora transparente sobre a arte; 40x28 tiles; área de texto de 36 colunas entre x16 e x304; comandos na linha 26 (8 px acima da borda). As prévias não estão exportadas como recursos VDP.",
+    "Preparação: nome e dica estáticos por nó; objetivo e valores derivados de LevelDef/GRAPH. Exceção explícita para chefe. Os avisos de rota consultam as condições existentes.",
+    "Pause: expor consulta somente de leitura dos contadores de objetivo (restante/coleta/NPC) hoje privados e da vida do chefe. Dano e tempo de rota vêm de PhaseStats; não inferir dano a partir da vida atual. Timer, NPC, inimigos e inventário ficam congelados também no guia.",
+    "A nova arte cobre a tela: deve emprestar e restaurar padrões e paletas sem reiniciar a fase. O fundo foi reduzido a até 15 cores RGB333 para estudar um único banco. Fonte transparente, cor de destaque e ícones/retratos precisam de organização por tela. O orçamento e a restauração devem ser validados na implementação.",
+    "Ajuda via pause exige restaurar planos, fonte, paletas e cache de inimigos. HELP_run atual foi feito para o título e não pode ser chamado de dentro da fase sem adaptar o ciclo de recursos.",
+    "Inventário no pause é consulta; seleção e ativação continuam no combate. Um modo de tiro especial por vez. Inventário tem bomba mais três slots; repetidos ocupam slots; coleta sem slot livre é perdida.",
+    "Diálogo: reutilizar um retrato de 36 tiles e manter máximo de quatro linhas. Separar contador de fala do número de fase. Conferir quebra de todas as falas e retorno correto após pular.",
+    "A confirmação de saída é o único novo passo obrigatório e só ocorre ao abandonar a partida.",
+    "Após aprovação: validar NTSC/PAL, controle de 3 botões, objetivos, recursos no pause, restauração ao fechar ajuda, retomada sem consumir item e ausência dos atalhos de desenvolvimento no release."
+  ]
+}

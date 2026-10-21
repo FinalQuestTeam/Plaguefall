@@ -171,3 +171,7 @@ void OBJECTIVE_prepText(char *buf, const LevelDef *def)
         default:          sprintf(buf, "META: MATE %d INIMIGOS", def->killTarget); break;
     }
 }
+
+// Read-only snapshots for the pause screen; no simulation tick.
+u16 OBJECTIVE_secondsLeft(void){return secsLeft();}
+u16 OBJECTIVE_collected(void){return collected;}

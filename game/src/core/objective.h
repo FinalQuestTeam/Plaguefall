@@ -24,4 +24,7 @@ void OBJECTIVE_drawHUD(u16 kills);              // readout do objetivo (linha 0)
 void OBJECTIVE_forceHUD(u16 kills);             // idem, SEM o gate (redesenho garantido)
 void OBJECTIVE_prepText(char *buf, const LevelDef *def);  // 1 linha p/ a preparação
 
+u16 OBJECTIVE_secondsLeft(void);
+u16 OBJECTIVE_collected(void);
+
 #endif // OBJECTIVE_H

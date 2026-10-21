@@ -1,0 +1,12 @@
+{
+  "generator": "image_gen",
+  "prompt": "prompt.txt",
+  "original": "painel-resistencia.png",
+  "native": "painel-nativo.png",
+  "nativeConversion": "preparar.py",
+  "references": [
+    "../../routemap-regional-v1/region-1-native.png",
+    "../../phase01-courtyard-v2/intact-native.png"
+  ],
+  "status": "proposal_only"
+}
