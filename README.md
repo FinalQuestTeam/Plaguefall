@@ -10,7 +10,7 @@ Nossa Senhora Aparecida substitui a antena24×24 no objetivo PROTEGER, com a mes
 
 ## O jogo
 
-“Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” Damião sonhava com astronautas, extraterrestres e foguetes que davam ré. Os foguetes voltaram trazendo ninhos — Damião chama os invasores de “baratas” — e agora ele luta por uma resistência humana num Brasil cyberpunk com tons de cangaço e religiosidade popular. Leia a [abertura e os arquivos de história](game/doc/historia/README.md).
+“Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” Damião sonhava com astronautas, extraterrestres e foguetes. As naves voltaram sem quem foi nelas, e os foguetes agora descarregam ninhos — Damião chama os invasores de “baratas” — e agora ele luta por uma resistência humana num Brasil cyberpunk com tons de cangaço e religiosidade popular. Leia a [abertura e os arquivos de história](game/doc/historia/README.md).
 
 Você controla **Damião, humano com implantes**, numa arena de tela única. Inimigos surgem em ondas; a maioria das fases exige **eliminar N inimigos**. Na fase 5, proteja Nossa Senhora Aparecida por 30 segundos; na 16, derrote a Lacraia. Vida persiste entre as fases — administre os itens e atravesse as quatro bifurcações da campanha.
 
