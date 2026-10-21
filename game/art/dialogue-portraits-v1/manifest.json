@@ -1,0 +1,42 @@
+{
+  "tool": "built-in image_gen",
+  "assets": {
+    "rex": {
+      "concept": "../concepts/protagonista/protagonista-cangaco-cyberpunk-v3.png",
+      "concept_sha256": "9886109c1a635f7e74af69aa836a2212f1d1ece369138624277cc01ec7d7ecb4",
+      "source": "originals/rex.png",
+      "prompt": "prompts/rex.txt",
+      "native": "rex.png",
+      "size": [
+        48,
+        48
+      ],
+      "frames": 1
+    },
+    "parceira": {
+      "concept": "../concepts/parceira/parceira-cangaco-cyberpunk-v2.png",
+      "concept_sha256": "1c5687a61357744082774ff3bc3528855c5715092727fab79d9a7ba42ffb7085",
+      "source": "originals/parceira.png",
+      "prompt": "prompts/parceira.txt",
+      "native": "parceira.png",
+      "size": [
+        48,
+        48
+      ],
+      "frames": 1
+    },
+    "comando": {
+      "concept": "../concepts/comando/comando-padre-cangaco-cyberpunk-v1.png",
+      "concept_sha256": "59957c055e846b234c53b70c12e268af982c6736ffed59a4ddc1b6915cec23b1",
+      "source": "originals/comando.png",
+      "prompt": "prompts/comando.txt",
+      "native": "comando.png",
+      "size": [
+        48,
+        48
+      ],
+      "frames": 1,
+      "id": 1
+    }
+  }
+}

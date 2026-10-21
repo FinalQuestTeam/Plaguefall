@@ -32,7 +32,7 @@ Os 13 inimigos também têm oito direções, 2 quadros de repouso e 4 de movimen
 - Itens `ITEM_HEART`, `ITEM_BOMB`, `ITEM_SHOTS`, `ITEM_SPEED`, `ITEM_SHIELD`, `ITEM_CHAIN`, `ITEM_ICE`, `ITEM_FIRE`: oito sprites 16×16 de char-maps em `sprites/items_data.h`.
 - Projéteis `TILE_PSHOT`, `TILE_ESHOT`: 8×8; nó do raio `TILE_SPARK`: 8×8; sombra `TILE_SHADOW`: 16×16; sangue `TILE_BLOOD`: tile 8×8 espelhado em 16×16; overlays de gelo/fogo `TILE_STATUS`: bloco de até 32×32.
 - Galeria antiga `CHARS_COUNT=9`: AZUL PEQ, AZUL MED, AZUL ELITE, VERM PEQ, VERM MED, VERM ELITE, VERDE PEQ, VERDE MED, VERDE ELITE; mechs de 32×32, mantidos só como acervo da galeria. Rex é o personagem da partida.
-- Retratos de história `PORTRAIT_ART`: REX, COMANDO, LACRAIA, três imagens 48×48. Ainda não correspondem aos novos concepts. Não há retrato da parceira implementado.
+- Retratos de história `PORTRAIT_ART`: REX, COMANDO, LACRAIA e PARCEIRA, quatro imagens 48×48. [Rex, Comando (padre) e parceira já seguem os concepts](dialogue-portraits-v1/README.md), com paletas próprias e transparência; a parceira participa por rádio antes da fase 7. Lacraia mantém o retrato anterior.
 - Ícones de HUD/inventário são tiles 8×8; o indicador da antiga antena é substituído pelo da santa nesta etapa. Demais ícones mantêm a arte antiga.
 
 Piso, parede, lava, lama, portas, título e logo também mantêm a apresentação anterior, mas são tiles de cenário/interface, não personagens faltantes.

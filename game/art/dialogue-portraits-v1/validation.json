@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "generation": "built-in image_gen",
+  "size": [
+    48,
+    48
+  ],
+  "portraits": {
+    "rex": {
+      "id": 0,
+      "opaque_colors": 13,
+      "binary_alpha": true,
+      "transparent_index": 0,
+      "source_sha256": "b7157a0dff51cdd5e0dc69d613c0d176efaec5aa15f6499b2d45410fa02c7dd9",
+      "native_sha256": "0233c6157244c043776190c350e6c6956d0c746c2d396de264877f8b593ffdee",
+      "tile_bytes_when_loaded": 1152,
+      "palette_bytes": 32
+    },
+    "comando": {
+      "id": 1,
+      "opaque_colors": 12,
+      "binary_alpha": true,
+      "transparent_index": 0,
+      "source_sha256": "8b359a630d04691be79f3f9fc6909dfd11101e9312ec27deed4444e886a03a3c",
+      "native_sha256": "01568e9ab6ee151c08ca199f611f85a8e50750cc1459fa694079a14b0b91cc65",
+      "tile_bytes_when_loaded": 1152,
+      "palette_bytes": 32
+    },
+    "parceira": {
+      "id": 3,
+      "opaque_colors": 10,
+      "binary_alpha": true,
+      "transparent_index": 0,
+      "source_sha256": "c3f0f303e5db2cced71a8b62b91152428b54597d4f12f586f350e9bd6adfd524",
+      "native_sha256": "3350af054a9cd71e1dd5cd38c2b442692f8af9cbf8d4efcd6ceeefa54175cf81",
+      "tile_bytes_when_loaded": 1152,
+      "palette_bytes": 32
+    }
+  },
+  "resident_vram_delta_bytes": 0,
+  "simultaneous_portrait_tiles": 72,
+  "runtime_ram_delta_bytes": 0,
+  "header_sha256": "ab46398eff361a292e97b073aaefbab610a3179f6d7826420c0aa3b4fdc8cf0f"
+}

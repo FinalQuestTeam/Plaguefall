@@ -119,62 +119,36 @@ A história se adapta à forma como o jogador joga. Ver novas versões da histó
 
 # Atmosfera e ambientação
 
-A premissa narrativa é que o jogador é um soldado em treinamento e o jogo é uma ferramenta de avaliação. A humanidade está em guerra contra uma raça alienígena e toda ação do jogador será julgada pelo comando do exército para determinar se ele está preparado para o combate.
+A campanha se passa num Brasil futuro com cangaço cyberpunk, religiosidade popular e resistência humana a um enxame alienígena cibernético. Rex trabalhava na manutenção de foguetes reutilizáveis e sonhava em viajar. As cargas retornaram contaminadas, as instalações viraram ninhos e ele ficou em terra, lutando com equipamento remendado e implantes.
 
-O uso de um jogo como forma de treinamento para uma guerra intergalática contra uma raça de insetos alienígenas é um *trope* comum no gênero de ficção científica. A história é montada tendo como inspiração obras que seguem essa convenção. As principais referências narrativas para o jogo são Starship Troopers e Ender’s Game.
+A abertura parte de sua provocação: “Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” O Diabo é a interpretação de Rex para a promessa cruel de progresso; a campanha não confirma um pacto sobrenatural. O Consórcio Ascensão escondeu alertas e manteve as entregas. A resistência tenta recuperar um corredor industrial no sertão, com apoio de uma rede de abrigos e rádios.
 
-Em Starship Troopers a história segue um grupo de soldados treinando para enfrentar insetos alienígenas e em Ender’s Game a história segue um menino sendo treinado para comandar o exército que irá combater insetos alienígenas.
+O cangaço aparece nas silhuetas, no equipamento recuperado, no conhecimento do território e no enfrentamento aos donos da infraestrutura. A santa da fase 5 é um ponto de fé e abrigo cuja base guarda uma estação de rádio. Defendê-la dá tempo a uma transmissão. As regras continuam sendo as do NPC estático existente.
 
-Há várias semelhanças entre as histórias e várias convenções narrativas que se estabeleceram no gênero ao longo dos anos. Os slides que contam a história do jogo farão referências à essas obras e contarão uma versão mais simplificada desse tipo de história.
+[Universo e personagens](historia/universo.md) define a proposta completa e distingue contexto narrativo de sistemas ou arte ainda não integrados. A antiga premissa de soldado em treinamento, simulação militar e piloto de mech foi substituída por esta direção.
 
 # História
 
-O jogo é dividido em **fases** e a história transcorre entre essas fases por meio de **slides**. As ações do jogador impactam a narrativa e as fases do jogo de formas diferentes. Toda fase possui duas estruturas condicionais baseadas em ações do jogador, uma estrutura determina a fase e a outra determina o slide.
+O roteiro executável está em `levels/story.c`: 22 cenas, com uma chegada para cada um dos 20 nós, uma cena depois da fase 15 e o final depois da 16. Usa quatro retratos: Rex, Comando (padre) e parceira derivados dos concepts; Lacraia com arte anterior. As falas são em MAIÚSCULA SEM ACENTO. Comando é o padre que coordena os abrigos; Rex chama os invasores de “baratas”. A parceira participa por rádio antes da fase 7, sem ator aliado na arena. A completa/avança a fala; START pula a cena. Cada cena toca uma vez por partida.
 
-Algumas estruturas condicionais são:
+A campanha tem 16 fases por percurso e quatro bifurcações já implementadas:
 
-1. Uso de bomba: Uma estrutura condicional é o uso, ou não, de bombas na fase anterior.  
-2. Morte: Uma estrutura condicional é se o jogador perdeu uma vida na fase anterior.  
-3. Quantidade do item X: Uma estrutura condicional é a quantidade de determinado item no inventário do jogador.  
-4. Quantidade de corações: Uma estrutura condicional é quantas vidas o jogador possui.
+| Origem | Condição | Destino e contexto |
+|---|---|---|
+| 1 | Sem bomba / usou bomba | 2A, rua de serviço / 2B, baixio com lama após denunciar a posição |
+| 5 | Protegeu o ponto / objetivo falhou | 6A, avanço / 6B, retirada com cerco mais apertado |
+| 9 | Sem dano / sofreu dano | 10A, acesso técnico / 10B, desvio por lava e lama |
+| 12 | Menos de 60 s / 60 s ou mais | 13A, passagem direta com lava / 13B, canal com lama |
 
-Não há uma regra para o que determina a fase ou o slide. Por exemplo, o uso de bombas pode ser usado para determinar qual é a fase 3 e na fase 5 o uso de bombas determina qual o slide em vez de determinar a fase. 
+A seleção narrativa acompanha o nó e o momento ANTES/DEPOIS. Não há uma segunda condição independente para escolher slides, nem seleção por quantidade de itens ou corações. Após convergir, as falas comuns funcionam com qualquer caminho anterior. O resultado da fase 5 é tratado nas chegadas a 6A/6B, pois a saída DEPOIS da 5 também pode ocorrer após falha roteada.
 
-A única regra é que toda fase possui duas estruturas condicionais diferentes. A mesma estrutura condicional não pode ser usada para determinar tanto a fase quanto o slide.
+Rex vai da frustração com o sonho de viajar à decisão de defender quem ficou em terra. Lacraia oferece uma viagem como parte da carga; ele recusa. Vencer o chefe interrompe o comando local do enxame e permite o retorno à comunidade. O final é único e não declara o Brasil inteiro livre.
 
-## Estrutura Condicional de Fases
-
-Na perspectiva do jogador, há uma sequência linear de fases mas na realidade há diferentes versões da mesma fase. O que determina a fase é uma estrutura condicional às ações do jogador.
-
-![diagrama01](https://i.imgur.com/iNfavIw.jpeg)
-
-Cada linha no fluxograma acima representa uma estrutura condicional que determina a próxima fase. Como exemplo, na Fase 1 a estrutura condicional pode ser “Uso de Bombas” que determina se o jogador irá para a fase 2A (onde usou bomba) ou para a fase 2B (onde não usou bomba).
-
-A Fase 3 é um exemplo de condições convergentes. Independente do fato do jogador ter ido para fase 2A ou 2B ele irá acabar na mesma Fase 3, que possui uma única versão.
-
-As fases 4A, 4B e 4C são um exemplo de estrutura não binária. Não é possível usar uma condição binária como na fase anterior (usou bomba ou não) pois há três versões da fase 4\. Um exemplo de estrutura condicional que funciona aqui é o número de itens. Se o jogador possui mais de 2 bombas ao vencer a fase 3 ele irá para a Fase 4A, se o jogador possui duas bombas ele irá para a fase 4B e se o jogador possui menos de duas bombas ele irá para a Fase 4C. 
-
-As fases 5A, 5B e 5C são exemplo de condições convergentes determinadas por uma estrutura condicional prévia. Se a fase anterior é 4A, a próxima será 5A. Nesse exemplo as ações do jogador na fase 3 determinaram não apenas a fase a mas também a fase 5\.
-
-A Fase 6 demonstra a importância de usar uma condição convergente como na fase 3 ao chegar próximo do final do jogo. É importante para fins imersivos e narrativos que existam múltiplos finais, mas sem uma condição convergente anterior à esse final a tarefa seria inviável.
-
-## Estrutura Condicional de Slides
-
-Para simplificar visualmente a explicação de como funcionam as diferentes fases do jogo foi usado no fluxograma anterior apenas uma linha entre as fases. Mas se entre as fases há um slide com a história do jogo, e esse slide é determinado por uma segunda estrutura condicional, uma forma mais precisa de indicar isso seria com o seguinte diagrama.
-
-![diagrama02](https://i.imgur.com/bOjZXbk.jpeg)
-
-No diagrama acima, há múltiplas linhas entre as fases. Cada linha representa uma estrutura condicional que determina o slide com a história do jogo. Não importa qual a versão da fase (2A ou 2B; 4A ou 4B ou 4C) porque a estrutura condicional dos slides é diferente da estrutura condicional das fases.
-
-A natureza dessas estruturas condicionais é igual a estrutura já descrita para determinar as diferentes fases. Entre a fase 1 e 2 pode ser o número de bombas, entre 2 e 3 pode ser o uso ou não de uma bomba, entre 3 e 4 o número de corações e entre 4 e 5 pode haver uma convergência, a história sempre incorpora esse slide.
-
-É interessante notar que mesmo no caso de uma fase convergente (no exemplo anterior havia apenas uma versão da Fase 3 por exemplo) não é necessário o mesmo com os slides. Várias versões de uma fase podem gerar o mesmo slide e o mesmo slide pode ocorrer entre várias versões da mesma fase..
-
-A única regra é que a estrutura condicional entre fases não pode ser a mesma que determina o slide entre as fases.
+[Abertura completa](historia/abertura.md) · [Campanha por nó](historia/campanha.md) · [Sistema de diálogos](plano-historia.md).
 
 ## Visão geral
 
-**RedRex** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Rex, humano cibernético32×48** (hitbox 16×16) numa arena de tela única, eliminando insetos gigantes que surgem em ondas. Em cada fase da campanha o objetivo é **matar N inimigos** (`killTarget`); na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
+**RedRex** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Rex, humano cibernético32×48** (hitbox 16×16) numa arena de tela única, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
 
 A arena ocupa a tela inteira; a linha 0 de tiles é o HUD.
 

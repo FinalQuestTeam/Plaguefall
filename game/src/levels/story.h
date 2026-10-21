@@ -5,7 +5,7 @@
 
 // HISTÓRIA (diálogos entre fases): o roteiro é a tabela em levels/story.c —
 // edite SÓ lá. A tela que toca as cenas fica em system/video/screens/story.c.
-// Plano completo: doc/plano-historia.md.
+// Sistema: doc/plano-historia.md. Universo e campanha: doc/historia/README.md.
 
 // lado da fala (retrato esquerdo em cima; retrato direito embaixo)
 #define LADO_ESQ    0
@@ -16,9 +16,10 @@
 #define DEPOIS      1   // ao vencer o nó, antes do mapa de rotas (ou do fim)
 
 // retratos (a ARTE, na mesma ordem, vive em sprites/portraits_data.h)
-#define P_REX       0   // o piloto (mech vermelho)
-#define P_COMANDO   1   // a operadora da base
-#define P_LACRAIA   2   // a rainha dos insetos (chefe)
+#define P_REX       0   // humano com implantes, retrato do concept v3
+#define P_COMANDO   1   // padre que coordena a resistencia pelo radio
+#define P_LACRAIA   2   // a matriz local do enxame (chefe)
+#define P_PARCEIRA  3   // garota do concept v2, retrato de conversa
 
 typedef struct
 {

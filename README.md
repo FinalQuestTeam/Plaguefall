@@ -10,7 +10,9 @@ Nossa Senhora Aparecida substitui a antena24×24 no objetivo PROTEGER, com a mes
 
 ## O jogo
 
-Você pilota um mech numa arena de tela única. Inimigos surgem em ondas; a meta de cada fase é **matar N inimigos**. Vida persiste entre as fases — administre os itens para chegar vivo à fase 16.
+“Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” Rex sonhava com astronautas, extraterrestres e foguetes que davam ré. Os foguetes voltaram trazendo ninhos — Rex chama os invasores de “baratas” — e agora ele luta por uma resistência humana num Brasil cyberpunk com tons de cangaço e religiosidade popular. Leia a [abertura e os arquivos de história](game/doc/historia/README.md).
+
+Você controla **Rex, humano com implantes**, numa arena de tela única. Inimigos surgem em ondas; a maioria das fases exige **eliminar N inimigos**. Na fase 5, proteja Nossa Senhora Aparecida por 30 segundos; na 16, derrote a Lacraia. Vida persiste entre as fases — administre os itens e atravesse as quatro bifurcações da campanha.
 
 ### Controles
 
@@ -70,6 +72,9 @@ Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (
 
 - **[GDD completo](game/doc/GDD.md)** — visão geral, controles, fluxo, HUD, jogador/tiros/bomba, os 15 tipos de inimigo com valores reais, itens, fases e terreno, áudio e gráficos. Gerado a partir do código: os números refletem a implementação.
 - **[Plano de inimigos](game/doc/plano-inimigos.md)** — a matriz forma×cor e a progressão de introdução por fase.
+- **[História](game/doc/historia/README.md)** — abertura, universo, personagens e campanha vinculada aos 20 nós existentes. O roteiro da ROM usa 22 cenas, com as duas versões de cada bifurcação e um final comum.
+- **[Retratos de conversa](game/art/dialogue-portraits-v1/README.md)** — Rex, Comando (padre) e parceira em 48×48, baseados nos concepts, com PNGs, paletas e prévia no emulador.
+- **[Sistema de diálogos](game/doc/plano-historia.md)** — formato das cenas, retratos, controles e limites do texto.
 
 ## Compilar e rodar
 
