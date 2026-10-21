@@ -5,9 +5,9 @@
 #include "system/video/sprites/tiles.h"          // ENEMY_ROT_BASE
 #include "system/video/sprites/titlebg_data.h"   // TITLEBG_TILES_W / TITLEBG_TILES_H
 
-// Fundo da tela de título: a arte de img/bg.jpg recriada em char-map (mesma
+// Fundo da tela de título: splash de art/title-caatinga-v1 exportada em char-map (mesma
 // técnica do splash e dos personagens), em tela cheia — 320x224 = 40x28 tiles
-// no plano BG_B, com 30 cores (PAL1 + PAL2, escolhidas por tile).
+// no plano BG_B, com duas paletas de 16 cores (PAL1/PAL2, escolhidas por tile).
 //
 // São 1120 tiles, que não cabem junto com os do jogo: ocupam a região dos
 // inimigos rotacionados + mech + chão, tudo regenerável. TITLEBG_release()

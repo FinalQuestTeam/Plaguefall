@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "core": "Genesis Plus GX",
+  "frames": 5341,
+  "method": "controller input only; no emulator RAM modifications",
+  "checks": [
+    "reduced logo visible",
+    "initial menu",
+    "selection highlight",
+    "help and return",
+    "character gallery and return",
+    "sandbox and return",
+    "new game opening and campaign"
+  ],
+  "menu_art_sha256": "40d3e681b34ecde1a6059dcfd82934a50e4cd8ccbe490bcc92589fdeb0ad9531",
+  "return_art_identical": true,
+  "rom_sha256": "97392de906ea9189765e36bf1cc29c2ccea71f8c53eccdea125abb29066af093"
+}

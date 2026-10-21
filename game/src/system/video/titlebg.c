@@ -1,6 +1,6 @@
-// Arte de fundo da tela de título (img/bg.jpg em char-map). Pintada fileira de
+// Splash de caatinga da tela de titulo (art/title-caatinga-v1). Pintada fileira de
 // tiles a fileira direto na VRAM, como o splash — só que em tela cheia e com
-// duas paletas: cada tile aponta para a PAL1 ou a PAL2 (30 cores na tela).
+// duas paletas: cada tile aponta para a PAL1 ou a PAL2.
 //
 // Os 1120 tiles ocupam a região dos inimigos rotacionados / mech / chão; nada
 // disso existe no título e tudo é regenerável, então TITLEBG_release() apenas
@@ -51,6 +51,9 @@ void TITLEBG_load(void)
 
     PAL_setColors(PAL1 * 16, TITLEBG_PAL_A, 16, DMA);
     PAL_setColors(PAL2 * 16, TITLEBG_PAL_B, 16, DMA);
+    // Pixel 0 dos dois bancos usa o backdrop. A galeria troca essa cor;
+    // restaura o preto para a arte nao mudar ao voltar ao menu.
+    PAL_setColor(0, RGB24_TO_VDPCOLOR(0x000000));
 
     VDP_setEnable(TRUE);            // religa o display com a arte já completa na VRAM
 }

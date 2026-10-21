@@ -60,8 +60,8 @@ Legenda típica: `o` contorno, `b` corpo (cor da família), `h` brilho, `e` olho
 | Itens | `sprites/items_data.h` | Char-maps 16×16 dos 8 itens |
 | Ícones de HUD | `sprites/icons_data.h` | Caveira, bomba, raio, faísca, escudo, gelo, fogo (8×8) |
 | Chão da arena | `sprites/floor_data.h` | Padrão 32×32 ladrilhado no BG_B (PAL3) |
-| Fundo do título | `sprites/titlebg_data.h` | Derivado de `src/img/bg.jpg` por pipeline offline (quantização por cluster de tiles, 2×16 cores) |
-| Logo da splash | `sprites/logo_data.h` | Logo da desenvolvedora |
+| Fundo do título | `sprites/titlebg_data.h` | [Splash da caatinga](game/art/title-caatinga-v1/README.md), Rex, Dinorah, padre e insetos; 320×224, duas paletas por tile |
+| Logo da splash | `sprites/logo_data.h` | FinalQuest a 75% do tamanho anterior, arte144×132 em moldura144×136 |
 | Mapa de VRAM | `sprites/tiles.h` | Índice de todos os tiles + regiões (rotações de inimigo, chefe, chars) |
 
 Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (cache de frames dos insetos, streaming da ROM e cinco vistas canônicas com simetria horizontal), `chars.c` (rotações do mech).
@@ -73,6 +73,7 @@ Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (
 - **[GDD completo](game/doc/GDD.md)** — visão geral, controles, fluxo, HUD, jogador/tiros/bomba, os 15 tipos de inimigo com valores reais, itens, fases e terreno, áudio e gráficos. Gerado a partir do código: os números refletem a implementação.
 - **[Plano de inimigos](game/doc/plano-inimigos.md)** — a matriz forma×cor e a progressão de introdução por fase.
 - **[História](game/doc/historia/README.md)** — abertura, universo, personagens e campanha vinculada aos 20 nós existentes. O roteiro da ROM usa 22 cenas, com as duas versões de cada bifurcação e um final comum.
+- **[Splash art e abertura](game/art/title-caatinga-v1/README.md)** — caatinga e personagens no menu, com logo FinalQuest menor e capturas no emulador.
 - **[Retratos de conversa](game/art/dialogue-portraits-v1/README.md)** — Rex, Comando (padre) e Dinorah em 48×48, baseados nos concepts, com PNGs, paletas e prévia no emulador.
 - **[Sistema de diálogos](game/doc/plano-historia.md)** — formato das cenas, retratos, controles e limites do texto.
 

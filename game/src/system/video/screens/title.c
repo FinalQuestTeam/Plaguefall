@@ -2,7 +2,7 @@
 // do VDP. A música já toca aqui. A opção Como Jogar abre a tela de explicação e
 // volta ao menu; só Novo Jogo e Fase Teste são devolvidas ao main.
 //
-// O fundo é a arte de img/bg.jpg em char-map (system/video/titlebg.c), no BG_B;
+// O fundo é a splash de art/title-caatinga-v1 em char-map, no BG_B;
 // o menu fica no BG_A por cima. As telas de ajuda/personagens escondem a arte
 // (texto sobre fundo limpo) e ela volta ao retornar ao menu.
 
@@ -16,10 +16,10 @@
 
 // ordem do menu (Fase Teste por último); cada posição mapeia p/ uma ação TITLE_*
 #define MENU_N      4
-#define ROW_0       13
-#define ROW_1       15
-#define ROW_2       17
-#define ROW_3       19
+#define ROW_0       12
+#define ROW_1       14
+#define ROW_2       16
+#define ROW_3       18
 
 static const u16 menuRows[MENU_N]    = { ROW_0, ROW_1, ROW_2, ROW_3 };
 static const char *const menuText[MENU_N] =
@@ -27,19 +27,32 @@ static const char *const menuText[MENU_N] =
 static const u8 menuAction[MENU_N]   =
     { TITLE_NEW_GAME, TITLE_HELP, TITLE_CHARS, TITLE_TEST };
 
-static void drawMenu(void)
+static void drawSelection(u8 selected)
+{
+    for (u16 i = 0; i < MENU_N; i++)
+    {
+        VDP_setTextPalette(i == selected ? PAL3 : PAL0);
+        VDP_drawText(i == selected ? ">" : " ", 2, menuRows[i]);
+        VDP_drawText(menuText[i], 4, menuRows[i]);
+    }
+    VDP_setTextPalette(PAL0);
+}
+
+static void drawMenu(u8 selected)
 {
     VDP_setTextPlane(BG_A);
     VDP_setTextPalette(PAL0);
-    // texto do menu em PRETO (fonte = índice 15 da PAL0). Vale só no menu; ao sair
-    // do título, TITLEBG_release()->TILEGEN_palette() devolve o branco ao jogo.
-    PAL_setColor(15, RGB24_TO_VDPCOLOR(0x000000));
+    // Texto claro sobre a caatinga em sombra; PAL3 destaca a opcao selecionada.
+    // TITLEBG_release/FLOOR_init restaura PAL3 antes de voltar ao jogo.
+    PAL_setColor(15, RGB24_TO_VDPCOLOR(0xFFFFFF));
+    PAL_setColor(PAL3 * 16 + 15, RGB24_TO_VDPCOLOR(0xFFD27A));
     VDP_clearPlane(BG_A, TRUE);
 
-    VDP_drawText("R E D R E X", 15, 6);
-    VDP_drawText("ARENA SHOOTER", 14, 9);
-    for (u16 i = 0; i < MENU_N; i++)
-        VDP_drawText(menuText[i], 16, menuRows[i]);
+    VDP_setTextPalette(PAL3);
+    VDP_drawText("R E D R E X", 3, 4);
+    VDP_setTextPalette(PAL0);
+    VDP_drawText("ARENA SHOOTER", 3, 8);
+    drawSelection(selected);
 }
 
 u8 TITLE_run(void)
@@ -48,9 +61,8 @@ u8 TITLE_run(void)
     VDP_setScreenWidth320();    // ao voltar da fase/pausa); a música retoma no loop
     TITLEBG_load();             // arte do fundo na VRAM (PAL1/PAL2) ...
     TITLEBG_draw();             // ... e no BG_B, atrás do menu
-    drawMenu();
-
     u8 sel = 0;                 // posição no menu
+    drawMenu(sel);
     u16 prev = JOY_readJoypad(JOY_1);
     u16 lock = fps * 3 / 10;    // ignora input por ~0,3 s (evita seleção acidental)
 
@@ -59,6 +71,7 @@ u8 TITLE_run(void)
         const u16 joy = JOY_readJoypad(JOY_1);
         const u16 pressed = joy & ~prev;
         prev = joy;             // atualizado sempre: botão segurado não dispara
+        const u8 oldSel = sel;
 
         AUDIO_frameBegin();     // engata o loop ao fim da intro (via árbitro)
         MUSIC_update();
@@ -84,15 +97,13 @@ u8 TITLE_run(void)
                 else                   CHARDEMO_run(); // Personagens: vitrine e volta
                 TITLEBG_load();                     // repinta a arte por cima de novo
                 TITLEBG_draw();
-                drawMenu();
+                drawMenu(sel);
                 prev = JOY_readJoypad(JOY_1);        // re-sincroniza (evita eco)
                 lock = fps / 2;                      // trava curta ao retornar
             }
         }
 
-        // cursor ">" na opção selecionada
-        for (u16 i = 0; i < MENU_N; i++)
-            VDP_drawText(sel == i ? ">" : " ", 14, menuRows[i]);
+        if (sel != oldSel) drawSelection(sel);
 
         SYS_doVBlankProcess();
     }

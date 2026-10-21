@@ -1,0 +1,27 @@
+{
+  "generation": "built-in image_gen",
+  "source": "originals/title-caatinga.png",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "path": "../concepts/protagonista/protagonista-cangaco-cyberpunk-v3.png",
+      "sha256": "9886109c1a635f7e74af69aa836a2212f1d1ece369138624277cc01ec7d7ecb4"
+    },
+    {
+      "path": "../concepts/parceira/parceira-cangaco-cyberpunk-v2.png",
+      "sha256": "1c5687a61357744082774ff3bc3528855c5715092727fab79d9a7ba42ffb7085"
+    },
+    {
+      "path": "../concepts/comando/comando-padre-cangaco-cyberpunk-v2.png",
+      "sha256": "66b52dcb4249d8d2ca685d7b8681905315c32723a8b1d1a3548dc2074352d890"
+    },
+    {
+      "path": "../concepts/inimigos/sq/sq-serra-pau-v1.png",
+      "sha256": "a6a9dfc46e5c511b77cc6cfd7936d8369f7fabee613f7d0d6cd2dc51ed3b0f59"
+    }
+  ],
+  "runtime_headers": [
+    "../../src/system/video/sprites/titlebg_data.h",
+    "../../src/system/video/sprites/logo_data.h"
+  ]
+}

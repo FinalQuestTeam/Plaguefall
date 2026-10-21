@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "rom_bytes": 524288,
+  "rom_sha256": "97392de906ea9189765e36bf1cc29c2ccea71f8c53eccdea125abb29066af093",
+  "compiler": "m68k-elf-gcc, SGDK local",
+  "text_bytes": 418972,
+  "data_bytes": 88,
+  "bss_bytes": 6077,
+  "static_ram_bytes": 6165,
+  "logo_visible_bounds": [
+    96,
+    49,
+    227,
+    170
+  ],
+  "logo_scale": 0.75,
+  "title_size": [
+    320,
+    224
+  ],
+  "title_tiles": 1120,
+  "title_tile_vram_bytes": 35840,
+  "title_vram_delta_bytes": 0,
+  "emulator_report": "emulator/report.json"
+}

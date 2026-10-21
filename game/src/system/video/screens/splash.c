@@ -1,6 +1,6 @@
 // Tela de abertura: logo da desenvolvedora (FinalQuest) recriado com a técnica de
-// char-map (system/video/sprites/logo_data.h) em 192x176, 16 cores — melhor qualidade, sem
-// reduzir. Pintado em faixas de 1 fileira de tiles (buffer pequeno) direto na VRAM,
+// char-map (system/video/sprites/logo_data.h) em 144x136, com a arte a 75% do tamanho
+// anterior. Pintado em faixas de 1 fileira de tiles direto na VRAM,
 // mostrado no BG_A centralizado com fade de entrada e saída. Paleta em PAL2; o
 // índice 0 é transparente → aparece o fundo preto.
 
@@ -12,16 +12,16 @@
 #define FADE_FRAMES  24
 #define HOLD_FRAMES  90    // ~1,5 s
 
-// posição (em tiles) que centraliza 24x22 na tela de 320x224
-#define LOGO_X  ((320 - LOGO_W) / 2 / 8)    // 8
-#define LOGO_Y  ((224 - LOGO_H) / 2 / 8)    // 3
+// posição em tiles que centraliza a nova moldura 18x17 na tela de 320x224
+#define LOGO_X  ((320 - LOGO_W) / 2 / 8)
+#define LOGO_Y  ((224 - LOGO_H) / 2 / 8)
 
 static u16 joyPrev;
 
 // pinta os tiles do logo (fileira a fileira, na VRAM) e desenha o tilemap no BG_A
 static void drawLogo(void)
 {
-    u32 rowBuf[LOGO_TILES_W * 8];       // 1 fileira de tiles (24 tiles = 768 bytes)
+    u32 rowBuf[LOGO_TILES_W * 8];       // 1 fileira de tiles (18 tiles = 576 bytes)
 
     for (u16 ty = 0; ty < LOGO_TILES_H; ty++)
     {
