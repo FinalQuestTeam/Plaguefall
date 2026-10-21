@@ -9,7 +9,4 @@ void HERO_load(void);
 void HERO_prepare(u8 dir);
 u16 HERO_tile(void);
 u8 HERO_flipH(void);
-void HERO_loadPreview(void);
-u16 HERO_previewTile(u8 dir);
-u8 HERO_previewFlipH(u8 dir);
 #endif

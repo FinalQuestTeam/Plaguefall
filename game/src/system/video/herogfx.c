@@ -51,14 +51,3 @@ void HERO_prepare(u8 dir)
 
 u16 HERO_tile(void){return CHARS_TILE_BASE;}
 u8 HERO_flipH(void){return MIRROR[loadedDir];}
-
-void HERO_loadPreview(void)
-{
-    // Menus can borrow 120 of the 384 enemy cache tiles for all five views.
-    ENEMYGFX_reset();
-    PAL_setColors(PAL2*16,(const u16 *)heroi_palette,16,DMA);
-    for(u8 d=0;d<5;d++)
-        VDP_loadTileData(frameData(d,0),TILE_USER_INDEX+ENEMY_ROT_BASE+d*24,24,DMA);
-}
-u16 HERO_previewTile(u8 dir){return ENEMY_ROT_BASE+CANON[dir]*24;}
-u8 HERO_previewFlipH(u8 dir){return MIRROR[dir];}

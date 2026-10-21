@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "core": "Genesis Plus GX",
+  "frames": 3555,
+  "method": "controller input only; read-only sprite cache inspection",
+  "characters": [
+    "REX",
+    "DINORAH"
+  ],
+  "idle_poses_observed": {
+    "rex": [
+      0,
+      1
+    ],
+    "dinorah": [
+      0,
+      1
+    ]
+  },
+  "directions": 8,
+  "hardware_sprites": 16,
+  "preview_tiles": 240,
+  "checks": [
+    "two characters only",
+    "right selection and wrap",
+    "left selection and wrap",
+    "two idle poses for both characters",
+    "eight views and horizontal mirrors",
+    "menu return unchanged",
+    "campaign start"
+  ],
+  "rom_sha256": "8996b5814d875db56da435625a89c3524e4c4113709200853c418267a6da63e8"
+}

@@ -1,14 +1,44 @@
-// Vitrine dos personagens: o mech selecionado desenhado nas 8 direções, em volta
-// de uma bússola (dir 0 = cima, horário). ESQ/DIR troca de personagem, A/B/START sai.
+// Galeria de Rex e Dinorah: oito direcoes com animacao de repouso.
+// ESQ/DIR troca de personagem; A/B/START volta ao menu.
 
 #include "system/video/screens/chardemo.h"
-#include "system/video/chars.h"
-#include "system/video/herogfx.h"
+#include "system/video/enemygfx.h"
+#include "system/video/sprites/tiles.h"
+#include "system/video/actor_animation.h"
 #include "system/audio/music.h"
 #include "system/audio/audio.h"
 #include "core/game.h"     // fps
+#include "heroi.h"
+#include "dinorah.h"
 
-// posição (canto sup. esq. do sprite 32x32) de cada direção, ao redor do centro
+#define GALLERY_COUNT 2
+#define PREVIEW_FRAME_TILES 24
+#define PREVIEW_VIEW_COUNT 5
+#define PREVIEW_POSE_TILES (PREVIEW_VIEW_COUNT * PREVIEW_FRAME_TILES)
+
+#if PREVIEW_POSE_TILES * ACTOR_IDLE_FRAMES > ENEMY_CACHE_TILES
+#error Character gallery exceeds the borrowed enemy tile cache
+#endif
+
+static const char *const NAMES[GALLERY_COUNT] = { "REX", "DINORAH" };
+static const u8 CANON[8] = { 0, 1, 2, 3, 4, 3, 2, 1 };
+
+static void loadPreview(u8 which)
+{
+    const u32 *frames = (const u32 *)(which ? dinorah_frames : heroi_frames);
+    VDP_resetSprites();
+    VDP_updateSprites(1, DMA);
+    ENEMYGFX_reset();
+    // Dinorah's native frames use exactly the same palette as Rex.
+    PAL_setColors(PAL2 * 16, (const u16 *)heroi_palette, 16, DMA);
+    for (u8 pose = 0; pose < ACTOR_IDLE_FRAMES; pose++)
+        for (u8 dir = 0; dir < PREVIEW_VIEW_COUNT; dir++)
+            VDP_loadTileData(frames + (dir * ACTOR_VIEW_FRAMES + pose) * 192,
+                TILE_USER_INDEX + ENEMY_ROT_BASE + pose * PREVIEW_POSE_TILES + dir * PREVIEW_FRAME_TILES,
+                PREVIEW_FRAME_TILES, DMA);
+}
+
+// Posicao de referencia de cada personagem 32x48, ao redor do centro
 // (160,112) num raio ~70 px — mesma ordem das direções (0=cima, horário)
 static const struct { s16 x, y; } COMPASS[8] =
 {
@@ -25,12 +55,12 @@ static const struct { s16 x, y; } COMPASS[8] =
 static void drawLabels(u8 which)
 {
     VDP_clearTextArea(0, 13, 40, 1);        // limpa a linha do nome (centro)
-    const char *name = which==CHARS_COUNT ? "REX" : CHARS_NAME[which];
+    const char *name = NAMES[which];
     u16 len = 0; while (name[len]) len++;
     VDP_drawText(name, (40 - len) / 2, 13);
 
     char buf[8];
-    sprintf(buf, "%d/%d", which==CHARS_COUNT ? 1 : which+2, CHARS_COUNT+1);
+    sprintf(buf, "%d/%d", which + 1, GALLERY_COUNT);
     VDP_drawText(buf, 19, 15);
 }
 
@@ -45,8 +75,10 @@ void CHARDEMO_run(void)
     VDP_drawText("PERSONAGENS - 8 DIRECOES", 8, 0);
     VDP_drawText("ESQ/DIR: TROCAR   B: SAIR", 8, 26);
 
-    u8 which = CHARS_COUNT;
-    HERO_loadPreview();
+    u8 which = 0;
+    u16 animTick = 0;
+    const u16 idleStep = ACTOR_IDLE_TICKS(fps);
+    loadPreview(which);
     drawLabels(which);
 
     u16 prev = JOY_readJoypad(JOY_1);
@@ -63,30 +95,26 @@ void CHARDEMO_run(void)
 
         if (pressed & (BUTTON_RIGHT|BUTTON_LEFT))
         {
-            which=(which+((pressed&BUTTON_RIGHT) ? 1 : CHARS_COUNT))%(CHARS_COUNT+1);
-            if(which==CHARS_COUNT)HERO_loadPreview();else CHARS_load(which);
+            which = (which + 1) % GALLERY_COUNT;   // dois personagens: ambas alternam
+            animTick = 0;
+            loadPreview(which);
             drawLabels(which);
         }
         if (pressed & (BUTTON_A | BUTTON_B | BUTTON_START)) break;
 
         // os 8 sprites (uma direção em cada ponto da bússola)
+        const u8 pose = animTick / idleStep;
+        if (++animTick >= idleStep * ACTOR_IDLE_FRAMES) animTick = 0;
         u16 n = 0;
         for (u8 d = 0; d < 8; d++)
         {
-            if(which==CHARS_COUNT)
-            {
-                const u16 tile=TILE_USER_INDEX+HERO_previewTile(d);
-                const u8 flip=HERO_previewFlipH(d);
-                VDP_setSpriteFull(n,COMPASS[d].x,COMPASS[d].y-16,SPRITE_SIZE(4,4),
-                    TILE_ATTR_FULL(PAL2,TRUE,FALSE,flip,tile),n+1);n++;
-                VDP_setSpriteFull(n,COMPASS[d].x,COMPASS[d].y+16,SPRITE_SIZE(4,2),
-                    TILE_ATTR_FULL(PAL2,TRUE,FALSE,flip,tile+16),n+1);n++;
-                continue;
-            }
-            VDP_setSpriteFull(n, COMPASS[d].x, COMPASS[d].y, SPRITE_SIZE(4, 4),
-                TILE_ATTR_FULL(PAL2, TRUE, CHARS_dirFlipV(d), CHARS_dirFlipH(d),
-                    TILE_USER_INDEX + CHARS_dirTile(d)), n + 1);
-            n++;
+            const u16 tile = TILE_USER_INDEX + ENEMY_ROT_BASE +
+                pose * PREVIEW_POSE_TILES + CANON[d] * PREVIEW_FRAME_TILES;
+            const u8 flip = d >= 5;
+            VDP_setSpriteFull(n, COMPASS[d].x, COMPASS[d].y - 16, SPRITE_SIZE(4, 4),
+                TILE_ATTR_FULL(PAL2, TRUE, FALSE, flip, tile), n + 1); n++;
+            VDP_setSpriteFull(n, COMPASS[d].x, COMPASS[d].y + 16, SPRITE_SIZE(4, 2),
+                TILE_ATTR_FULL(PAL2, TRUE, FALSE, flip, tile + 16), n + 1); n++;
         }
         VDP_setSpriteLink(n - 1, 0);
         VDP_updateSprites(n, DMA_QUEUE);

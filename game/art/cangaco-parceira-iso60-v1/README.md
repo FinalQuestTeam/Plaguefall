@@ -60,7 +60,7 @@ Para o renderer manual do projeto, `runtime/frames.bin` já está em cinco vista
 
 A matriz completa tem 80 referências de quadro, a reduzida 48, incluindo os espelhos. O binário histórico completo contém 50 quadros canônicos e 38400 bytes. A otimização automática de corte do recurso SPRITE pode gerar duas ou três peças, conforme a pose; as duas peças fixas se referem ao renderer manual e ao binário candidato.
 
-**Os assets estão prontos para integração.** Esta etapa não acrescenta uma parceira controlada por IA nem muda o NPC da santa ou a ROM. O papel mecânico da parceira ainda precisa ser implementado. Caso ela apareça simultaneamente com Rex, será necessário alocar o quadro ativo e admitir as duas peças na lista SAT; há 24 tiles não usados por Rex na reserva atual de personagens, mas o reaproveitamento deve ser feito na integração. Limites H40, DMA, RAM do estado e FPS continuam compartilhados e precisam ser medidos com a personagem em execução. Estes testes de assets não garantem quinze inimigos a 60FPS.
+**Dinorah já está integrada à [galeria PERSONAGENS](../gallery-v1/README.md).** A prévia usa oito direções e duas poses de repouso, com a paleta de Rex. O papel mecânico da parceira ainda precisa ser implementado. Caso ela apareça simultaneamente com Rex, será necessário alocar o quadro ativo e admitir as duas peças na lista SAT; há 24 tiles não usados por Rex na reserva atual de personagens, mas o reaproveitamento deve ser feito na integração. Limites H40, DMA, RAM do estado e FPS continuam compartilhados e precisam ser medidos com a personagem em execução. Estes testes de assets não garantem quinze inimigos a 60FPS.
 
 ## Verificações e reprodução
 

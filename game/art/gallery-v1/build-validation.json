@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "rom_bytes": 524288,
+  "rom_sha256": "8996b5814d875db56da435625a89c3524e4c4113709200853c418267a6da63e8",
+  "text_bytes": 431388,
+  "data_bytes": 88,
+  "bss_bytes": 6073,
+  "static_ram_bytes": 6161,
+  "gallery_characters": [
+    "REX",
+    "DINORAH"
+  ],
+  "preview_tiles": 240,
+  "existing_enemy_cache_tiles": 320,
+  "gallery_vram_reservation_delta_bytes": 0,
+  "dinorah_rom_resource_bytes": 23040,
+  "shared_palette_matches_rex": true,
+  "old_mechs_linked": false,
+  "emulator_report": "emulator/report.json",
+  "pixel_validation": "pixel-validation.json"
+}
