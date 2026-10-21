@@ -1,9 +1,9 @@
 {
   "passed": true,
   "rom_bytes": 524288,
-  "rom_sha256": "97392de906ea9189765e36bf1cc29c2ccea71f8c53eccdea125abb29066af093",
+  "rom_sha256": "1bc8b2cfac844c2c266e6cf59eb9186d9225985b09afabe00f458409dab08458",
   "compiler": "m68k-elf-gcc, SGDK local",
-  "text_bytes": 418972,
+  "text_bytes": 419400,
   "data_bytes": 88,
   "bss_bytes": 6077,
   "static_ram_bytes": 6165,
@@ -21,5 +21,7 @@
   "title_tiles": 1120,
   "title_tile_vram_bytes": 35840,
   "title_vram_delta_bytes": 0,
-  "emulator_report": "emulator/report.json"
+  "emulator_report": "emulator/report.json",
+  "menu_text_color": "#FFFFFF",
+  "menu_cursor_color": "#FFFFFF"
 }

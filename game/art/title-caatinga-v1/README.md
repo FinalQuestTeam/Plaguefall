@@ -13,7 +13,7 @@ Criada com **image_gen integrado**, usando os concepts aprovados dos três perso
 - [Logo menor capturado no emulador](emulator/logo-2x.png).
 - [ROM atual](../../out/release/rom.bin).
 
-O menu continua oferecendo **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**. As opções ficam à esquerda, em branco; o cursor e a opção selecionada ficam em âmbar. A arte usa PAL1 e PAL2, com uma paleta de 16 cores por tile e 23 cores RGB efetivamente presentes nesta exportação. PAL3 fornece a cor do destaque do texto. As paletas do jogo são restauradas ao sair do menu.
+O menu continua oferecendo **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**. Todo o texto fica à esquerda em branco, incluindo o título e o cursor `>` que identifica a opção selecionada. A arte usa PAL1 e PAL2, com uma paleta de 16 cores por tile e 23 cores RGB efetivamente presentes nesta exportação. O texto usa PAL0; a seleção é indicada pelo cursor, sem trocar a cor das letras. As paletas do jogo são restauradas ao sair do menu.
 
 A tela continua usando 1120 tiles / 35840 bytes temporários de VRAM, o mesmo espaço do fundo anterior. A conversão agrupa tiles entre duas paletas e aproxima as cores aos oito níveis RGB do hardware. Redimensionamento e quantização são técnicos; o script não desenha personagens, cactos ou insetos.
 

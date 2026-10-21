@@ -214,7 +214,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 ## Tela-título, splash e ajuda
 
 - **Splash** (`splash.c`): logo FinalQuest reduzido para 75% (arte144×132 numa moldura144×136), centralizado, com os mesmos fades e possibilidade de pular.
-- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Rex, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**, texto branco e seleção âmbar. A música dark toca calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
+- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Rex, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. A música dark toca calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
 - **Como Jogar** (`help.c`): **5 páginas** navegáveis com ←/→ — controles, inimigos (cor/forma, com os sprites reais), a elite (pentágonos), itens diretos e itens de inventário.
 
 ## HUD (linha 0)

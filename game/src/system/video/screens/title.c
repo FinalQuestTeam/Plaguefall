@@ -29,9 +29,9 @@ static const u8 menuAction[MENU_N]   =
 
 static void drawSelection(u8 selected)
 {
+    VDP_setTextPalette(PAL0);
     for (u16 i = 0; i < MENU_N; i++)
     {
-        VDP_setTextPalette(i == selected ? PAL3 : PAL0);
         VDP_drawText(i == selected ? ">" : " ", 2, menuRows[i]);
         VDP_drawText(menuText[i], 4, menuRows[i]);
     }
@@ -42,15 +42,11 @@ static void drawMenu(u8 selected)
 {
     VDP_setTextPlane(BG_A);
     VDP_setTextPalette(PAL0);
-    // Texto claro sobre a caatinga em sombra; PAL3 destaca a opcao selecionada.
-    // TITLEBG_release/FLOOR_init restaura PAL3 antes de voltar ao jogo.
+    // Todo o texto do menu usa branco; o cursor identifica a opcao selecionada.
     PAL_setColor(15, RGB24_TO_VDPCOLOR(0xFFFFFF));
-    PAL_setColor(PAL3 * 16 + 15, RGB24_TO_VDPCOLOR(0xFFD27A));
     VDP_clearPlane(BG_A, TRUE);
 
-    VDP_setTextPalette(PAL3);
     VDP_drawText("R E D R E X", 3, 4);
-    VDP_setTextPalette(PAL0);
     VDP_drawText("ARENA SHOOTER", 3, 8);
     drawSelection(selected);
 }
