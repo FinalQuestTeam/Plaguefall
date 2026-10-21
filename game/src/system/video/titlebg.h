@@ -18,6 +18,7 @@
 
 void TITLEBG_load(void);        // pinta os tiles na VRAM + carrega PAL1/PAL2
 void TITLEBG_draw(void);        // desenha o tilemap no BG_B
+void TITLEBG_drawLogo(void);    // ex-voto acima das opções e FinalQuest no canto inferior direito
 void TITLEBG_clear(void);       // limpa o BG_B (telas de ajuda/personagens)
 void TITLEBG_release(void);     // devolve a VRAM e as paletas ao jogo
 

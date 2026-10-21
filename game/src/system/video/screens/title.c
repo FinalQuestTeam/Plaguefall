@@ -46,7 +46,7 @@ static void drawMenu(u8 selected)
     PAL_setColor(15, RGB24_TO_VDPCOLOR(0xFFFFFF));
     VDP_clearPlane(BG_A, TRUE);
 
-    VDP_drawText("PLAGUEFALL", 3, 4);
+    TITLEBG_drawLogo();
     drawSelection(selected);
 }
 
