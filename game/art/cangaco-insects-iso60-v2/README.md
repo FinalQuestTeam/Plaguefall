@@ -23,14 +23,14 @@ Treze inimigos com perspectiva elevada refeita, mantendo nomes e IDs do projeto.
 | `pen_yellow` | Alcateia | formiga saúva-soldado | [pen_yellow.png](enemies/pen_yellow/pen_yellow.png) |
 | `pen_purple` | Fortaleza | formiga saúva-soldado | [pen_purple.png](enemies/pen_purple/pen_purple.png) |
 | `pen_orange` | Meteoro | formiga saúva-soldado | [pen_orange.png](enemies/pen_orange/pen_orange.png) |
-| `boss` | Lacraia | escorpião-amarelo-do-Nordeste | [boss.png](enemies/boss/boss.png) |
+| `boss` | Escorpião | escorpião-amarelo-do-Nordeste | [boss.png](enemies/boss/boss.png) |
 
 ## Prévias de movimento
 
 - [Serra-pau: oito direções, ampliação 3×](previews/sq-movement-3x.gif).
 - [Mutuca: oito direções, ampliação 3×](previews/tri-movement-3x.gif).
 - [Saúva-soldado: oito direções, ampliação 3×](previews/pen-movement-3x.gif).
-- [Lacraia / escorpião: oito direções, ampliação 3×](previews/boss-movement-3x.gif).
+- [Escorpião: oito direções, ampliação 3×](previews/boss-movement-3x.gif).
 
 As folhas por direção estão em `enemies/ID/directions/ID_DIRECAO.png`. Os prompts iniciais e as correções estão em `prompts/`, nomeados pelo ID. As mutucas tiveram as antenas corrigidas; as saúvas receberam novas vistas L/O; Fortaleza tem seis poses extras para a corrida lateral. Meteoro compartilha uma pose neutra entre repouso e passagem da corrida L/O para substituir um quadro cortado da fonte.
 

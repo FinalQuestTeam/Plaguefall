@@ -3,15 +3,14 @@
 
 #include <genesis.h>
 #include "system/video/sprites/tiles.h"
-#include "system/video/chars.h"    // CHARS_TILE_BASE / CHARS_DIR_TILES
 
 // Chão da arena (pedra basketweave, recriado de img/floor.webp com a técnica de
 // char-map). Tile 32x32 (16 tiles) ladrilhado no plano de fundo BG_B; paleta PAL3.
 // Fica atrás de tudo (borda/HUD/elementos em BG_A, sprites por cima).
 
-// base na VRAM: após os tiles do mech do jogador (CHARS_TILE_BASE + CHARS_TILES).
+// Base na VRAM após a reserva de animação de Damião (48 tiles).
 // As variantes ficam residentes em sequência: cada uma em FLOOR_TILE_BASE + v*16.
-#define FLOOR_TILE_BASE  (CHARS_TILE_BASE + CHARS_TILES)
+#define FLOOR_TILE_BASE  (HERO_TILE_BASE + HERO_RESERVED_TILES)
 #define FLOOR_TILES      16    // 32x32 (por variante)
 
 // variantes do chão (índice usado no campo LevelDef.floor)

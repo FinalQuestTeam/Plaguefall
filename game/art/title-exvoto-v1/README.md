@@ -5,7 +5,7 @@
 Abertura: **logo da desenvolvedora → APRESENTA → PLAGUEFALL → monólogo → menu**. O logo da desenvolvedora conserva o asset FinalQuest já usado no projeto. APRESENTA aparece sozinho, branco e centralizado sobre preto por 1,2s, com fades. O título permanece por 4s, com fades de 0,25s e duas respirações de luz no interior do coração. Não há personagens, subtítulos nem instruções na tela.
 
 - [Prévia de 10 segundos, capturada no emulador](abertura-titulo.mp4).
-- [ROM atualizada](../../out/release/rom.bin).
+- [ROM atualizada](../../out/release/Plaguefall.bin).
 - [Imagem nativa 320×224](title-native.png) e [ampliação](title-3x.png).
 - [Concept B original aprovado](../concepts/titulo-v1/b-ex-voto.png), produzido com **image_gen integrado**, e [prompt original](../concepts/titulo-v1/prompts/b-ex-voto.txt). A integração preserva essa imagem; não foi necessário gerar outro desenho.
 

@@ -13,5 +13,6 @@ const LevelDef LEVEL13B_def =
     .mud          = MUD_PAIR,
     .mudCount     = LAYOUT_RECTS,
     .floor        = FLOOR_FOREST,
+    .musicTrack   = MUSIC_TRACK_BREU,
     LVL_ROSTER(roster),
 };

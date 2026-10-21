@@ -28,7 +28,7 @@ Ele sabe atirar e sobreviver porque já vive em território ocupado. Não começ
 
 Sua mudança é simples: começa falando do céu que lhe negaram e termina defendendo o chão que divide com outras pessoas. Não perde o humor nem vira devoto exemplar. Aprende a aceitar ajuda e a reconhecer a fé dos outros como parte da vida que está protegendo.
 
-Chapéu metálico, rádio, arma com peças antigas e modernas, placas sobre tecido e rosto exposto já pertencem à direção de arte. As falas não devem chamá-lo de mech ou sugerir que sua prótese o torna menos humano. Damião chama os invasores de **baratas**, inclusive os que têm outras silhuetas. É um apelido coloquial e debochado do personagem; os nomes serra-pau, mutuca, saúva e Lacraia continuam no catálogo e nas falas de quem identifica cada ameaça.
+Chapéu metálico, rádio, arma com peças antigas e modernas, placas sobre tecido e rosto exposto já pertencem à direção de arte. As falas não devem chamá-lo de mech ou sugerir que sua prótese o torna menos humano. Damião chama os invasores de **baratas**, inclusive os que têm outras silhuetas. É um apelido coloquial e debochado do personagem; os nomes serra-pau, mutuca, saúva e Escorpião continuam no catálogo e nas falas de quem identifica cada ameaça.
 
 ## Comando e a resistência
 
@@ -50,9 +50,9 @@ Se o sinalizador for destruído antes da confirmação, as naves abortam a aprox
 
 Há gente que reza, gente que não reza e gente que faz as duas coisas conforme o dia. A propaganda do Consórcio usa linguagem de ascensão e salvação, mas não representa toda religião. A campanha pode criticar a venda de milagres e tratar a fé comunitária com respeito ao mesmo tempo.
 
-## Lacraia e o enxame
+## Escorpião e o enxame
 
-Lacraia é o apelido humano da matriz que coordena a ocupação local. Seu corpo lembra um escorpião, conforme a arte atual; o apelido não é uma classificação zoológica. “Rainha do enxame” descreve sua função, sem provar que existe uma monarquia alienígena ou uma única matriz no planeta.
+Escorpião é o nome usado pelos humanos para a matriz que coordena a ocupação local. Sua aparência segue o concept do escorpião-amarelo-do-Nordeste, com carapaça ocre, pinças e cauda segmentada com ferrão. A função de matriz não implica uma monarquia alienígena nem uma única matriz no planeta.
 
 Ela se ligou à instalação de pouso subterrânea e trata peças, pessoas e território como material disponível. Suas frases chegam como voz traduzida pela interferência no rádio de Damião. É uma explicação narrativa para o retrato já existente, sem propor uma mecânica de comunicação durante a luta.
 
@@ -67,7 +67,7 @@ As famílias e cores mantêm os comportamentos atuais:
 | Amarelo | Caça e aproximação | Perseguição |
 | Roxo | Defesa do avanço | Escudo cíclico |
 | Laranja | Ruptura de posição | Investida |
-| Lacraia | Matriz local | Ciclos de invulnerabilidade, lacaios, investidas e rajadas |
+| Escorpião | Matriz local | Ciclos de invulnerabilidade, lacaios, investidas e rajadas |
 
 As cores são leitura de combate; não indicam alinhamento religioso. Sangue verde, implantes e carapaças sustentam a mistura de organismo e máquina.
 
@@ -89,7 +89,7 @@ O nome da personagem é **Dinorah**. Os recursos de arte mantêm o identificador
 
 ## Desfecho e limites
 
-No novo fluxo, derrotar Lacraia permite a Damião alcançar os acessos dos ninhos para instalar cargas de demolição recuperadas na base. Ele se retira pelos túneis de manutenção antes da detonação. As explosões destroem os criadouros; nos dias seguintes, a comunidade elimina os insetos isolados e confirma que a região está livre. O planeta continua infestado.
+No novo fluxo, derrotar o Escorpião permite a Damião alcançar os acessos dos ninhos para instalar cargas de demolição recuperadas na base. Ele se retira pelos túneis de manutenção antes da detonação. As explosões destroem os criadouros; nos dias seguintes, a comunidade elimina os insetos isolados e confirma que a região está livre. O planeta continua infestado.
 
 O resultado militar é comum a todas as rotas. Os diálogos e as imagens finais preservam o estado da igreja e a relação com Dinorah: ela participa do retorno na rota do resgate bem-sucedido e permanece afastada de Damião na rota da falha. O retorno dos refugiados acontece por nave ou por terra conforme o percurso. Essas variações pertencem ao novo tratamento; o seletor atual da ROM ainda não as implementa.
 

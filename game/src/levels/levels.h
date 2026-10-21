@@ -5,6 +5,8 @@
 #include "elements/elements.h"
 #include "enemies/enemies.h"
 #include "system/video/floor.h"        // FLOOR_STONE / FLOOR_FOREST
+#include "levels/arena.h"
+#include "system/audio/music.h"
 
 // A ORDEM das fases (e as bifurcações) vive no grafo da campanha — ver
 // levels/graph.h e a tabela em levels/graph.c. Aqui ficam só as DEFS (dados
@@ -43,6 +45,10 @@ typedef struct
     u8 musEnemyMax;        // inimigos que leva ao BPM máximo
     u8 musStepCalm;        // quadros NTSC equivalentes/passo (BPM = 900/valor)
     u8 musStepHot;         // frames/passo no perigo (menor = + rápido)
+    u8 musicTrack;         // MUSIC_TRACK_*; zero = Baiao de Ferrugem
+    u8 enemyCap;           // zero = teto global; fase 1 usa carga validada
+    u8 shotCap;            // por grupo (jogador/inimigo); zero = pool completo
+    const ArenaDef *arena;// NULL = arena classica; mapa com camera quando definido
 } LevelDef;
 
 // uma fase por arquivo em levels/defs/ (level01.c .. level16.c); o grafo

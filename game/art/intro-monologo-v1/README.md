@@ -1,3 +1,5 @@
+> **Versão anterior preservada.** A abertura atual é a [montagem aprovada de 14 planos e 18 cartelas](../intro-monologo-v2/README.md). Os dados e relatórios abaixo descrevem a revisão anterior.
+
 # Abertura animada — monólogo de Damião
 
 ![Damião e o sonho espacial, capturado na ROM](emulator-ntsc/01-complete.png)
@@ -5,7 +7,7 @@
 O boot segue **[FinalQuest redesenhado](../finalquest-logo-v2/README.md) → APRESENTA → [título ex-voto pulsante](../title-exvoto-v1/README.md) → monólogo ilustrado → menu PLAGUEFALL**. Os 12 quadros do [storyboard](../storyboard-abertura-v1/README.md) apresentam o monólogo completo com texto branco centralizado e transições em fade de0,4s. A câmera fica fixa;12 partículas de poeira, brasa e fuligem se movem sobre a arte. A trilha original [O Sonho Atendido](../audio-abertura-v2/README.md) começa no logo Plaguefall e segue continuamente pelos12 planos, sem reinícios nem redução de volume nas trocas de imagem.
 
 - [Vídeo do boot real com a nova trilha](../audio-abertura-v2/ntsc/abertura.mp4), com logo, áudio PSG, monólogo e chegada ao menu. O monólogo tem89s mais as trocas de imagem; o último quadro passou de17 para5s.
-- [ROM atualizada](../../out/release/rom.bin).
+- [ROM atualizada](../../out/release/Plaguefall.bin).
 - [Roteiro e tempos dos 12 planos](../../doc/historia/storyboard-abertura.md).
 - [Todos os recortes na paleta do hardware](contact-sheet.png).
 

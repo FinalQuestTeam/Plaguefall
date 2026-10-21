@@ -1,8 +1,9 @@
 // Human protagonist: one 32x48 frame in the existing player VRAM reservation.
 #include "system/video/herogfx.h"
-#include "system/video/chars.h"
+#include "system/video/sprites/tiles.h"
 #include "system/video/enemygfx.h"
 #include "system/video/actor_animation.h"
+#include "system/video/hero_muzzle.h"
 #include "core/game.h"
 #include "heroi.h"
 
@@ -11,7 +12,7 @@ static const u8 MIRROR[8]={0,0,0,0,0,1,1,1};
 static s16 lastX,lastY;
 static u16 animTick;
 static u8 loadedDir,loadedPose,motion;
-static bool running,loaded;
+static bool running,loaded,prepared;
 
 static const u32 *frameData(u8 dir,u8 pose)
 {
@@ -21,13 +22,16 @@ static const u32 *frameData(u8 dir,u8 pose)
 void HERO_load(void)
 {
     PAL_setColors(PAL2*16,(const u16 *)heroi_palette,16,DMA);
-    VDP_loadTileData(frameData(2,0),TILE_USER_INDEX+CHARS_TILE_BASE,24,DMA);
+    VDP_loadTileData(frameData(2,0),TILE_USER_INDEX+HERO_TILE_BASE,24,DMA);
     loadedDir=2;loadedPose=0;loaded=TRUE;
-    lastX=px;lastY=py;animTick=0;motion=0;running=FALSE;
+    lastX=px;lastY=py;animTick=0;motion=0;running=FALSE;prepared=FALSE;
 }
 
 void HERO_prepare(u8 dir)
 {
+    // Firing and drawing share one animation/DMA decision per game frame.
+    if(prepared)return;
+    prepared=TRUE;
     const bool moved=px!=lastX || py!=lastY;
     lastX=px;lastY=py;
     if(moved) motion=3; else if(motion) motion--;
@@ -45,9 +49,24 @@ void HERO_prepare(u8 dir)
     if(DMA_getQueueTransferSize()+768+1024>DMA_TRANSFER_CAPACITY_NTSC ||
        DMA_getQueueSize()+3>=DMA_getMaxQueueSize())return;
     if(!DMA_queueDma(DMA_VRAM,(void *)frameData(dir,pose),
-                    (TILE_USER_INDEX+CHARS_TILE_BASE)*32,384,2))return;
+                    (TILE_USER_INDEX+HERO_TILE_BASE)*32,384,2))return;
     loadedDir=dir;loadedPose=pose;loaded=TRUE;
 }
 
-u16 HERO_tile(void){return CHARS_TILE_BASE;}
+void HERO_endFrame(void){prepared=FALSE;}
+
+u8 HERO_direction(s16 x,s16 y)
+{
+    static const u8 dirs[3][3]={{7,0,1},{6,0,2},{5,4,3}};
+    return dirs[y+1][x+1];
+}
+
+void HERO_muzzle(s16 *x,s16 *y)
+{
+    const u8 *anchor=HERO_MUZZLE[CANON[loadedDir]][loadedPose];
+    *x=px-8+(MIRROR[loadedDir] ? 32-anchor[0] : anchor[0]);
+    *y=py-31+anchor[1];
+}
+
+u16 HERO_tile(void){return HERO_TILE_BASE;}
 u8 HERO_flipH(void){return MIRROR[loadedDir];}

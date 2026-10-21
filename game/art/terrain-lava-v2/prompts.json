@@ -1,0 +1,10 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "prompt": "Use case: stylized-concept. Asset type: seamless repeatable native game terrain texture, 64x64 logical pixels, one opaque square, no sheets.\nPrimary request: create the MOLTEN INTERIOR ONLY of a large industrial lava pool for a Sega Mega Drive overhead shooter, matching the supplied level's fine 16-bit pixel art. The image is ONLY a repeating flat horizontal liquid surface, no objects, walls, pipes, outer shoreline, grass, stones, volcanic mountain, text, labels, frame or perspective. No overall pool outline. All four edges must tile seamlessly as liquid.\nVisual: broad connected glowing orange-red molten liquid, fine flowing bright gold/yellow threads and tiny dark-red cooled cracks. Mostly HOT LIQUID, with only thin dark fissures, NOT a checkerboard of black boulders or repeated coal islands. Organic meandering current at a small scale, no giant flame symbols, no repeating circular emblems. Restrained colors: deep rust red, brick red, dark terracotta, vivid orange, pale warm yellow. The supplied image is a material and pixel-scale reference ONLY; do not reproduce any architecture or the rectangular room.\nCamera true orthographic overhead, compatible with 60-degree-above-ground game actors. Crisp fine SINGLE-PIXEL clusters when reduced ONCE to64x64, no blurry painting, no coarse pixel filter, no outlines around tile subdivisions. Keep lighting even across whole texture; it must look continuous when reused across a lava surface 152x104 or200x96 logicalpixels. Output square opaque texture filling the entire image.",
+  "generated_file": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-be464496-ef33-4b1b-99fd-c03bd7969c54.png",
+  "native_size": [
+    64,
+    64
+  ]
+}

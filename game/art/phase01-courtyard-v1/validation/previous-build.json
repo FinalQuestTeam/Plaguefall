@@ -1,0 +1,251 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "rom": "../out/release/rom.bin",
+  "rom_sha256": "0828ef465302804a249e33583e311741982a3c95a324e75e520feb5671c25baa",
+  "rom_bytes": 917504,
+  "text_bytes": 836020,
+  "data_bytes": 128,
+  "bss_bytes": 6120,
+  "static_ram_bytes": 6248,
+  "native_audio": "ASan/UBSan passed for original, melancholic, dark defaults and continuous opening",
+  "score_checks": "all four scores, runtime catalog and continuous opening generated data verified",
+  "music_bench": "relocated build and real 2-second track-3 capture passed",
+  "emulator": "Genesis Plus GX",
+  "checks": {
+    "intro_ntsc": {
+      "passed": true,
+      "fps": 60,
+      "frames": 8697,
+      "game_ram_writes": false,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "START skips whole opening from APRESENTA or Plaguefall logo",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A/B/C ignored in monologue and Plaguefall logo",
+        "A cannot complete captions or advance shots",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Dami\u00e3o and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay",
+        "one continuous music run starts on Plaguefall logo",
+        "music clock never resets across title, images or fades",
+        "START stops opening score before menu"
+      ],
+      "opening_audio": {
+        "continuous": true,
+        "first_frame": 202,
+        "last_frame": 5818,
+        "first_ticks": 0,
+        "last_ticks": 28080,
+        "clock_resets": 0,
+        "clock_pauses": 0,
+        "ticks_per_frame": 5,
+        "pcm_sha256": "529b586ef47bb24127286e3cf9b735353e26c9bf690439d9e04f9290efca1b36",
+        "samples": 4133818,
+        "peak": 1665
+      }
+    },
+    "intro_pal": {
+      "passed": true,
+      "fps": 50,
+      "frames": 7243,
+      "game_ram_writes": false,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "START skips whole opening from APRESENTA or Plaguefall logo",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A/B/C ignored in monologue and Plaguefall logo",
+        "A cannot complete captions or advance shots",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Dami\u00e3o and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay",
+        "one continuous music run starts on Plaguefall logo",
+        "music clock never resets across title, images or fades",
+        "START stops opening score before menu"
+      ],
+      "opening_audio": {
+        "continuous": true,
+        "first_frame": 167,
+        "last_frame": 4841,
+        "first_ticks": 0,
+        "last_ticks": 28044,
+        "clock_resets": 0,
+        "clock_pauses": 0,
+        "ticks_per_frame": 6,
+        "pcm_sha256": "8f9d295f43c67f631a49c84e0566bd927b9a1c91de7c98e70f1eb830db5c77fa",
+        "samples": 4148118,
+        "peak": 1694
+      }
+    },
+    "gallery_ntsc": {
+      "passed": true,
+      "fps": 60,
+      "frames": 4155,
+      "game_ram_writes": false,
+      "checks": [
+        "ASSETS menu entry",
+        "three tabs, both directions and wrap",
+        "all four score names and cursor",
+        "all calm/combat tempos",
+        "four distinct real audio recordings",
+        "pause emits silence and resume restores audio",
+        "selection while paused resumes",
+        "character sprites return after music",
+        "B and START exit music",
+        "A still exits characters",
+        "menu audio restored",
+        "campaign starts after paused preview exit"
+      ],
+      "audio_captures": {
+        "baiao-calm": {
+          "peak": 4203,
+          "pcm_sha256": "8188545fee1ba8dd89d59dd6c684803f689efdf85b98babc2216e33f9a3fe577"
+        },
+        "baiao-combat": {
+          "peak": 4060,
+          "pcm_sha256": "52ccfeebaf38d101e7187ff174c0da13495359a5dc4fc441cfa5478ff0749713"
+        },
+        "entardecer-calm": {
+          "peak": 3741,
+          "pcm_sha256": "9d69485af940d496640574d0e227141c569a2d1acd50d91a950b1f60b57a0557"
+        },
+        "entardecer-combat": {
+          "peak": 4721,
+          "pcm_sha256": "1fe16337f209547e2c28b02cc9cd7eeab135bbcefa9ff1f72b84846dee4dad47"
+        },
+        "breu-calm": {
+          "peak": 3666,
+          "pcm_sha256": "1d59f29d79f18665c66c159517de5a5ff4d61eaa1a145d0fc7cce98bccc8e32d"
+        },
+        "breu-combat": {
+          "peak": 4215,
+          "pcm_sha256": "08bd4619c789e40f0ea065f59cec44043a2bd60a66612434bc57ecebc1ba204e"
+        },
+        "ladainha-calm": {
+          "peak": 3933,
+          "pcm_sha256": "059bf7fade2ed51d1d55050a962962f60747c8d30ed6f649b19248b16298e6fc"
+        },
+        "ladainha-combat": {
+          "peak": 4141,
+          "pcm_sha256": "a2a18f9dac09bb33f2101c99901afee1967c3699110d373369dc49fc4bc83be6"
+        },
+        "paused": {
+          "peak": 0,
+          "pcm_sha256": "87895746267989df526f76704df9a55b26a0feddab4544791de948c7abf4e1cb"
+        },
+        "resumed": {
+          "peak": 2544,
+          "pcm_sha256": "8f286ce7a63e6a0d7f8b9bc8de45c9ad5787688e29ed3efb9a87c7e1234884fb"
+        },
+        "character-return": {
+          "peak": 4173,
+          "pcm_sha256": "3c00acedfa0998b45fa1bd7906092fa49b9ac8ce54952745d965cd97843c4b7d"
+        },
+        "menu-restored": {
+          "peak": 3284,
+          "pcm_sha256": "718213f782f77a1a640a9973696f07a04977c7dac0cbd0dc6f121791fe7fb83c"
+        }
+      }
+    },
+    "gallery_pal": {
+      "passed": true,
+      "fps": 50,
+      "frames": 3491,
+      "game_ram_writes": false,
+      "checks": [
+        "ASSETS menu entry",
+        "three tabs, both directions and wrap",
+        "all four score names and cursor",
+        "all calm/combat tempos",
+        "four distinct real audio recordings",
+        "pause emits silence and resume restores audio",
+        "selection while paused resumes",
+        "character sprites return after music",
+        "B and START exit music",
+        "A still exits characters",
+        "menu audio restored",
+        "campaign starts after paused preview exit"
+      ],
+      "audio_captures": {
+        "baiao-calm": {
+          "peak": 4239,
+          "pcm_sha256": "ea24b350c1eceb2a4b50c882536fc49893f277678fadba32ccb15e1675ad88cd"
+        },
+        "baiao-combat": {
+          "peak": 4019,
+          "pcm_sha256": "75eda2f18022b16a1e32ddbb3eb0b2ff5122f55bd0acc4bfdda95fd8d8a2a19e"
+        },
+        "entardecer-calm": {
+          "peak": 3749,
+          "pcm_sha256": "4f469121634afcd45de0c629dda473cb4c1899beb945cde78f388cdad691955e"
+        },
+        "entardecer-combat": {
+          "peak": 4119,
+          "pcm_sha256": "2de37cc3b2f3504fca74a8e7d6e4a03611d86a93087e2e3e94254fdcc07b5893"
+        },
+        "breu-calm": {
+          "peak": 3507,
+          "pcm_sha256": "67867a352f1184feccb0b92046a908fbf983b556cec1d95079bbb7940ba76d93"
+        },
+        "breu-combat": {
+          "peak": 4121,
+          "pcm_sha256": "d270fa064fe63d8c74121d828254142c7714451255183d6575ee008e2bc9d646"
+        },
+        "ladainha-calm": {
+          "peak": 3524,
+          "pcm_sha256": "83bdf8f6abff833111c3eb6af46316d0d690b27f8c717b432a53c21c59943701"
+        },
+        "ladainha-combat": {
+          "peak": 4678,
+          "pcm_sha256": "e183bbc116f8e180aafef6d7a9832d0160cffd3ff9a1ab5cb54b64d72b8b7165"
+        },
+        "paused": {
+          "peak": 0,
+          "pcm_sha256": "ded7afe2faf9830173e0293963924c27a3a2082de7d6bf60f0782b960bee914b"
+        },
+        "resumed": {
+          "peak": 2703,
+          "pcm_sha256": "3ec3aa8a94d64b8689dd605c2db25563d6c32045b611d1f8ec12ec3925e50334"
+        },
+        "character-return": {
+          "peak": 4196,
+          "pcm_sha256": "b6f115bd628dcf55ff5c4c39ad30102082c641dea1f651025db1bff7ab23b3c1"
+        },
+        "menu-restored": {
+          "peak": 4299,
+          "pcm_sha256": "b0ead433712c61cde852748d63cd007f9a2c175011f91c2352ca2162b04bc400"
+        }
+      }
+    }
+  },
+  "repository_policy": {
+    "canonical_rom": "game/out/release/rom.bin",
+    "temporary_builds_ignored": true,
+    "native_test_binaries": "system temporary directory",
+    "music_archives_preserved": true
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "chapter": 2,
+  "width": 512,
+  "height": 320,
+  "camera_degrees": 60,
+  "objective": {
+    "type": "kill",
+    "target": 12
+  },
+  "next": [
+    "03"
+  ],
+  "start": [
+    48,
+    208
+  ],
+  "exit": [
+    464,
+    160
+  ],
+  "walkable": [
+    16,
+    96,
+    480,
+    208
+  ],
+  "solids": [],
+  "source": "source/layout.png",
+  "status": "awaiting-art-approval",
+  "integration": "not-integrated",
+  "id": "02A",
+  "title": "Rua de serviço — igreja preservada",
+  "node": 2,
+  "music": "Ladainha de Ferro",
+  "narrative": "A igreja resistiu à fuga sem a bomba. Damião avança pela rua de serviço, onde prateleiras vazias e rastros discretos mostram que os refugiados conseguiram retirar água e provisões. O nicho vazio confirma que a Santa seguiu com eles.",
+  "hazards": [],
+  "story_elements": [
+    {
+      "name": "Capela preservada",
+      "rect": [
+        16,
+        8,
+        176,
+        88
+      ],
+      "meaning": "O telhado e a porta intactos registram o resultado de não usar a bomba."
+    },
+    {
+      "name": "Nicho vazio",
+      "rect": [
+        64,
+        48,
+        32,
+        40
+      ],
+      "meaning": "A Santa foi retirada em segurança para acompanhar os refugiados."
+    },
+    {
+      "name": "Prateleiras esvaziadas",
+      "rect": [
+        224,
+        48,
+        72,
+        40
+      ],
+      "meaning": "A retirada foi organizada e os mantimentos seguiram com o grupo."
+    },
+    {
+      "name": "Jarras de água",
+      "rect": [
+        296,
+        64,
+        40,
+        24
+      ],
+      "meaning": "Reservas reunidas para continuar a travessia."
+    },
+    {
+      "name": "Portão azul e pano vermelho",
+      "rect": [
+        384,
+        32,
+        96,
+        56
+      ],
+      "meaning": "A marca de tecido orienta o caminho até o próximo abrigo."
+    }
+  ],
+  "assembly": {
+    "floor": {
+      "source_rect": [
+        192,
+        160,
+        32,
+        32
+      ],
+      "repeat_rect": [
+        16,
+        96,
+        480,
+        208
+      ]
+    },
+    "boundaries": {
+      "thickness": 16,
+      "lower_corners": "continuous"
+    },
+    "architecture_max_y": 96
+  },
+  "modules": [
+    {
+      "name": "Areia calma repetida",
+      "source": [
+        192,
+        160,
+        32,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        512,
+        320
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Caatinga ao fundo",
+      "source": [
+        320,
+        0,
+        64,
+        40
+      ],
+      "dest": [
+        0,
+        0,
+        512,
+        40
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro superior de cal",
+      "source": [
+        344,
+        40,
+        24,
+        48
+      ],
+      "dest": [
+        16,
+        40,
+        480,
+        48
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro lateral esquerdo",
+      "source": [
+        0,
+        128,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        40,
+        16,
+        264
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro lateral direito",
+      "source": [
+        496,
+        128,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        40,
+        16,
+        264
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro inferior contínuo",
+      "source": [
+        144,
+        288,
+        32,
+        16
+      ],
+      "dest": [
+        0,
+        304,
+        512,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Capela preservada",
+      "source": [
+        48,
+        8,
+        144,
+        80
+      ],
+      "dest": [
+        48,
+        8,
+        144,
+        80
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Rack vazio e jarras agrupadas",
+      "source": [
+        216,
+        48,
+        120,
+        40
+      ],
+      "dest": [
+        216,
+        48,
+        120,
+        40
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Portão de saída e pano vermelho",
+      "source": [
+        376,
+        40,
+        104,
+        48
+      ],
+      "dest": [
+        376,
+        40,
+        104,
+        48
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Portinhola inferior",
+      "source": [
+        224,
+        288,
+        64,
+        16
+      ],
+      "dest": [
+        224,
+        304,
+        64,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Junção inferior esquerda",
+      "source": [
+        0,
+        272,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        288,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Junção inferior direita",
+      "source": [
+        496,
+        272,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        288,
+        16,
+        32
+      ],
+      "role": "wall"
+    }
+  ],
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      36,
+      36,
+      73
+    ],
+    [
+      36,
+      73,
+      109
+    ],
+    [
+      73,
+      109,
+      146
+    ],
+    [
+      73,
+      109,
+      73
+    ],
+    [
+      109,
+      109,
+      36
+    ],
+    [
+      109,
+      73,
+      36
+    ],
+    [
+      146,
+      109,
+      73
+    ],
+    [
+      182,
+      146,
+      73
+    ],
+    [
+      219,
+      182,
+      109
+    ],
+    [
+      219,
+      146,
+      73
+    ],
+    [
+      182,
+      73,
+      36
+    ],
+    [
+      109,
+      36,
+      0
+    ],
+    [
+      219,
+      219,
+      182
+    ],
+    [
+      255,
+      255,
+      219
+    ]
+  ]
+}

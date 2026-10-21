@@ -1,0 +1,25 @@
+{
+  "world": [
+    512,
+    384
+  ],
+  "tiles": 640,
+  "tile_bytes": 20480,
+  "palette_colors": 16,
+  "source_unique_tiles": 640,
+  "shared_states": 2,
+  "tilemap_bytes_per_state": 6144,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": {
+    "intact.png": "ff4f55d0375e06d9e650639502786f964e9584e3ee94e734f5f1528dba5a7a0c",
+    "damaged.png": "fd7695f58392c3795452ab88da493bcf02e3a13988ef8927b9e4829cabff6ad5"
+  },
+  "export_sha256": {
+    "tiles.bin": "7ab3b484f138b0f97d03b771befa3ec7323cc21c97936649ec64dcb3c93566bf",
+    "map.bin": "e5f63910aeb0ae680416762b3f170ab9c4947dca9ae19194b2763b498189509f",
+    "damaged.bin": "f1deb8dd5e2ff3ce13050afb68ff07cb2d94fbdc0c285cd56ba5cae734194907",
+    "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798"
+  },
+  "shared_hud_font": "res/intro/font.bin"
+}

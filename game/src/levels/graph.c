@@ -109,7 +109,7 @@ const LevelNode GRAPH[NODE_MAX] =
     [N_14]  = FASE("14", LEVEL14_def, MAPA(13, 1), SENAO(N_15)),
     [N_15]  = FASE("15", LEVEL15_def, MAPA(14, 1), SENAO(N_16)),
 
-    [N_16]  = FASE_FINAL("16", LEVEL16_def, MAPA(15, 1)),   // chefe (Lacraia)
+    [N_16]  = FASE_FINAL("16", LEVEL16_def, MAPA(15, 1)),   // chefe (Escorpiao)
 };
 
 // ---------------------------------------------------------------------------

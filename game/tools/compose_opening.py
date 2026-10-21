@@ -1,4 +1,4 @@
-"""O Sonho Atendido: original PSG score for the twelve storyboard shots.
+"""O Sonho Atendido: continuous PSG score for the approved storyboard.
 
 Times are quarter seconds (a sixteenth at 60 BPM). Storyboard sections
 are assembled into one uninterrupted score, starting on the Plaguefall logo.
@@ -6,14 +6,17 @@ No existing song, samples, or external audio driver is used.
 """
 from pathlib import Path
 import argparse
+import json
 import math
 import re
 
 GAME = Path(__file__).resolve().parents[1]
-DURATIONS = [5, 5, 8, 4, 7, 8, 10, 9, 10, 7, 11, 5]
-NAMES = ["A pergunta", "A promessa", "O sonho", "Agora", "Quem nao voltou",
-         "Baratas", "A carga de retorno", "O trabalhador que ficou",
-         "O preco de ficar", "Reza e municao", "O chamado", "Ficar no chao"]
+STORY = json.loads((GAME/'art/storyboard-abertura-v2/storyboard.json').read_text())['shots']
+DURATIONS = [sum(c['seconds'] for c in shot['captions']) for shot in STORY]
+NAMES = [shot['title'] for shot in STORY]
+BASE_DURATIONS = [5, 5, 8, 4, 7, 8, 10, 9, 10, 7, 11, 5]
+PRELUDE_SECONDS, TAIL_SECONDS = 4, 3
+SCORE_SECONDS = PRELUDE_SECONDS + sum(DURATIONS) + TAIL_SECONDS
 PAD, REED, BELL, PLUCK = range(4)
 
 
@@ -24,12 +27,12 @@ def hz(note):
     return round(440 * math.pow(2, (midi - 69) / 12))
 
 
-def compose():
-    cues = [[] for _ in DURATIONS]
+def original_themes():
+    cues = [[] for _ in BASE_DURATIONS]
 
     def note(cue, at, pitch, length, voice=0, volume=6, style=REED):
-        assert 0 <= cue < 12 and 0 <= at < DURATIONS[cue] * 4
-        assert length > 0 and at + length <= DURATIONS[cue] * 4
+        assert 0 <= cue < 12 and 0 <= at < BASE_DURATIONS[cue] * 4
+        assert length > 0 and at + length <= BASE_DURATIONS[cue] * 4
         assert 0 <= voice < 4 and 0 <= volume <= 15
         cues[cue].append((at, hz(pitch) if voice < 3 else pitch,
                           length, voice, volume, style))
@@ -39,15 +42,15 @@ def compose():
             note(cue, at, pitch, length, volume=volume)
 
     def pedal(cue, pitch, volume=8):
-        note(cue, 0, pitch, DURATIONS[cue]*4, 2, volume, PAD)
+        note(cue, 0, pitch, BASE_DURATIONS[cue]*4, 2, volume, PAD)
 
     def pulse(cue, roots, volume=8):
         # A restrained root / anticipated fifth pattern recalls the baiao.
-        for bar in range((DURATIONS[cue]*4+7)//8):
+        for bar in range((BASE_DURATIONS[cue]*4+7)//8):
             root, fifth = roots[min(bar//2, len(roots)-1)]
             for offset, pitch in ((0, root), (3, fifth), (4, root), (6, fifth)):
                 at = bar*8+offset
-                if at < DURATIONS[cue]*4:
+                if at < BASE_DURATIONS[cue]*4:
                     note(cue, at, pitch, 1, 2, volume, PLUCK)
 
     # 01: a question in the dark. Leave the first second to wind/radio texture.
@@ -154,6 +157,37 @@ def compose():
     return cues
 
 
+def compose():
+    """Keep the authored themes, reordered and timed to the approved images.
+
+    Returning cargo/eggs and injury/community each share a musical phrase;
+    notes can span their picture boundary without restarting an envelope.
+    """
+    original = original_themes()
+    cues = [[] for _ in DURATIONS]
+    groups = [([0],0), ([1],1), ([2],2), ([3],7), ([4,5],6),
+              ([6],4), ([7],5), ([8,9],8), ([10],9),
+              ([11],10), ([12],10), ([13],11)]
+    assert [i for indices,_ in groups for i in indices] == list(range(len(DURATIONS)))
+    for indices, theme in groups:
+        units = sum(DURATIONS[i] for i in indices)*4
+        base_units = BASE_DURATIONS[theme]*4
+        previous_end = [0]*4
+        for at,freq,length,voice,volume,style in original[theme]:
+            start = max(previous_end[voice], round(at*units/base_units))
+            end = min(units, max(start+1, round((at+length)*units/base_units)))
+            if start >= units:
+                continue
+            previous_end[voice] = end
+            relative = start
+            for index in indices:
+                if relative < DURATIONS[index]*4:
+                    cues[index].append((relative,freq,end-start,voice,volume,style))
+                    break
+                relative -= DURATIONS[index]*4
+    return cues
+
+
 def continuous_score():
     # Four-second title prelude, followed by all storyboard sections on the
     # same clock. Shot changes never reset this clock or the sounding voices.
@@ -161,7 +195,7 @@ def continuous_score():
               (0,hz("D4"),8,0,8,REED),
               (8,hz("A4"),8,0,8,REED),
               (2,hz("F4"),12,1,11,PAD)]
-    offset = 16
+    offset = PRELUDE_SECONDS*4
     for seconds,section in zip(DURATIONS,compose()):
         events += [(at+offset,freq,length,voice,volume,style)
                    for at,freq,length,voice,volume,style in section]
@@ -176,9 +210,16 @@ def continuous_score():
             events[current]=(at,freq,events[following][0]-at,voice,max(volume,9),PAD)
     # A held final chord tolerates the few loading frames between images.
     for i,(at,freq,length,voice,volume,style) in enumerate(events):
-        if at>=16+sum(DURATIONS[:-1])*4+12 and voice<3:
-            events[i]=(at,freq,384-at,voice,volume,PAD)
+        if at>=PRELUDE_SECONDS*4+sum(DURATIONS[:-1])*4+round(12*DURATIONS[-1]/BASE_DURATIONS[-1]) and voice<3:
+            events[i]=(at,freq,SCORE_SECONDS*4-at,voice,volume,PAD)
     events.sort(key=lambda e:(e[0],e[3]))
+    for voice in range(4):
+        end = 0
+        for at,_,length,v,_,_ in events:
+            if v == voice:
+                assert at >= end, ('voice overlap', voice, at, end)
+                assert 0 < length <= 255 and at+length <= SCORE_SECONDS*4
+                end = at+length
     return events
 
 
@@ -187,7 +228,8 @@ def export():
     lines=['// Generated by tools/compose_opening.py. Original: O Sonho Atendido.',
            '#ifndef OPENING_DATA_H','#define OPENING_DATA_H',
            '#define OPENING_STEP_TICKS 75',
-           '#define OPENING_DURATION_TICKS 28800',
+           f'#define OPENING_DURATION_TICKS {SCORE_SECONDS*300}',
+           f'#define OPENING_DURATION_SECONDS {SCORE_SECONDS}',
            f'#define OPENING_EVENT_COUNT {len(events)}','',
            'static const OpeningEvent OPENING_EVENTS[OPENING_EVENT_COUNT] = {']
     lines += ['    { '+', '.join(map(str,event))+' },' for event in events]
@@ -200,7 +242,8 @@ def main():
     parser.add_argument('--check',action='store_true')
     args=parser.parse_args()
     shots=(GAME/'src/system/video/screens/intro_shots.h').read_text()
-    durations=list(map(int,re.findall(r'^    \{ (\d+),',shots,re.M)))
+    shot_array = re.search(r'static const IntroShot INTRO_SHOTS.*?= \{(.*?)\n\};',shots,re.S).group(1)
+    durations=list(map(int,re.findall(r'^    \{ (\d+),',shot_array,re.M)))
     assert durations==DURATIONS,'Storyboard shot timing changed: update the score'
     target=GAME/'src/system/audio/opening_data.h'
     source=export()
@@ -208,7 +251,7 @@ def main():
         assert target.read_text()==source,'Opening score is stale'
     else:
         target.write_text(source)
-    print('O Sonho Atendido: continuous score, 4-second logo prelude + 89-second storyboard + 3-second tail; '+
+    print(f'O Sonho Atendido: continuous score, {PRELUDE_SECONDS}-second logo prelude + {sum(DURATIONS)}-second storyboard + {TAIL_SECONDS}-second tail; '+
           ('score verified.' if args.check else 'score exported.'))
 
 

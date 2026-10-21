@@ -1,2 +1,2 @@
-// Dinorah in the character gallery; reuse the existing reduced native frames.
-BIN dinorah_frames "../art/cangaco-parceira-iso60-v1/runtime/frames.bin" 4
+// Assets displays only idle poses; full movement masters stay in art/.
+BIN dinorah_idle "dinorah/idle.bin" 4

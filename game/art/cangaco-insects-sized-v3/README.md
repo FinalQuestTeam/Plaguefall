@@ -20,7 +20,7 @@ O código original usa classes 16/24/32 pixels e 48 para o chefe; não havia uma
 | `pen_yellow` | [Alcateia](enemies/pen_yellow/pen_yellow.png) | 24×24 | 9 | 288 | 1 |
 | `pen_purple` | [Fortaleza](enemies/pen_purple/pen_purple.png) | 32×32 | 16 | 512 | 1 |
 | `pen_orange` | [Meteoro](enemies/pen_orange/pen_orange.png) | 24×24 | 9 | 288 | 1 |
-| `boss` | [Lacraia](enemies/boss/boss.png) | 48×48 | 36 | 1152 | 4 |
+| `boss` | [Escorpião](enemies/boss/boss.png) | 48×48 | 36 | 1152 | 4 |
 
 Cada PNG tem seis colunas (dois quadros de repouso, quatro de movimento) e oito linhas, na ordem N, NE, L, SE, S, SO, O, NO. Cinco vistas são desenhadas; as três ocidentais usam HFLIP. As folhas medem 96×128,144×192,192×256 ou 288×384, conforme a classe. A dimensão da célula e a escala são constantes dentro de cada personagem. Os arquivos `ID-4x.png` são prévias separadas por vizinho mais próximo.
 

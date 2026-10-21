@@ -1,0 +1,45 @@
+{
+  "id": "03",
+  "title": "Abrigo de manutenção",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    384,
+    384
+  ],
+  "camera_degrees": 60,
+  "tiles": 510,
+  "tile_bytes": 16320,
+  "palette_colors": 16,
+  "tilemap_bytes": 4608,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1302,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "da1e7f4db9284b0564117bd6c5aee96889f582c6177f34c6e31b42a1c24a31d0",
+  "design_sha256": "d3b6e86259ed8e8271fdd20efdc1f1a568b0755bc4e7ed1604072cb23a811a39",
+  "export_sha256": {
+    "tiles.bin": "3071dd93ed506705b3205eee9877432848f204449e074cd024d902be8590fe19",
+    "map.bin": "ca734d4dda20631a599162438905f7017da1d2c4338d11ddac19e34ade01da7f",
+    "map-vdp.bin": "6d99dde7c50bea6b1ddae6f88bd73b6f8ab635f6387765f127d39c900cb60174",
+    "palette.bin": "968b6f0562ae97c5d8d22869deb1aa88cac1b71d166e24bbbe5a45f0b54a9797"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 1387,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 95744,
+    "hazard_pixels": 1344,
+    "dry_area_fraction": 0.986
+  },
+  "emulator_performance_measured": false
+}

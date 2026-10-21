@@ -54,7 +54,7 @@ ao divisor e ao servo.
 ## Verificação
 
 Build release limpo realizado em cópia temporária das fontes atuais. ROM testada:
-[`game/out/itens/rom.bin`](../../out/release/rom.bin). Não substitui a saída de outros
+[`game/out/itens/rom.bin`](../../out/release/Plaguefall.bin). Não substitui a saída de outros
 trabalhos em `out/release/`.
 
 - [Validação dos arquivos](validation/assets.json): dimensões, indexação, transparência e paleta.

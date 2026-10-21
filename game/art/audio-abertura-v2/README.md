@@ -1,8 +1,10 @@
+> **Versão anterior preservada.** A abertura atual é a [montagem aprovada de 14 planos e 18 cartelas](../audio-abertura-v3/README.md). Os dados e relatórios abaixo descrevem a revisão anterior.
+
 # O Sonho Atendido — versão contínua
 
 A trilha começa na aparição do logo **Plaguefall** e segue pelo monólogo inteiro, sem reiniciar nas trocas dos12 planos. O arranjo conserva os temas do sonho, dos ninhos, da reza e da decisão final, acrescenta uma introdução de4 segundos para o logo e sustenta o baixo entre as seções.
 
-[Ouvir em MP3](o-sonho-atendido.mp3) · [Áudio real da ROM](o-sonho-atendido.wav) · [Ver o boot com a música contínua](ntsc/abertura.mp4) · [ROM atualizada](../../out/release/rom.bin). A [primeira versão por planos](../audio-abertura-v1/README.md) permanece arquivada.
+[Ouvir em MP3](o-sonho-atendido.mp3) · [Áudio real da ROM](o-sonho-atendido.wav) · [Ver o boot com a música contínua](ntsc/abertura.mp4) · [ROM atualizada](../../out/release/Plaguefall.bin). A [primeira versão por planos](../audio-abertura-v1/README.md) permanece arquivada.
 
 **START** pula a abertura e segue ao menu, inclusive durante APRESENTA ou o logo Plaguefall. **A, B e C** não completam legendas, não avançam imagens e não pulam os cartões. Segurar START não confirma uma opção do menu. Os controles dos diálogos da campanha e da galeria continuam próprios dessas telas.
 

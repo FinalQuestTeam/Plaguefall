@@ -75,3 +75,7 @@ A matriz completa tem 80 referências de quadro, a reduzida 48, incluindo os esp
 Arte criada com **image_gen integrado**, com [concept v2](../concepts/parceira/parceira-cangaco-cyberpunk-v2.png), guia geométrico e sprites de Damião como referências. [Prompt principal](prompts/parceira.txt), [correção NE parada](prompts/parceira-NE-idle.txt) e [correção NE corrida](prompts/parceira-NE-run.txt). Fontes preservadas em `originals/`.
 
 A ferramenta forneceu fontes ampliadas; o exportador separa as poses pelo alfa, descarta poses excedentes, registra, reduz por vizinho mais próximo e indexa na paleta final. As poses são desenhadas pela ferramenta de imagem; o código não inventa membros ou movimentos. As prévias ampliadas ficam separadas dos PNGs nativos.
+
+## Pacote da galeria
+
+A ROM atual inclui apenas os dez frames de repouso usados na tela Assets (`res/dinorah/idle.bin`,7680 bytes), exportados por `tools/pack_actor_animation.py`. Os frames completos e os de corrida deste pacote são matrizes de produção para uma futura personagem na arena, e não entram no build atual.

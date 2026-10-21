@@ -52,6 +52,9 @@ static void drawBorder(void)
 void LEVEL_draw(u8 n)
 {
     currentLevel = n;
+    const LevelDef *def = LEVEL_current();
+    ARENA_configure(def->arena);
+    if (arenaActive) { ARENA_draw(); return; }
 
     // limpa o interior da arena (apaga elementos anteriores e textos)
     VDP_fillTileMapRect(BG_A, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, 0),
@@ -59,7 +62,6 @@ void LEVEL_draw(u8 n)
 
     drawBorder();
 
-    const LevelDef *def = LEVEL_current();
     if (def->lava) LAVA_draw(def->lava, def->lavaCount);
     if (def->mud) MUD_draw(def->mud, def->mudCount);
 
@@ -83,6 +85,7 @@ void LEVEL_loadGfx(u8 n)
 
 void LEVEL_load(u8 n)
 {
+    arenaDamaged = 0;
     LEVEL_loadGfx(n);       // arte dos inimigos desta fase (por etapas, com cache)
     LEVEL_draw(n);
     LEVEL_reset();
@@ -91,6 +94,7 @@ void LEVEL_load(u8 n)
 void LEVEL_update(void)
 {
     const LevelDef *def = LEVEL_current();
+    ARENA_update();
     if (def->lava) LAVA_update(def->lava, def->lavaCount);
     if (def->mud) MUD_update(def->mud, def->mudCount);
 }
@@ -124,6 +128,7 @@ void LEVEL_drawInfo(u8 n, u16 x, u16 y)
     // "INIMIGOS:" seguido dos SPRITES (insetos) dos tipos distintos da fase,
     // alinhados pela base logo abaixo do rótulo
     VDP_drawText("INIMIGOS:", x, y + 4);
+    if (arenaActive) return; // pause uses the fixed window plane, not world tiles
     const u16 rowBase = y + 8;
     u16 col = x;
     u16 shown = 0;                              // tipos já mostrados (bitmask)

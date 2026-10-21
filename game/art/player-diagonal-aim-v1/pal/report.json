@@ -1,0 +1,342 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "fps": 50,
+  "core_fps": 49.7014591857706,
+  "rom_sha256": "ba6376b0274f6d4691cc16f9c122e04f3a51ee0b3704014bbc2d820f55ac1722",
+  "game_ram_writes": false,
+  "method": "Controller enters sandbox; each scenario restores that libretro save-state baseline. No game RAM writes.",
+  "diagonal_cases": [
+    {
+      "direction": "NE",
+      "remaining_button": 7,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        174,
+        88
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          -141
+        ]
+      ],
+      "capture": "ne-7-1.png"
+    },
+    {
+      "direction": "NE",
+      "remaining_button": 7,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        178,
+        88
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          -141
+        ]
+      ],
+      "capture": "ne-7-3.png"
+    },
+    {
+      "direction": "NE",
+      "remaining_button": 4,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        172,
+        86
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          -141
+        ]
+      ],
+      "capture": "ne-4-1.png"
+    },
+    {
+      "direction": "NE",
+      "remaining_button": 4,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        172,
+        82
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          -141
+        ]
+      ],
+      "capture": "ne-4-3.png"
+    },
+    {
+      "direction": "SE",
+      "remaining_button": 7,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        174,
+        128
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          141
+        ]
+      ],
+      "capture": "se-7-1.png"
+    },
+    {
+      "direction": "SE",
+      "remaining_button": 7,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        178,
+        128
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          141
+        ]
+      ],
+      "capture": "se-7-3.png"
+    },
+    {
+      "direction": "SE",
+      "remaining_button": 5,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        172,
+        130
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          141
+        ]
+      ],
+      "capture": "se-5-1.png"
+    },
+    {
+      "direction": "SE",
+      "remaining_button": 5,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        172,
+        134
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          141,
+          141
+        ]
+      ],
+      "capture": "se-5-3.png"
+    },
+    {
+      "direction": "SO",
+      "remaining_button": 6,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        130,
+        128
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          141
+        ]
+      ],
+      "capture": "so-6-1.png"
+    },
+    {
+      "direction": "SO",
+      "remaining_button": 6,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        126,
+        128
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          141
+        ]
+      ],
+      "capture": "so-6-3.png"
+    },
+    {
+      "direction": "SO",
+      "remaining_button": 5,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        132,
+        130
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          141
+        ]
+      ],
+      "capture": "so-5-1.png"
+    },
+    {
+      "direction": "SO",
+      "remaining_button": 5,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        132,
+        134
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          141
+        ]
+      ],
+      "capture": "so-5-3.png"
+    },
+    {
+      "direction": "NO",
+      "remaining_button": 6,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        130,
+        88
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          -141
+        ]
+      ],
+      "capture": "no-6-1.png"
+    },
+    {
+      "direction": "NO",
+      "remaining_button": 6,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        126,
+        88
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          -141
+        ]
+      ],
+      "capture": "no-6-3.png"
+    },
+    {
+      "direction": "NO",
+      "remaining_button": 4,
+      "release_gap_frames": 1,
+      "stationary_position": [
+        132,
+        86
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          -141
+        ]
+      ],
+      "capture": "no-4-1.png"
+    },
+    {
+      "direction": "NO",
+      "remaining_button": 4,
+      "release_gap_frames": 3,
+      "stationary_position": [
+        132,
+        82
+      ],
+      "idle_poses": [
+        0,
+        1
+      ],
+      "shot_velocities": [
+        [
+          -141,
+          -141
+        ]
+      ],
+      "capture": "no-4-3.png"
+    }
+  ],
+  "checks": [
+    "four diagonal facings survive staggered release",
+    "both axis release orders",
+    "1-frame and 3-frame release gaps",
+    "position fixed during idle and fire",
+    "both diagonal idle poses match real VRAM",
+    "hardware sprite mirror matches facing",
+    "real bullets have the correct nonzero X and Y velocity",
+    "held cardinal turn works",
+    "new cardinal press after idle remains immediate"
+  ]
+}

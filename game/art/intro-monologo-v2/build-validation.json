@@ -1,0 +1,346 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "revision": "approved opening: 14 shots, 18 captions, 101 seconds",
+  "rom": "../../out/release/rom.bin",
+  "rom_sha256": "c12430c31b2d3837144d847477f8f823b097599c11407d66e968aa92582330b5",
+  "rom_bytes": 1179648,
+  "rom_header_end": "0x1fffff",
+  "text_bytes": 1124368,
+  "data_bytes": 140,
+  "bss_bytes": 7174,
+  "static_ram_bytes": 7314,
+  "shot_count": 14,
+  "caption_count": 18,
+  "planned_seconds": 101,
+  "frame_vram_bytes": 29568,
+  "native_audio": "ASan/UBSan passed: 3 defaults, 4 tracks, continuous 106s in 50/60Hz, START fade, callback teardown, gameplay restore",
+  "score_checks": "all music scores and approved intro export verified reproducible",
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "ntsc": {
+      "passed": true,
+      "report": "emulator-ntsc/report.json",
+      "fps": 60,
+      "shots": 14,
+      "captions": 18,
+      "captured_caption_count": 18,
+      "clock_resets": 0,
+      "clock_pauses": 0,
+      "menu_delay_after_final_fade_seconds": 0.5666666666666667
+    },
+    "pal": {
+      "passed": true,
+      "report": "emulator-pal/report.json",
+      "fps": 50,
+      "shots": 14,
+      "captions": 18,
+      "captured_caption_count": 18,
+      "clock_resets": 0,
+      "clock_pauses": 0,
+      "menu_delay_after_final_fade_seconds": 0.58
+    },
+    "pixels": {
+      "passed": true,
+      "method": "exact native art and full centered subtitle region vs emulator captures",
+      "image_captures": 56,
+      "complete_captions": 36,
+      "background_pixel_tolerance": 0,
+      "particle_pixel_tolerance": 72,
+      "black_artwork_bottom_edge": true,
+      "reconstructed_logo_exact": true,
+      "menus_identical_after_natural_skip_and_gameplay": true,
+      "checks": [
+        {
+          "region": "ntsc",
+          "shot": 1,
+          "caption": 1,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 2,
+          "caption": 2,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 3,
+          "caption": 3,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 4,
+          "caption": 4,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 5,
+          "caption": 5,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 6,
+          "caption": 6,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 7,
+          "caption": 7,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 8,
+          "caption": 8,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 8,
+          "caption": 9,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 9,
+          "caption": 10,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 10,
+          "caption": 11,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 11,
+          "caption": 12,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 11,
+          "caption": 13,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 12,
+          "caption": 14,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 12,
+          "caption": 15,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 13,
+          "caption": 16,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 13,
+          "caption": 17,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "ntsc",
+          "shot": 14,
+          "caption": 18,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 1,
+          "caption": 1,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 2,
+          "caption": 2,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 3,
+          "caption": 3,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 4,
+          "caption": 4,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 5,
+          "caption": 5,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 6,
+          "caption": 6,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 7,
+          "caption": 7,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 8,
+          "caption": 8,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 8,
+          "caption": 9,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 9,
+          "caption": 10,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 10,
+          "caption": 11,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 11,
+          "caption": 12,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 11,
+          "caption": 13,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 12,
+          "caption": 14,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 12,
+          "caption": 15,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 13,
+          "caption": 16,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 13,
+          "caption": 17,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        },
+        {
+          "region": "pal",
+          "shot": 14,
+          "caption": 18,
+          "background_pixels_mismatched": 0,
+          "centered_caption_exact": true,
+          "speaker_counter_and_hints_absent": true
+        }
+      ]
+    }
+  }
+}

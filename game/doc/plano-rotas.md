@@ -15,7 +15,7 @@ ao vencer a fase. A primeira condição satisfeita decide a próxima fase; a
 
 As rotas **divergem e reconvergem** (malha): todo run tem o mesmo número de
 fases, o conteúdo extra fica controlado e as duas rotas de cada bifurcação se
-encontram adiante. O chefe (Lacraia) continua único no fim.
+encontram adiante. O chefe (Escorpião) continua único no fim.
 
 Princípios de design das bifurcações:
 

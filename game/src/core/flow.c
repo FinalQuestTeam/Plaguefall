@@ -12,7 +12,6 @@
 #include "system/video/screens/titlecard.h"
 #include "system/video/tilegen.h"
 #include "system/video/spritelist.h"
-#include "system/video/chars.h"
 #include "system/video/herogfx.h"
 #include "system/video/enemygfx.h"
 #include "system/video/floor.h"
@@ -71,6 +70,7 @@ static u16 prevJoy;             // estado anterior do joypad (detecção de bord
 // tela de preparação: condições da fase, começa com A
 static void showPrep(u8 level)
 {
+    ARENA_leave();
     pendingLevel = level;
     state = ST_PREP;
     SFX_silence();
@@ -97,6 +97,7 @@ static void showPrep(u8 level)
 // mapa de rotas (após a fase concluída/história): destaca o pendingLevel
 static void showMap(void)
 {
+    ARENA_leave();
     SPRITES_hide();
     SYS_doVBlankProcess();      // aplica a lista vazia já neste quadro
     VDP_clearPlane(BG_A, TRUE);
@@ -108,10 +109,11 @@ static void showMap(void)
 // tela de fim de jogo (chefe derrotado)
 static void showEnd(void)
 {
+    ARENA_leave();
     FLOOR_clear();
     VDP_clearPlane(BG_A, TRUE);
     VDP_drawText("PARABENS! FIM", 13, 9);
-    VDP_drawText("VOCE DERROTOU A LACRAIA!", 8, 12);
+    VDP_drawText("VOCE DERROTOU O ESCORPIAO!", 7, 12);
     VDP_drawText("APERTE START", 14, 15);
     state = ST_END;
 }
@@ -120,6 +122,8 @@ static void showEnd(void)
 // tem cena de ANTES inédita neste run (levels/story.c)
 static void gotoPrep(u8 node)
 {
+    ARENA_leave();
+    MUSIC_selectTrack(GRAPH[node].def->musicTrack);
     pendingLevel = node;
     if (STORYSCR_start(node, ANTES)) { storyThen = STORY_TO_PREP; state = ST_STORY; }
     else showPrep(node);
@@ -135,6 +139,7 @@ static void startPhase(u8 level)
     ITEMS_clear();
     SHOTS_clear();
     PLAYER_reset();
+    ARENA_camera();
     HERO_load();               // human protagonist: streamed 32x48 frame + PAL2
 
     kills = 0;
@@ -151,6 +156,7 @@ static void startPhase(u8 level)
     FLASH_stop();
     const LevelDef *def = LEVEL_current();
     OBJECTIVE_start(def);                    // objetivo da fase (timer/NPC/contagem)
+    MUSIC_selectTrack(def->musicTrack);
     MUSIC_setRamp(def->musCalmUntil, def->musEnemyMax,   // curva de BPM da fase
                   def->musStepCalm,  def->musStepHot);
     OBJECTIVE_drawHUD(kills);
@@ -171,6 +177,7 @@ static void startTest(u8 stage)
     ITEMS_clear();
     SHOTS_clear();
     PLAYER_reset();
+    ARENA_camera();
     HERO_load();               // human protagonist: streamed 32x48 frame + PAL2
     PLAYER_fullHp();
     BOMB_reset();
@@ -188,6 +195,7 @@ static void startTest(u8 stage)
     TEST_draw();               // porta + timer de aparição dos alvos
     const LevelDef *def = LEVEL_current();
     OBJECTIVE_start(def);                    // estágios 4/5/6 têm objetivo
+    MUSIC_selectTrack(def->musicTrack);
     MUSIC_setRamp(def->musCalmUntil, def->musEnemyMax,   // curva de BPM da fase
                   def->musStepCalm,  def->musStepHot);
     OBJECTIVE_drawHUD(kills);
@@ -205,6 +213,7 @@ static bool tickFreeze(void)
     if (freezeTimer == 0)
     {
         VDP_clearTextArea(14, 2, 12, 1);
+        ARENA_gameView();
     }
     else
     {
@@ -224,12 +233,13 @@ static void updatePlay(u16 joy, u16 pressed)
 
     STATS_tick();               // tempo de fase (condições de saída por tempo)
     PLAYER_update(joy);
+    ARENA_camera();
     LEVEL_update();                 // elementos da fase (ex.: lava/lama)
     if (gameOver) return;
 
     // alvo da perseguição dos inimigos: o aliado no PROTEGER, senão o jogador
     if (LEVEL_current()->objective == OBJ_PROTECT && NPC_active())
-        ENEMIES_setChaseTarget(npcX + NPC_SIZE / 2, npcY + NPC_SIZE / 2);
+        ENEMIES_setChaseTarget(npcX + NPC_size() / 2, npcY + NPC_size() / 2);
     else
         ENEMIES_setChaseTarget(px + 8, py + 8);
 
@@ -267,6 +277,7 @@ static void updatePlay(u16 joy, u16 pressed)
         {
             SFX_silence();
             // história do fim (se inédita) antes da tela de parabéns
+            MUSIC_selectTrack(MUSIC_TRACK_ENTARDECER);
             if (STORYSCR_start(currentLevel, DEPOIS))
             { storyThen = STORY_TO_END; state = ST_STORY; }
             else showEnd();
@@ -281,6 +292,7 @@ static void updatePlay(u16 joy, u16 pressed)
     {
         // fase completa: mensagem por 3 s antes da próxima tela; os itens no
         // chão somem na hora (não dá mais para coletar na cena congelada)
+        ARENA_overlay();
         state = ST_DONE;
         doneTimer = fps * 3;
         SFX_silence();
@@ -292,6 +304,7 @@ static void updatePlay(u16 joy, u16 pressed)
     if (obj == OBJ_LOST)            // objetivo falhou (ex.: aliado caiu)
     {
         SFX_silence();
+        ARENA_overlay();
         VDP_drawText("O ALIADO CAIU!", 13, 12);
 
         // se o nó tem rota de falha (EXIT OBJ_FALHOU no grafo), a falha NÃO é
@@ -351,6 +364,8 @@ void FLOW_run(void)
     // laço externo: TÍTULO → JOGO → (volta ao título pela pausa) → ...
     while (TRUE)
     {
+        ARENA_leave();
+        MUSIC_selectTrack(MUSIC_DEFAULT_TRACK);
         FLOOR_clear();          // menu/título sem o chão da arena
         MUSIC_setEnemies(0);    // título/menu: música calma
         const u8 choice = TITLE_run();
@@ -438,7 +453,7 @@ void FLOW_run(void)
                     }
 
                     updatePlay(joy, pressed);
-                    if (gameOver) state = ST_OVER;
+                    if (gameOver) { ARENA_overlay(); state = ST_OVER; }
                     HUD_drawInventoryIfDirty();      // só redesenha quando muda
                     SPRITES_draw();
                     break;

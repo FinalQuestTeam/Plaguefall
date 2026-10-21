@@ -102,8 +102,7 @@ static u16 secsLeft(void) { return (u16) ((surviveLeft + fps - 1) / fps); }
 // PAL1 = cor "natural" do tile; PAL0 = branco, p/ o coração do aliado)
 static void icon(u16 tile, u16 col, u16 pal)
 {
-    VDP_setTileMapXY(BG_A, TILE_ATTR_FULL(pal, FALSE, FALSE, FALSE,
-        TILE_USER_INDEX + tile), col, 0);
+    VDP_setTileMapXY(ARENA_hudPlane(), HUD_iconAttr(tile,pal), col, 0);
 }
 
 void OBJECTIVE_drawHUD(u16 kills)

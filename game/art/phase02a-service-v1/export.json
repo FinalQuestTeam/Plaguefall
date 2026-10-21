@@ -1,0 +1,45 @@
+{
+  "id": "02A",
+  "title": "Rua de serviço — igreja preservada",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    512,
+    320
+  ],
+  "camera_degrees": 60,
+  "tiles": 443,
+  "tile_bytes": 14176,
+  "palette_colors": 16,
+  "tilemap_bytes": 5120,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1235,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "20437eaf3990438266dfa2f35cd180ffa68f093565127f3c2ac10428bf0c5e6c",
+  "design_sha256": "d207cf8add4e46d31d50614881524cb948a5c9ce7d68bd84f7cd91a7140eb8ea",
+  "export_sha256": {
+    "tiles.bin": "cddfa4e49577691da4ed71a5a23790d9c80f79e593ca59ec087ef3bd1db74c29",
+    "map.bin": "6b8e80023718041d52d9062c7e06fb77b8f219addc31bcf4fe06bd079a05b153",
+    "map-vdp.bin": "52be2dc8940bb7d1c322f7630e7d214f7afff52a0f27996f6f1008726ab45457",
+    "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 1475,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 99840,
+    "hazard_pixels": 0,
+    "dry_area_fraction": 1.0
+  },
+  "emulator_performance_measured": false
+}

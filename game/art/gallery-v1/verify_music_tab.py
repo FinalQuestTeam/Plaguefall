@@ -182,6 +182,16 @@ def main():
     save("tab-damiao")
     press(7);run(fps)
     assert text(16,13,7) == "DINORAH" and text(19,15,3) == "2/3"
+    # Check the actual uploaded frames against the full art master. This
+    # catches an incorrect direction stride after dropping unused run poses.
+    vram = (C.c_ubyte * 65536).in_dll(core, 'vram')
+    master = (GAME / 'art/cangaco-parceira-iso60-v1/runtime/frames.bin').read_bytes()
+    for pose in range(2):
+        for direction in range(5):
+            address = (101 + pose * 120 + direction * 24) * 32
+            uploaded = bytes(vram[(address + i) ^ 1] for i in range(768))
+            expected = master[(direction * 6 + pose) * 768:(direction * 6 + pose + 1) * 768]
+            assert uploaded == expected, ('Dinorah gallery VRAM frame', direction, pose)
     save("tab-dinorah")
     press(7);run(fps)
     assert text(13,3,13) == "TRILHA SONORA"
@@ -228,15 +238,25 @@ def main():
     ram = (C.c_ubyte*core.retro_get_memory_size(2)).from_address(core.retro_get_memory_data(2))
     swap = bytes(ram[syms["fps"]:syms["fps"]+2]) == struct.pack("<H",fps)
     assert ram[syms["currentLevel"]^int(swap)] == 1
+    # startPhase starts a freeze countdown. Wait for active play before
+    # sending START; a fixed three-second delay can lose it in the countdown.
+    flow_state = next(int(p[0],16)&65535 for line in symbols.splitlines()
+                      if len(p:=line.split())==4 and int(p[1],16)==4
+                      and p[3].split('.lto_priv.')[0]=='state')
+    def game_state():
+        return int.from_bytes(bytes(ram[(flow_state+i)^int(swap)] for i in range(4)), 'big')
+    def countdown_done():
+        return not any(ram[(syms['freezeTimer']+i)^int(swap)] for i in range(2))
+    wait_for(lambda: game_state()==1 and countdown_done(),10*fps)
     save("campaign-after-music")
-    press(3);run(10);press(0);wait_for(menu);run(fps)
+    press(3);wait_for(lambda: game_state()==2);press(0);wait_for(menu);run(fps)
     press(5);press(5);press(3);run(fps);press(6);run(fps)
     check_track(0,100)
     press(3);wait_for(menu);run(fps)
     # A retains its old exit behaviour in the character pages.
     press(3);run(fps);assert text(17,13,6) == "DAMIAO"
     press(1);wait_for(menu)
-    report = dict(passed=True,core="Genesis Plus GX",fps=fps,frames=frame,
+    report = dict(passed=True,core="Genesis Plus GX",fps=fps,frames=frame,dinorah_exact_idle_vram_frames=10,
                   game_ram_writes=False,rom_sha256=hashlib.sha256(original).hexdigest(),
                   captures=captures,checks=["ASSETS menu entry", "three tabs, both directions and wrap", "all four score names and cursor", "all calm/combat tempos", "four distinct real audio recordings", "pause emits silence and resume restores audio", "selection while paused resumes", "character sprites return after music", "B and START exit music", "A still exits characters", "menu audio restored", "campaign starts after paused preview exit"])
     (args.output/"report.json").write_text(json.dumps(report,indent=2)+"\n")

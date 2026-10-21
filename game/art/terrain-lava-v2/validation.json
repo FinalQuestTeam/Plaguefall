@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "stages": [
+    {
+      "id": "03",
+      "hazard_pixels": 31616,
+      "walkable_pixels": 95744,
+      "coverage_percent": 33.02,
+      "visual_modules_match_damage_boxes": true,
+      "dry_route_checked_in_game": true,
+      "ntsc_fps": [
+        60.0,
+        60.0,
+        60.0
+      ],
+      "pal_fps": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "id": "06a",
+      "hazard_pixels": 36864,
+      "walkable_pixels": 99840,
+      "coverage_percent": 36.92,
+      "visual_modules_match_damage_boxes": true,
+      "dry_route_checked_in_game": true,
+      "ntsc_fps": [
+        60.0,
+        60.0,
+        60.0
+      ],
+      "pal_fps": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    },
+    {
+      "id": "06b",
+      "hazard_pixels": 36864,
+      "walkable_pixels": 99840,
+      "coverage_percent": 36.92,
+      "visual_modules_match_damage_boxes": true,
+      "dry_route_checked_in_game": true,
+      "ntsc_fps": [
+        60.0,
+        60.0,
+        60.0
+      ],
+      "pal_fps": [
+        50.0,
+        50.0,
+        50.0
+      ]
+    }
+  ],
+  "production_rom_sha256": "469f040494a7d5a38c74916e04034a913a8f0558269efdad9480146151c67ce5"
+}

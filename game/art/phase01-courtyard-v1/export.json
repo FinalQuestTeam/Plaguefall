@@ -1,0 +1,23 @@
+{
+  "world": [
+    512,
+    256
+  ],
+  "tiles": 560,
+  "tile_bytes": 17920,
+  "palette_colors": 16,
+  "source_unique_tiles": 2237,
+  "shared_states": 2,
+  "tilemap_bytes_per_state": 4096,
+  "source_sha256": {
+    "intact.png": "2ccf7c0c186ce752b2315e8550a61ade2cb10fb5d4933d7daef5cd5dd9fe864c",
+    "damaged.png": "dd45d15fa0e5834af7ac70e373e92c1cf0081159476bea49cdf83df9ad7e3a39"
+  },
+  "export_sha256": {
+    "tiles.bin": "4cf3ed1565307e22c51fd918dac45632fa1e22defc221c2d7920be976cf7a14b",
+    "map.bin": "3971e96fdd13c1ea24aafaa7e8c6ef4308f84266d8fa36c89549a99a0591895f",
+    "damaged.bin": "ff156c59ef7b6ea8e59ecf15e7f3b4add14c9663b6665fc02972a7703a9fd9df",
+    "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "font.bin": "8670c5f5d4a4aefcdbb7c902434093bcda026673170c1cfaeb8d2f649e30ac71"
+  }
+}

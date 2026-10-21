@@ -8,7 +8,7 @@ São 16 compassos de 2/4, em Ré menor, com Dm–Bb–Gm–A7 e resolução fina
 
 - Calma, 31 segundos: [MP3](ladainha-calma.mp3) · [WAV](ladainha-calma.wav).
 - Combate, 22 segundos: [MP3](ladainha-combate.mp3) · [WAV](ladainha-combate.wav).
-- [ROM com Assets e as quatro faixas](../../out/release/rom.bin).
+- [ROM com Assets e as quatro faixas](../../out/release/Plaguefall.bin).
 - [Partitura gerada](../../src/system/audio/song_data_church.h) · [Compositor editável](../../tools/compose_music.py).
 - [Validação de áudio e preservação](validation.json) · [Interface em NTSC](../gallery-v1/assets-player/ntsc/report.json) · [Interface em PAL](../gallery-v1/assets-player/pal/report.json).
 

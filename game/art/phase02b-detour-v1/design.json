@@ -1,0 +1,477 @@
+{
+  "chapter": 2,
+  "width": 512,
+  "height": 320,
+  "camera_degrees": 60,
+  "objective": {
+    "type": "kill",
+    "target": 12
+  },
+  "next": [
+    "03"
+  ],
+  "start": [
+    48,
+    208
+  ],
+  "exit": [
+    464,
+    160
+  ],
+  "walkable": [
+    16,
+    96,
+    480,
+    208
+  ],
+  "solids": [],
+  "source": "source/layout.png",
+  "status": "awaiting-art-approval",
+  "integration": "not-integrated",
+  "id": "02B",
+  "title": "Desvio — custo da explosão",
+  "node": 3,
+  "music": "Entardecer",
+  "narrative": "A bomba abriu a fuga, mas parte do telhado da igreja cedeu sobre as reservas. Damião precisa contornar a lama e atravessar a mesma rua de serviço. A capela sobrevive, marcada; o nicho vazio mostra que o grupo levou a Santa.",
+  "hazards": [
+    {
+      "kind": "mud",
+      "rect": [
+        400,
+        96,
+        96,
+        32
+      ]
+    },
+    {
+      "kind": "mud",
+      "rect": [
+        16,
+        248,
+        104,
+        56
+      ]
+    }
+  ],
+  "story_elements": [
+    {
+      "name": "Telhado parcialmente colapsado",
+      "rect": [
+        144,
+        8,
+        64,
+        72
+      ],
+      "meaning": "O dano fica restrito a uma parte da igreja e revela o custo da bomba."
+    },
+    {
+      "name": "Caixa e telhas caídas",
+      "rect": [
+        168,
+        64,
+        56,
+        32
+      ],
+      "meaning": "Parte das provisões foi perdida sob o desabamento."
+    },
+    {
+      "name": "Nicho vazio",
+      "rect": [
+        64,
+        48,
+        32,
+        40
+      ],
+      "meaning": "A Santa saiu com os refugiados apesar da destruição parcial."
+    },
+    {
+      "name": "Jarra tombada",
+      "rect": [
+        312,
+        72,
+        24,
+        16
+      ],
+      "meaning": "A evacuação ocorreu sob pressão, deixando água e recursos para trás."
+    },
+    {
+      "name": "Poças e rastros de desvio",
+      "rect": [
+        16,
+        248,
+        104,
+        56
+      ],
+      "meaning": "Passadas contornam terreno encharcado e indicam a travessia apressada."
+    },
+    {
+      "name": "Portão azul e pano vermelho",
+      "rect": [
+        384,
+        32,
+        96,
+        56
+      ],
+      "meaning": "O caminho para o novo abrigo continua reconhecível nas duas rotas."
+    }
+  ],
+  "assembly": {
+    "floor": {
+      "source_rect": [
+        192,
+        160,
+        32,
+        32
+      ],
+      "repeat_rect": [
+        16,
+        96,
+        480,
+        208
+      ]
+    },
+    "boundaries": {
+      "thickness": 16,
+      "lower_corners": "continuous"
+    },
+    "architecture_max_y": 96,
+    "hazard_patches": [
+      {
+        "source_rect": [
+          400,
+          80,
+          96,
+          48
+        ],
+        "target_rect": [
+          400,
+          80,
+          96,
+          48
+        ]
+      },
+      {
+        "source_rect": [
+          16,
+          224,
+          104,
+          56
+        ],
+        "target_rect": [
+          16,
+          248,
+          104,
+          56
+        ]
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "Areia calma repetida",
+      "source": [
+        192,
+        160,
+        32,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        512,
+        320
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Caatinga ao fundo",
+      "source": [
+        320,
+        0,
+        64,
+        40
+      ],
+      "dest": [
+        0,
+        0,
+        512,
+        40
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro superior de cal",
+      "source": [
+        344,
+        40,
+        24,
+        48
+      ],
+      "dest": [
+        16,
+        40,
+        480,
+        48
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro lateral esquerdo",
+      "source": [
+        0,
+        128,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        40,
+        16,
+        264
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro lateral direito",
+      "source": [
+        496,
+        128,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        40,
+        16,
+        264
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro inferior contínuo",
+      "source": [
+        144,
+        288,
+        32,
+        16
+      ],
+      "dest": [
+        0,
+        304,
+        512,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Capela parcialmente danificada",
+      "source": [
+        48,
+        8,
+        168,
+        80
+      ],
+      "dest": [
+        48,
+        8,
+        168,
+        80
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Reservas e jarra tombada",
+      "source": [
+        232,
+        48,
+        104,
+        40
+      ],
+      "dest": [
+        232,
+        48,
+        104,
+        40
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Portão de saída e pano vermelho",
+      "source": [
+        376,
+        40,
+        104,
+        48
+      ],
+      "dest": [
+        376,
+        40,
+        104,
+        48
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Portinhola inferior",
+      "source": [
+        224,
+        288,
+        64,
+        16
+      ],
+      "dest": [
+        224,
+        304,
+        64,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Poça superior periférica",
+      "source": [
+        400,
+        80,
+        96,
+        48
+      ],
+      "dest": [
+        400,
+        80,
+        96,
+        48
+      ],
+      "role": "hazard"
+    },
+    {
+      "name": "Poça inferior periférica",
+      "source": [
+        16,
+        224,
+        104,
+        56
+      ],
+      "dest": [
+        16,
+        248,
+        104,
+        56
+      ],
+      "role": "hazard"
+    },
+    {
+      "name": "Junção inferior esquerda",
+      "source": [
+        0,
+        272,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        288,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Junção inferior direita",
+      "source": [
+        496,
+        272,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        288,
+        16,
+        32
+      ],
+      "role": "wall"
+    }
+  ],
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      36,
+      36,
+      73
+    ],
+    [
+      36,
+      73,
+      109
+    ],
+    [
+      73,
+      109,
+      146
+    ],
+    [
+      73,
+      109,
+      73
+    ],
+    [
+      109,
+      109,
+      36
+    ],
+    [
+      109,
+      73,
+      36
+    ],
+    [
+      146,
+      109,
+      73
+    ],
+    [
+      182,
+      146,
+      73
+    ],
+    [
+      219,
+      182,
+      109
+    ],
+    [
+      219,
+      146,
+      73
+    ],
+    [
+      182,
+      73,
+      36
+    ],
+    [
+      109,
+      36,
+      0
+    ],
+    [
+      219,
+      219,
+      182
+    ],
+    [
+      255,
+      255,
+      219
+    ]
+  ]
+}

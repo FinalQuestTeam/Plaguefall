@@ -13,7 +13,7 @@ Criada com **image_gen integrado**, usando os concepts aprovados dos três perso
 - [Imagem nativa 320×224](title-native.png) / [prévia ampliada 3×](title-3x.png).
 - [Menu Plaguefall capturado no emulador](emulator/plaguefall-menu-2x.png) / [resolução nativa](emulator/plaguefall-menu.png).
 - [Logo reconstruído capturado no emulador](../intro-monologo-v1/emulator-ntsc/logo-2x.png).
-- [ROM atual](../../out/release/rom.bin).
+- [ROM atual](../../out/release/Plaguefall.bin).
 
 O menu oferece **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**. O subtítulo ARENA SHOOTER foi removido. Todo o texto fica à esquerda em branco, incluindo o título e o cursor `>` que identifica a opção selecionada. A arte usa PAL1 e PAL2, com uma paleta de16 cores por tile e23 cores RGB efetivamente presentes nesta exportação. O texto usa PAL0; as paletas do jogo são restauradas ao sair do menu.
 

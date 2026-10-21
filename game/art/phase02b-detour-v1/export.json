@@ -1,0 +1,45 @@
+{
+  "id": "02B",
+  "title": "Desvio — custo da explosão",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    512,
+    320
+  ],
+  "camera_degrees": 60,
+  "tiles": 603,
+  "tile_bytes": 19296,
+  "palette_colors": 16,
+  "tilemap_bytes": 5120,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1395,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "f13857868386063065e35e1d5343a232ad04447d2e90d9283518a62f061d6ac4",
+  "design_sha256": "a3f79b4673d2dec048d54964ddfba7423f08adcb8096cd62c9c45daabc9f89ce",
+  "export_sha256": {
+    "tiles.bin": "57cb12661d69af6bee149b243a72c3fd2fef9998062be8dd79399ed0abdfde77",
+    "map.bin": "b4dc28dfc2b63806ccf6e5984f4310e6c6bb7f20d2d3a8e7e3c76b6509ac1fbb",
+    "map-vdp.bin": "395e85c2acaf230dbf4c71fed11a39c3c0f5b4eee0110e632bb9d1b53e28a4be",
+    "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 1336,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 99840,
+    "hazard_pixels": 8896,
+    "dry_area_fraction": 0.9109
+  },
+  "emulator_performance_measured": false
+}

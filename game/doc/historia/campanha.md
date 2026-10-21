@@ -23,9 +23,9 @@ O novo fluxo liga a fuga da igreja, a tentativa de resgate e a destruição dos 
 | 12 | Comporta; romper o bloqueio antes do fechamento automático | Eliminar 30, lava e lama | Menos de 60 s → 13A; 60 s ou mais → 13B |
 | 13A | Linha quente; aproveitar o acesso direto | Eliminar 34, lava | Alcançar as galerias |
 | 13B | Decantação; contornar a comporta fechada | Eliminar 34, lama | Alcançar as mesmas galerias |
-| 14 | Pátio dos enxames; enfrentar a concentração de defensores | Eliminar 37, lava e lama, trios | Identificar Lacraia como a matriz que bloqueia os pontos das cargas |
+| 14 | Pátio dos enxames; enfrentar a concentração de defensores | Eliminar 37, lava e lama, trios | Identificar Escorpião como a matriz que bloqueia os pontos das cargas |
 | 15 | Boca das galerias; romper o último bloqueio e confirmar a retirada dos refugiados | Eliminar 40, lava e lama, trios | Conferir explosivos e rota de saída de Damião |
-| 16 | Câmara central; derrotar Lacraia para conseguir instalar as cargas nos ninhos | Derrotar o chefe, piso de caverna | Cena de instalação das cargas, fuga e detonação |
+| 16 | Câmara central; derrotar o Escorpião para conseguir instalar as cargas nos ninhos | Derrotar o chefe, piso de caverna | Cena de instalação das cargas, fuga e detonação |
 
 ## Estados que permanecem após as convergências
 
@@ -39,7 +39,7 @@ Dano na fase 9 e tempo na fase 12 alteram a aproximação da base. Não curam a 
 
 ## Encerramento comum e diferenças do percurso
 
-Lacraia precisa cair para Damião alcançar os pontos de instalação. Em seguida, ele coloca as cargas recuperadas na base, sai pelo túnel e detona os ninhos. As cargas fazem parte da missão e não dependem do estoque de bombas do jogador.
+O Escorpião precisa cair para Damião alcançar os pontos de instalação. Em seguida, ele coloca as cargas recuperadas na base, sai pelo túnel e detona os ninhos. As cargas fazem parte da missão e não dependem do estoque de bombas do jogador.
 
 Uma passagem de alguns dias mostra a eliminação dos insetos isolados e confirma a libertação da região. O planeta continua ocupado, com pedidos de ajuda chegando pelo rádio.
 

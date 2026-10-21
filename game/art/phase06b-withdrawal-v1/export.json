@@ -1,0 +1,49 @@
+{
+  "id": "06b",
+  "title": "Retirada por terra",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    512,
+    320
+  ],
+  "camera_degrees": 60,
+  "tiles": 500,
+  "tile_bytes": 16000,
+  "palette_colors": 16,
+  "tilemap_bytes": 5120,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1292,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "92708612223da7a80bc03e1ce1948c2afeb5e0ab6820e93dbdefab36cebffdc9",
+  "design_sha256": "ff2b1682e03b41b32b04d58c8e6b372dca395bbbd45737020e81cb44fdf6a268",
+  "module_source_sha256": {
+    "../terrain-lava-v2/source/liquid.png": "a1e565e24bc8adb187b29eb1829968155b34f0a58f676037b35d8621ecf2abe0",
+    "../phase06a-rescue-v1/source/layout.png": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42"
+  },
+  "export_sha256": {
+    "tiles.bin": "a11a722c7c48138e98c78132da239fbd3893168c8088ecd069f21ca8ff601d83",
+    "map.bin": "fa9bbec8c5113353d55f8e4ad6ad7bd71235f31d17082f7ce467630fbc03d1bf",
+    "map-vdp.bin": "54e80c7e7e738aac28201772e446ecd184fa24e050f9c3aeaae5dd8a11484c50",
+    "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 899,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 99840,
+    "hazard_pixels": 36864,
+    "dry_area_fraction": 0.6308
+  },
+  "emulator_performance_measured": false
+}

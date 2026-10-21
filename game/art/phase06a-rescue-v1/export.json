@@ -1,0 +1,49 @@
+{
+  "id": "06a",
+  "title": "Resgate confirmado",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    512,
+    320
+  ],
+  "camera_degrees": 60,
+  "tiles": 508,
+  "tile_bytes": 16256,
+  "palette_colors": 16,
+  "tilemap_bytes": 5120,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1300,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42",
+  "design_sha256": "7a0480705f94fa94d3a0a15eea3cc0787eed2eb329c49856e33228244d0fab30",
+  "module_source_sha256": {
+    "../terrain-lava-v2/source/liquid.png": "a1e565e24bc8adb187b29eb1829968155b34f0a58f676037b35d8621ecf2abe0",
+    "../phase06a-rescue-v1/source/layout.png": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42"
+  },
+  "export_sha256": {
+    "tiles.bin": "f7c4f41401ea5ad18b6d06fba37ba6a24c347b27230cbefc86b18f352a52b613",
+    "map.bin": "6dc4c7583095da0938e0cbadf8e8b951805a1f3c4f7a81388fdeda809a115d2c",
+    "map-vdp.bin": "e0fb50540f3130d6f47a32fbb8484d4a0ed2085cd589de6dc791c5f27ca486d2",
+    "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 899,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 99840,
+    "hazard_pixels": 36864,
+    "dry_area_fraction": 0.6308
+  },
+  "emulator_performance_measured": false
+}

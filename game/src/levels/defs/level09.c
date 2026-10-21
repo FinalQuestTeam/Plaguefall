@@ -9,5 +9,6 @@ const LevelDef LEVEL09_def =
 {
     .killTarget   = 24,
     .spawnSeconds = 4,
+    .musicTrack   = MUSIC_TRACK_BREU,
     LVL_ROSTER(roster),
 };

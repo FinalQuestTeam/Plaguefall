@@ -1,0 +1,45 @@
+{
+  "id": "05",
+  "title": "Plataforma do sinalizador",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    384,
+    384
+  ],
+  "camera_degrees": 60,
+  "tiles": 551,
+  "tile_bytes": 17632,
+  "palette_colors": 16,
+  "tilemap_bytes": 4608,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1343,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "835353cda994cfcd820cb95edaac27726f6b0a9632a23d9959ea84446022d826",
+  "design_sha256": "04e2041ecb691a6bb1f4220223d9ce0d6b473a662843d3667840a6980cfa18f2",
+  "export_sha256": {
+    "tiles.bin": "5495a81dbf71992874a5bd5d2a08e961eaf92ec3bcb3a7ed0ec2f535766adbd6",
+    "map.bin": "b28935790c67662fbcbce4b6fd7eb390e439e2c1ccc1b54b3621448029978090",
+    "map-vdp.bin": "6c4c501273bf53f91ee4597e108cc022191dd4c15186e1ca34c70ad2998fb42e",
+    "palette.bin": "b60d3256046996c949f354b03b7df2e019e87e73e9e50a13f3e4b9d7e5e10fc9"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 1401,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 95744,
+    "hazard_pixels": 0,
+    "dry_area_fraction": 0.9933
+  },
+  "emulator_performance_measured": false
+}

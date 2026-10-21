@@ -3,11 +3,13 @@
 #include "actors/npc.h"
 #include "core/game.h"
 #include "enemies/enemies.h"
+#include "levels/arena.h"
 #include "system/video/flash.h"     // FLASH_trigger (onda de choque)
 #include "system/video/screens/hud.h"
 
 #define NPC_CONTACT_DMG  12         // dano por encostão de inimigo
 #define NPC_INV_TENTHS   50         // invencibilidade após dano (0,1 s) -> 5,0 s
+#define NPC_MAP_INV_TENTHS 25       // objetivo de 30 s: permite perder a Santa se abandonada
 #define NPC_SHOCK_RANGE  56         // alcance (px) da onda de choque ao levar dano
 
 s16 npcX, npcY;
@@ -16,11 +18,14 @@ s16 npcHpMax;
 static bool active;
 static u16  invTimer;
 
+u16 NPC_size(void) { return ARENA_npcInMap() ? 40 : NPC_SIZE; }
+
 void NPC_spawn(s16 x, s16 y, u16 hp)
 {
-    // 0,0 -> centro da arena interna (aliado 24x24); hp 0 -> vida padrão
-    npcX = x ? x : (INNER_MIN_X + INNER_MAX_X) / 2 - NPC_SIZE / 2;
-    npcY = y ? y : (INNER_MIN_Y + INNER_MAX_Y) / 2 - NPC_SIZE / 2;
+    // 0,0 -> centro da arena interna; hp 0 -> vida padrão
+    const u16 size = NPC_size();
+    npcX = x ? x : (INNER_MIN_X + INNER_MAX_X) / 2 - size / 2;
+    npcY = y ? y : (INNER_MIN_Y + INNER_MAX_Y) / 2 - size / 2;
     npcHpMax = hp ? (s16) hp : NPC_DEFAULT_HP;
     npcHp = npcHpMax;
     invTimer = 0;
@@ -52,7 +57,10 @@ void NPC_update(void)
 {
     if (!active) return;
 
-    const s16 cx = npcX + NPC_SIZE / 2, cy = npcY + NPC_SIZE / 2;
+    const u16 size = NPC_size();
+    const s16 cx = npcX + size / 2, cy = npcY + size / 2;
+    const bool inMap = ARENA_npcInMap();
+    const s16 edge = inMap ? 1 : 0;
     const bool vulnerable = (invTimer == 0);
     if (invTimer) invTimer--;
 
@@ -66,8 +74,12 @@ void NPC_update(void)
         const EnemyDef *d = ENEMY_DEF(e);
         if (!d->contactDmg) continue;           // alvos/dummies não machucam
 
-        if ((e->x < npcX + NPC_SIZE) && (e->x + d->size > npcX) &&
-            (e->y < npcY + NPC_SIZE) && (e->y + d->size > npcY))
+        // The mapped Santa extends above/below its solid pedestal. Exact edge
+        // contact also counts there: its stone and contact area share X edges,
+        // so enemies coming from the sides must not need to enter the stone.
+        // Legacy NPCs keep their original strict-overlap contact rule.
+        if ((e->x < npcX + size + edge) && (e->x + d->size > npcX - edge) &&
+            (e->y < npcY + size + edge) && (e->y + d->size > npcY - edge))
         {
             ENEMIES_knockbackFrom(e, cx, cy);   // #1: recuo ao encostar
             contact = TRUE;
@@ -79,7 +91,7 @@ void NPC_update(void)
     {
         npcHp -= NPC_CONTACT_DMG;
         if (npcHp < 0) npcHp = 0;
-        invTimer = (u16) (NPC_INV_TENTHS * fps / 10);
+        invTimer = (u16) ((inMap ? NPC_MAP_INV_TENTHS : NPC_INV_TENTHS) * fps / 10);
         shockwave(cx, cy);
     }
 }

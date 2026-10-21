@@ -5,11 +5,13 @@
 #include "core/game.h"
 #include "actors/player.h"
 #include "system/audio/sfx.h"
+#include "levels/levels.h"
 
 // cria um projétil inimigo em (fx, fy) 26.6 com velocidade dada (26.6) e `dmg`
 static void spawnEShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 dmg)
 {
-    for (u16 i = 0; i < MAX_ESHOTS; i++)
+    const u16 cap = LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_ESHOTS;
+    for (u16 i = 0; i < cap; i++)
     {
         if (eshots[i].active) continue;
         eshots[i].x = fx;
@@ -70,8 +72,9 @@ void SHOTS_updateEnemy(void)
         s16 sx = (s16) (eshots[i].x >> 6);
         s16 sy = (s16) (eshots[i].y >> 6);
 
-        if ((sx < INNER_MIN_X) || (sx > INNER_MAX_X - 7) ||
-            (sy < INNER_MIN_Y) || (sy > INNER_MAX_Y - 7))
+        if (arenaActive ? ARENA_shotBlocked(sx,sy) :
+            ((sx < INNER_MIN_X) || (sx > INNER_MAX_X - 7) ||
+             (sy < INNER_MIN_Y) || (sy > INNER_MAX_Y - 7)))
         {
             eshots[i].active = FALSE;
             continue;
@@ -80,7 +83,9 @@ void SHOTS_updateEnemy(void)
         // colisão com o círculo do jogador (raio 7 + raio do tiro 3)
         s16 dx = (sx + 4) - (px + 8);
         s16 dy = (sy + 4) - (py + 8);
-        if (dx * dx + dy * dy <= 100)
+        // Reject distant bullets before squaring: int is 16-bit on 68000,
+        // and a scrolling 512px world can overflow the old distance sum.
+        if (dx >= -10 && dx <= 10 && dy >= -10 && dy <= 10 && dx * dx + dy * dy <= 100)
         {
             eshots[i].active = FALSE;
             damagePlayer(eshots[i].dmg);

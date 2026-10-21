@@ -5,12 +5,13 @@
 
 // Aliado (NPC) do objetivo PROTEGER: fica parado num ponto da arena, tem vida e
 // sofre dano ao ser encostado por inimigos (que o perseguem). Se a vida zera, a
-// fase é perdida. Um único NPC por vez. Desenhado como Nossa Senhora Aparecida (PAL1).
+// segue a rota de falha. Um único NPC por vez. A Santa pode estar no cenário
+// ou usar o sprite legado de 24x24 (PAL1).
 
 #define NPC_DEFAULT_HP  100     // vida do aliado quando o def não especifica
-#define NPC_SIZE        24      // lado do aliado (santa24x24, mesmo tamanho da antiga antena)
+#define NPC_SIZE        24      // tamanho do sprite legado; colisão usa NPC_size()
 
-extern s16 npcX, npcY;          // canto superior esquerdo (24x24), quando ativo
+extern s16 npcX, npcY;          // canto superior esquerdo da área de contato, quando ativo
 extern s16 npcHp;               // vida atual (<=0 = caiu)
 extern s16 npcHpMax;            // vida máxima da fase (para o HUD)
 
@@ -19,6 +20,7 @@ void NPC_clear(void);           // desativa (fases sem NPC)
 bool NPC_active(void);          // há um aliado na fase?
 bool NPC_alive(void);           // ativo e com vida > 0?
 bool NPC_hidden(void);          // piscando neste quadro (invencibilidade pós-dano)?
+u16 NPC_size(void);             // 40x40 com Santa no mapa; 24x24 nos cenários legados
 void NPC_update(void);          // dano por contato de inimigos (com i-frames)
 
 #endif // NPC_H

@@ -1,0 +1,68 @@
+[
+  {
+    "path": "game/src/system/video/chars.c",
+    "bytes": 2811,
+    "sha256": "ab7fb62862fd867c350646cf24ce9cc94c3672e0520883c0e3c120a1e995ab8c"
+  },
+  {
+    "path": "game/src/system/video/chars.h",
+    "bytes": 1342,
+    "sha256": "666c4d78624879cd4bf19eb994eb64409b5b0201c0eab177ca6337cd46b21be5"
+  },
+  {
+    "path": "game/src/system/video/sprites/chars_data.h",
+    "bytes": 14725,
+    "sha256": "c6110e987de34e1233a8e58501a44d2e66abed9f045597dbec1a72a4b72fd744"
+  },
+  {
+    "path": "game/res/bgm.res",
+    "bytes": 18,
+    "sha256": "16c17834475a4caffd2b08f91b3d36edb9668faf5bb3ef1676b87f9bdc2016c9"
+  },
+  {
+    "path": "game/res/bgm.h",
+    "bytes": 113,
+    "sha256": "ad652aacc85b1cc8de01479e8f092192960ffd7da52bbe8d9c16d0ae7c9e4b77"
+  },
+  {
+    "path": "game/res/bgm.vgm",
+    "bytes": 4803,
+    "sha256": "b4667a16c16fe77115bbe5c956553a623bab1e41f04ec9c0e18641a6b17c48bb"
+  },
+  {
+    "path": "game/src/system/video/sprites/insects_data.h",
+    "bytes": 17095,
+    "sha256": "2d619980e745cf205f05e9f6ff13a42156854102d651e6baba9eef8e341e77c6",
+    "retained": "Only24px sandbox training target in training_target_data.h"
+  },
+  {
+    "path": "game/src/system/video/sprites/icons_data.h",
+    "removed_bytes": 1064,
+    "retained": "SKULL, SPARK and CLOCK still used"
+  },
+  {
+    "path": "game/res/courtyard/font.bin",
+    "bytes": 3072,
+    "sha256": "8670c5f5d4a4aefcdbb7c902434093bcda026673170c1cfaeb8d2f649e30ac71"
+  },
+  {
+    "path": "game/src/img/char.jpg",
+    "bytes": 17812,
+    "sha256": "1c69f4701e24c5972d2ef3791649a60b652cfd41466c64e29bca72dc785cd952"
+  },
+  {
+    "path": "game/src/img/insects_preview.png",
+    "bytes": 11436,
+    "sha256": "ccbd6834f883ef2f73185fae0907a26809664fa03254a60e1963067444106bbd"
+  },
+  {
+    "path": "game/src/img/bg.jpg",
+    "bytes": 99494,
+    "sha256": "021f05a97862ea875bf3a4c72243eb7e8559d0cb81fc06d174ae7e1269dbe7cb"
+  },
+  {
+    "path": "game/src/img/bg2.png",
+    "bytes": 410391,
+    "sha256": "5d6f344b02403fa8589cba98f14df86fd64f83590cea24483dc9ca5e131dc0db"
+  }
+]

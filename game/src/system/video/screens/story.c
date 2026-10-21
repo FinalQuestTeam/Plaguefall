@@ -5,7 +5,7 @@
 // (BOSS_ROT, livre fora da luta) — custo residente zero; ao fim da cena o
 // cache do chefe é invalidado (ENEMYGFX_dropBoss) e regenera quando preciso.
 // Paletas: retrato esquerdo em PAL2, direito em PAL3 (o início de fase
-// restaura as duas: CHARS_load recarrega PAL2 e FLOOR_draw recarrega PAL3).
+// restaura as duas: HERO_load recarrega PAL2 e FLOOR_draw recarrega PAL3).
 
 #include "system/video/screens/story.h"
 #include "levels/story.h"
@@ -187,6 +187,7 @@ bool STORYSCR_start(u8 node, u8 when)
     if (!e) return FALSE;
     if (seen[when] & ((u32) 1 << node)) return FALSE;   // já tocou neste run
     seen[when] |= (u32) 1 << node;
+    ARENA_leave();
 
     cur = e;
     lineIdx = 0;

@@ -1,0 +1,28 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "use_case": "stylized-concept",
+  "prompt": "Use case: stylized-concept. Asset type: production gameplay background map for a 16-bit overhead action game, NOT a concept illustration or sheet. Reference images: approved courtyard map for fine pixel fidelity and broad readable empty floor; maintenance refuge concept for architecture/story only; hero for camera angle. Create ONE square seamless rectangular room map filling entire square canvas, representing exactly a 384 by 384 pixel game map (can render larger but preserve these proportions). Camera orthographic, looking down 60 degrees ABOVE ground, north exactly up, no diamond/isometric rotation, no horizon or perspective convergence. Fine detailed native pixel art, crisp small pixels, restrained 16-color-like rust brown/concrete gray/dark navy/amber palette. Layout pixel coordinates relative to 384: TOP BAND y0..95 contains blue iron industrial pipes, rusted hangar beams, a few hammocks, folded blankets, medicine shelf and water barrels, small candle-lit saint niche, improvised shelter dividers. Their shadows end ABOVE y96. Everything large remains in that top band. Main combat floor rectangle x16..367 y96..367 must remain broad connected and almost empty, worn gray concrete with quiet sparse seams, no big objects/obstacles/railings. Very small orange thermal leak in upper-left peripheral floor x16..47 y104..127, a matching small orange leak at lower-right x336..359 y336..359; rest floor dry and uninterrupted. Border is only 16px thick on left/right/bottom, flush to canvas edges, fully connected rectangular bottom corners, with a little blue side gate integrated into right border near y144. NO foreground wall rising over floor, NO solid objects at bottom, NO people, NO characters, NO UI/text/arrows/labels/frame, NO exploded tile sheet, NO black outside border. Tell the story through shelter objects along upper wall: civilian blankets and hanging cloth among old tools, humanitarian care in a working factory, refuge soon to be abandoned. Small repeated concrete floor modules and repeated pipe segments, fine readable detail like the reference, not coarse chunky huge pixels. ONE playable level map only.",
+  "reference_roles": [
+    {
+      "path": "game/art/phase01-courtyard-v2/intact-native.png",
+      "role": "approved native gameplay pixel style and open floor"
+    },
+    {
+      "path": "game/art/concepts/fases-v1/imagens/03-abrigo-manutencao.png",
+      "role": "environmental story and industrial shelter architecture"
+    },
+    {
+      "path": "game/art/cangaco-protagonista-iso60-v2/previews/heroi-repouso-4x.png",
+      "role": "hero camera angle"
+    }
+  ],
+  "generated_file": "/Users/fabiocantarimmelo/.codex/generated_images/01a15f7d-4b28-71b2-bae8-443a847f8bcf/exec-691e889f-4bfb-4b01-abf2-d1d6f35f737d.png",
+  "saved_as": "source/layout.png",
+  "native_target": [
+    384,
+    384
+  ],
+  "review": "Inspected generated map: shelter props stay in the upper quarter; broad continuous floor; small thermal pools at upper-left and lower-right; connected perimeter corners. Intended 60 degree overhead orthographic view.",
+  "generated_date": "2026-10-21"
+}

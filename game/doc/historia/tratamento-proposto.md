@@ -176,9 +176,9 @@ As falas preservam a composição da equipe: Dinorah orienta somente na rota em 
 
 ## Fase 14 e reação da matriz
 
-Os insetos se concentram no caminho dos acessos de manutenção. Ao identificar esse movimento, Damião entende que existe uma matriz comandando a defesa: a Lacraia. Ela ocupa a câmara que dá acesso aos pontos de instalação das cargas.
+Os insetos se concentram no caminho dos acessos de manutenção. Ao identificar esse movimento, Damião entende que existe uma matriz comandando a defesa: o Escorpião. Ela ocupa a câmara que dá acesso aos pontos de instalação das cargas.
 
-Fica estabelecido por que a operação precisa enfrentar o chefe: com a câmara sob ataque constante, Damião não consegue trabalhar nos detonadores nem alcançar os dutos finais. Derrotar Lacraia abre a oportunidade de plantar as cargas.
+Fica estabelecido por que a operação precisa enfrentar o chefe: com a câmara sob ataque constante, Damião não consegue trabalhar nos detonadores nem alcançar os dutos finais. Derrotar o Escorpião abre a oportunidade de plantar as cargas.
 
 ## Fase 15 e último bloqueio
 
@@ -194,13 +194,13 @@ Se a igreja foi poupada, o padre menciona que ela poderá receber o povo na volt
 
 ## Fase 16 e destruição dos ninhos
 
-Damião entra na câmara central carregando as cargas de demolição. Lacraia bloqueia os acessos e tenta incorporá-lo ao enxame. Sua voz retoma a promessa do espaço que atravessa a abertura.
+Damião entra na câmara central carregando as cargas de demolição. Escorpião bloqueia os acessos e tenta incorporá-lo ao enxame. Sua voz retoma a promessa do espaço que atravessa a abertura.
 
-**Lacraia:** “Você queria subir. Sua carne ainda pode viajar conosco.”
+**Escorpião:** “Você queria subir. Sua carne ainda pode viajar conosco.”
 
 **Damião:** “Já vi o que vocês trazem na volta. Hoje eu vim fechar o embarque.”
 
-O combate contra Lacraia é a última fase jogável. Depois de derrotá-la, Damião instala as cargas nos acessos dos ninhos, arma os detonadores e sai pelos túneis de manutenção. Uma sequência de encerramento mostra a instalação, a retirada e a explosão. A morte da matriz por si só não conclui a destruição dos criadouros.
+O combate contro Escorpião é a última fase jogável. Depois de derrotá-la, Damião instala as cargas nos acessos dos ninhos, arma os detonadores e sai pelos túneis de manutenção. Uma sequência de encerramento mostra a instalação, a retirada e a explosão. A morte da matriz por si só não conclui a destruição dos criadouros.
 
 **Padre:** “Damião, está ouvindo? Já saiu da galeria?”
 

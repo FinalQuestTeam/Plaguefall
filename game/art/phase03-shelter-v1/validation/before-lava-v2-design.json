@@ -1,0 +1,452 @@
+{
+  "id": "03",
+  "chapter": 3,
+  "node": 4,
+  "title": "Abrigo de manutenção",
+  "width": 384,
+  "height": 384,
+  "camera_degrees": 60,
+  "music": "Entardecer",
+  "narrative": "O padre pede que Damião proteja o novo abrigo enquanto os refugiados decidem uma rota segura. Redes e cobertores ocupam uma antiga oficina; a vida civil resiste entre tubulações avariadas.",
+  "objective": {
+    "kind": "kill",
+    "target": 14
+  },
+  "next": [
+    "04"
+  ],
+  "start": [
+    64,
+    256
+  ],
+  "exit": [
+    336,
+    144
+  ],
+  "walkable": [
+    16,
+    96,
+    352,
+    272
+  ],
+  "solids": [],
+  "hazards": [
+    {
+      "kind": "thermal",
+      "rect": [
+        16,
+        104,
+        32,
+        24
+      ]
+    },
+    {
+      "kind": "thermal",
+      "rect": [
+        336,
+        336,
+        24,
+        24
+      ]
+    }
+  ],
+  "story_elements": [
+    {
+      "name": "Redes e divisórias de tecido",
+      "rect": [
+        112,
+        32,
+        120,
+        64
+      ],
+      "meaning": "Famílias converteram a oficina em dormitório sem tempo para preparar um abrigo definitivo."
+    },
+    {
+      "name": "Medicamentos e água",
+      "rect": [
+        272,
+        32,
+        96,
+        64
+      ],
+      "meaning": "A comunidade organiza os poucos recursos disponíveis."
+    },
+    {
+      "name": "Nicho da santa e velas",
+      "rect": [
+        232,
+        8,
+        40,
+        80
+      ],
+      "meaning": "O padre preserva um ponto de encontro e esperança."
+    },
+    {
+      "name": "Tubulação azul e vazamentos térmicos",
+      "rect": [
+        16,
+        0,
+        80,
+        128
+      ],
+      "meaning": "A antiga manutenção industrial ainda ameaça a segurança do abrigo."
+    }
+  ],
+  "source": "source/layout.png",
+  "modules": [
+    {
+      "name": "concreto seco repetível",
+      "source": [
+        248,
+        264,
+        32,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "estrutura azul do galpão",
+      "source": [
+        112,
+        0,
+        64,
+        96
+      ],
+      "dest": [
+        16,
+        0,
+        352,
+        96
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "tubulação de manutenção",
+      "source": [
+        16,
+        0,
+        80,
+        96
+      ],
+      "dest": [
+        16,
+        0,
+        80,
+        96
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "redes e divisórias dos refugiados",
+      "source": [
+        112,
+        32,
+        120,
+        64
+      ],
+      "dest": [
+        112,
+        32,
+        120,
+        64
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "santa e velas do abrigo",
+      "source": [
+        232,
+        8,
+        40,
+        80
+      ],
+      "dest": [
+        232,
+        8,
+        40,
+        80
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "farmácia improvisada",
+      "source": [
+        272,
+        40,
+        64,
+        56
+      ],
+      "dest": [
+        272,
+        40,
+        64,
+        56
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "reserva de água",
+      "source": [
+        304,
+        32,
+        32,
+        64
+      ],
+      "dest": [
+        336,
+        32,
+        32,
+        64
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "vazamento térmico noroeste",
+      "source": [
+        16,
+        96,
+        32,
+        32
+      ],
+      "dest": [
+        16,
+        96,
+        32,
+        32
+      ],
+      "role": "hazard"
+    },
+    {
+      "name": "vazamento térmico sudeste",
+      "source": [
+        320,
+        328,
+        48,
+        40
+      ],
+      "dest": [
+        320,
+        328,
+        48,
+        40
+      ],
+      "role": "hazard"
+    },
+    {
+      "name": "muro esquerdo contínuo",
+      "source": [
+        0,
+        160,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        16,
+        384
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "muro direito contínuo",
+      "source": [
+        368,
+        208,
+        16,
+        32
+      ],
+      "dest": [
+        368,
+        0,
+        16,
+        384
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "muro inferior contínuo",
+      "source": [
+        80,
+        368,
+        32,
+        16
+      ],
+      "dest": [
+        0,
+        368,
+        384,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "portão do abrigo",
+      "source": [
+        368,
+        160,
+        16,
+        40
+      ],
+      "dest": [
+        368,
+        128,
+        16,
+        40
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto superior esquerdo",
+      "source": [
+        0,
+        0,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto superior direito",
+      "source": [
+        368,
+        0,
+        16,
+        32
+      ],
+      "dest": [
+        368,
+        0,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto inferior esquerdo",
+      "source": [
+        0,
+        352,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        352,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto inferior direito",
+      "source": [
+        368,
+        352,
+        16,
+        32
+      ],
+      "dest": [
+        368,
+        352,
+        16,
+        32
+      ],
+      "role": "wall"
+    }
+  ],
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      36,
+      36,
+      73
+    ],
+    [
+      36,
+      73,
+      109
+    ],
+    [
+      73,
+      109,
+      146
+    ],
+    [
+      73,
+      73,
+      73
+    ],
+    [
+      109,
+      109,
+      109
+    ],
+    [
+      146,
+      146,
+      146
+    ],
+    [
+      109,
+      73,
+      36
+    ],
+    [
+      146,
+      109,
+      73
+    ],
+    [
+      182,
+      73,
+      36
+    ],
+    [
+      255,
+      146,
+      36
+    ],
+    [
+      219,
+      182,
+      109
+    ],
+    [
+      182,
+      146,
+      109
+    ],
+    [
+      219,
+      219,
+      182
+    ],
+    [
+      255,
+      255,
+      219
+    ]
+  ]
+}

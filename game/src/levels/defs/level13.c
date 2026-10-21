@@ -11,5 +11,6 @@ const LevelDef LEVEL13_def =
     .spawnCount   = 2,
     .lava         = LAVA_PAIR,
     .lavaCount    = LAYOUT_RECTS,
+    .musicTrack   = MUSIC_TRACK_BAIAO,
     LVL_ROSTER(roster),
 };

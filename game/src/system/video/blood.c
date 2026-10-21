@@ -13,15 +13,17 @@ void BLOOD_splat(s16 cx, s16 cy)
     s16 ty = (s16) ((cy - 8) / 8);
 
     // mantém dentro do interior da arena (não pinta borda/HUD)
-    if (tx < ARENA_TILE_X + 1) tx = ARENA_TILE_X + 1;
-    if (tx > ARENA_TILE_X + ARENA_TILES_W - 3) tx = ARENA_TILE_X + ARENA_TILES_W - 3;
-    if (ty < ARENA_TILE_Y + 1) ty = ARENA_TILE_Y + 1;
-    if (ty > ARENA_TILE_Y + ARENA_TILES_H - 3) ty = ARENA_TILE_Y + ARENA_TILES_H - 3;
+    if (tx < INNER_MIN_X/8) tx = INNER_MIN_X/8;
+    if (tx > (INNER_MAX_X-15)/8) tx = (INNER_MAX_X-15)/8;
+    if (ty < INNER_MIN_Y/8) ty = INNER_MIN_Y/8;
+    if (ty > (INNER_MAX_Y-15)/8) ty = (INNER_MAX_Y-15)/8;
+    if (arenaActive && ARENA_blocked(tx*8,ty*8,16,16)) return;
+    if (arenaActive) ty &= 31;
 
     const u16 t = TILE_USER_INDEX + TILE_BLOOD;
     // TILE_ATTR_FULL(pal, prio, flipV, flipH, index) — prio FALSE: fica sob os sprites
     VDP_setTileMapXY(BG_A, TILE_ATTR_FULL(PAL1, FALSE, TRUE,  TRUE,  t), tx,     ty);      // sup-esq
     VDP_setTileMapXY(BG_A, TILE_ATTR_FULL(PAL1, FALSE, TRUE,  FALSE, t), tx + 1, ty);      // sup-dir
-    VDP_setTileMapXY(BG_A, TILE_ATTR_FULL(PAL1, FALSE, FALSE, TRUE,  t), tx,     ty + 1);  // inf-esq
-    VDP_setTileMapXY(BG_A, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, t), tx + 1, ty + 1);  // inf-dir
+    VDP_setTileMapXY(BG_A, TILE_ATTR_FULL(PAL1, FALSE, FALSE, TRUE,  t), tx,     (ty + 1)&31);  // inf-esq
+    VDP_setTileMapXY(BG_A, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, t), tx + 1, (ty + 1)&31);  // inf-dir
 }

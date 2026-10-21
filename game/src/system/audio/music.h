@@ -58,6 +58,7 @@
 void MUSIC_previewTrack(u8 track);
 void MUSIC_endPreview(void);
 u8 MUSIC_track(void);
+void MUSIC_selectTrack(u8 track); // permanent campaign selection; independent of gallery preview
 const char *MUSIC_trackName(u8 track);
 
 void MUSIC_init(void);          // silencia o PSG e reinicia o sequenciador

@@ -6,12 +6,46 @@
 #include "core/inventory.h"
 #include "items/items.h"
 #include "actors/shots.h"
+#include "system/video/floor.h"
+#include "system/video/sprites/item_icons_data.h"
+#include "system/video/sprites/icons_data.h"
+#include "system/video/sprites/saint_data.h"
+#include "levels/courtyard_data.h"
+
+#define HUD_OPAQUE_BASE (TILE_USER_INDEX + FLOOR_TILE_BASE + COURTYARD_TILE_COUNT)
+static const u16 opaqueTiles[HUD_OPAQUE_COUNT]={TILE_SKULL,TILE_BOMB_ICON,TILE_BOLT,TILE_ICON_SHIELD,TILE_ICON_ICE,TILE_ICON_FIRE,TILE_ICON_HEART,TILE_CLOCK,TILE_ICON_SAINT,TILE_ICON_SHOTS,TILE_ICON_SPEED};
+static const u32 *const opaqueSources[HUD_OPAQUE_COUNT]={NULL,ITEM_BOMB_ICON_DATA,ITEM_CHAIN_ICON_DATA,ITEM_SHIELD_ICON_DATA,ITEM_ICE_ICON_DATA,ITEM_FIRE_ICON_DATA,ITEM_HEART_ICON_DATA,NULL,SAINT_ICON_DATA,ITEM_SHOTS_ICON_DATA,ITEM_SPEED_ICON_DATA};
+
+void HUD_loadOpaqueIcons(void)
+{
+    // PAL1 index B is opaque black. Original icon/sprite tiles stay intact.
+    u32 data[8];
+    for(u16 i=0;i<HUD_OPAQUE_COUNT;i++) {
+        for(u16 y=0;y<8;y++) {
+            u32 row=opaqueSources[i] ? opaqueSources[i][y] : 0;
+            if(!opaqueSources[i]) {
+                const char *art=(i==0 ? ICON_SKULL_ART : ICON_CLOCK_ART)[y];
+                for(u16 x=0;x<8;x++)if(art[x]=='#')row|=1UL<<((7-x)*4);
+            }
+            for(u16 x=0;x<8;x++)if(!(row&(15UL<<(x*4))))row|=11UL<<(x*4);
+            data[y]=row;
+        }
+        VDP_loadTileData(data,HUD_OPAQUE_BASE+i,1,DMA);
+    }
+}
+u16 HUD_iconAttr(u16 tile,u16 pal)
+{
+    if(arenaActive && pal==PAL1)
+        for(u16 i=0;i<HUD_OPAQUE_COUNT;i++)if(tile==opaqueTiles[i])
+            return TILE_ATTR_FULL(pal,TRUE,FALSE,FALSE,HUD_OPAQUE_BASE+i);
+    return TILE_ATTR_FULL(pal,FALSE,FALSE,FALSE,TILE_USER_INDEX+tile);
+}
 
 void HUD_drawKills(u16 kills, u16 target)
 {
     char buf[16];
-    VDP_setTileMapXY(BG_A,
-        TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, TILE_USER_INDEX + TILE_SKULL), 1, 0);
+    VDP_setTileMapXY(ARENA_hudPlane(),
+        HUD_iconAttr(TILE_SKULL,PAL1), 1, 0);
     sprintf(buf, "%02d/%02d", kills, target);
     VDP_drawText(buf, 3, 0);
 }
@@ -84,8 +118,8 @@ void HUD_drawInventory(void)
         }
         else
         {
-            VDP_setTileMapXY(BG_A,
-                TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, TILE_USER_INDEX + iconTile(type)),
+            VDP_setTileMapXY(ARENA_hudPlane(),
+                HUD_iconAttr(iconTile(type),PAL1),
                 base + 1, 0);
             putc0((char) ('0' + (count % 10)), base + 2);
         }
@@ -97,8 +131,8 @@ void HUD_drawInventory(void)
     {
         const u16 t = (mode == SHOTMODE_CHAIN) ? TILE_BOLT
                     : (mode == SHOTMODE_ICE)   ? TILE_ICON_ICE : TILE_ICON_FIRE;
-        VDP_setTileMapXY(BG_A,
-            TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, TILE_USER_INDEX + t), MODE_HUD_X, 0);
+        VDP_setTileMapXY(ARENA_hudPlane(),
+            HUD_iconAttr(t,PAL1), MODE_HUD_X, 0);
         putc0((char) ('0' + (SHOTS_modeCharges() % 10)), MODE_HUD_X + 1);
     }
     else { putc0(' ', MODE_HUD_X); putc0(' ', MODE_HUD_X + 1); }

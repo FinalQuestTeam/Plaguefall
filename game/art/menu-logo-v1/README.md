@@ -8,7 +8,7 @@ A [nova arte](originals/plaguefall-menu-native-v2.png) foi recriada com **image_
 
 A carga acompanha o fundo do menu, com display desligado: 122 tiles únicos/3904 bytes após os tiles do fundo, em PAL3. Na configuração atual ocupa os índices 1221..1342, antes da fonte SGDK em1440. Não usa sprites nem altera as duas paletas do cenário. O empacotamento compartilha tiles repetidos, preservando espaço para a [marca FinalQuest no canto inferior direito](../finalquest-logo-v2/README.md#crédito-no-menu-inicial). A saída do menu já regenera a PAL3 e os tiles do chão; voltar de ajuda/personagens recarrega o logo.
 
-[ROM atualizada](../../out/release/rom.bin). [Teste de pixels](pixel-validation.json) e [compilação/memória](build-validation.json). A ROM foi exercitada no Genesis Plus GX em PAL e NTSC, com reprodução completa da abertura, navegação, ajuda, galeria e partida. Dez capturas de menu correspondem exatamente ao logo sobre o fundo original. As verificações da cartela de abertura e do monólogo também passaram.
+[ROM atualizada](../../out/release/Plaguefall.bin). [Teste de pixels](pixel-validation.json) e [compilação/memória](build-validation.json). A ROM foi exercitada no Genesis Plus GX em PAL e NTSC, com reprodução completa da abertura, navegação, ajuda, galeria e partida. Dez capturas de menu correspondem exatamente ao logo sobre o fundo original. As verificações da cartela de abertura e do monólogo também passaram.
 
 ```sh
 python3 game/art/menu-logo-v1/export_logo.py --check

@@ -3,6 +3,7 @@
 
 #include "actors/bomb.h"
 #include "core/stats.h"
+#include "levels/arena.h"
 #include "system/video/screens/hud.h"
 #include "system/audio/sfx.h"
 #include "system/video/flash.h"
@@ -28,6 +29,7 @@ u16 BOMB_use(void)
 
     bombs--;
     phaseStats.bombsUsed++;     // condições de saída do grafo (SEM/USOU_BOMBA)
+    ARENA_damageChurch();
     SFX_bombBlast();
     FLASH_trigger();
 

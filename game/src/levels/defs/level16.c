@@ -1,4 +1,4 @@
-// Fase 16 — CHEFE (Lacraia). Só o chefe (que invoca seus próprios lacaios).
+// Fase 16 — CHEFE (Escorpiao). Só o chefe (que invoca seus próprios lacaios).
 // O chefe é gerado no início da fase (core/flow.c) e derrotá-lo encerra o jogo
 // (tela de fim → título). Sem spawn regular; TRI_YEL entra no roster só para a
 // arte dos lacaios ficar carregada na VRAM.
@@ -18,5 +18,6 @@ const LevelDef LEVEL16_def =
     .musEnemyMax  = 6,
     .musStepCalm  = 7,
     .musStepHot   = 5,
+    .musicTrack   = MUSIC_TRACK_BREU,
     LVL_ROSTER(roster),
 };

@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "revision": "diagonal idle and aim: tolerate staggered D-pad release for 80ms",
+  "rom": "../out/release/rom.bin",
+  "rom_sha256": "ba6376b0274f6d4691cc16f9c122e04f3a51ee0b3704014bbc2d820f55ac1722",
+  "rom_bytes": 1179648,
+  "text_bytes": 1124456,
+  "data_bytes": 140,
+  "bss_bytes": 7178,
+  "static_ram_bytes": 7318,
+  "physical_hardware_tested": false,
+  "checks": {
+    "player_aim_ntsc": {
+      "passed": true,
+      "fps": 60,
+      "scenarios": 16,
+      "game_ram_writes": false,
+      "report": "../art/player-diagonal-aim-v1/ntsc/report.json"
+    },
+    "player_aim_pal": {
+      "passed": true,
+      "fps": 50,
+      "scenarios": 16,
+      "game_ram_writes": false,
+      "report": "../art/player-diagonal-aim-v1/pal/report.json"
+    },
+    "native": {
+      "passed": true,
+      "sanitizers": [
+        "address",
+        "undefined"
+      ],
+      "player_aim": true,
+      "existing_audio_and_generated_assets": true
+    }
+  },
+  "previous_validation": "../art/player-diagonal-aim-v1/build-validation-before.json",
+  "source_sha256": {
+    "game/src/actors/player.c": "5d435a5d51cce270780d6a013bea175f50bb224795513eb3748c42a3ed042eb9",
+    "game/src/actors/player.h": "a80ca3598589a62181830f2abfabcd0d6540ea6d2643a56bff3315adc537f253"
+  }
+}

@@ -6,6 +6,7 @@
 #include "system/audio/sfx.h"
 #include "system/video/screens/hud.h"
 #include "actors/shots.h"
+#include "system/video/herogfx.h"
 
 // tunáveis em actors/player.h (bloco CONFIG)
 
@@ -20,6 +21,7 @@ static s32 pfx, pfy;            // posição em 26.6
 static u16 invTimer;            // invencibilidade após dano (pisca)
 static u16 shieldTimer;         // invencibilidade do item escudo (imune a tudo)
 static u16 shotCooldown;        // frames até poder atirar de novo
+static u16 diagonalRelease;     // tolerância para soltar uma diagonal sem perder a mira
 static bool fireArmed;          // só atira após soltar A uma vez (evita que o A
                                 // que confirmou o menu dispare ao entrar na fase)
 static u8  speedPct;            // bônus de velocidade da botinha (0..MAX)
@@ -31,13 +33,14 @@ void PLAYER_grantShield(void) { shieldTimer = PLAYER_SHIELD_TENTHS * fps / 10; }
 
 void PLAYER_reset(void)
 {
-    px = INNER_MIN_X + (INNER_MAX_X - INNER_MIN_X - 15) / 2;
-    py = INNER_MIN_Y + (INNER_MAX_Y - INNER_MIN_Y - 15) / 2;
+    px = ARENA_startX();
+    py = ARENA_startY();
     pfx = (s32) px << 6;
     pfy = (s32) py << 6;
     playerSlowPct = 0;
     faceX = 1; faceY = 0;
     shotCooldown = 0;
+    diagonalRelease = 0;
     fireArmed = FALSE;          // exige soltar A antes do 1º tiro da fase
     invTimer = 0;
     shieldTimer = 0;
@@ -99,23 +102,32 @@ void PLAYER_update(u16 joy)
     if (speedPct)      speedFp = (u16) (((u32) speedFp * (100 + speedPct)) / 100);
     if (playerSlowPct) speedFp = (u16) (((u32) speedFp * (100 - playerSlowPct)) / 100);
 
-    pfx += mx * (s16) speedFp;
-    pfy += my * (s16) speedFp;
-    if (pfx < (s32) INNER_MIN_X << 6) pfx = (s32) INNER_MIN_X << 6;
-    if (pfx > (s32) (INNER_MAX_X - 15) << 6) pfx = (s32) (INNER_MAX_X - 15) << 6;
-    if (pfy < (s32) INNER_MIN_Y << 6) pfy = (s32) INNER_MIN_Y << 6;
-    if (pfy > (s32) (INNER_MAX_Y - 15) << 6) pfy = (s32) (INNER_MAX_Y - 15) << 6;
+    ARENA_move(&pfx, &pfy, mx * (s16)speedFp, my * (s16)speedFp, 16);
     px = (s16) (pfx >> 6);
     py = (s16) (pfy >> 6);
 
-    // direção do tiro = última direção cardinal pressionada
-    if (mx || my)
+    // O D-pad costuma liberar um eixo antes do outro. Preserve a diagonal
+    // nessa transição curta; movimento continua imediato. Segurar o eixo
+    // restante confirma a mudança cardinal, e um novo toque após parar é imediato.
+    if (mx && my)
     {
-        if (mx && !my) { faceX = mx; faceY = 0; }
-        else if (my && !mx) { faceX = 0; faceY = my; }
-        else { faceX = mx; faceY = my; }
+        faceX = mx; faceY = my;
+        diagonalRelease = (fps * PLAYER_DIAGONAL_RELEASE_MS + 999) / 1000;
     }
+    else if (mx || my)
+    {
+        const bool releasingDiagonal = faceX && faceY &&
+            ((mx == faceX && !my) || (my == faceY && !mx));
+        if (releasingDiagonal && diagonalRelease) diagonalRelease--;
+        if (!releasingDiagonal || !diagonalRelease)
+        {
+            faceX = mx; faceY = my;
+            diagonalRelease = 0;
+        }
+    }
+    else diagonalRelease = 0;
 
+    HERO_prepare(HERO_direction(faceX,faceY));
     if (shotCooldown) shotCooldown--;
     if (!(joy & BUTTON_A)) fireArmed = TRUE;        // soltou A: arma o disparo
     if (fireArmed && (joy & BUTTON_A) && (shotCooldown == 0))    // B é a bomba

@@ -1,3 +1,5 @@
+> **Versão anterior preservada.** A abertura atual é a [montagem aprovada de 14 planos e 18 cartelas](storyboard-abertura-v2.md). Os dados e relatórios abaixo descrevem a revisão anterior.
+
 # Storyboard de abertura — o sonho atendido
 
 **Personagem:** Damião. **Duração de referência:** 1min29s, ajustável à interpretação. **Formato:** 12 planos em duas pranchas, leitura da esquerda para a direita e de cima para baixo. Baseado no [monólogo completo](abertura.md), preservando suas falas.

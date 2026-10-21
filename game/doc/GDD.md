@@ -129,7 +129,7 @@ O cangaço aparece nas silhuetas, no equipamento recuperado, no conhecimento do 
 
 # História
 
-O roteiro executável está em `levels/story.c`: 22 cenas, com uma chegada para cada um dos 20 nós, uma cena depois da fase 15 e o final depois da 16. Usa quatro retratos: Damião, Comando (padre) e Dinorah derivados dos concepts; Lacraia com arte anterior. As falas são em MAIÚSCULA SEM ACENTO. Comando é o padre que coordena os abrigos; Damião chama os invasores de “baratas”. Dinorah participa por rádio antes da fase 7, sem ator aliado na arena. A completa/avança a fala; START pula a cena. Cada cena toca uma vez por partida.
+O roteiro executável está em `levels/story.c`: 22 cenas, com uma chegada para cada um dos 20 nós, uma cena depois da fase 15 e o final depois da 16. Usa quatro retratos: Damião, Comando (padre) e Dinorah derivados dos concepts; Escorpião com arte anterior. As falas são em MAIÚSCULA SEM ACENTO. Comando é o padre que coordena os abrigos; Damião chama os invasores de “baratas”. Dinorah participa por rádio antes da fase 7, sem ator aliado na arena. A completa/avança a fala; START pula a cena. Cada cena toca uma vez por partida.
 
 A campanha tem 16 fases por percurso e quatro bifurcações já implementadas:
 
@@ -142,15 +142,17 @@ A campanha tem 16 fases por percurso e quatro bifurcações já implementadas:
 
 A seleção narrativa acompanha o nó e o momento ANTES/DEPOIS. Não há uma segunda condição independente para escolher slides, nem seleção por quantidade de itens ou corações. Após convergir, as falas comuns funcionam com qualquer caminho anterior. O resultado da fase 5 é tratado nas chegadas a 6A/6B, pois a saída DEPOIS da 5 também pode ocorrer após falha roteada.
 
-Damião vai da frustração com o sonho de viajar à decisão de defender quem ficou em terra. Lacraia oferece uma viagem como parte da carga; ele recusa. Vencer o chefe interrompe o comando local do enxame e permite o retorno à comunidade. O final é único e não declara o Brasil inteiro livre.
+Damião vai da frustração com o sonho de viajar à decisão de defender quem ficou em terra. Escorpião oferece uma viagem como parte da carga; ele recusa. Vencer o chefe interrompe o comando local do enxame e permite o retorno à comunidade. O final é único e não declara o Brasil inteiro livre.
 
 [Abertura completa](historia/abertura.md) · [Campanha por nó](historia/campanha.md) · [Sistema de diálogos](plano-historia.md).
 
 ## Visão geral
 
-**Plaguefall** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Damião, humano cibernético32×48** (hitbox 16×16) numa arena de tela única, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
+**Plaguefall** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Damião, humano cibernético32×48** (hitbox 16×16) em arenas com limites por fase, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Escorpião** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
 
-A arena ocupa a tela inteira; a linha 0 de tiles é o HUD.
+A **fase 1** usa um mundo de **512×384**, câmera com janela320×224, padrões residentes em BG_B com atualização circular de linhas, sangue em BG_A e HUD fixo em WINDOW. Igreja e objetos periféricos possuem colisão; a bomba altera parte da igreja e decide a saída2B. Limites validados: quatro inimigos e seis tiros de cada lado,60 FPS NTSC/50 FPS PAL no emulador. [Arte, testes e próximos formatos](fases-cenarios.md).
+
+As outras fases ainda usam a arena clássica abaixo, ocupando a tela inteira; a linha 0 de tiles é o HUD. Seus novos cenários aguardam aprovação.
 
 | Dimensão | Valor (tiles) | Valor (pixels) |
 |---|---|---|
@@ -190,7 +192,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 
 ### Fluxo geral
 
-1. **Splash** (logo FinalQuest) → **monólogo animado** (12 quadros, uma vez por boot, somente START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**).
+1. **Splash** (logo FinalQuest) → **monólogo animado** (14 quadros e 18 cartelas, uma vez por boot, somente START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**).
 2. **Preparação** (`ST_PREP`) → A para começar.
 3. **"PREPARE-SE 3-2-1"** (3 s congelado) → jogo ativo.
 4. Meta atingida → `ST_DONE` → história do DEPOIS (se houver) → **mapa de rotas** (`ST_MAP`) → história do ANTES do nó destino (se houver) → preparação da próxima (decidida pelas condições de saída do grafo). Morte → `ST_OVER` → recomeça a mesma fase. Objetivo falhado em nó **com rota de falha** (`OBJ_FALHOU`) → "A MISSAO CONTINUA..." → segue pela rota de falha (sem game over).
@@ -214,7 +216,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 ## Tela-título, splash e ajuda
 
 - **Splash** (`splash.c`): logo [FinalQuest redesenhado](../art/finalquest-logo-v2/README.md), em192×128 centralizado; fades de0,2s,1s de exibição e possibilidade de pular.
-- **Monólogo animado** (`intro.c`): [12 quadros do storyboard](../art/intro-monologo-v1/README.md) entre FinalQuest e o menu, aproximadamente 1min30s incluindo trocas. Texto branco centralizado em até36×4, fundo preto com transição suave desde a arte, fades visuais e música contínua desde o logo Plaguefall. Sem nome, contador ou instruções na tela. O enquadramento é fixo;12 partículas de poeira, brasa e fuligem usam posições fracionárias e até1 pixel de deslocamento por frame. Usa924 tiles para a imagem mais3 para partículas, antes da inicialização dos recursos da arena. O último quadro dura5s, antes eram17s; o fundo do menu já fica empacotado na ROM para evitar a montagem pixel a pixel no fim. A, B e C são ignorados; somente START pula. Não se repete ao voltar ao título. A conversa antes da fase 1 mantém apenas o chamado do padre e a resposta de Damião.
+- **Monólogo animado** (`intro.c`): [14 quadros e 18 cartelas do storyboard](../art/intro-monologo-v2/README.md) entre FinalQuest e o menu, 101 segundos de exibição, com as trocas de imagem. Texto branco centralizado em até36×4, fundo preto com transição suave desde a arte, fades visuais e música contínua desde o logo Plaguefall. Sem nome, contador ou instruções na tela. O enquadramento é fixo;12 partículas de poeira, brasa e fuligem usam posições fracionárias e até1 pixel de deslocamento por frame. Usa924 tiles para a imagem mais3 para partículas, antes da inicialização dos recursos da arena. O último quadro dura6s; as trocas de cartela nos planos 08, 11, 12 e 13 conservam a imagem e a música; o fundo do menu já fica empacotado na ROM para evitar a montagem pixel a pixel no fim. A, B e C são ignorados; somente START pula. Não se repete ao voltar ao título. A conversa antes da fase 1 mantém apenas o chamado do padre e a resposta de Damião.
 - **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Damião, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. O tema Baião de Ferrugem toca em sua versão calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
 - **Assets** (`chardemo.c`): [três abas — Damião, Dinorah e Músicas](../art/gallery-v1/README.md). Os personagens têm oito direções e dois quadros de repouso. ESQ/DIR muda de aba; B/START volta ao menu, e A também sai nas abas dos personagens. Em MÚSICAS, CIMA/BAIXO escolhe entre Baião de Ferrugem, Entardecer, Breu e Ladainha de Ferro; A pausa/retoma e C alterna calma/combate. A faixa selecionada toca em loop; sair da audição restaura a música e a curva anteriores. As quatro partituras coexistem na ROM. As poses usam240 tiles do cache existente dos inimigos e PAL2; a aba musical esconde os sprites e usa somente texto.
 - **Como Jogar** (`help.c`): **5 páginas** navegáveis com ←/→ — controles, inimigos (cor/forma, com os sprites reais), a elite (pentágonos), itens diretos e itens de inventário.
@@ -306,7 +308,7 @@ Fixed-point 26.6, mirados no centro do jogador no instante do disparo (`getAppro
 
 ## A matriz forma × cor
 
-Cada inimigo combina uma **forma** (perfil de resistência) com uma **cor** (comportamento). As famílias visuais atuais são serra-pau (quadrado), mutuca (triângulo) e saúva (pentágono), com implantes e placas reaproveitadas. O chefe usa o concept do escorpião, preservando o nome Lacraia. Há oito direções, com cinco vistas desenhadas e três por espelhamento horizontal (§6).
+Cada inimigo combina uma **forma** (perfil de resistência) com uma **cor** (comportamento). As famílias visuais atuais são serra-pau (quadrado), mutuca (triângulo) e saúva (pentágono), com implantes e placas reaproveitadas. O chefe se chama Escorpião e usa o concept do escorpião-amarelo-do-Nordeste. Há oito direções, com cinco vistas desenhadas e três por espelhamento horizontal (§6).
 
 | | **Vermelho** (atira) | **Amarelo** (persegue) | **Roxo** (escudo cíclico) | **Laranja** (investida) |
 |---|---|---|---|---|
@@ -334,7 +336,7 @@ Velocidade em unidades 26.6 por frame (`ENEMY_SPEED_FP` = 40 ≈ 0,63 px/frame).
 | **Meteoro** (PEN laranja) | 24 | 3 | 14 | 60% | 20 | **teleporta para perto** antes de investir; cooldown 1,8 s |
 | **Dummy** (teste) | 24 | 20 | 0 | 0% | 0 | alvo da fase teste 1 |
 | **Alvo** (teste) | 24 | 1 | 0 | 0% | 0 | alvos do raio na fase teste 2 |
-| **Lacraia** (CHEFE) | **48** | **25** | **20** | 100% | 32 | ver abaixo |
+| **Escorpião** (CHEFE) | **48** | **25** | **20** | 100% | 32 | ver abaixo |
 
 ### Comportamentos por cor
 
@@ -343,9 +345,9 @@ Velocidade em unidades 26.6 por frame (`ENEMY_SPEED_FP` = 40 ≈ 0,63 px/frame).
 - **Roxo** (`enemy_purple.c`): persegue e alterna escudo — `timerA` s vulnerável / `timerB` s blindado. Blindado: **bloqueia tiros** (pisca para sinalizar) e é imune à cadeia/bomba. Com `EXTRA_SUMMON` invoca Caçadores enquanto blindado.
 - **Laranja** (`enemy_orange.c`): aproxima → **telegrafa 0,2 s** (para mirando) → **investida reta 0,5 s a ~3,1 px/frame** (`DASH_SPEED_FP` = 200) → cooldown `timerA`. Com `EXTRA_TELEPORT`, pisca para um ponto próximo do jogador antes do bote.
 
-## O chefe: Lacraia (`enemy_boss.c`)
+## O chefe: Escorpião (`enemy_boss.c`)
 
-Escorpião **48×48** (ID `boss`, nome Lacraia preservado; quatro peças de32×32,32×16,16×32 e16×16). Aparece na **fase 16** (e na arena de teste, estágio 3). Contador mestre `tA` dirige todos os ciclos:
+Escorpião **48×48** (ID `boss`; quatro peças de32×32,32×16,16×32 e16×16). Aparece na **fase 16** (e na arena de teste, estágio 3). Contador mestre `tA` dirige todos os ciclos:
 
 | Mecânica | Valor |
 |---|---|
@@ -409,13 +411,13 @@ Soma dos pesos = 100 (coincidência atual; o sorteio usa a soma real).
 
 ## Estrutura
 
-A **ordem da campanha vive no grafo de rotas** (`levels/graph.c`): cada fase é um nó (`NODE_COUNT` = **16**; 1–15 campanha + 16 = chefe, nó **final** = sem saídas) com **saídas condicionais** avaliadas ao vencer (bomba/dano/tempo/falha do objetivo — bifurcações ativas: **1→2A/2B** (sem bomba/com bomba), **5→6A/6B** (a fase 5 é PROTEGER o aliado 30 s; falhar NÃO é game over — vai à 6B "retirada" via `OBJ_FALHOU`), **9→10A/10B** (sem dano/com dano) e **12→13A/13B** (venceu em <60 s/não); cada par reconverge na fase seguinte). As condições leem as **estatísticas da fase** (`core/stats.c`: bombas usadas, dano sofrido, tempo, objetivo falhado), zeradas a cada início de fase. Plano completo em `doc/plano-rotas.md`. Cada fase é um `LevelDef` (dados puros) em `levels/defs/levelNN.c`: terreno (`lava`/`mud`, retângulos em tiles), `killTarget`, `spawnSeconds`, `spawnCount`, o **roster** de tipos, o **chão** (`floor`) e a **curva de música** por fase (`musCalmUntil`/`musEnemyMax`/`musStepCalm`/`musStepHot`; ver §6). A arte dos inimigos do roster é gerada **por fase** na VRAM (ver §6).
+A **ordem da campanha vive no grafo de rotas** (`levels/graph.c`): cada fase é um nó (`NODE_COUNT` = **20**; 16 etapas por partida, incluindo quatro pares de rotas; fase16 = chefe, nó **final** = sem saídas) com **saídas condicionais** avaliadas ao vencer (bomba/dano/tempo/falha do objetivo — bifurcações ativas: **1→2A/2B** (sem bomba/com bomba), **5→6A/6B** (a fase 5 é PROTEGER o aliado 30 s; falhar NÃO é game over — vai à 6B "retirada" via `OBJ_FALHOU`), **9→10A/10B** (sem dano/com dano) e **12→13A/13B** (venceu em <60 s/não); cada par reconverge na fase seguinte). As condições leem as **estatísticas da fase** (`core/stats.c`: bombas usadas, dano sofrido, tempo, objetivo falhado), zeradas a cada início de fase. Plano completo em `doc/plano-rotas.md`. Cada fase é um `LevelDef` (dados puros) em `levels/defs/levelNN.c`: terreno (`lava`/`mud`, retângulos em tiles), `killTarget`, `spawnSeconds`, `spawnCount`, o **roster** de tipos, o **chão** (`floor`) e a **curva de música** por fase (`musCalmUntil`/`musEnemyMax`/`musStepCalm`/`musStepHot`; ver §6). A arte dos inimigos do roster é gerada **por fase** na VRAM (ver §6). Os campos `arena`, `enemyCap`, `shotCap` e `musicTrack` controlam o mundo com câmera, os limites de carga e a trilha. Campos de arena/capacidade omitidos preservam a configuração clássica.
 
 ## Tabela das fases
 
 | Fase | Meta | Spawn (s) | Por onda | Terreno | Chão | Roster |
 |---|---|---|---|---|---|---|
-| 1 | 10 | 5 | 1 | — | pedra | Torreão, Batedor |
+| 1 | 10 | 5 | 1 | — | pátio em tiles | Torreão, Batedor |
 | 2A | 12 | 5 | 1 | — | pedra | + Aríete *(rota sem bomba na 1)* |
 | 2B | 12 | 5 | 1 | Lama | floresta | Torreão, Batedor, Aríete *(rota com bomba na 1)* |
 | 3 | 14 | 4 | 1 | Lava | pedra | Batedor, Baluarte, Aríete |
@@ -434,7 +436,7 @@ A **ordem da campanha vive no grafo de rotas** (`levels/graph.c`): cada fase é 
 | 13B | 34 | 2 | 2 | **Lama** | floresta | Baluarte, Caçador, Adaga, Artilheiro, Alcateia *(demorou na 12)* |
 | 14 | 37 | 2 | **3** | Lava+lama | mix | Fortaleza, Meteoro, Alcateia, Caçador |
 | 15 | 40 | 2 | 3 | Lava+lama | mix | Aríete, Fuzileiro, Caçador, Adaga, Artilheiro, Fortaleza, Meteoro |
-| **16** | **chefe** | — | — | — | caverna | **Lacraia** (+ Caçadores invocados) |
+| **16** | **chefe** | — | — | — | caverna | **Escorpião** (+ Caçadores invocados) |
 
 Layouts de terreno (`layouts.c`, retângulos em tiles): `LAVA_PAIR` {5,6,10×6}+{25,15,10×6}, `MUD_PAIR` {6,15,10×6}+{24,5,10×6}; combos (fases com os dois) usam retângulos 8×5 em cantos opostos.
 
@@ -459,7 +461,7 @@ Na preparação/pausa, os inimigos do roster aparecem como **sprites reais** ali
 
 1. **Dummies** (HP 20, inofensivos) + fileira com 1 item de cada tipo (reabastecida). Tem **lava + lama** (chão `FLOOR_MIX`), para testar dano/lentidão.
 2. **Alvos** frágeis agrupados — demonstra a reação em cadeia do raio. Porta "CHEFE →".
-3. **Arena do chefe** — a Lacraia com o comportamento completo (chão de caverna).
+3. **Arena do chefe** — o Escorpião com o comportamento completo (chão de caverna).
 
 ## Elementos de terreno
 
@@ -495,7 +497,7 @@ Lentidão progressiva **individual** (cada entidade acumula seu tempo): jogador 
 
 ### Trilha da abertura (`system/audio/opening.c`)
 
-[O Sonho Atendido](../art/audio-abertura-v2/README.md) é uma composição original de89 segundos para os12 planos do storyboard. Começa na aparição do logo Plaguefall e segue sem loop, resets ou pausas nas mudanças de imagem, com mudança de tema entre sonho e presente, tensão industrial, pausa na reza e pulso após o rádio. O volume só tem fade na entrada do logo e na saída natural ou com START. A, B e C não avançam nem completam o monólogo. Usa o árbitro PSG e um relógio de300 Hz por interrupção vertical para manter os tempos em PAL/NTSC. As quatro partituras da galeria permanecem preservadas.
+[O Sonho Atendido](../art/audio-abertura-v3/README.md) é uma composição original para os 101 segundos dos 14 planos e 18 cartelas do storyboard. Começa na aparição do logo Plaguefall e segue sem loop, resets ou pausas nas mudanças de imagem, com mudança de tema entre sonho e presente, tensão industrial, pausa na reza e pulso após o rádio. O volume só tem fade na entrada do logo e na saída natural ou com START. A, B e C não avançam nem completam o monólogo. Usa o árbitro PSG e um relógio de300 Hz por interrupção vertical para manter os tempos em PAL/NTSC. As quatro partituras da galeria permanecem preservadas.
 
 ### Efeitos (`system/audio/sfx.c`)
 
@@ -528,11 +530,11 @@ Os demais elementos continuam procedurais por char-maps.
   As três vistas ocidentais usam apenas HFLIP. Frente e costas são distintas.
 - BOSS_ROT: 72 tiles reservados aos dois retratos de história, separados do cache.
 - herogfx.c: Damião 32×48 em duas peças, um frame de 24 tiles dentro da reserva existente de 48 tiles, PAL2. Cinco vistas desenhadas e três por HFLIP; repouso de dois frames e corrida de quatro. Até 768 bytes adicionais de DMA por quadro, com prioridade sobre os inimigos.
-- chars.c: nove mechs históricos fora da galeria; a tela ASSETS mostra Damião e Dinorah.
+- O gerador e os nove mechs antigos foram removidos do runtime. A tela ASSETS usa os sprites atuais de Damião e Dinorah.
 - floor.c: 80 tiles no BG_B, PAL3. Cenário e projeção de mapa ainda são os anteriores.
 
-**Build atual:** ROM de917504 bytes (896 KiB), dentro de1 MiB. A [validação consolidada](build-validation.json) registra hash, memória estática e testes da ROM principal.
-[Compilação e testes da abertura](../art/intro-monologo-v1/build-validation.json). A auditoria anterior dos inimigos
+**Build atual:** ROM de1179648 bytes (1152 KiB), com cabeçalho para cartucho linear de2 MiB. A [validação consolidada](build-validation.json) registra hash, memória estática e testes da ROM principal.
+[Compilação e testes da abertura](../art/intro-monologo-v2/build-validation.json). A auditoria anterior dos inimigos
 observou47332 bytes de heap livre; esse número pertence àquela build. Os tiles de gameplay terminam no byte27488,
 a fonte começa no byte 46080 e há 18592 bytes de intervalo livre.
 Relatórios e capturas em art/cangaco-insects-sized-v3/validation/.
@@ -556,7 +558,7 @@ Reconstruída a cada frame, encadeada por link, enviada via `DMA_QUEUE`:
 
 | Paleta | Uso |
 |---|---|
-| PAL0 | Texto/HUD (letras no índice 15). Índices 1–14 = **paleta de flash**: brancos (dano) exceto o **índice 2 = vermelho** (pulso de fogo). Reaproveitada sem custo de VRAM |
+| PAL0 | Texto/HUD (letras no índice 15; índice1 preto para o fundo opaco do HUD na fase1). Índices 1–14 = **paleta de flash**: brancos (dano) exceto o **índice 2 = vermelho** (pulso de fogo). Reaproveitada sem custo de VRAM |
 | PAL1 | Objetos (1 contorno claro, 2 ciano/gelo, 3 vermelho, 4 amarelo, 5 tiro inimigo, 6/7 parede, 8 roxo, 9/10 lama, 11 escuro, 12 laranja, 13 cinza, 14 verde, 15 azul) |
 | PAL2 | Damião / galeria histórica |
 | PAL3 | Chão (varia por fase; alvo do flash da bomba) |

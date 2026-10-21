@@ -35,11 +35,12 @@ uma escala relativa entre variantes.
 | pen_yellow | Alcateia | sauva-soldado | direita superior |
 | pen_purple | Fortaleza | sauva-soldado | direita central |
 | pen_orange | Meteoro | sauva-soldado | direita inferior |
-| boss | Lacraia | escorpiao-chefe | vista principal à esquerda; vistas complementares à direita |
+| boss | Escorpião | escorpiao-chefe | vista principal à esquerda; vistas complementares à direita |
 
-O nome Lacraia e o identificador boss são preservados no catálogo para
-rastreabilidade; o novo concept visual do chefe é um escorpião, que é um
-aracnídeo. Dummy e Alvo são recursos de teste e não receberam novas criaturas.
+O nome curto do chefe é Escorpião, com referência visual no
+escorpião-amarelo-do-Nordeste. O identificador técnico boss permanece
+inalterado. O escorpião é um aracnídeo. Dummy e Alvo são recursos de teste
+e não receberam novas criaturas.
 
 ## Estado da entrega
 

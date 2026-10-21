@@ -1,0 +1,28 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "use_case": "stylized-concept",
+  "prompt": "Use case: stylized-concept. Asset type: ONE production playable background map for 16-bit overhead action game Plaguefall. Not concept illustration, not contact sheet. References: approved game courtyard defines fine native pixel style and open gameplay floor; maintenance tunnel concept defines worn pipes and valves; hero reference defines view angle. ONE wide rectangular map, exact aspect 512 by 288, canvas cropped flush to connected room perimeter, no black space outside. Camera orthographic looking down 60 degrees ABOVE ground with NORTH UP and walls parallel canvas edges. No diamond/isometric rotation, no vanishing point. Fine small-pixel detailed 16-bit game art with restrained concrete gray, rust, dark blue, amber palette. Composition coordinates relative 512x288: upper band y0..79 reserved for old stone/concrete maintenance wall, long blue industrial pipes, ceramic electric cable insulators, maintenance valves, one valve tied with red cloth, compact tool locker, an OPEN repair hatch and spanner tucked near the upper wall. All large props and their shadows remain ABOVE y80. A wide dry horizontal combat lane x16..495 y80..271, calm worn concrete floor made from economically repeating square modules; entire center and lower half open and readable. Mud is ONLY in two SMALL peripheral areas x432..479 y80..103 upper-right and x16..63 y240..263 lower-left, never blocking the dry center. No other pools. Left, right and bottom perimeter only16px thick; all four corners structurally connect. Small entrance integrated into left border at y176 and exit integrated into right border at y176, iron threshold no tall foreground walls or corridor obstruction. No floor hatches in movement space; put open hatch along upper wall. This is a rectangular service tunnel battlefield, wider than deep, not a narrow cinematic hallway. Story through battered infrastructure, old tools and repair marks: Damião goes first to clear a route for refugees. No characters, no text, labels, arrows, UI, decorative frame, horizon, large interior obstacles, or separate item studies. Fine crisp native pixel rendering (not coarse giant blocks), even utilitarian warm industrial lights along the upper wall, subdued floor texture and shadow so bullets remain readable. A single production background only.",
+  "reference_roles": [
+    {
+      "path": "game/art/phase01-courtyard-v2/intact-native.png",
+      "role": "approved native gameplay pixel style and open floor"
+    },
+    {
+      "path": "game/art/concepts/fases-v1/imagens/04-tuneis.png",
+      "role": "environmental story and service tunnel architecture"
+    },
+    {
+      "path": "game/art/cangaco-protagonista-iso60-v2/previews/heroi-repouso-4x.png",
+      "role": "hero camera angle"
+    }
+  ],
+  "generated_file": "/Users/fabiocantarimmelo/.codex/generated_images/01a15f7d-4b28-71b2-bae8-443a847f8bcf/exec-750f46bc-3926-4c19-840c-d76055b3c8a0.png",
+  "saved_as": "source/layout.png",
+  "native_target": [
+    512,
+    288
+  ],
+  "review": "Inspected generated map: maintenance machinery and hatch stay in upper band; broad uninterrupted horizontal floor; mud only at upper-right and lower-left; bottom wall corners connect. Side arch accents extend inward a few pixels and are decorative, not solid collision objects. Intended 60 degree overhead orthographic view.",
+  "generated_date": "2026-10-21"
+}

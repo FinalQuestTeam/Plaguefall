@@ -1,1 +1,0 @@
-XGM bgm "bgm.vgm"

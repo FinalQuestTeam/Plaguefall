@@ -2,6 +2,9 @@
 #define HUD_H
 
 #include <genesis.h>
+#define HUD_OPAQUE_COUNT 11
+void HUD_loadOpaqueIcons(void);
+u16 HUD_iconAttr(u16 tile, u16 pal);
 
 // linha 0 da tela: caveira+mortes | inventário (ícones) | modo ativo | HP
 void HUD_drawKills(u16 kills, u16 target);

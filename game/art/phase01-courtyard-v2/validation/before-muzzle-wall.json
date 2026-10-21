@@ -1,0 +1,492 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "rom": "../out/release/rom.bin",
+  "rom_sha256": "eb0f8e8a4a7392783c0ad7718d6e7fbfc91b4cb8b091ca5de5405973bf92f763",
+  "rom_bytes": 917504,
+  "text_bytes": 882608,
+  "data_bytes": 140,
+  "bss_bytes": 7162,
+  "static_ram_bytes": 7302,
+  "native_audio": "ASan/UBSan passed: 3 defaults, 4 tracks, campaign selection, preview restore and continuous opening",
+  "score_checks": "scores, catalog, opening and deterministic courtyard export verified",
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "courtyard_ntsc": {
+      "passed": true,
+      "region": "NTSC",
+      "rom_sha256": "eb0f8e8a4a7392783c0ad7718d6e7fbfc91b4cb8b091ca5de5405973bf92f763",
+      "world": [
+        512,
+        384
+      ],
+      "camera_limits": [
+        0,
+        192
+      ],
+      "hud_fixed": true,
+      "player_solid_collisions": true,
+      "projectile_solid_collisions": true,
+      "distant_shots_do_not_hit": true,
+      "pause_restores_scene": true,
+      "bomb_damages_church": true,
+      "damaged_state_survives_pause": true,
+      "classic_phase_restored": true,
+      "scene_tiles": 623,
+      "scene_tile_bytes": 19936,
+      "level_enemy_cap": 4,
+      "shots_per_pool_cap": 6,
+      "benchmark": [
+        {
+          "enemies": 0,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 27.25,
+          "cpu_p95_pct": 29.54
+        },
+        {
+          "enemies": 3,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 40.32,
+          "cpu_p95_pct": 43.16
+        },
+        {
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 63.62,
+          "cpu_p95_pct": 71.48
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 4,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 67.08,
+          "cpu_p95_pct": 74.41
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 299,
+          "fps": 59.8,
+          "cpu_mean_pct": 73.61,
+          "cpu_p95_pct": 82.67
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 63.57,
+          "cpu_p95_pct": 68.26
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 150,
+          "fps": 30.0,
+          "cpu_mean_pct": 123.63,
+          "cpu_p95_pct": 139.84
+        },
+        {
+          "enemies": 15,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 145,
+          "fps": 29.0,
+          "cpu_mean_pct": 168.45,
+          "cpu_p95_pct": 187.01
+        }
+      ],
+      "routes": [
+        {
+          "bomb_used": false,
+          "next_node": 2,
+          "music_track": 3
+        },
+        {
+          "bomb_used": true,
+          "next_node": 3,
+          "music_track": 1
+        }
+      ],
+      "hud_icons_opaque": true,
+      "floor_move_cases": 448,
+      "clear_floor_shot_cases": 412,
+      "ring_pixel_checks": 92,
+      "natural_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "physical_seconds": 41.18,
+          "game_fps": 60.0,
+          "kills": 6,
+          "remaining_hp": -6,
+          "bombs_used": 0,
+          "moving_frames": 1171,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 2,
+          "result": "victory",
+          "physical_seconds": 47.47,
+          "game_fps": 60.0,
+          "kills": 10,
+          "remaining_hp": 64,
+          "bombs_used": 2,
+          "moving_frames": 1417,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 3,
+          "result": "defeat",
+          "physical_seconds": 26.05,
+          "game_fps": 60.0,
+          "kills": 4,
+          "remaining_hp": -2,
+          "bombs_used": 0,
+          "moving_frames": 526,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 4,
+          "result": "defeat",
+          "physical_seconds": 33.23,
+          "game_fps": 60.0,
+          "kills": 4,
+          "remaining_hp": 0,
+          "bombs_used": 1,
+          "moving_frames": 996,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 5,
+          "result": "defeat",
+          "physical_seconds": 41.18,
+          "game_fps": 60.0,
+          "kills": 6,
+          "remaining_hp": -6,
+          "bombs_used": 0,
+          "moving_frames": 1171,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 6,
+          "result": "victory",
+          "physical_seconds": 47.47,
+          "game_fps": 60.0,
+          "kills": 10,
+          "remaining_hp": 64,
+          "bombs_used": 2,
+          "moving_frames": 1417,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        }
+      ],
+      "explained_shot_disappearances": 261,
+      "unexplained_shot_disappearances": 0,
+      "walkable_bounds": [
+        16,
+        112,
+        495,
+        367
+      ],
+      "camera_y_limits": [
+        0,
+        160
+      ],
+      "natural_combat": {
+        "seconds": 24,
+        "fps": 60.0,
+        "max_enemies": 4,
+        "max_player_shots": 3,
+        "max_enemy_shots": 1
+      },
+      "method": "Real ROM in Genesis Plus GX. Controller-driven entry/movement/pause/bomb; stress formations and HP held in volatile RAM; game-active frame counter compared with vtimer, not host emulation speed."
+    },
+    "intro_ntsc": {
+      "passed": true,
+      "fps": 60,
+      "frames": 8709,
+      "game_ram_writes": false,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "START skips whole opening from APRESENTA or Plaguefall logo",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A/B/C ignored in monologue and Plaguefall logo",
+        "A cannot complete captions or advance shots",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    },
+    "courtyard_pal": {
+      "passed": true,
+      "region": "PAL",
+      "rom_sha256": "eb0f8e8a4a7392783c0ad7718d6e7fbfc91b4cb8b091ca5de5405973bf92f763",
+      "world": [
+        512,
+        384
+      ],
+      "camera_limits": [
+        0,
+        192
+      ],
+      "hud_fixed": true,
+      "player_solid_collisions": true,
+      "projectile_solid_collisions": true,
+      "distant_shots_do_not_hit": true,
+      "pause_restores_scene": true,
+      "bomb_damages_church": true,
+      "damaged_state_survives_pause": true,
+      "classic_phase_restored": true,
+      "scene_tiles": 623,
+      "scene_tile_bytes": 19936,
+      "level_enemy_cap": 4,
+      "shots_per_pool_cap": 6,
+      "benchmark": [
+        {
+          "enemies": 0,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 3.58,
+          "cpu_p95_pct": 4.69
+        },
+        {
+          "enemies": 3,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 14.35,
+          "cpu_p95_pct": 17.48
+        },
+        {
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 37.7,
+          "cpu_p95_pct": 44.92
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 4,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 41.17,
+          "cpu_p95_pct": 48.14
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 47.66,
+          "cpu_p95_pct": 56.2
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 37.64,
+          "cpu_p95_pct": 42.53
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 181,
+          "fps": 30.17,
+          "cpu_mean_pct": 96.76,
+          "cpu_p95_pct": 104.3
+        },
+        {
+          "enemies": 15,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 150,
+          "fps": 25.0,
+          "cpu_mean_pct": 124.61,
+          "cpu_p95_pct": 139.4
+        }
+      ],
+      "routes": [
+        {
+          "bomb_used": false,
+          "next_node": 2,
+          "music_track": 3
+        },
+        {
+          "bomb_used": true,
+          "next_node": 3,
+          "music_track": 1
+        }
+      ],
+      "hud_icons_opaque": true,
+      "floor_move_cases": 448,
+      "clear_floor_shot_cases": 412,
+      "ring_pixel_checks": 92,
+      "natural_matches": [
+        {
+          "attempt": 1,
+          "result": "victory",
+          "physical_seconds": 47.88,
+          "game_fps": 50.0,
+          "kills": 10,
+          "remaining_hp": 45,
+          "bombs_used": 0,
+          "moving_frames": 923,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 2,
+          "result": "victory",
+          "physical_seconds": 49.16,
+          "game_fps": 50.0,
+          "kills": 10,
+          "remaining_hp": 75,
+          "bombs_used": 2,
+          "moving_frames": 1282,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 3,
+          "result": "victory",
+          "physical_seconds": 49.02,
+          "game_fps": 50.0,
+          "kills": 10,
+          "remaining_hp": 40,
+          "bombs_used": 0,
+          "moving_frames": 897,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 4,
+          "result": "victory",
+          "physical_seconds": 48.42,
+          "game_fps": 50.0,
+          "kills": 10,
+          "remaining_hp": 55,
+          "bombs_used": 2,
+          "moving_frames": 1201,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 5,
+          "result": "victory",
+          "physical_seconds": 47.88,
+          "game_fps": 50.0,
+          "kills": 10,
+          "remaining_hp": 45,
+          "bombs_used": 0,
+          "moving_frames": 923,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 6,
+          "result": "victory",
+          "physical_seconds": 49.16,
+          "game_fps": 50.0,
+          "kills": 10,
+          "remaining_hp": 75,
+          "bombs_used": 2,
+          "moving_frames": 1282,
+          "pause_resume_cycles": 1,
+          "game_ram_writes": false
+        }
+      ],
+      "explained_shot_disappearances": 334,
+      "natural_combat": {
+        "seconds": 24,
+        "fps": 50.0,
+        "max_enemies": 4,
+        "max_player_shots": 4,
+        "max_enemy_shots": 6
+      },
+      "method": "Real ROM in Genesis Plus GX. Controller-driven entry/movement/pause/bomb; stress formations and HP held in volatile RAM; game-active frame counter compared with vtimer, not host emulation speed.",
+      "unexplained_shot_disappearances": 0,
+      "walkable_bounds": [
+        16,
+        112,
+        495,
+        367
+      ],
+      "camera_y_limits": [
+        0,
+        160
+      ]
+    },
+    "intro_pal": {
+      "passed": true,
+      "fps": 50,
+      "frames": 7265,
+      "game_ram_writes": false,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "START skips whole opening from APRESENTA or Plaguefall logo",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A/B/C ignored in monologue and Plaguefall logo",
+        "A cannot complete captions or advance shots",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    }
+  },
+  "previous_validation": "../art/phase01-courtyard-v2/validation/previous-build.json"
+}

@@ -1,0 +1,32 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "use_case": "stylized-concept",
+  "output": "source/layout.png",
+  "prompt": "Use case: stylized-concept.\nAsset type: production environment map source for a Mega Drive action game, chapter 6A RESGATE CONFIRMADO, ONE seamless rectangular game arena, no presentation board.\nInput references: Image 1 approved first phase = detail scale, handcrafted fine 16-bit pixel art and modular terrain; Image 2 character sheet = 60-degree view convention only, do NOT include characters; Image 3 rescue concept = industrial materials and narrative objects only, do NOT copy its cinematic perspective or contact-sheet format.\nProduce a 512 by 320 game-world layout shown at high quality 3x scale (1536 by 960). Orthographic camera looking 60 degrees DOWN from horizontal ground, north straight up. Horizontal parallel walls, vertical parallel side boundaries; NOT diamond isometric, NO horizon, NO vanishing point. Game terrain sheet completely fills image.\nComposition constraints measured in world coordinates 512 by 320: upper 96 pixels are a service architecture strip. Below is a broad open combat floor x16..495 y96..303. West/east/bottom boundary masonry and steel walls exactly 16 pixels thick, connect into uninterrupted neat L corners on bottom left and bottom right. Bottom boundary straight horizontal at y304..319. KEEP THE ENTIRE MIDDLE FLOOR QUIET, WALKABLE, EMPTY OF SOLID OBJECTS. Floor repeating sand-colored concrete slabs, low contrast seams, sparse fine cracks. No chunky upscaled pixels, no blur, high clarity.\nScene: abandoned landing platform just after the successful living evacuation. In the TOP STRIP ONLY, central heavy blue-gray industrial boarding ramp EMPTY and beginning to retract into a cropped transport threshold, right of ramp a clearly lit small cobalt-blue confirmed beacon, peripheral cargo racks, aged white plaster and red clay tile maintenance huts, pipework. Keep ship cropped to top edge, do not draw a giant spaceship over the arena. Warm Brazilian sertão late-afternoon orange sunlight, restrained teal shadows, rusty yellow safety trim. Narrow orderly footprints and suitcase-wheel tracks on floor approach ramp, subtly fading below y160. Packing strap loops and rectangular clean marks from removed baggage at far upper edge; no scattered luggage blocking combat.\nExisting thermal hazard pair: small vivid orange coolant/melt spill occupying upper-left corner x24..88 y104..136 and lower-right corner x424..488 y264..296, from pipes outside the arena. Both are contained distinct readable shapes and leave wide dry paths across middle. Dry center dominates. No additional hazards.\nNarrative is hope and relief, people escaped ALIVE. NO people, NO player, NO enemies, NO bodies, NO gore. NO text, NO captions, NO UI, NO health bars, NO grid overlay, NO dramatic camera angle. The image itself must be a game-ready top-down rectangular environment with exact straight connected boundaries and fine pixel textures.",
+  "reference_roles": [
+    {
+      "path": "../phase01-courtyard-v2/intact-native.png",
+      "role": "Estilo aprovado, escala de detalhe e módulos"
+    },
+    {
+      "path": "../cangaco-protagonista-iso60-v2/previews/heroi-repouso-4x.png",
+      "role": "Convenção de vista a 60 graus; sem desenhar personagens"
+    },
+    {
+      "path": "../concepts/fases-v1/imagens/06a-resgate-v2.png",
+      "role": "Materiais industriais e narrativa"
+    }
+  ],
+  "source_dimensions": [
+    1586,
+    992
+  ],
+  "target_dimensions": [
+    512,
+    320
+  ],
+  "generated": "2026-10-21",
+  "generated_original": "/Users/fabiocantarimmelo/.codex/generated_images/01a15f7d-8a2b-71c3-8107-dd041ee9a781/exec-0a0d3158-8fd7-4808-88a7-4db2241bdbb3.png",
+  "pipeline_note": "Fonte raster preservada sem retoques criativos por script. O exportador compartilhado monta módulos nativos, reduz paleta e extrai tiles; a fonte não é a imagem já integrada à ROM."
+}

@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "isolated_preview_build": true,
+  "renderer_camera_actors_only": false,
+  "hazards_and_objectives_simulated": false,
+  "terrain_damage_enabled": true,
+  "terrain_checks": {
+    "production_lava_update": true,
+    "lava_hp_after_one_second": 95,
+    "dry_entry_hp": 100,
+    "damage_stops_on_exit": true,
+    "controller_dry_route": true,
+    "route_frames": 224,
+    "waypoints": [
+      [
+        48,
+        208
+      ],
+      [
+        240,
+        208
+      ],
+      [
+        240,
+        176
+      ],
+      [
+        464,
+        176
+      ]
+    ],
+    "ram_writes_during_controller_route": false
+  },
+  "world": [
+    512,
+    320
+  ],
+  "scene_tiles": 500,
+  "scene_tile_bytes": 16000,
+  "atlas_hardware_upload_matches": true,
+  "benchmark": [
+    {
+      "case": "idle",
+      "enemies": 0,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 3.27,
+      "cpu_p95_pct": 3.91,
+      "camera_x_range": [
+        96,
+        96
+      ],
+      "camera_y_range": [
+        72,
+        72
+      ]
+    },
+    {
+      "case": "horizontal",
+      "enemies": 4,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 39.88,
+      "cpu_p95_pct": 44.87,
+      "camera_x_range": [
+        0,
+        192
+      ],
+      "camera_y_range": [
+        72,
+        72
+      ]
+    },
+    {
+      "case": "vertical",
+      "enemies": 4,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 39.07,
+      "cpu_p95_pct": 41.85,
+      "camera_x_range": [
+        96,
+        96
+      ],
+      "camera_y_range": [
+        0,
+        96
+      ]
+    }
+  ],
+  "screenshot": "emulator-pal.png",
+  "screenshot_dimensions": [
+    320,
+    224
+  ],
+  "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+  "core_fps": 49.7014591857706,
+  "rom_sha256": "ecccb511c740bd5e06a288bf73617980a33063f306e8077981394ff31cea2026",
+  "emulated_rom_sha256": "34499649a9add7b82cdb1cbed9893dea6911f5f416d02e8c9f46eec2ec60f379",
+  "ram_setup": "Per frame: HP, kills=0, spawn cooldown, enemy/projectile formations, gradual actor coordinates (3 px/frame); joypad entry and A held. No production ROM patches.",
+  "method": "Game phaseStats.frames versus vtimer physical VBlanks; cpuFrameLoad is SGDK eight-frame sum / 2048. 90 warm-up plus 300 measured frames per case. Host execution speed is not used.",
+  "production_rom_unchanged": true,
+  "production_sources_unchanged": true,
+  "production_rom_sha256": "469f040494a7d5a38c74916e04034a913a8f0558269efdad9480146151c67ce5",
+  "source_export_sha256": {
+    "map.bin": "fa9bbec8c5113353d55f8e4ad6ad7bd71235f31d17082f7ce467630fbc03d1bf",
+    "map-vdp.bin": "54e80c7e7e738aac28201772e446ecd184fa24e050f9c3aeaae5dd8a11484c50",
+    "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676",
+    "tiles.bin": "a11a722c7c48138e98c78132da239fbd3893168c8088ecd069f21ca8ff601d83"
+  },
+  "design_sha256": "ff2b1682e03b41b32b04d58c8e6b372dca395bbbd45737020e81cb44fdf6a268",
+  "benchmark_source_sha256": "31992e8d639fe68b231380eaf1019f2c201e0b94d4bd8f1a7a6f199fb0030d42",
+  "isolated_build_directory": "/private/tmp/plaguefall-stage-preview-7pax49pg"
+}

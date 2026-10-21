@@ -1,4 +1,4 @@
-// Comportamento do CHEFE (Lacraia) — inimigo bônus da última fase.
+// Comportamento do CHEFE (Escorpiao) — inimigo bônus da última fase.
 //  - alterna a cada 4 s entre AGRESSIVO e À DISTÂNCIA;
 //  - AGRESSIVO: aproxima, telegrafa e dá DASH reto (investida) repetidamente;
 //  - À DISTÂNCIA: recua e dispara rajadas de 5 tiros;

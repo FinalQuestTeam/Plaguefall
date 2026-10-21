@@ -27,7 +27,7 @@ static void imageBrightness(const u16 *source, u16 level)
     DUST_brightness(level);
 }
 
-static void drawText(const IntroShot *shot, u16 *typed, u16 target)
+static void drawText(const IntroCaption *shot, u16 *typed, u16 target)
 {
     u16 offset = 0;
     const u16 firstY = TEXT_TOP + (TEXT_ROWS - shot->lineCount) / 2;
@@ -106,6 +106,9 @@ void INTRO_run(void)
     {
         const IntroShot *shot = &INTRO_SHOTS[index];
         const u16 duration = (u16) shot->seconds * fps;
+        u16 captionIndex = shot->firstCaption;
+        const IntroCaption *caption = &INTRO_CAPTIONS[captionIndex];
+        u16 captionEnd = (u16) caption->seconds * fps;
         const u16 *palette = (const u16 *)(intro_palettes + index * 64);
         u16 endTick = duration;
         u16 typed = 0, typeClock = 0, lastLevel = 0xFFFF;
@@ -113,6 +116,13 @@ void INTRO_run(void)
         DUST_reset(particles, index, 156);
         for (u16 tick = 0; tick < endTick; tick++)
         {
+            if (tick >= captionEnd && captionIndex + 1 < shot->firstCaption + shot->captionCount)
+            {
+                caption = &INTRO_CAPTIONS[++captionIndex];
+                captionEnd += (u16) caption->seconds * fps;
+                typed = typeClock = 0;
+                VDP_clearTextArea(0, TEXT_TOP, 40, TEXT_ROWS);
+            }
             const u16 joy = JOY_readJoypad(JOY_1);
             const u16 pressed = joy & ~prev;
             prev = joy;
@@ -122,10 +132,10 @@ void INTRO_run(void)
                 if (endTick > tick + fadeTicks) endTick = tick + fadeTicks;
             }
             typeClock += 36;
-            if (typeClock >= fps && typed < shot->letters)
+            if (typeClock >= fps && typed < caption->letters)
             {
                 typeClock -= fps;
-                drawText(shot, &typed, typed + 1);
+                drawText(caption, &typed, typed + 1);
             }
             const u16 edge = (tick < endTick - tick - 1) ? tick : endTick - tick - 1;
             const u16 level = edge < fadeTicks ? edge * FADE_LEVELS / fadeTicks : FADE_LEVELS;

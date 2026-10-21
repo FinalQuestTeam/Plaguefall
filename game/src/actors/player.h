@@ -10,12 +10,13 @@
 #define PLAYER_START_HP     100 // vida inicial e teto
 #define PLAYER_INV_TENTHS   3   // invencibilidade após dano (0,1 s) → 0,3 s
 #define PLAYER_FIRE_TENTHS  8   // intervalo entre disparos (0,1 s) → 0,8 s (1,25/s)
+#define PLAYER_DIAGONAL_RELEASE_MS 80 // tolerância entre soltar os dois eixos; só afeta a mira
 #define PLAYER_SPEED_STEP   20  // bônus de velocidade por botinha (%)
 #define PLAYER_SPEED_MAX    100 // bônus máximo de velocidade (%) → dobro no teto
 #define PLAYER_SHIELD_TENTHS 30 // invencibilidade do item escudo (0,1 s) → 3,0 s
 // ===========================================================================
 
-extern s16 faceX, faceY;    // última direção cardinal (usada pelo tiro)
+extern s16 faceX, faceY;    // última direção entre as oito possíveis (usada pelo tiro)
 extern s16 hp;
 
 // centraliza o jogador e zera o estado de controle (NÃO mexe no hp)

@@ -7,6 +7,7 @@
 #include "actors/player.h"
 #include "actors/shots.h"          // ICE_FREEZE_SEC / FIRE_BURN_SEC / FIRE_TICK_SEC
 #include "core/game.h"
+#include "levels/levels.h"
 #include "items/items.h"
 #include "system/video/chainfx.h"
 #include "system/video/blood.h"
@@ -69,7 +70,7 @@ static void initEnemy(Enemy *e, u8 type, s16 x, s16 y)
 
 void ENEMIES_spawnAt(u8 type, s16 x, s16 y)
 {
-    if (ENEMIES_activeCount() >= ENEMY_CAP) return;     // teto: espera abrir vaga
+    if (ENEMIES_activeCount() >= (LEVEL_current()->enemyCap ? LEVEL_current()->enemyCap : ENEMY_CAP)) return;     // teto: espera abrir vaga
 
     const s16 size = ENEMY_DEFS[type]->size;
     // mantém dentro da arena
@@ -78,13 +79,14 @@ void ENEMIES_spawnAt(u8 type, s16 x, s16 y)
     if (y < INNER_MIN_Y) y = INNER_MIN_Y;
     if (y > INNER_MAX_Y - (size - 1)) y = INNER_MAX_Y - (size - 1);
 
+    if (ARENA_blocked(x, y, size, size)) return;
     for (u16 i = 0; i < MAX_ENEMIES; i++)
         if (!enemies[i].active) { initEnemy(&enemies[i], type, x, y); return; }
 }
 
 void ENEMIES_trySpawn(const u8 *types, u8 typeCount)
 {
-    if (ENEMIES_activeCount() >= ENEMY_CAP) return;     // teto: espera abrir vaga
+    if (ENEMIES_activeCount() >= (LEVEL_current()->enemyCap ? LEVEL_current()->enemyCap : ENEMY_CAP)) return;     // teto: espera abrir vaga
 
     for (u16 i = 0; i < MAX_ENEMIES; i++)
     {
@@ -99,6 +101,7 @@ void ENEMIES_trySpawn(const u8 *types, u8 typeCount)
             s16 x = INNER_MIN_X + (random() % (INNER_MAX_X - INNER_MIN_X - (size - 1)));
             s16 y = INNER_MIN_Y + (random() % (INNER_MAX_Y - INNER_MIN_Y - (size - 1)));
             if (getApproximatedDistance(x - px, y - py) < 56) continue;
+            if (ARENA_blocked(x, y, size, size)) continue;
 
             initEnemy(&enemies[i], type, x, y);
             return;
@@ -112,13 +115,7 @@ void ENEMIES_integrate(Enemy *e)
 {
     const s16 size = ENEMY_SIZE(e);
 
-    e->fx += e->vx;
-    e->fy += e->vy;
-
-    if (e->fx < (s32) INNER_MIN_X << 6) e->fx = (s32) INNER_MIN_X << 6;
-    if (e->fx > (s32) (INNER_MAX_X - (size - 1)) << 6) e->fx = (s32) (INNER_MAX_X - (size - 1)) << 6;
-    if (e->fy < (s32) INNER_MIN_Y << 6) e->fy = (s32) INNER_MIN_Y << 6;
-    if (e->fy > (s32) (INNER_MAX_Y - (size - 1)) << 6) e->fy = (s32) (INNER_MAX_Y - (size - 1)) << 6;
+    ARENA_move(&e->fx, &e->fy, e->vx, e->vy, size);
 
     e->x = (s16) (e->fx >> 6);
     e->y = (s16) (e->fy >> 6);
@@ -251,13 +248,7 @@ static void ENEMIES_separate(void)
         if (pushY[i] < -SEP_MAX) pushY[i] = -SEP_MAX;
 
         const s16 size = ENEMY_SIZE(e);
-        e->fx += pushX[i];
-        e->fy += pushY[i];
-
-        if (e->fx < (s32) INNER_MIN_X << 6) e->fx = (s32) INNER_MIN_X << 6;
-        if (e->fx > (s32) (INNER_MAX_X - (size - 1)) << 6) e->fx = (s32) (INNER_MAX_X - (size - 1)) << 6;
-        if (e->fy < (s32) INNER_MIN_Y << 6) e->fy = (s32) INNER_MIN_Y << 6;
-        if (e->fy > (s32) (INNER_MAX_Y - (size - 1)) << 6) e->fy = (s32) (INNER_MAX_Y - (size - 1)) << 6;
+        ARENA_move(&e->fx, &e->fy, (s16)pushX[i], (s16)pushY[i], size);
 
         e->x = (s16) (e->fx >> 6);
         e->y = (s16) (e->fy >> 6);

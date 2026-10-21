@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-21",
+  "rom_sha256": "7dd524595683888221be2570c40008eddf98fe6c1af1a1b06d3fbc942d2c3250",
+  "rom_bytes": 1179648,
+  "raw_before_bytes": 1124596,
+  "raw_after_bytes": 1101736,
+  "net_rom_bytes_removed": 22860,
+  "shared_font_palettes_glow_bytes_removed": 7840,
+  "unused_dinorah_run_frame_bytes_removed": 15360,
+  "padding_after_bytes": 77912,
+  "native_audio_and_player_checks": true,
+  "masters_retained_for_future_dinorah_actor": true,
+  "removed_manifest": "removed.json",
+  "physical_hardware_tested": false,
+  "passed": true,
+  "emulator_checks": {
+    "intro_ntsc": {
+      "passed": true,
+      "report": "../art/runtime-cleanup-v1/validation/intro-ntsc/report.json"
+    },
+    "intro_pal": {
+      "passed": true,
+      "report": "../art/runtime-cleanup-v1/validation/intro-pal/report.json"
+    },
+    "gallery_ntsc": {
+      "passed": true,
+      "report": "../art/runtime-cleanup-v1/validation/gallery-ntsc/report.json"
+    },
+    "gallery_pal": {
+      "passed": true,
+      "report": "../art/runtime-cleanup-v1/validation/gallery-pal/report.json"
+    },
+    "campaign_ntsc": {
+      "passed": true,
+      "report": "../art/phases02-06-v1/validation/ntsc/report.json"
+    },
+    "campaign_pal": {
+      "passed": true,
+      "report": "../art/phases02-06-v1/validation/pal/report.json"
+    }
+  },
+  "ordinary_campaign_matches": 42,
+  "stress_cases": 28
+}

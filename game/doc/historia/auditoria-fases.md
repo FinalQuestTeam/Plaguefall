@@ -6,7 +6,7 @@ Levantamento do código salvo no workspace, incluindo alterações locais. A fon
 
 - **20 nós de campanha**, distribuídos em **16 etapas por partida**: as etapas 2, 6, 10 e 13 têm duas versões.
 - **23 ligações**, quatro bifurcações e um único nó final, a fase 16.
-- **16 percursos estruturais** possíveis no grafo, todos com 16 fases e terminando na Lacraia.
+- **16 percursos estruturais** possíveis no grafo, todos com 16 fases e terminando no Escorpião.
 - **6 estágios de teste**, fora da campanha. Não entram na contagem acima.
 - **22 cenas de diálogo e 47 falas**: chegada aos 20 nós, saída da 15 e final da 16. Cada percurso normal apresenta 18 cenas, além dos 12 planos da abertura de boot.
 
@@ -40,7 +40,7 @@ Levantamento do código salvo no workspace, incluindo alterações locais. A fon
 | 13B | Eliminar 34 | Lama | 2 / 2 s | 14 |
 | 14 | Eliminar 37 | Lava e lama | 3 / 2 s | 15 |
 | 15 | Eliminar 40 | Lava e lama | 3 / 2 s | 16 |
-| 16 | Derrotar Lacraia | Piso de caverna, sem lava/lama | Sem spawn regular; chefe invoca lacaios | Diálogo final → tela de fim → START volta ao título |
+| 16 | Derrotar o Escorpião | Piso de caverna, sem lava/lama | Sem spawn regular; chefe invoca lacaios | Diálogo final → tela de fim → START volta ao título |
 
 Há 18 nós de eliminação, um de proteção e um de chefe. Sobrevivência e coleta existem no motor e nos testes, mas não são objetivos da campanha atual. O plano antigo de rotas menciona coleta como recompensa; isso não corresponde às definições atuais.
 

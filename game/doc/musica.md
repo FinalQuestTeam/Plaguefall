@@ -1,5 +1,7 @@
 # Plaguefall — Baião de Ferrugem
 
+**Distribuição atual na campanha:** as quatro músicas coexistem na ROM e agora são escolhidas por fase. A igreja começa com Ladainha de Ferro; abrigo e despedidas usam Entardecer; investigação usa Breu; avanços industriais usam Baião de Ferrugem. [Mapa completo e justificativas](fases-cenarios.md). Os perfis e ROMs alternativos descritos abaixo permanecem como histórico das composições.
+
 A primeira versão da nova trilha combina inspiração no baião com pulsos industriais. A intenção é ter balanço e identidade nordestina sem perder a tensão da invasão. A melodia é original; não adapta uma música existente.
 
 ## O que mudou
@@ -26,7 +28,7 @@ As prévias foram capturadas da ROM da bancada no Genesis Plus GX, com o mesmo m
 
 ## Dinâmica e integração
 
-Até quatro inimigos, a curva padrão fica em 100 BPM. Com quinze, chega a 150 BPM. A ameaça também acrescenta pulsos de acompanhamento e reforça ataques metálicos, preservando o desenho rítmico. A fase 6B usa aproximadamente 112–150 BPM; a Lacraia usa aproximadamente 129–180 BPM.
+Até quatro inimigos, a curva padrão fica em 100 BPM. Com quinze, chega a 150 BPM. A ameaça também acrescenta pulsos de acompanhamento e reforça ataques metálicos, preservando o desenho rítmico. A fase 6B usa aproximadamente 112–150 BPM; o Escorpião usa aproximadamente 129–180 BPM.
 
 O relógio musical usa 300 unidades por segundo: cinco por quadro NTSC, seis por quadro PAL. Assim, os valores `musStepCalm` e `musStepHot` continuam sendo durações nominais de quadros NTSC, com o mesmo andamento nas duas regiões. A consulta `MUSIC_stepInBar()` agora retorna 0–7, correspondente ao compasso 2/4.
 
@@ -115,6 +117,6 @@ A faixa usa somente síntese PSG, sem amostras de órgão, sinos ou reverberaç�
 
 ## Trilha da abertura — O Sonho Atendido
 
-[O Sonho Atendido](../art/audio-abertura-v2/README.md) foi composta para os12 planos do storyboard e substitui a música de fundo reaproveitada durante o monólogo de boot. A versão contínua tem4 segundos iniciais para o logo Plaguefall,89 segundos planejados para o monólogo e uma sustentação final, com tema ascendente no sonho, sua transformação na cena do trabalhador, tensão metálica na carga e nos insetos, uma pausa de capela na reza e pulso crescente após o chamado do padre. O final resolve em Ré menor.
+[O Sonho Atendido](../art/audio-abertura-v3/README.md) foi ajustada para os14 planos e18 cartelas do storyboard e substitui a música de fundo reaproveitada durante o monólogo de boot. A versão contínua tem4 segundos iniciais para o logo Plaguefall,101 segundos para o monólogo e uma sustentação final, com tema ascendente no sonho, sua transformação na cena do trabalhador, tensão metálica na carga e nos insetos, uma pausa de capela na reza e pulso crescente após o chamado do padre. O final resolve em Ré menor.
 
-É uma partitura própria em `opening_data.h`, gerada por `tools/compose_opening.py`, com execução em `opening.c`. A partitura roda uma única vez, desde o logo Plaguefall, por interrupção vertical. As cargas de imagem e os fades visuais não reiniciam, pausam ou silenciam a música. Somente START pula a abertura; A, B e C não afetam as legendas ou a sequência. O relógio de300 Hz mantém a duração em PAL e NTSC, usando o mesmo árbitro PSG. As quatro faixas de galeria e campanha permanecem intactas. [Ouvir](../art/audio-abertura-v2/o-sonho-atendido.mp3) · [Ver com a abertura](../art/audio-abertura-v2/ntsc/abertura.mp4).
+É uma partitura própria em `opening_data.h`, gerada por `tools/compose_opening.py`, com execução em `opening.c`. A partitura roda uma única vez, desde o logo Plaguefall, por interrupção vertical. As cargas de imagem e os fades visuais não reiniciam, pausam ou silenciam a música. Somente START pula a abertura; A, B e C não afetam as legendas ou a sequência. O relógio de300 Hz mantém a duração em PAL e NTSC, usando o mesmo árbitro PSG. As quatro faixas de galeria e campanha permanecem intactas. [Ouvir](../art/audio-abertura-v3/o-sonho-atendido.mp3) · [Ver com a abertura](../art/intro-monologo-v2/emulator-ntsc/abertura.mp4).

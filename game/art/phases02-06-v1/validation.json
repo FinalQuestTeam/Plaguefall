@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "production_rom_sha256": "7dd524595683888221be2570c40008eddf98fe6c1af1a1b06d3fbc942d2c3250",
+  "production_rom_used": true,
+  "integrated": true,
+  "approval_date": "2026-10-21",
+  "chapters": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "screen_count": 7,
+  "stages": [
+    {
+      "id": "02A",
+      "tiles": 443,
+      "native_world": [
+        512,
+        320
+      ],
+      "binaries_and_sources_match": true,
+      "within_budget": true,
+      "dry_path_connected": true,
+      "both_emulator_reports_current": true
+    },
+    {
+      "id": "02B",
+      "tiles": 603,
+      "native_world": [
+        512,
+        320
+      ],
+      "binaries_and_sources_match": true,
+      "within_budget": true,
+      "dry_path_connected": true,
+      "both_emulator_reports_current": true
+    },
+    {
+      "id": "03",
+      "tiles": 538,
+      "native_world": [
+        384,
+        384
+      ],
+      "binaries_and_sources_match": true,
+      "within_budget": true,
+      "dry_path_connected": true,
+      "both_emulator_reports_current": true
+    },
+    {
+      "id": "04",
+      "tiles": 537,
+      "native_world": [
+        512,
+        288
+      ],
+      "binaries_and_sources_match": true,
+      "within_budget": true,
+      "dry_path_connected": true,
+      "both_emulator_reports_current": true
+    },
+    {
+      "id": "05",
+      "tiles": 551,
+      "native_world": [
+        384,
+        384
+      ],
+      "binaries_and_sources_match": true,
+      "within_budget": true,
+      "dry_path_connected": true,
+      "both_emulator_reports_current": true
+    },
+    {
+      "id": "06a",
+      "tiles": 508,
+      "native_world": [
+        512,
+        320
+      ],
+      "binaries_and_sources_match": true,
+      "within_budget": true,
+      "dry_path_connected": true,
+      "both_emulator_reports_current": true
+    },
+    {
+      "id": "06b",
+      "tiles": 500,
+      "native_world": [
+        512,
+        320
+      ],
+      "binaries_and_sources_match": true,
+      "within_budget": true,
+      "dry_path_connected": true,
+      "both_emulator_reports_current": true
+    }
+  ],
+  "emulator_report_count": 14,
+  "measured_cases": 28,
+  "measured_physical_frames": 8400,
+  "ordinary_match_count": 42,
+  "scope": "Production ROM. Ordinary controller matches forbid RAM writes. Isolated probes/stress use explicit setup; terrain tests include lava damage/reset, mud slowdown/reset, dry controller routes, and exclusive-tile lava shimmer. Objective branches and legacy transition verified separately in campaign reports.",
+  "regions": {
+    "NTSC": {
+      "fps_values": [
+        60.0
+      ],
+      "cpu_p95_max_pct": 76.12
+    },
+    "PAL": {
+      "fps_values": [
+        50.0
+      ],
+      "cpu_p95_max_pct": 50.59
+    }
+  }
+}

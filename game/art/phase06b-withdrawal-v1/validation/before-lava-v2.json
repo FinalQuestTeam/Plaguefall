@@ -1,0 +1,45 @@
+{
+  "id": "06b",
+  "title": "Retirada por terra",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    512,
+    320
+  ],
+  "camera_degrees": 60,
+  "tiles": 592,
+  "tile_bytes": 18944,
+  "palette_colors": 16,
+  "tilemap_bytes": 5120,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1384,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "92708612223da7a80bc03e1ce1948c2afeb5e0ab6820e93dbdefab36cebffdc9",
+  "design_sha256": "d6dd3c70d6296ee01c4f4bc914020f42e117cc6245b1350dd13f2c810028c598",
+  "export_sha256": {
+    "tiles.bin": "3f3dadf06a9ee672c184bf14e99ba14d1f4626780a786155af9adce3f0186c26",
+    "map.bin": "6e567a0b2dddbf3ad62143420ca0adb28d2ec979ee2dc71a39714e3abbac8928",
+    "map-vdp.bin": "4b05d8ecd3c9ddfe852180761c762f0e9ef82fa3239a15bc51ab10614056bdda",
+    "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 1277,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 99840,
+    "hazard_pixels": 12672,
+    "dry_area_fraction": 0.8731
+  },
+  "emulator_performance_measured": false
+}

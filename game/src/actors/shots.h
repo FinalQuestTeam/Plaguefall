@@ -28,10 +28,7 @@
 #define ESHOT_SPEED     2       // velocidade do tiro inimigo (px/frame)
 #define ESHOT_DAMAGE    10      // dano do tiro inimigo no jogador
 #define SHOTS_ARC_SHEAR 8       // abertura do leque (maior = arco mais fechado)
-// boca da arma: deslocamento do ponto de saída relativo ao centro da hitbox,
-// no referencial da mira — à frente (na direção) e à direita (perpendicular)
-#define PSHOT_MUZZLE_FWD   13   // px à frente (na direção do tiro)
-#define PSHOT_MUZZLE_RIGHT 5    // px à direita da direção
+// Boca da arma: âncoras por desenho/quadro em res/heroi/muzzle.json.
 // ===========================================================================
 
 // 26.6 fixed. `mode` = SHOTMODE_* do tiro do jogador (efeito ao acertar). `dmg`

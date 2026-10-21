@@ -1,0 +1,45 @@
+{
+  "id": "04",
+  "title": "Túneis de manutenção",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    512,
+    288
+  ],
+  "camera_degrees": 60,
+  "tiles": 537,
+  "tile_bytes": 17184,
+  "palette_colors": 16,
+  "tilemap_bytes": 4608,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1329,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "06f8cccea86d26fb3419d10be482ada5bc7b56fa36b9bddd18f12a93821cb5bc",
+  "design_sha256": "809c4116e178e84b91ddcee0a639ad58d5eed2f6f6437d28a8f2e6cf34d61200",
+  "export_sha256": {
+    "tiles.bin": "0c9b0d259fef96b21f560ccf56cddd62cb4628d92462981211136d49f104e11e",
+    "map.bin": "a1145359f3734834966524651eaed5f72b96e9e04a71f2808b4ab1b6e38a34fa",
+    "map-vdp.bin": "c43e478a8f9eaa6ba8c5f7fb7c228fbe420f28df7c89a2af3b711c80c8c28568",
+    "palette.bin": "1200494b471d4ba14ed2a9a82f60615a8224e4244d35edb17f1bf252b6e7b331"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 1281,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 92160,
+    "hazard_pixels": 4672,
+    "dry_area_fraction": 0.9493
+  },
+  "emulator_performance_measured": false
+}

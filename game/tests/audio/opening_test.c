@@ -62,7 +62,7 @@ int main(void)
         uint32_t signature = 2166136261u;
         unsigned silent = 0, longest = 0;
         // No main-loop music calls or scene resets, including all load times.
-        for (unsigned frame = 0; frame < 94*fps; frame++)
+        for (unsigned frame = 0; frame < 106*fps; frame++)
         {
             signature = (signature ^ forward(1,true)) * 16777619u;
             if (audible()) silent=0; else silent++;
@@ -73,7 +73,7 @@ int main(void)
         OPENING_stop(); assert(!vint && !audible() && !lockDepth);
         OPENING_start();
         uint32_t repeated = 2166136261u;
-        for (unsigned frame = 0; frame < 94*fps; frame++)
+        for (unsigned frame = 0; frame < 106*fps; frame++)
             repeated = (repeated ^ forward(1,true)) * 16777619u;
         assert(repeated == signature);
         OPENING_stop();
@@ -97,7 +97,7 @@ int main(void)
         forward(37,false);
         OPENING_start(); forward(fps,true); OPENING_stop();
         assert(forward(100,false)==expected);
-        printf("%u Hz: continuous 94s, longest musical rest %u frames.\n",fps,longest);
+        printf("%u Hz: continuous 106s, longest musical rest %u frames.\n",fps,longest);
     }
     assert(writes>100);
     puts("PASS: continuous logo-to-intro score, independent VInt clock, no scene fades/restarts, START fade, callback teardown and untouched gameplay music.");

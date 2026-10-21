@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "isolated_preview_build": true,
+  "renderer_camera_actors_only": true,
+  "hazards_and_objectives_simulated": false,
+  "world": [
+    512,
+    320
+  ],
+  "scene_tiles": 603,
+  "scene_tile_bytes": 19296,
+  "atlas_hardware_upload_matches": true,
+  "benchmark": [
+    {
+      "case": "idle",
+      "enemies": 0,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 3.25,
+      "cpu_p95_pct": 3.86,
+      "camera_x_range": [
+        96,
+        96
+      ],
+      "camera_y_range": [
+        72,
+        72
+      ]
+    },
+    {
+      "case": "horizontal",
+      "enemies": 4,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 39.54,
+      "cpu_p95_pct": 44.58,
+      "camera_x_range": [
+        0,
+        192
+      ],
+      "camera_y_range": [
+        72,
+        72
+      ]
+    },
+    {
+      "case": "vertical",
+      "enemies": 4,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 38.81,
+      "cpu_p95_pct": 41.55,
+      "camera_x_range": [
+        96,
+        96
+      ],
+      "camera_y_range": [
+        0,
+        96
+      ]
+    }
+  ],
+  "screenshot": "emulator-pal.png",
+  "screenshot_dimensions": [
+    320,
+    224
+  ],
+  "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+  "core_fps": 49.7014591857706,
+  "rom_sha256": "ad1c186dd05c740678e55e85fb529306ee9c3389d1c7995715b08c210fda152d",
+  "emulated_rom_sha256": "24ecd8bebe481c5a6342bf573193180fbf8ffe3fed7153c6723f2f0422e658fc",
+  "ram_setup": "Per frame: HP, kills=0, spawn cooldown, enemy/projectile formations, gradual actor coordinates (3 px/frame); joypad entry and A held. No production ROM patches.",
+  "method": "Game phaseStats.frames versus vtimer physical VBlanks; cpuFrameLoad is SGDK eight-frame sum / 2048. 90 warm-up plus 300 measured frames per case. Host execution speed is not used.",
+  "production_rom_unchanged": true,
+  "production_sources_unchanged": true,
+  "production_rom_sha256": "469f040494a7d5a38c74916e04034a913a8f0558269efdad9480146151c67ce5",
+  "source_export_sha256": {
+    "map.bin": "b4dc28dfc2b63806ccf6e5984f4310e6c6bb7f20d2d3a8e7e3c76b6509ac1fbb",
+    "map-vdp.bin": "395e85c2acaf230dbf4c71fed11a39c3c0f5b4eee0110e632bb9d1b53e28a4be",
+    "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "tiles.bin": "57cb12661d69af6bee149b243a72c3fd2fef9998062be8dd79399ed0abdfde77"
+  },
+  "design_sha256": "a3f79b4673d2dec048d54964ddfba7423f08adcb8096cd62c9c45daabc9f89ce",
+  "benchmark_source_sha256": "f4105196e05b98723bd808583b939e26f39aa67f25d51f2b01102e4283dd6a25",
+  "isolated_build_directory": "/private/tmp/plaguefall-stage-preview-vacv52t_"
+}

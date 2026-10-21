@@ -1,4 +1,4 @@
-// CHEFE "Lacraia" — inimigo bônus da última fase. Sprite dedicado 48x48
+// CHEFE "Escorpiao" — inimigo bônus da última fase. Sprite dedicado 48x48
 // (INS_BOSS48, desenhado em 4 quadrantes); comportamento em enemy_boss.c.
 //   25 de vida · contato 20 · tiro 13 · invoca 2 lacaios/10 s · blindado 3 s/15 s
 //   resistente à bomba · fase agressiva com investidas (dash)
@@ -10,9 +10,9 @@
 
 const EnemyDef ENEMYDEF_boss =
 {
-    .name       = "Lacraia",
-    .shape      = SHAPE_SQUARE,      // besouro/lacraia (arte própria via enemygfx)
-    .color      = COLOR_RED,         // lacraia vermelha gigante
+    .name       = "Escorpiao",
+    .shape      = SHAPE_SQUARE,      // escorpiao (arte propria via enemygfx)
+    .color      = COLOR_RED,         // classe de comportamento; o chefe usa arte propria
     .size       = 48,
     .hp         = 25,
     .contactDmg = 20,

@@ -1,0 +1,389 @@
+{
+  "title": "O sonho atendido — storyboard revisado",
+  "status": "Proposta para aprovação; não integrada à ROM",
+  "date": "2026-10-21",
+  "fade_seconds": 0.4,
+  "typing_characters_per_second": 36,
+  "shots": [
+    {
+      "id": 1,
+      "title": "A pergunta",
+      "source": {
+        "sheet": 1,
+        "box": [
+          25,
+          70,
+          490,
+          484
+        ],
+        "center": [
+          0.5,
+          0.65
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 6,
+          "speaker": "Damião, em off",
+          "text": "Você já ouviu falar que o Diabo dá tudo que a gente quer?"
+        }
+      ],
+      "direction": "Close nos olhos sob o chapéu. Abrir direto na pergunta, com o rosto parcialmente em sombra. O Diabo pertence à fala; não mostrar uma entidade ou um pacto.",
+      "sound": "Vento seco e chiado discreto como direção sonora. Trilha contida, sem acento de susto."
+    },
+    {
+      "id": 2,
+      "title": "A promessa",
+      "source": {
+        "sheet": 1,
+        "box": [
+          524,
+          70,
+          1064,
+          484
+        ],
+        "center": [
+          0.5,
+          0.64
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 5,
+          "speaker": "Damião, em off",
+          "text": "Mas sempre da maneira mais filha da puta possível?"
+        }
+      ],
+      "direction": "Anúncio espacial gasto sobre as casas e a capela, com o complexo industrial ao fundo. A imagem responde à pergunta: a promessa foi vendida à comunidade. Não acrescentar texto ao anúncio nesta revisão.",
+      "sound": "Pequena pausa depois da pergunta; o palavrão recebe amargura, sem efeito de comédia."
+    },
+    {
+      "id": 3,
+      "title": "O sonho",
+      "source": {
+        "sheet": 1,
+        "box": [
+          1150,
+          28,
+          1509,
+          484
+        ],
+        "center": [
+          0.5,
+          0.02
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 7,
+          "speaker": "Damião, em off",
+          "text": "Eu sonhava com astronautas, extraterrestres e foguetes."
+        }
+      ],
+      "direction": "Lembrança quente: Damião adulto, ainda trabalhador, olha o foguete além da cerca. Dois braços biológicos e roupa de serviço; a distância da nave deve permanecer clara.",
+      "sound": "O tema ganha um pouco de luminosidade; motor distante, ainda associado à admiração."
+    },
+    {
+      "id": 4,
+      "title": "O trabalho e a espera",
+      "source": {
+        "sheet": 2,
+        "box": [
+          599,
+          49,
+          1145,
+          460
+        ],
+        "center": [
+          0.5,
+          0.5
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 8,
+          "speaker": "Damião, em off",
+          "text": "Eu consertava essas máquinas. Achava que um dia iam me deixar subir."
+        }
+      ],
+      "direction": "Manutenção do trem de pouso. Damião permanece do lado de fora do portão enquanto os tripulantes passam ao fundo. O ofício agora vem imediatamente depois do sonho, sem retorno tardio ao passado.",
+      "sound": "Ferramentas e vibração de metal como intenção sonora, deixando a fala respirar depois de máquinas."
+    },
+    {
+      "id": 5,
+      "title": "As naves dos sonhos",
+      "source": {
+        "sheet": 2,
+        "box": [
+          15,
+          10,
+          577,
+          195
+        ],
+        "center": [
+          0.5,
+          0.5
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 6,
+          "speaker": "Damião, em off",
+          "text": "As naves que levavam os meus sonhos…"
+        }
+      ],
+      "direction": "Corte para o presente: foguete de retorno sobre os telhados. Reenquadrar a parte alta do antigo plano 07 para não antecipar os ovos da carga. Sustentar a reticência até o corte seguinte.",
+      "sound": "O mesmo motivo de motor perde a qualidade admirável e ganha peso. A música continua no corte."
+    },
+    {
+      "id": 6,
+      "title": "Os ovos",
+      "new_art": true,
+      "source": {
+        "file": "novos-cards-fonte.png",
+        "box": [
+          0,
+          0,
+          1728,
+          449
+        ],
+        "center": [
+          0.42,
+          0.5
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 4,
+          "speaker": "Damião, em off",
+          "text": "hoje voltam trazendo ovos."
+        }
+      ],
+      "direction": "Novo close no interior da carga. Ovos manchados, cascas rompidas e metal enferrujado; os ovos devem dominar a leitura. A troca de imagem completa a frase iniciada no plano anterior.",
+      "sound": "Motor abafado, um ruído orgânico discreto como proposta. Sem interromper a trilha."
+    },
+    {
+      "id": 7,
+      "title": "Quem não voltou",
+      "source": {
+        "sheet": 1,
+        "box": [
+          556,
+          555,
+          996,
+          991
+        ],
+        "center": [
+          0.5,
+          0.35
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 5,
+          "speaker": "Damião, em off",
+          "text": "De quem foi nelas, nem sinal."
+        }
+      ],
+      "direction": "Traje de astronauta vazio, capacete escuro e estrutura de carga. O traje funciona como vestígio de quem partiu, sem confirmar destino dos tripulantes e sem cadáver em quadro.",
+      "sound": "Reduzir a densidade musical e dar espaço à ausência."
+    },
+    {
+      "id": 8,
+      "title": "Baratas",
+      "source": {
+        "sheet": 1,
+        "box": [
+          1030,
+          555,
+          1507,
+          991
+        ],
+        "center": [
+          0.5,
+          0.12
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 6,
+          "speaker": "Damião, em off",
+          "text": "Só aquelas merdas saíram de dentro. Patas, asas e zumbido."
+        },
+        {
+          "seconds": 3,
+          "speaker": "Damião, em off",
+          "text": "Pra mim, é tudo barata."
+        }
+      ],
+      "direction": "Um único plano do inseto biomecânico atravessando a carga, com Damião ao fundo. Trocar apenas a legenda aos seis segundos, sem fade ou recarga da imagem. O apelido barata encerra o bloco com humor seco.",
+      "sound": "Patas no metal e zumbido como direção de som. Pequena suspensão antes da segunda cartela."
+    },
+    {
+      "id": 9,
+      "title": "O preço",
+      "source": {
+        "sheet": 2,
+        "box": [
+          1180,
+          200,
+          1650,
+          460
+        ],
+        "center": [
+          0.5,
+          0.65
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 6,
+          "speaker": "Damião, em off",
+          "text": "Já perdi um braço. Quase perdi uma perna."
+        }
+      ],
+      "direction": "Novo enquadramento da arte existente: arma, peito e prótese esquerda. A fala sobre a perna não deve sugerir que ela foi amputada. Sem ferimentos gráficos ou piada visual.",
+      "sound": "Estalo discreto do mecanismo como intenção. Tom contido e duas pausas curtas."
+    },
+    {
+      "id": 10,
+      "title": "Por quem ele fica",
+      "source": {
+        "sheet": 1,
+        "box": [
+          76,
+          518,
+          527,
+          991
+        ],
+        "center": [
+          0.5,
+          0.0
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 5,
+          "speaker": "Damião, em off",
+          "text": "Mas esse povo ainda precisa de mim."
+        }
+      ],
+      "direction": "Damião no pátio com a arma baixa, atento ao acesso que vai defender. A comunidade fica fora de quadro neste plano; sua presença será concretizada no abrigo e na retirada. A prótese e o rosto exposto mantêm continuidade.",
+      "sound": "O pulso começa a se afirmar, sem transformar o gesto em pose triunfal."
+    },
+    {
+      "id": 11,
+      "title": "Reza e munição",
+      "source": {
+        "sheet": 2,
+        "box": [
+          15,
+          526,
+          577,
+          931
+        ],
+        "center": [
+          0.5,
+          0.1
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 6,
+          "speaker": "Damião, em off",
+          "text": "Minha mãe sempre mandava eu levar uma reza."
+        },
+        {
+          "seconds": 4,
+          "speaker": "Damião, em off",
+          "text": "Eu levo. Junto com a munição."
+        }
+      ],
+      "direction": "Detalhe da mão direita biológica junto ao terço e às bolsas de munição. Manter a mesma imagem nas duas cartelas. Não mostrar a mãe, retrato, túmulo ou lembrança que sugira se está viva. O passado está apenas na fala.",
+      "sound": "Intimidade na lembrança. Nos últimos 0,5s, sugerir entrada de chiado de rádio para preparar o padre; é direção sonora para a futura implementação."
+    },
+    {
+      "id": 12,
+      "title": "O padre chama",
+      "source": {
+        "sheet": 2,
+        "box": [
+          650,
+          487,
+          1150,
+          931
+        ],
+        "center": [
+          0.5,
+          0.0
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 7,
+          "speaker": "Comando, pelo rádio",
+          "text": "Damião… Damião, tá me ouvindo? Aqui é o padre."
+        },
+        {
+          "seconds": 4,
+          "speaker": "Comando, pelo rádio",
+          "text": "Ainda tem gente aqui dentro."
+        }
+      ],
+      "direction": "Comando no abrigo da capela, cabelo grisalho descoberto e colarinho romano. Civis ao fundo dão contexto ao pedido. Sem trocar a imagem entre as duas cartelas: primeiro contato, depois o que está em risco.",
+      "sound": "Rádio, passos e vozes ao fundo como intenção de direção. A prévia permanece sem áudio e não pressupõe nova dublagem."
+    },
+    {
+      "id": 13,
+      "title": "A saída dos fundos",
+      "new_art": true,
+      "source": {
+        "file": "retirada-fonte.png",
+        "center": [
+          0.5,
+          0.5
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 9,
+          "speaker": "Comando, pelo rádio",
+          "text": "A gente tá tirando todo mundo pelos fundos, mas eles já chegaram no pátio."
+        },
+        {
+          "seconds": 4,
+          "speaker": "Comando, pelo rádio",
+          "text": "Segura eles mais um pouco."
+        }
+      ],
+      "direction": "Novo plano que mostra a rota de retirada junto à parede lateral/traseira da capela. Os civis saem para a esquerda; uma quina de muro os separa dos insetos no pátio, à direita. A frase longa recebe nove segundos; o pedido final fica sozinho por mais quatro, sem trocar o desenho.",
+      "sound": "Pulso ganha urgência e o rádio continua sobre a nova imagem. Ainda não há tiro."
+    },
+    {
+      "id": 14,
+      "title": "Ninguém antes da hora",
+      "source": {
+        "sheet": 2,
+        "box": [
+          1173,
+          523,
+          1660,
+          931
+        ],
+        "center": [
+          0.5,
+          0.54
+        ]
+      },
+      "captions": [
+        {
+          "seconds": 6,
+          "speaker": "Damião",
+          "text": "Tô ouvindo. Hoje ninguém vai pro céu antes da hora."
+        }
+      ],
+      "direction": "Enquadramento elevado existente: Damião entre a retirada dos civis e os invasores. A resposta fecha a provocação inicial sobre o Diabo e transforma o desabafo numa ação de proteção. Encerrar antes do primeiro tiro; na montagem do boot, seguir para o menu.",
+      "sound": "Última frase firme, sem grito. Saída musical apenas no encerramento da sequência."
+    }
+  ]
+}

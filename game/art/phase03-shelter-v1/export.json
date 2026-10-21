@@ -1,0 +1,49 @@
+{
+  "id": "03",
+  "title": "Abrigo de manutenção",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    384,
+    384
+  ],
+  "camera_degrees": 60,
+  "tiles": 538,
+  "tile_bytes": 17216,
+  "palette_colors": 16,
+  "tilemap_bytes": 4608,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1330,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "da1e7f4db9284b0564117bd6c5aee96889f582c6177f34c6e31b42a1c24a31d0",
+  "design_sha256": "d1f44b41c718d16b6faad1b9b85b7a20523df7d94138bfa84e3e72e8623dc448",
+  "module_source_sha256": {
+    "../terrain-lava-v2/source/liquid.png": "a1e565e24bc8adb187b29eb1829968155b34f0a58f676037b35d8621ecf2abe0",
+    "../phase06a-rescue-v1/source/layout.png": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42"
+  },
+  "export_sha256": {
+    "tiles.bin": "ff661da4d6ff8b446751392037556839d5f69720cbb806877e474e6197b3236c",
+    "map.bin": "8e3f16d66293689ceeac6415b6afbf7532ac704395c698f128e5f8f9abdb9fa0",
+    "map-vdp.bin": "74d9b7c774f7246182c5915de77d660f8d76eab98860eba53e6d60465050b2f5",
+    "palette.bin": "968b6f0562ae97c5d8d22869deb1aa88cac1b71d166e24bbbe5a45f0b54a9797"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 925,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 95744,
+    "hazard_pixels": 31616,
+    "dry_area_fraction": 0.6698
+  },
+  "emulator_performance_measured": false
+}

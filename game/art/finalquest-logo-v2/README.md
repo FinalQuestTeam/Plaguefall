@@ -9,7 +9,7 @@ Arte reconstruída com **image_gen integrado**, a partir da [referência origina
 - [PNG nativo192×128](logo-native.png) e [ampliado3×](logo-3x.png).
 - [Dimensões e hashes](export.json).
 - [Abertura completa gravada no emulador](../intro-monologo-v1/abertura.mp4).
-- [ROM](../../out/release/rom.bin).
+- [ROM](../../out/release/Plaguefall.bin).
 
 O desenho ocupa168×120 dentro de uma moldura192×128, centralizada em320×224. São384 tiles temporários, em PAL2. O splash usa0,2s para entrar,1s de exibição e0,2s para sair, em50/60Hz, além da carga da arte. A/B/C/START continuam permitindo pular; não fica um fade pendente para a próxima tela.
 

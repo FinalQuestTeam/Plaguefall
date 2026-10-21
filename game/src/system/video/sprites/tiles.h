@@ -6,8 +6,7 @@
 // pelos módulos que desenham (sprites, HUD, elementos, itens, inimigos).
 // Mantido separado de core/game.h por ser um concern de vídeo/gráficos.
 
-// Os sprites dos inimigos (insetos) e do jogador (mech) NÃO ficam aqui: são
-// gerados por direção nas regiões ENEMY_ROT / BOSS_ROT / CHARS (abaixo). Estes
+// Os frames dos insetos e de Damião são carregados nas reservas abaixo. Estes
 // tiles base são só os elementos fixos (projéteis, cenário, itens, HUD, overlays).
 
 // projéteis e cenário (8x8, 1 tile cada)
@@ -72,5 +71,9 @@
 #define BOSS_ROT_BASE   (ENEMY_ROT_BASE + ENEMY_ROT_COUNT)
 #define BOSS_ROT_COUNT  72 // scratch only: two 48x48 story portraits
 #define BOSS_DIR_TILES  36  // (48/8)² tiles por direção
+
+// Keep the established VRAM layout while removing the retired mech renderer.
+#define HERO_TILE_BASE (BOSS_ROT_BASE + BOSS_ROT_COUNT)
+#define HERO_RESERVED_TILES 48
 
 #endif // TILES_H

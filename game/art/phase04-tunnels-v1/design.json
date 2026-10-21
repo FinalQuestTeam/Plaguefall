@@ -1,0 +1,484 @@
+{
+  "id": "04",
+  "chapter": 4,
+  "node": 5,
+  "title": "Túneis de manutenção",
+  "width": 512,
+  "height": 288,
+  "camera_degrees": 60,
+  "music": "Breu",
+  "narrative": "Damião avança pelos túneis de manutenção para abrir o caminho dos refugiados. Escotilhas abertas e marcas de ferramentas revelam os últimos reparos feitos antes do abandono.",
+  "objective": {
+    "kind": "kill",
+    "target": 16
+  },
+  "next": [
+    "05"
+  ],
+  "start": [
+    48,
+    176
+  ],
+  "exit": [
+    464,
+    176
+  ],
+  "walkable": [
+    16,
+    80,
+    480,
+    192
+  ],
+  "solids": [],
+  "hazards": [
+    {
+      "kind": "mud",
+      "rect": [
+        432,
+        80,
+        48,
+        24
+      ]
+    },
+    {
+      "kind": "mud",
+      "rect": [
+        16,
+        232,
+        88,
+        40
+      ]
+    }
+  ],
+  "story_elements": [
+    {
+      "name": "Tubulações e válvulas de controle",
+      "rect": [
+        32,
+        0,
+        432,
+        80
+      ],
+      "meaning": "O corredor era uma artéria de serviço da região, mantida manualmente."
+    },
+    {
+      "name": "Escotilha aberta e ferramentas",
+      "rect": [
+        208,
+        32,
+        64,
+        40
+      ],
+      "meaning": "Alguém tentou manter a passagem funcionando antes de fugir."
+    },
+    {
+      "name": "Trapo vermelho na válvula",
+      "rect": [
+        360,
+        0,
+        48,
+        80
+      ],
+      "meaning": "Uma marca humana identifica uma peça que ainda pode ser operada."
+    },
+    {
+      "name": "Lama nos extremos",
+      "rect": [
+        416,
+        80,
+        72,
+        32
+      ],
+      "meaning": "A infiltração avança pelas bordas, mas o eixo central continua transitável."
+    }
+  ],
+  "source": "source/layout.png",
+  "modules": [
+    {
+      "name": "concreto de circulação repetível",
+      "source": [
+        360,
+        208,
+        16,
+        16
+      ],
+      "dest": [
+        0,
+        0,
+        512,
+        288
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "parede com tubulação de serviço",
+      "source": [
+        80,
+        0,
+        64,
+        80
+      ],
+      "dest": [
+        16,
+        0,
+        480,
+        80
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "tubulação azul de entrada",
+      "source": [
+        32,
+        0,
+        48,
+        80
+      ],
+      "dest": [
+        32,
+        0,
+        48,
+        80
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "escotilha aberta e ferramenta",
+      "source": [
+        208,
+        32,
+        64,
+        40
+      ],
+      "dest": [
+        208,
+        32,
+        64,
+        40
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "válvula marcada pelo pano vermelho",
+      "source": [
+        360,
+        0,
+        48,
+        80
+      ],
+      "dest": [
+        360,
+        0,
+        48,
+        80
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "armário de ferramentas",
+      "source": [
+        288,
+        32,
+        32,
+        40
+      ],
+      "dest": [
+        288,
+        32,
+        32,
+        40
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "luminária oeste",
+      "source": [
+        176,
+        0,
+        32,
+        64
+      ],
+      "dest": [
+        176,
+        0,
+        32,
+        64
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "luminária leste",
+      "source": [
+        304,
+        0,
+        32,
+        64
+      ],
+      "dest": [
+        304,
+        0,
+        32,
+        64
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "lama do nordeste",
+      "source": [
+        416,
+        72,
+        72,
+        32
+      ],
+      "dest": [
+        416,
+        80,
+        72,
+        32
+      ],
+      "role": "hazard"
+    },
+    {
+      "name": "lama do sudoeste",
+      "source": [
+        16,
+        208,
+        96,
+        64
+      ],
+      "dest": [
+        16,
+        208,
+        96,
+        64
+      ],
+      "role": "hazard"
+    },
+    {
+      "name": "muro esquerdo contínuo",
+      "source": [
+        0,
+        64,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        16,
+        288
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "muro direito contínuo",
+      "source": [
+        496,
+        64,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        0,
+        16,
+        288
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "muro inferior contínuo",
+      "source": [
+        64,
+        272,
+        32,
+        16
+      ],
+      "dest": [
+        0,
+        272,
+        512,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "soleira de entrada",
+      "source": [
+        0,
+        120,
+        24,
+        40
+      ],
+      "dest": [
+        0,
+        152,
+        24,
+        40
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "soleira de saída",
+      "source": [
+        488,
+        120,
+        24,
+        40
+      ],
+      "dest": [
+        488,
+        152,
+        24,
+        40
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto superior esquerdo",
+      "source": [
+        0,
+        0,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto superior direito",
+      "source": [
+        496,
+        0,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        0,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto inferior esquerdo",
+      "source": [
+        0,
+        256,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        256,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "canto inferior direito",
+      "source": [
+        496,
+        256,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        256,
+        16,
+        32
+      ],
+      "role": "wall"
+    }
+  ],
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      36,
+      36,
+      73
+    ],
+    [
+      36,
+      73,
+      109
+    ],
+    [
+      73,
+      109,
+      146
+    ],
+    [
+      73,
+      73,
+      73
+    ],
+    [
+      109,
+      109,
+      109
+    ],
+    [
+      146,
+      146,
+      146
+    ],
+    [
+      109,
+      73,
+      36
+    ],
+    [
+      182,
+      182,
+      182
+    ],
+    [
+      182,
+      73,
+      36
+    ],
+    [
+      255,
+      146,
+      36
+    ],
+    [
+      219,
+      182,
+      109
+    ],
+    [
+      109,
+      146,
+      146
+    ],
+    [
+      219,
+      219,
+      182
+    ],
+    [
+      255,
+      255,
+      219
+    ]
+  ]
+}

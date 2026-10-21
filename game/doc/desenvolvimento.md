@@ -20,16 +20,18 @@ make -C game -j4 OUT_DIR_LIB="$PWD/SGDK/out/release"
 python3 game/tools/check.py
 ```
 
-A ROM principal é `game/out/release/rom.bin`. Somente essa ROM de distribuição é versionada em `game/out/`. Dependências, objetos, símbolos e compilações de variantes são locais e ignorados. `make -C game clean` limpa o build; reconstrua a ROM antes de versionar uma atualização.
+O arquivo para abrir no emulador é `game/out/release/Plaguefall.bin`. O build também entrega `Plaguefall.png` (arte existente do menu) e `Plaguefall.json` (identificação e hashes). O SGDK continua gerando `game/out/release/rom.bin`, idêntico byte a byte ao arquivo nomeado, para compatibilidade com os testes. Somente `Plaguefall.bin` é versionada como ROM em `game/out/`, acompanhada da capa PNG e dos metadados JSON; `rom.bin` é uma saída local ignorada. Dependências, objetos, símbolos e compilações de variantes são locais e ignorados. `make -C game clean` limpa o build; reconstrua a ROM antes de versionar uma atualização.
 
 ## Testes
+
+`python3 game/tools/test_player_aim.py` verifica o `player.c` de produção com ASan/UBSan, incluindo a parada nas quatro diagonais, soltura dos eixos em ordens diferentes, autofire parado e mudanças intencionais de mira. `arch -x86_64 /usr/bin/python3 game/tools/test_player_aim_emulator.py` confere a ROM real no sandbox, os dois frames de idle na VRAM e a velocidade diagonal dos projéteis; repita com `--pal`. Os testes de emulador não escrevem na RAM do jogo.
 
 `game/tools/check.py` verifica as quatro partituras, o catálogo e a partitura contínua da abertura. Compila e executa os testes do motor real com ASan/UBSan para os três perfis iniciais e para a abertura. Todos os executáveis temporários ficam fora do repositório e são removidos ao terminar.
 
 Os testes de integração usam o Genesis Plus GX instalado:
 
 ```sh
-arch -x86_64 /usr/bin/python3 game/art/intro-monologo-v1/verify_emulator.py \
+arch -x86_64 /usr/bin/python3 game/art/intro-monologo-v2/verify_emulator.py \
   --rom game/out/release/rom.bin --symbols game/out/release/rom.out \
   --output /private/tmp/plaguefall-intro-ntsc \
   --opening-audio /private/tmp/plaguefall-intro-ntsc/opening.wav
@@ -47,8 +49,20 @@ A [bancada de áudio](../tools/music-bench/README.md) é opcional e compartilha 
 ```sh
 arch -x86_64 /Applications/RetroArch.app/Contents/MacOS/RetroArch \
   -L "$HOME/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib" \
-  game/out/release/rom.bin
+  game/out/release/Plaguefall.bin
 ```
+
+## Nome e capa no OpenEmu
+
+O cabeçalho doméstico e internacional da ROM já identifica `PLAGUEFALL`. O nome `rom` vinha do arquivo padrão do SGDK. `release` e `debug` agora executam `tools/package_rom.py` depois de `padROM`, publicando o nome do jogo sem modificar o conteúdo compilado. Confira com `python3 game/tools/package_rom.py --check`.
+
+O OpenEmu guarda nome e imagem na própria biblioteca e tenta obter metadados no OpenVGDB. Uma nova versão pode mudar o hash da ROM, e um jogo em desenvolvimento pode não ser reconhecido nessa base. Uma capa ao lado do `.bin` não é importada automaticamente. Importe `Plaguefall.bin`; na biblioteca, clique com o botão direito no jogo → **Adicionar Arte de Capa…** → selecione `Plaguefall.png`. Entradas antigas podem ser corrigidas em **Renomear Jogo**. [Guia oficial de capas](https://github.com/OpenEmu/OpenEmu/wiki/User-guide:-Box-art).
+
+O OpenEmu pode copiar ROMs para sua biblioteca. Recompilar o projeto não atualiza uma cópia já importada: para testar o build atual, abra o arquivo nomeado recém-gerado. Essa publicação não modifica automaticamente ROMs, saves ou preferências do emulador.
+
+## Recursos substituídos
+
+A [limpeza do runtime](../art/runtime-cleanup-v1/README.md) retirou os antigos mechs, os demais desenhos de insetos substituídos, seis ícones sem uso e a trilha XGM obsoleta. Dinorah usa somente os dez frames de repouso da galeria. Fontes e dados idênticos de cenário são compartilhados; `install_stage_art.py --check` verifica as referências e os pixels aprovados.
 
 ## Referências
 

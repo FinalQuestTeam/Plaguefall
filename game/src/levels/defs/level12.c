@@ -15,5 +15,6 @@ const LevelDef LEVEL12_def =
     .mud          = COMBO_MUD,
     .mudCount     = LAYOUT_RECTS,
     .floor        = FLOOR_MIX,
+    .musicTrack   = MUSIC_TRACK_BAIAO,
     LVL_ROSTER(roster),
 };

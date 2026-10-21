@@ -28,7 +28,8 @@ static const u8 CANON[8] = { 0, 1, 2, 3, 4, 3, 2, 1 };
 
 static void loadPreview(u8 which)
 {
-    const u32 *frames = (const u32 *)(which ? dinorah_frames : heroi_frames);
+    const u32 *frames = (const u32 *)(which ? dinorah_idle : heroi_frames);
+    const u16 stride = which ? ACTOR_IDLE_FRAMES : ACTOR_VIEW_FRAMES;
     VDP_resetSprites();
     VDP_updateSprites(1, DMA);
     ENEMYGFX_reset();
@@ -36,7 +37,7 @@ static void loadPreview(u8 which)
     PAL_setColors(PAL2 * 16, (const u16 *)heroi_palette, 16, DMA);
     for (u8 pose = 0; pose < ACTOR_IDLE_FRAMES; pose++)
         for (u8 dir = 0; dir < PREVIEW_VIEW_COUNT; dir++)
-            VDP_loadTileData(frames + (dir * ACTOR_VIEW_FRAMES + pose) * 192,
+            VDP_loadTileData(frames + (dir * stride + pose) * 192,
                 TILE_USER_INDEX + ENEMY_ROT_BASE + pose * PREVIEW_POSE_TILES + dir * PREVIEW_FRAME_TILES,
                 PREVIEW_FRAME_TILES, DMA);
 }

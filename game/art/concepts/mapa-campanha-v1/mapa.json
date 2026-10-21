@@ -1,0 +1,234 @@
+{
+  "current": "9",
+  "next": "10A",
+  "visited": [
+    "1",
+    "2B",
+    "3",
+    "4",
+    "5",
+    "6A",
+    "7",
+    "8",
+    "9"
+  ],
+  "edges": [
+    [
+      "1",
+      "2A"
+    ],
+    [
+      "1",
+      "2B"
+    ],
+    [
+      "2A",
+      "3"
+    ],
+    [
+      "2B",
+      "3"
+    ],
+    [
+      "3",
+      "4"
+    ],
+    [
+      "4",
+      "5"
+    ],
+    [
+      "5",
+      "6A"
+    ],
+    [
+      "5",
+      "6B"
+    ],
+    [
+      "6A",
+      "7"
+    ],
+    [
+      "6B",
+      "7"
+    ],
+    [
+      "7",
+      "8"
+    ],
+    [
+      "8",
+      "9"
+    ],
+    [
+      "9",
+      "10A"
+    ],
+    [
+      "9",
+      "10B"
+    ],
+    [
+      "10A",
+      "11"
+    ],
+    [
+      "10B",
+      "11"
+    ],
+    [
+      "11",
+      "12"
+    ],
+    [
+      "12",
+      "13A"
+    ],
+    [
+      "12",
+      "13B"
+    ],
+    [
+      "13A",
+      "14"
+    ],
+    [
+      "13B",
+      "14"
+    ],
+    [
+      "14",
+      "15"
+    ],
+    [
+      "15",
+      "16"
+    ]
+  ],
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Pátio da igreja",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "2A",
+      "name": "Rua de serviço",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "2B",
+      "name": "Baixio da igreja",
+      "col": 1,
+      "row": 2
+    },
+    {
+      "id": "3",
+      "name": "Abrigo de manutenção",
+      "col": 2,
+      "row": 1
+    },
+    {
+      "id": "4",
+      "name": "Túneis de manutenção",
+      "col": 3,
+      "row": 1
+    },
+    {
+      "id": "5",
+      "name": "Sinalizador na Santa",
+      "col": 4,
+      "row": 1
+    },
+    {
+      "id": "6A",
+      "name": "Perímetro do resgate",
+      "col": 5,
+      "row": 0
+    },
+    {
+      "id": "6B",
+      "name": "Retirada por terra",
+      "col": 5,
+      "row": 2
+    },
+    {
+      "id": "7",
+      "name": "Rede de antenas",
+      "col": 6,
+      "row": 1
+    },
+    {
+      "id": "8",
+      "name": "Fornalha",
+      "col": 7,
+      "row": 1
+    },
+    {
+      "id": "9",
+      "name": "Alfândega",
+      "col": 8,
+      "row": 1
+    },
+    {
+      "id": "10A",
+      "name": "Acesso dos técnicos",
+      "col": 9,
+      "row": 0
+    },
+    {
+      "id": "10B",
+      "name": "Dreno térmico",
+      "col": 9,
+      "row": 2
+    },
+    {
+      "id": "11",
+      "name": "Depósito de demolição",
+      "col": 10,
+      "row": 1
+    },
+    {
+      "id": "12",
+      "name": "Comporta de carga",
+      "col": 11,
+      "row": 1
+    },
+    {
+      "id": "13A",
+      "name": "Linha quente",
+      "col": 12,
+      "row": 0
+    },
+    {
+      "id": "13B",
+      "name": "Decantação",
+      "col": 12,
+      "row": 2
+    },
+    {
+      "id": "14",
+      "name": "Pátio dos enxames",
+      "col": 13,
+      "row": 1
+    },
+    {
+      "id": "15",
+      "name": "Galerias dos ninhos",
+      "col": 14,
+      "row": 1
+    },
+    {
+      "id": "16",
+      "name": "Câmara do Escorpião",
+      "col": 15,
+      "row": 1
+    }
+  ],
+  "status": "concept_only",
+  "gameImplemented": false,
+  "generation": "integrated image_gen"
+}

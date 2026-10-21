@@ -1,0 +1,597 @@
+{
+  "generated_by": "game/tools/install_stage_art.py",
+  "generator_sha256": "31e48f6e6a1d3c8993eb6a36e987a6aa9fb5735c57a90f841a7769266fe6dc46",
+  "approved_base_pixel_identical": true,
+  "global_palettes_changed": false,
+  "glow_variant_order": [
+    "A",
+    "B"
+  ],
+  "runtime_glow_sequence": [
+    "base",
+    "A",
+    "B",
+    "A"
+  ],
+  "runtime_upload_limit_bytes_per_frame": 128,
+  "runtime_upload_limit_tiles_per_frame": 4,
+  "shared_resource_bytes_saved": 4768,
+  "stages": [
+    {
+      "id": "02A",
+      "folder": "phase02a-service-v1",
+      "world": [
+        512,
+        320
+      ],
+      "approved_source_sha256": "20437eaf3990438266dfa2f35cd180ffa68f093565127f3c2ac10428bf0c5e6c",
+      "module_source_sha256": {},
+      "design_sha256": "d207cf8add4e46d31d50614881524cb948a5c9ce7d68bd84f7cd91a7140eb8ea",
+      "art_export_sha256": "91bcb91e6577a95958d540ee748ecf08a3ff15c2154fbb8d56f542635813ed3a",
+      "approved_base_sha256": {
+        "tiles.bin": "cddfa4e49577691da4ed71a5a23790d9c80f79e593ca59ec087ef3bd1db74c29",
+        "map-vdp.bin": "52be2dc8940bb7d1c322f7630e7d214f7afff52a0f27996f6f1008726ab45457",
+        "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798"
+      },
+      "installed_sha256": {
+        "tiles.bin": "cddfa4e49577691da4ed71a5a23790d9c80f79e593ca59ec087ef3bd1db74c29",
+        "map.bin": "52be2dc8940bb7d1c322f7630e7d214f7afff52a0f27996f6f1008726ab45457",
+        "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798"
+      },
+      "runtime_symbols": {
+        "tiles": "stage02a_tiles",
+        "map": "stage02a_map",
+        "palette": "courtyard_palette"
+      },
+      "base_decoded_pixel_sha256": "d5cf45f677dae9c22c0fb973e1cbc4a5d3b6154fc81c343fea1df05d786d4fc4",
+      "installed_decoded_pixel_sha256": "d5cf45f677dae9c22c0fb973e1cbc4a5d3b6154fc81c343fea1df05d786d4fc4",
+      "approved_base_pixel_identical": true,
+      "base_tile_count": 443,
+      "tile_count": 443,
+      "tile_bytes": 14176,
+      "tile_budget": 640,
+      "vram_end_with_hud": 1235,
+      "glow_start": 0,
+      "glow_count": 0,
+      "glow": {
+        "variants": 0,
+        "shared_tiles_duplicated": 0,
+        "changed_pixels_per_variant": []
+      },
+      "scene_rows": 40,
+      "map_stride": 64,
+      "npc_in_map": false,
+      "solids": [],
+      "hazards": []
+    },
+    {
+      "id": "02B",
+      "folder": "phase02b-detour-v1",
+      "world": [
+        512,
+        320
+      ],
+      "approved_source_sha256": "f13857868386063065e35e1d5343a232ad04447d2e90d9283518a62f061d6ac4",
+      "module_source_sha256": {},
+      "design_sha256": "a3f79b4673d2dec048d54964ddfba7423f08adcb8096cd62c9c45daabc9f89ce",
+      "art_export_sha256": "c2e83165a9f8c96718901a3a66ee36785ab688b639752c096cc9ccc5fd3308cd",
+      "approved_base_sha256": {
+        "tiles.bin": "57cb12661d69af6bee149b243a72c3fd2fef9998062be8dd79399ed0abdfde77",
+        "map-vdp.bin": "395e85c2acaf230dbf4c71fed11a39c3c0f5b4eee0110e632bb9d1b53e28a4be",
+        "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798"
+      },
+      "installed_sha256": {
+        "tiles.bin": "57cb12661d69af6bee149b243a72c3fd2fef9998062be8dd79399ed0abdfde77",
+        "map.bin": "395e85c2acaf230dbf4c71fed11a39c3c0f5b4eee0110e632bb9d1b53e28a4be",
+        "palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798"
+      },
+      "runtime_symbols": {
+        "tiles": "stage02b_tiles",
+        "map": "stage02b_map",
+        "palette": "courtyard_palette"
+      },
+      "base_decoded_pixel_sha256": "a2e50803290c2f5259de12be9d6f0ab7114a931ccd947e284f30c91150f1b47c",
+      "installed_decoded_pixel_sha256": "a2e50803290c2f5259de12be9d6f0ab7114a931ccd947e284f30c91150f1b47c",
+      "approved_base_pixel_identical": true,
+      "base_tile_count": 603,
+      "tile_count": 603,
+      "tile_bytes": 19296,
+      "tile_budget": 640,
+      "vram_end_with_hud": 1395,
+      "glow_start": 0,
+      "glow_count": 0,
+      "glow": {
+        "variants": 0,
+        "shared_tiles_duplicated": 0,
+        "changed_pixels_per_variant": []
+      },
+      "scene_rows": 40,
+      "map_stride": 64,
+      "npc_in_map": false,
+      "solids": [],
+      "hazards": [
+        {
+          "kind": "mud",
+          "rect": [
+            400,
+            96,
+            96,
+            32
+          ]
+        },
+        {
+          "kind": "mud",
+          "rect": [
+            16,
+            248,
+            104,
+            56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "folder": "phase03-shelter-v1",
+      "world": [
+        384,
+        384
+      ],
+      "approved_source_sha256": "da1e7f4db9284b0564117bd6c5aee96889f582c6177f34c6e31b42a1c24a31d0",
+      "module_source_sha256": {
+        "../terrain-lava-v2/source/liquid.png": "a1e565e24bc8adb187b29eb1829968155b34f0a58f676037b35d8621ecf2abe0",
+        "../phase06a-rescue-v1/source/layout.png": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42"
+      },
+      "design_sha256": "d1f44b41c718d16b6faad1b9b85b7a20523df7d94138bfa84e3e72e8623dc448",
+      "art_export_sha256": "4558ed8279a1aceb230410162bd0a1220784fefeddfb03e30c58191f2f163fa6",
+      "approved_base_sha256": {
+        "tiles.bin": "ff661da4d6ff8b446751392037556839d5f69720cbb806877e474e6197b3236c",
+        "map-vdp.bin": "74d9b7c774f7246182c5915de77d660f8d76eab98860eba53e6d60465050b2f5",
+        "palette.bin": "968b6f0562ae97c5d8d22869deb1aa88cac1b71d166e24bbbe5a45f0b54a9797"
+      },
+      "installed_sha256": {
+        "tiles.bin": "c8caf6a0190ccd707087f0c071b666e556b56cbebc9b56430b65b46f22813bca",
+        "map.bin": "94d12cb9f423f9a7b2e797cd667898110427cd3a6c2d683679ed1299cd9072ec",
+        "palette.bin": "968b6f0562ae97c5d8d22869deb1aa88cac1b71d166e24bbbe5a45f0b54a9797",
+        "glow.bin": "b2962096508ae1fbcb9c783ade60a9f96bf27abf42981b5ce84eb73a2ed5b6b0"
+      },
+      "runtime_symbols": {
+        "tiles": "stage03_tiles",
+        "map": "stage03_map",
+        "palette": "stage03_palette",
+        "glow": "stage03_glow"
+      },
+      "base_decoded_pixel_sha256": "aeffa9a525ad0b7588d6ad54b1d69c23f786f52af52dacf7052800d2a7cc6a26",
+      "installed_decoded_pixel_sha256": "aeffa9a525ad0b7588d6ad54b1d69c23f786f52af52dacf7052800d2a7cc6a26",
+      "approved_base_pixel_identical": true,
+      "base_tile_count": 538,
+      "tile_count": 538,
+      "tile_bytes": 17216,
+      "tile_budget": 640,
+      "vram_end_with_hud": 1330,
+      "glow_start": 464,
+      "glow_count": 74,
+      "glow": {
+        "variants": 2,
+        "variant_order": [
+          "A",
+          "B"
+        ],
+        "runtime_sequence": [
+          "base",
+          "A",
+          "B",
+          "A"
+        ],
+        "shared_tiles_duplicated": 0,
+        "highlight_index": 11,
+        "brighter_index": 12,
+        "highlight_rgb3": [
+          7,
+          4,
+          1
+        ],
+        "brighter_rgb3": [
+          6,
+          5,
+          3
+        ],
+        "eligible_highlight_pixels": 1704,
+        "changed_pixels_per_variant": [
+          213,
+          213
+        ],
+        "maximum_highlight_fraction": "1/8",
+        "variant_bytes": 2368,
+        "private_lava_tiles_only": true,
+        "global_palette_changed": false
+      },
+      "scene_rows": 48,
+      "map_stride": 64,
+      "npc_in_map": false,
+      "solids": [],
+      "hazards": [
+        {
+          "name": "Lava noroeste",
+          "kind": "thermal",
+          "rect": [
+            16,
+            96,
+            152,
+            104
+          ]
+        },
+        {
+          "name": "Lava sudeste",
+          "kind": "thermal",
+          "rect": [
+            216,
+            264,
+            152,
+            104
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "folder": "phase04-tunnels-v1",
+      "world": [
+        512,
+        288
+      ],
+      "approved_source_sha256": "06f8cccea86d26fb3419d10be482ada5bc7b56fa36b9bddd18f12a93821cb5bc",
+      "module_source_sha256": {},
+      "design_sha256": "809c4116e178e84b91ddcee0a639ad58d5eed2f6f6437d28a8f2e6cf34d61200",
+      "art_export_sha256": "74f14609f5790fd5b989f878d075b51d24d8f2e724adcfa10dbf02d499bd1d7c",
+      "approved_base_sha256": {
+        "tiles.bin": "0c9b0d259fef96b21f560ccf56cddd62cb4628d92462981211136d49f104e11e",
+        "map-vdp.bin": "c43e478a8f9eaa6ba8c5f7fb7c228fbe420f28df7c89a2af3b711c80c8c28568",
+        "palette.bin": "1200494b471d4ba14ed2a9a82f60615a8224e4244d35edb17f1bf252b6e7b331"
+      },
+      "installed_sha256": {
+        "tiles.bin": "0c9b0d259fef96b21f560ccf56cddd62cb4628d92462981211136d49f104e11e",
+        "map.bin": "c43e478a8f9eaa6ba8c5f7fb7c228fbe420f28df7c89a2af3b711c80c8c28568",
+        "palette.bin": "1200494b471d4ba14ed2a9a82f60615a8224e4244d35edb17f1bf252b6e7b331"
+      },
+      "runtime_symbols": {
+        "tiles": "stage04_tiles",
+        "map": "stage04_map",
+        "palette": "stage04_palette"
+      },
+      "base_decoded_pixel_sha256": "eff384fa3e2266fab63031d3801d32162ba56274e96ccba02652ceb790ea9e70",
+      "installed_decoded_pixel_sha256": "eff384fa3e2266fab63031d3801d32162ba56274e96ccba02652ceb790ea9e70",
+      "approved_base_pixel_identical": true,
+      "base_tile_count": 537,
+      "tile_count": 537,
+      "tile_bytes": 17184,
+      "tile_budget": 640,
+      "vram_end_with_hud": 1329,
+      "glow_start": 0,
+      "glow_count": 0,
+      "glow": {
+        "variants": 0,
+        "shared_tiles_duplicated": 0,
+        "changed_pixels_per_variant": []
+      },
+      "scene_rows": 36,
+      "map_stride": 64,
+      "npc_in_map": false,
+      "solids": [],
+      "hazards": [
+        {
+          "kind": "mud",
+          "rect": [
+            432,
+            80,
+            48,
+            24
+          ]
+        },
+        {
+          "kind": "mud",
+          "rect": [
+            16,
+            232,
+            88,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "folder": "phase05-beacon-v1",
+      "world": [
+        384,
+        384
+      ],
+      "approved_source_sha256": "835353cda994cfcd820cb95edaac27726f6b0a9632a23d9959ea84446022d826",
+      "module_source_sha256": {},
+      "design_sha256": "04e2041ecb691a6bb1f4220223d9ce0d6b473a662843d3667840a6980cfa18f2",
+      "art_export_sha256": "35b32f1464644da4bcc687d6f57fd32f53faaa3b67c1ee71bec47c18093226bc",
+      "approved_base_sha256": {
+        "tiles.bin": "5495a81dbf71992874a5bd5d2a08e961eaf92ec3bcb3a7ed0ec2f535766adbd6",
+        "map-vdp.bin": "6c4c501273bf53f91ee4597e108cc022191dd4c15186e1ca34c70ad2998fb42e",
+        "palette.bin": "b60d3256046996c949f354b03b7df2e019e87e73e9e50a13f3e4b9d7e5e10fc9"
+      },
+      "installed_sha256": {
+        "tiles.bin": "5495a81dbf71992874a5bd5d2a08e961eaf92ec3bcb3a7ed0ec2f535766adbd6",
+        "map.bin": "6c4c501273bf53f91ee4597e108cc022191dd4c15186e1ca34c70ad2998fb42e",
+        "palette.bin": "b60d3256046996c949f354b03b7df2e019e87e73e9e50a13f3e4b9d7e5e10fc9"
+      },
+      "runtime_symbols": {
+        "tiles": "stage05_tiles",
+        "map": "stage05_map",
+        "palette": "stage05_palette"
+      },
+      "base_decoded_pixel_sha256": "7d95baa07db6a71d52964e71d9d4d6d89890873e4afceb2389fb095759aad746",
+      "installed_decoded_pixel_sha256": "7d95baa07db6a71d52964e71d9d4d6d89890873e4afceb2389fb095759aad746",
+      "approved_base_pixel_identical": true,
+      "base_tile_count": 551,
+      "tile_count": 551,
+      "tile_bytes": 17632,
+      "tile_budget": 640,
+      "vram_end_with_hud": 1343,
+      "glow_start": 0,
+      "glow_count": 0,
+      "glow": {
+        "variants": 0,
+        "shared_tiles_duplicated": 0,
+        "changed_pixels_per_variant": []
+      },
+      "scene_rows": 48,
+      "map_stride": 64,
+      "npc_in_map": true,
+      "solids": [
+        {
+          "name": "Base visível da Santa",
+          "rect": [
+            176,
+            208,
+            40,
+            16
+          ],
+          "blocks_shots": false
+        }
+      ],
+      "hazards": []
+    },
+    {
+      "id": "06A",
+      "folder": "phase06a-rescue-v1",
+      "world": [
+        512,
+        320
+      ],
+      "approved_source_sha256": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42",
+      "module_source_sha256": {
+        "../terrain-lava-v2/source/liquid.png": "a1e565e24bc8adb187b29eb1829968155b34f0a58f676037b35d8621ecf2abe0",
+        "../phase06a-rescue-v1/source/layout.png": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42"
+      },
+      "design_sha256": "7a0480705f94fa94d3a0a15eea3cc0787eed2eb329c49856e33228244d0fab30",
+      "art_export_sha256": "136f6ea1d4a3a581bc297a1b6cd1bce863d5a909f5788b3bb83d7b5224fd9af8",
+      "approved_base_sha256": {
+        "tiles.bin": "f7c4f41401ea5ad18b6d06fba37ba6a24c347b27230cbefc86b18f352a52b613",
+        "map-vdp.bin": "e0fb50540f3130d6f47a32fbb8484d4a0ed2085cd589de6dc791c5f27ca486d2",
+        "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676"
+      },
+      "installed_sha256": {
+        "tiles.bin": "c6af7714a2d146ed937010c0276989be9e60d9373255a2d756c7c2549f4784b5",
+        "map.bin": "5c644149bf7def366ad217847e517d59f69ccfb64aa879b4e5e5b925647e0687",
+        "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676",
+        "glow.bin": "ff7ebe2d60dc30be7ff0c603e88eb3b585f6beada4c126b488d360319e543230"
+      },
+      "runtime_symbols": {
+        "tiles": "stage06a_tiles",
+        "map": "stage06a_map",
+        "palette": "stage06a_palette",
+        "glow": "stage06a_glow"
+      },
+      "base_decoded_pixel_sha256": "fa8e8199e43f9e79c58db94b0efe0a2c16f9e926f1ab8b74d9232596b1abab77",
+      "installed_decoded_pixel_sha256": "fa8e8199e43f9e79c58db94b0efe0a2c16f9e926f1ab8b74d9232596b1abab77",
+      "approved_base_pixel_identical": true,
+      "base_tile_count": 508,
+      "tile_count": 508,
+      "tile_bytes": 16256,
+      "tile_budget": 640,
+      "vram_end_with_hud": 1300,
+      "glow_start": 435,
+      "glow_count": 73,
+      "glow": {
+        "variants": 2,
+        "variant_order": [
+          "A",
+          "B"
+        ],
+        "runtime_sequence": [
+          "base",
+          "A",
+          "B",
+          "A"
+        ],
+        "shared_tiles_duplicated": 0,
+        "highlight_index": 11,
+        "brighter_index": 10,
+        "highlight_rgb3": [
+          7,
+          4,
+          1
+        ],
+        "brighter_rgb3": [
+          6,
+          5,
+          3
+        ],
+        "eligible_highlight_pixels": 1726,
+        "changed_pixels_per_variant": [
+          215,
+          215
+        ],
+        "maximum_highlight_fraction": "1/8",
+        "variant_bytes": 2336,
+        "private_lava_tiles_only": true,
+        "global_palette_changed": false
+      },
+      "scene_rows": 40,
+      "map_stride": 64,
+      "npc_in_map": false,
+      "solids": [],
+      "hazards": [
+        {
+          "name": "Lava noroeste",
+          "kind": "thermal",
+          "rect": [
+            16,
+            96,
+            184,
+            96
+          ]
+        },
+        {
+          "name": "Lava sudeste",
+          "kind": "thermal",
+          "rect": [
+            296,
+            208,
+            200,
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06B",
+      "folder": "phase06b-withdrawal-v1",
+      "world": [
+        512,
+        320
+      ],
+      "approved_source_sha256": "92708612223da7a80bc03e1ce1948c2afeb5e0ab6820e93dbdefab36cebffdc9",
+      "module_source_sha256": {
+        "../terrain-lava-v2/source/liquid.png": "a1e565e24bc8adb187b29eb1829968155b34f0a58f676037b35d8621ecf2abe0",
+        "../phase06a-rescue-v1/source/layout.png": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42"
+      },
+      "design_sha256": "ff2b1682e03b41b32b04d58c8e6b372dca395bbbd45737020e81cb44fdf6a268",
+      "art_export_sha256": "c3864d4b85623bc896d2b5c80771259e3404c36b8d12099e4bd5755172701c38",
+      "approved_base_sha256": {
+        "tiles.bin": "a11a722c7c48138e98c78132da239fbd3893168c8088ecd069f21ca8ff601d83",
+        "map-vdp.bin": "54e80c7e7e738aac28201772e446ecd184fa24e050f9c3aeaae5dd8a11484c50",
+        "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676"
+      },
+      "installed_sha256": {
+        "tiles.bin": "d647d2a49d2e59233e008be41f126ba5d1ce0e69b3cc72d2b8ac2f5545409958",
+        "map.bin": "93ff6b6c91bb1d0ab850c944e367d43ad14dab8c4ab771c25850d353bb054d24",
+        "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676",
+        "glow.bin": "ff7ebe2d60dc30be7ff0c603e88eb3b585f6beada4c126b488d360319e543230"
+      },
+      "runtime_symbols": {
+        "tiles": "stage06b_tiles",
+        "map": "stage06b_map",
+        "palette": "stage06a_palette",
+        "glow": "stage06a_glow"
+      },
+      "base_decoded_pixel_sha256": "9dcc207318af3e80f58c8e6b712b41b2647357dd1d018915388b0917dc75b9ed",
+      "installed_decoded_pixel_sha256": "9dcc207318af3e80f58c8e6b712b41b2647357dd1d018915388b0917dc75b9ed",
+      "approved_base_pixel_identical": true,
+      "base_tile_count": 500,
+      "tile_count": 500,
+      "tile_bytes": 16000,
+      "tile_budget": 640,
+      "vram_end_with_hud": 1292,
+      "glow_start": 427,
+      "glow_count": 73,
+      "glow": {
+        "variants": 2,
+        "variant_order": [
+          "A",
+          "B"
+        ],
+        "runtime_sequence": [
+          "base",
+          "A",
+          "B",
+          "A"
+        ],
+        "shared_tiles_duplicated": 0,
+        "highlight_index": 11,
+        "brighter_index": 10,
+        "highlight_rgb3": [
+          7,
+          4,
+          1
+        ],
+        "brighter_rgb3": [
+          6,
+          5,
+          3
+        ],
+        "eligible_highlight_pixels": 1726,
+        "changed_pixels_per_variant": [
+          215,
+          215
+        ],
+        "maximum_highlight_fraction": "1/8",
+        "variant_bytes": 2336,
+        "private_lava_tiles_only": true,
+        "global_palette_changed": false
+      },
+      "scene_rows": 40,
+      "map_stride": 64,
+      "npc_in_map": false,
+      "solids": [],
+      "hazards": [
+        {
+          "name": "Lava noroeste",
+          "kind": "thermal",
+          "rect": [
+            16,
+            96,
+            184,
+            96
+          ]
+        },
+        {
+          "name": "Lava sudeste",
+          "kind": "thermal",
+          "rect": [
+            296,
+            208,
+            200,
+            96
+          ]
+        }
+      ]
+    }
+  ],
+  "generated_file_sha256": {
+    "game/res/stages/02a/tiles.bin": "cddfa4e49577691da4ed71a5a23790d9c80f79e593ca59ec087ef3bd1db74c29",
+    "game/res/stages/02a/map.bin": "52be2dc8940bb7d1c322f7630e7d214f7afff52a0f27996f6f1008726ab45457",
+    "game/res/stages/02a/palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "game/res/stages/02b/tiles.bin": "57cb12661d69af6bee149b243a72c3fd2fef9998062be8dd79399ed0abdfde77",
+    "game/res/stages/02b/map.bin": "395e85c2acaf230dbf4c71fed11a39c3c0f5b4eee0110e632bb9d1b53e28a4be",
+    "game/res/stages/02b/palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "game/res/stages/03/tiles.bin": "c8caf6a0190ccd707087f0c071b666e556b56cbebc9b56430b65b46f22813bca",
+    "game/res/stages/03/map.bin": "94d12cb9f423f9a7b2e797cd667898110427cd3a6c2d683679ed1299cd9072ec",
+    "game/res/stages/03/palette.bin": "968b6f0562ae97c5d8d22869deb1aa88cac1b71d166e24bbbe5a45f0b54a9797",
+    "game/res/stages/03/glow.bin": "b2962096508ae1fbcb9c783ade60a9f96bf27abf42981b5ce84eb73a2ed5b6b0",
+    "game/res/stages/04/tiles.bin": "0c9b0d259fef96b21f560ccf56cddd62cb4628d92462981211136d49f104e11e",
+    "game/res/stages/04/map.bin": "c43e478a8f9eaa6ba8c5f7fb7c228fbe420f28df7c89a2af3b711c80c8c28568",
+    "game/res/stages/04/palette.bin": "1200494b471d4ba14ed2a9a82f60615a8224e4244d35edb17f1bf252b6e7b331",
+    "game/res/stages/05/tiles.bin": "5495a81dbf71992874a5bd5d2a08e961eaf92ec3bcb3a7ed0ec2f535766adbd6",
+    "game/res/stages/05/map.bin": "6c4c501273bf53f91ee4597e108cc022191dd4c15186e1ca34c70ad2998fb42e",
+    "game/res/stages/05/palette.bin": "b60d3256046996c949f354b03b7df2e019e87e73e9e50a13f3e4b9d7e5e10fc9",
+    "game/res/stages/06a/tiles.bin": "c6af7714a2d146ed937010c0276989be9e60d9373255a2d756c7c2549f4784b5",
+    "game/res/stages/06a/map.bin": "5c644149bf7def366ad217847e517d59f69ccfb64aa879b4e5e5b925647e0687",
+    "game/res/stages/06a/palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676",
+    "game/res/stages/06a/glow.bin": "ff7ebe2d60dc30be7ff0c603e88eb3b585f6beada4c126b488d360319e543230",
+    "game/res/stages/06b/tiles.bin": "d647d2a49d2e59233e008be41f126ba5d1ce0e69b3cc72d2b8ac2f5545409958",
+    "game/res/stages/06b/map.bin": "93ff6b6c91bb1d0ab850c944e367d43ad14dab8c4ab771c25850d353bb054d24",
+    "game/res/stages/06b/palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676",
+    "game/res/stages/06b/glow.bin": "ff7ebe2d60dc30be7ff0c603e88eb3b585f6beada4c126b488d360319e543230",
+    "game/src/levels/stage_scenes.h": "acbca0524ca66ff24e84d124130232d7cb5049ec9ef76955167d0c4dbd8ec1bf",
+    "game/src/levels/stage_scenes.c": "35ed40dde6b6022233ed15c78924995830b1a8df271a1452fe2b90f804e23790",
+    "game/res/stages.res": "6c660cd003a091e4fb41a01c002626f5082c45cb6bbbb14793b5449a9c60e812",
+    "game/res/stages.h": "ce9c0cdea2e870584ae3089d4f9ef75c0ffd3c5806d79f6bd3f06b572c67aecb"
+  }
+}

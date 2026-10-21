@@ -1,0 +1,576 @@
+{
+  "id": "05",
+  "chapter": 5,
+  "node": 6,
+  "title": "Plataforma do sinalizador",
+  "width": 384,
+  "height": 384,
+  "camera_degrees": 60,
+  "music": "Ladainha de Ferro",
+  "narrative": "O padre revela o sinalizador escondido na base da Santa. Damião deve manter o ponto intacto por30 segundos para chamar as naves de resgate. Cabos expostos, marcas de pouso e bagagens preparadas ligam a imagem religiosa à operação de evacuação.",
+  "objective": {
+    "kind": "protect",
+    "target_seconds": 30,
+    "rect": [
+      176,
+      208,
+      32,
+      32
+    ]
+  },
+  "next": [
+    "06A",
+    "06B"
+  ],
+  "start": [
+    64,
+    288
+  ],
+  "exit": [
+    336,
+    144
+  ],
+  "walkable": [
+    16,
+    96,
+    352,
+    272
+  ],
+  "solids": [
+    {
+      "name": "Base visível da Santa",
+      "rect": [
+        176,
+        208,
+        40,
+        16
+      ],
+      "blocks_shots": false
+    }
+  ],
+  "hazards": [],
+  "source": "source/layout.png",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "story_elements": [
+    {
+      "name": "Santa e base técnica",
+      "rect": [
+        176,
+        160,
+        40,
+        64
+      ],
+      "meaning": "A imagem traz o sinalizador que pode salvar os refugiados."
+    },
+    {
+      "name": "Cabo e caixas de conexão",
+      "rect": [
+        208,
+        80,
+        24,
+        96
+      ],
+      "meaning": "A fé da comunidade e a manutenção industrial se encontram no mesmo objeto."
+    },
+    {
+      "name": "Bagagens sob lona",
+      "rect": [
+        192,
+        24,
+        88,
+        48
+      ],
+      "meaning": "O povo se preparou para embarcar e aguarda a resposta."
+    },
+    {
+      "name": "Marca de aproximação",
+      "rect": [
+        112,
+        120,
+        160,
+        152
+      ],
+      "meaning": "A praça foi adaptada para orientar as naves do resgate."
+    },
+    {
+      "name": "Portão do embarque",
+      "rect": [
+        296,
+        8,
+        72,
+        64
+      ],
+      "meaning": "A saída aguarda a confirmação do sinal."
+    }
+  ],
+  "modules": [
+    {
+      "name": "Chao de concreto",
+      "source": [
+        88,
+        320,
+        32,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        384,
+        384
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Caatinga",
+      "source": [
+        304,
+        0,
+        32,
+        16
+      ],
+      "dest": [
+        0,
+        0,
+        384,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro norte",
+      "source": [
+        288,
+        16,
+        8,
+        64
+      ],
+      "dest": [
+        0,
+        16,
+        384,
+        64
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Oficina e agua",
+      "source": [
+        16,
+        8,
+        80,
+        80
+      ],
+      "dest": [
+        16,
+        8,
+        80,
+        80
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Espera e mantimentos",
+      "source": [
+        96,
+        16,
+        192,
+        64
+      ],
+      "dest": [
+        96,
+        16,
+        192,
+        64
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Portao azul",
+      "source": [
+        296,
+        8,
+        72,
+        64
+      ],
+      "dest": [
+        296,
+        8,
+        72,
+        64
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Cabo do sinal",
+      "source": [
+        208,
+        80,
+        24,
+        96
+      ],
+      "dest": [
+        208,
+        80,
+        24,
+        96
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Curva do cabo",
+      "source": [
+        200,
+        168,
+        16,
+        32
+      ],
+      "dest": [
+        200,
+        168,
+        16,
+        32
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Marca de pouso 1",
+      "source": [
+        184,
+        120,
+        16,
+        16
+      ],
+      "dest": [
+        184,
+        120,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Marca de pouso 2",
+      "source": [
+        256,
+        184,
+        16,
+        16
+      ],
+      "dest": [
+        256,
+        184,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Marca de pouso 3",
+      "source": [
+        184,
+        256,
+        16,
+        16
+      ],
+      "dest": [
+        184,
+        256,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Marca de pouso 4",
+      "source": [
+        112,
+        184,
+        16,
+        16
+      ],
+      "dest": [
+        112,
+        184,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Marca de pouso 5",
+      "source": [
+        136,
+        136,
+        16,
+        16
+      ],
+      "dest": [
+        136,
+        136,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Marca de pouso 6",
+      "source": [
+        232,
+        136,
+        16,
+        16
+      ],
+      "dest": [
+        232,
+        136,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Marca de pouso 7",
+      "source": [
+        136,
+        232,
+        16,
+        16
+      ],
+      "dest": [
+        136,
+        232,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Marca de pouso 8",
+      "source": [
+        232,
+        232,
+        16,
+        16
+      ],
+      "dest": [
+        232,
+        232,
+        16,
+        16
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Santa e pedestal",
+      "source": [
+        176,
+        160,
+        40,
+        64
+      ],
+      "dest": [
+        176,
+        160,
+        40,
+        64
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Muro oeste",
+      "source": [
+        0,
+        192,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        80,
+        16,
+        288
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro leste",
+      "source": [
+        368,
+        192,
+        16,
+        32
+      ],
+      "dest": [
+        368,
+        80,
+        16,
+        288
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro sul",
+      "source": [
+        64,
+        368,
+        32,
+        16
+      ],
+      "dest": [
+        0,
+        368,
+        384,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Canto 0 0",
+      "source": [
+        0,
+        0,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        0,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Canto 368 0",
+      "source": [
+        368,
+        0,
+        16,
+        32
+      ],
+      "dest": [
+        368,
+        0,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Canto 0 352",
+      "source": [
+        0,
+        352,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        352,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Canto 368 352",
+      "source": [
+        368,
+        352,
+        16,
+        32
+      ],
+      "dest": [
+        368,
+        352,
+        16,
+        32
+      ],
+      "role": "wall"
+    }
+  ],
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      36,
+      36,
+      73
+    ],
+    [
+      36,
+      73,
+      109
+    ],
+    [
+      73,
+      109,
+      146
+    ],
+    [
+      73,
+      109,
+      73
+    ],
+    [
+      109,
+      109,
+      109
+    ],
+    [
+      109,
+      73,
+      36
+    ],
+    [
+      146,
+      146,
+      146
+    ],
+    [
+      182,
+      146,
+      73
+    ],
+    [
+      219,
+      182,
+      109
+    ],
+    [
+      255,
+      146,
+      36
+    ],
+    [
+      182,
+      73,
+      36
+    ],
+    [
+      109,
+      36,
+      0
+    ],
+    [
+      219,
+      219,
+      182
+    ],
+    [
+      255,
+      255,
+      219
+    ]
+  ],
+  "integration_note": "O pedestal tem base física explícita. Na integração, a entidade protegida existente deve substituir a Santa estática deste mapa e conservar esta âncora; não sobrepor duas Santas."
+}

@@ -56,7 +56,7 @@ python3 compare.py
 
 ## Build e jogo real
 
-[ROM testada](../../out/release/rom.bin), compilada em cópia temporária das fontes
+[ROM testada](../../out/release/Plaguefall.bin), compilada em cópia temporária das fontes
 atuais. A saída anterior em `out/itens/` permanece preservada.
 
 - [Arquivos e contornos](validation/assets.json): oito sprites e oito ícones;

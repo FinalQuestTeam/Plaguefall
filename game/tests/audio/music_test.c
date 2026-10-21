@@ -86,6 +86,29 @@ static void checkPreview(void)
     assert(MUSIC_bpm() == 112); // the original custom phase ramp was restored too
 }
 
+static void checkCampaignSelection(void)
+{
+    MUSIC_selectTrack(MUSIC_TRACK_BAIAO);
+    MUSIC_setRamp(1, 6, 8, 4);
+    MUSIC_setEnemies(6);
+    forward(100);
+    MUSIC_selectTrack(MUSIC_TRACK_LADAINHA);
+    assert(MUSIC_track() == MUSIC_TRACK_LADAINHA && MUSIC_bpm() == 64);
+    forward(37);
+    const u16 step = MUSIC_stepInBar();
+    MUSIC_selectTrack(255);
+    assert(MUSIC_track() == MUSIC_TRACK_LADAINHA && MUSIC_stepInBar() == step);
+    MUSIC_previewTrack(MUSIC_TRACK_BREU);
+    MUSIC_selectTrack(MUSIC_TRACK_BREU); // selecting the preview must be permanent
+    MUSIC_endPreview();
+    assert(MUSIC_track() == MUSIC_TRACK_BREU && MUSIC_bpm() == 75);
+    MUSIC_setEnemies(15); forward(200);
+    assert(MUSIC_bpm() == 112); // old phase's custom ramp did not leak
+    MUSIC_selectTrack(MUSIC_TRACK_ENTARDECER);
+    assert(MUSIC_bpm() == 90);
+    MUSIC_selectTrack(MUSIC_DEFAULT_TRACK);
+}
+
 static unsigned run(u16 region, u8 enemies)
 {
     pal = region;
@@ -151,6 +174,7 @@ int main(void)
         { AUDIO_frameBegin(); MUSIC_update(); AUDIO_frameEnd(); }
     }
     checkPreview();
+    checkCampaignSelection();
     printf("PASS: 50/60 Hz timing (%u calm / %u hot steps in 10s), loops, envelopes, SFX, all four runtime tracks and exact preview restoration.\n", calm60, hot60);
     return 0;
 }

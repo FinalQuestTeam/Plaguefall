@@ -13,6 +13,7 @@
 
 void PAUSE_show(void)
 {
+    ARENA_overlay();
     if (currentLevel == 0)
     {
         TEST_drawPauseText();       // "PAUSA - FASE TESTE n"
@@ -31,6 +32,7 @@ void PAUSE_show(void)
 void PAUSE_resume(u16 kills)
 {
     LEVEL_draw(currentLevel);
+    ARENA_gameView();
     if (currentLevel == 0) TEST_draw();     // porta é redesenhada com a arena
     OBJECTIVE_forceHUD(kills);      // mortes, tempo, coleta ou proteção
     HUD_drawLife(hp);

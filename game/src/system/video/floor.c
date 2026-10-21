@@ -66,6 +66,7 @@ static bool nearMud(u16 tx, u16 ty, const TileRect *rects, u16 count, s16 pad)
 
 void FLOOR_draw(u8 variant)
 {
+    if (arenaActive) return; // resident scenery owns PAL3 and BG_B
     // ladrilha só o INTERIOR da arena (sem passar por baixo do HUD nem da borda)
     const u16 x0 = ARENA_TILE_X + 1, x1 = ARENA_TILE_X + ARENA_TILES_W - 1;
     const u16 y0 = ARENA_TILE_Y + 1, y1 = ARENA_TILE_Y + ARENA_TILES_H - 1;
@@ -114,6 +115,7 @@ void FLOOR_clear(void)
 
 void FLOOR_setBright(u16 mix)
 {
+    if (arenaActive) { ARENA_bright(mix); return; }
     u16 out[16];
     for (u16 i = 0; i < 16; i++)
     {

@@ -210,6 +210,15 @@ void MUSIC_endPreview(void)
 }
 
 u8 MUSIC_track(void) { return music.track; }
+void MUSIC_selectTrack(u8 track)
+{
+    if (track >= MUSIC_TRACK_COUNT) return;
+    MUSIC_endPreview();
+    if (track == music.track) return;
+    music.track = track;
+    MUSIC_setRamp(0, 0, 0, 0);
+    MUSIC_init();
+}
 const char *MUSIC_trackName(u8 track)
 {
     return track < MUSIC_TRACK_COUNT ? MUSIC_SCORES[track].name : "";

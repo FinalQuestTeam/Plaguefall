@@ -1,4 +1,4 @@
-"""Reproducible score and native audio checks; all binaries live in a temp dir."""
+"""Reproducible resources and native audio/player checks; binaries live in a temp dir."""
 from pathlib import Path
 import os
 import shlex
@@ -13,6 +13,8 @@ def run(*args):
 
 
 def main():
+    run("python3", "game/art/intro-monologo-v2/export_intro.py", "--check")
+    run("python3", "game/tools/test_player_aim.py")
     for variant in ("original", "melancolico", "sombrio", "igreja"):
         run("python3", "game/tools/compose_music.py", "--variant", variant, "--check")
     run("python3", "game/tools/compose_music.py", "--catalog", "--check")
@@ -31,7 +33,7 @@ def main():
         run(*compiler, *flags, "game/tests/audio/opening_test.c",
             "game/src/system/audio/opening.c", *production, "-o", binary)
         run(binary)
-    print("All generated scores and native audio checks passed.")
+    print("All generated resources and native audio/player checks passed.")
 
 
 if __name__ == "__main__":

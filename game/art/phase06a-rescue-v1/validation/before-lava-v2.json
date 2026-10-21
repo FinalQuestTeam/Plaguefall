@@ -1,0 +1,45 @@
+{
+  "id": "06a",
+  "title": "Resgate confirmado",
+  "status": "awaiting-art-approval",
+  "integrated": false,
+  "world": [
+    512,
+    320
+  ],
+  "camera_degrees": 60,
+  "tiles": 600,
+  "tile_bytes": 19200,
+  "palette_colors": 16,
+  "tilemap_bytes": 5120,
+  "padded_vdp_map_bytes": 6144,
+  "tile_budget": 640,
+  "vram_scene_base": 781,
+  "vram_end_with_hud": 1392,
+  "font_vram_base": 1440,
+  "within_vram_budget": true,
+  "native_pixel_scale": 1,
+  "lossy_tile_replacements": 0,
+  "source_sha256": "76c9ab61e10224c96fe12b6f5785a8808e101ff5884ebef00e8f597fbb05df42",
+  "design_sha256": "acbb068714d1d82f11b0749676c52ce6b67e380b56848efed405664eff520670",
+  "export_sha256": {
+    "tiles.bin": "eae795093ba57c3a51e43586397cd9fa6000dbce23054a6b5b1f6a11f3a32409",
+    "map.bin": "8fca27d13f955cd761101a8ab0225689dcc65aa6a6ad8df7db68b9caf0aaf732",
+    "map-vdp.bin": "368855dbe4e745f87f52ca7a7bf5d0ae745cc920d9f550d4806d481f879df5c2",
+    "palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "path_step": 8,
+    "reachable_dry_positions": 1277,
+    "connected_dry_floor": true,
+    "entry_exit_reachable": true,
+    "walkable_pixels": 99840,
+    "hazard_pixels": 12672,
+    "dry_area_fraction": 0.8731
+  },
+  "emulator_performance_measured": false
+}

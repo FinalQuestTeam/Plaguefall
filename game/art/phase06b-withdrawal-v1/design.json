@@ -1,0 +1,800 @@
+{
+  "chapter": 6,
+  "width": 512,
+  "height": 320,
+  "camera_degrees": 60,
+  "objective": {
+    "kind": "kill",
+    "target": 20
+  },
+  "next": [
+    "07"
+  ],
+  "start": [
+    48,
+    208
+  ],
+  "exit": [
+    464,
+    176
+  ],
+  "walkable": [
+    16,
+    96,
+    480,
+    208
+  ],
+  "solids": [],
+  "hazards": [
+    {
+      "name": "Lava noroeste",
+      "kind": "thermal",
+      "rect": [
+        16,
+        96,
+        184,
+        96
+      ]
+    },
+    {
+      "name": "Lava sudeste",
+      "kind": "thermal",
+      "rect": [
+        296,
+        208,
+        200,
+        96
+      ]
+    }
+  ],
+  "source": "source/layout.png",
+  "source_dimensions": [
+    1585,
+    992
+  ],
+  "source_regions": {
+    "thermal_upper": [
+      16,
+      56,
+      88,
+      56
+    ],
+    "thermal_lower": [
+      408,
+      208,
+      88,
+      88
+    ],
+    "lava_module_core": [
+      456,
+      240,
+      32,
+      32
+    ]
+  },
+  "approval_status": "pending",
+  "id": "06b",
+  "node": 8,
+  "title": "Retirada por terra",
+  "music": "Breu",
+  "narrative": "O resgate falhou. Dinorah discute com Damião; o Padre tenta intervir, mas ela parte viva pela rota terrestre. O campo de pouso vazio e as marcas no chão contam a ruptura.",
+  "story_elements": [
+    {
+      "name": "Embarque fechado e vazio",
+      "rect": [
+        216,
+        24,
+        88,
+        40
+      ],
+      "meaning": "Não há nave ou rampa disponível; o sinal falhou e ninguém embarcou."
+    },
+    {
+      "name": "Sinalizador quebrado e apagado",
+      "rect": [
+        344,
+        16,
+        40,
+        56
+      ],
+      "meaning": "Mesmo suporte tecnológico da variante 6A, agora incapaz de confirmar o resgate."
+    },
+    {
+      "name": "Pegadas e bagagem arrastada",
+      "rect": [
+        416,
+        104,
+        80,
+        72
+      ],
+      "meaning": "Os vestígios seguem para terra, indicando que Dinorah saiu viva."
+    },
+    {
+      "name": "Portão da rota terrestre",
+      "rect": [
+        488,
+        136,
+        24,
+        48
+      ],
+      "meaning": "Um caminho para a caatinga toma o lugar da promessa de embarque."
+    },
+    {
+      "name": "Campos de lava expostos",
+      "rect": [
+        16,
+        96,
+        184,
+        96
+      ],
+      "meaning": "O vazamento tomou parte relevante do piso; é preciso contornar a área quente durante a defesa."
+    }
+  ],
+  "modules": [
+    {
+      "name": "Piso modular seco",
+      "source": [
+        128,
+        144,
+        16,
+        16
+      ],
+      "dest": [
+        0,
+        0,
+        512,
+        320
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Caatinga ao norte",
+      "source": [
+        160,
+        0,
+        32,
+        24
+      ],
+      "dest": [
+        0,
+        0,
+        512,
+        24
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Muro norte modular",
+      "source": [
+        160,
+        24,
+        32,
+        32
+      ],
+      "dest": [
+        0,
+        24,
+        512,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Tanque e tubo periférico",
+      "source": [
+        16,
+        16,
+        40,
+        80
+      ],
+      "dest": [
+        16,
+        16,
+        40,
+        80
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Posto de manutenção",
+      "source": [
+        56,
+        16,
+        48,
+        48
+      ],
+      "dest": [
+        56,
+        16,
+        48,
+        48
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Suprimentos à esquerda",
+      "source": [
+        104,
+        32,
+        48,
+        40
+      ],
+      "dest": [
+        104,
+        32,
+        48,
+        40
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Abrigo de suprimentos direito",
+      "source": [
+        400,
+        24,
+        64,
+        48
+      ],
+      "dest": [
+        400,
+        24,
+        64,
+        48
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Campo de embarque fechado",
+      "source": [
+        216,
+        24,
+        88,
+        40
+      ],
+      "dest": [
+        216,
+        24,
+        88,
+        40
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Sinalizador apagado",
+      "source": [
+        344,
+        16,
+        40,
+        56
+      ],
+      "dest": [
+        344,
+        16,
+        40,
+        56
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Trilhas da retirada terrestre",
+      "source": [
+        416,
+        88,
+        80,
+        72
+      ],
+      "dest": [
+        416,
+        104,
+        80,
+        72
+      ],
+      "role": "floor"
+    },
+    {
+      "name": "Lava NO interior",
+      "role": "hazard",
+      "source": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "dest": [
+        24,
+        104,
+        168,
+        80
+      ],
+      "source_image": "../terrain-lava-v2/source/liquid.png",
+      "source_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "Lava NO margem norte",
+      "role": "hazard",
+      "source": [
+        448,
+        224,
+        16,
+        8
+      ],
+      "dest": [
+        24,
+        96,
+        168,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ]
+    },
+    {
+      "name": "Lava NO margem sul",
+      "role": "hazard",
+      "source": [
+        448,
+        224,
+        16,
+        8
+      ],
+      "dest": [
+        24,
+        184,
+        168,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_y": true
+    },
+    {
+      "name": "Lava NO margem oeste",
+      "role": "hazard",
+      "source": [
+        432,
+        240,
+        8,
+        16
+      ],
+      "dest": [
+        16,
+        104,
+        8,
+        80
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ]
+    },
+    {
+      "name": "Lava NO margem leste",
+      "role": "hazard",
+      "source": [
+        432,
+        240,
+        8,
+        16
+      ],
+      "dest": [
+        192,
+        104,
+        8,
+        80
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_x": true
+    },
+    {
+      "name": "Lava NO canto5",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        16,
+        96,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ]
+    },
+    {
+      "name": "Lava NO canto6",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        192,
+        96,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_x": true
+    },
+    {
+      "name": "Lava NO canto7",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        16,
+        184,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_y": true
+    },
+    {
+      "name": "Lava NO canto8",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        192,
+        184,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_x": true,
+      "flip_y": true
+    },
+    {
+      "name": "Lava SE interior",
+      "role": "hazard",
+      "source": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "dest": [
+        304,
+        216,
+        184,
+        80
+      ],
+      "source_image": "../terrain-lava-v2/source/liquid.png",
+      "source_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "Lava SE margem norte",
+      "role": "hazard",
+      "source": [
+        448,
+        224,
+        16,
+        8
+      ],
+      "dest": [
+        304,
+        208,
+        184,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ]
+    },
+    {
+      "name": "Lava SE margem sul",
+      "role": "hazard",
+      "source": [
+        448,
+        224,
+        16,
+        8
+      ],
+      "dest": [
+        304,
+        296,
+        184,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_y": true
+    },
+    {
+      "name": "Lava SE margem oeste",
+      "role": "hazard",
+      "source": [
+        432,
+        240,
+        8,
+        16
+      ],
+      "dest": [
+        296,
+        216,
+        8,
+        80
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ]
+    },
+    {
+      "name": "Lava SE margem leste",
+      "role": "hazard",
+      "source": [
+        432,
+        240,
+        8,
+        16
+      ],
+      "dest": [
+        488,
+        216,
+        8,
+        80
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_x": true
+    },
+    {
+      "name": "Lava SE canto14",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        296,
+        208,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ]
+    },
+    {
+      "name": "Lava SE canto15",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        488,
+        208,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_x": true
+    },
+    {
+      "name": "Lava SE canto16",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        296,
+        296,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_y": true
+    },
+    {
+      "name": "Lava SE canto17",
+      "role": "hazard",
+      "source": [
+        432,
+        224,
+        8,
+        8
+      ],
+      "dest": [
+        488,
+        296,
+        8,
+        8
+      ],
+      "source_image": "../phase06a-rescue-v1/source/layout.png",
+      "source_size": [
+        512,
+        320
+      ],
+      "flip_x": true,
+      "flip_y": true
+    },
+    {
+      "name": "Muro lateral esquerdo",
+      "source": [
+        0,
+        160,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        24,
+        16,
+        280
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro lateral direito",
+      "source": [
+        496,
+        160,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        24,
+        16,
+        280
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Muro inferior contínuo",
+      "source": [
+        80,
+        288,
+        32,
+        16
+      ],
+      "dest": [
+        0,
+        304,
+        512,
+        16
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Portão terrestre fechado",
+      "source": [
+        488,
+        120,
+        24,
+        48
+      ],
+      "dest": [
+        488,
+        136,
+        24,
+        48
+      ],
+      "role": "prop"
+    },
+    {
+      "name": "Canto inferior esquerdo conectado",
+      "source": [
+        0,
+        280,
+        16,
+        32
+      ],
+      "dest": [
+        0,
+        288,
+        16,
+        32
+      ],
+      "role": "wall"
+    },
+    {
+      "name": "Canto inferior direito conectado",
+      "source": [
+        496,
+        280,
+        16,
+        32
+      ],
+      "dest": [
+        496,
+        288,
+        16,
+        32
+      ],
+      "role": "wall"
+    }
+  ],
+  "terrain_revision": "lava-v2: large native tiled fields matched to hazard rectangles",
+  "lava_design": {
+    "description": "Dois campos grandes em cantos opostos restringem o recuo e obrigam a contornar o calor. Módulos originais repetidos em escala nativa; não ampliar pixels.",
+    "clear_gap_between_fields": {
+      "horizontal": 96,
+      "vertical": 16
+    },
+    "player_reference": {
+      "sprite": [
+        32,
+        48
+      ],
+      "footprint": [
+        16,
+        16
+      ]
+    },
+    "runtime_collision": "Usar o centro do jogador (px+8,py+8), como LAVA_update, nas caixas declaradas. A validação do percurso seco usa a base16×16 inteira, de forma conservadora."
+  }
+}

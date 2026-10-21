@@ -6,7 +6,7 @@ O motor já está implementado. Este arquivo documenta o contrato técnico; a [p
 
 O roteiro tem **22 cenas**: uma chegada para cada um dos 20 nós, a aproximação do chefe depois da fase 15 e o final depois da 16. Cada percurso atravessa 16 fases e apresenta 18 cenas. A abertura tem sete falas; as demais, duas ou três. Toda cena pode ser pulada.
 
-Damião é humano com implantes; Comando é o padre que coordena a resistência pelo rádio; Lacraia é a matriz local do enxame. [Damião, Comando e Dinorah têm retratos 48×48 derivados dos concepts](../art/dialogue-portraits-v1/README.md). Dinorah fala por rádio antes da fase 7; não há ator aliado na arena. Lacraia mantém o retrato provisório. Damião chama os invasores de BARATAS nas suas falas.
+Damião é humano com implantes; Comando é o padre que coordena a resistência pelo rádio; Escorpião é a matriz local do enxame. [Damião, Comando e Dinorah têm retratos 48×48 derivados dos concepts](../art/dialogue-portraits-v1/README.md). Dinorah fala por rádio antes da fase 7; não há ator aliado na arena. Escorpião mantém o retrato provisório. Damião chama os invasores de BARATAS nas suas falas.
 
 O roteiro substitui a demonstração de sete cenas que descrevia um piloto de mech numa colônia. Não modifica objetivos, inimigos, itens, terrenos ou critérios das rotas.
 
@@ -28,7 +28,7 @@ QUANDO(N_5, ANTES, capela),
 - `ESQUERDA(retrato, texto)` usa o canto superior esquerdo.
 - `DIREITA(retrato, texto)` usa o canto inferior direito.
 - A ordem das entradas define a conversa; um falante pode continuar por várias entradas.
-- `P_DAMIAO`, `P_COMANDO`, `P_LACRAIA` e `P_DINORAH` são os retratos registrados.
+- `P_DAMIAO`, `P_COMANDO`, `P_ESCORPIAO` e `P_DINORAH` são os retratos registrados.
 - Cada par nó/momento deve aparecer no máximo uma vez: `STORY_find` retorna a primeira correspondência.
 
 `StoryLine` guarda lado, retrato e texto; `StoryEntry` guarda nó, momento, lista de falas e contagem. As estruturas vivem em `levels/story.h`.
@@ -57,7 +57,7 @@ A falha do objetivo na 5 também alcança o fluxo DEPOIS antes de seguir a 6B. P
 
 ## Retratos e recursos
 
-A arte está em `system/video/sprites/portraits_data.h`: quatro char-maps 48×48, cada um com paleta de 16 cores. O exportador em `art/dialogue-portraits-v1/export_portraits.py` gera o cabeçalho e preserva o retrato legado da Lacraia. A ordem deve acompanhar os `P_*` e `PORTRAIT_NAME`.
+A arte está em `system/video/sprites/portraits_data.h`: quatro char-maps 48×48, cada um com paleta de 16 cores. O exportador em `art/dialogue-portraits-v1/export_portraits.py` gera o cabeçalho e preserva o retrato legado do Escorpião. A ordem deve acompanhar os `P_*` e `PORTRAIT_NAME`.
 
 Dois retratos custam 72 tiles temporários, emprestados da região do chefe `BOSS_ROT_BASE`. O esquerdo usa PAL2; o direito, PAL3. Ao encerrar, `ENEMYGFX_dropBoss()` invalida o cache. A preparação da partida restaura as paletas. A biblioteca acrescenta o retrato da parceira na ROM e substitui os de Damião e Comando. A quantidade simultânea continua sendo dois, sem reserva adicional de VRAM ou buffers de RAM.
 

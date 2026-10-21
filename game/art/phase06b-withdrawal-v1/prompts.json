@@ -1,0 +1,32 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "use_case": "stylized-concept",
+  "output": "source/layout.png",
+  "prompt": "Use case: stylized-concept.\nAsset type: production environment map source for Mega Drive action game, chapter 6B RETIRADA POR TERRA, a SINGLE rectangular game arena, no presentation board.\nInput images: Image 1 is the SUCCESSFUL-RESCUE version of exactly this same location. Preserve its industrial masonry platform, floor slab modules, wall materials, scale and straight north-up rectangular boundaries. Image 2 failed-rescue concept provides narrative props and dusk mood only, NOT cinematic perspective or contact-sheet format. Image 3 approved game first phase provides fine 16-bit pixel detail scale.\nProduce the same 512 by 320 game-world layout at high clarity 3x presentation scale, 1536 by 960 target. Orthographic view camera looking 60 degrees down from horizontal ground; north straight up; walls remain horizontal/vertical parallel. NOT diamond isometric, NO horizon, NO vanishing point. Fine handcrafted 16-bit pixel art, restrained grouped colors and crisp details, no chunky blurred or enlarged-pixel filter.\nPreserve broad quiet unobstructed sand and concrete slab combat floor x16..495 y96..303. Repeating subdued slab seams and fine sparse cracks, center very readable. Top y0..95 ONLY contains service architecture: replace transport/ramp with an EMPTY fenced landing zone behind the same northern masonry wall. Its boarding opening is now shut by a dark blue steel barrier, confirming no rescue arrived. The same beacon, now broken, dark and unlit, sits to the right of this empty threshold; its small cracked casing and hanging cable are visible but NOT a body. Maintenance shelters at upper left/right retain yellowed plaster, exposed red brick, clay-tile roofs, caged water supplies, steel pipework.\nNarrative: rescue signaling FAILED, Dinorah has argued with Damião while the Padre tried to intervene, and she leaves ALIVE through a terrestrial exit. Show luggage drag tracks and paired bootprints starting below the dead beacon, bending along the upper right edge to a clearly visible ground-route gateway on the RIGHT edge x480..511 y152..208; the gateway is closed during combat, but its dry track continues beyond to the caatinga. Minimal packed bags near TOP edge only. No people, no corpses, no aftermath suggesting death.\nTwo contained thermal spills consistent with same site: small vivid orange coolant/melt at upper-left x24..88 y104..136, lower-right x424..488 y264..296. Both leave middle fully dry. NO other hazards. Keep side wall x0..15 and x496..511 (except visual gateway frame), bottom wall y304..319 uninterrupted straight, joining both side walls into neat solid L corners. Place no wall, fence, crate, junk or other collision volume inside open floor; all solid props stay inside upper 96-pixel strip.\nLighting: early night dry Brazilian sertão, desaturated indigo shadows and subdued warm masonry; orange pipes and faint remote amber utility bulbs. Dead beacon has NO blue illumination. Keep enough floor brightness for characters; no black obscuring vignette.\nNO text, labels, UI, health bars, overlay grid, characters, enemies, bodies, gore, split panels or asset showcases. The image is the actual map canvas edge to edge.",
+  "reference_roles": [
+    {
+      "path": "../phase06a-rescue-v1/source/layout.png",
+      "role": "Identidade e geografia do mesmo local"
+    },
+    {
+      "path": "../concepts/fases-v1/imagens/06b-retirada.png",
+      "role": "Narrativa da retirada terrestre"
+    },
+    {
+      "path": "../phase01-courtyard-v2/intact-native.png",
+      "role": "Estilo de pixel art aprovado"
+    }
+  ],
+  "source_dimensions": [
+    1585,
+    992
+  ],
+  "target_dimensions": [
+    512,
+    320
+  ],
+  "generated": "2026-10-21",
+  "generated_original": "/Users/fabiocantarimmelo/.codex/generated_images/01a15f7d-8a2b-71c3-8107-dd041ee9a781/exec-b6e20e8b-fa81-4e52-a1d2-8666796e7171.png",
+  "pipeline_note": "Fonte raster preservada sem retoques criativos por script. O exportador compartilhado monta módulos nativos, reduz paleta e extrai tiles; a fonte não é a imagem já integrada à ROM."
+}

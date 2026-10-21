@@ -1,0 +1,293 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "749e91e719be07d6f575b9c8b977254a7e0e37b3de5975c656d839a0ae7049f9",
+  "world": [
+    512,
+    384
+  ],
+  "camera_limits": [
+    0,
+    192
+  ],
+  "hud_fixed": true,
+  "player_solid_collisions": true,
+  "projectile_solid_collisions": true,
+  "distant_shots_do_not_hit": true,
+  "pause_restores_scene": true,
+  "bomb_damages_church": true,
+  "damaged_state_survives_pause": true,
+  "next_custom_stage_loaded": true,
+  "scene_tiles": 640,
+  "scene_tile_bytes": 20480,
+  "level_enemy_cap": 4,
+  "shots_per_pool_cap": 6,
+  "benchmark": [
+    {
+      "enemies": 0,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 3.95,
+      "cpu_p95_pct": 5.18
+    },
+    {
+      "enemies": 3,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 15.14,
+      "cpu_p95_pct": 18.36
+    },
+    {
+      "enemies": 4,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 38.63,
+      "cpu_p95_pct": 46.04
+    },
+    {
+      "enemies": 6,
+      "shots_per_pool": 4,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 42.23,
+      "cpu_p95_pct": 49.37
+    },
+    {
+      "enemies": 6,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 48.71,
+      "cpu_p95_pct": 57.42
+    },
+    {
+      "enemies": 8,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 38.79,
+      "cpu_p95_pct": 43.75
+    },
+    {
+      "enemies": 8,
+      "shots_per_pool": 16,
+      "physical_frames": 300,
+      "game_frames": 181,
+      "fps": 30.17,
+      "cpu_mean_pct": 97.7,
+      "cpu_p95_pct": 106.35
+    },
+    {
+      "enemies": 15,
+      "shots_per_pool": 16,
+      "physical_frames": 300,
+      "game_frames": 150,
+      "fps": 25.0,
+      "cpu_mean_pct": 126.35,
+      "cpu_p95_pct": 141.31
+    }
+  ],
+  "routes": [
+    {
+      "bomb_used": false,
+      "next_node": 2,
+      "music_track": 3
+    },
+    {
+      "bomb_used": true,
+      "next_node": 3,
+      "music_track": 1
+    }
+  ],
+  "hud_icons_opaque": true,
+  "floor_move_cases": 448,
+  "clear_floor_shot_cases": 412,
+  "ring_pixel_checks": 92,
+  "natural_matches": [
+    {
+      "attempt": 1,
+      "result": "victory",
+      "physical_seconds": 47.84,
+      "game_fps": 50.0,
+      "kills": 10,
+      "remaining_hp": 45,
+      "bombs_used": 0,
+      "moving_frames": 1048,
+      "pause_resume_cycles": 1,
+      "game_ram_writes": false
+    },
+    {
+      "attempt": 2,
+      "result": "victory",
+      "physical_seconds": 49.16,
+      "game_fps": 50.0,
+      "kills": 10,
+      "remaining_hp": 75,
+      "bombs_used": 2,
+      "moving_frames": 1296,
+      "pause_resume_cycles": 1,
+      "game_ram_writes": false
+    },
+    {
+      "attempt": 3,
+      "result": "victory",
+      "physical_seconds": 48.22,
+      "game_fps": 50.0,
+      "kills": 10,
+      "remaining_hp": 40,
+      "bombs_used": 0,
+      "moving_frames": 886,
+      "pause_resume_cycles": 1,
+      "game_ram_writes": false
+    },
+    {
+      "attempt": 4,
+      "result": "victory",
+      "physical_seconds": 49.68,
+      "game_fps": 50.0,
+      "kills": 10,
+      "remaining_hp": 55,
+      "bombs_used": 2,
+      "moving_frames": 1255,
+      "pause_resume_cycles": 1,
+      "game_ram_writes": false
+    },
+    {
+      "attempt": 5,
+      "result": "victory",
+      "physical_seconds": 47.84,
+      "game_fps": 50.0,
+      "kills": 10,
+      "remaining_hp": 45,
+      "bombs_used": 0,
+      "moving_frames": 1048,
+      "pause_resume_cycles": 1,
+      "game_ram_writes": false
+    },
+    {
+      "attempt": 6,
+      "result": "victory",
+      "physical_seconds": 49.16,
+      "game_fps": 50.0,
+      "kills": 10,
+      "remaining_hp": 75,
+      "bombs_used": 2,
+      "moving_frames": 1296,
+      "pause_resume_cycles": 1,
+      "game_ram_writes": false
+    }
+  ],
+  "explained_shot_disappearances": 333,
+  "unexplained_shot_disappearances": 0,
+  "walkable_bounds": [
+    16,
+    112,
+    495,
+    367
+  ],
+  "camera_y_limits": [
+    0,
+    160
+  ],
+  "natural_combat": {
+    "seconds": 24,
+    "fps": 50.0,
+    "max_enemies": 4,
+    "max_player_shots": 4,
+    "max_enemy_shots": 4
+  },
+  "barrel_origin_cases": 348,
+  "hardware_barrel_cases": 298,
+  "barrel_frame_coverage": {
+    "left-up-idle": [
+      0,
+      1
+    ],
+    "left-up-run": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "left-down-idle": [
+      0,
+      1
+    ],
+    "left-down-run": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "right-up-idle": [
+      0,
+      1
+    ],
+    "right-up-run": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "right-down-idle": [
+      0,
+      1
+    ],
+    "right-down-run": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "wall_barrel_screenshots": [
+    {
+      "side": "left",
+      "direction": 0,
+      "origin": [
+        25,
+        217
+      ],
+      "screenshot": "13-muzzle-left-up.png"
+    },
+    {
+      "side": "left",
+      "direction": 4,
+      "origin": [
+        29,
+        258
+      ],
+      "screenshot": "13-muzzle-left-down.png"
+    },
+    {
+      "side": "right",
+      "direction": 0,
+      "origin": [
+        489,
+        217
+      ],
+      "screenshot": "13-muzzle-right-up.png"
+    },
+    {
+      "side": "right",
+      "direction": 4,
+      "origin": [
+        493,
+        258
+      ],
+      "screenshot": "13-muzzle-right-down.png"
+    }
+  ],
+  "barrel_inside_wall_hits": 43,
+  "bottom_corner_pixel_checks": 2048,
+  "method": "Real ROM in Genesis Plus GX. Controller-driven entry/movement/pause/bomb; stress formations and HP held in volatile RAM; game-active frame counter compared with vtimer, not host emulation speed."
+}

@@ -1,7 +1,6 @@
 // Hardware sprite list with global and per-scanline admission limits.
 #include "system/video/spritelist.h"
 #include "system/video/sprites/tiles.h"
-#include "system/video/chars.h"
 #include "system/video/herogfx.h"
 #include "system/video/enemygfx.h"
 #include "system/video/projection.h"
@@ -12,8 +11,8 @@
 #include "enemies/enemies.h"
 #include "items/items.h"
 #include "actors/npc.h"
+#include "levels/arena.h"
 
-static const u8 FACE_DIR[3][3]={{7,0,1},{6,0,2},{5,4,3}};
 // Four exact scanlines per 32-bit word: each byte is an independent lane.
 // Counts stay <=20 and widths (in8px units) <=40, so packed adds never carry
 // into the next scanline. This preserves exact pixel-row limits without
@@ -117,6 +116,7 @@ __attribute__((always_inline)) static inline bool admit(u16 n,s16 x,s16 y,u16 w,
 
 bool SPRITES_emit(u16 *n,s16 x,s16 y,u8 size,u16 attr)
 {
+    x-=cameraX;y-=cameraY;
     const u16 w=(((size>>2)&3)+1)*8,h=((size&3)+1)*8;
     if(!admit(*n,x,y,w,h,1,size,attr))return FALSE;
     if(!deferred)VDP_setSpriteFull(*n,x,y,size,attr,*n+1);
@@ -126,6 +126,7 @@ bool SPRITES_emit(u16 *n,s16 x,s16 y,u8 size,u16 attr)
 
 static bool emitActor(u16 *n,s16 x,s16 y,u16 attr)
 {
+    x-=cameraX;y-=cameraY;
     // The two hardware pieces occupy disjoint rows: one count per row.
     if(!admit(*n,x,y,32,48,2,SPRITE_SIZE(4,4),attr))return FALSE;
     if(!deferred)
@@ -150,6 +151,7 @@ static u16 writeBoss(u16 n,s16 x,s16 y,u16 attr)
 
 static bool emitBoss(u16 *n,s16 x,s16 y,u16 attr)
 {
+    x-=cameraX;y-=cameraY;
     // Reserve the whole 48x48 box atomically. Both columns count on each
     // scanline; retaining one atomic group avoids partially rendered bosses.
     if(!admit(*n,x,y,48,48,4,SPRITE_SIZE(4,4),attr))return FALSE;
@@ -202,7 +204,7 @@ void SPRITES_draw(void)
     PROFILE_START();
     beginSprites();
     CHAINFX_update();
-    const u8 dir=FACE_DIR[faceY+1][faceX+1];
+    const u8 dir=HERO_direction(faceX,faceY);
     PROFILE_MARK(0);
     HERO_prepare(dir);
     PROFILE_MARK(1);
@@ -251,11 +253,22 @@ void SPRITES_draw(void)
     }
     if (NPC_active() && !NPC_hidden())
     {
-        if ((frame%60)>=30)
-            SPRITES_emit(&n,npcX+8,npcY,SPRITE_SIZE(1,1),
-                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT_GLOW));
-        SPRITES_emit(&n,npcX,npcY,SPRITE_SIZE(3,3),
-            TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT));
+        if (ARENA_npcInMap())
+        {
+            // The complete Santa is already painted in the background.
+            // Only the beacon feedback blinks; damage never hides the scenery.
+            if ((frame%60)>=30)
+                SPRITES_emit(&n,npcX+16,npcY,SPRITE_SIZE(1,1),
+                    TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT_GLOW));
+        }
+        else
+        {
+            if ((frame%60)>=30)
+                SPRITES_emit(&n,npcX+8,npcY,SPRITE_SIZE(1,1),
+                    TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT_GLOW));
+            SPRITES_emit(&n,npcX,npcY,SPRITE_SIZE(3,3),
+                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT));
+        }
     }
     n=ITEMS_draw(n);
     for (u16 i=0;i<MAX_PSHOTS;i++)
@@ -278,6 +291,7 @@ void SPRITES_draw(void)
         VDP_updateSprites(n,DMA_QUEUE);
     }
     else SPRITES_hide();
+    HERO_endFrame();
     PROFILE_MARK(3);
 }
 

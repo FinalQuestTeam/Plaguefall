@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "0c5b6921b2c6dc26019d16b20e2872362aa4126726c27ed6d70a179bcbd97b9a",
+  "world": [
+    512,
+    256
+  ],
+  "camera_limits": [
+    0,
+    192
+  ],
+  "hud_fixed": true,
+  "player_solid_collisions": true,
+  "projectile_solid_collisions": true,
+  "distant_shots_do_not_hit": true,
+  "pause_restores_scene": true,
+  "bomb_damages_church": true,
+  "damaged_state_survives_pause": true,
+  "classic_phase_restored": true,
+  "scene_tiles": 560,
+  "scene_tile_bytes": 17920,
+  "level_enemy_cap": 4,
+  "shots_per_pool_cap": 6,
+  "benchmark": [
+    {
+      "enemies": 0,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 3.12,
+      "cpu_p95_pct": 3.12
+    },
+    {
+      "enemies": 3,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 15.13,
+      "cpu_p95_pct": 16.36
+    },
+    {
+      "enemies": 4,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 52.95,
+      "cpu_p95_pct": 55.22
+    },
+    {
+      "enemies": 6,
+      "shots_per_pool": 4,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 53.16,
+      "cpu_p95_pct": 55.47
+    },
+    {
+      "enemies": 6,
+      "shots_per_pool": 6,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 64.54,
+      "cpu_p95_pct": 67.14
+    },
+    {
+      "enemies": 8,
+      "shots_per_pool": 0,
+      "physical_frames": 300,
+      "game_frames": 300,
+      "fps": 50.0,
+      "cpu_mean_pct": 41.83,
+      "cpu_p95_pct": 43.75
+    },
+    {
+      "enemies": 8,
+      "shots_per_pool": 16,
+      "physical_frames": 300,
+      "game_frames": 150,
+      "fps": 25.0,
+      "cpu_mean_pct": 111.51,
+      "cpu_p95_pct": 113.77
+    },
+    {
+      "enemies": 15,
+      "shots_per_pool": 16,
+      "physical_frames": 300,
+      "game_frames": 150,
+      "fps": 25.0,
+      "cpu_mean_pct": 155.62,
+      "cpu_p95_pct": 158.25
+    }
+  ],
+  "routes": [
+    {
+      "bomb_used": false,
+      "next_node": 2,
+      "music_track": 3
+    },
+    {
+      "bomb_used": true,
+      "next_node": 3,
+      "music_track": 1
+    }
+  ],
+  "natural_combat": {
+    "seconds": 24,
+    "fps": 50.0,
+    "max_enemies": 4,
+    "max_player_shots": 2,
+    "max_enemy_shots": 4
+  },
+  "method": "Real ROM in Genesis Plus GX. Controller-driven entry/movement/pause/bomb; stress formations and HP held in volatile RAM; game-active frame counter compared with vtimer, not host emulation speed."
+}

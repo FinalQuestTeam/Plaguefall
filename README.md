@@ -4,17 +4,18 @@ Shooter de arena para **Sega Mega Drive / Genesis**, escrito em C com o SGDK. Da
 
 ![Menu de Plaguefall](game/art/menu-logo-v1/menu-3x.png)
 
-[Baixar a ROM](game/out/release/rom.bin) · [Ver a abertura](game/art/audio-abertura-v2/ntsc/abertura.mp4) · [GDD](game/doc/GDD.md)
+[Baixar Plaguefall.bin](game/out/release/Plaguefall.bin) · [Ver a abertura](game/art/intro-monologo-v2/emulator-ntsc/abertura.mp4) · [GDD](game/doc/GDD.md)
 
 ## Estado atual
 
+- **Cenários da campanha:** [pátio da igreja aprovado](game/art/phase01-courtyard-v2/revisao.html) e [sete mapas dos capítulos 2 a 6 aprovados e integrados](game/art/phases02-06-v1/revisao.html), incluindo 2A/2B e 6A/6B. Cada arena tem tamanho, câmera, piso e perigos próprios. A lava das fases 3 e 6 ganha brilho por tiles; as músicas existentes permanecem. Na fase 5, a Santa do cenário usa contato lógico de 40×40 e invulnerabilidade de 2,5 s, sem sprite duplicado. [Músicas, arenas e integração](game/doc/fases-cenarios.md).
 - **Damião** é o protagonista jogável, com oito direções e animações de repouso e movimento. **Dinorah** aparece na galeria e nas conversas da campanha.
-- **Campanha:** 16 etapas por partida, representadas por20 nós e quatro bifurcações. Há13 inimigos de combate, incluindo o chefe **Lacraia**, e dois tipos de treino. Os objetivos incluem eliminar ondas, sobreviver, coletar itens e proteger Nossa Senhora Aparecida.
-- **Abertura:** FinalQuest → APRESENTA → logo Plaguefall → monólogo ilustrado em12 planos → menu. A música **O Sonho Atendido** começa no logo Plaguefall e segue continuamente pelas imagens. Somente **START** pula; A, B e C não completam textos nem avançam cenas. A abertura toca uma vez por boot.
+- **Campanha:** 16 etapas por partida, representadas por20 nós e quatro bifurcações. Há13 inimigos de combate, incluindo o chefe **Escorpião**, e dois tipos de treino. Os objetivos incluem eliminar ondas, sobreviver, coletar itens e proteger Nossa Senhora Aparecida.
+- **Abertura:** FinalQuest → APRESENTA → logo Plaguefall → monólogo ilustrado em14 planos e18 cartelas, com101 segundos → menu. A música **O Sonho Atendido** começa no logo Plaguefall e segue continuamente pelas imagens. Somente **START** pula; A, B e C não completam textos nem avançam cenas. A abertura toca uma vez por boot.
 - **Menu Assets:** três abas — Damião, Dinorah e Músicas. Permite ouvir **Baião de Ferrugem**, **Entardecer**, **Breu** e **Ladainha de Ferro**, com pausa e alternância entre calma e combate. Sair da audição restaura a música anterior.
 - **Áudio:** síntese PSG em tempo real, com ritmo e acentos de combate ligados à ameaça. As versões nordestina industrial, melancólica, sombria e de inspiração em igreja permanecem preservadas.
-- **Arte:** personagens32×48, inimigos16/24/32 pixels e chefe48×48, oito direções e perspectiva elevada. Os recursos ativos são exportados para tiles, paletas e frames na ROM; parte do cenário e dos efeitos continua procedural.
-- **ROM principal:**896 KiB, conferida no Genesis Plus GX em PAL e NTSC. Memória estática e hash estão no [relatório de build](game/doc/build-validation.json).
+- **Arte:** personagens32×48, inimigos16/24/32 pixels e chefe48×48, oito direções e perspectiva elevada. Os recursos ativos são exportados para tiles, paletas e frames na ROM; os cenários aprovados até o capítulo 6 usam mapas de tiles próprios, enquanto as etapas seguintes e parte dos efeitos mantêm a implementação anterior.
+- **ROM principal:** inclui os cenários aprovados até o capítulo 6. A validação integrada NTSC/PAL foi concluída com 42 partidas novas, 12 partidas de regressão da fase 1 e 28 ensaios de carga a 60/50 FPS. Relatórios: [NTSC](game/art/phases02-06-v1/validation/ntsc/report.json) e [PAL](game/art/phases02-06-v1/validation/pal/report.json). Os ensaios isolados anteriores permanecem nas pastas de arte, identificados como históricos. O [relatório consolidado](game/doc/build-validation.json) registra a revisão a que seus hashes e resultados pertencem.
 
 A revisão narrativa sobre a fuga da igreja, o resgate e a demolição dos ninhos está documentada como **proposta**, ainda não aplicada integralmente à campanha. Consulte [História](game/doc/historia/README.md) para distinguir o roteiro executável do tratamento futuro.
 
@@ -28,6 +29,8 @@ A revisão narrativa sobre a fuga da igreja, o resgate e a demolição dos ninho
 | C | Troca o item selecionado | Na preparação, percorre fases para depuração |
 | START | Pausa/retoma | Confirma no menu; pula a abertura e as conversas |
 | A+B+C segurados | Pula a fase para depuração | — |
+
+**Mira diagonal:** ao soltar o direcional depois de andar na diagonal, Damião conserva a mira e pode disparar parado com A. Uma tolerância de80ms entre soltar os dois eixos evita virar involuntariamente para uma direção reta. Segurar apenas um eixo confirma a mudança; um novo toque após parar muda a mira imediatamente.
 
 **Durante o boot, somente START tem ação.** Na aba Músicas, CIMA/BAIXO escolhe a faixa, A pausa/retoma e C alterna calma/combate. ESQ/DIR troca de aba; B/START sai. A faixa da galeria não muda permanentemente a trilha da campanha.
 
@@ -57,7 +60,7 @@ make -C game -j4 OUT_DIR_LIB="$PWD/SGDK/out/release"
 python3 game/tools/check.py
 ```
 
-O build gera **`game/out/release/rom.bin`**, a única ROM principal versionada. Os testes nativos usam uma pasta temporária e verificam partituras, PAL/NTSC, envelopes, prioridade dos efeitos, as quatro faixas e a continuidade da abertura. [Configuração, emulador e testes de integração](game/doc/desenvolvimento.md).
+O build gera **`game/out/release/Plaguefall.bin`** para abrir no emulador, acompanhado de `Plaguefall.png` para a capa da biblioteca e `Plaguefall.json` com identificação e hashes. `Plaguefall.bin` é a única ROM versionada; `rom.bin` permanece como saída interna local do SGDK, com conteúdo idêntico. Os testes nativos usam uma pasta temporária e verificam partituras, PAL/NTSC, envelopes, prioridade dos efeitos, as quatro faixas e a continuidade da abertura. [Configuração, emulador e testes de integração](game/doc/desenvolvimento.md).
 
 ## Organização
 
@@ -70,7 +73,7 @@ game/
 ├── tests/audio/         # testes nativos mantidos
 ├── tools/               # geradores e validação
 │   └── music-bench/     # bancada opcional; compartilha o áudio de produção
-└── out/release/rom.bin  # ROM principal; demais saídas são locais
+└── out/release/Plaguefall.bin  # ROM principal; rom.bin é saída local do SGDK
 SGDK/                    # submódulo do SDK
 ```
 
@@ -79,8 +82,8 @@ Compilações experimentais, objetos, dependências e arquivos de sistema foram 
 ## Documentação
 
 - [GDD](game/doc/GDD.md) · [Desenvolvimento e validação](game/doc/desenvolvimento.md).
-- [História e campanha](game/doc/historia/README.md) · [Storyboard](game/doc/historia/storyboard-abertura.md).
-- [Direção sonora e partituras](game/doc/musica.md) · [Abertura com música contínua](game/art/audio-abertura-v2/README.md).
+- [História e campanha](game/doc/historia/README.md) · [Storyboard](game/doc/historia/storyboard-abertura-v2.md).
+- [Direção sonora e partituras](game/doc/musica.md) · [Abertura com música contínua](game/art/audio-abertura-v3/README.md).
 - [Assets e galeria musical](game/art/gallery-v1/README.md) · [Inventário de sprites](game/art/INVENTARIO-SPRITES.md).
 - [Itens e ícones atuais](game/art/cangaco-itens-v2/README.md) · [Arte do projeto](game/art/README.md).
 - [Guia SGDK em português](game/doc/sgdk-guia.html).

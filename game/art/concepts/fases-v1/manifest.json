@@ -4,238 +4,470 @@
   "purpose": "Concept art de cenários e narrativa ambiental para futura adaptação das telas",
   "mode": "image_gen integrado",
   "camera": "Ortográfica, aproximadamente 60 graus acima do chão",
-  "status": "generation_pending",
+  "status": "complete",
+  "phaseCount": 20,
+  "epilogueSheets": 1,
   "assets": [
     {
       "id": "01",
       "title": "Pátio da igreja",
       "phase": "Prólogo e fase 1",
-      "story": "A fila saiu por aqui: bancos viraram barricada, recipientes de água ficaram junto à porta e o caminho dos fundos permanece aberto.",
+      "narrative": "A fila saiu por aqui: bancos viraram barricada, recipientes de água ficaram junto à porta e o caminho dos fundos permanece aberto.",
       "hazard": "none",
-      "filename": "01-patio-igreja.png",
-      "prompt": "prompts/01.txt",
       "image": "imagens/01-patio-igreja.png",
-      "status": "pending"
+      "generationPrompt": "prompts/01.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-1bc43458-dea2-432e-a682-54ba5161a2b7.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-1bc43458-dea2-432e-a682-54ba5161a2b7.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6fb96847469dc0273c388d3cf079067db7f763ea9f7a9c45ab7fbd6991cb32c8"
     },
     {
       "id": "02a",
       "title": "Rua de serviço",
       "phase": "Fase 2A",
-      "story": "A igreja continua inteira; marcas ordenadas de passagem e espaços vazios dos suprimentos mostram uma evacuação concluída.",
+      "narrative": "A igreja continua inteira; marcas ordenadas de passagem e espaços vazios dos suprimentos mostram uma evacuação concluída.",
       "hazard": "none",
-      "filename": "02a-rua-servico.png",
-      "prompt": "prompts/02a.txt",
-      "image": "imagens/02a-rua-servico.png",
-      "status": "pending"
+      "image": "imagens/02a-rua-servico-v2.png",
+      "generationPrompt": "prompts/02a.txt",
+      "revisionPrompt": "prompts/02a-continuidade.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-52f7d4b8-94b5-460c-bf6a-1384b8117583.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-d9ce2d6c-d1d6-4861-bde4-724905387c55.png",
+          "edited": false
+        },
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-52f7d4b8-94b5-460c-bf6a-1384b8117583.png",
+          "edited": true
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f223a348cfe50445c0c1612b5c6d480c6db5041c49f5669750fc1c996b2e190f",
+      "draft": "rascunhos/02a-rua-servico.png"
     },
     {
       "id": "02b",
       "title": "Baixio da igreja danificada",
       "phase": "Fase 2B",
-      "story": "Telhas e reboco recém-caídos identificam o dano da bomba; suprimentos presos sob a parede explicam a perda e o desvio.",
+      "narrative": "Telhas e reboco recém-caídos identificam o dano da bomba; suprimentos presos sob a parede explicam a perda e o desvio.",
       "hazard": "mud",
-      "filename": "02b-igreja-danificada.png",
-      "prompt": "prompts/02b.txt",
-      "image": "imagens/02b-igreja-danificada.png",
-      "status": "pending"
+      "image": "imagens/02b-igreja-danificada-v2.png",
+      "generationPrompt": "prompts/02b.txt",
+      "revisionPrompt": "prompts/02b-continuidade.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-e39aba48-f39e-4099-9dde-14b4824fcca5.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-20d212aa-c448-4d92-bb54-2bd777c4ba3f.png",
+          "edited": false
+        },
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-e39aba48-f39e-4099-9dde-14b4824fcca5.png",
+          "edited": true
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "613659fe0c5dbd83c7032b4f2b1c1a5c3003e8161d5089f3b7da655079971273",
+      "draft": "rascunhos/02b-igreja-danificada.png"
     },
     {
       "id": "03",
       "title": "Abrigo no galpão de manutenção",
       "phase": "Fase 3",
-      "story": "Redes, biombos e uma farmácia improvisada mostram quem depende da defesa; o passado industrial continua perigoso.",
+      "narrative": "Redes, biombos e uma farmácia improvisada mostram quem depende da defesa; o passado industrial continua perigoso.",
       "hazard": "lava",
-      "filename": "03-abrigo-manutencao.png",
-      "prompt": "prompts/03.txt",
       "image": "imagens/03-abrigo-manutencao.png",
-      "status": "pending"
+      "generationPrompt": "prompts/03.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-31f154d6-81f0-45a4-9fba-dbe67ccd2134.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-31f154d6-81f0-45a4-9fba-dbe67ccd2134.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e9810391c9f66d552fa1ba3ca7bc35b347e85eb3710a25d5758c1d9710d36a3f"
     },
     {
       "id": "04",
       "title": "Túneis de manutenção",
       "phase": "Fase 4",
-      "story": "A passagem foi limpa para outras pessoas cruzarem depois: tampas abertas, marcas de ferramentas e uma rota seca ligam entrada e saída.",
+      "narrative": "A passagem foi limpa para outras pessoas cruzarem depois: tampas abertas, marcas de ferramentas e uma rota seca ligam entrada e saída.",
       "hazard": "mud",
-      "filename": "04-tuneis.png",
-      "prompt": "prompts/04.txt",
       "image": "imagens/04-tuneis.png",
-      "status": "pending"
+      "generationPrompt": "prompts/04.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-36bcd03c-fc2d-4429-8b64-b25fce006dc6.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-36bcd03c-fc2d-4429-8b64-b25fce006dc6.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e633f8dd2fe6eb0a5447abad5274ebf34810be875de062d741cf0d03dae65035"
     },
     {
       "id": "05",
       "title": "Plataforma do sinalizador",
       "phase": "Fase 5",
-      "story": "A santa retirada da igreja torna-se o centro da composição; os preparativos do embarque revelam a função do sinal.",
+      "narrative": "A santa retirada da igreja torna-se o centro da composição; os preparativos do embarque revelam a função do sinal.",
       "hazard": "none",
-      "filename": "05-sinalizador-santa.png",
-      "prompt": "prompts/05.txt",
       "image": "imagens/05-sinalizador-santa.png",
-      "status": "pending"
+      "generationPrompt": "prompts/05.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-bfca0b26-edb0-4545-b4b7-f468f8f461b8.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-bfca0b26-edb0-4545-b4b7-f468f8f461b8.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6782ae6d115d08ad6efc27368a62f2dc37302f2ab639b956cb13f86ab668d575"
     },
     {
       "id": "06a",
       "title": "Perímetro do resgate",
       "phase": "Fase 6A",
-      "story": "Marcas de embarque, a rampa recolhendo e o sinal confirmado contam que o povo conseguiu partir.",
+      "narrative": "Marcas de embarque, a rampa recolhendo e o sinal confirmado contam que o povo conseguiu partir.",
       "hazard": "lava",
-      "filename": "06a-resgate.png",
-      "prompt": "prompts/06a.txt",
-      "image": "imagens/06a-resgate.png",
-      "status": "pending"
+      "image": "imagens/06a-resgate-v2.png",
+      "generationPrompt": "prompts/06a.txt",
+      "revisionPrompt": "prompts/06a-continuidade.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-230d5443-c310-4134-b983-c614c889861b.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-39518da8-55dc-4eb5-9485-c77c288e88bb.png",
+          "edited": false
+        },
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-230d5443-c310-4134-b983-c614c889861b.png",
+          "edited": true
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5113b351b53d40859d9c52d6c0850cbacdcb177b02e7b83ef946f24db5054e72",
+      "draft": "rascunhos/06a-resgate.png"
     },
     {
       "id": "06b",
       "title": "Corredor da retirada",
       "phase": "Fase 6B",
-      "story": "O sinal quebrado e as bagagens arrastadas para longe do pouso mostram que o resgate falhou e a saída passou a ser por terra.",
+      "narrative": "O sinal quebrado e as bagagens arrastadas para longe do pouso mostram que o resgate falhou e a saída passou a ser por terra.",
       "hazard": "lava",
-      "filename": "06b-retirada.png",
-      "prompt": "prompts/06b.txt",
       "image": "imagens/06b-retirada.png",
-      "status": "pending"
+      "generationPrompt": "prompts/06b.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-a4aa1c08-661a-4b1b-bef4-0cebf961a776.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-a4aa1c08-661a-4b1b-bef4-0cebf961a776.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "de3512afb95269a812b9fb895330158faadd9af28e866d9f57b83c81989f5e98"
     },
     {
       "id": "07",
       "title": "Baixio das antenas",
       "phase": "Fase 7",
-      "story": "Rastros orgânicos seguem os mesmos cabos que antes ligavam a comunidade à base; a infraestrutura revela o rumo da investigação.",
+      "narrative": "Rastros orgânicos seguem os mesmos cabos que antes ligavam a comunidade à base; a infraestrutura revela o rumo da investigação.",
       "hazard": "mud",
-      "filename": "07-antenas.png",
-      "prompt": "prompts/07.txt",
       "image": "imagens/07-antenas.png",
-      "status": "pending"
+      "generationPrompt": "prompts/07.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-5ebbf3e9-0551-4895-bef6-6bcde7683ae2.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-5ebbf3e9-0551-4895-bef6-6bcde7683ae2.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c6a7995aeee5736712ed52fc4d6fc91cfc6bac8b3a384db5762b717de5826809"
     },
     {
       "id": "08",
       "title": "Fornalha e dutos de criação",
       "phase": "Fase 8",
-      "story": "O jogador vê pela primeira vez como a máquina virou criadouro: ovos crescem no calor e na água dos dutos.",
+      "narrative": "O jogador vê pela primeira vez como a máquina virou criadouro: ovos crescem no calor e na água dos dutos.",
       "hazard": "lava",
-      "filename": "08-fornalha.png",
-      "prompt": "prompts/08.txt",
       "image": "imagens/08-fornalha.png",
-      "status": "pending"
+      "generationPrompt": "prompts/08.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-f830471b-96ab-41a1-b13e-6993404d9eb0.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-f830471b-96ab-41a1-b13e-6993404d9eb0.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "dc7e92f00a8600dba3bffb7def59ed16899810dfb0f1fe77e07e1bc33f2318bd"
     },
     {
       "id": "09",
       "title": "Alfândega ocupada",
       "phase": "Fase 9",
-      "story": "Caixas de carga abertas por dentro e equipamentos humanos incorporados à defesa mostram a origem e a adaptação da infestação.",
+      "narrative": "Caixas de carga abertas por dentro e equipamentos humanos incorporados à defesa mostram a origem e a adaptação da infestação.",
       "hazard": "none",
-      "filename": "09-alfandega.png",
-      "prompt": "prompts/09.txt",
       "image": "imagens/09-alfandega.png",
-      "status": "pending"
+      "generationPrompt": "prompts/09.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-2484c11c-9cc7-4d80-935d-e38fad11bd9d.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-2484c11c-9cc7-4d80-935d-e38fad11bd9d.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c779dd02e2c17456620a9ebdef7d8000b96e48dde3626a2cd7f3ac257d1975cb"
     },
     {
       "id": "10a",
       "title": "Acesso dos técnicos",
       "phase": "Fase 10A",
-      "story": "Armários e ferramentas identificam a antiga vida de Damião; a rota humana de manutenção ainda permite atravessar a instalação.",
+      "narrative": "Armários e ferramentas identificam a antiga vida de Damião; a rota humana de manutenção ainda permite atravessar a instalação.",
       "hazard": "mud",
-      "filename": "10a-acesso-tecnicos.png",
-      "prompt": "prompts/10a.txt",
       "image": "imagens/10a-acesso-tecnicos.png",
-      "status": "pending"
+      "generationPrompt": "prompts/10a.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-3ca77dce-dd4d-457d-8e41-f4c10b8138c3.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-3ca77dce-dd4d-457d-8e41-f4c10b8138c3.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "1587bc413e1335feeda953ec00aa5de24f065a06c79bd9584cd2ddff219c9263"
     },
     {
       "id": "10b",
       "title": "Dreno térmico",
       "phase": "Fase 10B",
-      "story": "Níveis antigos de enchente, grades arrebentadas e calor vazando mostram o custo do desvio sob a base.",
+      "narrative": "Níveis antigos de enchente, grades arrebentadas e calor vazando mostram o custo do desvio sob a base.",
       "hazard": "mix",
-      "filename": "10b-dreno-termico.png",
-      "prompt": "prompts/10b.txt",
       "image": "imagens/10b-dreno-termico.png",
-      "status": "pending"
+      "generationPrompt": "prompts/10b.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-8029ce6a-9668-4723-8784-1382415d24a0.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-8029ce6a-9668-4723-8784-1382415d24a0.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "b2e0592f0aaca147c2f02dd04b8ed6ec5481730c6e128a61b2328f6a6a1f60a1"
     },
     {
       "id": "11",
       "title": "Depósito de demolição",
       "phase": "Fase 11",
-      "story": "Cargas industriais, caixas ainda lacradas e alertas abandonados contam que havia recursos e conhecimento, mas as operações continuaram.",
+      "narrative": "Cargas industriais, caixas ainda lacradas e alertas abandonados contam que havia recursos e conhecimento, mas as operações continuaram.",
       "hazard": "mix",
-      "filename": "11-deposito.png",
-      "prompt": "prompts/11.txt",
       "image": "imagens/11-deposito.png",
-      "status": "pending"
+      "generationPrompt": "prompts/11-v2.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-8e29c6ef-2d67-4c3c-ab58-1b0c6e0292f8.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-8e29c6ef-2d67-4c3c-ab58-1b0c6e0292f8.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "05d0584d1cda75aa876d08449703f3b228f3c37035f5b1acc9b6beaf995277be"
     },
     {
       "id": "12",
       "title": "Comporta de carga",
       "phase": "Fase 12",
-      "story": "A comporta em movimento e os sinais mecânicos de fechamento tornam a janela de tempo visível antes do desvio.",
+      "narrative": "A comporta em movimento e os sinais mecânicos de fechamento tornam a janela de tempo visível antes do desvio.",
       "hazard": "mix",
-      "filename": "12-comporta.png",
-      "prompt": "prompts/12.txt",
       "image": "imagens/12-comporta.png",
-      "status": "pending"
+      "generationPrompt": "prompts/12.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-a98cb415-eb88-4764-96ab-58045e263a27.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-a98cb415-eb88-4764-96ab-58045e263a27.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "acb54e250b9a7372d96a63e34d11ac6bbc6d76d8f810911f69fb68e263156a09"
     },
     {
       "id": "13a",
       "title": "Linha quente aberta",
       "phase": "Fase 13A",
-      "story": "A passagem ainda aberta e o metal em resfriamento registram que Damião chegou dentro da janela.",
+      "narrative": "A passagem ainda aberta e o metal em resfriamento registram que Damião chegou dentro da janela.",
       "hazard": "lava",
-      "filename": "13a-linha-quente.png",
-      "prompt": "prompts/13a.txt",
       "image": "imagens/13a-linha-quente.png",
-      "status": "pending"
+      "generationPrompt": "prompts/13a.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-909ee3ee-15b1-417a-8959-ea9a7987e688.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-909ee3ee-15b1-417a-8959-ea9a7987e688.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5512336a84b789b1f245ac6b0dad616db87b21c90dd79a55b8b50a82ec5185ba"
     },
     {
       "id": "13b",
       "title": "Canal de decantação",
       "phase": "Fase 13B",
-      "story": "A comporta fechada aparece ao fundo; sedimento e ferrugem indicam a passagem mais lenta que precisou ser usada.",
+      "narrative": "A comporta fechada aparece ao fundo; sedimento e ferrugem indicam a passagem mais lenta que precisou ser usada.",
       "hazard": "mud",
-      "filename": "13b-decantacao.png",
-      "prompt": "prompts/13b.txt",
       "image": "imagens/13b-decantacao.png",
-      "status": "pending"
+      "generationPrompt": "prompts/13b.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-15bcbfce-dde2-4332-b11d-b58c88126149.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-15bcbfce-dde2-4332-b11d-b58c88126149.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "5b824b269700733eb00e23603a024b0fb8239eb0a6a75801f1f73dbf55920e36"
     },
     {
       "id": "14",
       "title": "Pátio dos enxames",
       "phase": "Fase 14",
-      "story": "A ocupação passa de manchas a arquitetura: carapaças usam aço e cabos para fechar a aproximação da câmara.",
+      "narrative": "A ocupação passa de manchas a arquitetura: carapaças usam aço e cabos para fechar a aproximação da câmara.",
       "hazard": "mix",
-      "filename": "14-patio-enxames.png",
-      "prompt": "prompts/14.txt",
       "image": "imagens/14-patio-enxames.png",
-      "status": "pending"
+      "generationPrompt": "prompts/14.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-90507ef0-fee7-4bdd-93ca-001b286d5c79.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-90507ef0-fee7-4bdd-93ca-001b286d5c79.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "912a3fecefa16c7e2d19059be29b9b806d554f62fb0d4ad9e29bddab2ba04ef1"
     },
     {
       "id": "15",
       "title": "Boca das galerias",
       "phase": "Fase 15",
-      "story": "Suportes e pontos de inspeção revelam onde as cargas poderão entrar; a saída pelos túneis continua reconhecível.",
+      "narrative": "Suportes e pontos de inspeção revelam onde as cargas poderão entrar; a saída pelos túneis continua reconhecível.",
       "hazard": "mix",
-      "filename": "15-galerias.png",
-      "prompt": "prompts/15.txt",
       "image": "imagens/15-galerias.png",
-      "status": "pending"
+      "generationPrompt": "prompts/15.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-638b8709-0af1-447f-bce3-6cf62d53a12a.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-638b8709-0af1-447f-bce3-6cf62d53a12a.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "630a800d89b6885cd459ad5f3159d1bd9cf01f45643d924c4cbddd9ba9faaf3b"
     },
     {
       "id": "16",
-      "title": "Câmara da Lacraia",
+      "title": "Câmara do Escorpião",
       "phase": "Fase 16",
-      "story": "O ninho ocupa o coração da instalação; os acessos humanos sobreviventes tornam visível como Damião poderá destruí-lo.",
+      "narrative": "O ninho ocupa o coração da instalação; os acessos humanos sobreviventes tornam visível como Damião poderá destruí-lo.",
       "hazard": "none",
-      "filename": "16-camara-lacraia.png",
-      "prompt": "prompts/16.txt",
-      "image": "imagens/16-camara-lacraia.png",
-      "status": "pending"
+      "image": "imagens/16-camara-escorpiao.png",
+      "generationPrompt": "prompts/16.txt",
+      "revisionPrompt": null,
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-61680ca8-19c5-45b0-9179-d878479bdbc6.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-61680ca8-19c5-45b0-9179-d878479bdbc6.png",
+          "edited": false
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "878b84c1e462cadd41d79099f77a29b23197fdc4f43f3dc4a9f9d9f09e401243"
     },
     {
       "id": "epilogo",
       "title": "Retorno à igreja",
       "phase": "Epílogo e variantes da igreja",
-      "story": "O mesmo lugar do prólogo reaparece livre dos ninhos: a versão preservada recebe o retorno, e a versão danificada mostra reparos.",
+      "narrative": "O mesmo lugar do prólogo reaparece livre dos ninhos: a versão preservada recebe o retorno, e a versão danificada mostra reparos.",
       "hazard": "none",
-      "filename": "epilogo-retorno-igreja.png",
-      "prompt": "prompts/epilogo.txt",
-      "image": "imagens/epilogo-retorno-igreja.png",
-      "status": "pending"
+      "image": "imagens/epilogo-retorno-igreja-v2.png",
+      "generationPrompt": "prompts/epilogo.txt",
+      "revisionPrompt": "prompts/epilogo-continuidade.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-2b4136cc-fb9f-485e-b794-6abfc91be2ee.png",
+      "history": [
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-30a3e79b-df99-4dcb-b625-e17ca9147d64.png",
+          "edited": false
+        },
+        {
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a15d70-ca6b-7e60-a4b0-893de3afb681/exec-2b4136cc-fb9f-485e-b794-6abfc91be2ee.png",
+          "edited": true
+        }
+      ],
+      "status": "selected",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "9d063301e77b070394264c3aa02fced94028bf09285964d103da845da7a463dc",
+      "draft": "rascunhos/epilogo-retorno-igreja.png"
     }
   ]
 }

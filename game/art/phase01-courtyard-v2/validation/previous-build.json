@@ -1,0 +1,318 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "rom": "../out/release/rom.bin",
+  "rom_sha256": "0c5b6921b2c6dc26019d16b20e2872362aa4126726c27ed6d70a179bcbd97b9a",
+  "rom_bytes": 917504,
+  "text_bytes": 869088,
+  "data_bytes": 136,
+  "bss_bytes": 6392,
+  "static_ram_bytes": 6528,
+  "native_audio": "ASan/UBSan passed: all three build defaults, four runtime tracks, permanent campaign selection, preview restoration and continuous opening",
+  "score_checks": "four scores, runtime catalog, continuous opening and deterministic courtyard export verified",
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "courtyard_ntsc": {
+      "passed": true,
+      "region": "NTSC",
+      "rom_sha256": "0c5b6921b2c6dc26019d16b20e2872362aa4126726c27ed6d70a179bcbd97b9a",
+      "world": [
+        512,
+        256
+      ],
+      "camera_limits": [
+        0,
+        192
+      ],
+      "hud_fixed": true,
+      "player_solid_collisions": true,
+      "projectile_solid_collisions": true,
+      "distant_shots_do_not_hit": true,
+      "pause_restores_scene": true,
+      "bomb_damages_church": true,
+      "damaged_state_survives_pause": true,
+      "classic_phase_restored": true,
+      "scene_tiles": 560,
+      "scene_tile_bytes": 17920,
+      "level_enemy_cap": 4,
+      "shots_per_pool_cap": 6,
+      "benchmark": [
+        {
+          "enemies": 0,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 26.57,
+          "cpu_p95_pct": 28.27
+        },
+        {
+          "enemies": 3,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 41.03,
+          "cpu_p95_pct": 42.97
+        },
+        {
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 78.86,
+          "cpu_p95_pct": 80.22
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 4,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 79.02,
+          "cpu_p95_pct": 80.81
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 277,
+          "fps": 55.4,
+          "cpu_mean_pct": 90.93,
+          "cpu_p95_pct": 94.43
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 67.82,
+          "cpu_p95_pct": 69.87
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 150,
+          "fps": 30.0,
+          "cpu_mean_pct": 156.56,
+          "cpu_p95_pct": 159.77
+        },
+        {
+          "enemies": 15,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 120,
+          "fps": 24.0,
+          "cpu_mean_pct": 200.01,
+          "cpu_p95_pct": 203.22
+        }
+      ],
+      "routes": [
+        {
+          "bomb_used": false,
+          "next_node": 2,
+          "music_track": 3
+        },
+        {
+          "bomb_used": true,
+          "next_node": 3,
+          "music_track": 1
+        }
+      ],
+      "natural_combat": {
+        "seconds": 24,
+        "fps": 60.0,
+        "max_enemies": 4,
+        "max_player_shots": 2,
+        "max_enemy_shots": 4
+      },
+      "method": "Real ROM in Genesis Plus GX. Controller-driven entry/movement/pause/bomb; stress formations and HP held in volatile RAM; game-active frame counter compared with vtimer, not host emulation speed."
+    },
+    "intro_ntsc": {
+      "passed": true,
+      "fps": 60,
+      "frames": 8698,
+      "game_ram_writes": false,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "START skips whole opening from APRESENTA or Plaguefall logo",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A/B/C ignored in monologue and Plaguefall logo",
+        "A cannot complete captions or advance shots",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    },
+    "courtyard_pal": {
+      "passed": true,
+      "region": "PAL",
+      "rom_sha256": "0c5b6921b2c6dc26019d16b20e2872362aa4126726c27ed6d70a179bcbd97b9a",
+      "world": [
+        512,
+        256
+      ],
+      "camera_limits": [
+        0,
+        192
+      ],
+      "hud_fixed": true,
+      "player_solid_collisions": true,
+      "projectile_solid_collisions": true,
+      "distant_shots_do_not_hit": true,
+      "pause_restores_scene": true,
+      "bomb_damages_church": true,
+      "damaged_state_survives_pause": true,
+      "classic_phase_restored": true,
+      "scene_tiles": 560,
+      "scene_tile_bytes": 17920,
+      "level_enemy_cap": 4,
+      "shots_per_pool_cap": 6,
+      "benchmark": [
+        {
+          "enemies": 0,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 3.12,
+          "cpu_p95_pct": 3.12
+        },
+        {
+          "enemies": 3,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 15.13,
+          "cpu_p95_pct": 16.36
+        },
+        {
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 52.95,
+          "cpu_p95_pct": 55.22
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 4,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 53.16,
+          "cpu_p95_pct": 55.47
+        },
+        {
+          "enemies": 6,
+          "shots_per_pool": 6,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 64.54,
+          "cpu_p95_pct": 67.14
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 0,
+          "physical_frames": 300,
+          "game_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 41.83,
+          "cpu_p95_pct": 43.75
+        },
+        {
+          "enemies": 8,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 150,
+          "fps": 25.0,
+          "cpu_mean_pct": 111.51,
+          "cpu_p95_pct": 113.77
+        },
+        {
+          "enemies": 15,
+          "shots_per_pool": 16,
+          "physical_frames": 300,
+          "game_frames": 150,
+          "fps": 25.0,
+          "cpu_mean_pct": 155.62,
+          "cpu_p95_pct": 158.25
+        }
+      ],
+      "routes": [
+        {
+          "bomb_used": false,
+          "next_node": 2,
+          "music_track": 3
+        },
+        {
+          "bomb_used": true,
+          "next_node": 3,
+          "music_track": 1
+        }
+      ],
+      "natural_combat": {
+        "seconds": 24,
+        "fps": 50.0,
+        "max_enemies": 4,
+        "max_player_shots": 2,
+        "max_enemy_shots": 4
+      },
+      "method": "Real ROM in Genesis Plus GX. Controller-driven entry/movement/pause/bomb; stress formations and HP held in volatile RAM; game-active frame counter compared with vtimer, not host emulation speed."
+    },
+    "intro_pal": {
+      "passed": true,
+      "fps": 50,
+      "frames": 7245,
+      "game_ram_writes": false,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "START skips whole opening from APRESENTA or Plaguefall logo",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A/B/C ignored in monologue and Plaguefall logo",
+        "A cannot complete captions or advance shots",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    }
+  },
+  "previous_validation": "../art/phase01-courtyard-v1/validation/previous-build.json",
+  "repository_policy": {
+    "canonical_rom": "game/out/release/rom.bin",
+    "temporary_builds_ignored": true,
+    "native_test_binaries": "system temporary directory",
+    "music_archives_preserved": true
+  }
+}

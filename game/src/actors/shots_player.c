@@ -6,6 +6,9 @@
 #include "actors/player.h"
 #include "system/audio/sfx.h"
 #include "enemies/enemies.h"
+#include "levels/levels.h"
+#include "system/video/projection.h"
+#include "system/video/herogfx.h"
 
 static u8 shotPower = 1;         // balas por disparo (1..SHOTS_MAX_POWER)
 static u8 shotMode;              // SHOTMODE_* ativo (raio/gelo/fogo)
@@ -26,7 +29,8 @@ bool SHOTS_hasChain(void)   { return shotMode == SHOTMODE_CHAIN && modeCharges >
 // modo especial `mode` (SHOTMODE_*), que decide o efeito ao acertar
 static void spawnPShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 mode)
 {
-    for (u16 i = 0; i < MAX_PSHOTS; i++)
+    const u16 cap = LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_PSHOTS;
+    for (u16 i = 0; i < cap; i++)
     {
         if (pshots[i].active) continue;
         pshots[i].x = fx;
@@ -54,21 +58,13 @@ void SHOTS_firePlayer(void)
     const s32 bvx = ((s32) dx * spd) / (s32) mag;
     const s32 bvy = ((s32) dy * spd) / (s32) mag;
 
-    // The eight human views use horizontal mirroring only. N/S are distinct
-    // drawings; a south-facing aim must not apply the old mech vertical flip.
-    const s16 rs = faceX < 0 ? -1 : 1;
-    const s16 rp = (s16) (PSHOT_MUZZLE_RIGHT * rs);
-    const s16 mx = (s16) (px + 8 + faceX * PSHOT_MUZZLE_FWD - faceY * rp);
-    const s16 my = (s16) (py + 8 + faceY * PSHOT_MUZZLE_FWD + faceX * rp);
-
-    // canto superior-esquerdo da bala 8x8, PRESO dentro da arena: perto da parede
-    // a boca cairia fora e a bala seria descartada no 1º quadro (não saía tiro)
-    s16 sx = (s16) (mx - 4), sy = (s16) (my - 4);
-    if (sx < INNER_MIN_X)      sx = INNER_MIN_X;
-    if (sx > INNER_MAX_X - 7)  sx = INNER_MAX_X - 7;
-    if (sy < INNER_MIN_Y)      sy = INNER_MIN_Y;
-    if (sy > INNER_MAX_Y - 7)  sy = INNER_MAX_Y - 7;
-    const s32 fx = (s32) sx << 6, fy = (s32) sy << 6;
+    // Use the barrel of the frame actually queued for display. Do not clamp
+    // the origin to the floor: that teleported bullets away from the weapon.
+    // Collision handles shots aimed into a wall; N/S shots along it stay aligned.
+    s16 mx,my;
+    HERO_muzzle(&mx,&my);
+    const s16 sx=mx-4,sy=my+VIDEO_HEIGHT_OFFSET-4;
+    const s32 fx=(s32)sx*64,fy=(s32)sy*64;
 
     // modo especial deste disparo: consome 1 carga no tiro (mesmo que erre)
     u8 vmode = SHOTMODE_NONE;
@@ -101,8 +97,9 @@ u16 SHOTS_updatePlayer(void)
         const s16 sx = (s16) (pshots[i].x >> 6);
         const s16 sy = (s16) (pshots[i].y >> 6);
 
-        if ((sx < INNER_MIN_X) || (sx > INNER_MAX_X - 7) ||
-            (sy < INNER_MIN_Y) || (sy > INNER_MAX_Y - 7))
+        if (arenaActive ? ARENA_playerShotBlocked(sx,sy) :
+            ((sx < INNER_MIN_X) || (sx > INNER_MAX_X - 7) ||
+             (sy < INNER_MIN_Y) || (sy > INNER_MAX_Y - 7)))
         {
             pshots[i].active = FALSE;
             continue;

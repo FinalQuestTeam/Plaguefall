@@ -4,7 +4,7 @@
 #include "system/video/actor_animation.h"
 #include "system/video/enemy_asset_layout.h"
 #include "system/video/sprites/tiles.h"
-#include "system/video/sprites/insects_data.h"
+#include "system/video/sprites/training_target_data.h"
 #include "enemies/enemies.h"
 #include "actors/player.h"
 #include "core/game.h"
@@ -50,7 +50,7 @@ static void loadIcon(u8 type)
         for (u16 y=0; y<24; y++)
             for (u16 x=0; x<24; x++)
             {
-                const char c = INS_BEETLE24[y][x];
+                const char c = TRAINING_TARGET_ART[y][x];
                 const u16 color = c=='.' ? 0 : c=='o' ? 11 :
                     (c=='h' || c=='w') ? 1 : c=='e' ? 2 : c=='l' ? 6 : 13;
                 data[((x/8)*3+y/8)*8+y%8] |= (u32)color << ((7-x%8)*4);

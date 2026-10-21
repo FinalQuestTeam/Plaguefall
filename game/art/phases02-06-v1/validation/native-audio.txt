@@ -1,0 +1,13 @@
+Baiao de Ferrugem / original: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / melancolico: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / sombrio: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / igreja: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / catalog / 4 tracks: 16 bars, 128 steps; score verified.
+O Sonho Atendido: continuous score, 4-second logo prelude + 101-second storyboard + 3-second tail; score verified.
+PASS: 50/60 Hz timing (67 calm / 100 hot steps in 10s), loops, envelopes, SFX, all four runtime tracks and exact preview restoration.
+PASS: 50/60 Hz timing (60 calm / 86 hot steps in 10s), loops, envelopes, SFX, all four runtime tracks and exact preview restoration.
+PASS: 50/60 Hz timing (50 calm / 75 hot steps in 10s), loops, envelopes, SFX, all four runtime tracks and exact preview restoration.
+60 Hz: continuous 106s, longest musical rest 4 frames.
+50 Hz: continuous 106s, longest musical rest 3 frames.
+PASS: continuous logo-to-intro score, independent VInt clock, no scene fades/restarts, START fade, callback teardown and untouched gameplay music.
+All generated scores and native audio checks passed.

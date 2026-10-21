@@ -8,7 +8,7 @@ Na aba MÚSICAS, CIMA/BAIXO seleciona **Baião de Ferrugem**, **Entardecer**, **
 
 ![Dinorah na galeria](emulator/dinorah-idle-0-2x.png)
 
-[Damião na galeria](emulator/damiao-idle-0-2x.png) · [ROM com as três abas](../../out/release/rom.bin).
+[Damião na galeria](emulator/damiao-idle-0-2x.png) · [ROM com as três abas](../../out/release/Plaguefall.bin).
 
 Cada personagem aparece em oito direções, com dois quadros de repouso de 32×48. A animação usa a cadência existente: 24 ticks por quadro em NTSC e 20 em PAL. SO/O/NO usam os espelhos horizontais das vistas SE/L/NE, preservando as matrizes dos sprites aprovados.
 
