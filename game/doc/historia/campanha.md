@@ -8,22 +8,22 @@ Todas as cenas de chegada são registradas em `levels/story.c`. Há também uma 
 
 ## Ato 1 — promessa de céu, vida no chão
 
-Rex contém a primeira incursão, atravessa os terrenos industriais e recebe uma tarefa que torna concreta a razão de lutar: proteger um ponto de encontro da comunidade.
+Damião contém a primeira incursão, atravessa os terrenos industriais e recebe uma tarefa que torna concreta a razão de lutar: proteger um ponto de encontro da comunidade.
 
 | Nó | Lugar proposto | Objetivo atual | Função da cena |
 |---|---|---|---|
 | 1 | Pátio de retorno | Eliminar 10 | Abertura do Diabo; segurar passagem enquanto há gente fugindo |
-| 2A | Rua de serviço | Eliminar 12, sem lama | Sem bomba na 1: Comando ainda consegue encaminhar Rex pelo acesso direto |
+| 2A | Rua de serviço | Eliminar 12, sem lama | Sem bomba na 1: Comando ainda consegue encaminhar Damião pelo acesso direto |
 | 2B | Baixio do terminal | Eliminar 12, lama | Usou bomba na 1: o clarão denunciou a posição; Comando indica outro caminho |
 | 3 | Sangria dos motores | Eliminar 14, lava | O pouso que era espetáculo deixa vazamento e perigo no chão |
-| 4 | Canal de manutenção | Eliminar 16, lama | Os bichos usam a infraestrutura que Rex ajudava a manter |
+| 4 | Canal de manutenção | Eliminar 16, lama | Os bichos usam a infraestrutura que Damião ajudava a manter |
 | 5 | Capela do baixio | Proteger a santa por 30 s | Sustentar o ponto de rádio durante uma transmissão da resistência |
 
 A bifurcação da bomba representa mudança de situação, sem presumir que o jogador destruiu uma ponte ou matou alguém. A rota A não é prêmio moral e a B não é pecado: ambas continuam a mesma operação.
 
 ## Ato 2 — o que merece ser salvo
 
-A operação sai da defesa do abrigo e procura a instalação que mantém os ninhos em funcionamento. Rex reconhece o elo entre as cargas que consertava e a ocupação.
+A operação sai da defesa do abrigo e procura a instalação que mantém os ninhos em funcionamento. Damião reconhece o elo entre as cargas que consertava e a ocupação.
 
 | Nó | Lugar proposto | Objetivo atual | Função da cena |
 |---|---|---|---|
@@ -32,16 +32,16 @@ A operação sai da defesa do abrigo e procura a instalação que mantém os nin
 | 7 | Baixio das antenas | Eliminar 22, lama, duplas | Dinorah entra pelo rádio: outras vozes mantêm a rede, em qualquer rota |
 | 8 | Fornalha de retorno | Eliminar 24, lava, duplas | Revelar que o carregamento dos foguetes alimentava os ninhos |
 | 9 | Alfândega automática | Eliminar 24, entrada das elites | A colmeia incorporou equipamento humano; aproximar a matriz |
-| 10A | Acesso dos técnicos | Eliminar 26, lama | Sem dano na 9: Rex está em condição de seguir o acesso de manutenção |
+| 10A | Acesso dos técnicos | Eliminar 26, lama | Sem dano na 9: Damião está em condição de seguir o acesso de manutenção |
 | 10B | Dreno térmico | Eliminar 26, lava e lama | Sofreu dano na 9: Comando o conduz pelo dreno para sair do cerco |
 | 11 | Casa das bombas | Eliminar 28, lava e lama | A denúncia central: o alerta já existia e as entregas continuaram |
 | 12 | Comporta de carga | Eliminar 30, lava e lama | Os teleportadores apertam o cerco; tentar alcançar a próxima passagem a tempo |
 
-A sobrevivência de Rex não apaga a perda da capela. A rota 6B não afirma uma morte humana que o jogo não mostra. A cena da 7 não declara que a estação anterior continua funcionando.
+A sobrevivência de Damião não apaga a perda da capela. A rota 6B não afirma uma morte humana que o jogo não mostra. A cena da 7 não declara que a estação anterior continua funcionando.
 
 ## Ato 3 — ninguém sobe sozinho
 
-Rex chega ao núcleo local da ocupação. Lacraia oferece a imagem perversa da viagem que ele desejava: ser transportado como parte da carga. Ele recusa porque agora sabe para quem precisa voltar.
+Damião chega ao núcleo local da ocupação. Lacraia oferece a imagem perversa da viagem que ele desejava: ser transportado como parte da carga. Ele recusa porque agora sabe para quem precisa voltar.
 
 | Nó | Lugar proposto | Objetivo atual | Função da cena |
 |---|---|---|---|
@@ -55,7 +55,7 @@ A “comporta” dá contexto à condição de tempo; não há porta animada ou 
 
 ## Encerramento
 
-Rex confirma a queda da matriz. Comando chama o sobrevivente de volta. Ele fecha a ideia da abertura: ainda queria ver o mundo de cima, mas primeiro precisa garantir que alguém possa continuar vivendo embaixo.
+Damião confirma a queda da matriz. Comando chama o sobrevivente de volta. Ele fecha a ideia da abertura: ainda queria ver o mundo de cima, mas primeiro precisa garantir que alguém possa continuar vivendo embaixo.
 
 O final não depende de qual rota foi tomada. “Voltar para casa” significa voltar à comunidade, mesmo se a capela foi perdida. Uma futura continuação pode mostrar recuperação de água, reparo de implantes e outros núcleos de ocupação; esta campanha termina com uma vitória local completa.
 
@@ -63,7 +63,7 @@ O final não depende de qual rota foi tomada. “Voltar para casa” significa v
 
 | Elemento disponível | Uso narrativo nesta revisão |
 |---|---|
-| `P_REX`, `P_COMANDO`, `P_LACRAIA`, `P_DINORAH` | Rex, Comando (padre) e Dinorah usam os concepts; Lacraia preserva a arte anterior |
+| `P_DAMIAO`, `P_COMANDO`, `P_LACRAIA`, `P_DINORAH` | Damião, Comando (padre) e Dinorah usam os concepts; Lacraia preserva a arte anterior |
 | `ANTES` por nó | Cenas das rotas A e B recebem contexto próprio |
 | `DEPOIS` em 15 e 16 | Preparação do confronto e encerramento único |
 | `NPC` estático com HP | Santa e estação no mesmo ponto de proteção |

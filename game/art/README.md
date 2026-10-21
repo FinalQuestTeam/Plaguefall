@@ -1,6 +1,6 @@
-# RedRex — arte do projeto
+# Plaguefall — arte do projeto
 
-**Arte ativa:** [Rex](cangaco-protagonista-iso60-v2/README.md), [13 inimigos em resoluções nativas](cangaco-insects-sized-v3/README.md) e [Nossa Senhora Aparecida](santa-aparecida-v1/README.md), substituindo a antena. Câmera visual elevada a 60° acima do chão. O [inventário completo e pendências](INVENTARIO-SPRITES.md) separa arte integrada e legado. A [parceira feminina](cangaco-parceira-iso60-v1/README.md) tem sprites32×48, oito direções e as mesmas animações de Rex, prontos para integração. A ROM atual tem512 KiB; os relatórios distinguem orçamento de memória de desempenho de CPU.
+**Arte ativa:** [Damião](cangaco-protagonista-iso60-v2/README.md), [13 inimigos em resoluções nativas](cangaco-insects-sized-v3/README.md) e [Nossa Senhora Aparecida](santa-aparecida-v1/README.md), substituindo a antena. Câmera visual elevada a 60° acima do chão. O [inventário completo e pendências](INVENTARIO-SPRITES.md) separa arte integrada e legado. A [parceira feminina](cangaco-parceira-iso60-v1/README.md) tem sprites32×48, oito direções e as mesmas animações de Damião, prontos para integração. A ROM atual tem512 KiB; os relatórios distinguem orçamento de memória de desempenho de CPU.
 
 ## Direção atual: cangaço cyberpunk brasileiro
 
@@ -8,7 +8,7 @@ A direção visual parte do concept do
 [protagonista humano](concepts/protagonista/README.md): implantes cibernéticos,
 proteções feitas de pedaços de armadura sobre tecido, tecnologia incorporada,
 chapéu metálico com sensores/comunicação e arma de fogo. O rosto fica exposto,
-sem óculos ou visor. O [protagonista Rex já possui sprites](cangaco-protagonista-iso60-v2/README.md) e substitui o mech na partida e na abertura da galeria de personagens.
+sem óculos ou visor. O [protagonista Damião já possui sprites](cangaco-protagonista-iso60-v2/README.md) e substitui o mech na partida e na abertura da galeria de personagens.
 
 Os [concepts atuais dos inimigos gigantes](concepts/inimigos/README.md) apresentam
 serra-pau (sq), mutuca (tri), saúva-soldado (pen) e escorpião (boss), com doze

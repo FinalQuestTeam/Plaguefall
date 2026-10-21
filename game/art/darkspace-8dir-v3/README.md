@@ -1,4 +1,4 @@
-# RedRex — sprites dos inimigos
+# Plaguefall — sprites dos inimigos
 
 Arquivos organizados pelos mesmos identificadores de `game/src/enemies/defs/`,
 na ordem de `ENEMY_DEFS`. Cada pasta reúne a folha completa, as oito direções,

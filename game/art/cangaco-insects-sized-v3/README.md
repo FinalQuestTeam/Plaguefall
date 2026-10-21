@@ -1,6 +1,6 @@
 # Inimigos cangaço — tamanhos nativos e colisão
 
-Os treze inimigos foram redesenhados com **image_gen integrado**, a partir das identidades anteriores, para as classes nativas do projeto. Rex mantém a arte 32×48 da versão 2. Os PNGs antigos não foram substituídos.
+Os treze inimigos foram redesenhados com **image_gen integrado**, a partir das identidades anteriores, para as classes nativas do projeto. Damião mantém a arte 32×48 da versão 2. Os PNGs antigos não foram substituídos.
 
 O código original usa classes 16/24/32 pixels e 48 para o chefe; não havia uma classe 36×36 nas definições consultadas. Antes desta etapa todos os novos insetos eram desenhados em 32×48, apesar dessas hitboxes diferentes.
 
@@ -28,7 +28,7 @@ Paleta PAL1 compartilhada, até 15 cores visíveis, índice 0 transparente, RGB 
 
 ## Correção de alinhamento e hitbox
 
-As caixas de movimento/contato de `EnemyDef.size` foram preservadas. A arte agora tem o mesmo tamanho da caixa; corpo, tiros dos dois lados e arcos usam a projeção comum `VIDEO_PROJECT_Y(y)=y−16`. Assim um tiro desenhado sobre a área do inseto também cruza a sua AABB lógica. A saída da arma deixou de aplicar a regra antiga de espelhamento vertical do mech: Rex usa apenas HFLIP, com N/S próprios.
+As caixas de movimento/contato de `EnemyDef.size` foram preservadas. A arte agora tem o mesmo tamanho da caixa; corpo, tiros dos dois lados e arcos usam a projeção comum `VIDEO_PROJECT_Y(y)=y−16`. Assim um tiro desenhado sobre a área do inseto também cruza a sua AABB lógica. A saída da arma deixou de aplicar a regra antiga de espelhamento vertical do mech: Damião usa apenas HFLIP, com N/S próprios.
 
 É uma colisão AABB, não uma máscara de pixels: a margem transparente da célula também pertence ao retângulo. Os escudos dos blindados continuam consumindo tiros sem perder HP por regra do jogo.
 
@@ -48,7 +48,7 @@ As caixas de movimento/contato de `EnemyDef.size` foram preservadas. A arte agor
 
 A animação dos inimigos usa **60,6% menos ROM**. O pool está limitado a 320 tiles, alocados em blocos de 4; desalocações, reutilização e eventuais expulsões invalidam a imagem antes do reaproveitamento. Gráficos com DMA já agendado no quadro ficam protegidos. Isso reduz VRAM e transferências dos inimigos comuns, com um pequeno aumento de RAM para a administração do cache.
 
-Por transferência: 128/288/512 bytes para os comuns e 1152 para o chefe. Até quatro atualizações de inimigos e uma de Rex são permitidas por quadro; o pior caso teórico é 5376 bytes, com reserva de banda/fila para SAT/HUD. Sob excesso de demanda pode haver adiamento/expulsão; não há garantia de manter 16 chefes em cache ao mesmo tempo. As situações normais com quinze comuns e um único chefe cabem no pool.
+Por transferência: 128/288/512 bytes para os comuns e 1152 para o chefe. Até quatro atualizações de inimigos e uma de Damião são permitidas por quadro; o pior caso teórico é 5376 bytes, com reserva de banda/fila para SAT/HUD. Sob excesso de demanda pode haver adiamento/expulsão; não há garantia de manter 16 chefes em cache ao mesmo tempo. As situações normais com quinze comuns e um único chefe cabem no pool.
 
 O HUD da arena TESTE passou a reescrever textos inalterados a 10 Hz, atualizando atributos imediatamente quando mudam. Isso também foi verificado por diferença dos pixels reais do vídeo.
 
@@ -69,7 +69,7 @@ make -C game clean
 make -C game -j4
 ```
 
-Para conferir recursos e cabeçalho sem escrever, usar `pack_actor_animation.py --check`. O empacotador lê a seleção de animações e a versão ativa em `game/res/actor_animation.json`, mantém Rex com os mesmos quadros e gera os binários do SGDK em `game/res/insects/`. O exportador direto também aceita `--check`.
+Para conferir recursos e cabeçalho sem escrever, usar `pack_actor_animation.py --check`. O empacotador lê a seleção de animações e a versão ativa em `game/res/actor_animation.json`, mantém Damião com os mesmos quadros e gera os binários do SGDK em `game/res/insects/`. O exportador direto também aceita `--check`.
 
 Os testes de emulador usam o Genesis Plus GX libretro Intel já instalado via Rosetta. Relatórios e capturas descrevem emulação controlada; não são testes em console físico nem garantem todos os ataques e sobreposições possíveis. A projeção do cenário permanece a anterior; esta etapa trata da arte e colisão dos personagens/projéteis.
 

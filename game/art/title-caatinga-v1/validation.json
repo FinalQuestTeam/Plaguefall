@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "generation": "built-in image_gen for title; existing logo resized",
+  "generation": "built-in image_gen for title and reconstructed FinalQuest logo; title tiles packed offline",
   "source_sha256": "77781f4e70437afc3ab255a94d3c9297e3c71b04b9624cea04ccc8964f66b2ed",
   "title": {
     "size": [
@@ -182,26 +182,21 @@
     "opaque_rgb_colors": 23,
     "mean_square_error": 498.20223214285716,
     "vram_delta_bytes": 0,
-    "header_sha256": "fb0b609d95605a7a30de418ebf94a26e4e315467ec863ff59f6171b62d7eea90"
+    "header_sha256": "0dcfe60a3f6916b9eed9e457097090693be7851e53636e7771f8dc1ec9a9997c"
   },
   "logo": {
     "canvas": [
-      144,
-      136
+      192,
+      128
     ],
     "art_size": [
-      144,
-      132
+      165,
+      120
     ],
-    "previous_size": [
-      192,
-      176
-    ],
-    "scale": 0.75,
-    "tiles": 306,
-    "previous_tiles": 528,
-    "tile_bytes": 9792,
-    "vram_delta_bytes": -7104,
-    "header_sha256": "1ed0df36019680aabb7b9abc94e69d4c292d256ae2b809c175820a9c6693eea0"
+    "tiles": 384,
+    "tile_bytes": 12288,
+    "source_sha256": "71f21e4794056bce3c0b6e721c65f0c5db579faf478a6668240cdebcf30ccdd9",
+    "header_sha256": "467f0d465e056516a0886825c9b7a3a62ff420f3049b8a770de63bca951bfba2",
+    "generation": "built-in image_gen reconstruction; original identity reference"
   }
 }

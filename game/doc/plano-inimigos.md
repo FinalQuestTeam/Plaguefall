@@ -1,4 +1,4 @@
-# RedRex — Plano de Implementação: +9 Inimigos (cor = comportamento, forma = perfil)
+# Plaguefall — Plano de Implementação: +9 Inimigos (cor = comportamento, forma = perfil)
 
 > Expandir de **3 para 12 inimigos** numa **grade 4 cores × 3 formas**. A **cor** ensina o *comportamento* (o jogador lê a ameaça na hora); a **forma** define o *perfil*: quadrado = mais resistente, triângulo = mais agressivo, pentágono = elite. Cada forma acrescenta uma **variação** do comportamento da cor, e o pentágono ganha um **truque extra**.
 > Plano de design + engenharia — valores são pontos de partida, ajustáveis no balanceamento.

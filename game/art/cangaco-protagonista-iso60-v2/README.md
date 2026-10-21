@@ -1,4 +1,4 @@
-# Rex — sprites redesenhados, versão 2
+# Damião — sprites redesenhados, versão 2
 
 Protagonista humano do cangaço cyberpunk brasileiro: chapéu metálico funcional, placas reaproveitadas, tecido, implante no braço e arma de fogo. O redesenho expõe o topo do chapéu e dos ombros e encurta a leitura das pernas para acompanhar a câmera elevada.
 
@@ -42,7 +42,7 @@ A [revisão visual da câmera](../camera-60-redraw-v2/README.md) compara os PNGs
 - [Memória da ROM compilada e executada](validation/memory.json).
 - [Registro de recorte, fonte e alinhamento por pose](validation/export.json).
 
-O código de produção passou por 600 quadros de estresse: máximo de 80 sprites de hardware, 20 por linha e 320 pixels por linha. A ROM nova foi executada por 1159 quadros no Genesis Plus GX, incluindo Rex nas oito direções e os 13 tipos de inimigo. Isso verifica o emulador e as verificações de software; não é um teste em console físico.
+O código de produção passou por 600 quadros de estresse: máximo de 80 sprites de hardware, 20 por linha e 320 pixels por linha. A ROM nova foi executada por 1159 quadros no Genesis Plus GX, incluindo Damião nas oito direções e os 13 tipos de inimigo. Isso verifica o emulador e as verificações de software; não é um teste em console físico.
 
 ## Memória do conjunto integrado
 

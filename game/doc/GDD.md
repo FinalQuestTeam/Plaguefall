@@ -1,11 +1,11 @@
-# RedRex — Game Design Document (GDD)
+# Plaguefall — Game Design Document (GDD)
 
 > **Plataforma:** Sega Mega Drive / Genesis · **Engine:** SGDK 2.11 (C, m68k-elf)
 > **Gênero:** shooter de arena top-down, sobrevivência por fases
 > **Documento gerado a partir do código-fonte** (`game/src/`) — os valores refletem a implementação real.
 > Tempos convertidos assumindo **60 fps (NTSC)**; em PAL (`fps` = 50) as cadências se ajustam automaticamente.
 
-> **Nova direção visual:** cangaço cyberpunk brasileiro, com figuras humanas, implantes cibernéticos, pedaços de armadura sobre tecido e tecnologia adaptada de objetos cotidianos. O protagonista usa arma de fogo; o [guerreiro Rex](../art/cangaco-protagonista-iso60-v2/README.md) já substitui o mech, com animação e oito direções. Os [13 inimigos nas resoluções nativas](../art/cangaco-insects-sized-v3/README.md) já foram convertidos em sprites e integrados, com auditoria de memória. A câmera ortográfica elevada a **60° acima do chão** continua sendo requisito: Rex e os 13 inimigos receberam um [redesenho na versão 2](../art/camera-60-redraw-v2/README.md), comparado visualmente a guias geométricos dessa câmera. A elevação exata de uma câmera 3D não é medida a partir dos PNGs 2D. Mantêm-se as direções `0=N, 1=NE, 2=L, 3=SE, 4=S, 5=SO, 6=O, 7=NO`. As folhas de robôs em `art/darkspace-8dir-v3/` são estudos anteriores. Nossa Senhora Aparecida substitui a antena no objetivo PROTEGER, mantendo24×24 e todas as regras do NPC. Dinorah tem sprites32×48 e oito direções em `art/cangaco-parceira-iso60-v1/`; seu comportamento e um segundo ator ainda não foram integrados. [Inventário e pendências](../art/INVENTARIO-SPRITES.md).
+> **Nova direção visual:** cangaço cyberpunk brasileiro, com figuras humanas, implantes cibernéticos, pedaços de armadura sobre tecido e tecnologia adaptada de objetos cotidianos. O protagonista usa arma de fogo; o [guerreiro Damião](../art/cangaco-protagonista-iso60-v2/README.md) já substitui o mech, com animação e oito direções. Os [13 inimigos nas resoluções nativas](../art/cangaco-insects-sized-v3/README.md) já foram convertidos em sprites e integrados, com auditoria de memória. A câmera ortográfica elevada a **60° acima do chão** continua sendo requisito: Damião e os 13 inimigos receberam um [redesenho na versão 2](../art/camera-60-redraw-v2/README.md), comparado visualmente a guias geométricos dessa câmera. A elevação exata de uma câmera 3D não é medida a partir dos PNGs 2D. Mantêm-se as direções `0=N, 1=NE, 2=L, 3=SE, 4=S, 5=SO, 6=O, 7=NO`. As folhas de robôs em `art/darkspace-8dir-v3/` são estudos anteriores. Nossa Senhora Aparecida substitui a antena no objetivo PROTEGER, mantendo24×24 e todas as regras do NPC. Dinorah tem sprites32×48 e oito direções em `art/cangaco-parceira-iso60-v1/`; seu comportamento e um segundo ator ainda não foram integrados. [Inventário e pendências](../art/INVENTARIO-SPRITES.md).
 
 ---
 
@@ -119,9 +119,9 @@ A história se adapta à forma como o jogador joga. Ver novas versões da histó
 
 # Atmosfera e ambientação
 
-A campanha se passa num Brasil futuro com cangaço cyberpunk, religiosidade popular e resistência humana a um enxame alienígena cibernético. Rex trabalhava na manutenção de foguetes reutilizáveis e sonhava em viajar. As cargas retornaram contaminadas, as instalações viraram ninhos e ele ficou em terra, lutando com equipamento remendado e implantes.
+A campanha se passa num Brasil futuro com cangaço cyberpunk, religiosidade popular e resistência humana a um enxame alienígena cibernético. Damião trabalhava na manutenção de foguetes reutilizáveis e sonhava em viajar. As cargas retornaram contaminadas, as instalações viraram ninhos e ele ficou em terra, lutando com equipamento remendado e implantes.
 
-A abertura parte de sua provocação: “Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” O Diabo é a interpretação de Rex para a promessa cruel de progresso; a campanha não confirma um pacto sobrenatural. O Consórcio Ascensão escondeu alertas e manteve as entregas. A resistência tenta recuperar um corredor industrial no sertão, com apoio de uma rede de abrigos e rádios.
+A abertura parte de sua provocação: “Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” O Diabo é a interpretação de Damião para a promessa cruel de progresso; a campanha não confirma um pacto sobrenatural. O Consórcio Ascensão escondeu alertas e manteve as entregas. A resistência tenta recuperar um corredor industrial no sertão, com apoio de uma rede de abrigos e rádios.
 
 O cangaço aparece nas silhuetas, no equipamento recuperado, no conhecimento do território e no enfrentamento aos donos da infraestrutura. A santa da fase 5 é um ponto de fé e abrigo cuja base guarda uma estação de rádio. Defendê-la dá tempo a uma transmissão. As regras continuam sendo as do NPC estático existente.
 
@@ -129,7 +129,7 @@ O cangaço aparece nas silhuetas, no equipamento recuperado, no conhecimento do 
 
 # História
 
-O roteiro executável está em `levels/story.c`: 22 cenas, com uma chegada para cada um dos 20 nós, uma cena depois da fase 15 e o final depois da 16. Usa quatro retratos: Rex, Comando (padre) e Dinorah derivados dos concepts; Lacraia com arte anterior. As falas são em MAIÚSCULA SEM ACENTO. Comando é o padre que coordena os abrigos; Rex chama os invasores de “baratas”. Dinorah participa por rádio antes da fase 7, sem ator aliado na arena. A completa/avança a fala; START pula a cena. Cada cena toca uma vez por partida.
+O roteiro executável está em `levels/story.c`: 22 cenas, com uma chegada para cada um dos 20 nós, uma cena depois da fase 15 e o final depois da 16. Usa quatro retratos: Damião, Comando (padre) e Dinorah derivados dos concepts; Lacraia com arte anterior. As falas são em MAIÚSCULA SEM ACENTO. Comando é o padre que coordena os abrigos; Damião chama os invasores de “baratas”. Dinorah participa por rádio antes da fase 7, sem ator aliado na arena. A completa/avança a fala; START pula a cena. Cada cena toca uma vez por partida.
 
 A campanha tem 16 fases por percurso e quatro bifurcações já implementadas:
 
@@ -142,13 +142,13 @@ A campanha tem 16 fases por percurso e quatro bifurcações já implementadas:
 
 A seleção narrativa acompanha o nó e o momento ANTES/DEPOIS. Não há uma segunda condição independente para escolher slides, nem seleção por quantidade de itens ou corações. Após convergir, as falas comuns funcionam com qualquer caminho anterior. O resultado da fase 5 é tratado nas chegadas a 6A/6B, pois a saída DEPOIS da 5 também pode ocorrer após falha roteada.
 
-Rex vai da frustração com o sonho de viajar à decisão de defender quem ficou em terra. Lacraia oferece uma viagem como parte da carga; ele recusa. Vencer o chefe interrompe o comando local do enxame e permite o retorno à comunidade. O final é único e não declara o Brasil inteiro livre.
+Damião vai da frustração com o sonho de viajar à decisão de defender quem ficou em terra. Lacraia oferece uma viagem como parte da carga; ele recusa. Vencer o chefe interrompe o comando local do enxame e permite o retorno à comunidade. O final é único e não declara o Brasil inteiro livre.
 
 [Abertura completa](historia/abertura.md) · [Campanha por nó](historia/campanha.md) · [Sistema de diálogos](plano-historia.md).
 
 ## Visão geral
 
-**RedRex** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Rex, humano cibernético32×48** (hitbox 16×16) numa arena de tela única, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
+**Plaguefall** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Damião, humano cibernético32×48** (hitbox 16×16) numa arena de tela única, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Lacraia** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
 
 A arena ocupa a tela inteira; a linha 0 de tiles é o HUD.
 
@@ -190,7 +190,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 
 ### Fluxo geral
 
-1. **Splash** (logo FinalQuest) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**).
+1. **Splash** (logo FinalQuest) → **monólogo animado** (12 quadros, uma vez por boot, A completa/avança e START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**).
 2. **Preparação** (`ST_PREP`) → A para começar.
 3. **"PREPARE-SE 3-2-1"** (3 s congelado) → jogo ativo.
 4. Meta atingida → `ST_DONE` → história do DEPOIS (se houver) → **mapa de rotas** (`ST_MAP`) → história do ANTES do nó destino (se houver) → preparação da próxima (decidida pelas condições de saída do grafo). Morte → `ST_OVER` → recomeça a mesma fase. Objetivo falhado em nó **com rota de falha** (`OBJ_FALHOU`) → "A MISSAO CONTINUA..." → segue pela rota de falha (sem game over).
@@ -213,9 +213,10 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 
 ## Tela-título, splash e ajuda
 
-- **Splash** (`splash.c`): logo FinalQuest reduzido para 75% (arte144×132 numa moldura144×136), centralizado, com os mesmos fades e possibilidade de pular.
-- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Rex, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. A música dark toca calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
-- **Personagens** (`chardemo.c`): [galeria de Rex e Dinorah](../art/gallery-v1/README.md), somente duas entradas (1/2 e 2/2), oito direções e dois quadros de repouso por personagem. ESQ/DIR alterna; A/B/START volta ao menu. Os mechs antigos foram removidos da lista. Usa240 tiles do cache existente dos inimigos e a paleta compartilhada PAL2.
+- **Splash** (`splash.c`): logo [FinalQuest redesenhado](../art/finalquest-logo-v2/README.md), em192×128 centralizado; fades de0,2s,1s de exibição e possibilidade de pular.
+- **Monólogo animado** (`intro.c`): [12 quadros do storyboard](../art/intro-monologo-v1/README.md) entre FinalQuest e o menu, aproximadamente 1min30s incluindo trocas. Texto branco centralizado em até36×4, fundo preto com transição suave desde a arte, fades e música existente. Sem nome, contador ou instruções na tela. O enquadramento é fixo;12 partículas de poeira, brasa e fuligem usam posições fracionárias e até1 pixel de deslocamento por frame. Usa924 tiles para a imagem mais3 para partículas, antes da inicialização dos recursos da arena. O último quadro dura5s, antes eram17s; o fundo do menu já fica empacotado na ROM para evitar a montagem pixel a pixel no fim. A completa/avança; START pula. Não se repete ao voltar ao título. A conversa antes da fase 1 mantém apenas o chamado do padre e a resposta de Damião.
+- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Damião, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. A música dark toca calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
+- **Personagens** (`chardemo.c`): [galeria de Damião e Dinorah](../art/gallery-v1/README.md), somente duas entradas (1/2 e 2/2), oito direções e dois quadros de repouso por personagem. ESQ/DIR alterna; A/B/START volta ao menu. Os mechs antigos foram removidos da lista. Usa240 tiles do cache existente dos inimigos e a paleta compartilhada PAL2.
 - **Como Jogar** (`help.c`): **5 páginas** navegáveis com ←/→ — controles, inimigos (cor/forma, com os sprites reais), a elite (pentágonos), itens diretos e itens de inventário.
 
 ## HUD (linha 0)
@@ -235,7 +236,7 @@ O inventário é redesenhado **só quando o estado muda** (`HUD_drawInventoryIfD
 
 ## O jogador
 
-Rex **32×48** (sprite em duas peças, PAL2, oito direções) mantém a **hitbox16×16**. Movimento em **fixed-point26.6**. Cinco vistas canônicas N/NE/L/SE/S; SO/O/NO usam somente HFLIP. Runtime com dois quadros de repouso e quatro de movimento, transmitidos para um frame em VRAM — ver §6.
+Damião **32×48** (sprite em duas peças, PAL2, oito direções) mantém a **hitbox16×16**. Movimento em **fixed-point26.6**. Cinco vistas canônicas N/NE/L/SE/S; SO/O/NO usam somente HFLIP. Runtime com dois quadros de repouso e quatro de movimento, transmitidos para um frame em VRAM — ver §6.
 
 | Parâmetro | Constante | Valor |
 |---|---|---|
@@ -263,7 +264,7 @@ A direção de tiro (`faceX/faceY`) segue a última direção pressionada (8 dir
 | Máx. simultâneos (`MAX_PSHOTS`) | 16 |
 | Potência (leque) | 1 a `SHOTS_MAX_POWER` = 5 balas por disparo (item bala) |
 | Abertura do leque | cisalhamento `SHOTS_ARC_SHEAR` = 8 |
-| Origem | arma de Rex (`PSHOT_MUZZLE_FWD` = 13 px à frente, 5 px à direita) |
+| Origem | arma de Damião (`PSHOT_MUZZLE_FWD` = 13 px à frente, 5 px à direita) |
 | Dano | 1 por bala (HP dos inimigos é medido em tiros) |
 
 **Modos de tiro** (ativados pelo inventário; a carga é consumida **a cada disparo**, mesmo errando):
@@ -512,7 +513,7 @@ Cada evento arma um timer; `SFX_update` requisita a voz ao árbitro com priorida
 ### Arte e carregamento
 
 Os 13 inimigos usam PNGs indexados exportados offline e BINs 4bpp em res/insects.res.
-Inimigos nativos16×16,24×24,32×32 e chefe48×48; Rex permanece32×48. O runtime usa dois frames de repouso e quatro de movimento. As matrizes históricas32×48 permanecem arquivadas.
+Inimigos nativos16×16,24×24,32×32 e chefe48×48; Damião permanece32×48. O runtime usa dois frames de repouso e quatro de movimento. As matrizes históricas32×48 permanecem arquivadas.
 Os demais elementos continuam procedurais por char-maps.
 
 - tilegen.c: 83 tiles fixos e PAL1 compartilhada entre objetos e inimigos.
@@ -522,12 +523,13 @@ Os demais elementos continuam procedurais por char-maps.
 - ROM: 390 frames canônicos, cinco direções × seis poses × treze tipos.
   As três vistas ocidentais usam apenas HFLIP. Frente e costas são distintas.
 - BOSS_ROT: 72 tiles reservados aos dois retratos de história, separados do cache.
-- herogfx.c: Rex 32×48 em duas peças, um frame de 24 tiles dentro da reserva existente de 48 tiles, PAL2. Cinco vistas desenhadas e três por HFLIP; repouso de dois frames e corrida de quatro. Até 768 bytes adicionais de DMA por quadro, com prioridade sobre os inimigos.
-- chars.c: nove mechs históricos, mantidos apenas na galeria.
+- herogfx.c: Damião 32×48 em duas peças, um frame de 24 tiles dentro da reserva existente de 48 tiles, PAL2. Cinco vistas desenhadas e três por HFLIP; repouso de dois frames e corrida de quatro. Até 768 bytes adicionais de DMA por quadro, com prioridade sobre os inimigos.
+- chars.c: nove mechs históricos fora da galeria; a tela PERSONAGENS mostra Damião e Dinorah.
 - floor.c: 80 tiles no BG_B, PAL3. Cenário e projeção de mapa ainda são os anteriores.
 
-**Build auditada:** ROM de524288 bytes dentro de 1 MiB; RAM estática de6165 bytes;
-47332 bytes de heap livre observados. Os tiles de gameplay terminam no byte27488,
+**Build atual com abertura animada:** ROM de786432 bytes (768 KiB), dentro de1 MiB; RAM estática de6159 bytes.
+[Compilação e testes da abertura](../art/intro-monologo-v1/build-validation.json). A auditoria anterior dos inimigos
+observou47332 bytes de heap livre; esse número pertence àquela build. Os tiles de gameplay terminam no byte27488,
 a fonte começa no byte 46080 e há 18592 bytes de intervalo livre.
 Relatórios e capturas em art/cangaco-insects-sized-v3/validation/.
 O relatório performance/README.md separa os testes de memória dos FPS; quinze inimigos com lógica completa ainda ficam abaixo da referência ASCII.
@@ -536,7 +538,7 @@ O relatório performance/README.md separa os testes de memória dos FPS; quinze 
 
 Reconstruída a cada frame, encadeada por link, enviada via `DMA_QUEUE`:
 
-1. **Jogador Rex** (32×48, duas peças 32×32 e 32×16, nos primeiros links; HFLIP nas vistas ocidentais).
+1. **Jogador Damião** (32×48, duas peças 32×32 e 32×16, nos primeiros links; HFLIP nas vistas ocidentais).
 2. **Inimigos**, com **rotação de flicker**: a varredura começa em um índice diferente por quadro, distribuindo o descarte do VDP (limite de 20 sprites/320 px por linha) entre todos — o piscar em cena cheia fica uniforme. Os inimigos comuns usam uma peça16/24/32; o chefe usa quatro peças (32×32,32×16,16×32,16×16) com espelhamento que reposiciona as colunas. A admissão por software respeita 80 sprites totais, 20 por linha e 320 pixels por linha. Blindados piscam de propósito; ao tomar dano brilham branco. O chefe usa célula48×48. Overlays de status por cima: **ciano contínuo** (gelo) e **pulso vermelho no tique** (fogo).
 3. **Itens**, **projéteis**, **arcos do raio**.
 4. **Sombra do jogador** (prioridade baixa, sob os demais).
@@ -552,7 +554,7 @@ Reconstruída a cada frame, encadeada por link, enviada via `DMA_QUEUE`:
 |---|---|
 | PAL0 | Texto/HUD (letras no índice 15). Índices 1–14 = **paleta de flash**: brancos (dano) exceto o **índice 2 = vermelho** (pulso de fogo). Reaproveitada sem custo de VRAM |
 | PAL1 | Objetos (1 contorno claro, 2 ciano/gelo, 3 vermelho, 4 amarelo, 5 tiro inimigo, 6/7 parede, 8 roxo, 9/10 lama, 11 escuro, 12 laranja, 13 cinza, 14 verde, 15 azul) |
-| PAL2 | Rex / galeria histórica |
+| PAL2 | Damião / galeria histórica |
 | PAL3 | Chão (varia por fase; alvo do flash da bomba) |
 
 > **Flash sem gastar VRAM**: o corpo do inimigo desenhado com **PAL0** fica todo branco (dano); o `TILE_STATUS` desenhado com PAL0 (índice 2 = vermelho) vira o overlay de fogo; com PAL1 (índice 2 = ciano) vira o gelo. Um tile, três efeitos, pela troca de paleta.

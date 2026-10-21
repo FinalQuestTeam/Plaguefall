@@ -4,7 +4,7 @@ import json,hashlib
 base=Path(__file__).resolve().parent.parent
 out=base/'camera-60-redraw-v2'
 (out/'contact-sheets').mkdir(exist_ok=True)
-entries=[dict(id='heroi',name='Rex',path=base/'cangaco-protagonista-iso60-v2/heroi/heroi.png')]
+entries=[dict(id='heroi',name='Damião',path=base/'cangaco-protagonista-iso60-v2/heroi/heroi.png')]
 entries += [dict(id=e['id'],name=e['name'],path=base/'cangaco-insects-iso60-v2/enemies'/e['id']/(e['id']+'.png')) for e in json.loads((base/'cangaco-insects-iso60-v2/catalog.json').read_text())]
 manifest=[]
 for e in entries:

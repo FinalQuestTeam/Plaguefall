@@ -1,0 +1,525 @@
+{
+  "passed": true,
+  "image_size": [
+    336,
+    176
+  ],
+  "viewport": [
+    320,
+    176
+  ],
+  "shots": 12,
+  "seconds": 89,
+  "frame_tiles": 924,
+  "frame_vram_bytes": 29568,
+  "palettes_per_tile": 1,
+  "palettes_per_shot": 2,
+  "colors_per_palette": 16,
+  "caption_box": [
+    36,
+    4
+  ],
+  "max_caption_rows": 4,
+  "animation": "static framing + 0.4s palette fades + 12 dust/ember/soot sprites; no camera scroll or per-frame image uploads",
+  "subtitle_layout": "centered lines on black, soft 48px artwork edge, no speaker/counter/control labels",
+  "files": {
+    "res/intro/tiles.bin": {
+      "bytes": 354816,
+      "sha256": "0646054249596a239b195b11d8301cfb81c0372c2c48b58df0b40f3df23e7b31"
+    },
+    "res/intro/groups.bin": {
+      "bytes": 11088,
+      "sha256": "79a98ec29e48fa04725e5f5607228e2ea499a020900ab9f51ed40f8e7540d12c"
+    },
+    "res/intro/palettes.bin": {
+      "bytes": 768,
+      "sha256": "975fcf0cdcf041e9c13d07edddbc9deb6eba4b63b23de8fb1a1594995f06571d"
+    },
+    "res/intro/font.bin": {
+      "bytes": 3072,
+      "sha256": "8670c5f5d4a4aefcdbb7c902434093bcda026673170c1cfaeb8d2f649e30ac71"
+    },
+    "src/system/video/screens/intro_shots.h": {
+      "bytes": 1786,
+      "sha256": "4461cd059da788228e2cd205b3baaf6997cc9173938e8da06825d161aab79dc5"
+    }
+  },
+  "scenes": [
+    {
+      "shot": 1,
+      "source_sheet": 1,
+      "source_crop": [
+        25,
+        70,
+        490,
+        484
+      ],
+      "crop_center": [
+        0.5,
+        0.65
+      ],
+      "seconds": 5,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "VOCE JA OUVIU FALAR QUE O DIABO DA TUDO QUE A GENTE QUER?",
+      "lines": [
+        "VOCE JA OUVIU FALAR QUE O",
+        "DIABO DA TUDO QUE A GENTE QUER?",
+        "",
+        ""
+      ],
+      "text_origins": [
+        [
+          7,
+          24
+        ],
+        [
+          4,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 2,
+      "source_sheet": 1,
+      "source_crop": [
+        524,
+        70,
+        1064,
+        484
+      ],
+      "crop_center": [
+        0.5,
+        0.64
+      ],
+      "seconds": 5,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "MAS SEMPRE DA MANEIRA MAIS FILHA DA PUTA POSSIVEL?",
+      "lines": [
+        "MAS SEMPRE DA MANEIRA MAIS",
+        "FILHA DA PUTA POSSIVEL?",
+        "",
+        ""
+      ],
+      "text_origins": [
+        [
+          7,
+          24
+        ],
+        [
+          8,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 3,
+      "source_sheet": 1,
+      "source_crop": [
+        1150,
+        28,
+        1509,
+        484
+      ],
+      "crop_center": [
+        0.5,
+        0.02
+      ],
+      "seconds": 8,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "EU SONHAVA COM ASTRONAUTAS, EXTRATERRESTRES E FOGUETES QUE DAVAM RE.",
+      "lines": [
+        "EU SONHAVA COM ASTRONAUTAS,",
+        "EXTRATERRESTRES E",
+        "FOGUETES QUE DAVAM RE.",
+        ""
+      ],
+      "text_origins": [
+        [
+          6,
+          23
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          9,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 4,
+      "source_sheet": 1,
+      "source_crop": [
+        76,
+        518,
+        527,
+        991
+      ],
+      "crop_center": [
+        0.5,
+        0.0
+      ],
+      "seconds": 4,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "AGORA TO ASSIM.",
+      "lines": [
+        "AGORA TO ASSIM.",
+        "",
+        "",
+        ""
+      ],
+      "text_origins": [
+        [
+          12,
+          24
+        ]
+      ]
+    },
+    {
+      "shot": 5,
+      "source_sheet": 1,
+      "source_crop": [
+        556,
+        555,
+        996,
+        991
+      ],
+      "crop_center": [
+        0.5,
+        0.35
+      ],
+      "seconds": 7,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "OS ASTRONAUTAS VOLTARAM. SO ESQUECERAM DE TRAZER GENTE DENTRO DA ROUPA.",
+      "lines": [
+        "OS ASTRONAUTAS VOLTARAM.",
+        "SO ESQUECERAM DE TRAZER",
+        "GENTE DENTRO DA ROUPA.",
+        ""
+      ],
+      "text_origins": [
+        [
+          8,
+          23
+        ],
+        [
+          8,
+          24
+        ],
+        [
+          9,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 6,
+      "source_sheet": 1,
+      "source_crop": [
+        1030,
+        555,
+        1507,
+        991
+      ],
+      "crop_center": [
+        0.5,
+        0.12
+      ],
+      "seconds": 8,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "OS EXTRATERRESTRES VIERAM TAMBEM. TEM PATA DEMAIS E CONVERSA DE MENOS. PRA MIM, E TUDO BARATA.",
+      "lines": [
+        "OS EXTRATERRESTRES VIERAM TAMBEM.",
+        "TEM PATA DEMAIS E CONVERSA DE",
+        "MENOS. PRA MIM, E TUDO BARATA.",
+        ""
+      ],
+      "text_origins": [
+        [
+          3,
+          23
+        ],
+        [
+          5,
+          24
+        ],
+        [
+          5,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 7,
+      "source_sheet": 2,
+      "source_crop": [
+        15,
+        51,
+        577,
+        460
+      ],
+      "crop_center": [
+        0.5,
+        0.9
+      ],
+      "seconds": 10,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "E OS FOGUETES DAO RE DIREITINHO. POUSAM DE PE, NO MESMO LUGAR DE ONDE SAIRAM. A DIFERENCA E QUE AGORA DESCARREGAM NINHO.",
+      "lines": [
+        "E OS FOGUETES DAO RE DIREITINHO.",
+        "POUSAM DE PE, NO MESMO LUGAR",
+        "DE ONDE SAIRAM. A DIFERENCA E",
+        "QUE AGORA DESCARREGAM NINHO."
+      ],
+      "text_origins": [
+        [
+          4,
+          23
+        ],
+        [
+          6,
+          24
+        ],
+        [
+          5,
+          25
+        ],
+        [
+          6,
+          26
+        ]
+      ]
+    },
+    {
+      "shot": 8,
+      "source_sheet": 2,
+      "source_crop": [
+        599,
+        49,
+        1145,
+        460
+      ],
+      "crop_center": [
+        0.5,
+        0.5
+      ],
+      "seconds": 9,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "EU CONSERTAVA ESSAS MERDAS. ACHAVA QUE UM DIA IAM ME DEIXAR SUBIR. SUBI FOI NA LISTA DE QUEM ELES QUEREM MATAR.",
+      "lines": [
+        "EU CONSERTAVA ESSAS MERDAS.",
+        "ACHAVA QUE UM DIA IAM ME",
+        "DEIXAR SUBIR. SUBI FOI NA LISTA",
+        "DE QUEM ELES QUEREM MATAR."
+      ],
+      "text_origins": [
+        [
+          6,
+          23
+        ],
+        [
+          8,
+          24
+        ],
+        [
+          4,
+          25
+        ],
+        [
+          7,
+          26
+        ]
+      ]
+    },
+    {
+      "shot": 9,
+      "source_sheet": 2,
+      "source_crop": [
+        1220,
+        8,
+        1660,
+        460
+      ],
+      "crop_center": [
+        0.5,
+        0.0
+      ],
+      "seconds": 10,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "O BRACO E DE PECA. A ARMA E REMENDADA. O CHAPEU PEGA RADIO MELHOR QUE A TORRE.",
+      "lines": [
+        "O BRACO E DE PECA. A ARMA",
+        "E REMENDADA. O CHAPEU PEGA",
+        "RADIO MELHOR QUE A TORRE.",
+        ""
+      ],
+      "text_origins": [
+        [
+          7,
+          23
+        ],
+        [
+          7,
+          24
+        ],
+        [
+          7,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 10,
+      "source_sheet": 2,
+      "source_crop": [
+        15,
+        526,
+        577,
+        931
+      ],
+      "crop_center": [
+        0.5,
+        0.1
+      ],
+      "seconds": 7,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "MINHA MAE AINDA MANDA EU LEVAR UMA REZA. EU LEVO. JUNTO COM A MUNICAO.",
+      "lines": [
+        "MINHA MAE AINDA MANDA EU LEVAR UMA",
+        "REZA. EU LEVO. JUNTO COM A MUNICAO.",
+        "",
+        ""
+      ],
+      "text_origins": [
+        [
+          3,
+          24
+        ],
+        [
+          2,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 11,
+      "source_sheet": 2,
+      "source_crop": [
+        650,
+        487,
+        1150,
+        931
+      ],
+      "crop_center": [
+        0.5,
+        0.0
+      ],
+      "seconds": 11,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "COMANDO - RADIO",
+      "text": "DAMIAO. AQUI E O PADRE. TA ME OUVINDO? ELES CHEGARAM NO PATIO. TEM GENTE SAINDO PELO FUNDO.",
+      "lines": [
+        "DAMIAO. AQUI E O PADRE. TA ME",
+        "OUVINDO? ELES CHEGARAM NO PATIO.",
+        "TEM GENTE SAINDO PELO FUNDO.",
+        ""
+      ],
+      "text_origins": [
+        [
+          5,
+          23
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          6,
+          25
+        ]
+      ]
+    },
+    {
+      "shot": 12,
+      "source_sheet": 2,
+      "source_crop": [
+        1173,
+        523,
+        1660,
+        931
+      ],
+      "crop_center": [
+        0.5,
+        0.54
+      ],
+      "seconds": 5,
+      "fixed_crop": [
+        8,
+        0
+      ],
+      "speaker": "DAMIAO",
+      "text": "TO OUVINDO. HOJE NINGUEM VAI PRO CEU ANTES DA HORA.",
+      "lines": [
+        "TO OUVINDO. HOJE NINGUEM",
+        "VAI PRO CEU ANTES DA HORA.",
+        "",
+        ""
+      ],
+      "text_origins": [
+        [
+          8,
+          24
+        ],
+        [
+          7,
+          25
+        ]
+      ]
+    }
+  ]
+}

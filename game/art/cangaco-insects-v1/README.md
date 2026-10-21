@@ -1,4 +1,4 @@
-# RedRex — insetos gigantes — sprites cangaço cyberpunk v1
+# Plaguefall — insetos gigantes — sprites cangaço cyberpunk v1
 
 Treze inimigos convertidos dos concepts e integrados à ROM: serra-pau (sq),
 mutuca (tri), saúva-soldado (pen) e escorpião (boss). Os IDs e nomes do projeto
@@ -94,7 +94,7 @@ de todos os personagens.
 
 ## Memória verificada na build inicial dos inimigos
 
-A ROM atual também inclui o [protagonista Rex](../cangaco-protagonista-v1/README.md):
+A ROM atual também inclui o [protagonista Damião](../cangaco-protagonista-v1/README.md):
 896 KiB, 5124 bytes de RAM estática e frame de jogador de 768 bytes na reserva
 existente. O relatório memory.json acompanha a ROM atual; a tabela abaixo
 preserva os números da integração inicial dos inimigos.

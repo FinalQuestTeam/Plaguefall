@@ -1,14 +1,14 @@
 {
   "passed": true,
   "core": "Genesis Plus GX",
-  "frames": 3555,
+  "frames": 3639,
   "method": "controller input only; read-only sprite cache inspection",
   "characters": [
-    "REX",
+    "DAMIAO",
     "DINORAH"
   ],
   "idle_poses_observed": {
-    "rex": [
+    "damiao": [
       0,
       1
     ],
@@ -29,5 +29,5 @@
     "menu return unchanged",
     "campaign start"
   ],
-  "rom_sha256": "8996b5814d875db56da435625a89c3524e4c4113709200853c418267a6da63e8"
+  "rom_sha256": "3352c4a7e338477a97e9b0b001c64af9e9d9026c7f6c09537e66d1dc49fdd223"
 }

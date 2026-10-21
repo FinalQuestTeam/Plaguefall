@@ -46,7 +46,7 @@ A referência ASCII foi compilada do commit c133b29c74e0727878f91db1f7b46197543b
 
 ## Verificação técnica
 
-Build limpo aprovado. Testes nativos: 8192 admissões aleatórias contra referência por linha, domínio completo da codificação compacta, 128 quadros aleatórios com certificação/recorte comparados a referência independente, e 600 quadros de estresse com DMA e falha de fila. Mantidos os tetos 80 sprites totais / 20 por linha / 320 pixels por linha; as duas peças de um ator são admitidas ou descartadas juntas. A ROM final passou por 1159 VBlanks com Rex nas oito direções e todos os treze inimigos; esse teste funcional é separado da medição de FPS.
+Build limpo aprovado. Testes nativos: 8192 admissões aleatórias contra referência por linha, domínio completo da codificação compacta, 128 quadros aleatórios com certificação/recorte comparados a referência independente, e 600 quadros de estresse com DMA e falha de fila. Mantidos os tetos 80 sprites totais / 20 por linha / 320 pixels por linha; as duas peças de um ator são admitidas ou descartadas juntas. A ROM final passou por 1159 VBlanks com Damião nas oito direções e todos os treze inimigos; esse teste funcional é separado da medição de FPS.
 
 RAM estática: 6008 bytes; heap livre observado: 47490 bytes, maior bloco de 46976 bytes. VRAM e recursos gráficos têm os mesmos tamanhos. ROM: 917504 bytes.
 
@@ -67,9 +67,9 @@ SHA-256 da etapa anterior, com quatro quadros de repouso e seis de corrida: `fc1
 
 ## Atualização: dois quadros de repouso e quatro de corrida
 
-Por solicitação do usuário, foram mantidos quinze inimigos e todas as oito direções, com menos quadros e menos trocas de imagem por segundo. O mesmo tratamento foi aplicado a Rex e aos treze tipos. Seleção das poses existentes: repouso 0/2; corrida 4/6/7/9 (contatos e poses intermediárias dos dois lados). Os PNGs completos e as prévias de seis quadros ficam como matrizes, não representam a cadência reduzida da build atual.
+Por solicitação do usuário, foram mantidos quinze inimigos e todas as oito direções, com menos quadros e menos trocas de imagem por segundo. O mesmo tratamento foi aplicado a Damião e aos treze tipos. Seleção das poses existentes: repouso 0/2; corrida 4/6/7/9 (contatos e poses intermediárias dos dois lados). Os PNGs completos e as prévias de seis quadros ficam como matrizes, não representam a cadência reduzida da build atual.
 
-O espelhamento horizontal já reutilizava três vistas: L→O, NE→NO e SE→SO. Um teste de regressão comprova que a troca L/O da mesma pose conserva os tiles e não agenda DMA adicional, tanto no inimigo quanto em Rex. Inverter verticalmente não substitui N/S mantendo a câmera elevada e personagens de pé.
+O espelhamento horizontal já reutilizava três vistas: L→O, NE→NO e SE→SO. Um teste de regressão comprova que a troca L/O da mesma pose conserva os tiles e não agenda DMA adicional, tanto no inimigo quanto em Damião. Inverter verticalmente não substitui N/S mantendo a câmera elevada e personagens de pé.
 
 | Medida | Antes da redução | Atual |
 |---|---:|---:|

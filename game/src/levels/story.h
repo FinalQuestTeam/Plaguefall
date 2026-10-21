@@ -16,10 +16,10 @@
 #define DEPOIS      1   // ao vencer o nó, antes do mapa de rotas (ou do fim)
 
 // retratos (a ARTE, na mesma ordem, vive em sprites/portraits_data.h)
-#define P_REX       0   // humano com implantes, retrato do concept v3
+#define P_DAMIAO       0   // humano com implantes, retrato do concept v3
 #define P_COMANDO   1   // padre que coordena a resistencia pelo radio
 #define P_LACRAIA   2   // a matriz local do enxame (chefe)
-#define P_DINORAH   3   // Dinorah, parceira de Rex, retrato do concept v2
+#define P_DINORAH   3   // Dinorah, parceira de Damião, retrato do concept v2
 
 typedef struct
 {

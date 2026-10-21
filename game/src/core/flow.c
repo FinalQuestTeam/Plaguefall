@@ -8,6 +8,7 @@
 #include "core/game.h"
 #include "system/video/screens/title.h"
 #include "system/video/screens/splash.h"
+#include "system/video/screens/intro.h"
 #include "system/video/tilegen.h"
 #include "system/video/spritelist.h"
 #include "system/video/chars.h"
@@ -330,12 +331,14 @@ void FLOW_run(void)
     ENEMY_CD = fps * 2;
 
     SPLASH_run();               // abertura: logo da desenvolvedora (sem música ainda)
+    INTRO_run();                // monologo ilustrado: uma vez no boot, antes do menu
 
     // tiles e paleta dos objetos (uma vez; título/pausa usam texto em PAL0).
     // A arte dos inimigos é gerada POR FASE (LEVEL_loadGfx), não aqui — start
     // instantâneo e menos VRAM.
     TILEGEN_init();
-    FLOOR_init();               // tiles + paleta (PAL3) do chão; desenhado por fase
+    // O menu cobre os tiles do chao; TITLEBG_release os gera ao sair do titulo.
+    // Evita uma geracao inutil na transicao entre o monologo e o menu.
     VDP_resetSprites();
 
     // música só DEPOIS de toda a geração de tiles do boot: o driver PCM (DAC via

@@ -1,8 +1,8 @@
-# Rex — protagonista cangaço cyberpunk — sprites v1
+# Damião — protagonista cangaço cyberpunk — sprites v1
 
 O protagonista humano do concept v3 já substitui o mech na partida.
 Ele aparece como opção inicial da galeria PERSONAGENS, identificado como
-REX. Os nove mechs antigos permanecem na galeria como
+DAMIAO. Os nove mechs antigos permanecem na galeria como
 arte legada. O recurso e os arquivos usam o ID heroi.
 
 ## Arquivos

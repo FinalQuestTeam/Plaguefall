@@ -1,20 +1,20 @@
 {
   "passed": true,
-  "rom_bytes": 524288,
-  "rom_sha256": "8996b5814d875db56da435625a89c3524e4c4113709200853c418267a6da63e8",
-  "text_bytes": 431388,
+  "rom_bytes": 917504,
+  "rom_sha256": "3352c4a7e338477a97e9b0b001c64af9e9d9026c7f6c09537e66d1dc49fdd223",
+  "text_bytes": 811024,
   "data_bytes": 88,
-  "bss_bytes": 6073,
-  "static_ram_bytes": 6161,
+  "bss_bytes": 6088,
+  "static_ram_bytes": 6176,
   "gallery_characters": [
-    "REX",
+    "DAMIAO",
     "DINORAH"
   ],
   "preview_tiles": 240,
   "existing_enemy_cache_tiles": 320,
   "gallery_vram_reservation_delta_bytes": 0,
   "dinorah_rom_resource_bytes": 23040,
-  "shared_palette_matches_rex": true,
+  "shared_palette_matches_damiao": true,
   "old_mechs_linked": false,
   "emulator_report": "emulator/report.json",
   "pixel_validation": "pixel-validation.json"

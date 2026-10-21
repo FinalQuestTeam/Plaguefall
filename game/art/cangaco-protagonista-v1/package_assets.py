@@ -31,7 +31,7 @@ def main():
         shutil.copy2(source/"emulator"/name,dest/name)
     opt=ROOT/"heroi/heroi_opt.png"
     if opt.exists():shutil.move(opt,ROOT/"validation/heroi_opt.png")
-    catalog={"id":"heroi","name":"Rex","cell":[32,48],"sheet":"heroi/heroi.png",
+    catalog={"id":"heroi","name":"Damião","cell":[32,48],"sheet":"heroi/heroi.png",
         "directions":["N","NE","L","SE","S","SO","O","NO"],"animations":{"idle":4,"run":6},
         "palette":"palette.json","resource":"heroi.res","prompt":"prompts/heroi.txt"}
     (ROOT/"catalog.json").write_text(json.dumps(catalog,indent=2)+"\n")
@@ -43,5 +43,5 @@ def main():
         for folder in ["heroi","previews","prompts"]:
             for f in (ROOT/folder).rglob("*"):
                 if f.is_file():z.write(f,f.relative_to(ROOT))
-    print("Packaged Rex:8 directions,16 animations,80 frame references.")
+    print("Packaged Damião:8 directions,16 animations,80 frame references.")
 if __name__=="__main__":main()

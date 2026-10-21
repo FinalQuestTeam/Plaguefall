@@ -45,7 +45,7 @@ def export(name):
         if cyan not in palette:
             palette.append(cyan)
     # The priest's small white collar, grey beard and brass cross distinguish
-    # him from Rex; retain these source colours instead of merging into skin.
+    # him from Damião; retain these source colours instead of merging into skin.
     if name == "comando":
         for accent in [(219, 219, 219), (146, 146, 146), (219, 146, 36)]:
             if accent not in palette and len(palette) < 15:
@@ -116,7 +116,7 @@ def main():
     report = {"passed": True, "generation": "built-in image_gen", "size": [48, 48],
               "portraits": {}, "resident_vram_delta_bytes": 0,
               "simultaneous_portrait_tiles": 72, "runtime_ram_delta_bytes": 0}
-    for name, index in [("rex", 0), ("comando", 1), ("parceira", 3)]:
+    for name, index in [("damiao", 0), ("comando", 1), ("parceira", 3)]:
         image, rows, words, palette = export(name)
         display_name = "DINORAH" if name == "parceira" else name.upper()
         entry = (display_name, rows, words)
@@ -156,7 +156,7 @@ def main():
         TARGET.write_text(generated)
         # Preview is only a nearest-neighbour contact sheet of exported assets.
         preview = Image.new("RGBA", (1312, 448), (16, 16, 24, 255))
-        for i, name in enumerate(("rex", "comando", "parceira")):
+        for i, name in enumerate(("damiao", "comando", "parceira")):
             large = outputs[name].convert("RGBA").resize((384, 384), Image.Resampling.NEAREST)
             preview.alpha_composite(large, (32 + 432 * i, 32))
         preview.convert("RGB").save(ROOT / "preview-8x.png")

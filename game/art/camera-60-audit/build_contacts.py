@@ -3,7 +3,7 @@ from PIL import Image,ImageDraw
 import json,hashlib
 base=Path(__file__).resolve().parent.parent
 out=base/'camera-60-audit'
-entries=[dict(id='heroi',name='Rex',path=base/'cangaco-protagonista-v1/heroi/heroi.png')]
+entries=[dict(id='heroi',name='Damião',path=base/'cangaco-protagonista-v1/heroi/heroi.png')]
 entries += [dict(id=e['id'],name=e['name'],path=base/'cangaco-insects-v1/enemies'/e['id']/(e['id']+'.png')) for e in json.loads((base/'cangaco-insects-v1/catalog.json').read_text())]
 manifest=[]
 for e in entries:

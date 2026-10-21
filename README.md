@@ -1,18 +1,18 @@
-# RedRex 🦂
+# Plaguefall 🦂
 
 **Shooter de arena top-down para Sega Mega Drive / Genesis**, escrito em C com o [SGDK 2.11+](https://github.com/Stephane-D/SGDK). Sobreviva a ondas de insetos-máquina em 15 fases de campanha e enfrente a **Lacraia**, o chefe da fase final.
 
-**Nova direção visual:** cangaço cyberpunk brasileiro. Os [13 inimigos gigantes](game/art/cangaco-insects-sized-v3/README.md) agora usam tamanhos nativos de 16×16, 24×24 e 32×32 (chefe48×48), oito direções, repouso e movimento, com [redesenho da perspectiva na versão 2](game/art/camera-60-redraw-v2/README.md), comparado visualmente a guias de câmera ortográfica a 60° acima do chão. A ROM foi recompilada e auditada: **512 KiB**, cache de inimigos de **10 KiB de VRAM** e **47332 bytes de heap livre** observados no emulador. O [protagonista humano Rex](game/art/cangaco-protagonista-iso60-v2/README.md) já substitui o mech na partida e é a opção inicial da galeria, com oito direções e animações. O cenário e a projeção do mapa ainda usam a implementação anterior. As folhas darkspace são estudos históricos.
+**Nova direção visual:** cangaço cyberpunk brasileiro. Os [13 inimigos gigantes](game/art/cangaco-insects-sized-v3/README.md) agora usam tamanhos nativos de 16×16, 24×24 e 32×32 (chefe48×48), oito direções, repouso e movimento, com [redesenho da perspectiva na versão 2](game/art/camera-60-redraw-v2/README.md), comparado visualmente a guias de câmera ortográfica a 60° acima do chão. A ROM atual, com a abertura animada, ocupa **768 KiB**; o cache de inimigos continua em **10 KiB de VRAM**. A abertura foi verificada no emulador em **50/60Hz**. O [protagonista humano Damião](game/art/cangaco-protagonista-iso60-v2/README.md) já substitui o mech na partida e é a opção inicial da galeria, com oito direções e animações. O cenário e a projeção do mapa ainda usam a implementação anterior. As folhas darkspace são estudos históricos.
 
-Nossa Senhora Aparecida substitui a antena24×24 no objetivo PROTEGER, com a mesma lógica e sem aumentar VRAM/RAM. [Dinorah tem sprites32×48 e oito direções](game/art/cangaco-parceira-iso60-v1/README.md) e já aparece ao lado de Rex na [galeria PERSONAGENS](game/art/gallery-v1/README.md). Consulte o [inventário de sprites e pendências](game/art/INVENTARIO-SPRITES.md).
+Nossa Senhora Aparecida substitui a antena24×24 no objetivo PROTEGER, com a mesma lógica e sem aumentar VRAM/RAM. [Dinorah tem sprites32×48 e oito direções](game/art/cangaco-parceira-iso60-v1/README.md) e já aparece ao lado de Damião na [galeria PERSONAGENS](game/art/gallery-v1/README.md). Consulte o [inventário de sprites e pendências](game/art/INVENTARIO-SPRITES.md).
 
 > ROM: `game/out/release/rom.bin` — roda em qualquer emulador de Mega Drive (testado no RetroArch + Genesis Plus GX) e, em teoria, no hardware real.
 
 ## O jogo
 
-“Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” Rex sonhava com astronautas, extraterrestres e foguetes que davam ré. Os foguetes voltaram trazendo ninhos — Rex chama os invasores de “baratas” — e agora ele luta por uma resistência humana num Brasil cyberpunk com tons de cangaço e religiosidade popular. Leia a [abertura e os arquivos de história](game/doc/historia/README.md).
+“Você já ouviu falar que o Diabo dá tudo que a gente quer? Mas sempre da maneira mais filha da puta possível?” Damião sonhava com astronautas, extraterrestres e foguetes que davam ré. Os foguetes voltaram trazendo ninhos — Damião chama os invasores de “baratas” — e agora ele luta por uma resistência humana num Brasil cyberpunk com tons de cangaço e religiosidade popular. Leia a [abertura e os arquivos de história](game/doc/historia/README.md).
 
-Você controla **Rex, humano com implantes**, numa arena de tela única. Inimigos surgem em ondas; a maioria das fases exige **eliminar N inimigos**. Na fase 5, proteja Nossa Senhora Aparecida por 30 segundos; na 16, derrote a Lacraia. Vida persiste entre as fases — administre os itens e atravesse as quatro bifurcações da campanha.
+Você controla **Damião, humano com implantes**, numa arena de tela única. Inimigos surgem em ondas; a maioria das fases exige **eliminar N inimigos**. Na fase 5, proteja Nossa Senhora Aparecida por 30 segundos; na 16, derrote a Lacraia. Vida persiste entre as fases — administre os itens e atravesse as quatro bifurcações da campanha.
 
 ### Controles
 
@@ -60,8 +60,8 @@ Legenda típica: `o` contorno, `b` corpo (cor da família), `h` brilho, `e` olho
 | Itens | `sprites/items_data.h` | Char-maps 16×16 dos 8 itens |
 | Ícones de HUD | `sprites/icons_data.h` | Caveira, bomba, raio, faísca, escudo, gelo, fogo (8×8) |
 | Chão da arena | `sprites/floor_data.h` | Padrão 32×32 ladrilhado no BG_B (PAL3) |
-| Fundo do título | `sprites/titlebg_data.h` | [Splash da caatinga](game/art/title-caatinga-v1/README.md), Rex, Dinorah, padre e insetos; 320×224, duas paletas por tile |
-| Logo da splash | `sprites/logo_data.h` | FinalQuest a 75% do tamanho anterior, arte144×132 em moldura144×136 |
+| Fundo do título | `sprites/titlebg_data.h` | [Splash da caatinga](game/art/title-caatinga-v1/README.md), Damião, Dinorah, padre e insetos; 320×224, duas paletas por tile |
+| Logo da splash | `sprites/logo_data.h` | FinalQuest redesenhado, moldura192×128, letras mais legíveis e exposição de1s |
 | Mapa de VRAM | `sprites/tiles.h` | Índice de todos os tiles + regiões (rotações de inimigo, chefe, chars) |
 
 Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (cache de frames dos insetos, streaming da ROM e cinco vistas canônicas com simetria horizontal), `chars.c` (rotações do mech).
@@ -73,9 +73,10 @@ Geradores: `system/video/tilegen.c` (tiles procedurais + paleta), `enemygfx.c` (
 - **[GDD completo](game/doc/GDD.md)** — visão geral, controles, fluxo, HUD, jogador/tiros/bomba, os 15 tipos de inimigo com valores reais, itens, fases e terreno, áudio e gráficos. Gerado a partir do código: os números refletem a implementação.
 - **[Plano de inimigos](game/doc/plano-inimigos.md)** — a matriz forma×cor e a progressão de introdução por fase.
 - **[História](game/doc/historia/README.md)** — abertura, universo, personagens e campanha vinculada aos 20 nós existentes. O roteiro da ROM usa 22 cenas, com as duas versões de cada bifurcação e um final comum.
-- **[Galeria de personagens](game/art/gallery-v1/README.md)** — Rex e Dinorah em oito direções, com animação de repouso; ESQ/DIR alterna entre os dois.
+- **[Abertura animada](game/art/intro-monologo-v1/README.md)** — 12 quadros do monólogo de Damião antes do menu, com texto branco centralizado, enquadramento estável e fades; A completa/avança, START pula.
+- **[Galeria de personagens](game/art/gallery-v1/README.md)** — Damião e Dinorah em oito direções, com animação de repouso; ESQ/DIR alterna entre os dois.
 - **[Splash art e abertura](game/art/title-caatinga-v1/README.md)** — caatinga e personagens no menu, com logo FinalQuest menor e capturas no emulador.
-- **[Retratos de conversa](game/art/dialogue-portraits-v1/README.md)** — Rex, Comando (padre) e Dinorah em 48×48, baseados nos concepts, com PNGs, paletas e prévia no emulador.
+- **[Retratos de conversa](game/art/dialogue-portraits-v1/README.md)** — Damião, Comando (padre) e Dinorah em 48×48, baseados nos concepts, com PNGs, paletas e prévia no emulador.
 - **[Sistema de diálogos](game/doc/plano-historia.md)** — formato das cenas, retratos, controles e limites do texto.
 
 ## Compilar e rodar
@@ -124,7 +125,7 @@ Ambiente completo para desenvolver jogos de Mega Drive em C com o SGDK no macOS.
 
 ```
 MegaDrive/
-├── game/                   # O jogo (RedRex) — ver acima
+├── game/                   # O jogo (Plaguefall) — ver acima
 │   └── doc/                # Documentação
 │       ├── GDD.md          # Game Design Document
 │       ├── plano-inimigos.md

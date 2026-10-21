@@ -1,4 +1,4 @@
-// Galeria de Rex e Dinorah: oito direcoes com animacao de repouso.
+// Galeria de Damião e Dinorah: oito direcoes com animacao de repouso.
 // ESQ/DIR troca de personagem; A/B/START volta ao menu.
 
 #include "system/video/screens/chardemo.h"
@@ -20,7 +20,7 @@
 #error Character gallery exceeds the borrowed enemy tile cache
 #endif
 
-static const char *const NAMES[GALLERY_COUNT] = { "REX", "DINORAH" };
+static const char *const NAMES[GALLERY_COUNT] = { "DAMIAO", "DINORAH" };
 static const u8 CANON[8] = { 0, 1, 2, 3, 4, 3, 2, 1 };
 
 static void loadPreview(u8 which)
@@ -29,7 +29,7 @@ static void loadPreview(u8 which)
     VDP_resetSprites();
     VDP_updateSprites(1, DMA);
     ENEMYGFX_reset();
-    // Dinorah's native frames use exactly the same palette as Rex.
+    // Dinorah's native frames use exactly the same palette as Damião.
     PAL_setColors(PAL2 * 16, (const u16 *)heroi_palette, 16, DMA);
     for (u8 pose = 0; pose < ACTOR_IDLE_FRAMES; pose++)
         for (u8 dir = 0; dir < PREVIEW_VIEW_COUNT; dir++)

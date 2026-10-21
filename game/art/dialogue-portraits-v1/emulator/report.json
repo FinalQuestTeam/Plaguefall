@@ -1,16 +1,12 @@
 {
   "passed": true,
   "core": "Genesis Plus GX",
-  "frames": 1791,
+  "frames": 1443,
   "portrait_ids_loaded": [
     0,
     3
   ],
-  "priest_ids_in_opening": [
-    0,
-    1
-  ],
   "test_scene": "N_7 / ANTES",
   "method": "normal new-game opening; volatile emulator RAM redirects current scene to production N_7 for second portrait",
-  "rom_sha256": "1a1c418ab758ea83531ed5289315102473c9f5e1ec83b1846e010ff1b25cdc8c"
+  "rom_sha256": "3352c4a7e338477a97e9b0b001c64af9e9d9026c7f6c09537e66d1dc49fdd223"
 }

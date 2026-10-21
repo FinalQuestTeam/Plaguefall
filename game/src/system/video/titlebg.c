@@ -1,5 +1,5 @@
 // Splash de caatinga da tela de titulo (art/title-caatinga-v1). Pintada fileira de
-// tiles a fileira direto na VRAM, como o splash — só que em tela cheia e com
+// dados 4bpp ja preparados direto na VRAM, em tela cheia e com
 // duas paletas: cada tile aponta para a PAL1 ou a PAL2.
 //
 // Os 1120 tiles ocupam a região dos inimigos rotacionados / mech / chão; nada
@@ -18,36 +18,15 @@ void TITLEBG_load(void)
     while (PAL_isDoingFade()) SYS_doVBlankProcess();
     SYS_doVBlankProcess();          // sincroniza num quadro limpo + esvazia a fila de DMA
 
-    u32 *buf = MEM_alloc(TITLEBG_TILES_W * 8 * (u16) sizeof(u32));  // 1 fileira de tiles
-
-    // carrega com o display DESLIGADO: as ~28 DMAs completam sem disputar acesso à
+    // carrega com o display DESLIGADO: o DMA completa sem disputar acesso à
     // VRAM com o raster — senão, na 1ª carga (logo após o boot), alguma faixa de
     // tiles vinha truncada (elementos pretos até uma recarga)
     VDP_setEnable(FALSE);
 
-    for (u16 ty = 0; ty < TITLEBG_TILES_H; ty++)
-    {
-        // a arte é densa (sem transparência): monta a palavra de 8 pixels de uma
-        // vez, varrendo a linha em sequência — sem máscara nem limpeza do buffer
-        for (u16 py = 0; py < 8; py++)
-        {
-            const char *px = TITLEBG_ART[ty * 8 + py];
-            for (u16 tx = 0; tx < TITLEBG_TILES_W; tx++)
-            {
-                u32 w = 0;
-                for (u16 i = 0; i < 8; i++)
-                {
-                    const char ch = *px++;
-                    w = (w << 4) | ((ch <= '9') ? (u32) (ch - '0') : (u32) (ch - 'a' + 10));
-                }
-                buf[tx * 8 + py] = w;
-            }
-        }
-        VDP_loadTileData(buf, TILE_USER_INDEX + TITLEBG_TILE_BASE + ty * TITLEBG_TILES_W,
-                         TITLEBG_TILES_W, DMA);
-    }
-
-    MEM_free(buf);
+    // The exporter already packs the 4bpp words: no 71680-pixel conversion
+    // and no temporary RAM allocation on the transition from the monologue.
+    VDP_loadTileData(TITLEBG_PIXELS, TILE_USER_INDEX + TITLEBG_TILE_BASE,
+                     TITLEBG_TILES_W * TITLEBG_TILES_H, DMA);
 
     PAL_setColors(PAL1 * 16, TITLEBG_PAL_A, 16, DMA);
     PAL_setColors(PAL2 * 16, TITLEBG_PAL_B, 16, DMA);

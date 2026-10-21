@@ -10,7 +10,7 @@ Foram inspecionadas as 700 poses desenhadas: cinco direções × (quatro repouso
 
 | ID | Nome | Resultado visual |
 |---|---|---|
-| `heroi` | Rex | [Reprovado](contact-sheets/heroi.png): Rosto e tronco permanecem muito frontais; o topo do chapéu aparece estreito. |
+| `heroi` | Damião | [Reprovado](contact-sheets/heroi.png): Rosto e tronco permanecem muito frontais; o topo do chapéu aparece estreito. |
 | `sq_red` | Torreão | [Reprovado](contact-sheets/sq_red.png): N/S exibem bastante dorso, mas L/O expõem um perfil muito mais baixo. |
 | `sq_yellow` | Batedor | [Reprovado](contact-sheets/sq_yellow.png): L/O têm corpo quase horizontal de perfil e pouca área dorsal. |
 | `sq_purple` | Baluarte | [Reprovado](contact-sheets/sq_purple.png): Área visível das placas dorsais muda muito de N/NE para L/O. |

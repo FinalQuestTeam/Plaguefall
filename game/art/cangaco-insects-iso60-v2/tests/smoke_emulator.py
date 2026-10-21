@@ -116,7 +116,7 @@ def main():
     def press(id):
         buttons.add(id);run(2);buttons.clear();run(2)
     run(480);shot("title")
-    # Open the character gallery first: Rex is the default, with eight views.
+    # Open the character gallery first: Damião is the default, with eight views.
     for _ in range(2):press(5)
     press(3);run(40);shot("hero-gallery")
     press(3);run(120) # title bitmap generation precedes the half-second input lock

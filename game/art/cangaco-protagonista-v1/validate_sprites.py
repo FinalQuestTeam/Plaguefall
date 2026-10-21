@@ -61,7 +61,7 @@ def main():
     assert runtime.returncode==0,runtime.stderr
     report={"passed":True,"pass_scope":"technical_checks_only","overall_art_approved":False,
         "camera_validation":camera_review("heroi",ROOT/"heroi/heroi.png"),
-        "id":"heroi","project_character":"Rex","directions":8,
+        "id":"heroi","project_character":"Damião","directions":8,
         "animations":16,"frames_exported":80,"runtime_canonical_frames":50,"cell":[32,48],
         "sheet":[192,768],"directional_sheet":[192,96],"alpha":[0,255],"transparent_index":0,
         "palette_visible_max":15,"palette_slot":"PAL2","runtime_rom_bytes":38432,

@@ -1,4 +1,4 @@
-"""Technical export only; drawn poses come from image_gen, same pipeline as Rex."""
+"""Technical export only; drawn poses come from image_gen, same pipeline as Damião."""
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 from io import BytesIO
@@ -110,8 +110,8 @@ def main():
     write(ROOT/'parceira.res',resource.encode())
     write(ROOT/'runtime/parceira.res',b'BIN parceira_frames "frames.bin" 4\nBIN parceira_palette "palette.bin" 2\n')
     write(ROOT/'palette.json',(json.dumps(PALETTE,indent=2)+'\n').encode())
-    write(ROOT/'palette.gpl',('GIMP Palette\nName: RedRex parceira shared Rex PAL2\nColumns: 4\n#\n'+'\n'.join(f'{r} {g} {b} index{i}' for i,(r,g,b) in enumerate(PALETTE))+'\n').encode())
-    report.update({'native_master_sha256':hashlib.sha256((ROOT/'parceira/parceira.png').read_bytes()).hexdigest(),'native_cell':[32,48],'full_animation':{'idle':4,'run':6},'runtime_selected_poses':SELECTED,'runtime_animation':{'idle':2,'run':4},'runtime_canonical_frames':30,'runtime_bytes':len(compact_raw),'palette_shared_with':'heroi PAL2','source_tool':'image_gen built-in','technical_adjustments':'alpha segmentation, crop, registration, nearest-neighbour scaling, palette indexing; same algorithm and feet baseline46 as Rex; no procedural drawing'})
+    write(ROOT/'palette.gpl',('GIMP Palette\nName: RedRex parceira shared Damião PAL2\nColumns: 4\n#\n'+'\n'.join(f'{r} {g} {b} index{i}' for i,(r,g,b) in enumerate(PALETTE))+'\n').encode())
+    report.update({'native_master_sha256':hashlib.sha256((ROOT/'parceira/parceira.png').read_bytes()).hexdigest(),'native_cell':[32,48],'full_animation':{'idle':4,'run':6},'runtime_selected_poses':SELECTED,'runtime_animation':{'idle':2,'run':4},'runtime_canonical_frames':30,'runtime_bytes':len(compact_raw),'palette_shared_with':'heroi PAL2','source_tool':'image_gen built-in','technical_adjustments':'alpha segmentation, crop, registration, nearest-neighbour scaling, palette indexing; same algorithm and feet baseline46 as Damião; no procedural drawing'})
     write(ROOT/'validation/export.json',(json.dumps(report,indent=2)+'\n').encode())
     if not args.check:previews(master)
     print(json.dumps({k:v for k,v in report.items() if k!='cells'},indent=2))
@@ -143,11 +143,11 @@ def previews(master):
     contact.save(folder/'parceira-todas-poses-4x.png')
     hero=Image.open(GAME/'art/cangaco-protagonista-iso60-v2/heroi/heroi.png')
     compare=Image.new('RGB',(1024,448),(24,24,36));draw=ImageDraw.Draw(compare)
-    for row,(actor,label) in enumerate([(hero,'REX'),(master,'PARCEIRA')]):
+    for row,(actor,label) in enumerate([(hero,'DAMIAO'),(master,'PARCEIRA')]):
         draw.text((4,row*224),label,font=font,fill=(219,219,182))
         for d,direction in enumerate(DIRS):
             image=cell(actor,d,0).convert('RGBA').resize((128,192),Image.Resampling.NEAREST)
             compare.paste(image,(d*128,row*224+32),image)
-    compare.save(folder/'rex-parceira-comparacao-4x.png')
+    compare.save(folder/'damiao-parceira-comparacao-4x.png')
 
 if __name__=='__main__':main()

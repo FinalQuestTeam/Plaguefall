@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "rom_bytes": 786432,
+  "rom_sha256": "9471d3733b40a85c292845651eaf26532536a54bedeb5435b4920eb47b9b1932",
+  "text_bytes": 774716,
+  "data_bytes": 88,
+  "bss_bytes": 6071,
+  "static_ram_bytes": 6159,
+  "intro_resource_bytes": 369744,
+  "image_tiles": 924,
+  "particle_tiles": 3,
+  "temporary_vram_bytes": 29664,
+  "particles": 12,
+  "particle_types": [
+    "dust",
+    "ember",
+    "soot"
+  ],
+  "particle_motion_max_pixels_per_frame": 1,
+  "camera_scroll": false,
+  "fade_seconds": 0.4,
+  "fade_interpolation_levels": 32,
+  "artwork_bottom_fade_pixels": 48,
+  "final_shot_previous_seconds": 17,
+  "final_shot_seconds": 5,
+  "intro_timeline_seconds": 89,
+  "menu_delay_including_final_fade_seconds": {
+    "ntsc": 0.55,
+    "pal": 0.56
+  },
+  "menu_title_tiles_packed_in_rom": true,
+  "menu_image_pixels_converted_at_runtime": 0,
+  "redundant_boot_floor_generation_removed": true,
+  "logo": "192x128 image_gen reconstruction, 0.2s fade in / 1s hold / 0.2s fade out",
+  "arena_shooter_label": false,
+  "framebuffer_allocated": false,
+  "full_image_dma_per_animation_frame": false,
+  "text_box": [
+    36,
+    4
+  ],
+  "centered_text": true,
+  "speaker_counter_and_hints": false,
+  "build_matches_delivered_source": true,
+  "emulator_ntsc": "emulator-ntsc/report.json",
+  "emulator_pal": "emulator-pal/report.json",
+  "pixel_comparison": "pixel-validation.json"
+}

@@ -1,19 +1,19 @@
 # Redesenho da câmera — versão2
 
-Rex e os 13 inimigos foram redesenhados usando uma **câmera ortográfica a 60° acima do chão** como referência. O guia foi calculado por projeção; os sprites são desenhos 2D comparados visualmente com ele, sem certificação numérica de câmera 3D.
+Damião e os 13 inimigos foram redesenhados usando uma **câmera ortográfica a 60° acima do chão** como referência. O guia foi calculado por projeção; os sprites são desenhos 2D comparados visualmente com ele, sem certificação numérica de câmera 3D.
 
 O topo do chapéu, ombros, dorso, cabeça e carapaças passa a orientar as vistas; as laterais também são vistas de cima. Foram revistas todas as 700 referências de quadros canônicos na resolução nativa. As 420 restantes são espelhos horizontais verificados por código.
 
 ## Arquivos atuais
 
-- [Rex: PNGs, animações, paleta, declaração SGDK e ZIP](../cangaco-protagonista-iso60-v2/README.md).
+- [Damião: PNGs, animações, paleta, declaração SGDK e ZIP](../cangaco-protagonista-iso60-v2/README.md).
 - [13 inimigos: PNGs, animações, paleta, declarações SGDK e ZIP](../cangaco-insects-iso60-v2/README.md).
 - [Parecer por personagem e hashes exatos](audit.json).
 - [Inventário das folhas revisadas](inventory.json).
 
 | ID | Nome do projeto | Todas as poses nativas |
 |---|---|---|
-| `heroi` | Rex | [Prancha](contact-sheets/heroi.png) |
+| `heroi` | Damião | [Prancha](contact-sheets/heroi.png) |
 | `sq_red` | Torreão | [Prancha](contact-sheets/sq_red.png) |
 | `sq_yellow` | Batedor | [Prancha](contact-sheets/sq_yellow.png) |
 | `sq_purple` | Baluarte | [Prancha](contact-sheets/sq_purple.png) |

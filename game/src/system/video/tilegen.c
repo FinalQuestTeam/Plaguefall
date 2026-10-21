@@ -37,7 +37,7 @@ static void buildTiles(void)
     tileBuf = MEM_alloc(TILEBUF_BYTES);
     memset(tileBuf, 0, TILEBUF_BYTES);
 
-    // o jogador (Rex) e os inimigos (insetos) são gerados por direção em
+    // o jogador (Damião) e os inimigos (insetos) são gerados por direção em
     // chars.c / enemygfx.c (regiões CHARS / ENEMY_ROT), não aqui.
 
     // projéteis 8x8 (tile único)
