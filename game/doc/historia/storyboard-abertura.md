@@ -34,7 +34,7 @@ O Diabo fica na fala de Damião. A sequência não apresenta uma entidade nem um
 
 **Imagem e câmera:** lembrança em plano médio aberto. Damião mais jovem, já adulto, com uniforme de manutenção e caixa de ferramentas, olha um foguete retornando à base além da cerca. Seus dois braços ainda são biológicos. A câmera acompanha seu olhar para cima; ele continua do lado de fora.
 
-**Damião, em off:** “Eu sonhava com astronautas, extraterrestres e foguetes que davam ré.”
+**Damião, em off:** “Eu sonhava com astronautas, extraterrestres e foguetes.”
 
 **Som e corte:** motor limpo, quase admirável. Corte seco antes de o pouso completar.
 
@@ -42,25 +42,25 @@ O Diabo fica na fala de Damião. A sequência não apresenta uma entidade nem um
 
 **Imagem e câmera:** presente. Plano de corpo inteiro de Damião no pátio, arma baixa, prótese esquerda, roupa remendada e chapéu com antena. Repete a direção do olhar do plano anterior, mas agora ele olha para o perigo ao nível do chão. Segurar a imagem, sem pose triunfal.
 
-**Damião, em off:** “Agora tô assim.”
+**Damião, em off:** “... É. agora tô assim.”
 
 **Som e corte:** o motor vira um ronco distante; pequeno estalo da mão mecânica. Dar espaço para o jogador reconhecer o personagem.
 
-### 05 · O traje vazio · 00:22–00:29
+### 05 · Quem não voltou · 00:22–00:29
 
 **Imagem e câmera:** plano próximo de um traje de astronauta abandonado numa estrutura de carga. O capacete está escuro, sem rosto. Uma antena e uma pata segmentada surgem pela gola. Aproximação lenta até perceber o movimento.
 
-**Damião, em off:** “Os astronautas voltaram. Só esqueceram de trazer gente dentro da roupa.”
+**Damião, em off:** “As naves voltaram. Quem foi nelas, não.”
 
-**Som e corte:** tecido raspando, peça de metal batendo e um primeiro clique de inseto. A ausência de gente se comunica pelo traje vazio, sem cadáver em quadro.
+**Som e corte:** tecido raspando, peça de metal batendo e um primeiro clique de inseto. O traje vazio representa quem partiu nas naves e não voltou, sem cadáver em quadro.
 
 ### 06 · Baratas · 00:29–00:37
 
 **Imagem e câmera:** câmera baixa junto à carga. Um inseto biomecânico de seis patas passa por cima da caixa; antenas, mandíbulas e placas recuperadas definem a silhueta. Damião observa ao fundo. O foco passa das patas para o homem.
 
-**Damião, em off:** “Os extraterrestres vieram também. Têm pata demais e conversa de menos. Pra mim, é tudo barata.”
+**Damião, em off:** “Aquelas merdas vieram também. Cheio de patas, asas e aquele zumbido. Pra mim, é tudo barata.”
 
-**Som e corte:** patas no metal, breve pausa antes de “barata”. O ronco de um pouso atravessa o corte seguinte.
+**Som e corte:** patas no metal, zumbido de asas e breve pausa antes de “barata”. O ronco de um pouso atravessa o corte seguinte.
 
 ## Prancha 2 — o preço e a decisão
 
@@ -68,7 +68,7 @@ O Diabo fica na fala de Damião. A sequência não apresenta uma entidade nem um
 
 **Imagem e câmera:** plano geral. Um foguete pousa verticalmente atrás do povoado. No primeiro plano, uma carga já descarregada está aberta: casulos, patas e movimento dentro do contêiner. A luz do motor revela os ninhos. O mesmo enquadramento reúne a capacidade técnica do pouso e sua consequência no chão.
 
-**Damião, em off:** “E os foguetes dão ré direitinho. Pousam de pé, no mesmo lugar de onde saíram. A diferença é que agora descarregam ninho.”
+**Damião, em off:** “E os foguetes pousam de pé, no mesmo lugar de onde saíram. A diferença é que agora descarregam ninhos.”
 
 **Som e corte:** motor forte, travas da carga, ruído orgânico baixo. Cortar do trem de pouso atual para o mesmo componente na lembrança de Damião.
 
@@ -76,17 +76,17 @@ O Diabo fica na fala de Damião. A sequência não apresenta uma entidade nem um
 
 **Imagem e câmera:** lembrança em plano médio aberto. Damião trabalha com uma chave no trem de pouso. Ao fundo, tripulantes atravessam um portão fechado para ele. A câmera fica do seu lado da cerca. Dois braços biológicos, roupa de serviço, sem armadura de combate.
 
-**Damião, em off:** “Eu consertava essas merdas. Achava que um dia iam me deixar subir. Subi foi na lista de quem eles querem matar.”
+**Damião, em off:** “Eu consertava essas máquinas. Achava que um dia iam me deixar subir. Subi foi na lista de quem eles querem matar.”
 
 **Som e corte:** ferramentas e vibração da carcaça. O clique da chave vira o clique do mecanismo da arma no presente.
 
-### 09 · O que sobrou · 00:56–01:06
+### 09 · O preço de ficar · 00:56–01:06
 
 **Imagem e câmera:** plano próximo de três quartos pelo lado esquerdo de Damião. A mão mecânica sustenta a arma remendada; a mão direita, biológica, confere a empunhadura. Um deslocamento curto da câmera sobe do braço até a antena e seu rosto. A prancha registra a composição principal desse movimento.
 
-**Damião, em off:** “O braço é de peça. A arma é remendada. O chapéu pega rádio melhor que a torre.”
+**Damião, em off:** “Já foi um braço e quase uma perna, mas esse povo precisa de mim!”
 
-**Som e corte:** três acentos discretos: servo, trava da arma, sintonia do rádio. O humor aqui é seco, sem efeito de comédia.
+**Som e corte:** servo do braço e trava da arma em volume baixo. A fala parte do ferimento e termina na decisão de proteger a comunidade, sem efeito de comédia.
 
 ### 10 · Reza e munição · 01:06–01:13
 

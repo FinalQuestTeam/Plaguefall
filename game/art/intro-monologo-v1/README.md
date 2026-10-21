@@ -13,7 +13,7 @@ O boot segue **[FinalQuest redesenhado](../finalquest-logo-v2/README.md) → mon
 
 A sequência avança sozinha. **A** completa o texto; um segundo toque avança ao próximo quadro com fade. **START** pula tudo e vai para o menu. Botões segurados não repetem o avanço nem confirmam uma opção no menu. A animação toca uma vez por boot; voltar da partida ao menu não a repete.
 
-Antes da fase 1, a conversa mantém apenas o chamado do padre para segurar o pátio e a resposta de Damião. As outras falas da campanha continuam em `src/levels/story.c`. O texto integral da animação vem do storyboard, convertido em `intro_shots.h` pelo exportador.
+Antes da fase 1, a conversa mantém apenas o chamado do padre para segurar o pátio e a resposta de Damião. As outras falas da campanha continuam em `src/levels/story.c`. O texto integral da animação vem do storyboard, convertido em `intro_shots.h` pelo exportador. A revisão de 21/10/2026 aplica as 12 falas aprovadas, incluindo “As naves voltaram. Quem foi nelas, não.” e “Já foi um braço e quase uma perna, mas esse povo precisa de mim!”. A montagem mantém os 89 segundos e as ilustrações existentes.
 
 ## Arte e implementação
 

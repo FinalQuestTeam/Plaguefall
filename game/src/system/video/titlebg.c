@@ -7,6 +7,16 @@
 // devolve o que o jogo precisa antes de a partida começar.
 
 #include "system/video/titlebg.h"
+#include "system/video/sprites/menulogo_data.h"
+#include "system/video/sprites/finalquest_menu_data.h"
+
+// The compact logo follows the background and ends before the SGDK font.
+#define LOGO_BASE (TILE_USER_INDEX + TITLEBG_TILE_BASE + TITLEBG_TILES)
+#define FINALQUEST_BASE (LOGO_BASE + MENULOGO_TILES)
+// Keep both logos within a conservative 219-tile budget before the font.
+#if MENULOGO_TILES + FINALQUEST_MENU_TILES > 219
+#error "FinalQuest menu logo overlaps the SGDK font"
+#endif
 #include "system/video/tilegen.h"       // TILEGEN_palette: devolve a PAL1 aos objetos
 #include "system/video/floor.h"         // FLOOR_init: regenera os tiles do chão (PAL3)
 #include "system/video/enemygfx.h"      // ENEMYGFX_reset: invalida o cache dos rotacionados
@@ -27,6 +37,12 @@ void TITLEBG_load(void)
     // and no temporary RAM allocation on the transition from the monologue.
     VDP_loadTileData(TITLEBG_PIXELS, TILE_USER_INDEX + TITLEBG_TILE_BASE,
                      TITLEBG_TILES_W * TITLEBG_TILES_H, DMA);
+
+    VDP_loadTileData(MENULOGO_PIXELS, LOGO_BASE, MENULOGO_TILES, DMA);
+    PAL_setColors(PAL3 * 16, MENULOGO_PAL, 16, DMA);
+    VDP_loadTileData(FINALQUEST_MENU_PIXELS, FINALQUEST_BASE, FINALQUEST_MENU_TILES, DMA);
+    // Text keeps white ink 15; the developer credit uses the other PAL0 inks.
+    PAL_setColors(PAL0 * 16, FINALQUEST_MENU_PAL, 16, DMA);
 
     PAL_setColors(PAL1 * 16, TITLEBG_PAL_A, 16, DMA);
     PAL_setColors(PAL2 * 16, TITLEBG_PAL_B, 16, DMA);
@@ -52,6 +68,22 @@ void TITLEBG_draw(void)
 
         VDP_setTileMapDataRow(BG_B, row, ty, 0, TITLEBG_TILES_W, CPU);
     }
+}
+
+void TITLEBG_drawLogo(void)
+{
+    for (u16 y = 0; y < MENULOGO_TILES_H; y++)
+        for (u16 x = 0; x < MENULOGO_TILES_W; x++)
+            VDP_setTileMapXY(BG_A,
+                TILE_ATTR_FULL(PAL3, TRUE, FALSE, FALSE, LOGO_BASE + MENULOGO_MAP[y * MENULOGO_TILES_W + x]),
+                MENULOGO_X + x, MENULOGO_Y + y);
+
+    for (u16 y = 0; y < FINALQUEST_MENU_TILES_H; y++)
+        for (u16 x = 0; x < FINALQUEST_MENU_TILES_W; x++)
+            VDP_setTileMapXY(BG_A,
+                TILE_ATTR_FULL(PAL0, TRUE, FALSE, FALSE,
+                    FINALQUEST_BASE + FINALQUEST_MENU_MAP[y * FINALQUEST_MENU_TILES_W + x]),
+                FINALQUEST_MENU_X + x, FINALQUEST_MENU_Y + y);
 }
 
 void TITLEBG_clear(void)

@@ -5,19 +5,19 @@
 > Você já ouviu falar que o Diabo dá tudo que a gente quer?
 > Mas sempre da maneira mais filha da puta possível?
 >
-> Eu sonhava com astronautas, extraterrestres e foguetes que davam ré.
-> Agora tô assim.
+> Eu sonhava com astronautas, extraterrestres e foguetes.
+> ... É. agora tô assim.
 >
-> Os astronautas voltaram. Só esqueceram de trazer gente dentro da roupa.
-> Os extraterrestres vieram também. Têm pata demais e conversa de menos.
+> As naves voltaram. Quem foi nelas, não.
+> Aquelas merdas vieram também. Cheio de patas, asas e aquele zumbido.
 > Pra mim, é tudo barata.
-> E os foguetes dão ré direitinho. Pousam de pé, no mesmo lugar de onde saíram.
-> A diferença é que agora descarregam ninho.
+> E os foguetes pousam de pé, no mesmo lugar de onde saíram.
+> A diferença é que agora descarregam ninhos.
 >
-> Eu consertava essas merdas. Achava que um dia iam me deixar subir.
+> Eu consertava essas máquinas. Achava que um dia iam me deixar subir.
 > Subi foi na lista de quem eles querem matar.
 >
-> O braço é de peça. A arma é remendada. O chapéu pega rádio melhor que a torre.
+> Já foi um braço e quase uma perna, mas esse povo precisa de mim!
 > Minha mãe ainda manda eu levar uma reza.
 > Eu levo. Junto com a munição.
 
@@ -25,13 +25,13 @@
 
 **Damião:** “Tô ouvindo. Hoje ninguém vai pro céu antes da hora.”
 
-O texto mantém a provocação e o palavrão do conceito original, corrige a frase e faz a imagem dos foguetes voltar com uma consequência concreta. Damião não narra a extinção do país: ele está segurando uma passagem para alguém conseguir viver.
+O texto mantém a provocação e o palavrão do conceito original. A volta das naves sem seus ocupantes prepara a chegada dos invasores; os foguetes trazem ninhos, e o braço perdido reforça o custo de proteger a comunidade. Damião não narra a extinção do país: ele está segurando uma passagem para alguém conseguir viver.
 
 ## Encenação proposta
 
 O primeiro som seria uma transmissão de pouso interrompida por estática. Uma propaganda antiga promete “ASCENSÃO: O CÉU É PARA TODOS”. A voz de Damião atravessa o anúncio. No corte para o presente, os motores iluminam antenas improvisadas, telhas, reservatórios e uma capela espremida entre instalações industriais. A carga do foguete se mexe por dentro.
 
-“Agora tô assim” apresenta o corpo inteiro de Damião: rosto exposto, chapéu metálico, braço esquerdo cibernético, tecido e placas recuperadas. O contraste é entre a promessa de acesso ao espaço e o trabalhador que ficou recolhendo os destroços dela.
+“... É. agora tô assim” apresenta o corpo inteiro de Damião: rosto exposto, chapéu metálico, braço esquerdo cibernético, tecido e placas recuperadas. O contraste é entre a promessa de acesso ao espaço e o trabalhador que ficou recolhendo os destroços dela.
 
 O [storyboard em 12 planos](storyboard-abertura.md) já foi integrado à ROM como [abertura animada](../../art/intro-monologo-v1/README.md), entre o logo FinalQuest e o menu. Usa as imagens das pranchas com recortes próprios para 320×176, enquadramento estável, fades e legendas brancas centralizadas sobre preto. A borda inferior da arte escurece gradualmente; poeira, brasa e fuligem se movem sobre a imagem com câmera fixa; não há nome, contador nem instruções na tela. O áudio reaproveita a música existente e um breve chiado de rádio; as falas são apresentadas em texto.
 

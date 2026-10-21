@@ -193,7 +193,7 @@ def main():
         save("timeout")
         raise AssertionError(("Timed out", frame, counter(), text(3, 4, 10)))
     def menu():
-        return raw is not None and fmt == 2 and text(3, 4, 10) == "PLAGUEFALL"
+        return raw is not None and fmt == 2 and text(4, 12, 9) == "NOVO JOGO" and text(4, 14, 10) == "COMO JOGAR"
     def press(button):
         buttons.add(button); run(2)
         buttons.clear(); run(2)
@@ -281,7 +281,7 @@ def main():
     press(7); run(fps); save("gallery-dinorah")
     assert text(16, 13, 7) == "DINORAH"
     press(3); wait_for(menu, 8*fps)
-    run(fps)
+    run(fps); save("menu-after-gallery")
     press(4); press(4); press(3); run(fps)
     save("mission-call")
     assert text(4, 19, 7) == "COMANDO"
@@ -293,6 +293,8 @@ def main():
     press(3); run(10); press(0)
     wait_for(menu, 8*fps)
     run(fps); save("menu-after-game")
+    press(5); press(3); run(fps); save("help")
+    press(3); wait_for(menu,8*fps); run(fps); save("menu-after-help")
     # START can also skip the very first shot without leaking input to the menu.
     core.retro_reset(); run(2)
     wait_for(lambda: counter() == 1, 8*fps)

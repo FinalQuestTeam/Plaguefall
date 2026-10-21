@@ -2,7 +2,6 @@
 from pathlib import Path
 import argparse
 import hashlib
-import importlib.util
 import json
 
 import numpy as np
@@ -11,16 +10,15 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parent
 GAME = ROOT.parents[1]
 TARGET = GAME / "src/system/video/sprites/logo_data.h"
+SOURCE = ROOT / "originals/finalquest-menu-white-v2.png"
 
 
 def logo():
-    source = Image.open(ROOT / "originals/finalquest.png").convert("RGB")
-    pixels = np.asarray(source)
-    yy, xx = np.where(pixels.max(axis=2) > 64)
-    crop = source.crop((int(xx.min()), int(yy.min()), int(xx.max())+1, int(yy.max())+1))
+    source = Image.open(SOURCE).convert("RGBA")
+    crop = source.crop(source.getchannel("A").point(lambda a: 255 if a >= 128 else 0).getbbox())
     fitted = ImageOps.contain(crop, (184, 120), Image.Resampling.LANCZOS)
     canvas = Image.new("RGB", (192, 128))
-    canvas.paste(fitted, ((192-fitted.width)//2, (128-fitted.height)//2))
+    canvas.paste(fitted, ((192-fitted.width)//2, (128-fitted.height)//2), fitted.getchannel("A"))
     # Fixed clean VDP greys and orange: keep the bold wordmark and icon bright,
     # spending intermediate colours on their edges instead of background noise.
     colors = np.array([(0,0,0),(1,1,1),(2,2,2),(3,3,3),(4,4,4),(5,5,5),(6,6,6),(7,7,7),
@@ -47,7 +45,7 @@ static const char *const LOGO_ART[LOGO_H] =
 {
 ''' + "".join(f'    "{row}",\n' for row in rows) + '};\n#endif // LOGO_DATA_H\n'
     info = dict(canvas=[192,128],art_size=list(fitted.size),tiles=384,tile_bytes=12288,
-                source_sha256=hashlib.sha256((ROOT/'originals/finalquest.png').read_bytes()).hexdigest(),
+                source=str(SOURCE.relative_to(GAME)),source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
                 header_sha256=hashlib.sha256(header.encode()).hexdigest(), generation="built-in image_gen reconstruction; original identity reference")
     return header, image, info
 
