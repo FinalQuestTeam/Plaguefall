@@ -1,6 +1,6 @@
 # sq_purple — Baluarte
 
-Definição: [`sq_purple.c`](../../../../src/enemies/defs/sq_purple.c).
+Definição: [`sq_purple.c`](../../../../../src/enemies/defs/sq_purple.c).
 
 - Tipo: `ENEMY_SQ_PUR` = `2`.
 - Dados: `ENEMYDEF_sq_purple`.

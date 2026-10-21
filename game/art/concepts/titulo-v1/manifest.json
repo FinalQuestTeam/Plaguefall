@@ -1,0 +1,45 @@
+{
+  "status": "B_selected_and_integrated",
+  "generation": "image_gen built-in, four independent calls",
+  "game_title": "PLAGUEFALL",
+  "integrated_in_game": true,
+  "variants": [
+    {
+      "option": "A",
+      "name": "Xilogravura do sertão",
+      "file": "a-xilogravura.png",
+      "width": 1499,
+      "height": 1049,
+      "sha256": "ef3680b2825c90755b9af0068a848a781f14f482f022715b1915ee621836c80f",
+      "prompt": "prompts/a-xilogravura.txt"
+    },
+    {
+      "option": "B",
+      "name": "Ex-voto de metal",
+      "file": "b-ex-voto.png",
+      "width": 1499,
+      "height": 1049,
+      "sha256": "1a850daad0a08903b33d82442823b62a21166cd4e4b3d54cb2c940bcda836e53",
+      "prompt": "prompts/b-ex-voto.txt"
+    },
+    {
+      "option": "C",
+      "name": "Selo do enxame",
+      "file": "c-selo-enxame.png",
+      "width": 1499,
+      "height": 1049,
+      "sha256": "9537305a48599a91dde4035ee222d6b45595b44353aedce9758cd9059fec1039",
+      "prompt": "prompts/c-selo-enxame.txt"
+    },
+    {
+      "option": "D",
+      "name": "Queda da Ascensão",
+      "file": "d-queda-ascensao.png",
+      "width": 1499,
+      "height": 1049,
+      "sha256": "e97f9f4b055eea10a9b497a48d5ea5a27c2f12f780c51e7f7833aaae17d75b95",
+      "prompt": "prompts/d-queda-ascensao.txt"
+    }
+  ],
+  "selected_option": "B"
+}

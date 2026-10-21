@@ -42,9 +42,11 @@ O cangaço orienta silhueta, deslocamento por território hostil, emboscada, rá
 
 ## Nossa Senhora Aparecida e a fé
 
-A santa da fase 5 pertence a um pequeno ponto de abrigo. Sua base guarda uma estação de rádio adaptada por quem frequenta o lugar. O sinal ajuda a organizar a saída da população; a imagem também tem valor próprio para quem a preservou. O projeto não precisa escolher entre devoção sincera e conhecimento técnico.
+Na proposta revisada, o padre retira a santa da igreja durante a fuga pelo pátio. Ela acompanha os refugiados até o abrigo de manutenção e depois até a plataforma de evacuação. A igreja pode ser poupada ou parcialmente destruída por uma bomba de Damião; a santa já está com o grupo quando isso acontece.
 
-A ação jogável é a que já existe: proteger por 30 segundos um objeto estático que perde vida por contato. Na ficção, Damião segura o ponto durante uma transmissão. O HUD e o código ainda o chamam de aliado. Se ele cai, a imagem e a estação são atingidas; a cena seguinte trata da perda do ponto e da retirada. Não afirmar que uma companheira morreu, que a santa ressuscitou ou que todos os civis foram salvos por um contador invisível.
+Dentro da imagem há um dispositivo de sinalização que transmite às naves humanas de resgate a identificação e a posição de um pouso seguro. Proteger a santa por 30 segundos permite concluir o sinal. Essas naves são operadas por sobreviventes e levam os refugiados a um posto seguro fora do corredor infestado. São distintas das cargas contaminadas que trouxeram os invasores.
+
+Se o sinalizador for destruído antes da confirmação, as naves abortam a aproximação. Dinorah discute com Damião e parte com os refugiados para procurar uma saída por terra; o padre tenta intervir e depois mantém o contato de rádio com ele. A imagem conserva seu valor religioso, além da função do dispositivo. A defesa jogável continua sendo a de um objeto estático com vida.
 
 Há gente que reza, gente que não reza e gente que faz as duas coisas conforme o dia. A propaganda do Consórcio usa linguagem de ascensão e salvação, mas não representa toda religião. A campanha pode criticar a venda de milagres e tratar a fé comunitária com respeito ao mesmo tempo.
 
@@ -75,16 +77,20 @@ A paisagem proposta combina concreto, caatinga, mangue industrial, cabos pendura
 
 A lava permanece um terreno que causa dano. Na história, ocupa áreas de vazamento térmico e descarte dos motores. A lama permanece um terreno que reduz movimento, ligada aos baixios e canais industriais. A ficção deve explicar o que o jogador encontra, sem prometer física, clima ou destruição de cenário.
 
-Os itens continuam sendo suprimentos de combate. Coração cura; não é órgão arrancado de humano. Gelo, fogo, raio e escudo são efeitos do equipamento recuperado, não milagres concedidos como recompensa por crença. A trilha dinâmica existente expressa pressão do enxame; baião, rabeca ou cantoria ficam como direção sonora futura, sem alegar que já foram compostos.
+Os itens continuam sendo suprimentos de combate. Coração cura; não é órgão arrancado de humano. Gelo, fogo, raio e escudo são efeitos do equipamento recuperado, não milagres concedidos como recompensa por crença. A trilha original Baião de Ferrugem aproxima síncopes de baião de pulsos e percussão industriais no PSG; o andamento e os acentos expressam a pressão do enxame. Os timbres sugerem instrumentos por articulação e ritmo, sem amostras acústicas. Rabeca e cantoria continuam como possibilidades futuras.
 
 ## Dinorah — parceira de Damião
 
-**Dinorah** é técnica de campo do Bando, com objetivos próprios ligados à manutenção da rede de água. Sua arte já existe em marrom e vermelho. Uma futura história pode colocá-la ao lado de Damião por competência e conflito de prioridades, sem reduzi-la a romance ou pessoa a resgatar.
+**Dinorah** é técnica de campo do Bando e participa da organização da fuga e do cuidado com os refugiados. Sua arte já existe em marrom e vermelho. Na proposta revisada, sua relação com Damião depende do resultado do resgate da fase 5.
 
-O nome da personagem é **Dinorah**. Os recursos de arte mantêm o identificador técnico `parceira`. Ela já tem um retrato próprio de conversa, exibido como DINORAH, e participa por rádio antes da fase 7. Não há segundo ator integrado nem IA aliada. Ela não substitui a santa nem usa o retrato de Comando.
+Se o sinal é transmitido e o povo embarca, ela permanece para planejar com Damião uma investigação dos ninhos perto da base de lançamento. Ajuda a interpretar sinais e mapas, mantendo sua própria competência técnica. Se o resgate falha, briga com ele, não aceita a tentativa de conciliação do padre e vai embora com os refugiados. A prioridade dela é procurar uma retirada por terra. Ela não retoma a função de orientadora de Damião nas fases seguintes dessa rota nem lhe oferece perdão automático no final.
+
+O nome da personagem é **Dinorah**. Os recursos de arte mantêm o identificador técnico `parceira`. Ela já tem um retrato de conversa exibido como DINORAH. A ROM atual ainda apresenta apenas sua fala por rádio antes da fase 7; a participação anterior e as diferenças de continuidade precisam ser adaptadas ao roteiro. Não há segundo ator integrado nem IA aliada. Ela não substitui a santa nem usa o retrato de Comando.
 
 ## Desfecho e limites
 
-Derrotar Lacraia interrompe o comando local e abre uma oportunidade de retorno e reconstrução. O país continua ocupado em outros pontos. O final é único em todas as rotas; não verifica reputação, número de pessoas salvas, religião ou estado da santa.
+No novo fluxo, derrotar Lacraia permite a Damião alcançar os acessos dos ninhos para instalar cargas de demolição recuperadas na base. Ele se retira pelos túneis de manutenção antes da detonação. As explosões destroem os criadouros; nos dias seguintes, a comunidade elimina os insetos isolados e confirma que a região está livre. O planeta continua infestado.
 
-Não reintroduzir a premissa de simulação de treinamento. Não apresentar a morte do chefe como cura de todos os implantes. A conquista de Damião é material e limitada: existe um pedaço de chão onde as pessoas podem tentar viver outra vez.
+O resultado militar é comum a todas as rotas. Os diálogos e as imagens finais preservam o estado da igreja e a relação com Dinorah: ela participa do retorno na rota do resgate bem-sucedido e permanece afastada de Damião na rota da falha. O retorno dos refugiados acontece por nave ou por terra conforme o percurso. Essas variações pertencem ao novo tratamento; o seletor atual da ROM ainda não as implementa.
+
+Não reintroduzir a premissa de simulação de treinamento. A morte do chefe não cura todos os implantes nem elimina os insetos instantaneamente. A libertação regional decorre da destruição dos ninhos e da eliminação dos focos restantes. As cargas do encerramento são recursos da missão e não exigem bombas guardadas no inventário de combate.

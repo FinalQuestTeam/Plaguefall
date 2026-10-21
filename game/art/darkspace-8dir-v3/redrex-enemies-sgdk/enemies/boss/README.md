@@ -1,6 +1,6 @@
 # boss — Lacraia
 
-Definição: [`boss.c`](../../../../src/enemies/defs/boss.c).
+Definição: [`boss.c`](../../../../../src/enemies/defs/boss.c).
 
 - Tipo: `ENEMY_BOSS` = `14`.
 - Dados: `ENEMYDEF_boss`.

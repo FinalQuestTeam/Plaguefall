@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "track": "LADAINHA DE FERRO",
+  "rom_sha256": "1fe42402f1cbbae368559290b3d76343640b6a0a237962fa97b8efd4466f9fa9",
+  "bench_rom_sha256": "21c9c2ea0f5a93f29a5723b8e33386fc7cccd10daae5ee22bba90377ac0ceaee",
+  "audio": {
+    "ladainha-calma.wav": {
+      "seconds": 31.039977324263038,
+      "sample_rate": 44100,
+      "channels": 2,
+      "peak": 0.14935302734375,
+      "rms": 0.03410372858653947,
+      "sha256": "df20270de77ae96681ea89f0f70a081e8cbc4c6978b235ca91c5140366d04c9c"
+    },
+    "ladainha-combate.wav": {
+      "seconds": 22.028367346938776,
+      "sample_rate": 44100,
+      "channels": 2,
+      "peak": 0.14501953125,
+      "rms": 0.03408762861775366,
+      "sha256": "bb7481ac505d82fb3562d3a84fc3ff3148497df9a19390b77c9af0fc7a596171"
+    },
+    "plaguefall-ladainha-pal.wav": {
+      "seconds": 31.186213151927436,
+      "sample_rate": 44100,
+      "channels": 2,
+      "peak": 0.1431884765625,
+      "rms": 0.034106672952000004,
+      "sha256": "3a3230c3b9edeb00e4667b2e76d75a997f1decdf9568e5cecf6fc475ccf379f2"
+    }
+  },
+  "previous_files_preserved": {
+    "game/src/system/audio/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/src/system/audio/song_data_melancholic.h": "0a20459f9114802c54818081d5c6f7f2bc16cad5559ac137309ecaf3d0d8a7e1",
+    "game/src/system/audio/song_data_dark.h": "0f5fb1d4b40d5d6c4fbc945fe1b9a2e13f66541f11c399c23e0d6e086bdc96bd",
+    "game/art/audio-baiao-industrial-v1/baiao-calmo.wav": "c3f4da6fbe555afd4acdc719565fcfe13bf147ce597c9aa2a4c068cf35a2d4ff",
+    "game/art/audio-baiao-industrial-v1/baiao-combate.wav": "aa91d4d8739dc50f7a4b8c905f379b362b406381c7ca9e1f8895c9dae84d9ce9",
+    "game/art/audio-baiao-industrial-v1/anterior.wav": "30b00cd995279f4a084c1bc370e4c2635502847644c769ae29064bc511de46eb",
+    "game/art/audio-baiao-industrial-v1/README.md": "a50f784929051ad21cb6cb5df8687563ee31905e1613fb1fc14836f860450f33",
+    "game/art/audio-baiao-industrial-v1/baiao-calmo.mp3": "79863966fbab96b3aa97dfcb4d3c673f054844d2925e7f3c850fb334eaa801df",
+    "game/art/audio-baiao-industrial-v1/baiao-combate.mp3": "1d75b7148fc4912aaf35e9d361e226c04a86e99cb85b8db6ad1ce38e24d43fbb",
+    "game/art/audio-baiao-industrial-v1/validation.json": "17f1f7646a1cbd46bda2723196108645d178a5c5ca336ff5ee9e775659867dfa",
+    "game/art/audio-baiao-industrial-v1/anterior.mp3": "77177f05c86904538a246fd6204c1a1625722f128db1cb02a4bbdf1b7341eeb5",
+    "game/art/audio-baiao-industrial-v1/source/music.h": "d71ace2764b9adce7006ef81aaffa465c0a84d46367462d3e049843a152d7fbb",
+    "game/art/audio-baiao-industrial-v1/source/preservation.json": "ec2099bbcc0da8c880de1088b363f3f1007fad89611cba8d1d4af7569f6d5558",
+    "game/art/audio-baiao-industrial-v1/source/audio.h": "4d317b31a5961e3a651cd40d964d753c2191fd89dadb61a5cf28a5fb5f24bc9f",
+    "game/art/audio-baiao-industrial-v1/source/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/art/audio-baiao-industrial-v1/source/music.c": "5f6094f6ebfb200136656a003a155be7119818804a19491635c95e8f8a143b38",
+    "game/art/audio-baiao-industrial-v1/source/compose_music.py": "ef51b506b4b08f7039ff91e6f1364356495264693729297706c0fa8c9a3c9946",
+    "game/art/audio-baiao-industrial-v1/source/bench-rom.bin": "7ca3c016c31e5e6a4934cdafe0a01303354c3728708b56f9905f1e969161df48",
+    "game/art/audio-baiao-industrial-v1/source/audio.c": "58faab0ff08b5edb45a661ef82e03f9a980b1b577016c6760a9e80b7c7fca6f9",
+    "game/art/audio-baiao-melancolico-v1/entardecer-combate.mp3": "eb27519a046458d17ebc0608a4402a88a9e5463656b6e757eafcc974529b5ad2",
+    "game/art/audio-baiao-melancolico-v1/entardecer-calmo.mp3": "b1461c8c6a8ee62c61b482e80b25c541e450ac1148911ff59b566c1607fe818b",
+    "game/art/audio-baiao-melancolico-v1/README.md": "558c59f5b3d1bcbaebe711088daaed44acce426fec4df581fddd9773fe547308",
+    "game/art/audio-baiao-melancolico-v1/validation.json": "3e8236bb11265385a2d54b2550c1ae12f23c8eb2ed1c8811cabeab41271e8547",
+    "game/art/audio-baiao-melancolico-v1/entardecer-combate.wav": "ae44adb7a529cb75482418794d25a0c77f0032032b6cb9f646385a919915241b",
+    "game/art/audio-baiao-melancolico-v1/entardecer-calmo.wav": "06a36fac42e5ba72cd2c68c5a404cc0c6280402788e787ceb025d6c4989691cb",
+    "game/art/audio-baiao-melancolico-v1/source/music.h": "9ff317693ed5b40bc7a105f1a63dc55a09e11def08e5be96884abc372a250229",
+    "game/art/audio-baiao-melancolico-v1/source/audio.h": "4d317b31a5961e3a651cd40d964d753c2191fd89dadb61a5cf28a5fb5f24bc9f",
+    "game/art/audio-baiao-melancolico-v1/source/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/art/audio-baiao-melancolico-v1/source/music.c": "4def705dcd8d20ee81e6f9888d95221d198133872dcbd63d51afbd608a55a963",
+    "game/art/audio-baiao-melancolico-v1/source/compose_music.py": "fadfa04419bcdf7d8eb5effca7a490a15f54acfbc8b17a99126ab96081c5b287",
+    "game/art/audio-baiao-melancolico-v1/source/bench-rom.bin": "ef586346ad3c1292de71ce1f4ef762b795eb60f3bf9d088bc543d5dffe7cb2da",
+    "game/art/audio-baiao-melancolico-v1/source/song_data_melancholic.h": "0a20459f9114802c54818081d5c6f7f2bc16cad5559ac137309ecaf3d0d8a7e1",
+    "game/art/audio-baiao-melancolico-v1/source/audio.c": "58faab0ff08b5edb45a661ef82e03f9a980b1b577016c6760a9e80b7c7fca6f9",
+    "game/art/audio-baiao-sombrio-v1/breu-calmo.wav": "0665a42bfd72a068364cbd53a30d319ddc09c050edac2a0553044d6193e69894",
+    "game/art/audio-baiao-sombrio-v1/breu-combate.wav": "4aad4b81b9608123dd60715921b510942699319e2e317afb506a0698b4c5ae97",
+    "game/art/audio-baiao-sombrio-v1/README.md": "bf8863575679f62c804d61301056b6895cd9015076d4c6731196e7953c278ecc",
+    "game/art/audio-baiao-sombrio-v1/breu-calmo.mp3": "49ac484d2bd4d1049f88611751d17c8a3a7d9a5d84ad27dfb5b0714ef9e8fc10",
+    "game/art/audio-baiao-sombrio-v1/validation.json": "bf190db84e9bf48ba72e96ddccf5bfcfb3ddc1140e6801fc913f02fb738489b8",
+    "game/art/audio-baiao-sombrio-v1/breu-combate.mp3": "fcaf25ec7aa73109d76de0a3a4275d3b2265871d67147329b8915deb07416ee2"
+  },
+  "gallery_reports": {
+    "ntsc": "game/art/gallery-v1/assets-player/ntsc/report.json",
+    "pal": "game/art/gallery-v1/assets-player/pal/report.json"
+  },
+  "native_audio_checks": "ASan/UBSan passed for default, melancholic and dark defaults, all four runtime tracks and exact preview restoration"
+}

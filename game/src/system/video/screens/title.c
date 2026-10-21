@@ -3,7 +3,7 @@
 // volta ao menu; só Novo Jogo e Fase Teste são devolvidas ao main.
 //
 // O fundo é a splash de art/title-caatinga-v1 em char-map, no BG_B;
-// o menu fica no BG_A por cima. As telas de ajuda/personagens escondem a arte
+// o menu fica no BG_A por cima. As telas de ajuda/assets escondem a arte
 // (texto sobre fundo limpo) e ela volta ao retornar ao menu.
 
 #include "system/video/screens/title.h"
@@ -23,7 +23,7 @@
 
 static const u16 menuRows[MENU_N]    = { ROW_0, ROW_1, ROW_2, ROW_3 };
 static const char *const menuText[MENU_N] =
-    { "NOVO JOGO", "COMO JOGAR", "PERSONAGENS", "FASE TESTE" };
+    { "NOVO JOGO", "COMO JOGAR", "ASSETS", "FASE TESTE" };
 static const u8 menuAction[MENU_N]   =
     { TITLE_NEW_GAME, TITLE_HELP, TITLE_CHARS, TITLE_TEST };
 
@@ -89,7 +89,7 @@ u8 TITLE_run(void)
                 TITLEBG_clear();                    // texto dessas telas sem a arte atrás
                 TITLEBG_release();                  // elas usam a VRAM/paletas do jogo
                 if (act == TITLE_HELP) HELP_run();  // Como Jogar: explica e volta
-                else                   CHARDEMO_run(); // Personagens: vitrine e volta
+                else                   CHARDEMO_run(); // Assets: personagens e músicas
                 TITLEBG_load();                     // repinta a arte por cima de novo
                 TITLEBG_draw();
                 drawMenu(sel);

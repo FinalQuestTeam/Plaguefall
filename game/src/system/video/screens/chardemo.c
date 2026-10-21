@@ -1,5 +1,5 @@
-// Galeria de Damião e Dinorah: oito direcoes com animacao de repouso.
-// ESQ/DIR troca de personagem; A/B/START volta ao menu.
+// Assets: Damião, Dinorah e audição das trilhas originais.
+// ESQ/DIR troca de aba; na música CIMA/BAIXO escolhe, A pausa, C muda o clima.
 
 #include "system/video/screens/chardemo.h"
 #include "system/video/enemygfx.h"
@@ -11,7 +11,10 @@
 #include "heroi.h"
 #include "dinorah.h"
 
-#define GALLERY_COUNT 2
+#define CHARACTER_COUNT 2
+#define GALLERY_COUNT 3
+#define MUSIC_TAB 2
+#define MUSIC_LIST_ROW 7
 #define PREVIEW_FRAME_TILES 24
 #define PREVIEW_VIEW_COUNT 5
 #define PREVIEW_POSE_TILES (PREVIEW_VIEW_COUNT * PREVIEW_FRAME_TILES)
@@ -20,7 +23,7 @@
 #error Character gallery exceeds the borrowed enemy tile cache
 #endif
 
-static const char *const NAMES[GALLERY_COUNT] = { "DAMIAO", "DINORAH" };
+static const char *const NAMES[GALLERY_COUNT] = { "DAMIAO", "DINORAH", "MUSICAS" };
 static const u8 CANON[8] = { 0, 1, 2, 3, 4, 3, 2, 1 };
 
 static void loadPreview(u8 which)
@@ -64,6 +67,66 @@ static void drawLabels(u8 which)
     VDP_drawText(buf, 19, 15);
 }
 
+static void centered(const char *text, u16 row)
+{
+    VDP_drawText(text, (40 - strlen(text)) / 2, row);
+}
+
+static void drawTabs(u8 which)
+{
+    static const u16 columns[GALLERY_COUNT] = { 1, 14, 28 };
+    for (u8 i = 0; i < GALLERY_COUNT; i++)
+    {
+        char label[12];
+        sprintf(label, "%c%s", i == which ? '>' : ' ', NAMES[i]);
+        VDP_drawText(label, columns[i], 0);
+    }
+}
+
+static void drawMusicList(u8 selected)
+{
+    for (u8 i = 0; i < MUSIC_TRACK_COUNT; i++)
+    {
+        const u16 row = MUSIC_LIST_ROW + i * 3;
+        char label[28];
+        sprintf(label, "%d. %s", i + 1, MUSIC_trackName(i));
+        VDP_drawText(i == selected ? ">" : " ", 2, row);
+        VDP_drawText(label, 4, row);
+    }
+}
+
+static void drawMusicStatus(bool playing, bool combat)
+{
+    VDP_clearTextArea(0, 18, 40, 3);
+    centered(playing ? (combat ? "TOCANDO - COMBATE" : "TOCANDO - CALMA")
+                     : (combat ? "PAUSADO - COMBATE" : "PAUSADO - CALMA"), 18);
+    char label[16];
+    sprintf(label, "BPM: %d", MUSIC_bpm());
+    centered(label, 20);
+    VDP_clearTextArea(0, 24, 40, 1);
+    centered(playing ? "A: PAUSAR  C: CALMA/COMBATE" : "A: OUVIR   C: CALMA/COMBATE", 24);
+}
+
+static void drawPage(u8 which, u8 selected)
+{
+    VDP_clearPlane(BG_A, TRUE);
+    drawTabs(which);
+    centered("ESQ/DIR: ABAS  B/START: SAIR", 26);
+    if (which < CHARACTER_COUNT)
+    {
+        loadPreview(which);
+        drawLabels(which);
+    }
+    else
+    {
+        VDP_resetSprites();
+        VDP_updateSprites(1, DMA);
+        centered("TRILHA SONORA", 3);
+        centered("CIMA/BAIXO: ESCOLHER", 5);
+        drawMusicList(selected);
+    }
+}
+
 void CHARDEMO_run(void)
 {
     VDP_setScreenWidth320();
@@ -72,14 +135,14 @@ void CHARDEMO_run(void)
     VDP_clearPlane(BG_A, TRUE);
     PAL_setColor(0, RGB24_TO_VDPCOLOR(0x101018));   // fundo azul bem escuro
 
-    VDP_drawText("PERSONAGENS - 8 DIRECOES", 8, 0);
-    VDP_drawText("ESQ/DIR: TROCAR   B: SAIR", 8, 26);
-
     u8 which = 0;
+    u8 selected = MUSIC_TRACK_BAIAO;
+    bool playing = TRUE, combat = FALSE;
+    bool refreshStatus = FALSE;
+    u16 lastBpm = 0xFFFF;
     u16 animTick = 0;
     const u16 idleStep = ACTOR_IDLE_TICKS(fps);
-    loadPreview(which);
-    drawLabels(which);
+    drawPage(which, selected);
 
     u16 prev = JOY_readJoypad(JOY_1);
 
@@ -89,18 +152,63 @@ void CHARDEMO_run(void)
         const u16 pressed = joy & ~prev;
         prev = joy;
 
-        AUDIO_frameBegin();
-        MUSIC_update();
-        AUDIO_frameEnd();
+        if (pressed & (BUTTON_B | BUTTON_START)) break;
+        if (which < CHARACTER_COUNT && (pressed & BUTTON_A)) break;
 
         if (pressed & (BUTTON_RIGHT|BUTTON_LEFT))
         {
-            which = (which + 1) % GALLERY_COUNT;   // dois personagens: ambas alternam
+            if (which == MUSIC_TAB) MUSIC_endPreview();
+            which = (which + ((pressed & BUTTON_RIGHT) ? 1 : GALLERY_COUNT - 1)) % GALLERY_COUNT;
             animTick = 0;
-            loadPreview(which);
-            drawLabels(which);
+            playing = TRUE;
+            if (which == MUSIC_TAB)
+            {
+                MUSIC_previewTrack(selected);
+                MUSIC_setEnemies(combat ? MUSIC_ENEMY_MAX : 0);
+                refreshStatus = TRUE;
+            }
+            drawPage(which, selected);
         }
-        if (pressed & (BUTTON_A | BUTTON_B | BUTTON_START)) break;
+        else if (which == MUSIC_TAB)
+        {
+            if (pressed & (BUTTON_UP | BUTTON_DOWN))
+            {
+                selected = (selected + ((pressed & BUTTON_DOWN) ? 1 : MUSIC_TRACK_COUNT - 1)) % MUSIC_TRACK_COUNT;
+                MUSIC_previewTrack(selected);
+                MUSIC_setEnemies(combat ? MUSIC_ENEMY_MAX : 0);
+                playing = TRUE;
+                drawMusicList(selected);
+                refreshStatus = TRUE;
+            }
+            if (pressed & BUTTON_A)
+            {
+                playing = !playing;
+                if (!playing) AUDIO_silenceAll();
+                refreshStatus = TRUE;
+            }
+            if (pressed & BUTTON_C)
+            {
+                combat = !combat;
+                MUSIC_setEnemies(combat ? MUSIC_ENEMY_MAX : 0);
+                refreshStatus = TRUE;
+            }
+        }
+
+        AUDIO_frameBegin();
+        if (which != MUSIC_TAB || playing) MUSIC_update();
+        AUDIO_frameEnd();
+
+        if (which == MUSIC_TAB)
+        {
+            if (refreshStatus || MUSIC_bpm() != lastBpm)
+            {
+                drawMusicStatus(playing, combat);
+                lastBpm = MUSIC_bpm();
+                refreshStatus = FALSE;
+            }
+            SYS_doVBlankProcess();
+            continue;
+        }
 
         // os 8 sprites (uma direção em cada ponto da bússola)
         const u8 pose = animTick / idleStep;
@@ -122,6 +230,7 @@ void CHARDEMO_run(void)
         SYS_doVBlankProcess();
     }
 
+    MUSIC_endPreview();
     VDP_resetSprites();
     VDP_updateSprites(1, DMA_QUEUE);
     VDP_clearPlane(BG_A, TRUE);

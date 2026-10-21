@@ -1,6 +1,6 @@
 # tri_purple — Escudeiro
 
-Definição: [`tri_purple.c`](../../../../src/enemies/defs/tri_purple.c).
+Definição: [`tri_purple.c`](../../../../../src/enemies/defs/tri_purple.c).
 
 - Tipo: `ENEMY_TRI_PUR` = `6`.
 - Dados: `ENEMYDEF_tri_purple`.

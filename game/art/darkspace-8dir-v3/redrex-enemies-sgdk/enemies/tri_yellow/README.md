@@ -1,6 +1,6 @@
 # tri_yellow — Cacador
 
-Definição: [`tri_yellow.c`](../../../../src/enemies/defs/tri_yellow.c).
+Definição: [`tri_yellow.c`](../../../../../src/enemies/defs/tri_yellow.c).
 
 - Tipo: `ENEMY_TRI_YEL` = `5`.
 - Dados: `ENEMYDEF_tri_yellow`.

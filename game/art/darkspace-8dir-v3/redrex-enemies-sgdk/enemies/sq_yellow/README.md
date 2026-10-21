@@ -1,6 +1,6 @@
 # sq_yellow — Batedor
 
-Definição: [`sq_yellow.c`](../../../../src/enemies/defs/sq_yellow.c).
+Definição: [`sq_yellow.c`](../../../../../src/enemies/defs/sq_yellow.c).
 
 - Tipo: `ENEMY_SQ_YEL` = `1`.
 - Dados: `ENEMYDEF_sq_yellow`.

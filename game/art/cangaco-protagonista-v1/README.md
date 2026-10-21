@@ -1,7 +1,7 @@
 # Damião — protagonista cangaço cyberpunk — sprites v1
 
 O protagonista humano do concept v3 já substitui o mech na partida.
-Ele aparece como opção inicial da galeria PERSONAGENS, identificado como
+Ele aparece como opção inicial da galeria ASSETS, identificado como
 DAMIAO. Os nove mechs antigos permanecem na galeria como
 arte legada. O recurso e os arquivos usam o ID heroi.
 
@@ -11,7 +11,7 @@ arte legada. O recurso e os arquivos usam o ID heroi.
 - [Prévia das oito posições](previews/heroi-8dir-4x.png).
 - [Corrida animada](previews/heroi-movimento-4x.gif).
 - [Repouso animado](previews/heroi-repouso-4x.gif).
-- [Pacote de PNGs, paleta, prévias e prompt](redrex-heroi-sgdk.zip).
+- [Pacote de PNGs, paleta, prévias e prompt](.).
 - [Prompt completo](prompts/heroi.txt).
 - [Verificação técnica](validation/report.json) e [memória da ROM](validation/memory.json).
 - [Galeria no emulador](validation/emulator/hero-gallery.png).

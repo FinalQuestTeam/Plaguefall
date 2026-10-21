@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "core": "Genesis Plus GX",
+  "fps": 50,
+  "frames": 3578,
+  "game_ram_writes": false,
+  "rom_sha256": "1fe42402f1cbbae368559290b3d76343640b6a0a237962fa97b8efd4466f9fa9",
+  "captures": {
+    "baiao-calm": {
+      "peak": 4005,
+      "pcm_sha256": "8b21a70803e246f10540b8091f8657a6ecc55456f62417abd5acde5957ffb292"
+    },
+    "baiao-combat": {
+      "peak": 4063,
+      "pcm_sha256": "728bb653faee8279a86a639a3c4c986a4b8352ddd3a4b427d8c0a3f82ea5d1c0"
+    },
+    "entardecer-calm": {
+      "peak": 3749,
+      "pcm_sha256": "1175c0edd38c553632ae610adce36b9dff8463dedc9e7a83fa82600e83c3d7ac"
+    },
+    "entardecer-combat": {
+      "peak": 4167,
+      "pcm_sha256": "3bf517fb5cbcb390a4fad8bd94ebeca373425a6c07b0dc3191d80983c20aa205"
+    },
+    "breu-calm": {
+      "peak": 3512,
+      "pcm_sha256": "5b88366277bea8981b7522cf3923ee6f24d6ce539f764f367f816c37ce1d9e0f"
+    },
+    "breu-combat": {
+      "peak": 4444,
+      "pcm_sha256": "1f0adc4f559f16411f5c4779259e29ae6cbb9f810cfda80309effa8b2d3c0476"
+    },
+    "ladainha-calm": {
+      "peak": 3424,
+      "pcm_sha256": "f17696bcf04995788592a4b06d33224867a13b799710cf331537875da58a1b02"
+    },
+    "ladainha-combat": {
+      "peak": 4728,
+      "pcm_sha256": "d190c8635b343f4a37de892a80a2098c93c8433ca5e8ecf9cfe15b5ad6cd5066"
+    },
+    "paused": {
+      "peak": 0,
+      "pcm_sha256": "ded7afe2faf9830173e0293963924c27a3a2082de7d6bf60f0782b960bee914b"
+    },
+    "resumed": {
+      "peak": 2693,
+      "pcm_sha256": "c62080e93e8637baee5b0617fc44f2e13378b771a86402f1d7ab4562b4e96f6e"
+    },
+    "character-return": {
+      "peak": 4186,
+      "pcm_sha256": "d82e3df2c7445d723a8087c0090f0faf68e910ca9275787c4369053333e34c42"
+    },
+    "menu-restored": {
+      "peak": 4237,
+      "pcm_sha256": "2f94ed71579a372982633ac613cf352a17c3b9804d4ac670f0aedb043f5c4992"
+    }
+  },
+  "checks": [
+    "ASSETS menu entry",
+    "three tabs, both directions and wrap",
+    "all four score names and cursor",
+    "all calm/combat tempos",
+    "four distinct real audio recordings",
+    "pause emits silence and resume restores audio",
+    "selection while paused resumes",
+    "character sprites return after music",
+    "B and START exit music",
+    "A still exits characters",
+    "menu audio restored",
+    "campaign starts after paused preview exit"
+  ]
+}

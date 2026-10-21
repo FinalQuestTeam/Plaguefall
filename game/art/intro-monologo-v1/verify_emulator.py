@@ -13,6 +13,7 @@ import json
 import struct
 import subprocess
 import wave
+from array import array
 
 ROOT = Path(__file__).resolve().parent
 GAME = ROOT.parents[1]
@@ -26,9 +27,11 @@ def main():
     parser.add_argument("--core", type=Path, default=CORE)
     parser.add_argument("--pal", action="store_true")
     parser.add_argument("--movie", action="store_true")
+    parser.add_argument("--output", type=Path, help="Keep a separate validation/capture directory")
+    parser.add_argument("--opening-audio", type=Path, help="Capture the continuous score from the Plaguefall logo through the monologue")
     args = parser.parse_args()
-    out = ROOT / ("emulator-pal" if args.pal else "emulator-ntsc")
-    out.mkdir(exist_ok=True)
+    out = args.output or ROOT / ("emulator-pal" if args.pal else "emulator-ntsc")
+    out.mkdir(parents=True, exist_ok=True)
     original = args.rom.read_bytes()
     data = bytearray(original)
     if args.pal:
@@ -51,6 +54,11 @@ def main():
     pitch = width = height = 0
     recording = False
     encoder = audio = None
+    opening_audio = None
+    opening_recording = False
+    opening_cue = None
+    cue_audio = {}
+    opening_clock = []
     directory = b"/private/tmp"
     ENV = C.CFUNCTYPE(C.c_bool, C.c_uint, C.c_void_p)
     VIDEO = C.CFUNCTYPE(None, C.c_void_p, C.c_uint, C.c_uint, C.c_size_t)
@@ -67,6 +75,9 @@ def main():
             return fmt in (0, 1, 2)
         if cmd == 15:
             var = C.cast(ptr, C.POINTER(Variable))[0]
+            # The core reuses this struct between options. Unknown options
+            # must not inherit the region string (atoi("ntsc-u") mutes PSG).
+            C.cast(ptr, C.POINTER(Variable))[0].value = None
             if var.key == b"genesis_plus_gx_region_detect":
                 C.cast(ptr, C.POINTER(Variable))[0].value = b"pal" if args.pal else b"ntsc-u"
                 return True
@@ -98,11 +109,21 @@ def main():
     def sample(left, right):
         if recording:
             audio.writeframesraw(struct.pack("<hh", left, right))
+        if opening_recording:
+            capture_opening(struct.pack("<hh", left, right))
     @BATCH
     def batch(ptr, n):
         if recording:
             audio.writeframesraw(C.string_at(ptr, n * 4))
+        if opening_recording:
+            capture_opening(C.string_at(ptr, n * 4))
         return n
+    def capture_opening(pcm):
+        opening_audio.writeframesraw(pcm)
+        stats = cue_audio[opening_cue]
+        stats["hash"].update(pcm)
+        stats["samples"] += len(pcm)//4
+        stats["peak"] = max(stats["peak"],max(map(abs,array("h",pcm))))
     @POLL
     def poll():
         pass
@@ -126,10 +147,21 @@ def main():
     fps = 50 if args.pal else 60
     symbols = subprocess.check_output(["/opt/homebrew/bin/m68k-elf-nm", "-Sn", str(args.symbols)], text=True)
     syms = {parts[3]: int(parts[0], 16) & 65535 for line in symbols.splitlines() if len(parts := line.split()) == 4}
+    syms.update({name.split(".lto_priv.")[0]:address for name,address in list(syms.items()) if ".lto_priv." in name})
     ram = (C.c_ubyte * core.retro_get_memory_size(2)).from_address(core.retro_get_memory_data(2))
     def run(n=1):
-        nonlocal frame
+        nonlocal frame, opening_recording, opening_cue
         for _ in range(n):
+            if opening_audio is not None:
+                opening_recording = read(syms["openingActive"],1) != b"\0"
+                if opening_recording:
+                    opening_cue = 0
+                    clock = int.from_bytes(read(syms["openingElapsed"],2),"big")
+                    if opening_clock:
+                        assert clock == opening_clock[-1][1] + (6 if args.pal else 5), "Music clock paused or restarted"
+                    opening_clock.append((frame,clock))
+                    if 0 not in cue_audio:
+                        cue_audio[0] = dict(hash=hashlib.sha256(),samples=0,peak=0,first_frame=frame)
             core.retro_run()
             frame += 1
     for _ in range(8 * fps):
@@ -140,11 +172,11 @@ def main():
     def read(addr, n):
         return bytes(ram[((addr+i) & 65535) ^ int(swapped)] for i in range(n))
     assert read(syms["fps"], 2) == struct.pack(">H", fps)
-    def particle_state():
+    def particle_state(base=16+924):
         result = []
         for i in range(12):
             y, link, attr, x = struct.unpack(">4H", read(syms["vdpSpriteCache"]+i*8, 8))
-            assert attr & 2047 == 16+924+i%3
+            assert attr & 2047 == base+i%3
             assert attr & 0x6000 == 0x6000
             result.append(dict(x=(x&511)-128,y=(y&511)-128,type=i%3))
         return result
@@ -202,18 +234,68 @@ def main():
     def save(name):
         rgb = b"".join(rgb_lut[n[0]] for y in range(height) for n in struct.iter_unpack("<H", raw[y*pitch:y*pitch+width*2]))
         (out / f"{name}.ppm").write_bytes((f"P6\n{width} {height}\n255\n").encode() + rgb)
+    if args.opening_audio:
+        args.opening_audio.parent.mkdir(parents=True,exist_ok=True)
+        opening_audio=wave.open(str(args.opening_audio),"wb")
+        opening_audio.setnchannels(2);opening_audio.setsampwidth(2)
+        opening_audio.setframerate(round(av.timing.sample_rate))
     if args.movie:
         encoder = subprocess.Popen(["/opt/homebrew/bin/ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb565le", "-s", "320x224", "-r", str(fps/2), "-i", "pipe:0", "-vf", "scale=960:672:flags=neighbor", "-c:v", "libx264", "-crf", "22", "-pix_fmt", "yuv420p", "-an", str(out/"video.mp4")], stdin=subprocess.PIPE)
         audio = wave.open(str(out/"audio.wav"), "wb")
         audio.setnchannels(2); audio.setsampwidth(2); audio.setframerate(round(av.timing.sample_rate))
         recording = True
     run(fps*4//5); save("logo")
-    wait_for(lambda: counter() == 1, 8 * fps)
+    wait_for(lambda: text(15,13,9) == "APRESENTA", 4*fps)
+    save("apresenta")
+    # Stable wordmark anchors identify the fully faded-in title independently
+    # of core brightness and the sparse sprites.
+    title_tiles = (GAME/"res/titlecard/tiles.bin").read_bytes()
+    title_groups = (GAME/"res/titlecard/groups.bin").read_bytes()
+    title_pal = struct.unpack(">32H", (GAME/"res/titlecard/palettes.bin").read_bytes())
+    title_pixels=[]
+    core_offsets=[]
+    for y in range(224):
+        for x in range(320):
+            tile=y//8*40+x//8
+            byte=title_tiles[tile*32+y%8*4+x%8//2]
+            ink=byte>>4 if x%2==0 else byte&15
+            if ink>=13: core_offsets.append((x,y))
+            word=title_pal[title_groups[tile]*16+ink]
+            r,g,b=[((word>>shift)&7)*34 for shift in (1,5,9)]
+            title_pixels.append(struct.pack("<H",((r>>3)<<11)|((g>>2)<<5)|(b>>3)))
+    points=[(x,y) for y in range(144,185,8) for x in range(24,300,17) if title_pixels[y*320+x]!=b"\0\0"]
+    def title_visible():
+        return raw is not None and all(raw[y*pitch+x*2:y*pitch+x*2+2]==title_pixels[y*320+x] for x,y in points)
+    wait_for(title_visible,4*fps)
+    save("title-start")
+    title_first=frame
+    core_signatures=set()
+    previous=particle_state(16+1120)
+    title_captures=[]
+    for tick in range(2*fps):
+        run()
+        current=particle_state(16+1120)
+        for before,after in zip(previous,current):
+            dx=abs(before["x"]-after["x"]);dy=abs(before["y"]-after["y"])
+            assert dx<=1 or dx>=300
+            assert dy<=1 or dy>=210
+        previous=current
+        signature=b"".join(raw[y*pitch+x*2:y*pitch+x*2+2] for x,y in core_offsets)
+        core_signatures.add(hashlib.sha256(signature).hexdigest())
+        if tick in (fps//4,3*fps//4,5*fps//4,7*fps//4):
+            name="title-%03d"%tick
+            save(name)
+            title_captures.append(dict(file=name,particles=current))
+    assert len(core_signatures)>=2,"core does not pulse"
+    print(f"{fps}Hz: APRESENTA, option B, core pulse and particles OK",flush=True)
+    wait_for(lambda: counter() == 1, 12 * fps)
     first_intro = frame
     durations = [scene["seconds"] for scene in scenes]
     observed = []
     for index, seconds in enumerate(durations, 1):
         wait_for(lambda: counter() == index, 2 * fps)
+        if args.opening_audio:
+            assert read(syms["openingActive"],1) != b"\0"
         start = frame
         run(fps)
         save(f"{index:02}-early")
@@ -246,6 +328,17 @@ def main():
     wait_for(menu, 8 * fps)
     menu_frame = frame
     run(fps); save("menu-after-natural")
+    if args.opening_audio:
+        assert read(syms["openingActive"],1)==b"\0","Opening score remains active in menu"
+    if opening_audio is not None:
+        opening_recording=False
+        opening_audio.close();opening_audio=None
+        assert len(cue_audio)==1,"Opening must have exactly one musical run"
+        assert cue_audio[0]["first_frame"] <= title_first
+        assert opening_clock[-1][1] > 93*300,"Music clock failed to advance through image loads"
+        for stats in cue_audio.values():
+            assert stats["peak"]>0,"Silent opening cue"
+
     assert text(3,8,13) != "ARENA SHOOTER"
     assert (menu_frame-last_visible)/fps<0.75
     assert (menu_frame-observed[-1]["first_frame"])/fps<6
@@ -253,26 +346,32 @@ def main():
         recording = False
         encoder.stdin.close(); assert encoder.wait() == 0
         audio.close()
-        subprocess.run(["/opt/homebrew/bin/ffmpeg", "-y", "-loglevel", "error", "-i", str(out/"video.mp4"), "-i", str(out/"audio.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(ROOT/"abertura.mp4")], check=True)
+        subprocess.run(["/opt/homebrew/bin/ffmpeg", "-y", "-loglevel", "error", "-i", str(out/"video.mp4"), "-i", str(out/"audio.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(out/"abertura.mp4") if args.output else str(ROOT/"abertura.mp4")], check=True)
         (out/"video.mp4").unlink(); (out/"audio.wav").unlink()
     assert abs((frame - first_intro) / fps - (sum(durations)+1)) < 4
-    # A completes the current text first, and advances only on the next press.
+    # A/B/C cannot complete captions, advance pictures, or skip the sequence.
     core.retro_reset(); run(2)
-    wait_for(lambda: counter() == 1, 8 * fps)
-    press(1)  # Genesis A is libretro Y in the core's default mapping.
-    assert counter() == 1
-    save("a-complete")
-    first_line = scenes[0]["lines"][0]
-    x, y = scenes[0]["text_origins"][0]
-    assert text(x, y, len(first_line)) == first_line
-    press(1); wait_for(lambda: counter() == 2, 2*fps)
-    assert counter() == 2
-    save("a-advance")
-    # A held down must not repeatedly advance. START skips from mid sequence.
-    buttons.add(1); run(2*fps); buttons.clear(); run(2)
-    assert counter() == 2
+    wait_for(lambda: counter() == 1, 12 * fps)
+    before=frame
+    press(1)
+    assert counter()==1
+    first_line=scenes[0]["lines"][0]
+    x,y=scenes[0]["text_origins"][0]
+    assert text(x,y,len(first_line)) != first_line,"A completed the caption"
+    for button in (1,0,8):
+        press(button)
+        assert counter()==1
+    buttons.add(1);run(fps);buttons.clear();run(2)
+    assert counter()==1
+    save("a-ignored")
+    wait_for(lambda: counter()==2,6*fps)
+    assert frame-before>=4*fps,"A advanced before the automatic boundary"
+    save("automatic-next-shot")
+    # START skips from mid sequence, without leaking input into the menu.
     press(3)
     wait_for(menu, 8 * fps)
+    if args.opening_audio:
+        assert read(syms["openingActive"],1)==b"\0","Skipped opening score remains active"
     run(fps); save("menu-after-skip")
     # Returning from gallery and gameplay never replays the boot cinematic.
     press(5); press(5); press(3); run(fps)
@@ -297,16 +396,45 @@ def main():
     press(3); wait_for(menu,8*fps); run(fps); save("menu-after-help")
     # START can also skip the very first shot without leaking input to the menu.
     core.retro_reset(); run(2)
-    wait_for(lambda: counter() == 1, 8*fps)
+    wait_for(lambda: counter() == 1, 12*fps)
     buttons.add(3); run(4*fps)
     assert menu()
     buttons.clear(); run(2)
+    # Only START skips the logo/card sequence, and skips the whole monologue.
+    core.retro_reset();run(2)
+    wait_for(lambda: text(15,13,9)=="APRESENTA",4*fps)
+    press(1)
+    assert text(15,13,9)=="APRESENTA"
+    wait_for(title_visible,4*fps)
+    for button in (1,0,8):press(button)
+    assert not menu() and counter() is None,"A/B/C skipped the Plaguefall logo"
+    if args.opening_audio:assert read(syms["openingActive"],1)!=b"\0"
+    buttons.add(3)
+    wait_for(menu,4*fps)
+    run(fps)
+    assert menu()
+    if args.opening_audio:assert read(syms["openingActive"],1)==b"\0"
+    buttons.clear();run(2)
+    core.retro_reset();run(2)
+    wait_for(lambda: text(15,13,9)=="APRESENTA",4*fps)
+    press(3);wait_for(menu,4*fps)
     report = dict(passed=True, core="Genesis Plus GX", fps=fps, core_fps=av.timing.fps,
                   input_only=True, game_ram_writes=False, rom_sha256=hashlib.sha256(original).hexdigest(),
                   pal_region_override=args.pal, frames=frame, shots=observed,
                   menu_delay_after_final_fade_seconds=(menu_frame-last_visible)/fps,
                   last_shot_to_menu_seconds=(menu_frame-observed[-1]["first_frame"])/fps,
-                  checks=["all 12 shots play automatically", "centered white captions", "12 dust/ember/soot sprites move <=1px/frame", "camera remains fixed", "final shot shortened to 5 seconds", "no ARENA SHOOTER label", "A completes then advances", "held A has no repeat", "START skip first and middle shot", "held START does not start game", "title after natural playback and skip", "gallery Damião and Dinorah after intro", "mission call without repeated monologue", "phase 1 starts", "return to menu without replay"])
+                  titlecard=dict(first_frame=title_first,core_signatures=len(core_signatures),captures=title_captures),
+                  checks=["developer logo > APRESENTA > option B > monologue", "title core pulses", "START skips whole opening from APRESENTA or Plaguefall logo", "title particles move <=1px/frame","all 12 shots play automatically", "centered white captions", "12 dust/ember/soot sprites move <=1px/frame", "camera remains fixed", "final shot shortened to 5 seconds", "no ARENA SHOOTER label", "A/B/C ignored in monologue and Plaguefall logo", "A cannot complete captions or advance shots", "START skip first and middle shot", "held START does not start game", "title after natural playback and skip", "menu logo survives help/gallery/gameplay return", "gallery Damião and Dinorah after intro", "mission call without repeated monologue", "phase 1 starts", "return to menu without replay"])
+    if cue_audio:
+        stats=cue_audio[0]
+        report["opening_audio"] = dict(file=str(args.opening_audio),continuous=True,
+            first_frame=opening_clock[0][0],last_frame=opening_clock[-1][0],
+            first_ticks=opening_clock[0][1],last_ticks=opening_clock[-1][1],
+            clock_resets=0,clock_pauses=0,ticks_per_frame=6 if args.pal else 5,
+            pcm_sha256=stats["hash"].hexdigest(),samples=stats["samples"],peak=stats["peak"])
+        report["checks"] += ["one continuous music run starts on Plaguefall logo",
+                              "music clock never resets across title, images or fades",
+                              "START stops opening score before menu"]
     (out/"report.json").write_text(json.dumps(report, indent=2)+"\n")
     core.retro_unload_game(); core.retro_deinit()
     print(json.dumps(report, indent=2))

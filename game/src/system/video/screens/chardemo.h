@@ -3,8 +3,9 @@
 
 #include <genesis.h>
 
-// Galeria de Damião e Dinorah (32x48), com duas poses de repouso nas oito direcoes.
-// ESQ/DIR alterna entre os dois; A/B/START sai. Volta ao menu ao encerrar.
+// Assets: Damião, Dinorah (oito direções) e Músicas (quatro trilhas).
+// ESQ/DIR troca de aba; B/START sai. A também sai nas abas dos personagens.
+// Na música: CIMA/BAIXO escolhe, A pausa/retoma e C troca calma/combate.
 void CHARDEMO_run(void);
 
 #endif // CHARDEMO_H

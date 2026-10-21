@@ -1,6 +1,6 @@
 # pen_orange — Meteoro
 
-Definição: [`pen_orange.c`](../../../../src/enemies/defs/pen_orange.c).
+Definição: [`pen_orange.c`](../../../../../src/enemies/defs/pen_orange.c).
 
 - Tipo: `ENEMY_PEN_ORG` = `11`.
 - Dados: `ENEMYDEF_pen_orange`.

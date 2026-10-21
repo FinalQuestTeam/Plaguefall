@@ -126,11 +126,13 @@ Este é o **storyboard ilustrado do monólogo completo**, agora integrado à [an
 | 6 · Chamado do padre | 11 |
 | 7 · Resposta e entrada em ação | 12 |
 
-O plano 10 mantém o gesto religioso e sua fala do monólogo extenso. Os 12 planos tocam automaticamente no boot, respeitando a duração prevista de 89 segundos mais os poucos quadros de carga entre imagens. A completa/avança; START pula. O quadro 12 conserva a composição elevada da ilustração, sem rolagem.
+O plano 10 mantém o gesto religioso e sua fala do monólogo extenso. Os 12 planos tocam automaticamente no boot, respeitando a duração prevista de 89 segundos mais os poucos quadros de carga entre imagens. A não completa nem avança as legendas; somente START pula a abertura. O quadro 12 conserva a composição elevada da ilustração, sem rolagem.
 
 As pranchas originais permanecem como material de direção. A [exportação para o VDP](../../art/intro-monologo-v1/export.json) usa 924 tiles por imagem com recorte lateral fixo, duas paletas por quadro e texto branco centralizado sobre preto, sem nome, numeração ou instruções de controle. A arte tem uma borda inferior em fade para evitar um retângulo marcado. A abertura toca após FinalQuest e antes de PLAGUEFALL; ao terminar ou pular, restaura paletas, fonte, sprites e rolagem antes de inicializar os recursos do jogo.
 
 Na campanha, [levels/story.c](../../src/levels/story.c) conserva apenas o chamado do padre e a resposta de Damião antes da fase 1. O monólogo não é repetido após escolher NOVO JOGO. A animação de boot não leva diretamente à arena: termina no menu solicitado.
+
+A trilha original [O Sonho Atendido](../../art/audio-abertura-v2/README.md) começa na aparição do logo Plaguefall e acompanha continuamente esse arco: pergunta contida, sonho mais luminoso, ninhos com tensão industrial, reza com vozes sustentadas e decisão final com pulso. As mudanças de imagem não reiniciam nem silenciam a música. START encerra o som antes do menu; A, B e C são ignorados.
 
 ## Arquivos de produção
 

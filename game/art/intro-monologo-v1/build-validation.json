@@ -1,11 +1,11 @@
 {
   "passed": true,
-  "rom_bytes": 786432,
-  "rom_sha256": "9471d3733b40a85c292845651eaf26532536a54bedeb5435b4920eb47b9b1932",
-  "text_bytes": 774716,
+  "rom_bytes": 917504,
+  "rom_sha256": "65547dce7ec00527ba179c152d036bbb6f0d1e698c6650006e85a03f30a64cbd",
+  "text_bytes": 821924,
   "data_bytes": 88,
-  "bss_bytes": 6071,
-  "static_ram_bytes": 6159,
+  "bss_bytes": 6079,
+  "static_ram_bytes": 6167,
   "intro_resource_bytes": 369744,
   "image_tiles": 924,
   "particle_tiles": 3,
@@ -25,7 +25,7 @@
   "final_shot_seconds": 5,
   "intro_timeline_seconds": 89,
   "menu_delay_including_final_fade_seconds": {
-    "ntsc": 0.55,
+    "ntsc": 0.567,
     "pal": 0.56
   },
   "menu_title_tiles_packed_in_rom": true,
@@ -44,5 +44,8 @@
   "build_matches_delivered_source": true,
   "emulator_ntsc": "emulator-ntsc/report.json",
   "emulator_pal": "emulator-pal/report.json",
-  "pixel_comparison": "pixel-validation.json"
+  "pixel_comparison": "pixel-validation.json",
+  "text_revision_date": "2026-10-21",
+  "approved_speeches": 12,
+  "export_reproducibility_check": true
 }

@@ -1,6 +1,6 @@
 # pen_purple — Fortaleza
 
-Definição: [`pen_purple.c`](../../../../src/enemies/defs/pen_purple.c).
+Definição: [`pen_purple.c`](../../../../../src/enemies/defs/pen_purple.c).
 
 - Tipo: `ENEMY_PEN_PUR` = `10`.
 - Dados: `ENEMYDEF_pen_purple`.

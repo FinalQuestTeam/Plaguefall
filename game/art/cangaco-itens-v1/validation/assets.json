@@ -1,0 +1,400 @@
+{
+  "passed": true,
+  "tool": "built-in image_gen",
+  "processing": "Alpha crop, nearest-neighbor registration, shared PAL1 indexing; independent generated HUD drawings.",
+  "palette_shared": true,
+  "transparent_index": 0,
+  "items": [
+    {
+      "id": 0,
+      "key": "heart",
+      "name": "Marmita do abrigo",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13
+      ],
+      "hud_visible_colors": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13
+      ],
+      "source_sha256": "3aea3721e34e7e3b0b9baf6db8058ac1bcfa294622ad6da6c2bf1a6be9797d89",
+      "source_crop_world": [
+        96,
+        191,
+        976,
+        896
+      ],
+      "source_crop_hud": [
+        90,
+        560,
+        426,
+        864
+      ]
+    },
+    {
+      "id": 1,
+      "key": "bomb",
+      "name": "Carga de desmonte",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hud_visible_colors": [
+        1,
+        4,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_sha256": "3c74fd284513d6d2ef58b399c9c52ae8fac3d2b66375d3253bed51c4abeded36",
+      "source_crop_world": [
+        193,
+        124,
+        1040,
+        818
+      ],
+      "source_crop_hud": [
+        104,
+        526,
+        396,
+        776
+      ]
+    },
+    {
+      "id": 2,
+      "key": "shots",
+      "name": "Divisor de disparo",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hud_visible_colors": [
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_sha256": "e62d14c880573faa19cbe674730bdf5f82ab61cd41f39b9fd1cdb1b8da4334e2",
+      "source_crop_world": [
+        108,
+        111,
+        928,
+        839
+      ],
+      "source_crop_hud": [
+        82,
+        455,
+        435,
+        769
+      ]
+    },
+    {
+      "id": 3,
+      "key": "speed",
+      "name": "Servo de passada",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        4,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "hud_visible_colors": [
+        1,
+        6,
+        9,
+        10,
+        11,
+        13,
+        14
+      ],
+      "source_sha256": "aec06b5f0db7e633c6f558be9b0ceea8f056f1f79d93bf828ae9b3ce99f5d905",
+      "source_crop_world": [
+        205,
+        87,
+        987,
+        824
+      ],
+      "source_crop_hud": [
+        67,
+        416,
+        401,
+        736
+      ]
+    },
+    {
+      "id": 4,
+      "key": "shield",
+      "name": "Capacitor de protecao",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hud_visible_colors": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_sha256": "d0bc08d55535400d167a6969ea651f7a8c630314fa9ebba4730212823487ad00",
+      "source_crop_world": [
+        161,
+        151,
+        899,
+        905
+      ],
+      "source_crop_hud": [
+        64,
+        561,
+        347,
+        860
+      ]
+    },
+    {
+      "id": 5,
+      "key": "chain",
+      "name": "Bobina de subestacao",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "hud_visible_colors": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_sha256": "b873cfbaaee5a3755fd9e628d0fbe01e34bde79610a8f3428f1051c1032c4dc9",
+      "source_crop_world": [
+        128,
+        153,
+        923,
+        923
+      ],
+      "source_crop_hud": [
+        72,
+        485,
+        429,
+        843
+      ]
+    },
+    {
+      "id": 6,
+      "key": "ice",
+      "name": "Refil de arrefecimento",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        2,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15
+      ],
+      "hud_visible_colors": [
+        1,
+        2,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15
+      ],
+      "source_sha256": "31ac8e2a3e6886a882e1523f8249a21dc0c24570d669d6029d355986bf7490fb",
+      "source_crop_world": [
+        113,
+        184,
+        908,
+        854
+      ],
+      "source_crop_hud": [
+        55,
+        492,
+        423,
+        809
+      ]
+    },
+    {
+      "id": 7,
+      "key": "fire",
+      "name": "Refil de macarico",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        10,
+        11,
+        13
+      ],
+      "hud_visible_colors": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        10,
+        11,
+        13
+      ],
+      "source_sha256": "a346368ca02adf77f812e35655e5f4c814da96c44881ed187df2e70ceb1f34d3",
+      "source_crop_world": [
+        399,
+        113,
+        716,
+        924
+      ],
+      "source_crop_hud": [
+        3,
+        597,
+        147,
+        923
+      ]
+    }
+  ]
+}

@@ -190,7 +190,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 
 ### Fluxo geral
 
-1. **Splash** (logo FinalQuest) → **monólogo animado** (12 quadros, uma vez por boot, A completa/avança e START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**).
+1. **Splash** (logo FinalQuest) → **monólogo animado** (12 quadros, uma vez por boot, somente START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**).
 2. **Preparação** (`ST_PREP`) → A para começar.
 3. **"PREPARE-SE 3-2-1"** (3 s congelado) → jogo ativo.
 4. Meta atingida → `ST_DONE` → história do DEPOIS (se houver) → **mapa de rotas** (`ST_MAP`) → história do ANTES do nó destino (se houver) → preparação da próxima (decidida pelas condições de saída do grafo). Morte → `ST_OVER` → recomeça a mesma fase. Objetivo falhado em nó **com rota de falha** (`OBJ_FALHOU`) → "A MISSAO CONTINUA..." → segue pela rota de falha (sem game over).
@@ -214,9 +214,9 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 ## Tela-título, splash e ajuda
 
 - **Splash** (`splash.c`): logo [FinalQuest redesenhado](../art/finalquest-logo-v2/README.md), em192×128 centralizado; fades de0,2s,1s de exibição e possibilidade de pular.
-- **Monólogo animado** (`intro.c`): [12 quadros do storyboard](../art/intro-monologo-v1/README.md) entre FinalQuest e o menu, aproximadamente 1min30s incluindo trocas. Texto branco centralizado em até36×4, fundo preto com transição suave desde a arte, fades e música existente. Sem nome, contador ou instruções na tela. O enquadramento é fixo;12 partículas de poeira, brasa e fuligem usam posições fracionárias e até1 pixel de deslocamento por frame. Usa924 tiles para a imagem mais3 para partículas, antes da inicialização dos recursos da arena. O último quadro dura5s, antes eram17s; o fundo do menu já fica empacotado na ROM para evitar a montagem pixel a pixel no fim. A completa/avança; START pula. Não se repete ao voltar ao título. A conversa antes da fase 1 mantém apenas o chamado do padre e a resposta de Damião.
-- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Damião, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. A música dark toca calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
-- **Personagens** (`chardemo.c`): [galeria de Damião e Dinorah](../art/gallery-v1/README.md), somente duas entradas (1/2 e 2/2), oito direções e dois quadros de repouso por personagem. ESQ/DIR alterna; A/B/START volta ao menu. Os mechs antigos foram removidos da lista. Usa240 tiles do cache existente dos inimigos e a paleta compartilhada PAL2.
+- **Monólogo animado** (`intro.c`): [12 quadros do storyboard](../art/intro-monologo-v1/README.md) entre FinalQuest e o menu, aproximadamente 1min30s incluindo trocas. Texto branco centralizado em até36×4, fundo preto com transição suave desde a arte, fades visuais e música contínua desde o logo Plaguefall. Sem nome, contador ou instruções na tela. O enquadramento é fixo;12 partículas de poeira, brasa e fuligem usam posições fracionárias e até1 pixel de deslocamento por frame. Usa924 tiles para a imagem mais3 para partículas, antes da inicialização dos recursos da arena. O último quadro dura5s, antes eram17s; o fundo do menu já fica empacotado na ROM para evitar a montagem pixel a pixel no fim. A, B e C são ignorados; somente START pula. Não se repete ao voltar ao título. A conversa antes da fase 1 mantém apenas o chamado do padre e a resposta de Damião.
+- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Damião, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. O tema Baião de Ferrugem toca em sua versão calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
+- **Assets** (`chardemo.c`): [três abas — Damião, Dinorah e Músicas](../art/gallery-v1/README.md). Os personagens têm oito direções e dois quadros de repouso. ESQ/DIR muda de aba; B/START volta ao menu, e A também sai nas abas dos personagens. Em MÚSICAS, CIMA/BAIXO escolhe entre Baião de Ferrugem, Entardecer, Breu e Ladainha de Ferro; A pausa/retoma e C alterna calma/combate. A faixa selecionada toca em loop; sair da audição restaura a música e a curva anteriores. As quatro partituras coexistem na ROM. As poses usam240 tiles do cache existente dos inimigos e PAL2; a aba musical esconde os sprites e usa somente texto.
 - **Como Jogar** (`help.c`): **5 páginas** navegáveis com ←/→ — controles, inimigos (cor/forma, com os sprites reais), a elite (pentágonos), itens diretos e itens de inventário.
 
 ## HUD (linha 0)
@@ -489,9 +489,13 @@ Lentidão progressiva **individual** (cada entidade acumula seu tempo): jogador 
 
 ### Música (`system/audio/music.c` + `song_data.h`)
 
-Chiptune **original**, tom **dark**, em Ré menor harmônico (cadência andaluza Dm–C–Bb–A); sequenciador de **64 passos** (16 × 4 compassos) em loop. Vozes: **melodia** (ch0), **arpejo** (ch1), **baixo** (ch2), **bateria** de ruído (ch3, bumbo + caixa).
+**Baião de Ferrugem**, composição original de inspiração nordestina e industrial. São **16 compassos de 2/4 / 128 semicolcheias**, em Ré mixolídio, com Sol sustenido como aproximação cromática de Lá. Harmonia D7–C–G–D7, dois compassos por acorde, repetida com variação melódica. A melodia tem durações explícitas, pausas, sustentação e vibrato discreto; o acompanhamento é sincopado, o baixo alterna tônica/quinta e a percussão combina baques, estalos secos e ruído periódico metálico. São sugestões de articulação no PSG, sem amostras acústicas de sanfona, zabumba ou triângulo. [Partitura editável e prévias](musica.md).
 
-**BPM dinâmico por ameaça**: o andamento sobe conforme os inimigos vivos (`MUSIC_setEnemies`), com *glide* suave (sem saltos). A curva é **configurável por fase** no `LevelDef` — `musCalmUntil`, `musEnemyMax`, `musStepCalm`, `musStepHot` (0 em cada campo = usa o padrão global de `music.h`); `startPhase`/`startTest` aplicam via `MUSIC_setRamp`. Padrão: calmo (~75 BPM) até 4 inimigos, subindo até ~225 BPM em 15. O **chefe** (fase 16) já começa acelerado (curva própria). BPM = 900 / frames-por-passo.
+**BPM dinâmico por ameaça**: o andamento sobe conforme os inimigos vivos (`MUSIC_setEnemies`), com *glide* suave (sem saltos). A curva é **configurável por fase** no `LevelDef` — `musCalmUntil`, `musEnemyMax`, `musStepCalm`, `musStepHot` (0 em cada campo = usa o padrão global de `music.h`); `startPhase`/`startTest` aplicam via `MUSIC_setRamp`. Padrão: **100 BPM** até 4 inimigos, subindo até **150 BPM** em 15. A ameaça também acrescenta pulsos no ch1 e reforça acentos metálicos no ch3. O **chefe** usa aproximadamente **129–180 BPM**, e a retirada 6B usa **112–150 BPM**. Os valores `musStep*` são durações equivalentes a quadros NTSC; um relógio de 300 Hz mantém o andamento em PAL e NTSC. BPM = 900 / duração nominal do passo. A prioridade dos SFX continua preservada.
+
+### Trilha da abertura (`system/audio/opening.c`)
+
+[O Sonho Atendido](../art/audio-abertura-v2/README.md) é uma composição original de89 segundos para os12 planos do storyboard. Começa na aparição do logo Plaguefall e segue sem loop, resets ou pausas nas mudanças de imagem, com mudança de tema entre sonho e presente, tensão industrial, pausa na reza e pulso após o rádio. O volume só tem fade na entrada do logo e na saída natural ou com START. A, B e C não avançam nem completam o monólogo. Usa o árbitro PSG e um relógio de300 Hz por interrupção vertical para manter os tempos em PAL/NTSC. As quatro partituras da galeria permanecem preservadas.
 
 ### Efeitos (`system/audio/sfx.c`)
 
@@ -524,10 +528,10 @@ Os demais elementos continuam procedurais por char-maps.
   As três vistas ocidentais usam apenas HFLIP. Frente e costas são distintas.
 - BOSS_ROT: 72 tiles reservados aos dois retratos de história, separados do cache.
 - herogfx.c: Damião 32×48 em duas peças, um frame de 24 tiles dentro da reserva existente de 48 tiles, PAL2. Cinco vistas desenhadas e três por HFLIP; repouso de dois frames e corrida de quatro. Até 768 bytes adicionais de DMA por quadro, com prioridade sobre os inimigos.
-- chars.c: nove mechs históricos fora da galeria; a tela PERSONAGENS mostra Damião e Dinorah.
+- chars.c: nove mechs históricos fora da galeria; a tela ASSETS mostra Damião e Dinorah.
 - floor.c: 80 tiles no BG_B, PAL3. Cenário e projeção de mapa ainda são os anteriores.
 
-**Build atual com abertura animada:** ROM de786432 bytes (768 KiB), dentro de1 MiB; RAM estática de6159 bytes.
+**Build atual:** ROM de917504 bytes (896 KiB), dentro de1 MiB. A [validação consolidada](build-validation.json) registra hash, memória estática e testes da ROM principal.
 [Compilação e testes da abertura](../art/intro-monologo-v1/build-validation.json). A auditoria anterior dos inimigos
 observou47332 bytes de heap livre; esse número pertence àquela build. Os tiles de gameplay terminam no byte27488,
 a fonte começa no byte 46080 e há 18592 bytes de intervalo livre.

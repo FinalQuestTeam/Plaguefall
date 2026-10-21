@@ -1,6 +1,6 @@
 # pen_red — Artilheiro
 
-Definição: [`pen_red.c`](../../../../src/enemies/defs/pen_red.c).
+Definição: [`pen_red.c`](../../../../../src/enemies/defs/pen_red.c).
 
 - Tipo: `ENEMY_PEN_RED` = `8`.
 - Dados: `ENEMYDEF_pen_red`.

@@ -1,0 +1,247 @@
+{
+  "passed": true,
+  "title": "O Sonho Atendido \u2014 continuous",
+  "rom_path": "../../out/release/rom.bin",
+  "rom_sha256": "0828ef465302804a249e33583e311741982a3c95a324e75e520feb5671c25baa",
+  "rom_bytes": 917504,
+  "text_bytes": 836020,
+  "data_bytes": 128,
+  "bss_bytes": 6120,
+  "static_ram_bytes": 6248,
+  "starts_on": "Plaguefall logo appearance",
+  "clock_hz": 300,
+  "score_reserved_seconds": 96,
+  "continuous_across_images": true,
+  "controls": {
+    "START": "skip whole opening to menu",
+    "A/B/C": "ignored during boot opening"
+  },
+  "native_checks": "ASan/UBSan passed: 94s continuous in PAL/NTSC, max musical rest 4/3 frames, START fade, callback teardown and untouched gameplay music",
+  "new_dynamic_allocation": false,
+  "new_vram_bytes": 0,
+  "regions": {
+    "ntsc": {
+      "report": "ntsc/report.json",
+      "audio_sha256": "b1ac59bc5a069aac7e8c0a67ff6e6e2381c29c48a6f54d85e3fc1ec0c1620eb5",
+      "audio_seconds": 93.73736961451247,
+      "peak": 0.050811767578125,
+      "rms": 0.012089189258186072,
+      "longest_near_silence_seconds": 0.10276643990929706,
+      "clock": {
+        "file": "game/art/audio-abertura-v2/o-sonho-atendido.wav",
+        "continuous": true,
+        "first_frame": 202,
+        "last_frame": 5818,
+        "first_ticks": 0,
+        "last_ticks": 28080,
+        "clock_resets": 0,
+        "clock_pauses": 0,
+        "ticks_per_frame": 5,
+        "pcm_sha256": "529b586ef47bb24127286e3cf9b735353e26c9bf690439d9e04f9290efca1b36",
+        "samples": 4133818,
+        "peak": 1665
+      },
+      "image_transitions": [
+        {
+          "shot": 1,
+          "seconds": 4.433333333333334,
+          "rms": 0.004437122914635793
+        },
+        {
+          "shot": 2,
+          "seconds": 9.5,
+          "rms": 0.011272171968756477
+        },
+        {
+          "shot": 3,
+          "seconds": 14.55,
+          "rms": 0.017673073050312713
+        },
+        {
+          "shot": 4,
+          "seconds": 22.616666666666667,
+          "rms": 0.01429175355001837
+        },
+        {
+          "shot": 5,
+          "seconds": 26.65,
+          "rms": 0.009775550579014785
+        },
+        {
+          "shot": 6,
+          "seconds": 33.71666666666667,
+          "rms": 0.01282753067439396
+        },
+        {
+          "shot": 7,
+          "seconds": 41.766666666666666,
+          "rms": 0.014733132139604255
+        },
+        {
+          "shot": 8,
+          "seconds": 51.81666666666667,
+          "rms": 0.012763793049835067
+        },
+        {
+          "shot": 9,
+          "seconds": 60.833333333333336,
+          "rms": 0.01830294086783404
+        },
+        {
+          "shot": 10,
+          "seconds": 70.88333333333334,
+          "rms": 0.011982286315915027
+        },
+        {
+          "shot": 11,
+          "seconds": 77.96666666666667,
+          "rms": 0.004000343361587869
+        },
+        {
+          "shot": 12,
+          "seconds": 88.98333333333333,
+          "rms": 0.008029021240309053
+        }
+      ]
+    },
+    "pal": {
+      "report": "pal/report.json",
+      "audio_sha256": "4b65594713ed4ed4b77deba56b53531575c89b7b91ab2ac777a1008f54d5ff34",
+      "audio_seconds": 94.06163265306122,
+      "peak": 0.05169677734375,
+      "rms": 0.012174564060241727,
+      "longest_near_silence_seconds": 0.11294784580498866,
+      "clock": {
+        "file": "game/art/audio-abertura-v2/pal/o-sonho-atendido.wav",
+        "continuous": true,
+        "first_frame": 167,
+        "last_frame": 4841,
+        "first_ticks": 0,
+        "last_ticks": 28044,
+        "clock_resets": 0,
+        "clock_pauses": 0,
+        "ticks_per_frame": 6,
+        "pcm_sha256": "8f9d295f43c67f631a49c84e0566bd927b9a1c91de7c98e70f1eb830db5c77fa",
+        "samples": 4148118,
+        "peak": 1694
+      },
+      "image_transitions": [
+        {
+          "shot": 1,
+          "seconds": 4.42,
+          "rms": 0.004647429950122657
+        },
+        {
+          "shot": 2,
+          "seconds": 9.48,
+          "rms": 0.010851980754563045
+        },
+        {
+          "shot": 3,
+          "seconds": 14.52,
+          "rms": 0.017951714044842804
+        },
+        {
+          "shot": 4,
+          "seconds": 22.56,
+          "rms": 0.014362080445161306
+        },
+        {
+          "shot": 5,
+          "seconds": 26.6,
+          "rms": 0.007286707674678098
+        },
+        {
+          "shot": 6,
+          "seconds": 33.64,
+          "rms": 0.012821077595453383
+        },
+        {
+          "shot": 7,
+          "seconds": 41.68,
+          "rms": 0.016023808005579412
+        },
+        {
+          "shot": 8,
+          "seconds": 51.72,
+          "rms": 0.015014694706711353
+        },
+        {
+          "shot": 9,
+          "seconds": 60.76,
+          "rms": 0.019035823567402015
+        },
+        {
+          "shot": 10,
+          "seconds": 70.78,
+          "rms": 0.012592801157172295
+        },
+        {
+          "shot": 11,
+          "seconds": 77.84,
+          "rms": 0.005142975407733261
+        },
+        {
+          "shot": 12,
+          "seconds": 88.86,
+          "rms": 0.01845935163326885
+        }
+      ]
+    }
+  },
+  "preserved_files": {
+    "game/src/system/audio/song_catalog_data.h": "304b9125f53033ed02bd800868b6aa3f144b7d204ec19586e9822f1f109ae2c2",
+    "game/src/system/audio/song_data_dark.h": "0f5fb1d4b40d5d6c4fbc945fe1b9a2e13f66541f11c399c23e0d6e086bdc96bd",
+    "game/src/system/audio/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/src/system/audio/song_data_church.h": "6fef5a0be399d0f3c5d86018e9953169c8083010e3ac1f74e6779ec49aeadee8",
+    "game/src/system/audio/song_data_melancholic.h": "0a20459f9114802c54818081d5c6f7f2bc16cad5559ac137309ecaf3d0d8a7e1",
+    "game/art/audio-baiao-industrial-v1/baiao-calmo.wav": "c3f4da6fbe555afd4acdc719565fcfe13bf147ce597c9aa2a4c068cf35a2d4ff",
+    "game/art/audio-baiao-industrial-v1/baiao-combate.wav": "aa91d4d8739dc50f7a4b8c905f379b362b406381c7ca9e1f8895c9dae84d9ce9",
+    "game/art/audio-baiao-industrial-v1/anterior.wav": "30b00cd995279f4a084c1bc370e4c2635502847644c769ae29064bc511de46eb",
+    "game/art/audio-baiao-industrial-v1/README.md": "a50f784929051ad21cb6cb5df8687563ee31905e1613fb1fc14836f860450f33",
+    "game/art/audio-baiao-industrial-v1/baiao-calmo.mp3": "79863966fbab96b3aa97dfcb4d3c673f054844d2925e7f3c850fb334eaa801df",
+    "game/art/audio-baiao-industrial-v1/baiao-combate.mp3": "1d75b7148fc4912aaf35e9d361e226c04a86e99cb85b8db6ad1ce38e24d43fbb",
+    "game/art/audio-baiao-industrial-v1/validation.json": "17f1f7646a1cbd46bda2723196108645d178a5c5ca336ff5ee9e775659867dfa",
+    "game/art/audio-baiao-industrial-v1/anterior.mp3": "77177f05c86904538a246fd6204c1a1625722f128db1cb02a4bbdf1b7341eeb5",
+    "game/art/audio-baiao-industrial-v1/source/music.h": "d71ace2764b9adce7006ef81aaffa465c0a84d46367462d3e049843a152d7fbb",
+    "game/art/audio-baiao-industrial-v1/source/preservation.json": "ec2099bbcc0da8c880de1088b363f3f1007fad89611cba8d1d4af7569f6d5558",
+    "game/art/audio-baiao-industrial-v1/source/audio.h": "4d317b31a5961e3a651cd40d964d753c2191fd89dadb61a5cf28a5fb5f24bc9f",
+    "game/art/audio-baiao-industrial-v1/source/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/art/audio-baiao-industrial-v1/source/music.c": "5f6094f6ebfb200136656a003a155be7119818804a19491635c95e8f8a143b38",
+    "game/art/audio-baiao-industrial-v1/source/compose_music.py": "ef51b506b4b08f7039ff91e6f1364356495264693729297706c0fa8c9a3c9946",
+    "game/art/audio-baiao-industrial-v1/source/bench-rom.bin": "7ca3c016c31e5e6a4934cdafe0a01303354c3728708b56f9905f1e969161df48",
+    "game/art/audio-baiao-industrial-v1/source/audio.c": "58faab0ff08b5edb45a661ef82e03f9a980b1b577016c6760a9e80b7c7fca6f9",
+    "game/art/audio-baiao-melancolico-v1/entardecer-combate.mp3": "eb27519a046458d17ebc0608a4402a88a9e5463656b6e757eafcc974529b5ad2",
+    "game/art/audio-baiao-melancolico-v1/entardecer-calmo.mp3": "b1461c8c6a8ee62c61b482e80b25c541e450ac1148911ff59b566c1607fe818b",
+    "game/art/audio-baiao-melancolico-v1/README.md": "558c59f5b3d1bcbaebe711088daaed44acce426fec4df581fddd9773fe547308",
+    "game/art/audio-baiao-melancolico-v1/validation.json": "3e8236bb11265385a2d54b2550c1ae12f23c8eb2ed1c8811cabeab41271e8547",
+    "game/art/audio-baiao-melancolico-v1/entardecer-combate.wav": "ae44adb7a529cb75482418794d25a0c77f0032032b6cb9f646385a919915241b",
+    "game/art/audio-baiao-melancolico-v1/entardecer-calmo.wav": "06a36fac42e5ba72cd2c68c5a404cc0c6280402788e787ceb025d6c4989691cb",
+    "game/art/audio-baiao-melancolico-v1/source/music.h": "9ff317693ed5b40bc7a105f1a63dc55a09e11def08e5be96884abc372a250229",
+    "game/art/audio-baiao-melancolico-v1/source/audio.h": "4d317b31a5961e3a651cd40d964d753c2191fd89dadb61a5cf28a5fb5f24bc9f",
+    "game/art/audio-baiao-melancolico-v1/source/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/art/audio-baiao-melancolico-v1/source/music.c": "4def705dcd8d20ee81e6f9888d95221d198133872dcbd63d51afbd608a55a963",
+    "game/art/audio-baiao-melancolico-v1/source/compose_music.py": "fadfa04419bcdf7d8eb5effca7a490a15f54acfbc8b17a99126ab96081c5b287",
+    "game/art/audio-baiao-melancolico-v1/source/bench-rom.bin": "ef586346ad3c1292de71ce1f4ef762b795eb60f3bf9d088bc543d5dffe7cb2da",
+    "game/art/audio-baiao-melancolico-v1/source/song_data_melancholic.h": "0a20459f9114802c54818081d5c6f7f2bc16cad5559ac137309ecaf3d0d8a7e1",
+    "game/art/audio-baiao-melancolico-v1/source/audio.c": "58faab0ff08b5edb45a661ef82e03f9a980b1b577016c6760a9e80b7c7fca6f9",
+    "game/art/audio-baiao-sombrio-v1/breu-calmo.wav": "0665a42bfd72a068364cbd53a30d319ddc09c050edac2a0553044d6193e69894",
+    "game/art/audio-baiao-sombrio-v1/breu-combate.wav": "4aad4b81b9608123dd60715921b510942699319e2e317afb506a0698b4c5ae97",
+    "game/art/audio-baiao-sombrio-v1/README.md": "bf8863575679f62c804d61301056b6895cd9015076d4c6731196e7953c278ecc",
+    "game/art/audio-baiao-sombrio-v1/breu-calmo.mp3": "49ac484d2bd4d1049f88611751d17c8a3a7d9a5d84ad27dfb5b0714ef9e8fc10",
+    "game/art/audio-baiao-sombrio-v1/validation.json": "bf190db84e9bf48ba72e96ddccf5bfcfb3ddc1140e6801fc913f02fb738489b8",
+    "game/art/audio-baiao-sombrio-v1/breu-combate.mp3": "fcaf25ec7aa73109d76de0a3a4275d3b2265871d67147329b8915deb07416ee2",
+    "game/art/audio-igreja-v1/ladainha-combate.mp3": "9ea300bdb43697a3f34ff0544e5608516f82d6826f2b89a79ad93a2de94d5207",
+    "game/art/audio-igreja-v1/ladainha-calma.mp3": "5a03773e5fd50e55476383d361bda5aa5c5d30c3bbd38b27b7729965271855e9",
+    "game/art/audio-igreja-v1/README.md": "2a230c61d80f1fc3f8986e5739060f8be285e1bb8413d3aa7aa8945100f25266",
+    "game/art/audio-igreja-v1/validation.json": "5445939595355e7b01c56f2dcb821fa78e4819123344212c0f7b6937d37ac33f",
+    "game/art/audio-igreja-v1/ladainha-combate.wav": "bb7481ac505d82fb3562d3a84fc3ff3148497df9a19390b77c9af0fc7a596171",
+    "game/art/audio-igreja-v1/ladainha-calma.wav": "df20270de77ae96681ea89f0f70a081e8cbc4c6978b235ca91c5140366d04c9c"
+  },
+  "archived_previous_opening": {
+    "game/art/audio-abertura-v1/o-sonho-atendido.wav": "c40e27af17665a8d00a8a0a608e8b698ec3c55368e90df94194dba710e0e47ee",
+    "game/art/audio-abertura-v1/o-sonho-atendido.mp3": "a8e85449f8996a00e4b974a80f647b9b05773ba582533027b47681a4502570a7",
+    "game/art/audio-abertura-v1/ntsc/abertura.mp4": "68ab877c4e197a0b4bdd634b69616ce0f2ce70069dbf38444c880128a6b9e739"
+  },
+  "current_validation": "../../doc/build-validation.json"
+}

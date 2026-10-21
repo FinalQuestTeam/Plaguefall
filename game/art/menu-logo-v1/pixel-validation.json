@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "logo_size": [
+    128,
+    88
+  ],
+  "logo_position": [
+    8,
+    0
+  ],
+  "transparent_index": 0,
+  "checks": [
+    {
+      "region": "ntsc",
+      "menu": "natural",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "ntsc",
+      "menu": "skip",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "ntsc",
+      "menu": "game",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "ntsc",
+      "menu": "gallery",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "ntsc",
+      "menu": "help",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "pal",
+      "menu": "natural",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "pal",
+      "menu": "skip",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "pal",
+      "menu": "game",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "pal",
+      "menu": "gallery",
+      "logo_and_background_mismatches": 0
+    },
+    {
+      "region": "pal",
+      "menu": "help",
+      "logo_and_background_mismatches": 0
+    }
+  ]
+}

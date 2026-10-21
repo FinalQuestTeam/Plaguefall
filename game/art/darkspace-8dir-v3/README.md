@@ -4,7 +4,7 @@ Arquivos organizados pelos mesmos identificadores de `game/src/enemies/defs/`,
 na ordem de `ENEMY_DEFS`. Cada pasta reúne a folha completa, as oito direções,
 as prévias e o original do respectivo inimigo.
 
-[Baixar o pacote organizado](redrex-enemies-sgdk.zip).
+[Baixar o pacote organizado](.).
 
 ## Organização
 

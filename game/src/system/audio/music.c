@@ -6,7 +6,6 @@
 // assim que ele solta. O árbitro é quem escreve o PSG (1x por canal por quadro).
 
 #include "music.h"
-#include "song_data.h"
 #include "audio.h"
 
 #define CH_MEL   0
@@ -18,25 +17,39 @@
 
 // voz de tom: guarda a freq p/ reaplicar todo quadro (retoma após o SFX soltar).
 // O canal ocioso é silenciado pelo próprio árbitro (a voz só deixa de requisitar).
+// Durations use a 300 Hz clock: a video frame is 5 ticks in NTSC, 6 in PAL.
 typedef struct { s16 left, gate; u8 vmin; u16 freq; } Voice;
-static Voice vMel, vArp, vBass;
-static s16 drumLeft, drumGate; static u8 drumVmin, drumType, drumFreq;
+typedef struct {
+    const char *name;
+    const u16 *mel;
+    const u8 *gate;
+    const u16 *arp, *bass;
+    const u8 *drum;
+    u8 calm, hot;
+} MusicScore;
+#include "song_catalog_data.h"
 
-static u16 step;                // passo atual (0..SEQ_STEPS-1)
-static u16 countdown;           // frames até o próximo passo
-static u16 stepFramesCur;       // andamento atual (0 = não inicializado)
-static u16 stepFramesTgt;       // andamento alvo (pela ameaça)
-
-// curva de BPM da fase atual (padrão = CONFIG de music.h; MUSIC_setRamp ajusta)
-static u8 rCalmUntil = MUSIC_CALM_UNTIL;   // inimigos até ficar calmo
-static u8 rEnemyMax  = MUSIC_ENEMY_MAX;    // inimigos p/ BPM máximo
-static u8 rStepCalm  = MUSIC_STEP_CALM;    // frames/passo calmo
-static u8 rStepHot   = MUSIC_STEP_HOT;     // frames/passo no perigo
+typedef struct {
+    Voice vMel, vArp, vBass;
+    s16 drumLeft, drumGate;
+    u8 drumVmin, drumType, drumFreq, frameTicks, heat, track;
+    u16 step, stepFramesCur, stepFramesTgt;
+    s16 countdown;
+    u8 rCalmUntil, rEnemyMax, rStepCalm, rStepHot;
+} MusicState;
+static MusicState music = {
+    .track = MUSIC_DEFAULT_TRACK,
+    .rCalmUntil = MUSIC_CALM_UNTIL, .rEnemyMax = MUSIC_ENEMY_MAX,
+    .rStepCalm = MUSIC_STEP_CALM, .rStepHot = MUSIC_STEP_HOT
+};
+static MusicState savedMusic;
+static bool previewing;
 
 // dispara uma nota (freq 0 = sustenta a nota anterior, não recorta)
 static void setVoice(Voice *v, u16 freq, s16 gate, u8 vmin)
 {
     if (!freq) return;
+    if (gate < 5) gate = 5; // keep envelopes valid even for custom one-frame steps
     v->freq = freq; v->left = v->gate = gate; v->vmin = vmin;
 }
 
@@ -46,19 +59,47 @@ static void applyVoice(Voice *v, u8 ch)
 {
     if (v->left > 0)
     {
-        v->left--;
-        const u8 vol = (u8) (v->vmin + ((15 - v->vmin) * (v->gate - v->left)) / v->gate);
-        AUDIO_tone(ch, v->freq, vol, AUD_PRIO_MUSIC);
+        const u16 age = v->gate - v->left;
+        u8 vol;
+        u16 freq = v->freq;
+        const bool church = music.track == MUSIC_TRACK_LADAINHA;
+        const bool organ = church && (ch == CH_BASS || (ch == CH_ARP && v->freq < 700));
+        if (ch == CH_MEL || organ)
+        {
+            // A held reed-like voice, a short release and restrained vibrato.
+            // The PSG stays a square wave: this is articulation, not a sample.
+            const u16 release = v->gate / 4;
+            vol = v->vmin + 2;
+            if (v->left <= release)
+                vol += (u8) ((12 - v->vmin) * (release - v->left) / release);
+            if (age >= 20 && !church)
+            {
+                static const s8 vibrato[8] = { 0, 1, 2, 1, 0, -1, -2, -1 };
+                static const s8 darkVibrato[8] = { 0, 0, 1, 0, 0, 0, -1, 0 };
+                const s8 *wave = music.track == MUSIC_TRACK_BREU ? darkVibrato : vibrato;
+                freq = (u16) ((s16) freq + wave[(age / 10) & 7] * (freq >> 8));
+            }
+        }
+        else
+        {
+            vol = (u8) (v->vmin + ((15 - v->vmin) * age) / v->gate);
+            // A brief downward transient gives the root/fifth bass some body.
+            if (ch == CH_BASS && age < 10)
+                freq += (u16) (((freq >> 3) * (10 - age)) / 10);
+        }
+        AUDIO_tone(ch, freq, vol, AUD_PRIO_MUSIC);
+        v->left -= music.frameTicks;
     }
 }
 
 static void setDrum(u8 type)
 {
     if (!type) return;
-    if (type == 1)      { drumType = PSG_NOISE_TYPE_WHITE; drumFreq = PSG_NOISE_FREQ_CLOCK2; drumVmin = 1; drumGate = 6; }
-    else if (type == 2) { drumType = PSG_NOISE_TYPE_WHITE; drumFreq = PSG_NOISE_FREQ_CLOCK4; drumVmin = 2; drumGate = 5; }
-    else                { drumType = PSG_NOISE_TYPE_WHITE; drumFreq = PSG_NOISE_FREQ_CLOCK8; drumVmin = 7; drumGate = 3; }
-    drumLeft = drumGate;                          // só arma a nota; o árbitro escreve o ruído
+    if (type == 1)      { music.drumType = PSG_NOISE_TYPE_WHITE; music.drumFreq = PSG_NOISE_FREQ_CLOCK8; music.drumVmin = 5; music.drumGate = 20; }
+    else if (type == 2) { music.drumType = PSG_NOISE_TYPE_WHITE; music.drumFreq = PSG_NOISE_FREQ_CLOCK4; music.drumVmin = 6; music.drumGate = 10; }
+    else if (type == 3) { music.drumType = PSG_NOISE_TYPE_PERIODIC; music.drumFreq = PSG_NOISE_FREQ_CLOCK2; music.drumVmin = 9; music.drumGate = 10; }
+    else                { music.drumType = PSG_NOISE_TYPE_WHITE; music.drumFreq = PSG_NOISE_FREQ_CLOCK2; music.drumVmin = 5; music.drumGate = 20; }
+    music.drumLeft = music.drumGate;                          // só arma a nota; o árbitro escreve o ruído
 }
 
 static void applyDrum(void)
@@ -66,20 +107,22 @@ static void applyDrum(void)
     // requisita ruído (tipo/freq + envelope) todo quadro enquanto a nota dura; o
     // árbitro só reescreve PSG_setNoise se o tipo/freq mudar (evita reiniciar o
     // gerador de ruído a cada frame = chiado). Ocioso: não requisita.
-    if (drumLeft > 0)
+    if (music.drumLeft > 0)
     {
-        drumLeft--;
-        const u8 vol = (u8) (drumVmin + ((15 - drumVmin) * (drumGate - drumLeft)) / drumGate);
-        AUDIO_noise(drumType, drumFreq, vol, AUD_PRIO_MUSIC);
+        const u8 vol = (u8) (music.drumVmin + ((15 - music.drumVmin) * (music.drumGate - music.drumLeft)) / music.drumGate);
+        AUDIO_noise(music.drumType, music.drumFreq, vol, AUD_PRIO_MUSIC);
+        music.drumLeft -= music.frameTicks;
     }
 }
 
 void MUSIC_init(void)
 {
     AUDIO_silenceAll();
-    step = 0; countdown = 1;
-    stepFramesCur = stepFramesTgt = rStepCalm;
-    vMel.left = vArp.left = vBass.left = drumLeft = 0;
+    music.step = 0; music.countdown = 1;
+    music.frameTicks = SYS_isPAL() ? 6 : 5;
+    music.heat = 0;
+    music.stepFramesCur = music.stepFramesTgt = music.rStepCalm;
+    music.vMel.left = music.vArp.left = music.vBass.left = music.drumLeft = 0;
 }
 
 void MUSIC_start(void) { }       // compat (a música já toca a partir de MUSIC_init)
@@ -87,53 +130,87 @@ void MUSIC_start(void) { }       // compat (a música já toca a partir de MUSIC
 void MUSIC_setRamp(u8 calmUntil, u8 enemyMax, u8 stepCalm, u8 stepHot)
 {
     // 0 em qualquer campo => mantém o padrão do CONFIG (music.h)
-    rCalmUntil = calmUntil ? calmUntil : MUSIC_CALM_UNTIL;
-    rEnemyMax  = enemyMax  ? enemyMax  : MUSIC_ENEMY_MAX;
-    rStepCalm  = stepCalm  ? stepCalm  : MUSIC_STEP_CALM;
-    rStepHot   = stepHot   ? stepHot   : MUSIC_STEP_HOT;
-    if (rEnemyMax <= rCalmUntil) rEnemyMax = rCalmUntil + 1;  // evita span 0
+    music.rCalmUntil = calmUntil ? calmUntil : MUSIC_CALM_UNTIL;
+    music.rEnemyMax  = enemyMax  ? enemyMax  : MUSIC_ENEMY_MAX;
+    music.rStepCalm  = stepCalm  ? stepCalm  : MUSIC_SCORES[music.track].calm;
+    music.rStepHot   = stepHot   ? stepHot   : MUSIC_SCORES[music.track].hot;
+    if (music.rEnemyMax <= music.rCalmUntil) music.rEnemyMax = music.rCalmUntil + 1;  // evita span 0
+    if (music.rStepHot > music.rStepCalm) music.rStepHot = music.rStepCalm;
 }
 
 void MUSIC_setEnemies(u8 count)
 {
-    if (count > rEnemyMax) count = rEnemyMax;
-    if (count <= rCalmUntil)                    // poucos inimigos: fica calmo
+    if (count > music.rEnemyMax) count = music.rEnemyMax;
+    if (count <= music.rCalmUntil)                    // poucos inimigos: fica calmo
     {
-        stepFramesTgt = rStepCalm;
+        music.stepFramesTgt = music.rStepCalm;
+        music.heat = 0;
         return;
     }
-    // interpola do calmo (em rCalmUntil) ao quente (em rEnemyMax)
-    const u16 span = rEnemyMax - rCalmUntil;
-    const u16 k    = count - rCalmUntil;                      // 1..span
-    stepFramesTgt  = (u16) (rStepCalm - ((rStepCalm - rStepHot) * k) / span);
+    // interpola do calmo (em music.rCalmUntil) ao quente (em music.rEnemyMax)
+    const u16 span = music.rEnemyMax - music.rCalmUntil;
+    const u16 k    = count - music.rCalmUntil;                      // 1..span
+    music.stepFramesTgt  = (u16) (music.rStepCalm - ((music.rStepCalm - music.rStepHot) * k) / span);
+    music.heat = (u8) ((k * 3) / span);
 }
 
 void MUSIC_update(void)
 {
-    if (!stepFramesCur) return;                 // ainda não inicializado
+    if (!music.stepFramesCur) return;                 // ainda não inicializado
 
-    if (--countdown == 0)
+    music.countdown -= music.frameTicks;
+    if (music.countdown <= 0)
     {
         // glide do andamento (1 passo por semicolcheia -> transição suave)
-        if (stepFramesCur < stepFramesTgt) stepFramesCur++;
-        else if (stepFramesCur > stepFramesTgt) stepFramesCur--;
-        countdown = stepFramesCur;
+        if (music.stepFramesCur < music.stepFramesTgt) music.stepFramesCur++;
+        else if (music.stepFramesCur > music.stepFramesTgt) music.stepFramesCur--;
+        const u16 ticks = music.stepFramesCur * 5;
+        music.countdown += ticks;
+        const MusicScore *score = &MUSIC_SCORES[music.track];
+        const bool church = music.track == MUSIC_TRACK_LADAINHA;
+        setVoice(&music.vMel, score->mel[music.step], ticks * score->gate[music.step] - 5, 2);
+        u16 arp = score->arp[music.step];
+        if (music.heat && !arp && (music.step & 3) == 2)
+            arp = score->arp[music.step + 1]; // extra machine pulses; melody/bass keep the groove
+        setVoice(&music.vArp, arp, ticks * (church ? 4 : 1) - 10,
+                 church ? (arp >= 700 ? 4 : 6) : music.heat >= 2 ? 7 : 9);
+        setVoice(&music.vBass, score->bass[music.step], ticks * (church ? 8 : 1) - 5,
+                 church ? 2 : (music.step & 7) == 0 ? 3 : 5);
+        setDrum(music.heat >= 2 && (music.step & 7) == 6 ? 4 : score->drum[music.step]);
 
-        setVoice(&vMel,  MEL[step],  stepFramesCur * 3, 1);
-        setVoice(&vArp,  ARP[step],  stepFramesCur,     7);
-        setVoice(&vBass, BASS[step], stepFramesCur * 2, 3);
-        setDrum(DRUM[step]);
-
-        if (++step >= SEQ_STEPS) step = 0;
+        if (++music.step >= SEQ_STEPS) music.step = 0;
     }
 
     // escreve nos canais todo quadro (o SFX, chamado depois, tem prioridade)
-    applyVoice(&vMel,  CH_MEL);
-    applyVoice(&vArp,  CH_ARP);
-    applyVoice(&vBass, CH_BASS);
+    applyVoice(&music.vMel,  CH_MEL);
+    applyVoice(&music.vArp,  CH_ARP);
+    applyVoice(&music.vBass, CH_BASS);
     applyDrum();
 }
 
-u16 MUSIC_bpm(void)       { return stepFramesCur ? (900 / stepFramesCur) : 0; }
-u8  MUSIC_chord(void)     { return (u8) ((step >> 4) & 3); }
-u16 MUSIC_stepInBar(void) { return step & 15; }
+u16 MUSIC_bpm(void)       { return music.stepFramesCur ? (900 / music.stepFramesCur) : 0; }
+u8  MUSIC_chord(void)     { return (u8) ((music.step >> 4) & 3); }
+u16 MUSIC_stepInBar(void) { return music.step & (SONG_BAR_STEPS - 1); }
+
+void MUSIC_previewTrack(u8 track)
+{
+    if (track >= MUSIC_TRACK_COUNT) return;
+    if (!previewing) { savedMusic = music; previewing = TRUE; }
+    music.track = track;
+    MUSIC_setRamp(0, 0, 0, 0);
+    MUSIC_init();
+}
+
+void MUSIC_endPreview(void)
+{
+    if (!previewing) return;
+    AUDIO_silenceAll();
+    music = savedMusic;
+    previewing = FALSE;
+}
+
+u8 MUSIC_track(void) { return music.track; }
+const char *MUSIC_trackName(u8 track)
+{
+    return track < MUSIC_TRACK_COUNT ? MUSIC_SCORES[track].name : "";
+}

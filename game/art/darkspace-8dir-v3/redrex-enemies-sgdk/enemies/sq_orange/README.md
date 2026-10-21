@@ -1,6 +1,6 @@
 # sq_orange — Ariete
 
-Definição: [`sq_orange.c`](../../../../src/enemies/defs/sq_orange.c).
+Definição: [`sq_orange.c`](../../../../../src/enemies/defs/sq_orange.c).
 
 - Tipo: `ENEMY_SQ_ORG` = `3`.
 - Dados: `ENEMYDEF_sq_orange`.

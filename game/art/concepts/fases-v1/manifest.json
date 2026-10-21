@@ -1,0 +1,241 @@
+{
+  "project": "Plaguefall",
+  "date": "2026-10-21",
+  "purpose": "Concept art de cenários e narrativa ambiental para futura adaptação das telas",
+  "mode": "image_gen integrado",
+  "camera": "Ortográfica, aproximadamente 60 graus acima do chão",
+  "status": "generation_pending",
+  "assets": [
+    {
+      "id": "01",
+      "title": "Pátio da igreja",
+      "phase": "Prólogo e fase 1",
+      "story": "A fila saiu por aqui: bancos viraram barricada, recipientes de água ficaram junto à porta e o caminho dos fundos permanece aberto.",
+      "hazard": "none",
+      "filename": "01-patio-igreja.png",
+      "prompt": "prompts/01.txt",
+      "image": "imagens/01-patio-igreja.png",
+      "status": "pending"
+    },
+    {
+      "id": "02a",
+      "title": "Rua de serviço",
+      "phase": "Fase 2A",
+      "story": "A igreja continua inteira; marcas ordenadas de passagem e espaços vazios dos suprimentos mostram uma evacuação concluída.",
+      "hazard": "none",
+      "filename": "02a-rua-servico.png",
+      "prompt": "prompts/02a.txt",
+      "image": "imagens/02a-rua-servico.png",
+      "status": "pending"
+    },
+    {
+      "id": "02b",
+      "title": "Baixio da igreja danificada",
+      "phase": "Fase 2B",
+      "story": "Telhas e reboco recém-caídos identificam o dano da bomba; suprimentos presos sob a parede explicam a perda e o desvio.",
+      "hazard": "mud",
+      "filename": "02b-igreja-danificada.png",
+      "prompt": "prompts/02b.txt",
+      "image": "imagens/02b-igreja-danificada.png",
+      "status": "pending"
+    },
+    {
+      "id": "03",
+      "title": "Abrigo no galpão de manutenção",
+      "phase": "Fase 3",
+      "story": "Redes, biombos e uma farmácia improvisada mostram quem depende da defesa; o passado industrial continua perigoso.",
+      "hazard": "lava",
+      "filename": "03-abrigo-manutencao.png",
+      "prompt": "prompts/03.txt",
+      "image": "imagens/03-abrigo-manutencao.png",
+      "status": "pending"
+    },
+    {
+      "id": "04",
+      "title": "Túneis de manutenção",
+      "phase": "Fase 4",
+      "story": "A passagem foi limpa para outras pessoas cruzarem depois: tampas abertas, marcas de ferramentas e uma rota seca ligam entrada e saída.",
+      "hazard": "mud",
+      "filename": "04-tuneis.png",
+      "prompt": "prompts/04.txt",
+      "image": "imagens/04-tuneis.png",
+      "status": "pending"
+    },
+    {
+      "id": "05",
+      "title": "Plataforma do sinalizador",
+      "phase": "Fase 5",
+      "story": "A santa retirada da igreja torna-se o centro da composição; os preparativos do embarque revelam a função do sinal.",
+      "hazard": "none",
+      "filename": "05-sinalizador-santa.png",
+      "prompt": "prompts/05.txt",
+      "image": "imagens/05-sinalizador-santa.png",
+      "status": "pending"
+    },
+    {
+      "id": "06a",
+      "title": "Perímetro do resgate",
+      "phase": "Fase 6A",
+      "story": "Marcas de embarque, a rampa recolhendo e o sinal confirmado contam que o povo conseguiu partir.",
+      "hazard": "lava",
+      "filename": "06a-resgate.png",
+      "prompt": "prompts/06a.txt",
+      "image": "imagens/06a-resgate.png",
+      "status": "pending"
+    },
+    {
+      "id": "06b",
+      "title": "Corredor da retirada",
+      "phase": "Fase 6B",
+      "story": "O sinal quebrado e as bagagens arrastadas para longe do pouso mostram que o resgate falhou e a saída passou a ser por terra.",
+      "hazard": "lava",
+      "filename": "06b-retirada.png",
+      "prompt": "prompts/06b.txt",
+      "image": "imagens/06b-retirada.png",
+      "status": "pending"
+    },
+    {
+      "id": "07",
+      "title": "Baixio das antenas",
+      "phase": "Fase 7",
+      "story": "Rastros orgânicos seguem os mesmos cabos que antes ligavam a comunidade à base; a infraestrutura revela o rumo da investigação.",
+      "hazard": "mud",
+      "filename": "07-antenas.png",
+      "prompt": "prompts/07.txt",
+      "image": "imagens/07-antenas.png",
+      "status": "pending"
+    },
+    {
+      "id": "08",
+      "title": "Fornalha e dutos de criação",
+      "phase": "Fase 8",
+      "story": "O jogador vê pela primeira vez como a máquina virou criadouro: ovos crescem no calor e na água dos dutos.",
+      "hazard": "lava",
+      "filename": "08-fornalha.png",
+      "prompt": "prompts/08.txt",
+      "image": "imagens/08-fornalha.png",
+      "status": "pending"
+    },
+    {
+      "id": "09",
+      "title": "Alfândega ocupada",
+      "phase": "Fase 9",
+      "story": "Caixas de carga abertas por dentro e equipamentos humanos incorporados à defesa mostram a origem e a adaptação da infestação.",
+      "hazard": "none",
+      "filename": "09-alfandega.png",
+      "prompt": "prompts/09.txt",
+      "image": "imagens/09-alfandega.png",
+      "status": "pending"
+    },
+    {
+      "id": "10a",
+      "title": "Acesso dos técnicos",
+      "phase": "Fase 10A",
+      "story": "Armários e ferramentas identificam a antiga vida de Damião; a rota humana de manutenção ainda permite atravessar a instalação.",
+      "hazard": "mud",
+      "filename": "10a-acesso-tecnicos.png",
+      "prompt": "prompts/10a.txt",
+      "image": "imagens/10a-acesso-tecnicos.png",
+      "status": "pending"
+    },
+    {
+      "id": "10b",
+      "title": "Dreno térmico",
+      "phase": "Fase 10B",
+      "story": "Níveis antigos de enchente, grades arrebentadas e calor vazando mostram o custo do desvio sob a base.",
+      "hazard": "mix",
+      "filename": "10b-dreno-termico.png",
+      "prompt": "prompts/10b.txt",
+      "image": "imagens/10b-dreno-termico.png",
+      "status": "pending"
+    },
+    {
+      "id": "11",
+      "title": "Depósito de demolição",
+      "phase": "Fase 11",
+      "story": "Cargas industriais, caixas ainda lacradas e alertas abandonados contam que havia recursos e conhecimento, mas as operações continuaram.",
+      "hazard": "mix",
+      "filename": "11-deposito.png",
+      "prompt": "prompts/11.txt",
+      "image": "imagens/11-deposito.png",
+      "status": "pending"
+    },
+    {
+      "id": "12",
+      "title": "Comporta de carga",
+      "phase": "Fase 12",
+      "story": "A comporta em movimento e os sinais mecânicos de fechamento tornam a janela de tempo visível antes do desvio.",
+      "hazard": "mix",
+      "filename": "12-comporta.png",
+      "prompt": "prompts/12.txt",
+      "image": "imagens/12-comporta.png",
+      "status": "pending"
+    },
+    {
+      "id": "13a",
+      "title": "Linha quente aberta",
+      "phase": "Fase 13A",
+      "story": "A passagem ainda aberta e o metal em resfriamento registram que Damião chegou dentro da janela.",
+      "hazard": "lava",
+      "filename": "13a-linha-quente.png",
+      "prompt": "prompts/13a.txt",
+      "image": "imagens/13a-linha-quente.png",
+      "status": "pending"
+    },
+    {
+      "id": "13b",
+      "title": "Canal de decantação",
+      "phase": "Fase 13B",
+      "story": "A comporta fechada aparece ao fundo; sedimento e ferrugem indicam a passagem mais lenta que precisou ser usada.",
+      "hazard": "mud",
+      "filename": "13b-decantacao.png",
+      "prompt": "prompts/13b.txt",
+      "image": "imagens/13b-decantacao.png",
+      "status": "pending"
+    },
+    {
+      "id": "14",
+      "title": "Pátio dos enxames",
+      "phase": "Fase 14",
+      "story": "A ocupação passa de manchas a arquitetura: carapaças usam aço e cabos para fechar a aproximação da câmara.",
+      "hazard": "mix",
+      "filename": "14-patio-enxames.png",
+      "prompt": "prompts/14.txt",
+      "image": "imagens/14-patio-enxames.png",
+      "status": "pending"
+    },
+    {
+      "id": "15",
+      "title": "Boca das galerias",
+      "phase": "Fase 15",
+      "story": "Suportes e pontos de inspeção revelam onde as cargas poderão entrar; a saída pelos túneis continua reconhecível.",
+      "hazard": "mix",
+      "filename": "15-galerias.png",
+      "prompt": "prompts/15.txt",
+      "image": "imagens/15-galerias.png",
+      "status": "pending"
+    },
+    {
+      "id": "16",
+      "title": "Câmara da Lacraia",
+      "phase": "Fase 16",
+      "story": "O ninho ocupa o coração da instalação; os acessos humanos sobreviventes tornam visível como Damião poderá destruí-lo.",
+      "hazard": "none",
+      "filename": "16-camara-lacraia.png",
+      "prompt": "prompts/16.txt",
+      "image": "imagens/16-camara-lacraia.png",
+      "status": "pending"
+    },
+    {
+      "id": "epilogo",
+      "title": "Retorno à igreja",
+      "phase": "Epílogo e variantes da igreja",
+      "story": "O mesmo lugar do prólogo reaparece livre dos ninhos: a versão preservada recebe o retorno, e a versão danificada mostra reparos.",
+      "hazard": "none",
+      "filename": "epilogo-retorno-igreja.png",
+      "prompt": "prompts/epilogo.txt",
+      "image": "imagens/epilogo-retorno-igreja.png",
+      "status": "pending"
+    }
+  ]
+}

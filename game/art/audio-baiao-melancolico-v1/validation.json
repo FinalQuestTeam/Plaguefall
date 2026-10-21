@@ -1,0 +1,52 @@
+{
+  "track": "Baião de Ferrugem — Entardecer",
+  "variant": "melancolico",
+  "key": "D dorian",
+  "default_bpm": {
+    "calm": 90,
+    "combat": 128.57142857142858
+  },
+  "original_previews_preserved": true,
+  "original_score_preserved": true,
+  "default_game_rom_unchanged": true,
+  "capture": "Genesis Plus GX / real music-test ROM / controller input only",
+  "postprocessing": "MP3 encoding only",
+  "native_tests": "ASan/UBSan passed for original and melancholic profiles; 50/60 Hz timing, loops, envelopes, SFX arbitration and silence",
+  "recordings": {
+    "entardecer-calmo": {
+      "enemies": 0,
+      "sample_rate": 44100,
+      "seconds": 22.028344671201815,
+      "rms": 0.02267560361405809,
+      "peak": 0.12738037109375,
+      "wav_sha256": "06a36fac42e5ba72cd2c68c5a404cc0c6280402788e787ceb025d6c4989691cb",
+      "mp3_sha256": "b1461c8c6a8ee62c61b482e80b25c541e450ac1148911ff59b566c1607fe818b"
+    },
+    "entardecer-combate": {
+      "enemies": 15,
+      "sample_rate": 44100,
+      "seconds": 16.020612244897958,
+      "rms": 0.024385326178615507,
+      "peak": 0.137420654296875,
+      "wav_sha256": "ae44adb7a529cb75482418794d25a0c77f0032032b6cb9f646385a919915241b",
+      "mp3_sha256": "eb27519a046458d17ebc0608a4402a88a9e5463656b6e757eafcc974529b5ad2"
+    }
+  },
+  "rom_sha256": {
+    "game": "07b57372b1cefa6363d5061ee31b3b03631cb5947358870198f94a5c9408f542",
+    "bench": "ef586346ad3c1292de71ce1f4ef762b795eb60f3bf9d088bc543d5dffe7cb2da"
+  },
+  "game_emulator_checks": {
+    "ntsc": {
+      "passed": true,
+      "fps": 60,
+      "frames": 8270
+    },
+    "pal": {
+      "passed": true,
+      "fps": 50,
+      "frames": 6892
+    }
+  },
+  "pal_audio_capture_passed": true
+}

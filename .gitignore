@@ -1,10 +1,19 @@
+# Desktop metadata and Python caches
 .DS_Store
 DS_Store
-music-test/out/
-
-# Subprodutos locais da exportação e testes de arte.
 __pycache__/
 *.py[cod]
-game/art/**/*.zip
-game/art/**/*.ppm
-game/art/**/validation/*.s
+
+# Build outputs: keep one verified playable ROM in Git.
+/game/out/*
+!/game/out/release/
+/game/out/release/*
+!/game/out/release/rom.bin
+/game/tools/music-bench/out/
+
+# Disposable exports and validation intermediates.
+/game/art/**/*.zip
+/game/art/**/*.ppm
+/game/art/**/*.o
+/game/art/**/*.out
+/game/art/**/validation/*.s

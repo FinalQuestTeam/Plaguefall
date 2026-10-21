@@ -18,14 +18,14 @@ static const char *itemName(u8 type)
 {
     switch (type)
     {
-        case ITEM_HEART:  return "CORACOES";
-        case ITEM_BOMB:   return "BOMBAS";
-        case ITEM_SHOTS:  return "BALAS";
-        case ITEM_SPEED:  return "BOTINHAS";
-        case ITEM_SHIELD: return "ESCUDOS";
-        case ITEM_CHAIN:  return "RAIOS";
-        case ITEM_ICE:    return "GELOS";
-        case ITEM_FIRE:   return "FOGOS";
+        case ITEM_HEART:  return "MARMITAS";
+        case ITEM_BOMB:   return "CARGAS";
+        case ITEM_SHOTS:  return "DIVISORES";
+        case ITEM_SPEED:  return "SERVOS";
+        case ITEM_SHIELD: return "CAPACITORES";
+        case ITEM_CHAIN:  return "BOBINAS";
+        case ITEM_ICE:    return "REFIS FRIOS";
+        case ITEM_FIRE:   return "REFIS QUENTES";
     }
     return "ITENS";
 }
@@ -37,12 +37,14 @@ static u16 itemIcon(u8 type)
     {
         case ITEM_HEART:  return TILE_ICON_HEART;
         case ITEM_BOMB:   return TILE_BOMB_ICON;
+        case ITEM_SHOTS:  return TILE_ICON_SHOTS;
+        case ITEM_SPEED:  return TILE_ICON_SPEED;
         case ITEM_SHIELD: return TILE_ICON_SHIELD;
         case ITEM_CHAIN:  return TILE_BOLT;
         case ITEM_ICE:    return TILE_ICON_ICE;
         case ITEM_FIRE:   return TILE_ICON_FIRE;
     }
-    return TILE_SKULL;                           // fallback (itens sem ícone 8x8)
+    return TILE_SKULL;                           // fallback para tipo inválido
 }
 
 void OBJECTIVE_start(const LevelDef *def)

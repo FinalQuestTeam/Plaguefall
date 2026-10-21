@@ -5,7 +5,7 @@
 
 const ItemDef ITEMDEF_shots =
 {
-    .name       = "DISPAROS",
+    .name       = "DIVISOR DE DISPARO",
     .weight     = 10,
     .tile       = TILE_BULLET,
     .buildTile  = ITEMSHOTS_buildTile,

@@ -16,7 +16,7 @@ const LevelDef LEVEL16_def =
     // com poucos lacaios (o combate contra o chefe é intenso do início ao fim)
     .musCalmUntil = 1,
     .musEnemyMax  = 6,
-    .musStepCalm  = 8,
-    .musStepHot   = 4,
+    .musStepCalm  = 7,
+    .musStepHot   = 5,
     LVL_ROSTER(roster),
 };

@@ -1,6 +1,6 @@
 # Plaguefall — arte do projeto
 
-**Arte ativa:** [Damião](cangaco-protagonista-iso60-v2/README.md), [13 inimigos em resoluções nativas](cangaco-insects-sized-v3/README.md) e [Nossa Senhora Aparecida](santa-aparecida-v1/README.md), substituindo a antena. Câmera visual elevada a 60° acima do chão. O [inventário completo e pendências](INVENTARIO-SPRITES.md) separa arte integrada e legado. A [parceira feminina](cangaco-parceira-iso60-v1/README.md) tem sprites32×48, oito direções e as mesmas animações de Damião, prontos para integração. A ROM atual tem512 KiB; os relatórios distinguem orçamento de memória de desempenho de CPU.
+**Arte ativa:** [Damião](cangaco-protagonista-iso60-v2/README.md), [13 inimigos em resoluções nativas](cangaco-insects-sized-v3/README.md) e [Nossa Senhora Aparecida](santa-aparecida-v1/README.md), substituindo a antena. Câmera visual elevada a 60° acima do chão. O [inventário completo e pendências](INVENTARIO-SPRITES.md) separa arte integrada e legado. A [parceira feminina](cangaco-parceira-iso60-v1/README.md) tem sprites32×48, oito direções e as mesmas animações de Damião, integrados à galeria Assets. A ROM atual tem896 KiB; os relatórios distinguem orçamento de memória de desempenho de CPU.
 
 ## Direção atual: cangaço cyberpunk brasileiro
 
@@ -29,3 +29,7 @@ Cada pasta reúne o inimigo nas oito direções do jogo. Consulte o
 [declarações SGDK](darkspace-8dir-v3/enemies.res).
 
 `darkspace-v1` e `darkspace-iso60-v2` são versões anteriores da arte.
+
+## Áudio e apresentação
+
+A [abertura com trilha contínua](audio-abertura-v2/README.md) começa a música no logo Plaguefall e só permite pular com START. A [galeria Assets](gallery-v1/README.md) reúne Damião, Dinorah e quatro músicas. Os [itens atuais](cangaco-itens-v2/README.md) têm sprites16×16 e ícones8×8. A [ROM principal](../out/release/rom.bin) e o [relatório consolidado](../doc/build-validation.json) são as referências atuais; relatórios dentro dos estudos anteriores são históricos.

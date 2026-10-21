@@ -1,6 +1,6 @@
 # sq_red — Torreao
 
-Definição: [`sq_red.c`](../../../../src/enemies/defs/sq_red.c).
+Definição: [`sq_red.c`](../../../../../src/enemies/defs/sq_red.c).
 
 - Tipo: `ENEMY_SQ_RED` = `0`.
 - Dados: `ENEMYDEF_sq_red`.

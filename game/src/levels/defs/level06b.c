@@ -14,7 +14,7 @@ const LevelDef LEVEL06B_def =
     // retirada: a música já entra tensa (calma só sem NENHUM inimigo)
     .musCalmUntil = 1,
     .musEnemyMax  = 12,
-    .musStepCalm  = 10,
-    .musStepHot   = 4,
+    .musStepCalm  = 8,
+    .musStepHot   = 6,
     LVL_ROSTER(roster),
 };

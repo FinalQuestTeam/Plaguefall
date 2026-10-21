@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "core": "Genesis Plus GX",
+  "rom_sha256": "cdd410b162e755176c71f20df8b62079cb437ff7b693f4e8dd7fcd230d15b966",
+  "frames": 897,
+  "opaque_pixel_assertions": 3168,
+  "world_items_checked": 8,
+  "hud_icons_checked": 8,
+  "item_struct_bytes": 8,
+  "world_size": [
+    16,
+    16
+  ],
+  "hud_size": [
+    8,
+    8
+  ],
+  "heap_free_bytes": 47338,
+  "heap_largest_free_bytes": 46824,
+  "boot_tile_buffer_bytes": 2720,
+  "vram_extra_bytes": 64,
+  "new_hardware_sprites": 0,
+  "extra_per_frame_item_DMA_bytes": 0,
+  "inventory_icons_checked": [
+    "bomb",
+    "shield",
+    "chain",
+    "ice",
+    "fire"
+  ],
+  "active_modes_checked": [
+    "chain",
+    "ice",
+    "fire"
+  ]
+}

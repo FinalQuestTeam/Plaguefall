@@ -6,6 +6,7 @@
 #include "system/video/sprites/tiles.h"
 #include "system/video/sprites/icons_data.h"
 #include "system/video/sprites/saint_data.h"
+#include "system/video/sprites/item_icons_data.h"
 #include "core/game.h"
 #include "elements/lava.h"
 #include "elements/mud.h"
@@ -69,14 +70,17 @@ static void buildTiles(void)
     // aqui só a legenda char -> cor da PAL1 de cada um
     buildTile8(TILE_SKULL, ICON_SKULL_ART, '#', 1);         // caveira (contador)
 
-    buildTile8(TILE_BOMB_ICON, ICON_BOMB_ART, 'B', 11);     // bomba: corpo
-    buildTile8(TILE_BOMB_ICON, ICON_BOMB_ART, '#', 1);      //   contorno/brilho
-    buildTile8(TILE_BOMB_ICON, ICON_BOMB_ART, 'o', 5);      //   faísca
+    // Itens: desenhos próprios de 8x8, com a mesma identidade dos pickups16x16.
+    // Substituem seis tiles existentes; divisor e servo acrescentam só64 bytes.
+    memcpy(tileBuf + TILE_ICON_HEART * 8, ITEM_HEART_ICON_DATA, sizeof ITEM_HEART_ICON_DATA);
+    memcpy(tileBuf + TILE_BOMB_ICON * 8, ITEM_BOMB_ICON_DATA, sizeof ITEM_BOMB_ICON_DATA);
+    memcpy(tileBuf + TILE_ICON_SHOTS * 8, ITEM_SHOTS_ICON_DATA, sizeof ITEM_SHOTS_ICON_DATA);
+    memcpy(tileBuf + TILE_ICON_SPEED * 8, ITEM_SPEED_ICON_DATA, sizeof ITEM_SPEED_ICON_DATA);
+    memcpy(tileBuf + TILE_ICON_SHIELD * 8, ITEM_SHIELD_ICON_DATA, sizeof ITEM_SHIELD_ICON_DATA);
+    memcpy(tileBuf + TILE_BOLT * 8, ITEM_CHAIN_ICON_DATA, sizeof ITEM_CHAIN_ICON_DATA);
+    memcpy(tileBuf + TILE_ICON_ICE * 8, ITEM_ICE_ICON_DATA, sizeof ITEM_ICE_ICON_DATA);
+    memcpy(tileBuf + TILE_ICON_FIRE * 8, ITEM_FIRE_ICON_DATA, sizeof ITEM_FIRE_ICON_DATA);
 
-    buildTile8(TILE_BOLT, ICON_BOLT_ART, '#', 4);           // raio — amarelo
-
-    // ícones do HUD de objetivo (o coração fica branco quando desenhado com PAL0)
-    buildTile8(TILE_ICON_HEART, ICON_HEART_ART, '#', 3);    // coração (índice 3)
     buildTile8(TILE_CLOCK, ICON_CLOCK_ART, '#', 1);         // relógio claro
     // Santa24x24, indicador e brilho: mesmos11 tiles da antiga antena.
     // Arte indexada exportada; nenhuma paleta, alocação ou peça extra.
@@ -141,17 +145,6 @@ static void buildTiles(void)
             for (u16 xx = 0; xx < 8; xx++)
                 if (((xx + yy) & 1) == 0)
                     tileBuf[(TILE_STATUS + t) * 8 + yy] |= (u32) 2 << ((7 - xx) * 4);
-
-    // ícones do inventário no HUD (escudo, gelo, fogo). Bomba e raio já têm
-    // ícone (TILE_BOMB_ICON / TILE_BOLT).
-    buildTile8(TILE_ICON_SHIELD, ICON_SHIELD_ART, 'b', 15);
-    buildTile8(TILE_ICON_SHIELD, ICON_SHIELD_ART, '#', 1);
-
-    buildTile8(TILE_ICON_ICE, ICON_ICE_ART, 'c', 2);
-
-    buildTile8(TILE_ICON_FIRE, ICON_FIRE_ART, 'r', 3);
-    buildTile8(TILE_ICON_FIRE, ICON_FIRE_ART, 'f', 12);
-    buildTile8(TILE_ICON_FIRE, ICON_FIRE_ART, 'y', 4);
 
     // poça de sangue (verde): quarto de disco denso no canto (0,0); a poça 16x16
     // é montada por 4 cópias espelhadas deste tile (blood.c) → mancha arredondada.

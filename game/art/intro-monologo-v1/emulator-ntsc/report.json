@@ -5,13 +5,13 @@
   "core_fps": 59.92274340431231,
   "input_only": true,
   "game_ram_writes": false,
-  "rom_sha256": "9471d3733b40a85c292845651eaf26532536a54bedeb5435b4920eb47b9b1932",
+  "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8",
   "pal_region_override": false,
-  "frames": 7020,
+  "frames": 8414,
   "shots": [
     {
       "shot": 1,
-      "first_frame": 150,
+      "first_frame": 468,
       "frames": 258,
       "particle_motion_frames": 174,
       "captures": {
@@ -143,7 +143,7 @@
     },
     {
       "shot": 2,
-      "first_frame": 454,
+      "first_frame": 772,
       "frames": 254,
       "particle_motion_frames": 174,
       "captures": {
@@ -275,7 +275,7 @@
     },
     {
       "shot": 3,
-      "first_frame": 757,
+      "first_frame": 1075,
       "frames": 434,
       "particle_motion_frames": 347,
       "captures": {
@@ -407,7 +407,7 @@
     },
     {
       "shot": 4,
-      "first_frame": 1241,
+      "first_frame": 1559,
       "frames": 194,
       "particle_motion_frames": 115,
       "captures": {
@@ -539,7 +539,7 @@
     },
     {
       "shot": 5,
-      "first_frame": 1483,
+      "first_frame": 1801,
       "frames": 374,
       "particle_motion_frames": 289,
       "captures": {
@@ -671,7 +671,7 @@
     },
     {
       "shot": 6,
-      "first_frame": 1907,
+      "first_frame": 2225,
       "frames": 434,
       "particle_motion_frames": 347,
       "captures": {
@@ -803,7 +803,7 @@
     },
     {
       "shot": 7,
-      "first_frame": 2390,
+      "first_frame": 2708,
       "frames": 554,
       "particle_motion_frames": 463,
       "captures": {
@@ -935,7 +935,7 @@
     },
     {
       "shot": 8,
-      "first_frame": 2993,
+      "first_frame": 3311,
       "frames": 494,
       "particle_motion_frames": 404,
       "captures": {
@@ -1067,7 +1067,7 @@
     },
     {
       "shot": 9,
-      "first_frame": 3534,
+      "first_frame": 3852,
       "frames": 556,
       "particle_motion_frames": 463,
       "captures": {
@@ -1199,7 +1199,7 @@
     },
     {
       "shot": 10,
-      "first_frame": 4137,
+      "first_frame": 4455,
       "frames": 378,
       "particle_motion_frames": 289,
       "captures": {
@@ -1331,7 +1331,7 @@
     },
     {
       "shot": 11,
-      "first_frame": 4562,
+      "first_frame": 4880,
       "frames": 613,
       "particle_motion_frames": 520,
       "captures": {
@@ -1463,7 +1463,7 @@
     },
     {
       "shot": 12,
-      "first_frame": 5223,
+      "first_frame": 5541,
       "frames": 257,
       "particle_motion_frames": 174,
       "captures": {
@@ -1594,9 +1594,279 @@
       }
     }
   ],
-  "menu_delay_after_final_fade_seconds": 0.55,
-  "last_shot_to_menu_seconds": 4.833333333333333,
+  "menu_delay_after_final_fade_seconds": 0.5666666666666667,
+  "last_shot_to_menu_seconds": 4.85,
+  "titlecard": {
+    "first_frame": 217,
+    "core_signatures": 5,
+    "captures": [
+      {
+        "file": "title-015",
+        "particles": [
+          {
+            "x": 8,
+            "y": 206,
+            "type": 0
+          },
+          {
+            "x": 63,
+            "y": 20,
+            "type": 1
+          },
+          {
+            "x": 117,
+            "y": 62,
+            "type": 2
+          },
+          {
+            "x": 172,
+            "y": 98,
+            "type": 0
+          },
+          {
+            "x": 226,
+            "y": 131,
+            "type": 1
+          },
+          {
+            "x": 273,
+            "y": 174,
+            "type": 2
+          },
+          {
+            "x": 8,
+            "y": 210,
+            "type": 0
+          },
+          {
+            "x": 62,
+            "y": 26,
+            "type": 1
+          },
+          {
+            "x": 117,
+            "y": 70,
+            "type": 2
+          },
+          {
+            "x": 171,
+            "y": 106,
+            "type": 0
+          },
+          {
+            "x": 218,
+            "y": 137,
+            "type": 1
+          },
+          {
+            "x": 273,
+            "y": 178,
+            "type": 2
+          }
+        ]
+      },
+      {
+        "file": "title-045",
+        "particles": [
+          {
+            "x": 16,
+            "y": 197,
+            "type": 0
+          },
+          {
+            "x": 72,
+            "y": 4,
+            "type": 1
+          },
+          {
+            "x": 128,
+            "y": 51,
+            "type": 2
+          },
+          {
+            "x": 184,
+            "y": 86,
+            "type": 0
+          },
+          {
+            "x": 240,
+            "y": 115,
+            "type": 1
+          },
+          {
+            "x": 281,
+            "y": 164,
+            "type": 2
+          },
+          {
+            "x": 17,
+            "y": 199,
+            "type": 0
+          },
+          {
+            "x": 73,
+            "y": 10,
+            "type": 1
+          },
+          {
+            "x": 129,
+            "y": 61,
+            "type": 2
+          },
+          {
+            "x": 185,
+            "y": 96,
+            "type": 0
+          },
+          {
+            "x": 226,
+            "y": 121,
+            "type": 1
+          },
+          {
+            "x": 282,
+            "y": 166,
+            "type": 2
+          }
+        ]
+      },
+      {
+        "file": "title-075",
+        "particles": [
+          {
+            "x": 24,
+            "y": 188,
+            "type": 0
+          },
+          {
+            "x": 82,
+            "y": 204,
+            "type": 1
+          },
+          {
+            "x": 139,
+            "y": 40,
+            "type": 2
+          },
+          {
+            "x": 197,
+            "y": 74,
+            "type": 0
+          },
+          {
+            "x": 254,
+            "y": 99,
+            "type": 1
+          },
+          {
+            "x": 289,
+            "y": 154,
+            "type": 2
+          },
+          {
+            "x": 27,
+            "y": 188,
+            "type": 0
+          },
+          {
+            "x": 84,
+            "y": 210,
+            "type": 1
+          },
+          {
+            "x": 142,
+            "y": 52,
+            "type": 2
+          },
+          {
+            "x": 199,
+            "y": 86,
+            "type": 0
+          },
+          {
+            "x": 234,
+            "y": 105,
+            "type": 1
+          },
+          {
+            "x": 292,
+            "y": 154,
+            "type": 2
+          }
+        ]
+      },
+      {
+        "file": "title-105",
+        "particles": [
+          {
+            "x": 32,
+            "y": 179,
+            "type": 0
+          },
+          {
+            "x": 91,
+            "y": 188,
+            "type": 1
+          },
+          {
+            "x": 150,
+            "y": 29,
+            "type": 2
+          },
+          {
+            "x": 209,
+            "y": 62,
+            "type": 0
+          },
+          {
+            "x": 268,
+            "y": 83,
+            "type": 1
+          },
+          {
+            "x": 297,
+            "y": 144,
+            "type": 2
+          },
+          {
+            "x": 36,
+            "y": 177,
+            "type": 0
+          },
+          {
+            "x": 95,
+            "y": 194,
+            "type": 1
+          },
+          {
+            "x": 154,
+            "y": 43,
+            "type": 2
+          },
+          {
+            "x": 213,
+            "y": 76,
+            "type": 0
+          },
+          {
+            "x": 242,
+            "y": 89,
+            "type": 1
+          },
+          {
+            "x": 301,
+            "y": 142,
+            "type": 2
+          }
+        ]
+      }
+    ]
+  },
   "checks": [
+    "developer logo > APRESENTA > option B > monologue",
+    "title core pulses",
+    "card skip and held input boundaries",
+    "title particles move <=1px/frame",
     "all 12 shots play automatically",
     "centered white captions",
     "12 dust/ember/soot sprites move <=1px/frame",
@@ -1608,6 +1878,7 @@
     "START skip first and middle shot",
     "held START does not start game",
     "title after natural playback and skip",
+    "menu logo survives help/gallery/gameplay return",
     "gallery Dami\u00e3o and Dinorah after intro",
     "mission call without repeated monologue",
     "phase 1 starts",

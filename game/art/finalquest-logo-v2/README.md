@@ -24,15 +24,15 @@ A [comparação com capturas PAL/NTSC](../intro-monologo-v1/pixel-validation.jso
 
 ## Crédito no menu inicial
 
-![FinalQuest no canto inferior direito](../menu-logo-v1/menu-3x.png)
+![FinalQuest no canto inferior direito](menu-credit-screen-3x.png)
 
 O menu mantém a marca em **56×40 pixels**, em x256/y176, com margem externa de 8 pixels e a redução de 30% solicitada. O desenho recupera o controle inclinado original, seu corpo branco, direcional com quatro pontos, botões, aros e exclamação laranja. O nome usa a versão com mais definição aprovada pelo usuário: F!nalQuest com letras de 7 pixels na grade nativa, branco sólido, exclamação laranja de 2 pixels de largura e contorno escuro de 1 pixel. O fundo externo é transparente; as áreas pretas internas continuam opacas.
 
 A nova [arte de menu](originals/finalquest-menu-faithful-v4.png) foi recriada com **image_gen integrado**, tomando a marca original e a reconstrução de corpo branco como referências. O [prompt](prompt-menu-faithful-v4.txt) especifica o destino de 56×40 pixels, as proporções e os contornos da marca. O controle mantém os pixels da arte aprovada. O exportador substitui apenas a área do nome pelo letreiro nativo de 7 pixels, restaurado a pedido do usuário. A fonte da abertura permanece a versão aprovada de corpo branco.
 
-O [exportador](export_menu_logo.py) converte a arte diretamente para o arquivo nativo de 56×40, usando uma moldura interna de 50×36 pixels. São **30 tiles únicos / 960 bytes**, nos índices 1341..1370, após o título PLAGUEFALL e antes da fonte em 1440. A marca usa PAL0 e preserva o branco do texto no índice 15. A saída do menu restaura a paleta do jogo; ajuda, galeria e partida recarregam o crédito ao retornar.
+O [exportador](export_menu_logo.py) converte a arte diretamente para o arquivo nativo de 56×40, usando uma moldura interna de 50×36 pixels. São **30 tiles únicos / 960 bytes**, nos índices 1343..1372, após o título PLAGUEFALL e antes da fonte em 1440. A marca usa PAL0 e preserva o branco do texto no índice 15. A saída do menu restaura a paleta do jogo; ajuda, galeria e partida recarregam o crédito ao retornar.
 
-[Imagem nativa](menu-credit-native.png) e [metadados de exportação](menu-credit-export.json). A compilação isolada e dez capturas reais PAL/NTSC conferiram os logos após reprodução, pulo da abertura e retorno de partida, galeria e ajuda.
+[Imagem nativa](menu-credit-native.png), [captura do menu](menu-credit-screen.png), [exportação](menu-credit-export.json), [pixels conferidos](menu-credit-validation.json) e [compilação](menu-credit-build-validation.json). Dez capturas reais PAL/NTSC verificam a marca e seu fundo após reprodução, pulo da abertura e retorno de partida, galeria e ajuda.
 
 ```sh
 python3 game/art/finalquest-logo-v2/export_menu_logo.py --check

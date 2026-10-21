@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "region": "ntsc",
+      "non_core_art_mismatches": 0,
+      "pulse_states": 5,
+      "captures": 4
+    },
+    {
+      "region": "pal",
+      "non_core_art_mismatches": 0,
+      "pulse_states": 5,
+      "captures": 4
+    }
+  ],
+  "core_pixels": 715,
+  "method": "Exact RGB565-expanded native art outside reserved core inks and 12 particle sprites"
+}

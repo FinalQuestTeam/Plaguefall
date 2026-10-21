@@ -56,7 +56,9 @@
 #define TILE_SAINT      72  // 9 tiles24x24 — Nossa Senhora Aparecida
 #define TILE_ICON_SAINT 81  // 1 tile8x8 — indicador no HUD
 #define TILE_SAINT_GLOW 82  // 1 tile8x8 — brilho da coroa, overlay existente
-#define NUM_TILES       83
+#define TILE_ICON_SHOTS 83  // divisor (objetivo COLETAR)
+#define TILE_ICON_SPEED 84  // servo (objetivo COLETAR)
+#define NUM_TILES       85
 
 // Streamed enemy animation cache followed by independent menu icons.
 #define ENEMY_ROT_BASE  NUM_TILES

@@ -1,11 +1,11 @@
 {
   "passed": true,
   "rom_bytes": 917504,
-  "rom_sha256": "3352c4a7e338477a97e9b0b001c64af9e9d9026c7f6c09537e66d1dc49fdd223",
-  "text_bytes": 811024,
-  "data_bytes": 88,
-  "bss_bytes": 6088,
-  "static_ram_bytes": 6176,
+  "rom_sha256": "1fe42402f1cbbae368559290b3d76343640b6a0a237962fa97b8efd4466f9fa9",
+  "text_bytes": 830348,
+  "data_bytes": 128,
+  "bss_bytes": 6082,
+  "static_ram_bytes": 6210,
   "gallery_characters": [
     "DAMIAO",
     "DINORAH"
@@ -17,5 +17,35 @@
   "shared_palette_matches_damiao": true,
   "old_mechs_linked": false,
   "emulator_report": "emulator/report.json",
-  "pixel_validation": "pixel-validation.json"
+  "pixel_validation": "pixel-validation.json",
+  "rom_path": "../../out/release/rom.bin",
+  "gallery_tabs": [
+    "DAMIAO",
+    "DINORAH",
+    "MUSICAS"
+  ],
+  "music_tracks": [
+    "BAIAO DE FERRUGEM",
+    "ENTARDECER",
+    "BREU",
+    "LADAINHA DE FERRO"
+  ],
+  "music_track_count": 4,
+  "music_tab_new_art_tiles": 0,
+  "music_tab_dynamic_allocation": false,
+  "music_preview_saved_state_bytes": 46,
+  "music_preview_restores": [
+    "track",
+    "position",
+    "tempo",
+    "threat ramp",
+    "voice envelopes"
+  ],
+  "music_emulator_reports": [
+    "assets-player/ntsc/report.json",
+    "assets-player/pal/report.json"
+  ],
+  "music_native_checks": "ASan/UBSan passed for all three default profiles; all four runtime tracks and exact preview restoration",
+  "menu_label": "ASSETS",
+  "current_validation": "../../doc/build-validation.json"
 }

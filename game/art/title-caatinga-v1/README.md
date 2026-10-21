@@ -15,7 +15,7 @@ Criada com **image_gen integrado**, usando os concepts aprovados dos três perso
 - [Logo reconstruído capturado no emulador](../intro-monologo-v1/emulator-ntsc/logo-2x.png).
 - [ROM atual](../../out/release/rom.bin).
 
-O menu oferece **NOVO JOGO / COMO JOGAR / PERSONAGENS / FASE TESTE**. O subtítulo ARENA SHOOTER foi removido. Todo o texto fica à esquerda em branco, incluindo o título e o cursor `>` que identifica a opção selecionada. A arte usa PAL1 e PAL2, com uma paleta de16 cores por tile e23 cores RGB efetivamente presentes nesta exportação. O texto usa PAL0; as paletas do jogo são restauradas ao sair do menu.
+O menu oferece **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**. O subtítulo ARENA SHOOTER foi removido. Todo o texto fica à esquerda em branco, incluindo o título e o cursor `>` que identifica a opção selecionada. A arte usa PAL1 e PAL2, com uma paleta de16 cores por tile e23 cores RGB efetivamente presentes nesta exportação. O texto usa PAL0; as paletas do jogo são restauradas ao sair do menu.
 
 A tela continua usando1120 tiles /35840 bytes temporários de VRAM. A conversão agrupa tiles entre duas paletas e aproxima as cores aos oito níveis RGB do hardware. O exportador já empacota os pixels em palavras4bpp; `TITLEBG_load` faz DMA direto da ROM, eliminando a montagem pixel a pixel e o buffer temporário na chegada ao menu. A imagem nativa permanece idêntica. Redimensionamento e quantização são técnicos; o script não desenha personagens, cactos ou insetos.
 

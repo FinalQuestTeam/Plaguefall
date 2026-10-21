@@ -1,6 +1,6 @@
 # tri_orange — Adaga
 
-Definição: [`tri_orange.c`](../../../../src/enemies/defs/tri_orange.c).
+Definição: [`tri_orange.c`](../../../../../src/enemies/defs/tri_orange.c).
 
 - Tipo: `ENEMY_TRI_ORG` = `7`.
 - Dados: `ENEMYDEF_tri_orange`.

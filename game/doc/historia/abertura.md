@@ -33,11 +33,11 @@ O primeiro som seria uma transmissão de pouso interrompida por estática. Uma p
 
 “... É. agora tô assim” apresenta o corpo inteiro de Damião: rosto exposto, chapéu metálico, braço esquerdo cibernético, tecido e placas recuperadas. O contraste é entre a promessa de acesso ao espaço e o trabalhador que ficou recolhendo os destroços dela.
 
-O [storyboard em 12 planos](storyboard-abertura.md) já foi integrado à ROM como [abertura animada](../../art/intro-monologo-v1/README.md), entre o logo FinalQuest e o menu. Usa as imagens das pranchas com recortes próprios para 320×176, enquadramento estável, fades e legendas brancas centralizadas sobre preto. A borda inferior da arte escurece gradualmente; poeira, brasa e fuligem se movem sobre a imagem com câmera fixa; não há nome, contador nem instruções na tela. O áudio reaproveita a música existente e um breve chiado de rádio; as falas são apresentadas em texto.
+O [storyboard em 12 planos](storyboard-abertura.md) já foi integrado à ROM como [abertura animada](../../art/intro-monologo-v1/README.md), entre o logo FinalQuest e o menu. Usa as imagens das pranchas com recortes próprios para 320×176, enquadramento estável, fades e legendas brancas centralizadas sobre preto. A borda inferior da arte escurece gradualmente; poeira, brasa e fuligem se movem sobre a imagem com câmera fixa; não há nome, contador nem instruções na tela. O áudio usa a trilha original [O Sonho Atendido](../../art/audio-abertura-v2/README.md), contínua desde a aparição do logo Plaguefall até o fim do monólogo, sem resets ou fades de áudio entre imagens; as falas são apresentadas em texto.
 
 ## Versão da ROM
 
-O monólogo completo acima toca uma vez no boot, nos 12 planos, com aproximadamente 1min30s de reprodução automática incluindo as trocas de imagem. A duração de cada plano considera 50 ou 60Hz. A completa o texto em curso; um novo toque avança ao próximo plano com fade. START pula a sequência inteira. Segurar um botão não dispara novos avanços nem inicia a partida no menu.
+O monólogo completo acima toca uma vez no boot, nos 12 planos, com aproximadamente 1min30s de reprodução automática incluindo as trocas de imagem. A duração de cada plano considera 50 ou 60Hz. A, B e C não completam legendas nem avançam planos. Somente START pula a sequência inteira, também a partir de APRESENTA ou do logo Plaguefall. Segurar START não inicia a partida no menu.
 
 Antes de `N_1`, a cena `abertura` de `levels/story.c` mantém apenas as duas falas de missão, evitando repetir o monólogo:
 

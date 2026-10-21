@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8",
+  "rom_bytes": 917504,
+  "text_bytes": 834448,
+  "data_bytes": 128,
+  "bss_bytes": 6122,
+  "menu_logo_tiles": 122,
+  "menu_logo_tile_range": [
+    1221,
+    1342
+  ],
+  "finalquest_tiles": 30,
+  "finalquest_tile_range": [
+    1343,
+    1372
+  ],
+  "font_first_tile": 1440,
+  "finalquest_canvas": [
+    56,
+    40
+  ],
+  "plaguefall_canvas": [
+    128,
+    88
+  ],
+  "finalquest_original_identity_restored": true,
+  "menu_art_recreated_with_imagegen": true,
+  "checks": [
+    "both exports reproducible",
+    "10 exact menu captures in PAL/NTSC",
+    "help, gallery and gameplay return",
+    "48 intro backgrounds and 24 complete captions"
+  ],
+  "finalquest_wordmark_native_height": 7,
+  "finalquest_controller_pixels_preserved": true,
+  "wordmark": "F!nalQuest",
+  "orange_exclamation": true
+}

@@ -1,6 +1,6 @@
 # dummy — Dummy
 
-Definição: [`dummy.c`](../../../../src/enemies/defs/dummy.c).
+Definição: [`dummy.c`](../../../../../src/enemies/defs/dummy.c).
 
 - Tipo: `ENEMY_DUMMY` = `12`.
 - Dados: `ENEMYDEF_dummy`.

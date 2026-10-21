@@ -5,7 +5,7 @@
 
 const ItemDef ITEMDEF_speed =
 {
-    .name       = "VELOCIDADE",
+    .name       = "SERVO DE PASSADA",
     .weight     = 10,
     .tile       = TILE_BOOT,
     .buildTile  = ITEMSPEED_buildTile,

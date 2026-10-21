@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8",
+  "rom_bytes": 917504,
+  "position": [
+    256,
+    176
+  ],
+  "size": [
+    56,
+    40
+  ],
+  "transparent_index": 0,
+  "checks": [
+    {
+      "region": "ntsc",
+      "returned_from": "natural",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "ntsc",
+      "returned_from": "skip",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "ntsc",
+      "returned_from": "game",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "ntsc",
+      "returned_from": "gallery",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "ntsc",
+      "returned_from": "help",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "pal",
+      "returned_from": "natural",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "pal",
+      "returned_from": "skip",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "pal",
+      "returned_from": "game",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "pal",
+      "returned_from": "gallery",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    },
+    {
+      "region": "pal",
+      "returned_from": "help",
+      "pixel_mismatches": 0,
+      "rom_sha256": "60a83f09a506862d68b8d773df24214f1864bc11213d289c6a9aedea2fc397d8"
+    }
+  ]
+}

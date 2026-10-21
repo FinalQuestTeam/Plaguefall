@@ -1,6 +1,6 @@
 # tri_red — Fuzileiro
 
-Definição: [`tri_red.c`](../../../../src/enemies/defs/tri_red.c).
+Definição: [`tri_red.c`](../../../../../src/enemies/defs/tri_red.c).
 
 - Tipo: `ENEMY_TRI_RED` = `4`.
 - Dados: `ENEMYDEF_tri_red`.

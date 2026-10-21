@@ -55,7 +55,7 @@ static bool skipPressed(void)
     const u16 joy = JOY_readJoypad(JOY_1);
     const u16 pressed = joy & ~joyPrev;
     joyPrev = joy;
-    return (pressed & (BUTTON_START | BUTTON_A | BUTTON_B | BUTTON_C)) != 0;
+    return (pressed & BUTTON_START) != 0;
 }
 
 static bool pump(u16 n)

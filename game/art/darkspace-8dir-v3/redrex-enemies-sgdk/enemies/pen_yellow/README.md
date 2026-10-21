@@ -1,6 +1,6 @@
 # pen_yellow — Alcateia
 
-Definição: [`pen_yellow.c`](../../../../src/enemies/defs/pen_yellow.c).
+Definição: [`pen_yellow.c`](../../../../../src/enemies/defs/pen_yellow.c).
 
 - Tipo: `ENEMY_PEN_YEL` = `9`.
 - Dados: `ENEMYDEF_pen_yellow`.

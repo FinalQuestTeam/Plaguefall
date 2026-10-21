@@ -5,7 +5,7 @@
 
 const ItemDef ITEMDEF_heart =
 {
-    .name       = "VIDA",
+    .name       = "MARMITA DO ABRIGO",
     .weight     = 40,
     .tile       = TILE_HEART,
     .buildTile  = ITEMHEART_buildTile,

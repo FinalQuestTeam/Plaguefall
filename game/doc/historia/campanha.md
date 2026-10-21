@@ -1,73 +1,54 @@
-# Campanha — um caminho de volta ao chão
+# Campanha proposta e consequências das rotas
 
-## Estrutura existente
+O novo fluxo liga a fuga da igreja, a tentativa de resgate e a destruição dos ninhos de São Jerônimo. Mantém os 20 nós e as 16 fases por partida do grafo atual. A versão extensa, com cenas e diálogos, está em [Fluxo proposto da história](tratamento-proposto.md). Os acontecimentos desta revisão ainda precisam ser adaptados ao roteiro da ROM.
 
-O grafo tem 20 nós e cada partida atravessa 16 fases: quatro etapas possuem versões A/B que voltam ao caminho comum. As decisões são tomadas pelas condições de `levels/graph.c`, sem menu de escolha narrativa. Os nomes de lugar abaixo orientam as falas e a arte futura; a preparação continua mostrando os números das fases.
+## Progressão das fases
 
-Todas as cenas de chegada são registradas em `levels/story.c`. Há também uma cena depois da 15 e o final depois da 16. Cenas comuns não lembram uma rota específica depois da convergência: o motor atual não escolhe falas por histórico completo.
-
-## Ato 1 — promessa de céu, vida no chão
-
-Damião contém a primeira incursão, atravessa os terrenos industriais e recebe uma tarefa que torna concreta a razão de lutar: proteger um ponto de encontro da comunidade.
-
-| Nó | Lugar proposto | Objetivo atual | Função da cena |
+| Fase | Lugar e ação narrativa | Objetivo jogável atual | Consequência ou próximo passo |
 |---|---|---|---|
-| 1 | Pátio de retorno | Eliminar 10 | Abertura do Diabo; segurar passagem enquanto há gente fugindo |
-| 2A | Rua de serviço | Eliminar 12, sem lama | Sem bomba na 1: Comando ainda consegue encaminhar Damião pelo acesso direto |
-| 2B | Baixio do terminal | Eliminar 12, lama | Usou bomba na 1: o clarão denunciou a posição; Comando indica outro caminho |
-| 3 | Sangria dos motores | Eliminar 14, lava | O pouso que era espetáculo deixa vazamento e perigo no chão |
-| 4 | Canal de manutenção | Eliminar 16, lama | Os bichos usam a infraestrutura que Damião ajudava a manter |
-| 5 | Capela do baixio | Proteger a santa por 30 s | Sustentar o ponto de rádio durante uma transmissão da resistência |
+| 1 | Pátio atrás da igreja; Damião protege a fuga organizada por Dinorah e pelo padre | Eliminar 10 | Sem bomba → igreja poupada, 2A; com bomba → destruição parcial, 2B |
+| 2A | Rua de serviço; todos fugiram e os suprimentos foram retirados | Eliminar 12 | O grupo alcança o novo abrigo; confiança de Dinorah reforçada |
+| 2B | Baixio; os destroços impedem o acesso direto | Eliminar 12, lama | O grupo alcança o novo abrigo; perda de materiais e discussão sobre a explosão |
+| 3 | Pátio térmico do abrigo de manutenção; defender os acessos enquanto o padre procura um caminho | Eliminar 14, lava | Encontrar uma saída para a plataforma de evacuação |
+| 4 | Túneis de manutenção; Damião vai na frente para abrir a passagem | Eliminar 16, lama | Os refugiados podem alcançar a plataforma |
+| 5 | Plataforma; proteger o sinalizador escondido na santa | Proteger por 30 s | Sinal confirmado → 6A; sinalizador destruído → 6B |
+| 6A | Perímetro de embarque; cobrir a partida das naves humanas de resgate | Eliminar 20, lava | Refugiados resgatados; Damião e Dinorah planejam investigar os ninhos |
+| 6B | Corredor da retirada; cobrir a saída por terra após o resgate abortado | Eliminar 20, lava e spawn mais rápido | Dinorah briga com Damião, o padre tenta intervir e ela parte com os refugiados |
+| 7 | Baixio das antenas; seguir os rastros que convergem para a base | Eliminar 22, lama e duplas | Na 6A, Dinorah ajuda; na 6B, Damião investiga com o padre no rádio |
+| 8 | Fornalha; descobrir os ninhos nos sistemas de resfriamento | Eliminar 24, lava e duplas | Os dutos conectam os criadouros locais e oferecem um meio de destruí-los |
+| 9 | Alfândega ocupada; romper a defesa das elites | Eliminar 24 | Sem perder HP → 10A; perdeu HP → 10B |
+| 10A | Acesso dos técnicos; localizar o depósito industrial | Eliminar 26, lama | Chegar ao setor de demolição |
+| 10B | Dreno térmico; entrar pelo subsolo e localizar o mesmo depósito | Eliminar 26, lava e lama | Chegar ao setor de demolição |
+| 11 | Depósito; obter cargas e descobrir que os alertas foram ignorados pelo Consórcio | Eliminar 28, lava e lama | Preparar a demolição dos acessos que alimentam os ninhos |
+| 12 | Comporta; romper o bloqueio antes do fechamento automático | Eliminar 30, lava e lama | Menos de 60 s → 13A; 60 s ou mais → 13B |
+| 13A | Linha quente; aproveitar o acesso direto | Eliminar 34, lava | Alcançar as galerias |
+| 13B | Decantação; contornar a comporta fechada | Eliminar 34, lama | Alcançar as mesmas galerias |
+| 14 | Pátio dos enxames; enfrentar a concentração de defensores | Eliminar 37, lava e lama, trios | Identificar Lacraia como a matriz que bloqueia os pontos das cargas |
+| 15 | Boca das galerias; romper o último bloqueio e confirmar a retirada dos refugiados | Eliminar 40, lava e lama, trios | Conferir explosivos e rota de saída de Damião |
+| 16 | Câmara central; derrotar Lacraia para conseguir instalar as cargas nos ninhos | Derrotar o chefe, piso de caverna | Cena de instalação das cargas, fuga e detonação |
 
-A bifurcação da bomba representa mudança de situação, sem presumir que o jogador destruiu uma ponte ou matou alguém. A rota A não é prêmio moral e a B não é pecado: ambas continuam a mesma operação.
+## Estados que permanecem após as convergências
 
-## Ato 2 — o que merece ser salvo
+O resultado da igreja e o resultado do resgate são independentes. Há quatro combinações de resultados: igreja poupada e resgate realizado; igreja danificada e resgate realizado; igreja poupada e resgate falho; igreja danificada e resgate falho. A mesma bifurcação 6A/6B pode acontecer depois de qualquer versão da fase 2.
 
-A operação sai da defesa do abrigo e procura a instalação que mantém os ninhos em funcionamento. Damião reconhece o elo entre as cargas que consertava e a ocupação.
+O estado da igreja aparece nas falas sobre recursos do abrigo, nas lembranças da explosão, no cuidado ao preparar as cargas e na imagem final. A santa foi retirada pelo padre durante a fuga inicial; sua presença na fase 5 não depende de a igreja permanecer intacta.
 
-| Nó | Lugar proposto | Objetivo atual | Função da cena |
-|---|---|---|---|
-| 6A | Fundos da capela | Eliminar 20, lava | O ponto resistiu; Comando ouviu respostas de outros abrigos |
-| 6B | Corredor da retirada | Eliminar 20, lava, spawns mais rápidos | A santa/estação caiu; reconhecer a perda e seguir pela passagem sob cerco |
-| 7 | Baixio das antenas | Eliminar 22, lama, duplas | Dinorah entra pelo rádio: outras vozes mantêm a rede, em qualquer rota |
-| 8 | Fornalha de retorno | Eliminar 24, lava, duplas | Revelar que o carregamento dos foguetes alimentava os ninhos |
-| 9 | Alfândega automática | Eliminar 24, entrada das elites | A colmeia incorporou equipamento humano; aproximar a matriz |
-| 10A | Acesso dos técnicos | Eliminar 26, lama | Sem dano na 9: Damião está em condição de seguir o acesso de manutenção |
-| 10B | Dreno térmico | Eliminar 26, lava e lama | Sofreu dano na 9: Comando o conduz pelo dreno para sair do cerco |
-| 11 | Casa das bombas | Eliminar 28, lava e lama | A denúncia central: o alerta já existia e as entregas continuaram |
-| 12 | Comporta de carga | Eliminar 30, lava e lama | Os teleportadores apertam o cerco; tentar alcançar a próxima passagem a tempo |
+O resultado do resgate determina quem acompanha a investigação. Em 6A, Dinorah permanece e colabora por rádio. Em 6B, ela parte com o povo, e o padre mantém Damião informado durante a retirada. As fases comuns precisam de falas que respeitem essa ausência. O êxito final não provoca uma reconciliação automática.
 
-A sobrevivência de Damião não apaga a perda da capela. A rota 6B não afirma uma morte humana que o jogo não mostra. A cena da 7 não declara que a estação anterior continua funcionando.
+Dano na fase 9 e tempo na fase 12 alteram a aproximação da base. Não curam a relação entre os personagens nem mudam o resgate já ocorrido. A janela de 60 segundos da comporta deve ser comunicada antes da fase 12.
 
-## Ato 3 — ninguém sobe sozinho
+## Encerramento comum e diferenças do percurso
 
-Damião chega ao núcleo local da ocupação. Lacraia oferece a imagem perversa da viagem que ele desejava: ser transportado como parte da carga. Ele recusa porque agora sabe para quem precisa voltar.
+Lacraia precisa cair para Damião alcançar os pontos de instalação. Em seguida, ele coloca as cargas recuperadas na base, sai pelo túnel e detona os ninhos. As cargas fazem parte da missão e não dependem do estoque de bombas do jogador.
 
-| Nó | Lugar proposto | Objetivo atual | Função da cena |
-|---|---|---|---|
-| 13A | Linha quente | Eliminar 34, lava | Venceu a 12 em menos de 60 s: alcançou a passagem direta antes do fechamento |
-| 13B | Canal de decantação | Eliminar 34, lama | Levou 60 s ou mais: perdeu a janela e atravessa o canal sob a mesma pressão de spawn |
-| 14 | Pátio dos enxames | Eliminar 37, lava e lama, trios | A matriz detecta o avanço; manter a tarefa concreta de abrir caminho |
-| 15 | Boca do terminal | Eliminar 40, lava e lama, trios | Último bloqueio; depois da vitória, Comando localiza Lacraia |
-| 16 | Ninho sob o porto | Derrotar Lacraia, piso de caverna | Confronto, recusa de virar carga e interrupção do comando local |
+Uma passagem de alguns dias mostra a eliminação dos insetos isolados e confirma a libertação da região. O planeta continua ocupado, com pedidos de ajuda chegando pelo rádio.
 
-A “comporta” dá contexto à condição de tempo; não há porta animada ou contador adicional. O teleporte dos inimigos continua o comportamento existente. A matriz cair não elimina automaticamente todos os inimigos do Brasil.
+Na rota 6A, o povo retorna do posto de resgate e Dinorah participa dos preparativos com Damião. Na 6B, a caravana chega por terra e o afastamento de Dinorah permanece. A igreja aparece inteira ou parcialmente destruída conforme o resultado da fase 1. Todos os percursos terminam com São Jerônimo livre.
 
-## Encerramento
+## Correspondência com a implementação atual
 
-Damião confirma a queda da matriz. Comando chama o sobrevivente de volta. Ele fecha a ideia da abertura: ainda queria ver o mundo de cima, mas primeiro precisa garantir que alguém possa continuar vivendo embaixo.
+O [levantamento das fases](auditoria-fases.md) registra os objetivos e as condições já implementados. A defesa da fase 3 continua representada pela eliminação dos inimigos nos acessos; não pressupõe um segundo NPC para proteger. Resgate, dano à igreja, aquisição das cargas e demolição são acontecimentos para as cenas da nova versão.
 
-O final não depende de qual rota foi tomada. “Voltar para casa” significa voltar à comunidade, mesmo se a capela foi perdida. Uma futura continuação pode mostrar recuperação de água, reparo de implantes e outros núcleos de ocupação; esta campanha termina com uma vitória local completa.
+O seletor atual usa nó e momento, sem variar cenas comuns por resultados anteriores. Será necessário consultar as rotas visitadas ou registrar os dois estados narrativos e selecionar suas versões de diálogo. A fase 7 atual faz Dinorah falar incondicionalmente e deverá ser adaptada.
 
-## Correspondência com a implementação
-
-| Elemento disponível | Uso narrativo nesta revisão |
-|---|---|
-| `P_DAMIAO`, `P_COMANDO`, `P_LACRAIA`, `P_DINORAH` | Damião, Comando (padre) e Dinorah usam os concepts; Lacraia preserva a arte anterior |
-| `ANTES` por nó | Cenas das rotas A e B recebem contexto próprio |
-| `DEPOIS` em 15 e 16 | Preparação do confronto e encerramento único |
-| `NPC` estático com HP | Santa e estação no mesmo ponto de proteção |
-| Uso de bomba / dano / falha / tempo | Condições exatas das quatro bifurcações, sem novas variáveis |
-| Lava / lama / caverna | Setores térmicos, canais e ninho, com a arte atual |
-
-Não adicionar uma cena de sucesso em `N_5, DEPOIS`: esse momento também pode ser alcançado na falha roteada. A distinção fica nas chegadas a `N_6A` e `N_6B`. Não escrever um epílogo condicional sem antes implementar memória e seleção próprias para isso.
+A queda da santa na fase 5 está bloqueada pelos valores atuais de vida e invulnerabilidade. A rota 6B precisa de ajuste de balanceamento para ser alcançável. Uma cena DEPOIS da fase 5 deve tratar separadamente sucesso e falha, pois ambos passam por esse momento do fluxo.

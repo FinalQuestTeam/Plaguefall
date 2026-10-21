@@ -5,7 +5,7 @@
 
 const ItemDef ITEMDEF_shield =
 {
-    .name       = "ESCUDO",
+    .name       = "CAPACITOR DE PROTECAO",
     .weight     = 5,
     .tile       = TILE_SHIELD,
     .buildTile  = ITEMSHIELD_buildTile,

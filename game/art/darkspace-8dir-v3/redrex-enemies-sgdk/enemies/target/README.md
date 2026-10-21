@@ -1,6 +1,6 @@
 # target — Alvo
 
-Definição: [`target.c`](../../../../src/enemies/defs/target.c).
+Definição: [`target.c`](../../../../../src/enemies/defs/target.c).
 
 - Tipo: `ENEMY_TARGET` = `13`.
 - Dados: `ENEMYDEF_target`.

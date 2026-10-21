@@ -1,0 +1,95 @@
+{
+  "track": "Baião de Ferrugem — Breu",
+  "variant": "sombrio",
+  "tonal_direction": "D minor / phrygian colour; altered dominant",
+  "default_bpm": {
+    "calm": 75,
+    "combat": 112.5
+  },
+  "previous_two_versions_preserved": true,
+  "default_and_melancholic_roms_unchanged": true,
+  "capture": "Genesis Plus GX running the production score/engine in the music-test ROM; controller input only",
+  "postprocessing": "MP3 encoding only",
+  "native_tests": "All three profiles passed ASan/UBSan: PAL/NTSC timing, loops, envelopes, SFX arbitration, resumption and silence. Breu: 50 calm / 75 hot steps in 10 seconds.",
+  "recordings": {
+    "breu-calmo": {
+      "enemies": 0,
+      "sample_rate": 44100,
+      "seconds": 26.033514739229027,
+      "rms": 0.02286295966720726,
+      "peak": 0.12603759765625,
+      "wav_sha256": "0665a42bfd72a068364cbd53a30d319ddc09c050edac2a0553044d6193e69894",
+      "mp3_sha256": "49ac484d2bd4d1049f88611751d17c8a3a7d9a5d84ad27dfb5b0714ef9e8fc10"
+    },
+    "breu-combate": {
+      "enemies": 15,
+      "sample_rate": 44100,
+      "seconds": 18.023197278911564,
+      "rms": 0.02443573084850856,
+      "peak": 0.144775390625,
+      "wav_sha256": "4aad4b81b9608123dd60715921b510942699319e2e317afb506a0698b4c5ae97",
+      "mp3_sha256": "fcaf25ec7aa73109d76de0a3a4275d3b2265871d67147329b8915deb07416ee2"
+    }
+  },
+  "rom_sha256": {
+    "game": "7ad7dea25ea5b7cb0bc2d21184b32033c0a765ad206d1b7456a385bdd2aa54fa",
+    "bench": "ce8d407d0331ddaf5a6b4dbf7c045fd60605348d9f7535734caa761c44aca048"
+  },
+  "pal_audio_capture_passed": true,
+  "game_emulator_checks": {
+    "ntsc": {
+      "passed": true,
+      "fps": 60,
+      "frames": 8408,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "card skip and held input boundaries",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A completes then advances",
+        "held A has no repeat",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    },
+    "pal": {
+      "passed": true,
+      "fps": 50,
+      "frames": 7004,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "card skip and held input boundaries",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A completes then advances",
+        "held A has no repeat",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    }
+  }
+}

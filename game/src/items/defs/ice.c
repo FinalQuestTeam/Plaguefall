@@ -6,7 +6,7 @@
 
 const ItemDef ITEMDEF_ice =
 {
-    .name       = "GELO",
+    .name       = "REFIL DE ARREFECIMENTO",
     .weight     = 5,
     .tile       = TILE_ICE,
     .buildTile  = ITEMICE_buildTile,

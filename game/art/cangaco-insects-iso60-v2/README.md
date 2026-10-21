@@ -4,7 +4,7 @@
 
 Treze inimigos com perspectiva elevada refeita, mantendo nomes e IDs do projeto. Serra-pau, mutuca, saúva-soldado e escorpião continuam orgânicos, com placas reaproveitadas e implantes discretos.
 
-- [Baixar os 13 inimigos: PNGs, paleta, recursos SGDK, prévias e relatórios](redrex-cangaco-insects-iso60-v2-sgdk.zip).
+- [Baixar os 13 inimigos: PNGs, paleta, recursos SGDK, prévias e relatórios](.).
 - [Declarações de recurso SGDK separadas](enemies.res).
 - [Paleta compartilhada PAL1](palette.json) / [paleta GIMP](palette.gpl).
 - [Revisão por personagem e todas as poses nativas](../camera-60-redraw-v2/README.md).

@@ -5,7 +5,7 @@
 
 const ItemDef ITEMDEF_bomb =
 {
-    .name       = "BOMBA",
+    .name       = "CARGA DE DESMONTE",
     .weight     = 20,
     .tile       = TILE_BOMB,
     .buildTile  = ITEMBOMB_buildTile,

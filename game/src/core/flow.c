@@ -9,6 +9,7 @@
 #include "system/video/screens/title.h"
 #include "system/video/screens/splash.h"
 #include "system/video/screens/intro.h"
+#include "system/video/screens/titlecard.h"
 #include "system/video/tilegen.h"
 #include "system/video/spritelist.h"
 #include "system/video/chars.h"
@@ -331,7 +332,8 @@ void FLOW_run(void)
     ENEMY_CD = fps * 2;
 
     SPLASH_run();               // abertura: logo da desenvolvedora (sem música ainda)
-    INTRO_run();                // monologo ilustrado: uma vez no boot, antes do menu
+    if (!TITLECARD_run())       // START skips from APRESENTA or the Plaguefall logo
+        INTRO_run();                // monologo ilustrado: uma vez no boot, antes do menu
 
     // tiles e paleta dos objetos (uma vez; título/pausa usam texto em PAL0).
     // A arte dos inimigos é gerada POR FASE (LEVEL_loadGfx), não aqui — start

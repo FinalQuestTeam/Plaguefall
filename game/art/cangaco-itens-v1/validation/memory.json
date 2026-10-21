@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "rom_path": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/itens/rom.bin",
+  "rom_bytes": 786432,
+  "rom_sha256": "cdd410b162e755176c71f20df8b62079cb437ff7b693f4e8dd7fcd230d15b966",
+  "rom_header_last_address": 1048575,
+  "rom_supported_max_bytes": 4194304,
+  "rom_linked_text_bytes": 776264,
+  "ram_initialized_bytes": 88,
+  "ram_bss_bytes": 6071,
+  "item_extra_persistent_ram_bytes": 0,
+  "boot_tile_buffer_bytes_before": 2656,
+  "boot_tile_buffer_bytes_after": 2720,
+  "item_extra_vram_bytes": 64,
+  "new_hardware_sprites": 0,
+  "extra_per_frame_DMA_bytes": 0,
+  "palette": "unchanged PAL1",
+  "fixed_tiles": 85,
+  "vram_regions": [
+    {
+      "name": "fixed gameplay",
+      "base_tile": 16,
+      "tiles": 85
+    },
+    {
+      "name": "enemy streaming cache",
+      "base_tile": 101,
+      "tiles": 320
+    },
+    {
+      "name": "enemy menu icons",
+      "base_tile": 421,
+      "tiles": 240
+    },
+    {
+      "name": "boss scratch",
+      "base_tile": 661,
+      "tiles": 72
+    },
+    {
+      "name": "player reservation",
+      "base_tile": 733,
+      "tiles": 48
+    },
+    {
+      "name": "floor variants",
+      "base_tile": 781,
+      "tiles": 80
+    }
+  ],
+  "vram_gameplay_end_byte_exclusive": 27552,
+  "vram_font_start_byte": 46080,
+  "vram_gap_before_font_bytes": 18528,
+  "vram_title_end_byte_exclusive": 39072
+}

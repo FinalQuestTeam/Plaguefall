@@ -6,7 +6,7 @@ foram preservados; Dummy e Alvo continuam como recursos de teste.
 
 ## Entrega
 
-- [Pacote nativo SGDK](redrex-cangaco-insects-sgdk.zip).
+- [Pacote nativo SGDK](.).
 - Prévias de [serra-pau](previews/sq-3x.png), [mutuca](previews/tri-3x.png),
   [saúva](previews/pen-3x.png) e [escorpião](previews/boss-3x.png).
 - Ciclos animados: [sq](previews/sq-movement-3x.gif),

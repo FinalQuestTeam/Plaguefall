@@ -2,7 +2,7 @@
 
 Protagonista humano do cangaço cyberpunk brasileiro: chapéu metálico funcional, placas reaproveitadas, tecido, implante no braço e arma de fogo. O redesenho expõe o topo do chapéu e dos ombros e encurta a leitura das pernas para acompanhar a câmera elevada.
 
-- [Baixar PNGs, paleta, recurso SGDK, prévias e relatórios](redrex-heroi-iso60-v2-sgdk.zip).
+- [Baixar PNGs, paleta, recurso SGDK, prévias e relatórios](.).
 - [Folha mestra na resolução nativa](heroi/heroi.png).
 - [Corrida nas oito direções, ampliada 4×](previews/heroi-movimento-4x.gif).
 - [Repouso nas oito direções, ampliado 4×](previews/heroi-repouso-4x.gif).

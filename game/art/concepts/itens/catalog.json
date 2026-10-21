@@ -1,0 +1,163 @@
+{
+  "status": "concept_para_revisao_antes_da_pixel_art",
+  "source_tool": "image_gen built-in",
+  "style_references": [
+    "../protagonista/protagonista-cangaco-cyberpunk-v3.png",
+    "../parceira/parceira-cangaco-cyberpunk-v2.png"
+  ],
+  "story_reference": "../../../doc/historia/universo.md",
+  "future_sprite_size": [
+    16,
+    16
+  ],
+  "runtime_changed": false,
+  "items": [
+    {
+      "id": 0,
+      "project_id": "ITEM_HEART",
+      "asset_id": "heart",
+      "name": "Marmita do abrigo",
+      "current_effect": "Cura 15 pontos de vida",
+      "design": "Marmita reutilizável de alumínio amassado, tampa parcialmente aberta, comida caseira e pano vermelho queimado.",
+      "story": "Suprimento preparado nas cozinhas dos abrigos do Bando.",
+      "presentation_order": 1,
+      "concept": "heart/heart-marmita-v1.png",
+      "prompt": "heart/prompt-v1.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "color_mode": "RGB",
+      "sha256": "3a62e0e7efae84169fbd28b45132cd5629deecb4a40b57e9d41002cd34ccabbc"
+    },
+    {
+      "id": 1,
+      "project_id": "ITEM_BOMB",
+      "asset_id": "bomb",
+      "name": "Carga de desmonte",
+      "current_effect": "Carga do ataque de bomba existente",
+      "design": "Bloco industrial fechado de aço gasto, faixas amarelas e travas diferentes.",
+      "story": "Peça recuperada das instalações do Consórcio Ascensão.",
+      "presentation_order": 2,
+      "concept": "bomb/bomb-concept-v1.png",
+      "prompt": "bomb/prompt-v1.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "color_mode": "RGB",
+      "sha256": "971488c092d5a09caf1ca5b3998cdf5c2321ab1f3b3cae93c1cc1db54417f1f3"
+    },
+    {
+      "id": 2,
+      "project_id": "ITEM_SHOTS",
+      "asset_id": "shots",
+      "name": "Divisor de disparo",
+      "current_effect": "Aumenta o leque de tiros",
+      "design": "Cabeçote compacto com três saídas, contatos de cobre e presilhas.",
+      "story": "Adaptação das oficinas da resistência para a arma remendada.",
+      "presentation_order": 3,
+      "concept": "shots/shots-concept-v1.png",
+      "prompt": "shots/prompt-v1.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "color_mode": "RGB",
+      "sha256": "e49cc6c761847706774d16306874ce11b56373364204312190d7e8249eaa07d7"
+    },
+    {
+      "id": 3,
+      "project_id": "ITEM_SPEED",
+      "asset_id": "speed",
+      "name": "Servo de passada",
+      "current_effect": "Aumenta a velocidade",
+      "design": "Atuador de tornozelo em C, mola, pequeno motor, fixação de nylon e indicador verde.",
+      "story": "Componente de equipamento de carga reaproveitado.",
+      "presentation_order": 4,
+      "concept": "speed/speed-concept-v1.png",
+      "prompt": "speed/prompt-v1.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "color_mode": "RGB",
+      "sha256": "237b3a4d09db67ddd43144164eb68ca99ef75caaf4c4ae83f8429f01cb4498d7"
+    },
+    {
+      "id": 4,
+      "project_id": "ITEM_SHIELD",
+      "asset_id": "shield",
+      "name": "Capacitor de proteção",
+      "current_effect": "Invulnerabilidade temporária",
+      "design": "Disco de placas metálicas sobrepostas, parafusos diferentes e núcleo ciano.",
+      "story": "Proteção breve alimentada por equipamento recuperado.",
+      "presentation_order": 5,
+      "concept": "shield/shield-concept-v1.png",
+      "prompt": "shield/prompt-v1.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "color_mode": "RGB",
+      "sha256": "892f01f56ad4735086a0347ea2042f9963679816272d0f623040502e131c00ab"
+    },
+    {
+      "id": 5,
+      "project_id": "ITEM_CHAIN",
+      "asset_id": "chain",
+      "name": "Bobina de subestação",
+      "current_effect": "Ataques em cadeia",
+      "design": "Duas bobinas de cobre, isoladores escuros e contatos amarelos.",
+      "story": "Componente recuperado da infraestrutura elétrica ocupada.",
+      "presentation_order": 6,
+      "concept": "chain/chain-concept-v1.png",
+      "prompt": "chain/prompt-v1.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "color_mode": "RGB",
+      "sha256": "d50d996010d55b7438cb06315aab71b02e3fe4c61a211bbf3c3861f462ed92d5"
+    },
+    {
+      "id": 6,
+      "project_id": "ITEM_ICE",
+      "asset_id": "ice",
+      "name": "Refil de arrefecimento",
+      "current_effect": "Tiros de congelamento",
+      "design": "Reservatório baixo e largo, pintura azul-clara, válvula e cinta remendada.",
+      "story": "Sistemas de refrigeração industrial recuperados.",
+      "presentation_order": 7,
+      "concept": "ice/ice-concept-v1.png",
+      "prompt": "ice/prompt-v1.txt",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "color_mode": "RGB",
+      "sha256": "1e76254cab17d8e258c436c350295651703d56d12f19a246cbff9c246ff6b5ca"
+    },
+    {
+      "id": 7,
+      "project_id": "ITEM_FIRE",
+      "asset_id": "fire",
+      "name": "Refil de maçarico",
+      "current_effect": "Tiros de queimadura",
+      "design": "Cilindro estreito alaranjado, cintas de aço e bocal escuro fechado.",
+      "story": "Material de manutenção conhecido por Damião.",
+      "presentation_order": 8,
+      "concept": "fire/fire-concept-v1.png",
+      "prompt": "fire/prompt-v1.txt",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "color_mode": "RGB",
+      "sha256": "2f62a5668ce7ba12d184d34c6e7d84c66fc00ba355bb25b5c6000770ecfae3ec"
+    }
+  ],
+  "presentation": "Oito pranchas individuais, com vista principal e vista menor do mesmo objeto.",
+  "imagegen_reference_images": [],
+  "style_reference_usage": "Os concepts existentes orientaram a descrição escrita; as gerações finais usaram os prompts individuais em texto."
+}

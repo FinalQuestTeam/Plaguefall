@@ -6,7 +6,8 @@
 // Motor de música PSG com ANDAMENTO DINÂMICO (pronto para o jogo).
 // A faixa (song_data.h) toca em loop; o BPM sobe conforme a "ameaça" (nº de
 // inimigos), dando sensação de perigo. O tempo escala de forma UNIFORME — as
-// notas/harmonia não mudam —, então a música continua musical em qualquer BPM.
+// notas/harmonia não mudam; a ameaça também adensa pulsos e acentos metálicos.
+// A faixa original Baiao de Ferrugem mistura síncopes de baião e textura industrial.
 // Transições de BPM são SUAVIZADAS (glide), sem saltos bruscos.
 //
 // NÃO escreve no PSG direto: a cada quadro REQUISITA voz ao árbitro (audio.c),
@@ -19,11 +20,45 @@
 // CONFIG — curva de BPM × ameaça (ajuste aqui). BPM = 900 / frames-por-passo.
 // A música interpola do "calmo" ao "quente" conforme os inimigos, com glide.
 // ===========================================================================
-#define MUSIC_ENEMY_MAX  15     // inimigos que leva ao BPM MÁXIMO (225)
-#define MUSIC_CALM_UNTIL  4     // até este nº de inimigos, fica no BPM calmo (75)
-#define MUSIC_STEP_CALM  12     // frames/passo calmo          (~75 BPM)
-#define MUSIC_STEP_HOT    4     // frames/passo no perigo máx.  (~225 BPM)
+#define MUSIC_ENEMY_MAX  15     // inimigos que levam ao BPM máximo do perfil
+#define MUSIC_CALM_UNTIL  4     // até este nº de inimigos, fica no BPM calmo
+// Compile com MUSIC_MELANCHOLIC=1 (Entardecer) ou MUSIC_DARK=1 (Breu).
+#if defined(MUSIC_DARK) && defined(MUSIC_MELANCHOLIC)
+#error Select only one music variant
+#endif
+#ifdef MUSIC_DARK
+#define MUSIC_STEP_CALM  12     // Breu: 75 BPM
+#define MUSIC_STEP_HOT    8     // Breu: aproximadamente 113 BPM
+#elif defined(MUSIC_MELANCHOLIC)
+#define MUSIC_STEP_CALM  10     // Entardecer: 90 BPM
+#define MUSIC_STEP_HOT    7     // Entardecer: aproximadamente 129 BPM
+#else
+#define MUSIC_STEP_CALM   9     // frames NTSC equivalentes/passo (100 BPM)
+#define MUSIC_STEP_HOT    6     // frames NTSC equivalentes/passo (150 BPM)
+#endif
+// O relógio de 300 Hz mantém o mesmo andamento em sistemas de 50 e 60 Hz.
 // ===========================================================================
+
+#define MUSIC_TRACK_BAIAO       0
+#define MUSIC_TRACK_ENTARDECER  1
+#define MUSIC_TRACK_BREU        2
+#define MUSIC_TRACK_LADAINHA    3
+#define MUSIC_TRACK_COUNT       4
+#ifdef MUSIC_DARK
+#define MUSIC_DEFAULT_TRACK MUSIC_TRACK_BREU
+#elif defined(MUSIC_MELANCHOLIC)
+#define MUSIC_DEFAULT_TRACK MUSIC_TRACK_ENTARDECER
+#else
+#define MUSIC_DEFAULT_TRACK MUSIC_TRACK_BAIAO
+#endif
+
+// Audição na galeria: a primeira chamada salva a reprodução e a curva atuais.
+// Trocar faixa reinicia a prévia; encerrar restaura exatamente o estado salvo.
+// IDs inválidos são ignorados. Não muda a trilha escolhida para o jogo.
+void MUSIC_previewTrack(u8 track);
+void MUSIC_endPreview(void);
+u8 MUSIC_track(void);
+const char *MUSIC_trackName(u8 track);
 
 void MUSIC_init(void);          // silencia o PSG e reinicia o sequenciador
 void MUSIC_start(void);         // compat (no-op; a música já toca após MUSIC_init)
@@ -38,6 +73,6 @@ void MUSIC_setRamp(u8 calmUntil, u8 enemyMax, u8 stepCalm, u8 stepHot);
 
 u16  MUSIC_bpm(void);           // BPM atual (para HUD/debug)
 u8   MUSIC_chord(void);         // acorde do compasso atual: 0..3 (HUD)
-u16  MUSIC_stepInBar(void);     // passo dentro do compasso: 0..15 (HUD)
+u16  MUSIC_stepInBar(void);     // passo dentro do compasso 2/4: 0..7 (HUD)
 
 #endif // MUSIC_H

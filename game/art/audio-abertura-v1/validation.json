@@ -1,0 +1,318 @@
+{
+  "passed": true,
+  "title": "O Sonho Atendido",
+  "storyboard": "../../doc/historia/storyboard-abertura.md",
+  "planned_seconds": 89,
+  "cues": 12,
+  "step_ticks": 75,
+  "clock_hz": 300,
+  "rom_path": "../../out/abertura/rom.bin",
+  "rom_sha256": "923dc9047d6aa20ceba1f4d25baba25eec5f3bef0d18d72c5ea4e35dce81c510",
+  "rom_bytes": 917504,
+  "text_bytes": 834448,
+  "data_bytes": 128,
+  "bss_bytes": 6122,
+  "static_ram_bytes": 6250,
+  "new_dynamic_allocation": false,
+  "new_vram_bytes": 0,
+  "new_audio_driver": false,
+  "native_checks": "ASan/UBSan: 12 distinct non-looping cues, PAL/NTSC, fades, skips, SFX arbitration and untouched gameplay music",
+  "music_regression": "ASan/UBSan: all four runtime tracks and exact preview restoration passed",
+  "audio": {
+    "ntsc": {
+      "file": "game/art/audio-abertura-v1/o-sonho-atendido.wav",
+      "seconds": 89.68215419501134,
+      "sample_rate": 44100,
+      "peak": 0.0535888671875,
+      "rms": 0.01087257064004924,
+      "sha256": "c40e27af17665a8d00a8a0a608e8b698ec3c55368e90df94194dba710e0e47ee"
+    },
+    "pal": {
+      "file": "game/art/audio-abertura-v1/pal/o-sonho-atendido.wav",
+      "seconds": 89.97723356009071,
+      "sample_rate": 44100,
+      "peak": 0.05426025390625,
+      "rms": 0.010891791750935494,
+      "sha256": "a657cba441aa6e07b11da96d522973037ff41795fbc89bc81ea94b9da0ec59fc"
+    }
+  },
+  "reports": {
+    "ntsc": {
+      "report": "game/art/audio-abertura-v1/ntsc/report.json",
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "card skip and held input boundaries",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A completes then advances",
+        "held A has no repeat",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Dami\u00e3o and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay",
+        "twelve distinct audible storyboard cues, including fades",
+        "each image selects its corresponding musical cue",
+        "A resynchronizes music and START stops opening score before menu"
+      ],
+      "cues": [
+        {
+          "shot": 1,
+          "pcm_sha256": "ec1045f4bfbe7ab0bac708669891fd72174d6d4c3c6ddf24b31e7cd104cd5cec",
+          "samples": 222992,
+          "peak": 558,
+          "first_frame": 445
+        },
+        {
+          "shot": 2,
+          "pcm_sha256": "773be13c2d9cdd7766ad7397cc2a7b416ae9598bf1809f6328178c8afd924dc4",
+          "samples": 222992,
+          "peak": 784,
+          "first_frame": 748
+        },
+        {
+          "shot": 3,
+          "pcm_sha256": "2b05388dab404352a82e0d7e0ffdad6b8d72ec7faee698654ead9f5627eaf6b4",
+          "samples": 355463,
+          "peak": 1437,
+          "first_frame": 1051
+        },
+        {
+          "shot": 4,
+          "pcm_sha256": "6f5112ad87a650c9b4df6502f44e285f69fcd0e874323f7fa1bae6ea8fe4b094",
+          "samples": 178835,
+          "peak": 840,
+          "first_frame": 1534
+        },
+        {
+          "shot": 5,
+          "pcm_sha256": "c45149d0e05ff8192dd1ec83940d29de7d3d00aee9feb003e52aeee1c5dafbbc",
+          "samples": 311306,
+          "peak": 783,
+          "first_frame": 1777
+        },
+        {
+          "shot": 6,
+          "pcm_sha256": "4aae300a3008541b3ebeb98f066668194f66ded4bda96000520e4c4aa4b22e4b",
+          "samples": 355463,
+          "peak": 1142,
+          "first_frame": 2200
+        },
+        {
+          "shot": 7,
+          "pcm_sha256": "2042466bd0b854e79d003cba017f70913b1e8a62d7b6d71c6795e9b444f3ea98",
+          "samples": 443776,
+          "peak": 1756,
+          "first_frame": 2683
+        },
+        {
+          "shot": 8,
+          "pcm_sha256": "6bc69fcb0f8e9404c81b184a053f35e8ccb4e42645d4b3feb757353169a3c4b7",
+          "samples": 399620,
+          "peak": 1070,
+          "first_frame": 3286
+        },
+        {
+          "shot": 9,
+          "pcm_sha256": "019ee6e76f69ffdc5d7bd803584563a8883fd7254e4d863c2b17af578d777554",
+          "samples": 443776,
+          "peak": 1563,
+          "first_frame": 3829
+        },
+        {
+          "shot": 10,
+          "pcm_sha256": "54c7af22bf608043551e825ecbfb0bc2cbec858cbfe0264a27d244b424834295",
+          "samples": 311306,
+          "peak": 834,
+          "first_frame": 4432
+        },
+        {
+          "shot": 11,
+          "pcm_sha256": "d25d9adf2e6ccaaef9bd99f6058d2c41f44d80f0beb252f21766ac24f9404262",
+          "samples": 487933,
+          "peak": 1287,
+          "first_frame": 4855
+        },
+        {
+          "shot": 12,
+          "pcm_sha256": "ea99026f8b2fcb1e4aab29d217feaa694025b40762d6277cebf474c8d9773dc2",
+          "samples": 221521,
+          "peak": 1732,
+          "first_frame": 5518
+        }
+      ]
+    },
+    "pal": {
+      "report": "game/art/audio-abertura-v1/pal/report.json",
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "card skip and held input boundaries",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A completes then advances",
+        "held A has no repeat",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "menu logo survives help/gallery/gameplay return",
+        "gallery Dami\u00e3o and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay",
+        "twelve distinct audible storyboard cues, including fades",
+        "each image selects its corresponding musical cue",
+        "A resynchronizes music and START stops opening score before menu"
+      ],
+      "cues": [
+        {
+          "shot": 1,
+          "pcm_sha256": "1e4d58cf93a551db7e66d8004fa5c1d4eae62f7837027ff0929e808a64dbab7d",
+          "samples": 223599,
+          "peak": 550,
+          "first_frame": 370
+        },
+        {
+          "shot": 2,
+          "pcm_sha256": "7636d027bb750f0c0262c0b3bccf0cf4045a19da10b3daeea99ea5f4b8424b10",
+          "samples": 223599,
+          "peak": 805,
+          "first_frame": 622
+        },
+        {
+          "shot": 3,
+          "pcm_sha256": "3e01d79e469f2d5e401af36714fc2f6d520ffde1bb31086cd040c402d86086a5",
+          "samples": 356694,
+          "peak": 1418,
+          "first_frame": 874
+        },
+        {
+          "shot": 4,
+          "pcm_sha256": "a785c65dcbc3db3913d4ceb625a9f74b5c48c1ed36cbac5eddb06aeaeaed0998",
+          "samples": 179234,
+          "peak": 964,
+          "first_frame": 1276
+        },
+        {
+          "shot": 5,
+          "pcm_sha256": "97edbe001362e3e269e7e65356998b4169bdac2d7e0bfb57b905129b8b0e7509",
+          "samples": 312329,
+          "peak": 760,
+          "first_frame": 1478
+        },
+        {
+          "shot": 6,
+          "pcm_sha256": "3fb57c7324d9e70ef23b8956606cb83755c541a5e749de00439f8a50ef30eaf0",
+          "samples": 356693,
+          "peak": 1186,
+          "first_frame": 1830
+        },
+        {
+          "shot": 7,
+          "pcm_sha256": "5e171e63a0fd6d770f1a21de982adca103c93a8d39e1e200171ee4e4a106bb57",
+          "samples": 445424,
+          "peak": 1778,
+          "first_frame": 2232
+        },
+        {
+          "shot": 8,
+          "pcm_sha256": "ff404ab0ecf4753258bc45ce6b5208c5df1800c16746400b3cabb4a3047481b9",
+          "samples": 401059,
+          "peak": 1071,
+          "first_frame": 2734
+        },
+        {
+          "shot": 9,
+          "pcm_sha256": "bfe72dbead5d58f4fef87231ca50b071707112bd3676c61713747aa94e3f6677",
+          "samples": 445423,
+          "peak": 1600,
+          "first_frame": 3186
+        },
+        {
+          "shot": 10,
+          "pcm_sha256": "bfc329c72f9c4bd70cfd8331aa7d70def2cbb2dd7d143cb439094faea3456905",
+          "samples": 312329,
+          "peak": 839,
+          "first_frame": 3688
+        },
+        {
+          "shot": 11,
+          "pcm_sha256": "3dca72188ce06afe47b657329e6a802ae8426b94d824190f0fb8a1e12ffab6bb",
+          "samples": 489788,
+          "peak": 1329,
+          "first_frame": 4040
+        },
+        {
+          "shot": 12,
+          "pcm_sha256": "aaea94901b137ab41bc035dfcf3484407c21a5cc981fdfeadb2d7d2411fd5926",
+          "samples": 221825,
+          "peak": 1651,
+          "first_frame": 4592
+        }
+      ]
+    }
+  },
+  "preserved_files": {
+    "game/src/system/audio/song_catalog_data.h": "304b9125f53033ed02bd800868b6aa3f144b7d204ec19586e9822f1f109ae2c2",
+    "game/src/system/audio/song_data_dark.h": "0f5fb1d4b40d5d6c4fbc945fe1b9a2e13f66541f11c399c23e0d6e086bdc96bd",
+    "game/src/system/audio/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/src/system/audio/song_data_church.h": "6fef5a0be399d0f3c5d86018e9953169c8083010e3ac1f74e6779ec49aeadee8",
+    "game/src/system/audio/song_data_melancholic.h": "0a20459f9114802c54818081d5c6f7f2bc16cad5559ac137309ecaf3d0d8a7e1",
+    "game/art/audio-baiao-industrial-v1/baiao-calmo.wav": "c3f4da6fbe555afd4acdc719565fcfe13bf147ce597c9aa2a4c068cf35a2d4ff",
+    "game/art/audio-baiao-industrial-v1/baiao-combate.wav": "aa91d4d8739dc50f7a4b8c905f379b362b406381c7ca9e1f8895c9dae84d9ce9",
+    "game/art/audio-baiao-industrial-v1/anterior.wav": "30b00cd995279f4a084c1bc370e4c2635502847644c769ae29064bc511de46eb",
+    "game/art/audio-baiao-industrial-v1/README.md": "a50f784929051ad21cb6cb5df8687563ee31905e1613fb1fc14836f860450f33",
+    "game/art/audio-baiao-industrial-v1/baiao-calmo.mp3": "79863966fbab96b3aa97dfcb4d3c673f054844d2925e7f3c850fb334eaa801df",
+    "game/art/audio-baiao-industrial-v1/baiao-combate.mp3": "1d75b7148fc4912aaf35e9d361e226c04a86e99cb85b8db6ad1ce38e24d43fbb",
+    "game/art/audio-baiao-industrial-v1/validation.json": "17f1f7646a1cbd46bda2723196108645d178a5c5ca336ff5ee9e775659867dfa",
+    "game/art/audio-baiao-industrial-v1/anterior.mp3": "77177f05c86904538a246fd6204c1a1625722f128db1cb02a4bbdf1b7341eeb5",
+    "game/art/audio-baiao-industrial-v1/source/music.h": "d71ace2764b9adce7006ef81aaffa465c0a84d46367462d3e049843a152d7fbb",
+    "game/art/audio-baiao-industrial-v1/source/preservation.json": "ec2099bbcc0da8c880de1088b363f3f1007fad89611cba8d1d4af7569f6d5558",
+    "game/art/audio-baiao-industrial-v1/source/audio.h": "4d317b31a5961e3a651cd40d964d753c2191fd89dadb61a5cf28a5fb5f24bc9f",
+    "game/art/audio-baiao-industrial-v1/source/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/art/audio-baiao-industrial-v1/source/music.c": "5f6094f6ebfb200136656a003a155be7119818804a19491635c95e8f8a143b38",
+    "game/art/audio-baiao-industrial-v1/source/compose_music.py": "ef51b506b4b08f7039ff91e6f1364356495264693729297706c0fa8c9a3c9946",
+    "game/art/audio-baiao-industrial-v1/source/bench-rom.bin": "7ca3c016c31e5e6a4934cdafe0a01303354c3728708b56f9905f1e969161df48",
+    "game/art/audio-baiao-industrial-v1/source/audio.c": "58faab0ff08b5edb45a661ef82e03f9a980b1b577016c6760a9e80b7c7fca6f9",
+    "game/art/audio-baiao-melancolico-v1/entardecer-combate.mp3": "eb27519a046458d17ebc0608a4402a88a9e5463656b6e757eafcc974529b5ad2",
+    "game/art/audio-baiao-melancolico-v1/entardecer-calmo.mp3": "b1461c8c6a8ee62c61b482e80b25c541e450ac1148911ff59b566c1607fe818b",
+    "game/art/audio-baiao-melancolico-v1/README.md": "558c59f5b3d1bcbaebe711088daaed44acce426fec4df581fddd9773fe547308",
+    "game/art/audio-baiao-melancolico-v1/validation.json": "3e8236bb11265385a2d54b2550c1ae12f23c8eb2ed1c8811cabeab41271e8547",
+    "game/art/audio-baiao-melancolico-v1/entardecer-combate.wav": "ae44adb7a529cb75482418794d25a0c77f0032032b6cb9f646385a919915241b",
+    "game/art/audio-baiao-melancolico-v1/entardecer-calmo.wav": "06a36fac42e5ba72cd2c68c5a404cc0c6280402788e787ceb025d6c4989691cb",
+    "game/art/audio-baiao-melancolico-v1/source/music.h": "9ff317693ed5b40bc7a105f1a63dc55a09e11def08e5be96884abc372a250229",
+    "game/art/audio-baiao-melancolico-v1/source/audio.h": "4d317b31a5961e3a651cd40d964d753c2191fd89dadb61a5cf28a5fb5f24bc9f",
+    "game/art/audio-baiao-melancolico-v1/source/song_data.h": "ff4bdb1d7497fa724c43ef3259fe910d37e345cf4246a4c268652b0537ee1e8d",
+    "game/art/audio-baiao-melancolico-v1/source/music.c": "4def705dcd8d20ee81e6f9888d95221d198133872dcbd63d51afbd608a55a963",
+    "game/art/audio-baiao-melancolico-v1/source/compose_music.py": "fadfa04419bcdf7d8eb5effca7a490a15f54acfbc8b17a99126ab96081c5b287",
+    "game/art/audio-baiao-melancolico-v1/source/bench-rom.bin": "ef586346ad3c1292de71ce1f4ef762b795eb60f3bf9d088bc543d5dffe7cb2da",
+    "game/art/audio-baiao-melancolico-v1/source/song_data_melancholic.h": "0a20459f9114802c54818081d5c6f7f2bc16cad5559ac137309ecaf3d0d8a7e1",
+    "game/art/audio-baiao-melancolico-v1/source/audio.c": "58faab0ff08b5edb45a661ef82e03f9a980b1b577016c6760a9e80b7c7fca6f9",
+    "game/art/audio-baiao-sombrio-v1/breu-calmo.wav": "0665a42bfd72a068364cbd53a30d319ddc09c050edac2a0553044d6193e69894",
+    "game/art/audio-baiao-sombrio-v1/breu-combate.wav": "4aad4b81b9608123dd60715921b510942699319e2e317afb506a0698b4c5ae97",
+    "game/art/audio-baiao-sombrio-v1/README.md": "bf8863575679f62c804d61301056b6895cd9015076d4c6731196e7953c278ecc",
+    "game/art/audio-baiao-sombrio-v1/breu-calmo.mp3": "49ac484d2bd4d1049f88611751d17c8a3a7d9a5d84ad27dfb5b0714ef9e8fc10",
+    "game/art/audio-baiao-sombrio-v1/validation.json": "bf190db84e9bf48ba72e96ddccf5bfcfb3ddc1140e6801fc913f02fb738489b8",
+    "game/art/audio-baiao-sombrio-v1/breu-combate.mp3": "fcaf25ec7aa73109d76de0a3a4275d3b2265871d67147329b8915deb07416ee2",
+    "game/art/audio-igreja-v1/ladainha-combate.mp3": "9ea300bdb43697a3f34ff0544e5608516f82d6826f2b89a79ad93a2de94d5207",
+    "game/art/audio-igreja-v1/ladainha-calma.mp3": "5a03773e5fd50e55476383d361bda5aa5c5d30c3bbd38b27b7729965271855e9",
+    "game/art/audio-igreja-v1/README.md": "2a230c61d80f1fc3f8986e5739060f8be285e1bb8413d3aa7aa8945100f25266",
+    "game/art/audio-igreja-v1/validation.json": "5445939595355e7b01c56f2dcb821fa78e4819123344212c0f7b6937d37ac33f",
+    "game/art/audio-igreja-v1/ladainha-combate.wav": "bb7481ac505d82fb3562d3a84fc3ff3148497df9a19390b77c9af0fc7a596171",
+    "game/art/audio-igreja-v1/ladainha-calma.wav": "df20270de77ae96681ea89f0f70a081e8cbc4c6978b235ca91c5140366d04c9c"
+  }
+}

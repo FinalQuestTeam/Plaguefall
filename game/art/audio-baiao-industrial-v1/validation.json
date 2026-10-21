@@ -1,0 +1,97 @@
+{
+  "track": "Baião de Ferrugem",
+  "original_composition": true,
+  "synthesis": "Mega Drive PSG / production C sequencer",
+  "capture": "Genesis Plus GX running the music-test ROM; controller input only",
+  "postprocessing": "MP3 encoding only; no effects or normalization",
+  "native_test": "50/60 Hz timing: 67 calm / 100 hot steps in 10 seconds; loops, envelopes, SFX arbitration and silence; ASan/UBSan passed",
+  "recordings": {
+    "anterior": {
+      "enemies": 0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "seconds": 26.033514739229027,
+      "peak": 0.23541259765625,
+      "rms": 0.032076416357488285,
+      "wav_sha256": "30b00cd995279f4a084c1bc370e4c2635502847644c769ae29064bc511de46eb",
+      "mp3_sha256": "77177f05c86904538a246fd6204c1a1625722f128db1cb02a4bbdf1b7341eeb5"
+    },
+    "baiao-calmo": {
+      "enemies": 0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "seconds": 20.02578231292517,
+      "peak": 0.128204345703125,
+      "rms": 0.023254413594162384,
+      "wav_sha256": "c3f4da6fbe555afd4acdc719565fcfe13bf147ce597c9aa2a4c068cf35a2d4ff",
+      "mp3_sha256": "79863966fbab96b3aa97dfcb4d3c673f054844d2925e7f3c850fb334eaa801df"
+    },
+    "baiao-combate": {
+      "enemies": 15,
+      "sample_rate": 44100,
+      "channels": 2,
+      "seconds": 14.018049886621315,
+      "peak": 0.144439697265625,
+      "rms": 0.025114819291493912,
+      "wav_sha256": "aa91d4d8739dc50f7a4b8c905f379b362b406381c7ca9e1f8895c9dae84d9ce9",
+      "mp3_sha256": "1d75b7148fc4912aaf35e9d361e226c04a86e99cb85b8db6ad1ce38e24d43fbb"
+    }
+  },
+  "game_rom_sha256": "c7a0cf281722c66407b2d4e41b4a4fe43a92f3179a75ba29e5a3d78093d2545d",
+  "bench_rom_sha256": "7ca3c016c31e5e6a4934cdafe0a01303354c3728708b56f9905f1e969161df48",
+  "game_rom_bytes": 917504,
+  "game_emulator_checks": {
+    "ntsc": {
+      "passed": true,
+      "fps": 60,
+      "frames": 8276,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "card skip and held input boundaries",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A completes then advances",
+        "held A has no repeat",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    },
+    "pal": {
+      "passed": true,
+      "fps": 50,
+      "frames": 6898,
+      "checks": [
+        "developer logo > APRESENTA > option B > monologue",
+        "title core pulses",
+        "card skip and held input boundaries",
+        "title particles move <=1px/frame",
+        "all 12 shots play automatically",
+        "centered white captions",
+        "12 dust/ember/soot sprites move <=1px/frame",
+        "camera remains fixed",
+        "final shot shortened to 5 seconds",
+        "no ARENA SHOOTER label",
+        "A completes then advances",
+        "held A has no repeat",
+        "START skip first and middle shot",
+        "held START does not start game",
+        "title after natural playback and skip",
+        "gallery Damião and Dinorah after intro",
+        "mission call without repeated monologue",
+        "phase 1 starts",
+        "return to menu without replay"
+      ]
+    }
+  }
+}

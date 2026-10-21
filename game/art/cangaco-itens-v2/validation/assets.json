@@ -1,0 +1,370 @@
+{
+  "passed": true,
+  "tool": "built-in image_gen",
+  "processing": "Alpha component isolation; nearest-neighbor registration; three visible colors per item from unchanged PAL1; image_gen designs refined in editable native char-maps (16x16 and 8x8), like the original icons; complete white perimeter verified on final grids.",
+  "palette_shared": true,
+  "transparent_index": 0,
+  "items": [
+    {
+      "id": 0,
+      "key": "heart",
+      "name": "Marmita do abrigo",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        3,
+        10
+      ],
+      "hud_visible_colors": [
+        1,
+        3
+      ],
+      "source_sha256": "c0341d6cddb9f7bf06ab0dfc4932f2cdd67d22b29fe0ca034b9e1178762945fb",
+      "source_crop_world": [
+        298,
+        134,
+        993,
+        785
+      ],
+      "source_crop_hud": [
+        1185,
+        429,
+        1520,
+        748
+      ],
+      "world_contour": {
+        "boundary_pixels": 42,
+        "white_boundary_pixels": 42,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 22,
+        "white_boundary_pixels": 22,
+        "white_boundary_fraction": 1.0
+      }
+    },
+    {
+      "id": 1,
+      "key": "bomb",
+      "name": "Carga de desmonte",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        4,
+        11
+      ],
+      "hud_visible_colors": [
+        1,
+        4,
+        11
+      ],
+      "source_sha256": "d93ad9c598e0a10321713336bf911a052c9dc049d83feeb3079553796d66e51b",
+      "source_crop_world": [
+        335,
+        243,
+        967,
+        673
+      ],
+      "source_crop_hud": [
+        1127,
+        414,
+        1432,
+        651
+      ],
+      "world_contour": {
+        "boundary_pixels": 44,
+        "white_boundary_pixels": 44,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 22,
+        "white_boundary_pixels": 22,
+        "white_boundary_fraction": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "key": "shots",
+      "name": "Divisor de disparo",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        3
+      ],
+      "hud_visible_colors": [
+        1,
+        3
+      ],
+      "source_sha256": "55c89eb1c69d43f0a4258635b02913f768dfb4190c0a3f4e446d9aa8528a7367",
+      "source_crop_world": [
+        186,
+        135,
+        977,
+        753
+      ],
+      "source_crop_hud": [
+        1171,
+        459,
+        1543,
+        748
+      ],
+      "world_contour": {
+        "boundary_pixels": 44,
+        "white_boundary_pixels": 44,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 22,
+        "white_boundary_pixels": 22,
+        "white_boundary_fraction": 1.0
+      }
+    },
+    {
+      "id": 3,
+      "key": "speed",
+      "name": "Servo de passada",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        6,
+        14
+      ],
+      "hud_visible_colors": [
+        1,
+        14
+      ],
+      "source_sha256": "ee97e86f6b9fb228ab16d33a4c4acea976451bafd352d4181dc7ec24ac8e9c16",
+      "source_crop_world": [
+        290,
+        110,
+        870,
+        799
+      ],
+      "source_crop_hud": [
+        1223,
+        471,
+        1476,
+        773
+      ],
+      "world_contour": {
+        "boundary_pixels": 48,
+        "white_boundary_pixels": 48,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 22,
+        "white_boundary_pixels": 22,
+        "white_boundary_fraction": 1.0
+      }
+    },
+    {
+      "id": 4,
+      "key": "shield",
+      "name": "Capacitor de protecao",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        15
+      ],
+      "hud_visible_colors": [
+        1,
+        15
+      ],
+      "source_sha256": "a503b7e27ad96d0ede948dffb4ca4c7e321686f07b71048c9336c023ac445022",
+      "source_crop_world": [
+        322,
+        115,
+        958,
+        795
+      ],
+      "source_crop_hud": [
+        1167,
+        359,
+        1467,
+        686
+      ],
+      "world_contour": {
+        "boundary_pixels": 44,
+        "white_boundary_pixels": 44,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 18,
+        "white_boundary_pixels": 18,
+        "white_boundary_fraction": 1.0
+      }
+    },
+    {
+      "id": 5,
+      "key": "chain",
+      "name": "Bobina de subestacao",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        4,
+        10
+      ],
+      "hud_visible_colors": [
+        1,
+        4
+      ],
+      "source_sha256": "554083c4430f0b3a522ba7ff3d6901aa918cf4c5d2712c06f48dc38125a6a2ab",
+      "source_crop_world": [
+        373,
+        65,
+        863,
+        849
+      ],
+      "source_crop_hud": [
+        1205,
+        524,
+        1403,
+        829
+      ],
+      "world_contour": {
+        "boundary_pixels": 38,
+        "white_boundary_pixels": 38,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 19,
+        "white_boundary_pixels": 19,
+        "white_boundary_fraction": 1.0
+      }
+    },
+    {
+      "id": 6,
+      "key": "ice",
+      "name": "Refil de arrefecimento",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        2,
+        15
+      ],
+      "hud_visible_colors": [
+        1,
+        2,
+        15
+      ],
+      "source_sha256": "b4fbaf14778a4ed4a8d7197916b2cea18a20131265e6f0c93c0cc27373d2b7c4",
+      "source_crop_world": [
+        377,
+        112,
+        1063,
+        692
+      ],
+      "source_crop_hud": [
+        1266,
+        415,
+        1555,
+        671
+      ],
+      "world_contour": {
+        "boundary_pixels": 48,
+        "white_boundary_pixels": 48,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 22,
+        "white_boundary_pixels": 22,
+        "white_boundary_fraction": 1.0
+      }
+    },
+    {
+      "id": 7,
+      "key": "fire",
+      "name": "Refil de macarico",
+      "world_size": [
+        16,
+        16
+      ],
+      "hud_size": [
+        8,
+        8
+      ],
+      "world_visible_colors": [
+        1,
+        3,
+        12
+      ],
+      "hud_visible_colors": [
+        1,
+        3,
+        12
+      ],
+      "source_sha256": "b9f115dbf1fc1bf8840de93209ed6aeb10eef02d23585c5f33f5e78fe219ee40",
+      "source_crop_world": [
+        310,
+        102,
+        887,
+        789
+      ],
+      "source_crop_hud": [
+        1166,
+        414,
+        1455,
+        773
+      ],
+      "world_contour": {
+        "boundary_pixels": 48,
+        "white_boundary_pixels": 48,
+        "white_boundary_fraction": 1.0
+      },
+      "hud_contour": {
+        "boundary_pixels": 22,
+        "white_boundary_pixels": 22,
+        "white_boundary_fraction": 1.0
+      }
+    }
+  ]
+}

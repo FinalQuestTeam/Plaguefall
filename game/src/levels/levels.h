@@ -41,7 +41,7 @@ typedef struct
     // Deixa ajustar o "perigo" sonoro por fase (ex.: chefe já começa agressivo).
     u8 musCalmUntil;       // inimigos até a música ficar calma
     u8 musEnemyMax;        // inimigos que leva ao BPM máximo
-    u8 musStepCalm;        // frames/passo calmo   (BPM = 900/frames; maior = + lento)
+    u8 musStepCalm;        // quadros NTSC equivalentes/passo (BPM = 900/valor)
     u8 musStepHot;         // frames/passo no perigo (menor = + rápido)
 } LevelDef;
 
