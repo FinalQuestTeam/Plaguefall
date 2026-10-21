@@ -14,6 +14,8 @@ def run(*args):
 
 def main():
     run("python3", "game/art/intro-monologo-v2/export_intro.py", "--check")
+    run("python3", "game/art/routemap-regional-v1/export_map.py", "--check")
+    run("python3", "game/art/routemap-footer-ux-v1/export_footer.py", "--check")
     run("python3", "game/tools/test_player_aim.py")
     for variant in ("original", "melancolico", "sombrio", "igreja"):
         run("python3", "game/tools/compose_music.py", "--variant", variant, "--check")

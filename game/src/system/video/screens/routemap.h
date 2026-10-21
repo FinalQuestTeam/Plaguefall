@@ -3,14 +3,15 @@
 
 #include <genesis.h>
 
-// Mapa de rotas (estilo Darius): mostrado entre a "FASE CONCLUIDA!" e a
-// preparação da próxima. Desenhado A PARTIR DO GRAFO (levels/graph.c —
-// mapCol/mapRow dos nós e as saídas), então nunca desatualiza em relação ao
-// fluxo. Caminho percorrido = "O"; próxima fase = "*" piscando; resto = ".".
+// Four regional paintings. Connections and global overview use GRAPH;
+// persistent pointer shows the origin, concentric rings show the destination.
+// Borrows BG_A/B, palettes and animation tiles until ROUTEMAP_release().
 
 void ROUTEMAP_reset(void);              // novo jogo: zera o caminho percorrido
 void ROUTEMAP_markVisited(u8 n);        // início de fase: marca o nó no caminho
-void ROUTEMAP_show(u8 nextNode);        // desenha a tela (nó destino em destaque)
-void ROUTEMAP_update(void);             // por quadro: pisca o marcador da próxima
+void ROUTEMAP_show(u8 currentNode, u8 nextNode);
+// A/START begins travel; another press skips it. TRUE means ready to leave.
+bool ROUTEMAP_update(u16 pressed);
+void ROUTEMAP_release(void);            // restores borrowed graphics and palettes
 
 #endif // ROUTEMAP_H

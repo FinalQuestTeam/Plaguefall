@@ -1,0 +1,136 @@
+{
+  "status": "implemented",
+  "romChanged": true,
+  "layout": {
+    "screen": [
+      320,
+      224
+    ],
+    "footerTop": 176,
+    "rows": {
+      "destination": 176,
+      "cause": 184,
+      "consequence": 192,
+      "action": 208
+    },
+    "bottomMargin": 8,
+    "sideMargin": 8,
+    "nativeFont": "existing SGDK 8x8 glyphs",
+    "currentPosition": "Sem rótulo AGORA: posição indicada pelo ponteiro e pelo mapa.",
+    "highlightStrategy": "PAL3 para destino e ação; PAL0 para explicações; PAL1/PAL2 para arte. Implementado.",
+    "destinationFormat": "Somente o nome da fase, sem PROXIMA, número ou separador.",
+    "travelActionAlignment": "Direita, com margem de 8 px.",
+    "bodyAlignment": "Centralizado por linha no grid de 8 px.",
+    "actionAlignment": "Direita, com margem de 8 px para seguir e pular viagem."
+  },
+  "ux": {
+    "assessment": "O mapa orienta o percurso, mas o rodapé distribui destaque igualmente entre origem, destino e consequência. A nova ordem concentra a leitura na próxima fase e na ação.",
+    "changes": [
+      "Nome completo da fase na primeira linha, sem prefixo PROXIMA: 10A -.",
+      "Duas frases ligam o resultado da fase anterior à rota disponível.",
+      "Uma linha de respiro separa o texto centralizado do comando alinhado à direita.",
+      "O comando repete o número da fase de destino e fica oito pixels acima da borda inferior.",
+      "Sem rótulo AGORA no cabeçalho; o ponteiro identifica a posição.",
+      "Remover SEU CAMINHO do rodapé: a legenda solta não explica nenhum símbolo ali.",
+      "Durante a viagem, A / START: PULAR VIAGEM fica alinhado à direita, com margem de 8 px.",
+      "Rotas alternativas descrevem o motivo do desvio sem fingir sucesso."
+    ],
+    "productionConstraint": "Manter fonte 8x8 e grid de tiles, no máximo 38 caracteres por linha. A proposta usa apenas as cores da interface e pode aproveitar PAL3, que está livre nesta tela.",
+    "validationLimit": "Proposta original composta sobre capturas. Implementação verificada separadamente na ROM em NTSC/PAL; sem teste em CRT ou hardware físico."
+  },
+  "cases": [
+    {
+      "id": "10a",
+      "label": "Sem dano → 10A",
+      "current": "9",
+      "next": "10A",
+      "name": "ACESSO DOS TECNICOS",
+      "cause": "VOCE SAIU SEM SOFRER DANO.",
+      "consequence": "O ACESSO DOS TECNICOS FOI LIBERADO.",
+      "capture": "map-9-10A.png"
+    },
+    {
+      "id": "10b",
+      "label": "Com dano → 10B",
+      "current": "9",
+      "next": "10B",
+      "name": "DRENO TERMICO",
+      "cause": "VOCE SOFREU DANO NO CONFRONTO.",
+      "consequence": "VAI PRECISAR CONTORNAR PELO DRENO.",
+      "capture": "map-9-10B.png"
+    },
+    {
+      "id": "2a",
+      "label": "Sem bomba → 2A",
+      "current": "1",
+      "next": "2A",
+      "name": "RUA DE SERVICO",
+      "cause": "VOCE NAO USOU BOMBAS.",
+      "consequence": "A IGREJA FICOU PRESERVADA.",
+      "capture": "map-1-2A.png"
+    },
+    {
+      "id": "2b",
+      "label": "Com bomba → 2B",
+      "current": "1",
+      "next": "2B",
+      "name": "BAIXIO DA IGREJA",
+      "cause": "A EXPLOSAO DANIFICOU A IGREJA.",
+      "consequence": "OS DESTROCOS FORCARAM UM DESVIO.",
+      "capture": "map-1-2B.png"
+    },
+    {
+      "id": "6a",
+      "label": "Sinal protegido → 6A",
+      "current": "5",
+      "next": "6A",
+      "name": "PERIMETRO DO RESGATE",
+      "cause": "VOCE PROTEGEU O SINALIZADOR.",
+      "consequence": "O RESGATE FOI CONFIRMADO.",
+      "capture": "map-5-6A.png"
+    },
+    {
+      "id": "6b",
+      "label": "Sinal perdido → 6B",
+      "current": "5",
+      "next": "6B",
+      "name": "RETIRADA POR TERRA",
+      "cause": "O SINALIZADOR FOI DESTRUIDO.",
+      "consequence": "A RETIRADA VAI SER POR TERRA.",
+      "capture": "map-5-6B.png"
+    },
+    {
+      "id": "13a",
+      "label": "Menos de 60 s → 13A",
+      "current": "12",
+      "next": "13A",
+      "name": "LINHA QUENTE",
+      "cause": "VOCE TERMINOU EM MENOS DE 60 S.",
+      "consequence": "A COMPORTA AINDA ESTAVA ABERTA.",
+      "capture": "map-12-13A.png"
+    },
+    {
+      "id": "13b",
+      "label": "60 s ou mais → 13B",
+      "current": "12",
+      "next": "13B",
+      "name": "DECANTACAO",
+      "cause": "VOCE LEVOU 60 SEGUNDOS OU MAIS.",
+      "consequence": "A COMPORTA FECHOU. SIGA PELO CANAL.",
+      "capture": "map-12-13B.png"
+    },
+    {
+      "id": "normal",
+      "label": "Caminho normal → 4",
+      "current": "3",
+      "next": "4",
+      "name": "TUNEIS DE MANUTENCAO",
+      "cause": "O ABRIGO ESTA SEGURO POR ENQUANTO.",
+      "consequence": "OS TUNEIS LEVAM A PLATAFORMA.",
+      "capture": "map-3-4.png"
+    }
+  ],
+  "approvedBy": "User: aprovado implemente",
+  "implementation": "integracao/revisao.html",
+  "romSHA256": "32ba29b1ce99b9c9d9623df319f756f4a3f11c0bd3243e596e096e1552f5d6d0"
+}

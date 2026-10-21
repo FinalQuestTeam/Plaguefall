@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "revision": "Four-region campaign atlas, graph-derived paths, persistent location pin and skippable travel",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "860808bd9a61f0bd83edf368dd5aa0bf5d723e5514708c2e8195843f1444bbd6",
+  "rom_bytes": 1310720,
+  "text_bytes": 1229304,
+  "data_bytes": 140,
+  "bss_bytes": 8620,
+  "static_ram_bytes": 8760,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "routemap_ntsc": {
+      "passed": true,
+      "report": "../art/routemap-regional-v1/validation/ntsc/report.json",
+      "edges": 23,
+      "completeHistories": 2,
+      "maxOverlayTiles": 140
+    },
+    "routemap_pal": {
+      "passed": true,
+      "report": "../art/routemap-regional-v1/validation/pal/report.json",
+      "edges": 23,
+      "completeHistories": 2,
+      "maxOverlayTiles": 140
+    },
+    "stages_ntsc": {
+      "passed": true,
+      "report": "../art/routemap-regional-v1/validation/stages-ntsc/report.json",
+      "stages": 7
+    },
+    "stages_pal": {
+      "passed": true,
+      "report": "../art/routemap-regional-v1/validation/stages-pal/report.json",
+      "stages": 7
+    }
+  },
+  "native_audio_player_resources": "../art/routemap-regional-v1/validation/native-checks.txt",
+  "native_checks_passed": true,
+  "map_limits": {
+    "screen": [
+      320,
+      224
+    ],
+    "painting": [
+      320,
+      160
+    ],
+    "art_tiles": 800,
+    "art_base": 101,
+    "overlay_budget": 192,
+    "overlay_max_observed": 140,
+    "pin_tiles": 4,
+    "pin_base": 1093,
+    "font_base": 1440,
+    "art_palettes": 2,
+    "row_buffer_bytes": 1280,
+    "borrowed_graphics_restored": true
+  },
+  "previous_validation": "../art/routemap-regional-v1/validation/build-before.json"
+}

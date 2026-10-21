@@ -170,6 +170,11 @@ def main():
         for name in ('pshots','eshots'):write(syms[name][0],bytes(syms[name][1]))
     def enter(node):
         restore(baseline);isolate();w16('kills',10);run(4*fps)
+        # Regional atlas preparation can span VBlanks after the completion timer.
+        # Wait for the real transition instead of assuming a four-second deadline.
+        for _ in range(4*fps):
+            if state()!=4:break
+            run()
         assert state() in (5,6),('phase1 exit',state())
         for _ in range(40):
             if state()==1 and u8('currentLevel')==node:break

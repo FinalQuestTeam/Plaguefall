@@ -102,7 +102,7 @@ static void showMap(void)
     SYS_doVBlankProcess();      // aplica a lista vazia já neste quadro
     VDP_clearPlane(BG_A, TRUE);
     FLOOR_clear();
-    ROUTEMAP_show(pendingLevel);
+    ROUTEMAP_show(currentLevel, pendingLevel);
     state = ST_MAP;
 }
 
@@ -521,10 +521,11 @@ void FLOW_run(void)
                 case ST_MAP:
                     // mapa de rotas: A (ou START) segue (história de ANTES,
                     // se o nó destino tiver, e então a preparação)
-                    ROUTEMAP_update();              // pisca a próxima fase
-                    if (pressed & (BUTTON_A | BUTTON_START))
+                    if (ROUTEMAP_update(pressed))
+                    {
+                        ROUTEMAP_release();
                         gotoPrep(pendingLevel);
-                    SPRITES_hide();
+                    }
                     break;
 
                 case ST_END:

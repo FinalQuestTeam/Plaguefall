@@ -1,0 +1,183 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "860808bd9a61f0bd83edf368dd5aa0bf5d723e5514708c2e8195843f1444bbd6",
+  "emulated_rom_sha256": "860808bd9a61f0bd83edf368dd5aa0bf5d723e5514708c2e8195843f1444bbd6",
+  "production_rom": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release/rom.bin",
+  "temporary_build": false,
+  "region_header_override_in_memory_only": false,
+  "core_fps": 59.92274340431231,
+  "stages": [
+    {
+      "node": 2,
+      "id": "02A",
+      "world": [
+        512,
+        320
+      ],
+      "isolated_probes": {
+        "02A/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 3,
+            "bounds": [
+              16,
+              96,
+              480,
+              288
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        }
+      },
+      "ordinary_matches": []
+    },
+    {
+      "node": 3,
+      "id": "02B",
+      "world": [
+        512,
+        320
+      ],
+      "isolated_probes": {
+        "02B/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 1,
+            "bounds": [
+              16,
+              96,
+              480,
+              288
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        }
+      },
+      "ordinary_matches": []
+    },
+    {
+      "node": 4,
+      "id": "03",
+      "world": [
+        384,
+        384
+      ],
+      "isolated_probes": {
+        "03/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 1,
+            "bounds": [
+              16,
+              96,
+              352,
+              352
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        }
+      },
+      "ordinary_matches": []
+    },
+    {
+      "node": 5,
+      "id": "04",
+      "world": [
+        512,
+        288
+      ],
+      "isolated_probes": {
+        "04/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 2,
+            "bounds": [
+              16,
+              80,
+              480,
+              256
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        }
+      },
+      "ordinary_matches": []
+    },
+    {
+      "node": 6,
+      "id": "05",
+      "world": [
+        384,
+        384
+      ],
+      "isolated_probes": {
+        "05/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 3,
+            "bounds": [
+              16,
+              96,
+              352,
+              352
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        }
+      },
+      "ordinary_matches": []
+    },
+    {
+      "node": 7,
+      "id": "06a",
+      "world": [
+        512,
+        320
+      ],
+      "isolated_probes": {
+        "06a/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 1,
+            "bounds": [
+              16,
+              96,
+              480,
+              288
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        }
+      },
+      "ordinary_matches": []
+    },
+    {
+      "node": 8,
+      "id": "06b",
+      "world": [
+        512,
+        320
+      ],
+      "isolated_probes": {
+        "06b/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 2,
+            "bounds": [
+              16,
+              96,
+              480,
+              288
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        }
+      },
+      "ordinary_matches": []
+    }
+  ],
+  "failures": [],
+  "method": "Controller enters phase 1. Kills and pendingLevel are accelerated only in node setup. All ordinary attempts restore a node baseline then enable an enforced RAM-write guard. Isolated probes/stress explicitly use RAM setup. FPS = region_fps * phaseStats.frames / vtimer VBlanks.",
+  "objective_branch_probes": {}
+}
