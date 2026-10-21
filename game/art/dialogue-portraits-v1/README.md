@@ -14,7 +14,7 @@ Criados com **image_gen integrado** a partir dos concepts de [Rex v3](../concept
 
 [Pacote completo](redrex-dialogue-portraits-v1.zip) · [ROM de prévia](../../out/release/rom.bin) · [Validação técnica](validation.json).
 
-Os PNGs nativos são indexados de 4 bits, com índice 0 transparente, alfa binário e componentes RGB nos oito níveis do Mega Drive. Rex usa 13 cores opacas; o Comando usa 12; a parceira usa 10. As fontes geradas em `originals/` têm 1254×1254 e não são os arquivos nativos. A exportação faz apenas amostragem por vizinho mais próximo e quantização de paleta; não desenha o personagem por código.
+Os PNGs nativos são indexados de 4 bits, com índice 0 transparente, alfa binário e componentes RGB nos oito níveis do Mega Drive. Rex usa 13 cores opacas; o Comando usa 13; a parceira usa 10. As fontes geradas em `originals/` têm 1254×1254 e não são os arquivos nativos. O Comando usa a revisão sem chapéu de `originals/comando-v2.png`, com recorte quadrado de 8% nas laterais e 16% no topo para manter o rosto legível. A exportação faz recorte, amostragem por vizinho mais próximo e quantização de paleta; não desenha o personagem por código.
 
 ## Integração
 
@@ -31,7 +31,7 @@ python3 game/art/dialogue-portraits-v1/export_portraits.py
 python3 game/art/dialogue-portraits-v1/export_portraits.py --check
 ```
 
-Os prompts exatos estão em [rex.txt](prompts/rex.txt), [comando.txt](prompts/comando.txt) e [parceira.txt](prompts/parceira.txt). Cada personagem usa seu concept para identidade; os dois retratos posteriores também usam Rex como referência de estilo. As três fontes foram geradas com fundo transparente e preservadas em `originals/`.
+Os prompts exatos estão em [rex.txt](prompts/rex.txt), [comando-v2.txt](prompts/comando-v2.txt) e [parceira.txt](prompts/parceira.txt). Cada personagem usa seu concept para identidade; os dois retratos posteriores também usam Rex como referência de estilo. As fontes foram geradas/editadas com fundo transparente e preservadas em `originals/`; a primeira versão do Comando permanece como histórico. A revisão 2 remove o chapéu, preservando a identidade do padre e seu fone de rádio.
 
 ## Verificação no jogo
 

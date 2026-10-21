@@ -26,17 +26,19 @@
       "frames": 1
     },
     "comando": {
-      "concept": "../concepts/comando/comando-padre-cangaco-cyberpunk-v1.png",
-      "concept_sha256": "59957c055e846b234c53b70c12e268af982c6736ffed59a4ddc1b6915cec23b1",
-      "source": "originals/comando.png",
-      "prompt": "prompts/comando.txt",
+      "concept": "../concepts/comando/comando-padre-cangaco-cyberpunk-v2.png",
+      "concept_sha256": "66b52dcb4249d8d2ca685d7b8681905315c32723a8b1d1a3548dc2074352d890",
+      "source": "originals/comando-v2.png",
+      "prompt": "prompts/comando-v2.txt",
       "native": "comando.png",
       "size": [
         48,
         48
       ],
       "frames": 1,
-      "id": 1
+      "id": 1,
+      "revision": 2,
+      "headwear": false
     }
   }
 }

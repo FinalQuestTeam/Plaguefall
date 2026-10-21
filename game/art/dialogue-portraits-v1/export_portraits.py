@@ -13,15 +13,24 @@ TARGET = GAME / "src/system/video/sprites/portraits_data.h"
 LEVELS = [round(i * 255 / 7) for i in range(8)]
 
 
+def source_path(name):
+    return ROOT / "originals" / ("comando-v2.png" if name == "comando" else f"{name}.png")
+
+
 def snap(rgb):
     return tuple(LEVELS[round(c * 7 / 255)] for c in rgb)
 
 
 def export(name):
-    source = Image.open(ROOT / "originals" / f"{name}.png").convert("RGBA")
+    source = Image.open(source_path(name)).convert("RGBA")
     # The generated sources are square, registered busts. Preserve
     # that framing; only nearest-neighbour sampling and hardware quantization.
     assert source.width == source.height
+    if name == "comando":
+        # Without the hat, trim empty headroom and the outer shoulders so the
+        # face remains legible at 48x48. This is a square crop, not a redraw.
+        inset = round(source.width * 0.08)
+        source = source.crop((inset, inset * 2, source.width - inset, source.height))
     native = source.resize((48, 48), Image.Resampling.NEAREST)
     pixels = [native.getpixel((x, y)) for y in range(48) for x in range(48)]
     samples = [rgb[:3] for rgb in pixels if rgb[3] >= 128]
@@ -133,9 +142,10 @@ def main():
         report["portraits"][name] = {
             "id": index, "opaque_colors": len(set(image.tobytes()) - {0}),
             "binary_alpha": True, "transparent_index": 0,
-            "source_sha256": hashlib.sha256((ROOT / "originals" / f"{name}.png").read_bytes()).hexdigest(),
+            "source_sha256": hashlib.sha256(source_path(name).read_bytes()).hexdigest(),
             "native_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
             "tile_bytes_when_loaded": 1152, "palette_bytes": 32,
+            "framing": "square crop: 8% each side, 16% top" if name == "comando" else "full source",
         }
     generated = header(entries)
     if args.check:

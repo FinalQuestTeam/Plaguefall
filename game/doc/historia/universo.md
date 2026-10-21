@@ -30,7 +30,7 @@ Chapéu metálico, rádio, arma com peças antigas e modernas, placas sobre teci
 
 ## Comando e a resistência
 
-**Comando** é o indicativo de rádio de um padre brasileiro que acompanha Rex. Coordena uma rede de oficinas, cozinhas, rádios e pontos de abrigo. Usa camisa clerical preta, colarinho branco, crucifixo e equipamento de comunicação recuperado. Seu [concept e retrato](../../art/concepts/comando/README.md) seguem o visual do cangaço cyberpunk.
+**Comando** é o indicativo de rádio de um padre brasileiro que acompanha Rex. Coordena uma rede de oficinas, cozinhas, rádios e pontos de abrigo. Tem a cabeça descoberta, cabelo e barba grisalhos. Usa camisa clerical preta, colarinho branco, crucifixo e equipamento de comunicação recuperado. A antena fica no rádio da mochila. Seu [concept e retrato](../../art/concepts/comando/README.md) seguem o visual do cangaço cyberpunk.
 
 O padre conhece as famílias dos abrigos e toma decisões com quem vive ali. Fala de modo direto, calmo e solidário; sua fé não elimina dúvida, cansaço ou responsabilidade pelas perdas. O contraste com o humor e os palavrões de Rex cabe numa relação de confiança. Não transforma cada ordem em sermão. Sua participação é por rádio, sem um novo ator na arena.
 
