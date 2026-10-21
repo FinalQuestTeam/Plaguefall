@@ -8,6 +8,7 @@
   "portraits": {
     "rex": {
       "id": 0,
+      "display_name": "REX",
       "opaque_colors": 13,
       "binary_alpha": true,
       "transparent_index": 0,
@@ -19,6 +20,7 @@
     },
     "comando": {
       "id": 1,
+      "display_name": "COMANDO",
       "opaque_colors": 13,
       "binary_alpha": true,
       "transparent_index": 0,
@@ -30,6 +32,7 @@
     },
     "parceira": {
       "id": 3,
+      "display_name": "DINORAH",
       "opaque_colors": 10,
       "binary_alpha": true,
       "transparent_index": 0,
@@ -43,5 +46,5 @@
   "resident_vram_delta_bytes": 0,
   "simultaneous_portrait_tiles": 72,
   "runtime_ram_delta_bytes": 0,
-  "header_sha256": "01262e738d087ff0193f243aa1d9de90e0b39b68c1e6af61ea49af186e0dcf31"
+  "header_sha256": "3b24ecda9144d993ed479967ecfe16882098ba14777061b9b0b1b8a551810fd5"
 }

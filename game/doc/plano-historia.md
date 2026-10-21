@@ -6,7 +6,7 @@ O motor já está implementado. Este arquivo documenta o contrato técnico; a [p
 
 O roteiro tem **22 cenas**: uma chegada para cada um dos 20 nós, a aproximação do chefe depois da fase 15 e o final depois da 16. Cada percurso atravessa 16 fases e apresenta 18 cenas. A abertura tem sete falas; as demais, duas ou três. Toda cena pode ser pulada.
 
-Rex é humano com implantes; Comando é o padre que coordena a resistência pelo rádio; Lacraia é a matriz local do enxame. [Rex, Comando e parceira têm retratos 48×48 derivados dos concepts](../art/dialogue-portraits-v1/README.md). A parceira fala por rádio antes da fase 7; não há ator aliado na arena. Lacraia mantém o retrato provisório. Rex chama os invasores de BARATAS nas suas falas.
+Rex é humano com implantes; Comando é o padre que coordena a resistência pelo rádio; Lacraia é a matriz local do enxame. [Rex, Comando e Dinorah têm retratos 48×48 derivados dos concepts](../art/dialogue-portraits-v1/README.md). Dinorah fala por rádio antes da fase 7; não há ator aliado na arena. Lacraia mantém o retrato provisório. Rex chama os invasores de BARATAS nas suas falas.
 
 O roteiro substitui a demonstração de sete cenas que descrevia um piloto de mech numa colônia. Não modifica objetivos, inimigos, itens, terrenos ou critérios das rotas.
 
@@ -28,7 +28,7 @@ QUANDO(N_5, ANTES, capela),
 - `ESQUERDA(retrato, texto)` usa o canto superior esquerdo.
 - `DIREITA(retrato, texto)` usa o canto inferior direito.
 - A ordem das entradas define a conversa; um falante pode continuar por várias entradas.
-- `P_REX`, `P_COMANDO`, `P_LACRAIA` e `P_PARCEIRA` são os retratos registrados.
+- `P_REX`, `P_COMANDO`, `P_LACRAIA` e `P_DINORAH` são os retratos registrados.
 - Cada par nó/momento deve aparecer no máximo uma vez: `STORY_find` retorna a primeira correspondência.
 
 `StoryLine` guarda lado, retrato e texto; `StoryEntry` guarda nó, momento, lista de falas e contagem. As estruturas vivem em `levels/story.h`.

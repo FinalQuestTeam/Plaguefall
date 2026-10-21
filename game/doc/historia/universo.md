@@ -75,11 +75,11 @@ A lava permanece um terreno que causa dano. Na história, ocupa áreas de vazame
 
 Os itens continuam sendo suprimentos de combate. Coração cura; não é órgão arrancado de humano. Gelo, fogo, raio e escudo são efeitos do equipamento recuperado, não milagres concedidos como recompensa por crença. A trilha dinâmica existente expressa pressão do enxame; baião, rabeca ou cantoria ficam como direção sonora futura, sem alegar que já foram compostos.
 
-## Parceira — espaço para uma próxima etapa
+## Dinorah — parceira de Rex
 
-Nome proposto: **Luzia**, técnica de campo do Bando, com objetivos próprios ligados à manutenção da rede de água. Sua arte já existe em marrom e vermelho. Uma futura história pode colocá-la ao lado de Rex por competência e conflito de prioridades, sem reduzi-la a romance ou pessoa a resgatar.
+**Dinorah** é técnica de campo do Bando, com objetivos próprios ligados à manutenção da rede de água. Sua arte já existe em marrom e vermelho. Uma futura história pode colocá-la ao lado de Rex por competência e conflito de prioridades, sem reduzi-la a romance ou pessoa a resgatar.
 
-O nome é proposta, não renomeação dos recursos. A personagem já tem um retrato próprio de conversa, exibido como PARCEIRA, e participa por rádio antes da fase 7. Não há segundo ator integrado nem IA aliada. Ela não substitui a santa nem usa o retrato de Comando.
+O nome da personagem é **Dinorah**. Os recursos de arte mantêm o identificador técnico `parceira`. Ela já tem um retrato próprio de conversa, exibido como DINORAH, e participa por rádio antes da fase 7. Não há segundo ator integrado nem IA aliada. Ela não substitui a santa nem usa o retrato de Comando.
 
 ## Desfecho e limites
 

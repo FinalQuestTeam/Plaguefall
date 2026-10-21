@@ -19,7 +19,7 @@
 #define P_REX       0   // humano com implantes, retrato do concept v3
 #define P_COMANDO   1   // padre que coordena a resistencia pelo radio
 #define P_LACRAIA   2   // a matriz local do enxame (chefe)
-#define P_PARCEIRA  3   // garota do concept v2, retrato de conversa
+#define P_DINORAH   3   // Dinorah, parceira de Rex, retrato do concept v2
 
 typedef struct
 {

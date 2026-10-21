@@ -1,6 +1,6 @@
-# Parceira — sprites cangaço cyberpunk
+# Dinorah — sprites cangaço cyberpunk
 
-Derivados do concept v2 aprovado: mulher brasileira com implantes, placas reaproveitadas em vermelho-óxido, tecido marrom e arma de fogo. ID de recurso: `parceira`; nome narrativo ainda não definido.
+Derivados do concept v2 aprovado: mulher brasileira com implantes, placas reaproveitadas em vermelho-óxido, tecido marrom e arma de fogo. ID de recurso: `parceira`; nome narrativo: **Dinorah**.
 
 **Células 32×48, oito direções e as mesmas animações de Rex.** A câmera elevada a 60° acima do chão foi usada como referência visual; o topo do chapéu e dos ombros domina a leitura. A revisão compara desenhos 2D ao guia geométrico de Rex, sem medir um ângulo 3D exato a partir dos pixels.
 

@@ -86,7 +86,7 @@ CENA(retirada)              // 6B: a santa/estacao caiu na fase 5
 FIM
 
 CENA(rede)                  // convergencia: nao presume o resultado da fase 5
-    DIREITA(P_PARCEIRA, "REX, AQUI E SUA PARCEIRA. AINDA HA VOZES NA REDE. SIGA PELO BAIXIO DAS ANTENAS.")
+    DIREITA(P_DINORAH,  "REX, AQUI E DINORAH. AINDA HA VOZES NA REDE. SIGA PELO BAIXIO DAS ANTENAS.")
     ESQUERDA(P_REX,     "ENQUANTO TIVER ALGUEM RESPONDENDO, ESSE BANDO NAO ACABA.")
 FIM
 

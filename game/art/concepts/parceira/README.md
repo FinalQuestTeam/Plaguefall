@@ -1,8 +1,8 @@
-# Parceira — concept v2 aprovado para criação dos sprites
+# Dinorah — concept v2 aprovado para criação dos sprites
 
 Gerado com image_gen integrado, usando o concept aprovado de Rex v3 como referência de estilo. Mulher adulta brasileira, implantes, antebraço direito cibernético, tecido e placas metálicas recuperadas, chapéu com sensores, rádio e arma de fogo. Prancha com frente, costas, rosto e estudo de câmera elevada a 60° acima do chão.
 
-**O concept v2 foi aprovado pelo pedido de conversão. Os [sprites32×48 e oito direções estão prontos](../../cangaco-parceira-iso60-v1/README.md). A integração do comportamento da parceira no jogo é uma etapa separada.** O nome da personagem e seu papel mecânico ainda não foram definidos. O objetivo PROTEGER atual é único e estático: a antiga antena já foi substituída pela santa; a parceira permanece como proposta de personagem separado.
+**O concept v2 foi aprovado pelo pedido de conversão. Os [sprites32×48 e oito direções estão prontos](../../cangaco-parceira-iso60-v1/README.md). A integração do comportamento da parceira no jogo é uma etapa separada.** A personagem se chama **Dinorah**; seu papel mecânico na arena ainda não foi implementado. O objetivo PROTEGER atual é único e estático: a antiga antena já foi substituída pela santa; a parceira permanece como proposta de personagem separado.
 
 ## Versão atual: marrom e vermelho
 

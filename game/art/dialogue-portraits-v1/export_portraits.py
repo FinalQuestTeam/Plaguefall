@@ -118,7 +118,8 @@ def main():
               "simultaneous_portrait_tiles": 72, "runtime_ram_delta_bytes": 0}
     for name, index in [("rex", 0), ("comando", 1), ("parceira", 3)]:
         image, rows, words, palette = export(name)
-        entry = (name.upper(), rows, words)
+        display_name = "DINORAH" if name == "parceira" else name.upper()
+        entry = (display_name, rows, words)
         if index == 3:
             entries.append(entry)
         else:
@@ -140,7 +141,8 @@ def main():
             (ROOT / f"{name}-palette.json").write_text(json.dumps(palette, indent=2) + "\n")
         outputs[name] = image
         report["portraits"][name] = {
-            "id": index, "opaque_colors": len(set(image.tobytes()) - {0}),
+            "id": index, "display_name": display_name,
+            "opaque_colors": len(set(image.tobytes()) - {0}),
             "binary_alpha": True, "transparent_index": 0,
             "source_sha256": hashlib.sha256(source_path(name).read_bytes()).hexdigest(),
             "native_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),

@@ -1,9 +1,9 @@
 {
   "passed": true,
   "rom_bytes": 524288,
-  "rom_sha256": "f88da0217de6ebbb5aebc9de1ebf22ea8ab2e9ac3944e4852586232916e5068e",
+  "rom_sha256": "1a1c418ab758ea83531ed5289315102473c9f5e1ec83b1846e010ff1b25cdc8c",
   "compiler": "m68k-elf-gcc, SGDK local",
-  "text_bytes": 432004,
+  "text_bytes": 432000,
   "data_bytes": 88,
   "bss_bytes": 6077,
   "static_ram_bytes": 6165,
@@ -15,5 +15,6 @@
   "build_warning_count": 12,
   "emulator_report": "emulator/report.json",
   "priest_portrait_revision": 2,
-  "priest_headwear": false
+  "priest_headwear": false,
+  "partner_name": "DINORAH"
 }

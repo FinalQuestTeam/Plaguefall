@@ -29,7 +29,7 @@ A operação sai da defesa do abrigo e procura a instalação que mantém os nin
 |---|---|---|---|
 | 6A | Fundos da capela | Eliminar 20, lava | O ponto resistiu; Comando ouviu respostas de outros abrigos |
 | 6B | Corredor da retirada | Eliminar 20, lava, spawns mais rápidos | A santa/estação caiu; reconhecer a perda e seguir pela passagem sob cerco |
-| 7 | Baixio das antenas | Eliminar 22, lama, duplas | A parceira entra pelo rádio: outras vozes mantêm a rede, em qualquer rota |
+| 7 | Baixio das antenas | Eliminar 22, lama, duplas | Dinorah entra pelo rádio: outras vozes mantêm a rede, em qualquer rota |
 | 8 | Fornalha de retorno | Eliminar 24, lava, duplas | Revelar que o carregamento dos foguetes alimentava os ninhos |
 | 9 | Alfândega automática | Eliminar 24, entrada das elites | A colmeia incorporou equipamento humano; aproximar a matriz |
 | 10A | Acesso dos técnicos | Eliminar 26, lama | Sem dano na 9: Rex está em condição de seguir o acesso de manutenção |
@@ -63,7 +63,7 @@ O final não depende de qual rota foi tomada. “Voltar para casa” significa v
 
 | Elemento disponível | Uso narrativo nesta revisão |
 |---|---|
-| `P_REX`, `P_COMANDO`, `P_LACRAIA`, `P_PARCEIRA` | Rex, Comando (padre) e parceira usam os concepts; Lacraia preserva a arte anterior |
+| `P_REX`, `P_COMANDO`, `P_LACRAIA`, `P_DINORAH` | Rex, Comando (padre) e Dinorah usam os concepts; Lacraia preserva a arte anterior |
 | `ANTES` por nó | Cenas das rotas A e B recebem contexto próprio |
 | `DEPOIS` em 15 e 16 | Preparação do confronto e encerramento único |
 | `NPC` estático com HP | Santa e estação no mesmo ponto de proteção |
