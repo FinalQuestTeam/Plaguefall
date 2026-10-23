@@ -14,17 +14,23 @@
 #include "system/video/spritelist.h"
 #include "system/video/herogfx.h"
 #include "system/video/enemygfx.h"
+#include "system/video/combatgfx.h"
+#include "system/video/actordeath.h"
 #include "system/video/floor.h"
 #include "system/video/flash.h"
 #include "system/video/screens/hud.h"
 #include "system/video/screens/pause.h"
 #include "system/video/screens/panel.h"
+#include "system/video/screens/result.h"
 #include "system/video/screens/mission.h"
 #include "system/video/screens/routemap.h"
 #include "system/video/screens/story.h"
+#include "system/video/screens/loading.h"
 #include "core/inventory.h"
+#include "core/death.h"
 #include "core/objective.h"
 #include "actors/npc.h"
+#include "actors/dinorah.h"
 #include "system/audio/sfx.h"
 #include "system/audio/music.h"
 #include "system/audio/audio.h"
@@ -61,9 +67,46 @@ static u8 storyThen;            // STORY_TO_*: destino ao fim da cena de histór
 
 static u16 kills;
 static u16 spawnTimer;
-static u16 freezeTimer;         // fase congelada ao começar (3 s de contagem)
-static u16 doneTimer;           // fase concluída: espera antes da próxima tela
+static u8 settleKind;       //1 stage result,2 boss dialogue,3 defeat,4 fail exit,5 training failure
+static u16 settleTimer;
+static volatile u16 freezeTimer; // diagnostic: zero; preparation owns the only countdown
 static u16 prevJoy;             // estado anterior do joypad (detecção de borda)
+static volatile bool transitioning; // observable while blocking screen loads run
+
+// Keep audio running through one fade on each side of a complete screen load.
+// Screen owners preserve the disabled display until the next screen is ready.
+static void transitionFrames(void)
+{
+    while(PAL_isDoingFade())
+    {
+        AUDIO_frameBegin();MUSIC_update();SFX_update();AUDIO_frameEnd();
+        SYS_doVBlankProcess();
+    }
+}
+static void beginTransition(void)
+{
+    LOADING_workBegin();
+    transitioning=TRUE;
+    PAL_fadeOutAll((fps+9)/10,TRUE);transitionFrames();
+    VDP_setEnable(FALSE);
+}
+static void endTransition(void)
+{
+    u16 colors[64];PAL_getColors(0,colors,64);
+    PAL_setColors(0,palette_black,64,DMA);VDP_setEnable(TRUE);
+    PAL_fadeInAll(colors,(fps+9)/10,TRUE);transitionFrames();
+    prevJoy=JOY_readJoypad(JOY_1);
+    transitioning=FALSE;
+    LOADING_workEnd();
+}
+static void beginContentTransition(void)
+{
+    LOADING_workBegin();transitioning=TRUE;
+}
+static void endContentTransition(void)
+{
+    prevJoy=JOY_readJoypad(JOY_1);transitioning=FALSE;LOADING_workEnd();
+}
 
 // ---------------------------------------------------------------------------
 // Telas e fluxo de fases
@@ -72,7 +115,8 @@ static u16 prevJoy;             // estado anterior do joypad (detecção de bord
 // tela de preparação: condições da fase, começa com A
 static void showPrep(u8 level)
 {
-    ARENA_leave();
+    DINORAH_clear();
+    if(!PANEL_isMission())ARENA_leave();
     pendingLevel = level;
     state = ST_PREP;
     SFX_silence();
@@ -84,12 +128,13 @@ static void showPrep(u8 level)
     SPRITES_hide();
     SYS_doVBlankProcess();      // aplica a lista vazia já neste quadro
 
-    if(PANEL_begin())MISSION_show(level);
+    if(PANEL_beginMission(NULL))MISSION_show(level);
 }
 
 // mapa de rotas (após a fase concluída/história): destaca o pendingLevel
 static void showMap(void)
 {
+    DINORAH_clear();
     ARENA_leave();
     SPRITES_hide();
     SYS_doVBlankProcess();      // aplica a lista vazia já neste quadro
@@ -103,12 +148,11 @@ static void showMap(void)
 static void showEnd(void)
 {
     ARENA_leave();
-    FLOOR_clear();
-    VDP_clearPlane(BG_A, TRUE);
-    VDP_drawText("PARABENS! FIM", 13, 9);
-    VDP_drawText("VOCE DERROTOU O ESCORPIAO!", 7, 12);
-    VDP_drawText("APERTE START", 14, 15);
-    state = ST_END;
+    // The final dialogue has released its full-screen panel. Rebuild only
+    // the empty native chamber, without respawning actors or resetting stats.
+    VDP_clearPlane(BG_A,TRUE);FLOOR_clear();
+    LEVEL_draw(currentLevel);FLOOR_draw(LEVEL_current()->floor);
+    RESULT_victory();state = ST_END;
 }
 
 // vai para a preparação do nó — tocando antes a HISTÓRIA de chegada, se o nó
@@ -125,14 +169,16 @@ static void gotoPrep(u8 node)
 // começa (ou recomeça) uma fase; a vida NÃO reseta (persiste entre fases)
 static void startPhase(u8 level)
 {
+    settleKind=0;settleTimer=0;
     PANEL_end();
-    AUDIO_silenceAll();         // cala o PSG antes da carga pesada (sem nota presa)
+    if(!LOADING_active())AUDIO_silenceAll();
+    DINORAH_clear();
     LEVEL_load(level);
     FLOOR_draw(LEVEL_current()->floor);     // chão configurado por fase (def)
     ENEMIES_clear();
     ITEMS_clear();
+    DEATH_startPhase(level);
     SHOTS_clear();
-    PLAYER_reset();
     ARENA_camera();
     HERO_load();               // human protagonist: streamed 32x48 frame + PAL2
 
@@ -142,80 +188,112 @@ static void startPhase(u8 level)
     STATS_reset();              // estatísticas da fase (condições de saída do grafo)
     ROUTEMAP_markVisited(level);    // caminho percorrido (mapa de rotas)
     if (GRAPH_isFinal(level))   // nó final = fase do chefe (gerado uma vez)
-        ENEMIES_spawnAt(ENEMY_BOSS, 140, 40);
+        ENEMIES_spawnAt(ENEMY_BOSS, 140, arenaMinY);
     spawnTimer = FIRST_SPAWN_S * fps;   // 1º inimigo aparece logo no início
-    freezeTimer = fps * 3;      // 3 s de contagem antes de o jogador assumir
+    freezeTimer = 0;            // preparation already counted 3/2/1
 
-    SFX_silence();
+    if(!LOADING_active())SFX_silence();
     FLASH_stop();
     const LevelDef *def = LEVEL_current();
     OBJECTIVE_start(def);                    // objetivo da fase (timer/NPC/contagem)
     MUSIC_selectTrack(def->musicTrack);
     MUSIC_setRamp(def->musCalmUntil, def->musEnemyMax,   // curva de BPM da fase
                   def->musStepCalm,  def->musStepHot);
-    OBJECTIVE_drawHUD(kills);
-    HUD_drawLife(hp);
-    HUD_drawInventory();
-    state = ST_PLAY;
+    OBJECTIVE_drawHUD(kills);LOADING_poll();
+    HUD_drawLife(hp);LOADING_poll();
+    HUD_drawInventory();LOADING_poll();
+    if(!LOADING_active())state=ST_PLAY;
 }
 
-// FASE TESTE (currentLevel == 0): sandbox no estágio dado (1/2). A lógica do
-// sandbox (porta, inimigos, infos) fica em levels/test.c.
-static void startTest(u8 stage)
+// Training: directly selectable rooms, outside the campaign graph.
+static void startTest(u8 stage, bool retry)
 {
+    const bool retryRules=retry && stage==TEST_RULE_ROOM;
+    if(retryRules)DEATH_retry(TEST_ruleNode(),px,py);
+    else DEATH_reset();
+    settleKind=0;settleTimer=0;
     AUDIO_silenceAll();         // cala o PSG antes da carga pesada (sem nota presa)
     testStage = stage;
+    SPRITES_hide();SYS_doVBlankProcess();ENEMYGFX_reset();
+    DINORAH_clear();
     LEVEL_load(0);              // arena + HUD "FASE TESTE n"
     FLOOR_draw(LEVEL_current()->floor);     // chão configurado por fase (def)
     ENEMIES_clear();
     ITEMS_clear();
     SHOTS_clear();
-    PLAYER_reset();
     ARENA_camera();
     HERO_load();               // human protagonist: streamed 32x48 frame + PAL2
-    PLAYER_fullHp();
-    BOMB_reset();
-    SHOTS_resetPower();
-    SHOTS_resetChain();
-    PLAYER_resetSpeed();
+    if(!retryRules) {
+        PLAYER_fullHp();
+        BOMB_reset();
+        SHOTS_resetPower();
+        SHOTS_resetChain();
+        PLAYER_resetSpeed();
+        INV_clear();
+    }
 
     kills = 0;
     gameOver = FALSE;
-    STATS_reset();             // os estágios de objetivo (4/5/6) também zeram
+    STATS_reset();             // cada sala começa com estatísticas novas
     freezeTimer = 0;           // sem contagem regressiva no teste
 
     SFX_silence();
     FLASH_stop();
-    TEST_draw();               // porta + timer de aparição dos alvos
     const LevelDef *def = LEVEL_current();
-    OBJECTIVE_start(def);                    // estágios 4/5/6 têm objetivo
+    OBJECTIVE_start(def);
     MUSIC_selectTrack(def->musicTrack);
     MUSIC_setRamp(def->musCalmUntil, def->musEnemyMax,   // curva de BPM da fase
                   def->musStepCalm,  def->musStepHot);
-    OBJECTIVE_drawHUD(kills);
+    ARENA_gameView();
+    if(TEST_objectiveRoom())OBJECTIVE_drawHUD(kills);
+    TEST_begin(retryRules);
     HUD_drawLife(hp);
     HUD_drawInventory();
     state = ST_PLAY;
 }
 
-// contagem regressiva do início da fase; devolve TRUE enquanto congelado
-static bool tickFreeze(void)
+static void finishSettled(void)
 {
-    if (freezeTimer == 0) return FALSE;
-
-    freezeTimer--;
-    if (freezeTimer == 0)
+    const u8 kind=settleKind;settleKind=0;settleTimer=0;
+    SFX_silence();FLASH_stop();
+    if(kind==2)
     {
-        VDP_clearTextArea(14, 2, 12, 1);
-        ARENA_gameView();
+        LOADING_workBegin();
+        MUSIC_selectTrack(MUSIC_TRACK_ENTARDECER);
+        if(STORYSCR_start(currentLevel,DEPOIS)){storyThen=STORY_TO_END;state=ST_STORY;}
+        else showEnd();
+        LOADING_workEnd();
+    }
+    else if(kind==3)
+    {
+        RESULT_defeat(kills);state=ST_OVER;
+    }
+    else if(kind==4)
+    {
+        phaseStats.objFailed=TRUE;state=ST_DONE;
+        ITEMS_clear();NPC_clear();RESULT_complete(kills,TRUE);
+    }
+    else if(kind==5)
+    {
+        TEST_finish(OBJ_LOST);
     }
     else
     {
-        char buf[16];
-        sprintf(buf, "PREPARE-SE %d", (freezeTimer + fps - 1) / fps);
-        VDP_drawText(buf, 14, 2);
+        state=ST_DONE;ITEMS_clear();NPC_clear();RESULT_complete(kills,FALSE);
     }
-    return TRUE;
+}
+static void settleDeath(u8 kind)
+{
+    if(kind==3) {
+        const u8 node=currentLevel ? currentLevel : testStage==TEST_RULE_ROOM ? TEST_ruleNode() : 0;
+        if(node)DEATH_capture(node,px,py);
+    }
+    if(kind>=3) {
+        SFX_silence();FLASH_stop();
+        if(hp<=0)ACTORDEATH_start(ACTOR_DEATH_HERO,faceX<0);
+    }
+    settleKind=kind;settleTimer=COMBATGFX_remaining();
+    if(!settleTimer && !ACTORDEATH_pending())finishSettled();
 }
 
 // ---------------------------------------------------------------------------
@@ -223,10 +301,17 @@ static bool tickFreeze(void)
 // ---------------------------------------------------------------------------
 static void updatePlay(u16 joy, u16 pressed)
 {
-    (void) pressed;             // B (bomba) agora é ativação do inventário (flow)
-
+    if(currentLevel==0) {
+        if(testResult){COMBATGFX_update();return;}
+        if(testStage==TEST_DEATH_ROOM)TEST_deathInput(pressed);
+        else if(testStage==TEST_RULE_ROOM)TEST_ruleInput(pressed);
+        TEST_beforeUpdate();
+    }
+    if(currentLevel || TEST_effectTick())COMBATGFX_update();
+    if(!currentLevel && testStage==TEST_DEATH_ROOM){TEST_afterUpdate();return;}
     STATS_tick();               // tempo de fase (condições de saída por tempo)
     PLAYER_update(joy);
+    kills+=DINORAH_update();
     ARENA_camera();
     LEVEL_update();                 // elementos da fase (ex.: lava/lama)
     if (gameOver) return;
@@ -234,6 +319,8 @@ static void updatePlay(u16 joy, u16 pressed)
     // alvo da perseguição dos inimigos: o aliado no PROTEGER, senão o jogador
     if (LEVEL_current()->objective == OBJ_PROTECT && NPC_active())
         ENEMIES_setChaseTarget(npcX + NPC_size() / 2, npcY + NPC_size() / 2);
+    else if(DINORAH_alive())
+        ENEMIES_setChaseTarget(dinorahX+8,dinorahY+8);
     else
         ENEMIES_setChaseTarget(px + 8, py + 8);
 
@@ -241,24 +328,23 @@ static void updatePlay(u16 joy, u16 pressed)
     SHOTS_updateEnemy();
     kills += ENEMIES_update();      // + mortes pela queimadura (fogo)
     MUSIC_setEnemies(ENEMIES_activeCount());   // + inimigos = BPM sobe (perigo)
+    if (gameOver) return; // um golpe fatal não pode recolher a bolsa ou outros itens
     ITEMS_update();
 
     if (gameOver) return;
 
-    // FASE TESTE: lógica do sandbox vive em levels/test.c; se o jogador cruzou
-    // a porta, TEST_update devolve o estágio a (re)carregar
+    // Training rooms keep their own spawners and never advance the graph.
     if (currentLevel == 0)
     {
-        const u8 next = TEST_update();
-        if (next) { startTest(next); return; }
+        TEST_afterUpdate();
 
-        // estágios de objetivo (4/5/6): roda a meta e reinicia o estágio ao
-        // concluir/falhar (é uma demonstração em loop, sem prep nem game over)
-        if (LEVEL_current()->objective != OBJ_KILL)
+        // Objective rooms freeze on success/failure until restarted.
+        if (TEST_objectiveRoom())
         {
             const u8 st = OBJECTIVE_update(kills);
             OBJECTIVE_drawHUD(kills);
-            if (st != OBJ_ONGOING) startTest(testStage);
+            if (st == OBJ_LOST && ACTORDEATH_pending())settleDeath(5);
+            else if (st != OBJ_ONGOING) TEST_finish(st);
         }
         return;
     }
@@ -267,14 +353,10 @@ static void updatePlay(u16 joy, u16 pressed)
     // título. Sem meta por contagem nem spawn regular (só o chefe e lacaios).
     if (GRAPH_isFinal(currentLevel))
     {
+        OBJECTIVE_drawHUD(kills);
         if (bossDefeated)
         {
-            SFX_silence();
-            // história do fim (se inédita) antes da tela de parabéns
-            MUSIC_selectTrack(MUSIC_TRACK_ENTARDECER);
-            if (STORYSCR_start(currentLevel, DEPOIS))
-            { storyThen = STORY_TO_END; state = ST_STORY; }
-            else showEnd();
+            settleDeath(2);
         }
         return;
     }
@@ -284,38 +366,23 @@ static void updatePlay(u16 joy, u16 pressed)
     OBJECTIVE_drawHUD(kills);
     if (obj == OBJ_WON)
     {
-        // fase completa: mensagem por 3 s antes da próxima tela; os itens no
-        // chão somem na hora (não dá mais para coletar na cena congelada)
-        ARENA_overlay();
-        state = ST_DONE;
-        doneTimer = fps * 3;
-        SFX_silence();
-        ITEMS_clear();
-        NPC_clear();
-        VDP_drawText("FASE CONCLUIDA!", 12, 13);
+        settleDeath(1);
         return;
     }
-    if (obj == OBJ_LOST)            // objetivo falhou (ex.: aliado caiu)
+    if (obj == OBJ_LOST)
     {
-        SFX_silence();
-        ARENA_overlay();
-        VDP_drawText("O ALIADO CAIU!", 13, 12);
-
-        // se o nó tem rota de falha (EXIT OBJ_FALHOU no grafo), a falha NÃO é
-        // game over: a fase encerra e o GRAPH_resolve segue por essa saída
+        if(ACTORDEATH_pending()) {
+            if(!GRAPH_hasFailExit(currentLevel))gameOver=TRUE;
+            settleDeath(GRAPH_hasFailExit(currentLevel) ? 4 : 3);return;
+        }
+        SFX_silence();FLASH_stop();
         if (GRAPH_hasFailExit(currentLevel))
         {
-            VDP_drawText("A MISSAO CONTINUA...", 10, 14);
-            phaseStats.objFailed = TRUE;
-            state = ST_DONE;
-            doneTimer = fps * 3;
-            ITEMS_clear();
-            NPC_clear();
+            phaseStats.objFailed = TRUE;state = ST_DONE;
+            ITEMS_clear();NPC_clear();RESULT_complete(kills,TRUE);
             return;
         }
-
-        VDP_drawText("APERTE START", 14, 14);
-        gameOver = TRUE;            // o laço ST_PLAY vê gameOver e vai p/ ST_OVER
+        gameOver = TRUE;
         return;
     }
 
@@ -328,6 +395,13 @@ static void updatePlay(u16 joy, u16 pressed)
             ENEMIES_trySpawn(def->enemyTypes, def->enemyTypeCount);
         spawnTimer = def->spawnSeconds * fps;
     }
+}
+
+static void resetCampaign(void)
+{
+    DEATH_reset();
+    PLAYER_fullHp();BOMB_reset();SHOTS_resetPower();SHOTS_resetChain();
+    PLAYER_resetSpeed();INV_clear();ROUTEMAP_reset();STORYSCR_reset();STATS_reset();
 }
 
 // ---------------------------------------------------------------------------
@@ -358,6 +432,7 @@ void FLOW_run(void)
     // laço externo: TÍTULO → JOGO → (volta ao título pela pausa) → ...
     while (TRUE)
     {
+        DINORAH_clear();
         ARENA_leave();
         MUSIC_selectTrack(MUSIC_DEFAULT_TRACK);
         FLOOR_clear();          // menu/título sem o chão da arena
@@ -366,17 +441,14 @@ void FLOW_run(void)
 
         VDP_setTextPlane(BG_A);
         VDP_setTextPalette(PAL0);
-        PLAYER_fullHp();
-        BOMB_reset();
-        SHOTS_resetPower();
-        SHOTS_resetChain();
-        PLAYER_resetSpeed();
-        INV_clear();                            // inventário zerado a cada jogo novo
-        ROUTEMAP_reset();                       // novo run: caminho do mapa zerado
-        STORYSCR_reset();                       // novo run: cenas de história de novo
+        resetCampaign();
 
-        if (choice == TITLE_TEST) startTest(1); // fase teste (começa no estágio 1)
-        else gotoPrep(1);                       // novo jogo (história + fase 1)
+        if (choice == TITLE_TEST) {
+            TEST_defaults();const u8 room=TEST_chooseRoom(1);
+            if(!room)continue;
+            startTest(room,FALSE);
+        }
+        else {LOADING_workBegin();gotoPrep(1);LOADING_workEnd();} // novo jogo
 
         // sincroniza o joypad: o START/A usado no menu não vaza como toque novo
         prevJoy = JOY_readJoypad(JOY_1);
@@ -401,7 +473,15 @@ void FLOW_run(void)
             switch (state)
             {
                 case ST_PREP:
-                    if (pressed & BUTTON_A) startPhase(pendingLevel);
+                    if (MISSION_update(pressed)){
+                        beginContentTransition();SFX_silence();
+                        if(!LOADING_begin(fps*3,pendingLevel))
+                        {
+                            showPrep(pendingLevel);endContentTransition();break;
+                        }
+                        startPhase(pendingLevel);
+                        LOADING_end();HUD_present();ARENA_gameView();state=ST_PLAY;endContentTransition();
+                    }
 #ifdef DEV_SHORTCUTS
                     else if (pressed & BUTTON_C)    // C: percorre os nós (debug)
                         showPrep((pendingLevel % NODE_COUNT) + 1);
@@ -410,9 +490,19 @@ void FLOW_run(void)
                     break;
 
                 case ST_PLAY:
-                    if (tickFreeze())               // contagem regressiva de 3 s
+                    if(settleKind)
                     {
-                        SPRITES_draw();
+                        if(pressed & BUTTON_START)
+                        {
+                            AUDIO_silenceAll();
+                            if(PAUSE_show(kills))state=ST_PAUSE;
+                            break;
+                        }
+                        COMBATGFX_update();
+                        ACTORDEATH_update();
+                        if(settleTimer)--settleTimer;
+                        if(!settleTimer && !ACTORDEATH_pending())finishSettled();
+                        if(state==ST_PLAY)SPRITES_draw();else SPRITES_hide();
                         break;
                     }
 
@@ -436,8 +526,8 @@ void FLOW_run(void)
                     {
 #endif
                         // inventário: C troca a seleção; B ativa o selecionado
-                        if (pressed & BUTTON_C) INV_cycle();
-                        if (pressed & BUTTON_B)
+                        if ((currentLevel || (!testResult && testStage!=TEST_DEATH_ROOM && testStage!=TEST_RULE_ROOM)) && (pressed & BUTTON_C)) INV_cycle();
+                        if ((currentLevel || (!testResult && testStage!=TEST_DEATH_ROOM && testStage!=TEST_RULE_ROOM)) && (pressed & BUTTON_B))
                         {
                             const u16 bk = INV_activate();      // bomba devolve mortes
                             // o HUD do objetivo se atualiza no updatePlay
@@ -455,63 +545,88 @@ void FLOW_run(void)
                     }
 
                     updatePlay(joy, pressed);
-                    if (gameOver) { ARENA_overlay(); state = ST_OVER; }
-                    HUD_drawInventoryIfDirty();      // só redesenha quando muda
-                    SPRITES_draw();
+                    if(gameOver && !settleKind)
+                    {
+                        settleDeath(3);
+                    }
+                    if(state==ST_PLAY){HUD_drawInventoryIfDirty();SPRITES_draw();}
+                    else SPRITES_hide();
                     break;
 
                 case ST_PAUSE:
                 {
                     const u8 action=PAUSE_update(pressed);
-                    if(action==PAUSE_RESUME)state=ST_PLAY;
+                    if(action==PAUSE_RESUME){state=ST_PLAY;if(!currentLevel)TEST_resume();}
                     else if(action==PAUSE_EXIT)backToTitle=TRUE;
+                    else if(action==PAUSE_TEST_RESTART)startTest(testStage,FALSE);
+                    else if(action==PAUSE_TEST_CONFIG) {
+                        if(TEST_configure())startTest(testStage,FALSE);else{state=ST_PLAY;TEST_resume();}
+                        prevJoy=JOY_readJoypad(JOY_1);
+                    }
+                    else if(action==PAUSE_TEST_ROOM) {
+                        const u8 room=TEST_chooseRoom(testStage);
+                        if(room)startTest(room,FALSE);else{state=ST_PLAY;TEST_resume();}
+                        prevJoy=JOY_readJoypad(JOY_1);
+                    }
                     SPRITES_hide();
                     break;
                 }
 
                 case ST_OVER:
-                    if (pressed & BUTTON_START)
+                {
+                    const u8 action=RESULT_update(joy,pressed);
+                    if(action==RESULT_TITLE){RESULT_close();backToTitle=TRUE;}
+                    else if(action==RESULT_RETRY)
                     {
-                        if (currentLevel == 0) startTest(testStage); // reinicia o estágio de teste
+                        beginTransition();
+                        RESULT_close();
+                        if(currentLevel==0)startTest(testStage,TRUE);
                         else
                         {
-                            PLAYER_fullHp();        // morreu: vida, bombas e tiros ao início
-                            BOMB_reset();
-                            SHOTS_resetPower();
-                            SHOTS_resetChain();
-                            PLAYER_resetSpeed();
-                            INV_clear();
-                            gotoPrep(currentLevel);     // cena já vista: vai direto
+                            DEATH_retry(currentLevel,px,py);
+                            gotoPrep(currentLevel);
                         }
+                        endTransition();
                     }
-                    SPRITES_draw();
+                    SPRITES_hide();
                     break;
+                }
 
                 case ST_DONE:
-                    // cena congelada com a mensagem de conclusão; no quadro da
-                    // transição NÃO redesenha (showPrep acabou de esconder tudo)
-                    if (doneTimer) { doneTimer--; SPRITES_draw(); }
-                    else
+                    if(RESULT_update(joy,pressed)==RESULT_RETRY)
                     {
-                        // saída do grafo conforme as estatísticas da fase
-                        // (bomba/dano/tempo/falha); nó final não passa por aqui
-                        pendingLevel = GRAPH_resolve(currentLevel);
-                        if (!pendingLevel) pendingLevel = 1;
-
-                        // história do DEPOIS (se inédita), depois o mapa
-                        if (STORYSCR_start(currentLevel, DEPOIS))
-                        { storyThen = STORY_TO_MAP; state = ST_STORY; }
+                        pendingLevel=GRAPH_resolve(currentLevel);
+                        if(!pendingLevel)pendingLevel=1;
+                        ROUTEMAP_prepare(currentLevel,pendingLevel);
+                        beginTransition();
+                        RESULT_close();
+                        if(STORYSCR_start(currentLevel,DEPOIS))
+                        {storyThen=STORY_TO_MAP;state=ST_STORY;}
                         else showMap();
+                        endTransition();
                     }
+                    SPRITES_hide();
                     break;
 
                 case ST_STORY:
                     // cena de diálogo; ao terminar (ou pular), segue o destino
                     if (STORYSCR_update(pressed))
                     {
+                        if(storyThen==STORY_TO_PREP)
+                        {
+                            beginContentTransition();
+                            if(STORYSCR_closeToMission())
+                            {
+                                showPrep(pendingLevel);endContentTransition();break;
+                            }
+                            endContentTransition();
+                        }
+                        if(storyThen==STORY_TO_MAP)ROUTEMAP_prepare(currentLevel,pendingLevel);
+                        beginTransition();STORYSCR_close();
                         if (storyThen == STORY_TO_PREP)     showPrep(pendingLevel);
                         else if (storyThen == STORY_TO_MAP) showMap();
                         else                                showEnd();
+                        endTransition();
                     }
                     SPRITES_hide();
                     break;
@@ -521,25 +636,30 @@ void FLOW_run(void)
                     // se o nó destino tiver, e então a preparação)
                     if (ROUTEMAP_update(pressed))
                     {
+                        beginTransition();
                         ROUTEMAP_release();
                         gotoPrep(pendingLevel);
+                        endTransition();
                     }
                     break;
 
                 case ST_END:
-                    // fim de jogo (chefe derrotado): START volta ao título
-                    if (pressed & BUTTON_START) backToTitle = TRUE;
+                {
+                    const u8 action=RESULT_update(joy,pressed);
+                    if(action==RESULT_TITLE){RESULT_close();backToTitle=TRUE;}
+                    else if(action==RESULT_REPLAY)
+                    {beginTransition();RESULT_close();resetCampaign();gotoPrep(1);endTransition();}
                     SPRITES_hide();
                     break;
+                }
             }
 
             AUDIO_frameBegin();     // árbitro: música e SFX só REQUISITAM voz...
             MUSIC_update();
             SFX_update();
             AUDIO_frameEnd();       // ...e o árbitro escreve o PSG (1x por canal)
-            // Pause/guide/panel palettes stay stable; gameplay feedback still
-            // decays on the frozen victory and game-over views.
-            if((frameState==ST_PLAY && state==ST_PLAY) || state==ST_DONE || state==ST_OVER)FLASH_update();
+            // All opaque cards and panels own stable palettes while frozen.
+            if(frameState==ST_PLAY && state==ST_PLAY)FLASH_update();
             SYS_doVBlankProcess();
         }
     }

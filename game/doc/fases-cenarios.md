@@ -47,9 +47,10 @@ As fases 1 a 6 abaixo usam os cenários aprovados na campanha. As medidas das fa
 | 1 | Retângulo horizontal, integrado | 512×384 | Igreja ao norte, miolo livre e barricadas periféricas |
 | 2A / 2B | Rua horizontal, integrada | 512×320 | Rua aberta / desvio entre escombros e lama |
 | 3 | Praça do abrigo, integrada | 384×384 | Abrigo periférico e centro para defesa |
-| 4 | Corredor de manutenção, integrado | 512×288 | Tubulação, acessos técnicos e trechos secos |
+| 4 | Travessia de manutenção, integrada | 2048×288 | Entrada, bombas, reparos e portão de serviço |
 | 5 | Praça de defesa, integrada | 384×384 | Santa no centro, aproximações pelas bordas |
-| 6A / 6B | Retângulo de embarque, integrado | 512×320 | Rampa e sinal confirmado / passagem por terra |
+| 6A | Retângulo de embarque, integrado | 512×320 | Rampa e sinal confirmado |
+| 6B | Escolta por terra, integrada | 2048×320 | Posto de evacuação, rastros de bagagem e saída terrestre |
 | 7 | Retângulo horizontal | 512×256 | Antenas e cabos indicam o percurso |
 | 8 | Praça industrial | 384×384 | Fornalha e ovos nos dutos periféricos |
 | 9 | Retângulo de carga | 512×256 | Pilhas de carga criam acessos legíveis |
@@ -69,11 +70,24 @@ Para as fases futuras, cada aprovação deve mostrar composição em resolução
 
 ## Integração dos capítulos 2 a 6
 
-As áreas navegáveis medem 480×208 nas ruas e plataformas, 352×272 nas praças e 480×192 nos túneis. Os perigos ficam nos extremos, com rota seca contínua para a base física de 16×16 do personagem. A fase 5 preserva o objetivo de proteger a Santa por 30 segundos; as demais preservam suas metas de abates e músicas. Arquitetura e bagagens permanecem no perímetro. As fases 2B e 4 usam as áreas de lama da planta, aplicando a lentidão existente ao jogador e aos inimigos.
+As fases 4 e 6B usam os [percursos contínuos de 2048 pixels](../art/routes-2048-v2/README.md).
+Os cenários medem 2048×288 e 2048×320, respectivamente. A composição distribui
+marcos de manutenção e evacuação em posições próprias, com piso de textura
+discreta e arquitetura contínua. Os mapas deixam de repetir a sala original
+a cada 512 pixels, preservando as rotas e as colisões dos buracos.
+
+Na fase 4, a [lama da travessia](../art/reach-mud-v1/README.md) ocupa 25,23% da
+área caminhável, com três passagens de lama de altura inteira e larguras
+diferentes. Nesses pontos não há desvio seco: é preciso atravessar a lama e
+administrar sua lentidão progressiva. A lama não bloqueia fisicamente o avanço.
+
+Nas fases de travessia (4) e escolta (6B), os vinte buracos têm [bordas de segurança hachuradas](../art/pit-safety-v1/README.md) de 4 pixels em amarelo e preto, com contorno discreto nos quatro lados e cantos. A faixa é pintura do piso; a área bloqueada dos buracos e as rotas permanecem iguais. As salas de treino usam os mesmos recursos.
+
+Nos cenários compactos, as áreas navegáveis medem 480×208 nas ruas e plataformas e 352×272 nas praças. Os campos de lava conservam uma rota seca para a base física de 16×16 do personagem; a lama da travessia ampliada tem passagens obrigatórias. A fase 5 preserva o objetivo de proteger a Santa por 30 segundos. Arquitetura e bagagens permanecem no perímetro. As fases 2B e 4 usam a lentidão existente da lama para jogador e inimigos.
 
 A exportação usa uma paleta de 16 cores por cenário, tiles de 8×8 deduplicados sem substituição aproximada, mapas compactos e cópias de 64×48 para o anel do VDP. Os recursos ativos da campanha derivam desses pacotes. A revisão mantém os limites, perigos, vestígios narrativos e módulos para consulta.
 
-Na fase 5, a Santa já está desenhada no mapa. A entidade protegida usa contato lógico de 40×40 em (176,200), centro em (196,220), sem desenhar outra Santa por cima. A pedra física de 40×16 em (176,208) bloqueia os pés e deixa passar os tiros. O toque exato nas bordas também atinge o objetivo, permitindo que inimigos vindos dos lados causem dano sem atravessar a pedra. Um sinal de 8×8 pisca em (192,200), e o HUD continua mostrando a vida. Cada acerto causa 12 pontos, recuo, onda de choque e 2,5 segundos de invulnerabilidade; essa duração permite tanto resgate confirmado em 6A quanto falha em 6B dentro da defesa de 30 segundos. Os NPCs legados conservam 24×24 e 5 segundos de invulnerabilidade.
+Na fase 5 e na sala de defesa do treino, a [Santa iso60 v2](../art/santa-iso60-v2/README.md) substitui a imagem frontal no mapa. O novo desenho de 40×48 fica em (176,176), com corpo e base na perspectiva elevada dos personagens. Essa mesma área é sólida para o jogador e define o contato dos inimigos pelos quatro lados; os tiros continuam passando. A âncora da IA permanece em (176,200), centro em (196,220). O recorte de 40×64 apaga toda a imagem antiga e faz o conjunto novo piscar por inteiro, incluindo o pedestal. Ao cair, o conjunto desaparece. Dois círculos completos e quatro setas delimitam a área da Santa, com o cabo conectado ao pedestal. O brilho de 8×8 alterna vermelho e amarelo na coroa, com ciclo de um segundo em NTSC e PAL, e acompanha o piscar. A barra de vida de 32×8 e o ícone opaco PAL1 permanecem. Cada acerto causa 12 pontos, recuo, onda de choque e 2,5 segundos de invulnerabilidade; sucesso e falha continuam possíveis na defesa de 30 segundos. Os NPCs legados conservam 24×24 e 5 segundos de invulnerabilidade.
 
 ## Lava integrada e histórico de revisão
 
@@ -82,3 +96,11 @@ Após a revisão visual, os campos quentes passaram a ocupar33,02% do piso na3 e
 Na integração atual, o brilho lento da lava é feito por variações dos próprios tiles, com transferências parceladas ao VDP. A paleta compartilhada permanece estável durante esse efeito: chão, paredes, personagens e HUD não mudam de cor junto com a lava. As caixas de dano mantêm as dimensões aprovadas.
 
 A bateria integrada também verificou dano e reinício da lava, passagem seca, lentidão da lama, colisões, pausa, fonte e HUD, brilho restrito aos tiles de lava e as rotas da defesa da Santa. Os resultados dos dois relatórios finais correspondem aos hashes atuais da ROM e dos recursos.
+
+### Cortes durante a rolagem e música sob carga — 22/10/2026
+
+As fases de travessia/deslocamento e escolta aplicam a rolagem no mesmo VBlank
+que carrega o trecho exposto do mapa. Foram removidos recortes incompletos de
+objetos herdados da arena antiga; atlas atuais: 448 e 357 tiles. A música segue
+o relógio real de vídeo mesmo quando a simulação perde quadros.
+[Diagnóstico, limites e validação NTSC/PAL](../art/route-presentation-fix-v1/README.md).

@@ -14,6 +14,7 @@ def pieces(size):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--partial',action='store_true');parser.add_argument('--check',action='store_true');args=parser.parse_args()
     catalog=json.loads((GAME/'art/cangaco-insects-iso60-v2/catalog.json').read_text())
+    corrections=json.loads((ROOT/'direction_corrections.json').read_text())
     raw=bytearray();icons=bytearray(15*512);report=[];definitions=[]
     for e in catalog:
         id=e['id'];file=ROOT/'originals'/(id+'.png')
@@ -24,20 +25,32 @@ def main():
             raise FileNotFoundError(file)
         source=Image.open(file).convert('RGBA');edges=pipeline.row_edges(source,5)
         rows=[]
+        correction=corrections.get(id,{})
+        overrides=correction.get('source_rows',{})
         for d in range(5):
             row=source.crop((0,edges[d],source.width,edges[d+1]))
             poses=pipeline.source_poses(row,expected=7 if id=="pen_orange" else 6,minimum=6)[:6]
+            if str(d) in overrides:
+                replacement=pipeline.source_poses(Image.open(ROOT/overrides[str(d)]).convert('RGBA'),expected=6,minimum=6)
+                # Generated rows can have a different source resolution. Match
+                # the old row's envelope before the shared native-size scale.
+                factor=min(max(p['image'].width for p in poses)/max(p['image'].width for p in replacement),
+                           max(p['image'].height for p in poses)/max(p['image'].height for p in replacement))
+                for pose in replacement:
+                    im=pose['image'];pose['image']=im.resize((max(1,round(im.width*factor)),max(1,round(im.height*factor))),Image.Resampling.NEAREST)
+                poses=replacement
             assert len(poses)==6,(id,d,len(poses))
             rows.append(poses)
         scale=min((size-2)/max(p['image'].width for row in rows for p in row),(size-2)/max(p['image'].height for row in rows for p in row))
         native=[]
-        for row in rows:
+        for d,row in enumerate(rows):
             frames=[]
-            for pose in row:
+            for p,pose in enumerate(row):
                 rgba=pose['image'];rgba=rgba.resize((max(1,round(rgba.width*scale)),max(1,round(rgba.height*scale))),Image.Resampling.NEAREST)
                 frame=Image.new('RGBA',(size,size));frame.paste(rgba,((size-rgba.width)//2,size-1-rgba.height))
                 frame=pipeline.indexed(frame);assert frame.getbbox() and frame.getbbox()[3]<=size-1
-                if id=="pen_purple" and d in (1,2,3):frame=frame.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+                if p in correction.get('horizontal_flip_poses',{}).get(str(d),[]):
+                    frame=frame.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
                 frames.append(frame)
             # Generation can give identical idle frames after quantization; keep
             # honest counts. Four locomotion poses must remain visibly distinct.
@@ -66,7 +79,8 @@ def main():
         icons[enemy_index*512:(enemy_index+1)*512]=icon_data+bytes(512-len(icon_data))
         tiles=size*size//64
         definitions.append((offset,tiles*8,size,tiles))
-        row_report={**e,'source_horizontal_flip_rows':([1,2,3] if id=='pen_purple' else []),'size':size,'frames':30,'hardware_pieces':len(pieces(size)),'tiles_per_frame':tiles,'bytes_per_frame':tiles*32,'rom_offset':offset*4,'rom_bytes':30*tiles*32,'scale':scale,'source_sha256':hashlib.sha256(file.read_bytes()).hexdigest(),'native_sha256':hashlib.sha256((folder/(id+'.png')).read_bytes()).hexdigest(),'source_rows':edges,'unique_poses_per_direction':[[len(set(f.tobytes() for f in row[:2])),len(set(f.tobytes() for f in row[2:]))] for row in native]}
+        flips=correction.get('horizontal_flip_poses',{})
+        row_report={**e,'source_horizontal_flip_rows':[int(d) for d,poses in flips.items() if poses==list(range(6))],'source_horizontal_flip_poses':flips,'source_row_overrides':{d:{'path':path,'sha256':hashlib.sha256((ROOT/path).read_bytes()).hexdigest()} for d,path in overrides.items()},'size':size,'frames':30,'hardware_pieces':len(pieces(size)),'tiles_per_frame':tiles,'bytes_per_frame':tiles*32,'rom_offset':offset*4,'rom_bytes':30*tiles*32,'scale':scale,'source_sha256':hashlib.sha256(file.read_bytes()).hexdigest(),'native_sha256':hashlib.sha256((folder/(id+'.png')).read_bytes()).hexdigest(),'source_rows':edges,'unique_poses_per_direction':[[len(set(f.tobytes() for f in row[:2])),len(set(f.tobytes() for f in row[2:]))] for row in native]}
         report.append(row_report);print(id,size,tiles,len(raw),flush=True)
     if not args.check:
         (ROOT/'validation/export.json').write_text(json.dumps(report,indent=2)+'\n')

@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-22",
+  "passed": true,
+  "romSHA256": "30834c88f455342d0ce1ff18746ee6ee13372653f76097b66fbdd72c1f8491a9",
+  "rom": "../../out/release/Plaguefall.bin",
+  "terrain": {
+    "pixels": 97664,
+    "walkableFraction": 0.2523,
+    "fullHeightColumns": [
+      448,
+      456,
+      464,
+      472,
+      480,
+      488,
+      496,
+      504,
+      960,
+      968,
+      976,
+      984,
+      992,
+      1000,
+      1008,
+      1016,
+      1024,
+      1032,
+      1536,
+      1544,
+      1552,
+      1560,
+      1568,
+      1576,
+      1584,
+      1592,
+      1600,
+      1608,
+      1616
+    ]
+  },
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "checks": 28,
+      "mud": {
+        "crossings": [
+          [
+            448,
+            80,
+            64,
+            192
+          ],
+          [
+            960,
+            80,
+            80,
+            192
+          ],
+          [
+            1536,
+            80,
+            88,
+            192
+          ]
+        ],
+        "coverage": 0.2523,
+        "maximumSlowPercent": 85,
+        "dryDistanceFixed": 2176,
+        "mudDistanceFixed": 380,
+        "resetsOnDryGround": true
+      },
+      "controllerOnlyCompletion": true
+    },
+    "pal": {
+      "passed": true,
+      "checks": 28,
+      "mud": {
+        "crossings": [
+          [
+            448,
+            80,
+            64,
+            192
+          ],
+          [
+            960,
+            80,
+            80,
+            192
+          ],
+          [
+            1536,
+            80,
+            88,
+            192
+          ]
+        ],
+        "coverage": 0.2523,
+        "maximumSlowPercent": 85,
+        "dryDistanceFixed": 1792,
+        "mudDistanceFixed": 304,
+        "resetsOnDryGround": true
+      },
+      "controllerOnlyCompletion": true
+    }
+  }
+}

@@ -23,13 +23,13 @@
 #error Character gallery exceeds the borrowed enemy tile cache
 #endif
 
-static const char *const NAMES[GALLERY_COUNT] = { "DAMIAO", "DINORAH", "MUSICAS" };
+static const char *const NAMES[GALLERY_COUNT] = { "DAMIÃO", "DINORAH", "MÚSICAS" };
 static const u8 CANON[8] = { 0, 1, 2, 3, 4, 3, 2, 1 };
 
 static void loadPreview(u8 which)
 {
-    const u32 *frames = (const u32 *)(which ? dinorah_idle : heroi_frames);
-    const u16 stride = which ? ACTOR_IDLE_FRAMES : ACTOR_VIEW_FRAMES;
+    const u32 *frames = (const u32 *)(which ? dinorah_frames : heroi_frames);
+    const u16 stride = ACTOR_VIEW_FRAMES;
     VDP_resetSprites();
     VDP_updateSprites(1, DMA);
     ENEMYGFX_reset();

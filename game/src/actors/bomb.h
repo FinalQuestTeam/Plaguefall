@@ -11,8 +11,9 @@
 
 // cargas de bomba do jogador (persistem entre fases, teto de BOMB_MAX)
 
-// volta ao máximo (início de jogo / game over); NÃO desenha o HUD
+// duas cargas iniciais (novo jogo / treino); NÃO desenha o HUD
 void BOMB_reset(void);
+void BOMB_clear(void); // nenhuma carga antes de recuperar a bolsa
 
 // +1 carga (respeita o teto) e atualiza o HUD — usado pelo item de bomba
 void BOMB_add(void);

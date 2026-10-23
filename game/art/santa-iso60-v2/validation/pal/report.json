@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "350359eb827ae3ecf3b722fe54fc204c2ba64deddf23f3f65d1bd4225b17423b",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "room-3-entry": {
+      "passed": true,
+      "details": {
+        "stage": 3,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "santa-success": {
+      "passed": true,
+      "details": {
+        "real_30_second_timer": true,
+        "result_frozen": true,
+        "controller_only": true
+      }
+    },
+    "santa-geometry-and-effects": {
+      "passed": true,
+      "details": {
+        "solid_stops_four_sides": [
+          [
+            160,
+            184
+          ],
+          [
+            216,
+            184
+          ],
+          [
+            184,
+            160
+          ],
+          [
+            184,
+            224
+          ]
+        ],
+        "real_contact_four_sides": true,
+        "full_blink_cells": 40,
+        "body_and_pedestal_blink": true,
+        "glow_on_crown_both_phases": true,
+        "glow_red_yellow_only": true,
+        "glow_hidden_with_statue": true,
+        "setup": "Controller movement after isolated player/enemy positioning; real contact damage, no NPC HP writes."
+      }
+    },
+    "santa-failure": {
+      "passed": true,
+      "details": {
+        "real_contact_damage": [
+          88,
+          76,
+          64,
+          52,
+          40,
+          28,
+          16,
+          4,
+          0
+        ],
+        "no_npc_hp_writes": true,
+        "result_frozen": true
+      }
+    }
+  },
+  "failures": []
+}

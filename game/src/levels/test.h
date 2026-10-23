@@ -1,20 +1,39 @@
 #ifndef LEVELS_TEST_H
 #define LEVELS_TEST_H
-
 #include <genesis.h>
-
-// Fase teste (currentLevel == 0): lógica própria do sandbox, mantida fora do
-// main.c. O estágio atual fica em testStage (declarado em levels.h).
-
-// desenha os elementos próprios da fase teste (a porta) e arma o timer de
-// aparição dos alvos — chamar logo após LEVEL_draw/LEVEL_load
-void TEST_draw(void);
-
-// atualização por quadro: porta, inimigos do estágio e a caixa de infos.
-// devolve o estágio a (re)carregar se o jogador cruzou a porta, ou 0 se ficar.
-u8 TEST_update(void);
-
-// texto da tela de pausa da fase teste (conforme o estágio atual)
-void TEST_drawPauseText(void);
-
-#endif // LEVELS_TEST_H
+#define TEST_ROOMS 10
+#define TEST_DEATH_ROOM 9
+#define TEST_RULE_ROOM 10
+typedef struct {
+    u8 animation,direction,slow,selected,repeat;
+    u8 dummyHp,chain,restock,initialHp;
+    u8 attacks,kind,noDefeat;
+    u8 count,shots,status,deaths;
+} TestSettings;
+extern TestSettings testSettings[TEST_ROOMS];
+extern u32 testTicks;
+extern u8 testResult;
+void TEST_defaults(void);
+const char *TEST_name(u8 room);
+void TEST_goal(char *text);
+u8 TEST_chooseRoom(u8 initial);
+bool TEST_configure(void);
+void TEST_pauseDraw(u8 selection);
+void TEST_pauseSelection(u8 selection);
+void TEST_begin(bool retryRules);
+void TEST_resume(void);
+void TEST_beforeUpdate(void);
+void TEST_afterUpdate(void);
+void TEST_drawHUD(void);
+void TEST_finish(u8 outcome);
+bool TEST_objectiveRoom(void);
+bool TEST_staticEnemies(void);
+bool TEST_noDefeat(void);
+bool TEST_effectTick(void);
+bool TEST_animation(u8 index,u8 *dir,u8 *pose);
+u16 TEST_shotLimit(void);
+void TEST_requestDeath(void);
+void TEST_deathInput(u16 pressed);
+void TEST_ruleInput(u16 pressed);
+u8 TEST_ruleNode(void); // nó representativo do trecho escolhido na sala 10
+#endif

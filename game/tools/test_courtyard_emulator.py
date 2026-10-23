@@ -287,7 +287,7 @@ def main():
                     shot('ring-mismatch')
                     offset=(((wy//8)&31)*64+wx//8)*2
                     bga=vw(u16('bga_addr')+offset);bgb=vw(u16('bgb_addr')+offset)
-                    raise AssertionError(('ring tile mismatch',wx,wy,'camera',u16('cameraX'),u16('cameraY'),'tile',tile,'index',index,'palette',hex(color),'actual',actual.hex(),'expected',expected.hex(),'planes',hex(bga),hex(bgb),'tiledata',bytes(vram[((781+tile)*32+i)^1] for i in range(32)).hex(),tiles[tile*32:tile*32+32].hex()))
+                    raise AssertionError(('ring tile mismatch',wx,wy,'camera',u16('cameraX'),u16('cameraY'),'tile',tile,'index',index,'palette',hex(color),'actual',actual.hex(),'expected',expected.hex(),'planes',hex(bga),hex(bgb),'tiledata',bytes(vram[((785+tile)*32+i)^1] for i in range(32)).hex(),tiles[tile*32:tile*32+32].hex()))
                 sampled+=1
     shot('11-patio-amplo')
     # Both actual lower corners and the central gate must match the exported

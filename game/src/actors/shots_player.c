@@ -9,6 +9,7 @@
 #include "levels/levels.h"
 #include "system/video/projection.h"
 #include "system/video/herogfx.h"
+#include "levels/test.h"
 
 static u8 shotPower = 1;         // balas por disparo (1..SHOTS_MAX_POWER)
 static u8 shotMode;              // SHOTMODE_* ativo (raio/gelo/fogo)
@@ -29,7 +30,7 @@ bool SHOTS_hasChain(void)   { return shotMode == SHOTMODE_CHAIN && modeCharges >
 // modo especial `mode` (SHOTMODE_*), que decide o efeito ao acertar
 static void spawnPShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 mode)
 {
-    const u16 cap = LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_PSHOTS;
+    const u16 cap = currentLevel==0 ? TEST_shotLimit() : (LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_PSHOTS);
     for (u16 i = 0; i < cap; i++)
     {
         if (pshots[i].active) continue;

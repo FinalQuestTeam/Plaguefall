@@ -18,6 +18,10 @@ from array import array
 
 ROOT = Path(__file__).resolve().parent
 GAME = ROOT.parents[1]
+import sys
+sys.path.insert(0,str(GAME/'tools'))
+from text_codec import decode
+
 CORE = Path.home() / "Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib"
 
 
@@ -187,7 +191,7 @@ def main():
         mask = []
         for byte in font[i*32:(i+1)*32]:
             mask.extend((int(byte >> 4 == 15), int(byte & 15 == 15)))
-        glyphs[bytes(mask)] = chr(i+32)
+        glyphs[bytes(mask)] = decode(chr(i+32))
     scenes = json.loads((ROOT / "export.json").read_text())["scenes"]
     tiles = (GAME / "res/intro/tiles.bin").read_bytes()
     groups = (GAME / "res/intro/groups.bin").read_bytes()
@@ -392,20 +396,22 @@ def main():
     # Returning from gallery and gameplay never replays the boot cinematic.
     press(5); press(5); press(3); run(fps)
     save("gallery-damiao")
-    assert text(17, 13, 6) == "DAMIAO"
+    assert text(17, 13, 6) == "DAMIÃO"
     press(7); run(fps); save("gallery-dinorah")
     assert text(16, 13, 7) == "DINORAH"
     press(3); wait_for(menu, 8*fps)
     run(fps); save("menu-after-gallery")
     press(4); press(4); press(3); run(fps)
     save("mission-call")
-    assert text(4, 19, 7) == "COMANDO"
+    assert read(syms["radioActive"],1) != b"\0", "Phase 1 must open the radio"
     press(3); run(fps)
     save("phase-prep")
     press(1); run(4*fps)
     save("gameplay")
     assert read(syms["currentLevel"], 1) == b"\x01"
-    press(3); run(10); press(0)
+    press(3); run(10)
+    # Current pause flow: choose title, then explicitly confirm the exit.
+    press(5); press(5); press(1); press(5); press(1)
     wait_for(menu, 8*fps)
     run(fps); save("menu-after-game")
     press(5); press(3); run(fps); save("help")

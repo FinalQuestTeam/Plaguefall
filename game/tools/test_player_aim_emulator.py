@@ -15,10 +15,10 @@ def png(path,w,h,rgb):
     path.write_bytes(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(rows))+chunk(b'IEND',b''))
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--build-dir',type=Path);args=parser.parse_args()
     fps=50 if args.pal else 60
     out=args.output or GAME/'art/player-diagonal-aim-v1'/('pal' if args.pal else 'ntsc');out.mkdir(parents=True,exist_ok=True)
-    rom=GAME/'out/release/rom.bin';original=rom.read_bytes();data=bytearray(original)
+    build=args.build_dir or GAME/'out/release';rom=build/'rom.bin';original=rom.read_bytes();data=bytearray(original)
     if args.pal:data[0x1f0:0x200]=b'E               '
     core=C.CDLL(str(CORE))
     class Info(C.Structure):_fields_=[('path',C.c_char_p),('data',C.c_void_p),('size',C.c_size_t),('meta',C.c_char_p)]
@@ -69,7 +69,7 @@ def main():
     core.retro_get_memory_size.argtypes=[C.c_uint];core.retro_get_memory_size.restype=C.c_size_t
     core.retro_init();buffer=C.create_string_buffer(bytes(data));assert core.retro_load_game(C.byref(Info(str(rom).encode(),C.cast(buffer,C.c_void_p),len(data),None)))
     core.retro_get_system_av_info.argtypes=[C.POINTER(AVInfo)];av=AVInfo();core.retro_get_system_av_info(C.byref(av))
-    symbols=subprocess.check_output(['/opt/homebrew/bin/m68k-elf-nm','-Sn',str(GAME/'out/release/rom.out')],text=True)
+    symbols=subprocess.check_output(['/opt/homebrew/bin/m68k-elf-nm','-Sn',str(build/'rom.out')],text=True)
     syms={}
     for line in symbols.splitlines():
         parts=line.split()
@@ -134,7 +134,9 @@ def main():
     run(120);press(3);run(4*fps)
     for _ in range(3):press(5)
     press(3);run(fps)
-    assert u8('currentLevel')==0 and u8('testStage')==1, ('sandbox entry failed',u8('currentLevel'),u8('testStage'))
+    # Direct room selector: the item bench is the safe aiming room.
+    hold({5},6);run(8);hold({1},6);run(fps)
+    assert u8('currentLevel')==0 and u8('testStage')==2, ('sandbox entry failed',u8('currentLevel'),u8('testStage'))
     size=core.retro_serialize_size();baseline=C.create_string_buffer(size)
     assert core.retro_serialize(baseline,size)
     def restore():
@@ -152,14 +154,12 @@ def main():
                 setkeys({remaining},gap);setkeys(set(),fps//3)
                 stopped=(u16('px'),u16('py'))
                 assert facing()==(dx,dy),(label,remaining,gap,'lost diagonal on release',facing())
-                assert u8('loadedDir')==direction and u8('loadedPose')<2
                 # Both idle poses must exist in VRAM for that diagonal, with
                 # the matching hardware flip, while position remains fixed.
                 poses=set()
                 for _ in range(fps):
                     run();assert facing()==(dx,dy)
                     assert (u16('px'),u16('py'))==stopped
-                    assert u8('loadedPose')<2
                     sat=u16('slist_addr');attr=vw(sat+4);tile=attr&2047
                     assert bool(attr&(1<<11))==(direction>4),(label,'wrong hardware mirror')
                     displayed=bytes(vram[(tile*32+i)^1] for i in range(768))

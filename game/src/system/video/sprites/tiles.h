@@ -57,7 +57,12 @@
 #define TILE_SAINT_GLOW 82  // 1 tile8x8 — brilho da coroa, overlay existente
 #define TILE_ICON_SHOTS 83  // divisor (objetivo COLETAR)
 #define TILE_ICON_SPEED 84  // servo (objetivo COLETAR)
-#define NUM_TILES       85
+#define TILE_ENEMY_SHIELD 85 // outlined 8x8 armour marker
+#define TILE_TEST_MARKER 86 // training-only selection arrow, within that reservation
+#define TILE_ENEMY_FIRE  87 // outlined 8x8 flame; uses the existing reservation
+#define TILE_ENEMY_ICE   88 // outlined 8x8 ice crystal
+#define TILE_BAG        89 // bornal de couro 16x16: 4 tiles, mesma PAL1
+#define NUM_TILES       93
 
 // Streamed enemy animation cache followed by independent menu icons.
 #define ENEMY_ROT_BASE  NUM_TILES
@@ -69,7 +74,7 @@
 #define ENEMY_ROT_COUNT (ENEMY_CACHE_TILES + 15 * ENEMY_ICON_TILES)
 
 #define BOSS_ROT_BASE   (ENEMY_ROT_BASE + ENEMY_ROT_COUNT)
-#define BOSS_ROT_COUNT  72 // scratch only: two 48x48 story portraits
+#define BOSS_ROT_COUNT  68 // boss36 + two16-tile deaths; 4 spare tiles fund the bag
 #define BOSS_DIR_TILES  36  // (48/8)² tiles por direção
 
 // Keep the established VRAM layout while removing the retired mech renderer.

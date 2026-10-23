@@ -13,15 +13,35 @@ def run(*args):
 
 
 def main():
+    run("python3", "game/tools/build_text_font.py", "--check")
+    run("python3", "game/tools/build_floor_tiles.py", "--check")
+    run("python3", "game/tools/test_text.py")
+    run("python3", "game/art/actor-deaths-v1/export.py", "--check")
     run("python3", "game/art/intro-monologo-v2/export_intro.py", "--check")
     run("python3", "game/art/routemap-regional-v1/export_map.py", "--check")
     run("python3", "game/art/routemap-footer-ux-v1/export_footer.py", "--check")
     run("python3", "game/art/interface-ux-v2/exportar.py", "--check")
+    run("python3", "game/tools/build_mission_portraits.py", "--check")
+    run("python3", "game/art/resultados-ux-v1/exportar.py", "--check")
+    run("python3", "game/art/radio-dialogos-ux-v1/exportar.py", "--check")
+    run("python3", "game/art/countdown-radio-v4/export.py", "--check")
+    run("python3", "game/art/hud-resistencia-v1/integracao/exportar.py", "--check")
+    run("python3", "game/art/training-v2/export_scene.py", "--check")
     run("python3", "game/tools/test_player_aim.py")
+    run("python3", "game/art/bolsa-recuperacao-v1/export.py", "--check")
+    run("python3", "game/tools/test_death_rules.py")
+    run("python3", "game/tools/test_enemy_facing.py")
+    run("python3", "game/tools/pack_actor_animation.py", "--check")
+    run("python3", "game/art/cangaco-insects-sized-v3/validate_sprites.py", "--assets-only")
+    run("python3", "game/tools/build_terrain_modules.py", "--check")
+    run("python3", "game/tools/test_terrain_modules.py")
+    run("python3", "game/tools/build_route_stages.py", "--check")
     for variant in ("original", "melancolico", "sombrio", "igreja"):
         run("python3", "game/tools/compose_music.py", "--variant", variant, "--check")
     run("python3", "game/tools/compose_music.py", "--catalog", "--check")
     run("python3", "game/tools/compose_opening.py", "--check")
+    run("python3", "game/art/audio-vitoria-v1/compose.py", "--check")
+    run("python3", "game/art/audio-game-over-v1/compose.py", "--check")
     compiler = shlex.split(os.environ.get("CC", "cc"))
     flags = ["-std=c99", "-Wall", "-Wextra", "-Werror", "-fsanitize=address,undefined",
              "-Igame/tests/audio", "-Igame/src/system/audio"]

@@ -32,8 +32,9 @@
 // alcance (em tiles) da grama ao redor de cada retângulo de lama, no esquema MIX
 #define FLOOR_MIX_MUD_PAD    2
 
-void FLOOR_init(void);              // gera os 2 tilesets (boot)
+void FLOOR_init(void);              // carrega os cinco tilesets já empacotados
 void FLOOR_draw(u8 variant);       // preenche o BG_B com o chão da variante + paleta
+void FLOOR_preview(u8 node);       // render-only campaign floor, no currentLevel mutation
 void FLOOR_clear(void);             // limpa o BG_B (voltar ao título / preparação)
 void FLOOR_setBright(u16 mix);      // 0..16: mistura o chão com branco (flash da bomba)
 

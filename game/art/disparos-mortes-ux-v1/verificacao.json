@@ -1,0 +1,43 @@
+{
+  "disparos-8direcoes.png": {
+    "size": [
+      64,
+      40
+    ],
+    "only_existing_palette": true,
+    "nonempty_frames": 40
+  },
+  "disparos-osseo.png": {
+    "size": [
+      64,
+      40
+    ],
+    "only_existing_palette": true,
+    "nonempty_frames": 40
+  },
+  "production_changes": "None by this proposal; all authored files under this art directory",
+  "runtime_performance": "Not tested; no integration yet",
+  "budget": {
+    "projectile_tiles": 15,
+    "projectile_bytes": 480,
+    "normal_death_rom": 8352,
+    "boss_death_rom": 3456,
+    "death_pool_tiles": 72,
+    "four_normal_slots_tiles": 64,
+    "boss_plus_two_normal_tiles": 68
+  },
+  "source_hashes": {
+    "src/system/video/sprites/tiles.h": "12061f7255e010727fde1d5b19c9440cb095e76d567e97774643a3c979256b9c",
+    "src/system/video/enemy_asset_layout.h": "df922441d211220e1933cb9183b36c0aa4c98d361be277f6bf56812bd724f216",
+    "src/actors/shots_enemy.c": "364938241d4acb0901472efe97f60409b6b12f651e368360b7b3a2a29fbe3935",
+    "src/enemies/enemies.c": "15b39a32aa374f648e57a64b1c91933b0753c4bf340b903297c3b64ad9a79edf",
+    "src/system/video/enemygfx.c": "29e44f12846ca288f0361b856a9520594047797afc87a5e8e1beb07622447619"
+  },
+  "browser_review": {
+    "page_loaded": true,
+    "before_after_buttons": true,
+    "animation_toggle": true,
+    "native_art_seen": true,
+    "proposal_only": true
+  }
+}

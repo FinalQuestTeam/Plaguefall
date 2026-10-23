@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "rom": "game/out/santa-iso60/Plaguefall.bin",
+  "rom_sha256": "350359eb827ae3ecf3b722fe54fc204c2ba64deddf23f3f65d1bd4225b17423b",
+  "reports": {
+    "ntsc": {
+      "passed": true,
+      "report": "ntsc/report.json"
+    },
+    "pal": {
+      "passed": true,
+      "report": "pal/report.json"
+    },
+    "campaign-ntsc": {
+      "passed": true,
+      "report": "campaign-ntsc/report.json"
+    },
+    "campaign-pal": {
+      "passed": true,
+      "report": "campaign-pal/report.json"
+    }
+  },
+  "main_release_matches": true,
+  "beacon_ground": {
+    "complete_circles": 2,
+    "inward_arrows": 4,
+    "cable_endpoint": [
+      208,
+      218
+    ]
+  },
+  "crown_glow": {
+    "phases": [
+      "red",
+      "yellow"
+    ],
+    "palette_slots": [
+      3,
+      4
+    ],
+    "no_white_or_opaque_black": true
+  }
+}

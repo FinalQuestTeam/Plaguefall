@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-22",
+  "rom_sha256": "65145b06b6880c91a6468353e32bf4765337ec7fe90655de6f7e3f16980a27f3",
+  "game_changed": false,
+  "sandbox_stages": 6,
+  "checks_completed": true,
+  "issues_found": [
+    {
+      "priority": "high",
+      "stage": 6,
+      "issue": "Protection cannot fail by contact within 20 seconds: 60 HP, 12 damage, five-second invulnerability; at most four hits."
+    },
+    {
+      "priority": "medium",
+      "stages": [
+        1,
+        2,
+        3
+      ],
+      "issue": "Pause shows eliminate 99 enemies instead of the actual open-ended training task."
+    },
+    {
+      "priority": "medium",
+      "stage": 6,
+      "issue": "Player (152,108) and protected target (147,103) overlap at entry."
+    },
+    {
+      "priority": "medium",
+      "issue": "Classic arena presentation and debug text differ from current campaign art; 24px HUD is still only a proposal."
+    },
+    {
+      "priority": "low",
+      "issue": "GDD lists three test stages; code and ROM have six."
+    }
+  ],
+  "regions": {
+    "ntsc": {
+      "report": "validation/ntsc/report.json",
+      "six_pauses_passed": true,
+      "ten_controller_door_passages": true,
+      "six_death_retry_checks_passed": true,
+      "protect_contact_hp": [
+        60,
+        48,
+        36,
+        24,
+        12,
+        60
+      ]
+    },
+    "pal": {
+      "report": "validation/pal/report.json",
+      "six_pauses_passed": true,
+      "ten_controller_door_passages": true,
+      "six_death_retry_checks_passed": true,
+      "protect_contact_hp": [
+        60,
+        48,
+        36,
+        24,
+        12,
+        60
+      ]
+    }
+  }
+}

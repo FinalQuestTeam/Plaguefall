@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "campaign-death-rules-room": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "early_preserved_twice": true,
+        "middle_deaths": [
+          [
+            4,
+            80,
+            2,
+            2
+          ],
+          [
+            3,
+            60,
+            1,
+            2
+          ],
+          [
+            3,
+            60,
+            0,
+            2
+          ],
+          [
+            3,
+            60,
+            0,
+            1
+          ],
+          [
+            3,
+            60,
+            0,
+            0
+          ],
+          [
+            3,
+            60,
+            0,
+            0
+          ]
+        ],
+        "refill_shortcut": true,
+        "late_bag_replaced": true,
+        "bag_pickup_once": true,
+        "below_floor_unchanged": true,
+        "configuration_apply_cancel_restart": true,
+        "pause_help_preserves_experiment": true,
+        "room_switch_clears_bag": true,
+        "ordinary_training_reset_unchanged": true
+      }
+    }
+  },
+  "failures": []
+}

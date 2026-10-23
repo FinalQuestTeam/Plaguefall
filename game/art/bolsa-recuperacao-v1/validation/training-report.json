@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "room": 10,
+  "name": "REGRAS DE MORTE",
+  "rom": "../../../out/release/Plaguefall.bin",
+  "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+  "controller_only": true,
+  "regions": [
+    "NTSC",
+    "PAL"
+  ],
+  "presets": [
+    "1–5",
+    "6–11",
+    "12–16"
+  ],
+  "controls": {
+    "A": "provoca morte real",
+    "B": "repõe equipamento configurado e zera mortes",
+    "C": "troca trecho e repõe",
+    "START": "pausa/configura; na derrota, repete"
+  },
+  "checks": {
+    "training-ntsc": "training-ntsc/report.json",
+    "training-pal": "training-pal/report.json",
+    "room9-regression-ntsc": "room9-regression-ntsc/report.json",
+    "room9-regression-pal": "room9-regression-pal/report.json"
+  },
+  "native_checks": "training-native-checks.txt",
+  "physical_hardware_tested": false
+}

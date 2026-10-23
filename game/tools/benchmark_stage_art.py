@@ -185,7 +185,7 @@ def emulate(rom, symbols_path, stage, design, export, pal, thermal=False):
     # Compare the actual hardware tile upload, not just a resource filename.
     vram = (C.c_ubyte * 65536).in_dll(core, 'vram')
     atlas = (stage / 'hardware/tiles.bin').read_bytes()
-    uploaded = bytes(vram[(781 * 32 + i) ^ 1] for i in range(len(atlas)))
+    uploaded = bytes(vram[(785 * 32 + i) ^ 1] for i in range(len(atlas)))
     assert uploaded == atlas, 'stage atlas differs from real VDP VRAM'
     left, top, floor_w, floor_h = design['walkable']
     right, bottom = left + floor_w - 16, top + floor_h - 16

@@ -1,0 +1,132 @@
+{
+  "status": "PROPOSTA — nenhuma alteração de runtime",
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      219,
+      219,
+      182
+    ],
+    [
+      36,
+      182,
+      219
+    ],
+    [
+      182,
+      36,
+      36
+    ],
+    [
+      219,
+      182,
+      36
+    ],
+    [
+      219,
+      109,
+      0
+    ],
+    [
+      73,
+      109,
+      109
+    ],
+    [
+      146,
+      182,
+      182
+    ],
+    [
+      109,
+      73,
+      146
+    ],
+    [
+      146,
+      73,
+      36
+    ],
+    [
+      73,
+      36,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      219,
+      109,
+      36
+    ],
+    [
+      146,
+      146,
+      146
+    ],
+    [
+      73,
+      146,
+      36
+    ],
+    [
+      36,
+      73,
+      182
+    ]
+  ],
+  "profiles": [
+    {
+      "key": "player",
+      "name": "Damião",
+      "palette_index": 9
+    },
+    {
+      "key": "torreao",
+      "name": "Torreão",
+      "palette_index": 3
+    },
+    {
+      "key": "fuzileiro",
+      "name": "Fuzileiro",
+      "palette_index": 5
+    },
+    {
+      "key": "artilheiro",
+      "name": "Artilheiro",
+      "palette_index": 8
+    },
+    {
+      "key": "boss",
+      "name": "Escorpião",
+      "palette_index": 2
+    }
+  ],
+  "direction_order": [
+    "L",
+    "SE",
+    "S",
+    "SO",
+    "O",
+    "NO",
+    "N",
+    "NE"
+  ],
+  "canonical_tiles": 15,
+  "projectile_vram_bytes": 480,
+  "current_projectile_tiles": 2,
+  "native_sizes": [
+    8,
+    8
+  ],
+  "death_concept_generator": "built-in image_gen",
+  "death_concept": "source/mortes-concept.png",
+  "death_runtime_art_ready": false
+}

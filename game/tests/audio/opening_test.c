@@ -5,6 +5,7 @@
 #include "music.h"
 #include "audio.h"
 
+volatile u32 vtimer;
 static u16 pal, frequencies[3], volumes[4], noiseType, noiseFrequency;
 static unsigned writes, lockDepth;
 static VoidCallback *vint;
@@ -40,6 +41,7 @@ static uint32_t forward(unsigned frames, bool opening)
     uint32_t hash = 2166136261u;
     for (unsigned i = 0; i < frames; i++)
     {
+        vtimer++;
         if (opening) { if (vint) vint(); }
         else { AUDIO_frameBegin(); MUSIC_update(); AUDIO_frameEnd(); }
         for (u8 ch = 0; ch < 4; ch++)

@@ -22,13 +22,33 @@ python3 game/tools/check.py
 
 O arquivo para abrir no emulador é `game/out/release/Plaguefall.bin`. O build também entrega `Plaguefall.png` (arte existente do menu) e `Plaguefall.json` (identificação e hashes). O SGDK continua gerando `game/out/release/rom.bin`, idêntico byte a byte ao arquivo nomeado, para compatibilidade com os testes. Somente `Plaguefall.bin` é versionada como ROM em `game/out/`, acompanhada da capa PNG e dos metadados JSON; `rom.bin` é uma saída local ignorada. Dependências, objetos, símbolos e compilações de variantes são locais e ignorados. `make -C game clean` limpa o build; reconstrua a ROM antes de versionar uma atualização.
 
+## Textos e fonte em português
+
+Escreva os textos exibidos ao jogador em **MAIÚSCULAS COM ACENTOS**, em UTF-8 NFC. O repertório adicional é `ÀÁÂÃÉÊÍÓÔÕÚÇ`; as posições internas `a..l` representam esses caracteres, na mesma ordem. Os nomes de inimigos também usam maiúsculas. A fonte permanece com 96 tiles de 8×8 pixels: 3072 bytes na VRAM, tanto na variante transparente dos painéis quanto na opaca da abertura, mapa e arenas.
+
+O Makefile pré-processa cada unidade C, passa os literais por `tools/encode_text.py` e compila o arquivo `.i` resultante. A conversão acontece depois dos includes e macros; identificadores, formatos como `%s` e `%u`, comentários e mapas de pixels ASCII continuam intactos. Cada letra exibida ocupa um byte na ROM, preservando `strlen`, centralização, quebra de linhas e digitação. Não substitua manualmente as letras acentuadas pelas posições internas nos arquivos de autoria.
+
+Os desenhos dos 12 glifos ficam em `res/text/glyphs.json`. Depois de editá-los, rode `python3 game/tools/build_text_font.py` na raiz para gerar `res/text/font.bin`, `res/intro/font.bin` e a máscara compartilhada por rádio, HUD e resultados. O exportador da abertura utiliza a mesma fonte e conserva os acentos do storyboard. `tools/check.py` verifica a reprodução desses recursos, a codificação compilada e a preservação dos outros 84 glifos.
+
+As capturas e os relatórios desta integração estão em `art/texto-acentuado-v1/validation/`, separados dos registros históricos das interfaces. A abertura foi conferida também pixel a pixel em NTSC/PAL:
+
+```sh
+python3 game/art/intro-monologo-v2/verify_pixels.py --capture-root game/art/texto-acentuado-v1/validation
+```
+
 ## Testes
+
+`python3 game/tools/test_death_rules.py` executa os módulos reais de morte, jogador, tiros, bombas, inventário e itens com ASan/UBSan em 50/60 Hz. Verifica as 20 fases/rotas, a fotografia pré-morte, a remoção do piso 3, bônus finais condicionais, bolsa vazia, inventário cheio, perdas repetidas e recuperação sem duplicação, permanência por mais de 65.535 quadros e reposicionamento seguro. `python3 game/art/bolsa-recuperacao-v1/export.py --check` verifica o sprite 16×16 e o contorno claro. Ambos fazem parte de `check.py`.
+
+`arch -x86_64 /usr/bin/python3 game/tools/test_results_emulator.py --output /private/tmp/plaguefall-death-ntsc` verifica as políticas nas 20 fases, a bolsa em todas as etapas, seus pixels reais na VRAM e a coleta única; repita com `--pal`. `test_interface_emulator.py` confere as oito páginas de ajuda, incluindo o bornal, no título e na pausa.
 
 `python3 game/tools/test_player_aim.py` verifica o `player.c` de produção com ASan/UBSan, incluindo a parada nas quatro diagonais, soltura dos eixos em ordens diferentes, autofire parado e mudanças intencionais de mira. `arch -x86_64 /usr/bin/python3 game/tools/test_player_aim_emulator.py` confere a ROM real no sandbox, os dois frames de idle na VRAM e a velocidade diagonal dos projéteis; repita com `--pal`. Os testes de emulador não escrevem na RAM do jogo.
 
 `game/tools/check.py` verifica as quatro partituras, o catálogo e a partitura contínua da abertura. Compila e executa os testes do motor real com ASan/UBSan para os três perfis iniciais e para a abertura. Todos os executáveis temporários ficam fora do repositório e são removidos ao terminar.
 
 Os testes de integração usam o Genesis Plus GX instalado:
+
+`arch -x86_64 /usr/bin/python3 game/tools/test_menu_flicker_emulator.py` verifica a troca de seleção no título, salas de teste, configurações, pausa, confirmações, derrota e vitória. Compara cada quadro fora das linhas que podem mudar, detectando apagões e alterações indevidas no fundo; repita com `--pal`. As capturas de falha e o relatório ficam em `/private/tmp/plaguefall-menu-flicker/`. A navegação usa somente o controle; a preparação de derrota e final declara as alterações de RAM.
 
 ```sh
 arch -x86_64 /usr/bin/python3 game/art/intro-monologo-v2/verify_emulator.py \

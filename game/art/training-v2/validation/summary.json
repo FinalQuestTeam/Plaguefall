@@ -1,0 +1,87 @@
+{
+  "status": "implemented_with_known_performance_limits",
+  "tested_rom": "rom/Plaguefall.bin",
+  "rom_sha256": "8b5c0ef07e6b968fcc4d8acc91278dfb8ed8be3f05e57de06869a77e9f0a1c85",
+  "rom_bytes": 1572864,
+  "training_functional_passed": true,
+  "all_regression_performance_targets_passed": false,
+  "suites": {
+    "ntsc": {
+      "passed": true,
+      "report": "validation/ntsc/report.json"
+    },
+    "pal": {
+      "passed": true,
+      "report": "validation/pal/report.json"
+    },
+    "aim-ntsc": {
+      "passed": true,
+      "report": "validation/aim-ntsc/report.json"
+    },
+    "aim-pal": {
+      "passed": true,
+      "report": "validation/aim-pal/report.json"
+    },
+    "results-ntsc": {
+      "passed": true,
+      "report": "validation/results-ntsc/report.json"
+    },
+    "results-pal": {
+      "passed": true,
+      "report": "validation/results-pal/report.json"
+    },
+    "campaign-ntsc": {
+      "passed": false,
+      "report": "validation/campaign-ntsc/report.json",
+      "ordinary_matches": 6,
+      "failures": [
+        {
+          "check": "05/stress",
+          "error": "AssertionError({'axis': 'horizontal', 'enemies': 4, 'shots_per_pool': 6, 'game_frames': 293, 'physical_frames': 300, 'fps': 58.6, 'cpu_mean_pct': 80.51, 'cpu_p95_pct': 89.06, 'camera_x_range': [0, 64], 'camera_y_range': [104, 104]})"
+        }
+      ]
+    },
+    "campaign-pal": {
+      "passed": true,
+      "report": "validation/campaign-pal/report.json",
+      "ordinary_matches": 6,
+      "failures": []
+    }
+  },
+  "checks": {
+    "native_tools_check": true,
+    "stage_art_export_check": true,
+    "training_scene_export_check": true,
+    "named_rom_package_check": true,
+    "git_diff_check": true
+  },
+  "performance_limits": {
+    "training_maximum": {
+      "enemies": 16,
+      "type": "large purple",
+      "shots_per_pool": 16,
+      "status": "shield",
+      "ntsc_hud_fps": 19,
+      "pal_hud_fps": 18
+    },
+    "campaign_santa_ntsc": {
+      "game_frames": 293,
+      "vblanks": 300,
+      "fps": 58.6,
+      "target_99_percent_passed": false
+    },
+    "comparison_combat_snapshot": {
+      "rom_sha256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1",
+      "same_stress_passed": true,
+      "causality": "Different integrations are present; this is not an isolated A/B comparison of the training change."
+    }
+  },
+  "method_limits": [
+    "Menu/gallery/settings scenarios use controller input.",
+    "Pickup, terrain, lethal projectile and continuous NPC-contact probes declare isolated RAM setup.",
+    "Boss summon timer is accelerated only in its isolated probe.",
+    "Twelve campaign attempts use an enforced RAM-write guard after node setup. They include victories and defeats.",
+    "Metrics use simulated updates per emulated VBlank, not host speed.",
+    "Other chats can rebuild out/release; rom/ preserves the tested executable and symbols."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "preview_only",
+  "romChanged": false,
+  "romSHA256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "sequence": [
+    "Padre",
+    "Damião",
+    "Objetivo",
+    "3",
+    "2",
+    "1"
+  ],
+  "durationsMs": [
+    6000,
+    5000,
+    6000,
+    1000,
+    1000,
+    1000
+  ],
+  "note": "As falas e o objetivo avançam por tempo somente nesta prévia; no jogo dependem de A. A contagem mantém um segundo por número. Conversa e objetivo são capturas existentes do emulador; contagens são propostas compostas com recursos nativos. Não é uma gravação da ROM com a proposta integrada.",
+  "sources": [
+    {
+      "path": "art/dialogue-holodeck-v1/validation/ntsc/radio-padre.png",
+      "sha256": "88d6c4b318b10a16773c479f4cee69ee3c0101e751812705ddf449e39c437cc4",
+      "copy": "01-conversa-padre.png"
+    },
+    {
+      "path": "art/dialogue-holodeck-v1/validation/ntsc/radio-damiao.png",
+      "sha256": "7b619bff18fb00945b043623dbe951c568c12ad7310b98404040306cb978e06e",
+      "copy": "02-conversa-damiao.png"
+    },
+    {
+      "path": "art/mission-ux-v1/validation/ntsc/prep-1.png",
+      "sha256": "2ecb89d18d83a7d12144544fce50597f7697df1e4244331e1d377dc49c4b8861",
+      "copy": "03-objetivo.png"
+    }
+  ],
+  "models": [
+    {
+      "id": 1,
+      "name": "monitor-radio",
+      "countdownFrames": [
+        "01-monitor-radio-3.png",
+        "01-monitor-radio-2.png",
+        "01-monitor-radio-1.png"
+      ],
+      "animation": "sequencia-01-monitor-radio.gif"
+    },
+    {
+      "id": 2,
+      "name": "cartao-missao",
+      "countdownFrames": [
+        "02-cartao-missao-3.png",
+        "02-cartao-missao-2.png",
+        "02-cartao-missao-1.png"
+      ],
+      "animation": "sequencia-02-cartao-missao.gif"
+    },
+    {
+      "id": 3,
+      "name": "console-dividido",
+      "countdownFrames": [
+        "03-console-dividido-3.png",
+        "03-console-dividido-2.png",
+        "03-console-dividido-1.png"
+      ],
+      "animation": "sequencia-03-console-dividido.gif"
+    }
+  ]
+}

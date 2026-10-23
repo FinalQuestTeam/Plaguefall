@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "romSHA256": "9e50d95938d3d0d6dcdecd60693d1d120103413f7b653c3c0b4aa09f85b00bdb",
+  "region": "NTSC",
+  "setup": "RAM selects campaign phases and accelerates objective counters/boss. Production successful/failed objective results, final victory playback and controller dismissal are exercised. Defeat/retry rules are covered by the full result suite. No ROM patch.",
+  "defeatPhases": [],
+  "failures": [],
+  "audioScenarios": [
+    {
+      "name": "stage-complete",
+      "victoryCue": true,
+      "singlePlayThenSilence": true
+    },
+    {
+      "name": "signal-protected",
+      "victoryCue": true,
+      "singlePlayThenSilence": true
+    },
+    {
+      "name": "signal-lost-unchanged",
+      "victoryCue": false,
+      "singlePlayThenSilence": false
+    },
+    {
+      "name": "campaign-victory",
+      "victoryCue": true,
+      "singlePlayThenSilence": true
+    }
+  ],
+  "maxBackgroundTiles": 443,
+  "lastTileObserved": 970,
+  "earlyConfirmationStopsCue": true,
+  "closingResultRestoresMusic": true
+}

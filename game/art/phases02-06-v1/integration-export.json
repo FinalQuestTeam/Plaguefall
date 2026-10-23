@@ -1,7 +1,8 @@
 {
   "generated_by": "game/tools/install_stage_art.py",
-  "generator_sha256": "31e48f6e6a1d3c8993eb6a36e987a6aa9fb5735c57a90f841a7769266fe6dc46",
-  "approved_base_pixel_identical": true,
+  "generator_sha256": "156f36764fae8777e5410021cc2d87e4930b027e367de77411a31106bf824c50",
+  "approved_base_pixel_identical": false,
+  "unchanged_outside_beacon_area": true,
   "global_palettes_changed": false,
   "glow_variant_order": [
     "A",
@@ -46,11 +47,12 @@
       "base_decoded_pixel_sha256": "d5cf45f677dae9c22c0fb973e1cbc4a5d3b6154fc81c343fea1df05d786d4fc4",
       "installed_decoded_pixel_sha256": "d5cf45f677dae9c22c0fb973e1cbc4a5d3b6154fc81c343fea1df05d786d4fc4",
       "approved_base_pixel_identical": true,
+      "unchanged_outside_beacon_area": true,
       "base_tile_count": 443,
       "tile_count": 443,
       "tile_bytes": 14176,
       "tile_budget": 640,
-      "vram_end_with_hud": 1235,
+      "vram_end_with_hud": 1239,
       "glow_start": 0,
       "glow_count": 0,
       "glow": {
@@ -61,6 +63,7 @@
       "scene_rows": 40,
       "map_stride": 64,
       "npc_in_map": false,
+      "npc_visual": null,
       "solids": [],
       "hazards": []
     },
@@ -93,11 +96,12 @@
       "base_decoded_pixel_sha256": "a2e50803290c2f5259de12be9d6f0ab7114a931ccd947e284f30c91150f1b47c",
       "installed_decoded_pixel_sha256": "a2e50803290c2f5259de12be9d6f0ab7114a931ccd947e284f30c91150f1b47c",
       "approved_base_pixel_identical": true,
+      "unchanged_outside_beacon_area": true,
       "base_tile_count": 603,
       "tile_count": 603,
       "tile_bytes": 19296,
       "tile_budget": 640,
-      "vram_end_with_hud": 1395,
+      "vram_end_with_hud": 1399,
       "glow_start": 0,
       "glow_count": 0,
       "glow": {
@@ -108,6 +112,7 @@
       "scene_rows": 40,
       "map_stride": 64,
       "npc_in_map": false,
+      "npc_visual": null,
       "solids": [],
       "hazards": [
         {
@@ -164,11 +169,12 @@
       "base_decoded_pixel_sha256": "aeffa9a525ad0b7588d6ad54b1d69c23f786f52af52dacf7052800d2a7cc6a26",
       "installed_decoded_pixel_sha256": "aeffa9a525ad0b7588d6ad54b1d69c23f786f52af52dacf7052800d2a7cc6a26",
       "approved_base_pixel_identical": true,
+      "unchanged_outside_beacon_area": true,
       "base_tile_count": 538,
       "tile_count": 538,
       "tile_bytes": 17216,
       "tile_budget": 640,
-      "vram_end_with_hud": 1330,
+      "vram_end_with_hud": 1334,
       "glow_start": 464,
       "glow_count": 74,
       "glow": {
@@ -209,6 +215,7 @@
       "scene_rows": 48,
       "map_stride": 64,
       "npc_in_map": false,
+      "npc_visual": null,
       "solids": [],
       "hazards": [
         {
@@ -262,11 +269,12 @@
       "base_decoded_pixel_sha256": "eff384fa3e2266fab63031d3801d32162ba56274e96ccba02652ceb790ea9e70",
       "installed_decoded_pixel_sha256": "eff384fa3e2266fab63031d3801d32162ba56274e96ccba02652ceb790ea9e70",
       "approved_base_pixel_identical": true,
+      "unchanged_outside_beacon_area": true,
       "base_tile_count": 537,
       "tile_count": 537,
       "tile_bytes": 17184,
       "tile_budget": 640,
-      "vram_end_with_hud": 1329,
+      "vram_end_with_hud": 1333,
       "glow_start": 0,
       "glow_count": 0,
       "glow": {
@@ -277,6 +285,7 @@
       "scene_rows": 36,
       "map_stride": 64,
       "npc_in_map": false,
+      "npc_visual": null,
       "solids": [],
       "hazards": [
         {
@@ -316,8 +325,8 @@
         "palette.bin": "b60d3256046996c949f354b03b7df2e019e87e73e9e50a13f3e4b9d7e5e10fc9"
       },
       "installed_sha256": {
-        "tiles.bin": "5495a81dbf71992874a5bd5d2a08e961eaf92ec3bcb3a7ed0ec2f535766adbd6",
-        "map.bin": "6c4c501273bf53f91ee4597e108cc022191dd4c15186e1ca34c70ad2998fb42e",
+        "tiles.bin": "45c2c894607bd957bbab70e39bd3d56c7093c2388fb039e35e3a0707bdbb4e57",
+        "map.bin": "3e95776aa56f459c268edd0c35d49d515116e0c97ccf3a967407fb5a9a53fc48",
         "palette.bin": "b60d3256046996c949f354b03b7df2e019e87e73e9e50a13f3e4b9d7e5e10fc9"
       },
       "runtime_symbols": {
@@ -326,13 +335,14 @@
         "palette": "stage05_palette"
       },
       "base_decoded_pixel_sha256": "7d95baa07db6a71d52964e71d9d4d6d89890873e4afceb2389fb095759aad746",
-      "installed_decoded_pixel_sha256": "7d95baa07db6a71d52964e71d9d4d6d89890873e4afceb2389fb095759aad746",
-      "approved_base_pixel_identical": true,
+      "installed_decoded_pixel_sha256": "51f16bf0afc853ea13c38263edae94c433fb2ce859bb45bf81497365950c1563",
+      "approved_base_pixel_identical": false,
+      "unchanged_outside_beacon_area": true,
       "base_tile_count": 551,
-      "tile_count": 551,
-      "tile_bytes": 17632,
+      "tile_count": 636,
+      "tile_bytes": 20352,
       "tile_budget": 640,
-      "vram_end_with_hud": 1343,
+      "vram_end_with_hud": 1432,
       "glow_start": 0,
       "glow_count": 0,
       "glow": {
@@ -343,14 +353,135 @@
       "scene_rows": 48,
       "map_stride": 64,
       "npc_in_map": true,
+      "npc_visual": {
+        "rect": [
+          176,
+          160,
+          40,
+          64
+        ],
+        "floor_tiles": [
+          257,
+          262,
+          263,
+          257,
+          257,
+          257,
+          260,
+          258,
+          257,
+          257,
+          472,
+          473,
+          474,
+          475,
+          476,
+          283,
+          286,
+          327,
+          261,
+          283,
+          257,
+          262,
+          263,
+          257,
+          257,
+          257,
+          260,
+          258,
+          257,
+          257,
+          266,
+          259,
+          309,
+          477,
+          478,
+          283,
+          286,
+          327,
+          479,
+          480
+        ],
+        "bar_rect": [
+          180,
+          152,
+          32,
+          8
+        ],
+        "solid_rect": [
+          176,
+          176,
+          40,
+          48
+        ],
+        "crown": [
+          194,
+          181
+        ],
+        "asset": "santa-iso60-v2",
+        "crown_tile": 634,
+        "crown_colors": [
+          3,
+          4
+        ],
+        "focus_top": 112,
+        "ground_rect": [
+          96,
+          112,
+          208,
+          192
+        ],
+        "ring_center": [
+          196,
+          208
+        ],
+        "ring_bounds": [
+          [
+            132,
+            152,
+            260,
+            264
+          ],
+          [
+            156,
+            176,
+            236,
+            240
+          ]
+        ],
+        "inward_arrows": 4,
+        "cable_path": [
+          [
+            224,
+            152
+          ],
+          [
+            228,
+            166
+          ],
+          [
+            228,
+            210
+          ],
+          [
+            208,
+            218
+          ]
+        ],
+        "cable_endpoint": [
+          208,
+          218
+        ],
+        "source_sha256": "65342d875f5475c316c97aadb4247ce130eaa4b665308a2b0c7aa7f3eaf9d90a"
+      },
       "solids": [
         {
-          "name": "Base visível da Santa",
+          "name": "Santa iso60, corpo e base",
           "rect": [
             176,
-            208,
+            176,
             40,
-            16
+            48
           ],
           "blocks_shots": false
         }
@@ -391,11 +522,12 @@
       "base_decoded_pixel_sha256": "fa8e8199e43f9e79c58db94b0efe0a2c16f9e926f1ab8b74d9232596b1abab77",
       "installed_decoded_pixel_sha256": "fa8e8199e43f9e79c58db94b0efe0a2c16f9e926f1ab8b74d9232596b1abab77",
       "approved_base_pixel_identical": true,
+      "unchanged_outside_beacon_area": true,
       "base_tile_count": 508,
       "tile_count": 508,
       "tile_bytes": 16256,
       "tile_budget": 640,
-      "vram_end_with_hud": 1300,
+      "vram_end_with_hud": 1304,
       "glow_start": 435,
       "glow_count": 73,
       "glow": {
@@ -436,6 +568,7 @@
       "scene_rows": 40,
       "map_stride": 64,
       "npc_in_map": false,
+      "npc_visual": null,
       "solids": [],
       "hazards": [
         {
@@ -494,11 +627,12 @@
       "base_decoded_pixel_sha256": "9dcc207318af3e80f58c8e6b712b41b2647357dd1d018915388b0917dc75b9ed",
       "installed_decoded_pixel_sha256": "9dcc207318af3e80f58c8e6b712b41b2647357dd1d018915388b0917dc75b9ed",
       "approved_base_pixel_identical": true,
+      "unchanged_outside_beacon_area": true,
       "base_tile_count": 500,
       "tile_count": 500,
       "tile_bytes": 16000,
       "tile_budget": 640,
-      "vram_end_with_hud": 1292,
+      "vram_end_with_hud": 1296,
       "glow_start": 427,
       "glow_count": 73,
       "glow": {
@@ -539,6 +673,7 @@
       "scene_rows": 40,
       "map_stride": 64,
       "npc_in_map": false,
+      "npc_visual": null,
       "solids": [],
       "hazards": [
         {
@@ -578,8 +713,9 @@
     "game/res/stages/04/tiles.bin": "0c9b0d259fef96b21f560ccf56cddd62cb4628d92462981211136d49f104e11e",
     "game/res/stages/04/map.bin": "c43e478a8f9eaa6ba8c5f7fb7c228fbe420f28df7c89a2af3b711c80c8c28568",
     "game/res/stages/04/palette.bin": "1200494b471d4ba14ed2a9a82f60615a8224e4244d35edb17f1bf252b6e7b331",
-    "game/res/stages/05/tiles.bin": "5495a81dbf71992874a5bd5d2a08e961eaf92ec3bcb3a7ed0ec2f535766adbd6",
-    "game/res/stages/05/map.bin": "6c4c501273bf53f91ee4597e108cc022191dd4c15186e1ca34c70ad2998fb42e",
+    "game/art/santa-iso60-v2/ground-layout.png": "65dfbbafb955e9ddc81ddca4977af418683972594e2d1c7ac17860b8d372fc02",
+    "game/res/stages/05/tiles.bin": "45c2c894607bd957bbab70e39bd3d56c7093c2388fb039e35e3a0707bdbb4e57",
+    "game/res/stages/05/map.bin": "3e95776aa56f459c268edd0c35d49d515116e0c97ccf3a967407fb5a9a53fc48",
     "game/res/stages/05/palette.bin": "b60d3256046996c949f354b03b7df2e019e87e73e9e50a13f3e4b9d7e5e10fc9",
     "game/res/stages/06a/tiles.bin": "c6af7714a2d146ed937010c0276989be9e60d9373255a2d756c7c2549f4784b5",
     "game/res/stages/06a/map.bin": "5c644149bf7def366ad217847e517d59f69ccfb64aa879b4e5e5b925647e0687",
@@ -590,8 +726,8 @@
     "game/res/stages/06b/palette.bin": "bb530bb4047be067735a30c1131e0bc7e783746b21493786661fe40d872f5676",
     "game/res/stages/06b/glow.bin": "ff7ebe2d60dc30be7ff0c603e88eb3b585f6beada4c126b488d360319e543230",
     "game/src/levels/stage_scenes.h": "acbca0524ca66ff24e84d124130232d7cb5049ec9ef76955167d0c4dbd8ec1bf",
-    "game/src/levels/stage_scenes.c": "35ed40dde6b6022233ed15c78924995830b1a8df271a1452fe2b90f804e23790",
+    "game/src/levels/stage_scenes.c": "9af04c25f2c7f0cf5acf7a0b5af2495b73e82def7746f858cc8d7fc71d80aaee",
     "game/res/stages.res": "6c660cd003a091e4fb41a01c002626f5082c45cb6bbbb14793b5449a9c60e812",
-    "game/res/stages.h": "ce9c0cdea2e870584ae3089d4f9ef75c0ffd3c5806d79f6bd3f06b572c67aecb"
+    "game/res/stages.h": "f884fee6d35f4b1d52f4831c46cc8f01b3901684f5cadf32fed74ec8b4783fef"
   }
 }

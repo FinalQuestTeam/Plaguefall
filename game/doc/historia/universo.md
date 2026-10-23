@@ -20,7 +20,7 @@ Um pacto literal pode ser estudado em outra revisão. Esta campanha não precisa
 
 ## Damião
 
-O protagonista se chama **Damião**. Na ROM, o nome aparece como **DAMIAO**, seguindo a fonte sem acentos usada nos demais textos; seu identificador de retrato é `P_DAMIAO`.
+O protagonista se chama **Damião**. Na ROM, o nome aparece como **DAMIÃO**, com a fonte portuguesa de 8×8 pixels; seu identificador de retrato é `P_DAMIAO`.
 
 Antes da ocupação, Damião fazia manutenção de veículos e equipamento de recuperação no porto de lançamento. Conhecia o lado de fora das naves e sonhava com o lado de dentro. Perdeu o braço esquerdo num acidente durante a crise; a prótese veio de peças recuperadas pela comunidade.
 

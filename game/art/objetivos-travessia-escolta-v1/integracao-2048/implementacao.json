@@ -1,0 +1,629 @@
+{
+  "status": "implementado",
+  "romSHA256": "3dcc36a348469c34f2e368ffa096552a05e68c7f729c86f0b2c665c3ea496dbc",
+  "width": 2048,
+  "previousWidth": 1024,
+  "phases": [
+    "4",
+    "6B"
+  ],
+  "maps": {
+    "04": {
+      "height": 288,
+      "bounds": [
+        16,
+        80,
+        2032,
+        271
+      ],
+      "start": [
+        48,
+        176
+      ],
+      "points": [
+        [
+          56,
+          184
+        ],
+        [
+          144,
+          184
+        ],
+        [
+          144,
+          112
+        ],
+        [
+          280,
+          112
+        ],
+        [
+          280,
+          240
+        ],
+        [
+          424,
+          240
+        ],
+        [
+          440,
+          176
+        ],
+        [
+          552,
+          176
+        ],
+        [
+          648,
+          176
+        ],
+        [
+          648,
+          112
+        ],
+        [
+          792,
+          112
+        ],
+        [
+          792,
+          240
+        ],
+        [
+          936,
+          240
+        ],
+        [
+          968,
+          176
+        ],
+        [
+          1080,
+          184
+        ],
+        [
+          1168,
+          184
+        ],
+        [
+          1168,
+          112
+        ],
+        [
+          1304,
+          112
+        ],
+        [
+          1304,
+          240
+        ],
+        [
+          1448,
+          240
+        ],
+        [
+          1464,
+          176
+        ],
+        [
+          1576,
+          176
+        ],
+        [
+          1672,
+          176
+        ],
+        [
+          1672,
+          112
+        ],
+        [
+          1816,
+          112
+        ],
+        [
+          1816,
+          240
+        ],
+        [
+          1960,
+          240
+        ],
+        [
+          1992,
+          176
+        ]
+      ],
+      "pits": [
+        [
+          176,
+          128,
+          64,
+          64
+        ],
+        [
+          320,
+          176,
+          64,
+          48
+        ],
+        [
+          688,
+          128,
+          64,
+          64
+        ],
+        [
+          832,
+          176,
+          64,
+          48
+        ],
+        [
+          1200,
+          128,
+          64,
+          64
+        ],
+        [
+          1344,
+          176,
+          64,
+          48
+        ],
+        [
+          1712,
+          128,
+          64,
+          64
+        ],
+        [
+          1856,
+          176,
+          64,
+          48
+        ]
+      ],
+      "hazards": [
+        [
+          432,
+          80,
+          48,
+          24
+        ],
+        [
+          16,
+          232,
+          88,
+          40
+        ],
+        [
+          944,
+          80,
+          48,
+          24
+        ],
+        [
+          528,
+          232,
+          88,
+          40
+        ],
+        [
+          1456,
+          80,
+          48,
+          24
+        ],
+        [
+          1040,
+          232,
+          88,
+          40
+        ],
+        [
+          1968,
+          80,
+          48,
+          24
+        ],
+        [
+          1552,
+          232,
+          88,
+          40
+        ]
+      ],
+      "kind": "mud",
+      "pauses": [],
+      "width": 2048,
+      "length": 2899,
+      "minimumWalkSeconds": 84.5,
+      "tiles": 582,
+      "exit": [
+        1976,
+        152,
+        48,
+        48
+      ]
+    },
+    "06b": {
+      "height": 320,
+      "bounds": [
+        16,
+        96,
+        2032,
+        303
+      ],
+      "start": [
+        48,
+        208
+      ],
+      "points": [
+        [
+          56,
+          228
+        ],
+        [
+          96,
+          264
+        ],
+        [
+          208,
+          264
+        ],
+        [
+          224,
+          192
+        ],
+        [
+          296,
+          192
+        ],
+        [
+          352,
+          160
+        ],
+        [
+          432,
+          160
+        ],
+        [
+          464,
+          192
+        ],
+        [
+          512,
+          192
+        ],
+        [
+          512,
+          208
+        ],
+        [
+          552,
+          224
+        ],
+        [
+          608,
+          264
+        ],
+        [
+          720,
+          264
+        ],
+        [
+          736,
+          192
+        ],
+        [
+          808,
+          192
+        ],
+        [
+          864,
+          160
+        ],
+        [
+          944,
+          160
+        ],
+        [
+          968,
+          176
+        ],
+        [
+          1008,
+          192
+        ],
+        [
+          1024,
+          192
+        ],
+        [
+          1024,
+          208
+        ],
+        [
+          1080,
+          228
+        ],
+        [
+          1120,
+          264
+        ],
+        [
+          1232,
+          264
+        ],
+        [
+          1248,
+          192
+        ],
+        [
+          1320,
+          192
+        ],
+        [
+          1376,
+          160
+        ],
+        [
+          1456,
+          160
+        ],
+        [
+          1488,
+          192
+        ],
+        [
+          1536,
+          192
+        ],
+        [
+          1536,
+          208
+        ],
+        [
+          1576,
+          224
+        ],
+        [
+          1632,
+          264
+        ],
+        [
+          1744,
+          264
+        ],
+        [
+          1760,
+          192
+        ],
+        [
+          1832,
+          192
+        ],
+        [
+          1888,
+          160
+        ],
+        [
+          1968,
+          160
+        ],
+        [
+          1992,
+          176
+        ]
+      ],
+      "pits": [
+        [
+          128,
+          208,
+          56,
+          40
+        ],
+        [
+          240,
+          128,
+          40,
+          48
+        ],
+        [
+          368,
+          112,
+          48,
+          32
+        ],
+        [
+          640,
+          208,
+          56,
+          40
+        ],
+        [
+          752,
+          128,
+          40,
+          48
+        ],
+        [
+          880,
+          112,
+          48,
+          32
+        ],
+        [
+          1152,
+          208,
+          56,
+          40
+        ],
+        [
+          1264,
+          128,
+          40,
+          48
+        ],
+        [
+          1392,
+          112,
+          48,
+          32
+        ],
+        [
+          1664,
+          208,
+          56,
+          40
+        ],
+        [
+          1776,
+          128,
+          40,
+          48
+        ],
+        [
+          1904,
+          112,
+          48,
+          32
+        ]
+      ],
+      "hazards": [
+        [
+          16,
+          96,
+          184,
+          96
+        ],
+        [
+          296,
+          208,
+          200,
+          96
+        ],
+        [
+          528,
+          96,
+          184,
+          96
+        ],
+        [
+          808,
+          208,
+          200,
+          96
+        ],
+        [
+          1040,
+          96,
+          184,
+          96
+        ],
+        [
+          1320,
+          208,
+          200,
+          96
+        ],
+        [
+          1552,
+          96,
+          184,
+          96
+        ],
+        [
+          1832,
+          208,
+          200,
+          96
+        ]
+      ],
+      "kind": "lava",
+      "pauses": [
+        15,
+        36
+      ],
+      "width": 2048,
+      "length": 2351,
+      "minimumWalkSeconds": 69.3,
+      "tiles": 549,
+      "exit": [
+        1976,
+        152,
+        48,
+        48
+      ]
+    }
+  },
+  "markers": {
+    "style": "Placas em PAL1, como o HUD: ferrugem, preto, creme e âmbar",
+    "sharedAPI": "game/src/system/video/markers.h",
+    "spriteTiles": 24,
+    "absoluteTiles": [
+      605,
+      628
+    ],
+    "hudArrowIcons": 4,
+    "fontGlyphsUsedForWorldMarkers": false,
+    "extraPalette": false
+  },
+  "collisionMasks": {
+    "maximumWorldWidth": 2048,
+    "bytes": 4096,
+    "increaseFrom1024Version": 2048
+  },
+  "spawns": "Amostragem direta do setor ativo; protege personagens e saída também após1024px.",
+  "tests": {
+    "ntsc": {
+      "file": "validation/ntsc/report.json",
+      "sha256": "56caafb7f6a113f006147f8aa9702788d8f79e504394c37c749f977ab4ebc591",
+      "passed": true
+    },
+    "pal": {
+      "file": "validation/pal/report.json",
+      "sha256": "29f5d17c64054029298bbc6d6747c3be90680bcedf907636599b7dbce3916d87",
+      "passed": true
+    },
+    "hud-ntsc": {
+      "file": "validation/hud-ntsc/report.json",
+      "sha256": "13eb900433f10a3b3f7ed2158be505624825b087e38255f70d535b98a245fc48",
+      "passed": true
+    },
+    "hud-pal": {
+      "file": "validation/hud-pal/report.json",
+      "sha256": "5a71df39adf1225236513b7ab1563938a790da539de4d83dc545225c0bbedc84",
+      "passed": true
+    },
+    "combat": {
+      "file": "validation/combat/report.json",
+      "sha256": "06992497c484bc45ff318304682d1a9d85ea694a273c91745d33463bfcceb320",
+      "passed": true
+    },
+    "training": {
+      "file": "validation/training/report.json",
+      "sha256": "763e7412dd7d0e0e83b6d321f633bd360060d87d263bd7708b4354bb8e3303bf",
+      "passed": true
+    }
+  },
+  "nativeChecks": "python3 game/tools/check.py — passed",
+  "build": "make -C game -j4 release — passed, zero warnings",
+  "limits": [
+    "Validação em emulador.",
+    "Dificuldade ainda pode ser afinada com partidas humanas."
+  ],
+  "sourceSHA256": {
+    "game/src/core/objective.c": "ab8803507c8e015a7bae394a53c6f28922b8efc4e5cf4c9ee93f36614889dc13",
+    "game/src/levels/arena.c": "b9481fcf10fd8296afc29b0e6dfa24c02e1cb760b833dbab44dc80cb158b08c7",
+    "game/src/enemies/enemies.c": "61922d0102e1dc2174ebec737476fcbef5a9f2be879c61ff33edd89a3999373d",
+    "game/src/system/video/markers.c": "47d4548105bc2ab792858e3bdad054022defe8ea21c53f1340bdffdacb3e1207",
+    "game/src/system/video/markers.h": "542f8e6e1318c75af76bf844a4744cd04f0b125f26b03fcf10d50c4e7c27604e",
+    "game/src/system/video/screens/hud.c": "357ba6902b6f8d00a8bf61640201558a1054d464e9e64d5b3561fccd81581685",
+    "game/src/levels/route_stages.c": "4bd06bb4f27aac539c839d467c1de1330bb1dd87427ca33086e84b57daec228a",
+    "game/tools/build_route_stages.py": "d58ac925d6147b311fc3a01acf6d4fd570926bc6bc5c885209b135c1f00427dd",
+    "game/tools/build_game_markers.py": "59bfb15735c6d9b484d9a2bd723f3073004ee456eb19ea0c9ed044199fdf2fec",
+    "game/tools/test_route_objectives_emulator.py": "7998be8e69e35ba93c37cb1f0a572ebc3d74f75d50d3d0c8dc95ad3116943612"
+  }
+}

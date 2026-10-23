@@ -1,0 +1,232 @@
+{
+  "status": "PROPOSTA — não integrada",
+  "models": {
+    "reach": {
+      "name": "Chegar ao ponto",
+      "phase": "4 — Túneis de manutenção",
+      "map": "tunel",
+      "width": 512,
+      "height": 288,
+      "bounds": [
+        16,
+        80,
+        480,
+        192
+      ],
+      "points": [
+        [
+          48,
+          176
+        ],
+        [
+          136,
+          176
+        ],
+        [
+          144,
+          112
+        ],
+        [
+          264,
+          112
+        ],
+        [
+          280,
+          144
+        ],
+        [
+          280,
+          240
+        ],
+        [
+          416,
+          240
+        ],
+        [
+          432,
+          176
+        ],
+        [
+          464,
+          176
+        ]
+      ],
+      "holes": [
+        [
+          176,
+          128,
+          64,
+          64
+        ],
+        [
+          320,
+          176,
+          64,
+          48
+        ]
+      ],
+      "hazards": [],
+      "pauses": {},
+      "exit": [
+        448,
+        160,
+        40,
+        40
+      ]
+    },
+    "escort": {
+      "name": "Escoltar Dinorah",
+      "phase": "6B — Retirada por terra",
+      "map": "retirada",
+      "width": 512,
+      "height": 320,
+      "bounds": [
+        16,
+        96,
+        480,
+        208
+      ],
+      "points": [
+        [
+          48,
+          220
+        ],
+        [
+          96,
+          264
+        ],
+        [
+          208,
+          264
+        ],
+        [
+          224,
+          192
+        ],
+        [
+          296,
+          192
+        ],
+        [
+          320,
+          176
+        ],
+        [
+          352,
+          160
+        ],
+        [
+          432,
+          160
+        ],
+        [
+          464,
+          176
+        ]
+      ],
+      "holes": [
+        [
+          128,
+          208,
+          56,
+          40
+        ],
+        [
+          240,
+          128,
+          40,
+          48
+        ],
+        [
+          368,
+          112,
+          48,
+          32
+        ]
+      ],
+      "hazards": [
+        [
+          16,
+          96,
+          184,
+          96
+        ],
+        [
+          296,
+          208,
+          200,
+          96
+        ]
+      ],
+      "pauses": {
+        "2": 2,
+        "6": 2
+      },
+      "exit": [
+        448,
+        160,
+        40,
+        40
+      ]
+    }
+  },
+  "geometryChecks": {
+    "reach": {
+      "routeLengthPixels": 638.24,
+      "samplesChecked": 647,
+      "footprint": [
+        16,
+        16
+      ],
+      "noIntersectionsWithProposedHolesOrHazards": true,
+      "scope": "offline geometry only; not game navigation or performance"
+    },
+    "escort": {
+      "routeLengthPixels": 503.27,
+      "samplesChecked": 513,
+      "footprint": [
+        16,
+        16
+      ],
+      "noIntersectionsWithProposedHolesOrHazards": true,
+      "scope": "offline geometry only; not game navigation or performance"
+    }
+  },
+  "proposedTuning": {
+    "DinorahSpeedPixelsPerSecond": 36,
+    "shotIntervalSeconds": 2.5,
+    "shotRangePixels": 96,
+    "allyShotCap": 2,
+    "contactInvulnerabilitySeconds": 0.75,
+    "hp": 100,
+    "distancePausePixels": [
+      112,
+      64
+    ],
+    "distanceResumePixels": [
+      80,
+      48
+    ],
+    "exitHoldSeconds": 0.4,
+    "escortExitPlayerRangePixels": 64
+  },
+  "facts": {
+    "dinorahFullFramesBytes": 23040,
+    "runtimeIdleBytes": 7680,
+    "netRomGrowthReplacingIdle": 15360,
+    "sharedPaletteExact": true,
+    "proposedDinorahTiles": [
+      761,
+      784
+    ],
+    "sceneStartTile": 785
+  },
+  "productionHashesAtAudit": {
+    "game/src/core/objective.c": "f94ed9a8e0e99dab64754ee8c7461744065fc614e6d27f6edcf049c105abe734",
+    "game/src/actors/npc.c": "ed8a52adc207821d5a5034159f39b52c3556301c26ea77e6fd534d4eca025059",
+    "game/src/levels/arena.c": "9d47ac6f74b97dc156f2bb65692fd4fc8508a339ab8259a8971058703fd43ebc",
+    "game/src/system/video/herogfx.c": "31dd85c01008b3c059961b39bd79e8c4ca5cb8526ac0af3a793085f8250cb152",
+    "game/src/system/video/sprites/tiles.h": "631e53535ab9d5bdb5bc32160fee59c93013b4d2fc161064fe15f900b90b8394",
+    "game/out/release/Plaguefall.bin": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1"
+  }
+}

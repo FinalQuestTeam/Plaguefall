@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "rom": "game/out/pit-safety/Plaguefall.bin",
+  "romSHA256": "4ebad7ac7aa7220a6143b565633badb9fee2a554afc31dc1cfc0cc75e6c197a3",
+  "reports": {
+    "ntsc": {
+      "passed": true,
+      "checks": 27,
+      "report": "ntsc/report.json"
+    },
+    "pal": {
+      "passed": true,
+      "checks": 27,
+      "report": "pal/report.json"
+    }
+  },
+  "borders": {
+    "04": {
+      "width": 4,
+      "yellowIndex": 12,
+      "darkIndex": 1,
+      "allPits": 8,
+      "paintOnly": true,
+      "collisionUnchanged": true
+    },
+    "06b": {
+      "width": 4,
+      "yellowIndex": 10,
+      "darkIndex": 1,
+      "allPits": 12,
+      "paintOnly": true,
+      "collisionUnchanged": true
+    }
+  },
+  "mainReleaseMatches": true
+}

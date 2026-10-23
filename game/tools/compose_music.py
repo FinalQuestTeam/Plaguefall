@@ -217,7 +217,7 @@ def catalog():
 #define SONG_BAR_STEPS 8
 
 """
-    tracks = [("original", "BAIAO", "BAIAO DE FERRUGEM", 9, 6),
+    tracks = [("original", "BAIAO", "BAIÃO DE FERRUGEM", 9, 6),
               ("melancolico", "ENTARDECER", "ENTARDECER", 10, 7),
               ("sombrio", "BREU", "BREU", 12, 8),
               ("igreja", "LADAINHA", "LADAINHA DE FERRO", 14, 10)]

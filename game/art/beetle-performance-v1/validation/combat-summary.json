@@ -1,0 +1,217 @@
+{
+  "tested_build_directory": "/private/tmp/plaguefall-shield-combat-y4t7s4kj",
+  "source_sha256": {
+    "src": "790b3afadf3870e18a84a920d6dd97c9a5e60d0d3a1b2ad140c5231bcf28672a",
+    "res": "4a486677772a35dd5d451b14873ffeb217acbe2acd5530d8d242485f06633e01"
+  },
+  "production_rom_sha256_at_start": "ea8db11bd481c8751ad240da5e280a18694f19361a7f7f4300d7a79e38ca2f0e",
+  "production_rom_unchanged": false,
+  "workspace_sources_changed_during_test": true,
+  "scope": "Uninstrumented isolated snapshot compiled at test start. Other work changed workspace source files during the run; these results describe the isolated snapshot, not subsequent edits.",
+  "regions": {
+    "ntsc": {
+      "rom_sha256": "ea8db11bd481c8751ad240da5e280a18694f19361a7f7f4300d7a79e38ca2f0e",
+      "report": "game/art/beetle-performance-v1/validation/combat-ntsc/report.json",
+      "cases": 36
+    },
+    "pal": {
+      "rom_sha256": "ea8db11bd481c8751ad240da5e280a18694f19361a7f7f4300d7a79e38ca2f0e",
+      "report": "game/art/beetle-performance-v1/validation/combat-pal/report.json",
+      "cases": 36
+    }
+  },
+  "summary": [
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 0,
+      "fps_mean": 33.73,
+      "fps_min": 33.73,
+      "fps_max": 33.73
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 6,
+      "fps_mean": 30.0,
+      "fps_min": 30.0,
+      "fps_max": 30.0
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 16,
+      "fps_mean": 23.83,
+      "fps_min": 23.83,
+      "fps_max": 23.83
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 0,
+      "fps_mean": 33.0,
+      "fps_min": 33.0,
+      "fps_max": 33.0
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 6,
+      "fps_mean": 30.0,
+      "fps_min": 30.0,
+      "fps_max": 30.0
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 16,
+      "fps_mean": 23.97,
+      "fps_min": 23.97,
+      "fps_max": 23.97
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 0,
+      "fps_mean": 39.93,
+      "fps_min": 39.93,
+      "fps_max": 39.93
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 6,
+      "fps_mean": 30.0,
+      "fps_min": 30.0,
+      "fps_max": 30.0
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 16,
+      "fps_mean": 27.5,
+      "fps_min": 27.5,
+      "fps_max": 27.5
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 0,
+      "fps_mean": 33.3,
+      "fps_min": 33.3,
+      "fps_max": 33.3
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 6,
+      "fps_mean": 30.0,
+      "fps_min": 30.0,
+      "fps_max": 30.0
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 16,
+      "fps_mean": 24.0,
+      "fps_min": 24.0,
+      "fps_max": 24.0
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 0,
+      "fps_mean": 33.44,
+      "fps_min": 33.44,
+      "fps_max": 33.44
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 6,
+      "fps_mean": 25.03,
+      "fps_min": 25.03,
+      "fps_max": 25.03
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 16,
+      "fps_mean": 24.75,
+      "fps_min": 24.75,
+      "fps_max": 24.75
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 0,
+      "fps_mean": 33.39,
+      "fps_min": 33.39,
+      "fps_max": 33.39
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 6,
+      "fps_mean": 25.0,
+      "fps_min": 25.0,
+      "fps_max": 25.0
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 16,
+      "fps_mean": 25.0,
+      "fps_min": 25.0,
+      "fps_max": 25.0
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 0,
+      "fps_mean": 39.25,
+      "fps_min": 39.25,
+      "fps_max": 39.25
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 6,
+      "fps_mean": 25.44,
+      "fps_min": 25.44,
+      "fps_max": 25.44
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 16,
+      "fps_mean": 25.0,
+      "fps_min": 25.0,
+      "fps_max": 25.0
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 0,
+      "fps_mean": 33.42,
+      "fps_min": 33.42,
+      "fps_max": 33.42
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 6,
+      "fps_mean": 25.03,
+      "fps_min": 25.03,
+      "fps_max": 25.03
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 16,
+      "fps_mean": 24.92,
+      "fps_min": 24.92,
+      "fps_max": 24.92
+    }
+  ]
+}

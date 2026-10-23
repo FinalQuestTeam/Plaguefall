@@ -13,6 +13,8 @@ static u16 sfxNoise;
 static u16 sfxPick;
 static u16 sfxBoom;
 static u16 sfxHurt;
+static u8 sfxRadio,sfxCount;
+static bool countGo;
 
 static u8  ambientKind;     // som ambiente atual (leito de ruído, canal 3)
 static u16 ambientPhase;    // fase do padrão ambiente (passos da lama)
@@ -32,8 +34,12 @@ void SFX_bombBlast(void)  { sfxBoom = 30; }     // canal 3, prioridade ALERT
 
 void SFX_ambient(u8 kind) { ambientKind = kind; }
 
+void SFX_radioTick(void){if(!sfxRadio)sfxRadio=2;}
+void SFX_countPulse(bool go){sfxCount=go ? 8 : 4;countGo=go;}
+
 void SFX_silence(void)
 {
+    sfxRadio=sfxCount=0;
     sfxShot = 0;
     sfxNoise = 0;
     sfxPick = 0;
@@ -101,5 +107,7 @@ void SFX_update(void)
         if (sfxPick) AUDIO_tone(2, 1400 - sfxPick * 100, (u8) (11 - sfxPick), AUD_PRIO_SFX);
     }
 
+    if(sfxRadio){sfxRadio--;AUDIO_tone(2,920+sfxRadio*80,11,AUD_PRIO_SFX);}
+    if(sfxCount){sfxCount--;AUDIO_tone(2,countGo ? 880 : 440,7+sfxCount/2,AUD_PRIO_SFX);}
     updateAmbient();
 }

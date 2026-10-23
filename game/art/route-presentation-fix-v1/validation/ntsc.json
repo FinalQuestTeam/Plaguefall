@@ -1,0 +1,385 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "41e76ea6acbd47bbb99ba083890f42d46c88f334d117ade2429a609e29644a72",
+  "checks": {
+    "streamingEveryDisplayedFrame-04": {
+      "frames": 1500,
+      "staleSceneryCells": 0,
+      "missingTerrainCells": 0,
+      "bothAxesAndDirections": true
+    },
+    "streamingEveryDisplayedFrame-06b": {
+      "frames": 1500,
+      "staleSceneryCells": 0,
+      "missingTerrainCells": 0,
+      "bothAxesAndDirections": true
+    },
+    "continuousScenery-04": {
+      "landmarks": 4,
+      "tiles": 448,
+      "groundDetails": 4,
+      "sceneryVRAMMatchesExport": true,
+      "blockSimilarityToFirst": [
+        0.3568,
+        0.3346,
+        0.319
+      ]
+    },
+    "continuousScenery-06b": {
+      "landmarks": 4,
+      "tiles": 357,
+      "groundDetails": 4,
+      "sceneryVRAMMatchesExport": true,
+      "blockSimilarityToFirst": [
+        0.5031,
+        0.3758,
+        0.4656
+      ]
+    },
+    "escortEntryStartsAtSpawnAndFreezesUntilGo": {
+      "countdownFrames": 180,
+      "cameraY": 76
+    },
+    "escortStepKeepsMovingThroughAllFourPoses": {
+      "poses": [
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "framesPerPose": {
+        "2": 12,
+        "3": 13,
+        "4": 14,
+        "5": 14,
+        "0": 1
+      },
+      "posePositions": {
+        "2": [
+          [
+            48,
+            220
+          ],
+          [
+            49,
+            221
+          ],
+          [
+            49,
+            221
+          ],
+          [
+            49,
+            221
+          ],
+          [
+            50,
+            222
+          ],
+          [
+            50,
+            222
+          ],
+          [
+            51,
+            222
+          ],
+          [
+            51,
+            223
+          ],
+          [
+            51,
+            223
+          ],
+          [
+            52,
+            223
+          ],
+          [
+            52,
+            224
+          ],
+          [
+            52,
+            224
+          ]
+        ],
+        "3": [
+          [
+            53,
+            224
+          ],
+          [
+            53,
+            224
+          ],
+          [
+            53,
+            224
+          ],
+          [
+            53,
+            225
+          ],
+          [
+            54,
+            225
+          ],
+          [
+            54,
+            225
+          ],
+          [
+            54,
+            226
+          ],
+          [
+            55,
+            226
+          ],
+          [
+            55,
+            226
+          ],
+          [
+            55,
+            226
+          ],
+          [
+            56,
+            227
+          ],
+          [
+            56,
+            227
+          ],
+          [
+            56,
+            227
+          ]
+        ],
+        "4": [
+          [
+            57,
+            228
+          ],
+          [
+            57,
+            228
+          ],
+          [
+            57,
+            228
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            59,
+            230
+          ],
+          [
+            59,
+            230
+          ],
+          [
+            59,
+            230
+          ],
+          [
+            60,
+            231
+          ],
+          [
+            60,
+            231
+          ],
+          [
+            60,
+            231
+          ]
+        ],
+        "5": [
+          [
+            61,
+            231
+          ],
+          [
+            61,
+            232
+          ],
+          [
+            61,
+            232
+          ],
+          [
+            62,
+            232
+          ],
+          [
+            62,
+            233
+          ],
+          [
+            62,
+            233
+          ],
+          [
+            63,
+            233
+          ],
+          [
+            63,
+            233
+          ],
+          [
+            63,
+            233
+          ],
+          [
+            63,
+            234
+          ],
+          [
+            64,
+            234
+          ],
+          [
+            64,
+            234
+          ],
+          [
+            64,
+            234
+          ],
+          [
+            64,
+            234
+          ]
+        ],
+        "0": [
+          [
+            64,
+            234
+          ]
+        ]
+      }
+    },
+    "escortShortWaypointMovesUntilFinalPoseThenPauses": {
+      "poses": [
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "arrival": [
+        856,
+        152
+      ]
+    },
+    "escortFinishesMovingStepBeforeAiming": {
+      "poses": [
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "aimPosition": [
+        64,
+        234
+      ]
+    },
+    "reachMudFullHeightAndProgressiveSlow": {
+      "crossings": [
+        [
+          448,
+          80,
+          64,
+          192
+        ],
+        [
+          960,
+          80,
+          80,
+          192
+        ],
+        [
+          1536,
+          80,
+          88,
+          192
+        ]
+      ],
+      "coverage": 0.2523,
+      "maximumSlowPercent": 85,
+      "dryDistanceFixed": 2048,
+      "mudDistanceFixed": 380,
+      "resetsOnDryGround": true
+    },
+    "reachFullRouteControllerOnly": true,
+    "horizontalAndVerticalRingPast1536": true,
+    "pauseRestoresExtendedMap": true,
+    "reachWinsWithoutKills": true,
+    "reachIgnoresKillQuota": true,
+    "former1024ExitNoLongerCompletes": true,
+    "holesBlockFeetButNotBullets": true,
+    "collisionMaskBeyond1024": true,
+    "escortWaitsForCover": true,
+    "nativeArrowAndAlertUseInterfacePalette": true,
+    "escortFullRouteControllerOnly": {
+      "seconds": 84.0,
+      "hp": 100,
+      "states": [
+        0,
+        2
+      ]
+    },
+    "escortPauseFreezesAndRestoresSprite": true,
+    "escortBulletDamageAndLocalInvulnerability": true,
+    "allyShotKillsWithoutInventoryOrFriendlyFire": {
+      "peakBullets": 1,
+      "kills": 1
+    },
+    "enemyShooterAimsAssignedActor": true,
+    "escortContactDamage": true,
+    "escortNeedsBothActorsAndConfirmation": true,
+    "escortFailureOnEnemyBullet": true,
+    "escortRetryResetsSameStage": true,
+    "sectorSpawnsAvoidActorsHolesAndExit": {
+      "samples": 79
+    },
+    "pilotLoadPerformance": {
+      "gameFPS": 50.0,
+      "regionFPS": 60
+    },
+    "musicTempoFollowsVideoClockUnderCombatLoad": {
+      "steps": 90,
+      "expectedSteps": 90.0,
+      "videoFrames": 720,
+      "gameFPS": 53.0
+    }
+  },
+  "heap_sentinel_intact": true
+}

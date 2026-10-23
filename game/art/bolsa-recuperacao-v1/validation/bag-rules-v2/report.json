@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "rule": "Bag after every death; recovery based on equipment captured before the latest death",
+  "rom": "../../../../out/release/Plaguefall.bin",
+  "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "rom_bytes": 1572864,
+  "policies": {
+    "1-5": "all captured equipment",
+    "6-11": "one fewer shot upgrade, speed upgrade and inventory item; no level-3 floor",
+    "12-16": "at most one of each upgrade, independently conditional on having it before death"
+  },
+  "before_pickup": "one basic projectile, no speed bonus, empty inventory/bombs/effects; full HP",
+  "empty_bag": true,
+  "new_death_replaces_previous_snapshot": true,
+  "full_inventory_keeps_remaining_items_in_bag": true,
+  "native_checks": "native-checks.txt",
+  "emulator_reports": {
+    "ntsc": "ntsc/report.json",
+    "pal": "pal/report.json",
+    "training-ntsc": "training-ntsc/report.json",
+    "training-pal": "training-pal/report.json",
+    "interface-ntsc": "interface-ntsc/report.json",
+    "interface-pal": "interface-pal/report.json"
+  },
+  "campaign_nodes_per_region": 20,
+  "help_pages": 8,
+  "training_controller_only": true,
+  "physical_hardware_tested": false
+}

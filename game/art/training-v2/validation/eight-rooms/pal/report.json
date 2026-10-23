@@ -1,0 +1,236 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "ec500a055ce569f3b14fe45900fbf17d5c576dfa6ab3fd02cb12d8e4ee96bbad",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "gallery": {
+      "passed": true,
+      "details": {
+        "types": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14
+        ],
+        "fixed_positions": true,
+        "idle_and_walk_all_13": true,
+        "eight_directions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "death_previews": [
+          0,
+          2,
+          12
+        ],
+        "controller_only": true
+      }
+    },
+    "room-2-entry": {
+      "passed": true,
+      "details": {
+        "stage": 2,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-3-entry": {
+      "passed": true,
+      "details": {
+        "stage": 3,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-4-entry": {
+      "passed": true,
+      "details": {
+        "stage": 4,
+        "arena_active": true,
+        "enemies": 0,
+        "controller_only": true
+      }
+    },
+    "room-5-entry": {
+      "passed": true,
+      "details": {
+        "stage": 5,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-6-entry": {
+      "passed": true,
+      "details": {
+        "stage": 6,
+        "arena_active": true,
+        "enemies": 4,
+        "controller_only": true
+      }
+    },
+    "room-7-entry": {
+      "passed": true,
+      "details": {
+        "stage": 7,
+        "arena_active": true,
+        "enemies": 2,
+        "controller_only": true
+      }
+    },
+    "room-8-entry": {
+      "passed": true,
+      "details": {
+        "stage": 8,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "load-controls": {
+      "passed": true,
+      "details": {
+        "max_enemies": 16,
+        "hud_fps": 16,
+        "peak_cpu_pct": 229,
+        "controller_only": true
+      }
+    },
+    "santa-success": {
+      "passed": true,
+      "details": {
+        "real_30_second_timer": true,
+        "result_frozen": true,
+        "controller_only": true
+      }
+    },
+    "menu-controls": {
+      "passed": true,
+      "details": {
+        "configuration_cancel_rolls_back": true,
+        "restart_resets_room": true,
+        "room_selector_cancel_resumes": true,
+        "controller_only": true
+      }
+    },
+    "traversal": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "route_width": 2048,
+        "wins_without_kills": true,
+        "frozen_result": true,
+        "restart": true
+      }
+    },
+    "escort": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "waits_for_cover": true,
+        "pause_freezes": true,
+        "wins_with_both_actors": true,
+        "hp": 100,
+        "frozen_result": true,
+        "restart": true
+      }
+    },
+    "escort-failure": {
+      "passed": true,
+      "details": {
+        "real_projectile_damage": true,
+        "damiao_no_defeat_does_not_protect_dinorah": true,
+        "frozen_failure": true,
+        "restart_hp": 100,
+        "setup": "isolated lethal projectile and 10 HP"
+      }
+    },
+    "no-defeat": {
+      "passed": true,
+      "details": {
+        "lethal_projectile_no_defeat_hp": 1,
+        "normal_life_defeats": true,
+        "setup": "controller settings, isolated 1 HP and stationary lethal projectile"
+      }
+    },
+    "item-bench": {
+      "passed": true,
+      "details": {
+        "eight_types": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "healing": 40,
+        "power": 2,
+        "speed_bonus": 20,
+        "chain_targets_killed": 2,
+        "dummy_ice_frames": 230,
+        "dummy_burn_frames": 280,
+        "replenishment": true,
+        "setup": "real pickups/activation/shots; player repositioning only"
+      }
+    },
+    "behavior-boss": {
+      "passed": true,
+      "details": {
+        "boss_moves": true,
+        "real_minion_summon": true,
+        "setup": "controller selects boss, cycle accelerated for summon"
+      }
+    },
+    "santa-failure": {
+      "passed": true,
+      "details": {
+        "real_contact_damage": [
+          88,
+          76,
+          64,
+          52,
+          40,
+          28,
+          16,
+          4,
+          0
+        ],
+        "no_npc_hp_writes": true,
+        "result_frozen": true
+      }
+    },
+    "collision-terrain": {
+      "passed": true,
+      "details": {
+        "lava_hp": [
+          99,
+          95
+        ],
+        "mud_slow": 50,
+        "mud_exit_reset": true
+      }
+    }
+  },
+  "failures": []
+}

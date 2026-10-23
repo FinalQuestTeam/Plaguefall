@@ -3,6 +3,11 @@
 Revisão aplicada nos pickups da arena e nos ícones da interface. Mantém os IDs,
 nomes, efeitos, áreas de coleta, dimensões e paleta da versão anterior.
 
+Em 22/10/2026, a grade nativa da bomba no HUD foi ajustada para uma caixa
+retangular amarela com faixa escura, de leitura mais clara em 8×8. PNGs,
+atlas e dados C foram reexportados. A [validação desta revisão](../enemy-status-v1/README.md)
+inclui a comparação dos pixels do HUD na ROM atual.
+
 ![Comparação com os antigos e com a v1](comparison-nearest.png)
 
 ## Mudança visual

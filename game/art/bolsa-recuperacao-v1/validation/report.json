@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "rom": "../../../out/release/Plaguefall.bin",
+  "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+  "rom_bytes": 1572864,
+  "sprite": {
+    "pixels": [
+      16,
+      16
+    ],
+    "tiles": 4,
+    "bytes": 128,
+    "palette": "PAL1 existente",
+    "permanent_vram_growth_bytes": 0
+  },
+  "native_checks": {
+    "passed": true,
+    "report": "native-checks.txt",
+    "death_modules_sanitized": true,
+    "frequencies": [
+      50,
+      60
+    ]
+  },
+  "emulator": {
+    "name": "Genesis Plus GX",
+    "reports": {
+      "ntsc": "ntsc/report.json",
+      "pal": "pal/report.json",
+      "interface-ntsc": "interface-ntsc/report.json",
+      "interface-pal": "interface-pal/report.json"
+    },
+    "campaign_nodes_per_region": 20,
+    "help_pages": 8,
+    "bag_pixels_compared_with_vram": true,
+    "pickup_once": true,
+    "replacement_on_next_death": true
+  },
+  "physical_hardware_tested": false
+}

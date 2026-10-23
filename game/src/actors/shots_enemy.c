@@ -4,13 +4,17 @@
 #include "actors/shots.h"
 #include "core/game.h"
 #include "actors/player.h"
+#include "actors/dinorah.h"
 #include "system/audio/sfx.h"
 #include "levels/levels.h"
+#include "levels/test.h"
 
+static s16 shotTargetX,shotTargetY;
+void SHOTS_enemyTarget(s16 x,s16 y){shotTargetX=x;shotTargetY=y;}
 // cria um projétil inimigo em (fx, fy) 26.6 com velocidade dada (26.6) e `dmg`
-static void spawnEShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 dmg)
+static void spawnEShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 dmg, u8 style)
 {
-    const u16 cap = LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_ESHOTS;
+    const u16 cap = currentLevel==0 ? TEST_shotLimit() : (LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_ESHOTS);
     for (u16 i = 0; i < cap; i++)
     {
         if (eshots[i].active) continue;
@@ -19,28 +23,29 @@ static void spawnEShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 dmg)
         eshots[i].vx = vx;
         eshots[i].vy = vy;
         eshots[i].dmg = dmg;
+        eshots[i].mode = style;
         eshots[i].active = TRUE;
         return;
     }
 }
 
-void fireEnemyShot(s16 ex, s16 ey)
+void fireEnemyShot(s16 ex, s16 ey, u8 style)
 {
-    s16 dx = (px + 8) - (ex + 8);
-    s16 dy = (py + 8) - (ey + 8);
+    s16 dx = shotTargetX - (ex + 8);
+    s16 dy = shotTargetY - (ey + 8);
     u32 dist = getApproximatedDistance(dx, dy);
     if (dist == 0) dist = 1;
 
     spawnEShot((s32) (ex + 4) << 6, (s32) (ey + 4) << 6,
                ((s32) dx * ESHOT_SPEED << 6) / (s32) dist,
-               ((s32) dy * ESHOT_SPEED << 6) / (s32) dist, ESHOT_DAMAGE);
+               ((s32) dy * ESHOT_SPEED << 6) / (s32) dist, ESHOT_DAMAGE, style);
     SFX_enemyShot();
 }
 
-void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg)
+void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg, u8 style)
 {
-    s16 dx = (px + 8) - (ex + 8);
-    s16 dy = (py + 8) - (ey + 8);
+    s16 dx = shotTargetX - (ex + 8);
+    s16 dy = shotTargetY - (ey + 8);
     u32 dist = getApproximatedDistance(dx, dy);
     if (dist == 0) { dx = 1; dist = 1; }
 
@@ -51,14 +56,14 @@ void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg)
     // rotação aproximada por cisalhamento: ~18° por passo (k = s/3)
     const s16 half = count / 2;
     for (s16 s = -half; s <= half; s++)
-        spawnEShot(fx, fy, bvx - (bvy * s) / 3, bvy + (bvx * s) / 3, dmg);
+        spawnEShot(fx, fy, bvx - (bvy * s) / 3, bvy + (bvx * s) / 3, dmg, style);
 
     SFX_enemyShot();
 }
 
-void fireEnemySpread(s16 ex, s16 ey, u8 count)
+void fireEnemySpread(s16 ex, s16 ey, u8 count, u8 style)
 {
-    fireEnemySpreadDmg(ex, ey, count, ESHOT_DAMAGE);
+    fireEnemySpreadDmg(ex, ey, count, ESHOT_DAMAGE, style);
 }
 
 void SHOTS_updateEnemy(void)
@@ -80,6 +85,12 @@ void SHOTS_updateEnemy(void)
             continue;
         }
 
+        if(DINORAH_alive()) {
+            const s16 ax=sx+4-dinorahX-8,ay=sy+4-dinorahY-8;
+            if(ax>=-10 && ax<=10 && ay>=-10 && ay<=10 && ax*ax+ay*ay<=100) {
+                eshots[i].active=FALSE;DINORAH_damage(eshots[i].dmg);continue;
+            }
+        }
         // colisão com o círculo do jogador (raio 7 + raio do tiro 3)
         s16 dx = (sx + 4) - (px + 8);
         s16 dy = (sy + 4) - (py + 8);

@@ -10,6 +10,8 @@ void SFX_enemyShot(void);
 void sfxItemPickup(void);   // blip ascendente ao coletar item (usado por items.c)
 void SFX_playerHit(void);   // tom grave descendente: dano de INIMIGO no jogador
 void SFX_bombBlast(void);
+void SFX_radioTick(void);
+void SFX_countPulse(bool go);
 void SFX_silence(void);
 void SFX_update(void);      // decaimento por frame; chamar sempre no loop
 

@@ -1,0 +1,86 @@
+{
+  "tile_size": 8,
+  "variants_per_material": 23,
+  "resident_tiles": 46,
+  "resident_bytes": 1472,
+  "rom_art_bytes": 2208,
+  "source_palette": "native 06b; adapted to active scene PAL3, PAL1 fallback",
+  "source_palette_words": [
+    0,
+    546,
+    1058,
+    1602,
+    2148,
+    1124,
+    614,
+    582,
+    1128,
+    1162,
+    1708,
+    654,
+    586,
+    38,
+    2764,
+    3310
+  ],
+  "style_references": {
+    "lava": {
+      "stage": "06b",
+      "rect": [
+        48,
+        120,
+        32,
+        16
+      ]
+    },
+    "mud": {
+      "stage": "02b",
+      "rect": [
+        32,
+        264,
+        32,
+        16
+      ]
+    }
+  },
+  "depth": {
+    "view_degrees": 60,
+    "lava_far_wall_pixels": 6,
+    "lava_near_lip_pixels": 2,
+    "narrow_channel_wall_pixels": 3,
+    "mud_ground_level": true
+  },
+  "transparent_index": 0,
+  "neighbours": {
+    "north": 1,
+    "east": 2,
+    "south": 4,
+    "west": 8
+  },
+  "examples": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 4
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "w": 3,
+      "h": 5
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "w": 7,
+      "h": 2
+    },
+    {
+      "x": 16,
+      "y": 0,
+      "w": 4,
+      "h": 1
+    }
+  ]
+}

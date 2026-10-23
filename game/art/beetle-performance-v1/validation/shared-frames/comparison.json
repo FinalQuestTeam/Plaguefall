@@ -1,0 +1,519 @@
+{
+  "adopted": false,
+  "reason": "No consistent FPS gain in the critical large-enemy combat cases; sharing adds cache bookkeeping and lookup cost.",
+  "runs": 72,
+  "measured_physical_frames_per_run": 1800,
+  "repeat_method": "One deterministic run of each configuration per build and region.",
+  "source_difference": "Only src/system/video/enemygfx.c differs between isolated builds. Synchronized also aligns idle/walk animation phase by species.",
+  "builds": {
+    "baseline": {
+      "directory": "/private/tmp/plaguefall-shared-frames-zx3zwc5f/baseline",
+      "rom_sha256": "c08cc6b6333213290814d51cc5a860b5d0ae4bc1bcd5123ce63d7c1198eb2cc4",
+      "enemygfx_sha256": "b73f4f9019ded1712d35da9a0cec4222d8fcc7fc01bdb3c0a9fe4a0711eb430c"
+    },
+    "shared": {
+      "directory": "/private/tmp/plaguefall-shared-frames-zx3zwc5f/shared",
+      "rom_sha256": "f3d79de1c91ece7e36c96775842c6cedf6500d6ccc589818cfa71ece42ef841b",
+      "enemygfx_sha256": "d5bbaf23b5456dda577681e8876389a7ad12ae9dd27e90254fb5e3c86b06d9c0"
+    },
+    "synchronized": {
+      "directory": "/private/tmp/plaguefall-shared-frames-zx3zwc5f/synchronized",
+      "rom_sha256": "b701674664c45f738924e2b6754665316acd8ec45e0b5fcd1e4e2e067cd75199",
+      "enemygfx_sha256": "f88a0b513d7484da3125e92d7f507907bebc0ec100735ac05e009508dcb3d6cb"
+    }
+  },
+  "comparison": [
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 30.0,
+        "cpu_mean": 144.86,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 29.97,
+        "cpu_mean": 153.81,
+        "distinct_graphics_mean": 7.41
+      },
+      "synchronized": {
+        "fps": 30.0,
+        "cpu_mean": 146.23,
+        "distinct_graphics_mean": 4.42
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 29.2,
+        "cpu_mean": 173.34,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 26.6,
+        "cpu_mean": 181.87,
+        "distinct_graphics_mean": 7.33
+      },
+      "synchronized": {
+        "fps": 28.5,
+        "cpu_mean": 174.46,
+        "distinct_graphics_mean": 4.43
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 22.5,
+        "cpu_mean": 220.61,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 20.93,
+        "cpu_mean": 228.18,
+        "distinct_graphics_mean": 7.25
+      },
+      "synchronized": {
+        "fps": 22.47,
+        "cpu_mean": 221.13,
+        "distinct_graphics_mean": 4.35
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 30.0,
+        "cpu_mean": 147.02,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 29.97,
+        "cpu_mean": 158.2,
+        "distinct_graphics_mean": 7.63
+      },
+      "synchronized": {
+        "fps": 30.0,
+        "cpu_mean": 148.7,
+        "distinct_graphics_mean": 5.2
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 28.37,
+        "cpu_mean": 176.38,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.23,
+        "cpu_mean": 186.5,
+        "distinct_graphics_mean": 7.54
+      },
+      "synchronized": {
+        "fps": 28.0,
+        "cpu_mean": 177.15,
+        "distinct_graphics_mean": 5.14
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 21.83,
+        "cpu_mean": 221.1,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 20.63,
+        "cpu_mean": 229.9,
+        "distinct_graphics_mean": 7.49
+      },
+      "synchronized": {
+        "fps": 22.17,
+        "cpu_mean": 221.4,
+        "distinct_graphics_mean": 5.04
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 30.0,
+        "cpu_mean": 133.23,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 30.0,
+        "cpu_mean": 132.99,
+        "distinct_graphics_mean": 5.26
+      },
+      "synchronized": {
+        "fps": 30.0,
+        "cpu_mean": 132.95,
+        "distinct_graphics_mean": 2.51
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 30.0,
+        "cpu_mean": 161.74,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 30.0,
+        "cpu_mean": 161.57,
+        "distinct_graphics_mean": 5.25
+      },
+      "synchronized": {
+        "fps": 30.0,
+        "cpu_mean": 161.51,
+        "distinct_graphics_mean": 2.5
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 23.77,
+        "cpu_mean": 205.58,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 23.87,
+        "cpu_mean": 205.07,
+        "distinct_graphics_mean": 4.65
+      },
+      "synchronized": {
+        "fps": 23.87,
+        "cpu_mean": 205.04,
+        "distinct_graphics_mean": 2.3
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 30.0,
+        "cpu_mean": 145.93,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 29.97,
+        "cpu_mean": 156.93,
+        "distinct_graphics_mean": 7.46
+      },
+      "synchronized": {
+        "fps": 29.97,
+        "cpu_mean": 152.85,
+        "distinct_graphics_mean": 6.23
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 28.9,
+        "cpu_mean": 174.59,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.9,
+        "cpu_mean": 184.81,
+        "distinct_graphics_mean": 7.36
+      },
+      "synchronized": {
+        "fps": 26.6,
+        "cpu_mean": 180.74,
+        "distinct_graphics_mean": 6.15
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 22.33,
+        "cpu_mean": 218.57,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 20.97,
+        "cpu_mean": 227.37,
+        "distinct_graphics_mean": 7.24
+      },
+      "synchronized": {
+        "fps": 21.57,
+        "cpu_mean": 223.26,
+        "distinct_graphics_mean": 5.9
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 25.06,
+        "cpu_mean": 111.28,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.03,
+        "cpu_mean": 117.53,
+        "distinct_graphics_mean": 7.59
+      },
+      "synchronized": {
+        "fps": 25.11,
+        "cpu_mean": 112.89,
+        "distinct_graphics_mean": 4.78
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.0,
+        "cpu_mean": 126.94,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.0,
+        "cpu_mean": 139.0,
+        "distinct_graphics_mean": 7.64
+      },
+      "synchronized": {
+        "fps": 25.0,
+        "cpu_mean": 130.38,
+        "distinct_graphics_mean": 4.72
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 22.33,
+        "cpu_mean": 176.66,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 20.47,
+        "cpu_mean": 184.82,
+        "distinct_graphics_mean": 7.54
+      },
+      "synchronized": {
+        "fps": 22.06,
+        "cpu_mean": 178.03,
+        "distinct_graphics_mean": 4.66
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 25.03,
+        "cpu_mean": 112.47,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.03,
+        "cpu_mean": 118.16,
+        "distinct_graphics_mean": 7.31
+      },
+      "synchronized": {
+        "fps": 25.06,
+        "cpu_mean": 113.84,
+        "distinct_graphics_mean": 5.28
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.0,
+        "cpu_mean": 128.92,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.0,
+        "cpu_mean": 140.45,
+        "distinct_graphics_mean": 7.36
+      },
+      "synchronized": {
+        "fps": 25.0,
+        "cpu_mean": 132.29,
+        "distinct_graphics_mean": 5.25
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 21.61,
+        "cpu_mean": 175.94,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 20.64,
+        "cpu_mean": 182.57,
+        "distinct_graphics_mean": 7.31
+      },
+      "synchronized": {
+        "fps": 21.78,
+        "cpu_mean": 176.74,
+        "distinct_graphics_mean": 5.15
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 27.25,
+        "cpu_mean": 102.53,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 27.72,
+        "cpu_mean": 102.13,
+        "distinct_graphics_mean": 6.16
+      },
+      "synchronized": {
+        "fps": 27.86,
+        "cpu_mean": 102.06,
+        "distinct_graphics_mean": 2.66
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.0,
+        "cpu_mean": 117.68,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.0,
+        "cpu_mean": 117.41,
+        "distinct_graphics_mean": 5.95
+      },
+      "synchronized": {
+        "fps": 25.0,
+        "cpu_mean": 117.44,
+        "distinct_graphics_mean": 2.62
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 24.97,
+        "cpu_mean": 161.64,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 24.94,
+        "cpu_mean": 161.2,
+        "distinct_graphics_mean": 5.92
+      },
+      "synchronized": {
+        "fps": 24.94,
+        "cpu_mean": 161.19,
+        "distinct_graphics_mean": 2.59
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 25.0,
+        "cpu_mean": 111.83,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.0,
+        "cpu_mean": 118.27,
+        "distinct_graphics_mean": 7.42
+      },
+      "synchronized": {
+        "fps": 25.03,
+        "cpu_mean": 116.03,
+        "distinct_graphics_mean": 6.29
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.0,
+        "cpu_mean": 127.72,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 25.0,
+        "cpu_mean": 140.39,
+        "distinct_graphics_mean": 7.46
+      },
+      "synchronized": {
+        "fps": 25.0,
+        "cpu_mean": 136.3,
+        "distinct_graphics_mean": 6.28
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 22.33,
+        "cpu_mean": 174.99,
+        "distinct_graphics_mean": 8
+      },
+      "shared": {
+        "fps": 20.69,
+        "cpu_mean": 183.17,
+        "distinct_graphics_mean": 7.34
+      },
+      "synchronized": {
+        "fps": 21.08,
+        "cpu_mean": 180.22,
+        "distinct_graphics_mean": 6.15
+      }
+    }
+  ],
+  "caveat": "Fresh common source snapshot, so baseline values may differ from previous reports. Per-frame RAM graphics samples can observe intermediate loader state when a game update spans VBlanks; they do not alone prove a missing displayed sprite.",
+  "pixel_validation": {
+    "frames": 1248,
+    "types": 13,
+    "directions": 8,
+    "regions": [
+      "NTSC",
+      "PAL"
+    ],
+    "variant": "synchronized",
+    "vram_and_sat_verified": true
+  }
+}

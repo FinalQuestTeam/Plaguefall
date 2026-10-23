@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plaguefall — conversa, objetivo e contagem</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#161815;color:#ebe4d5;font:15px system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:28px 24px}h1{font-size:24px;margin:0 0 8px}p{line-height:1.5;color:#bfbda9;margin:8px 0 20px}.models,.controls,.steps{display:flex;gap:8px;flex-wrap:wrap}button{cursor:pointer;border:1px solid #555443;background:#25281f;color:#eee9d9;padding:10px 14px;border-radius:6px;font:inherit}button:hover{border-color:#c7a758}button[aria-pressed=true]{background:#e7cd70;color:#202117;border-color:#e7cd70}.models{margin:20px 0}.screen{margin:0 auto;width:min(100%,960px);background:#000;outline:1px solid #494938}.screen img{display:block;width:100%;height:auto;aspect-ratio:10/7;image-rendering:pixelated;image-rendering:crisp-edges}.stage{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:18px 0 10px}.stage strong{color:#f2d76e}.time{font-variant-numeric:tabular-nums;color:#bbbda9}input{width:100%;accent-color:#e7cd70;cursor:pointer}.controls{margin:14px 0}.steps{margin-top:18px}.steps button{font-size:13px;padding:7px 11px}.note{font-size:13px;margin-top:24px;max-width:900px}.downloads a{color:#e7cd70}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #ffe990;outline-offset:3px}
+</style>
+<main>
+<h1>Conversa → objetivo → contagem</h1>
+<p>Pátio da Igreja · mesmas telas de conversa e missão nos três modelos.</p>
+<div class="models" aria-label="Modelo de contagem">
+<button data-model="1" aria-pressed="false">1 · Monitor do rádio</button>
+<button data-model="2" aria-pressed="false">2 · Cartão de missão</button>
+<button data-model="3" aria-pressed="true">3 · Console dividido</button>
+</div>
+<div class="screen"><img id="screen" src="01-conversa-padre.png" width="320" height="224" alt="Conversa: Padre falando"></div>
+<div class="stage"><strong id="stage">Conversa · Padre</strong><span id="time" class="time">0,0 / 20,0 s</span></div>
+<input id="timeline" type="range" min="0" max="20000" step="100" value="0" aria-label="Posição na sequência">
+<div class="controls"><button id="play">Reproduzir sequência</button><button id="restart">Voltar ao início</button><button id="previous">← Tela anterior</button><button id="next">Próxima tela →</button></div>
+<div class="steps" aria-label="Ir para uma etapa">
+<button data-time="0">Padre</button><button data-time="6000">Damião</button><button data-time="11000">Objetivo</button><button data-time="17000">Contagem · 3</button><button data-time="18000">2</button><button data-time="19000">1</button>
+</div>
+<p class="note">Prévia de montagem, sem alteração da ROM. Conversa e objetivo são capturas do emulador; as contagens são propostas com os recursos gráficos do jogo. Para facilitar a comparação, as falas e o objetivo avançam automaticamente aqui. No jogo, continuam por confirmação em A. A contagem dura três segundos e, ao terminar, a fase começa.</p>
+<p class="downloads">Sequências em GIF: <a href="sequencia-01-monitor-radio.gif">modelo 1</a> · <a href="sequencia-02-cartao-missao.gif">modelo 2</a> · <a href="sequencia-03-console-dividido.gif">modelo 3</a></p>
+</main>
+<script>
+const names={1:'monitor-radio',2:'cartao-missao',3:'console-dividido'};
+const stages=[{start:0,title:'Conversa · Padre',src:'01-conversa-padre.png'},{start:6000,title:'Conversa · Damião',src:'02-conversa-damiao.png'},{start:11000,title:'Objetivo da missão',src:'03-objetivo.png'},{start:17000,title:'Contagem · 3',digit:3},{start:18000,title:'Contagem · 2',digit:2},{start:19000,title:'Contagem · 1',digit:1}];
+const screen=document.getElementById('screen'),timeline=document.getElementById('timeline'),play=document.getElementById('play');
+let model=3,position=0,running=false,last=0;
+const preload=[];
+for(const s of stages.filter(s=>s.src)){const im=new Image();im.src=s.src;preload.push(im)}
+for(let m=1;m<=3;m++)for(let d=1;d<=3;d++){const im=new Image();im.src=`0${m}-${names[m]}-${d}.png`;preload.push(im)}
+function current(){let i=stages.findLastIndex(s=>position>=s.start);return Math.max(0,i)}
+function update(){const s=stages[current()];const src=s.src||`0${model}-${names[model]}-${s.digit}.png`;if(screen.getAttribute('src')!==src)screen.src=src;screen.alt=s.title;timeline.value=position;document.getElementById('stage').textContent=position>=20000?'Fim da prévia · aqui começa a fase':s.title;document.getElementById('time').textContent=`${(position/1000).toFixed(1).replace('.',',')} / 20,0 s`;play.textContent=running?'Pausar':'Reproduzir sequência';document.querySelectorAll('[data-model]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.model)===model));document.querySelectorAll('[data-time]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.time)===s.start))}
+function seek(ms){position=Math.max(0,Math.min(20000,ms));last=performance.now();update()}
+document.querySelectorAll('[data-model]').forEach(b=>b.onclick=()=>{model=Number(b.dataset.model);update()});
+document.querySelectorAll('[data-time]').forEach(b=>b.onclick=()=>{running=false;seek(Number(b.dataset.time))});
+play.onclick=()=>{if(position>=20000)position=0;running=!running;last=performance.now();update()};
+document.getElementById('restart').onclick=()=>{running=false;seek(0)};
+document.getElementById('previous').onclick=()=>{running=false;seek(stages[Math.max(0,current()-1)].start)};
+document.getElementById('next').onclick=()=>{running=false;seek(stages[Math.min(stages.length-1,current()+1)].start)};
+timeline.oninput=()=>{running=false;seek(Number(timeline.value))};
+function tick(now){if(running){position=Math.min(20000,position+now-last);if(position===20000)running=false;update()}last=now;requestAnimationFrame(tick)}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){running=false;update()}});
+update();requestAnimationFrame(tick);
+</script>
+</html>

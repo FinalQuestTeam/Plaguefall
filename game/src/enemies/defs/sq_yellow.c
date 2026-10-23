@@ -7,7 +7,7 @@
 
 const EnemyDef ENEMYDEF_sq_yellow =
 {
-    .name       = "Batedor",
+    .name       = "BATEDOR",
     .shape      = SHAPE_SQUARE,
     .color      = COLOR_YELLOW,     // perseguidor
     .size       = 16,

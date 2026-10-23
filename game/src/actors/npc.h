@@ -20,7 +20,8 @@ void NPC_clear(void);           // desativa (fases sem NPC)
 bool NPC_active(void);          // há um aliado na fase?
 bool NPC_alive(void);           // ativo e com vida > 0?
 bool NPC_hidden(void);          // piscando neste quadro (invencibilidade pós-dano)?
-u16 NPC_size(void);             // 40x40 com Santa no mapa; 24x24 nos cenários legados
+u16 NPC_size(void);             // âncora da IA: 40 no mapa, 24 legado; contato usa a área sólida
 void NPC_update(void);          // dano por contato de inimigos (com i-frames)
 
+void NPC_stopBlink(void);
 #endif // NPC_H

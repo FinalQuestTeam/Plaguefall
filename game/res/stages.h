@@ -14,7 +14,7 @@ extern const u8 stage03_glow[4736];
 extern const u8 stage04_tiles[17184];
 extern const u8 stage04_map[6144];
 extern const u8 stage04_palette[32];
-extern const u8 stage05_tiles[17632];
+extern const u8 stage05_tiles[20352];
 extern const u8 stage05_map[6144];
 extern const u8 stage05_palette[32];
 extern const u8 stage06a_tiles[16256];

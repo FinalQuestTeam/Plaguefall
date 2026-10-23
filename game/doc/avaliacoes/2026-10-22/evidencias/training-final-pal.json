@@ -1,0 +1,93 @@
+{
+  "passed": false,
+  "region": "PAL",
+  "rom_sha256": "1b29878ddda2d8c0b5e0aebcbd81df06f534ad5707e7220309df1cfc2649899c",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "gallery": {
+      "passed": false,
+      "error": "AssertionError((56, (1332, 56)))"
+    },
+    "room-2-entry": {
+      "passed": true,
+      "details": {
+        "stage": 2,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-3-entry": {
+      "passed": true,
+      "details": {
+        "stage": 3,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-4-entry": {
+      "passed": true,
+      "details": {
+        "stage": 4,
+        "arena_active": true,
+        "enemies": 0,
+        "controller_only": true
+      }
+    },
+    "room-5-entry": {
+      "passed": true,
+      "details": {
+        "stage": 5,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-6-entry": {
+      "passed": true,
+      "details": {
+        "stage": 6,
+        "arena_active": true,
+        "enemies": 4,
+        "controller_only": true
+      }
+    },
+    "load-controls": {
+      "passed": true,
+      "details": {
+        "max_enemies": 16,
+        "hud_fps": 19,
+        "peak_cpu_pct": 226,
+        "controller_only": true
+      }
+    },
+    "santa-success": {
+      "passed": true,
+      "details": {
+        "real_30_second_timer": true,
+        "result_frozen": true,
+        "controller_only": true
+      }
+    },
+    "santa-failure": {
+      "passed": false,
+      "error": "AssertionError(('failure', 0, [88, 76, 64, 52, 40, 28]))"
+    },
+    "collision-terrain": {
+      "passed": true,
+      "details": {
+        "lava_hp": [
+          99,
+          95
+        ],
+        "mud_slow": 50,
+        "mud_exit_reset": true
+      }
+    }
+  },
+  "failures": [
+    "gallery",
+    "santa-failure"
+  ]
+}

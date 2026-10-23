@@ -1,6 +1,7 @@
 // O Sonho Atendido: one continuous PSG score from the Plaguefall logo.
 #include "opening.h"
 #include "audio.h"
+#include "music.h"
 
 typedef struct {
     u16 at, frequency;
@@ -95,6 +96,7 @@ void OPENING_stop(void)
     SYS_disableInts();
     SYS_setVIntCallback(0);
     openingActive = FALSE;
+    MUSIC_syncClock();
     for (u8 i = 0; i < 4; i++) voices[i].left = 0;
     AUDIO_silenceAll();
     SYS_enableInts();

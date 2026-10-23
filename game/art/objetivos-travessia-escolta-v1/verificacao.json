@@ -1,0 +1,40 @@
+{
+  "status": "proposta_apenas",
+  "productionChangesAuthoredForThisRequest": [],
+  "ROMBuildRunByThisProposal": false,
+  "spriteFramesChecked": 96,
+  "assetLinksValid": true,
+  "paletteIdentical": true,
+  "geometry": {
+    "reach": {
+      "routeLengthPixels": 638.24,
+      "samplesChecked": 647,
+      "footprint": [
+        16,
+        16
+      ],
+      "noIntersectionsWithProposedHolesOrHazards": true,
+      "scope": "offline geometry only; not game navigation or performance"
+    },
+    "escort": {
+      "routeLengthPixels": 503.27,
+      "samplesChecked": 513,
+      "footprint": [
+        16,
+        16
+      ],
+      "noIntersectionsWithProposedHolesOrHazards": true,
+      "scope": "offline geometry only; not game navigation or performance"
+    }
+  },
+  "snapshotEqualityAtEnd": {
+    "game/src/core/objective.c": true,
+    "game/src/actors/npc.c": false,
+    "game/src/levels/arena.c": true,
+    "game/src/system/video/herogfx.c": true,
+    "game/src/system/video/sprites/tiles.h": true,
+    "game/out/release/Plaguefall.bin": false
+  },
+  "concurrentWorkspaceNote": "NPC_stopBlink foi acrescentado ao NPC e a ROM mudou durante esta revisão por atividade externa a esta proposta. A alteração foi relida; não muda a conclusão sobre o aliado imóvel. Nenhum desses arquivos foi escrito por esta proposta.",
+  "limits": "Não testa IA integrada ou FPS."
+}

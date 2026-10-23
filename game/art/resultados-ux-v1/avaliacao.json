@@ -1,0 +1,97 @@
+{
+  "scope": "Proposta visual para aprovação. Nenhuma alteração em src, recursos exportados ou ROM.",
+  "basis": "Avaliação heurística de UX e game design, leitura do código e capturas da ROM atual em Genesis Plus GX/NTSC. Não é teste com jogadores ou em CRT.",
+  "pattern": "Painel da resistência aprovado em interface-ux-v2: 320×224, fonte nativa 8×8, caixas centrais de 256 px de largura, margens externas de 32 px, texto centralizado, papel claro, ferrugem, oliva e seleção de alto contraste. A moldura preserva os pixels originais; não há redução da fonte. Sem novas imagens geradas.",
+  "findings": [
+    {
+      "current": "GAME OVER + APERTE START",
+      "problem": "Diz o estado, mas não o que START faz nem quais recursos serão reiniciados.",
+      "proposal": "Damião caiu; repetir a mesma fase é a ação inicial. Informar vida cheia, equipamento básico e reinício de itens/melhorias."
+    },
+    {
+      "current": "FASE CONCLUIDA! por 3 s",
+      "problem": "A recompensa é genérica e a espera não pode ser pulada.",
+      "proposal": "Confirmação breve ligada ao objetivo, sobre o cenário. Avanço automático e atalho explícito, sem adicionar outra etapa obrigatória."
+    },
+    {
+      "current": "O ALIADO CAIU! / A MISSAO CONTINUA...",
+      "problem": "O alvo é o sinalizador na Santa. A linguagem de morte confunde uma bifurcação com derrota.",
+      "proposal": "Sinal perdido; retirada por terra; a missão continua. Ritmo e som próprios, sem oferecer retry neste caso."
+    },
+    {
+      "current": "PARABENS! FIM em fundo preto",
+      "problem": "Pouco retorno emocional depois do chefe e quebra o padrão artístico recém-aprovado. START não diz que volta ao título.",
+      "proposal": "O Escorpião caiu. Caixa central de 256 × 176 px sobre o cenário, continuidade da música final, retorno ao título nomeado e opção de nova campanha."
+    }
+  ],
+  "implementation": [
+    "Reusar o ciclo seguro de gerenciamento de fonte, paletas e VRAM do painel, adaptando-o à caixa parcial e preservando o cenário ao redor. O texto centralizado pode exigir deslocamento de 4 px em linhas de comprimento ímpar. Não desenhar diretamente na WINDOW do HUD.",
+    "Centralizar resultados em flow/screens. loseHp deve emitir o estado de derrota; o módulo de ator não deve compor o menu.",
+    "O cartão parcial precisa de compositor próprio com tiles do painel aprovado, cenário congelado e sprites ocultos/ocultados pelo cartão. Não é só reduzir a imagem inteira.",
+    "Distinguir morte, objetivo cumprido, objetivo perdido com rota e chefe final. Não acionar dois resultados quando morte e meta ocorrerem no mesmo quadro: derrota tem prioridade.",
+    "Ler kills, PhaseStats.frames/fps, currentLevel e a definição da fase. Não inventar tempo de campanha, pontuação, medalhas ou vidas extras.",
+    "START fora da confirmação repete a fase na derrota; dentro da confirmação cancela. A confirma o foco. No final A/START confirma a opção selecionada.",
+    "Nova campanha deve usar a rotina completa do menu: limpar rotas, cenas vistas, estatísticas e inventário. Não apenas chamar startPhase(1).",
+    "Depois de aprovado, verificar retry com resets, saída/cancelamento, 6A/6B, vitória final, novas pressões e restauração de vídeo em NTSC/PAL. Temporizações propostas precisam de playtest."
+  ],
+  "cases": [
+    {
+      "id": "derrota",
+      "label": "Derrota / tentar novamente",
+      "before": "atuais/ntsc/derrota.png",
+      "after": "propostas/derrota.png",
+      "note": "Caixa de 256 × 184 px, texto e opções centralizados. Prioridade em repetir a mesma fase. START repete diretamente; A confirma a seleção. Números ilustrativos, usando apenas dados disponíveis da fase. A saída abre a confirmação seguinte; B retorna o foco para tentar novamente."
+    },
+    {
+      "id": "derrota-sair",
+      "label": "Derrota / selecionar saída",
+      "before": "atuais/ntsc/derrota.png",
+      "after": "propostas/derrota-sair.png",
+      "note": "Caixa de 256 × 184 px, texto e opções centralizados. Prioridade em repetir a mesma fase. START repete diretamente; A confirma a seleção. Números ilustrativos, usando apenas dados disponíveis da fase. A saída abre a confirmação seguinte; B retorna o foco para tentar novamente."
+    },
+    {
+      "id": "confirmar-saida",
+      "label": "Confirmação / preservar a partida",
+      "before": "atuais/ntsc/derrota.png",
+      "after": "propostas/confirmar-saida.png",
+      "note": "Caixa de 256 × 152 px. Mesmo padrão do pause aprovado, com conteúdo centralizado: opção inicial preserva a partida. Voltar retorna à tela de derrota, sem iniciar a fase. B e START cancelam a confirmação."
+    },
+    {
+      "id": "fase-concluida",
+      "label": "Fase concluída / confirmação breve",
+      "before": "atuais/ntsc/fase-concluida.png",
+      "after": "propostas/fase-concluida.png",
+      "note": "Cartão de 256 × 128 px, com 32 px de cenário visível em cada lateral e texto centralizado. Proposta: 2 s automáticos, ou A/START após nova pressão e trava de 350 ms. O mapa continua explicando o destino e a bifurcação. Contagem ilustrativa igual à meta real da fase 1."
+    },
+    {
+      "id": "sinal-protegido",
+      "label": "Proteção / resgate confirmado",
+      "before": "atuais/ntsc/sinal-protegido.png",
+      "after": "propostas/sinal-protegido.png",
+      "note": "Mesmo cartão central de 256 × 128 px e ritmo da conclusão comum. Texto nomeia o sinalizador, em vez de sugerir que o alvo é uma pessoa. A consequência é compatível com a rota de resgate; o mapa apresenta o próximo destino."
+    },
+    {
+      "id": "sinal-perdido",
+      "label": "Sinal perdido / a missão continua",
+      "before": "atuais/ntsc/sinal-perdido.png",
+      "after": "propostas/sinal-perdido.png",
+      "note": "Cartão central de 256 × 128 px. Resultado de objetivo, sem menu de tentar novamente: Damião está vivo e segue por 6B. Proposta: 3 s automáticos para ler a consequência, com o mesmo atalho A/START. Som curto de alerta, diferente do som de derrota; significado também no texto, independente da cor."
+    },
+    {
+      "id": "vitoria",
+      "label": "Vitória final / encerramento",
+      "before": "atuais/ntsc/vitoria-final.png",
+      "after": "propostas/vitoria.png",
+      "note": "Caixa de 256 × 176 px com todo o texto centralizado e cenário do covil visível ao redor. Fundo ilustrativo da fase 16, com o HUD oculto. Permanece após o diálogo final, sem avanço automático; música Entardecer continua. Retornar ao título preserva o fluxo atual; jogar novamente inicia campanha nova. Nova pressão após soltar o comando evita saída acidental."
+    },
+    {
+      "id": "vitoria-rejogar",
+      "label": "Vitória final / jogar novamente",
+      "before": "atuais/ntsc/vitoria-final.png",
+      "after": "propostas/vitoria-rejogar.png",
+      "note": "Caixa de 256 × 176 px com todo o texto centralizado e cenário do covil visível ao redor. Fundo ilustrativo da fase 16, com o HUD oculto. Permanece após o diálogo final, sem avanço automático; música Entardecer continua. Retornar ao título preserva o fluxo atual; jogar novamente inicia campanha nova. Nova pressão após soltar o comando evita saída acidental."
+    }
+  ],
+  "textBoundsChecked": 64,
+  "romSHA256": "70004ffb25201aeba387ad12b16b2acd6b3ef9b4c958aa6d36bb50e23593ec99"
+}

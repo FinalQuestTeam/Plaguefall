@@ -1,0 +1,169 @@
+{
+  "region_fps": 50,
+  "rom_sha256": "d0eb603294a2f6ae67766b1ff6ee8c29215f9147168b43dca524822633b089a2",
+  "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+  "instrumented": false,
+  "method": "Production phase 1, no shooting or new spawns; 120 physical warmup frames and 600 measured frames. RAM injects 4/8 live enemies (HP 200), disables summon/shield timers, grants player hit immunity and forces enemy shield state. Movement, separation, animation, sprite admission, audio and HUD run normally. Game updates / physical VBlanks measure FPS. This is a controlled stress test, not a normal campaign attempt.",
+  "cases": [
+    {
+      "type": 1,
+      "count": 4,
+      "shield": 0,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 33.25,
+      "cpu_p95": 35.16
+    },
+    {
+      "type": 1,
+      "count": 4,
+      "shield": 1,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 39.96,
+      "cpu_p95": 41.85
+    },
+    {
+      "type": 1,
+      "count": 8,
+      "shield": 0,
+      "fps": 49.83,
+      "physical_frames": 600,
+      "game_frames": 598,
+      "cpu_mean": 65.91,
+      "cpu_p95": 69.04
+    },
+    {
+      "type": 1,
+      "count": 8,
+      "shield": 1,
+      "fps": 39.67,
+      "physical_frames": 600,
+      "game_frames": 476,
+      "cpu_mean": 80.82,
+      "cpu_p95": 84.47
+    },
+    {
+      "type": 2,
+      "count": 4,
+      "shield": 0,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 38.38,
+      "cpu_p95": 43.75
+    },
+    {
+      "type": 2,
+      "count": 4,
+      "shield": 1,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 45.11,
+      "cpu_p95": 50.49
+    },
+    {
+      "type": 2,
+      "count": 8,
+      "shield": 0,
+      "fps": 34.83,
+      "physical_frames": 600,
+      "game_frames": 418,
+      "cpu_mean": 80.48,
+      "cpu_p95": 82.37
+    },
+    {
+      "type": 2,
+      "count": 8,
+      "shield": 1,
+      "fps": 33.5,
+      "physical_frames": 600,
+      "game_frames": 402,
+      "cpu_mean": 88.94,
+      "cpu_p95": 90.58
+    },
+    {
+      "type": 6,
+      "count": 4,
+      "shield": 0,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 33.7,
+      "cpu_p95": 35.4
+    },
+    {
+      "type": 6,
+      "count": 4,
+      "shield": 1,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 40.41,
+      "cpu_p95": 42.14
+    },
+    {
+      "type": 6,
+      "count": 8,
+      "shield": 0,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 65.61,
+      "cpu_p95": 69.19
+    },
+    {
+      "type": 6,
+      "count": 8,
+      "shield": 1,
+      "fps": 40.75,
+      "physical_frames": 600,
+      "game_frames": 489,
+      "cpu_mean": 80.78,
+      "cpu_p95": 84.96
+    },
+    {
+      "type": 10,
+      "count": 4,
+      "shield": 0,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 39.46,
+      "cpu_p95": 44.24
+    },
+    {
+      "type": 10,
+      "count": 4,
+      "shield": 1,
+      "fps": 50.0,
+      "physical_frames": 600,
+      "game_frames": 600,
+      "cpu_mean": 46.27,
+      "cpu_p95": 50.98
+    },
+    {
+      "type": 10,
+      "count": 8,
+      "shield": 0,
+      "fps": 36.17,
+      "physical_frames": 600,
+      "game_frames": 434,
+      "cpu_mean": 80.27,
+      "cpu_p95": 82.76
+    },
+    {
+      "type": 10,
+      "count": 8,
+      "shield": 1,
+      "fps": 33.75,
+      "physical_frames": 600,
+      "game_frames": 405,
+      "cpu_mean": 89.61,
+      "cpu_p95": 91.16
+    }
+  ]
+}

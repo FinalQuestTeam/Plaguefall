@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-22",
+  "romSHA256": "4a25ada748015b98f8fe94aae65e9c9e6ca63fbf3045cc3d3a1685d9b202b635",
+  "cause": "Cursor changes cleared and redrew the full panel/result card with the display disabled.",
+  "fix": "Update menu rows and highlights in place; upload only five result-card tile rows during vertical blank.",
+  "baseline": {
+    "region": "NTSC",
+    "romSHA256": "3dcc36a348469c34f2e368ffa096552a05e68c7f729c86f0b2c665c3ea496dbc",
+    "failedChecks": [
+      "room-selector",
+      "training-pause",
+      "training-settings",
+      "campaign-pause",
+      "pause-exit-confirmation",
+      "defeat",
+      "defeat-exit-confirmation",
+      "victory"
+    ]
+  },
+  "emulator": "Genesis Plus GX",
+  "validation": {
+    "ntsc": {
+      "passed": true,
+      "frames": 705,
+      "checks": [
+        {
+          "name": "title",
+          "frames": 75,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "room-selector",
+          "frames": 105,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "training-pause",
+          "frames": 105,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "training-settings",
+          "frames": 135,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "campaign-pause",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "pause-exit-confirmation",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "defeat",
+          "frames": 45,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "defeat-exit-confirmation",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "victory",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        }
+      ],
+      "regression": {
+        "interface": true,
+        "training": true,
+        "results": true
+      }
+    },
+    "pal": {
+      "passed": true,
+      "frames": 705,
+      "checks": [
+        {
+          "name": "title",
+          "frames": 75,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "room-selector",
+          "frames": 105,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "training-pause",
+          "frames": 105,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "training-settings",
+          "frames": 135,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "campaign-pause",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "pause-exit-confirmation",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "defeat",
+          "frames": 45,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "defeat-exit-confirmation",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        },
+        {
+          "name": "victory",
+          "frames": 60,
+          "unexpectedFrames": [],
+          "selectionChanged": true,
+          "passed": true
+        }
+      ],
+      "regression": {
+        "interface": true,
+        "training": true,
+        "results": true
+      }
+    }
+  },
+  "nativeAndResourceChecksPassed": true
+}

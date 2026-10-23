@@ -6,7 +6,7 @@
 
 const EnemyDef ENEMYDEF_pen_purple =
 {
-    .name       = "Fortaleza",
+    .name       = "FORTALEZA",
     .shape      = SHAPE_PENTAGON,
     .color      = COLOR_PURPLE,
     .size       = 32,

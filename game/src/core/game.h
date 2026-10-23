@@ -5,13 +5,12 @@
 #include "levels/arena.h"
 
 // ---------------------------------------------------------------------------
-// Arena: tela inteira (40x27 tiles, 320x216 px), borda incluída.
-// Linha 0 fica para o HUD.
+// Fixed arenas keep24px for the HUD and a wall below it.
 // ---------------------------------------------------------------------------
 #define ARENA_TILE_X    0
-#define ARENA_TILE_Y    1
+#define ARENA_TILE_Y    3
 #define ARENA_TILES_W   40
-#define ARENA_TILES_H   27
+#define ARENA_TILES_H   25
 
 #define INNER_MIN_X     arenaMinX
 #define INNER_MIN_Y     arenaMinY

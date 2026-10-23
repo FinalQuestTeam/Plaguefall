@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-22",
+  "rom": "game/out/release/Plaguefall.bin",
+  "romSHA256": "31d741874fdae149da3c4cadf628706df05671f45e02cd5f3cf01952fd35c2fb",
+  "before": {
+    "idleResultAdvancedWithoutInput": true,
+    "resultDisplayBlackFramesNTSC": 16,
+    "resultToMapBlackFramesNTSC": 84,
+    "mapToRadioHadOneFrameFlashes": true
+  },
+  "changes": [
+    "Stage success and fail-exit results wait for a released, fresh A/START press.",
+    "The first result card loads over the frozen scene without blanking the display.",
+    "Result/radio graphics preserve the 89 fixed object tiles, avoiding procedural rebuilds on exit.",
+    "Owners keep the display disabled throughout a complete screen load, bracketed by a 100ms fade out and fade in.",
+    "Input is resynchronized after loading, so held buttons do not confirm the destination."
+  ],
+  "limitation": "Scene loads still have one continuous dark interval inside the fades; map generation is about 1.2 seconds. This change removes intermediate flashes, not all loading time.",
+  "validation": {
+    "ntsc": {
+      "passed": true,
+      "defeatRetryNodes": 20,
+      "mapEdges": 23,
+      "radioLines": 51,
+      "countdowns": 20,
+      "waitsForConfirmation": true,
+      "heldFireDoesNotConfirm": true,
+      "mapWaitsForInput": true,
+      "transitions": [
+        {
+          "name": "gameplay-to-completion",
+          "frames": 39,
+          "blackIntervals": 0,
+          "blackFrames": 0
+        },
+        {
+          "name": "completion-to-map-or-radio",
+          "frames": 87,
+          "blackIntervals": 1,
+          "blackFrames": 74
+        },
+        {
+          "name": "map-to-arrival-radio",
+          "frames": 166,
+          "blackIntervals": 1,
+          "blackFrames": 34
+        },
+        {
+          "name": "radio-to-mission",
+          "frames": 70,
+          "blackIntervals": 1,
+          "blackFrames": 35
+        }
+      ]
+    },
+    "pal": {
+      "passed": true,
+      "defeatRetryNodes": 20,
+      "mapEdges": 23,
+      "radioLines": 51,
+      "countdowns": 20,
+      "waitsForConfirmation": true,
+      "heldFireDoesNotConfirm": true,
+      "mapWaitsForInput": true,
+      "transitions": [
+        {
+          "name": "gameplay-to-completion",
+          "frames": 31,
+          "blackIntervals": 0,
+          "blackFrames": 0
+        },
+        {
+          "name": "completion-to-map-or-radio",
+          "frames": 73,
+          "blackIntervals": 1,
+          "blackFrames": 62
+        },
+        {
+          "name": "map-to-arrival-radio",
+          "frames": 139,
+          "blackIntervals": 1,
+          "blackFrames": 29
+        },
+        {
+          "name": "radio-to-mission",
+          "frames": 60,
+          "blackIntervals": 1,
+          "blackFrames": 29
+        }
+      ]
+    }
+  },
+  "generatedAndNativeChecks": "passed (python3 game/tools/check.py)"
+}

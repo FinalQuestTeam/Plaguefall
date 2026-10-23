@@ -1,0 +1,302 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1",
+  "stages": [
+    {
+      "stage": 1,
+      "hp": 100,
+      "enemies": 1,
+      "pause": {
+        "passed": true,
+        "details": {
+          "opened": true,
+          "simulation_frozen": true,
+          "resumed": true
+        }
+      }
+    },
+    {
+      "stage": 2,
+      "hp": 100,
+      "enemies": 0,
+      "pause": {
+        "passed": true,
+        "details": {
+          "opened": true,
+          "simulation_frozen": true,
+          "resumed": true
+        }
+      }
+    },
+    {
+      "stage": 3,
+      "hp": 100,
+      "enemies": 1,
+      "pause": {
+        "passed": true,
+        "details": {
+          "opened": true,
+          "simulation_frozen": true,
+          "resumed": true
+        }
+      }
+    },
+    {
+      "stage": 4,
+      "hp": 100,
+      "enemies": 0,
+      "pause": {
+        "passed": true,
+        "details": {
+          "opened": true,
+          "simulation_frozen": true,
+          "resumed": true
+        }
+      }
+    },
+    {
+      "stage": 5,
+      "hp": 100,
+      "enemies": 0,
+      "pause": {
+        "passed": true,
+        "details": {
+          "opened": true,
+          "simulation_frozen": true,
+          "resumed": true
+        }
+      }
+    },
+    {
+      "stage": 6,
+      "hp": 100,
+      "enemies": 0,
+      "pause": {
+        "passed": true,
+        "details": {
+          "opened": true,
+          "simulation_frozen": true,
+          "resumed": true
+        }
+      }
+    }
+  ],
+  "method": "Controller-only menu entry, all ten doors and six pauses. Explicit RAM setup is used only in isolated lava/mud/objective probes.",
+  "failures": [],
+  "reverse_doors": [
+    {
+      "passed": true,
+      "details": {
+        "from": 6,
+        "to": 5,
+        "ram_writes": false
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "from": 5,
+        "to": 4,
+        "ram_writes": false
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "from": 4,
+        "to": 3,
+        "ram_writes": false
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "from": 3,
+        "to": 2,
+        "ram_writes": false
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "from": 2,
+        "to": 1,
+        "ram_writes": false
+      }
+    }
+  ],
+  "isolated_probes": {
+    "terrain": {
+      "passed": true,
+      "details": {
+        "lava_hp": [
+          99,
+          95
+        ],
+        "mud_slow": [
+          50,
+          65
+        ],
+        "mud_reset": true
+      }
+    },
+    "dummy_shooting": {
+      "passed": true,
+      "details": {
+        "hp_before": 20,
+        "hp_after": 19,
+        "setup": "player repositioned; actual A shot, no HP writes"
+      }
+    },
+    "chain": {
+      "passed": true,
+      "details": {
+        "targets_spawned": 3,
+        "targets_killed": 3,
+        "setup": "player repositioned; real pickup, C selection, B activation and A shot; no mode or kill writes"
+      }
+    },
+    "boss": {
+      "passed": true,
+      "details": {
+        "boss_spawned": true,
+        "shield_8x8_present": true,
+        "setup": "boss cycle advanced to shield phase; normal rendering and AI"
+      }
+    },
+    "survive": {
+      "passed": true,
+      "details": {
+        "stage_restarted": true,
+        "hp": 100,
+        "setup": "timer accelerated; HP held during isolated probe"
+      }
+    },
+    "collect": {
+      "passed": true,
+      "details": {
+        "three_real_pickups": true,
+        "observed_counts": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "stage_restarted": true,
+        "setup": "player repositioning; no counter writes"
+      }
+    },
+    "protect_success": {
+      "passed": true,
+      "details": {
+        "stage_restarted": true,
+        "npc_hp": 60,
+        "setup": "timer accelerated"
+      }
+    },
+    "protect_failure": {
+      "passed": true,
+      "details": {
+        "stage_restarted": true,
+        "npc_hp": 60,
+        "setup": "NPC HP zeroed to isolate failure transition"
+      }
+    },
+    "protect_failure_reachability": {
+      "passed": true,
+      "details": {
+        "npc_hp_history": [
+          60,
+          48,
+          36,
+          24,
+          12,
+          60
+        ],
+        "failure_reachable_by_contact_within_20s": false,
+        "setup": "timer initially reset to full 20s, one enemy kept in continuous contact and other spawns suppressed; no NPC HP or invulnerability writes"
+      }
+    }
+  },
+  "death_retry": [
+    {
+      "passed": true,
+      "details": {
+        "stage": 1,
+        "actual_contact_triggered_defeat": true,
+        "retry_keeps_stage": true,
+        "hp_after_retry": 100,
+        "setup": "player HP initially set to 1 and one real enemy placed in contact; START retries through production result screen"
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "stage": 2,
+        "actual_contact_triggered_defeat": true,
+        "retry_keeps_stage": true,
+        "hp_after_retry": 100,
+        "setup": "player HP initially set to 1 and one real enemy placed in contact; START retries through production result screen"
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "stage": 3,
+        "actual_contact_triggered_defeat": true,
+        "retry_keeps_stage": true,
+        "hp_after_retry": 100,
+        "setup": "player HP initially set to 1 and one real enemy placed in contact; START retries through production result screen"
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "stage": 4,
+        "actual_contact_triggered_defeat": true,
+        "retry_keeps_stage": true,
+        "hp_after_retry": 100,
+        "setup": "player HP initially set to 1 and one real enemy placed in contact; START retries through production result screen"
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "stage": 5,
+        "actual_contact_triggered_defeat": true,
+        "retry_keeps_stage": true,
+        "hp_after_retry": 100,
+        "setup": "player HP initially set to 1 and one real enemy placed in contact; START retries through production result screen"
+      }
+    },
+    {
+      "passed": true,
+      "details": {
+        "stage": 6,
+        "actual_contact_triggered_defeat": true,
+        "retry_keeps_stage": true,
+        "hp_after_retry": 100,
+        "setup": "player HP initially set to 1 and one real enemy placed in contact; START retries through production result screen"
+      }
+    }
+  ],
+  "protect_entry_positions": {
+    "player": [
+      152,
+      108
+    ],
+    "npc": [
+      147,
+      103
+    ],
+    "player_hitbox": [
+      16,
+      16
+    ],
+    "npc_hitbox": [
+      24,
+      24
+    ]
+  }
+}

@@ -8,6 +8,7 @@
 #include "system/audio/sfx.h"
 #include "core/game.h"
 #include "core/inventory.h"
+#include "core/death.h"
 #include "core/objective.h"        // OBJECTIVE_addCollected (objetivo COLETAR)
 
 Item items[MAX_ITEMS];
@@ -17,7 +18,7 @@ Item items[MAX_ITEMS];
 // QUAL item cai vem de ITEM_DEFS[t]->weight. Fontes únicas, fáceis de ajustar.
 extern const ItemDef ITEMDEF_heart, ITEMDEF_bomb, ITEMDEF_shots,
                      ITEMDEF_speed, ITEMDEF_shield, ITEMDEF_chain,
-                     ITEMDEF_ice, ITEMDEF_fire;
+                     ITEMDEF_ice, ITEMDEF_fire, ITEMDEF_bag;
 
 const ItemDef *const ITEM_DEFS[ITEM_TYPES] =
 {
@@ -29,6 +30,7 @@ const ItemDef *const ITEM_DEFS[ITEM_TYPES] =
     &ITEMDEF_chain,     // ITEM_CHAIN
     &ITEMDEF_ice,       // ITEM_ICE
     &ITEMDEF_fire,      // ITEM_FIRE
+    &ITEMDEF_bag,       // ITEM_BAG (peso zero: só recuperação após derrota)
 };
 
 // método ÚNICO de desenho: mapa 16x16 de caracteres + legenda de cores
@@ -67,12 +69,13 @@ void ITEMS_clear(void)
 
 void ITEMS_spawnAt(u8 type, s16 x, s16 y)
 {
+    if (type >= ITEM_TYPES) return;
     for (u16 i = 0; i < MAX_ITEMS; i++)
     {
         if (items[i].active) continue;
         items[i].x = x;
         items[i].y = y;
-        items[i].ttl = 0xFFFF;      // ~permanente
+        items[i].ttl = ITEM_TTL_FOREVER;
         items[i].type = type;
         items[i].active = TRUE;
         return;
@@ -86,7 +89,7 @@ void ITEMS_update(void)
         Item *it = &items[i];
         if (!it->active) continue;
 
-        if (--it->ttl == 0)
+        if (it->ttl != ITEM_TTL_FOREVER && (!it->ttl || --it->ttl == 0))
         {
             it->active = FALSE;
             continue;
@@ -97,7 +100,13 @@ void ITEMS_update(void)
             (it->y < py + 16) && (it->y + 16 > py))
         {
             // itens ativáveis vão para o inventário; os demais aplicam na hora
-            if (ITEM_IS_INVENTORY(it->type)) INV_add(it->type);
+            if (it->type == ITEM_BAG)
+            {
+                const u8 recovery = DEATH_recover();
+                if (recovery == DEATH_RECOVER_BLOCKED) continue;
+                if (recovery == DEATH_RECOVER_PARTIAL) { sfxItemPickup();continue; }
+            }
+            else if (ITEM_IS_INVENTORY(it->type)) INV_add(it->type);
             else                             ITEM_DEFS[it->type]->apply();
             sfxItemPickup();
             OBJECTIVE_addCollected(it->type);   // COLETAR conta só o item-alvo

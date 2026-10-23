@@ -1,0 +1,239 @@
+{
+  "functional_passed": true,
+  "all_stress_loads_at_region_target_fps": false,
+  "rom": "game/out/release/Plaguefall.bin",
+  "rom_sha256": "e303fb6daec8037ee14658e31e9ac557542c171dd91fc204ec30e427a379526d",
+  "rom_bytes": 1441792,
+  "regions": {
+    "ntsc": {
+      "functional_passed": true,
+      "report": "ntsc/report.json",
+      "ordinary_matches": 6,
+      "ordinary_matches_with_natural_shield": 2,
+      "shield_stress_cases": [
+        {
+          "enemies": 4,
+          "shielded": false,
+          "dense_row": false,
+          "game_frames": 289,
+          "physical_frames": 300,
+          "fps": 57.8,
+          "cpu_mean_pct": 67.52,
+          "cpu_p95_pct": 74.07,
+          "minimum_bodies": 4,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 4,
+          "shielded": true,
+          "dense_row": false,
+          "game_frames": 279,
+          "physical_frames": 300,
+          "fps": 55.8,
+          "cpu_mean_pct": 72.98,
+          "cpu_p95_pct": 79.93,
+          "minimum_bodies": 4,
+          "minimum_markers": 4,
+          "maximum_markers": 4
+        },
+        {
+          "enemies": 8,
+          "shielded": false,
+          "dense_row": false,
+          "game_frames": 185,
+          "physical_frames": 300,
+          "fps": 37.0,
+          "cpu_mean_pct": 107.77,
+          "cpu_p95_pct": 114.6,
+          "minimum_bodies": 8,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 8,
+          "shielded": true,
+          "dense_row": false,
+          "game_frames": 150,
+          "physical_frames": 300,
+          "fps": 30.0,
+          "cpu_mean_pct": 120.3,
+          "cpu_p95_pct": 125.34,
+          "minimum_bodies": 8,
+          "minimum_markers": 8,
+          "maximum_markers": 8
+        },
+        {
+          "enemies": 16,
+          "shielded": false,
+          "dense_row": false,
+          "game_frames": 142,
+          "physical_frames": 300,
+          "fps": 28.4,
+          "cpu_mean_pct": 165.68,
+          "cpu_p95_pct": 172.9,
+          "minimum_bodies": 16,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 16,
+          "shielded": true,
+          "dense_row": false,
+          "game_frames": 130,
+          "physical_frames": 300,
+          "fps": 26.0,
+          "cpu_mean_pct": 186.1,
+          "cpu_p95_pct": 189.01,
+          "minimum_bodies": 16,
+          "minimum_markers": 16,
+          "maximum_markers": 16
+        },
+        {
+          "enemies": 16,
+          "shielded": false,
+          "dense_row": true,
+          "game_frames": 120,
+          "physical_frames": 300,
+          "fps": 24.0,
+          "cpu_mean_pct": 226.78,
+          "cpu_p95_pct": 229.39,
+          "minimum_bodies": 10,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 16,
+          "shielded": true,
+          "dense_row": true,
+          "game_frames": 86,
+          "physical_frames": 300,
+          "fps": 17.2,
+          "cpu_mean_pct": 281.97,
+          "cpu_p95_pct": 283.94,
+          "minimum_bodies": 10,
+          "minimum_markers": 10,
+          "maximum_markers": 10
+        }
+      ]
+    },
+    "pal": {
+      "functional_passed": true,
+      "report": "pal/report.json",
+      "ordinary_matches": 6,
+      "ordinary_matches_with_natural_shield": 1,
+      "shield_stress_cases": [
+        {
+          "enemies": 4,
+          "shielded": false,
+          "dense_row": false,
+          "game_frames": 298,
+          "physical_frames": 300,
+          "fps": 49.67,
+          "cpu_mean_pct": 41.46,
+          "cpu_p95_pct": 48.05,
+          "minimum_bodies": 4,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 4,
+          "shielded": true,
+          "dense_row": false,
+          "game_frames": 298,
+          "physical_frames": 300,
+          "fps": 49.67,
+          "cpu_mean_pct": 46.93,
+          "cpu_p95_pct": 52.98,
+          "minimum_bodies": 4,
+          "minimum_markers": 4,
+          "maximum_markers": 4
+        },
+        {
+          "enemies": 8,
+          "shielded": false,
+          "dense_row": false,
+          "game_frames": 234,
+          "physical_frames": 300,
+          "fps": 39.0,
+          "cpu_mean_pct": 82.18,
+          "cpu_p95_pct": 88.38,
+          "minimum_bodies": 8,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 8,
+          "shielded": true,
+          "dense_row": false,
+          "game_frames": 200,
+          "physical_frames": 300,
+          "fps": 33.33,
+          "cpu_mean_pct": 91.96,
+          "cpu_p95_pct": 97.22,
+          "minimum_bodies": 8,
+          "minimum_markers": 8,
+          "maximum_markers": 8
+        },
+        {
+          "enemies": 16,
+          "shielded": false,
+          "dense_row": false,
+          "game_frames": 149,
+          "physical_frames": 300,
+          "fps": 24.83,
+          "cpu_mean_pct": 125.1,
+          "cpu_p95_pct": 129.0,
+          "minimum_bodies": 16,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 16,
+          "shielded": true,
+          "dense_row": false,
+          "game_frames": 148,
+          "physical_frames": 300,
+          "fps": 24.67,
+          "cpu_mean_pct": 141.56,
+          "cpu_p95_pct": 148.19,
+          "minimum_bodies": 16,
+          "minimum_markers": 16,
+          "maximum_markers": 16
+        },
+        {
+          "enemies": 16,
+          "shielded": false,
+          "dense_row": true,
+          "game_frames": 120,
+          "physical_frames": 300,
+          "fps": 20.0,
+          "cpu_mean_pct": 171.44,
+          "cpu_p95_pct": 173.39,
+          "minimum_bodies": 10,
+          "minimum_markers": 0,
+          "maximum_markers": 0
+        },
+        {
+          "enemies": 16,
+          "shielded": true,
+          "dense_row": true,
+          "game_frames": 111,
+          "physical_frames": 300,
+          "fps": 18.5,
+          "cpu_mean_pct": 230.21,
+          "cpu_p95_pct": 233.35,
+          "minimum_bodies": 10,
+          "minimum_markers": 10,
+          "maximum_markers": 10
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Four large shielded enemies benchmark: 55.8 FPS NTSC, 49.67 FPS PAL.",
+    "Sixteen large shielded enemies spread across the arena: 26 FPS NTSC, 24.67 FPS PAL.",
+    "Sixteen large enemies on one row exceed hardware pixel limits; ten bodies admitted, markers follow admitted bodies only.",
+    "Early campaign caps remain unchanged; tests with eight/sixteen enemies use explicit RAM setup, not ordinary matches."
+  ]
+}

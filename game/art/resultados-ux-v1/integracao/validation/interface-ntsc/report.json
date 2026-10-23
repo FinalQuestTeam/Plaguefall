@@ -1,0 +1,212 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "3bfa4cbdc6dc076612cd7bd6817e1373547c9d2aae08c2eb3e98418308faf06e",
+  "setup": "RAM accelerates phase selection and death for entry; no RAM writes during interface navigation, pause, help, cancellation or resume.",
+  "phases": [
+    {
+      "id": "1",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "2A",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "2B",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "3",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "4",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "5",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "6A",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "6B",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "7",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "8",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "9",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "10A",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "10B",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "11",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "12",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "13A",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "13B",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "14",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "15",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    },
+    {
+      "id": "16",
+      "goalCorrect": true,
+      "realProgress": true,
+      "pauseAndHelpFreezeSimulation": true,
+      "helpReturnsToPause": true,
+      "exitDefaultsSafe": true,
+      "BAndStartResume": true,
+      "graphicsVRAMRestoredExactly": true
+    }
+  ],
+  "helpPages": 6,
+  "failures": [],
+  "releaseShortcutsDisabled": true,
+  "confirmedExitWorks": true
+}

@@ -10,15 +10,15 @@
 static u8 pickItemType(void)
 {
     u16 total = 0;
-    for (u8 t = 0; t < ITEM_TYPES; t++) total += ITEM_DEFS[t]->weight;
+    for (u8 t = 0; t < ITEM_DROP_TYPES; t++) total += ITEM_DEFS[t]->weight;
 
     u16 r = random() % total;
-    for (u8 t = 0; t < ITEM_TYPES; t++)
+    for (u8 t = 0; t < ITEM_DROP_TYPES; t++)
     {
         if (r < ITEM_DEFS[t]->weight) return t;
         r -= ITEM_DEFS[t]->weight;
     }
-    return ITEM_TYPES - 1;      // segurança
+    return ITEM_HEART;          // segurança: nunca sorteia bolsa
 }
 
 void ITEMS_tryDrop(s16 cx, s16 cy, u8 enemyType)

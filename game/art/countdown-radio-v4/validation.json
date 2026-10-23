@@ -1,0 +1,37 @@
+{
+  "status": "preview_only",
+  "selectedOption": 1,
+  "romChanged": false,
+  "romSHA256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "sequence": [
+    "Conversa: Padre",
+    "Conversa: Damião",
+    "Objetivo dentro do rádio",
+    "3",
+    "2",
+    "1"
+  ],
+  "durationsMs": [
+    6000,
+    5000,
+    6000,
+    1000,
+    1000,
+    1000
+  ],
+  "missionText": [
+    "FASE 1: PÁTIO DA IGREJA",
+    "ELIMINE 10 INIMIGOS.",
+    "SERRA-PAU VERMELHO",
+    "TIROS À DISTÂNCIA.",
+    "MOVA-SE PARA DESVIAR DOS TIROS.",
+    "BOMBA DANIFICA A IGREJA."
+  ],
+  "checks": {
+    "allGifFramesPixelExact": true,
+    "originalConversationsPreserved": true,
+    "option1CountdownPreserved": true,
+    "sameRadioMonitorFrameAndHeader": true
+  },
+  "note": "Conversa capturada no emulador; objetivo e contagem são prévias compostas com os recursos nativos. O avanço automático das falas e objetivo vale apenas para a animação; no jogo continuam por A."
+}

@@ -1,5 +1,11 @@
 # Inimigos cangaço — tamanhos nativos e colisão
 
+## Revisão das direções — 22/10/2026
+
+A revisão atual está em [validation/directions/README.md](validation/directions/README.md), com as oito vistas dos treze insetos, todas as poses dos quatro corrigidos e capturas da ROM em NTSC/PAL. Baluarte tinha três poses SE invertidas; Fortaleza não recebia o HFLIP descrito abaixo por um índice de linha incorreto no exportador. As vistas SE de Batedor e NE de Adaga foram redesenhadas com image_gen integrado. As fontes antigas permanecem preservadas.
+
+Use os hashes e resultados dessa revisão para a ROM atual. As medidas e relatórios das seções seguintes descrevem a integração original deste pacote.
+
 Os treze inimigos foram redesenhados com **image_gen integrado**, a partir das identidades anteriores, para as classes nativas do projeto. Damião mantém a arte 32×48 da versão 2. Os PNGs antigos não foram substituídos.
 
 O código original usa classes 16/24/32 pixels e 48 para o chefe; não havia uma classe 36×36 nas definições consultadas. Antes desta etapa todos os novos insetos eram desenhados em 32×48, apesar dessas hitboxes diferentes.

@@ -6,7 +6,7 @@
 
 const EnemyDef ENEMYDEF_pen_yellow =
 {
-    .name       = "Alcateia",
+    .name       = "ALCATEIA",
     .shape      = SHAPE_PENTAGON,
     .color      = COLOR_YELLOW,
     .size       = 24,

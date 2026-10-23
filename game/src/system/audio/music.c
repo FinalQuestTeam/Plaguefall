@@ -44,6 +44,95 @@ static MusicState music = {
 };
 static MusicState savedMusic;
 static bool previewing;
+static u32 lastVBlank;
+
+typedef struct { u16 at, frequency, length; u8 voice, volume, style; } MusicCueEvent;
+#include "victory_data.h"
+#include "game_over_data.h"
+// 0: campaign loop; 1: victory; 2: game over. Finished cues retain
+// ownership (silence) until the result card is dismissed.
+static u8 resultCueKind;
+static const MusicCueEvent *resultCueScore;
+static u16 resultCueCount, resultCueDuration;
+static u16 resultCueElapsed, resultCueNext;
+static u32 resultCueLastVBlank;
+static const MusicCueEvent *resultCueVoices[4];
+
+static void playResultCue(const MusicCueEvent *score, u16 count, u16 duration, u8 kind)
+{
+    AUDIO_silenceAll();
+    resultCueKind = kind;
+    resultCueScore = score; resultCueCount = count; resultCueDuration = duration;
+    resultCueElapsed = resultCueNext = 0;
+    resultCueLastVBlank = vtimer;
+    for (u8 ch = 0; ch < 4; ch++) resultCueVoices[ch] = 0;
+}
+
+void MUSIC_playVictory(void)
+{
+    playResultCue(VICTORY_SCORE, VICTORY_EVENT_COUNT, VICTORY_TICKS, 1);
+}
+
+void MUSIC_playGameOver(void)
+{
+    playResultCue(GAME_OVER_SCORE, GAME_OVER_EVENT_COUNT, GAME_OVER_TICKS, 2);
+}
+
+void MUSIC_stopResultCue(void)
+{
+    if (!resultCueKind) return;
+    resultCueKind = 0;
+    AUDIO_silenceAll();
+    MUSIC_syncClock();
+}
+
+void MUSIC_stopVictory(void)
+{
+    if (resultCueKind == 1) MUSIC_stopResultCue();
+}
+
+bool MUSIC_victoryActive(void) { return resultCueKind == 1; }
+bool MUSIC_gameOverActive(void) { return resultCueKind == 2; }
+
+static void updateResultCue(void)
+{
+    // Absolute event ages preserve the approved articulation even after a
+    // missed frame. Unsigned subtraction also handles VBlank counter wrap.
+    const u32 now = vtimer, frames = now - resultCueLastVBlank;
+    const u16 frameTicks = SYS_isPAL() ? 12 : 10; // 600 Hz score clock
+    resultCueLastVBlank = now;
+    if (frames >= (u32)(resultCueDuration - resultCueElapsed + frameTicks - 1) / frameTicks)
+        resultCueElapsed = resultCueDuration;
+    else resultCueElapsed += frames * frameTicks;
+    if (resultCueElapsed >= resultCueDuration) return; // no loop or background restart
+    while (resultCueNext < resultCueCount && resultCueScore[resultCueNext].at <= resultCueElapsed)
+    {
+        const MusicCueEvent *event = &resultCueScore[resultCueNext++];
+        resultCueVoices[event->voice] = event;
+    }
+    for (u8 ch = 0; ch < 4; ch++)
+    {
+        const MusicCueEvent *event = resultCueVoices[ch];
+        if (!event) continue;
+        const u16 age = resultCueElapsed - event->at;
+        if (age >= event->length) continue;
+        const u16 left = event->length - age;
+        u16 volume = event->volume;
+        if (event->style) volume += (15 - event->volume) * age / event->length;
+        else
+        {
+            const u16 release = event->length / 4;
+            if (age == 0) volume++;
+            if (release && left < release)
+                volume += (15 - event->volume) * (release - left) / release;
+        }
+        if (volume > 15) volume = 15;
+        if (ch < 3) AUDIO_tone(ch, event->frequency, volume, AUD_PRIO_MUSIC);
+        else AUDIO_noise(event->frequency == 0 ? PSG_NOISE_TYPE_PERIODIC : PSG_NOISE_TYPE_WHITE,
+                         event->frequency == 2 ? PSG_NOISE_FREQ_CLOCK8 : PSG_NOISE_FREQ_CLOCK2,
+                         volume, AUD_PRIO_MUSIC);
+    }
+}
 
 // dispara uma nota (freq 0 = sustenta a nota anterior, não recorta)
 static void setVoice(Voice *v, u16 freq, s16 gate, u8 vmin)
@@ -88,7 +177,6 @@ static void applyVoice(Voice *v, u8 ch)
                 freq += (u16) (((freq >> 3) * (10 - age)) / 10);
         }
         AUDIO_tone(ch, freq, vol, AUD_PRIO_MUSIC);
-        v->left -= music.frameTicks;
     }
 }
 
@@ -111,12 +199,15 @@ static void applyDrum(void)
     {
         const u8 vol = (u8) (music.drumVmin + ((15 - music.drumVmin) * (music.drumGate - music.drumLeft)) / music.drumGate);
         AUDIO_noise(music.drumType, music.drumFreq, vol, AUD_PRIO_MUSIC);
-        music.drumLeft -= music.frameTicks;
     }
 }
 
+void MUSIC_syncClock(void) { lastVBlank = vtimer; }
+
 void MUSIC_init(void)
 {
+    MUSIC_stopResultCue();
+    MUSIC_syncClock();
     AUDIO_silenceAll();
     music.step = 0; music.countdown = 1;
     music.frameTicks = SYS_isPAL() ? 6 : 5;
@@ -154,10 +245,15 @@ void MUSIC_setEnemies(u8 count)
     music.heat = (u8) ((k * 3) / span);
 }
 
-void MUSIC_update(void)
+// Advance score/envelopes once per elapsed video frame, including frames the
+// game missed. Submit only the final voices to the PSG arbiter, keeping SFX
+// priority and avoiding a burst of obsolete notes when the game catches up.
+static void tick(void)
 {
-    if (!music.stepFramesCur) return;                 // ainda não inicializado
-
+    if (music.vMel.left > 0) music.vMel.left -= music.frameTicks;
+    if (music.vArp.left > 0) music.vArp.left -= music.frameTicks;
+    if (music.vBass.left > 0) music.vBass.left -= music.frameTicks;
+    if (music.drumLeft > 0) music.drumLeft -= music.frameTicks;
     music.countdown -= music.frameTicks;
     if (music.countdown <= 0)
     {
@@ -180,8 +276,19 @@ void MUSIC_update(void)
 
         if (++music.step >= SEQ_STEPS) music.step = 0;
     }
+}
 
-    // escreve nos canais todo quadro (o SFX, chamado depois, tem prioridade)
+void MUSIC_update(void)
+{
+    if (resultCueKind) { updateResultCue(); return; }
+    const u32 now = vtimer;
+    u32 elapsed = now - lastVBlank;
+    lastVBlank = now;
+    if (!music.stepFramesCur) return;
+    while (elapsed--) tick();
+
+    // Re-submit even when called twice in a video frame, without advancing.
+    // SFX, called afterwards, retains channel priority.
     applyVoice(&music.vMel,  CH_MEL);
     applyVoice(&music.vArp,  CH_ARP);
     applyVoice(&music.vBass, CH_BASS);
@@ -206,6 +313,7 @@ void MUSIC_endPreview(void)
     if (!previewing) return;
     AUDIO_silenceAll();
     music = savedMusic;
+    MUSIC_syncClock();
     previewing = FALSE;
 }
 
@@ -213,6 +321,7 @@ u8 MUSIC_track(void) { return music.track; }
 void MUSIC_selectTrack(u8 track)
 {
     if (track >= MUSIC_TRACK_COUNT) return;
+    MUSIC_stopResultCue();
     MUSIC_endPreview();
     if (track == music.track) return;
     music.track = track;

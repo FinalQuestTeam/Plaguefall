@@ -1,0 +1,603 @@
+{
+  "adopted": false,
+  "decision": "Experimental only: measurable improvements under heavy NTSC load, but 60/50 FPS target remains unmet.",
+  "runs": 72,
+  "measured_frames_per_run": 1800,
+  "repeat_method": "One deterministic run of each configuration per build and region.",
+  "scope": "All builds share one fresh source/resource snapshot; only ENEMIES_separate differs. Earlier reports from other revisions are not the control.",
+  "production_enemies_unchanged": true,
+  "production_rom_unchanged": true,
+  "builds": {
+    "baseline": {
+      "directory": "/private/tmp/plaguefall-cheaper-separation-20261022/baseline",
+      "rom_sha256": "4ec4d2ea89b02a60b94dd1f6cf10c6df5f3a31c67893a2aa56ac67044266ea3e",
+      "enemies_sha256": "61922d0102e1dc2174ebec737476fcbef5a9f2be879c61ff33edd89a3999373d"
+    },
+    "compact": {
+      "directory": "/private/tmp/plaguefall-cheaper-separation-20261022/compact",
+      "rom_sha256": "1ef24fe0d7c62f08b5e282f7c6424ebc2027c7470bcdd90fc921954a62935320",
+      "enemies_sha256": "3093a7ca8382946a88b4364a979343fca760b15af51ae80f852719b519535984"
+    },
+    "compass": {
+      "directory": "/private/tmp/plaguefall-cheaper-separation-20261022/compass",
+      "rom_sha256": "aae839c1264d31b3f08271e9fd978858c3cae38a63cef8364483ec1759903f2a",
+      "enemies_sha256": "95d55a81f1eac57e2e19d410149018300cd143eb8aed3fce5995950b0516b7e1"
+    }
+  },
+  "comparison": [
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 33.8,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 119.38,
+        "cpu_p95": 123.68
+      },
+      "compact": {
+        "fps": 33.8,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 112.88,
+        "cpu_p95": 117.24
+      },
+      "compass": {
+        "fps": 33.77,
+        "fps_delta_pct": -0.09,
+        "cpu_mean": 111.95,
+        "cpu_p95": 116.94
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 148.3,
+        "cpu_p95": 153.12
+      },
+      "compact": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 141.85,
+        "cpu_p95": 146.68
+      },
+      "compass": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 141.25,
+        "cpu_p95": 146.39
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 23.8,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 195.02,
+        "cpu_p95": 210.6
+      },
+      "compact": {
+        "fps": 25.97,
+        "fps_delta_pct": 9.12,
+        "cpu_mean": 190.2,
+        "cpu_p95": 206.35
+      },
+      "compass": {
+        "fps": 26.7,
+        "fps_delta_pct": 12.18,
+        "cpu_mean": 188.81,
+        "cpu_p95": 199.71
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 33.2,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 121.52,
+        "cpu_p95": 124.71
+      },
+      "compact": {
+        "fps": 33.2,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 115.05,
+        "cpu_p95": 118.31
+      },
+      "compass": {
+        "fps": 32.87,
+        "fps_delta_pct": -0.99,
+        "cpu_mean": 113.78,
+        "cpu_p95": 118.21
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 151.04,
+        "cpu_p95": 154.69
+      },
+      "compact": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 144.6,
+        "cpu_p95": 148.34
+      },
+      "compass": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 143.15,
+        "cpu_p95": 147.9
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 23.93,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 196.02,
+        "cpu_p95": 201.56
+      },
+      "compact": {
+        "fps": 24.83,
+        "fps_delta_pct": 3.76,
+        "cpu_mean": 191.06,
+        "cpu_p95": 195.21
+      },
+      "compass": {
+        "fps": 26.03,
+        "fps_delta_pct": 8.78,
+        "cpu_mean": 189.02,
+        "cpu_p95": 193.6
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 39.8,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 104.8,
+        "cpu_p95": 109.77
+      },
+      "compact": {
+        "fps": 41.77,
+        "fps_delta_pct": 4.95,
+        "cpu_mean": 99.37,
+        "cpu_p95": 102.98
+      },
+      "compass": {
+        "fps": 41.8,
+        "fps_delta_pct": 5.03,
+        "cpu_mean": 99.33,
+        "cpu_p95": 102.39
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 137.19,
+        "cpu_p95": 142.33
+      },
+      "compact": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 130.53,
+        "cpu_p95": 135.99
+      },
+      "compass": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 130.61,
+        "cpu_p95": 136.13
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Escudeiro",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 27.4,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 183.59,
+        "cpu_p95": 190.62
+      },
+      "compact": {
+        "fps": 29.9,
+        "fps_delta_pct": 9.12,
+        "cpu_mean": 176.47,
+        "cpu_p95": 183.98
+      },
+      "compass": {
+        "fps": 29.93,
+        "fps_delta_pct": 9.23,
+        "cpu_mean": 176.53,
+        "cpu_p95": 183.98
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 33.3,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 120.61,
+        "cpu_p95": 124.56
+      },
+      "compact": {
+        "fps": 33.3,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 114.15,
+        "cpu_p95": 118.02
+      },
+      "compass": {
+        "fps": 33.23,
+        "fps_delta_pct": -0.21,
+        "cpu_mean": 112.84,
+        "cpu_p95": 117.38
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 149.59,
+        "cpu_p95": 153.61
+      },
+      "compact": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 143.15,
+        "cpu_p95": 147.22
+      },
+      "compass": {
+        "fps": 30.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 142.08,
+        "cpu_p95": 146.53
+      }
+    },
+    {
+      "region": "ntsc",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 24.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 193.75,
+        "cpu_p95": 199.12
+      },
+      "compact": {
+        "fps": 25.43,
+        "fps_delta_pct": 5.96,
+        "cpu_mean": 189.13,
+        "cpu_p95": 192.82
+      },
+      "compass": {
+        "fps": 26.57,
+        "fps_delta_pct": 10.71,
+        "cpu_mean": 188.63,
+        "cpu_p95": 193.36
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 33.44,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 89.11,
+        "cpu_p95": 90.43
+      },
+      "compact": {
+        "fps": 36.83,
+        "fps_delta_pct": 10.14,
+        "cpu_mean": 87.2,
+        "cpu_p95": 90.23
+      },
+      "compass": {
+        "fps": 38.0,
+        "fps_delta_pct": 13.64,
+        "cpu_mean": 86.49,
+        "cpu_p95": 90.19
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.06,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 113.54,
+        "cpu_p95": 117.19
+      },
+      "compact": {
+        "fps": 25.06,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 106.87,
+        "cpu_p95": 110.45
+      },
+      "compass": {
+        "fps": 25.0,
+        "fps_delta_pct": -0.24,
+        "cpu_mean": 105.9,
+        "cpu_p95": 109.18
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 24.75,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 148.86,
+        "cpu_p95": 160.06
+      },
+      "compact": {
+        "fps": 24.75,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 142.43,
+        "cpu_p95": 153.52
+      },
+      "compass": {
+        "fps": 24.81,
+        "fps_delta_pct": 0.24,
+        "cpu_mean": 141.7,
+        "cpu_p95": 152.05
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 33.42,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 89.68,
+        "cpu_p95": 91.02
+      },
+      "compact": {
+        "fps": 35.47,
+        "fps_delta_pct": 6.13,
+        "cpu_mean": 88.56,
+        "cpu_p95": 90.82
+      },
+      "compass": {
+        "fps": 36.19,
+        "fps_delta_pct": 8.29,
+        "cpu_mean": 88.2,
+        "cpu_p95": 90.97
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 115.04,
+        "cpu_p95": 117.77
+      },
+      "compact": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 108.37,
+        "cpu_p95": 111.33
+      },
+      "compass": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 106.92,
+        "cpu_p95": 110.11
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 149.46,
+        "cpu_p95": 154.83
+      },
+      "compact": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 142.98,
+        "cpu_p95": 148.44
+      },
+      "compass": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 141.64,
+        "cpu_p95": 146.58
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 39.17,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 81.88,
+        "cpu_p95": 85.55
+      },
+      "compact": {
+        "fps": 49.17,
+        "fps_delta_pct": 25.53,
+        "cpu_mean": 74.0,
+        "cpu_p95": 79.79
+      },
+      "compass": {
+        "fps": 49.53,
+        "fps_delta_pct": 26.45,
+        "cpu_mean": 73.47,
+        "cpu_p95": 78.76
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.33,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 105.56,
+        "cpu_p95": 110.01
+      },
+      "compact": {
+        "fps": 25.36,
+        "fps_delta_pct": 0.12,
+        "cpu_mean": 102.93,
+        "cpu_p95": 103.86
+      },
+      "compass": {
+        "fps": 25.42,
+        "fps_delta_pct": 0.36,
+        "cpu_mean": 102.8,
+        "cpu_p95": 103.56
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Escudeiro",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 137.03,
+        "cpu_p95": 143.8
+      },
+      "compact": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 130.49,
+        "cpu_p95": 137.5
+      },
+      "compass": {
+        "fps": 25.0,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 130.09,
+        "cpu_p95": 137.06
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 0,
+      "baseline": {
+        "fps": 33.44,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 89.41,
+        "cpu_p95": 90.72
+      },
+      "compact": {
+        "fps": 35.53,
+        "fps_delta_pct": 6.25,
+        "cpu_mean": 88.21,
+        "cpu_p95": 90.62
+      },
+      "compass": {
+        "fps": 36.97,
+        "fps_delta_pct": 10.56,
+        "cpu_mean": 87.57,
+        "cpu_p95": 90.53
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 6,
+      "baseline": {
+        "fps": 25.03,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 114.03,
+        "cpu_p95": 117.19
+      },
+      "compact": {
+        "fps": 25.03,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 107.39,
+        "cpu_p95": 110.6
+      },
+      "compass": {
+        "fps": 25.0,
+        "fps_delta_pct": -0.12,
+        "cpu_mean": 106.18,
+        "cpu_p95": 110.11
+      }
+    },
+    {
+      "region": "pal",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool": 16,
+      "baseline": {
+        "fps": 24.92,
+        "fps_delta_pct": 0.0,
+        "cpu_mean": 148.37,
+        "cpu_p95": 155.32
+      },
+      "compact": {
+        "fps": 24.94,
+        "fps_delta_pct": 0.08,
+        "cpu_mean": 141.89,
+        "cpu_p95": 148.88
+      },
+      "compass": {
+        "fps": 24.97,
+        "fps_delta_pct": 0.2,
+        "cpu_mean": 140.09,
+        "cpu_p95": 147.22
+      }
+    }
+  ],
+  "native_validation": {
+    "sanitizers": [
+      "ASan",
+      "UBSan"
+    ],
+    "compact_equivalence_scenes": 4096,
+    "equivalence_sizes": [
+      16,
+      24,
+      32
+    ],
+    "cadence_and_displacement_cap_preserved": true,
+    "obstacles_bounds_inactive_actors_checked": true,
+    "boss_reciprocal_bounds_checked": true,
+    "mean_pair_distance_after_600_separation_passes": {
+      "baseline": 37.203,
+      "compact": 37.203,
+      "compass": 37.607
+    }
+  },
+  "production_enemies_sha256_at_start": "61922d0102e1dc2174ebec737476fcbef5a9f2be879c61ff33edd89a3999373d",
+  "production_rom_sha256_at_start": "4ec4d2ea89b02a60b94dd1f6cf10c6df5f3a31c67893a2aa56ac67044266ea3e"
+}

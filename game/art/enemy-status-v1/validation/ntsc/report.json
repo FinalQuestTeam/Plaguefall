@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "84854411069b0577f02c749bf59497991bcc0539457270444cfa24d8c4cc9a64",
+  "emulated_rom_sha256": "84854411069b0577f02c749bf59497991bcc0539457270444cfa24d8c4cc9a64",
+  "production_rom": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release/rom.bin",
+  "temporary_build": false,
+  "region_header_override_in_memory_only": false,
+  "core_fps": 59.92274340431231,
+  "stages": [],
+  "failures": [],
+  "method": "Real production HUD/VDP patterns. RAM prepares phases, inventory, counters and isolated projectiles. Selection, item use, pause/resume and rendering use normal production code.",
+  "checks": {
+    "enemy-status-and-bomb": {
+      "passed": true,
+      "details": {
+        "cases": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            4
+          ],
+          [
+            10,
+            7
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            13,
+            4
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            14,
+            4
+          ],
+          [
+            14,
+            7
+          ]
+        ],
+        "bomb_pixels": true,
+        "persistent_between_burn_ticks": true,
+        "timer_expiry": true,
+        "concurrent_statuses": true,
+        "screen_edges": true
+      }
+    }
+  },
+  "heap_sentinel_intact": true
+}

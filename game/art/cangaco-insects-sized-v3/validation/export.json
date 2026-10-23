@@ -7,6 +7,8 @@
     "color": "vermelho queimado",
     "detail": "um pequeno canh\u00e3o reaproveitado sobre o t\u00f3rax; corpo robusto e antenas longas",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 16,
     "frames": 30,
     "hardware_pieces": 1,
@@ -56,6 +58,13 @@
     "color": "amarelo ocre",
     "detail": "corpo leve, pequeno sensor dorsal, antenas longas",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {
+      "3": {
+        "path": "originals/sq_yellow-se-direction-fix.png",
+        "sha256": "4f0cbd65f23b27974cc4a84373794fa2c881085bb2bb322f9ae84ae8feb262ca"
+      }
+    },
     "size": 16,
     "frames": 30,
     "hardware_pieces": 1,
@@ -65,7 +74,7 @@
     "rom_bytes": 3840,
     "scale": 0.0707070707070707,
     "source_sha256": "2d6f70752256d07b8f053eaf00137efcab624091f9859cec83e682b332202278",
-    "native_sha256": "fffad86a02c19057961e174fe091d957b4fca9af3f0ba9560dc1cf91e2d99253",
+    "native_sha256": "ace4e05a3c25c456935e0092448a2ac6f412ab9d24f03c33864026d40a8a4226",
     "source_rows": [
       0,
       231,
@@ -105,6 +114,14 @@
     "color": "roxo apagado",
     "detail": "corpo largo com placas met\u00e1licas sobrepostas e pequeno emissor defensivo dorsal",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {
+      "3": [
+        0,
+        1,
+        2
+      ]
+    },
+    "source_row_overrides": {},
     "size": 32,
     "frames": 30,
     "hardware_pieces": 1,
@@ -114,7 +131,7 @@
     "rom_bytes": 15360,
     "scale": 0.14634146341463414,
     "source_sha256": "c9731e52efe4ae7fe000cacb440212ec7dad7756b21dcba65569d97e49fd56b6",
-    "native_sha256": "9b67adb894191c595329a8f193d22a04310318a25b50edf24c20310728a59d7d",
+    "native_sha256": "3b43aa04f3fbef705e28fbbc084bd17aec09eb48647c22fb2e9bc16c04ad505e",
     "source_rows": [
       0,
       229,
@@ -154,6 +171,8 @@
     "color": "laranja gasto",
     "detail": "mand\u00edbulas refor\u00e7adas e cunha met\u00e1lica frontal compacta",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 16,
     "frames": 30,
     "hardware_pieces": 1,
@@ -203,6 +222,8 @@
     "color": "vermelho queimado",
     "detail": "um pequeno dispositivo de disparo lateral no t\u00f3rax",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 16,
     "frames": 30,
     "hardware_pieces": 1,
@@ -252,6 +273,8 @@
     "color": "amarelo ocre",
     "detail": "corpo leve com pouca prote\u00e7\u00e3o e asas bem vis\u00edveis",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 16,
     "frames": 30,
     "hardware_pieces": 1,
@@ -301,6 +324,8 @@
     "color": "roxo apagado",
     "detail": "placas tor\u00e1cicas pequenas e pequeno m\u00f3dulo defensivo",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 16,
     "frames": 30,
     "hardware_pieces": 1,
@@ -350,6 +375,13 @@
     "color": "laranja gasto",
     "detail": "frente com pequena placa refor\u00e7ada, corpo \u00e1gil",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {
+      "1": {
+        "path": "originals/tri_orange-ne-direction-fix.png",
+        "sha256": "428e2d58f672bcfb67427a85185684621c7048190033ab91cf7276498cd760c9"
+      }
+    },
     "size": 16,
     "frames": 30,
     "hardware_pieces": 1,
@@ -359,7 +391,7 @@
     "rom_bytes": 3840,
     "scale": 0.08433734939759036,
     "source_sha256": "b4c1b132ac88087712192715cc14c1ed9b7a0686150aee3ddf1ef7e425c48928",
-    "native_sha256": "7b5fb6786ceb4ca57de112265ca505dbccc644ad125e07a191a3e6dbaa7e197d",
+    "native_sha256": "02fad082afa8bd07cc29c4ee8ca4e284c3aae6b7c605f22b39ef9a9806a62b66",
     "source_rows": [
       0,
       229,
@@ -399,6 +431,8 @@
     "color": "vermelho queimado",
     "detail": "cabe\u00e7a grande e tr\u00eas pequenos canos de artilharia paralelos no dorso",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 24,
     "frames": 30,
     "hardware_pieces": 1,
@@ -448,6 +482,8 @@
     "color": "amarelo ocre",
     "detail": "cabe\u00e7a grande, antenas cotoveladas, pequeno m\u00f3dulo de r\u00e1dio dorsal",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 24,
     "frames": 30,
     "hardware_pieces": 1,
@@ -501,6 +537,33 @@
       2,
       3
     ],
+    "source_horizontal_flip_poses": {
+      "1": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "2": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "3": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "source_row_overrides": {},
     "size": 32,
     "frames": 30,
     "hardware_pieces": 1,
@@ -510,7 +573,7 @@
     "rom_bytes": 15360,
     "scale": 0.16483516483516483,
     "source_sha256": "0433be214d4c62b0548ceab919aa52f9b3ba35f06c672afbf6ef94c6662ed3ce",
-    "native_sha256": "57c5163df7aca6cb7c6ac98ae874f33b4eb7eae3d3ca196f8124d02696f4e836",
+    "native_sha256": "d0d1d0b14afb1df018c6ae88ea3d3e93c4a272afa8f55318be19c250f2b4c7ef",
     "source_rows": [
       0,
       229,
@@ -550,6 +613,8 @@
     "color": "laranja gasto",
     "detail": "cabe\u00e7a grande, abd\u00f4men org\u00e2nico exposto e pequeno m\u00f3dulo el\u00e9trico dorsal",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 24,
     "frames": 30,
     "hardware_pieces": 1,
@@ -599,6 +664,8 @@
     "color": "amarelo ocre e azul petr\u00f3leo",
     "detail": "duas pin\u00e7as grandes, oito pernas e cauda segmentada arqueada com ferr\u00e3o, reparo met\u00e1lico assim\u00e9trico em uma pin\u00e7a e implante perto do ferr\u00e3o",
     "source_horizontal_flip_rows": [],
+    "source_horizontal_flip_poses": {},
+    "source_row_overrides": {},
     "size": 48,
     "frames": 30,
     "hardware_pieces": 4,

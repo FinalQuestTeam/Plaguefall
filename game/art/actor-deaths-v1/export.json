@@ -1,0 +1,32 @@
+{
+  "source_sha256": "8d0dcc31def471fae7ccf4915feb52a05d105a480c2a4a57a7ec0b33a01f62b8",
+  "rom_bytes": 6144,
+  "sha256": "8a53e4294524f973582be035fc3096c4ea38411fdab940a159586b5d53ccbdce",
+  "palette": "Existing PAL2",
+  "actors": [
+    {
+      "actor": "damiao",
+      "frames": 4,
+      "cell": [
+        32,
+        48
+      ],
+      "scale": 0.09090909090909091,
+      "first_pose": "Exact runtime SE idle frame",
+      "first_pose_sha256": "befa3270e5499f638d0dc3c28713cba2f34c16891cf3bd6c13b7d0884400d777",
+      "runtime_sha256": "815e8fa2930cd4fe099a8c7e0b90d4b22d3b8e5d097fdbf9b6419c32e466a995"
+    },
+    {
+      "actor": "dinorah",
+      "frames": 4,
+      "cell": [
+        32,
+        48
+      ],
+      "scale": 0.08860759493670886,
+      "first_pose": "Exact runtime SE idle frame",
+      "first_pose_sha256": "7f0ecd6f7efbdb820f3a4176b138ede16d6d25841838d85047d42d550265df86",
+      "runtime_sha256": "ff03190b02c7873585eef75bd256a8e78dca7a98b9138bbc198dddd706a3fc6f"
+    }
+  ]
+}

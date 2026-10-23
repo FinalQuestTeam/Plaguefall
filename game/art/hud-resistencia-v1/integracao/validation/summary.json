@@ -1,0 +1,101 @@
+{
+  "status": "implemented_with_performance_limits",
+  "tested_rom": "rom/Plaguefall.bin",
+  "rom_sha256": "be309ac43e3c55aa00dc854f9259e18b51f304010ae125a2139224a0e1a4277e",
+  "rom_bytes": 1572864,
+  "hud_height": 24,
+  "native_functional_passed": true,
+  "all_performance_targets_passed": false,
+  "suites": {
+    "ntsc": {
+      "passed": true,
+      "report": "validation/ntsc/report.json"
+    },
+    "pal": {
+      "passed": true,
+      "report": "validation/pal/report.json"
+    },
+    "training-ntsc": {
+      "passed": true,
+      "report": "validation/training-ntsc/report.json"
+    },
+    "training-pal": {
+      "passed": true,
+      "report": "validation/training-pal/report.json"
+    },
+    "radio-ntsc": {
+      "passed": true,
+      "report": "validation/radio-ntsc/report.json"
+    },
+    "radio-pal": {
+      "passed": true,
+      "report": "validation/radio-pal/report.json"
+    },
+    "aim-ntsc": {
+      "passed": true,
+      "report": "validation/aim-ntsc/report.json"
+    },
+    "aim-pal": {
+      "passed": true,
+      "report": "validation/aim-pal/report.json"
+    },
+    "results-ntsc": {
+      "passed": true,
+      "report": "validation/results-ntsc/report.json"
+    },
+    "results-pal": {
+      "passed": true,
+      "report": "validation/results-pal/report.json"
+    },
+    "campaign-ntsc": {
+      "passed": false,
+      "report": "validation/campaign-ntsc/report.json",
+      "ordinary_attempts": 6,
+      "failures": [
+        {
+          "check": "03/stress",
+          "error": "AssertionError({'axis': 'horizontal', 'enemies': 4, 'shots_per_pool': 6, 'game_frames': 293, 'physical_frames': 300, 'fps': 58.6, 'cpu_mean_pct': 78.66, 'cpu_p95_pct': 87.4, 'camera_x_range': [0, 64], 'camera_y_range': [92, 92]})"
+        },
+        {
+          "check": "05/stress",
+          "error": "AssertionError({'axis': 'horizontal', 'enemies': 4, 'shots_per_pool': 6, 'game_frames': 289, 'physical_frames': 300, 'fps': 57.8, 'cpu_mean_pct': 81.56, 'cpu_p95_pct': 89.11, 'camera_x_range': [0, 64], 'camera_y_range': [92, 92]})"
+        }
+      ]
+    },
+    "campaign-pal": {
+      "passed": true,
+      "report": "validation/campaign-pal/report.json",
+      "ordinary_attempts": 6,
+      "failures": []
+    }
+  },
+  "generated_exports_and_native_checks": true,
+  "build_warnings": 0,
+  "native_vram": {
+    "hud_base": 425,
+    "hud_tiles": 120,
+    "new_palettes": 0,
+    "maximum_hud_dma_bytes_per_frame": 512,
+    "full_live_enemy_cache_restored_after_countdown": true
+  },
+  "stack_heap_sentinel_ntsc": true,
+  "stack_heap_sentinel_pal": true,
+  "heavy_ntsc_fps": {
+    "stage03": 58.6,
+    "stage05": 57.8
+  },
+  "maximum_training_load_fps": {
+    "ntsc": 19,
+    "pal": 18
+  },
+  "additional_route_test": {
+    "status": "reference_revision_mismatch",
+    "rom_world_width": 1024,
+    "current_reference_width": 2048,
+    "reports": [
+      "validation/routes-ntsc/report.json",
+      "validation/routes-pal/report.json"
+    ],
+    "interpretation": "Does not certify complete traversal of the later map revision. HUD readouts use the actual tested ROM."
+  }
+}

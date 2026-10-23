@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "romSHA256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc",
+  "scope": "Persistent radio background across conversation, mission, guide and countdown; content committed in VBlank.",
+  "interfacePhasesChecked": 40,
+  "campaignRuns": 4,
+  "transitionsChecked": 320,
+  "radioTransitionsChecked": 128,
+  "radioTransitionBlackFrames": 0,
+  "radioTransitionDisplayOffFrames": 0,
+  "persistentRadioBorderFramesChecked": 11200,
+  "persistentGuideContentFramesChecked": 1832,
+  "radioOverlayFramesChecked": 10688,
+  "maxRadioAudioServiceGapFrames": 2,
+  "previousPortraitCaptureComparisons": 40,
+  "enemyPortraitsAndPalettePreserved": true,
+  "singleCountdownSeconds": 3,
+  "nativeChecksPassed": true,
+  "cleanPublishSourceNativeChecksPassed": true,
+  "cleanPublishSourceBuildROMMatches": true,
+  "emulator": "Genesis Plus GX; NTSC/PAL; A/B campaign routes",
+  "hardwareTested": false,
+  "details": {
+    "loading-pal": "loading-pal/report.json",
+    "loading-ntsc-b": "loading-ntsc-b/report.json",
+    "interface-ntsc": "interface-ntsc/report.json",
+    "loading-pal-b": "loading-pal-b/report.json",
+    "loading-ntsc": "loading-ntsc/report.json",
+    "interface-pal": "interface-pal/report.json"
+  },
+  "implementation": [
+    "Mission uses a permanent background at tile 832 and a temporary content map committed in one VBlank.",
+    "Dialogue remains visible through WINDOW until mission content is ready.",
+    "Countdown loads while the mission remains visible and releases directly into gameplay.",
+    "Portrait transparency resolves to the identical existing brown without redrawing the background or modifying the original art resources."
+  ]
+}

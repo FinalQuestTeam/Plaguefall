@@ -7,7 +7,7 @@
 
 const EnemyDef ENEMYDEF_dummy =
 {
-    .name       = "Dummy",
+    .name       = "DUMMY",
     .shape      = SHAPE_SQUARE,
     .color      = COLOR_GRAY,
     .size       = 24,

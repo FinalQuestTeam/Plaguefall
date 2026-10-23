@@ -1,0 +1,286 @@
+{
+  "status": "proposal_only",
+  "hud_height": 24,
+  "native_size": [
+    320,
+    224
+  ],
+  "export_size": [
+    960,
+    672
+  ],
+  "font": "SGDK native 8x8 from result_font.h",
+  "rom_changed": false,
+  "rom_sha256": "df6b63e2e85b97c6fe6735448f663fe0d813b270a1732b96830d6fe9285bf5ef",
+  "background_shift_y": "Per case: 16px for protection; 0px for kill objective",
+  "palette": "Existing item palette, icons retain native colours",
+  "cases": [
+    {
+      "id": "proteger",
+      "camera_shift": 16,
+      "label": "Proteger a Santa",
+      "source": "art/hud-resistencia-v1/referencias/reference-05.png",
+      "hp": 76,
+      "signal": 100,
+      "seconds": 28,
+      "selected": 3,
+      "mode": true,
+      "text_bounds": [
+        {
+          "text": "PROTEJA",
+          "rect": [
+            8,
+            3,
+            56,
+            8
+          ]
+        },
+        {
+          "text": "100",
+          "rect": [
+            20,
+            13,
+            24,
+            8
+          ]
+        },
+        {
+          "text": "28",
+          "rect": [
+            72,
+            13,
+            16,
+            8
+          ]
+        },
+        {
+          "text": "2",
+          "rect": [
+            122,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "1",
+          "rect": [
+            148,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "2",
+          "rect": [
+            174,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "3",
+          "rect": [
+            200,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "3",
+          "rect": [
+            225,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "VIDA 076",
+          "rect": [
+            242,
+            3,
+            64,
+            8
+          ]
+        }
+      ],
+      "capture_sha256": "5e5655b88960ba4e4d8552f201d0bc6deba3d1687459156e473782fd72d4b0d5"
+    },
+    {
+      "id": "eliminar",
+      "camera_shift": 0,
+      "label": "Eliminar inimigos",
+      "source": "art/hud-resistencia-v1/referencias/reference-03.png",
+      "hp": 100,
+      "kills": 8,
+      "target": 14,
+      "selected": 0,
+      "mode": false,
+      "text_bounds": [
+        {
+          "text": "ELIMINE",
+          "rect": [
+            8,
+            3,
+            56,
+            8
+          ]
+        },
+        {
+          "text": "08/14",
+          "rect": [
+            20,
+            13,
+            40,
+            8
+          ]
+        },
+        {
+          "text": "2",
+          "rect": [
+            122,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "1",
+          "rect": [
+            148,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "2",
+          "rect": [
+            174,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "3",
+          "rect": [
+            200,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "VIDA 100",
+          "rect": [
+            242,
+            3,
+            64,
+            8
+          ]
+        }
+      ],
+      "capture_sha256": "1d6f24b563fd35d9dec04cca856453e60a7501e988c0cfa0115f8257ee9b98c7"
+    },
+    {
+      "id": "vida-baixa",
+      "camera_shift": 16,
+      "label": "Vida baixa",
+      "source": "art/hud-resistencia-v1/referencias/reference-05.png",
+      "hp": 24,
+      "signal": 100,
+      "seconds": 12,
+      "selected": 1,
+      "mode": true,
+      "text_bounds": [
+        {
+          "text": "PROTEJA",
+          "rect": [
+            8,
+            3,
+            56,
+            8
+          ]
+        },
+        {
+          "text": "100",
+          "rect": [
+            20,
+            13,
+            24,
+            8
+          ]
+        },
+        {
+          "text": "12",
+          "rect": [
+            72,
+            13,
+            16,
+            8
+          ]
+        },
+        {
+          "text": "2",
+          "rect": [
+            122,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "1",
+          "rect": [
+            148,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "2",
+          "rect": [
+            174,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "3",
+          "rect": [
+            200,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "3",
+          "rect": [
+            225,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "text": "VIDA 024",
+          "rect": [
+            242,
+            3,
+            64,
+            8
+          ]
+        }
+      ],
+      "capture_sha256": "5e5655b88960ba4e4d8552f201d0bc6deba3d1687459156e473782fd72d4b0d5"
+    }
+  ]
+}

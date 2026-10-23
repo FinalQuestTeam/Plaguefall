@@ -10,7 +10,7 @@
 
 const EnemyDef ENEMYDEF_boss =
 {
-    .name       = "Escorpiao",
+    .name       = "ESCORPIÃO",
     .shape      = SHAPE_SQUARE,      // escorpiao (arte propria via enemygfx)
     .color      = COLOR_RED,         // classe de comportamento; o chefe usa arte propria
     .size       = 48,

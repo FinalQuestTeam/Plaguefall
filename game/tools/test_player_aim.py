@@ -48,6 +48,7 @@ void ARENA_move(s32 *x,s32 *y,s16 dx,s16 dy,u16 size){(void)size;*x+=dx;*y+=dy;}
 void HUD_drawLife(s16 life){(void)life;}
 void VDP_drawText(const char *s,u16 x,u16 y){(void)s;(void)x;(void)y;}
 void SFX_playerHit(void){}
+bool TEST_noDefeat(void){return false;}
 u8 HERO_direction(s16 x,s16 y){return (u8)((y+1)*3+x+1);}
 void HERO_prepare(u8 dir){prepared=dir;}
 void SHOTS_firePlayer(void){assert(prepared==HERO_direction(faceX,faceY));shots++;shotX=faceX;shotY=faceY;}

@@ -148,19 +148,19 @@ Damião vai da frustração com o sonho de viajar à decisão de defender quem f
 
 ## Visão geral
 
-**Plaguefall** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Damião, humano cibernético32×48** (hitbox 16×16) em arenas com limites por fase, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Escorpião** — vencê-lo mostra a tela de fim ("PARABENS! FIM") e volta ao título.
+**Plaguefall** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Damião, humano cibernético32×48** (hitbox 16×16) em arenas com limites por fase, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Escorpião** — vencê-lo apresenta o diálogo final e a caixa de vitória, com opções de voltar ao título ou iniciar uma campanha nova.
 
 A **fase 1** usa um mundo de **512×384**, câmera com janela320×224, padrões residentes em BG_B com atualização circular de linhas, sangue em BG_A e HUD fixo em WINDOW. Igreja e objetos periféricos possuem colisão; a bomba altera parte da igreja e decide a saída2B. Limites validados: quatro inimigos e seis tiros de cada lado,60 FPS NTSC/50 FPS PAL no emulador. [Arte, testes e próximos formatos](fases-cenarios.md).
 
-As outras fases ainda usam a arena clássica abaixo, ocupando a tela inteira; a linha 0 de tiles é o HUD. Seus novos cenários aguardam aprovação.
+As arenas aprovadas das fases iniciais usam cenários maiores com câmera. As fases que conservam a arena fixa reservam o topo para o painel de 24 px; o limite dos pés deixa espaço para o corpo de Damião abaixo dele.
 
-| Dimensão | Valor (tiles) | Valor (pixels) |
+| Dimensão da arena fixa | Valor (tiles) | Valor (pixels) |
 |---|---|---|
-| Largura da arena (`ARENA_TILES_W`) | 40 | 320 |
-| Altura da arena (`ARENA_TILES_H`) | 27 | 216 |
-| Origem da arena (`ARENA_TILE_X`, `ARENA_TILE_Y`) | (0, 1) | (0, 8) |
+| Largura (`ARENA_TILES_W`) | 40 | 320 |
+| Altura, incluindo borda (`ARENA_TILES_H`) | 25 | 200 |
+| Origem da borda (`ARENA_TILE_X`, `ARENA_TILE_Y`) | (0, 3) | (0, 24) |
 
-Limites internos de movimento (dentro da borda de parede): `INNER_MIN_X` = 8, `INNER_MIN_Y` = 16, `INNER_MAX_X` = 311, `INNER_MAX_Y` = 215.
+Limites dos pés na arena fixa: `INNER_MIN_X` = 8, `INNER_MIN_Y` = 56, `INNER_MAX_X` = 311, `INNER_MAX_Y` = 215. Os mundos com câmera mantêm os limites próprios. A câmera considera o painel maior e prioriza manter Damião visível no limite sul da defesa.
 
 ## Controles
 
@@ -172,7 +172,7 @@ Só o Joypad 1 (`JOY_1`) é lido. Comandos de menu/itens usam **detecção de bo
 | A | Atira (segurar = autofire na cadência) | Começa a fase (preparação) / confirma |
 | B | **Ativa** o item selecionado do inventário | Sai ao título (pausa) |
 | C | **Troca** a seleção do inventário | Avança a fase (preparação) |
-| START | Pausa / retoma | Confirma (game over → recomeça a fase; tela de fim → título) |
+| START | Pausa / retoma | Repete na derrota, cancela a confirmação de saída e confirma a opção no final. |
 | A+B+C (segurar) | **(Debug)** pula para a próxima fase (uma vez por combo) | — |
 
 ## Fluxo e estados do jogo
@@ -184,33 +184,39 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 | `ST_PREP` | Preparação: "FASE n", meta, intervalo de spawn e os **sprites** dos inimigos da fase. A começa; C avança de fase. |
 | `ST_PLAY` | Jogo ativo (inclui a contagem "PREPARE-SE" de 3 s congelada). |
 | `ST_PAUSE` | Pausa: infos da fase; START retoma, B sai ao título. |
-| `ST_OVER` | Game over: START **recomeça a fase atual** com vida/bombas restauradas. |
-| `ST_DONE` | "FASE CONCLUIDA!" por 3 s; a saída do grafo é resolvida (`GRAPH_resolve`) e vai ao mapa. |
+| `ST_OVER` | Caixa de derrota com repetir a fase ou voltar ao título (confirmação adicional). START repete diretamente; A confirma a seleção. Repetir restaura a vida; sempre deixa o bornal e volta ao básico. A coleta recupera a fotografia pré-morte conforme a etapa (1–5 tudo, 6–11 menos um nível e um item, 12–16 no máximo uma melhoria de cada que existia). |
+| `ST_DONE` | Cartão central de objetivo por 2 s (3 s na perda do sinal); A/START podem seguir após uma nova pressão e 350 ms. Resolve a saída (`GRAPH_resolve`) e segue ao diálogo/mapa. |
 | `ST_MAP` | **Mapa de rotas** (`routemap.c`): o grafo desenhado dos próprios dados (nós `mapCol/mapRow`, ligações das saídas), caminho percorrido "O", próxima fase "*" piscando, resto "."; A/START segue à preparação. |
-| `ST_STORY` | **História** (`screens/story.c` + roteiro em `levels/story.c`): diálogo com retratos 48x48 (esq. em cima, dir. embaixo), máquina de escrever; A avança/completa, START pula. Toca 1x por run, nos momentos ANTES (chegada ao nó, antes da preparação) e DEPOIS (vitória, antes do mapa/fim). |
-| `ST_END` | Fim de jogo (chefe derrotado): "PARABENS! FIM"; START volta ao título. |
+| `ST_STORY` | **Console de holodeck** (`screens/story.c`, `screens/radio.c`, roteiro em `levels/story.c`): monitor superior preto com texto amarelo; retratos 48×48 fixos nos dois monitores inferiores, Damião à esquerda e interlocutor à direita. O campo `side` mantém as cores originais de quem fala e escurece quem escuta. Texto de 26 caracteres por linha, até quatro linhas com entrelinha de 16 px. A completa/avança e START pula. Cada cena toca uma vez por campanha, em ANTES ou DEPOIS. |
+| `ST_END` | Caixa central de vitória após o diálogo final; aguarda escolha. A/START confirmam voltar ao título ou jogar novamente com o estado de campanha reiniciado. |
 
 ### Fluxo geral
 
 1. **Splash** (logo FinalQuest) → **monólogo animado** (14 quadros e 18 cartelas, uma vez por boot, somente START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**).
 2. **Preparação** (`ST_PREP`) → A para começar.
-3. **"PREPARE-SE 3-2-1"** (3 s congelado) → jogo ativo.
-4. Meta atingida → `ST_DONE` → história do DEPOIS (se houver) → **mapa de rotas** (`ST_MAP`) → história do ANTES do nó destino (se houver) → preparação da próxima (decidida pelas condições de saída do grafo). Morte → `ST_OVER` → recomeça a mesma fase. Objetivo falhado em nó **com rota de falha** (`OBJ_FALHOU`) → "A MISSAO CONTINUA..." → segue pela rota de falha (sem game over).
-5. **Fase 16**: o chefe é gerado no início; derrotá-lo → `ST_END` → título.
+3. **3 → 2 → 1** em um pequeno instrumento sobre o cenário (3 s congelado) → **VAI!**, com movimento e tiro liberados no zero. A etiqueta permanece 21 quadros em NTSC ou 18 em PAL; não estende o congelamento. Soltar A durante a contagem arma o disparo, sem deixar a confirmação do menu disparar sozinha.
+4. Meta atingida → `ST_DONE` → história do DEPOIS (se houver) → **mapa de rotas** (`ST_MAP`) → história do ANTES do nó destino (se houver) → preparação da próxima (decidida pelas condições de saída do grafo). Morte → `ST_OVER` → recomeça a mesma fase. Objetivo falhado em nó **com rota de falha** (`OBJ_FALHOU`) → "SINAL PERDIDO / A MISSAO CONTINUA" → segue pela rota de falha (sem game over).
+5. **Fase 16**: o chefe é gerado no início; derrotá-lo → diálogo final → `ST_END` → título ou campanha nova na fase 1.
 
 ### Temporizações (60 fps NTSC)
 
 | Evento | Código | Segundos |
 |---|---|---|
-| Congelamento "PREPARE-SE" | `fps * 3` | 3 s |
+| Contagem 3/2/1 | `fps * 3` | 3 s; movimento e tiro liberados no zero |
+| Etiqueta VAI! | `(fps * 35 + 99) / 100` | ~350 ms sobre combate ativo |
 | Primeiro inimigo (`FIRST_SPAWN_S`) | `1 * fps` | 1 s após o congelamento |
-| "FASE CONCLUIDA!" (`doneTimer`) | `fps * 3` | 3 s |
+| Cartão de objetivo | A/START após soltar o botão e aguardar 350 ms | Aguarda confirmação, tanto no sucesso quanto na mudança de rota |
 | Intervalo entre ondas | `spawnSeconds * fps` | por fase (2–5 s) |
 
 ### Persistência
 
 - **Entre fases**: HP, cargas de bomba, itens do inventário e bônus acumulados (leque de balas, velocidade) **persistem**.
-- **No game over**: vida cheia (`PLAYER_fullHp`), bombas ao máximo (`BOMB_reset`), inventário esvaziado (`INV_clear`), potência de tiro/raio/velocidade zerados.
+- **Na derrota**: tentar novamente é a seleção inicial; START repete diretamente, A confirma a seleção e voltar ao título exige confirmação. A vida volta a 100 e o equipamento ao básico, em todas as etapas, até recolher a bolsa. `DEATH_capture` fotografa melhorias, inventário/cargas, bombas, modo de tiro e escudo ao entrar na derrota; `DEATH_retry` reinicia e `DEATH_startPhase` emite uma bolsa. As rotas A/B seguem a etapa correspondente.
+- **Etapas 1–5**: o bornal devolve todas as melhorias de tiro/velocidade, bombas, itens/cargas, modo de tiro e tempo restante de escudo existentes na morte.
+- **Etapas 6–11**: o bornal guarda as melhorias anteriores menos uma de tiro e uma de velocidade (20 pontos percentuais), até o básico de um projétil e +0%, sem piso 3. Remove o último item ocupado da fotografia; quando não há itens, desconta uma bomba. Modo de tiro e escudo guardados retornam com a coleta.
+- **Etapas 12–16**: a bolsa devolve no máximo uma melhoria de tiro (+1 projétil) se havia alguma, e uma de velocidade (+20%) se havia alguma. As condições são independentes: se não havia bônus de um atributo, não concede esse atributo. Itens, bombas e efeitos não voltam.
+- **Bolsa**: sempre existe após a derrota, inclusive vazia. Procura chão sem obstáculos/lava perto da queda ou da entrada; não nasce sobre o jogador nem desaparece por tempo. Coletas novas não entram na fotografia nem são removidas: as melhorias guardadas são somadas respeitando os tetos. Itens guardados que não couberem ficam na bolsa, sem repetir melhorias já devolvidas. Uma nova morte substitui o conteúdo pela fotografia mais recente; morrer sem recolher perde a bolsa anterior. Não entra no sorteio comum de inimigos e não atravessa fases/campanhas.
+- **Treino**: as salas comuns conservam o reinício com vida cheia, duas bombas e equipamento básico. A sala 10 usa a captura, queda, coleta e penalidade reais para testar as três etapas; B repõe a configuração e C troca o trecho. Novo jogo usa o equipamento inicial.
 - Cura tem **teto de 100 HP**.
 
 ## Tela-título, splash e ajuda
@@ -219,18 +225,22 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 - **Monólogo animado** (`intro.c`): [14 quadros e 18 cartelas do storyboard](../art/intro-monologo-v2/README.md) entre FinalQuest e o menu, 101 segundos de exibição, com as trocas de imagem. Texto branco centralizado em até36×4, fundo preto com transição suave desde a arte, fades visuais e música contínua desde o logo Plaguefall. Sem nome, contador ou instruções na tela. O enquadramento é fixo;12 partículas de poeira, brasa e fuligem usam posições fracionárias e até1 pixel de deslocamento por frame. Usa924 tiles para a imagem mais3 para partículas, antes da inicialização dos recursos da arena. O último quadro dura6s; as trocas de cartela nos planos 08, 11, 12 e 13 conservam a imagem e a música; o fundo do menu já fica empacotado na ROM para evitar a montagem pixel a pixel no fim. A, B e C são ignorados; somente START pula. Não se repete ao voltar ao título. A conversa antes da fase 1 mantém apenas o chamado do padre e a resposta de Damião.
 - **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Damião, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. O tema Baião de Ferrugem toca em sua versão calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
 - **Assets** (`chardemo.c`): [três abas — Damião, Dinorah e Músicas](../art/gallery-v1/README.md). Os personagens têm oito direções e dois quadros de repouso. ESQ/DIR muda de aba; B/START volta ao menu, e A também sai nas abas dos personagens. Em MÚSICAS, CIMA/BAIXO escolhe entre Baião de Ferrugem, Entardecer, Breu e Ladainha de Ferro; A pausa/retoma e C alterna calma/combate. A faixa selecionada toca em loop; sair da audição restaura a música e a curva anteriores. As quatro partituras coexistem na ROM. As poses usam240 tiles do cache existente dos inimigos e PAL2; a aba musical esconde os sprites e usa somente texto.
-- **Como Jogar** (`help.c`): **5 páginas** navegáveis com ←/→ — controles, inimigos (cor/forma, com os sprites reais), a elite (pentágonos), itens diretos e itens de inventário.
+- **Como Jogar** (`help.c`): **8 páginas** navegáveis com ESQ/DIR ou A; B/START voltam ao título ou à pausa de origem. Controles, itens diretos, inventário, cores/famílias dos inimigos, habilidades das saúvas, missões/rotas, bolsa em todas as derrotas, recuperação pré-morte e regras por trecho da campanha. A última página mostra o sprite real do bornal.
 
-## HUD (linha 0)
+## HUD da resistência (24 px)
 
-| Coluna | Elemento | Fonte |
-|---|---|---|
-| 1–8 | Caveira + `kills/killTarget` | `HUD_drawKills` |
-| 14–25 | **Inventário**: 4 posições × 3 colunas (`>` cursor, ícone 8×8, contagem) | `HUD_drawInventory` |
-| 27–28 | **Modo de tiro ativo** (raio/gelo/fogo): ícone + cargas restantes | idem |
-| 33–39 | `HP:xxx` | `HUD_drawLife` |
+Painel opaco de 320×24 em WINDOW, com fonte e ícones nativos de 8×8, metal escuro e bordas em cobre. Usa a paleta existente de objetos.
 
-O inventário é redesenhado **só quando o estado muda** (`HUD_drawInventoryIfDirty`, assinatura do estado) — economiza escritas de VDP por quadro.
+| Área | Conteúdo |
+|---|---|
+| Esquerda, x=0–103 | Objetivo em duas linhas: eliminações/meta, vida e tempo da Santa, direção/progresso da travessia, vida/estado de Dinorah ou vida atual do Escorpião. |
+| Centro, x=108–209 | Quatro espaços de equipamento com ícone e quantidade; borda dourada identifica a seleção. |
+| x=214–233 | Caixa azul com modo de tiro e cargas; desaparece quando as cargas acabam. |
+| Direita, x=242–309 | `VIDA 000–100` e barra; vermelho abaixo de 26 de vida, vazia em zero. |
+
+O inventário muda apenas quando sua assinatura muda. Atualizações de objetivo editam somente os números; a fila envia no máximo 16 tiles por quadro (512 bytes), preservando margem para sprites/câmera. O painel usa 120 tiles da reserva de ícones de menu, sem reduzir o cache de inimigos durante a partida. A contagem regressiva usa temporariamente 180 tiles da cauda desse cache, com proteção no alocador e liberação após o aviso de início. Os sprites ficam sob o painel opaco. Nas salas técnicas, o diagnóstico ocupa as linhas abaixo dele.
+
+[Capturas da ROM, limites de desempenho e testes PAL/NTSC](../art/hud-resistencia-v1/integracao/README.md).
 
 ---
 
@@ -334,15 +344,15 @@ Velocidade em unidades 26.6 por frame (`ENEMY_SPEED_FP` = 40 ≈ 0,63 px/frame).
 | **Alcateia** (PEN amarelo) | 24 | 3 | 10 | 55% | 35 | ao morrer, **divide-se em 2 Caçadores** |
 | **Fortaleza** (PEN roxo) | 32 | 4 | 15 | 80% | 15 | escudo 2,0 s / 2,5 s; **invoca 1 Caçador a cada 1,5 s enquanto blindado** |
 | **Meteoro** (PEN laranja) | 24 | 3 | 14 | 60% | 20 | **teleporta para perto** antes de investir; cooldown 1,8 s |
-| **Dummy** (teste) | 24 | 20 | 0 | 0% | 0 | alvo da fase teste 1 |
-| **Alvo** (teste) | 24 | 1 | 0 | 0% | 0 | alvos do raio na fase teste 2 |
+| **Dummy** (teste) | 24 | 20 | 0 | 0% | 0 | dummy da bancada de itens |
+| **Alvo** (teste) | 24 | 1 | 0 | 0% | 0 | alvos de cadeia da bancada de itens |
 | **Escorpião** (CHEFE) | **48** | **25** | **20** | 100% | 32 | ver abaixo |
 
 ### Comportamentos por cor
 
 - **Vermelho** (`enemy_red.c`): persegue se `speedFp > 0`; dispara mirado no jogador a cada `timerA` décimos de s. Com `EXTRA_SPREAD` dispara **leque de 3**. Primeiro tiro escalonado (`ENEMY_CD/2 + random % fps`) para dessincronizar.
 - **Amarelo** (`enemy_yellow.c`): perseguição pura (`ENEMIES_chase`). Com `EXTRA_SPLIT`, ao morrer gera 2 Caçadores no lugar.
-- **Roxo** (`enemy_purple.c`): persegue e alterna escudo — `timerA` s vulnerável / `timerB` s blindado. Blindado: **bloqueia tiros** (pisca para sinalizar) e é imune à cadeia/bomba. Com `EXTRA_SUMMON` invoca Caçadores enquanto blindado.
+- **Roxo** (`enemy_purple.c`): persegue e alterna escudo — `timerA` s vulnerável / `timerB` s blindado. Blindado: **bloqueia tiros** (escudo dourado flutuante de 8×8; corpo sempre visível) e é imune à cadeia/bomba. Com `EXTRA_SUMMON` invoca Caçadores enquanto blindado.
 - **Laranja** (`enemy_orange.c`): aproxima → **telegrafa 0,2 s** (para mirando) → **investida reta 0,5 s a ~3,1 px/frame** (`DASH_SPEED_FP` = 200) → cooldown `timerA`. Com `EXTRA_TELEPORT`, pisca para um ponto próximo do jogador antes do bote.
 
 ## O chefe: Escorpião (`enemy_boss.c`)
@@ -353,7 +363,7 @@ Escorpião **48×48** (ID `boss`; quatro peças de32×32,32×16,16×32 e16×16).
 |---|---|
 | Vida | 25 tiros |
 | Dano de contato | 20 · Dano do tiro: **13** |
-| **Blindagem cíclica** | invulnerável **3 s a cada 15 s** (12 s vulnerável) |
+| **Blindagem cíclica** | invulnerável **3 s a cada 15 s** (12 s vulnerável); mesmo escudo flutuante dos roxos, sem ocultar o corpo |
 | **Invocação** | 2 Caçadores a cada **10 s** |
 | **Alternância de modo** | a cada **4 s**: agressivo ↔ à distância |
 | Modo agressivo | aproxima e usa **dash** (telegrafa e investe a `BOSS_DASH_FP` = 210) |
@@ -394,15 +404,16 @@ Itens caem de inimigos mortos **por tiro/queimadura** (a bomba não gera drops).
 | **Raio** | 5 | inventário | Ao ativar: próximos 5 acertos fazem cadeia (3 alvos, 80 px) |
 | **Gelo** | 5 | inventário | Ao ativar: próximos 3 tiros congelam por 5 s |
 | **Fogo** | 5 | inventário | Ao ativar: próximos 4 tiros aplicam queimadura (6 s, 1 dano/2 s) |
+| **Bornal de recuperação** | 0 (fora do sorteio) | direto, após qualquer derrota | Fotografia pré-morte: tudo em 1–5, menos um nível/item em 6–11, até uma melhoria de cada que existia em 12–16; sem prazo |
 
 Soma dos pesos = 100 (coincidência atual; o sorteio usa a soma real).
 
 ## Regras de chão
 
 - Máx. **8 itens** ativos (`MAX_ITEMS`); sem slot → o drop é perdido.
-- **TTL de 10 s**; pisca nos últimos 2 s.
+- Itens comuns têm **TTL de 10 s** e piscam nos últimos 2 s; o bornal e os itens permanentes do treino não expiram.
 - Coleta automática por AABB 16×16; toca `sfxItemPickup` (blip ascendente).
-- **Itens diretos** aplicam o efeito na hora; **itens de inventário** vão para uma posição livre (1–3). Inventário cheio: o item é consumido sem efeito.
+- **Itens diretos** aplicam o efeito na hora; **itens de inventário** vão para uma posição livre (1–3). Inventário cheio: o item comum é consumido sem efeito; itens guardados no bornal permanecem nele até existir espaço.
 - Arte 16×16 por char-map (`items_data.h`), pintada em `ITEMS_buildTiles`.
 
 ---
@@ -448,7 +459,7 @@ Char-map 32×32 ladrilhado no **BG_B** (PAL3), escolhido por fase. Todas as vari
 |---|---|---|
 | `FLOOR_STONE` (padrão) | fases sem lama | pedra escura (basketweave) |
 | `FLOOR_FOREST` | fases de lama só | grama, terra, folhas, pedrinhas |
-| `FLOOR_CAVE` | covil do chefe (16 / teste 3) | rocha úmida/arenosa |
+| `FLOOR_CAVE` | covil do chefe (16) | rocha úmida/arenosa |
 | `FLOOR_MIX` | fases **lava+lama** | **rocha na arena + grama ao redor da lama** |
 
 O **`FLOOR_MIX`** desenha dois chões na mesma fase: como o BG_B só tem uma paleta (PAL3), os dois tilesets **dividem 16 cores** (grama + rocha). A grama é pintada nos tiles a até `FLOOR_MIX_MUD_PAD` = 2 tiles de qualquer retângulo de lama; o resto (inclusive o entorno da lava) fica rocha.
@@ -457,11 +468,19 @@ Na preparação/pausa, os inimigos do roster aparecem como **sprites reais** ali
 
 ## Fase teste (sandbox, opção do menu)
 
-3 estágios ligados por **portas** (`levels/test.c`):
+Seis salas selecionadas diretamente pelo menu **FASE TESTE**, sem portas entre arenas. **START** abre pausa com continuar, configurar, reiniciar, trocar sala, ajuda e título. As configurações são locais ao treino e não alteram as fases da campanha.
 
-1. **Dummies** (HP 20, inofensivos) + fileira com 1 item de cada tipo (reabastecida). Tem **lava + lama** (chão `FLOOR_MIX`), para testar dano/lentidão.
-2. **Alvos** frágeis agrupados — demonstra a reação em cadeia do raio. Porta "CHEFE →".
-3. **Arena do chefe** — o Escorpião com o comportamento completo (chão de caverna).
+| Sala | Objetivo e controles de ensaio |
+|---|---|
+| **Galeria de inimigos** | Os 12 tipos comuns e o Escorpião permanecem no lugar. Repouso/caminhada, oito direções, velocidade de animação 1×/½×/¼×, seleção de inimigo e reprodução de morte única ou repetida. Reposição após dois segundos. |
+| **Bancada de itens** | Dummy central com 1/20/100 HP, oito itens com reposição opcional, dois alvos extras para raio em cadeia e vida inicial 25/50/100. Usa coleta, inventário e dano reais. |
+| **Regras de morte (sala 10)** | Treino sem inimigos com as políticas reais das etapas 1–5, 6–11 e 12–16. A morre, B repõe, C troca o trecho. START configura tiro, velocidade, itens e bombas iniciais. Mortes repetidas e coleta do bornal usam os módulos de produção; o painel mostra os valores e o contador de mortes. |
+| **Defesa da Santa** | Cenário da fase 5, Santa com 100 HP e objetivo de 30 segundos. Ataques pausados, padrão de campanha ou pressão contínua; opção sem derrota para Damião. Sucesso/falha congela o resultado até reiniciar ou trocar sala. |
+| **Colisões e perigos** | Arena de 512×384 com muros, cantos, corredor de 32 px, obstáculo azul baixo que bloqueia pés e deixa tiros passar, lava e lama reais. Vida inicial configurável. |
+| **Comportamento e chefe** | IA real, tipo específico ou misto, 1/4/8/16 inimigos, vida normal ou sem derrota. O Escorpião usa um chefe e seus lacaios reais. |
+| **Carga e performance** | 1/4/8/16 inimigos, 0/6/16 tiros por grupo, escudo/gelo/fogo, mortes repetidas e modo sem derrota. Mostra FPS de simulação por VBlank, carga de CPU, pico e contagens de objetos. |
+
+As salas técnicas usam diagnóstico no topo e recursos nativos compactos. A defesa preserva o HUD e o cenário da campanha. O HUD da resistência de 24 px está integrado; os dados técnicos aparecem abaixo dele. Na sobrecarga máxima pode haver queda de FPS: o propósito da sexta sala é expor esse limite. [Guia e validação das salas](../art/training-v2/README.md).
 
 ## Elementos de terreno
 
@@ -558,8 +577,8 @@ Reconstruída a cada frame, encadeada por link, enviada via `DMA_QUEUE`:
 
 | Paleta | Uso |
 |---|---|
-| PAL0 | Texto/HUD (letras no índice 15; índice1 preto para o fundo opaco do HUD na fase1). Índices 1–14 = **paleta de flash**: brancos (dano) exceto o **índice 2 = vermelho** (pulso de fogo). Reaproveitada sem custo de VRAM |
-| PAL1 | Objetos (1 contorno claro, 2 ciano/gelo, 3 vermelho, 4 amarelo, 5 tiro inimigo, 6/7 parede, 8 roxo, 9/10 lama, 11 escuro, 12 laranja, 13 cinza, 14 verde, 15 azul) |
+| PAL0 | Texto de menus/diagnósticos (letras no índice 15; índice1 preto nos mundos com câmera). Índices 1–14 = **paleta de flash**: brancos (dano) exceto o **índice 2 = vermelho** (pulso de fogo). Reaproveitada sem custo de VRAM |
+| PAL1 | HUD da resistência e objetos (1 contorno claro, 2 ciano/gelo, 3 vermelho, 4 amarelo, 5 tiro inimigo, 6/7 parede, 8 roxo, 9/10 lama, 11 escuro, 12 laranja, 13 cinza, 14 verde, 15 azul) |
 | PAL2 | Damião / galeria histórica |
 | PAL3 | Chão (varia por fase; alvo do flash da bomba) |
 

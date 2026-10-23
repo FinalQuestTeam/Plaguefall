@@ -9,6 +9,9 @@
 #include "actors/player.h"
 #include "core/game.h"
 #include "insects.h"
+#include "system/video/combatgfx.h"
+#include "levels/levels.h"
+#include "levels/test.h"
 
 #define CACHE_BLOCK_TILES 4
 #define CACHE_BLOCKS (ENEMY_CACHE_TILES / CACHE_BLOCK_TILES)
@@ -58,6 +61,7 @@ static void loadIcon(u8 type)
         VDP_loadTileData(data,TILE_USER_INDEX+iconTile(type),16,DMA);
     }
     iconReady[type] = TRUE;
+    if(type==ENEMY_BOSS)COMBATGFX_invalidate();
 }
 
 void ENEMYGFX_loadForPhase(u8 phase, const u8 *types, u16 count)
@@ -77,6 +81,7 @@ void ENEMYGFX_reset(void)
     memset(iconReady,0,sizeof(iconReady));
     memset(blockOwner,255,sizeof blockOwner);
     pinnedSlots=0;evictionCursor=0;nextSlot=0;
+    COMBATGFX_invalidate();
 }
 
 static void releaseSlot(u16 index)
@@ -91,10 +96,11 @@ static bool allocateSlot(u16 index,u16 tiles)
     FrameSlot *s=&slots[index];
     if(s->blocks)return TRUE;
     const u16 needed=(tiles+CACHE_BLOCK_TILES-1)/CACHE_BLOCK_TILES;
+    const u16 limit=CACHE_BLOCKS;
     for(u16 attempt=0;attempt<=MAX_ENEMIES;attempt++)
     {
         u16 run=0;
-        for(u16 b=0;b<CACHE_BLOCKS;b++)
+        for(u16 b=0;b<limit;b++)
         {
             if(blockOwner[b]!=255){run=0;continue;}
             if(++run<needed)continue;
@@ -117,9 +123,27 @@ static bool allocateSlot(u16 index,u16 tiles)
     return FALSE;
 }
 
+static u8 facing(const Enemy *e,const FrameSlot *s)
+{
+    // Ice and recoil do not turn an actor around. A telegraphed dash keeps
+    // the same heading through its wind-up and the whole locked charge.
+    if ((e->frozen || e->stun) && s->valid) return s->dir;
+    const bool boss=e->type==ENEMY_BOSS;
+    const bool bossAttack=boss && !(divu(e->tA,4*fps)&1);
+    const bool charge=e->mode!=0 && (ENEMY_DEF(e)->color==COLOR_ORANGE || bossAttack);
+    if ((charge || (s->motion && (!boss || bossAttack))) && (e->vx || e->vy))
+        return ENEMYGFX_faceDir(e->vx,e->vy);
+    const s16 half=ENEMY_SIZE(e)/2;
+    const s16 tx=boss || e->aggroPlayer ? px+8 : chaseX;
+    const s16 ty=boss || e->aggroPlayer ? py+8 : chaseY;
+    const s16 dx=tx-e->x-half,dy=ty-e->y-half;
+    return dx || dy ? ENEMYGFX_faceDir(dx,dy) : s->valid ? s->dir : 4;
+}
+
 void ENEMYGFX_prepare(u16 frame)
 {
     u16 transfers=0;
+    const u16 allowance=COMBATGFX_remaining() ? ENEMY_DMA_FRAMES-1 : ENEMY_DMA_FRAMES;
     pinnedSlots=0;
     const u16 runPhase=divu(frame,ACTOR_RUN_TICKS(fps))&(ACTOR_RUN_FRAMES-1);
     const u16 idlePhase=divu(frame,ACTOR_IDLE_TICKS(fps))&(ACTOR_IDLE_FRAMES-1);
@@ -129,24 +153,25 @@ void ENEMYGFX_prepare(u16 frame)
         const Enemy *e=&enemies[i];
         if (!e->active || !newArt(e->type))
         {if(s->blocks)releaseSlot(i);s->valid=FALSE;s->seen=FALSE;continue;}
-        if(s->type!=e->type){releaseSlot(i);s->type=e->type;}
-        const s16 half=ENEMY_SIZE(e)/2;
+        if(s->type!=e->type){releaseSlot(i);s->type=e->type;s->seen=FALSE;s->motion=0;}
         const bool moved=s->seen && (s->x!=e->x || s->y!=e->y);
         // Hold movement briefly through subpixel steps below one pixel/frame.
         if (moved) s->motion=3;
         else if (s->motion) s->motion--;
-        if (e->frozen || (ENEMY_DEF(e)->color==COLOR_ORANGE && e->mode==1)) s->motion=0;
-        s->wantedDir=e->frozen && s->valid ? s->dir :
-            s->motion && (e->vx || e->vy) && e->type!=ENEMY_BOSS ? ENEMYGFX_faceDir(e->vx,e->vy) :
-            ENEMYGFX_faceDir(px+8-e->x-half,py+8-e->y-half);
+        if (e->frozen || (e->mode==1 &&
+            (ENEMY_DEF(e)->color==COLOR_ORANGE || e->type==ENEMY_BOSS))) s->motion=0;
+        s->wantedDir=facing(e,s);
         s->wantedPose=e->frozen ? 0 : s->motion ?
             ACTOR_IDLE_FRAMES+((runPhase+i)&(ACTOR_RUN_FRAMES-1)) :
             (idlePhase+i)&(ACTOR_IDLE_FRAMES-1);
+        if(currentLevel==0 && testStage==1)TEST_animation(i,&s->wantedDir,&s->wantedPose);
+        // Mirroring needs no upload, even when another actor uses the last
+        // DMA allowance or this actor's next animation pose is still pending.
+        if(s->valid && CANON[s->dir]==CANON[s->wantedDir])s->dir=s->wantedDir;
         s->x=e->x; s->y=e->y; s->seen=TRUE;
-        if (s->type!=e->type) s->valid=FALSE;
     }
     // Round-robin keeps a frequently turning enemy from starving other slots.
-    for (u16 k=0; k<MAX_ENEMIES && transfers<ENEMY_DMA_FRAMES; k++)
+    for (u16 k=0; k<MAX_ENEMIES && transfers<allowance; k++)
     {
         const u16 i=(nextSlot+k)&(MAX_ENEMIES-1);
         FrameSlot *s=&slots[i];
@@ -169,6 +194,7 @@ void ENEMYGFX_prepare(u16 frame)
         transfers++;
     }
     nextSlot=(nextSlot+ENEMY_DMA_FRAMES)&(MAX_ENEMIES-1);
+    COMBATGFX_prepare(transfers);
 }
 
 bool ENEMYGFX_ready(u16 index)

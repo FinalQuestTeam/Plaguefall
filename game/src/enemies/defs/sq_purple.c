@@ -8,7 +8,7 @@
 
 const EnemyDef ENEMYDEF_sq_purple =
 {
-    .name       = "Baluarte",
+    .name       = "BALUARTE",
     .shape      = SHAPE_SQUARE,
     .color      = COLOR_PURPLE,         // blindado
     .size       = 32,

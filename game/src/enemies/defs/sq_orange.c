@@ -6,7 +6,7 @@
 
 const EnemyDef ENEMYDEF_sq_orange =
 {
-    .name       = "Ariete",
+    .name       = "ARÍETE",
     .shape      = SHAPE_SQUARE,
     .color      = COLOR_ORANGE,     // investida (dash)
     .size       = 16,

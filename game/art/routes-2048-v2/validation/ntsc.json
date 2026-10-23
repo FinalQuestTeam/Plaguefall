@@ -1,0 +1,340 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "81e9454bf667df599c74fa64ceed11116c7456a9919ee86013dcf814fce63088",
+  "checks": {
+    "continuousScenery-04": {
+      "landmarks": 4,
+      "tiles": 603,
+      "groundDetails": 4,
+      "sceneryVRAMMatchesExport": true,
+      "blockSimilarityToFirst": [
+        0.3177,
+        0.3173,
+        0.2691
+      ]
+    },
+    "continuousScenery-06b": {
+      "landmarks": 4,
+      "tiles": 518,
+      "groundDetails": 4,
+      "sceneryVRAMMatchesExport": true,
+      "blockSimilarityToFirst": [
+        0.4594,
+        0.3414,
+        0.4215
+      ]
+    },
+    "escortEntryStartsAtSpawnAndFreezesUntilGo": {
+      "countdownFrames": 180,
+      "cameraY": 76
+    },
+    "escortStepKeepsMovingThroughAllFourPoses": {
+      "poses": [
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "framesPerPose": {
+        "2": 12,
+        "3": 13,
+        "4": 14,
+        "5": 14,
+        "0": 1
+      },
+      "posePositions": {
+        "2": [
+          [
+            48,
+            220
+          ],
+          [
+            49,
+            221
+          ],
+          [
+            49,
+            221
+          ],
+          [
+            49,
+            221
+          ],
+          [
+            50,
+            222
+          ],
+          [
+            50,
+            222
+          ],
+          [
+            51,
+            222
+          ],
+          [
+            51,
+            223
+          ],
+          [
+            51,
+            223
+          ],
+          [
+            52,
+            223
+          ],
+          [
+            52,
+            224
+          ],
+          [
+            52,
+            224
+          ]
+        ],
+        "3": [
+          [
+            53,
+            224
+          ],
+          [
+            53,
+            224
+          ],
+          [
+            53,
+            224
+          ],
+          [
+            53,
+            225
+          ],
+          [
+            54,
+            225
+          ],
+          [
+            54,
+            225
+          ],
+          [
+            54,
+            226
+          ],
+          [
+            55,
+            226
+          ],
+          [
+            55,
+            226
+          ],
+          [
+            55,
+            226
+          ],
+          [
+            56,
+            227
+          ],
+          [
+            56,
+            227
+          ],
+          [
+            56,
+            227
+          ]
+        ],
+        "4": [
+          [
+            57,
+            228
+          ],
+          [
+            57,
+            228
+          ],
+          [
+            57,
+            228
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            58,
+            229
+          ],
+          [
+            59,
+            230
+          ],
+          [
+            59,
+            230
+          ],
+          [
+            59,
+            230
+          ],
+          [
+            60,
+            231
+          ],
+          [
+            60,
+            231
+          ],
+          [
+            60,
+            231
+          ]
+        ],
+        "5": [
+          [
+            61,
+            231
+          ],
+          [
+            61,
+            232
+          ],
+          [
+            61,
+            232
+          ],
+          [
+            62,
+            232
+          ],
+          [
+            62,
+            233
+          ],
+          [
+            62,
+            233
+          ],
+          [
+            63,
+            233
+          ],
+          [
+            63,
+            233
+          ],
+          [
+            63,
+            233
+          ],
+          [
+            63,
+            234
+          ],
+          [
+            64,
+            234
+          ],
+          [
+            64,
+            234
+          ],
+          [
+            64,
+            234
+          ],
+          [
+            64,
+            234
+          ]
+        ],
+        "0": [
+          [
+            64,
+            234
+          ]
+        ]
+      }
+    },
+    "escortShortWaypointMovesUntilFinalPoseThenPauses": {
+      "poses": [
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "arrival": [
+        856,
+        152
+      ]
+    },
+    "escortFinishesMovingStepBeforeAiming": {
+      "poses": [
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "aimPosition": [
+        64,
+        234
+      ]
+    },
+    "reachFullRouteControllerOnly": true,
+    "horizontalAndVerticalRingPast1536": true,
+    "pauseRestoresExtendedMap": true,
+    "reachWinsWithoutKills": true,
+    "reachIgnoresKillQuota": true,
+    "former1024ExitNoLongerCompletes": true,
+    "holesBlockFeetButNotBullets": true,
+    "collisionMaskBeyond1024": true,
+    "escortWaitsForCover": true,
+    "nativeArrowAndAlertUseInterfacePalette": true,
+    "escortFullRouteControllerOnly": {
+      "seconds": 82.0,
+      "hp": 100,
+      "states": [
+        0,
+        2
+      ]
+    },
+    "escortPauseFreezesAndRestoresSprite": true,
+    "escortBulletDamageAndLocalInvulnerability": true,
+    "allyShotKillsWithoutInventoryOrFriendlyFire": {
+      "peakBullets": 1,
+      "kills": 1
+    },
+    "enemyShooterAimsAssignedActor": true,
+    "escortContactDamage": true,
+    "escortNeedsBothActorsAndConfirmation": true,
+    "escortFailureOnEnemyBullet": true,
+    "escortRetryResetsSameStage": true,
+    "sectorSpawnsAvoidActorsHolesAndExit": {
+      "samples": 80
+    },
+    "pilotLoadPerformance": {
+      "gameFPS": 52.5,
+      "regionFPS": 60
+    }
+  },
+  "heap_sentinel_intact": true
+}

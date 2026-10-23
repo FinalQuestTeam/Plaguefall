@@ -31,8 +31,8 @@
 // Boca da arma: âncoras por desenho/quadro em res/heroi/muzzle.json.
 // ===========================================================================
 
-// 26.6 fixed. `mode` = SHOTMODE_* do tiro do jogador (efeito ao acertar). `dmg`
-// = dano do tiro INIMIGO no jogador (padrão ESHOT_DAMAGE; chefe usa mais).
+// 26.6 fixed. mode is SHOTMODE_* for player shots, visual style1..4 for enemies.
+// dmg is enemy damage to the player (default ESHOT_DAMAGE; boss uses more).
 typedef struct { s32 x, y; s32 vx, vy; u8 mode; u8 dmg; bool active; } FShot;
 
 extern FShot pshots[MAX_PSHOTS];
@@ -42,7 +42,7 @@ extern FShot eshots[MAX_ESHOTS];
 void SHOTS_clear(void);
 
 // poder de tiro: nº de balas por disparo (1..SHOTS_MAX_POWER)
-void SHOTS_resetPower(void);    // volta a 1 (início / game over)
+void SHOTS_resetPower(void);    // volta a 1 (início / treino / nova tentativa)
 void SHOTS_addPower(void);      // +1 bala (item), respeitando o teto
 u8   SHOTS_power(void);         // nº de balas por disparo (caixa de infos do teste)
 
@@ -53,7 +53,7 @@ u8   SHOTS_modeCharges(void);    // cargas restantes do modo
 
 // reação em cadeia (item raio) — atalhos sobre o sistema de modos
 void SHOTS_grantChain(void);    // ativa o modo cadeia (SHOTS_CHAIN_HITS acertos)
-void SHOTS_resetChain(void);    // desativa qualquer modo (início / game over)
+void SHOTS_resetChain(void);    // desativa qualquer modo (início / nova tentativa)
 bool SHOTS_hasChain(void);      // modo cadeia ativo? (indicador do HUD)
 
 // dispara na direção atual do jogador (faceX/faceY), em leque conforme o poder
@@ -67,8 +67,10 @@ u16 SHOTS_updatePlayer(void);
 void SHOTS_updateEnemy(void);
 
 // dispara projétil(is) inimigo(s) mirado(s) no jogador — usado pelos comportamentos
-void fireEnemyShot(s16 ex, s16 ey);
-void fireEnemySpread(s16 ex, s16 ey, u8 count);     // leque de `count` (ímpar)
-void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg);  // leque com dano custom (chefe)
+// style1..4 identifies the firing species; stored in mode for enemy shots only.
+void SHOTS_enemyTarget(s16 x,s16 y);
+void fireEnemyShot(s16 ex, s16 ey, u8 style);
+void fireEnemySpread(s16 ex, s16 ey, u8 count, u8 style);
+void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg, u8 style);
 
 #endif // SHOTS_H

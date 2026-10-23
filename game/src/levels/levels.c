@@ -1,3 +1,4 @@
+#include "system/video/screens/loading.h"
 // Fases: dispatcher (carga/desenho, atualização dos elementos, HUD de condições).
 // A CURVA de dificuldade está em levels/defs/level01.c .. level15.c (uma por
 // arquivo); os terrenos reutilizáveis em levels/layouts.c.
@@ -7,9 +8,12 @@
 #include "system/video/sprites/tiles.h"
 #include "system/video/enemygfx.h"
 #include "core/game.h"
+#include "actors/player.h"
 #include "core/objective.h"        // OBJECTIVE_prepText (texto da meta na preparação)
 #include "elements/lava.h"
 #include "elements/mud.h"
+#include "elements/terrain.h"
+#include "system/video/screens/hud.h"
 
 u8 currentLevel = 1;
 u8 testStage = 1;
@@ -17,7 +21,7 @@ u8 testStage = 1;
 // o registro das fases é o GRAFO da campanha (levels/graph.c): aqui o número
 // da fase n é o número do NÓ (GRAPH[n]), e a def vem do nó
 
-// dados das fases teste (TEST_def / TEST2_def) vivem em levels/defs/test.c
+// Salas técnicas em defs/test.c; travessia/escolta reutilizam a campanha.
 
 // def da fase teste pelo estágio atual (independe de currentLevel — usado também
 // pelo LEVEL_loadGfx, que roda ANTES de currentLevel virar 0)
@@ -25,6 +29,9 @@ static const LevelDef *testDef(void)
 {
     switch (testStage)
     {
+        case 10: return &TEST10_def;
+        case 8:  return &LEVEL06B_def;
+        case 7:  return &LEVEL04_def;
         case 6:  return &TEST6_def;
         case 5:  return &TEST5_def;
         case 4:  return &TEST4_def;
@@ -53,7 +60,9 @@ void LEVEL_draw(u8 n)
 {
     currentLevel = n;
     const LevelDef *def = LEVEL_current();
-    ARENA_configure(def->arena);
+    ARENA_configure(def->arena);LOADING_poll();
+    TERRAIN_start(def->modularTerrain ? def->lava : NULL,def->modularTerrain ? def->lavaCount : 0,
+        def->modularTerrain ? def->mud : NULL,def->modularTerrain ? def->mudCount : 0,ARENA_scenePalette());LOADING_poll();
     if (arenaActive) { ARENA_draw(); return; }
 
     // limpa o interior da arena (apaga elementos anteriores e textos)
@@ -62,11 +71,43 @@ void LEVEL_draw(u8 n)
 
     drawBorder();
 
-    if (def->lava) LAVA_draw(def->lava, def->lavaCount);
-    if (def->mud) MUD_draw(def->mud, def->mudCount);
+    if(def->modularTerrain)TERRAIN_draw();
+    else {
+        if (def->lava) LAVA_draw(def->lava, def->lavaCount);
+        if (def->mud) MUD_draw(def->mud, def->mudCount);
+    }
+    HUD_begin();
 
     // (o rótulo da fase no HUD saiu: o inventário ocupa a linha 0; a fase é
     //  mostrada na tela de preparação e na pausa)
+}
+
+// Radio backdrop only: no actor spawn, objective reset, statistics or visit.
+void LEVEL_preview(u8 node)
+{
+    ARENA_leave();VDP_clearPlane(BG_A,TRUE);VDP_clearPlane(BG_B,TRUE);
+    const LevelDef *def=GRAPH[node].def;
+    const u8 previousDamage=arenaDamaged;arenaDamaged=0;
+    ARENA_configure(def->arena);LOADING_poll();
+    TERRAIN_start(def->modularTerrain ? def->lava : NULL,def->modularTerrain ? def->lavaCount : 0,
+        def->modularTerrain ? def->mud : NULL,def->modularTerrain ? def->mudCount : 0,ARENA_scenePalette());LOADING_poll();
+    if(arenaActive)
+    {
+        const s16 oldX=px,oldY=py;
+        px=ARENA_startX();py=ARENA_startY();ARENA_draw();px=oldX;py=oldY;
+        VDP_setWindowOff();
+        if(!def->modularTerrain)VDP_clearPlane(BG_A,TRUE);
+    }
+    else
+    {
+        FLOOR_preview(node);drawBorder();
+        if(def->modularTerrain)TERRAIN_draw();
+        else {
+            if(def->lava)LAVA_draw(def->lava,def->lavaCount);
+            if(def->mud)MUD_draw(def->mud,def->mudCount);
+        }
+    }
+    arenaDamaged=previousDamage;
 }
 
 // (o descarte de arte de inimigo por vida útil usa GRAPH_reachableTypes, em
@@ -87,6 +128,11 @@ void LEVEL_load(u8 n)
 {
     arenaDamaged = 0;
     LEVEL_loadGfx(n);       // arte dos inimigos desta fase (por etapas, com cache)
+    // Seed the camera with this stage's spawn before drawing its tile window.
+    // Otherwise the previous stage/menu position starts a long camera catch-up.
+    currentLevel = n;
+    ARENA_configure(LEVEL_current()->arena);LOADING_poll();
+    PLAYER_reset();
     LEVEL_draw(n);
     LEVEL_reset();
 }
@@ -95,6 +141,7 @@ void LEVEL_update(void)
 {
     const LevelDef *def = LEVEL_current();
     ARENA_update();
+    TERRAIN_update();
     if (def->lava) LAVA_update(def->lava, def->lavaCount);
     if (def->mud) MUD_update(def->mud, def->mudCount);
 }

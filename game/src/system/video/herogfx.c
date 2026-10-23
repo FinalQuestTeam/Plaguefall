@@ -4,6 +4,7 @@
 #include "system/video/enemygfx.h"
 #include "system/video/actor_animation.h"
 #include "system/video/hero_muzzle.h"
+#include "system/video/actordeath.h"
 #include "core/game.h"
 #include "heroi.h"
 
@@ -21,6 +22,7 @@ static const u32 *frameData(u8 dir,u8 pose)
 
 void HERO_load(void)
 {
+    ACTORDEATH_clear(ACTOR_DEATH_HERO);
     PAL_setColors(PAL2*16,(const u16 *)heroi_palette,16,DMA);
     VDP_loadTileData(frameData(2,0),TILE_USER_INDEX+HERO_TILE_BASE,24,DMA);
     loadedDir=2;loadedPose=0;loaded=TRUE;
@@ -29,6 +31,10 @@ void HERO_load(void)
 
 void HERO_prepare(u8 dir)
 {
+    if(ACTORDEATH_active(ACTOR_DEATH_HERO)) {
+        ACTORDEATH_prepare(ACTOR_DEATH_HERO,TILE_USER_INDEX+HERO_TILE_BASE);
+        return;
+    }
     // Firing and drawing share one animation/DMA decision per game frame.
     if(prepared)return;
     prepared=TRUE;
@@ -69,4 +75,4 @@ void HERO_muzzle(s16 *x,s16 *y)
 }
 
 u16 HERO_tile(void){return HERO_TILE_BASE;}
-u8 HERO_flipH(void){return MIRROR[loadedDir];}
+u8 HERO_flipH(void){return ACTORDEATH_active(ACTOR_DEATH_HERO) ? ACTORDEATH_flip(ACTOR_DEATH_HERO) : MIRROR[loadedDir];}

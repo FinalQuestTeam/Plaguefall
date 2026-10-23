@@ -37,7 +37,7 @@ QUANDO(N_5, ANTES, capela),
 
 A caixa tem **26 colunas por 4 linhas**. O motor quebra por palavra e **descarta sem aviso o que não cabe**. Contar caracteres não basta: espaços e palavras próximas da borda podem exigir uma quinta linha. Validar a quebra real ao mudar o roteiro.
 
-Usar MAIÚSCULA SEM ACENTO e pontuação ASCII. Escrever as versões longas com acentos nos documentos; adaptar as falas para a ROM em entradas curtas. Não inserir uma sequência de barra e `n` para forçar linha: o motor não interpreta esse escape como paginação.
+Usar MAIÚSCULA COM ACENTOS em UTF-8 e pontuação ASCII. O build converte os 12 caracteres ÀÁÂÃÉÊÍÓÔÕÚÇ para um byte por letra, reaproveitando as posições a..l da fonte de 96 tiles. Adaptar as falas para a ROM em entradas curtas. Não inserir uma sequência de barra e `n` para forçar linha: o motor não interpreta esse escape como paginação.
 
 O texto aparece a duas letras por quadro, com `sfxItemPickup` como blip de voz. A durante a escrita completa a fala; A depois da escrita avança. START encerra a cena inteira. O indicador de continuação é `>` piscando. As duas caixas de texto são limpas a cada fala, enquanto os retratos carregados permanecem na tela.
 

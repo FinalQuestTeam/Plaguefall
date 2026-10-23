@@ -31,11 +31,16 @@ void INV_clear(void)
 void INV_add(u8 t)
 {
     if (t == ITEM_BOMB) { BOMB_add(); return; }     // bomba: posição 0
+    INV_store(t, maxCharges(t));
+}
 
+bool INV_store(u8 t, u8 charges)
+{
+    if (!ITEM_IS_INVENTORY(t) || t == ITEM_BOMB || !charges) return FALSE;
     // item: primeiro slot livre; o mesmo item repetido ocupa um novo slot
     for (u8 i = 0; i < INV_ITEMS; i++)
-        if (item[i].type == INV_EMPTY) { item[i].type = t; item[i].charges = maxCharges(t); return; }
-    // sem slot livre: o drop é perdido
+        if (item[i].type == INV_EMPTY) { item[i].type = t; item[i].charges = charges; return TRUE; }
+    return FALSE;
 }
 
 void INV_cycle(void) { sel = (u8) ((sel + 1) % INV_POS); }

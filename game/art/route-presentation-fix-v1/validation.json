@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "romSHA256": "41e76ea6acbd47bbb99ba083890f42d46c88f334d117ade2429a609e29644a72",
+  "romBytes": 1572864,
+  "baselineSHA256": "30834c88f455342d0ce1ff18746ee6ee13372653f76097b66fbdd72c1f8491a9",
+  "fixes": [
+    "scroll queued after tilemap DMA in the same VBlank",
+    "remove eight incomplete rectangular source-arena fixtures",
+    "score/envelopes follow elapsed real VBlanks, with preview/opening resynchronization"
+  ],
+  "nativeChecks": "game/tools/check.py: passed (ASan/UBSan audio, PAL/NTSC, dropped/duplicate frames, counter wrap, preview and opening ownership)",
+  "regions": {
+    "ntsc": {
+      "routeChecks": 31,
+      "menuChecks": 11,
+      "displayedFramesCheckedPerStage": 1500,
+      "staleSceneryCells": 0,
+      "missingTerrainCells": 0,
+      "musicUnderLoad": {
+        "steps": 90,
+        "expectedSteps": 90.0,
+        "videoFrames": 720,
+        "gameFPS": 53.0
+      },
+      "pilotLoad": {
+        "gameFPS": 50.0,
+        "regionFPS": 60
+      }
+    },
+    "pal": {
+      "routeChecks": 31,
+      "menuChecks": 11,
+      "displayedFramesCheckedPerStage": 1500,
+      "staleSceneryCells": 0,
+      "missingTerrainCells": 0,
+      "musicUnderLoad": {
+        "steps": 90,
+        "expectedSteps": 90.0,
+        "videoFrames": 600,
+        "gameFPS": 43.67
+      },
+      "pilotLoad": {
+        "gameFPS": 42.83,
+        "regionFPS": 50
+      }
+    }
+  }
+}

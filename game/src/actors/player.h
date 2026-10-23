@@ -32,16 +32,21 @@ void healPlayer(u16 amount);    // cura, limitada ao teto de 100
 
 // bônus de velocidade (botinha): +PLAYER_SPEED_STEP%, teto PLAYER_SPEED_MAX%
 void PLAYER_addSpeed(void);
-void PLAYER_resetSpeed(void);   // volta a 0 (início / game over)
+void PLAYER_resetSpeed(void);   // início / treino / nova tentativa
 u8 PLAYER_speedBonus(void);     // bônus atual em % (para a caixa de infos do teste)
 
 // invencibilidade temporária (item escudo): imune a tudo, inclusive lava
 void PLAYER_grantShield(void);
+u16 PLAYER_shieldRemaining(void); // frames restantes; zero quando inativo
+void PLAYER_restoreShield(u16 frames); // preserva o tempo restante ao repetir
 
 // movimento, invencibilidade e tiro (botão A); chamar só com o jogo ativo
 void PLAYER_update(u16 joy);
+// Observe release during the countdown, without moving or advancing timers.
+void PLAYER_observeFireRelease(u16 joy);
+void PLAYER_waitFireRelease(void);
 
-// sprite oculto neste frame? (pisca da invencibilidade)
+// sprite oculto neste frame? (pisca após dano; escudo mantém visível)
 bool PLAYER_hidden(void);
 
 #endif // PLAYER_H

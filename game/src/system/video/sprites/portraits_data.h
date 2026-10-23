@@ -10,7 +10,7 @@
 
 static const char *const PORTRAIT_NAME[PORTRAIT_COUNT] =
 {
-    "DAMIAO", "COMANDO", "ESCORPIAO", "DINORAH"
+    "DAMIÃO", "COMANDO", "ESCORPIÃO", "DINORAH"
 };
 
 static const u16 PORTRAIT_PAL[PORTRAIT_COUNT][16] =

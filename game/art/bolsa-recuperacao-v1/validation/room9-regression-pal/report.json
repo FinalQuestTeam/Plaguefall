@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "actor-death-gallery": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "default_both_poses": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "direct_C_selection": [
+          0,
+          1,
+          2
+        ],
+        "sequences": [
+          {
+            "actor": 0,
+            "slow": 0,
+            "flip": 0,
+            "poses": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "observed_frames": {
+              "0": 6,
+              "1": 5,
+              "2": 7,
+              "3": 25
+            }
+          },
+          {
+            "actor": 1,
+            "slow": 0,
+            "flip": 1,
+            "poses": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "observed_frames": {
+              "0": 6,
+              "1": 5,
+              "2": 7,
+              "3": 25
+            }
+          },
+          {
+            "actor": 0,
+            "slow": 2,
+            "flip": 1,
+            "poses": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "observed_frames": {
+              "0": 29,
+              "1": 29,
+              "2": 31,
+              "3": 100
+            }
+          },
+          {
+            "actor": 1,
+            "slow": 2,
+            "flip": 0,
+            "poses": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "observed_frames": {
+              "0": 27,
+              "1": 29,
+              "2": 31,
+              "3": 100
+            }
+          }
+        ],
+        "loop_restarts": 3,
+        "exit_clears_deaths": true
+      }
+    }
+  },
+  "failures": []
+}

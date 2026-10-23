@@ -25,7 +25,7 @@ typedef struct
 {
     u8 side;                // LADO_ESQ / LADO_DIR
     u8 portrait;            // P_* (pode trocar a cada fala)
-    const char *text;       // a fala (MAIÚSCULA SEM ACENTO; quebra automática)
+    const char *text;       // a fala (MAIÚSCULA COM ACENTOS; quebra automática)
 } StoryLine;
 
 typedef struct

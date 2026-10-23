@@ -6,7 +6,7 @@
 
 const ItemDef ITEMDEF_fire =
 {
-    .name       = "REFIL DE MACARICO",
+    .name       = "REFIL DE MAÇARICO",
     .weight     = 5,
     .tile       = TILE_FIRE,
     .buildTile  = ITEMFIRE_buildTile,

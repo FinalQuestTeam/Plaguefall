@@ -9,7 +9,7 @@
 
 const EnemyDef ENEMYDEF_target =
 {
-    .name       = "Alvo",
+    .name       = "ALVO",
     .shape      = SHAPE_SQUARE,
     .color      = COLOR_GRAY,
     .size       = 24,

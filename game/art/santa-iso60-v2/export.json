@@ -1,0 +1,37 @@
+{
+  "source_sha256": "65342d875f5475c316c97aadb4247ce130eaa4b665308a2b0c7aa7f3eaf9d90a",
+  "native_size": [
+    40,
+    48
+  ],
+  "native_bounds": [
+    2,
+    1,
+    38,
+    47
+  ],
+  "world_origin": [
+    176,
+    176
+  ],
+  "erase_rect": [
+    176,
+    160,
+    40,
+    64
+  ],
+  "solid_rect": [
+    176,
+    176,
+    40,
+    48
+  ],
+  "crown": [
+    194,
+    181
+  ],
+  "palette": "stage05 PAL3, unchanged",
+  "camera": "High camera target 60 degrees above ground; visual match, not a measurable 3D calibration.",
+  "technical_export": "Alpha threshold, crop, nearest-neighbour registration and existing palette indexing only.",
+  "generation": "Built-in image_gen; final camera correction prompt in prompt-camera-final.txt"
+}

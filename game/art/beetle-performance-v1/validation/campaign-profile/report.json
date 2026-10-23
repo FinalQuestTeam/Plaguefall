@@ -1,0 +1,394 @@
+{
+  "region_fps": 60,
+  "rom_sha256": "684b5fb85e5873f326ac739e221df012df1a5871f3ccfcbb8c33fc3c10c42e3f",
+  "cases": [
+    {
+      "type": 1,
+      "count": 4,
+      "shield": 0,
+      "fps": 60.0,
+      "cpu_mean": 64.11,
+      "cpu_p95": 66.21,
+      "render_subticks": [
+        34.97,
+        6.02,
+        119.9,
+        132.37,
+        4.81,
+        22.79,
+        24.07,
+        16.27
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        259.17,
+        40.29
+      ]
+    },
+    {
+      "type": 1,
+      "count": 4,
+      "shield": 1,
+      "fps": 60.0,
+      "cpu_mean": 70.83,
+      "cpu_p95": 72.95,
+      "render_subticks": [
+        34.94,
+        6.08,
+        119.88,
+        141.91,
+        66.92,
+        22.62,
+        37.8,
+        16.39
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        259.91,
+        40.24
+      ]
+    },
+    {
+      "type": 1,
+      "count": 8,
+      "shield": 0,
+      "fps": 40.7,
+      "cpu_mean": 94.7,
+      "cpu_p95": 97.27,
+      "render_subticks": [
+        34.88,
+        6.22,
+        164.72,
+        215.72,
+        4.53,
+        23.06,
+        35.17,
+        15.51
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        581.44,
+        40.26
+      ]
+    },
+    {
+      "type": 1,
+      "count": 8,
+      "shield": 1,
+      "fps": 39.2,
+      "cpu_mean": 107.85,
+      "cpu_p95": 111.23,
+      "render_subticks": [
+        34.96,
+        6.38,
+        165.12,
+        235.36,
+        113.73,
+        21.07,
+        62.47,
+        16.38
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        576.12,
+        40.38
+      ]
+    },
+    {
+      "type": 2,
+      "count": 4,
+      "shield": 0,
+      "fps": 60.0,
+      "cpu_mean": 69.05,
+      "cpu_p95": 74.8,
+      "render_subticks": [
+        34.96,
+        6.04,
+        134.6,
+        132.23,
+        4.92,
+        22.73,
+        24,
+        16.33
+      ],
+      "logic_subticks": [
+        0,
+        1.43,
+        306.16,
+        40.23
+      ]
+    },
+    {
+      "type": 2,
+      "count": 4,
+      "shield": 1,
+      "fps": 59.9,
+      "cpu_mean": 75.79,
+      "cpu_p95": 81.49,
+      "render_subticks": [
+        34.86,
+        6.17,
+        134.6,
+        141.84,
+        66.92,
+        22.62,
+        37.81,
+        16.4
+      ],
+      "logic_subticks": [
+        0,
+        1.58,
+        307.09,
+        40.17
+      ]
+    },
+    {
+      "type": 2,
+      "count": 8,
+      "shield": 0,
+      "fps": 40.0,
+      "cpu_mean": 107.68,
+      "cpu_p95": 112.3,
+      "render_subticks": [
+        34.96,
+        6.22,
+        198.4,
+        199.12,
+        4.8,
+        22.27,
+        38.15,
+        15.94
+      ],
+      "logic_subticks": [
+        0,
+        2.12,
+        742.23,
+        40.25
+      ]
+    },
+    {
+      "type": 2,
+      "count": 8,
+      "shield": 1,
+      "fps": 30.9,
+      "cpu_mean": 122.17,
+      "cpu_p95": 127.15,
+      "render_subticks": [
+        34.98,
+        6.09,
+        199.62,
+        221.68,
+        125.97,
+        22.75,
+        105.19,
+        16.52
+      ],
+      "logic_subticks": [
+        0,
+        13.12,
+        644.44,
+        40.38
+      ]
+    },
+    {
+      "type": 6,
+      "count": 4,
+      "shield": 0,
+      "fps": 60.0,
+      "cpu_mean": 64.49,
+      "cpu_p95": 66.41,
+      "render_subticks": [
+        34.97,
+        6.15,
+        119.88,
+        132.02,
+        4.85,
+        23.08,
+        23.96,
+        16.21
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        264.29,
+        40.38
+      ]
+    },
+    {
+      "type": 6,
+      "count": 4,
+      "shield": 1,
+      "fps": 60.0,
+      "cpu_mean": 71.22,
+      "cpu_p95": 73.1,
+      "render_subticks": [
+        34.98,
+        6.29,
+        119.63,
+        141.78,
+        67.19,
+        22.45,
+        37.79,
+        16.37
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        265.09,
+        40.38
+      ]
+    },
+    {
+      "type": 6,
+      "count": 8,
+      "shield": 0,
+      "fps": 40.7,
+      "cpu_mean": 95.03,
+      "cpu_p95": 97.22,
+      "render_subticks": [
+        34.95,
+        6.31,
+        163.77,
+        215.52,
+        5.18,
+        23.52,
+        35.33,
+        15.61
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        579.45,
+        40.3
+      ]
+    },
+    {
+      "type": 6,
+      "count": 8,
+      "shield": 1,
+      "fps": 38.2,
+      "cpu_mean": 108.23,
+      "cpu_p95": 111.96,
+      "render_subticks": [
+        34.97,
+        5.97,
+        165.37,
+        235.26,
+        115.44,
+        19.45,
+        63.77,
+        16
+      ],
+      "logic_subticks": [
+        0,
+        0,
+        572.3,
+        40.3
+      ]
+    },
+    {
+      "type": 10,
+      "count": 4,
+      "shield": 0,
+      "fps": 60.0,
+      "cpu_mean": 70.15,
+      "cpu_p95": 75.0,
+      "render_subticks": [
+        34.94,
+        6.12,
+        139.6,
+        132.44,
+        4.85,
+        22.68,
+        24.02,
+        16.38
+      ],
+      "logic_subticks": [
+        0,
+        1.85,
+        314.55,
+        40.33
+      ]
+    },
+    {
+      "type": 10,
+      "count": 4,
+      "shield": 1,
+      "fps": 60.0,
+      "cpu_mean": 76.98,
+      "cpu_p95": 81.74,
+      "render_subticks": [
+        34.95,
+        6.2,
+        139.47,
+        141.97,
+        66.78,
+        22.84,
+        37.75,
+        16.21
+      ],
+      "logic_subticks": [
+        0,
+        1.85,
+        316.75,
+        40.27
+      ]
+    },
+    {
+      "type": 10,
+      "count": 8,
+      "shield": 0,
+      "fps": 40.0,
+      "cpu_mean": 107.49,
+      "cpu_p95": 112.5,
+      "render_subticks": [
+        34.92,
+        6.14,
+        207.56,
+        200.22,
+        4.71,
+        23.17,
+        37.65,
+        15.44
+      ],
+      "logic_subticks": [
+        0,
+        4.57,
+        722.09,
+        40.21
+      ]
+    },
+    {
+      "type": 10,
+      "count": 8,
+      "shield": 1,
+      "fps": 30.2,
+      "cpu_mean": 121.95,
+      "cpu_p95": 127.64,
+      "render_subticks": [
+        34.97,
+        6,
+        208.87,
+        224.23,
+        122.56,
+        23.79,
+        104.89,
+        13.48
+      ],
+      "logic_subticks": [
+        0,
+        13.12,
+        625.32,
+        40.28
+      ]
+    }
+  ],
+  "instrumented": true,
+  "experimental_build": "RENDER_PROFILE: 8 render groups + 4 logic groups",
+  "production_build": false,
+  "method": "Same controlled phase-1 formations as benchmark_enemy_shields.py; temporary source instrumentation. Not directly comparable with uninstrumented final CPU/FPS."
+}

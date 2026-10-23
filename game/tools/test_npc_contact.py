@@ -28,7 +28,12 @@ extern u16 fps;
 #define INNER_MAX_X arenaMaxX
 #define INNER_MAX_Y arenaMaxY
 ''',
-    'levels/arena.h': '#include <genesis.h>\nbool ARENA_npcInMap(void);\n',
+    'levels/arena.h': '''#include <genesis.h>
+typedef struct {s16 x,y,w,h;bool blocksShots;} ArenaRect;
+typedef struct {ArenaRect footprint;} ArenaNpcVisual;
+bool ARENA_npcInMap(void);
+const ArenaNpcVisual *ARENA_npcVisual(void);
+''',
     'system/video/flash.h': 'void FLASH_trigger(void);\n',
     'system/video/screens/hud.h': '',
     'enemies/enemies.h': '''#ifndef ENEMIES_H
@@ -50,16 +55,18 @@ TEST = r'''#include <assert.h>
 #include <string.h>
 #include "actors/npc.h"
 #include "enemies/enemies.h"
+#include "levels/arena.h"
 Enemy enemies[MAX_ENEMIES]; EnemyDef enemyDef={24,12};
 s16 arenaMinX=16,arenaMinY=96,arenaMaxX=367,arenaMaxY=367;
 u16 fps=60; static bool mapped=true; static int flash,knocks; static s16 hitX,hitY;
 bool ARENA_npcInMap(void){return mapped;}
+const ArenaNpcVisual *ARENA_npcVisual(void){static const ArenaNpcVisual v={{176,176,40,48,false}};return mapped ? &v : NULL;}
 void FLASH_trigger(void){flash++;}
 void ENEMIES_knockbackFrom(Enemy *e,s16 x,s16 y){(void)e;knocks++;hitX=x;hitY=y;}
-static bool overlaps_stone(Enemy *e){return e->x<216&&e->x+enemyDef.size>176&&e->y<224&&e->y+enemyDef.size>208;}
+static bool overlaps_stone(Enemy *e){return e->x<216&&e->x+enemyDef.size>176&&e->y<224&&e->y+enemyDef.size>176;}
 static void reset(void){memset(enemies,0,sizeof enemies);flash=knocks=0;NPC_spawn(176,200,100);}
 static Enemy *touch(int side){Enemy *e=&enemies[0];int sz=enemyDef.size;e->active=true;
- if(side==0){e->x=196-sz/2;e->y=208-sz;}
+ if(side==0){e->x=196-sz/2;e->y=(mapped?176:208)-sz;}
  if(side==1){e->x=216;e->y=220-sz/2;}
  if(side==2){e->x=196-sz/2;e->y=224;}
  if(side==3){e->x=176-sz;e->y=220-sz/2;}

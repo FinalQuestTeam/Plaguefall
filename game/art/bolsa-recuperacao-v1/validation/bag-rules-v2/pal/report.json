@@ -1,0 +1,260 @@
+{
+  "passed": true,
+  "romSHA256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "region": "PAL",
+  "setup": "RAM selects phases, seeds resources, stabilises shimmer before capture, injects lethal projectile and accelerates counters/boss. Actual result entry, drawing, menu navigation, resets and route transitions run through production code. No ROM patch.",
+  "defeatPhases": [
+    {
+      "id": "1",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "2A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "2B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "3",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "4",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "5",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "6A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "6B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "7",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "8",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "9",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "10A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "10B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "11",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "12",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "13A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "13B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "14",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "15",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "16",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "deathPolicyApplied": true,
+      "singlePersistentBag": true,
+      "preDeathEquipmentRecovered": true,
+      "pauseAfterRetry": true
+    }
+  ],
+  "failures": [],
+  "maxBackgroundTiles": 443,
+  "lastTileObserved": 1194,
+  "earlyEquipmentPreserved": true,
+  "heldFireDoesNotConfirm": true,
+  "bagPickupOnce": true,
+  "bagReplacedOnNextDeath": true,
+  "confirmedTitleExit": true,
+  "transitions": [
+    {
+      "name": "gameplay-to-completion",
+      "frames": 35,
+      "blackIntervals": 0,
+      "blackFrames": 0
+    },
+    {
+      "name": "completion-to-map-or-radio",
+      "frames": 52,
+      "blackIntervals": 1,
+      "blackFrames": 6
+    },
+    {
+      "name": "map-to-arrival-radio",
+      "frames": 130,
+      "blackIntervals": 1,
+      "blackFrames": 20
+    },
+    {
+      "name": "radio-to-mission",
+      "frames": 60,
+      "blackIntervals": 1,
+      "blackFrames": 9
+    }
+  ],
+  "victoryAudio": {
+    "captured": "victory-completion.wav",
+    "singlePlayThenSilence": true,
+    "scoreTicks": 1200,
+    "clockHz": 600,
+    "onlySuccessfulResults": true
+  },
+  "completionConfirmation": true,
+  "mapWaitsForInput": true,
+  "protectionRoutes": [
+    "6A",
+    "6B"
+  ],
+  "waitsForConfirmation": true,
+  "sandboxRetry": true,
+  "finalWaits": true,
+  "replayFullReset": true,
+  "finalStartTitle": true
+}

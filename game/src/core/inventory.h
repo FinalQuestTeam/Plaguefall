@@ -15,8 +15,9 @@
 
 typedef struct { u8 type; u8 charges; } InvSlot;
 
-void INV_clear(void);                       // esvazia os slots de item (novo jogo / morte)
+void INV_clear(void);                       // novo jogo / treino / nova tentativa
 void INV_add(u8 itemType);                  // coleta (bomba -> BOMB_add; item -> slot livre)
+bool INV_store(u8 itemType, u8 charges);     // devolve item guardado com as cargas originais
 void INV_cycle(void);                       // C: seleciona a próxima posição
 u16  INV_activate(void);                    // B: ativa o selecionado; retorna mortes (bomba)
 

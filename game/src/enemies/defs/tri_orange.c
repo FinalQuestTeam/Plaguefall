@@ -6,7 +6,7 @@
 
 const EnemyDef ENEMYDEF_tri_orange =
 {
-    .name       = "Adaga",
+    .name       = "ADAGA",
     .shape      = SHAPE_TRIANGLE,
     .color      = COLOR_ORANGE,
     .size       = 16,

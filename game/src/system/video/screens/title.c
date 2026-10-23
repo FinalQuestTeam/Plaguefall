@@ -13,6 +13,7 @@
 #include "system/audio/music.h"
 #include "system/audio/audio.h"
 #include "core/game.h"     // fps
+#include "text_data.h"
 
 // ordem do menu (Fase Teste por último); cada posição mapeia p/ uma ação TITLE_*
 #define MENU_N      4
@@ -54,6 +55,7 @@ u8 TITLE_run(void)
 {
     AUDIO_silenceAll();         // cala o PSG antes da carga do fundo (sem nota presa
     VDP_setScreenWidth320();    // ao voltar da fase/pausa); a música retoma no loop
+    VDP_loadFontData((const u32 *)text_font,FONT_LENGTH,DMA);
     TITLEBG_load();             // arte do fundo na VRAM (PAL1/PAL2) ...
     TITLEBG_draw();             // ... e no BG_B, atrás do menu
     u8 sel = 0;                 // posição no menu

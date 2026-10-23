@@ -5,7 +5,7 @@
 
 const ItemDef ITEMDEF_chain =
 {
-    .name       = "BOBINA DE SUBESTACAO",
+    .name       = "BOBINA DE SUBESTAÇÃO",
     .weight     = 5,
     .tile       = TILE_CHAIN,
     .buildTile  = ITEMCHAIN_buildTile,

@@ -7,7 +7,7 @@
 
 const EnemyDef ENEMYDEF_sq_red =
 {
-    .name       = "Torreao",
+    .name       = "TORREÃO",
     .shape      = SHAPE_SQUARE,
     .color      = COLOR_RED,        // atirador
     .size       = 16,

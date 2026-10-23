@@ -63,7 +63,16 @@ const char *MUSIC_trackName(u8 track);
 
 void MUSIC_init(void);          // silencia o PSG e reinicia o sequenciador
 void MUSIC_start(void);         // compat (no-op; a música já toca após MUSIC_init)
-void MUSIC_update(void);        // avança a música (chamar 1x por quadro, ANTES do SFX)
+void MUSIC_update(void);        // acompanha VBlank real; chamar ANTES do SFX
+void MUSIC_syncClock(void);     // retoma após outro dono do PSG (abertura/prévia)
+// Result cards replace the loop with a single approved cue (victory: 2s;
+// game over: 4s), then hold silence until the result card is closed.
+void MUSIC_playVictory(void);
+void MUSIC_playGameOver(void);
+void MUSIC_stopResultCue(void);
+void MUSIC_stopVictory(void);
+bool MUSIC_victoryActive(void);
+bool MUSIC_gameOverActive(void);
 void MUSIC_setEnemies(u8 count);// 0 = calmo ... enemyMax = perigo (BPM máx)
 
 // curva de BPM da FASE atual (0 em qualquer campo = usa o padrão do CONFIG acima).

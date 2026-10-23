@@ -17,6 +17,8 @@
 #define OBJ_WON         1
 #define OBJ_LOST        2
 
+u16 OBJECTIVE_progress(void);
+void OBJECTIVE_drawMarkers(u16 *n);
 void OBJECTIVE_start(const LevelDef *def);      // início da fase: zera timers/NPC
 u8   OBJECTIVE_update(u16 kills);               // por quadro: avança e avalia
 void OBJECTIVE_addCollected(u8 itemType);       // hook: item coletado (só o alvo conta)

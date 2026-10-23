@@ -4,6 +4,7 @@
 
 #include "enemies/enemies.h"
 #include "core/game.h"
+#include "actors/dinorah.h"
 
 #define M_APPROACH   0
 #define M_TELEGRAPH  1
@@ -15,8 +16,8 @@
 static void aimAt(Enemy *e, u16 speedFp)
 {
     const s16 half = ENEMY_SIZE(e) / 2;
-    s16 dx = (px + 8) - (e->x + half);
-    s16 dy = (py + 8) - (e->y + half);
+    s16 dx = (DINORAH_alive() && !e->aggroPlayer ? dinorahX+8 : px+8) - (e->x + half);
+    s16 dy = (DINORAH_alive() && !e->aggroPlayer ? dinorahY+8 : py+8) - (e->y + half);
     u32 dist = getApproximatedDistance(dx, dy);
     if (dist == 0) dist = 1;
     e->vx = (s16) (((s32) dx * speedFp) / (s32) dist);

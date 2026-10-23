@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "revision": "Persistent holodeck console: line changes keep background loaded and commit only text, prompt, palettes and optional remote portrait map during VBlank",
+  "rom": "../../../out/release/Plaguefall.bin",
+  "romSHA256": "d0eb603294a2f6ae67766b1ff6ee8c29215f9147168b43dca524822633b089a2",
+  "romBytes": 1572864,
+  "emulator": "Genesis Plus GX",
+  "physicalHardwareTested": false,
+  "reports": {
+    "ntsc": {
+      "report": "ntsc/report.json",
+      "passed": true,
+      "dialogues": 51,
+      "countdowns": 20,
+      "lineTransitions": 29
+    },
+    "pal": {
+      "report": "pal/report.json",
+      "passed": true,
+      "dialogues": 51,
+      "countdowns": 20,
+      "lineTransitions": 29
+    },
+    "results-ntsc": {
+      "report": "results-ntsc/report.json",
+      "passed": true,
+      "defeatPhases": 20
+    },
+    "results-pal": {
+      "report": "results-pal/report.json",
+      "passed": true,
+      "defeatPhases": 20
+    }
+  },
+  "nativeChecks": {
+    "passed": true,
+    "command": "python3 game/tools/check.py",
+    "log": "native-checks.txt"
+  },
+  "art": {
+    "nativeSize": [
+      320,
+      224
+    ],
+    "consoleTiles": 155,
+    "portraitTiles": 144,
+    "dynamicTileCapacity": 400,
+    "maxObservedDynamicTiles": 216,
+    "fontPreserved": true,
+    "baseArtPreserved": true,
+    "portraitPixelsPreserved": true
+  },
+  "persistentBackground": {
+    "loadedOncePerScene": true,
+    "displayDisabledBetweenLines": false,
+    "textCellsPinned": true,
+    "maxTransitionDmaBytes": 6088,
+    "ntscDmaBudgetBytes": 7200,
+    "frameComparisons": {
+      "ntsc": {
+        "transitions": 29,
+        "framesCompared": 696,
+        "unexpectedBackgroundFrames": 0
+      },
+      "pal": {
+        "transitions": 29,
+        "framesCompared": 580,
+        "unexpectedBackgroundFrames": 0
+      }
+    },
+    "beforeFix": "flicker-reproduction.json"
+  },
+  "scope": "All dialogue line changes, controller coverage, countdown and result transition regressions on this ROM. Earlier integration metadata is archived separately."
+}

@@ -3,7 +3,9 @@
 #include "system/video/sprites/tiles.h"
 #include "system/video/herogfx.h"
 #include "system/video/enemygfx.h"
+#include "system/video/combatgfx.h"
 #include "system/video/projection.h"
+#include "system/video/floor.h"
 #include "system/video/chainfx.h"
 #include "core/game.h"
 #include "actors/player.h"
@@ -11,7 +13,12 @@
 #include "enemies/enemies.h"
 #include "items/items.h"
 #include "actors/npc.h"
+#include "actors/dinorah.h"
+#include "core/objective.h"
 #include "levels/arena.h"
+#include "levels/levels.h"
+#include "levels/test.h"
+#include "system/video/screens/hud.h"
 
 // Four exact scanlines per 32-bit word: each byte is an independent lane.
 // Counts stay <=20 and widths (in8px units) <=40, so packed adds never carry
@@ -25,6 +32,9 @@ static u32 usedSpriteBits,usedPixelBits;
 // Only overloaded frames need the detailed priority-preserving admission pass.
 typedef struct { s16 x,y; u16 attr; u8 size,pieces; } PendingSprite;
 static PendingSprite pending[80];
+// Keep PendingSprite eight bytes: indexing ten-byte records costs a multiply
+// on the 68000 in the hot enqueue path. Only markers need a parent reference.
+static u8 markerParent[80];
 static u16 lineDelta[225];
 static u16 totalWidths,firstLine,lastLine;
 static bool deferred;
@@ -32,6 +42,7 @@ static bool deferred;
 static void beginSprites(void)
 {
     memset(lineDelta,0,sizeof lineDelta);
+    memset(markerParent,0,sizeof markerParent);
     totalWidths=0;firstLine=224;lastLine=0;deferred=TRUE;
 }
 
@@ -116,6 +127,7 @@ __attribute__((always_inline)) static inline bool admit(u16 n,s16 x,s16 y,u16 w,
 
 bool SPRITES_emit(u16 *n,s16 x,s16 y,u8 size,u16 attr)
 {
+    attr&=0x7fff; // The opaque, high-priority HUD always covers world sprites.
     x-=cameraX;y-=cameraY;
     const u16 w=(((size>>2)&3)+1)*8,h=((size&3)+1)*8;
     if(!admit(*n,x,y,w,h,1,size,attr))return FALSE;
@@ -126,6 +138,7 @@ bool SPRITES_emit(u16 *n,s16 x,s16 y,u8 size,u16 attr)
 
 static bool emitActor(u16 *n,s16 x,s16 y,u16 attr)
 {
+    attr&=0x7fff;
     x-=cameraX;y-=cameraY;
     // The two hardware pieces occupy disjoint rows: one count per row.
     if(!admit(*n,x,y,32,48,2,SPRITE_SIZE(4,4),attr))return FALSE;
@@ -151,6 +164,7 @@ static u16 writeBoss(u16 n,s16 x,s16 y,u16 attr)
 
 static bool emitBoss(u16 *n,s16 x,s16 y,u16 attr)
 {
+    attr&=0x7fff;
     x-=cameraX;y-=cameraY;
     // Reserve the whole 48x48 box atomically. Both columns count on each
     // scanline; retaining one atomic group avoids partially rendered bosses.
@@ -180,12 +194,19 @@ static u16 finishSprites(u16 count)
     }
     deferred=FALSE;
     u16 n=0;
+    bool admitted[80];
     for(u16 i=0;i<count;)
     {
+        const u16 source=i;
         const PendingSprite *s=&pending[i];
         const u16 w=s->pieces==4 ? 48 : (((s->size>>2)&3)+1)*8,h=s->pieces>=2 ? 48 : ((s->size&3)+1)*8;
         i+=s->pieces;
-        if(overloaded && !reserve(n,s->x,s->y,w,h,s->pieces))continue;
+        if(overloaded) {
+            admitted[source]=FALSE;
+            if(markerParent[source] && !admitted[markerParent[source]-1])continue;
+            if(!reserve(n,s->x,s->y,w,h,s->pieces))continue;
+            admitted[source]=TRUE;
+        }
         if(s->pieces==4){n=writeBoss(n,s->x,s->y,s->attr);continue;}
         VDP_setSpriteFull(n,s->x,s->y,s->size,s->attr,n+1);n++;
         if(s->pieces==2)
@@ -202,14 +223,19 @@ void SPRITES_draw(void)
     u16 n=0;
     frame++;
     PROFILE_START();
+    HUD_flush();
     beginSprites();
     CHAINFX_update();
     const u8 dir=HERO_direction(faceX,faceY);
     PROFILE_MARK(0);
     HERO_prepare(dir);
     PROFILE_MARK(1);
+    DINORAH_prepare();
     ENEMYGFX_prepare(frame);
     PROFILE_MARK(2);
+    // Both actors are admitted before enemies/effects; nearest feet first.
+    if(!DINORAH_hidden() && dinorahY>=py)
+        emitActor(&n,dinorahX-8,dinorahY-31,TILE_ATTR_FULL(PAL2,TRUE,FALSE,DINORAH_flip(),DINORAH_tile()));
     if (!PLAYER_hidden())
     {
         const u16 tile=TILE_USER_INDEX+HERO_tile();
@@ -217,32 +243,64 @@ void SPRITES_draw(void)
             TILE_ATTR_FULL(PAL2,TRUE,FALSE,HERO_flipH(),tile));
     }
 
+    if(!DINORAH_hidden() && dinorahY<py)
+        emitActor(&n,dinorahX-8,dinorahY-31,TILE_ATTR_FULL(PAL2,TRUE,FALSE,DINORAH_flip(),DINORAH_tile()));
+    if (NPC_active() && ARENA_npcInMap())
+    {
+        // The mapped Santa is the one protected object. Its own image reacts
+        // to damage; a readable life bar replaces the ambiguous floating icon.
+        ARENA_showNpc(NPC_alive() && !NPC_hidden());
+        if (NPC_alive())
+        {
+            const ArenaNpcVisual *visual=ARENA_npcVisual();
+            // Red/yellow crown sparkle, with no opaque white or black pixels.
+            // Use the regional rate so PAL and NTSC share a one-second cycle.
+            if(visual && !NPC_hidden())
+                SPRITES_emit(&n,visual->crownX,visual->crownY,SPRITE_SIZE(1,1),
+                    TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+FLOOR_TILE_BASE+
+                        visual->crownTile+(frame%fps>=fps/2)));
+            const u16 bar=ARENA_npcBar(npcHp,npcHpMax);
+            if(bar)
+            {
+                const s16 barY=npcY-48<cameraY+HUD_HEIGHT+4 ? cameraY+HUD_HEIGHT+4 : npcY-48;
+                SPRITES_emit(&n,npcX+4,barY,SPRITE_SIZE(4,1),
+                    TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,bar));
+            }
+        }
+    }
+
+    typedef struct { s16 x,y; u8 size,parent,flags; } StatusMarker;
+    StatusMarker statuses[MAX_ENEMIES+1];
+    u16 statusCount=0;
+    // Share enemy shield artwork, positioning and scanline admission rules.
+    if(PLAYER_shieldRemaining())
+        statuses[statusCount++]=(StatusMarker){px-8,py-31,32,0,1};
     for (u16 k=0;k<MAX_ENEMIES;k++)
     {
         const u16 i=(k+frame)&(MAX_ENEMIES-1);
         const Enemy *e=&enemies[i];
-        if (!e->active || (e->shielded && ((frame>>2)&1))) continue;
+        if (!e->active) continue;
         const EnemyDef *d=ENEMY_DEF(e);
         const u16 pal=e->hitFlash ? PAL0 : PAL1;
-        if (e->type==ENEMY_DUMMY || e->type==ENEMY_TARGET)
-        {
-            SPRITES_emit(&n,e->x,VIDEO_PROJECT_Y(e->y),SPRITE_SIZE(3,3),
-                TILE_ATTR_FULL(pal,TRUE,FALSE,FALSE,TILE_USER_INDEX+ENEMYGFX_dirTile(e->type,4,0)));
-            continue;
-        }
-        if (!ENEMYGFX_ready(i)) continue;
+        const bool target=e->type==ENEMY_DUMMY || e->type==ENEMY_TARGET;
+        if (!target && !ENEMYGFX_ready(i)) continue;
         // Native art and the unchanged ground hitbox have identical sizes.
         // Bodies and projectiles use the same projection, including all facings.
         const u16 size=d->size;
         const s16 x=e->x,y=VIDEO_PROJECT_Y(e->y);
-        const u16 tile=TILE_USER_INDEX+ENEMYGFX_entityTile(i);
-        const u8 flip=ENEMYGFX_entityFlipH(i);
+        const u16 tile=TILE_USER_INDEX+(target ? ENEMYGFX_dirTile(e->type,4,0) : ENEMYGFX_entityTile(i));
+        const u8 flip=target ? FALSE : ENEMYGFX_entityFlipH(i);
         const u16 attr=TILE_ATTR_FULL(pal,TRUE,FALSE,flip,tile);
+        const u16 bodyIndex=n;
         if(size<=32)
         {
             if(!SPRITES_emit(&n,x,y,SPRITE_SIZE(size/8,size/8),attr))continue;
         }
         else if(!emitBoss(&n,x,y,attr))continue;
+        if(e->shielded || e->burn || e->frozen) {
+            statuses[statusCount++]=(StatusMarker){x,y,size,bodyIndex+1,
+                (e->shielded ? 1 : 0)|(e->burn ? 2 : 0)|(e->frozen ? 4 : 0)};
+        }
         // Status marks use the existing checkerboard, subject to the same limits.
         if (e->frozen || e->burnFlash)
         {
@@ -251,39 +309,77 @@ void SPRITES_draw(void)
                 TILE_ATTR_FULL(statusPal,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_STATUS));
         }
     }
-    if (NPC_active() && !NPC_hidden())
+    if (NPC_active() && !ARENA_npcInMap() && !NPC_hidden())
     {
-        if (ARENA_npcInMap())
-        {
-            // The complete Santa is already painted in the background.
-            // Only the beacon feedback blinks; damage never hides the scenery.
-            if ((frame%60)>=30)
-                SPRITES_emit(&n,npcX+16,npcY,SPRITE_SIZE(1,1),
-                    TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT_GLOW));
-        }
-        else
-        {
             if ((frame%60)>=30)
                 SPRITES_emit(&n,npcX+8,npcY,SPRITE_SIZE(1,1),
                     TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT_GLOW));
             SPRITES_emit(&n,npcX,npcY,SPRITE_SIZE(3,3),
                 TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_SAINT));
-        }
     }
-    n=ITEMS_draw(n);
+    for(u16 i=0;i<2;i++)if(allyShots[i].active)
+        SPRITES_emit(&n,allyShots[i].x>>6,VIDEO_PROJECT_Y(allyShots[i].y>>6),SPRITE_SIZE(1,1),COMBATGFX_shotAttr(0,allyShots[i].vx,allyShots[i].vy));
+    OBJECTIVE_drawMarkers(&n);
     for (u16 i=0;i<MAX_PSHOTS;i++)
         if (pshots[i].active)
             // Shot simulation remains in ground coordinates; draw at gun height.
             SPRITES_emit(&n,pshots[i].x>>6,(pshots[i].y>>6)-VIDEO_HEIGHT_OFFSET,SPRITE_SIZE(1,1),
-                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_PSHOT));
+                COMBATGFX_shotAttr(0,pshots[i].vx,pshots[i].vy));
     for (u16 i=0;i<MAX_ESHOTS;i++)
         if (eshots[i].active)
             SPRITES_emit(&n,eshots[i].x>>6,VIDEO_PROJECT_Y(eshots[i].y>>6),SPRITE_SIZE(1,1),
-                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_ESHOT));
+                COMBATGFX_shotAttr(eshots[i].mode ? eshots[i].mode : 1,eshots[i].vx,eshots[i].vy));
+    // Admit bodies and projectiles before optional status markers. Crowded
+    // scanlines may shed a marker, never an actor to make room for its icon.
+    const StatusMarker *marker=statuses;
+    for(u16 k=0;k<statusCount;k++,marker++)
+    {
+        const s16 size=marker->size,bodyY=marker->y;
+        const u8 flags=marker->flags;
+        const u16 count=((flags&1)!=0)+((flags&2)!=0)+((flags&4)!=0);
+        const s16 width=count*10-2;
+        s16 x=marker->x+(size-width)/2,y=bodyY-10;
+        // Concurrent statuses form one row. At the north edge, move beside
+        // the body; clamp the entire row so no icon is hidden under the HUD.
+        if(y<cameraY+HUD_HEIGHT+2) {
+            y=bodyY+(size-8)/2;
+            x=marker->x+size+2;
+            if(x+width>cameraX+320)x=marker->x-width-2;
+        }
+        if(x<cameraX)x=cameraX;
+        if(x>cameraX+320-width)x=cameraX+320-width;
+        if(y<cameraY+HUD_HEIGHT+2)y=cameraY+HUD_HEIGHT+2;
+        static const u16 tiles[3]={TILE_ENEMY_SHIELD,TILE_ENEMY_FIRE,TILE_ENEMY_ICE};
+        for(u16 status=0;status<3;status++)if(flags&(1u<<status)) {
+            const u16 markerIndex=n;
+            if(SPRITES_emit(&n,x,y,SPRITE_SIZE(1,1),
+                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+tiles[status])))
+                markerParent[markerIndex]=marker->parent;
+            x+=10;
+        }
+    }
     n=CHAINFX_draw(n);
+    if(currentLevel==0 && testStage==1) {
+        const Enemy *e=&enemies[testSettings[0].selected];
+        SPRITES_emit(&n,e->x+(ENEMY_SIZE(e)-8)/2,VIDEO_PROJECT_Y(e->y)-10,SPRITE_SIZE(1,1),
+            TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_TEST_MARKER));
+    }
+    // Cosmetic corpses come after live bodies, bullets and combat markers.
+    for(u16 i=0;i<COMBAT_DEATH_CAP;i++)
+    {
+        const CombatDeath *d=&combatDeaths[i];if(!d->active || !d->ready)continue;
+        const u16 pal=d->age<(fps*4+99)/100 ? PAL0 : PAL1;
+        const u16 attr=TILE_ATTR_FULL(pal,TRUE,FALSE,FALSE,TILE_USER_INDEX+d->tile);
+        if(d->size<=32)SPRITES_emit(&n,d->x,VIDEO_PROJECT_Y(d->y),SPRITE_SIZE(d->size/8,d->size/8),attr);
+        else emitBoss(&n,d->x,VIDEO_PROJECT_Y(d->y),attr);
+    }
+    // A drop is already collectible, but must not cover its own dying body.
+    // Cosmetic corpses still enter after every live body and projectile.
+    n=ITEMS_draw(n);
     if (!PLAYER_hidden())
         SPRITES_emit(&n,px,py+4,SPRITE_SIZE(2,2),
             TILE_ATTR_FULL(PAL1,FALSE,FALSE,FALSE,TILE_USER_INDEX+TILE_SHADOW));
+    if(!DINORAH_hidden())SPRITES_emit(&n,dinorahX,dinorahY+4,SPRITE_SIZE(2,2),TILE_ATTR_FULL(PAL1,FALSE,FALSE,FALSE,TILE_USER_INDEX+TILE_SHADOW));
     n=finishSprites(n);
     if (n)
     {

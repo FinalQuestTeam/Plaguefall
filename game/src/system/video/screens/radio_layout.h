@@ -1,0 +1,5 @@
+#ifndef RADIO_DATA_H
+#define RADIO_DATA_H
+#define RADIO_TILE_COUNT 155
+#define COUNTDOWN_TILE_COUNT 180
+#endif

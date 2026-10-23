@@ -1,0 +1,70 @@
+{
+  "status": "preview_only",
+  "romChanged": false,
+  "romSHA256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "method": "native tile decoding, existing 8x8 font and existing portrait; no generated artwork",
+  "hardwareValidated": false,
+  "sources": {
+    "src/system/video/screens/result_font.h": "26792321a5a8c57c844a731b7b66cdb52c9817ca46b9a6ee65d5814dc977a621",
+    "res/radio/tiles.bin": "28dabd61ccccdf0d069efd0f0baad32294f6618d80675b5e25cfd3fc54ce6868",
+    "res/radio/map.bin": "771a5031f4b5a3290182c140933cc64f134179e21bd41ea246750f97cae106d2",
+    "res/radio/palette.bin": "3f34ecd40908ba57639f06fb42a3f6f480d65f990bfaf0f0b03a6b33dbbdf498",
+    "res/interface/tiles.bin": "099ffe8f5e65bcd82f442510e3fe8ee03fef60459742b197ceb723f9e6db82cb",
+    "res/interface/map.bin": "38e60bbd311141d017239e168c364b8c8858c475aa3ce8aadc12196dc516deac",
+    "res/interface/palette.bin": "f3a2182d837a1d7571279c76ae727e39c64009c9f07bddc7dd64f68d0725e574",
+    "src/system/video/sprites/portraits_data.h": "bec917ecd38797c695d839d086bebca2caffecc21b53c632b05deb32cf3b07c0"
+  },
+  "proposals": [
+    {
+      "id": 1,
+      "name": "monitor-radio",
+      "image": "01-monitor-radio.png",
+      "animation": "01-monitor-radio.gif",
+      "resolution": [
+        320,
+        224
+      ],
+      "previewScale": 3,
+      "digits": [
+        3,
+        2,
+        1
+      ],
+      "millisecondsPerDigit": 1000
+    },
+    {
+      "id": 2,
+      "name": "cartao-missao",
+      "image": "02-cartao-missao.png",
+      "animation": "02-cartao-missao.gif",
+      "resolution": [
+        320,
+        224
+      ],
+      "previewScale": 3,
+      "digits": [
+        3,
+        2,
+        1
+      ],
+      "millisecondsPerDigit": 1000
+    },
+    {
+      "id": 3,
+      "name": "console-dividido",
+      "image": "03-console-dividido.png",
+      "animation": "03-console-dividido.gif",
+      "resolution": [
+        320,
+        224
+      ],
+      "previewScale": 3,
+      "digits": [
+        3,
+        2,
+        1
+      ],
+      "millisecondsPerDigit": 1000
+    }
+  ]
+}

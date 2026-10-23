@@ -1,0 +1,244 @@
+{
+  "scope": "Proposta para aprovação. Sem alterações no código do jogo, recursos exportados ou ROM.",
+  "romSHA256": "3bfa4cbdc6dc076612cd7bd6817e1373547c9d2aae08c2eb3e98418308faf06e",
+  "sourceFinding": "StoryLine.side existe, mas startLine/portrait ignoram o campo e posicionam todos os retratos em 2,6. O retrato do padre já olha para a esquerda: no lado esquerdo, olha para fora.",
+  "dialogue": {
+    "anchors": {
+      "damiao": [
+        16,
+        40,
+        48,
+        48
+      ],
+      "remote": [
+        248,
+        144,
+        48,
+        48
+      ]
+    },
+    "bodyWidthCharacters": 26,
+    "bodyLines": 4,
+    "lineSpacingPixels": 16,
+    "font": [
+      8,
+      8
+    ],
+    "storyLinesChecked": 51,
+    "allFit": true,
+    "direction": "Damião à esquerda olha à direita; padre à direita olha à esquerda, usando os desenhos existentes sem espelhar.",
+    "identity": "Caixas de rádio escuras, metal e cobre; letras claras. Papel reservado aos menus/missões/guia/resultados.",
+    "controls": "A completa a fala; nova pressão avança. START pula a cena. Sem timer que pressione a leitura.",
+    "motion": "Apenas indicadores pequenos: RX/TX, barras de sinal e cursor; sem tremor, ruído ou piscadas sobre letras/retratos.",
+    "cases": [
+      {
+        "id": "radio-padre",
+        "group": "Diálogos",
+        "label": "Padre / recebendo",
+        "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-padre.png",
+        "after": "propostas/radio-padre.png",
+        "note": "O padre volta ao canto inferior direito, com o olhar para o centro. Damião fica no alto à esquerda. A fala ativa tem nome, RX/TX e moldura destacada; quem escuta mantém o retrato no mesmo lugar. Texto de produção preservado."
+      },
+      {
+        "id": "radio-damiao",
+        "group": "Diálogos",
+        "label": "Damião / transmitindo",
+        "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-damiao.png",
+        "after": "propostas/radio-damiao.png",
+        "note": "A resposta abre a janela de transmissão no alto, ao lado de Damião. O padre continua embaixo à direita. Os retratos não saltam entre posições e o olhar segue para o interior da tela. Uma fala por vez, sem repetir a mensagem anterior."
+      },
+      {
+        "id": "radio-digitando",
+        "group": "Diálogos",
+        "label": "Recebimento / texto entrando",
+        "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-padre.png",
+        "after": "propostas/radio-digitando.png",
+        "note": "Texto entra de forma estável; A revela a fala inteira e uma nova pressão avança. Ruído e pequenos indicadores ficam fora da área de leitura. Substituir o som atual de coleta por um clique discreto de rádio, sem reiniciar o áudio a cada caractere."
+      },
+      {
+        "id": "radio-dinorah",
+        "group": "Diálogos",
+        "label": "Dinorah / troca de interlocutor",
+        "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-6B.png",
+        "after": "propostas/radio-dinorah.png",
+        "note": "O quadro remoto recebe Dinorah no mesmo ponto. O fundo é a arena nativa da fase 6B; na integração, desenhá-la sem iniciar simulação nem alterar progresso. A mudança de personagem usa nome e retrato, preservando o mesmo canal."
+      },
+      {
+        "id": "radio-final",
+        "group": "Diálogos",
+        "label": "Padre / transmissão final",
+        "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-16.png",
+        "after": "propostas/radio-final.png",
+        "note": "O rádio também enquadra o final, antes da caixa de vitória já aprovada. A interface de papel e metal permanece nos menus, missões e resultados; o diálogo ganha identidade própria de comunicação."
+      }
+    ]
+  },
+  "countdown": {
+    "seconds": 3,
+    "digitPixels": [
+      32,
+      32
+    ],
+    "boxPixels": [
+      144,
+      80
+    ],
+    "goTagPixels": [
+      96,
+      32
+    ],
+    "goDurationMilliseconds": 350,
+    "inputRelease": "No zero, no mesmo quadro de VAI; a etiqueta não bloqueia controles.",
+    "timing": "3/2/1 por 1 s cada, ajustados por fps (50/60).",
+    "skip": "Não adicionar uma confirmação extra nem prolongar a espera.",
+    "cases": [
+      {
+        "id": "contagem-3",
+        "group": "Início da fase",
+        "label": "Contagem / 3",
+        "before": "atuais/ntsc/contagem-1-3.png",
+        "after": "propostas/contagem-3.png",
+        "note": "Um segundo por número, com algarismo de 32 × 32 px e três marcadores que se apagam. O cenário e Damião continuam visíveis. Título e numeral dão o estado sem depender da cor. O aviso fica acima do personagem, sem barra preta atrás do texto."
+      },
+      {
+        "id": "contagem-2",
+        "group": "Início da fase",
+        "label": "Contagem / 2",
+        "before": "atuais/ntsc/contagem-1-2.png",
+        "after": "propostas/contagem-2.png",
+        "note": "Um segundo por número, com algarismo de 32 × 32 px e três marcadores que se apagam. O cenário e Damião continuam visíveis. Título e numeral dão o estado sem depender da cor. O aviso fica acima do personagem, sem barra preta atrás do texto."
+      },
+      {
+        "id": "contagem-1",
+        "group": "Início da fase",
+        "label": "Contagem / 1",
+        "before": "atuais/ntsc/contagem-1-1.png",
+        "after": "propostas/contagem-1.png",
+        "note": "Um segundo por número, com algarismo de 32 × 32 px e três marcadores que se apagam. O cenário e Damião continuam visíveis. Título e numeral dão o estado sem depender da cor. O aviso fica acima do personagem, sem barra preta atrás do texto."
+      },
+      {
+        "id": "contagem-vai",
+        "group": "Início da fase",
+        "label": "Liberação / VAI!",
+        "before": "atuais/ntsc/cenario-1.png",
+        "after": "propostas/contagem-vai.png",
+        "note": "Ao chegar a zero, liberar movimento e tiro no mesmo quadro em que aparece VAI!. A etiqueta dura cerca de 350 ms e não prolonga o congelamento de 3 s. Remover a caixa grande antes de liberar o controle."
+      },
+      {
+        "id": "contagem-industrial",
+        "group": "Início da fase",
+        "label": "Contagem / cenário industrial",
+        "before": "atuais/ntsc/contagem-4-3.png",
+        "after": "propostas/contagem-industrial.png",
+        "note": "Mesmo indicador na fase com lava: não recolore o chão, não cobre Damião e não substitui o cenário. A leitura usa fundo sólido apenas no pequeno instrumento."
+      },
+      {
+        "id": "contagem-chefe",
+        "group": "Início da fase",
+        "label": "Contagem / covil do Escorpião",
+        "before": "atuais/ntsc/contagem-20-3.png",
+        "after": "propostas/contagem-chefe.png",
+        "note": "O padrão também funciona na arena clássica do chefe. Proposta sonora: três pulsos curtos, um por segundo, e um sinal de liberação distinto. Preservar a trilha e seus instrumentos, sem roubar o áudio de combate depois do zero."
+      }
+    ]
+  },
+  "implementationNotes": [
+    "Respeitar StoryLine.side para posicionar a fala. Manter as duas âncoras; ao trocar padre por Dinorah, trocar só o retrato/nome remoto. Escorpião entra como voz na interferência, conforme a cena existente, sem criar perda de sinal como mecânica nova.",
+    "O fundo da transmissão é uma vista nativa da fase, com simulação parada. Criar um caminho de desenho sem spawn, sem marcar visita e sem alterar currentLevel, estatísticas ou rota. O mockup não prova esse caminho no runtime.",
+    "Planejar quatro paletas: cenário, moldura/fonte, Damião e interlocutor. Ocultar atores/HUD durante o diálogo libera duas paletas para os retratos. A moldura usa apenas a paleta existente do painel; não há cinco paletas simultâneas.",
+    "O contador precisa de um pequeno recurso próprio; não carregar o painel completo sobre o mapa. Investigar o empréstimo temporário da reserva de ícones de inimigos, preservando seus dados e a paleta. Restaurar antes de liberar o controle; não sobrescrever tiles do cenário ou do herói.",
+    "VAI! deve usar recursos/paletas de jogo compatíveis com o combate ativo durante seus 350 ms; restaurar a paleta temporária da contagem no zero.",
+    "Antes de implementar, validar em ROM: posições e olhar dos quatro retratos, todas as falas, A/completar/avançar, START/pular, simulação congelada, vídeo/paletas na transição, 3 s exatos em PAL/NTSC e liberação de movimento/tiro no zero."
+  ],
+  "cases": [
+    {
+      "id": "radio-padre",
+      "group": "Diálogos",
+      "label": "Padre / recebendo",
+      "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-padre.png",
+      "after": "propostas/radio-padre.png",
+      "note": "O padre volta ao canto inferior direito, com o olhar para o centro. Damião fica no alto à esquerda. A fala ativa tem nome, RX/TX e moldura destacada; quem escuta mantém o retrato no mesmo lugar. Texto de produção preservado."
+    },
+    {
+      "id": "radio-damiao",
+      "group": "Diálogos",
+      "label": "Damião / transmitindo",
+      "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-damiao.png",
+      "after": "propostas/radio-damiao.png",
+      "note": "A resposta abre a janela de transmissão no alto, ao lado de Damião. O padre continua embaixo à direita. Os retratos não saltam entre posições e o olhar segue para o interior da tela. Uma fala por vez, sem repetir a mensagem anterior."
+    },
+    {
+      "id": "radio-digitando",
+      "group": "Diálogos",
+      "label": "Recebimento / texto entrando",
+      "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-padre.png",
+      "after": "propostas/radio-digitando.png",
+      "note": "Texto entra de forma estável; A revela a fala inteira e uma nova pressão avança. Ruído e pequenos indicadores ficam fora da área de leitura. Substituir o som atual de coleta por um clique discreto de rádio, sem reiniciar o áudio a cada caractere."
+    },
+    {
+      "id": "radio-dinorah",
+      "group": "Diálogos",
+      "label": "Dinorah / troca de interlocutor",
+      "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-6B.png",
+      "after": "propostas/radio-dinorah.png",
+      "note": "O quadro remoto recebe Dinorah no mesmo ponto. O fundo é a arena nativa da fase 6B; na integração, desenhá-la sem iniciar simulação nem alterar progresso. A mudança de personagem usa nome e retrato, preservando o mesmo canal."
+    },
+    {
+      "id": "radio-final",
+      "group": "Diálogos",
+      "label": "Padre / transmissão final",
+      "before": "../resultados-ux-v1/integracao/validation/interface-ntsc/dialogue-16.png",
+      "after": "propostas/radio-final.png",
+      "note": "O rádio também enquadra o final, antes da caixa de vitória já aprovada. A interface de papel e metal permanece nos menus, missões e resultados; o diálogo ganha identidade própria de comunicação."
+    },
+    {
+      "id": "contagem-3",
+      "group": "Início da fase",
+      "label": "Contagem / 3",
+      "before": "atuais/ntsc/contagem-1-3.png",
+      "after": "propostas/contagem-3.png",
+      "note": "Um segundo por número, com algarismo de 32 × 32 px e três marcadores que se apagam. O cenário e Damião continuam visíveis. Título e numeral dão o estado sem depender da cor. O aviso fica acima do personagem, sem barra preta atrás do texto."
+    },
+    {
+      "id": "contagem-2",
+      "group": "Início da fase",
+      "label": "Contagem / 2",
+      "before": "atuais/ntsc/contagem-1-2.png",
+      "after": "propostas/contagem-2.png",
+      "note": "Um segundo por número, com algarismo de 32 × 32 px e três marcadores que se apagam. O cenário e Damião continuam visíveis. Título e numeral dão o estado sem depender da cor. O aviso fica acima do personagem, sem barra preta atrás do texto."
+    },
+    {
+      "id": "contagem-1",
+      "group": "Início da fase",
+      "label": "Contagem / 1",
+      "before": "atuais/ntsc/contagem-1-1.png",
+      "after": "propostas/contagem-1.png",
+      "note": "Um segundo por número, com algarismo de 32 × 32 px e três marcadores que se apagam. O cenário e Damião continuam visíveis. Título e numeral dão o estado sem depender da cor. O aviso fica acima do personagem, sem barra preta atrás do texto."
+    },
+    {
+      "id": "contagem-vai",
+      "group": "Início da fase",
+      "label": "Liberação / VAI!",
+      "before": "atuais/ntsc/cenario-1.png",
+      "after": "propostas/contagem-vai.png",
+      "note": "Ao chegar a zero, liberar movimento e tiro no mesmo quadro em que aparece VAI!. A etiqueta dura cerca de 350 ms e não prolonga o congelamento de 3 s. Remover a caixa grande antes de liberar o controle."
+    },
+    {
+      "id": "contagem-industrial",
+      "group": "Início da fase",
+      "label": "Contagem / cenário industrial",
+      "before": "atuais/ntsc/contagem-4-3.png",
+      "after": "propostas/contagem-industrial.png",
+      "note": "Mesmo indicador na fase com lava: não recolore o chão, não cobre Damião e não substitui o cenário. A leitura usa fundo sólido apenas no pequeno instrumento."
+    },
+    {
+      "id": "contagem-chefe",
+      "group": "Início da fase",
+      "label": "Contagem / covil do Escorpião",
+      "before": "atuais/ntsc/contagem-20-3.png",
+      "after": "propostas/contagem-chefe.png",
+      "note": "O padrão também funciona na arena clássica do chefe. Proposta sonora: três pulsos curtos, um por segundo, e um sinal de liberação distinto. Preservar a trilha e seus instrumentos, sem roubar o áudio de combate depois do zero."
+    }
+  ],
+  "textBoundsChecked": 67
+}

@@ -1,0 +1,97 @@
+{
+  "rom": "game/out/release/Plaguefall.bin",
+  "rom_sha256": "8009bbddfcd7b8bbe1448c02df736ba43d24a4c3d1ddc0df25c4be860f825d24",
+  "rom_bytes": 1441792,
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "report": "ntsc/report.json",
+      "ordinary_matches": 3,
+      "ordinary_ram_writes": false,
+      "stress": [
+        {
+          "axis": "horizontal",
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "game_frames": 300,
+          "physical_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 71.79,
+          "cpu_p95_pct": 75.05,
+          "camera_x_range": [
+            0,
+            64
+          ],
+          "camera_y_range": [
+            104,
+            104
+          ]
+        },
+        {
+          "axis": "vertical",
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "game_frames": 300,
+          "physical_frames": 300,
+          "fps": 60.0,
+          "cpu_mean_pct": 73.72,
+          "cpu_p95_pct": 77.34,
+          "camera_x_range": [
+            32,
+            32
+          ],
+          "camera_y_range": [
+            0,
+            144
+          ]
+        }
+      ]
+    },
+    "pal": {
+      "passed": true,
+      "report": "pal/report.json",
+      "ordinary_matches": 3,
+      "ordinary_ram_writes": false,
+      "stress": [
+        {
+          "axis": "horizontal",
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "game_frames": 300,
+          "physical_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 45.98,
+          "cpu_p95_pct": 49.12,
+          "camera_x_range": [
+            0,
+            64
+          ],
+          "camera_y_range": [
+            104,
+            104
+          ]
+        },
+        {
+          "axis": "vertical",
+          "enemies": 4,
+          "shots_per_pool": 6,
+          "game_frames": 300,
+          "physical_frames": 300,
+          "fps": 50.0,
+          "cpu_mean_pct": 47.91,
+          "cpu_p95_pct": 52.83,
+          "camera_x_range": [
+            32,
+            32
+          ],
+          "camera_y_range": [
+            0,
+            144
+          ]
+        }
+      ]
+    }
+  },
+  "native_contact_test": "passed with ASan/UBSan; pedestal, contact, invulnerability and timers",
+  "passed": true
+}

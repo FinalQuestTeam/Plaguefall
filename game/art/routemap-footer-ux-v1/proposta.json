@@ -44,9 +44,9 @@
       "label": "Sem dano → 10A",
       "current": "9",
       "next": "10A",
-      "name": "ACESSO DOS TECNICOS",
-      "cause": "VOCE SAIU SEM SOFRER DANO.",
-      "consequence": "O ACESSO DOS TECNICOS FOI LIBERADO.",
+      "name": "ACESSO DOS TÉCNICOS",
+      "cause": "VOCÊ SAIU SEM SOFRER DANO.",
+      "consequence": "O ACESSO DOS TÉCNICOS FOI LIBERADO.",
       "capture": "map-9-10A.png"
     },
     {
@@ -54,8 +54,8 @@
       "label": "Com dano → 10B",
       "current": "9",
       "next": "10B",
-      "name": "DRENO TERMICO",
-      "cause": "VOCE SOFREU DANO NO CONFRONTO.",
+      "name": "DRENO TÉRMICO",
+      "cause": "VOCÊ SOFREU DANO NO CONFRONTO.",
       "consequence": "VAI PRECISAR CONTORNAR PELO DRENO.",
       "capture": "map-9-10B.png"
     },
@@ -64,8 +64,8 @@
       "label": "Sem bomba → 2A",
       "current": "1",
       "next": "2A",
-      "name": "RUA DE SERVICO",
-      "cause": "VOCE NAO USOU BOMBAS.",
+      "name": "RUA DE SERVIÇO",
+      "cause": "VOCÊ NÃO USOU BOMBAS.",
       "consequence": "A IGREJA FICOU PRESERVADA.",
       "capture": "map-1-2A.png"
     },
@@ -75,8 +75,8 @@
       "current": "1",
       "next": "2B",
       "name": "BAIXIO DA IGREJA",
-      "cause": "A EXPLOSAO DANIFICOU A IGREJA.",
-      "consequence": "OS DESTROCOS FORCARAM UM DESVIO.",
+      "cause": "A EXPLOSÃO DANIFICOU A IGREJA.",
+      "consequence": "OS DESTROÇOS FORCARAM UM DESVIO.",
       "capture": "map-1-2B.png"
     },
     {
@@ -84,8 +84,8 @@
       "label": "Sinal protegido → 6A",
       "current": "5",
       "next": "6A",
-      "name": "PERIMETRO DO RESGATE",
-      "cause": "VOCE PROTEGEU O SINALIZADOR.",
+      "name": "PERÍMETRO DO RESGATE",
+      "cause": "VOCÊ PROTEGEU O SINALIZADOR.",
       "consequence": "O RESGATE FOI CONFIRMADO.",
       "capture": "map-5-6A.png"
     },
@@ -95,7 +95,7 @@
       "current": "5",
       "next": "6B",
       "name": "RETIRADA POR TERRA",
-      "cause": "O SINALIZADOR FOI DESTRUIDO.",
+      "cause": "O SINALIZADOR FOI DESTRUÍDO.",
       "consequence": "A RETIRADA VAI SER POR TERRA.",
       "capture": "map-5-6B.png"
     },
@@ -105,7 +105,7 @@
       "current": "12",
       "next": "13A",
       "name": "LINHA QUENTE",
-      "cause": "VOCE TERMINOU EM MENOS DE 60 S.",
+      "cause": "VOCÊ TERMINOU EM MENOS DE 60 S.",
       "consequence": "A COMPORTA AINDA ESTAVA ABERTA.",
       "capture": "map-12-13A.png"
     },
@@ -114,8 +114,8 @@
       "label": "60 s ou mais → 13B",
       "current": "12",
       "next": "13B",
-      "name": "DECANTACAO",
-      "cause": "VOCE LEVOU 60 SEGUNDOS OU MAIS.",
+      "name": "DECANTAÇÃO",
+      "cause": "VOCÊ LEVOU 60 SEGUNDOS OU MAIS.",
       "consequence": "A COMPORTA FECHOU. SIGA PELO CANAL.",
       "capture": "map-12-13B.png"
     },
@@ -124,9 +124,9 @@
       "label": "Caminho normal → 4",
       "current": "3",
       "next": "4",
-      "name": "TUNEIS DE MANUTENCAO",
-      "cause": "O ABRIGO ESTA SEGURO POR ENQUANTO.",
-      "consequence": "OS TUNEIS LEVAM A PLATAFORMA.",
+      "name": "TÚNEIS DE MANUTENÇÃO",
+      "cause": "O ABRIGO ESTÁ SEGURO POR ENQUANTO.",
+      "consequence": "OS TÚNEIS LEVAM A PLATAFORMA.",
       "capture": "map-3-4.png"
     }
   ],

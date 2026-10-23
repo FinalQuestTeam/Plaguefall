@@ -6,7 +6,7 @@
 
 const EnemyDef ENEMYDEF_tri_yellow =
 {
-    .name       = "Cacador",
+    .name       = "CAÇADOR",
     .shape      = SHAPE_TRIANGLE,
     .color      = COLOR_YELLOW,
     .size       = 16,

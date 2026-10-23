@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "df6b63e2e85b97c6fe6735448f663fe0d813b270a1732b96830d6fe9285bf5ef",
+  "emulated_rom_sha256": "df6b63e2e85b97c6fe6735448f663fe0d813b270a1732b96830d6fe9285bf5ef",
+  "production_rom": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release/rom.bin",
+  "temporary_build": false,
+  "region_header_override_in_memory_only": false,
+  "core_fps": 59.92274340431231,
+  "stages": [
+    {
+      "node": 4,
+      "id": "03",
+      "world": [
+        384,
+        384
+      ],
+      "isolated_probes": {},
+      "ordinary_matches": []
+    },
+    {
+      "node": 6,
+      "id": "05",
+      "world": [
+        384,
+        384
+      ],
+      "isolated_probes": {},
+      "ordinary_matches": []
+    }
+  ],
+  "failures": [],
+  "method": "Controller enters phase 1. Kills and pendingLevel are accelerated only in node setup. All ordinary attempts restore a node baseline then enable an enforced RAM-write guard. Isolated probes/stress explicitly use RAM setup. FPS = region_fps * phaseStats.frames / vtimer VBlanks.",
+  "objective_branch_probes": {}
+}

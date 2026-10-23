@@ -8,8 +8,8 @@
 #define TEST_SPACING    32
 #define TEST_ROW_Y      176
 
-static u16  testCd[ITEM_TYPES];     // frames restantes até reabastecer o tipo t
-static bool testWas[ITEM_TYPES];    // o tipo t estava presente no quadro anterior?
+static u16  testCd[ITEM_DROP_TYPES]; // somente os oito itens comuns
+static bool testWas[ITEM_DROP_TYPES];
 
 void ITEMS_testReset(void)
 {
@@ -20,9 +20,9 @@ void ITEMS_testReset(void)
 void ITEMS_testEnsure(void)
 {
     // fileira CENTRALIZADA na tela (centro em x=160), espaçada TEST_SPACING px
-    const s16 startX = 160 - 8 - (s16) (ITEM_TYPES - 1) * (TEST_SPACING / 2);
+    const s16 startX = 160 - 8 - (s16) (ITEM_DROP_TYPES - 1) * (TEST_SPACING / 2);
 
-    for (u8 t = 0; t < ITEM_TYPES; t++)
+    for (u8 t = 0; t < ITEM_DROP_TYPES; t++)
     {
         bool present = FALSE;
         for (u16 i = 0; i < MAX_ITEMS; i++)

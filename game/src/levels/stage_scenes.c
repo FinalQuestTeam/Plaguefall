@@ -10,7 +10,8 @@ static const ArenaScene scene02A = {
     .palette = (const u16 *)courtyard_palette,
     .tileCount = 443, .rows = 40,
     .glow = NULL, .glowStart = 0, .glowCount = 0,
-    .npcInMap = FALSE
+    .npcInMap = FALSE,
+    .npcVisual = NULL
 };
 const ArenaDef ARENA02A = {
     512, 320, 16, 96, 495, 303, 48, 208, NULL, 0, &scene02A
@@ -23,7 +24,8 @@ static const ArenaScene scene02B = {
     .palette = (const u16 *)courtyard_palette,
     .tileCount = 603, .rows = 40,
     .glow = NULL, .glowStart = 0, .glowCount = 0,
-    .npcInMap = FALSE
+    .npcInMap = FALSE,
+    .npcVisual = NULL
 };
 const ArenaDef ARENA02B = {
     512, 320, 16, 96, 495, 303, 48, 208, NULL, 0, &scene02B
@@ -41,7 +43,8 @@ static const ArenaScene scene03 = {
     .palette = (const u16 *)stage03_palette,
     .tileCount = 538, .rows = 48,
     .glow = (const u32 *)stage03_glow, .glowStart = 464, .glowCount = 74,
-    .npcInMap = FALSE
+    .npcInMap = FALSE,
+    .npcVisual = NULL
 };
 const ArenaDef ARENA03 = {
     384, 384, 16, 96, 367, 367, 64, 256, NULL, 0, &scene03
@@ -59,7 +62,8 @@ static const ArenaScene scene04 = {
     .palette = (const u16 *)stage04_palette,
     .tileCount = 537, .rows = 36,
     .glow = NULL, .glowStart = 0, .glowCount = 0,
-    .npcInMap = FALSE
+    .npcInMap = FALSE,
+    .npcVisual = NULL
 };
 const ArenaDef ARENA04 = {
     512, 288, 16, 80, 495, 271, 48, 176, NULL, 0, &scene04
@@ -70,17 +74,20 @@ const TileRect STAGE04_mud[2] = {
     {2, 29, 11, 5},
 };
 
+static const u16 npc05Floor[40] = {257, 262, 263, 257, 257, 257, 260, 258, 257, 257, 472, 473, 474, 475, 476, 283, 286, 327, 261, 283, 257, 262, 263, 257, 257, 257, 260, 258, 257, 257, 266, 259, 309, 477, 478, 283, 286, 327, 479, 480};
+static const ArenaNpcVisual npc05Visual = {22,20,5,8,npc05Floor,{176,176,40,48,FALSE},194,181,634,112};
 static const ArenaScene scene05 = {
     .tiles = (const u32 *)stage05_tiles,
     .map = (const u16 *)stage05_map,
     .damaged = (const u16 *)stage05_map,
     .palette = (const u16 *)stage05_palette,
-    .tileCount = 551, .rows = 48,
+    .tileCount = 636, .rows = 48,
     .glow = NULL, .glowStart = 0, .glowCount = 0,
-    .npcInMap = TRUE
+    .npcInMap = TRUE,
+    .npcVisual = &npc05Visual
 };
 static const ArenaRect solids05[] = {
-    {176, 208, 40, 16, FALSE},
+    {176, 176, 40, 48, FALSE},
 };
 const ArenaDef ARENA05 = {
     384, 384, 16, 96, 367, 367, 64, 288, solids05, 1, &scene05
@@ -93,7 +100,8 @@ static const ArenaScene scene06A = {
     .palette = (const u16 *)stage06a_palette,
     .tileCount = 508, .rows = 40,
     .glow = (const u32 *)stage06a_glow, .glowStart = 435, .glowCount = 73,
-    .npcInMap = FALSE
+    .npcInMap = FALSE,
+    .npcVisual = NULL
 };
 const ArenaDef ARENA06A = {
     512, 320, 16, 96, 495, 303, 48, 208, NULL, 0, &scene06A
@@ -111,7 +119,8 @@ static const ArenaScene scene06B = {
     .palette = (const u16 *)stage06a_palette,
     .tileCount = 500, .rows = 40,
     .glow = (const u32 *)stage06a_glow, .glowStart = 427, .glowCount = 73,
-    .npcInMap = FALSE
+    .npcInMap = FALSE,
+    .npcVisual = NULL
 };
 const ArenaDef ARENA06B = {
     512, 320, 16, 96, 495, 303, 48, 208, NULL, 0, &scene06B

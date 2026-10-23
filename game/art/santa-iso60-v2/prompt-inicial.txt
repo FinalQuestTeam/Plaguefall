@@ -1,0 +1,7 @@
+Use case: style-transfer
+Asset type: production Sega Mega Drive pixel-art game sprite, isolated Nossa Senhora Aparecida statue.
+Primary request: redraw the Brazilian saint statue to match the existing game's very high camera, 60 degrees ABOVE THE GROUND (30 degrees away from straight overhead). Image 1 is identity reference only. Image 2 is the existing hero camera/style reference.
+Subject: one small dark-skinned Nossa Senhora Aparecida statuette with dark navy blue triangular mantle, subtle gold trim, small golden crown, hands together, compact weathered metal/stone pedestal. Entire statue and pedestal visible as a SINGLE object.
+Camera is crucial: see a LARGE top plane of crown and pedestal, tops of shoulders; heavily foreshortened vertical body. Viewed from above and slightly from the south-east. NOT a frontal devotional portrait, NOT a low angle. Base top is a broad diamond/ellipse; base side very short. Crown top visible as a broad oval. Match the high viewpoint of the hero.
+Style: crisp handcrafted low resolution 16-bit pixel art, readable clusters, dark outlines, muted colors: navy blue, blue-grey, ochre gold, warm ivory, charcoal. Sprite intended to fit a 40 by 48 pixel native canvas. Output enlarged cleanly with nearest-neighbor style square pixels and minimal detail.
+Composition: single centered sprite, transparent background with generous transparent margin, no surrounding ground, no cast shadow outside the compact pedestal, no text, no layout, no extra objects. Do not bake a glowing halo into the image: the crown will sparkle in engine.

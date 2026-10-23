@@ -3,6 +3,9 @@ from pathlib import Path
 from PIL import Image,ImageDraw
 import argparse,json,struct,re,textwrap
 ROOT=Path(__file__).resolve().parent;GAME=ROOT.parents[1]
+import sys
+sys.path.insert(0,str(GAME/'tools'))
+from text_codec import encode
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');args=ap.parse_args()
  im=Image.open(ROOT/'source/painel-nativo.png').convert('RGB');d=ImageDraw.Draw(im)
@@ -28,7 +31,7 @@ def main():
  phases=json.loads((ROOT/'conteudo-aprovado.json').read_text())['phases']
  header='#ifndef MISSION_COPY_H\n#define MISSION_COPY_H\ntypedef struct { const char *name, *attention, *route; } MissionCopy;\nstatic const MissionCopy MISSION_COPY[NODE_MAX] = {\n'
  for p in phases:
-  header+=f'    [N_{p["id"]}] = {{ {json.dumps(p["name"])}, {json.dumps(p["attention"])}, {json.dumps(p["route"]) if p["route"] else "NULL"} }},\n'
+  header+=f'    [N_{p["id"]}] = {{ {json.dumps(p["name"],ensure_ascii=False)}, {json.dumps(p["attention"],ensure_ascii=False)}, {json.dumps(p["route"],ensure_ascii=False) if p["route"] else "NULL"} }},\n'
  header+='};\n#endif\n';outputs[GAME/'src/system/video/screens/mission_copy.h']=header.encode()
  help_cases=[c for c in json.loads((ROOT/'conteudo-aprovado.json').read_text())['cases'] if c['group']=='Como jogar']
  help_header='#ifndef HELP_COPY_H\n#define HELP_COPY_H\ntypedef struct { const char *text; u8 x,y,palette; } HelpLine;\n'
@@ -36,14 +39,15 @@ def main():
   help_header+=f'static const HelpLine HELP_LINES_{i}[] = {{\n'
   for line in c['lines']:
    pal={'body':'PANEL_BODY','accent':'PANEL_ACCENT','light':'PANEL_LIGHT'}[line['palette']]
-   help_header+=f'    {{ {json.dumps(line["text"])}, {line["x"]}, {line["y"]}, {pal} }},\n'
+   help_header+=f'    {{ {json.dumps(line["text"],ensure_ascii=False)}, {line["x"]}, {line["y"]}, {pal} }},\n'
   help_header+='};\n'
- help_header+='static const HelpLine *const HELP_LINES[] = {'+','.join('HELP_LINES_'+str(i) for i in range(6))+'};\n'
+ help_header+=f'#define HELP_PAGE_COUNT {len(help_cases)}\n'
+ help_header+='static const HelpLine *const HELP_LINES[] = {'+','.join('HELP_LINES_'+str(i) for i in range(len(help_cases)))+'};\n'
  help_header+='static const u8 HELP_LINE_COUNT[] = {'+','.join(str(len(c['lines'])) for c in help_cases)+'};\n#endif\n'
  outputs[GAME/'src/system/video/screens/help_copy.h']=help_header.encode()
  story=re.sub(r'//[^\n]*','',(GAME/'src/levels/story.c').read_text())
  for text in re.findall(r'(?:ESQUERDA|DIREITA)\(\w+,\s*"([^"]*)"',story):
-  assert all(32<=ord(c)<128 for c in text),text
+  assert encode(text) and text==text.upper(),text
   assert len(textwrap.wrap(text,width=34,break_long_words=False))<=4,text
  for path,content in outputs.items():
   if args.check:assert path.read_bytes()==content,str(path)

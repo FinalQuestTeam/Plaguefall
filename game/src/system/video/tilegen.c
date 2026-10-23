@@ -1,3 +1,4 @@
+#include "system/video/screens/loading.h"
 // Fábrica de assets: geração procedural dos tiles (4bpp) e da paleta dos objetos.
 // Roda uma vez no boot (TILEGEN_init). O buffer é alocado só durante a geração e
 // liberado — não ocupa RAM permanente. O mapa de índices está em tiles.h.
@@ -12,6 +13,7 @@
 #include "elements/mud.h"
 #include "items/items.h"
 #include "insects.h"
+#include "combat_art.h"
 
 #define TILEBUF_BYTES   (NUM_TILES * 8 * (u16) sizeof(u32))
 static u32 *tileBuf;
@@ -41,20 +43,9 @@ static void buildTiles(void)
     // o jogador (Damião) e os inimigos (insetos) são gerados por direção em
     // herogfx.c / enemygfx.c (reservas do herói / ENEMY_ROT), não aqui.
 
-    // projéteis 8x8 (tile único)
-    for (u16 y = 0; y < 8; y++)
-    {
-        for (u16 x = 0; x < 8; x++)
-        {
-            s16 dx = (s16) (2 * x) - 7;
-            s16 dy = (s16) (2 * y) - 7;
-            if (dx * dx + dy * dy <= 49)
-            {
-                tileBuf[TILE_PSHOT * 8 + y] |= (u32) 4 << ((7 - x) * 4);
-                tileBuf[TILE_ESHOT * 8 + y] |= (u32) 5 << ((7 - x) * 4);
-            }
-        }
-    }
+    // Approved A artwork also supplies safe fallbacks during the first upload.
+    memcpy(tileBuf+TILE_PSHOT*8,(const u32 *)combat_shots,32);
+    memcpy(tileBuf+TILE_ESHOT*8,((const u32 *)combat_shots)+3*8,32);
 
     // parede: bloco sólido com linha de brilho
     for (u16 y = 0; y < 8; y++)
@@ -87,6 +78,38 @@ static void buildTiles(void)
     memcpy(tileBuf + TILE_SAINT * 8, SAINT24_DATA, sizeof SAINT24_DATA);
     memcpy(tileBuf + TILE_ICON_SAINT * 8, SAINT_ICON_DATA, sizeof SAINT_ICON_DATA);
     memcpy(tileBuf + TILE_SAINT_GLOW * 8, SAINT_HALO_DATA, sizeof SAINT_HALO_DATA);
+
+    // Enemy armour: a solid gold shield with a dark silhouette and white rim.
+    // One 8x8 tile; retain the reservation so other VRAM addresses stay stable.
+    static const char *const armour[8] = {
+        ".bbbbbb.", "b111111b", "b144441b", "b144441b",
+        ".b1441b.", ".b1441b.", "..b11b..", "...bb..."
+    };
+    for(u16 y=0;y<8;y++)
+        for(u16 x=0;x<8;x++) {
+            const char c=armour[y][x];
+            if(c!='.')setPix(TILE_ENEMY_SHIELD,x,y,c=='b' ? 11 : c=='1' ? 1 : 4,1);
+        }
+    static const char *const selection[8]={"bbbbbbbb","b444444b",".b4444b.","..b44b..","...bb...","........","........","........"};
+    for(u16 y=0;y<8;y++)for(u16 x=0;x<8;x++)if(selection[y][x]!='.')
+        setPix(TILE_TEST_MARKER,x,y,selection[y][x]=='b' ? 11 : 4,1);
+
+    // Persistent status markers share armour's 8x8 scale and dark silhouette.
+    // PAL1: orange/yellow flame, cyan/white crystal. No per-frame tile upload.
+    static const char *const flame[8]={
+        "...bb...", "..bcbb..", ".bbccbb.", ".bccc4b.",
+        "bcc444cb", "bc4414cb", ".bc44cb.", "..bbbb.."
+    };
+    static const char *const crystal[8]={
+        "...bb...", "..b21b..", ".b2211b.", "b222111b",
+        "b211222b", ".b1122b.", "..b12b..", "...bb..."
+    };
+    for(u16 y=0;y<8;y++)for(u16 x=0;x<8;x++) {
+        if(flame[y][x]!='.')setPix(TILE_ENEMY_FIRE,x,y,
+            flame[y][x]=='b' ? 11 : flame[y][x]=='c' ? 12 : flame[y][x]=='4' ? 4 : 1,1);
+        if(crystal[y][x]!='.')setPix(TILE_ENEMY_ICE,x,y,
+            crystal[y][x]=='b' ? 11 : crystal[y][x]=='2' ? 2 : 1,1);
+    }
 
     // porta 8x8 (área de passagem entre as fases teste): painel verde com
     // borda clara — ladrilhado num retângulo, forma um portão/portal
@@ -176,16 +199,16 @@ void TILEGEN_palette(void)
     // são pintados de BRANCO: viram a "paleta de flash" — um inimigo que toma dano
     // é desenhado com PAL0 e aparece todo branco por alguns quadros, sem gastar
     // nenhum tile de VRAM (a VRAM está no limite por causa da arte do título).
-    for (u16 i = 1; i <= 15; i++) PAL_setColor(i, RGB24_TO_VDPCOLOR(0xF0F0F0));
+    for (u16 i = 1; i <= 15; i++) LOADING_setColor(i, RGB24_TO_VDPCOLOR(0xF0F0F0));
 
     // exceção: PAL0 índice 2 = VERMELHO. Os tiles do overlay (TILE_STATUS, xadrez
     // no índice 2) desenhados com PAL0 saem vermelhos → overlay de "queimando",
     // igual ao ciano do gelo mas em vermelho. Os pequenos implantes ciano dos
     // inimigos também ficam vermelhos durante o flash de dano.
-    PAL_setColor(2, RGB24_TO_VDPCOLOR(0xE02020));
+    LOADING_setColor(2, RGB24_TO_VDPCOLOR(0xE02020));
 
     // Shared object/enemy PAL1 keeps semantic item/status indices.
-    PAL_setColors(PAL1 * 16, (const u16 *) insect_palette, 16, DMA);
+    LOADING_setColors(PAL1 * 16, (const u16 *) insect_palette, 16, DMA);
 }
 
 void TILEGEN_init(void)

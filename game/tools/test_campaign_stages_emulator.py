@@ -5,7 +5,7 @@ write guard: after each baseline restore, ONLY controller input is permitted.
 FPS uses phaseStats.frames / vtimer, never host execution speed.
 """
 from pathlib import Path
-import argparse, ctypes as C, hashlib, json, statistics, struct, subprocess, wave, zlib
+import os,argparse, ctypes as C, hashlib, json, statistics, struct, subprocess, wave, zlib
 
 GAME=Path(__file__).resolve().parents[1]
 CORE=Path.home()/'Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib'
@@ -16,10 +16,10 @@ def png(path,w,h,rgb):
     path.write_bytes(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(rows))+chunk(b'IEND',b''))
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--matches',type=int,default=2);parser.add_argument('--nodes',default='2,3,4,5,6,7,8');parser.add_argument('--seconds',type=int,default=150);parser.add_argument('--only-entry',action='store_true');parser.add_argument('--no-stress',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--matches',type=int,default=2);parser.add_argument('--nodes',default='2,3,4,5,6,7,8');parser.add_argument('--seconds',type=int,default=150);parser.add_argument('--only-entry',action='store_true');parser.add_argument('--no-stress',action='store_true');parser.add_argument('--shield-tests',action='store_true');parser.add_argument('--build-dir',type=Path);args=parser.parse_args()
     fps=50 if args.pal else 60
     out=args.output or GAME/'art/phases02-06-v1/validation'/('pal' if args.pal else 'ntsc');out.mkdir(parents=True,exist_ok=True)
-    rom=GAME/'out/release/rom.bin';original=rom.read_bytes();data=bytearray(original)
+    build=args.build_dir or GAME/'out/release';rom=build/'rom.bin';original=rom.read_bytes();data=bytearray(original)
     if args.pal:data[0x1f0:0x200]=b'E               '
     core=C.CDLL(str(CORE))
     class Info(C.Structure):_fields_=[('path',C.c_char_p),('data',C.c_void_p),('size',C.c_size_t),('meta',C.c_char_p)]
@@ -70,7 +70,7 @@ def main():
     core.retro_get_memory_size.argtypes=[C.c_uint];core.retro_get_memory_size.restype=C.c_size_t
     core.retro_init();buffer=C.create_string_buffer(bytes(data));assert core.retro_load_game(C.byref(Info(str(rom).encode(),C.cast(buffer,C.c_void_p),len(data),None)))
     core.retro_get_system_av_info.argtypes=[C.POINTER(AVInfo)];av=AVInfo();core.retro_get_system_av_info(C.byref(av))
-    symbols=subprocess.check_output(['/opt/homebrew/bin/m68k-elf-nm','-Sn',str(GAME/'out/release/rom.out')],text=True)
+    symbols=subprocess.check_output(['/opt/homebrew/bin/m68k-elf-nm','-Sn',str(build/'rom.out')],text=True)
     syms={}
     for line in symbols.splitlines():
         parts=line.split()
@@ -135,11 +135,11 @@ def main():
     # Skip boot, enter NEW GAME, skip mission call, start phase 1 with A.
     run(120);press(3);run(fps*4)
     for _ in range(6):
-        if u8('arenaActive'):break
+        if u8('arenaActive') and u32('flow_state')==1:break
         press(3);run(fps)
-        if u8('arenaActive'):break
+        if u8('arenaActive') and u32('flow_state')==1:break
         press(1);run(fps*4)
-    if not u8('arenaActive'):shot('startup-failed');raise AssertionError(('start',u8('state'),u8('currentLevel'),u8('arenaActive')))
+    if not (u8('arenaActive') and u32('flow_state')==1):shot('startup-failed');raise AssertionError(('start',u8('state'),u8('currentLevel'),u8('arenaActive')))
     assert u8('currentLevel')==1 and u16('arenaMaxX')==495
     shot('01-inicio')
     baseline=snapshot()
@@ -183,6 +183,13 @@ def main():
             if state()==6:press(3);run(fps//4)
         else:raise AssertionError(('node entry failed',node,state(),u8('currentLevel')))
         run(3*fps+4)
+        # Heavy scene/panel loads span VBlanks. Release A until the countdown
+        # is over and PLAYER_update has armed autofire before saving a match.
+        buttons.clear()
+        for _ in range(5*fps):
+            if u16('freezeTimer')==0 and frames()>=5:break
+            run()
+        else:raise AssertionError(('phase countdown did not finish',node))
         assert state()==1 and u8('currentLevel')==node
         return snapshot()
     def enemies():
@@ -249,7 +256,7 @@ def main():
         def hardware_probe():
             nonlocal record,encoder
             restore(initial);isolate();pos(*d['start']);settle()
-            atlas=(resource/'tiles.bin').read_bytes();uploaded=bytes(vram[(781*32+i)^1] for i in range(len(atlas)))
+            atlas=(resource/'tiles.bin').read_bytes();uploaded=bytes(vram[(785*32+i)^1] for i in range(len(atlas)))
             glow_start=ex.get('glow_start',ex.get('glowStart'));glow_count=ex.get('glow_count',ex.get('glowCount',0))
             # Base data may currently be a glow animation frame. Every byte
             # outside the declared range must still match its exact atlas.
@@ -260,12 +267,21 @@ def main():
             # HUD clones use a fixed 640-tile scene reservation, independent
             # of the current scene's shorter atlas. Read the actual skull or
             # clock WINDOW attribute instead of guessing from tileCount.
-            icon_attr=vw(u16('window_addr')+(7 if node==6 else 1)*2)
-            icon_tile=icon_attr&2047
-            icon_base=icon_tile-(7 if node==6 else 0)
-            assert icon_base==781+640,('HUD clone base',icon_base,icon_attr)
-            icons=bytes(vram[(icon_base*32+i)^1] for i in range(11*32))
-            assert all(v>>4 and v&15 for v in icons),'HUD icons contain transparent pixels'
+            native_hud=(vw(u16('window_addr'))&2047)==425
+            if native_hud:
+                icon_base=425;icon_count=120
+                icons=bytes(vram[(icon_base*32+i)^1] for i in range(icon_count*32))
+                assert all(v>>4 and v&15 for v in icons),'HUD contains transparent pixels'
+                for row in range(3):
+                    for col in range(40):
+                        attr=vw(u16('window_addr')+(row*64+col)*2)
+                        assert attr&2047==icon_base+row*40+col and attr&0x8000 and (attr>>13)&3==1
+            else:
+                icon_attr=vw(u16('window_addr')+(7 if node==6 else 1)*2)
+                icon_tile=icon_attr&2047;icon_base=icon_tile-(7 if node==6 else 0);icon_count=11
+                assert icon_base==785+640,('HUD clone base',icon_base,icon_attr)
+                icons=bytes(vram[(icon_base*32+i)^1] for i in range(icon_count*32))
+                assert all(v>>4 and v&15 for v in icons),'HUD icons contain transparent pixels'
             font=(GAME/'res/intro/font.bin').read_bytes()
             actual_font=bytes(vram[(1440*32+i)^1] for i in range(len(font)))
             assert actual_font==font,'opaque font differs in VRAM'
@@ -274,7 +290,7 @@ def main():
                 encoder=subprocess.Popen(['/opt/homebrew/bin/ffmpeg','-y','-loglevel','error','-f','rawvideo','-pixel_format','rgb565le','-video_size','320x224','-framerate',str(av.timing.fps),'-i','pipe:0','-vf','scale=960:672:flags=neighbor','-c:v','libx264','-pix_fmt','yuv420p',str(out/(d['id']+'-glow.mp4'))],stdin=subprocess.PIPE)
                 record=True
             for _ in range(fps*4):
-                run();variants.add(bytes(vram[(781*32+i)^1] for i in range(len(atlas))))
+                run();variants.add(bytes(vram[(785*32+i)^1] for i in range(len(atlas))))
             if record:
                 record=False;encoder.stdin.close();encoder.wait();assert encoder.returncode==0;encoder=None
             if glow_start is not None and glow_count:
@@ -290,8 +306,169 @@ def main():
                             assert (original_pixel,current_pixel)==(highlight,brighter),'glow altered a non-highlight pixel'
                             changed_pixels+=1
             after_pal=bytes((C.c_ubyte*128).in_dll(core,'cram'));assert before_pal==after_pal,'palette changed during isolated glow'
-            return {'exact_atlas_except_glow':True,'opaque_hud_tiles':11,'hud_vram_base':icon_base,'font_bytes':len(font),'glow_variants':len(variants),'glow_start':glow_start,'glow_count':glow_count,'only_lava_highlight_pixels_changed':bool(glow_count),'palette_stable':True,'scene_atlas_end':781+ex['tiles'],'reserved_scene_end_with_hud':781+640+11}
+            return {'exact_atlas_except_glow':True,'opaque_hud_tiles':icon_count,'hud_height':24 if native_hud else 8,'hud_vram_base':icon_base,'font_bytes':len(font),'glow_variants':len(variants),'glow_start':glow_start,'glow_count':glow_count,'only_lava_highlight_pixels_changed':bool(glow_count),'palette_stable':True,'scene_atlas_end':785+ex['tiles'],'reserved_scene_end_with_hud':785+640+11}
         check(d['id']+'/hardware',hardware_probe,result['isolated_probes'])
+        if args.shield_tests and node==6:
+            def shield_probe():
+                shield_tile=16+85
+                def sat():
+                    sprites=[];index=0
+                    for _ in range(80):
+                        address=u16('slist_addr')+index*8
+                        yy,ss,attr,xx=[vw(address+j) for j in (0,2,4,6)]
+                        sprites.append({'x':(xx&511)-128,'y':(yy&511)-128,
+                            'w':(((ss>>10)&3)+1)*8,'h':(((ss>>8)&3)+1)*8,
+                            'tile':attr&2047,'pal':(attr>>13)&3})
+                        index=ss&127
+                        if not index:return sprites
+                    raise AssertionError('SAT loop')
+                def enemy(i,kind,x,y,shield=True,static=False):
+                    buf=bytearray(stride)
+                    struct.pack_into('>hhii',buf,0,x,y,x<<6,y<<6)
+                    struct.pack_into('>HH',buf,16,600,600)
+                    if static:struct.pack_into('>H',buf,20,600)
+                    struct.pack_into('>HH',buf,24,12*fps if kind==14 else 600,600)
+                    buf[30],buf[31],buf[42],buf[43],buf[44]=kind,200,int(shield),1,1
+                    write(enemy_addr+i*stride,buf)
+                def body_tile(i):
+                    address,size=syms['slots'];assert size==16*16,(address,size)
+                    return 16+int.from_bytes(read(address+i*16+12,2),'big')
+                def markers():return [s for s in sat() if s['tile']==shield_tile]
+                def body_present(i):return body_tile(i) in {s['tile'] for s in sat()}
+                restore(initial);isolate();pos(64,336);settle()
+                raw_icon=bytes(vram[(shield_tile*32+j)^1] for j in range(32))
+                colors={v for b in raw_icon for v in (b>>4,b&15)}
+                assert colors=={0,1,4,11},colors
+                examples=[]
+                for kind in (2,6,10,14):
+                    restore(initial);isolate();pos(64,336);settle()
+                    enemy(0,kind,224,256,static=True);run(20)
+                    for _ in range(fps):
+                        run();assert body_present(0),('shielded body blinked',kind)
+                        mm=markers();assert len(mm)==1 and mm[0]['pal']==1,(kind,mm)
+                        assert mm[0]['w']==mm[0]['h']==8,('shield dimensions',mm)
+                        assert mm[0]['y']>=10 and mm[0]['y']+8<=224
+                    shot('shield-type-'+str(kind));examples.append(kind)
+                # Observe an actual purple shield activation and expiry without
+                # forcing shield flags after initial setup.
+                restore(initial);isolate();pos(64,336);settle()
+                enemy(0,2,224,256,False,True)
+                write(enemy_addr+24,struct.pack('>H',20));seen=set();transitions=[];previous=None
+                last_active=None
+                for t in range(4*fps):
+                    run();active=bool(read(enemy_addr+42,1)[0]);seen.add(active)
+                    if active!=previous:transitions.append([t,active]);previous=active
+                    # The SAT is transferred one VBlank after the RAM update.
+                    if t>8:
+                        assert body_present(0),('cycle body blink',t)
+                        if active==last_active:assert bool(markers())==active,('marker does not match armour',t,active)
+                    last_active=active
+                assert seen=={False,True} and len(transitions)>=3,transitions
+                # North/right edge: shield moves beside the head, below HUD.
+                restore(initial);isolate();pos(352,112);settle()
+                enemy(0,2,352,96,static=True);run(20)
+                mm=markers();assert len(mm)==1 and 0<=mm[0]['x']<=312 and mm[0]['y']>=10,mm
+                shot('shield-north-edge')
+                measurements=[]
+                for count,dense in [(4,False),(8,False),(16,False),(16,True)]:
+                    for shield in (False,True):
+                        restore(initial);isolate();pos(64,336);settle()
+                        def arrange():
+                            w16('hp',100);w16('spawnTimer',60000)
+                            for i in range(count):
+                                enemy(i,2,22+(i%4)*72,244 if dense else 174+(i//4)*52,shield)
+                        for _ in range(60):arrange();run()
+                        start=frames();vb=u32('vtimer');loads=[];body_counts=[];marker_counts=[]
+                        for _ in range(300):
+                            arrange();run();loads.append(u16('cpuFrameLoad')*100/2048)
+                            sprites=sat();tiles={s['tile'] for s in sprites}
+                            bodies=sum(body_tile(i) in tiles for i in range(count))
+                            mm=[s for s in sprites if s['tile']==shield_tile]
+                            body_counts.append(bodies);marker_counts.append(len(mm))
+                            assert len(mm)<=bodies,('orphan shield',bodies,len(mm))
+                            for yy in range(224):
+                                row=[s for s in sprites if s['y']<=yy<s['y']+s['h']]
+                                assert len(row)<=20 and sum(s['w'] for s in row)<=320,('scanline limit',yy,row)
+                            assert len(sprites)<=80
+                        game,physical=frames()-start,u32('vtimer')-vb
+                        rate=fps*game/physical
+                        item={'enemies':count,'shielded':shield,'dense_row':dense,'game_frames':game,'physical_frames':physical,
+                              'fps':round(rate,2),'cpu_mean_pct':round(statistics.mean(loads),2),
+                              'cpu_p95_pct':round(sorted(loads)[285],2),'minimum_bodies':min(body_counts),
+                              'minimum_markers':min(marker_counts),'maximum_markers':max(marker_counts)}
+                        if not dense:
+                            assert min(body_counts)==count,item
+                            assert min(marker_counts)==(count if shield else 0),item
+                        measurements.append(item)
+                        shot('shield-load-'+str(count)+('-dense' if dense else '')+('-on' if shield else '-off'))
+                for before,after in zip(measurements[::2],measurements[1::2]):
+                    assert after['minimum_bodies']>=before['minimum_bodies'],('markers displaced bodies',before,after)
+                return {'types_checked':examples,'body_always_visible':True,'gold_white_dark_outline':True,
+                        'natural_cycle_transitions':transitions,'hud_edge_safe':True,'no_orphan_markers':True,
+                        'scanline_limits_respected':True,'stress_ram_setup':True,'measurements':measurements}
+            check('enemy-shields',shield_probe,result['isolated_probes'])
+        if node==6:
+            def santa_feedback_probe():
+                restore(initial);isolate();pos(64,288);settle()
+                visual=runtime['npc_visual'];x,y,ww,hh=visual['rect']
+                cells=[(xx,yy) for yy in range(y//8,(y+hh)//8) for xx in range(x//8,(x+ww)//8)]
+                tilemap=struct.unpack('>3072H',(resource/'map.bin').read_bytes())
+                atlas=(resource/'tiles.bin').read_bytes()
+                original=tuple(785+tilemap[yy*64+xx] for xx,yy in cells)
+                hidden=tuple(785+v for v in visual['floor_tiles'])
+                def patch():return tuple(vw(u16('bgb_addr')+((yy&31)*64+xx)*2)&2047 for xx,yy in cells)
+                def sprite_tiles():
+                    result=[];index=0
+                    for _ in range(80):
+                        address=u16('slist_addr')+index*8;result.append(vw(address+4)&2047)
+                        index=vw(address+2)&127
+                        if not index:return result
+                    raise AssertionError('SAT link loop')
+                def gold_pixels():
+                    raw=bytes(vram[(1436*32+i)^1] for i in range(128))
+                    return sum(n==4 for b in raw for n in (b>>4,b&15))
+                attr=vw(u16('window_addr')+2)
+                assert attr&2047 in (1433,426) and (attr>>13)&3==1,'Santa HUD must use opaque PAL1 artwork'
+                assert patch()==original,'intact Santa image is missing'
+                assert 1436 in sprite_tiles(),'objective life bar is missing'
+                assert 88 not in sprite_tiles(),'duplicate legacy Santa sprite still present'
+                assert u16('cameraY')<=144,'objective marker is above the HUD'
+                full=gold_pixels();assert full==90,full
+                shot('05-santa-intact')
+                buf=bytearray(stride);ex,ey=160,208
+                struct.pack_into('>hhii',buf,0,ex,ey,ex<<6,ey<<6)
+                struct.pack_into('>hhHH',buf,12,32,0,600,600)
+                buf[30]=0;buf[31]=20;buf[43]=1;buf[44]=1;write(enemy_addr,buf)
+                for _ in range(fps):
+                    run()
+                    if u16('npcHp')==88:break
+                assert u16('npcHp')==88,'real side contact did not damage Santa'
+                clear_enemies();seen=set()
+                for _ in range(40):
+                    run();state_patch=patch();assert state_patch in (original,hidden),'partial/stale Santa patch'
+                    seen.add(state_patch)
+                    if state_patch==hidden:shot('05-santa-hit')
+                assert seen=={original,hidden},'Santa itself did not blink after damage'
+                assert 0<gold_pixels()<full,'life bar did not shrink'
+                restore(initial);isolate();pos(64,288);settle();write(enemy_addr,buf)
+                for _ in range(30*fps):
+                    if state()!=1:break
+                    write(enemy_addr,struct.pack('>hhii',ex,ey,ex<<6,ey<<6));run()
+                assert state()==4 and not u8('npcVisible'),'fallen Santa remains painted in the result background'
+                for _ in range(4):run()
+                for i,(xx,yy) in enumerate(cells):
+                    tile=vw(u16('bgb_addr')+((yy&31)*64+xx)*2)&2047
+                    actual=bytes(vram[(tile*32+j)^1] for j in range(32))
+                    source=visual['floor_tiles'][i]*32
+                    assert actual==atlas[source:source+32],('destroyed Santa remained visible',xx,yy)
+                # Result panels load with the display blanked over several
+                # VBlanks. Capture the completed screen, after checking VRAM.
+                run(fps//2)
+                shot('05-santa-destroyed')
+                return {'opaque_color_hud':True,'single_object_no_floating_icon':True,'world_health_bar':True,
+                        'real_damage_shrinks_bar':True,'statue_blinks_on_hit':True,'statue_removed_on_death':True,
+                        'camera_keeps_marker_below_hud':True,'no_hp_writes':True,'floor_patch_cells':len(cells)}
+            check('05/visible-objective',santa_feedback_probe,result['isolated_probes'])
         def bounds_probe():
             restore(initial);isolate();w16('hp',100);checks=0
             midx=(left+right)//2;midy=(top+bottom)//2
@@ -333,9 +510,21 @@ def main():
             buttons.clear();return {'hazards':values,'controller_dry_route':True,'controller_route_frames':route_frames,'ram_writes_during_route':False}
         check(d['id']+'/terrain',terrain_probe,result['isolated_probes'])
         def pause_probe():
-            restore(initial);isolate();pos(*d['start']);settle();before=(u16('cameraX'),u16('cameraY'))
-            press(3);assert state()==2;shot(d['id']+'-pause');press(3);settle();assert state()==1 and u8('arenaActive')
-            assert (u16('cameraX'),u16('cameraY'))==before;assert read(syms['music'][0]+33,1)[0]==tracks[node]
+            restore(initial);isolate();pos(*d['start']);settle();run(fps);before=(u16('cameraX'),u16('cameraY'))
+            hold({3},8)
+            for _ in range(2*fps):
+                if state()==2:break
+                run()
+            assert state()==2,('pause open',state(),'freeze',u16('freezeTimer'),'stats',frames())
+            # Give the new panel loop a released pad after its heavy load.
+            # Otherwise the second START can be seen as the same held press.
+            run(8);shot(d['id']+'-pause');hold({3},8)
+            for _ in range(2*fps):
+                if state()==1:break
+                run()
+            settle();assert state()==1 and u8('arenaActive'),('pause resume',state(),u8('arenaActive'))
+            assert (u16('cameraX'),u16('cameraY'))==before,('pause camera',before,u16('cameraX'),u16('cameraY'))
+            assert read(syms['music'][0]+33,1)[0]==tracks[node],('pause music',read(syms['music'][0]+33,1)[0],tracks[node])
             return {'scene_restored':True,'camera_restored':True,'music_track':tracks[node]}
         check(d['id']+'/pause',pause_probe,result['isolated_probes'])
         if node==8:
@@ -360,17 +549,24 @@ def main():
                     item={'axis':axis,'enemies':4,'shots_per_pool':6,'game_frames':game,'physical_frames':physical,'fps':round(rate,2),'cpu_mean_pct':round(statistics.mean(loads),2),'cpu_p95_pct':round(sorted(loads)[285],2),'camera_x_range':[min(cx),max(cx)],'camera_y_range':[min(cy),max(cy)]}
                     assert rate>=fps*.99,item
                     actual_range=item['camera_x_range'] if axis=='horizontal' else item['camera_y_range']
-                    assert actual_range==[0,max(0,d['width']-320 if axis=='horizontal' else d['height']-224)],item
+                    limit=max(0,d['width']-320 if axis=='horizontal' else d['height']-224)
+                    if node==6 and axis=='vertical':
+                        if (vw(u16('window_addr'))&2047)==425:
+                            limit=min(limit,max(runtime['npc_visual']['focus_top']-24-8,bottom+20-224))
+                        else:limit=min(limit,144)
+                    assert actual_range==[0,limit],item
                     tests.append(item)
                 buttons.clear();return tests
             check(d['id']+'/stress',stress_probe,result['isolated_probes'])
         for trial in range(args.matches):
-            restore(initial);ordinary=True;writes_before=writes;begin=frames();vb=u32('vtimer');walk=0;damage_samples=[];heals=[];peak_enemies=peak_player=peak_enemy=0;lastpos=(u16('px'),u16('py'));previous_hp=u16('hp');enemy_bound_checks=0;min_npc_hp=u16('npcHp') if node==6 else None
+            restore(initial);ordinary=True;writes_before=writes;begin=frames();vb=u32('vtimer');walk=0;damage_samples=[];heals=[];peak_enemies=peak_player=peak_enemy=0;lastpos=(u16('px'),u16('py'));previous_hp=u16('hp');enemy_bound_checks=0;min_npc_hp=u16('npcHp') if node==6 else None;peak_shielded=shielded_frames=0
             for tick in range(args.seconds*fps):
                 if state() in (3,4):break
                 assert state()==1,('ordinary match unexpected state',node,trial,state())
                 ax,ay=u16('px'),u16('py');assert left<=ax<=right and top<=ay<=bottom
                 current=enemies();peak_enemies=max(peak_enemies,len(current));keys={1}
+                shielded=sum(bool(read(enemy_addr+i*stride+42,1)[0]) and bool(read(enemy_addr+i*stride+44,1)[0]) for i in range(16))
+                peak_shielded=max(peak_shielded,shielded);shielded_frames+=bool(shielded)
                 for enemy_x,enemy_y,kind in current:
                     assert left<=enemy_x<=right and top<=enemy_y<=bottom,('enemy outside',node,kind,enemy_x,enemy_y);enemy_bound_checks+=1
                 if current:
@@ -404,7 +600,7 @@ def main():
                 peak_enemy=max(peak_enemy,sum(read(syms['eshots'][0]+i*20+18,1)[0]!=0 for i in range(16)))
             ordinary=False;buttons.clear();assert writes==writes_before
             assert peak_enemies<=4 and peak_player<=6 and peak_enemy<=6,('production caps',node,peak_enemies,peak_player,peak_enemy)
-            end_state=state();match={'attempt':trial+1,'result':{3:'defeat',4:'completed'}.get(end_state,'timeout'),'objective_failed':bool(read(syms['phaseStats'][0]+8,1)[0]),'physical_seconds':round((u32('vtimer')-vb)/fps,2),'active_seconds':round((frames()-begin)/fps,2),'game_fps':round(fps*(frames()-begin)/max(1,u32('vtimer')-vb),2),'kills':u16('kills'),'remaining_hp':signed('hp'),'minimum_npc_hp':min_npc_hp,'moving_frames':walk,'enemy_bound_checks':enemy_bound_checks,'damage_events':damage_samples,'healing_events':heals,'peak_enemies':peak_enemies,'peak_player_shots':peak_player,'peak_enemy_shots':peak_enemy,'game_ram_writes':False}
+            end_state=state();match={'attempt':trial+1,'result':{3:'defeat',4:'completed'}.get(end_state,'timeout'),'objective_failed':bool(read(syms['phaseStats'][0]+8,1)[0]),'physical_seconds':round((u32('vtimer')-vb)/fps,2),'active_seconds':round((frames()-begin)/fps,2),'game_fps':round(fps*(frames()-begin)/max(1,u32('vtimer')-vb),2),'kills':u16('kills'),'remaining_hp':signed('hp'),'minimum_npc_hp':min_npc_hp,'moving_frames':walk,'enemy_bound_checks':enemy_bound_checks,'damage_events':damage_samples,'healing_events':heals,'peak_enemies':peak_enemies,'peak_shielded':peak_shielded,'shielded_frames':shielded_frames,'peak_player_shots':peak_player,'peak_enemy_shots':peak_enemy,'game_ram_writes':False}
             result['ordinary_matches'].append(match);shot(d['id']+'-attempt-'+str(trial+1));print('MATCH',d['id'],json.dumps(match),flush=True)
             if end_state not in (3,4):report['failures'].append({'check':d['id']+'/attempt-'+str(trial+1),'error':'ordinary attempt timed out'})
         save_report()

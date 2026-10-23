@@ -1,76 +1,20 @@
-// FASES TESTE (dados) — sandbox. A lógica fica em levels/test.c.
-//   estágio 1: arena com lava + lama + um dummy (testa tiros/lava/lentidão).
-//   estágio 2: 3 alvos frágeis, sem lava (testa a reação em cadeia do raio).
-//   estágio 3: chefe. estágios 4/5/6: os novos objetivos (sobreviver/coletar/proteger).
-// killTarget/spawnSeconds = 99 aqui é intencional: o sandbox nunca "vence" por
-// mortes e o spawn regular da campanha não roda no teste (levels/test.c cuida).
-
+// Approved six-room training suite. Campaign definitions are independent.
 #include "levels/levels.h"
-#include "items/items.h"           // ITEM_* (item-alvo do objetivo COLETAR)
-
-static const u8 eTest[]  = { ENEMY_DUMMY };
-static const u8 eTest2[] = { ENEMY_TARGET };
-static const u8 eTest3[] = { ENEMY_BOSS, ENEMY_TRI_YEL };   // chefe + lacaios
-static const u8 eObj[]   = { ENEMY_TRI_YEL, ENEMY_TRI_RED, ENEMY_SQ_YEL };  // objetivos
-
-// estágio 1: lava só no canto superior esquerdo; no lugar da segunda lava
-// (canto inferior direito), uma poça de lama — testa a lentidão progressiva
-static const TileRect testMud[] = { { 25, 15, 10, 6 } };
-
-const LevelDef TEST_def =
-{
-    .killTarget   = 99,
-    .spawnSeconds = 99,
-    .lava         = LAVA_PAIR,
-    .lavaCount    = 1,          // só o 1º retângulo (testa o dano da lava)
-    .mud          = testMud,
-    .mudCount     = 1,          // poça única (testa a lentidão)
-    .floor        = FLOOR_MIX,
-    LVL_ROSTER(eTest),
-};
-
-const LevelDef TEST2_def =
-{
-    .killTarget   = 99,
-    .spawnSeconds = 99,
-    LVL_ROSTER(eTest2),
-};
-
-// estágio 3: arena do CHEFE (Besouro) — acessível pela porta à direita da teste 2
-const LevelDef TEST3_def =
-{
-    .killTarget   = 99,
-    .spawnSeconds = 99,
-    .floor        = FLOOR_CAVE,     // covil do chefe: rocha úmida
-    LVL_ROSTER(eTest3),
-};
-
-// estágios 4/5/6: demonstram os novos objetivos (inimigos surgem continuamente;
-// a lógica de spawn/vitória de teste fica em levels/test.c)
-const LevelDef TEST4_def =      // SOBREVIVER 20 s
-{
-    .objective    = OBJ_SURVIVE,
-    .objTarget    = 20,
-    .spawnSeconds = 99,
-    LVL_ROSTER(eObj),
-};
-
-const LevelDef TEST5_def =      // COLETAR 3 corações
-{
-    .objective    = OBJ_COLLECT,
-    .objTarget    = 3,
-    .collectItem  = ITEM_HEART,
-    .spawnSeconds = 99,
-    .floor        = FLOOR_FOREST,
-    LVL_ROSTER(eObj),
-};
-
-const LevelDef TEST6_def =      // PROTEGER o aliado (60 de vida) por 20 s
-{
-    .objective    = OBJ_PROTECT,
-    .objTarget    = 20,
-    .npcHp        = 60,
-    .spawnSeconds = 99,
-    .floor        = FLOOR_MIX,
-    LVL_ROSTER(eObj),
-};
+#include "levels/test_scene.h"
+#include "levels/stage_scenes.h"
+static const u8 all[]={0,1,2,3,4,5,6,7,8,9,10,11,ENEMY_BOSS};
+static const u8 dummy[]={ENEMY_DUMMY,ENEMY_TARGET};
+static const u8 defense[]={ENEMY_TRI_RED,ENEMY_TRI_YEL,ENEMY_SQ_ORG};
+const LevelDef TEST_def={.enemyCap=16,.shotCap=16,.arena=&TEST_LAB_arena,LVL_ROSTER(all)};
+const LevelDef TEST2_def={.enemyCap=16,.shotCap=16,.arena=&TEST_ITEMS_arena,LVL_ROSTER(dummy)};
+// Same map, objective, target, music and caps as campaign phase 5.
+const LevelDef TEST3_def={.objective=OBJ_PROTECT,.objTarget=30,.npcX=176,.npcY=200,
+    .spawnSeconds=4,.enemyCap=4,.shotCap=6,.musicTrack=MUSIC_TRACK_LADAINHA,
+    .arena=&ARENA05,LVL_ROSTER(defense)};
+const LevelDef TEST4_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COLLISION_arena,
+    .modularTerrain=TRUE,
+    .lava=TEST_lava,.lavaCount=1,.mud=TEST_mud,.mudCount=1,LVL_ROSTER(dummy)};
+const LevelDef TEST5_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(all)};
+const LevelDef TEST6_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(all)};
+// Isolated loss/recovery lab: no enemies or hazards are spawned.
+const LevelDef TEST10_def={.enemyCap=1,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(dummy)};

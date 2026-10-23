@@ -5,12 +5,15 @@
 
 #include "enemies/enemies.h"
 #include "actors/player.h"
+#include "actors/dinorah.h"
 #include "actors/shots.h"          // ICE_FREEZE_SEC / FIRE_BURN_SEC / FIRE_TICK_SEC
 #include "core/game.h"
 #include "levels/levels.h"
 #include "items/items.h"
 #include "system/video/chainfx.h"
 #include "system/video/blood.h"
+#include "system/video/combatgfx.h"
+#include "levels/test.h"
 
 static void enemyDie(Enemy *e);     // fwd: usado pela queimadura antes de definido
 
@@ -49,6 +52,7 @@ u16 ENEMIES_activeCount(void)
 void ENEMIES_clear(void)
 {
     memset(enemies, 0, sizeof(enemies));
+    COMBATGFX_clear();
     CHAINFX_reset();        // sem arcos de raio pendentes ao (re)carregar
 }
 
@@ -95,12 +99,29 @@ void ENEMIES_trySpawn(const u8 *types, u8 typeCount)
         const u8 type = types[random() % typeCount];
         const s16 size = ENEMY_DEFS[type]->size;
 
+        // Sample the active sector directly, including the distant half of
+        // a2048px world. Rejection sampling the entire map thins the waves.
+        s16 minX=INNER_MIN_X,maxX=INNER_MAX_X-(size-1);
+        if(LEVEL_current()->route) {
+            const s16 focus=DINORAH_alive() ? dinorahX : px;
+            if(minX<focus-136)minX=focus-136;
+            if(maxX>focus+216)maxX=focus+216;
+        }
         // procura posição a uma distância razoável do jogador
         for (u16 attempt = 0; attempt < 12; attempt++)
         {
-            s16 x = INNER_MIN_X + (random() % (INNER_MAX_X - INNER_MIN_X - (size - 1)));
+            s16 x = minX + (random() % (maxX-minX+1));
             s16 y = INNER_MIN_Y + (random() % (INNER_MAX_Y - INNER_MIN_Y - (size - 1)));
-            if (getApproximatedDistance(x - px, y - py) < 56) continue;
+            if(LEVEL_current()->route) {
+                // Spawn in the current combat sector, never on either actor
+                // or the landing. Retire distant pursuers below as we advance.
+                const s16 focus=DINORAH_alive() ? dinorahX : px;
+                if(x<focus-136 || x>focus+216)continue;
+                const ArenaRect *r=&LEVEL_current()->route->exit;
+                if(x<r->x+r->w && x+size>r->x && y<r->y+r->h && y+size>r->y)continue;
+                if(DINORAH_alive() && getApproximatedDistance(x-dinorahX,y-dinorahY)<64)continue;
+            }
+            if (getApproximatedDistance(x - px, y - py) < 64) continue;
             if (ARENA_blocked(x, y, size, size)) continue;
 
             initEnemy(&enemies[i], type, x, y);
@@ -280,14 +301,41 @@ void ENEMIES_knockbackFrom(Enemy *e, s16 fromX, s16 fromY)
     e->mode = 0;                                // cancela dash em curso
 }
 
+static u16 updateStaticTraining(void)
+{
+    u16 dead=0;
+    for(u16 i=0;i<MAX_ENEMIES;i++) {
+        Enemy *e=&enemies[i];if(!e->active)continue;
+        if(e->hitFlash)e->hitFlash--;
+        if(e->burnFlash)e->burnFlash--;
+        if(e->burn) {
+            e->burn--;
+            if(e->burnTick)e->burnTick--;
+            if(!e->burnTick) {
+                e->burnTick=FIRE_TICK_SEC*fps;
+                if(!--e->hp){enemyDie(e);dead++;continue;}
+                e->burnFlash=HIT_FLASH_FRAMES;
+            }
+        }
+        if(e->frozen)e->frozen--;
+    }
+    return dead;
+}
 u16 ENEMIES_update(void)
 {
+    if(currentLevel==0 && TEST_staticEnemies())return updateStaticTraining();
     u16 burnKills = 0;
 
     for (u16 i = 0; i < MAX_ENEMIES; i++)
     {
         Enemy *e = &enemies[i];
         if (!e->active) continue;
+        if(LEVEL_current()->route) {
+            const s16 focus=DINORAH_alive() ? dinorahX : px;
+            if((e->x<focus-240 || e->x>focus+400) && (e->x+ENEMY_SIZE(e)<cameraX || e->x>cameraX+320)) {
+                e->active=FALSE;continue; // out of the active sector; no kill/drop
+            }
+        }
 
         const EnemyDef *def = ENEMY_DEF(e);
 
@@ -328,7 +376,7 @@ u16 ENEMIES_update(void)
         }
     }
 
-    ENEMIES_separate();     // afasta devagar quem empilhou (anti-overlap)
+    ENEMIES_separate();
     return burnKills;
 }
 
@@ -350,6 +398,8 @@ u16 ENEMIES_killAll(void)
             continue;
         }
 
+        COMBATGFX_spawn(enemies[i].type,enemies[i].x,enemies[i].y);
+        BLOOD_splat(enemies[i].x+ENEMY_SIZE(&enemies[i])/2,enemies[i].y+ENEMY_SIZE(&enemies[i])/2);
         enemies[i].active = FALSE;      // sem drop: a bomba não sorteia itens
         count++;
     }
@@ -368,11 +418,18 @@ static void splitInto(Enemy *e)
 static void enemyDie(Enemy *e)
 {
     const s16 half = ENEMY_SIZE(e) / 2;
+    COMBATGFX_spawn(e->type,e->x,e->y);
     if (e->type == ENEMY_BOSS) bossDefeated = TRUE;     // chefe morto → encerra a fase 16
-    if (ENEMY_DEF(e)->extra == EXTRA_SPLIT) splitInto(e);
+    if (!TEST_staticEnemies() && ENEMY_DEF(e)->extra == EXTRA_SPLIT) splitInto(e);
     e->active = FALSE;
     BLOOD_splat(e->x + half, e->y + half);      // poça de sangue verde no local
-    ITEMS_tryDrop(e->x + half, e->y + half, e->type);
+    if(!TEST_staticEnemies() && (currentLevel || testStage!=6))ITEMS_tryDrop(e->x + half, e->y + half, e->type);
+}
+
+bool ENEMIES_testKill(u16 index)
+{
+    if(currentLevel || index>=MAX_ENEMIES || !enemies[index].active)return FALSE;
+    enemyDie(&enemies[index]);return TRUE;
 }
 
 u16 ENEMIES_damageBox(s16 x, s16 y, s16 w, s16 h, u8 status)

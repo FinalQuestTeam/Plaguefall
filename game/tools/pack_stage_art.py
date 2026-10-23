@@ -10,7 +10,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 BUDGET=640
-SCENE_BASE=781
+SCENE_BASE=785
 FONT_BASE=1440
 HUD_TILES=11
 COLORS=[(0,0,0),(36,36,36),(36,36,73),(36,73,109),(73,109,146),

@@ -84,7 +84,8 @@ void ENEMYBOSS_update(Enemy *e, const EnemyDef *def)
         if (e->fireTimer) e->fireTimer--;
         else
         {
-            fireEnemySpreadDmg(e->x, e->y, BOSS_SHOT_COUNT, BOSS_SHOT_DMG);
+            SHOTS_enemyTarget(px+8,py+8);
+            fireEnemySpreadDmg(e->x, e->y, BOSS_SHOT_COUNT, BOSS_SHOT_DMG, 4);
             e->fireTimer = (u16) (12 * fps / 10);   // ~1,2 s entre rajadas
         }
     }

@@ -1,10 +1,11 @@
 """Validate native sizes, shared palette, packing, hardware limits and combat."""
 from pathlib import Path
 from PIL import Image
-import json,re,subprocess,sys,hashlib
+import json,re,subprocess,sys,hashlib,argparse
 from export_sprites import ROOT,GAME,pipeline,pieces
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--assets-only',action='store_true');args=parser.parse_args()
     rows=json.loads((ROOT/'validation/export.json').read_text());assert len(rows)==13
     raw=(GAME/'res/insects/frames.bin').read_bytes();offset=0
     references=0
@@ -33,6 +34,12 @@ def main():
                 references+=1
         assert master.crop((0,0,size,size)).tobytes()!=master.crop((0,4*size,size,5*size)).tobytes(),(id,'N/S must differ')
     assert offset==len(raw)==118080
+    if args.assets_only:
+        report={'passed':True,'scope':'native PNGs, all poses, palette, margins, ROM bytes and HFLIP mirrors; no legacy runtime harness',
+                'enemies':13,'directions':104,'frame_references':references,'canonical_frames':390,
+                'raw_sha256':hashlib.sha256(raw).hexdigest()}
+        (ROOT/'validation/assets.json').write_text(json.dumps(report,indent=2)+'\n')
+        print(json.dumps(report,indent=2));return
     tests=GAME/'art/cangaco-insects-iso60-v2/tests'
     host=['clang','-std=c99','-Werror=implicit-function-declaration','-I'+str(tests),'-I'+str(GAME/'src')]
     reports={}

@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-22",
+  "passed": true,
+  "rom": "../../out/release/Plaguefall.bin",
+  "romSHA256": "81e9454bf667df599c74fa64ceed11116c7456a9919ee86013dcf814fce63088",
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "checks": 27,
+      "pilotLoadPerformance": {
+        "gameFPS": 52.5,
+        "regionFPS": 60
+      },
+      "baselineSameEngineWithOldArt": {
+        "gameFPS": 52.5,
+        "regionFPS": 60
+      },
+      "baselineRomSHA256": "5e670b7c2c22d98e69b87a7549afd7f519080cb45e4df1a00b25f3aea897f50a",
+      "performanceDelta": 0,
+      "heapSentinelIntact": true
+    },
+    "pal": {
+      "passed": true,
+      "checks": 27,
+      "pilotLoadPerformance": {
+        "gameFPS": 44.67,
+        "regionFPS": 50
+      },
+      "baselineSameEngineWithOldArt": {
+        "gameFPS": 44.67,
+        "regionFPS": 50
+      },
+      "baselineRomSHA256": "5e670b7c2c22d98e69b87a7549afd7f519080cb45e4df1a00b25f3aea897f50a",
+      "performanceDelta": 0,
+      "heapSentinelIntact": true
+    }
+  },
+  "geometryUnchanged": true,
+  "sourceTool": "image_gen.imagegen (built-in)",
+  "nativeResourcesCheckPassed": true,
+  "nativeTileReplacements": 0,
+  "budgets": {
+    "04": {
+      "tiles": 603,
+      "tileLimit": 640,
+      "sceneryBytes": 19296,
+      "paletteColors": 16
+    },
+    "06b": {
+      "tiles": 518,
+      "tileLimit": 640,
+      "sceneryBytes": 16576,
+      "paletteColors": 16
+    }
+  },
+  "baselineEngineSourcesMatch": true
+}

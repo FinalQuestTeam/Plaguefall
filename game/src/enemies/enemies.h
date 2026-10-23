@@ -129,6 +129,7 @@ extern Enemy enemies[MAX_ENEMIES];
 
 // desativa todos os inimigos
 void ENEMIES_clear(void);
+bool ENEMIES_testKill(u16 index); // training-only preview through real death path
 
 // tenta criar um inimigo longe do jogador, sorteado entre os tipos permitidos
 void ENEMIES_trySpawn(const u8 *types, u8 typeCount);

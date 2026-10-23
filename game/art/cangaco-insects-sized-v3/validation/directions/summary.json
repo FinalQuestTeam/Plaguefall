@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-22",
+  "passed": true,
+  "rom_sha256": "84854411069b0577f02c749bf59497991bcc0539457270444cfa24d8c4cc9a64",
+  "rom_bytes": 1572864,
+  "assets": {
+    "passed": true,
+    "scope": "native PNGs, all poses, palette, margins, ROM bytes and HFLIP mirrors; no legacy runtime harness",
+    "enemies": 13,
+    "directions": 104,
+    "frame_references": 624,
+    "canonical_frames": 390,
+    "raw_sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb"
+  },
+  "native_facing": "1248 gallery combinations at 50/60 Hz plus movement, ice, recoil, charges, retreat, target and DMA scenarios with ASan/UBSan",
+  "emulator": {
+    "ntsc": {
+      "passed": true,
+      "region": "NTSC",
+      "rom_sha256": "84854411069b0577f02c749bf59497991bcc0539457270444cfa24d8c4cc9a64",
+      "setup": "Controller gallery entry; RAM fixes gallery settings and clock, production loader and renderer run unchanged.",
+      "frames_checked": 624,
+      "directions": 8,
+      "types": 13,
+      "failures": [],
+      "legacy_static_targets": [
+        12,
+        13,
+        13
+      ]
+    },
+    "pal": {
+      "passed": true,
+      "region": "PAL",
+      "rom_sha256": "84854411069b0577f02c749bf59497991bcc0539457270444cfa24d8c4cc9a64",
+      "setup": "Controller gallery entry; RAM fixes gallery settings and clock, production loader and renderer run unchanged.",
+      "frames_checked": 624,
+      "directions": 8,
+      "types": 13,
+      "failures": [],
+      "legacy_static_targets": [
+        12,
+        13,
+        13
+      ]
+    }
+  },
+  "physical_hardware_tested": false,
+  "visual_review": "390 canonical poses and 234 mirrored poses inspected for head/abdomen orientation; four species corrected",
+  "corrected_types": [
+    "sq_yellow",
+    "sq_purple",
+    "tri_orange",
+    "pen_purple"
+  ],
+  "art_generation": {
+    "tool": "built-in image_gen",
+    "sources": [
+      "originals/sq_yellow-se-direction-fix.png",
+      "originals/tri_orange-ne-direction-fix.png"
+    ],
+    "prompts": [
+      "prompts/sq_yellow-direction-fix.txt",
+      "prompts/tri_orange-direction-fix.txt"
+    ]
+  },
+  "native_checks": "native-checks.txt",
+  "training_regression": {
+    "passed": true,
+    "region": "NTSC",
+    "report": "training-ntsc/report.json",
+    "checks": [
+      "gallery",
+      "room-2-entry",
+      "room-3-entry",
+      "room-4-entry",
+      "room-5-entry",
+      "room-6-entry",
+      "load-controls",
+      "santa-success",
+      "menu-controls",
+      "no-defeat",
+      "item-bench",
+      "behavior-boss",
+      "santa-failure",
+      "collision-terrain"
+    ]
+  }
+}

@@ -7,6 +7,7 @@
 #include "system/video/screens/hud.h"
 #include "actors/shots.h"
 #include "system/video/herogfx.h"
+#include "levels/test.h"
 
 // tunáveis em actors/player.h (bloco CONFIG)
 
@@ -30,6 +31,8 @@ void PLAYER_addSpeed(void)   { if (speedPct < PLAYER_SPEED_MAX) speedPct += PLAY
 void PLAYER_resetSpeed(void) { speedPct = 0; }
 u8   PLAYER_speedBonus(void) { return speedPct; }
 void PLAYER_grantShield(void) { shieldTimer = PLAYER_SHIELD_TENTHS * fps / 10; }
+u16 PLAYER_shieldRemaining(void) { return shieldTimer; }
+void PLAYER_restoreShield(u16 frames) { shieldTimer = frames; }
 
 void PLAYER_reset(void)
 {
@@ -46,6 +49,12 @@ void PLAYER_reset(void)
     shieldTimer = 0;
 }
 
+void PLAYER_observeFireRelease(u16 joy)
+{
+    if(!(joy&BUTTON_A))fireArmed=TRUE;
+}
+void PLAYER_waitFireRelease(void){fireArmed=FALSE;}
+
 void PLAYER_fullHp(void)
 {
     hp = PLAYER_START_HP;
@@ -54,23 +63,23 @@ void PLAYER_fullHp(void)
 // perda de HP direta (ignora os i-frames de dano, mas NÃO o escudo do item)
 void loseHp(u16 dmg)
 {
-    if (shieldTimer) return;            // escudo: imune inclusive à lava
+    if (hp<=0 || shieldTimer) return;   // dead actors cannot take more hits
 
     hp -= dmg;
+    if(hp<=0 && TEST_noDefeat())hp=1;
     phaseStats.damageTaken += dmg;      // condições de saída do grafo (SEM_DANO)
     HUD_drawLife(hp);
 
     if (hp <= 0)
     {
+        hp = 0;
         gameOver = TRUE;
-        VDP_drawText("GAME OVER", 15, 12);
-        VDP_drawText("APERTE START", 14, 14);
     }
 }
 
 void damagePlayer(u16 dmg)
 {
-    if (invTimer || shieldTimer) return;    // invencível: ignora o dano
+    if (hp<=0 || invTimer || shieldTimer) return;
 
     // feedback sonoro do dano de INIMIGO (contato/projétil). O dano de ambiente
     // (lava) entra por loseHp e fica só com o som ambiente de crepitar.
@@ -81,6 +90,7 @@ void damagePlayer(u16 dmg)
 
 void healPlayer(u16 amount)
 {
+    if(hp<=0)return;
     hp += amount;
     if (hp > PLAYER_START_HP) hp = PLAYER_START_HP;   // teto
     HUD_drawLife(hp);
@@ -88,6 +98,7 @@ void healPlayer(u16 amount)
 
 void PLAYER_update(u16 joy)
 {
+    if(hp<=0)return;
     if (invTimer) invTimer--;
     if (shieldTimer) shieldTimer--;
 
@@ -139,7 +150,8 @@ void PLAYER_update(u16 joy)
 
 bool PLAYER_hidden(void)
 {
+    if(hp<=0)return FALSE; // the collapse must remain visible after a fatal hit
+    if (shieldTimer) return FALSE;
     if (invTimer)    return (invTimer >> 2) & 1;
-    if (shieldTimer) return (shieldTimer >> 2) & 1;    // pisca durante o escudo
     return FALSE;
 }

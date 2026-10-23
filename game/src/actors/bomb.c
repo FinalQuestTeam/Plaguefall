@@ -13,6 +13,8 @@
 
 static u16 bombs;
 
+void BOMB_clear(void) { bombs = 0; }
+
 void BOMB_reset(void)
 {
     bombs = BOMB_MAX - 1;

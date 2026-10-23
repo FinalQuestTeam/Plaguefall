@@ -1,0 +1,162 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1",
+  "setup": "RAM seeds actors/projectiles and selects phase; production simulation, kill paths, controller pause and graphics run unmodified. No ROM patch.",
+  "species": [
+    {
+      "type": 0,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 1,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 2,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 3,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 4,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 5,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 6,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 7,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 8,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 9,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 10,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 11,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 300.0
+    },
+    {
+      "type": 14,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "logicalDeathImmediate": true,
+      "countedOnce": true,
+      "durationMs": 500.0
+    }
+  ],
+  "checks": {
+    "projectileTilesExact": true,
+    "allFourShooterStylesPersist": true,
+    "fortyShotOrientations": true,
+    "pauseHelpRestoresCombatArt": true,
+    "bombNoDropBoundedPoolAndDelayedResult": true,
+    "burnChainAndSplitCountOnce": true,
+    "crowdedScanlinesKeepShotsAndHardwareLimits": true,
+    "bossDeathBeforeFinalRadio": true
+  },
+  "failures": []
+}

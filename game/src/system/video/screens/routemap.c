@@ -1,3 +1,5 @@
+#include "text_data.h"
+#include "system/video/screens/loading.h"
 // Regional atlas: static BG_B art, graph-driven BG_A, one persistent pin.
 #include "system/video/screens/routemap.h"
 #include "levels/graph.h"
@@ -26,13 +28,21 @@ static bool active;
 // 1,280 bytes, reused per row. No full-screen RAM framebuffer.
 static u32 rowPixels[40 * 8];
 static u16 rowTop;
+typedef struct {
+    u32 tiles[OVERLAY_TILES*8];
+    u16 rows[22][40];
+    u16 count;
+} PreparedMap;
+static PreparedMap *prepared;
+static u8 preparedCurrent,preparedNext;
+
 static const u16 COLUMN_X[16] = {32,96,160,224,56,152,248,48,120,200,280,48,104,160,216,272};
-static const char *const REGION_NAMES[4] = {"COMUNIDADE","EVACUACAO","BASE INDUSTRIAL","NINHOS"};
-static const char *const PLACE[NODE_MAX] = {"", "PATIO DA IGREJA","RUA DE SERVICO","BAIXIO DA IGREJA",
- "ABRIGO DE MANUTENCAO","TUNEIS DE MANUTENCAO","SINALIZADOR NA SANTA","PERIMETRO DO RESGATE",
- "RETIRADA POR TERRA","REDE DE ANTENAS","FORNALHA","ALFANDEGA","ACESSO DOS TECNICOS",
- "DRENO TERMICO","DEPOSITO DE DEMOLICAO","COMPORTA DE CARGA","LINHA QUENTE","DECANTACAO",
- "PATIO DOS ENXAMES","GALERIAS DOS NINHOS","CAMARA DO ESCORPIAO"};
+static const char *const REGION_NAMES[4] = {"COMUNIDADE","EVACUAÇÃO","BASE INDUSTRIAL","NINHOS"};
+static const char *const PLACE[NODE_MAX] = {"", "PÁTIO DA IGREJA","RUA DE SERVIÇO","BAIXIO DA IGREJA",
+ "ABRIGO DE MANUTENÇÃO","TÚNEIS DE MANUTENÇÃO","SINALIZADOR NA SANTA","PERÍMETRO DO RESGATE",
+ "RETIRADA POR TERRA","REDE DE ANTENAS","FORNALHA","ALFÂNDEGA","ACESSO DOS TÉCNICOS",
+ "DRENO TÉRMICO","DEPÓSITO DE DEMOLIÇÃO","COMPORTA DE CARGA","LINHA QUENTE","DECANTAÇÃO",
+ "PÁTIO DOS ENXAMES","GALERIAS DOS NINHOS","CÂMARA DO ESCORPIÃO"};
 static const u16 MAP_PALETTE[16] = {
  RGB24_TO_VDPCOLOR(0x000000), RGB24_TO_VDPCOLOR(0x101820),
  RGB24_TO_VDPCOLOR(0x8CABA8), RGB24_TO_VDPCOLOR(0xFFDBB6),
@@ -69,7 +79,9 @@ static void line(s16 x, s16 y, s16 endX, s16 endY, u16 color, bool dashed, bool 
     u16 step = 0;
     while (TRUE)
     {
-        if (!dashed || (step % 7) < 4)
+        // Clip before the nine outline pixel calls, retaining the original
+        // Bresenham and dash steps so the raster stays byte-for-byte identical.
+        if (y >= rowTop-1 && y <= rowTop+8 && (!dashed || (step % 7) < 4))
         {
             if (outline)
                 for (s16 oy = -1; oy <= 1; oy++)
@@ -80,7 +92,7 @@ static void line(s16 x, s16 y, s16 endX, s16 endY, u16 color, bool dashed, bool 
         const s16 twice = error * 2;
         if (twice >= dy) { error += dy; x += sx; }
         if (twice <= dx) { error += dx; y += sy; }
-        step++;
+        step++;if((step&31)==0)LOADING_poll();
     }
 }
 static u16 edgeColor(u8 a, u8 b)
@@ -92,13 +104,15 @@ static u16 edgeColor(u8 a, u8 b)
 static void disk(s16 x, s16 y, s16 radius, u16 color, bool hollow)
 {
     if (y + radius < rowTop || y - radius >= rowTop + 8) return;
-    for (s16 oy = -radius; oy <= radius; oy++)
+    for (s16 oy = -radius; oy <= radius; oy++) {
         for (s16 ox = -radius; ox <= radius; ox++)
         {
             const s16 d = ox * ox + oy * oy;
             if (d <= radius * radius && (!hollow || d >= (radius - 1) * (radius - 1)))
                 pixel(x + ox, y + oy, color);
         }
+        LOADING_poll();
+    }
 }
 static bool visible(u8 n)
 {
@@ -122,6 +136,7 @@ static void paintRow(void)
             const u8 b = node->exits[e].next;
             line(x,y,80 + GRAPH[b].mapCol * 10,12 + ((s16)GRAPH[b].mapRow - 1) * 3,edgeColor(a,b),FALSE,FALSE);
         }
+        LOADING_poll();
         disk(x,y,a == currentNode || a == nextNode ? 1 : 0,
              a == currentNode ? 4 : a == nextNode ? 5 : (visited & ((u32)1 << a)) ? 3 : 6,FALSE);
     }
@@ -136,6 +151,7 @@ static void paintRow(void)
             const u16 color = edgeColor(a,b);
             line(x,y,bx,by,color,color == 2 || color == 6,TRUE);
             line(x,y,bx,by,color,color == 2 || color == 6,FALSE);
+            LOADING_poll();
         }
     }
     for (u8 n = 1; n <= NODE_COUNT; n++) if (visible(n))
@@ -175,6 +191,7 @@ static void drawPin(s16 x, s16 y)
 }
 void ROUTEMAP_reset(void)
 {
+    if(prepared){MEM_free(prepared);prepared=NULL;}
     visited = 0;lastVisited = 0;memset(departedTo,0,sizeof departedTo);
 }
 void ROUTEMAP_markVisited(u8 n)
@@ -185,8 +202,34 @@ void ROUTEMAP_markVisited(u8 n)
             if (GRAPH[lastVisited].exits[e].next == n) departedTo[lastVisited] = n;
     lastVisited = n;visited |= (u32)1 << n;
 }
+// Rasterize while the completed result/radio is still visible. The following
+// fade only uploads prepared tiles, instead of hiding a long CPU raster pass.
+void ROUTEMAP_prepare(u8 current,u8 next)
+{
+    if(prepared && preparedCurrent==current && preparedNext==next)return;
+    if(prepared){MEM_free(prepared);prepared=NULL;}
+    prepared=MEM_alloc(sizeof(PreparedMap));
+    if(!prepared)return; // the show path retains a cooperative low-memory fallback
+    preparedCurrent=current;preparedNext=next;
+    currentNode=current;nextNode=next;region=regionOf(next);
+    prepared->count=0;LOADING_workBegin();
+    for(u16 y=0;y<22;y++) {
+        rowTop=y*8;paintRow();
+        for(u16 x=0;x<40;x++) {
+            u32 used=0;for(u16 i=0;i<8;i++)used|=rowPixels[x*8+i];
+            prepared->rows[y][x]=0;
+            if(used && prepared->count<OVERLAY_TILES) {
+                memcpy(prepared->tiles+prepared->count*8,rowPixels+x*8,32);
+                prepared->rows[y][x]=TILE_ATTR_FULL(PAL0,TRUE,FALSE,FALSE,OVERLAY_BASE+prepared->count++);
+            }
+        }
+        LOADING_poll();
+    }
+    LOADING_workEnd();
+}
 void ROUTEMAP_show(u8 current, u8 next)
 {
+    const bool enabled=VDP_getEnable();
     currentNode = current;nextNode = next;region = regionOf(next);
     clockTick = travelTick = overlayCount = 0;
     while (PAL_isDoingFade()) SYS_doVBlankProcess();
@@ -202,7 +245,7 @@ void ROUTEMAP_show(u8 current, u8 next)
     u16 highlight[16];memcpy(highlight,MAP_PALETTE,sizeof highlight);
     highlight[15] = MAP_PALETTE[4];PAL_setColors(PAL3*16,highlight,16,DMA);
     PAL_setColors(PAL1*16,(const u16 *)routemap_palettes + region*32,32,DMA);
-    VDP_loadTileData((const u32 *)routemap_tiles + (u32)region*ART_TILES*8,ART_BASE,ART_TILES,DMA);
+    LOADING_tiles((const u32 *)routemap_tiles + (u32)region*ART_TILES*8,ART_BASE,ART_TILES,DMA);
     for (u16 y = 0; y < 20; y++)
     {
         u16 row[40];
@@ -213,21 +256,28 @@ void ROUTEMAP_show(u8 current, u8 next)
         }
         VDP_setTileMapDataRow(BG_B,row,y+2,0,40,CPU);
     }
-    // No heap. Allocate VRAM patterns only for occupied overlay cells.
+    if(prepared && preparedCurrent==current && preparedNext==next) {
+        overlayCount=prepared->count;
+        LOADING_tiles(prepared->tiles,OVERLAY_BASE,overlayCount,DMA);
+        for(u16 y=0;y<22;y++)VDP_setTileMapDataRow(BG_A,prepared->rows[y],y,0,40,CPU);
+        MEM_free(prepared);prepared=NULL;
+    } else {
+    // Bounded fallback if no temporary preparation buffer was available.
     for (u16 y = 0; y < 22; y++)
     {
-        u16 row[40];rowTop = y*8;paintRow();
+        u16 row[40];rowTop = y*8;paintRow();LOADING_poll();
         for (u16 x = 0; x < 40; x++)
         {
             u32 used = 0;for (u16 i = 0; i < 8; i++) used |= rowPixels[x*8+i];
             row[x] = 0;
             if (used && overlayCount < OVERLAY_TILES)
             {
-                VDP_loadTileData(rowPixels+x*8,OVERLAY_BASE+overlayCount,1,DMA);
+                LOADING_tiles(rowPixels+x*8,OVERLAY_BASE+overlayCount,1,DMA);
                 row[x] = TILE_ATTR_FULL(PAL0,TRUE,FALSE,FALSE,OVERLAY_BASE+overlayCount++);
             }
         }
         VDP_setTileMapDataRow(BG_A,row,y,0,40,CPU);
+    }
     }
     u32 pin[32] = {0};
     for (u16 y = 0; y < 16; y++) for (u16 x = 0; x < 16; x++)
@@ -239,7 +289,7 @@ void ROUTEMAP_show(u8 current, u8 next)
             pin[((x/8)*2+y/8)*8+y%8] |= (u32)color << ((7-x%8)*4);
         }
     }
-    VDP_loadTileData(pin,PIN_BASE,4,DMA);
+    LOADING_tiles(pin,PIN_BASE,4,DMA);
     for (u8 n = 1; n <= NODE_COUNT; n++) if (visible(n))
     {
         s16 x,y;point(n,&x,&y);u16 col=x/8-strlen(GRAPH[n].name)/2;
@@ -254,7 +304,7 @@ void ROUTEMAP_show(u8 current, u8 next)
     if (copy) { centeredText(copy->cause,23);centeredText(copy->result,24); }
     drawAction(FALSE);
     s16 x,y;point(current,&x,&y);drawPin(x,y);
-    active = TRUE;VDP_setEnable(TRUE);
+    active = TRUE;VDP_setEnable(enabled);
 }
 bool ROUTEMAP_update(u16 pressed)
 {
@@ -281,12 +331,13 @@ bool ROUTEMAP_update(u16 pressed)
 void ROUTEMAP_release(void)
 {
     if (!active) return;
+    const bool enabled=VDP_getEnable();
     SPRITES_hide();SYS_doVBlankProcess();VDP_setEnable(FALSE);
     VDP_clearPlane(BG_A,TRUE);VDP_clearPlane(BG_B,TRUE);
-    PAL_setColors(0,savedPalette,64,DMA);TILEGEN_palette();FLOOR_init();ENEMYGFX_reset();
-    VDP_loadDefaultFont(DMA);
+    PAL_setColors(0,savedPalette,64,DMA);TILEGEN_palette();ENEMYGFX_reset();
+    LOADING_tiles((const u32 *)text_font,TILE_FONT_INDEX,FONT_LENGTH,DMA);
     VDP_setHorizontalScroll(BG_A,0);VDP_setHorizontalScroll(BG_B,0);
     VDP_setVerticalScroll(BG_A,0);VDP_setVerticalScroll(BG_B,0);
     VDP_setWindowOff();VDP_setTextPlane(BG_A);VDP_setTextPalette(PAL0);VDP_setTextPriority(FALSE);
-    active = FALSE;VDP_setEnable(TRUE);
+    active = FALSE;VDP_setEnable(enabled);
 }

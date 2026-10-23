@@ -6,9 +6,14 @@ next-stage entry. Graph conditions, art VRAM, SAT pin and restoration are checke
 Run: arch -x86_64 /usr/bin/python3 game/tools/test_routemap_emulator.py [--pal]
 """
 from pathlib import Path
-import argparse, ctypes as C, hashlib, json, statistics, struct, subprocess, wave, zlib
+import os,re,argparse, ctypes as C, hashlib, json, statistics, struct, subprocess, wave, zlib
 
+from text_codec import decode
 GAME=Path(__file__).resolve().parents[1]
+TILE_DEFS=Path(os.environ.get('PLAGUEFALL_TILE_DEFS',str(GAME/'src/system/video/sprites/tiles.h'))).read_text()
+def tile_constant(name):return int(re.search(r'^#define\s+'+name+r'\s+(\d+)',TILE_DEFS,re.M).group(1))
+OBJECT_END=16+tile_constant('NUM_TILES')
+ICON_BASE=OBJECT_END+tile_constant('ENEMY_CACHE_TILES')
 CORE=Path.home()/'Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib'
 
 def png(path,w,h,rgb):
@@ -17,10 +22,10 @@ def png(path,w,h,rgb):
     path.write_bytes(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(rows))+chunk(b'IEND',b''))
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--matches',type=int,default=2);parser.add_argument('--nodes',default='2,3,4,5,6,7,8');parser.add_argument('--seconds',type=int,default=150);parser.add_argument('--only-entry',action='store_true');parser.add_argument('--no-stress',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--matches',type=int,default=2);parser.add_argument('--nodes',default='2,3,4,5,6,7,8');parser.add_argument('--seconds',type=int,default=150);parser.add_argument('--only-entry',action='store_true');parser.add_argument('--no-stress',action='store_true');parser.add_argument('--build-dir',type=Path);args=parser.parse_args()
     fps=50 if args.pal else 60
     out=args.output or GAME/'art/routemap-regional-v1/validation'/('pal' if args.pal else 'ntsc');out.mkdir(parents=True,exist_ok=True)
-    rom=GAME/'out/release/rom.bin';original=rom.read_bytes();data=bytearray(original)
+    build=args.build_dir or GAME/'out/release';rom=build/'rom.bin';original=rom.read_bytes();data=bytearray(original)
     if args.pal:data[0x1f0:0x200]=b'E               '
     core=C.CDLL(str(CORE))
     class Info(C.Structure):_fields_=[('path',C.c_char_p),('data',C.c_void_p),('size',C.c_size_t),('meta',C.c_char_p)]
@@ -71,7 +76,7 @@ def main():
     core.retro_get_memory_size.argtypes=[C.c_uint];core.retro_get_memory_size.restype=C.c_size_t
     core.retro_init();buffer=C.create_string_buffer(bytes(data));assert core.retro_load_game(C.byref(Info(str(rom).encode(),C.cast(buffer,C.c_void_p),len(data),None)))
     core.retro_get_system_av_info.argtypes=[C.POINTER(AVInfo)];av=AVInfo();core.retro_get_system_av_info(C.byref(av))
-    symbols=subprocess.check_output(['/opt/homebrew/bin/m68k-elf-nm','-Sn',str(GAME/'out/release/rom.out')],text=True)
+    symbols=subprocess.check_output(['/opt/homebrew/bin/m68k-elf-nm','-Sn',str(build/'rom.out')],text=True)
     syms={}
     for line in symbols.splitlines():
         parts=line.split()
@@ -103,7 +108,7 @@ def main():
     def w16(name,value):write(syms[name][0],struct.pack('>H',value&65535))
     def settle():
         initial=int.from_bytes(read(syms['phaseStats'][0]+4,4),'big')
-        for _ in range(120):
+        for _ in range(fps*5):
             run()
             if int.from_bytes(read(syms['phaseStats'][0]+4,4),'big')-initial>=4:return
         raise AssertionError('game update stalled')
@@ -136,24 +141,20 @@ def main():
     # Skip boot, enter NEW GAME, skip mission call, start phase 1 with A.
     run(120);press(3);run(fps*4)
     for _ in range(6):
-        if u8('arenaActive'):break
+        if u8('arenaActive') and u32('flow_state')==1:break
         press(3);run(fps)
-        if u8('arenaActive'):break
+        if u8('arenaActive') and u32('flow_state')==1:break
         press(1);run(fps*4)
-    if not u8('arenaActive'):shot('startup-failed');raise AssertionError(('start',u8('state'),u8('currentLevel'),u8('arenaActive')))
+    if not (u8('arenaActive') and u32('flow_state')==1):shot('startup-failed');raise AssertionError(('start',u8('state'),u8('currentLevel'),u8('arenaActive')))
     assert u8('currentLevel')==1 and u16('arenaMaxX')==495
     shot('01-inicio')
     baseline=snapshot()
-    original_fixed=bytes(vram[i^1] for i in range(16*32,101*32))
+    original_fixed=bytes(vram[i^1] for i in range(16*32,OBJECT_END*32))
     tiles=(GAME/'res/routemap/tiles.bin').read_bytes()
     groups=(GAME/'res/routemap/groups.bin').read_bytes()
     font=(GAME/'res/intro/font.bin').read_bytes()
     names=['','1','2A','2B','3','4','5','6A','6B','7','8','9','10A','10B','11','12','13A','13B','14','15','16']
-    places=['','PATIO DA IGREJA','RUA DE SERVICO','BAIXIO DA IGREJA','ABRIGO DE MANUTENCAO',
-      'TUNEIS DE MANUTENCAO','SINALIZADOR NA SANTA','PERIMETRO DO RESGATE','RETIRADA POR TERRA',
-      'REDE DE ANTENAS','FORNALHA','ALFANDEGA','ACESSO DOS TECNICOS','DRENO TERMICO',
-      'DEPOSITO DE DEMOLICAO','COMPORTA DE CARGA','LINHA QUENTE','DECANTACAO',
-      'PATIO DOS ENXAMES','GALERIAS DOS NINHOS','CAMARA DO ESCORPIAO']
+    places=['']+[p['name'] for p in json.loads((GAME/'art/interface-ux-v2/conteudo-aprovado.json').read_text())['phases']]
     footer_copy=json.loads((GAME/'art/routemap-footer-ux-v1/integracao/copy.json').read_text())
     copy_by_edge={(c['current'],c['next']):c for c in footer_copy['cases']}
     # Every edge of the production campaign, including all eight fork outcomes.
@@ -172,7 +173,7 @@ def main():
         write(syms['enemies'][0],bytes(syms['enemies'][1]))
         for n in ('pshots','eshots'):write(syms[n][0],bytes(syms[n][1]))
     def finish_to_map():
-        w16('doneTimer',0);write(syms['flow_state'][0],struct.pack('>I',4));run(2)
+        write(syms['flow_state'][0],struct.pack('>I',4));run(2);press(3)
         for _ in range(fps*8):
             if state()==5:break
             if state()==6:press(3)
@@ -180,6 +181,7 @@ def main():
                 assert state()==4,('not map/story',state())
                 run()
         assert state()==5,('map entry',state())
+        while u8('transitioning'):run()
         run(3)
     def enter(node):
         restore(baseline);isolate()
@@ -191,12 +193,14 @@ def main():
             else:press(1)
             run(fps//4)
         assert state()==1 and u8('currentLevel')==node,('source entry',node,state(),u8('currentLevel'))
+        while u8('transitioning'):run()
+        run(2)
         isolate()
     def pin():
         sat=u16('slist_addr')
         return vw(sat+6)-128,vw(sat)-128,vw(sat+4)&0x7ff,vw(sat+2)&127
     def textrow(row):
-        return ''.join(chr((vw(0xe000+(row*64+x)*2)&0x7ff)-1440+32)
+        return ''.join(decode(chr((vw(0xe000+(row*64+x)*2)&0x7ff)-1440+32))
             if 1440<= (vw(0xe000+(row*64+x)*2)&0x7ff)<1536 else '.' for x in range(40))
     def check_line(text,row,palette,right=False):
         start=39-len(text) if right else (40-len(text))//2
@@ -236,18 +240,18 @@ def main():
             r=region_of(b);assert u8('region')==r
             count=u16('overlayCount');assert 0<count<192,('overlay',count)
             result['maxOverlayTiles']=max(result['maxOverlayTiles'],count)
-            actual=bytes(vram[(101*32+i)^1] for i in range(25600))
+            actual=bytes(vram[(OBJECT_END*32+i)^1] for i in range(25600))
             assert actual==tiles[r*25600:(r+1)*25600],('art patterns',a,b)
             assert bytes(vram[i^1] for i in range(1440*32,1536*32))==font,('opaque font',a,b)
             for t in range(800):
-                expected=101+t | ((1+groups[r*800+t])<<13)
+                expected=OBJECT_END+t | ((1+groups[r*800+t])<<13)
                 assert vw(0xc000+((t//40+2)*64+t%40)*2)==expected,('art map',a,b,t)
-            assert bytes(vram[i^1] for i in range(16*32,101*32))==original_fixed,'fixed tiles overwritten'
+            assert bytes(vram[i^1] for i in range(16*32,OBJECT_END*32))==original_fixed,'fixed tiles overwritten'
             check_footer(a,b)
             shot('map-'+names[a]+'-'+names[b])
             # No RAM writes from this point through the next playable stage.
             ordinary=True
-            px0,py0=point_for(a,r);expected_pin=(px0-8,py0-17,1093,0)
+            px0,py0=point_for(a,r);expected_pin=(px0-8,py0-17,OBJECT_END+800+192,0)
             positions=set()
             for _ in range(fps+6):
                 run();positions.add(pin());assert state()==5
@@ -270,7 +274,7 @@ def main():
                 else:raise AssertionError(('unexpected exit state',a,b,state()))
                 run(fps//4)
             assert state()==1 and u8('currentLevel')==b,('destination',a,b,state())
-            assert bytes(vram[i^1] for i in range(16*32,101*32))==original_fixed,'fixed tiles on exit'
+            assert bytes(vram[i^1] for i in range(16*32,OBJECT_END*32))==original_fixed,'fixed tiles on exit'
             run(fps//2);shot('arrival-'+names[b])
             result['edges'].append({'from':names[a],'to':names[b],'region':r+1,'overlayTiles':count,
               'idlePinPersistent':True,'travelMoved':True,'skipTested':bool(index%2),'exitWaitFrames':exit_wait,
@@ -283,6 +287,10 @@ def main():
                      [1,3,4,5,6,8,9,10,11,13,14,15,17,18,19,20]):
             ordinary=False;restore(baseline);isolate()
             for a,b in zip(path,path[1:]):
+                # ST_PLAY starts with the three-second countdown. Wait for
+                # actual simulation before forcing the next completion, so
+                # the countdown's sprite/VRAM ownership has been released.
+                settle()
                 ordinary=False;isolate()
                 stats=bytearray(10)
                 if (a,b)==(1,3):stats[1]=1
@@ -293,7 +301,16 @@ def main():
                 assert u8('pendingLevel')==b
                 assert 0<u16('overlayCount')<192
                 result['maxOverlayTiles']=max(result['maxOverlayTiles'],u16('overlayCount'))
-                ordinary=True;press(1);run(fps*2)
+                ordinary=True;press(1)
+                # Observe the state transition rather than running blindly
+                # into the next stage's briefing and countdown.
+                exit_wait=0
+                # gotoPrep also loads the destination scene and radio before
+                # publishing ST_STORY/ST_PREP. Match the 12s entry timeout
+                # used by the interface/radio probes, rather than 2s.
+                while state()==5 and exit_wait<fps*12:
+                    run();exit_wait+=1
+                assert state()!=5,('history map did not leave',a,b)
                 for _ in range(20):
                     if state()==1 and u8('currentLevel')==b:break
                     if state()==6:press(3)

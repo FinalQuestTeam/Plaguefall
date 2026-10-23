@@ -16,7 +16,12 @@
 #define OBJ_KILL        0       // matar killTarget inimigos (padrão)
 #define OBJ_SURVIVE     1       // sobreviver objTarget segundos
 #define OBJ_COLLECT     2       // coletar objTarget itens
+#define OBJ_REACH       4
+#define OBJ_ESCORT      5
 #define OBJ_PROTECT     3       // proteger o aliado (NPC) por objTarget segundos
+
+typedef struct {s16 x,y;u8 pauseSeconds;} RoutePoint;
+typedef struct {const RoutePoint *points;u8 count;ArenaRect exit;} RouteDef;
 
 // descrição de uma fase: elementos, condições de vitória e regras de spawn.
 // CAMPO OMITIDO = padrão: objetivo MATAR (usa killTarget), sem lava/lama,
@@ -48,7 +53,9 @@ typedef struct
     u8 musicTrack;         // MUSIC_TRACK_*; zero = Baiao de Ferrugem
     u8 enemyCap;           // zero = teto global; fase 1 usa carga validada
     u8 shotCap;            // por grupo (jogador/inimigo); zero = pool completo
+    const RouteDef *route; // reach/escort authored route and visible destination
     const ArenaDef *arena;// NULL = arena classica; mapa com camera quando definido
+    bool modularTerrain;   // lava/lama conectadas em PAL1, independentes do mapa
 } LevelDef;
 
 // uma fase por arquivo em levels/defs/ (level01.c .. level16.c); o grafo
@@ -64,6 +71,7 @@ extern const LevelDef
 
 // fases teste (dados em levels/defs/test.c; lógica em levels/test.c)
 extern const LevelDef TEST_def, TEST2_def, TEST3_def, TEST4_def, TEST5_def, TEST6_def;
+extern const LevelDef TEST10_def;
 
 // terrenos reutilizáveis (definidos em levels/layouts.c) — todos com 2 retângulos.
 // LAVA/MUD_PAIR: um elemento por fase. COMBO_*: lava e lama juntas (cantos opostos).
@@ -75,15 +83,16 @@ extern const TileRect COMBO_LAVA[LAYOUT_RECTS], COMBO_MUD[LAYOUT_RECTS];
 #define LVL_ROSTER(a)   .enemyTypes = (a), .enemyTypeCount = (sizeof(a) / sizeof((a)[0]))
 
 extern u8 currentLevel;         // nó do grafo: 1..NODE_COUNT (0 = fase teste)
-extern u8 testStage;            // fase teste: 1 (dummy) ou 2 (alvos p/ o raio)
+extern u8 testStage;            // sala de teste: 1..TEST_ROOMS (levels/test.h)
 
 // definição da fase atual
 const LevelDef *LEVEL_current(void);
 
 // desenha a fase n SEM zerar os elementos (usado ao retomar do pause)
 void LEVEL_draw(u8 n);
+void LEVEL_preview(u8 node);
 
-// desenha a fase n e zera o estado dos elementos (começar/recomeçar)
+// posiciona o jogador no início, desenha a fase n e zera os elementos
 void LEVEL_load(u8 n);
 
 // gera na VRAM só a arte dos inimigos da fase n (por etapas; use antes de mostrar

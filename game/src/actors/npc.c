@@ -17,6 +17,7 @@ s16 npcHp;
 s16 npcHpMax;
 static bool active;
 static u16  invTimer;
+void NPC_stopBlink(void){invTimer=0;}
 
 u16 NPC_size(void) { return ARENA_npcInMap() ? 40 : NPC_SIZE; }
 
@@ -60,6 +61,11 @@ void NPC_update(void)
     const u16 size = NPC_size();
     const s16 cx = npcX + size / 2, cy = npcY + size / 2;
     const bool inMap = ARENA_npcInMap();
+    const ArenaNpcVisual *visual = ARENA_npcVisual();
+    const s16 left = visual ? visual->footprint.x : npcX;
+    const s16 top = visual ? visual->footprint.y : npcY;
+    const s16 right = left + (visual ? visual->footprint.w : size);
+    const s16 bottom = top + (visual ? visual->footprint.h : size);
     const s16 edge = inMap ? 1 : 0;
     const bool vulnerable = (invTimer == 0);
     if (invTimer) invTimer--;
@@ -74,12 +80,11 @@ void NPC_update(void)
         const EnemyDef *d = ENEMY_DEF(e);
         if (!d->contactDmg) continue;           // alvos/dummies não machucam
 
-        // The mapped Santa extends above/below its solid pedestal. Exact edge
-        // contact also counts there: its stone and contact area share X edges,
-        // so enemies coming from the sides must not need to enter the stone.
-        // Legacy NPCs keep their original strict-overlap contact rule.
-        if ((e->x < npcX + size + edge) && (e->x + d->size > npcX - edge) &&
-            (e->y < npcY + size + edge) && (e->y + d->size > npcY - edge))
+        // Contact must reach every outside edge of the solid statue. Enemies
+        // must never have to enter blocked floor to damage the objective.
+        // Legacy NPCs keep their strict-overlap contact rule.
+        if ((e->x < right + edge) && (e->x + d->size > left - edge) &&
+            (e->y < bottom + edge) && (e->y + d->size > top - edge))
         {
             ENEMIES_knockbackFrom(e, cx, cy);   // #1: recuo ao encostar
             contact = TRUE;

@@ -1,0 +1,276 @@
+{
+  "passed": false,
+  "region": "NTSC",
+  "rom_sha256": "500abaaea7d07178401c59f083b1e4a89cc44b1f996dbcd0044f0d8981b0db4e",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "gallery": {
+      "passed": true,
+      "details": {
+        "types": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14
+        ],
+        "fixed_positions": true,
+        "idle_and_walk_all_13": true,
+        "eight_directions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "death_previews": [
+          0,
+          2,
+          12
+        ],
+        "controller_only": true
+      }
+    },
+    "room-2-entry": {
+      "passed": true,
+      "details": {
+        "stage": 2,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-3-entry": {
+      "passed": true,
+      "details": {
+        "stage": 3,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-4-entry": {
+      "passed": true,
+      "details": {
+        "stage": 4,
+        "arena_active": true,
+        "enemies": 0,
+        "controller_only": true
+      }
+    },
+    "room-5-entry": {
+      "passed": true,
+      "details": {
+        "stage": 5,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-6-entry": {
+      "passed": true,
+      "details": {
+        "stage": 6,
+        "arena_active": true,
+        "enemies": 3,
+        "controller_only": true
+      }
+    },
+    "room-7-entry": {
+      "passed": true,
+      "details": {
+        "stage": 7,
+        "arena_active": true,
+        "enemies": 2,
+        "controller_only": true
+      }
+    },
+    "room-8-entry": {
+      "passed": true,
+      "details": {
+        "stage": 8,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "load-controls": {
+      "passed": true,
+      "details": {
+        "max_enemies": 16,
+        "hud_fps": 16,
+        "peak_cpu_pct": 291,
+        "controller_only": true
+      }
+    },
+    "santa-success": {
+      "passed": true,
+      "details": {
+        "real_30_second_timer": true,
+        "result_frozen": true,
+        "controller_only": true
+      }
+    },
+    "menu-controls": {
+      "passed": true,
+      "details": {
+        "configuration_cancel_rolls_back": true,
+        "restart_resets_room": true,
+        "room_selector_cancel_resumes": true,
+        "controller_only": true
+      }
+    },
+    "route-graphics": {
+      "passed": true,
+      "details": {
+        "authored_route_art_checked": true,
+        "native_floor_and_map_intact": true,
+        "both_room_entries": true
+      }
+    },
+    "traversal": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "route_width": 2048,
+        "wins_without_kills": true,
+        "frozen_result": true,
+        "restart": true
+      }
+    },
+    "escort": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "waits_for_cover": true,
+        "pause_freezes": true,
+        "wins_with_both_actors": true,
+        "hp": 100,
+        "frozen_result": true,
+        "restart": true
+      }
+    },
+    "portable-terrain": {
+      "passed": true,
+      "details": {
+        "scene_palette_preserved": true,
+        "lava_frames": 2,
+        "mud_atlas_exact": true,
+        "pause_restores_layer": true,
+        "independent_scenery_and_overlay": true,
+        "scrolling_2048px_checked_by_route_tests": true,
+        "resident_tiles": 46,
+        "setup": "Positioning only for screenshots; entry, animation, pause and routes use production rendering."
+      }
+    },
+    "santa-geometry-and-effects": {
+      "passed": true,
+      "details": {
+        "solid_stops_four_sides": [
+          [
+            160,
+            184
+          ],
+          [
+            216,
+            184
+          ],
+          [
+            184,
+            160
+          ],
+          [
+            184,
+            224
+          ]
+        ],
+        "real_contact_four_sides": true,
+        "full_blink_cells": 40,
+        "body_and_pedestal_blink": true,
+        "glow_on_crown_both_phases": true,
+        "glow_red_yellow_only": true,
+        "glow_hidden_with_statue": true,
+        "setup": "Controller movement after isolated player/enemy positioning; real contact damage, no NPC HP writes."
+      }
+    },
+    "escort-failure": {
+      "passed": true,
+      "details": {
+        "real_projectile_damage": true,
+        "damiao_no_defeat_does_not_protect_dinorah": true,
+        "death_poses": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "frozen_failure": true,
+        "restart_hp": 100,
+        "setup": "isolated lethal projectile and 10 HP"
+      }
+    },
+    "no-defeat": {
+      "passed": true,
+      "details": {
+        "lethal_projectile_no_defeat_hp": 1,
+        "normal_life_defeats": true,
+        "setup": "controller settings, isolated 1 HP and stationary lethal projectile"
+      }
+    },
+    "item-bench": {
+      "passed": false,
+      "error": "AssertionError('dummy did not freeze')"
+    },
+    "behavior-boss": {
+      "passed": true,
+      "details": {
+        "boss_moves": true,
+        "real_minion_summon": true,
+        "setup": "controller selects boss, cycle accelerated for summon"
+      }
+    },
+    "santa-failure": {
+      "passed": true,
+      "details": {
+        "real_contact_damage": [
+          88,
+          76,
+          64,
+          52,
+          40,
+          28,
+          16,
+          4,
+          0
+        ],
+        "no_npc_hp_writes": true,
+        "result_frozen": true
+      }
+    },
+    "collision-terrain": {
+      "passed": true,
+      "details": {
+        "lava_hp": [
+          99,
+          96
+        ],
+        "mud_slow": 50,
+        "mud_exit_reset": true
+      }
+    }
+  },
+  "failures": [
+    "item-bench"
+  ]
+}

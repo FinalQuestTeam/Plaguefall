@@ -1,5 +1,26 @@
 # Plaguefall — Baião de Ferrugem
 
+## Encerramento de fase — Mais um Amanhecer
+
+O [tema de vitória aprovado](../art/audio-vitoria-v1/README.md) toca uma vez
+nas telas de objetivo cumprido e de vitória final: dois compassos de 2/4 a
+120 BPM, em dois segundos. A melodia retoma Ré–Fá–Lá da abertura e resolve em
+Ré maior, sobre baixo de baião e uma virada metálica curta. O motor pausa a
+trilha da fase durante o resultado e deixa silêncio após a soltura final.
+Fechar o cartão devolve o controle à música da campanha; confirmar cedo pode
+interromper a frase. Perda de sinal conserva o áudio de mudança de rota.
+
+A partitura está em `src/system/audio/victory_data.h`, gerada por
+`art/audio-vitoria-v1/compose.py`. Os testes nativos verificam PAL/NTSC,
+execução única, retomada da trilha, confirmação antecipada e relógio musical.
+
+[Cinza e Silêncio](../art/audio-game-over-v1/README.md), também aprovada, toca
+uma vez na derrota, com quatro segundos a 90 BPM e resolução em Ré menor.
+Após a queda, substitui a trilha da fase e deixa silêncio até a confirmação.
+Tentar novamente ou sair para o título encerra o tema e devolve o controle à
+música normal. `art/audio-game-over-v1/compose.py` exporta os mesmos eventos
+da audição aprovada para `src/system/audio/game_over_data.h`.
+
 **Distribuição atual na campanha:** as quatro músicas coexistem na ROM e agora são escolhidas por fase. A igreja começa com Ladainha de Ferro; abrigo e despedidas usam Entardecer; investigação usa Breu; avanços industriais usam Baião de Ferrugem. [Mapa completo e justificativas](fases-cenarios.md). Os perfis e ROMs alternativos descritos abaixo permanecem como histórico das composições.
 
 A primeira versão da nova trilha combina inspiração no baião com pulsos industriais. A intenção é ter balanço e identidade nordestina sem perder a tensão da invasão. A melodia é original; não adapta uma música existente.

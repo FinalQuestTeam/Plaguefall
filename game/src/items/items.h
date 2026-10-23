@@ -14,7 +14,10 @@
 #define ITEM_CHAIN      5   // raio: próximos 5 acertos em cadeia (item_chain.c)
 #define ITEM_ICE        6   // gelo: 3 tiros que congelam o inimigo por 5 s (item_ice.c)
 #define ITEM_FIRE       7   // fogo: 4 tiros que queimam (dano por tempo) (item_fire.c)
-#define ITEM_TYPES      8
+#define ITEM_BAG        8   // equipamento pré-morte, com recuperação conforme a etapa
+#define ITEM_DROP_TYPES 8   // itens comuns; a bolsa não entra no sorteio/treino
+#define ITEM_TYPES      9
+#define ITEM_TTL_FOREVER 0xFFFF
 
 // itens que vão para o INVENTÁRIO (ativados com B, trocados com C) em vez de
 // aplicar na coleta. A bomba ocupa a posição 0 (espelha BOMB_count()).
@@ -96,5 +99,7 @@ void ITEMICE_buildTile(u32 *tileBuf);
 void ITEMICE_apply(void);
 void ITEMFIRE_buildTile(u32 *tileBuf);
 void ITEMFIRE_apply(void);
+void ITEMBAG_buildTile(u32 *tileBuf);
+void ITEMBAG_apply(void);
 
 #endif // ITEMS_H
