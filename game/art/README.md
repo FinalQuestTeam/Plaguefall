@@ -2,7 +2,7 @@
 
 **Bornal de recuperação:** [bolsa de couro de cangaceiro aprovada](bolsa-recuperacao-v1/README.md), adaptada a 16×16 na paleta existente e integrada a todas as derrotas, com conteúdo definido pelo equipamento pré-morte e pela etapa da campanha. As oito páginas de ajuda incluem o sprite e as regras por trecho da campanha; capturas reais NTSC/PAL acompanham a validação.
 
-**Diálogos em holodeck:** a [opção C aprovada](dialogue-holodeck-v1/README.md) está integrada: monitor preto, texto amarelo e dois retratos inferiores. Quem escuta fica escurecido, e quem fala conserva a paleta original. Capturas reais e validação das 51 falas em NTSC/PAL acompanham o pacote.
+**Diálogos em holodeck:** a [opção C aprovada](dialogue-holodeck-v1/README.md) está integrada: monitor preto, títulos dourados, falas em cinza claro e dois retratos inferiores. Quem escuta fica escurecido, e quem fala conserva a paleta original. [Cores atuais e capturas NTSC/PAL](radio-text-colors-v1/validation/report.json); o pacote original conserva a validação das 51 falas.
 
 **Preparação no rádio:** objetivo, guia e contagem usam o monitor único da opção 1. Os retratos dos inimigos conservam os pixels e a paleta anteriores; a única contagem 3/2/1 cobre o carregamento e libera o combate ao terminar. Conversa, objetivo e contagem trocam de conteúdo mantendo a moldura visível, e as páginas do guia reutilizam o fundo. [Captura real da missão](countdown-radio-v4/continuous/interface-ntsc/prep-1.png), [contagem](countdown-radio-v4/continuous/loading-ntsc/countdown-3.png) e [validação quadro a quadro NTSC/PAL](countdown-radio-v4/continuous/report.json).
 

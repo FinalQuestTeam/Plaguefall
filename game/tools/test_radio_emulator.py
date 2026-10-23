@@ -155,7 +155,8 @@ def main():
     art=re.findall(r'"([0-9a-f]{48})"',(GAME/'src/system/video/sprites/portraits_data.h').read_text());assert len(art)==4*48
     palette_source=(GAME/'src/system/video/sprites/portraits_data.h').read_text().split('PORTRAIT_PAL')[1].split('};')[0]
     portrait_colors=[int(c,16) for c in re.findall(r'0x[0-9a-fA-F]+',palette_source)]
-    console_colors=struct.unpack('>16H',(GAME/'res/radio/palette.bin').read_bytes())
+    console_colors=list(struct.unpack('>16H',(GAME/'res/radio/palette.bin').read_bytes()))
+    console_colors[13]=0xccc;console_colors[15]=0x4ce
     ids={'P_DAMIAO':0,'P_COMANDO':1,'P_ESCORPIAO':2,'P_DINORAH':3}
     font=bytes(int(x) for x in re.findall(r'\d+',(GAME/'src/system/video/screens/result_font.h').read_text().split('= {')[1]))
     def save():(out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
@@ -213,7 +214,7 @@ def main():
             if node==8:shot('radio-6B-'+str(i+1))
             if node==20:shot(('radio-final-' if when=='DEPOIS' else 'radio-chefe-')+str(i+1))
             assert frozen()==before,('radio simulation changed',node,when,i)
-            report['dialogues'].append({'phase':names[node],'when':when,'line':i+1,'portrait':who,'side':side,'wrapAndGlyphsExact':True,'portraitPixelsAndAnchorsExact':True,'listenerDimmedSpeakerOriginal':True,'blackMonitorYellowText':True,'noStageBackdrop':True,'simulationFrozen':True})
+            report['dialogues'].append({'phase':names[node],'when':when,'line':i+1,'portrait':who,'side':side,'wrapAndGlyphsExact':True,'portraitPixelsAndAnchorsExact':True,'listenerDimmedSpeakerOriginal':True,'blackMonitorGoldTitlesGrayBody':True,'noStageBackdrop':True,'simulationFrozen':True})
             if i+1<len(expected):
                 # Inspect every rendered frame, including frames spent inside
                 # RADIO_line, rather than only its completed screenshot.

@@ -4,6 +4,7 @@
 #include "system/video/screens/radio.h"
 #include "system/video/screens/panel.h"
 #include "system/video/screens/radio_layout.h"
+#include "system/video/screens/radio_colors.h"
 #include "system/video/screens/result_font.h"
 #include "system/video/sprites/portraits_data.h"
 #include "system/video/floor.h"
@@ -126,6 +127,8 @@ bool RADIO_begin(u8 node)
     LOADING_tiles((const u32 *)radio_tiles,BASE,RADIO_TILE_COUNT,DMA);
     loadPortraits();
     LOADING_setColors(0,(const u16 *)radio_palette,16,DMA);
+    LOADING_setColor(13,RADIO_BODY_COLOR);
+    LOADING_setColor(15,RADIO_TITLE_COLOR);
     LOADING_windowOff();VDP_setHorizontalScroll(BG_A,0);VDP_setVerticalScroll(BG_A,0);
     VDP_setHorizontalScroll(BG_B,0);VDP_setVerticalScroll(BG_B,0);
     const u16 *map=(const u16 *)radio_map;

@@ -6,6 +6,7 @@
 #include "system/video/spritelist.h"
 #include "system/video/screens/mission.h"
 #include "system/video/screens/radio_panel_data.h"
+#include "system/video/screens/radio_colors.h"
 #include "levels/graph.h"
 #include "radio_panel.h"
 
@@ -173,6 +174,7 @@ bool LOADING_begin(u16 minimumFrames,u8 missionNode)
     // reservation. Reveal them and their palette together during VBlank.
     SYS_doVBlankProcess();
     PAL_setColors(0,(const u16 *)radio_panel_palette,16,CPU);
+    PAL_setColor(15,RADIO_TITLE_COLOR);
     VDP_setWindowFullScreen();
     loadingMinimum=minimumFrames;loadingFrames=0;loadingDigit=0;
     loadingStart=vtimer;loadingActive=TRUE;animate();

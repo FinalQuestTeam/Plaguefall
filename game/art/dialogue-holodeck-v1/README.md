@@ -1,6 +1,6 @@
 # Diálogos em holodeck — opção C integrada
 
-A opção C foi escolhida, revisada para escurecer quem escuta e autorizada para implementação em 22/10/2026. A ROM principal usa o console em todas as conversas: monitor superior preto, letras amarelas e dois monitores inferiores para Damião e seu interlocutor. O cenário da fase deixa de aparecer durante o diálogo.
+A opção C foi escolhida, revisada para escurecer quem escuta e autorizada para implementação em 22/10/2026. A ROM principal usa o console em todas as conversas: monitor superior preto, títulos dourados, falas em cinza claro e dois monitores inferiores para Damião e seu interlocutor. O cenário da fase deixa de aparecer durante o diálogo. A revisão de contraste de 23/10/2026 está registrada em [cores do rádio](../radio-text-colors-v1/validation/report.json); as capturas abaixo documentam a integração original.
 
 ![Captura real: Padre falando](validation/padre-falando-3x.png)
 

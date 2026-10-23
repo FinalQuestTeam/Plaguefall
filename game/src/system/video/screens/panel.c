@@ -9,6 +9,7 @@
 #include "interface_data.h"
 #include "radio_panel.h"
 #include "system/video/screens/radio_panel_data.h"
+#include "system/video/screens/radio_colors.h"
 #include "insects.h"
 #include "text_data.h"
 #include "enemies/enemies.h"
@@ -92,8 +93,9 @@ bool PANEL_beginMission(const u16 *returnColors)
     memcpy(missionColors+16,insect_palette,32);
     memcpy(missionColors+32,interface_palette,32);
     memcpy(missionColors+48,radio_panel_palette,32);
-    missionColors[15]=((const u16 *)radio_panel_palette)[13];
-    missionColors[47]=((const u16 *)radio_panel_palette)[15];
+    missionColors[15]=RADIO_BODY_COLOR;
+    missionColors[47]=RADIO_TITLE_COLOR;
+    missionColors[63]=RADIO_TITLE_COLOR;
     missionBackdrop=FALSE;
     // The old radio uses tiles below 808. This font and the new background
     // can be prepared without changing a single pixel of its visible cover.

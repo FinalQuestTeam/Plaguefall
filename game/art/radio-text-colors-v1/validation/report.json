@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "romSHA256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52",
+  "colors": {
+    "titles": {
+      "rgb": "#FFDB49",
+      "md": "0x04CE"
+    },
+    "descriptions": {
+      "rgb": "#DBDBDB",
+      "md": "0x0CCC"
+    },
+    "countdown": "gold"
+  },
+  "interfacePhasesChecked": 40,
+  "radioTransitionsChecked": 64,
+  "radioBlackFrames": 0,
+  "displayOffFrames": 0,
+  "enemyPortraitComparisons": 40,
+  "nativeChecksPassed": true,
+  "artAssetsUnchanged": {
+    "game/res/radio/tiles.bin": "28dabd61ccccdf0d069efd0f0baad32294f6618d80675b5e25cfd3fc54ce6868",
+    "game/res/radio/map.bin": "771a5031f4b5a3290182c140933cc64f134179e21bd41ea246750f97cae106d2",
+    "game/res/radio_panel/tiles.bin": "4dcbe4efa055a87bf480ecd125749304bc080770461b2d667e5d99a6704ba8a0",
+    "game/res/radio_panel/map.bin": "d58a0be814db87b3f6631862edbf0ce4e95e8131702b5b8efec54a650b106f5b",
+    "game/res/mission/portraits.bin": "d2ba832035c6a6bb3ebf161057af146368290cbafb5823fd2c56aa32cf261b99",
+    "game/res/insects/palette.bin": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288",
+    "game/src/system/video/sprites/portraits_data.h": "bec917ecd38797c695d839d086bebca2caffecc21b53c632b05deb32cf3b07c0"
+  },
+  "details": {
+    "loading-pal": "loading-pal/report.json",
+    "interface-ntsc": "interface-ntsc/report.json",
+    "loading-ntsc": "loading-ntsc/report.json",
+    "interface-pal": "interface-pal/report.json"
+  },
+  "hardwareTested": false
+}

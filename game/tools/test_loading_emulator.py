@@ -89,7 +89,8 @@ def main():
     overlay=(GAME/'res/radio_panel/tiles.bin').read_bytes()
     # Genesis Plus GX keeps each native VRAM word byte-swapped on this host.
     overlay_raw=bytes(value for pair in zip(overlay[1::2],overlay[::2]) for value in pair)
-    overlay_colors=struct.unpack('>16H',(GAME/'res/radio_panel/palette.bin').read_bytes())
+    overlay_colors=list(struct.unpack('>16H',(GAME/'res/radio_panel/palette.bin').read_bytes()))
+    overlay_colors[15]=0x4ce
     overlay_colors=[(c>>1&7)|((c>>5&7)<<3)|((c>>9&7)<<6) for c in overlay_colors]
     overlay_checked=0
     def vw(address):return vram[address]+(vram[address+1]<<8)

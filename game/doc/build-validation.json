@@ -1,12 +1,12 @@
 {
   "passed": true,
-  "date": "2026-10-22",
-  "revision": "Rádio contínuo entre conversa, missão, guia e contagem; conteúdo trocado em VBlank; retratos dos inimigos preservados",
+  "date": "2026-10-23",
+  "revision": "Rádio com títulos dourados, descrições em cinza claro e contagem dourada; fundo contínuo e imagens dos inimigos preservados",
   "rom": "../out/release/Plaguefall.bin",
   "named_rom": "../out/release/Plaguefall.bin",
-  "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc",
+  "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52",
   "rom_bytes": 1572864,
-  "text_bytes": 1544632,
+  "text_bytes": 1544812,
   "data_bytes": 144,
   "bss_bytes": 20156,
   "static_ram_bytes": 20300,
@@ -15,314 +15,353 @@
   "checks": {
     "loading-pal": {
       "passed": true,
-      "report": "../art/countdown-radio-v4/continuous/loading-pal/report.json",
-      "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
-    },
-    "loading-ntsc-b": {
-      "passed": true,
-      "report": "../art/countdown-radio-v4/continuous/loading-ntsc-b/report.json",
-      "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+      "report": "../art/radio-text-colors-v1/validation/loading-pal/report.json",
+      "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
     },
     "interface-ntsc": {
       "passed": true,
-      "report": "../art/countdown-radio-v4/continuous/interface-ntsc/report.json",
-      "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
-    },
-    "loading-pal-b": {
-      "passed": true,
-      "report": "../art/countdown-radio-v4/continuous/loading-pal-b/report.json",
-      "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+      "report": "../art/radio-text-colors-v1/validation/interface-ntsc/report.json",
+      "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
     },
     "loading-ntsc": {
       "passed": true,
-      "report": "../art/countdown-radio-v4/continuous/loading-ntsc/report.json",
-      "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+      "report": "../art/radio-text-colors-v1/validation/loading-ntsc/report.json",
+      "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
     },
     "interface-pal": {
       "passed": true,
-      "report": "../art/countdown-radio-v4/continuous/interface-pal/report.json",
-      "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+      "report": "../art/radio-text-colors-v1/validation/interface-pal/report.json",
+      "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
     }
   },
-  "persistent_radio_report": "../art/countdown-radio-v4/continuous/report.json",
+  "text_colors_report": "../art/radio-text-colors-v1/validation/report.json",
   "native_checks_passed": true,
-  "clean_publish_source_native_checks_passed": true,
-  "clean_publish_source_build_rom_matches": true,
   "previous_validation": {
     "passed": true,
     "date": "2026-10-22",
-    "revision": "Bolsa em toda derrota com fotografia pré-morte, recuperação por etapa sem piso 3 e sem bônus novos; sala 10 e Como jogar atualizados",
+    "revision": "Rádio contínuo entre conversa, missão, guia e contagem; conteúdo trocado em VBlank; retratos dos inimigos preservados",
     "rom": "../out/release/Plaguefall.bin",
     "named_rom": "../out/release/Plaguefall.bin",
-    "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+    "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc",
     "rom_bytes": 1572864,
-    "text_bytes": 1537620,
-    "data_bytes": 148,
-    "bss_bytes": 20462,
-    "static_ram_bytes": 20610,
+    "text_bytes": 1544632,
+    "data_bytes": 144,
+    "bss_bytes": 20156,
+    "static_ram_bytes": 20300,
     "emulator": "Genesis Plus GX",
     "physical_hardware_tested": false,
     "checks": {
-      "ntsc": {
+      "loading-pal": {
         "passed": true,
-        "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/ntsc/report.json",
-        "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        "report": "../art/countdown-radio-v4/continuous/loading-pal/report.json",
+        "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
       },
-      "pal": {
+      "loading-ntsc-b": {
         "passed": true,
-        "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/pal/report.json",
-        "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        "report": "../art/countdown-radio-v4/continuous/loading-ntsc-b/report.json",
+        "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
       },
-      "training_ntsc": {
+      "interface-ntsc": {
         "passed": true,
-        "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/training-ntsc/report.json",
-        "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        "report": "../art/countdown-radio-v4/continuous/interface-ntsc/report.json",
+        "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
       },
-      "training_pal": {
+      "loading-pal-b": {
         "passed": true,
-        "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/training-pal/report.json",
-        "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        "report": "../art/countdown-radio-v4/continuous/loading-pal-b/report.json",
+        "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
       },
-      "interface_ntsc": {
+      "loading-ntsc": {
         "passed": true,
-        "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/interface-ntsc/report.json",
-        "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        "report": "../art/countdown-radio-v4/continuous/loading-ntsc/report.json",
+        "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
       },
-      "interface_pal": {
+      "interface-pal": {
         "passed": true,
-        "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/interface-pal/report.json",
-        "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        "report": "../art/countdown-radio-v4/continuous/interface-pal/report.json",
+        "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
       }
     },
-    "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/native-checks.txt",
+    "persistent_radio_report": "../art/countdown-radio-v4/continuous/report.json",
     "native_checks_passed": true,
+    "clean_publish_source_native_checks_passed": true,
+    "clean_publish_source_build_rom_matches": true,
     "previous_validation": {
+      "passed": true,
       "date": "2026-10-22",
-      "revision": "Sala 10: ensaio das três regras reais de morte por controles, equipamento configurável, contador e recuperação do bornal; regressão da sala 9 em NTSC/PAL",
-      "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+      "revision": "Bolsa em toda derrota com fotografia pré-morte, recuperação por etapa sem piso 3 e sem bônus novos; sala 10 e Como jogar atualizados",
+      "rom": "../out/release/Plaguefall.bin",
+      "named_rom": "../out/release/Plaguefall.bin",
+      "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
       "rom_bytes": 1572864,
+      "text_bytes": 1537620,
+      "data_bytes": 148,
+      "bss_bytes": 20462,
+      "static_ram_bytes": 20610,
+      "emulator": "Genesis Plus GX",
+      "physical_hardware_tested": false,
       "checks": {
+        "ntsc": {
+          "passed": true,
+          "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/ntsc/report.json",
+          "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        },
+        "pal": {
+          "passed": true,
+          "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/pal/report.json",
+          "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+        },
         "training_ntsc": {
           "passed": true,
-          "report": "../art/bolsa-recuperacao-v1/validation/training-ntsc/report.json",
-          "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
-          "controller_only": true
+          "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/training-ntsc/report.json",
+          "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
         },
         "training_pal": {
           "passed": true,
-          "report": "../art/bolsa-recuperacao-v1/validation/training-pal/report.json",
-          "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
-          "controller_only": true
+          "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/training-pal/report.json",
+          "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
         },
-        "room9_regression_ntsc": {
+        "interface_ntsc": {
           "passed": true,
-          "report": "../art/bolsa-recuperacao-v1/validation/room9-regression-ntsc/report.json",
-          "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
-          "controller_only": true
+          "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/interface-ntsc/report.json",
+          "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
         },
-        "room9_regression_pal": {
+        "interface_pal": {
           "passed": true,
-          "report": "../art/bolsa-recuperacao-v1/validation/room9-regression-pal/report.json",
-          "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
-          "controller_only": true
+          "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/interface-pal/report.json",
+          "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
         }
       },
-      "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/training-native-checks.txt",
-      "death_rules_report": "../art/bolsa-recuperacao-v1/validation/training-report.json",
+      "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/native-checks.txt",
+      "native_checks_passed": true,
       "previous_validation": {
         "date": "2026-10-22",
-        "revision": "Bornal de couro 16x16, regras de derrota por etapa e oito páginas de Como jogar; validação NTSC/PAL nas 20 fases/rotas",
-        "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+        "revision": "Sala 10: ensaio das três regras reais de morte por controles, equipamento configurável, contador e recuperação do bornal; regressão da sala 9 em NTSC/PAL",
+        "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
         "rom_bytes": 1572864,
         "checks": {
-          "results_ntsc": {
+          "training_ntsc": {
             "passed": true,
-            "report": "../art/bolsa-recuperacao-v1/validation/ntsc/report.json",
-            "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
-            "localities": 20,
-            "deathPolicyApplied": true,
-            "bagPickupOnce": true,
-            "bagReplacedOnNextDeath": true
+            "report": "../art/bolsa-recuperacao-v1/validation/training-ntsc/report.json",
+            "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+            "controller_only": true
           },
-          "results_pal": {
+          "training_pal": {
             "passed": true,
-            "report": "../art/bolsa-recuperacao-v1/validation/pal/report.json",
-            "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
-            "localities": 20,
-            "deathPolicyApplied": true,
-            "bagPickupOnce": true,
-            "bagReplacedOnNextDeath": true
+            "report": "../art/bolsa-recuperacao-v1/validation/training-pal/report.json",
+            "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+            "controller_only": true
           },
-          "interface_ntsc": {
+          "room9_regression_ntsc": {
             "passed": true,
-            "report": "../art/bolsa-recuperacao-v1/validation/interface-ntsc/report.json",
-            "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
-            "localities": 20,
-            "helpPages": 8
+            "report": "../art/bolsa-recuperacao-v1/validation/room9-regression-ntsc/report.json",
+            "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+            "controller_only": true
           },
-          "interface_pal": {
+          "room9_regression_pal": {
             "passed": true,
-            "report": "../art/bolsa-recuperacao-v1/validation/interface-pal/report.json",
-            "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
-            "localities": 20,
-            "helpPages": 8
+            "report": "../art/bolsa-recuperacao-v1/validation/room9-regression-pal/report.json",
+            "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+            "controller_only": true
           }
         },
-        "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/native-checks.txt",
-        "death_rules_report": "../art/bolsa-recuperacao-v1/validation/report.json",
+        "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/training-native-checks.txt",
+        "death_rules_report": "../art/bolsa-recuperacao-v1/validation/training-report.json",
         "previous_validation": {
-          "date": "2026-10-21",
-          "revision": "Centred partial resistance result cards: defeat/retry, safe exit, objective completion, signal branches, final victory and new campaign",
-          "rom_sha256": "3bfa4cbdc6dc076612cd7bd6817e1373547c9d2aae08c2eb3e98418308faf06e",
-          "rom_bytes": 1310720,
+          "date": "2026-10-22",
+          "revision": "Bornal de couro 16x16, regras de derrota por etapa e oito páginas de Como jogar; validação NTSC/PAL nas 20 fases/rotas",
+          "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+          "rom_bytes": 1572864,
           "checks": {
-            "interface_ntsc": {
-              "passed": true,
-              "report": "../art/resultados-ux-v1/integracao/validation/interface-ntsc/report.json",
-              "localities": 20,
-              "helpPages": 6,
-              "graphicsRestoredExactly": true,
-              "simulationFrozen": true
-            },
-            "routemap_ntsc": {
-              "passed": true,
-              "report": "../art/resultados-ux-v1/integracao/validation/map-ntsc/report.json",
-              "edges": 23,
-              "completeHistories": 2,
-              "maxOverlayTiles": 140
-            },
-            "interface_pal": {
-              "passed": true,
-              "report": "../art/resultados-ux-v1/integracao/validation/interface-pal/report.json",
-              "localities": 20,
-              "helpPages": 6,
-              "graphicsRestoredExactly": true,
-              "simulationFrozen": true
-            },
-            "routemap_pal": {
-              "passed": true,
-              "report": "../art/resultados-ux-v1/integracao/validation/map-pal/report.json",
-              "edges": 23,
-              "completeHistories": 2,
-              "maxOverlayTiles": 140
-            },
             "results_ntsc": {
               "passed": true,
-              "report": "../art/resultados-ux-v1/integracao/validation/ntsc/report.json",
+              "report": "../art/bolsa-recuperacao-v1/validation/ntsc/report.json",
+              "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
               "localities": 20,
-              "samePhaseRetry": true,
-              "equipmentReset": true,
-              "routes": [
-                "6A",
-                "6B"
-              ],
-              "replayFullReset": true,
-              "sandboxRetry": true
+              "deathPolicyApplied": true,
+              "bagPickupOnce": true,
+              "bagReplacedOnNextDeath": true
             },
             "results_pal": {
               "passed": true,
-              "report": "../art/resultados-ux-v1/integracao/validation/pal/report.json",
+              "report": "../art/bolsa-recuperacao-v1/validation/pal/report.json",
+              "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
               "localities": 20,
-              "samePhaseRetry": true,
-              "equipmentReset": true,
-              "routes": [
-                "6A",
-                "6B"
-              ],
-              "replayFullReset": true,
-              "sandboxRetry": true
-            }
-          },
-          "map_limits": {
-            "screen": [
-              320,
-              224
-            ],
-            "painting": [
-              320,
-              160
-            ],
-            "art_tiles": 800,
-            "art_base": 101,
-            "overlay_budget": 192,
-            "overlay_max_observed": 140,
-            "pin_tiles": 4,
-            "pin_base": 1093,
-            "font_base": 1440,
-            "art_palettes": 2,
-            "row_buffer_bytes": 1280,
-            "borrowed_graphics_restored": true
-          },
-          "interface_limits": {
-            "artTiles": 545,
-            "artBase": 101,
-            "scratchBase": 646,
-            "scratchTiles": 112,
-            "lastBorrowedTile": 757,
-            "fontBase": 1440,
-            "backgroundColors": 15,
-            "artBytes": 17440,
-            "graphicsSnapshotBytes": 32288,
-            "snapshotLifetime": "allocated once for a panel and its help subpages, freed on exit",
-            "simulationResetOnResume": false,
-            "portrait": [
-              48,
-              48
-            ],
-            "dialogueWidth": 34,
-            "dialogueRows": 4,
-            "dialogueLineSpacing": 16,
-            "dialogueLinesChecked": 51,
-            "releaseShortcuts": "DEV_SHORTCUTS opt-in; disabled in production"
-          },
-          "result_limits": {
-            "width": 256,
-            "heights": {
-              "defeat": 184,
-              "exit": 152,
-              "completion": 128,
-              "victory": 176
+              "deathPolicyApplied": true,
+              "bagPickupOnce": true,
+              "bagReplacedOnNextDeath": true
             },
-            "alignment": "exact pixel centre; original 8x8 glyphs",
-            "fontMaskBytes": 768,
-            "palette": "PAL2; actors hidden; original scenery PAL0/1/3 retained",
-            "backgroundTileCap": 680,
-            "maxBackgroundTilesObserved": 406,
-            "cardTilesMax": 736,
-            "lastTileLimit": 1431,
-            "lastTileObserved": 1157,
-            "temporaryCaptureBytesMax": 34048,
-            "cardBufferBytes": 23552,
-            "memoryLifetime": "capture buffers freed before card allocation; card freed on exit; object/floor patterns and actor cache rebuilt",
-            "transientBloodDecals": "hidden with actors in mapped arenas",
-            "inputGateMilliseconds": 350,
-            "automaticSeconds": {
-              "completion": 2,
-              "signalLost": 3,
-              "defeat": null,
-              "final": null
+            "interface_ntsc": {
+              "passed": true,
+              "report": "../art/bolsa-recuperacao-v1/validation/interface-ntsc/report.json",
+              "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+              "localities": 20,
+              "helpPages": 8
+            },
+            "interface_pal": {
+              "passed": true,
+              "report": "../art/bolsa-recuperacao-v1/validation/interface-pal/report.json",
+              "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+              "localities": 20,
+              "helpPages": 8
             }
           },
-          "native_audio_player_resources": "../art/resultados-ux-v1/integracao/validation/native-checks.txt",
-          "previous_validation": "../art/resultados-ux-v1/integracao/validation/build-before.json"
+          "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/native-checks.txt",
+          "death_rules_report": "../art/bolsa-recuperacao-v1/validation/report.json",
+          "previous_validation": {
+            "date": "2026-10-21",
+            "revision": "Centred partial resistance result cards: defeat/retry, safe exit, objective completion, signal branches, final victory and new campaign",
+            "rom_sha256": "3bfa4cbdc6dc076612cd7bd6817e1373547c9d2aae08c2eb3e98418308faf06e",
+            "rom_bytes": 1310720,
+            "checks": {
+              "interface_ntsc": {
+                "passed": true,
+                "report": "../art/resultados-ux-v1/integracao/validation/interface-ntsc/report.json",
+                "localities": 20,
+                "helpPages": 6,
+                "graphicsRestoredExactly": true,
+                "simulationFrozen": true
+              },
+              "routemap_ntsc": {
+                "passed": true,
+                "report": "../art/resultados-ux-v1/integracao/validation/map-ntsc/report.json",
+                "edges": 23,
+                "completeHistories": 2,
+                "maxOverlayTiles": 140
+              },
+              "interface_pal": {
+                "passed": true,
+                "report": "../art/resultados-ux-v1/integracao/validation/interface-pal/report.json",
+                "localities": 20,
+                "helpPages": 6,
+                "graphicsRestoredExactly": true,
+                "simulationFrozen": true
+              },
+              "routemap_pal": {
+                "passed": true,
+                "report": "../art/resultados-ux-v1/integracao/validation/map-pal/report.json",
+                "edges": 23,
+                "completeHistories": 2,
+                "maxOverlayTiles": 140
+              },
+              "results_ntsc": {
+                "passed": true,
+                "report": "../art/resultados-ux-v1/integracao/validation/ntsc/report.json",
+                "localities": 20,
+                "samePhaseRetry": true,
+                "equipmentReset": true,
+                "routes": [
+                  "6A",
+                  "6B"
+                ],
+                "replayFullReset": true,
+                "sandboxRetry": true
+              },
+              "results_pal": {
+                "passed": true,
+                "report": "../art/resultados-ux-v1/integracao/validation/pal/report.json",
+                "localities": 20,
+                "samePhaseRetry": true,
+                "equipmentReset": true,
+                "routes": [
+                  "6A",
+                  "6B"
+                ],
+                "replayFullReset": true,
+                "sandboxRetry": true
+              }
+            },
+            "map_limits": {
+              "screen": [
+                320,
+                224
+              ],
+              "painting": [
+                320,
+                160
+              ],
+              "art_tiles": 800,
+              "art_base": 101,
+              "overlay_budget": 192,
+              "overlay_max_observed": 140,
+              "pin_tiles": 4,
+              "pin_base": 1093,
+              "font_base": 1440,
+              "art_palettes": 2,
+              "row_buffer_bytes": 1280,
+              "borrowed_graphics_restored": true
+            },
+            "interface_limits": {
+              "artTiles": 545,
+              "artBase": 101,
+              "scratchBase": 646,
+              "scratchTiles": 112,
+              "lastBorrowedTile": 757,
+              "fontBase": 1440,
+              "backgroundColors": 15,
+              "artBytes": 17440,
+              "graphicsSnapshotBytes": 32288,
+              "snapshotLifetime": "allocated once for a panel and its help subpages, freed on exit",
+              "simulationResetOnResume": false,
+              "portrait": [
+                48,
+                48
+              ],
+              "dialogueWidth": 34,
+              "dialogueRows": 4,
+              "dialogueLineSpacing": 16,
+              "dialogueLinesChecked": 51,
+              "releaseShortcuts": "DEV_SHORTCUTS opt-in; disabled in production"
+            },
+            "result_limits": {
+              "width": 256,
+              "heights": {
+                "defeat": 184,
+                "exit": 152,
+                "completion": 128,
+                "victory": 176
+              },
+              "alignment": "exact pixel centre; original 8x8 glyphs",
+              "fontMaskBytes": 768,
+              "palette": "PAL2; actors hidden; original scenery PAL0/1/3 retained",
+              "backgroundTileCap": 680,
+              "maxBackgroundTilesObserved": 406,
+              "cardTilesMax": 736,
+              "lastTileLimit": 1431,
+              "lastTileObserved": 1157,
+              "temporaryCaptureBytesMax": 34048,
+              "cardBufferBytes": 23552,
+              "memoryLifetime": "capture buffers freed before card allocation; card freed on exit; object/floor patterns and actor cache rebuilt",
+              "transientBloodDecals": "hidden with actors in mapped arenas",
+              "inputGateMilliseconds": 350,
+              "automaticSeconds": {
+                "completion": 2,
+                "signalLost": 3,
+                "defeat": null,
+                "final": null
+              }
+            },
+            "native_audio_player_resources": "../art/resultados-ux-v1/integracao/validation/native-checks.txt",
+            "previous_validation": "../art/resultados-ux-v1/integracao/validation/build-before.json"
+          }
         }
-      }
-    },
-    "footer": {
-      "coveredEdges": 23,
-      "body": "centered on 8px tile grid",
-      "actions": "right aligned, 8px margin",
-      "goldPalette": "PAL3, restored on exit",
-      "maxCharacters": 37,
-      "fontTilesAdded": 0,
-      "rows": [
-        22,
-        23,
-        24,
-        26
-      ],
-      "readyAndTravelValidated": true
-    },
-    "death_rules_report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/report.json"
+      },
+      "footer": {
+        "coveredEdges": 23,
+        "body": "centered on 8px tile grid",
+        "actions": "right aligned, 8px margin",
+        "goldPalette": "PAL3, restored on exit",
+        "maxCharacters": 37,
+        "fontTilesAdded": 0,
+        "rows": [
+          22,
+          23,
+          24,
+          26
+        ],
+        "readyAndTravelValidated": true
+      },
+      "death_rules_report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/report.json"
+    }
   }
 }

@@ -193,7 +193,8 @@ def main():
     mission_scratch=mission_base+radio_count
     radio_tiles=(GAME/'res/radio_panel/tiles.bin').read_bytes()[:radio_count*32]
     radio_map=struct.unpack('>1120H',(GAME/'res/radio_panel/map.bin').read_bytes())
-    radio_palette=struct.unpack('>16H',(GAME/'res/radio_panel/palette.bin').read_bytes())
+    radio_palette=list(struct.unpack('>16H',(GAME/'res/radio_panel/palette.bin').read_bytes()))
+    radio_palette[15]=0x4ce
     insect_palette=struct.unpack('>16H',(GAME/'res/insects/palette.bin').read_bytes())
     def packed(c):return (c>>1&7)|((c>>5&7)<<3)|((c>>9&7)<<6)
     def radio_panel():
@@ -204,7 +205,7 @@ def main():
             for x in (0,1,38,39):
                 attr=vw(0xc000+(y*64+x)*2)
                 assert attr==0x6000+mission_base+radio_map[y*40+x],('radio frame',x,y,hex(attr))
-        assert cram[15]==packed(radio_palette[13]) and cram[47]==packed(radio_palette[15]),'native yellow text'
+        assert cram[15]==packed(0xccc) and cram[47]==packed(0x4ce),'gold titles and neutral gray descriptions'
     paper_palette=struct.unpack('>16H',(GAME/'res/interface/palette.bin').read_bytes())
     assert insect_palette[10]==paper_palette[14],'original portrait backing colour must remain exact'
     def portrait_bytes(kind):

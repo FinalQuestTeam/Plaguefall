@@ -6,6 +6,8 @@ O conjunto experimental passou nos 24 casos: **60 FPS NTSC e 50 FPS PAL**, com o
 
 Para chegar ao resultado, o protótipo combina otimizações de colisão, montagem de sprites e caches com mudanças a avaliar: lógica dos amarelos/roxos a 15 Hz NTSC, preparação gráfica dos inimigos em quatro grupos, afastamento distribuído e escudo incorporado aos frames roxos. Jogador e tiros atualizam em todos os quadros. Há mudanças na suavidade e no tempo de reação dos inimigos.
 
+[Nova build com a sala 6 preparada para o experimento](performance-60fps/load-room/README.md).
+
 [ROM experimental, resultados, compromissos e reprodução](performance-60fps/README.md). O registro detalha também uma alteração independente na ROM principal durante o trabalho; a comparação usa capturas isoladas.
 
 ## Experimento anterior: afastamento mais barato
