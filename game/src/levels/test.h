@@ -1,7 +1,7 @@
 #ifndef LEVELS_TEST_H
 #define LEVELS_TEST_H
 #include <genesis.h>
-#define TEST_ROOMS 10
+#define TEST_ROOMS 18
 #define TEST_DEATH_ROOM 9
 #define TEST_RULE_ROOM 10
 typedef struct {
@@ -13,6 +13,8 @@ typedef struct {
 extern TestSettings testSettings[TEST_ROOMS];
 extern u32 testTicks;
 extern u8 testResult;
+u16 TEST_measuredFps(void);
+u16 TEST_peakCpu(void);
 void TEST_defaults(void);
 const char *TEST_name(u8 room);
 void TEST_goal(char *text);

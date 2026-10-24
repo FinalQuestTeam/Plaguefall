@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "rom_sha256": "9b5d08575a56675248341c1f0ebacb1e0f543fbf45f7260a01d5ee56e5e3826b",
+  "emulator": "Genesis Plus GX",
+  "rom_patched": false,
+  "ram_fixtures": true,
+  "physical_hardware_tested": false,
+  "cases": 29304,
+  "volleys": 29904,
+  "projectiles": 111120,
+  "incomplete_volleys": 0,
+  "campaign_phases_per_region": 20,
+  "enemy_species": 13,
+  "enemy_group_sizes": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "powers": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "directions": 8,
+  "shot_pool_layouts": [
+    "empty",
+    "fragmented",
+    "full"
+  ],
+  "pool_caps": [
+    6,
+    16
+  ],
+  "player_ammunition_modes": [
+    "normal",
+    "chain",
+    "ice",
+    "fire"
+  ],
+  "enemy_statuses": [
+    "normal",
+    "shielded",
+    "frozen",
+    "burning"
+  ],
+  "speed_bonuses_pct": [
+    0,
+    100
+  ],
+  "scope": "New projectile records, including immediately consumed projectiles, not a pixel visibility assertion.",
+  "stress_performance": "Artificial dense groups at the phase cap; player/objective protection and durable enemies keep the scenario running. FPS is measured separately from projectile count.",
+  "slowest_sustained_windows": {
+    "ntsc": {
+      "phase": "13B",
+      "simulation_fps": 34.1844,
+      "enemies": 15,
+      "volleys": 6,
+      "updates": 241,
+      "vblanks": 423
+    },
+    "pal": {
+      "phase": "16",
+      "simulation_fps": 42.0502,
+      "enemies": 15,
+      "volleys": 6,
+      "updates": 201,
+      "vblanks": 239
+    }
+  },
+  "reports": {
+    "ntsc": "ntsc/report.json",
+    "pal": "pal/report.json"
+  },
+  "reproduce": {
+    "ntsc": "arch -x86_64 /usr/bin/python3 game/tools/test_player_volley_emulator.py",
+    "pal": "arch -x86_64 /usr/bin/python3 game/tools/test_player_volley_emulator.py --pal"
+  }
+}

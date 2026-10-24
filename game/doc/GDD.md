@@ -129,26 +129,23 @@ O cangaço aparece nas silhuetas, no equipamento recuperado, no conhecimento do 
 
 # História
 
-O roteiro executável está em `levels/story.c`: 22 cenas, com uma chegada para cada um dos 20 nós, uma cena depois da fase 15 e o final depois da 16. Usa quatro retratos: Damião, Comando (padre) e Dinorah derivados dos concepts; Escorpião com arte anterior. As falas são em MAIÚSCULA SEM ACENTO. Comando é o padre que coordena os abrigos; Damião chama os invasores de “baratas”. Dinorah participa por rádio antes da fase 7, sem ator aliado na arena. A completa/avança a fala; START pula a cena. Cada cena toca uma vez por partida.
+O roteiro executável está em `levels/story.c`, com21 cenas-base, variantes das conversas 14–16 e oito epílogos. Os retratos são Damião, Padre, Dinorah e Escorpião. As falas nativas usam português acentuado. A animação existente de101 segundos abre o jogo antes do menu; a chegada à fase 1 mantém só o chamado do padre.
 
-A campanha tem 16 fases por percurso e quatro bifurcações já implementadas:
+A campanha tem 16 etapas por percurso e 19 versões:
 
-| Origem | Condição | Destino e contexto |
+| Origem | Condição | Destino |
 |---|---|---|
-| 1 | Sem bomba / usou bomba | 2A, rua de serviço / 2B, baixio com lama após denunciar a posição |
-| 5 | Protegeu o ponto / objetivo falhou | 6A, avanço / 6B, retirada com cerco mais apertado |
-| 9 | Sem dano / sofreu dano | 10A, acesso técnico / 10B, desvio por lava e lama |
-| 12 | Menos de 60 s / 60 s ou mais | 13A, passagem direta com lava / 13B, canal com lama |
+| 1 | Sem bomba / com bomba | 2A, igreja preservada / 2B, destroços sólidos |
+| 5 | Sinal protegido / sinal perdido | 6A, resgate completo / 6B, perdas civis e portões |
+| 12 | Dinorah viva / morta | 13A, 30 insetos e apoio final / 13B, 45 insetos e luto |
 
-A seleção narrativa acompanha o nó e o momento ANTES/DEPOIS. Não há uma segunda condição independente para escolher slides, nem seleção por quantidade de itens ou corações. Após convergir, as falas comuns funcionam com qualquer caminho anterior. O resultado da fase 5 é tratado nas chegadas a 6A/6B, pois a saída DEPOIS da 5 também pode ocorrer após falha roteada.
+Igreja, resgate e Dinorah persistem depois das reconvergências e compõem oito encerramentos. Dinorah viva trabalha no console protegido e participa das conversas 14, 15 e 16. Morta, a operação final usa sequência automática e apoio do padre. O chefe emerge dos foguetes em chamas; derrotá-lo encerra o confronto local.
 
-Damião vai da frustração com o sonho de viajar à decisão de defender quem ficou em terra. Escorpião oferece uma viagem como parte da carga; ele recusa. Vencer o chefe interrompe o comando local do enxame e permite o retorno à comunidade. O final é único e não declara o Brasil inteiro livre.
-
-[Abertura completa](historia/abertura.md) · [Campanha por nó](historia/campanha.md) · [Sistema de diálogos](plano-historia.md).
+[História e impactos](historia/tratamento-proposto.md) · [Campanha por nó](historia/campanha.md) · [Implementação e playtests](campanha-implementada.md).
 
 ## Visão geral
 
-**Plaguefall** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Damião, humano cibernético32×48** (hitbox 16×16) em arenas com limites por fase, eliminando insetos gigantes que surgem em ondas. Na maioria das fases o objetivo é **matar N inimigos** (`killTarget`); na **fase 5**, proteger a santa por 30 segundos; na **fase 16**, o objetivo é **derrotar o chefe Escorpião** — vencê-lo apresenta o diálogo final e a caixa de vitória, com opções de voltar ao título ou iniciar uma campanha nova.
+**Plaguefall** é um shooter de arena *top-down* para Mega Drive. O jogador controla **Damião, humano cibernético32×48** (hitbox 16×16) em arenas com limites por fase, eliminando insetos gigantes que surgem em ondas. Os objetivos alternam combate, travessia, escolta, transporte e operação de equipamentos; na **fase 5**, proteger a Santa por 120 segundos; na **fase 16**, o objetivo é **derrotar o chefe Escorpião** — vencê-lo apresenta o diálogo final e a caixa de vitória, com opções de voltar ao título ou iniciar uma campanha nova.
 
 A **fase 1** usa um mundo de **512×384**, câmera com janela320×224, padrões residentes em BG_B com atualização circular de linhas, sangue em BG_A e HUD fixo em WINDOW. Igreja e objetos periféricos possuem colisão; a bomba altera parte da igreja e decide a saída2B. Limites validados: quatro inimigos e seis tiros de cada lado,60 FPS NTSC/50 FPS PAL no emulador. [Arte, testes e próximos formatos](fases-cenarios.md).
 
@@ -278,6 +275,8 @@ A direção de tiro (`faceX/faceY`) segue a última direção pressionada (8 dir
 | Abertura do leque | cisalhamento `SHOTS_ARC_SHEAR` = 8 |
 | Origem | arma de Damião (`PSHOT_MUZZLE_FWD` = 13 px à frente, 5 px à direita) |
 | Dano | 1 por bala (HP dos inimigos é medido em tiros) |
+
+Cada disparo reserva o leque completo antes de criar as balas. Usa vagas livres e, se o pool atingir o teto da fase (`shotCap`, seis em várias arenas), substitui projéteis anteriores em rodízio para não cortar o novo leque. A quantidade simultânea permanece no limite da fase.
 
 **Modos de tiro** (ativados pelo inventário; a carga é consumida **a cada disparo**, mesmo errando):
 
@@ -422,34 +421,31 @@ Soma dos pesos = 100 (coincidência atual; o sorteio usa a soma real).
 
 ## Estrutura
 
-A **ordem da campanha vive no grafo de rotas** (`levels/graph.c`): cada fase é um nó (`NODE_COUNT` = **20**; 16 etapas por partida, incluindo quatro pares de rotas; fase16 = chefe, nó **final** = sem saídas) com **saídas condicionais** avaliadas ao vencer (bomba/dano/tempo/falha do objetivo — bifurcações ativas: **1→2A/2B** (sem bomba/com bomba), **5→6A/6B** (a fase 5 é PROTEGER o aliado 30 s; falhar NÃO é game over — vai à 6B "retirada" via `OBJ_FALHOU`), **9→10A/10B** (sem dano/com dano) e **12→13A/13B** (venceu em <60 s/não); cada par reconverge na fase seguinte). As condições leem as **estatísticas da fase** (`core/stats.c`: bombas usadas, dano sofrido, tempo, objetivo falhado), zeradas a cada início de fase. Plano completo em `doc/plano-rotas.md`. Cada fase é um `LevelDef` (dados puros) em `levels/defs/levelNN.c`: terreno (`lava`/`mud`, retângulos em tiles), `killTarget`, `spawnSeconds`, `spawnCount`, o **roster** de tipos, o **chão** (`floor`) e a **curva de música** por fase (`musCalmUntil`/`musEnemyMax`/`musStepCalm`/`musStepHot`; ver §6). A arte dos inimigos do roster é gerada **por fase** na VRAM (ver §6). Os campos `arena`, `enemyCap`, `shotCap` e `musicTrack` controlam o mundo com câmera, os limites de carga e a trilha. Campos de arena/capacidade omitidos preservam a configuração clássica.
+A ordem vive em `levels/graph.c`: 19 nós, 16 etapas por partida e três bifurcações. `LevelDef` define objetivo, mapa, rota, roster, música e limites por fase. As máscaras de colisão usam passo de linha variável e 4 KB no total, cobrindo os mundos de 3072×320 sem ampliar a reserva anterior de RAM. Os objetos animados entram depois do atlas do cenário e respeitam a reserva comum de 640 tiles.
 
-## Tabela das fases
+A tabela abaixo corresponde à ROM integrada de 23/10/2026. [Resultados, controles e método dos ensaios](campanha-implementada.md).
 
-| Fase | Meta | Spawn (s) | Por onda | Terreno | Chão | Roster |
-|---|---|---|---|---|---|---|
-| 1 | 10 | 5 | 1 | — | pátio em tiles | Torreão, Batedor |
-| 2A | 12 | 5 | 1 | — | pedra | + Aríete *(rota sem bomba na 1)* |
-| 2B | 12 | 5 | 1 | Lama | floresta | Torreão, Batedor, Aríete *(rota com bomba na 1)* |
-| 3 | 14 | 4 | 1 | Lava | pedra | Batedor, Baluarte, Aríete |
-| 4 | 16 | 4 | 1 | Lama | floresta | Torreão, Baluarte, **Caçador** |
-| 5 | **proteger o aliado 30 s** | 4 | 1 | — | pedra | **Fuzileiro**, Caçador, Aríete |
-| 6A | 20 | 3 | 1 | Lava | pedra | Fuzileiro, Caçador, **Adaga** *(protegeu o aliado)* |
-| 6B | 20 | **2** | 1 | Lava | pedra | Fuzileiro, Caçador, Adaga *(retirada: o aliado caiu; música já tensa)* |
-| 7 | 22 | 3 | **2** | Lama | floresta | Caçador, **Escudeiro**, Baluarte |
-| 8 | 24 | 3 | 2 | Lava | pedra | Fuzileiro, Caçador, Adaga, Aríete |
-| 9 | 24 | 4 | 1 | — | pedra | **Artilheiro, Alcateia**, Caçador |
-| 10A | 26 | 3 | 2 | Lama | floresta | Alcateia, **Meteoro**, Adaga *(venceu a 9 sem dano)* |
-| 10B | 26 | 3 | 2 | **Lava+lama** | mix | Alcateia, Meteoro, Adaga *(levou dano na 9)* |
-| 11 | 28 | 3 | 2 | Lava+lama | mix | Artilheiro, **Fortaleza**, Caçador |
-| 12 | 30 | 3 | 2 | Lava+lama | mix | Meteoro, Fuzileiro, Caçador, Baluarte |
-| 13A | 34 | 2 | 2 | Lava | pedra | Baluarte, Caçador, Adaga, Artilheiro, Alcateia *(venceu a 12 em <60 s)* |
-| 13B | 34 | 2 | 2 | **Lama** | floresta | Baluarte, Caçador, Adaga, Artilheiro, Alcateia *(demorou na 12)* |
-| 14 | 37 | 2 | **3** | Lava+lama | mix | Fortaleza, Meteoro, Alcateia, Caçador |
-| 15 | 40 | 2 | 3 | Lava+lama | mix | Aríete, Fuzileiro, Caçador, Adaga, Artilheiro, Fortaleza, Meteoro |
-| **16** | **chefe** | — | — | — | caverna | **Escorpião** (+ Caçadores invocados) |
-
-Layouts de terreno (`layouts.c`, retângulos em tiles): `LAVA_PAIR` {5,6,10×6}+{25,15,10×6}, `MUD_PAIR` {6,15,10×6}+{24,5,10×6}; combos (fases com os dois) usam retângulos 8×5 em cantos opostos.
+| Fase | Objetivo | Limite de insetos | Tiros por lado |
+|---|---|---:|---:|
+| 1 | Sobreviver 90 s | 4 | 6 |
+| 2A | Eliminar 15 insetos | 4 | 6 |
+| 2B | Eliminar 15 insetos; entulho sólido | 4 | 6 |
+| 3 | Percorrer 2560 px | 4 | 6 |
+| 4 | Eliminar 20 insetos | 4 | 6 |
+| 5 | Proteger 120 s | 3 | 6 |
+| 6A | Escolta 3072 px | 3 | 4 |
+| 6B | Escolta 3072 px;2 válvulas e 2 portões | 3 | 4 |
+| 7 | Transportar 5 cargas | 4 | 6 |
+| 8 | Eliminar 3 prioritários | 6 | 6 |
+| 9 | Percorrer 2560 px | 3 | 4 |
+| 10 | Destruir 10 ninhos | 4 | 6 |
+| 11 | Liberar 3 válvulas | 3 | 6 |
+| 12 | Escolta 3072 px; morte permanente deDinorah | 3 | 4 |
+| 13A | Eliminar 30;Dinorah protegida | 5 | 6 |
+| 13B | Eliminar 45;Dinorah morta | 5 | 6 |
+| 14 | Ligar 5 geradores | 4 | 4 |
+| 15 | Proteger 120 s | 3 | 4 |
+| 16 | Derrotar o chefe | 4 | 4 |
 
 ## Chão da arena (`floor.c`, campo `LevelDef.floor`)
 

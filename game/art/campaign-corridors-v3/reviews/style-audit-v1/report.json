@@ -1,0 +1,317 @@
+{
+  "status": "style_nonconformance_confirmed",
+  "scope": "READ-ONLY audit of corridor 3,6A,6B,9,12 against the visual guide and original native reference kit. No art, bank, metadata, runtime C, ROM or emulator mutations.",
+  "runtime_ROM_reference": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "overall_verdict": "The five corridors do not form a stylistically coherent continuation of the approved native kit.9 is the clearest failure; 12 also departs in projection and material handling. 3 retains the exact church language but juxtaposes it with untextured new surfaces. 6A/6B retain a common new kit with each other but do not retain the existing worn tunnel language.",
+  "what_previous_approval_proved": "Whole landmark silhouettes, framing, contact and atlas/geometry correctness. Those checks did not validate the requested camera projection, pixel texture, palette/material continuity or story identity. The previous visual_runtime_accepted labels are superseded for style acceptance by this audit.",
+  "evidence": {
+    "comparison_1x": "comparison-1x.png",
+    "pixel_detail_x4": "floor-patches-x4.png",
+    "material_metrics": "sample-metrics.json",
+    "reference_overlay_limit": "Reference panels include the existing hero pixels only as a QA scale overlay; they are not new game assets or original runtime screenshots.",
+    "metric_limit": "Modal-color fractions characterize the specified material patches, not a numeric quality score. Roof ratios are authored shape proxies, not camera-angle measurements."
+  },
+  "standards": [
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 11,
+      "rule": "Orthographic elevated camera near 60 degrees above the ground, following the existing courtyard/actors; normalize camera, scale, palette and anchors."
+    },
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 15,
+      "rule": "Human cells 32x 48 and existing palettes."
+    },
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 23,
+      "rule": "Corridors use modules/landmarks/circular scrolling without evident repetition of the same room."
+    },
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 249,
+      "rule": "3 reuses existing urban floor, gutter, houses and gates; arrival matches 4."
+    },
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 370,
+      "rule": "6A reuses tunnel walls, pipes and floor; maintenance tunnel provides the kit."
+    },
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 409,
+      "rule": "6B is an alternate branch of the same 6Asewer kit."
+    },
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 528,
+      "rule": "9 reuses 3 urban kit and existing industrial gates/pipes; avoid another entire street library; destination facade reappears in 10/11."
+    },
+    {
+      "path": "game/doc/historia/guia-producao-visual-fases.md",
+      "line": 648,
+      "rule": "12 reuses pipes/floor/corridor landmarks and shipyard infrastructure; arrival is the workers room."
+    }
+  ],
+  "general_findings": [
+    {
+      "id": "camera_projection_substituted_by_framing",
+      "priority": 0,
+      "finding": "9 has frontal facade dominance. Office roof 56 px over total 160(35%); dock roof 64 over 160(40%).12 union roof 88 over 176(50%). The original courtyard church has roughly 60–65 px of roof over 25–30 px of facade; its top plane dominates. Scrolling the camera to fit a tall facade preserves the different projection instead of normalizing it.",
+      "evidence": [
+        {
+          "path": "game/art/campaign-corridors-v3/streets/9/build.py",
+          "line": 49
+        },
+        {
+          "path": "game/art/campaign-corridors-v3/syndicate/12/build.py",
+          "line": 40
+        },
+        "comparison-1x.png"
+      ],
+      "inference_limit": "These ratios visibly compare top-versus-front balance; a precise angle cannot be recovered from unknown building depth."
+    },
+    {
+      "id": "quiet_floor_became_blank_fill",
+      "priority": 0,
+      "finding": "Existing floors remain quiet while carrying sparse 1 px grain: selected R01 patch 94.8% base with 11 colors; R04 patch 93.4% base with 3 colors. Selected 3/9/12 patches are 100% onecolor. 6A/Bpatches carry two colors almost only in straight paving joints. The old worn world becomes clean flat fields.",
+      "evidence": [
+        "floor-patches-x4.png",
+        {
+          "path": "game/art/campaign-corridors-v3/streets/3/build.py",
+          "line": 58
+        },
+        {
+          "path": "game/art/campaign-corridors-v3/streets/9/build.py",
+          "line": 38
+        },
+        {
+          "path": "game/art/campaign-corridors-v3/syndicate/12/build.py",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "id": "material_pixel_language_diverged",
+      "priority": 1,
+      "finding": "Reference plaster, tiles, stone and tunnel pipes use irregular 1 px edges, chips, dirt and rusty transitions. 9/12 quantize structural crops on 2 px grids and repeat uniform wall samples; only openings retain 1 px details. Clean rectangular walls, unweathered metal and regular tree/fence repeats are materially different from the native worn kit. Adding noise to these frontal shapes alone would not repair camera/style.",
+      "evidence": [
+        {
+          "path": "game/art/campaign-corridors-v3/streets/9/build.py",
+          "line": 11
+        },
+        {
+          "path": "game/art/campaign-corridors-v3/streets/9/build.py",
+          "line": 15
+        },
+        {
+          "path": "game/art/campaign-corridors-v3/syndicate/12/build.py",
+          "line": 13
+        },
+        "comparison-1x.png"
+      ]
+    },
+    {
+      "id": "actor_scale_was_cell_checked_only",
+      "priority": 1,
+      "finding": "The 32x 48 cell remains correct, with about 33 px visible human height.9 office front 104 px is about 3 visible human heights; the reference church front is about 25–30 px.12 union front 88 px is about 2.7 human heights. This creates a different apparent storey/camera scale even while 32x 40 doors seem locally usable. Whole-building fit and door reachability did not prove the same world scale.",
+      "evidence": [
+        "comparison-1x.png",
+        "game/art/campaign-corridors-v3/captures/ntsc/9/landmark-0.png",
+        "game/art/campaign-corridors-v3/captures/ntsc/12/landmark-2.png"
+      ]
+    },
+    {
+      "id": "independent_libraries_replaced_continuity",
+      "priority": 1,
+      "finding": "3 uses the old church plus new flat houses;9 introduces a different modern industrial/landscaped kit; 12 uses a third terracotta/blue-garage family. 6A/Bare coherent with each other but replace the worn tunnel material vocabulary with olive paving/navy dashed water. The result reads as several asset packs across one campaign.",
+      "evidence": [
+        "comparison-1x.png",
+        {
+          "path": "game/doc/historia/guia-producao-visual-fases.md",
+          "line": 534
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "phase": "3",
+      "style_verdict": "partial_identity_preserved_style_mixed",
+      "preserve": [
+        "Exact church identity, warm floor hue, blue doors, modular route/arrival function."
+      ],
+      "failures": [
+        {
+          "world_bbox": [
+            704,
+            192,
+            64,
+            64
+          ],
+          "issue": "Road sampled from a 1x 1 source pixel; selected 64x 64 floor is completely uniform against the grainy church."
+        },
+        {
+          "source": "game/art/campaign-corridors-v3/streets/3/build.py:28",
+          "issue": "New plaster is literally a 1x 1 sample repeated across walls. Clean green parcels and plaster contrast with the worn church/old enclosure."
+        }
+      ],
+      "story": "Street, abandoned vehicle and warehouse arrival match the stated journey in function; the church-to-new-house material jump undermines same-neighborhood continuity.",
+      "priority": 1
+    },
+    {
+      "phase": "6A",
+      "style_verdict": "new_sewer_kit_not_native_tunnel_continuity",
+      "preserve": [
+        "Dry escort lane, canal, bridge, maintenance landmarks and shelter direction."
+      ],
+      "failures": [
+        {
+          "world_bbox": [
+            560,
+            128,
+            64,
+            64
+          ],
+          "issue": "Flat olive paving plus perfect line joints instead of the charcoal/sparse-grain floor and warm rust/dirt transitions of the existing maintenance tunnel."
+        },
+        {
+          "evidence": "game/art/campaign-corridors-v3/captures/ntsc/6A/landmark-1.png",
+          "issue": "Canal/walls are almost diagrammatic top-down strips; small 3Ddoors/pumps sit in a different level of finish. Repeated cyan dashes read as a pattern rather than the old material vocabulary."
+        }
+      ],
+      "story": "Sewer/dry path/shelter are readable. The reason to reuse the existing maintenance kit was not realized in materials.",
+      "priority": 1
+    },
+    {
+      "phase": "6B",
+      "style_verdict": "matches_new 6A_but_inherits_style_break",
+      "preserve": [
+        "Shared base with 6A, two gate/pressure sequences and alternate branch consequence."
+      ],
+      "failures": [
+        {
+          "world_bbox": [
+            1056,
+            128,
+            64,
+            64
+          ],
+          "issue": "Same clean olive paving and regular joints as 6A."
+        },
+        {
+          "evidence": "game/art/campaign-corridors-v3/captures/ntsc/6B/landmark-1.png",
+          "issue": "Valve/gate have detailed isolated metal silhouettes but their surroundings remain clean flat paving; weathering and pressure/corrosion history do not bind equipment to the environment."
+        }
+      ],
+      "story": "The interactive requirements are represented. Gate correctness does not restore the reference sewer material/camera identity.",
+      "priority": 1
+    },
+    {
+      "phase": "9",
+      "style_verdict": "highest_priority_style_rejection",
+      "preserve": [
+        "Industrial destination intent, whole vehicle, service detour, mechanical/tank yard logic and collision correctness."
+      ],
+      "failures": [
+        {
+          "world_bbox": [
+            64,
+            32,
+            304,
+            160
+          ],
+          "issue": "Office is dominated by 104 px of front wall under 56 px of roof, with large uniform brick-red planes. Reads as a frontal clean campus building."
+        },
+        {
+          "world_bbox": [
+            672,
+            24,
+            304,
+            160
+          ],
+          "issue": "Three clean repeated garage doors, blue canopy and same oversized facade projection."
+        },
+        {
+          "world_bbox": [
+            192,
+            208,
+            64,
+            64
+          ],
+          "issue": "Graphite asphalt is semantically a road after the water-color correction, but remains 100% flat and has no native 1 px surface wear."
+        },
+        {
+          "evidence": "game/art/campaign-corridors-v3/captures/ntsc/9/landmark-9.png",
+          "issue": "The isolated blue gate marks an endpoint but the promised factory silhouette/facade continuity with 10/11 is not established by a shared complete facade. Industrial props alone are not a reused urban-to-factory kit."
+        }
+      ],
+      "story": "Reach-factory objective and dialogue fit. Clean landscaping/campus vocabulary weakens the infested industrial setting and introduces a new street library contrary to guide 528–539.",
+      "priority": 0
+    },
+    {
+      "phase": "12",
+      "style_verdict": "recognizable_union_destination_but_wrong_material_projection_family",
+      "preserve": [
+        "Union red cloth/blue entrance identity, protected stops, north/south route, whole buildings and escort consequence."
+      ],
+      "failures": [
+        {
+          "world_bbox": [
+            2704,
+            24,
+            304,
+            176
+          ],
+          "issue": "Union roof 88/front 88 creates a frontal facade twice to three times the old projected front height; walls are flat brown and roof details on 2 px grid."
+        },
+        {
+          "world_bbox": [
+            608,
+            208,
+            64,
+            64
+          ],
+          "issue": "Uniform gray floor with none of the technical plate/channel/scorched maintenance vocabulary proposed inK4F."
+        },
+        {
+          "world_positions": [
+            432,
+            736,
+            1296,
+            1984,
+            2176,
+            2480
+          ],
+          "issue": "Six copies of the same 160x 128 annex fill camera gaps but create a visibly repeated garage family. They solve empty framing without giving shipyard-specific structural progression."
+        }
+      ],
+      "story": "Union arrival is clear; the preceding place reads as a workshop neighborhood rather than the last service passage of the spacecraft yard. Few large shipyard modules/pipes/technical ground reused from the final area would establish that connection.",
+      "priority": 1
+    }
+  ],
+  "priorities": [
+    {
+      "order": 1,
+      "action": "Approve a 320x 2241x/2xstyle proof with existing human sprites againstR01/R03 before extending a whole new corridor. Use the original camera/material kit as the source of truth; a new ImageGen full scene must be normalized to it."
+    },
+    {
+      "order": 2,
+      "action": "Repair 9 projection and kit continuity first. Reuse native urban/industrial roof, plaster, gate and pipe parts; do not retain tall frontal buildings and simply add dirt."
+    },
+    {
+      "order": 3,
+      "action": "Restore quiet 1 px material vocabulary: sparse ground grain, worn plaster/stone, rust at metal joints and contact dirt. Preserve low contrast on movement ground; avoid global random noise."
+    },
+    {
+      "order": 4,
+      "action": "Normalize 12 projection and shipyard infrastructure, and 6A/Btunnel palette/materials. 3 needs targeted surface continuity while keeping its faithful church."
+    },
+    {
+      "order": 5,
+      "action": "Then review full panorama, entry/middle/arrival cameras and story transition pairs; only afterward redo combined runtime and performance acceptance."
+    }
+  ],
+  "performance_boundary": "This audit makes no new FPS measurement.640 tile fit is a VRAM constraint, not proof of smooth normal gameplay. Existing rendering/collision passes and combat-disabled/forced-load captures do not settle the user-reported stutter. Performance remains a separate root investigation.",
+  "writes": "Only this review directory was written; production sources, generators, manifests, native assets and ROM were not changed."
+}

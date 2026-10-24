@@ -1,0 +1,1881 @@
+{
+  "passed": true,
+  "romSHA256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+  "region": "PAL",
+  "route": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20
+  ],
+  "transitions": [
+    {
+      "name": "arrival-radio-to-prep-1",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-1",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-1",
+      "frames": 24,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-1",
+      "frames": 56,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-1",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-1",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-2A",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-2A",
+      "frames": 22,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-2A",
+      "frames": 57,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "paintRow",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-2A",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-2A",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-3",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-3",
+      "frames": 21,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "result-to-next-3",
+      "frames": 57,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-3",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-3",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-4",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ],
+        [
+          "LEVEL_draw",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-4",
+      "frames": 22,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-4",
+      "frames": 60,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-4",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-4",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-5",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-5",
+      "frames": 22,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "result-to-next-5",
+      "frames": 59,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-5",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-5",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-6A",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-6A",
+      "frames": 22,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-6A",
+      "frames": 60,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-6A",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-6A",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-7",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-7",
+      "frames": 20,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-7",
+      "frames": 59,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-7",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-7",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-8",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-8",
+      "frames": 21,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ],
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-8",
+      "frames": 58,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-8",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-8",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-9",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-9",
+      "frames": 20,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-9",
+      "frames": 58,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ],
+        [
+          "PAL_initFade",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-9",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-9",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-10A",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-10A",
+      "frames": 21,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ],
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-10A",
+      "frames": 59,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-10A",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-10A",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-11",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-11",
+      "frames": 20,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-11",
+      "frames": 55,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ],
+        [
+          "PAL_initFade",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-11",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-11",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-12",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-12",
+      "frames": 20,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-12",
+      "frames": 54,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ],
+        [
+          "PAL_initFade",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-12",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-12",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-13A",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-13A",
+      "frames": 21,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ],
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-13A",
+      "frames": 54,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-13A",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-13A",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-14",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-14",
+      "frames": 20,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-14",
+      "frames": 55,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ],
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ],
+        [
+          "PAL_initFade",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-14",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-14",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-15",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "play-to-result-15",
+      "frames": 21,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ],
+        [
+          "VDP_waitVBlank.constprop.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "result-to-next-15",
+      "frames": 69,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "line.part.0",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "after-radio-to-map-15",
+      "frames": 21,
+      "blackFrames": 6,
+      "longestBlack": 6,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 3,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "PAL_initFade",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "map-to-arrival-15",
+      "frames": 84,
+      "blackFrames": 20,
+      "longestBlack": 20,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 18,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "arrival-radio-to-prep-15",
+      "frames": 13,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 4,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          2
+        ],
+        [
+          "FLOW_run",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "prep-to-play-16",
+      "frames": 163,
+      "blackFrames": 0,
+      "longestBlack": 0,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 0,
+      "loadingFrames": 152,
+      "visibleLoadingFrames": 152,
+      "digits": {
+        "3": 51,
+        "2": 50,
+        "1": 51
+      },
+      "persistentBorderFramesChecked": 155,
+      "functionsWhileAudioStalled": [
+        [
+          "VDP_waitVBlank.constprop.0",
+          3
+        ]
+      ]
+    },
+    {
+      "name": "boss-to-radio",
+      "frames": 22,
+      "blackFrames": 17,
+      "longestBlack": 17,
+      "longestMusicStall": 0,
+      "longestFrozenPSGCache": 0,
+      "displayOffFrames": 17,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": []
+    },
+    {
+      "name": "final-radio-to-victory",
+      "frames": 37,
+      "blackFrames": 22,
+      "longestBlack": 22,
+      "longestMusicStall": 1,
+      "longestFrozenPSGCache": 1,
+      "displayOffFrames": 19,
+      "loadingFrames": 0,
+      "visibleLoadingFrames": 0,
+      "digits": {
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "persistentBorderFramesChecked": 0,
+      "functionsWhileAudioStalled": [
+        [
+          "begin.lto_priv.0",
+          1
+        ]
+      ]
+    }
+  ],
+  "radioOverlayFramesPixelDataChecked": 2432,
+  "objectiveSetup": "RAM accelerates objectives/positions and branch statistics; loading, audio, routing and countdown use production code."
+}

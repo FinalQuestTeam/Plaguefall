@@ -1,0 +1,127 @@
+{
+  "status": "candidate for private in-game trial only; continuous review completed",
+  "phase": "6A",
+  "memory": {
+    "scene_tiles": 554,
+    "objective_tiles": 0,
+    "total_tiles": 554,
+    "budget": 640,
+    "exact_native_tile_reuse": true,
+    "lossy_tile_substitutions": 0,
+    "map_bytes": 30720
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 5554,
+    "reachable_positions": 5554,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3200
+  },
+  "placements": [
+    {
+      "id": "closed-pump-recess",
+      "source_bbox_xywh": [
+        1672,
+        128,
+        128,
+        104
+      ],
+      "position": [
+        688,
+        104
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "entry-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        48
+      ],
+      "position": [
+        512,
+        48
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "middle-north-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        56
+      ],
+      "position": [
+        1168,
+        24
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "middle-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        56
+      ],
+      "position": [
+        2000,
+        24
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "late-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        56
+      ],
+      "position": [
+        2704,
+        32
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    }
+  ],
+  "baseline_files_unchanged": {
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/corrections/6A-guidebook/manifest.json": "6e30af400142dddc686da48630881a01757554506958786e98a67802675171d8",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/corrections/6A-guidebook/complete-native.png": "5dba9c51612bc0206e44cee16a91ffaf1d936c4711c0e1a298a810daa53788f2",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/corrections/6A-guidebook/native/map.bin": "2fbec621a2b686fe99ec638c63c03ede68ca79fa111a42fb82903e896600fe27",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/corrections/6A-guidebook/native/palette.bin": "52f253bacc58eae0fb3a53db5f4e526909b1f575fce09f21b3966d6d2db1d71a",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/corrections/6A-guidebook/native/tiles.bin": "3e122821115206f16fd7361d45ebc39099d0441f1392d6e4ad4e6ac44211ff17"
+  },
+  "actor_anchor_corrected_to_renderer": true,
+  "native_exact_reassembly": true,
+  "continuous_cameras": 20,
+  "limits": [
+    "Composed native previews, not runtime evidence.",
+    "Maintenance canopy repeats four times; stop here unless whole-scene review finds an actual remaining defect.",
+    "No story/roster/geometry/active C/ROM changes."
+  ],
+  "critical_visual_review": {
+    "all_four_pages_read": true,
+    "blocking_findings": [],
+    "reservations": [
+      "Maintenance stations repeat; field remains intentionally quiet.",
+      "Offline frames are not runtime/FPS/collision proof."
+    ],
+    "whole_unit_contacts": "New machine fits the preexisting blocked northern recess; maintenance units retain complete bench, support and native base above existing walkable bounds.",
+    "south_trial_discarded": true
+  }
+}

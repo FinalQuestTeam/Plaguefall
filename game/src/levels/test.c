@@ -1,5 +1,6 @@
 // Training runtime. Never changes campaign definitions or save state.
 #include "levels/test.h"
+#include "levels/operations.h"
 #include "levels/levels.h"
 #include "system/video/actor_animation.h"
 #include "system/video/actordeath.h"
@@ -32,6 +33,12 @@ static bool wasAlive[MAX_ENEMIES],deathRequested;
 static u8 galleryDirection,galleryPose;
 static u32 meterVblank,meterTicks,meterWarmTicks;
 static u16 measuredFps,peakCpu;
+u16 TEST_measuredFps(void){return measuredFps;}
+u16 TEST_peakCpu(void){return peakCpu;}
+static char loadHud[3][40];
+static u16 loadHudTiles[3][38];
+static u8 loadHudField;
+static u16 loadLastNumber[6];
 static u16 ruleDeaths;
 static const RoutePoint deathPoint[]={{232,168,0}};
 static const RouteDef deathRoute={.points=deathPoint,.count=1};
@@ -45,8 +52,9 @@ void TEST_defaults(void)
         testSettings[i].restock=1;testSettings[i].initialHp=2;
         testSettings[i].kind=1;testSettings[i].attacks=1;
     }
-    testSettings[5].kind=0;testSettings[5].count=1;
-    testSettings[5].shots=1;testSettings[5].noDefeat=1;
+    for(u8 i=OPS_FIRST_ROOM-1;i<TEST_ROOMS;i++)testSettings[i].dummyHp=0;
+    testSettings[5].kind=1;testSettings[5].count=2;
+    testSettings[5].shots=2;testSettings[5].status=1;testSettings[5].noDefeat=1;
     testSettings[TEST_DEATH_ROOM-1].selected=2;
     testSettings[TEST_DEATH_ROOM-1].direction=0;
     testSettings[TEST_DEATH_ROOM-1].repeat=1;
@@ -105,7 +113,9 @@ void TEST_ruleInput(u16 pressed)
 }
 static void slotPosition(u16 i,u8 type,s16 *x,s16 *y)
 {
-    if(testStage==1) {
+    if(testStage==6) {
+        *x=240+(i%4)*12;*y=184+(i/4)*12;
+    } else if(testStage==1) {
         *x=i==12 ? 248 : 24+(i%4)*48;
         *y=i==12 ? 112 : 88+(i/4)*48;
     } else if(testStage==2) {
@@ -125,6 +135,11 @@ static void spawnSlot(u16 i,u8 type)
     e->type=type;e->hp=ENEMY_DEFS[type]->hp;e->active=TRUE;
     e->fireTimer=ENEMY_CD/2+(random()%fps);
     if(testStage==2 && i==0)e->hp=dummyValues[settings()->dummyHp];
+    if(testStage==6){
+        e->aggroPlayer=TRUE;e->retarget=i;e->fireTimer=60000;e->tB=60000;
+        if(!settings()->deaths)e->hp=200;
+        if(settings()->status==1){e->shielded=TRUE;e->tA=60000;}
+    }
     if(type==ENEMY_BOSS)bossDefeated=FALSE;
     wasAlive[i]=TRUE;respawn[i]=0;
 }
@@ -144,10 +159,15 @@ static u16 desiredCount(void)
 }
 static u8 selectedKind(u16 i)
 {
+    if(testStage==6) {
+        static const u8 kinds[3]={ENEMY_SQ_PUR,ENEMY_PEN_PUR,ENEMY_TRI_PUR};
+        return settings()->kind ? kinds[settings()->kind-1] : (i&1 ? ENEMY_PEN_PUR : ENEMY_SQ_PUR);
+    }
     return settings()->kind ? roster[settings()->kind-1] : roster[i%13];
 }
 void TEST_begin(bool retryRules)
 {
+    memset(loadHud,0,sizeof loadHud);memset(loadLastNumber,255,sizeof loadLastNumber);loadHudField=0;
     testTicks=0;testResult=0;testSpawnTimer=fps;repeatTimer=fps*2;
     hudTimer=0;deathRequested=FALSE;peakCpu=0;measuredFps=fps;
     memset(respawn,0,sizeof respawn);memset(wasAlive,0,sizeof wasAlive);
@@ -163,6 +183,7 @@ void TEST_begin(bool retryRules)
     if(testStage==2 || testStage==4)hp=lifeValues[settings()->initialHp];
     if(testStage==1 || testStage==2 || testStage==5 || testStage==6)
         for(u16 i=0;i<desiredCount();i++)spawnSlot(i,testStage==1 ? roster[i] : testStage==2 ? (i ? ENEMY_TARGET : ENEMY_DUMMY) : selectedKind(i));
+    if(testStage==6){faceX=0;faceY=1;}
     if(testStage==TEST_DEATH_ROOM) {
         px=72;py=160;faceX=1;faceY=1;
         DINORAH_start(&deathRoute);ARENA_camera();deathRequested=TRUE;
@@ -171,29 +192,102 @@ void TEST_begin(bool retryRules)
         if(retryRules){DEATH_startPhase(TEST_ruleNode());ruleDeaths++;}
         else rulesSeed();
     }
+    if(OPS_active())OPS_begin();
     TEST_drawHUD();
 }
 void TEST_resume(void)
 {
     meterVblank=vtimer;meterTicks=meterWarmTicks=testTicks;hudTimer=0;
+    memset(loadLastNumber,255,sizeof loadLastNumber);
     PLAYER_waitFireRelease();
+    if(OPS_active())OPS_restoreView();
 }
-static void seedShots(void)
+// Immutable spawn records avoid division/modulo in the live refill path.
+static const FShot loadShots[2][16]={
+    {
+        {8704,12800,0,-192,0,10,1,0},
+        {10880,13248,0,-192,0,10,1,0},
+        {13056,13696,0,-192,0,10,1,0},
+        {15232,14144,0,-192,0,10,1,0},
+        {17408,13056,0,-192,0,10,1,0},
+        {19584,13504,0,-192,0,10,1,0},
+        {21760,13952,0,-192,0,10,1,0},
+        {23936,12864,0,-192,0,10,1,0},
+        {8704,13312,0,-192,0,10,1,0},
+        {10880,13760,0,-192,0,10,1,0},
+        {13056,14208,0,-192,0,10,1,0},
+        {15232,13120,0,-192,0,10,1,0},
+        {17408,13568,0,-192,0,10,1,0},
+        {19584,14016,0,-192,0,10,1,0},
+        {21760,12928,0,-192,0,10,1,0},
+        {23936,13376,0,-192,0,10,1,0}
+    },
+    {
+        {8704,8704,0,128,1,10,1,0},
+        {10880,9408,0,128,2,10,1,0},
+        {13056,10112,0,128,3,10,1,0},
+        {15232,10816,0,128,1,10,1,0},
+        {17408,8960,0,128,2,10,1,0},
+        {19584,9664,0,128,3,10,1,0},
+        {21760,10368,0,128,1,10,1,0},
+        {23936,11072,0,128,2,10,1,0},
+        {8704,9216,0,128,3,10,1,0},
+        {10880,9920,0,128,1,10,1,0},
+        {13056,10624,0,128,2,10,1,0},
+        {15232,8768,0,128,3,10,1,0},
+        {17408,9472,0,128,1,10,1,0},
+        {19584,10176,0,128,2,10,1,0},
+        {21760,10880,0,128,3,10,1,0},
+        {23936,9024,0,128,1,10,1,0}
+    }
+};
+__attribute__((noinline)) static void seedShots(void)
 {
-    const u16 cap=TEST_shotLimit();
+    const u16 cap=shotCounts[testSettings[5].shots];
     for(u16 pool=0;pool<2;pool++) {
-        FShot *shots=pool ? eshots : pshots;
-        for(u16 i=0;i<MAX_PSHOTS;i++) {
-            if(i>=cap){shots[i].active=FALSE;continue;}
-            if(shots[i].active)continue;
-            shots[i]=(FShot){(s32)(24+(i%8)*34)<<6,(s32)(pool ? 88+(i/8)*48 : 172+(i/8)*24)<<6,
-                pool ? -128 : 128,0,pool ? 1 : 0,1,TRUE};
-        }
+        FShot *shot=pool ? eshots : pshots,*end=shot+cap,*limit=shot+MAX_PSHOTS;
+        const FShot *initial=loadShots[pool];
+        for(;shot<end;shot++,initial++)if(!shot->active)*shot=*initial;
+        for(;shot<limit;shot++)shot->active=FALSE;
     }
 }
-void TEST_beforeUpdate(void)
+__attribute__((noinline)) static void loadBeforeUpdate(void)
+{
+    const TestSettings *s=&testSettings[5];
+    const u16 count=counts[s->count];
+    if(s->status==1 && !s->deaths) {
+        // Shielded actors cannot lose HP in ordinary combat. The benchmark
+        // also initializes their long timers once, rather than every frame.
+        // Refresh one slot at a time; AI/collision/rendering still run normally.
+        if(!(testTicks&7)) {
+            const u16 i=(testTicks>>3)&(count-1);
+            if(!enemies[i].active)spawnSlot(i,selectedKind(i));
+            enemies[i].hp=200;enemies[i].tA=enemies[i].tB=60000;enemies[i].shielded=TRUE;
+        }
+        if(s->noDefeat)PLAYER_testProtect();
+        seedShots();return;
+    }
+    for(u16 i=0;i<count;i++) {
+        Enemy *e=&enemies[i];
+        if(!e->active)ensureSlot(i,selectedKind(i));
+        if(!e->active)continue;
+        if(!s->deaths)e->hp=200;
+        e->tB=60000; // keep Fortaleza summons out of a fixed-population test
+        if(s->status==1){e->shielded=TRUE;e->tA=60000;}
+        if(s->status==2)e->frozen=fps;
+        if(s->status==3){e->burn=fps;e->burnTick=fps;e->burnFlash=2;}
+    }
+    for(u16 i=count;i<MAX_ENEMIES;i++)enemies[i].active=FALSE;
+    if(s->noDefeat)PLAYER_testProtect();
+    if(s->deaths && !(testTicks%fps) && !COMBATGFX_remaining())
+        for(u16 i=0;i<count;i++)if(enemies[i].active){ENEMIES_testKill(i);break;}
+    seedShots();
+}
+__attribute__((noinline)) void TEST_beforeUpdate(void)
 {
     testTicks++;
+    if(OPS_active()){OPS_beforeUpdate();return;}
+    if(testStage==6){loadBeforeUpdate();return;}
     if(testStage==TEST_DEATH_ROOM) {
         if(TEST_effectTick())ACTORDEATH_update();
         if(deathRequested || !ACTORDEATH_pending()) {
@@ -219,24 +313,17 @@ void TEST_beforeUpdate(void)
             ENEMIES_testKill(settings()->selected);deathRequested=FALSE;
         }
     }
-    if(testStage==1 || testStage==2 || testStage==5 || testStage==6) {
+    if(testStage==1 || testStage==2 || testStage==5) {
         const u16 count=desiredCount();
         for(u16 i=0;i<count;i++)ensureSlot(i,testStage==1 ? roster[i] : testStage==2 ? (i ? ENEMY_TARGET : ENEMY_DUMMY) : selectedKind(i));
         // Live behaviour keeps its summons. Gallery and load obey fixed slots.
         if(testStage!=5)for(u16 i=count;i<MAX_ENEMIES;i++)enemies[i].active=FALSE;
     }
-    if(testStage==6) {
-        if(settings()->deaths && !(testTicks%fps) && !COMBATGFX_remaining()) {
-            for(u16 i=0;i<desiredCount();i++)if(enemies[i].active){ENEMIES_testKill(i);break;}
-        }
-        for(u16 i=0;i<MAX_ENEMIES;i++)if(enemies[i].active) {
-            if(settings()->status==2)enemies[i].frozen=fps;
-            if(settings()->status==3){enemies[i].burn=fps;enemies[i].burnTick=fps;enemies[i].burnFlash=2;}
-        }
-        seedShots();
-    }
+
 }
-void TEST_afterUpdate(void)
+static void drawLoadHUD(u8 row);
+static void drawLoadField(void);
+__attribute__((noinline)) void TEST_afterUpdate(void)
 {
     if(testStage==2 && settings()->restock)ITEMS_testEnsure();
     if(TEST_objectiveRoom() && settings()->attacks) {
@@ -248,22 +335,191 @@ void TEST_afterUpdate(void)
             testSpawnTimer=settings()->attacks==2 ? fps : def->spawnSeconds*fps;
         }
     }
-    if(testStage==6) {
-        const u16 count=desiredCount();
-        for(u16 i=count;i<MAX_ENEMIES;i++)enemies[i].active=FALSE;
-        if(settings()->status==1)for(u16 i=0;i<count;i++)if(enemies[i].active)enemies[i].shielded=TRUE;
-    }
     const u16 cpu=SYS_getCPULoad();if(testTicks-meterWarmTicks>=fps && cpu>peakCpu)peakCpu=cpu;
     const u32 elapsed=vtimer-meterVblank;
     if(elapsed>=fps) {
         measuredFps=divu((testTicks-meterTicks)*fps,elapsed);
         meterVblank=vtimer;meterTicks=testTicks;
     }
+    if(OPS_active()){OPS_update();return;}
+    if(testStage==6){if((testTicks&3)==1)drawLoadField();return;}
     if(hudTimer)hudTimer--;
     else {TEST_drawHUD();hudTimer=fps/5;}
+
 }
+__attribute__((noinline)) static void drawLoadLine(u16 row,const char *text)
+{
+    char line[39];memset(line,' ',38);memcpy(line,text,strlen(text));line[38]=0;
+    u16 first=0,last=37;
+    while(first<38 && line[first]==loadHud[row][first])first++;
+    if(first==38)return;
+    while(last>first && line[last]==loadHud[row][last])last--;
+    for(u16 i=first;i<=last;i++)loadHudTiles[row][i]=TILE_ATTR_FULL(PAL0,TRUE,FALSE,FALSE,TILE_FONT_INDEX+(u8)line[i]-32);
+    const u16 address=VDP_getWindowAddress()+(((HUD_ROWS+1+row)*windowWidth+1+first)*2);
+    if(DMA_queueDma(DMA_VRAM,loadHudTiles[row]+first,address,last-first+1,2))strcpy(loadHud[row],line);
+}
+static void loadNumber(char *text,u16 value,u16 width)
+{
+    while(width) {
+        const u16 q=divu(value,10);
+        text[--width]='0'+value-q*10;value=q;
+    }
+}
+static void drawLoadHUD(u8 row)
+{
+    char text[40];
+    if(!row) {
+        strcpy(text,"FPS:00/00 CPU:000% PICO:000%");
+        loadNumber(text+4,measuredFps,2);loadNumber(text+7,fps,2);
+        loadNumber(text+14,SYS_getCPULoad(),3);loadNumber(text+24,peakCpu,3);
+    } else if(row==1) {
+        u16 player=0,enemy=0;
+        for(u16 i=0;i<MAX_PSHOTS;i++){player+=pshots[i].active!=0;enemy+=eshots[i].active!=0;}
+        strcpy(text,"BLINDADOS:00 TIROS:00/00");
+        loadNumber(text+10,ENEMIES_activeCount(),2);loadNumber(text+19,player,2);loadNumber(text+22,enemy,2);
+    } else {
+        static const char *const kinds[]={"MISTO B+F","BALUARTE","FORTALEZA","ESCUDEIRO"};
+        static const char *const statuses[]={"NATURAL","ESCUDO","GELO","FOGO"};
+        strcpy(text,kinds[settings()->kind]);strcat(text," ");strcat(text,statuses[settings()->status]);strcat(text,"  AUTO");
+    }
+    drawLoadLine(row,text);
+}
+// One small numeric field per frame; labels and line conversion stay cold.
+#define LOAD_DIGIT(n) (16+(n))
+static const u16 loadPairs[100][2]={
+    {LOAD_DIGIT(0),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(0),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(1),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(2),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(3),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(4),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(5),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(6),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(7),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(8),LOAD_DIGIT(9)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(0)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(1)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(2)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(3)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(4)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(5)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(6)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(7)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(8)},
+    {LOAD_DIGIT(9),LOAD_DIGIT(9)}
+};
+static void drawLoadField(void)
+{
+    const u8 field=loadHudField;if(++loadHudField==6)loadHudField=0;
+    static const u8 rows[6]={0,0,0,1,1,1},columns[6]={4,14,24,10,19,22},widths[6]={2,3,3,2,2,2};
+    u16 value=0;
+    if(field==0)value=measuredFps;
+    else if(field==1)value=SYS_getCPULoad();
+    else if(field==2)value=peakCpu;
+    else if(field==3)value=ENEMIES_activeCount();
+    else {
+        const FShot *shot=field==4?pshots:eshots,*end=shot+16;
+        for(;shot<end;shot++)value+=shot->active!=0;
+    }
+    if(value>999)value=999;
+    if(value==loadLastNumber[field])return;
+    const u16 displayValue=value,base=TILE_ATTR_FULL(PAL0,TRUE,FALSE,FALSE,TILE_FONT_INDEX);
+    const u8 row=rows[field],column=columns[field],width=widths[field];
+    u16 *data=loadHudTiles[row]+column,*digits=data;
+    if(width==3){const u16 hundreds=divu(value,100);*digits++=base+LOAD_DIGIT(hundreds);value-=hundreds*100;}
+    digits[0]=base+loadPairs[value][0];digits[1]=base+loadPairs[value][1];
+    const u16 address=VDP_getWindowAddress()+(((HUD_ROWS+1+row)*windowWidth+1+column)*2);
+    if(DMA_queueDma(DMA_VRAM,data,address,width,2))loadLastNumber[field]=displayValue;
+}
+#undef LOAD_DIGIT
 void TEST_drawHUD(void)
 {
+    if(OPS_active()){OPS_drawHUD();return;}
+    if(testStage==6){
+        if(!testTicks){drawLoadHUD(0);drawLoadHUD(1);drawLoadHUD(2);}
+        else memset(loadLastNumber,255,sizeof loadLastNumber);
+        return;
+    }
     char text[48];
     if(TEST_objectiveRoom()) {
         if(testResult && testStage!=3) {

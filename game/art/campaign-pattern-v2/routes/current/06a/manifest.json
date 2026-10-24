@@ -1,0 +1,988 @@
+{
+  "phase": "6A",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    24,
+    80,
+    3047,
+    271
+  ],
+  "start": [
+    40,
+    224
+  ],
+  "route_points": [
+    [
+      48,
+      232
+    ],
+    [
+      280,
+      232
+    ],
+    [
+      544,
+      232
+    ],
+    [
+      648,
+      240
+    ],
+    [
+      776,
+      240
+    ],
+    [
+      848,
+      240
+    ],
+    [
+      880,
+      216
+    ],
+    [
+      880,
+      168
+    ],
+    [
+      1000,
+      168
+    ],
+    [
+      1168,
+      144
+    ],
+    [
+      1248,
+      136
+    ],
+    [
+      1360,
+      136
+    ],
+    [
+      1480,
+      136
+    ],
+    [
+      1552,
+      96
+    ],
+    [
+      1840,
+      96
+    ],
+    [
+      1840,
+      216
+    ],
+    [
+      2096,
+      216
+    ],
+    [
+      2160,
+      248
+    ],
+    [
+      2344,
+      248
+    ],
+    [
+      2432,
+      248
+    ],
+    [
+      2544,
+      248
+    ],
+    [
+      2688,
+      200
+    ],
+    [
+      2824,
+      200
+    ],
+    [
+      3016,
+      176
+    ]
+  ],
+  "route_points_are": "centers",
+  "pauses": [
+    2,
+    10,
+    15,
+    19
+  ],
+  "exit": [
+    2976,
+    152,
+    64,
+    64
+  ],
+  "solids": [
+    [
+      0,
+      0,
+      3072,
+      80,
+      false
+    ],
+    [
+      2128,
+      80,
+      944,
+      8,
+      false
+    ],
+    [
+      0,
+      80,
+      824,
+      16,
+      false
+    ],
+    [
+      1272,
+      80,
+      184,
+      16,
+      false
+    ],
+    [
+      2128,
+      88,
+      416,
+      24,
+      false
+    ],
+    [
+      2128,
+      112,
+      32,
+      72,
+      false
+    ],
+    [
+      2352,
+      112,
+      192,
+      72,
+      false
+    ],
+    [
+      664,
+      96,
+      160,
+      112,
+      false
+    ],
+    [
+      0,
+      96,
+      24,
+      176,
+      false
+    ],
+    [
+      1272,
+      176,
+      184,
+      96,
+      false
+    ],
+    [
+      2128,
+      264,
+      416,
+      8,
+      false
+    ],
+    [
+      3048,
+      88,
+      24,
+      184,
+      false
+    ],
+    [
+      0,
+      272,
+      3072,
+      48,
+      false
+    ],
+    [
+      112,
+      32,
+      56,
+      80,
+      true
+    ],
+    [
+      80,
+      72,
+      144,
+      32,
+      true
+    ],
+    [
+      80,
+      184,
+      320,
+      32,
+      true
+    ],
+    [
+      224,
+      112,
+      176,
+      32,
+      true
+    ],
+    [
+      384,
+      128,
+      96,
+      88,
+      true
+    ],
+    [
+      1656,
+      112,
+      160,
+      32,
+      true
+    ],
+    [
+      1648,
+      144,
+      8,
+      96,
+      true
+    ],
+    [
+      1816,
+      144,
+      8,
+      96,
+      true
+    ],
+    [
+      1656,
+      240,
+      160,
+      32,
+      true
+    ],
+    [
+      1672,
+      128,
+      128,
+      104,
+      true
+    ],
+    [
+      2192,
+      120,
+      128,
+      104,
+      true
+    ],
+    [
+      2480,
+      104,
+      56,
+      80,
+      true
+    ],
+    [
+      2496,
+      200,
+      24,
+      32,
+      true
+    ],
+    [
+      2848,
+      112,
+      160,
+      32,
+      true
+    ],
+    [
+      2896,
+      80,
+      32,
+      32,
+      true
+    ],
+    [
+      2848,
+      72,
+      48,
+      48,
+      true
+    ],
+    [
+      2928,
+      48,
+      64,
+      80,
+      true
+    ],
+    [
+      80,
+      104,
+      144,
+      80,
+      false
+    ],
+    [
+      224,
+      144,
+      176,
+      40,
+      false
+    ],
+    [
+      912,
+      80,
+      48,
+      64,
+      false
+    ],
+    [
+      912,
+      192,
+      48,
+      80,
+      false
+    ],
+    [
+      1656,
+      144,
+      160,
+      96,
+      false
+    ],
+    [
+      2496,
+      184,
+      24,
+      16,
+      false
+    ]
+  ],
+  "gates": [],
+  "valves": [],
+  "valve_approaches": [],
+  "gate_shot_approaches": [],
+  "camera_interest": [
+    {
+      "name": "Cisterna e arco",
+      "bbox": [
+        72,
+        32,
+        168,
+        184
+      ],
+      "preferred_feet": [
+        40,
+        200
+      ],
+      "position": [
+        40,
+        200
+      ]
+    },
+    {
+      "name": "Ponte inteira",
+      "bbox": [
+        880,
+        136,
+        112,
+        96
+      ],
+      "preferred_feet": [
+        872,
+        160
+      ],
+      "position": [
+        872,
+        160
+      ]
+    },
+    {
+      "name": "Ilha de bombas",
+      "bbox": [
+        1648,
+        112,
+        176,
+        160
+      ],
+      "preferred_feet": [
+        1832,
+        192
+      ],
+      "position": [
+        1832,
+        192
+      ]
+    },
+    {
+      "name": "Recuo de manutenção",
+      "bbox": [
+        2160,
+        112,
+        192,
+        152
+      ],
+      "preferred_feet": [
+        2336,
+        240
+      ],
+      "position": [
+        2336,
+        240
+      ]
+    },
+    {
+      "name": "Abrigo",
+      "bbox": [
+        2848,
+        48,
+        160,
+        96
+      ],
+      "preferred_feet": [
+        3008,
+        168
+      ],
+      "position": [
+        3008,
+        168
+      ]
+    }
+  ],
+  "camera_player_y": 200,
+  "camera_player_y_samples": [
+    184,
+    200,
+    248
+  ],
+  "assembly_notes": [
+    [
+      "cistern",
+      [
+        72,
+        32,
+        408,
+        184
+      ]
+    ],
+    [
+      "bridge",
+      [
+        896,
+        48,
+        80,
+        256
+      ]
+    ],
+    [
+      "pump-island",
+      [
+        1648,
+        112,
+        176,
+        160
+      ]
+    ],
+    [
+      "refuge",
+      [
+        2848,
+        48,
+        160,
+        96
+      ]
+    ]
+  ],
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "memory": {
+    "scene_tiles": 554,
+    "objective_tiles": 0,
+    "total_tiles": 554,
+    "budget": 640,
+    "exact_native_tile_reuse": true,
+    "lossy_tile_substitutions": 0,
+    "map_bytes": 30720,
+    "background_tiles": 554,
+    "limit": 640,
+    "graphics_bytes": 17728
+  },
+  "status": "isolated crossing-context revision; needs whole-map/continuous-camera review; no activation",
+  "geometry_checks": {
+    "actor_feet": [
+      16,
+      16
+    ],
+    "margin": 8,
+    "swept_samples": 3200,
+    "reachable_centers": 4448,
+    "arrival_connected": true
+  },
+  "complete": "complete-native.png",
+  "sources": [
+    "../../complete-indexed.png"
+  ],
+  "material_revision": {
+    "source": "art/phase04-tunnels-v1/map-native.png",
+    "concrete_rect": [
+      360,
+      208,
+      16,
+      16
+    ],
+    "grain_grid": 1,
+    "texture_resampling": false,
+    "channel": "same existing quiet source grain, dark charcoal palette; mouth water pigments normalized without reshaping",
+    "architecture": "existing complete module alpha, cap, face and joint positions unchanged",
+    "first_discarded_trial": "Wet sludge crop repeated too visibly; rejected before review handoff.",
+    "objective_palette_changed": false,
+    "actor_palette_changed": false
+  },
+  "material_geometry_validation": {
+    "footprint": 16,
+    "free_positions": 5554,
+    "reachable_positions": 5554,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3200
+  },
+  "geometry_unchanged_from_canonical": true,
+  "preview_cameras": [
+    {
+      "id": "Cisterna e arco",
+      "position": [
+        40,
+        200
+      ],
+      "camera": [
+        0,
+        0
+      ],
+      "follower_feet": [
+        24,
+        200
+      ],
+      "preview": "camera-1.png",
+      "actor_y_anchor": "py-31"
+    },
+    {
+      "id": "Ponte inteira",
+      "position": [
+        872,
+        160
+      ],
+      "camera": [
+        704,
+        8
+      ],
+      "follower_feet": [
+        840,
+        160
+      ],
+      "preview": "camera-2.png",
+      "actor_y_anchor": "py-31"
+    },
+    {
+      "id": "Ilha de bombas",
+      "position": [
+        1832,
+        192
+      ],
+      "camera": [
+        1648,
+        48
+      ],
+      "follower_feet": [
+        1824,
+        192
+      ],
+      "preview": "camera-3.png",
+      "actor_y_anchor": "py-31"
+    },
+    {
+      "id": "Recuo de manutenção",
+      "position": [
+        2336,
+        240
+      ],
+      "camera": [
+        2160,
+        40
+      ],
+      "follower_feet": [
+        2304,
+        240
+      ],
+      "preview": "camera-4.png",
+      "actor_y_anchor": "py-31"
+    },
+    {
+      "id": "Abrigo",
+      "position": [
+        3008,
+        168
+      ],
+      "camera": [
+        2752,
+        0
+      ],
+      "follower_feet": [
+        2976,
+        168
+      ],
+      "preview": "camera-5.png",
+      "actor_y_anchor": "py-31"
+    }
+  ],
+  "art_limitations": [
+    "This changes materials only: existing long corridor composition, native outlines, pumps, bays and gates remain. It does not claim to redesign the spatial macrocomposition.",
+    "The 16x16 material is repeated exactly; sparse 1px grain can still reveal repetition at enlarged viewing scale.",
+    "Dark drainage is conveyed by charcoal pigment and depth of existing banks; blue pipework remains on mechanical equipment.",
+    "Cameras are native composed previews at previously measured legal runtime coordinates. Actor placement is illustrative; no new emulator or gameplay measurement is claimed.",
+    "Root/user whole-map and private-ROM review is still required; tile and geometry checks are not visual approval."
+  ],
+  "revision_placements": [
+    {
+      "id": "closed-pump-recess",
+      "source_bbox_xywh": [
+        1672,
+        128,
+        128,
+        104
+      ],
+      "position": [
+        688,
+        104
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "entry-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        48
+      ],
+      "position": [
+        512,
+        48
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "middle-north-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        56
+      ],
+      "position": [
+        1168,
+        24
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "middle-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        56
+      ],
+      "position": [
+        2000,
+        24
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    },
+    {
+      "id": "late-maintenance-bay",
+      "source_bbox_xywh": [
+        2848,
+        72,
+        48,
+        56
+      ],
+      "position": [
+        2704,
+        32
+      ],
+      "complete_module": true,
+      "source": "../../complete-indexed.png",
+      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+    }
+  ],
+  "revision_scope": "Resident whole pump and maintenance unit only. Bounds/solids/route/camera/objectives unchanged.",
+  "continuous_preview_step_world_x": 160,
+  "continuous_previews": "continuous-cameras.json",
+  "revision_geometry_validation": {
+    "footprint": 16,
+    "free_positions": 5554,
+    "reachable_positions": 5554,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3200
+  },
+  "width": 3072,
+  "height": 320,
+  "points": [
+    [
+      48,
+      232
+    ],
+    [
+      280,
+      232
+    ],
+    [
+      544,
+      232
+    ],
+    [
+      648,
+      240
+    ],
+    [
+      776,
+      240
+    ],
+    [
+      848,
+      240
+    ],
+    [
+      880,
+      216
+    ],
+    [
+      880,
+      168
+    ],
+    [
+      1000,
+      168
+    ],
+    [
+      1168,
+      144
+    ],
+    [
+      1248,
+      136
+    ],
+    [
+      1360,
+      136
+    ],
+    [
+      1480,
+      136
+    ],
+    [
+      1552,
+      96
+    ],
+    [
+      1840,
+      96
+    ],
+    [
+      1840,
+      216
+    ],
+    [
+      2096,
+      216
+    ],
+    [
+      2160,
+      248
+    ],
+    [
+      2344,
+      248
+    ],
+    [
+      2432,
+      248
+    ],
+    [
+      2544,
+      248
+    ],
+    [
+      2688,
+      200
+    ],
+    [
+      2824,
+      200
+    ],
+    [
+      3016,
+      176
+    ]
+  ],
+  "traversal_points": [
+    [
+      40,
+      224
+    ],
+    [
+      272,
+      224
+    ],
+    [
+      536,
+      224
+    ],
+    [
+      640,
+      232
+    ],
+    [
+      768,
+      232
+    ],
+    [
+      840,
+      232
+    ],
+    [
+      872,
+      208
+    ],
+    [
+      872,
+      160
+    ],
+    [
+      992,
+      160
+    ],
+    [
+      1160,
+      136
+    ],
+    [
+      1240,
+      128
+    ],
+    [
+      1352,
+      128
+    ],
+    [
+      1472,
+      128
+    ],
+    [
+      1544,
+      88
+    ],
+    [
+      1832,
+      88
+    ],
+    [
+      1832,
+      208
+    ],
+    [
+      2088,
+      208
+    ],
+    [
+      2152,
+      240
+    ],
+    [
+      2336,
+      240
+    ],
+    [
+      2424,
+      240
+    ],
+    [
+      2536,
+      240
+    ],
+    [
+      2680,
+      192
+    ],
+    [
+      2816,
+      192
+    ],
+    [
+      3008,
+      168
+    ]
+  ],
+  "walkable": [
+    24,
+    80,
+    3024,
+    192
+  ],
+  "tiles": 554,
+  "tileBudget": 640,
+  "nativeTileSHA256": "12310aa8d26655d48181c8886d7426941a58731125e58a48206d66abd28fc8d4",
+  "native_bank": "art/campaign-corridors-v3/corrections/6A-guidebook/revisions/01-crossing-context/native",
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 5554,
+    "reachable_positions": 5554,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3200
+  },
+  "geometry": {
+    "swept16pxSamples": 3200
+  },
+  "swept16pxSamples": 3200,
+  "routeLengthPx": 3173.6,
+  "unopposedMinimumSeconds": 92.2,
+  "cap": 3,
+  "spawn": 3,
+  "art": {
+    "nativeImage": "art/campaign-corridors-v3/corrections/6A-guidebook/revisions/01-crossing-context/complete-native.png",
+    "method": "Whole scene first; complete modules; exact native export",
+    "lossyTileReplacements": 0
+  },
+  "source_directory": "art/campaign-corridors-v3/corrections/6A-guidebook/revisions/01-crossing-context"
+}

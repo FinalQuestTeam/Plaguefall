@@ -1,0 +1,533 @@
+--- a/src/actors/player.c
++++ b/src/actors/player.c
+@@ -8,6 +8,7 @@
+ #include "actors/shots.h"
+ #include "system/video/herogfx.h"
+ #include "levels/test.h"
++#include "levels/levels.h"
+ 
+ // tunáveis em actors/player.h (bloco CONFIG)
+ 
+@@ -54,6 +55,7 @@
+     if(!(joy&BUTTON_A))fireArmed=TRUE;
+ }
+ void PLAYER_waitFireRelease(void){fireArmed=FALSE;}
++void PLAYER_testProtect(void){if(!currentLevel && testStage==6 && invTimer<fps)invTimer=60000;}
+ 
+ void PLAYER_fullHp(void)
+ {
+--- a/src/actors/player.h
++++ b/src/actors/player.h
+@@ -49,4 +49,7 @@
+ // sprite oculto neste frame? (pisca após dano; escudo mantém visível)
+ bool PLAYER_hidden(void);
+ 
++// Training load room only: hold the same damage immunity used by the measured experiment.
++void PLAYER_testProtect(void);
++
+ #endif // PLAYER_H
+--- a/src/enemies/enemies.c
++++ b/src/enemies/enemies.c
+@@ -294,12 +294,13 @@
+     if(currentLevel==0 && TEST_staticEnemies())return updateStaticTraining();
+     static u8 aiTick;aiTick++;
+     u16 burnKills = 0;
++    const bool routeActive=LEVEL_current()->route!=NULL;
+ 
+     for (u16 i = 0; i < MAX_ENEMIES; i++)
+     {
+         Enemy *e = &enemies[i];
+         if (!e->active) continue;
+-        if(LEVEL_current()->route) {
++        if(routeActive) {
+             const s16 focus=DINORAH_alive() ? dinorahX : px;
+             if((e->x<focus-240 || e->x>focus+400) && (e->x+ENEMY_SIZE(e)<cameraX || e->x>cameraX+320)) {
+                 e->active=FALSE;continue; // out of the active sector; no kill/drop
+--- a/src/levels/defs/test.c
++++ b/src/levels/defs/test.c
+@@ -15,6 +15,8 @@
+     .modularTerrain=TRUE,
+     .lava=TEST_lava,.lavaCount=1,.mud=TEST_mud,.mudCount=1,LVL_ROSTER(dummy)};
+ const LevelDef TEST5_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(all)};
+-const LevelDef TEST6_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(all)};
++// Same arena as the measured eight-shield stress experiment.
++const LevelDef TEST6_def={.enemyCap=16,.shotCap=16,.musicTrack=MUSIC_TRACK_LADAINHA,
++    .musCalmUntil=1,.musEnemyMax=4,.arena=&COURTYARD_arena,LVL_ROSTER(all)};
+ // Isolated loss/recovery lab: no enemies or hazards are spawned.
+ const LevelDef TEST10_def={.enemyCap=1,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(dummy)};
+--- a/src/levels/test.c
++++ b/src/levels/test.c
+@@ -32,6 +32,10 @@
+ static u8 galleryDirection,galleryPose;
+ static u32 meterVblank,meterTicks,meterWarmTicks;
+ static u16 measuredFps,peakCpu;
++static char loadHud[3][40];
++static u16 loadHudTiles[3][38];
++static u8 loadHudField;
++static u16 loadLastNumber[6];
+ static u16 ruleDeaths;
+ static const RoutePoint deathPoint[]={{232,168,0}};
+ static const RouteDef deathRoute={.points=deathPoint,.count=1};
+@@ -45,8 +49,8 @@
+         testSettings[i].restock=1;testSettings[i].initialHp=2;
+         testSettings[i].kind=1;testSettings[i].attacks=1;
+     }
+-    testSettings[5].kind=0;testSettings[5].count=1;
+-    testSettings[5].shots=1;testSettings[5].noDefeat=1;
++    testSettings[5].kind=1;testSettings[5].count=2;
++    testSettings[5].shots=2;testSettings[5].status=1;testSettings[5].noDefeat=1;
+     testSettings[TEST_DEATH_ROOM-1].selected=2;
+     testSettings[TEST_DEATH_ROOM-1].direction=0;
+     testSettings[TEST_DEATH_ROOM-1].repeat=1;
+@@ -105,7 +109,9 @@
+ }
+ static void slotPosition(u16 i,u8 type,s16 *x,s16 *y)
+ {
+-    if(testStage==1) {
++    if(testStage==6) {
++        *x=240+(i%4)*12;*y=184+(i/4)*12;
++    } else if(testStage==1) {
+         *x=i==12 ? 248 : 24+(i%4)*48;
+         *y=i==12 ? 112 : 88+(i/4)*48;
+     } else if(testStage==2) {
+@@ -125,6 +131,11 @@
+     e->type=type;e->hp=ENEMY_DEFS[type]->hp;e->active=TRUE;
+     e->fireTimer=ENEMY_CD/2+(random()%fps);
+     if(testStage==2 && i==0)e->hp=dummyValues[settings()->dummyHp];
++    if(testStage==6){
++        e->aggroPlayer=TRUE;e->retarget=i;e->fireTimer=60000;e->tB=60000;
++        if(!settings()->deaths)e->hp=200;
++        if(settings()->status==1){e->shielded=TRUE;e->tA=60000;}
++    }
+     if(type==ENEMY_BOSS)bossDefeated=FALSE;
+     wasAlive[i]=TRUE;respawn[i]=0;
+ }
+@@ -144,10 +155,15 @@
+ }
+ static u8 selectedKind(u16 i)
+ {
++    if(testStage==6) {
++        static const u8 kinds[3]={ENEMY_SQ_PUR,ENEMY_PEN_PUR,ENEMY_TRI_PUR};
++        return settings()->kind ? kinds[settings()->kind-1] : (i&1 ? ENEMY_PEN_PUR : ENEMY_SQ_PUR);
++    }
+     return settings()->kind ? roster[settings()->kind-1] : roster[i%13];
+ }
+ void TEST_begin(bool retryRules)
+ {
++    memset(loadHud,0,sizeof loadHud);memset(loadLastNumber,255,sizeof loadLastNumber);loadHudField=0;
+     testTicks=0;testResult=0;testSpawnTimer=fps;repeatTimer=fps*2;
+     hudTimer=0;deathRequested=FALSE;peakCpu=0;measuredFps=fps;
+     memset(respawn,0,sizeof respawn);memset(wasAlive,0,sizeof wasAlive);
+@@ -163,6 +179,7 @@
+     if(testStage==2 || testStage==4)hp=lifeValues[settings()->initialHp];
+     if(testStage==1 || testStage==2 || testStage==5 || testStage==6)
+         for(u16 i=0;i<desiredCount();i++)spawnSlot(i,testStage==1 ? roster[i] : testStage==2 ? (i ? ENEMY_TARGET : ENEMY_DUMMY) : selectedKind(i));
++    if(testStage==6){faceX=0;faceY=1;}
+     if(testStage==TEST_DEATH_ROOM) {
+         px=72;py=160;faceX=1;faceY=1;
+         DINORAH_start(&deathRoute);ARENA_camera();deathRequested=TRUE;
+@@ -176,24 +193,94 @@
+ void TEST_resume(void)
+ {
+     meterVblank=vtimer;meterTicks=meterWarmTicks=testTicks;hudTimer=0;
++    memset(loadLastNumber,255,sizeof loadLastNumber);
+     PLAYER_waitFireRelease();
+ }
+-static void seedShots(void)
+-{
+-    const u16 cap=TEST_shotLimit();
++// Immutable spawn records avoid division/modulo in the live refill path.
++static const FShot loadShots[2][16]={
++    {
++        {8704,12800,0,-192,0,10,1,0},
++        {10880,13248,0,-192,0,10,1,0},
++        {13056,13696,0,-192,0,10,1,0},
++        {15232,14144,0,-192,0,10,1,0},
++        {17408,13056,0,-192,0,10,1,0},
++        {19584,13504,0,-192,0,10,1,0},
++        {21760,13952,0,-192,0,10,1,0},
++        {23936,12864,0,-192,0,10,1,0},
++        {8704,13312,0,-192,0,10,1,0},
++        {10880,13760,0,-192,0,10,1,0},
++        {13056,14208,0,-192,0,10,1,0},
++        {15232,13120,0,-192,0,10,1,0},
++        {17408,13568,0,-192,0,10,1,0},
++        {19584,14016,0,-192,0,10,1,0},
++        {21760,12928,0,-192,0,10,1,0},
++        {23936,13376,0,-192,0,10,1,0}
++    },
++    {
++        {8704,8704,0,128,1,10,1,0},
++        {10880,9408,0,128,2,10,1,0},
++        {13056,10112,0,128,3,10,1,0},
++        {15232,10816,0,128,1,10,1,0},
++        {17408,8960,0,128,2,10,1,0},
++        {19584,9664,0,128,3,10,1,0},
++        {21760,10368,0,128,1,10,1,0},
++        {23936,11072,0,128,2,10,1,0},
++        {8704,9216,0,128,3,10,1,0},
++        {10880,9920,0,128,1,10,1,0},
++        {13056,10624,0,128,2,10,1,0},
++        {15232,8768,0,128,3,10,1,0},
++        {17408,9472,0,128,1,10,1,0},
++        {19584,10176,0,128,2,10,1,0},
++        {21760,10880,0,128,3,10,1,0},
++        {23936,9024,0,128,1,10,1,0}
++    }
++};
++__attribute__((noinline)) static void seedShots(void)
++{
++    const u16 cap=shotCounts[testSettings[5].shots];
+     for(u16 pool=0;pool<2;pool++) {
+-        FShot *shots=pool ? eshots : pshots;
+-        for(u16 i=0;i<MAX_PSHOTS;i++) {
+-            if(i>=cap){shots[i].active=FALSE;continue;}
+-            if(shots[i].active)continue;
+-            shots[i]=(FShot){(s32)(24+(i%8)*34)<<6,(s32)(pool ? 88+(i/8)*48 : 172+(i/8)*24)<<6,
+-                pool ? -128 : 128,0,pool ? 1 : 0,1,TRUE};
+-        }
+-    }
+-}
+-void TEST_beforeUpdate(void)
++        FShot *shot=pool ? eshots : pshots,*end=shot+cap,*limit=shot+MAX_PSHOTS;
++        const FShot *initial=loadShots[pool];
++        for(;shot<end;shot++,initial++)if(!shot->active)*shot=*initial;
++        for(;shot<limit;shot++)shot->active=FALSE;
++    }
++}
++__attribute__((noinline)) static void loadBeforeUpdate(void)
++{
++    const TestSettings *s=&testSettings[5];
++    const u16 count=counts[s->count];
++    if(s->status==1 && !s->deaths) {
++        // Shielded actors cannot lose HP in ordinary combat. The benchmark
++        // also initializes their long timers once, rather than every frame.
++        // Refresh one slot at a time; AI/collision/rendering still run normally.
++        if(!(testTicks&7)) {
++            const u16 i=(testTicks>>3)&(count-1);
++            if(!enemies[i].active)spawnSlot(i,selectedKind(i));
++            enemies[i].hp=200;enemies[i].tA=enemies[i].tB=60000;enemies[i].shielded=TRUE;
++        }
++        if(s->noDefeat)PLAYER_testProtect();
++        seedShots();return;
++    }
++    for(u16 i=0;i<count;i++) {
++        Enemy *e=&enemies[i];
++        if(!e->active)ensureSlot(i,selectedKind(i));
++        if(!e->active)continue;
++        if(!s->deaths)e->hp=200;
++        e->tB=60000; // keep Fortaleza summons out of a fixed-population test
++        if(s->status==1){e->shielded=TRUE;e->tA=60000;}
++        if(s->status==2)e->frozen=fps;
++        if(s->status==3){e->burn=fps;e->burnTick=fps;e->burnFlash=2;}
++    }
++    for(u16 i=count;i<MAX_ENEMIES;i++)enemies[i].active=FALSE;
++    if(s->noDefeat)PLAYER_testProtect();
++    if(s->deaths && !(testTicks%fps) && !COMBATGFX_remaining())
++        for(u16 i=0;i<count;i++)if(enemies[i].active){ENEMIES_testKill(i);break;}
++    seedShots();
++}
++__attribute__((noinline)) void TEST_beforeUpdate(void)
+ {
+     testTicks++;
++    if(testStage==6){loadBeforeUpdate();return;}
+     if(testStage==TEST_DEATH_ROOM) {
+         if(TEST_effectTick())ACTORDEATH_update();
+         if(deathRequested || !ACTORDEATH_pending()) {
+@@ -219,24 +306,17 @@
+             ENEMIES_testKill(settings()->selected);deathRequested=FALSE;
+         }
+     }
+-    if(testStage==1 || testStage==2 || testStage==5 || testStage==6) {
++    if(testStage==1 || testStage==2 || testStage==5) {
+         const u16 count=desiredCount();
+         for(u16 i=0;i<count;i++)ensureSlot(i,testStage==1 ? roster[i] : testStage==2 ? (i ? ENEMY_TARGET : ENEMY_DUMMY) : selectedKind(i));
+         // Live behaviour keeps its summons. Gallery and load obey fixed slots.
+         if(testStage!=5)for(u16 i=count;i<MAX_ENEMIES;i++)enemies[i].active=FALSE;
+     }
+-    if(testStage==6) {
+-        if(settings()->deaths && !(testTicks%fps) && !COMBATGFX_remaining()) {
+-            for(u16 i=0;i<desiredCount();i++)if(enemies[i].active){ENEMIES_testKill(i);break;}
+-        }
+-        for(u16 i=0;i<MAX_ENEMIES;i++)if(enemies[i].active) {
+-            if(settings()->status==2)enemies[i].frozen=fps;
+-            if(settings()->status==3){enemies[i].burn=fps;enemies[i].burnTick=fps;enemies[i].burnFlash=2;}
+-        }
+-        seedShots();
+-    }
+-}
+-void TEST_afterUpdate(void)
++
++}
++static void drawLoadHUD(u8 row);
++static void drawLoadField(void);
++__attribute__((noinline)) void TEST_afterUpdate(void)
+ {
+     if(testStage==2 && settings()->restock)ITEMS_testEnsure();
+     if(TEST_objectiveRoom() && settings()->attacks) {
+@@ -248,22 +328,189 @@
+             testSpawnTimer=settings()->attacks==2 ? fps : def->spawnSeconds*fps;
+         }
+     }
+-    if(testStage==6) {
+-        const u16 count=desiredCount();
+-        for(u16 i=count;i<MAX_ENEMIES;i++)enemies[i].active=FALSE;
+-        if(settings()->status==1)for(u16 i=0;i<count;i++)if(enemies[i].active)enemies[i].shielded=TRUE;
+-    }
+     const u16 cpu=SYS_getCPULoad();if(testTicks-meterWarmTicks>=fps && cpu>peakCpu)peakCpu=cpu;
+     const u32 elapsed=vtimer-meterVblank;
+     if(elapsed>=fps) {
+         measuredFps=divu((testTicks-meterTicks)*fps,elapsed);
+         meterVblank=vtimer;meterTicks=testTicks;
+     }
++    if(testStage==6){if((testTicks&3)==1)drawLoadField();return;}
+     if(hudTimer)hudTimer--;
+     else {TEST_drawHUD();hudTimer=fps/5;}
+-}
++
++}
++__attribute__((noinline)) static void drawLoadLine(u16 row,const char *text)
++{
++    char line[39];memset(line,' ',38);memcpy(line,text,strlen(text));line[38]=0;
++    u16 first=0,last=37;
++    while(first<38 && line[first]==loadHud[row][first])first++;
++    if(first==38)return;
++    while(last>first && line[last]==loadHud[row][last])last--;
++    for(u16 i=first;i<=last;i++)loadHudTiles[row][i]=TILE_ATTR_FULL(PAL0,TRUE,FALSE,FALSE,TILE_FONT_INDEX+(u8)line[i]-32);
++    const u16 address=VDP_getWindowAddress()+(((HUD_ROWS+1+row)*windowWidth+1+first)*2);
++    if(DMA_queueDma(DMA_VRAM,loadHudTiles[row]+first,address,last-first+1,2))strcpy(loadHud[row],line);
++}
++static void loadNumber(char *text,u16 value,u16 width)
++{
++    while(width) {
++        const u16 q=divu(value,10);
++        text[--width]='0'+value-q*10;value=q;
++    }
++}
++static void drawLoadHUD(u8 row)
++{
++    char text[40];
++    if(!row) {
++        strcpy(text,"FPS:00/00 CPU:000% PICO:000%");
++        loadNumber(text+4,measuredFps,2);loadNumber(text+7,fps,2);
++        loadNumber(text+14,SYS_getCPULoad(),3);loadNumber(text+24,peakCpu,3);
++    } else if(row==1) {
++        u16 player=0,enemy=0;
++        for(u16 i=0;i<MAX_PSHOTS;i++){player+=pshots[i].active!=0;enemy+=eshots[i].active!=0;}
++        strcpy(text,"BLINDADOS:00 TIROS:00/00");
++        loadNumber(text+10,ENEMIES_activeCount(),2);loadNumber(text+19,player,2);loadNumber(text+22,enemy,2);
++    } else {
++        static const char *const kinds[]={"MISTO B+F","BALUARTE","FORTALEZA","ESCUDEIRO"};
++        static const char *const statuses[]={"NATURAL","ESCUDO","GELO","FOGO"};
++        strcpy(text,kinds[settings()->kind]);strcat(text," ");strcat(text,statuses[settings()->status]);strcat(text,"  AUTO");
++    }
++    drawLoadLine(row,text);
++}
++// One small numeric field per frame; labels and line conversion stay cold.
++#define LOAD_DIGIT(n) (16+(n))
++static const u16 loadPairs[100][2]={
++    {LOAD_DIGIT(0),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(0),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(1),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(2),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(3),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(4),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(5),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(6),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(7),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(8),LOAD_DIGIT(9)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(0)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(1)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(2)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(3)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(4)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(5)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(6)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(7)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(8)},
++    {LOAD_DIGIT(9),LOAD_DIGIT(9)}
++};
++static void drawLoadField(void)
++{
++    const u8 field=loadHudField;if(++loadHudField==6)loadHudField=0;
++    static const u8 rows[6]={0,0,0,1,1,1},columns[6]={4,14,24,10,19,22},widths[6]={2,3,3,2,2,2};
++    u16 value=0;
++    if(field==0)value=measuredFps;
++    else if(field==1)value=SYS_getCPULoad();
++    else if(field==2)value=peakCpu;
++    else if(field==3)value=ENEMIES_activeCount();
++    else {
++        const FShot *shot=field==4?pshots:eshots,*end=shot+16;
++        for(;shot<end;shot++)value+=shot->active!=0;
++    }
++    if(value>999)value=999;
++    if(value==loadLastNumber[field])return;
++    const u16 displayValue=value,base=TILE_ATTR_FULL(PAL0,TRUE,FALSE,FALSE,TILE_FONT_INDEX);
++    const u8 row=rows[field],column=columns[field],width=widths[field];
++    u16 *data=loadHudTiles[row]+column,*digits=data;
++    if(width==3){const u16 hundreds=divu(value,100);*digits++=base+LOAD_DIGIT(hundreds);value-=hundreds*100;}
++    digits[0]=base+loadPairs[value][0];digits[1]=base+loadPairs[value][1];
++    const u16 address=VDP_getWindowAddress()+(((HUD_ROWS+1+row)*windowWidth+1+column)*2);
++    if(DMA_queueDma(DMA_VRAM,data,address,width,2))loadLastNumber[field]=displayValue;
++}
++#undef LOAD_DIGIT
+ void TEST_drawHUD(void)
+ {
++    if(testStage==6){
++        if(!testTicks){drawLoadHUD(0);drawLoadHUD(1);drawLoadHUD(2);}
++        else memset(loadLastNumber,255,sizeof loadLastNumber);
++        return;
++    }
+     char text[48];
+     if(TEST_objectiveRoom()) {
+         if(testResult && testStage!=3) {
+--- a/src/levels/test_menu.c
++++ b/src/levels/test_menu.c
+@@ -12,7 +12,7 @@
+ static const char *const goals[TEST_ROOMS]={
+     "13 INIMIGOS: ANIMAÇÕES E MORTES.","DUMMY, OITO ITENS E ALVOS EM CADEIA.",
+     "PROTEJA A SANTA POR 30 SEGUNDOS.","TESTE MUROS, TIROS, LAVA E LAMA.",
+-    "ESCOLHA AMEAÇAS COM COMPORTAMENTO REAL.","CONTROLE INIMIGOS, TIROS E EFEITOS.",
++    "ESCOLHA AMEAÇAS COM COMPORTAMENTO REAL.","8 BLINDADOS AGRUPADOS, TIROS REPOSTOS.",
+     "ATRAVESSE ATÉ A SAÍDA SINALIZADA.","LEVE DINORAH VIVA ATÉ A SAÍDA.","VEJA AS MORTES DE DAMIÃO E DINORAH.",
+     "TESTE AS PERDAS E RECUPERE O BORNAL."};
+ const char *TEST_name(u8 room){return names[(room>=1 && room<=TEST_ROOMS) ? room-1 : 0];}
+@@ -90,7 +90,7 @@
+         case 4:*limit=3;return &s->initialHp;
+         case 5:if(!row){*limit=14;return &s->kind;}if(row==1){*limit=4;return &s->count;}return &s->noDefeat;
+         default:
+-            switch(row){case 0:*limit=4;return &s->count;case 1:*limit=14;return &s->kind;
++            switch(row){case 0:*limit=4;return &s->count;case 1:*limit=4;return &s->kind;
+                 case 2:*limit=3;return &s->shots;case 3:*limit=4;return &s->status;
+                 case 4:return &s->deaths;default:return &s->noDefeat;}
+     }
+@@ -134,7 +134,8 @@
+     if(testStage==2 && (row==0 || row==3)){static const u8 hp[]={1,20,100},life[]={25,50,100};sprintf(text,"%u",row==0 ? hp[s->dummyHp] : life[s->initialHp]);return;}
+     if(TEST_objectiveRoom() && !row){static const char *const attacks[]={"PAUSADOS","CAMPANHA","PRESSÃO CONTÍNUA"};strcpy(text,attacks[s->attacks]);return;}
+     if(testStage==4){static const u8 life[]={25,50,100};sprintf(text,"%u",life[s->initialHp]);return;}
+-    if((testStage==5 && !row) || (testStage==6 && row==1)){strcpy(text,s->kind ? ENEMY_DEFS[s->kind==13 ? ENEMY_BOSS : s->kind-1]->name : "MISTO");return;}
++    if(testStage==6 && row==1){static const char *const kinds[]={"BALUARTE+FORTALEZA","BALUARTE","FORTALEZA","ESCUDEIRO"};strcpy(text,kinds[s->kind]);return;}
++    if((testStage==5 && !row)){strcpy(text,s->kind ? ENEMY_DEFS[s->kind==13 ? ENEMY_BOSS : s->kind-1]->name : "MISTO");return;}
+     if((testStage==5 && row==1) || (testStage==6 && !row)) {
+         static const u8 count[]={1,4,8,16};if(testStage==5 && s->kind==13)strcpy(text,"1 + LACAIOS");else sprintf(text,"%u",count[s->count]);return;
+     }
+@@ -166,6 +167,10 @@
+         PANEL_text("A: MORRER / START: REPETIR DERROTA",2,17,PANEL_BODY);
+         PANEL_text("B: REPOR EQUIPAMENTO E ZERAR MORTES",2,18,PANEL_BODY);
+         PANEL_text("C: TROCAR ETAPAS E REPOR",2,19,PANEL_BODY);
++    }
++    if(testStage==6) {
++        PANEL_text("PADRÃO: 8 BLINDADOS + 16/16 TIROS",2,18,PANEL_BODY);
++        PANEL_text("SEM MORTES: GRUPO MANTIDO VIVO",2,19,PANEL_BODY);
+     }
+     PANEL_text("CIMA/BAIXO: ESCOLHER",2,21,PANEL_BODY);
+     PANEL_text("ESQUERDA/DIREITA: AJUSTAR",2,23,PANEL_BODY);
+--- a/src/system/audio/music.c
++++ b/src/system/audio/music.c
+@@ -161,7 +161,7 @@
+             const u16 release = v->gate / 4;
+             vol = v->vmin + 2;
+             if (v->left <= release)
+-                vol += (u8) ((12 - v->vmin) * (release - v->left) / release);
++                vol += (u8) (divu((u32)(12-v->vmin)*(release-v->left),release));
+             if (age >= 20 && !church)
+             {
+                 static const s8 vibrato[8] = { 0, 1, 2, 1, 0, -1, -2, -1 };
+@@ -172,7 +172,7 @@
+         }
+         else
+         {
+-            vol = (u8) (v->vmin + ((15 - v->vmin) * age) / v->gate);
++            vol = (u8) (v->vmin + divu((u32)(15-v->vmin)*age,(u16)v->gate));
+             // A brief downward transient gives the root/fifth bass some body.
+             if (ch == CH_BASS && age < 10)
+                 freq += (u16) (((freq >> 3) * (10 - age)) / 10);
+@@ -198,7 +198,7 @@
+     // gerador de ruído a cada frame = chiado). Ocioso: não requisita.
+     if (music.drumLeft > 0)
+     {
+-        const u8 vol = (u8) (music.drumVmin + ((15 - music.drumVmin) * (music.drumGate - music.drumLeft)) / music.drumGate);
++        const u8 vol = (u8) (music.drumVmin + divu((u32)(15-music.drumVmin)*(music.drumGate-music.drumLeft),(u16)music.drumGate));
+         AUDIO_noise(music.drumType, music.drumFreq, vol, AUD_PRIO_MUSIC);
+     }
+ }

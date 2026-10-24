@@ -1,0 +1,118 @@
+{
+  "phase": "6A",
+  "status": "isolated material checkpoint pending visual and budget review",
+  "scene_tiles": 554,
+  "objective_tiles": 0,
+  "total_tiles": 554,
+  "scene_limit": 640,
+  "fits": true,
+  "baseline_reproduces_active_pixels": true,
+  "geometry_unchanged": true,
+  "new_bitmap_art": false,
+  "procedural_noise": false,
+  "arbitrary_tile_substitutions": 0,
+  "material_sources": {
+    "floor": [
+      "art/phase04-tunnels-v1/map-native.png",
+      [
+        360,
+        208,
+        16,
+        16
+      ]
+    ],
+    "dark_channel": [
+      "art/phase04-tunnels-v1/map-native.png",
+      [
+        360,
+        208,
+        16,
+        16
+      ],
+      "same quiet concrete grain mapped to dark charcoal; existing blue mouths pigment-normalized only"
+    ],
+    "bank_grit": "same R04concrete1px grain, palette-normalized only within existing wall-face pigment"
+  },
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      0,
+      36,
+      72
+    ],
+    [
+      0,
+      72,
+      109
+    ],
+    [
+      36,
+      109,
+      145
+    ],
+    [
+      109,
+      145,
+      145
+    ],
+    [
+      145,
+      109,
+      72
+    ],
+    [
+      109,
+      109,
+      109
+    ],
+    [
+      145,
+      145,
+      145
+    ],
+    [
+      218,
+      218,
+      182
+    ],
+    [
+      109,
+      72,
+      36
+    ],
+    [
+      145,
+      109,
+      36
+    ],
+    [
+      182,
+      145,
+      72
+    ],
+    [
+      255,
+      218,
+      109
+    ],
+    [
+      36,
+      36,
+      72
+    ],
+    [
+      72,
+      72,
+      72
+    ]
+  ]
+}

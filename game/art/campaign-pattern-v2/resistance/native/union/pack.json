@@ -1,0 +1,23 @@
+{
+  "tiles": 620,
+  "limit": 640,
+  "lossy_tile_replacements": 0,
+  "maps": {
+    "alive": {
+      "size": [
+        512,
+        384
+      ],
+      "sha256": "4435c373067a526f82ad176141004307cb429c9864f3f3f7c6b02f0caeaf5870",
+      "pixel_exact_reassembly": true
+    },
+    "dead": {
+      "size": [
+        512,
+        384
+      ],
+      "sha256": "af7264c296c95d29a88eec27d0e921b44373a0331791f9208e8a85ae0f998a5a",
+      "pixel_exact_reassembly": true
+    }
+  }
+}

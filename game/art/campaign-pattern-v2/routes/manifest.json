@@ -1,0 +1,94 @@
+{
+  "status": "candidate_pending_integrated_emulator_review",
+  "review": "review.json",
+  "cycle": 2,
+  "phases": {
+    "06a": {
+      "source": {
+        "image": "cycle-1/source/06a-whole.png",
+        "prompt": "cycle-1/prompts/06a.txt",
+        "sha256": "bf650205ab505259b14343745d1233a9be5db8182c7cd5c4c83f5fca839e707c"
+      },
+      "native": "current/06a/complete-native.png",
+      "closed": "current/06a/complete-closed-objectives.png",
+      "collapse": "current/06a/complete-collapse-objectives.png",
+      "open": "current/06a/complete-open-objectives.png",
+      "layout": "current/06a/layout.png",
+      "details": "current/06a/manifest.json",
+      "world": [
+        3072,
+        272
+      ],
+      "memory": {
+        "scene_tiles": 602,
+        "objective_tiles": 0,
+        "total_tiles": 602,
+        "budget": 640,
+        "lossy_pattern_replacements": 0,
+        "graphics_bytes": 19264,
+        "map_bytes": 26112,
+        "palette_bytes": 32,
+        "free_tiles": 38,
+        "all_objective_frames_included": true
+      }
+    },
+    "06b": {
+      "source": {
+        "image": "cycle-1/source/06b-whole.png",
+        "prompt": "cycle-1/prompts/06b.txt",
+        "sha256": "219db21fe59db2df645cf0a8f232a3706bc17bbbc71ee0f9387f8274b2196e9f"
+      },
+      "native": "current/06b/complete-native.png",
+      "closed": "current/06b/complete-closed-objectives.png",
+      "collapse": "current/06b/complete-collapse-objectives.png",
+      "open": "current/06b/complete-open-objectives.png",
+      "layout": "current/06b/layout.png",
+      "details": "current/06b/manifest.json",
+      "world": [
+        3072,
+        272
+      ],
+      "memory": {
+        "scene_tiles": 373,
+        "objective_tiles": 256,
+        "total_tiles": 629,
+        "budget": 640,
+        "lossy_pattern_replacements": 0,
+        "graphics_bytes": 20128,
+        "map_bytes": 26112,
+        "palette_bytes": 32,
+        "free_tiles": 11,
+        "all_objective_frames_included": true
+      }
+    },
+    "12": {
+      "source": {
+        "image": "cycle-1/source/12-whole.png",
+        "prompt": "cycle-1/prompts/12.txt",
+        "sha256": "881b8a9819d284de9c7b73b1a2ebaeac4f2510aa29f480be86e0d4b6cd00e59b"
+      },
+      "native": "current/12/complete-native.png",
+      "closed": "current/12/complete-closed-objectives.png",
+      "collapse": "current/12/complete-collapse-objectives.png",
+      "open": "current/12/complete-open-objectives.png",
+      "layout": "current/12/layout.png",
+      "details": "current/12/manifest.json",
+      "world": [
+        3072,
+        272
+      ],
+      "memory": {
+        "scene_tiles": 600,
+        "objective_tiles": 0,
+        "total_tiles": 600,
+        "budget": 640,
+        "lossy_pattern_replacements": 0,
+        "graphics_bytes": 19200,
+        "map_bytes": 26112,
+        "palette_bytes": 32,
+        "free_tiles": 40,
+        "all_objective_frames_included": true
+      }
+    }
+  }
+}

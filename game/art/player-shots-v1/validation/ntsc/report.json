@@ -1,0 +1,985 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "fps": 60,
+  "rom_sha256": "9b5d08575a56675248341c1f0ebacb1e0f543fbf45f7260a01d5ee56e5e3826b",
+  "rom_patched": false,
+  "method": "Real production ROM. RAM fixtures select phases/equipment/rosters/pool occupancy and protect objectives. Inactive projectile coordinates are marked before firing; raw projectile records count newly created bullets even if immediately consumed by collision.",
+  "phases": [
+    {
+      "node": 1,
+      "phase": "1",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        0,
+        1
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 2,
+      "phase": "2A",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        0,
+        1,
+        3
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 3,
+      "phase": "2B",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        0,
+        1,
+        3
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 4,
+      "phase": "3",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        1,
+        2,
+        3
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 5,
+      "phase": "4",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        0,
+        2,
+        5
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 6,
+      "phase": "5",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        4,
+        5,
+        3
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 256
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 279
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 279
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 7,
+      "phase": "6A",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 8,
+      "phase": "6B",
+      "shot_cap": 6,
+      "enemy_cap": 4,
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 273
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 279
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 279
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 9,
+      "phase": "7",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        5,
+        6,
+        2
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 339
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 10,
+      "phase": "8",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        4,
+        5,
+        7,
+        3
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 351
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 11,
+      "phase": "9",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        8,
+        9,
+        5
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 341
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 12,
+      "phase": "10A",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        9,
+        11,
+        7
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 390
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 13,
+      "phase": "10B",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        9,
+        11,
+        7
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 380
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 14,
+      "phase": "11",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        8,
+        10,
+        5
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 417
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 15,
+      "phase": "12",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        11,
+        4,
+        5,
+        2
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 380
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 16,
+      "phase": "13A",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        2,
+        5,
+        7,
+        8,
+        9
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 350
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 17,
+      "phase": "13B",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        2,
+        5,
+        7,
+        8,
+        9
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 423
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 18,
+      "phase": "14",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        10,
+        11,
+        9,
+        5
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 356
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 19,
+      "phase": "15",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 251
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 412
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    },
+    {
+      "node": 20,
+      "phase": "16",
+      "shot_cap": 16,
+      "enemy_cap": 15,
+      "roster": [
+        14,
+        5
+      ],
+      "sustained": [
+        {
+          "enemies": 1,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 254
+        },
+        {
+          "enemies": 4,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 256
+        },
+        {
+          "enemies": 15,
+          "volleys": 6,
+          "updates": 241,
+          "vblanks": 401
+        }
+      ],
+      "cases": 483,
+      "projectiles": 1530
+    }
+  ],
+  "training": [
+    {
+      "enemy_type": 0,
+      "enemy_name": "SQ_RED",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 1,
+      "enemy_name": "SQ_YEL",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 2,
+      "enemy_name": "SQ_PUR",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 3,
+      "enemy_name": "SQ_ORG",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 4,
+      "enemy_name": "TRI_RED",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 5,
+      "enemy_name": "TRI_YEL",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 6,
+      "enemy_name": "TRI_PUR",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 7,
+      "enemy_name": "TRI_ORG",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 8,
+      "enemy_name": "PEN_RED",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 9,
+      "enemy_name": "PEN_YEL",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 10,
+      "enemy_name": "PEN_PUR",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 11,
+      "enemy_name": "PEN_ORG",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    },
+    {
+      "enemy_type": 14,
+      "enemy_name": "BOSS",
+      "counts": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "statuses": [
+        "normal",
+        "frozen",
+        "burning"
+      ],
+      "cases": 384,
+      "projectiles": 1920
+    }
+  ],
+  "failures": [],
+  "cases": 14652,
+  "volleys": 14952,
+  "projectiles": 55560,
+  "ram_fixture_writes": 749497
+}

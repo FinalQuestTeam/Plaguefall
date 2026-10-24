@@ -1,0 +1,966 @@
+{
+  "rom_sha256": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+  "status": "final_runtime_visual_review_complete",
+  "scope": "Read-only review of138camera captures from final ROM:51street+9factory10+9factory11 in each region;14whole-region QA sheets plus valve progression frames. Central harness owns compilation/emulation.",
+  "game_visual_blockers_found": [],
+  "capture_coverage_issues": [],
+  "phases": [
+    {
+      "phase": "9",
+      "assessment": "Acceptable visual candidate in actual NTSC/PAL frames, with documented design limits; no assembly blocker found.",
+      "evidence": {
+        "ntsc": [
+          "factory/runtime-qa/c622defb/9-ntsc-cols-0-3.png",
+          "factory/runtime-qa/c622defb/9-ntsc-cols-12-15.png",
+          "factory/runtime-qa/c622defb/9-ntsc-cols-16-16.png",
+          "factory/runtime-qa/c622defb/9-ntsc-cols-4-7.png",
+          "factory/runtime-qa/c622defb/9-ntsc-cols-8-11.png"
+        ],
+        "pal": [
+          "factory/runtime-qa/c622defb/9-pal-cols-0-3.png",
+          "factory/runtime-qa/c622defb/9-pal-cols-12-15.png",
+          "factory/runtime-qa/c622defb/9-pal-cols-16-16.png",
+          "factory/runtime-qa/c622defb/9-pal-cols-4-7.png",
+          "factory/runtime-qa/c622defb/9-pal-cols-8-11.png"
+        ]
+      },
+      "specific_observations": [
+        "Workshop,gantry,tanks and terminal gate read as real industrial progression.",
+        "No previous24×8black crop at exit; terminal boundary and southern corners remain intact.",
+        "All four whole field obstacles now seen with overlapping samples; pipe bundle end caps and bin full side/base/silhouette intact. No black exit padding."
+      ]
+    },
+    {
+      "phase": "10",
+      "assessment": "Acceptable visual candidate in actual NTSC/PAL frames, with documented design limits; no assembly blocker found.",
+      "evidence": {
+        "ntsc": [
+          "factory/runtime-qa/c622defb/10-ntsc-cols-0-2.png"
+        ],
+        "pal": [
+          "factory/runtime-qa/c622defb/10-pal-cols-0-2.png"
+        ]
+      },
+      "specific_observations": [
+        "Cold furnace/no baked active flames; tank pair and full northern columns present.",
+        "Nests are pale clusters clearly distinct from brown enemies, on exposed floor with space from walls/conveyor/crate.",
+        "Continuous southern wall cap/pipe/frame is coherent in bottom views."
+      ],
+      "state_evidence": {
+        "cleared_clutch": "playtests/factory/ntsc/10-eggs-1.png",
+        "cleared_visible_clutches_after_pause": "playtests/factory/ntsc/10-resumed.png",
+        "note": "The native special-state destroyed preview is frame3of the destruction animation; actual settled clutches disappear and restore original floor. Runtime captures establish that behavior."
+      }
+    },
+    {
+      "phase": "11",
+      "assessment": "Acceptable visual candidate in actual NTSC/PAL frames, with documented design limits; no assembly blocker found.",
+      "evidence": {
+        "ntsc": [
+          "factory/runtime-qa/c622defb/11-ntsc-cols-0-2.png"
+        ],
+        "pal": [
+          "factory/runtime-qa/c622defb/11-pal-cols-0-2.png"
+        ]
+      },
+      "specific_observations": [
+        "Three red wheels attach blue outlets on complete cabinets, not on conveyors.",
+        "Cabinets wholly beyond north walk line; player stands in front on floor.",
+        "Header and cabinet feed/cap joint visible connected; no former fake machine-body pipe stamp."
+      ],
+      "state_evidence": {
+        "one_powered": "playtests/factory/ntsc/11-valve-1.png",
+        "two_powered": "playtests/factory/ntsc/11-valve-2.png",
+        "all_three_complete": "playtests/factory/ntsc/11-valve-3.png",
+        "observation": "Powered cabinet vent replaced by a yellow bolt; count increments1/3and2/3, third triggers objective-complete card. Controls remain connected and supported."
+      }
+    }
+  ],
+  "tests": {
+    "ntsc": {
+      "path": "playtests/factory/ntsc/report.json",
+      "passed": true,
+      "nodes": {
+        "9": {
+          "controller_corridor": {
+            "passed": true,
+            "ending_x": 2502,
+            "detour_waypoints": [
+              [
+                424,
+                184
+              ],
+              [
+                520,
+                184
+              ],
+              [
+                968,
+                144
+              ],
+              [
+                1104,
+                144
+              ],
+              [
+                1528,
+                184
+              ],
+              [
+                1632,
+                184
+              ],
+              [
+                2056,
+                128
+              ],
+              [
+                2192,
+                128
+              ]
+            ],
+            "method": "controller only after isolated spawn-delay setup; four physical barriers require north/south detours"
+          },
+          "controller_collision": {
+            "passed": true,
+            "probes": [
+              {
+                "solid": [
+                  456,
+                  144,
+                  40,
+                  32
+                ],
+                "passed": true,
+                "end_x": 439
+              },
+              {
+                "solid": [
+                  1000,
+                  168,
+                  80,
+                  24
+                ],
+                "passed": true,
+                "end_x": 983
+              },
+              {
+                "solid": [
+                  1568,
+                  144,
+                  48,
+                  32
+                ],
+                "passed": true,
+                "end_x": 1551
+              },
+              {
+                "solid": [
+                  2096,
+                  152,
+                  64,
+                  40
+                ],
+                "passed": true,
+                "end_x": 2079
+              }
+            ]
+          },
+          "controller_world_bounds": {
+            "passed": true,
+            "probes": [
+              {
+                "edge": "north",
+                "passed": true,
+                "position": [
+                  48,
+                  112
+                ]
+              },
+              {
+                "edge": "south",
+                "passed": true,
+                "position": [
+                  48,
+                  198
+                ]
+              },
+              {
+                "edge": "west",
+                "passed": true,
+                "position": [
+                  16,
+                  128
+                ]
+              },
+              {
+                "edge": "east",
+                "passed": true,
+                "position": [
+                  2528,
+                  128
+                ]
+              }
+            ]
+          },
+          "visible_maximum_stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_visible_enemies": 3,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 63.13,
+            "cpu_peak_percent": 65.14,
+            "setup": "RAM seeded full formations and pools each frame; stress only"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "video_duration_seconds": 20.0,
+            "result": "timeout",
+            "remaining_hp": 65,
+            "damage_net": 35,
+            "peak_enemies": 3,
+            "simulation_fps": 59.95,
+            "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+            "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+          }
+        },
+        "10": {
+          "controller_egg_hits": {
+            "passed": true,
+            "destroyed_mask": 1023,
+            "hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "method": "RAM position setup per clutch; controller firing with ordinary write guard; no objective-state seeds"
+          },
+          "controller_collision": {
+            "passed": true,
+            "probes": [
+              {
+                "solid": [
+                  128,
+                  192,
+                  80,
+                  32
+                ],
+                "passed": true,
+                "end_x": 111
+              },
+              {
+                "solid": [
+                  576,
+                  200,
+                  40,
+                  32
+                ],
+                "passed": true,
+                "end_x": 559
+              }
+            ]
+          },
+          "controller_world_bounds": {
+            "passed": true,
+            "probes": [
+              {
+                "edge": "north",
+                "passed": true,
+                "position": [
+                  48,
+                  112
+                ]
+              },
+              {
+                "edge": "south",
+                "passed": true,
+                "position": [
+                  48,
+                  256
+                ]
+              },
+              {
+                "edge": "west",
+                "passed": true,
+                "position": [
+                  16,
+                  128
+                ]
+              },
+              {
+                "edge": "east",
+                "passed": true,
+                "position": [
+                  736,
+                  128
+                ]
+              }
+            ]
+          },
+          "visible_maximum_stress": {
+            "passed": true,
+            "simulation_fps": 59.2,
+            "seeded_visible_enemies": 4,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 85.24,
+            "cpu_peak_percent": 95.9,
+            "setup": "RAM seeded full formations and pools each frame; stress only"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "video_duration_seconds": 20.0,
+            "result": "timeout",
+            "remaining_hp": 100,
+            "damage_net": 0,
+            "peak_enemies": 4,
+            "simulation_fps": 59.1,
+            "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+            "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+          }
+        },
+        "11": {
+          "controller_valves": {
+            "passed": true,
+            "probes": [
+              {
+                "valve": 0,
+                "fire_blocks_work": true,
+                "opened": true
+              },
+              {
+                "valve": 1,
+                "fire_blocks_work": true,
+                "opened": true
+              },
+              {
+                "valve": 2,
+                "fire_blocks_work": true,
+                "opened": true
+              }
+            ],
+            "opened_mask": 7,
+            "method": "RAM position per valve; runtime interaction and A rejection controller only"
+          },
+          "controller_collision": {
+            "passed": true,
+            "probes": [
+              {
+                "solid": [
+                  128,
+                  192,
+                  80,
+                  32
+                ],
+                "passed": true,
+                "end_x": 111
+              },
+              {
+                "solid": [
+                  576,
+                  200,
+                  40,
+                  32
+                ],
+                "passed": true,
+                "end_x": 559
+              }
+            ]
+          },
+          "controller_world_bounds": {
+            "passed": true,
+            "probes": [
+              {
+                "edge": "north",
+                "passed": true,
+                "position": [
+                  48,
+                  112
+                ]
+              },
+              {
+                "edge": "south",
+                "passed": true,
+                "position": [
+                  48,
+                  256
+                ]
+              },
+              {
+                "edge": "west",
+                "passed": true,
+                "position": [
+                  16,
+                  128
+                ]
+              },
+              {
+                "edge": "east",
+                "passed": true,
+                "position": [
+                  736,
+                  128
+                ]
+              }
+            ]
+          },
+          "visible_maximum_stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_visible_enemies": 3,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 72.52,
+            "cpu_peak_percent": 73.78,
+            "setup": "RAM seeded full formations and pools each frame; stress only"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "video_duration_seconds": 20.0,
+            "result": "timeout",
+            "remaining_hp": 53,
+            "damage_net": 47,
+            "peak_enemies": 3,
+            "simulation_fps": 59.95,
+            "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+            "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+          }
+        }
+      }
+    },
+    "pal": {
+      "path": "playtests/factory/pal/report.json",
+      "passed": true,
+      "nodes": {
+        "9": {
+          "controller_corridor": {
+            "passed": true,
+            "ending_x": 2502,
+            "detour_waypoints": [
+              [
+                424,
+                184
+              ],
+              [
+                520,
+                184
+              ],
+              [
+                968,
+                144
+              ],
+              [
+                1104,
+                144
+              ],
+              [
+                1528,
+                184
+              ],
+              [
+                1632,
+                184
+              ],
+              [
+                2056,
+                128
+              ],
+              [
+                2192,
+                128
+              ]
+            ],
+            "method": "controller only after isolated spawn-delay setup; four physical barriers require north/south detours"
+          },
+          "controller_collision": {
+            "passed": true,
+            "probes": [
+              {
+                "solid": [
+                  456,
+                  144,
+                  40,
+                  32
+                ],
+                "passed": true,
+                "end_x": 439
+              },
+              {
+                "solid": [
+                  1000,
+                  168,
+                  80,
+                  24
+                ],
+                "passed": true,
+                "end_x": 983
+              },
+              {
+                "solid": [
+                  1568,
+                  144,
+                  48,
+                  32
+                ],
+                "passed": true,
+                "end_x": 1551
+              },
+              {
+                "solid": [
+                  2096,
+                  152,
+                  64,
+                  40
+                ],
+                "passed": true,
+                "end_x": 2079
+              }
+            ]
+          },
+          "controller_world_bounds": {
+            "passed": true,
+            "probes": [
+              {
+                "edge": "north",
+                "passed": true,
+                "position": [
+                  48,
+                  112
+                ]
+              },
+              {
+                "edge": "south",
+                "passed": true,
+                "position": [
+                  48,
+                  198
+                ]
+              },
+              {
+                "edge": "west",
+                "passed": true,
+                "position": [
+                  16,
+                  128
+                ]
+              },
+              {
+                "edge": "east",
+                "passed": true,
+                "position": [
+                  2528,
+                  128
+                ]
+              }
+            ]
+          },
+          "visible_maximum_stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_visible_enemies": 3,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 37.19,
+            "cpu_peak_percent": 38.96,
+            "setup": "RAM seeded full formations and pools each frame; stress only"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 19.74,
+            "video_duration_seconds": 20.0,
+            "result": "defeat",
+            "remaining_hp": 0,
+            "damage_net": 100,
+            "peak_enemies": 3,
+            "simulation_fps": 50.0,
+            "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+            "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+          }
+        },
+        "10": {
+          "controller_egg_hits": {
+            "passed": true,
+            "destroyed_mask": 1023,
+            "hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "method": "RAM position setup per clutch; controller firing with ordinary write guard; no objective-state seeds"
+          },
+          "controller_collision": {
+            "passed": true,
+            "probes": [
+              {
+                "solid": [
+                  128,
+                  192,
+                  80,
+                  32
+                ],
+                "passed": true,
+                "end_x": 111
+              },
+              {
+                "solid": [
+                  576,
+                  200,
+                  40,
+                  32
+                ],
+                "passed": true,
+                "end_x": 559
+              }
+            ]
+          },
+          "controller_world_bounds": {
+            "passed": true,
+            "probes": [
+              {
+                "edge": "north",
+                "passed": true,
+                "position": [
+                  48,
+                  112
+                ]
+              },
+              {
+                "edge": "south",
+                "passed": true,
+                "position": [
+                  48,
+                  256
+                ]
+              },
+              {
+                "edge": "west",
+                "passed": true,
+                "position": [
+                  16,
+                  128
+                ]
+              },
+              {
+                "edge": "east",
+                "passed": true,
+                "position": [
+                  736,
+                  128
+                ]
+              }
+            ]
+          },
+          "visible_maximum_stress": {
+            "passed": true,
+            "simulation_fps": 49.6,
+            "seeded_visible_enemies": 4,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 59.42,
+            "cpu_peak_percent": 71.97,
+            "setup": "RAM seeded full formations and pools each frame; stress only"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "video_duration_seconds": 20.0,
+            "result": "timeout",
+            "remaining_hp": 100,
+            "damage_net": 0,
+            "peak_enemies": 4,
+            "simulation_fps": 49.5,
+            "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+            "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+          }
+        },
+        "11": {
+          "controller_valves": {
+            "passed": true,
+            "probes": [
+              {
+                "valve": 0,
+                "fire_blocks_work": true,
+                "opened": true
+              },
+              {
+                "valve": 1,
+                "fire_blocks_work": true,
+                "opened": true
+              },
+              {
+                "valve": 2,
+                "fire_blocks_work": true,
+                "opened": true
+              }
+            ],
+            "opened_mask": 7,
+            "method": "RAM position per valve; runtime interaction and A rejection controller only"
+          },
+          "controller_collision": {
+            "passed": true,
+            "probes": [
+              {
+                "solid": [
+                  128,
+                  192,
+                  80,
+                  32
+                ],
+                "passed": true,
+                "end_x": 111
+              },
+              {
+                "solid": [
+                  576,
+                  200,
+                  40,
+                  32
+                ],
+                "passed": true,
+                "end_x": 559
+              }
+            ]
+          },
+          "controller_world_bounds": {
+            "passed": true,
+            "probes": [
+              {
+                "edge": "north",
+                "passed": true,
+                "position": [
+                  48,
+                  112
+                ]
+              },
+              {
+                "edge": "south",
+                "passed": true,
+                "position": [
+                  48,
+                  256
+                ]
+              },
+              {
+                "edge": "west",
+                "passed": true,
+                "position": [
+                  16,
+                  128
+                ]
+              },
+              {
+                "edge": "east",
+                "passed": true,
+                "position": [
+                  736,
+                  128
+                ]
+              }
+            ]
+          },
+          "visible_maximum_stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_visible_enemies": 3,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 46.61,
+            "cpu_peak_percent": 48.0,
+            "setup": "RAM seeded full formations and pools each frame; stress only"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "video_duration_seconds": 20.0,
+            "result": "timeout",
+            "remaining_hp": 100,
+            "damage_net": 0,
+            "peak_enemies": 3,
+            "simulation_fps": 50.0,
+            "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+            "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+          }
+        }
+      }
+    }
+  },
+  "reviewer_cautions": [
+    "Existing nest objectives remain non-solid; actor can overlap a clutch. This is documented retained behavior, not a newly measured collision pass for nests.",
+    "In low factory11 camera, controls are above/outside visible play area and marker points up; industrial south perimeter remains. This is natural viewport clipping, not partial asset export.",
+    "Capture sheets prove displayed configurations only; collision/objective/full-load probes come from separate root tests.",
+    "Single20s patrol bot cannot establish human difficulty/balance; phase10bot took0damage in bothregions."
+  ],
+  "capture_file_hashes": {
+    "captures/ntsc/9/x0-y0.png": "152f6f88ad7184572f3f24efc1c367b3648af81c92308def2c42099549bbb1ea",
+    "captures/ntsc/9/x1-y0.png": "9f69d634634ade07a0337865c2e510f8f922eafbf49afaf9c1511c69752497a5",
+    "captures/ntsc/9/x2-y0.png": "1c01bda7340b336a32780b8bd73277ebaa87f2ff28f61fe46534e6107e1a98a3",
+    "captures/ntsc/9/x3-y0.png": "90f4dfc155ae5d971e2a9cdfe02555d45145e830b72f863c646944a79aa5d9f5",
+    "captures/ntsc/9/x4-y0.png": "0d7f4d1585327c9386623056ab93b60e455ea935f51ac84edd04e39b9c01fcfd",
+    "captures/ntsc/9/x5-y0.png": "e47d324d414623012592a1bb0d4ce3dcdc53d23e0f5fc54388fa5d7701a9bcb2",
+    "captures/ntsc/9/x6-y0.png": "01918788e5dba0cdcbd23a48627b58adfb2c46a248a77ff61d581176726c3258",
+    "captures/ntsc/9/x7-y0.png": "d2aa6439ee3a005c5878ccb1932011684c8c34c925222dabec6a1b8300f3afe0",
+    "captures/ntsc/9/x8-y0.png": "9b1a009a4cafbd7094d43cc640e220c14471968718c97701dad807aa241c7785",
+    "captures/ntsc/9/x9-y0.png": "d73397b1725349979c4c4066962bb212ae360a9f36104ae6e1e58739599dd090",
+    "captures/ntsc/9/x10-y0.png": "4e5b64bdfc19e2529a786b736b9caf751558f71b942ca6cb4785d5dc9af7673a",
+    "captures/ntsc/9/x11-y0.png": "9907c234e88841c1d027ad8a4649ce4de3b7e4f306dd9ca9a5d694e505a70b6c",
+    "captures/ntsc/9/x12-y0.png": "2ba6333ffbba8086a594365b2ddaf3a83e8887830501409b0de4d77803db2715",
+    "captures/ntsc/9/x13-y0.png": "f62e13e037dee257e8fb92b9112569f2374fae231c8a9cd4547a6f49856e144e",
+    "captures/ntsc/9/x14-y0.png": "a04d5e0cdc2aafee6a8575cdd0b89e4d5e69c2e45ff496e727dd3d2e4b119d01",
+    "captures/ntsc/9/x15-y0.png": "4aaa905d1d21a203e79b4400b9d3abe42e635034ff06e4fc4c67be13596a99e1",
+    "captures/ntsc/9/x16-y0.png": "222f57866e5fc61de549febbb6e6303ef4366f451acc6257d3ae27773915168c",
+    "captures/ntsc/9/x0-y1.png": "7949f3f6305f5547bf3476b88b7f65a13d40b6b6d51f5011327d92c11cc77fe8",
+    "captures/ntsc/9/x1-y1.png": "20c0b8a38918f86610e382dff791785a240053c32df75410ca2973c64bc6ac0e",
+    "captures/ntsc/9/x2-y1.png": "0a392ad92351d8781d7bfa52006410745d67a4c8a69d14b52d3b1cd923fea910",
+    "captures/ntsc/9/x3-y1.png": "e09cf65338e33014172b99c02cc9441dff2f6da7693447d18fb59b60e2022b66",
+    "captures/ntsc/9/x4-y1.png": "75c19ec33c348dd1b4a1fcc2314a5199beeb985d511ea0a400b2ac66ee6b99cb",
+    "captures/ntsc/9/x5-y1.png": "d7c5bf1dcff291a6b6907baa1ef6ac54c41d23c0f7a4922bc0e4cbe3ee8f6926",
+    "captures/ntsc/9/x6-y1.png": "be1a76f46f4886d2980d5f3c74927f16e7dea1357b2315dba6c85eb218cd3747",
+    "captures/ntsc/9/x7-y1.png": "6c3bc21e09057d57b86b9b90fa3fcb551e7864b3cb4e12bd147692e3eb73893c",
+    "captures/ntsc/9/x8-y1.png": "be246973b32099668e820ad25cb567015e7f761769dab5484f04f9c7d40a91eb",
+    "captures/ntsc/9/x9-y1.png": "271da6c4035606aef91bdc918ab896d985444dab4a20277fdc6822a29484da84",
+    "captures/ntsc/9/x10-y1.png": "08ba3a08da176e981e4f8cd942a62e0ca4031d5f6fd9cfe46d168c1ac752f7aa",
+    "captures/ntsc/9/x11-y1.png": "fd7d28eea6c9f8e483830fb1e933078b46befe23c42dc5ef36fd6905130a6460",
+    "captures/ntsc/9/x12-y1.png": "c252de9d73ae84d2b341e094e4ddd532e53c4de7024330ca9fdea7314a7a1faa",
+    "captures/ntsc/9/x13-y1.png": "2b5609d8c5e158919539005217dda3cf2ee3d18879ee8348be908bd39e52ff4c",
+    "captures/ntsc/9/x14-y1.png": "0cc9d26cc173032e614bc6d8f54fabdd00eea34e3ad364b227064889a2b4803b",
+    "captures/ntsc/9/x15-y1.png": "7e1622e7671e6ac9b18be30d13f201ec16ccfce2de11463920747758f467d883",
+    "captures/ntsc/9/x16-y1.png": "f4ac9d0a301d79ca5f95b0575262dc131fda53c7b0e96f3268b21da7efb9ca83",
+    "captures/ntsc/9/x0-y2.png": "fa59ccb75d3ef13103699d4857cc4f263f88abc7bbc27c0231e32285376c8c6d",
+    "captures/ntsc/9/x1-y2.png": "13dda011c3d7382cfaea49f7f308d082f70ef621b9309d549ebf37b0688579b6",
+    "captures/ntsc/9/x2-y2.png": "59ebdefcb100cb4e06283a0cfa0e4908064047e3e48f0c5a213e090bcea4f512",
+    "captures/ntsc/9/x3-y2.png": "c9ec7ce6d595c798f276695702093e625a4a445716eef4c872f920bb129a8b6e",
+    "captures/ntsc/9/x4-y2.png": "a5a5e212d8ab031156bb4db0595244ec43491c9ad4f7a069bbe97040bd59ca4d",
+    "captures/ntsc/9/x5-y2.png": "e5f72bc9caa4463a1e27913607f444402a3f877d067d1fd64f84d5eb4e04a671",
+    "captures/ntsc/9/x6-y2.png": "46749fb45a172de47c1f980d4f47363b43818247aa0fed48fb646d1432406982",
+    "captures/ntsc/9/x7-y2.png": "fdbd35fa1ae343ff377853a41eb14886fc40a8fe88fb3fbf0e420c6dbfcd8eb9",
+    "captures/ntsc/9/x8-y2.png": "5194b5ad6c2177ab03f3d78ea84aa0b92018138ffd0874d9f49dd5810f42b5c0",
+    "captures/ntsc/9/x9-y2.png": "6df82cc06b0ceb6c7c45b02330de452782188c3c0926e3329eb2df89e94fa987",
+    "captures/ntsc/9/x10-y2.png": "6a737ef134120578dd31ba7053997a5ebdd10e6b5776298ce738b31c159e1e72",
+    "captures/ntsc/9/x11-y2.png": "cf5bbc30211bf92a9792832c804d6a0ffcc11c7ac5462d35d079e5ebbd5cc864",
+    "captures/ntsc/9/x12-y2.png": "0e38098b98200c960e3568a100d1caf025431d946b2beb04c4e9a91ea04c0bb8",
+    "captures/ntsc/9/x13-y2.png": "483848711a1746c6ecdb1ae005be73f0b74a5e367ad96b73f1ca980e140b09b1",
+    "captures/ntsc/9/x14-y2.png": "8e86930219b338e90685c048ebff97a0e7429ca01078bf130a23cfb71a62a459",
+    "captures/ntsc/9/x15-y2.png": "c50feb55ed70fdd6e02f73a9e296a3199e260d8e862b453f667e0c5498a42f4d",
+    "captures/ntsc/9/x16-y2.png": "a70a62be3341fe9e08c5ae7afad168cde2efd740eece7e3b52709eb952fd6870",
+    "captures/ntsc/10/x0-y0.png": "3f195cef5145b825cef7460c9b5bcf44bcbe57d54c5dc9d3cca4f6422c54fabe",
+    "captures/ntsc/10/x1-y0.png": "0df646622ed7f4a35bf2f9b4386b5a5d245efaaee7776a6c9f939161798aa723",
+    "captures/ntsc/10/x2-y0.png": "bbf8459861a302be95ee713c6e053967d938ea4a66543aa1ea75c43d6c4680d8",
+    "captures/ntsc/10/x0-y1.png": "ed5dcd29dba77dcb7f5f82489e2c0ad5dfba5969505fe085a32573dbe4727d90",
+    "captures/ntsc/10/x1-y1.png": "591c69eb4197c1c6c3ba3841d969e1bfd56d2cdc55857a74a60b022312f84062",
+    "captures/ntsc/10/x2-y1.png": "aa6b35371842c4457ba47389da5673b881ece50b6b774e8774f2c9986fa1f94f",
+    "captures/ntsc/10/x0-y2.png": "7a8c551ba12b49d1974db45e849029b859bdd4f91219d476076ff5eb4145aec4",
+    "captures/ntsc/10/x1-y2.png": "c3b290c15396134d3c30f0aab68a3f0161fddff6f7cc71169bc7711a92dffb97",
+    "captures/ntsc/10/x2-y2.png": "2fa964e2005a906a8b3159a61c5022b510ad107c239ed868dc9c787c9786e51b",
+    "captures/ntsc/11/x0-y0.png": "d849f472a331fe99c5a5089cc9847eba13a12d09d648411b8e2fd3ac8fa1564c",
+    "captures/ntsc/11/x1-y0.png": "7e22154b24b4d89ae389cfe3c6d3ec82e57df8ece57def4795fa6f83c28256ba",
+    "captures/ntsc/11/x2-y0.png": "ee9cd6f929726b6628101f51657d78ab2683fe769e0df1a0b50e9ffb78d8ffed",
+    "captures/ntsc/11/x0-y1.png": "419fd13e62255be145bb5b5a610c380e7f4aea100e465aba69bc77d88354939a",
+    "captures/ntsc/11/x1-y1.png": "cab67668a20741c8762419a07d507381d2fec63bbc9183a05cd544fe889832f2",
+    "captures/ntsc/11/x2-y1.png": "ed814ca6e54dc04fa925ffd9ecd891a3256aaad911408a50f1de19e9f1a30081",
+    "captures/ntsc/11/x0-y2.png": "b95dd7be2eff2499e59a7b2bdd122c437ccf07858ba0f96db6032592f5c6c1d6",
+    "captures/ntsc/11/x1-y2.png": "7ec57720fdf55258c80a0b9894d88ff3da6d3cad6347c5bb28d053d9b56b5b00",
+    "captures/ntsc/11/x2-y2.png": "14c62f08d228ea115eed812bd3af0d8a897b97ed6931e237cffa57a448453c30",
+    "captures/pal/9/x0-y0.png": "152f6f88ad7184572f3f24efc1c367b3648af81c92308def2c42099549bbb1ea",
+    "captures/pal/9/x1-y0.png": "270e8e79d9a2602d67b7aa3c3331fb3375c69739d6602d78d7db9cf72d1be369",
+    "captures/pal/9/x2-y0.png": "40df2cdb7fe3db5208d740c95523554da117820bec42cd2a8ba3a1d1266048ae",
+    "captures/pal/9/x3-y0.png": "90f4dfc155ae5d971e2a9cdfe02555d45145e830b72f863c646944a79aa5d9f5",
+    "captures/pal/9/x4-y0.png": "0d7f4d1585327c9386623056ab93b60e455ea935f51ac84edd04e39b9c01fcfd",
+    "captures/pal/9/x5-y0.png": "e47d324d414623012592a1bb0d4ce3dcdc53d23e0f5fc54388fa5d7701a9bcb2",
+    "captures/pal/9/x6-y0.png": "d24d9aadec52ed39fcfe83fba496e021a9afc2ba432df477acdb1b2f9aea8653",
+    "captures/pal/9/x7-y0.png": "d2aa6439ee3a005c5878ccb1932011684c8c34c925222dabec6a1b8300f3afe0",
+    "captures/pal/9/x8-y0.png": "44e802b910454a2e922ae51e41b17315fca8734812febbeca732ff88291ee39b",
+    "captures/pal/9/x9-y0.png": "2e3fc6a3f4c391df44d00ffb9af7f863df0037085406dbc5291fe0734c426c3b",
+    "captures/pal/9/x10-y0.png": "416789439637002d3b0aaeaafd94f23e929a5b184fa4db0b2c5ee43c4a8415fe",
+    "captures/pal/9/x11-y0.png": "5f57e4b167d98d827161547906ad4a372a0c9aea6d85d8e6ebaf10eea1d1e4e1",
+    "captures/pal/9/x12-y0.png": "5974150abdc64e0b6b308cdef3a5c8b171a0de2db71857549944d0c493b1a771",
+    "captures/pal/9/x13-y0.png": "3208b78379cdb746d420936dd85fff1458842a628cbd067cd3003e9fb6413720",
+    "captures/pal/9/x14-y0.png": "213455ea6d9fc67299189d914263b93ecc47046d2f697b77f440d87105b4c54c",
+    "captures/pal/9/x15-y0.png": "4aaa905d1d21a203e79b4400b9d3abe42e635034ff06e4fc4c67be13596a99e1",
+    "captures/pal/9/x16-y0.png": "222f57866e5fc61de549febbb6e6303ef4366f451acc6257d3ae27773915168c",
+    "captures/pal/9/x0-y1.png": "0d91c8d232f3e4237772463ea9a1966c2092b095a6643841e0c60167e9c6f673",
+    "captures/pal/9/x1-y1.png": "20c0b8a38918f86610e382dff791785a240053c32df75410ca2973c64bc6ac0e",
+    "captures/pal/9/x2-y1.png": "c0cadcc626358523ff6fe45245787130f55edce568cc74a6bd353caafbbec231",
+    "captures/pal/9/x3-y1.png": "d352d4f662bc4b82332c051887db3ca8d37b90d35592b46e71d158f4ba484240",
+    "captures/pal/9/x4-y1.png": "e539764536616cdcc4feabdb62abf0191ce351c84db7ba5638ed9b6d52091706",
+    "captures/pal/9/x5-y1.png": "d7c5bf1dcff291a6b6907baa1ef6ac54c41d23c0f7a4922bc0e4cbe3ee8f6926",
+    "captures/pal/9/x6-y1.png": "6e640d9dedce9a7858adbeccb9cd271284b868324deab8b2f162938b249df31b",
+    "captures/pal/9/x7-y1.png": "c699b5d2bc548826909dc5c1226f79453091dcf7ea4a1d6573803a9a3cd5c055",
+    "captures/pal/9/x8-y1.png": "5dc078810824dac548821e2802dbc7bb3449e52afc9e21686b802721e2aa5cc6",
+    "captures/pal/9/x9-y1.png": "91feda5df20a180545f875349ebba62f5024f8e642700577523a7a36b30cc8a3",
+    "captures/pal/9/x10-y1.png": "8ca37829f642629e7971ff15ab901a177c9c238ea5e05c06b5dd9cd5e5b312f1",
+    "captures/pal/9/x11-y1.png": "c3b01089e8675933a84219ec1f2725e276c9a8412bd135ae2ec0920996969266",
+    "captures/pal/9/x12-y1.png": "64c3e70c68ff9a139bc1bd37f63f39b691df6e1e48e95f62f2280f173739e9d6",
+    "captures/pal/9/x13-y1.png": "d82ff1a5779953f02c395e8959f753ff200c987a0678bf5f0ca26ca3eedc9b55",
+    "captures/pal/9/x14-y1.png": "a26c3c7deedd2a547ecd82d620ce85eb171d3cd2f6d35f10123d3e8a3d695683",
+    "captures/pal/9/x15-y1.png": "efb12b1df8bd0873947047395f7c02cf02b3a85073514597fa40cd9cd250b039",
+    "captures/pal/9/x16-y1.png": "2d3049dcf0ef19b4dfc3257f4254df93859c13a9282d031be3704585e547ea1f",
+    "captures/pal/9/x0-y2.png": "35e426802cd554f3f63ed2db46dcebc4b64e60351c1a30c51ef774ddcaaea2d3",
+    "captures/pal/9/x1-y2.png": "13dda011c3d7382cfaea49f7f308d082f70ef621b9309d549ebf37b0688579b6",
+    "captures/pal/9/x2-y2.png": "c2c11ebdfe276d213c5fcbf835ad2f1114ea221988083017a8fed5d35b2a3b27",
+    "captures/pal/9/x3-y2.png": "c9ec7ce6d595c798f276695702093e625a4a445716eef4c872f920bb129a8b6e",
+    "captures/pal/9/x4-y2.png": "e67dcfbed5daeefcab9f88322db4a9549d1c07381bcf122b0d9131a81d41657e",
+    "captures/pal/9/x5-y2.png": "e5f72bc9caa4463a1e27913607f444402a3f877d067d1fd64f84d5eb4e04a671",
+    "captures/pal/9/x6-y2.png": "21272cec9fb79ad30077232fe6a7f7cfd9e2492758b0305a09c8106fa8801646",
+    "captures/pal/9/x7-y2.png": "ed4df0650b419a817c487c4f3d29b7bf39af5f28b1acaa0bb93e7b496d6e597f",
+    "captures/pal/9/x8-y2.png": "5b4f5f1f87851a71e649846d6a53b849769f062ce489a813c256eb49fd536743",
+    "captures/pal/9/x9-y2.png": "aa1a25a1c65503a3eb620d8f900b4991ddc9ceb10077d0eb10186d68f7b813bb",
+    "captures/pal/9/x10-y2.png": "60f364585473506ef03a3611b3a07f89447991eabb3849710658d62163aa3ed1",
+    "captures/pal/9/x11-y2.png": "7d7a19ca48566a3eebb1ef70b445ff4611129be061f50ae2282a362023ca6e63",
+    "captures/pal/9/x12-y2.png": "a21bc9688da62619ed81f1b955e86de03ea11257dbb69de52eae639083cc9644",
+    "captures/pal/9/x13-y2.png": "aa8da2830e3a9fd79fa180953f7cccb666affff199f6723dcb4cddf9fcd86740",
+    "captures/pal/9/x14-y2.png": "ff1fa4e36fa308bcdfd2426ae6b88525dee59259ea74d6c7e0e791699fc9c157",
+    "captures/pal/9/x15-y2.png": "c50feb55ed70fdd6e02f73a9e296a3199e260d8e862b453f667e0c5498a42f4d",
+    "captures/pal/9/x16-y2.png": "a70a62be3341fe9e08c5ae7afad168cde2efd740eece7e3b52709eb952fd6870",
+    "captures/pal/10/x0-y0.png": "8bcb69154bd4a0b4660d12a877e844974dadd10f99dbf2198339a82fba73a5d2",
+    "captures/pal/10/x1-y0.png": "b1e544a7bb55b1e58e427c4b3590f149c4c12fcb86960274f5e6cb09ff1e412f",
+    "captures/pal/10/x2-y0.png": "bbf8459861a302be95ee713c6e053967d938ea4a66543aa1ea75c43d6c4680d8",
+    "captures/pal/10/x0-y1.png": "0fb20a00c998d6a35746606d36cc17c89ea0aa1dccf48c3100ea506e746a064e",
+    "captures/pal/10/x1-y1.png": "877f2df46a55322455922fa972e33d3b0a487e20f4f15b1b2507dbfb78fd2f95",
+    "captures/pal/10/x2-y1.png": "8db25a2319f4d05bd3d3dbfc02b854aad562c678d4de8780d817482fb6fa3cd5",
+    "captures/pal/10/x0-y2.png": "4713c036c14a4f1480809efb149ad19c5e3c082b4a6dd09c41bc60912331b132",
+    "captures/pal/10/x1-y2.png": "fad3321d56a60c0c20d986903cc669709500cb6959c1096c1bce34cbe0b605ab",
+    "captures/pal/10/x2-y2.png": "2fa964e2005a906a8b3159a61c5022b510ad107c239ed868dc9c787c9786e51b",
+    "captures/pal/11/x0-y0.png": "db38daecbcd77a1eab22d471f88bcc65878fb60c74bf302c4925c912c167de9a",
+    "captures/pal/11/x1-y0.png": "5675f309ff025d539c3eee2310e350f3bbbc46fc2134f951ad570a7119847fa5",
+    "captures/pal/11/x2-y0.png": "51520fc774c392f527b072c7ff4368d87de3e452669bc76e90ec16b99c2afe63",
+    "captures/pal/11/x0-y1.png": "50d3ceef4953ce0029224047b96c941c1032e08620ca59277e0b962127fc543e",
+    "captures/pal/11/x1-y1.png": "2a00377b6af166b195ad785de8047044f30c86ea11a1d400e2202614b0e2af08",
+    "captures/pal/11/x2-y1.png": "7bc075233a50bfd1e85bfa244d3534ea083aa57be697734b7f5be28d0663eda8",
+    "captures/pal/11/x0-y2.png": "4e8f6a81b64b2b7d1098f1f7d22f06cd7504001e0a654b06132d5e2238b6a0bc",
+    "captures/pal/11/x1-y2.png": "0d39a134d7c0e76eb49ae5375eb52b4dfbef051d807d1322d7a66a80bc352ad8",
+    "captures/pal/11/x2-y2.png": "14c62f08d228ea115eed812bd3af0d8a897b97ed6931e237cffa57a448453c30"
+  },
+  "resolved_coverage": [
+    {
+      "phase": "9",
+      "issue": "Initial camera gaps left pipes/bin cropped.",
+      "resolution": "New overlapping samples contain whole pipe bundle in x6-y1(camera832,20) and whole bin in x13-y1(camera1952,4).",
+      "evidence": [
+        "captures/ntsc/9/x6-y1.png",
+        "captures/ntsc/9/x13-y1.png",
+        "captures/pal/9/x6-y1.png",
+        "captures/pal/9/x13-y1.png"
+      ]
+    }
+  ],
+  "visual_decision": "9,10,11 acceptable as visual candidates in actual final ROM; no proven assembly defects found. User approval is separate.",
+  "progression_board": "factory/runtime-qa/c622defb/11-progression-ntsc-pal.png"
+}

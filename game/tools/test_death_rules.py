@@ -7,6 +7,7 @@ import tempfile
 from test_player_aim import STUBS as PLAYER_STUBS, ROOT
 
 STUBS = dict(PLAYER_STUBS)
+STUBS['levels/campaign_factory.h'] = '#include <genesis.h>\nstatic inline bool CF_shotHit(s16 x,s16 y){(void)x;(void)y;return FALSE;}\nstatic inline void CF_bomb(void){}\n'
 STUBS.pop('actors/shots.h')
 STUBS['genesis.h'] = STUBS['genesis.h'].replace('#endif', '''
 #include <string.h>
@@ -33,7 +34,7 @@ STUBS['levels/levels.h'] = '''#ifndef LEVELS_H
 #include <genesis.h>
 #include "elements/elements.h"
 typedef struct {const TileRect *lava;u16 lavaCount;u8 shotCap;} LevelDef;
-extern u8 currentLevel;
+extern u8 currentLevel, testStage;
 const LevelDef *LEVEL_current(void);
 #endif
 '''
@@ -47,6 +48,10 @@ STUBS['enemies/enemies.h'] = '''#ifndef ENEMIES_H
 #define ENEMY_HIT_KILLED 2
 typedef struct {u8 dropChance;} EnemyDef;
 extern const EnemyDef *const ENEMY_DEFS[];
+#define MAX_ENEMIES 16
+typedef struct {s16 x,y;bool active;} Enemy;
+extern Enemy enemies[MAX_ENEMIES];
+#define ENEMY_SIZE(e) 16
 u16 ENEMIES_damageBox(s16,s16,u16,u16,u8);
 u16 ENEMIES_chainDamage(s16,s16,u8,u16);
 u16 ENEMIES_killAll(void);

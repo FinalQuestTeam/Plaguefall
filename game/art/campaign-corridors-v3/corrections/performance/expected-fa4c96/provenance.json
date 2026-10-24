@@ -1,0 +1,69 @@
+{
+  "romSHA256": "fa4c96dca4ec6f289671e9647fc6dd783ec1613bee05af9c8be1de32120313ca",
+  "all9BanksCompiledExact": true,
+  "banks": [
+    {
+      "key": "06a",
+      "bank": "tiles",
+      "address": 931236,
+      "size": 17792,
+      "sha256": "9386da2892bce07b01214acf9894963cc1d8c594d7eb9abbebed4c5639b85153"
+    },
+    {
+      "key": "06a",
+      "bank": "map",
+      "address": 949028,
+      "size": 30720,
+      "sha256": "a8bd10e5dd9a6410cb711ecb52de3d6457aa586f45fca742b182320e57810a7c"
+    },
+    {
+      "key": "06a",
+      "bank": "palette",
+      "address": 979748,
+      "size": 32,
+      "sha256": "e49cf98da08679b183eff7bba503fe30c7a9c3f6bef70dca6753f6d36918907e"
+    },
+    {
+      "key": "06b",
+      "bank": "tiles",
+      "address": 979780,
+      "size": 12096,
+      "sha256": "41c0289c7304845e3e0ff8fa5d6297b6ab0f8bdb3ee2aa9809b08f31db8d8120"
+    },
+    {
+      "key": "06b",
+      "bank": "map",
+      "address": 991876,
+      "size": 30720,
+      "sha256": "942f350d4faefb34c70c37eb4ee3360abdf70473346e71f5fbee7d1738e60e13"
+    },
+    {
+      "key": "06b",
+      "bank": "palette",
+      "address": 1022596,
+      "size": 32,
+      "sha256": "e49cf98da08679b183eff7bba503fe30c7a9c3f6bef70dca6753f6d36918907e"
+    },
+    {
+      "key": "12",
+      "bank": "tiles",
+      "address": 1022628,
+      "size": 16480,
+      "sha256": "f3ae35a6c4c353d79c8a10983c45d6da8a3c61ba0a5937497e43a322c6a16731"
+    },
+    {
+      "key": "12",
+      "bank": "map",
+      "address": 1039108,
+      "size": 30720,
+      "sha256": "e4c5c685a79e433a68f30115cf19dc20c974839e5c224c863f03824a76517f9a"
+    },
+    {
+      "key": "12",
+      "bank": "palette",
+      "address": 1069828,
+      "size": 32,
+      "sha256": "b48d03e0467ab40b96e7097337e0c22e22b81ff7a81030d78568ef954add889d"
+    }
+  ]
+}

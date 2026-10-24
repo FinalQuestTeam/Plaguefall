@@ -1,0 +1,1014 @@
+{
+  "phase": "3",
+  "status": "private_trial_only_requires_visual_review_and_real_ROM_tests",
+  "size": [
+    2560,
+    320
+  ],
+  "bounds": [
+    16,
+    80,
+    2543,
+    303
+  ],
+  "start": [
+    32,
+    184
+  ],
+  "solids": [
+    [
+      352,
+      128,
+      16,
+      192,
+      true
+    ],
+    [
+      656,
+      128,
+      16,
+      192,
+      true
+    ],
+    [
+      352,
+      288,
+      320,
+      32,
+      true
+    ],
+    [
+      1648,
+      128,
+      16,
+      192,
+      true
+    ],
+    [
+      1984,
+      128,
+      16,
+      192,
+      true
+    ],
+    [
+      1648,
+      288,
+      352,
+      32,
+      true
+    ],
+    [
+      48,
+      32,
+      200,
+      112,
+      true
+    ],
+    [
+      416,
+      144,
+      192,
+      112,
+      true
+    ],
+    [
+      800,
+      32,
+      160,
+      112,
+      true
+    ],
+    [
+      1248,
+      32,
+      192,
+      112,
+      true
+    ],
+    [
+      1712,
+      144,
+      240,
+      112,
+      true
+    ],
+    [
+      2288,
+      32,
+      240,
+      128,
+      true
+    ],
+    [
+      1312,
+      160,
+      96,
+      56,
+      true
+    ],
+    [
+      2224,
+      176,
+      40,
+      40,
+      true
+    ],
+    [
+      0,
+      0,
+      320,
+      32,
+      true
+    ],
+    [
+      320,
+      0,
+      432,
+      32,
+      true
+    ],
+    [
+      752,
+      0,
+      256,
+      32,
+      true
+    ],
+    [
+      1008,
+      32,
+      192,
+      32,
+      true
+    ],
+    [
+      1200,
+      0,
+      352,
+      32,
+      true
+    ],
+    [
+      1552,
+      0,
+      496,
+      32,
+      true
+    ],
+    [
+      2048,
+      32,
+      128,
+      32,
+      true
+    ],
+    [
+      2176,
+      0,
+      384,
+      32,
+      true
+    ],
+    [
+      352,
+      128,
+      16,
+      32,
+      true
+    ],
+    [
+      608,
+      128,
+      64,
+      32,
+      true
+    ],
+    [
+      1648,
+      128,
+      16,
+      32,
+      true
+    ],
+    [
+      1952,
+      128,
+      48,
+      32,
+      true
+    ]
+  ],
+  "route_points": [
+    [
+      40,
+      192
+    ],
+    [
+      336,
+      192
+    ],
+    [
+      336,
+      104
+    ],
+    [
+      704,
+      104
+    ],
+    [
+      704,
+      208
+    ],
+    [
+      1168,
+      208
+    ],
+    [
+      1168,
+      232
+    ],
+    [
+      1608,
+      232
+    ],
+    [
+      1608,
+      104
+    ],
+    [
+      2080,
+      104
+    ],
+    [
+      2080,
+      208
+    ],
+    [
+      2168,
+      208
+    ],
+    [
+      2168,
+      240
+    ],
+    [
+      2440,
+      240
+    ],
+    [
+      2440,
+      208
+    ]
+  ],
+  "player_waypoints": [
+    [
+      32,
+      184
+    ],
+    [
+      328,
+      184
+    ],
+    [
+      328,
+      96
+    ],
+    [
+      696,
+      96
+    ],
+    [
+      696,
+      200
+    ],
+    [
+      1160,
+      200
+    ],
+    [
+      1160,
+      224
+    ],
+    [
+      1600,
+      224
+    ],
+    [
+      1600,
+      96
+    ],
+    [
+      2072,
+      96
+    ],
+    [
+      2072,
+      200
+    ],
+    [
+      2160,
+      200
+    ],
+    [
+      2160,
+      232
+    ],
+    [
+      2432,
+      232
+    ],
+    [
+      2432,
+      200
+    ]
+  ],
+  "route_margin": 8,
+  "route_validation": {
+    "footprint": [
+      16,
+      16
+    ],
+    "grid_step": 8,
+    "walk_samples": 365,
+    "all_samples_clear_with_margin": true,
+    "movement": "axis-aligned segments; intermediate 8px samples validated"
+  },
+  "exit": [
+    2384,
+    176,
+    112,
+    80
+  ],
+  "camera_player_y": 200,
+  "camera_interest": [
+    {
+      "id": "church-48",
+      "bbox": [
+        48,
+        32,
+        200,
+        112
+      ],
+      "player_feet": [
+        136,
+        176
+      ],
+      "camera": [
+        0,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
+      "position": [
+        136,
+        176
+      ],
+      "name": "church 48"
+    },
+    {
+      "id": "market-416",
+      "bbox": [
+        416,
+        144,
+        192,
+        112
+      ],
+      "player_feet": [
+        496,
+        264
+      ],
+      "camera": [
+        344,
+        96
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
+      "position": [
+        496,
+        264
+      ],
+      "name": "market 416"
+    },
+    {
+      "id": "house-800",
+      "bbox": [
+        800,
+        32,
+        160,
+        112
+      ],
+      "player_feet": [
+        872,
+        176
+      ],
+      "camera": [
+        720,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
+      "position": [
+        872,
+        176
+      ],
+      "name": "house 800"
+    },
+    {
+      "id": "garage-1248",
+      "bbox": [
+        1248,
+        32,
+        192,
+        112
+      ],
+      "player_feet": [
+        1280,
+        160
+      ],
+      "camera": [
+        1128,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
+      "position": [
+        1280,
+        160
+      ],
+      "name": "garage 1248"
+    },
+    {
+      "id": "garage-1712",
+      "bbox": [
+        1712,
+        144,
+        240,
+        112
+      ],
+      "player_feet": [
+        1824,
+        264
+      ],
+      "camera": [
+        1672,
+        96
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
+      "position": [
+        1824,
+        264
+      ],
+      "name": "garage 1712"
+    },
+    {
+      "id": "warehouse-2288",
+      "bbox": [
+        2288,
+        32,
+        240,
+        128
+      ],
+      "player_feet": [
+        2400,
+        176
+      ],
+      "camera": [
+        2240,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
+      "position": [
+        2400,
+        176
+      ],
+      "name": "warehouse 2288"
+    }
+  ],
+  "church_bbox": [
+    48,
+    32,
+    200,
+    112
+  ],
+  "church_original_bbox": [
+    16,
+    0,
+    200,
+    112
+  ],
+  "church_identity": {
+    "intact_source": "../../../campaign-pattern-v2/early/01-courtyard/complete-native.png",
+    "damaged_source": "../../../campaign-pattern-v2/early/01-courtyard/damaged-native.png",
+    "exact_pixels_both_states": true
+  },
+  "sources": [
+    "source/whole-folded-cycle3.png",
+    "source/truck-extracted.png",
+    "../../../campaign-pattern-v2/early/01-courtyard/complete-native.png",
+    "../../../campaign-pattern-v2/early/01-courtyard/damaged-native.png",
+    "../9-guidebook/modules/whole-workshop-rgba.png",
+    "../../../phase01-courtyard-v2/intact-native.png",
+    "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
+    "../../../campaign-pattern-v2/early/01-courtyard/modules/barrels.png",
+    "build.py"
+  ],
+  "complete": "complete-native.png",
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "damaged_native": {
+    "complete": "complete-damaged-native.png",
+    "tiles": "damaged-native/tiles.bin",
+    "map": "damaged-native/map.bin",
+    "palette": "damaged-native/palette.bin"
+  },
+  "memory": {
+    "scene_tiles": 554,
+    "objective_tiles": 0,
+    "total_tiles": 570,
+    "budget": 640,
+    "free_tiles": 86,
+    "graphics_bytes": 17728,
+    "map_bytes": 25600,
+    "palette_bytes": 32,
+    "exact_hv_deduplication": true,
+    "pixel_exact_reassembly": true,
+    "lossy_pattern_replacements": 0,
+    "tile_sha256": "df13348ba21c875f418bb1046bc1845d2ee42357f5fb516e1e3fc96c401a1b6e",
+    "damaged_scene_tiles": 570,
+    "max_state_tiles": 570,
+    "states_resident_simultaneously": false,
+    "background_tiles": 554,
+    "limit": 640
+  },
+  "special_states": [
+    {
+      "state": "church destroyed by bomb in phase1",
+      "path": "complete-damaged-native.png",
+      "memory": {
+        "scene_tiles": 570,
+        "objective_tiles": 0,
+        "total_tiles": 570,
+        "budget": 640,
+        "free_tiles": 70,
+        "graphics_bytes": 18240,
+        "map_bytes": 25600,
+        "palette_bytes": 32,
+        "exact_hv_deduplication": true,
+        "pixel_exact_reassembly": true,
+        "lossy_pattern_replacements": 0,
+        "tile_sha256": "309f892dcc8e41d078b40622d541649b4088d4e4cc2ff48a0adfd680ab8984f2"
+      }
+    }
+  ],
+  "palette": {
+    "index0": "black",
+    "colors": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        36,
+        36,
+        36
+      ],
+      [
+        36,
+        36,
+        72
+      ],
+      [
+        36,
+        72,
+        109
+      ],
+      [
+        72,
+        109,
+        145
+      ],
+      [
+        72,
+        109,
+        72
+      ],
+      [
+        109,
+        109,
+        36
+      ],
+      [
+        109,
+        72,
+        36
+      ],
+      [
+        145,
+        109,
+        72
+      ],
+      [
+        182,
+        145,
+        72
+      ],
+      [
+        218,
+        182,
+        109
+      ],
+      [
+        218,
+        145,
+        72
+      ],
+      [
+        182,
+        72,
+        36
+      ],
+      [
+        109,
+        36,
+        0
+      ],
+      [
+        218,
+        218,
+        182
+      ],
+      [
+        255,
+        255,
+        218
+      ]
+    ],
+    "encoding": "RGB33316entries, big-endian Mega Drive words",
+    "exact_reference": "../../../campaign-pattern-v2/early/01-courtyard/complete-native.png"
+  },
+  "layout": "draft/placements.json",
+  "module_trace": "draft/modules.json",
+  "engineering_notes": [
+    "Curbs are low walkable pavement edges; green garden material is walkable unless bounded by listed walls/buildings.",
+    "All visible buildings, perimeter wall segments, truck and barrel pair have solid footprints. Full projected building bboxes are conservative to keep baked background architecture in front of the player.",
+    "Shared roofs/plaster/frames/slats retain their material; complete doors, canopy ends, garage jambs and church are never approximated by similar tiles.",
+    "RGBA truck/barrels composited in RGB against actual ground before nearest palette conversion, avoiding palette-index alpha interpolation.",
+    "Camera views are composed native previews with existing hero sprite, not emulator screenshots; runtime confirmation belongs to root."
+  ],
+  "critical_review": {
+    "improvements": [
+      "Church is preserved pixel-for-pixel in both states, including its worn material and roof silhouette.",
+      "Roof area72/112 and88/128 now dominates ordinary buildings; separate short fronts retain complete doors/windows.",
+      "Existing1px roof/plaster/floor kit removes the previous large one-color street and flat building planes.",
+      "Existing north/south parcels, openings and paths are retained; no silhouette was shrunk to fit a tile count."
+    ],
+    "reservations": [
+      "The pale wall16x16patch repeats visibly, and orange terracotta roofs are very regular across different building families.",
+      "The shared ochre ground is recognizably the church material but reads as dry earth; asphalt distinction remains limited.",
+      "Warehouse roller and shortened garage openings are cleaner than the worn church; this is still an isolated style candidate.",
+      "Offline previews do not prove camera interpolation, collisions, FPS, combat readability or ROM palette upload."
+    ],
+    "decision": "Suitable for private comparative trial; no publication or final style approval."
+  },
+  "global_connectivity": {
+    "0": {
+      "free_positions": 6183,
+      "connected_to_start": 6183,
+      "unreachable": 0
+    },
+    "8": {
+      "free_positions": 5042,
+      "connected_to_start": 5042,
+      "unreachable": 0
+    }
+  },
+  "southern_parcels": {
+    "closed_to_bottom": [
+      [
+        352,
+        128,
+        320,
+        192
+      ],
+      [
+        1648,
+        128,
+        352,
+        192
+      ]
+    ],
+    "northwest_openings": [
+      [
+        368,
+        128,
+        48,
+        32
+      ],
+      [
+        1664,
+        128,
+        48,
+        32
+      ]
+    ],
+    "walls": [
+      [
+        352,
+        128,
+        16,
+        192
+      ],
+      [
+        656,
+        128,
+        16,
+        192
+      ],
+      [
+        352,
+        288,
+        320,
+        32
+      ],
+      [
+        1648,
+        128,
+        16,
+        192
+      ],
+      [
+        1984,
+        128,
+        16,
+        192
+      ],
+      [
+        1648,
+        288,
+        352,
+        32
+      ]
+    ],
+    "inner_yards_connected": true,
+    "floor_y280_is_not_a_straight_bypass": true
+  },
+  "packaging_validation": {
+    "active_geometry_unchanged": true,
+    "source_paths_resolve": true,
+    "palette_same_as_reference": true,
+    "decoded_pixels_unchanged": true,
+    "geometry": {
+      "footprint": 16,
+      "free_positions": 6183,
+      "reachable_positions": 6183,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 2926
+    }
+  },
+  "proposal_previews": [
+    {
+      "id": "church",
+      "feet": [
+        136,
+        176
+      ],
+      "camera": [
+        0,
+        0
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-church-intact.png",
+      "damaged_preview": "reviews/camera-church-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "market",
+      "feet": [
+        496,
+        264
+      ],
+      "camera": [
+        344,
+        64
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-market-intact.png",
+      "damaged_preview": "reviews/camera-market-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "garage-north",
+      "feet": [
+        1280,
+        160
+      ],
+      "camera": [
+        1128,
+        0
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-garage-north-intact.png",
+      "damaged_preview": "reviews/camera-garage-north-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "garage-south",
+      "feet": [
+        1824,
+        264
+      ],
+      "camera": [
+        1672,
+        64
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-garage-south-intact.png",
+      "damaged_preview": "reviews/camera-garage-south-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "warehouse",
+      "feet": [
+        2400,
+        176
+      ],
+      "camera": [
+        2240,
+        0
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-warehouse-intact.png",
+      "damaged_preview": "reviews/camera-warehouse-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    }
+  ],
+  "width": 2560,
+  "height": 320,
+  "points": [
+    [
+      40,
+      192
+    ],
+    [
+      336,
+      192
+    ],
+    [
+      336,
+      104
+    ],
+    [
+      704,
+      104
+    ],
+    [
+      704,
+      208
+    ],
+    [
+      1168,
+      208
+    ],
+    [
+      1168,
+      232
+    ],
+    [
+      1608,
+      232
+    ],
+    [
+      1608,
+      104
+    ],
+    [
+      2080,
+      104
+    ],
+    [
+      2080,
+      208
+    ],
+    [
+      2168,
+      208
+    ],
+    [
+      2168,
+      240
+    ],
+    [
+      2440,
+      240
+    ],
+    [
+      2440,
+      208
+    ]
+  ],
+  "traversal_points": [
+    [
+      32,
+      184
+    ],
+    [
+      328,
+      184
+    ],
+    [
+      328,
+      96
+    ],
+    [
+      696,
+      96
+    ],
+    [
+      696,
+      200
+    ],
+    [
+      1160,
+      200
+    ],
+    [
+      1160,
+      224
+    ],
+    [
+      1600,
+      224
+    ],
+    [
+      1600,
+      96
+    ],
+    [
+      2072,
+      96
+    ],
+    [
+      2072,
+      200
+    ],
+    [
+      2160,
+      200
+    ],
+    [
+      2160,
+      232
+    ],
+    [
+      2432,
+      232
+    ],
+    [
+      2432,
+      200
+    ]
+  ],
+  "pauses": [],
+  "walkable": [
+    16,
+    80,
+    2528,
+    224
+  ],
+  "tiles": 554,
+  "tileBudget": 640,
+  "nativeTileSHA256": "df13348ba21c875f418bb1046bc1845d2ee42357f5fb516e1e3fc96c401a1b6e",
+  "native_bank": "art/campaign-corridors-v3/corrections/3-guidebook/native",
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 6183,
+    "reachable_positions": 6183,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2926
+  },
+  "geometry": {
+    "swept16pxSamples": 2926
+  },
+  "swept16pxSamples": 2926
+}

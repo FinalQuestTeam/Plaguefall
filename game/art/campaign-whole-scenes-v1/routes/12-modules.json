@@ -1,0 +1,226 @@
+[
+  {
+    "id": "ceiling",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      0,
+      0,
+      96,
+      40
+    ],
+    "native_size": [
+      32,
+      16
+    ],
+    "repeat_axis": "xy",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "wall",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      1264,
+      105,
+      1544,
+      310
+    ],
+    "native_size": [
+      72,
+      56
+    ],
+    "repeat_axis": "x",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "entrance",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      68,
+      55,
+      526,
+      314
+    ],
+    "native_size": [
+      128,
+      72
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "maintenance",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      978,
+      105,
+      1264,
+      314
+    ],
+    "native_size": [
+      96,
+      72
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "arrival",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      1664,
+      34,
+      2144,
+      315
+    ],
+    "native_size": [
+      128,
+      72
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "floor",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      810,
+      330,
+      938,
+      546
+    ],
+    "native_size": [
+      32,
+      48
+    ],
+    "repeat_axis": "xy",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "lower",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      435,
+      575,
+      665,
+      710
+    ],
+    "native_size": [
+      48,
+      32
+    ],
+    "repeat_axis": "x",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "side-left",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      0,
+      342,
+      50,
+      510
+    ],
+    "native_size": [
+      16,
+      48
+    ],
+    "repeat_axis": "y",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "side-right",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      2122,
+      342,
+      2172,
+      510
+    ],
+    "native_size": [
+      16,
+      48
+    ],
+    "repeat_axis": "y",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-upper-left",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      0,
+      140,
+      90,
+      340
+    ],
+    "native_size": [
+      24,
+      64
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-upper-right",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      2100,
+      140,
+      2172,
+      340
+    ],
+    "native_size": [
+      24,
+      64
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-lower-left",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      0,
+      568,
+      78,
+      724
+    ],
+    "native_size": [
+      24,
+      32
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-lower-right",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      2094,
+      568,
+      2172,
+      724
+    ],
+    "native_size": [
+      24,
+      32
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "cargo",
+    "source": "../source/12-whole.png",
+    "source_rect": [
+      1550,
+      238,
+      1670,
+      314
+    ],
+    "native_size": [
+      40,
+      24
+    ],
+    "repeat_axis": "object",
+    "extraction": "complete silhouette"
+  }
+]

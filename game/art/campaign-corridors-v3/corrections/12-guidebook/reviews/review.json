@@ -1,0 +1,133 @@
+{
+  "phase": "12",
+  "status": "isolated_native_proposal_requires_visual_review_NOT_APPROVED",
+  "scope": "Proposal only. Active art/banks/metadata/C/ROM untouched; no emulator run.",
+  "whole_scene": "../complete-native.png",
+  "comparison": "comparison-5-cameras.png",
+  "geometry_unchanged": true,
+  "geometry": {
+    "BFS_reachable_positions": 4904,
+    "all_route_points_reachable": true,
+    "swept_samples": 2833,
+    "actor16_plus8margin_each_side": true,
+    "five_camera_actor_and_escort_feet_free": true
+  },
+  "memory": {
+    "scene_tiles": 508,
+    "objective_tiles": 0,
+    "total_tiles": 508,
+    "budget": 640,
+    "free_tiles": 132,
+    "graphics_bytes": 16256,
+    "map_bytes": 30720,
+    "palette_bytes": 32,
+    "pixel_exact_reassembly": true,
+    "lossy_pattern_replacements": 0
+  },
+  "roof_projection_proxy": {
+    "workshop": {
+      "size": [
+        304,
+        160
+      ],
+      "roof_height": 104,
+      "front_height": 56,
+      "roof_fraction": 0.65
+    },
+    "annex": {
+      "size": [
+        160,
+        128
+      ],
+      "roof_height": 88,
+      "front_height": 40,
+      "roof_fraction": 0.6875
+    },
+    "covered": {
+      "size": [
+        304,
+        144
+      ],
+      "roof_height": 96,
+      "front_height": 48,
+      "roof_fraction": 0.6667
+    },
+    "low-dock": {
+      "size": [
+        240,
+        112
+      ],
+      "roof_height": 72,
+      "front_height": 40,
+      "roof_fraction": 0.6429
+    },
+    "union": {
+      "size": [
+        304,
+        176
+      ],
+      "roof_height": 120,
+      "front_height": 56,
+      "roof_fraction": 0.6818
+    }
+  },
+  "floor_patch": {
+    "bbox_xyxy": [
+      608,
+      208,
+      672,
+      272
+    ],
+    "unique_colors": 3,
+    "modal_fraction": 0.9336,
+    "source": "phase04-tunnels-v1native32x32patch, repeated at1px without added raster noise"
+  },
+  "source_rules": [
+    "Unionhall uses existing whole workshop128x128from phase03-street-v2kit, extracted ridge/plane/eave/endcaps. Other roofs use active12native-clean-1pxcrops [672,56,696,104],[752,56,768,104],[880,56,904,104]. Back-wall pixels y40..56are excluded. No entire building rescale.",
+    "Pale plaster from original native courtyard unobstructed8x8areas; rejected wall-cap crop with diagonal brick stamp.",
+    "Window72x48and emblem64x64kept whole and unscaled. Door40x40whole on large buildings; complete32x32normalization on small ones. Whole bay crop112x64isotropically normalized to70x40.",
+    "Ground1pxnative tunnel grain; rear earth from original courtyard ground, replacing rejected vegetation confetti.",
+    "No new ImageGen bitmap or hand-painted raster was created; composition and palette remapping use existing pixels."
+  ],
+  "industrial_perimeter": "Complete R04native wall crop[80,0,144,80]repeated at0..80with shared factory10supply-header32x8mounted continuously at y40. Entire assembly remains inside unchanged blocked northern area.",
+  "normal_camera_model": "Five offline views reproduce current ARENA target calculation with close escort and existing focus metadata. They are not captured from a ROM; later integration must confirm camera/streaming/frames.",
+  "critical_review": {
+    "improvements": [
+      "Shorter fronts and dominant top planes now65–69%for4families and64%for lowdock, versus frontal active scene.",
+      "Ground carries sparse native1pxgrain; plaster uses restrained irregular light/tan texture instead of flatbrown or a repeated brick-cap motif.",
+      "Caps/eaves/footings are closed and complete; all existing lateral limits/path geometry remain."
+    ],
+    "not_approved_or_hidden": [
+      "The all-terracotta proposal was rejected for losing shipyard identity. Current proposal retains terracotta only on the unionhall; other roofs use the existing fine1pxsteel source with a shared R04/factory10service perimeter.",
+      "The steel source has broad blue plate areas with little internal wear. Ridge/eave/caps are preserved, but its material reading still needs visual judgment; no invented noise was added.",
+      "Six annexes retain the exact repeated160x128footprint of the active layout. Style changed, route/density did not; repetition still needs editorial judgment.",
+      "The union emblem is preserved as an elevated sign crossing the roof/eave above the intact door. Its physical reading should be judged in1x, not accepted from tile metrics.",
+      "Native palette normalized to one16-colorRGB333bank. Some source shades merge; no claim of pixel identity to the original reference palette.",
+      "No C integration or normal-combat performance claim. Tile count is an atlas result only."
+    ]
+  },
+  "active_hash_check_against_last_frozen_review": {
+    "build.py": true,
+    "manifest.json": true,
+    "complete-native.png": true,
+    "native/tiles.bin": true,
+    "native/map.bin": true,
+    "native/palette.bin": true
+  },
+  "active_current_hashes": {
+    "build.py": "df4756f21c40be5758c5283de4e909eed9068f5375ce76d0ef37e36a63c4665b",
+    "manifest.json": "fa7396f73206723e8011cc513dd3276f53f269db24f354d9ff9c1b6e58aa74f3",
+    "complete-native.png": "d5c29d069059e894fcfc47bdaed46ed9f19603c9cc70633ce71a5020a6730b17",
+    "native/tiles.bin": "f3ae35a6c4c353d79c8a10983c45d6da8a3c61ba0a5937497e43a322c6a16731",
+    "native/map.bin": "e4c5c685a79e433a68f30115cf19dc20c974839e5c224c863f03824a76517f9a",
+    "native/palette.bin": "b48d03e0467ab40b96e7097337e0c22e22b81ff7a81030d78568ef954add889d"
+  },
+  "candidate_hashes": {
+    "build.py": "6dc2e3a2a43125ea5a8ada6b717aa7e82d00858c3c8ca242d7012dbee0ef56c9",
+    "manifest.json": "2c0c0247cc86cf52837b54f50e3b63dca400b59d50e459dd9bdf4b1fa7de9619",
+    "complete-native.png": "6ed6c6ec91c4ea89d1fa3f8aa69cbd44373837f5f18bd18e677d6c4730f1bd25",
+    "native/tiles.bin": "35f3f22983a4da92a770e1bf1d9c77d941b81664ffb0bb4e9b90062a50ec7a9c",
+    "native/map.bin": "75a954babc9274db1e409a0bd7d26a1d3f7f6dc70c8f13613345aae01d3c6c42",
+    "native/palette.bin": "bddae35cd846764ada162a5e72a3fecab86e3e7c79487a133941e721a704785e"
+  }
+}

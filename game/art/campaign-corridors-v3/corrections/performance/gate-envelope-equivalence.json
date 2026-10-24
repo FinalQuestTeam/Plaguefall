@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "geometryQueries": 28985880,
+  "damageAndEffectComparisons": 13545600,
+  "allHP0to4": true,
+  "closedCollapsingOpen": true,
+  "cacheInvalidFallback": true,
+  "productionFunctionSHA256": "1209ec9c07fbb18e571532205d0d2eb80f3d460a798337580104b2ba92577aa0",
+  "gates": [
+    [
+      960,
+      112,
+      32,
+      64
+    ],
+    [
+      2080,
+      192,
+      32,
+      64
+    ]
+  ],
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "productionModified": false,
+  "native68000TimingClaim": false,
+  "method": "Extracted current callbacks, exact former callbacks obtained by removing only early-envelope lines. Compare geometry, HP, collapse timers and all sound/visual side effects."
+}

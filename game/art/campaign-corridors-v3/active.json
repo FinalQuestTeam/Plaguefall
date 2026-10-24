@@ -1,0 +1,20 @@
+{
+  "phases": [
+    "3",
+    "6A",
+    "6B",
+    "9",
+    "12"
+  ],
+  "state": "integrated_reviewed_with_limits",
+  "rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "published_rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "scene_folders": {
+    "3": "corrections/3-guidebook",
+    "6A": "corrections/6A-guidebook/revisions/01-crossing-context",
+    "6B": "corrections/6B-guidebook/revisions/01-crossing-context",
+    "9": "corrections/9-guidebook",
+    "12": "corrections/12-guidebook"
+  },
+  "replaces_rejected_rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779"
+}

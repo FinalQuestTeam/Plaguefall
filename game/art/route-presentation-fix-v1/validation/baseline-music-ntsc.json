@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "30834c88f455342d0ce1ff18746ee6ee13372653f76097b66fbdd72c1f8491a9",
+  "checks": {
+    "5-idle": {
+      "gameFPS": 60.0,
+      "musicSteps": 90,
+      "expectedSteps": 90.0,
+      "stepFramesCur": 8,
+      "stepFramesTarget": 8,
+      "realFrames": 720,
+      "meanNoteInterval": 8,
+      "minNoteInterval": 8,
+      "maxNoteInterval": 8
+    },
+    "5-scroll": {
+      "gameFPS": 59.917,
+      "musicSteps": 90,
+      "expectedSteps": 90.0,
+      "stepFramesCur": 8,
+      "stepFramesTarget": 8,
+      "realFrames": 720,
+      "meanNoteInterval": 8.011,
+      "minNoteInterval": 8,
+      "maxNoteInterval": 9
+    },
+    "5-combat": {
+      "gameFPS": 60.0,
+      "musicSteps": 90,
+      "expectedSteps": 90.0,
+      "stepFramesCur": 8,
+      "stepFramesTarget": 8,
+      "realFrames": 720,
+      "meanNoteInterval": 8,
+      "minNoteInterval": 8,
+      "maxNoteInterval": 8
+    },
+    "8-idle": {
+      "gameFPS": 59.667,
+      "musicSteps": 90,
+      "expectedSteps": 90.0,
+      "stepFramesCur": 8,
+      "stepFramesTarget": 8,
+      "realFrames": 720,
+      "meanNoteInterval": 8.045,
+      "minNoteInterval": 8,
+      "maxNoteInterval": 9
+    },
+    "8-scroll": {
+      "gameFPS": 59.667,
+      "musicSteps": 90,
+      "expectedSteps": 90.0,
+      "stepFramesCur": 8,
+      "stepFramesTarget": 8,
+      "realFrames": 720,
+      "meanNoteInterval": 8.045,
+      "minNoteInterval": 8,
+      "maxNoteInterval": 9
+    },
+    "8-combat": {
+      "gameFPS": 54.833,
+      "musicSteps": 82,
+      "expectedSteps": 90.0,
+      "stepFramesCur": 8,
+      "stepFramesTarget": 8,
+      "realFrames": 720,
+      "meanNoteInterval": 8.765,
+      "minNoteInterval": 8,
+      "maxNoteInterval": 10
+    }
+  }
+}

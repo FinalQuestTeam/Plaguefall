@@ -1,0 +1,982 @@
+{
+  "phase": "12",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    16,
+    96,
+    3055,
+    287
+  ],
+  "start": [
+    48,
+    208
+  ],
+  "solids": [
+    [
+      0,
+      0,
+      704,
+      96
+    ],
+    [
+      704,
+      0,
+      640,
+      144
+    ],
+    [
+      1344,
+      0,
+      864,
+      96
+    ],
+    [
+      2208,
+      0,
+      864,
+      112
+    ],
+    [
+      80,
+      32,
+      304,
+      160
+    ],
+    [
+      736,
+      32,
+      160,
+      128
+    ],
+    [
+      1008,
+      200,
+      240,
+      112
+    ],
+    [
+      1488,
+      24,
+      304,
+      144
+    ],
+    [
+      1760,
+      200,
+      240,
+      112
+    ],
+    [
+      2176,
+      32,
+      160,
+      128
+    ],
+    [
+      2304,
+      200,
+      240,
+      112
+    ],
+    [
+      2704,
+      24,
+      304,
+      176
+    ],
+    [
+      224,
+      248,
+      72,
+      24
+    ],
+    [
+      2560,
+      248,
+      72,
+      24
+    ]
+  ],
+  "route_points": [
+    [
+      56,
+      216
+    ],
+    [
+      336,
+      216
+    ],
+    [
+      424,
+      232
+    ],
+    [
+      592,
+      232
+    ],
+    [
+      704,
+      232
+    ],
+    [
+      920,
+      232
+    ],
+    [
+      952,
+      184
+    ],
+    [
+      1264,
+      184
+    ],
+    [
+      1400,
+      184
+    ],
+    [
+      1496,
+      184
+    ],
+    [
+      1784,
+      184
+    ],
+    [
+      2024,
+      184
+    ],
+    [
+      2104,
+      208
+    ],
+    [
+      2168,
+      208
+    ],
+    [
+      2280,
+      184
+    ],
+    [
+      2560,
+      184
+    ],
+    [
+      2600,
+      208
+    ],
+    [
+      2856,
+      216
+    ]
+  ],
+  "point_semantics": "CENTERS; actor foot top-left=center−8",
+  "pauses": [
+    3,
+    7,
+    16
+  ],
+  "exit": [
+    2824,
+    192,
+    64,
+    64
+  ],
+  "camera_player_y": 200,
+  "camera_interest": [
+    {
+      "id": "workshop",
+      "bbox": [
+        80,
+        32,
+        304,
+        160
+      ],
+      "center": [
+        232,
+        112
+      ],
+      "camera": [
+        72,
+        8
+      ],
+      "position": [
+        224,
+        208
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-workshop.png"
+    },
+    {
+      "id": "covered-dock",
+      "bbox": [
+        1488,
+        24,
+        304,
+        144
+      ],
+      "center": [
+        1640,
+        96
+      ],
+      "camera": [
+        1480,
+        0
+      ],
+      "position": [
+        1624,
+        184
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-covered-dock.png"
+    },
+    {
+      "id": "union-arrival",
+      "bbox": [
+        2704,
+        24,
+        304,
+        176
+      ],
+      "center": [
+        2856,
+        112
+      ],
+      "camera": [
+        2696,
+        0
+      ],
+      "position": [
+        2848,
+        208
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-union-arrival.png"
+    },
+    {
+      "id": "south-dock1",
+      "bbox": [
+        1008,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        1128,
+        256
+      ],
+      "camera": [
+        968,
+        88
+      ],
+      "position": [
+        1176,
+        176
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-south-dock1.png"
+    },
+    {
+      "id": "south-dock2",
+      "bbox": [
+        1760,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        1880,
+        256
+      ],
+      "camera": [
+        1720,
+        88
+      ],
+      "position": [
+        1880,
+        176
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-south-dock2.png"
+    },
+    {
+      "id": "south-dock3",
+      "bbox": [
+        2304,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        2424,
+        256
+      ],
+      "camera": [
+        2264,
+        88
+      ],
+      "position": [
+        2416,
+        176
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-south-dock3.png"
+    }
+  ],
+  "sources": [
+    {
+      "path": "source/12-whole-cycle3.png",
+      "sha256": "3f4b2e52309f2121969b4f0acc7ce2e9987a0823f094ae515c5542d3613b103f",
+      "whole_art_strip_crop": [
+        0,
+        160,
+        2172,
+        516
+      ],
+      "native_pre_cut_size": [
+        1360,
+        224
+      ],
+      "native_palette": "RGB333; index0 literal black",
+      "authoring": "Built-in ImageGen full source; prompts and cycles preserved"
+    }
+  ],
+  "memory": {
+    "scene_tiles": 515,
+    "objective_tiles": 0,
+    "total_tiles": 515,
+    "budget": 640,
+    "free_tiles": 125,
+    "graphics_bytes": 16480,
+    "map_bytes": 24576,
+    "palette_bytes": 32,
+    "collision_mask_words": 480,
+    "lossy_pattern_replacements": 0,
+    "pixel_exact_reassembly": true
+  },
+  "modules": [
+    {
+      "id": "terra-left",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        32,
+        0,
+        56,
+        88
+      ],
+      "source_bbox_original": [
+        51,
+        160,
+        89,
+        300
+      ],
+      "size": [
+        24,
+        88
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "terra-run",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        112,
+        0,
+        128,
+        88
+      ],
+      "source_bbox_original": [
+        179,
+        160,
+        204,
+        300
+      ],
+      "size": [
+        16,
+        88
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "terra-right",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        280,
+        0,
+        304,
+        88
+      ],
+      "source_bbox_original": [
+        447,
+        160,
+        486,
+        300
+      ],
+      "size": [
+        24,
+        88
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "steel-left",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        672,
+        40,
+        696,
+        104
+      ],
+      "source_bbox_original": [
+        1073,
+        224,
+        1112,
+        325
+      ],
+      "size": [
+        24,
+        64
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "steel-run",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        752,
+        40,
+        768,
+        104
+      ],
+      "source_bbox_original": [
+        1201,
+        224,
+        1227,
+        325
+      ],
+      "size": [
+        16,
+        64
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "steel-right",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        880,
+        40,
+        904,
+        104
+      ],
+      "source_bbox_original": [
+        1405,
+        224,
+        1444,
+        325
+      ],
+      "size": [
+        24,
+        64
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "brick",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        1080,
+        80,
+        1096,
+        88
+      ],
+      "source_bbox_original": [
+        1725,
+        287,
+        1750,
+        300
+      ],
+      "size": [
+        16,
+        8
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "plinth",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        64,
+        216,
+        96,
+        224
+      ],
+      "source_bbox_original": [
+        102,
+        503,
+        153,
+        516
+      ],
+      "size": [
+        32,
+        8
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "column-cap",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        40,
+        184,
+        56,
+        200
+      ],
+      "source_bbox_original": [
+        64,
+        452,
+        89,
+        478
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "column-run",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        40,
+        200,
+        56,
+        216
+      ],
+      "source_bbox_original": [
+        64,
+        478,
+        89,
+        503
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "column-foot",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        40,
+        216,
+        56,
+        224
+      ],
+      "source_bbox_original": [
+        64,
+        503,
+        89,
+        516
+      ],
+      "size": [
+        16,
+        8
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "wall-run",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        64,
+        200,
+        96,
+        224
+      ],
+      "source_bbox_original": [
+        102,
+        478,
+        153,
+        516
+      ],
+      "size": [
+        32,
+        24
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "foliage-context",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        312,
+        0,
+        376,
+        72
+      ],
+      "source_bbox_original": [
+        498,
+        160,
+        600,
+        274
+      ],
+      "size": [
+        64,
+        72
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "window",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        1088,
+        80,
+        1160,
+        128
+      ],
+      "source_bbox_original": [
+        1738,
+        287,
+        1853,
+        363
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "grid": 1,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "door",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        1184,
+        128,
+        1224,
+        168
+      ],
+      "source_bbox_original": [
+        1891,
+        363,
+        1955,
+        427
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "grid": 1,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "banner",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        1168,
+        64,
+        1232,
+        128
+      ],
+      "source_bbox_original": [
+        1865,
+        262,
+        1968,
+        363
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "grid": 1,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "workshop-opening",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        80,
+        80,
+        192,
+        144
+      ],
+      "source_bbox_original": [
+        128,
+        287,
+        307,
+        389
+      ],
+      "size": [
+        112,
+        64
+      ],
+      "grid": 1,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "vent",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        408,
+        32,
+        440,
+        64
+      ],
+      "source_bbox_original": [
+        652,
+        211,
+        703,
+        262
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "bench",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        104,
+        160,
+        176,
+        184
+      ],
+      "source_bbox_original": [
+        166,
+        414,
+        281,
+        452
+      ],
+      "size": [
+        72,
+        24
+      ],
+      "grid": 1,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "paving-warm",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        188,
+        152,
+        204,
+        168
+      ],
+      "source_bbox_original": [
+        300,
+        402,
+        326,
+        427
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "paving-service",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        188,
+        152,
+        204,
+        168
+      ],
+      "source_bbox_original": [
+        300,
+        402,
+        326,
+        427
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "paving-union",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        188,
+        152,
+        204,
+        168
+      ],
+      "source_bbox_original": [
+        300,
+        402,
+        326,
+        427
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    },
+    {
+      "id": "paving-step",
+      "source": "source/12-whole-cycle3.png",
+      "source_bbox_native_scaled": [
+        1200,
+        168,
+        1208,
+        176
+      ],
+      "source_bbox_original": [
+        1916,
+        427,
+        1929,
+        440
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "grid": 2,
+      "function": "complete end/cap/opening or repeatable material cross-section"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "workshop",
+      "size": [
+        304,
+        160
+      ],
+      "file": "modules/workshop-assembly.png"
+    },
+    {
+      "id": "annex",
+      "size": [
+        160,
+        128
+      ],
+      "file": "modules/annex-assembly.png"
+    },
+    {
+      "id": "covered",
+      "size": [
+        304,
+        144
+      ],
+      "file": "modules/covered-assembly.png"
+    },
+    {
+      "id": "low-dock",
+      "size": [
+        240,
+        112
+      ],
+      "file": "modules/low-dock-assembly.png"
+    },
+    {
+      "id": "union",
+      "size": [
+        304,
+        176
+      ],
+      "file": "modules/union-assembly.png"
+    }
+  ],
+  "placements": [
+    [
+      "workshop",
+      80,
+      32
+    ],
+    [
+      "annex",
+      736,
+      32
+    ],
+    [
+      "low-dock",
+      1008,
+      200
+    ],
+    [
+      "covered",
+      1488,
+      24
+    ],
+    [
+      "low-dock",
+      1760,
+      200
+    ],
+    [
+      "annex",
+      2176,
+      32
+    ],
+    [
+      "low-dock",
+      2304,
+      200
+    ],
+    [
+      "union",
+      2704,
+      24
+    ]
+  ],
+  "source_geometry": {
+    "blockout": "blockout.json",
+    "principle": "Full source first. Closed roof ends plus authored repeatable roof/wall cross-sections and complete sharp openings form whole closed buildings; no approximate tile substitution. North enclosure steps96→144→96→112 and south volumes project to200, creating distinct courts/crossings.",
+    "first_native": "reviews/cycle1/rejected-native.png",
+    "first_native_verdict": "Rejected by author and parent:4px mosaic, floating masses, broad empty field."
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "point_margin": 8,
+    "BFS_step": 8,
+    "connected_positions": 5492,
+    "all_points_reachable": true,
+    "swept16pxSamples": 2833,
+    "all_segments_collision_free": true,
+    "exit_reachable": true,
+    "open_depth": 192,
+    "service_neck_width": 32
+  },
+  "complete": "complete-native.png",
+  "layout": "layout.png",
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "status": "final_native_material_fix_pending_parent_visual_review"
+}

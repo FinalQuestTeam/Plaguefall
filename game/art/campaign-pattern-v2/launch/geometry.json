@@ -1,0 +1,112 @@
+{
+  "normal_tiles": 482,
+  "fire_tiles": 482,
+  "normal_plus_objectives": 633,
+  "fire_plus_objectives": 633,
+  "tile_limit": 640,
+  "world": [
+    512,
+    384
+  ],
+  "bounds": [
+    40,
+    128,
+    471,
+    319
+  ],
+  "start": [
+    48,
+    200
+  ],
+  "solids": [
+    [
+      200,
+      152,
+      112,
+      64
+    ],
+    [
+      248,
+      136,
+      16,
+      16
+    ],
+    [
+      216,
+      256,
+      80,
+      48
+    ],
+    [
+      56,
+      128,
+      24,
+      16
+    ],
+    [
+      440,
+      128,
+      24,
+      16
+    ],
+    [
+      392,
+      200,
+      24,
+      16
+    ],
+    [
+      408,
+      288,
+      24,
+      16
+    ],
+    [
+      88,
+      288,
+      24,
+      16
+    ]
+  ],
+  "machines": [
+    [
+      64,
+      136
+    ],
+    [
+      448,
+      136
+    ],
+    [
+      400,
+      208
+    ],
+    [
+      416,
+      296
+    ],
+    [
+      96,
+      296
+    ]
+  ],
+  "radio": [
+    256,
+    192
+  ],
+  "protected_station_footprint": [
+    200,
+    152,
+    112,
+    64
+  ],
+  "persistent_generators_in": [
+    "14",
+    "15",
+    "16"
+  ],
+  "states_share_identical_pixels_outside_engines": true,
+  "whole_sources_first": true,
+  "pixel_exact_reassembly": true,
+  "lossy_tile_replacements": 0
+}

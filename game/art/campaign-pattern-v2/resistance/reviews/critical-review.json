@@ -1,0 +1,312 @@
+{
+  "scope": "Cada variação reavaliada; a autoria não substitui inspeção visual.",
+  "cycles": {
+    "favela": [
+      "Ciclo1 rejeitado: telhados cortados pela própria fonte.",
+      "Ciclo2 rejeitado: ápice central ainda cortado.",
+      "Ciclo3 fonte completa com margens; recortes estruturais completos confirmados em proof e montagem com objetivos."
+    ],
+    "union": [
+      "Cena inteira nova com guichê apoiado e bancos completos.",
+      "Montagem inicial rejeitada por vazio cinza no topo.",
+      "Montagem final recompõe viga inteira, sobrepõe busto e restaura tampo; memorial na mesma estrutura."
+    ],
+    "launch": [
+      "Cena inteira normal + edição inteira da ignição pareada.",
+      "Montagem remove gabinetes pintados, extrai conduítes e recoloca objetivos globais reais.",
+      "Montagem final de todas as variantes/estados conserva cinco máquinas, console sólido e soleiras completas."
+    ]
+  },
+  "source_creation": "ImageGen built-in; no SVG/code-generated replacement art",
+  "source_prompts": "art/campaign-pattern-v2/prompts.json",
+  "reviews": [
+    {
+      "phase": "7",
+      "reviewed_whole_before_judgment": "art/campaign-pattern-v2/resistance/complete/7-complete.png",
+      "reviewed_camera_previews": [
+        "art/campaign-pattern-v2/resistance/camera-previews/7-0.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/7-1.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/7-2.png"
+      ],
+      "result": "Composição nativa completa aceita como candidata à integração; não é aprovação de playtest.",
+      "observations": [
+        "Cinco maletas e um depósito encostado na cobertura; bases físicas dinâmicas saem após coleta. Barricadas completas com duas pontas e sombra. Casas têm beiral/postes/degraus preservados.",
+        "As quatro casas de4px têm menos detalhe que o refúgio central de2px; simplificação deliberada para caber na reserva compartilhada."
+      ],
+      "geometry_checks": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 1395,
+        "checks": [
+          {
+            "name": "cargo-1-front",
+            "reachable_samples": 23,
+            "example_feet": [
+              200,
+              184
+            ]
+          },
+          {
+            "name": "cargo-1-pickup",
+            "reachable_samples": 21,
+            "example_feet": [
+              232,
+              192
+            ]
+          },
+          {
+            "name": "cargo-2-front",
+            "reachable_samples": 23,
+            "example_feet": [
+              360,
+              184
+            ]
+          },
+          {
+            "name": "cargo-2-pickup",
+            "reachable_samples": 21,
+            "example_feet": [
+              392,
+              192
+            ]
+          },
+          {
+            "name": "cargo-3-front",
+            "reachable_samples": 23,
+            "example_feet": [
+              520,
+              184
+            ]
+          },
+          {
+            "name": "cargo-3-pickup",
+            "reachable_samples": 21,
+            "example_feet": [
+              552,
+              192
+            ]
+          },
+          {
+            "name": "cargo-4-front",
+            "reachable_samples": 16,
+            "example_feet": [
+              184,
+              304
+            ]
+          },
+          {
+            "name": "cargo-4-pickup",
+            "reachable_samples": 16,
+            "example_feet": [
+              216,
+              312
+            ]
+          },
+          {
+            "name": "cargo-5-front",
+            "reachable_samples": 9,
+            "example_feet": [
+              592,
+              312
+            ]
+          },
+          {
+            "name": "cargo-5-pickup",
+            "reachable_samples": 11,
+            "example_feet": [
+              624,
+              320
+            ]
+          },
+          {
+            "name": "depot-delivery",
+            "reachable_samples": 10,
+            "example_feet": [
+              80,
+              312
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "memory": {
+        "scene_tiles": 492,
+        "reserved_objective_tiles": 74,
+        "total_reserved_tiles": 566,
+        "limit": 640,
+        "margin_tiles": 74,
+        "tile_bytes": 15744,
+        "map_bytes": 9216,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "unresolved_visual_blockers": [],
+      "required_runtime_proof": [
+        "Câmera real com movimento e HUD",
+        "Contato e limites por controle",
+        "Pixels nativos/objetivos exatos após rolagem"
+      ],
+      "no_inherited_approval": true
+    },
+    {
+      "phase": "8",
+      "reviewed_whole_before_judgment": "art/campaign-pattern-v2/resistance/complete/8-complete.png",
+      "reviewed_camera_previews": [
+        "art/campaign-pattern-v2/resistance/camera-previews/8-0.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/8-1.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/8-2.png"
+      ],
+      "result": "Composição nativa completa aceita como candidata à integração; não é aprovação de playtest.",
+      "observations": [
+        "Mesmo pátio e circulação da7; três emissores nascem em posições diferentes, sobre o piso. Corpos continuam entidades de combate; nenhum sólido fixo permanece após morte.",
+        "Amostra estática documenta apenas posições iniciais; inimigos móveis e projéteis exigem a captura integrada."
+      ],
+      "geometry_checks": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 1445,
+        "checks": [
+          {
+            "name": "transmitter-1",
+            "reachable_samples": 113,
+            "example_feet": [
+              152,
+              160
+            ]
+          },
+          {
+            "name": "transmitter-2",
+            "reachable_samples": 101,
+            "example_feet": [
+              368,
+              256
+            ]
+          },
+          {
+            "name": "transmitter-3",
+            "reachable_samples": 169,
+            "example_feet": [
+              616,
+              184
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "memory": {
+        "scene_tiles": 492,
+        "reserved_objective_tiles": 96,
+        "total_reserved_tiles": 588,
+        "limit": 640,
+        "margin_tiles": 52,
+        "tile_bytes": 15744,
+        "map_bytes": 9216,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "unresolved_visual_blockers": [],
+      "required_runtime_proof": [
+        "Câmera real com movimento e HUD",
+        "Contato e limites por controle",
+        "Pixels nativos/objetivos exatos após rolagem"
+      ],
+      "no_inherited_approval": true
+    },
+    {
+      "phase": "13A",
+      "reviewed_whole_before_judgment": "art/campaign-pattern-v2/resistance/complete/13A-complete.png",
+      "reviewed_camera_previews": [
+        "art/campaign-pattern-v2/resistance/camera-previews/13A-0.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/13A-1.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/13A-2.png"
+      ],
+      "result": "Composição nativa completa aceita como candidata à integração; não é aprovação de playtest.",
+      "observations": [
+        "Guichê completo apoiado na parede, sem o vazio antigo no teto. Dinorah fica atrás do balcão: recomposição do tampo cobre cintura/pernas. Três bancos completos com pés e sombra.",
+        "Teto/parede superior sairão do viewport em câmera baixa; o mapa nativo completo prova que não são recortes de asset."
+      ],
+      "geometry_checks": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 786,
+        "checks": [],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "memory": {
+        "scene_tiles": 620,
+        "reserved_objective_tiles": 0,
+        "total_reserved_tiles": 620,
+        "limit": 640,
+        "margin_tiles": 20,
+        "tile_bytes": 19840,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "unresolved_visual_blockers": [],
+      "required_runtime_proof": [
+        "Câmera real com movimento e HUD",
+        "Contato e limites por controle",
+        "Pixels nativos/objetivos exatos após rolagem"
+      ],
+      "no_inherited_approval": true
+    },
+    {
+      "phase": "13B",
+      "reviewed_whole_before_judgment": "art/campaign-pattern-v2/resistance/complete/13B-complete.png",
+      "reviewed_camera_previews": [
+        "art/campaign-pattern-v2/resistance/camera-previews/13B-0.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/13B-1.png",
+        "art/campaign-pattern-v2/resistance/camera-previews/13B-2.png"
+      ],
+      "result": "Composição nativa completa aceita como candidata à integração; não é aprovação de playtest.",
+      "observations": [
+        "Memorial dentro do mesmo guichê: retrato, moldura, faixa de luto e velas. Mesmos bancos, limites e início diante do guichê.",
+        "O retrato é arquitetura narrativa estática; não se atribui animação ou interação inexistente."
+      ],
+      "geometry_checks": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 786,
+        "checks": [],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "memory": {
+        "scene_tiles": 620,
+        "reserved_objective_tiles": 0,
+        "total_reserved_tiles": 620,
+        "limit": 640,
+        "margin_tiles": 20,
+        "tile_bytes": 19840,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "unresolved_visual_blockers": [],
+      "required_runtime_proof": [
+        "Câmera real com movimento e HUD",
+        "Contato e limites por controle",
+        "Pixels nativos/objetivos exatos após rolagem"
+      ],
+      "no_inherited_approval": true
+    }
+  ],
+  "integration_status": "Integrated c622 ROM: bothNTSC/PAL central suites pass, whole-map and allreal-camera visual reviews recorded in runtime-review.json.",
+  "runtime_review": "runtime-review.json"
+}

@@ -1,0 +1,891 @@
+   3ca92:	4e56 ffe8      	linkw %fp,#-24
+   3ca96:	48e7 3f3c      	moveml %d2-%d7/%a2-%a5,%sp@-
+   3ca9a:	3039 e0ff 1ac2 	movew e0ff1ac2 <fps>,%d0
+   3caa0:	7400           	moveq #0,%d2
+   3caa2:	3439 e0ff 1290 	movew e0ff1290 <shieldTimer.lto_priv.0>,%d2
+   3caa8:	7200           	moveq #0,%d1
+   3caaa:	3200           	movew %d0,%d1
+   3caac:	2242           	moveal %d2,%a1
+   3caae:	41f1 18ff      	lea %a1@(ffffffffffffffff,%d1:l),%a0
+   3cab2:	2208           	movel %a0,%d1
+   3cab4:	82c0           	divuw %d0,%d1
+   3cab6:	2d41 fff2      	movel %d1,%fp@(-14)
+   3caba:	1d79 e0ff 0e9a 	moveb e0ff0e9a <modeCharges.lto_priv.0>,%fp@(-9)
+   3cac0:	fff7 
+   3cac2:	1439 e0ff 0e9b 	moveb e0ff0e9b <shotMode.lto_priv.0>,%d2
+   3cac8:	56c1           	sne %d1
+   3caca:	4401           	negb %d1
+   3cacc:	4a2e fff7      	tstb %fp@(-9)
+   3cad0:	56c0           	sne %d0
+   3cad2:	4400           	negb %d0
+   3cad4:	c200           	andb %d0,%d1
+   3cad6:	1d41 fffc      	moveb %d1,%fp@(-4)
+   3cada:	1639 e0ff 07da 	moveb e0ff07da <sel.lto_priv.0>,%d3
+   3cae0:	3239 e0ff 1e92 	movew e0ff1e92 <bombs.lto_priv.0>,%d1
+   3cae6:	1801           	moveb %d1,%d4
+   3cae8:	4240           	clrw %d0
+   3caea:	1003           	moveb %d3,%d0
+   3caec:	c0fc 0083      	muluw #131,%d0
+   3caf0:	0241 00ff      	andiw #255,%d1
+   3caf4:	d081           	addl %d1,%d0
+   3caf6:	0680 0000 0100 	addil #256,%d0
+   3cafc:	c0fc 0083      	muluw #131,%d0
+   3cb00:	7200           	moveq #0,%d1
+   3cb02:	1239 e0ff 0e94 	moveb e0ff0e94 <item.lto_priv.0>,%d1
+   3cb08:	e189           	lsll #8,%d1
+   3cb0a:	7a00           	moveq #0,%d5
+   3cb0c:	1a39 e0ff 0e95 	moveb e0ff0e95 <item.lto_priv.0+0x1>,%d5
+   3cb12:	d285           	addl %d5,%d1
+   3cb14:	d081           	addl %d1,%d0
+   3cb16:	2200           	movel %d0,%d1
+   3cb18:	ed89           	lsll #6,%d1
+   3cb1a:	d280           	addl %d0,%d1
+   3cb1c:	d281           	addl %d1,%d1
+   3cb1e:	d081           	addl %d1,%d0
+   3cb20:	7200           	moveq #0,%d1
+   3cb22:	1239 e0ff 0e96 	moveb e0ff0e96 <item.lto_priv.0+0x2>,%d1
+   3cb28:	e189           	lsll #8,%d1
+   3cb2a:	1a39 e0ff 0e97 	moveb e0ff0e97 <item.lto_priv.0+0x3>,%d5
+   3cb30:	d285           	addl %d5,%d1
+   3cb32:	d081           	addl %d1,%d0
+   3cb34:	2200           	movel %d0,%d1
+   3cb36:	ed89           	lsll #6,%d1
+   3cb38:	d280           	addl %d0,%d1
+   3cb3a:	d281           	addl %d1,%d1
+   3cb3c:	d280           	addl %d0,%d1
+   3cb3e:	7000           	moveq #0,%d0
+   3cb40:	1039 e0ff 0e98 	moveb e0ff0e98 <item.lto_priv.0+0x4>,%d0
+   3cb46:	e188           	lsll #8,%d0
+   3cb48:	1a39 e0ff 0e99 	moveb e0ff0e99 <item.lto_priv.0+0x5>,%d5
+   3cb4e:	d085           	addl %d5,%d0
+   3cb50:	d081           	addl %d1,%d0
+   3cb52:	2200           	movel %d0,%d1
+   3cb54:	ed89           	lsll #6,%d1
+   3cb56:	d280           	addl %d0,%d1
+   3cb58:	d281           	addl %d1,%d1
+   3cb5a:	d081           	addl %d1,%d0
+   3cb5c:	7200           	moveq #0,%d1
+   3cb5e:	1202           	moveb %d2,%d1
+   3cb60:	2041           	moveal %d1,%a0
+   3cb62:	d1c8           	addal %a0,%a0
+   3cb64:	122e fffc      	moveb %fp@(-4),%d1
+   3cb68:	d288           	addl %a0,%d1
+   3cb6a:	d281           	addl %d1,%d1
+   3cb6c:	d081           	addl %d1,%d0
+   3cb6e:	2d40 fff8      	movel %d0,%fp@(-8)
+   3cb72:	4a6e fff4      	tstw %fp@(-12)
+   3cb76:	6700 0770      	beqw 3d2e8 <HUD_drawInventory+0x856>
+   3cb7a:	52ae fff8      	addql #1,%fp@(-8)
+   3cb7e:	206e fff8      	moveal %fp@(-8),%a0
+   3cb82:	b1f9 e0ff 3a48 	cmpal e0ff3a48 <s_invStructureSig>,%a0
+   3cb88:	6700 0860      	beqw 3d3ea <HUD_drawInventory+0x958>
+   3cb8c:	263c e0ff 3c68 	movel #-520143768,%d3
+   3cb92:	283c 000e 0688 	movel #919176,%d4
+   3cb98:	2a3c e0ff 3a1e 	movel #-520144354,%d5
+   3cb9e:	243c e0ff 33be 	movel #-520145986,%d2
+   3cba4:	45f9 0000 0536 	lea 536 <memcpy>,%a2
+   3cbaa:	4878 0220      	pea 220 <_Entry_Point+0x20>
+   3cbae:	2f03           	movel %d3,%sp@-
+   3cbb0:	2f02           	movel %d2,%sp@-
+   3cbb2:	4e92           	jsr %a2@
+   3cbb4:	4878 0220      	pea 220 <_Entry_Point+0x20>
+   3cbb8:	2f04           	movel %d4,%sp@-
+   3cbba:	2f03           	movel %d3,%sp@-
+   3cbbc:	4e92           	jsr %a2@
+   3cbbe:	0682 0000 0220 	addil #544,%d2
+   3cbc4:	0683 0000 0500 	addil #1280,%d3
+   3cbca:	0684 0000 0500 	addil #1280,%d4
+   3cbd0:	4fef 0018      	lea %sp@(24),%sp
+   3cbd4:	b485           	cmpl %d5,%d2
+   3cbd6:	66d2           	bnes 3cbaa <HUD_drawInventory+0x118>
+   3cbd8:	1d79 e0ff 1e93 	moveb e0ff1e93 <bombs.lto_priv.0+0x1>,%fp@(-3)
+   3cbde:	fffd 
+   3cbe0:	2d7c e0ff 0e92 	movel #-520155502,%fp@(-18)
+   3cbe6:	ffee 
+   3cbe8:	7000           	moveq #0,%d0
+   3cbea:	4640           	notw %d0
+   3cbec:	97cb           	subal %a3,%a3
+   3cbee:	3d7c 006c ffec 	movew #108,%fp@(-20)
+   3cbf4:	1d79 e0ff 07da 	moveb e0ff07da <sel.lto_priv.0>,%fp@(-10)
+   3cbfa:	fff6 
+   3cbfc:	340b           	movew %a3,%d2
+   3cbfe:	b42e fff6      	cmpb %fp@(-10),%d2
+   3cc02:	6700 0246      	beqw 3ce4a <HUD_drawInventory+0x3b8>
+   3cc06:	2e3c aaaa aaaa 	movel #-1431655766,%d7
+   3cc0c:	322e ffec      	movew %fp@(-20),%d1
+   3cc10:	e649           	lsrw #3,%d1
+   3cc12:	3a41           	moveaw %d1,%a5
+   3cc14:	3a2e ffec      	movew %fp@(-20),%d5
+   3cc18:	0285 0000 0007 	andil #7,%d5
+   3cc1e:	72ff           	moveq #-1,%d1
+   3cc20:	7c03           	moveq #3,%d6
+   3cc22:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3cc28:	2845           	moveal %d5,%a4
+   3cc2a:	d9c5           	addal %d5,%a4
+   3cc2c:	d9cc           	addal %a4,%a4
+   3cc2e:	3406           	movew %d6,%d2
+   3cc30:	e64a           	lsrw #3,%d2
+   3cc32:	c5fc 0028      	mulsw #40,%d2
+   3cc36:	d48d           	addl %a5,%d2
+   3cc38:	e78a           	lsll #3,%d2
+   3cc3a:	2042           	moveal %d2,%a0
+   3cc3c:	3406           	movew %d6,%d2
+   3cc3e:	0242 0007      	andiw #7,%d2
+   3cc42:	d1c2           	addal %d2,%a0
+   3cc44:	7400           	moveq #0,%d2
+   3cc46:	3408           	movew %a0,%d2
+   3cc48:	2042           	moveal %d2,%a0
+   3cc4a:	d1c8           	addal %a0,%a0
+   3cc4c:	d1c8           	addal %a0,%a0
+   3cc4e:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3cc54:	2410           	movel %a0@,%d2
+   3cc56:	c081           	andl %d1,%d0
+   3cc58:	2207           	movel %d7,%d1
+   3cc5a:	b581           	eorl %d2,%d1
+   3cc5c:	c081           	andl %d1,%d0
+   3cc5e:	b580           	eorl %d2,%d0
+   3cc60:	2080           	movel %d0,%a0@
+   3cc62:	3405           	movew %d5,%d2
+   3cc64:	0642 0010      	addiw #16,%d2
+   3cc68:	41e8 0020      	lea %a0@(32),%a0
+   3cc6c:	7000           	moveq #0,%d0
+   3cc6e:	3002           	movew %d2,%d0
+   3cc70:	7208           	moveq #8,%d1
+   3cc72:	b280           	cmpl %d0,%d1
+   3cc74:	6c02           	bges 3cc78 <HUD_drawInventory+0x1e6>
+   3cc76:	7008           	moveq #8,%d0
+   3cc78:	2610           	movel %a0@,%d3
+   3cc7a:	2803           	movel %d3,%d4
+   3cc7c:	bf84           	eorl %d7,%d4
+   3cc7e:	2200           	movel %d0,%d1
+   3cc80:	d280           	addl %d0,%d1
+   3cc82:	d281           	addl %d1,%d1
+   3cc84:	c8b1 1800      	andl %a1@(0,%d1:l),%d4
+   3cc88:	b784           	eorl %d3,%d4
+   3cc8a:	2084           	movel %d4,%a0@
+   3cc8c:	9440           	subw %d0,%d2
+   3cc8e:	66d8           	bnes 3cc68 <HUD_drawInventory+0x1d6>
+   3cc90:	5246           	addqw #1,%d6
+   3cc92:	0c46 0015      	cmpiw #21,%d6
+   3cc96:	6748           	beqs 3cce0 <HUD_drawInventory+0x24e>
+   3cc98:	243c 000e 0108 	movel #917768,%d2
+   3cc9e:	2034 2800      	movel %a4@(0,%d2:l),%d0
+   3cca2:	72ff           	moveq #-1,%d1
+   3cca4:	3406           	movew %d6,%d2
+   3cca6:	e64a           	lsrw #3,%d2
+   3cca8:	c5fc 0028      	mulsw #40,%d2
+   3ccac:	d48d           	addl %a5,%d2
+   3ccae:	e78a           	lsll #3,%d2
+   3ccb0:	2042           	moveal %d2,%a0
+   3ccb2:	3406           	movew %d6,%d2
+   3ccb4:	0242 0007      	andiw #7,%d2
+   3ccb8:	d1c2           	addal %d2,%a0
+   3ccba:	7400           	moveq #0,%d2
+   3ccbc:	3408           	movew %a0,%d2
+   3ccbe:	2042           	moveal %d2,%a0
+   3ccc0:	d1c8           	addal %a0,%a0
+   3ccc2:	d1c8           	addal %a0,%a0
+   3ccc4:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3ccca:	2410           	movel %a0@,%d2
+   3cccc:	c081           	andl %d1,%d0
+   3ccce:	2207           	movel %d7,%d1
+   3ccd0:	b581           	eorl %d2,%d1
+   3ccd2:	c081           	andl %d1,%d0
+   3ccd4:	b580           	eorl %d2,%d0
+   3ccd6:	2080           	movel %d0,%a0@
+   3ccd8:	3405           	movew %d5,%d2
+   3ccda:	0642 0010      	addiw #16,%d2
+   3ccde:	6088           	bras 3cc68 <HUD_drawInventory+0x1d6>
+   3cce0:	3a2e ffec      	movew %fp@(-20),%d5
+   3cce4:	5245           	addqw #1,%d5
+   3cce6:	3005           	movew %d5,%d0
+   3cce8:	e648           	lsrw #3,%d0
+   3ccea:	3a40           	moveaw %d0,%a5
+   3ccec:	7007           	moveq #7,%d0
+   3ccee:	c085           	andl %d5,%d0
+   3ccf0:	d080           	addl %d0,%d0
+   3ccf2:	d080           	addl %d0,%d0
+   3ccf4:	41f9 000e 0108 	lea e0108 <leftMask.1>,%a0
+   3ccfa:	2870 0800      	moveal %a0@(0,%d0:l),%a4
+   3ccfe:	7e04           	moveq #4,%d7
+   3cd00:	45f9 000e 00e4 	lea e00e4 <rightMask.0>,%a2
+   3cd06:	3007           	movew %d7,%d0
+   3cd08:	e648           	lsrw #3,%d0
+   3cd0a:	c1fc 0028      	mulsw #40,%d0
+   3cd0e:	d08d           	addl %a5,%d0
+   3cd10:	e788           	lsll #3,%d0
+   3cd12:	2040           	moveal %d0,%a0
+   3cd14:	3007           	movew %d7,%d0
+   3cd16:	0240 0007      	andiw #7,%d0
+   3cd1a:	d1c0           	addal %d0,%a0
+   3cd1c:	7200           	moveq #0,%d1
+   3cd1e:	3208           	movew %a0,%d1
+   3cd20:	2041           	moveal %d1,%a0
+   3cd22:	d1c8           	addal %a0,%a0
+   3cd24:	d1c8           	addal %a0,%a0
+   3cd26:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3cd2c:	220c           	movel %a4,%d1
+   3cd2e:	3005           	movew %d5,%d0
+   3cd30:	0240 0007      	andiw #7,%d0
+   3cd34:	7416           	moveq #22,%d2
+   3cd36:	0280 0000 ffff 	andil #65535,%d0
+   3cd3c:	7600           	moveq #0,%d3
+   3cd3e:	3602           	movew %d2,%d3
+   3cd40:	327c 0008      	moveaw #8,%a1
+   3cd44:	93c0           	subal %d0,%a1
+   3cd46:	b689           	cmpl %a1,%d3
+   3cd48:	6c02           	bges 3cd4c <HUD_drawInventory+0x2ba>
+   3cd4a:	2243           	moveal %d3,%a1
+   3cd4c:	2610           	movel %a0@,%d3
+   3cd4e:	d089           	addl %a1,%d0
+   3cd50:	d080           	addl %d0,%d0
+   3cd52:	d080           	addl %d0,%d0
+   3cd54:	2803           	movel %d3,%d4
+   3cd56:	0a84 bbbb bbbb 	eoril #-1145324613,%d4
+   3cd5c:	c284           	andl %d4,%d1
+   3cd5e:	c2b2 0800      	andl %a2@(0,%d0:l),%d1
+   3cd62:	b781           	eorl %d3,%d1
+   3cd64:	2081           	movel %d1,%a0@
+   3cd66:	9449           	subw %a1,%d2
+   3cd68:	41e8 0020      	lea %a0@(32),%a0
+   3cd6c:	72ff           	moveq #-1,%d1
+   3cd6e:	4a42           	tstw %d2
+   3cd70:	6704           	beqs 3cd76 <HUD_drawInventory+0x2e4>
+   3cd72:	4240           	clrw %d0
+   3cd74:	60c0           	bras 3cd36 <HUD_drawInventory+0x2a4>
+   3cd76:	5247           	addqw #1,%d7
+   3cd78:	0c47 0014      	cmpiw #20,%d7
+   3cd7c:	6688           	bnes 3cd06 <HUD_drawInventory+0x274>
+   3cd7e:	340b           	movew %a3,%d2
+   3cd80:	b42e fff6      	cmpb %fp@(-10),%d2
+   3cd84:	6700 00f0      	beqw 3ce76 <HUD_drawInventory+0x3e4>
+   3cd88:	300b           	movew %a3,%d0
+   3cd8a:	4a00           	tstb %d0
+   3cd8c:	6700 0172      	beqw 3cf00 <HUD_drawInventory+0x46e>
+   3cd90:	206e ffee      	moveal %fp@(-18),%a0
+   3cd94:	1010           	moveb %a0@,%d0
+   3cd96:	0c00 ffff      	cmpib #-1,%d0
+   3cd9a:	6700 0528      	beqw 3d2c4 <HUD_drawInventory+0x832>
+   3cd9e:	1228 0001      	moveb %a0@(1),%d1
+   3cda2:	0c01 0009      	cmpib #9,%d1
+   3cda6:	6302           	blss 3cdaa <HUD_drawInventory+0x318>
+   3cda8:	7209           	moveq #9,%d1
+   3cdaa:	0601 0030      	addib #48,%d1
+   3cdae:	1d41 fffe      	moveb %d1,%fp@(-2)
+   3cdb2:	422e ffff      	clrb %fp@(-1)
+   3cdb6:	322e ffec      	movew %fp@(-20),%d1
+   3cdba:	5641           	addqw #3,%d1
+   3cdbc:	5900           	subqb #4,%d0
+   3cdbe:	0c00 0003      	cmpib #3,%d0
+   3cdc2:	6200 06da      	bhiw 3d49e <HUD_drawInventory+0xa0c>
+   3cdc6:	0280 0000 00ff 	andil #255,%d0
+   3cdcc:	d080           	addl %d0,%d0
+   3cdce:	41f9 000d fd7c 	lea dfd7c <CSWTCH.95>,%a0
+   3cdd4:	3030 0800      	movew %a0@(0,%d0:l),%d0
+   3cdd8:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3cddc:	3f01           	movew %d1,%sp@-
+   3cdde:	4267           	clrw %sp@-
+   3cde0:	3f00           	movew %d0,%sp@-
+   3cde2:	4267           	clrw %sp@-
+   3cde4:	4eba a048      	jsr %pc@(36e2e <icon>)
+   3cde8:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3cdec:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3cdf0:	302e ffec      	movew %fp@(-20),%d0
+   3cdf4:	0640 000e      	addiw #14,%d0
+   3cdf8:	3f00           	movew %d0,%sp@-
+   3cdfa:	4267           	clrw %sp@-
+   3cdfc:	486e fffe      	pea %fp@(-2)
+   3ce00:	4eba 96f6      	jsr %pc@(364f8 <text>)
+   3ce04:	4fef 001c      	lea %sp@(28),%sp
+   3ce08:	300b           	movew %a3,%d0
+   3ce0a:	5200           	addqb #1,%d0
+   3ce0c:	3640           	moveaw %d0,%a3
+   3ce0e:	0c00 0004      	cmpib #4,%d0
+   3ce12:	6700 013c      	beqw 3cf50 <HUD_drawInventory+0x4be>
+   3ce16:	54ae ffee      	addql #2,%fp@(-18)
+   3ce1a:	066e 001a ffec 	addiw #26,%fp@(-20)
+   3ce20:	302e ffec      	movew %fp@(-20),%d0
+   3ce24:	0280 0000 0007 	andil #7,%d0
+   3ce2a:	d080           	addl %d0,%d0
+   3ce2c:	d080           	addl %d0,%d0
+   3ce2e:	41f9 000e 0108 	lea e0108 <leftMask.1>,%a0
+   3ce34:	2030 0800      	movel %a0@(0,%d0:l),%d0
+   3ce38:	1d79 e0ff 07da 	moveb e0ff07da <sel.lto_priv.0>,%fp@(-10)
+   3ce3e:	fff6 
+   3ce40:	340b           	movew %a3,%d2
+   3ce42:	b42e fff6      	cmpb %fp@(-10),%d2
+   3ce46:	6600 fdbe      	bnew 3cc06 <HUD_drawInventory+0x174>
+   3ce4a:	2e3c 4444 4444 	movel #1145324612,%d7
+   3ce50:	322e ffec      	movew %fp@(-20),%d1
+   3ce54:	e649           	lsrw #3,%d1
+   3ce56:	3a41           	moveaw %d1,%a5
+   3ce58:	3a2e ffec      	movew %fp@(-20),%d5
+   3ce5c:	0285 0000 0007 	andil #7,%d5
+   3ce62:	72ff           	moveq #-1,%d1
+   3ce64:	7c03           	moveq #3,%d6
+   3ce66:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3ce6c:	2845           	moveal %d5,%a4
+   3ce6e:	d9c5           	addal %d5,%a4
+   3ce70:	d9cc           	addal %a4,%a4
+   3ce72:	6000 fdba      	braw 3cc2e <HUD_drawInventory+0x19c>
+   3ce76:	322e ffec      	movew %fp@(-20),%d1
+   3ce7a:	5441           	addqw #2,%d1
+   3ce7c:	3001           	movew %d1,%d0
+   3ce7e:	e648           	lsrw #3,%d0
+   3ce80:	0640 0050      	addiw #80,%d0
+   3ce84:	2400           	movel %d0,%d2
+   3ce86:	e78a           	lsll #3,%d2
+   3ce88:	2042           	moveal %d2,%a0
+   3ce8a:	5688           	addql #3,%a0
+   3ce8c:	7000           	moveq #0,%d0
+   3ce8e:	3008           	movew %a0,%d0
+   3ce90:	2040           	moveal %d0,%a0
+   3ce92:	d1c8           	addal %a0,%a0
+   3ce94:	d1c8           	addal %a0,%a0
+   3ce96:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3ce9c:	3001           	movew %d1,%d0
+   3ce9e:	0240 0007      	andiw #7,%d0
+   3cea2:	0281 0000 0007 	andil #7,%d1
+   3cea8:	d281           	addl %d1,%d1
+   3ceaa:	d281           	addl %d1,%d1
+   3ceac:	43f9 000e 0108 	lea e0108 <leftMask.1>,%a1
+   3ceb2:	2231 1800      	movel %a1@(0,%d1:l),%d1
+   3ceb6:	45f9 000e 00e4 	lea e00e4 <rightMask.0>,%a2
+   3cebc:	2601           	movel %d1,%d3
+   3cebe:	0280 0000 ffff 	andil #65535,%d0
+   3cec4:	7400           	moveq #0,%d2
+   3cec6:	3407           	movew %d7,%d2
+   3cec8:	327c 0008      	moveaw #8,%a1
+   3cecc:	93c0           	subal %d0,%a1
+   3cece:	b489           	cmpl %a1,%d2
+   3ced0:	6c02           	bges 3ced4 <HUD_drawInventory+0x442>
+   3ced2:	2242           	moveal %d2,%a1
+   3ced4:	2410           	movel %a0@,%d2
+   3ced6:	2202           	movel %d2,%d1
+   3ced8:	0a81 4444 4444 	eoril #1145324612,%d1
+   3cede:	c283           	andl %d3,%d1
+   3cee0:	d089           	addl %a1,%d0
+   3cee2:	d080           	addl %d0,%d0
+   3cee4:	d080           	addl %d0,%d0
+   3cee6:	c2b2 0800      	andl %a2@(0,%d0:l),%d1
+   3ceea:	b581           	eorl %d2,%d1
+   3ceec:	2081           	movel %d1,%a0@
+   3ceee:	9e49           	subw %a1,%d7
+   3cef0:	41e8 0020      	lea %a0@(32),%a0
+   3cef4:	76ff           	moveq #-1,%d3
+   3cef6:	4a47           	tstw %d7
+   3cef8:	6700 fe8e      	beqw 3cd88 <HUD_drawInventory+0x2f6>
+   3cefc:	4240           	clrw %d0
+   3cefe:	60be           	bras 3cebe <HUD_drawInventory+0x42c>
+   3cf00:	102e fffd      	moveb %fp@(-3),%d0
+   3cf04:	0c00 0009      	cmpib #9,%d0
+   3cf08:	6302           	blss 3cf0c <HUD_drawInventory+0x47a>
+   3cf0a:	7009           	moveq #9,%d0
+   3cf0c:	0600 0030      	addib #48,%d0
+   3cf10:	1d40 fffe      	moveb %d0,%fp@(-2)
+   3cf14:	422e ffff      	clrb %fp@(-1)
+   3cf18:	726f           	moveq #111,%d1
+   3cf1a:	702a           	moveq #42,%d0
+   3cf1c:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3cf20:	3f01           	movew %d1,%sp@-
+   3cf22:	4267           	clrw %sp@-
+   3cf24:	3f00           	movew %d0,%sp@-
+   3cf26:	4267           	clrw %sp@-
+   3cf28:	4eba 9f04      	jsr %pc@(36e2e <icon>)
+   3cf2c:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3cf30:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3cf34:	302e ffec      	movew %fp@(-20),%d0
+   3cf38:	0640 000e      	addiw #14,%d0
+   3cf3c:	3f00           	movew %d0,%sp@-
+   3cf3e:	4267           	clrw %sp@-
+   3cf40:	486e fffe      	pea %fp@(-2)
+   3cf44:	4eba 95b2      	jsr %pc@(364f8 <text>)
+   3cf48:	4fef 001c      	lea %sp@(28),%sp
+   3cf4c:	6000 feba      	braw 3ce08 <HUD_drawInventory+0x376>
+   3cf50:	4a6e fff4      	tstw %fp@(-12)
+   3cf54:	6700 045a      	beqw 3d3b0 <HUD_drawInventory+0x91e>
+   3cf58:	4a2e fffc      	tstb %fp@(-4)
+   3cf5c:	6700 04e6      	beqw 3d444 <HUD_drawInventory+0x9b2>
+   3cf60:	347c 000b      	moveaw #11,%a2
+   3cf64:	7e0c           	moveq #12,%d7
+   3cf66:	7a03           	moveq #3,%d5
+   3cf68:	7c02           	moveq #2,%d6
+   3cf6a:	367c 0003      	moveaw #3,%a3
+   3cf6e:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3cf74:	3206           	movew %d6,%d1
+   3cf76:	e649           	lsrw #3,%d1
+   3cf78:	c3fc 0140      	mulsw #320,%d1
+   3cf7c:	0681 0000 00d0 	addil #208,%d1
+   3cf82:	3006           	movew %d6,%d0
+   3cf84:	0240 0007      	andiw #7,%d0
+   3cf88:	d081           	addl %d1,%d0
+   3cf8a:	0280 0000 ffff 	andil #65535,%d0
+   3cf90:	2040           	moveal %d0,%a0
+   3cf92:	d1c0           	addal %d0,%a0
+   3cf94:	d1c8           	addal %a0,%a0
+   3cf96:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3cf9c:	117c 0044 0003 	moveb #68,%a0@(3)
+   3cfa2:	7412           	moveq #18,%d2
+   3cfa4:	41e8 0020      	lea %a0@(32),%a0
+   3cfa8:	7000           	moveq #0,%d0
+   3cfaa:	3002           	movew %d2,%d0
+   3cfac:	7208           	moveq #8,%d1
+   3cfae:	b280           	cmpl %d0,%d1
+   3cfb0:	6c02           	bges 3cfb4 <HUD_drawInventory+0x522>
+   3cfb2:	7008           	moveq #8,%d0
+   3cfb4:	2810           	movel %a0@,%d4
+   3cfb6:	2604           	movel %d4,%d3
+   3cfb8:	0a83 4444 4444 	eoril #1145324612,%d3
+   3cfbe:	2200           	movel %d0,%d1
+   3cfc0:	d280           	addl %d0,%d1
+   3cfc2:	d281           	addl %d1,%d1
+   3cfc4:	c6b1 1800      	andl %a1@(0,%d1:l),%d3
+   3cfc8:	b983           	eorl %d4,%d3
+   3cfca:	2083           	movel %d3,%a0@
+   3cfcc:	9440           	subw %d0,%d2
+   3cfce:	66d4           	bnes 3cfa4 <HUD_drawInventory+0x512>
+   3cfd0:	5246           	addqw #1,%d6
+   3cfd2:	bc47           	cmpw %d7,%d6
+   3cfd4:	669e           	bnes 3cf74 <HUD_drawInventory+0x4e2>
+   3cfd6:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3cfdc:	3205           	movew %d5,%d1
+   3cfde:	e649           	lsrw #3,%d1
+   3cfe0:	c3fc 0140      	mulsw #320,%d1
+   3cfe4:	0681 0000 00d0 	addil #208,%d1
+   3cfea:	3005           	movew %d5,%d0
+   3cfec:	0240 0007      	andiw #7,%d0
+   3cff0:	d081           	addl %d1,%d0
+   3cff2:	0280 0000 ffff 	andil #65535,%d0
+   3cff8:	2040           	moveal %d0,%a0
+   3cffa:	d1c0           	addal %d0,%a0
+   3cffc:	d1c8           	addal %a0,%a0
+   3cffe:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3d004:	70fb           	moveq #-5,%d0
+   3d006:	c090           	andl %a0@,%d0
+   3d008:	740b           	moveq #11,%d2
+   3d00a:	8480           	orl %d0,%d2
+   3d00c:	2082           	movel %d2,%a0@
+   3d00e:	7411           	moveq #17,%d2
+   3d010:	41e8 0020      	lea %a0@(32),%a0
+   3d014:	7000           	moveq #0,%d0
+   3d016:	3002           	movew %d2,%d0
+   3d018:	7208           	moveq #8,%d1
+   3d01a:	b280           	cmpl %d0,%d1
+   3d01c:	6c02           	bges 3d020 <HUD_drawInventory+0x58e>
+   3d01e:	7008           	moveq #8,%d0
+   3d020:	2810           	movel %a0@,%d4
+   3d022:	2604           	movel %d4,%d3
+   3d024:	0a83 bbbb bbbb 	eoril #-1145324613,%d3
+   3d02a:	2200           	movel %d0,%d1
+   3d02c:	d280           	addl %d0,%d1
+   3d02e:	d281           	addl %d1,%d1
+   3d030:	c6b1 1800      	andl %a1@(0,%d1:l),%d3
+   3d034:	b983           	eorl %d4,%d3
+   3d036:	2083           	movel %d3,%a0@
+   3d038:	9440           	subw %d0,%d2
+   3d03a:	66d4           	bnes 3d010 <HUD_drawInventory+0x57e>
+   3d03c:	5245           	addqw #1,%d5
+   3d03e:	7000           	moveq #0,%d0
+   3d040:	3005           	movew %d5,%d0
+   3d042:	b5c0           	cmpal %d0,%a2
+   3d044:	6e96           	bgts 3cfdc <HUD_drawInventory+0x54a>
+   3d046:	7400           	moveq #0,%d2
+   3d048:	340b           	movew %a3,%d2
+   3d04a:	2f02           	movel %d2,%sp@-
+   3d04c:	4878 00d8      	pea d8 <stop_xgm_size+0x2c>
+   3d050:	4878 0032      	pea 32 <campaign_route06a_palette_size+0x12>
+   3d054:	4eba 9dd8      	jsr %pc@(36e2e <icon>)
+   3d058:	102e fff5      	moveb %fp@(-11),%d0
+   3d05c:	0600 0030      	addib #48,%d0
+   3d060:	1d40 fffe      	moveb %d0,%fp@(-2)
+   3d064:	422e ffff      	clrb %fp@(-1)
+   3d068:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3d06c:	2f02           	movel %d2,%sp@-
+   3d06e:	4878 00e1      	pea e1 <stop_xgm_size+0x35>
+   3d072:	486e fffe      	pea %fp@(-2)
+   3d076:	4eba 9480      	jsr %pc@(364f8 <text>)
+   3d07a:	4fef 001c      	lea %sp@(28),%sp
+   3d07e:	4a2e fffc      	tstb %fp@(-4)
+   3d082:	6700 013c      	beqw 3d1c0 <HUD_drawInventory+0x72e>
+   3d086:	347c 0015      	moveaw #21,%a2
+   3d08a:	7e16           	moveq #22,%d7
+   3d08c:	7a0d           	moveq #13,%d5
+   3d08e:	7c0c           	moveq #12,%d6
+   3d090:	367c 000d      	moveaw #13,%a3
+   3d094:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3d09a:	3206           	movew %d6,%d1
+   3d09c:	e649           	lsrw #3,%d1
+   3d09e:	c3fc 0140      	mulsw #320,%d1
+   3d0a2:	0681 0000 00d0 	addil #208,%d1
+   3d0a8:	3006           	movew %d6,%d0
+   3d0aa:	0240 0007      	andiw #7,%d0
+   3d0ae:	d081           	addl %d1,%d0
+   3d0b0:	0280 0000 ffff 	andil #65535,%d0
+   3d0b6:	2040           	moveal %d0,%a0
+   3d0b8:	d1c0           	addal %d0,%a0
+   3d0ba:	d1c8           	addal %a0,%a0
+   3d0bc:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3d0c2:	117c 0066 0003 	moveb #102,%a0@(3)
+   3d0c8:	7412           	moveq #18,%d2
+   3d0ca:	41e8 0020      	lea %a0@(32),%a0
+   3d0ce:	7000           	moveq #0,%d0
+   3d0d0:	3002           	movew %d2,%d0
+   3d0d2:	7208           	moveq #8,%d1
+   3d0d4:	b280           	cmpl %d0,%d1
+   3d0d6:	6c02           	bges 3d0da <HUD_drawInventory+0x648>
+   3d0d8:	7008           	moveq #8,%d0
+   3d0da:	2810           	movel %a0@,%d4
+   3d0dc:	2604           	movel %d4,%d3
+   3d0de:	0a83 6666 6666 	eoril #1717986918,%d3
+   3d0e4:	2200           	movel %d0,%d1
+   3d0e6:	d280           	addl %d0,%d1
+   3d0e8:	d281           	addl %d1,%d1
+   3d0ea:	c6b1 1800      	andl %a1@(0,%d1:l),%d3
+   3d0ee:	b983           	eorl %d4,%d3
+   3d0f0:	2083           	movel %d3,%a0@
+   3d0f2:	9440           	subw %d0,%d2
+   3d0f4:	66d4           	bnes 3d0ca <HUD_drawInventory+0x638>
+   3d0f6:	5246           	addqw #1,%d6
+   3d0f8:	be46           	cmpw %d6,%d7
+   3d0fa:	669e           	bnes 3d09a <HUD_drawInventory+0x608>
+   3d0fc:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3d102:	3205           	movew %d5,%d1
+   3d104:	e649           	lsrw #3,%d1
+   3d106:	c3fc 0140      	mulsw #320,%d1
+   3d10a:	0681 0000 00d0 	addil #208,%d1
+   3d110:	3005           	movew %d5,%d0
+   3d112:	0240 0007      	andiw #7,%d0
+   3d116:	d081           	addl %d1,%d0
+   3d118:	0280 0000 ffff 	andil #65535,%d0
+   3d11e:	2040           	moveal %d0,%a0
+   3d120:	d1c0           	addal %d0,%a0
+   3d122:	d1c8           	addal %a0,%a0
+   3d124:	d1fc e0ff 3ac8 	addal #-520144184,%a0
+   3d12a:	70fb           	moveq #-5,%d0
+   3d12c:	c090           	andl %a0@,%d0
+   3d12e:	740b           	moveq #11,%d2
+   3d130:	8480           	orl %d0,%d2
+   3d132:	2082           	movel %d2,%a0@
+   3d134:	7411           	moveq #17,%d2
+   3d136:	41e8 0020      	lea %a0@(32),%a0
+   3d13a:	7000           	moveq #0,%d0
+   3d13c:	3002           	movew %d2,%d0
+   3d13e:	7208           	moveq #8,%d1
+   3d140:	b280           	cmpl %d0,%d1
+   3d142:	6c02           	bges 3d146 <HUD_drawInventory+0x6b4>
+   3d144:	7008           	moveq #8,%d0
+   3d146:	2810           	movel %a0@,%d4
+   3d148:	2604           	movel %d4,%d3
+   3d14a:	0a83 bbbb bbbb 	eoril #-1145324613,%d3
+   3d150:	2200           	movel %d0,%d1
+   3d152:	d280           	addl %d0,%d1
+   3d154:	d281           	addl %d1,%d1
+   3d156:	c6b1 1800      	andl %a1@(0,%d1:l),%d3
+   3d15a:	b983           	eorl %d4,%d3
+   3d15c:	2083           	movel %d3,%a0@
+   3d15e:	9440           	subw %d0,%d2
+   3d160:	66d4           	bnes 3d136 <HUD_drawInventory+0x6a4>
+   3d162:	5245           	addqw #1,%d5
+   3d164:	7000           	moveq #0,%d0
+   3d166:	3005           	movew %d5,%d0
+   3d168:	b5c0           	cmpal %d0,%a2
+   3d16a:	6e96           	bgts 3d102 <HUD_drawInventory+0x670>
+   3d16c:	1039 e0ff 0e9b 	moveb e0ff0e9b <shotMode.lto_priv.0>,%d0
+   3d172:	0c00 0001      	cmpib #1,%d0
+   3d176:	6700 02e4      	beqw 3d45c <HUD_drawInventory+0x9ca>
+   3d17a:	0c00 0002      	cmpib #2,%d0
+   3d17e:	6700 0422      	beqw 3d5a2 <HUD_drawInventory+0xb10>
+   3d182:	7034           	moveq #52,%d0
+   3d184:	7400           	moveq #0,%d2
+   3d186:	340b           	movew %a3,%d2
+   3d188:	2f02           	movel %d2,%sp@-
+   3d18a:	4878 00d8      	pea d8 <stop_xgm_size+0x2c>
+   3d18e:	723f           	moveq #63,%d1
+   3d190:	c280           	andl %d0,%d1
+   3d192:	2f01           	movel %d1,%sp@-
+   3d194:	4eba 9c98      	jsr %pc@(36e2e <icon>)
+   3d198:	1039 e0ff 0e9a 	moveb e0ff0e9a <modeCharges.lto_priv.0>,%d0
+   3d19e:	0600 0030      	addib #48,%d0
+   3d1a2:	1d40 fffe      	moveb %d0,%fp@(-2)
+   3d1a6:	422e ffff      	clrb %fp@(-1)
+   3d1aa:	4878 0002      	pea 2 <_Start_Of_Rom+0x2>
+   3d1ae:	2f02           	movel %d2,%sp@-
+   3d1b0:	4878 00e1      	pea e1 <stop_xgm_size+0x35>
+   3d1b4:	486e fffe      	pea %fp@(-2)
+   3d1b8:	4eba 933e      	jsr %pc@(364f8 <text>)
+   3d1bc:	4fef 001c      	lea %sp@(28),%sp
+   3d1c0:	223c e0ff 35de 	movel #-520145442,%d1
+   3d1c6:	2d7c e0ff 3a50 	movel #-520144304,%fp@(-22)
+   3d1cc:	ffea 
+   3d1ce:	263c e0ff 3c88 	movel #-520143736,%d3
+   3d1d4:	9bcd           	subal %a5,%a5
+   3d1d6:	4202           	clrb %d2
+   3d1d8:	2641           	moveal %d1,%a3
+   3d1da:	47eb fde0      	lea %a3@(-544),%a3
+   3d1de:	2443           	moveal %d3,%a2
+   3d1e0:	286e ffea      	moveal %fp@(-22),%a4
+   3d1e4:	41ea ffe0      	lea %a2@(-32),%a0
+   3d1e8:	224b           	moveal %a3,%a1
+   3d1ea:	1018           	moveb %a0@+,%d0
+   3d1ec:	9011           	subb %a1@,%d0
+   3d1ee:	b1ca           	cmpal %a2,%a0
+   3d1f0:	6700 01de      	beqw 3d3d0 <HUD_drawInventory+0x93e>
+   3d1f4:	5289           	addql #1,%a1
+   3d1f6:	4a00           	tstb %d0
+   3d1f8:	67f0           	beqs 3d1ea <HUD_drawInventory+0x758>
+   3d1fa:	197c 0001 000d 	moveb #1,%a4@(13)
+   3d200:	7401           	moveq #1,%d2
+   3d202:	528c           	addql #1,%a4
+   3d204:	47eb 0020      	lea %a3@(32),%a3
+   3d208:	45ea 0020      	lea %a2@(32),%a2
+   3d20c:	b28b           	cmpl %a3,%d1
+   3d20e:	66d4           	bnes 3d1e4 <HUD_drawInventory+0x752>
+   3d210:	220b           	movel %a3,%d1
+   3d212:	0681 0000 0220 	addil #544,%d1
+   3d218:	7028           	moveq #40,%d0
+   3d21a:	d1ae ffea      	addl %d0,%fp@(-22)
+   3d21e:	0683 0000 0500 	addil #1280,%d3
+   3d224:	4bed 0011      	lea %a5@(17),%a5
+   3d228:	7033           	moveq #51,%d0
+   3d22a:	b08d           	cmpl %a5,%d0
+   3d22c:	66aa           	bnes 3d1d8 <HUD_drawInventory+0x746>
+   3d22e:	4a02           	tstb %d2
+   3d230:	6708           	beqs 3d23a <HUD_drawInventory+0x7a8>
+   3d232:	13fc 0001 e0ff 	moveb #1,e0ff20c5 <hudPending.lto_priv.0>
+   3d238:	20c5 
+   3d23a:	13f9 e0ff 07da 	moveb e0ff07da <sel.lto_priv.0>,e0ff0193 <inventorySelected.lto_priv.0>
+   3d240:	e0ff 0193 
+   3d244:	13f9 e0ff 0e9b 	moveb e0ff0e9b <shotMode.lto_priv.0>,e0ff0192 <inventoryMode.lto_priv.0>
+   3d24a:	e0ff 0192 
+   3d24e:	13fc 0001 e0ff 	moveb #1,e0ff018e <inventoryTypes.lto_priv.0>
+   3d254:	018e 
+   3d256:	13ee fffd e0ff 	moveb %fp@(-3),e0ff018a <inventoryCounts.lto_priv.0>
+   3d25c:	018a 
+   3d25e:	13f9 e0ff 0e94 	moveb e0ff0e94 <item.lto_priv.0>,e0ff018f <inventoryTypes.lto_priv.0+0x1>
+   3d264:	e0ff 018f 
+   3d268:	13f9 e0ff 0e95 	moveb e0ff0e95 <item.lto_priv.0+0x1>,e0ff018b <inventoryCounts.lto_priv.0+0x1>
+   3d26e:	e0ff 018b 
+   3d272:	13f9 e0ff 0e96 	moveb e0ff0e96 <item.lto_priv.0+0x2>,e0ff0190 <inventoryTypes.lto_priv.0+0x2>
+   3d278:	e0ff 0190 
+   3d27c:	13f9 e0ff 0e97 	moveb e0ff0e97 <item.lto_priv.0+0x3>,e0ff018c <inventoryCounts.lto_priv.0+0x2>
+   3d282:	e0ff 018c 
+   3d286:	13f9 e0ff 0e98 	moveb e0ff0e98 <item.lto_priv.0+0x4>,e0ff0191 <inventoryTypes.lto_priv.0+0x3>
+   3d28c:	e0ff 0191 
+   3d290:	13f9 e0ff 0e99 	moveb e0ff0e99 <item.lto_priv.0+0x5>,e0ff018d <inventoryCounts.lto_priv.0+0x3>
+   3d296:	e0ff 018d 
+   3d29a:	13fc 0001 e0ff 	moveb #1,e0ff0194 <inventorySnapshotValid.lto_priv.0>
+   3d2a0:	0194 
+   3d2a2:	23ee fff8 e0ff 	movel %fp@(-8),e0ff3a48 <s_invStructureSig>
+   3d2a8:	3a48 
+   3d2aa:	33ee fff4 e0ff 	movew %fp@(-12),e0ff3a46 <lastShieldSeconds>
+   3d2b0:	3a46 
+   3d2b2:	13ee fff7 e0ff 	moveb %fp@(-9),e0ff3a44 <lastModeCharges>
+   3d2b8:	3a44 
+   3d2ba:	4cee 3cfc ffc0 	moveml %fp@(-64),%d2-%d7/%a2-%a5
+   3d2c0:	4e5e           	unlk %fp
+   3d2c2:	4e75           	rts
+   3d2c4:	4878 0009      	pea 9 <_Start_Of_Rom+0x9>
+   3d2c8:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3d2cc:	302e ffec      	movew %fp@(-20),%d0
+   3d2d0:	5040           	addqw #8,%d0
+   3d2d2:	3f00           	movew %d0,%sp@-
+   3d2d4:	4267           	clrw %sp@-
+   3d2d6:	4879 0005 df89 	pea 5df89 <__DTOR_END__+0x2645>
+   3d2dc:	4eba 921a      	jsr %pc@(364f8 <text>)
+   3d2e0:	4fef 0010      	lea %sp@(16),%sp
+   3d2e4:	6000 fb22      	braw 3ce08 <HUD_drawInventory+0x376>
+   3d2e8:	b0b9 e0ff 3a48 	cmpl e0ff3a48 <s_invStructureSig>,%d0
+   3d2ee:	6600 f89c      	bnew 3cb8c <HUD_drawInventory+0xfa>
+   3d2f2:	4a2e fffc      	tstb %fp@(-4)
+   3d2f6:	6740           	beqs 3d338 <HUD_drawInventory+0x8a6>
+   3d2f8:	122e fff7      	moveb %fp@(-9),%d1
+   3d2fc:	b239 e0ff 3a44 	cmpb e0ff3a44 <lastModeCharges>,%d1
+   3d302:	6734           	beqs 3d338 <HUD_drawInventory+0x8a6>
+   3d304:	7008           	moveq #8,%d0
+   3d306:	4878 0002      	pea 2 <_Start_Of_Rom+0x2>
+   3d30a:	3f00           	movew %d0,%sp@-
+   3d30c:	4267           	clrw %sp@-
+   3d30e:	102e fff7      	moveb %fp@(-9),%d0
+   3d312:	0600 0030      	addib #48,%d0
+   3d316:	0280 0000 00ff 	andil #255,%d0
+   3d31c:	2f00           	movel %d0,%sp@-
+   3d31e:	4eba b402      	jsr %pc@(38722 <inventoryDigit>)
+   3d322:	1439 e0ff 0e9b 	moveb e0ff0e9b <shotMode.lto_priv.0>,%d2
+   3d328:	1639 e0ff 07da 	moveb e0ff07da <sel.lto_priv.0>,%d3
+   3d32e:	3839 e0ff 1e92 	movew e0ff1e92 <bombs.lto_priv.0>,%d4
+   3d334:	4fef 000c      	lea %sp@(12),%sp
+   3d338:	33ee fff4 e0ff 	movew %fp@(-12),e0ff3a46 <lastShieldSeconds>
+   3d33e:	3a46 
+   3d340:	13ee fff7 e0ff 	moveb %fp@(-9),e0ff3a44 <lastModeCharges>
+   3d346:	3a44 
+   3d348:	13c3 e0ff 0193 	moveb %d3,e0ff0193 <inventorySelected.lto_priv.0>
+   3d34e:	13c2 e0ff 0192 	moveb %d2,e0ff0192 <inventoryMode.lto_priv.0>
+   3d354:	13fc 0001 e0ff 	moveb #1,e0ff018e <inventoryTypes.lto_priv.0>
+   3d35a:	018e 
+   3d35c:	13c4 e0ff 018a 	moveb %d4,e0ff018a <inventoryCounts.lto_priv.0>
+   3d362:	13f9 e0ff 0e94 	moveb e0ff0e94 <item.lto_priv.0>,e0ff018f <inventoryTypes.lto_priv.0+0x1>
+   3d368:	e0ff 018f 
+   3d36c:	13f9 e0ff 0e95 	moveb e0ff0e95 <item.lto_priv.0+0x1>,e0ff018b <inventoryCounts.lto_priv.0+0x1>
+   3d372:	e0ff 018b 
+   3d376:	13f9 e0ff 0e96 	moveb e0ff0e96 <item.lto_priv.0+0x2>,e0ff0190 <inventoryTypes.lto_priv.0+0x2>
+   3d37c:	e0ff 0190 
+   3d380:	13f9 e0ff 0e97 	moveb e0ff0e97 <item.lto_priv.0+0x3>,e0ff018c <inventoryCounts.lto_priv.0+0x2>
+   3d386:	e0ff 018c 
+   3d38a:	13f9 e0ff 0e98 	moveb e0ff0e98 <item.lto_priv.0+0x4>,e0ff0191 <inventoryTypes.lto_priv.0+0x3>
+   3d390:	e0ff 0191 
+   3d394:	13f9 e0ff 0e99 	moveb e0ff0e99 <item.lto_priv.0+0x5>,e0ff018d <inventoryCounts.lto_priv.0+0x3>
+   3d39a:	e0ff 018d 
+   3d39e:	13fc 0001 e0ff 	moveb #1,e0ff0194 <inventorySnapshotValid.lto_priv.0>
+   3d3a4:	0194 
+   3d3a6:	4cee 3cfc ffc0 	moveml %fp@(-64),%d2-%d7/%a2-%a5
+   3d3ac:	4e5e           	unlk %fp
+   3d3ae:	4e75           	rts
+   3d3b0:	4a2e fffc      	tstb %fp@(-4)
+   3d3b4:	6700 fe0a      	beqw 3d1c0 <HUD_drawInventory+0x72e>
+   3d3b8:	347c 0013      	moveaw #19,%a2
+   3d3bc:	7e14           	moveq #20,%d7
+   3d3be:	7a05           	moveq #5,%d5
+   3d3c0:	7c04           	moveq #4,%d6
+   3d3c2:	367c 0008      	moveaw #8,%a3
+   3d3c6:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3d3cc:	6000 fccc      	braw 3d09a <HUD_drawInventory+0x608>
+   3d3d0:	4a00           	tstb %d0
+   3d3d2:	6600 fe26      	bnew 3d1fa <HUD_drawInventory+0x768>
+   3d3d6:	528c           	addql #1,%a4
+   3d3d8:	47eb 0020      	lea %a3@(32),%a3
+   3d3dc:	45ea 0020      	lea %a2@(32),%a2
+   3d3e0:	b28b           	cmpl %a3,%d1
+   3d3e2:	6600 fe00      	bnew 3d1e4 <HUD_drawInventory+0x752>
+   3d3e6:	6000 fe28      	braw 3d210 <HUD_drawInventory+0x77e>
+   3d3ea:	302e fff4      	movew %fp@(-12),%d0
+   3d3ee:	b079 e0ff 3a46 	cmpw e0ff3a46 <lastShieldSeconds>,%d0
+   3d3f4:	6700 0190      	beqw 3d586 <HUD_drawInventory+0xaf4>
+   3d3f8:	102e fff5      	moveb %fp@(-11),%d0
+   3d3fc:	0600 0030      	addib #48,%d0
+   3d400:	4a2e fffc      	tstb %fp@(-4)
+   3d404:	6700 00ce      	beqw 3d4d4 <HUD_drawInventory+0xa42>
+   3d408:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3d40c:	4878 0003      	pea 3 <_Start_Of_Rom+0x3>
+   3d410:	0280 0000 00ff 	andil #255,%d0
+   3d416:	2f00           	movel %d0,%sp@-
+   3d418:	4eba b308      	jsr %pc@(38722 <inventoryDigit>)
+   3d41c:	4fef 000c      	lea %sp@(12),%sp
+   3d420:	122e fff7      	moveb %fp@(-9),%d1
+   3d424:	b239 e0ff 3a44 	cmpb e0ff3a44 <lastModeCharges>,%d1
+   3d42a:	6700 00d6      	beqw 3d502 <HUD_drawInventory+0xa70>
+   3d42e:	700d           	moveq #13,%d0
+   3d430:	4878 0002      	pea 2 <_Start_Of_Rom+0x2>
+   3d434:	3f00           	movew %d0,%sp@-
+   3d436:	4267           	clrw %sp@-
+   3d438:	102e fff7      	moveb %fp@(-9),%d0
+   3d43c:	0600 0030      	addib #48,%d0
+   3d440:	6000 fed4      	braw 3d316 <HUD_drawInventory+0x884>
+   3d444:	347c 0013      	moveaw #19,%a2
+   3d448:	7e14           	moveq #20,%d7
+   3d44a:	7a05           	moveq #5,%d5
+   3d44c:	7c04           	moveq #4,%d6
+   3d44e:	367c 0008      	moveaw #8,%a3
+   3d452:	43f9 000e 00e4 	lea e00e4 <rightMask.0>,%a1
+   3d458:	6000 fb1a      	braw 3cf74 <HUD_drawInventory+0x4e2>
+   3d45c:	702b           	moveq #43,%d0
+   3d45e:	7400           	moveq #0,%d2
+   3d460:	340b           	movew %a3,%d2
+   3d462:	2f02           	movel %d2,%sp@-
+   3d464:	4878 00d8      	pea d8 <stop_xgm_size+0x2c>
+   3d468:	723f           	moveq #63,%d1
+   3d46a:	c280           	andl %d0,%d1
+   3d46c:	2f01           	movel %d1,%sp@-
+   3d46e:	4eba 99be      	jsr %pc@(36e2e <icon>)
+   3d472:	1039 e0ff 0e9a 	moveb e0ff0e9a <modeCharges.lto_priv.0>,%d0
+   3d478:	0600 0030      	addib #48,%d0
+   3d47c:	1d40 fffe      	moveb %d0,%fp@(-2)
+   3d480:	422e ffff      	clrb %fp@(-1)
+   3d484:	4878 0002      	pea 2 <_Start_Of_Rom+0x2>
+   3d488:	2f02           	movel %d2,%sp@-
+   3d48a:	4878 00e1      	pea e1 <stop_xgm_size+0x35>
+   3d48e:	486e fffe      	pea %fp@(-2)
+   3d492:	4eba 9064      	jsr %pc@(364f8 <text>)
+   3d496:	4fef 001c      	lea %sp@(28),%sp
+   3d49a:	6000 fd24      	braw 3d1c0 <HUD_drawInventory+0x72e>
+   3d49e:	702a           	moveq #42,%d0
+   3d4a0:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3d4a4:	3f01           	movew %d1,%sp@-
+   3d4a6:	4267           	clrw %sp@-
+   3d4a8:	3f00           	movew %d0,%sp@-
+   3d4aa:	4267           	clrw %sp@-
+   3d4ac:	4eba 9980      	jsr %pc@(36e2e <icon>)
+   3d4b0:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3d4b4:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3d4b8:	302e ffec      	movew %fp@(-20),%d0
+   3d4bc:	0640 000e      	addiw #14,%d0
+   3d4c0:	3f00           	movew %d0,%sp@-
+   3d4c2:	4267           	clrw %sp@-
+   3d4c4:	486e fffe      	pea %fp@(-2)
+   3d4c8:	4eba 902e      	jsr %pc@(364f8 <text>)
+   3d4cc:	4fef 001c      	lea %sp@(28),%sp
+   3d4d0:	6000 f936      	braw 3ce08 <HUD_drawInventory+0x376>
+   3d4d4:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3d4d8:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3d4dc:	0280 0000 00ff 	andil #255,%d0
+   3d4e2:	2f00           	movel %d0,%sp@-
+   3d4e4:	4eba b23c      	jsr %pc@(38722 <inventoryDigit>)
+   3d4e8:	1439 e0ff 0e9b 	moveb e0ff0e9b <shotMode.lto_priv.0>,%d2
+   3d4ee:	1639 e0ff 07da 	moveb e0ff07da <sel.lto_priv.0>,%d3
+   3d4f4:	3839 e0ff 1e92 	movew e0ff1e92 <bombs.lto_priv.0>,%d4
+   3d4fa:	4fef 000c      	lea %sp@(12),%sp
+   3d4fe:	6000 fe38      	braw 3d338 <HUD_drawInventory+0x8a6>
+   3d502:	1439 e0ff 0e9b 	moveb e0ff0e9b <shotMode.lto_priv.0>,%d2
+   3d508:	1639 e0ff 07da 	moveb e0ff07da <sel.lto_priv.0>,%d3
+   3d50e:	3839 e0ff 1e92 	movew e0ff1e92 <bombs.lto_priv.0>,%d4
+   3d514:	33ee fff4 e0ff 	movew %fp@(-12),e0ff3a46 <lastShieldSeconds>
+   3d51a:	3a46 
+   3d51c:	13ee fff7 e0ff 	moveb %fp@(-9),e0ff3a44 <lastModeCharges>
+   3d522:	3a44 
+   3d524:	13c3 e0ff 0193 	moveb %d3,e0ff0193 <inventorySelected.lto_priv.0>
+   3d52a:	13c2 e0ff 0192 	moveb %d2,e0ff0192 <inventoryMode.lto_priv.0>
+   3d530:	13fc 0001 e0ff 	moveb #1,e0ff018e <inventoryTypes.lto_priv.0>
+   3d536:	018e 
+   3d538:	13c4 e0ff 018a 	moveb %d4,e0ff018a <inventoryCounts.lto_priv.0>
+   3d53e:	13f9 e0ff 0e94 	moveb e0ff0e94 <item.lto_priv.0>,e0ff018f <inventoryTypes.lto_priv.0+0x1>
+   3d544:	e0ff 018f 
+   3d548:	13f9 e0ff 0e95 	moveb e0ff0e95 <item.lto_priv.0+0x1>,e0ff018b <inventoryCounts.lto_priv.0+0x1>
+   3d54e:	e0ff 018b 
+   3d552:	13f9 e0ff 0e96 	moveb e0ff0e96 <item.lto_priv.0+0x2>,e0ff0190 <inventoryTypes.lto_priv.0+0x2>
+   3d558:	e0ff 0190 
+   3d55c:	13f9 e0ff 0e97 	moveb e0ff0e97 <item.lto_priv.0+0x3>,e0ff018c <inventoryCounts.lto_priv.0+0x2>
+   3d562:	e0ff 018c 
+   3d566:	13f9 e0ff 0e98 	moveb e0ff0e98 <item.lto_priv.0+0x4>,e0ff0191 <inventoryTypes.lto_priv.0+0x3>
+   3d56c:	e0ff 0191 
+   3d570:	13f9 e0ff 0e99 	moveb e0ff0e99 <item.lto_priv.0+0x5>,e0ff018d <inventoryCounts.lto_priv.0+0x3>
+   3d576:	e0ff 018d 
+   3d57a:	13fc 0001 e0ff 	moveb #1,e0ff0194 <inventorySnapshotValid.lto_priv.0>
+   3d580:	0194 
+   3d582:	6000 fe22      	braw 3d3a6 <HUD_drawInventory+0x914>
+   3d586:	4a2e fffc      	tstb %fp@(-4)
+   3d58a:	6700 fdac      	beqw 3d338 <HUD_drawInventory+0x8a6>
+   3d58e:	102e fff7      	moveb %fp@(-9),%d0
+   3d592:	b039 e0ff 3a44 	cmpb e0ff3a44 <lastModeCharges>,%d0
+   3d598:	6700 fd9e      	beqw 3d338 <HUD_drawInventory+0x8a6>
+   3d59c:	700d           	moveq #13,%d0
+   3d59e:	6000 fe90      	braw 3d430 <HUD_drawInventory+0x99e>
+   3d5a2:	7033           	moveq #51,%d0
+   3d5a4:	7400           	moveq #0,%d2
+   3d5a6:	340b           	movew %a3,%d2
+   3d5a8:	2f02           	movel %d2,%sp@-
+   3d5aa:	4878 00d8      	pea d8 <stop_xgm_size+0x2c>
+   3d5ae:	723f           	moveq #63,%d1
+   3d5b0:	c280           	andl %d0,%d1
+   3d5b2:	2f01           	movel %d1,%sp@-
+   3d5b4:	4eba 9878      	jsr %pc@(36e2e <icon>)
+   3d5b8:	1039 e0ff 0e9a 	moveb e0ff0e9a <modeCharges.lto_priv.0>,%d0
+   3d5be:	0600 0030      	addib #48,%d0
+   3d5c2:	1d40 fffe      	moveb %d0,%fp@(-2)
+   3d5c6:	422e ffff      	clrb %fp@(-1)
+   3d5ca:	4878 0002      	pea 2 <_Start_Of_Rom+0x2>
+   3d5ce:	2f02           	movel %d2,%sp@-
+   3d5d0:	4878 00e1      	pea e1 <stop_xgm_size+0x35>
+   3d5d4:	486e fffe      	pea %fp@(-2)
+   3d5d8:	4eba 8f1e      	jsr %pc@(364f8 <text>)
+   3d5dc:	4fef 001c      	lea %sp@(28),%sp
+   3d5e0:	6000 fbde      	braw 3d1c0 <HUD_drawInventory+0x72e>
+

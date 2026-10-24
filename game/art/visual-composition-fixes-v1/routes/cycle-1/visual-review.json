@@ -1,0 +1,27 @@
+{
+  "status": "revisar",
+  "evidence": [
+    "06a-native-complete.png",
+    "06b-native-complete.png",
+    "12-native-complete.png"
+  ],
+  "findings": {
+    "06a": [
+      "Piso limpo, porém excessivamente uniforme.",
+      "Textura superior8x8 repetida produz faixas artificiais.",
+      "Arcos repetem com ritmo idêntico; criar intervalos de parede e marco central maior.",
+      "Chegada distinta com escada e tecido, preservar."
+    ],
+    "06b": [
+      "337 tiles de cenário deixam margem real para porta ampla e válvula.",
+      "Porta frontal nova não acompanha passagem norte/sul: gerar orientação corrigida.",
+      "Tubo deve terminar na boca esquerda da nova válvula, conferir no jogo."
+    ],
+    "12": [
+      "Céu coerente e chegada sindical branca distinguem a meta.",
+      "Oficinas idênticas em todas as baias; alternar portas fechadas e centro de manutenção.",
+      "Piso cinza limpo, mas pode manter juntas discretas sem diagonais laranja."
+    ]
+  },
+  "decision": "Ciclo2 ajusta módulos e escala; nenhum destes previews substitui review de framebuffer."
+}

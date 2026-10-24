@@ -1,0 +1,677 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "be309ac43e3c55aa00dc854f9259e18b51f304010ae125a2139224a0e1a4277e",
+  "emulated_rom_sha256": "a074490c4d5e35e8fdd2233fe46531ff08b98084dba56f0f2100b1a0722e9566",
+  "production_rom": "game/art/hud-resistencia-v1/integracao/rom/rom.bin",
+  "temporary_build": false,
+  "region_header_override_in_memory_only": true,
+  "core_fps": 49.7014591857706,
+  "stages": [
+    {
+      "node": 4,
+      "id": "03",
+      "world": [
+        384,
+        384
+      ],
+      "isolated_probes": {
+        "03/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 1,
+            "bounds": [
+              16,
+              96,
+              352,
+              352
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        },
+        "03/hardware": {
+          "passed": true,
+          "details": {
+            "exact_atlas_except_glow": true,
+            "opaque_hud_tiles": 120,
+            "hud_height": 24,
+            "hud_vram_base": 425,
+            "font_bytes": 3072,
+            "glow_variants": 71,
+            "glow_start": 464,
+            "glow_count": 74,
+            "only_lava_highlight_pixels_changed": true,
+            "palette_stable": true,
+            "scene_atlas_end": 1323,
+            "reserved_scene_end_with_hud": 1436
+          }
+        },
+        "03/bounds": {
+          "passed": true,
+          "details": {
+            "wall_and_vertical_shot_cases": 8
+          }
+        },
+        "03/terrain": {
+          "passed": true,
+          "details": {
+            "hazards": [
+              {
+                "kind": "thermal",
+                "hp_samples": [
+                  99,
+                  95,
+                  86
+                ],
+                "damage_stops_on_exit": true,
+                "progress_resets": true,
+                "hp_held_during_probe": false
+              },
+              {
+                "kind": "thermal",
+                "hp_samples": [
+                  99,
+                  95,
+                  86
+                ],
+                "damage_stops_on_exit": true,
+                "progress_resets": true,
+                "hp_held_during_probe": false
+              }
+            ],
+            "controller_dry_route": true,
+            "controller_route_frames": 192,
+            "ram_writes_during_route": false
+          }
+        },
+        "03/pause": {
+          "passed": true,
+          "details": {
+            "scene_restored": true,
+            "camera_restored": true,
+            "music_track": 1
+          }
+        },
+        "03/stress": {
+          "passed": true,
+          "details": [
+            {
+              "axis": "horizontal",
+              "enemies": 4,
+              "shots_per_pool": 6,
+              "game_frames": 300,
+              "physical_frames": 300,
+              "fps": 50.0,
+              "cpu_mean_pct": 52.73,
+              "cpu_p95_pct": 59.03,
+              "camera_x_range": [
+                0,
+                64
+              ],
+              "camera_y_range": [
+                92,
+                92
+              ]
+            },
+            {
+              "axis": "vertical",
+              "enemies": 4,
+              "shots_per_pool": 6,
+              "game_frames": 300,
+              "physical_frames": 300,
+              "fps": 50.0,
+              "cpu_mean_pct": 54.21,
+              "cpu_p95_pct": 60.3,
+              "camera_x_range": [
+                32,
+                32
+              ],
+              "camera_y_range": [
+                0,
+                160
+              ]
+            }
+          ]
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "objective_failed": false,
+          "physical_seconds": 9.58,
+          "active_seconds": 9.24,
+          "game_fps": 48.23,
+          "kills": 0,
+          "remaining_hp": -4,
+          "minimum_npc_hp": null,
+          "moving_frames": 429,
+          "enemy_bound_checks": 720,
+          "damage_events": [
+            {
+              "at_frame": 166,
+              "hp": 88
+            },
+            {
+              "at_frame": 213,
+              "hp": 76
+            },
+            {
+              "at_frame": 254,
+              "hp": 64
+            },
+            {
+              "at_frame": 292,
+              "hp": 52
+            },
+            {
+              "at_frame": 325,
+              "hp": 40
+            },
+            {
+              "at_frame": 356,
+              "hp": 28
+            },
+            {
+              "at_frame": 387,
+              "hp": 16
+            },
+            {
+              "at_frame": 415,
+              "hp": 8
+            },
+            {
+              "at_frame": 461,
+              "hp": -4
+            }
+          ],
+          "healing_events": [],
+          "peak_enemies": 3,
+          "peak_shielded": 1,
+          "shielded_frames": 38,
+          "peak_player_shots": 2,
+          "peak_enemy_shots": 0,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 2,
+          "result": "defeat",
+          "objective_failed": false,
+          "physical_seconds": 14.66,
+          "active_seconds": 14.32,
+          "game_fps": 48.84,
+          "kills": 2,
+          "remaining_hp": -8,
+          "minimum_npc_hp": null,
+          "moving_frames": 573,
+          "enemy_bound_checks": 697,
+          "damage_events": [
+            {
+              "at_frame": 150,
+              "hp": 88
+            },
+            {
+              "at_frame": 166,
+              "hp": 76
+            },
+            {
+              "at_frame": 477,
+              "hp": 64
+            },
+            {
+              "at_frame": 531,
+              "hp": 52
+            },
+            {
+              "at_frame": 567,
+              "hp": 40
+            },
+            {
+              "at_frame": 604,
+              "hp": 28
+            },
+            {
+              "at_frame": 642,
+              "hp": 16
+            },
+            {
+              "at_frame": 678,
+              "hp": 4
+            },
+            {
+              "at_frame": 715,
+              "hp": -8
+            }
+          ],
+          "healing_events": [],
+          "peak_enemies": 2,
+          "peak_shielded": 0,
+          "shielded_frames": 0,
+          "peak_player_shots": 3,
+          "peak_enemy_shots": 0,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 3,
+          "result": "defeat",
+          "objective_failed": false,
+          "physical_seconds": 9.58,
+          "active_seconds": 9.24,
+          "game_fps": 48.23,
+          "kills": 0,
+          "remaining_hp": -8,
+          "minimum_npc_hp": null,
+          "moving_frames": 417,
+          "enemy_bound_checks": 720,
+          "damage_events": [
+            {
+              "at_frame": 167,
+              "hp": 88
+            },
+            {
+              "at_frame": 202,
+              "hp": 76
+            },
+            {
+              "at_frame": 239,
+              "hp": 64
+            },
+            {
+              "at_frame": 276,
+              "hp": 52
+            },
+            {
+              "at_frame": 313,
+              "hp": 40
+            },
+            {
+              "at_frame": 349,
+              "hp": 28
+            },
+            {
+              "at_frame": 387,
+              "hp": 16
+            },
+            {
+              "at_frame": 425,
+              "hp": 4
+            },
+            {
+              "at_frame": 461,
+              "hp": -8
+            }
+          ],
+          "healing_events": [],
+          "peak_enemies": 3,
+          "peak_shielded": 1,
+          "shielded_frames": 38,
+          "peak_player_shots": 1,
+          "peak_enemy_shots": 0,
+          "game_ram_writes": false
+        }
+      ]
+    },
+    {
+      "node": 6,
+      "id": "05",
+      "world": [
+        384,
+        384
+      ],
+      "isolated_probes": {
+        "05/entry": {
+          "passed": true,
+          "details": {
+            "music_track": 3,
+            "bounds": [
+              16,
+              96,
+              352,
+              352
+            ],
+            "setup": "phase1 kill counter + pendingLevel override; normal startPhase and countdown"
+          }
+        },
+        "05/hardware": {
+          "passed": true,
+          "details": {
+            "exact_atlas_except_glow": true,
+            "opaque_hud_tiles": 120,
+            "hud_height": 24,
+            "hud_vram_base": 425,
+            "font_bytes": 3072,
+            "glow_variants": 1,
+            "glow_start": 0,
+            "glow_count": 0,
+            "only_lava_highlight_pixels_changed": false,
+            "palette_stable": true,
+            "scene_atlas_end": 1336,
+            "reserved_scene_end_with_hud": 1436
+          }
+        },
+        "05/visible-objective": {
+          "passed": true,
+          "details": {
+            "opaque_color_hud": true,
+            "single_object_no_floating_icon": true,
+            "world_health_bar": true,
+            "real_damage_shrinks_bar": true,
+            "statue_blinks_on_hit": true,
+            "statue_removed_on_death": true,
+            "camera_keeps_marker_below_hud": true,
+            "no_hp_writes": true,
+            "floor_patch_cells": 30
+          }
+        },
+        "05/bounds": {
+          "passed": true,
+          "details": {
+            "wall_and_vertical_shot_cases": 8
+          }
+        },
+        "05/terrain": {
+          "passed": true,
+          "details": {
+            "hazards": [],
+            "controller_dry_route": true,
+            "controller_route_frames": 208,
+            "ram_writes_during_route": false
+          }
+        },
+        "05/pause": {
+          "passed": true,
+          "details": {
+            "scene_restored": true,
+            "camera_restored": true,
+            "music_track": 3
+          }
+        },
+        "05/stress": {
+          "passed": true,
+          "details": [
+            {
+              "axis": "horizontal",
+              "enemies": 4,
+              "shots_per_pool": 6,
+              "game_frames": 300,
+              "physical_frames": 300,
+              "fps": 50.0,
+              "cpu_mean_pct": 55.38,
+              "cpu_p95_pct": 62.74,
+              "camera_x_range": [
+                0,
+                64
+              ],
+              "camera_y_range": [
+                92,
+                92
+              ]
+            },
+            {
+              "axis": "vertical",
+              "enemies": 4,
+              "shots_per_pool": 6,
+              "game_frames": 300,
+              "physical_frames": 300,
+              "fps": 50.0,
+              "cpu_mean_pct": 57.46,
+              "cpu_p95_pct": 62.79,
+              "camera_x_range": [
+                32,
+                32
+              ],
+              "camera_y_range": [
+                0,
+                148
+              ]
+            }
+          ]
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "objective_failed": false,
+          "physical_seconds": 13.42,
+          "active_seconds": 13.06,
+          "game_fps": 48.66,
+          "kills": 1,
+          "remaining_hp": -8,
+          "minimum_npc_hp": 88,
+          "moving_frames": 519,
+          "enemy_bound_checks": 825,
+          "damage_events": [
+            {
+              "at_frame": 308,
+              "hp": 88
+            },
+            {
+              "at_frame": 454,
+              "hp": 76
+            },
+            {
+              "at_frame": 487,
+              "hp": 64
+            },
+            {
+              "at_frame": 516,
+              "hp": 52
+            },
+            {
+              "at_frame": 553,
+              "hp": 40
+            },
+            {
+              "at_frame": 586,
+              "hp": 28
+            },
+            {
+              "at_frame": 612,
+              "hp": 16
+            },
+            {
+              "at_frame": 627,
+              "hp": 4
+            },
+            {
+              "at_frame": 653,
+              "hp": -8
+            }
+          ],
+          "healing_events": [],
+          "peak_enemies": 3,
+          "peak_shielded": 0,
+          "shielded_frames": 0,
+          "peak_player_shots": 3,
+          "peak_enemy_shots": 0,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 2,
+          "result": "defeat",
+          "objective_failed": false,
+          "physical_seconds": 9.92,
+          "active_seconds": 9.52,
+          "game_fps": 47.98,
+          "kills": 0,
+          "remaining_hp": -8,
+          "minimum_npc_hp": 88,
+          "moving_frames": 446,
+          "enemy_bound_checks": 770,
+          "damage_events": [
+            {
+              "at_frame": 180,
+              "hp": 88
+            },
+            {
+              "at_frame": 214,
+              "hp": 76
+            },
+            {
+              "at_frame": 253,
+              "hp": 64
+            },
+            {
+              "at_frame": 290,
+              "hp": 52
+            },
+            {
+              "at_frame": 319,
+              "hp": 40
+            },
+            {
+              "at_frame": 365,
+              "hp": 28
+            },
+            {
+              "at_frame": 402,
+              "hp": 16
+            },
+            {
+              "at_frame": 440,
+              "hp": 4
+            },
+            {
+              "at_frame": 476,
+              "hp": -8
+            }
+          ],
+          "healing_events": [],
+          "peak_enemies": 3,
+          "peak_shielded": 0,
+          "shielded_frames": 0,
+          "peak_player_shots": 3,
+          "peak_enemy_shots": 3,
+          "game_ram_writes": false
+        },
+        {
+          "attempt": 3,
+          "result": "completed",
+          "objective_failed": false,
+          "physical_seconds": 29.84,
+          "active_seconds": 29.74,
+          "game_fps": 49.83,
+          "kills": 6,
+          "remaining_hp": 43,
+          "minimum_npc_hp": 52,
+          "moving_frames": 853,
+          "enemy_bound_checks": 1393,
+          "damage_events": [
+            {
+              "at_frame": 164,
+              "hp": 88
+            },
+            {
+              "at_frame": 202,
+              "hp": 76
+            },
+            {
+              "at_frame": 1395,
+              "hp": 79
+            },
+            {
+              "at_frame": 1427,
+              "hp": 67
+            },
+            {
+              "at_frame": 1448,
+              "hp": 55
+            },
+            {
+              "at_frame": 1488,
+              "hp": 43
+            }
+          ],
+          "healing_events": [
+            {
+              "at_frame": 1119,
+              "hp": 91
+            }
+          ],
+          "peak_enemies": 2,
+          "peak_shielded": 0,
+          "shielded_frames": 0,
+          "peak_player_shots": 3,
+          "peak_enemy_shots": 2,
+          "game_ram_writes": false
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "method": "Controller enters phase 1. Kills and pendingLevel are accelerated only in node setup. All ordinary attempts restore a node baseline then enable an enforced RAM-write guard. Isolated probes/stress explicitly use RAM setup. FPS = region_fps * phaseStats.frames / vtimer VBlanks.",
+  "objective_branch_probes": {
+    "05/protect-success": {
+      "passed": true,
+      "details": {
+        "target_seconds": 30,
+        "next_node": 7,
+        "npc_spawn": [
+          176,
+          200
+        ],
+        "pedestal_collision": true,
+        "setup": "spawn cooldown suppressed; timer and objective not patched"
+      }
+    },
+    "05/protect-failure": {
+      "passed": true,
+      "details": {
+        "next_node": 8,
+        "real_npc_contact_damage": true,
+        "initial_npc_hp": 100,
+        "hp_never_written": true,
+        "contact_damage_events": [
+          {
+            "frame": 1,
+            "hp": 88
+          },
+          {
+            "frame": 127,
+            "hp": 76
+          },
+          {
+            "frame": 253,
+            "hp": 64
+          },
+          {
+            "frame": 379,
+            "hp": 52
+          },
+          {
+            "frame": 505,
+            "hp": 40
+          },
+          {
+            "frame": 631,
+            "hp": 28
+          },
+          {
+            "frame": 757,
+            "hp": 16
+          },
+          {
+            "frame": 883,
+            "hp": 4
+          },
+          {
+            "frame": 1009,
+            "hp": 0
+          }
+        ],
+        "interval_frames": [
+          126,
+          126,
+          126,
+          126,
+          126,
+          126,
+          126,
+          126
+        ],
+        "setup": "One enemy initial contact, then enemy position pinned each frame; real NPC contact/knockback/invulnerability/timer/graph logic"
+      }
+    }
+  }
+}

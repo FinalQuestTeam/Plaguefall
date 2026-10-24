@@ -12,6 +12,9 @@ TILE_DEFS=Path(os.environ.get('PLAGUEFALL_TILE_DEFS',str(GAME/'src/system/video/
 def tile_constant(name):return int(re.search(r'^#define\s+'+name+r'\s+(\d+)',TILE_DEFS,re.M).group(1))
 OBJECT_END=16+tile_constant('NUM_TILES')
 ICON_BASE=OBJECT_END+tile_constant('ENEMY_CACHE_TILES')
+import re
+CAMPAIGN_NODE_COUNT=len(re.findall(r'\bN_[A-Za-z0-9]+\b',re.search(r'typedef enum\s*\{(.*?)NODE_MAX',(GAME/'src/levels/graph.h').read_text(),re.S)[1]))
+
 CORE=Path.home()/'Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib'
 
 def png(path,w,h,rgb):
@@ -236,7 +239,7 @@ def main():
         assert 'PÁTIO DA IGREJA' in textrow(5),textrow(5)
         press(8);run(3);assert u8('pendingLevel')==1,'C must not skip preparation in release'
         baseline=snapshot()
-        for node in range(1,21):
+        for node in range(1,CAMPAIGN_NODE_COUNT+1):
             ordinary=False;restore(baseline)
             # Real startPhase establishes actors/objective. Accelerated death
             # then uses the ordinary story -> briefing -> start path.
@@ -333,7 +336,7 @@ def main():
             report['phases'].append({'id':names[node],'goalCorrect':True,'realProgress':True,'pauseAndHelpFreezeSimulation':True,
                 'helpReturnsToPause':True,'exitDefaultsSafe':True,'BAndStartResume':True,'graphicsVRAMRestoredExactly':True,
                 'missionGuidePages':pages,'missionGuideFreezesSimulation':True,'missionCardRestoredExactly':True})
-            report['phases'][-1].update({'radioMonitorNativeFrameExact':True,'enemyPortraitPixelsAndPalettePreserved':True})
+            report['phases'][-1].update({'radioMonitorNativeFrameExact':True,'enemyPortraitMatchesAuthoredPixelsAndPalette':True})
             print('PASS',names[node],'briefing/pause/help/restore',flush=True);save()
         # Release combo must retain the current stage. Only setup resets the foes.
         ordinary=False;restore(baseline);press(1)

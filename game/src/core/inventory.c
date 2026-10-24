@@ -63,3 +63,13 @@ void INV_view(u8 i, u8 *type, u8 *count)
 }
 
 u8 INV_selected(void) { return sel; }
+
+// Compare packed inventory fields without four output-parameter calls. This
+// observes the same live storage as INV_view, including externally added bombs.
+bool INV_matches(const u8 *types,const u8 *counts)
+{
+    return types[0]==ITEM_BOMB && counts[0]==(u8)BOMB_count() &&
+        types[1]==item[0].type && counts[1]==item[0].charges &&
+        types[2]==item[1].type && counts[2]==item[1].charges &&
+        types[3]==item[2].type && counts[3]==item[2].charges;
+}

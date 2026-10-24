@@ -1,0 +1,24 @@
+{
+  "status": "integrated and validated with documented limits",
+  "references": [
+    "game/doc/historia/guia-producao-visual-fases.md",
+    "game/doc/historia/storyboard-campanha.md",
+    "game/art/phase01-courtyard-v2/intact-native.png",
+    "game/art/phase04-tunnels-v1/map-native.png"
+  ],
+  "art": [
+    "Reuse existing approved native modules; no replacement street library.",
+    "Elevated orthographic projection, dominant roof, short facade, actor32x48, native1px patina.",
+    "Review whole panorama and contiguous320x224views at160px steps, including spaces between landmarks.",
+    "Upper/lower/lateral limits remain continuous; whole architecture and safe character field.",
+    "Stage9 is2560px, urban-industrial approach with workshops/loading sheds and exact factory10/11door."
+  ],
+  "technical": [
+    "Exact native4bpp/H-Vdeduplication, PAL3scenery,640tiles shared with objective animation.",
+    "6B background<=384 plus256objective tiles; no palette or enemy cap shortcuts.",
+    "Compare compiled bank bytes and actual cameras from the same frozen ROM.",
+    "Separate functional assertions, art judgment and60/50FPS measurements.",
+    "No final approval inferred from tile counts or passing functional scripts."
+  ],
+  "publication": "Replaced rejected0844 only after whole-scene review,10same-ROM functional suites,18bank comparisons and18,000VBlanks at60/50FPS. Physicalhardware and human difficulty remain unmeasured."
+}

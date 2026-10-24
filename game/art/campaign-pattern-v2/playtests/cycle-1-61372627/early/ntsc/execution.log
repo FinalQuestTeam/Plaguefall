@@ -1,0 +1,36 @@
+PASS 01/entry
+PASS 01/atlas-camera
+PASS 01/collision
+PASS 01/load
+MATCH 01 {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 52.23, 'physical_seconds': 53.68, 'fps': 58.38, 'kills': 8, 'hp': 0, 'minimum_npc_hp': None, 'peak_enemies': 4, 'damage_events': 13, 'ram_writes_during_attempt': False}
+PASS 01/timer-victory
+PASS 02A/entry
+PASS 02A/atlas-camera
+PASS 02A/collision
+PASS 02A/load
+MATCH 02A {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 74.23, 'physical_seconds': 75.65, 'fps': 58.88, 'kills': 13, 'hp': 0, 'minimum_npc_hp': None, 'peak_enemies': 3, 'damage_events': 10, 'ram_writes_during_attempt': False}
+PASS 02B/entry
+PASS 02B/atlas-camera
+PASS 02B/collision
+PASS 02B/load
+MATCH 02B {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 42.22, 'physical_seconds': 43.65, 'fps': 58.03, 'kills': 6, 'hp': 0, 'minimum_npc_hp': None, 'peak_enemies': 4, 'damage_events': 11, 'ram_writes_during_attempt': False}
+PASS 03/entry
+FAIL 03/atlas-camera AssertionError(('ring', 153, 4, 110, 28))
+PASS 03/collision
+PASS 03/load
+FAIL 03/full-controller-traversal AssertionError(('blocked street route', 312, 174, 3))
+PASS 03/church-continuity
+MATCH 03 {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 12.75, 'physical_seconds': 14.37, 'fps': 53.25, 'kills': 0, 'hp': 0, 'minimum_npc_hp': None, 'peak_enemies': 4, 'damage_events': 12, 'ram_writes_during_attempt': False}
+PASS 04/entry
+PASS 04/atlas-camera
+PASS 04/collision
+PASS 04/load
+MATCH 04 {'attempt': 1, 'result': 'timeout', 'objective_failed': False, 'game_seconds': 150.0, 'physical_seconds': 150.0, 'fps': 60.0, 'kills': 3, 'hp': 80, 'minimum_npc_hp': None, 'peak_enemies': 4, 'damage_events': 2, 'ram_writes_during_attempt': False}
+PASS 05/entry
+PASS 05/atlas-camera
+PASS 05/collision
+PASS 05/load
+MATCH 05 {'attempt': 1, 'result': 'completed', 'objective_failed': False, 'game_seconds': 119.03, 'physical_seconds': 119.75, 'fps': 59.64, 'kills': 29, 'hp': 22, 'minimum_npc_hp': 48, 'peak_enemies': 3, 'damage_events': 8, 'ram_writes_during_attempt': False}
+PASS 05/timer-victory
+PASS 05/abandonment-failure
+{"passed": false, "failures": [{"check": "03/atlas-camera", "error": "AssertionError(('ring', 153, 4, 110, 28))"}, {"check": "03/full-controller-traversal", "error": "AssertionError(('blocked street route', 312, 174, 3))"}], "output": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-pattern-v2/playtests/early/ntsc/report.json"}

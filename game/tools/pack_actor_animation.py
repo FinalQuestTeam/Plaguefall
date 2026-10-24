@@ -52,6 +52,9 @@ def main():
                     raw.extend(pixels.frame_bytes(cell))
         write(GAME/"res"/group/"frames.bin",raw)
         report["actors"][group]={"characters":len(masters),"canonical_frames":len(masters)*5*len(poses),"rom_bytes":len(raw),"previous_rom_bytes":len(masters)*5*10*768,"sha256":hashlib.sha256(raw).hexdigest()}
+    # Keep the purple shield bank synchronized with the selected enemy art.
+    subprocess.run([sys.executable,str(GAME/'tools/build_enemy_shields.py'),str(GAME)]+
+                   (["--check"] if args.check else []),check=True)
     # Dinorah is currently displayed only at rest in Assets. Keep movement
     # poses in the art master, and publish just the ten displayed ROM frames.
     dinorah=(GAME/'art/cangaco-parceira-iso60-v1/runtime/frames.bin').read_bytes()

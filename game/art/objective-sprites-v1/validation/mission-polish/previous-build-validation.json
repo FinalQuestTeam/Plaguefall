@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "revision": "Portões norte–sul alinhados aos muros, batentes permanentes e folha central compartilhando geometria com a colisão",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "5964565a940ebeb4cd9389d410fb9148022c7a67d2981ee0d400353b72fe1b07",
+  "rom_bytes": 1835008,
+  "text_bytes": 1788796,
+  "data_bytes": 152,
+  "bss_bytes": 19494,
+  "static_ram_bytes": 19646,
+  "native_checks_passed": true,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "objective_art": {
+    "new_assets": 9,
+    "authored_frames": 54,
+    "all_frames_distinct": true,
+    "generation": "built-in image_gen.imagegen",
+    "palette": "existing PAL1",
+    "tile_base": 817,
+    "maximum_resident_tiles": 528,
+    "vram_end_exclusive": 1345,
+    "checks_passed": 18,
+    "rooms": [
+      16
+    ],
+    "animations_finish_after_result": true,
+    "pause_freezes_animations": true,
+    "frame_patterns_verified_in_vram": true,
+    "ground_tiles_verified_during_camera_motion": true,
+    "strict_fps_target_met_in_all_scenarios": false,
+    "reports": {
+      "ntsc": "../art/objective-sprites-v1/validation/gate-mount/ntsc/report.json",
+      "pal": "../art/objective-sprites-v1/validation/gate-mount/pal/report.json"
+    },
+    "validation_scope": "Gate mounting revision: room 16 only, both regions; art/wall registration, fixed jamb collision, open passage, controller completion, 30-second normal/stress profiles.",
+    "resource_export_check_passed": true,
+    "gate_mount_verified": true
+  },
+  "previous_validation": "../art/objective-sprites-v1/validation/gate-mount/previous-build-validation.json"
+}

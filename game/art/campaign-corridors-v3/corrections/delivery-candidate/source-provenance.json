@@ -1,0 +1,17 @@
+{
+  "rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "independent_main_source_build_same_sha": true,
+  "sources": {
+    "game/src/levels/arena.c": "784162a3bf7b3bba6318fae524d5c23a991e7d775c0d1ea7158a0318cdb5f1dd",
+    "game/src/actors/dinorah.c": "07e64d4bff193025ae3c7711ddbb44ddd9807005466ba61bee17af573f0c5dea",
+    "game/src/core/inventory.c": "6754662d2906cd11b9882c7322f7b2136316e48a7d535e68e5d7044332b057c3",
+    "game/src/core/objective.c": "8f5929039fc5448a79090eac1999d292f5527064d1b94c4a58c8c9d51bc0287c",
+    "game/src/actors/shots_enemy.c": "baf687d46058c8e831ca3c1b217666361e381f26c329f73dfcbf72b36d09d067",
+    "game/src/enemies/enemy_orange.c": "fd9a3266d66a25fbcec026219c769c48898fd414e64359107cfcb4200b4bbb08",
+    "game/src/system/video/screens/hud.c": "7cbbb89616262bd9ff83f4bfcc49b69660da6827d558f204d2bce545ce14cee5",
+    "game/src/system/video/screens/hud_label_data.h": "d37c868b9e8f9bb27c456ffa2f77967597d7a6540b5ef67f3e2874599c8ac029",
+    "game/src/system/video/markers.c": "c2922a603c3740955efd9f51bf0ff8ad0b9716a5e662c083d36c07351525d188",
+    "game/src/levels/campaign_route_ops.c": "c9d0b4d9af5804dee1e177cdf3be75f246e4e06c79aafcee1d641bd212ab34fb",
+    "game/src/rom_header.c": "e877ed1165d5937244f952a084ffb24db4515dc91bd1938f0b7497d76fa2e7f6"
+  }
+}

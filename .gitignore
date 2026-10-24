@@ -19,3 +19,26 @@ __pycache__/
 /game/art/**/*.o
 /game/art/**/*.out
 /game/art/**/validation/*.s
+
+# Reproducible emulator captures and temporary comparison builds.
+# Final campaign evidence remains bundled with the reviewed candidate.
+/game/art/**/*.mp4
+/game/art/**/validation/**/*.png
+/game/art/**/validation/**/*.bin
+/game/art/**/captures/**/*.png
+/game/art/**/ntsc/**/*.png
+/game/art/**/pal/**/*.png
+/game/art/**/emulator-ntsc/**/*.png
+/game/art/**/emulator-pal/**/*.png
+/game/art/**/rom/*.bin
+/game/art/**/rom.bin
+/game/art/**/Plaguefall*.bin
+/game/art/campaign-corridors-v3/baseline/rom.bin
+/game/art/campaign-corridors-v3/milestones/
+/game/art/campaign-corridors-v3/playtests-before-correction/
+/game/art/campaign-corridors-v3/captures-before-correction/
+/game/art/campaign-corridors-v3/corrections/staging/
+/game/art/campaign-corridors-v3/corrections/final-trial/
+/game/art/campaign-corridors-v3/corrections/performance/**/*.bin
+/game/art/campaign-corridors-v3/corrections/performance/**/*.png
+!/game/art/campaign-corridors-v3/corrections/delivery-candidate/**/*.png

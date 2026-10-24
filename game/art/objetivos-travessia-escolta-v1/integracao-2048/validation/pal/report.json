@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "3dcc36a348469c34f2e368ffa096552a05e68c7f729c86f0b2c665c3ea496dbc",
+  "checks": {
+    "reachFullRouteControllerOnly": true,
+    "horizontalAndVerticalRingPast1536": true,
+    "pauseRestoresExtendedMap": true,
+    "reachWinsWithoutKills": true,
+    "reachIgnoresKillQuota": true,
+    "former1024ExitNoLongerCompletes": true,
+    "holesBlockFeetButNotBullets": true,
+    "collisionMaskBeyond1024": true,
+    "escortWaitsForCover": true,
+    "nativeArrowAndAlertUseInterfacePalette": true,
+    "escortFullRouteControllerOnly": {
+      "seconds": 65.8,
+      "hp": 100,
+      "states": [
+        0,
+        2
+      ]
+    },
+    "escortPauseFreezesAndRestoresSprite": true,
+    "escortBulletDamageAndLocalInvulnerability": true,
+    "allyShotKillsWithoutInventoryOrFriendlyFire": {
+      "peakBullets": 1,
+      "kills": 1
+    },
+    "enemyShooterAimsAssignedActor": true,
+    "escortContactDamage": true,
+    "escortNeedsBothActorsAndConfirmation": true,
+    "escortFailureOnEnemyBullet": true,
+    "escortRetryResetsSameStage": true,
+    "sectorSpawnsAvoidActorsHolesAndExit": {
+      "samples": 80
+    },
+    "pilotLoadPerformance": {
+      "gameFPS": 49.17,
+      "regionFPS": 50
+    }
+  },
+  "heap_sentinel_intact": true
+}

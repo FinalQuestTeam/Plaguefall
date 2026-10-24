@@ -1,0 +1,50 @@
+{
+  "phase": "12",
+  "rom_sha256": "232eac030e985dfc2ea029722ed20ae8ffff5da5131daadae8c53e296fd3b2e0",
+  "scope": "Actual integrated emulator screenshots, both NTSC/PAL. Native previews were not used as runtime proof.",
+  "status": "visual_runtime_accepted",
+  "regions": {
+    "ntsc": {
+      "frames": 70,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime232e/capture-ntsc.json"
+    },
+    "pal": {
+      "frames": 70,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime232e/capture-pal.json"
+    }
+  },
+  "frames_visually_reviewed": 140,
+  "review_method": "All3sweep sheets of each region and both10-landmark sheets inspected. All10NTSClandmarks inspected at320x224; criticalPALlandmark board inspected. Screenshots were snapshotted locally to preserve this exact ROM evidence.",
+  "general_observations": [
+    "Every declared landmark is whole and outside the HUD at its legal focus pose.",
+    "Damião feet remain aligned to the walkable floor; no roof penetration or floating contact found in the inspected poses.",
+    "No VRAM stripe, shifted palette block or broken streaming corner found across the inspected sweep.",
+    "Partial buildings entering ordinary scrolling views are expected; full assembly proof is assessed at the separate focus landmarks."
+  ],
+  "limits": [
+    "Screenshot setup suppresses combat/progress and relocates player feet. These frames prove rendering/framing; they are not a completed normal-combat run.",
+    "Dinorah appears beside Damião at the12entry but is not moved alongside every teleported focus pose. Central controller tests separately exercise actual escort traversal.",
+    "NTSC/PAL animation and some escort-camera targets differ slightly as real timers/NPCs settle; matching pixel hashes were not used to excuse visual differences."
+  ],
+  "mutations": "Review evidence only for12. A separately authorized isolated truck9extraction correction followed its real finding; old232ereports retain the original failure.",
+  "composition_observations": [
+    "Workshop closes on both sides in the entry camera; the player and Dinorah are visible with contact/shadow on the sidewalk.",
+    "Union roof is now below the HUD and the blue entrance/red union cloth remain distinct.",
+    "All3southern docks include their full side closures and bases. Bases end exactly on the last viewport row atY88; no extra south ground context is visible, but no assembly pixel is lost.",
+    "New service annexes appear in the former long blank intervals; their complete roofs/doors/plinths are visible while moving through those sectors.",
+    "Annex4pose[2544,168]selects the northern facade and all160x128pixels fit atcamera[2392,0]in both regions."
+  ],
+  "blocking_findings": [],
+  "framing_notes": [
+    {
+      "id": "south-base-exact-fit",
+      "severity": "normal_camera_limit",
+      "evidence": "captures-ntsc/12/landmark-3.png",
+      "description": "Whole base ends atviewportbottom224; eight pixels of world margin below the assembly lie outside this frame. Full-bbox test and visual inspection confirm no truncation."
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "scope": "Refazer todas as19variações e integrar em produção",
+  "workflow": "workflow.json",
+  "not_a_fixed_layout": true,
+  "ownership": {
+    "root": [
+      "1",
+      "2A",
+      "2B",
+      "3",
+      "4",
+      "5"
+    ],
+    "routes": [
+      "6A",
+      "6B",
+      "12"
+    ],
+    "factory": [
+      "9",
+      "10",
+      "11"
+    ],
+    "resistance_launch": [
+      "7",
+      "8",
+      "13A",
+      "13B",
+      "14",
+      "15",
+      "16"
+    ]
+  },
+  "global_constraints": [
+    "Preservar história e8percursos de consequências",
+    "Dinorah viva participa do final; falecida mantém versão correspondente",
+    "Não mudar os sprites globais de objetivos nesta rodada; respeitar sua reserva real junto ao fundo",
+    "Revisar fonte completa, montagem nativa completa, objetivos/estados e câmeras reais",
+    "Não aprovar arte por teste técnico; registrar problemas e limites",
+    "Proibir fragmentos de construções usados como objetos ou limites sem terminações",
+    "Quantidade e posição de obstáculos seguem cada fase, sem copiar os4exemplos"
+  ],
+  "starting_rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "stages": [
+    {
+      "phase": "1",
+      "node": 1,
+      "name": "Pátio da igreja",
+      "goal": "Sobreviver 90 s",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "2A",
+      "node": 2,
+      "name": "Igreja preservada",
+      "goal": "Eliminar 15 insetos",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "2B",
+      "node": 3,
+      "name": "Igreja destruída",
+      "goal": "Eliminar 15 insetos; entulho sólido",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "3",
+      "node": 4,
+      "name": "Rua ao galpão",
+      "goal": "Percorrer 2560 px com desvios e cobertura",
+      "size": [
+        2560,
+        320
+      ]
+    },
+    {
+      "phase": "4",
+      "node": 5,
+      "name": "Interior do galpão",
+      "goal": "Eliminar 20 insetos",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "5",
+      "node": 6,
+      "name": "Sinal na Santa",
+      "goal": "Proteger 120 s",
+      "size": [
+        384,
+        384
+      ]
+    },
+    {
+      "phase": "6A",
+      "node": 7,
+      "name": "Esgotos",
+      "goal": "Escolta 3072 px",
+      "size": [
+        3072,
+        320
+      ]
+    },
+    {
+      "phase": "6B",
+      "node": 8,
+      "name": "Esgotos sob pressão",
+      "goal": "Escolta 3072 px;2 válvulas e 2 portões",
+      "size": [
+        3072,
+        320
+      ]
+    },
+    {
+      "phase": "7",
+      "node": 9,
+      "name": "Abrigo O Último Chão",
+      "goal": "Transportar 5 cargas",
+      "size": [
+        768,
+        384
+      ]
+    },
+    {
+      "phase": "8",
+      "node": 10,
+      "name": "Transmissores",
+      "goal": "Eliminar 3 prioritários",
+      "size": [
+        768,
+        384
+      ]
+    },
+    {
+      "phase": "9",
+      "node": 11,
+      "name": "Caminho da fábrica",
+      "goal": "Percorrer 2560 px",
+      "size": [
+        2560,
+        320
+      ]
+    },
+    {
+      "phase": "10",
+      "node": 12,
+      "name": "Ovos na fábrica",
+      "goal": "Destruir 10 ninhos",
+      "size": [
+        768,
+        384
+      ]
+    },
+    {
+      "phase": "11",
+      "node": 13,
+      "name": "Fábrica aquecida",
+      "goal": "Liberar 3 válvulas",
+      "size": [
+        768,
+        384
+      ]
+    },
+    {
+      "phase": "12",
+      "node": 14,
+      "name": "Caminho ao sindicato",
+      "goal": "Escolta 3072 px; morte permanente deDinorah",
+      "size": [
+        3072,
+        320
+      ]
+    },
+    {
+      "phase": "13A",
+      "node": 15,
+      "name": "Sala do sindicato",
+      "goal": "Eliminar 30;Dinorah protegida",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "13B",
+      "node": 16,
+      "name": "Sala do sindicato em luto",
+      "goal": "Eliminar 45;Dinorah morta",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "14",
+      "node": 17,
+      "name": "Energia do estaleiro",
+      "goal": "Ligar 5 geradores",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "15",
+      "node": 18,
+      "name": "Rádio de ignição",
+      "goal": "Proteger 120 s",
+      "size": [
+        512,
+        384
+      ]
+    },
+    {
+      "phase": "16",
+      "node": 19,
+      "name": "Escorpião",
+      "goal": "Derrotar o chefe",
+      "size": [
+        512,
+        384
+      ]
+    }
+  ]
+}

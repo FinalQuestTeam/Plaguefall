@@ -1,0 +1,194 @@
+{
+  "full_sources_before_extraction": [
+    {
+      "path": "art/campaign-pattern-v2/launch/source/15-16-shipyard-ignition.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "33c6ab980c48b9fe430e809d90fb36a9f84f652244b6a51c1681700b77aef73e",
+      "authoring": "Native ImageGen; prompt/provenance in campaign-pattern-v2/prompts.json",
+      "accepted_for_extraction": true
+    },
+    {
+      "path": "art/campaign-pattern-v2/launch/source/14-16-shipyard.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "9b33cba5cc877c1418c966298cbb1b1166617e9f1f4c384636704d375024ad77",
+      "authoring": "Native ImageGen; prompt/provenance in campaign-pattern-v2/prompts.json",
+      "accepted_for_extraction": true
+    }
+  ],
+  "module_extraction": [
+    {
+      "name": "engine-chamber-complete",
+      "source_plane": "q",
+      "source_bbox_world_scaled": [
+        32,
+        0,
+        216,
+        112
+      ],
+      "size": [
+        184,
+        112
+      ],
+      "source_line": 20,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "nozzle-detail-complete",
+      "source_plane": "detail",
+      "source_bbox_world_scaled": [
+        104,
+        8,
+        160,
+        80
+      ],
+      "size": [
+        56,
+        72
+      ],
+      "source_line": 24,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "side-wall-complete-segment",
+      "source_plane": "q",
+      "source_bbox_world_scaled": [
+        0,
+        128,
+        32,
+        192
+      ],
+      "size": [
+        32,
+        64
+      ],
+      "source_line": 27,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "lower-full-bay",
+      "source_plane": "q",
+      "source_bbox_world_scaled": [
+        32,
+        320,
+        216,
+        384
+      ],
+      "size": [
+        184,
+        64
+      ],
+      "source_line": 29,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "engine-ignited-interior-complete",
+      "source_plane": "fire",
+      "source_bbox_world_scaled": [
+        56,
+        16,
+        200,
+        96
+      ],
+      "size": [
+        144,
+        80
+      ],
+      "source_line": 46,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "upper-center-bay-complete",
+      "source_plane": "q",
+      "source_bbox_world_scaled": [
+        216,
+        0,
+        296,
+        112
+      ],
+      "size": [
+        80,
+        112
+      ],
+      "source_line": 26,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "lower-door-whole",
+      "source_plane": "q",
+      "source_bbox_world_scaled": [
+        216,
+        320,
+        296,
+        384
+      ],
+      "size": [
+        80,
+        64
+      ],
+      "source_line": 31,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "station-complete-supported",
+      "source_plane": "detail",
+      "source_bbox_world_scaled": [
+        192,
+        112,
+        320,
+        224
+      ],
+      "size": [
+        128,
+        112
+      ],
+      "source_line": 42,
+      "directory": "",
+      "complete_silhouette": true
+    },
+    {
+      "name": "island-complete-shadow",
+      "source_plane": "detail",
+      "source_bbox_world_scaled": [
+        208,
+        240,
+        304,
+        304
+      ],
+      "size": [
+        96,
+        64
+      ],
+      "source_line": 43,
+      "directory": "",
+      "complete_silhouette": true
+    }
+  ],
+  "exact_deduplication": "H/V-identical8x8 tiles only, no similarity substitution",
+  "pixel_quantization": "Exact nearest RGB333 before8x8 cutting; no dithering.4px structural modules,2px focal objects;1px union portrait/actor. Source art determines all drawn pixels.",
+  "floor": "A single clean authored material pixel; no repeated object shadow or furniture fragment.",
+  "alpha_extraction": "Favela props keep protected complete bodies/caps; only edge-connected floor colors removed. Launch conduits use a16px-wide extraction mask around the complete authored path, including elbows/flanges; mask never draws pipe pixels.",
+  "full_module_crop_proofs": [],
+  "runtime_actor_scale": {
+    "generator_and_radio": "Global objective-sprites-v1 exports, unchanged",
+    "persistent_generators": [
+      "14",
+      "15",
+      "16"
+    ],
+    "radio_slot": 5
+  },
+  "generator_source": "tools/build_campaign_launch.py"
+}

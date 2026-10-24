@@ -10,10 +10,12 @@
 #include "system/video/projection.h"
 #include "system/video/herogfx.h"
 #include "levels/test.h"
+#include "levels/campaign_factory.h"
 
 static u8 shotPower = 1;         // balas por disparo (1..SHOTS_MAX_POWER)
 static u8 shotMode;              // SHOTMODE_* ativo (raio/gelo/fogo)
 static u8 modeCharges;           // acertos restantes do modo
+static u16 recycleCursor;        // alterna os projéteis antigos a substituir
 
 void SHOTS_resetPower(void) { shotPower = 1; }
 void SHOTS_addPower(void)   { if (shotPower < SHOTS_MAX_POWER) shotPower++; }
@@ -28,24 +30,36 @@ bool SHOTS_hasChain(void)   { return shotMode == SHOTMODE_CHAIN && modeCharges >
 
 // cria um projétil do jogador em (fx, fy) 26.6 com velocidade (vx, vy) 26.6 e o
 // modo especial `mode` (SHOTMODE_*), que decide o efeito ao acertar
-static void spawnPShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 mode)
+static void spawnPShot(u16 slot, s32 fx, s32 fy, s32 vx, s32 vy, u8 mode)
 {
-    const u16 cap = currentLevel==0 ? TEST_shotLimit() : (LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_PSHOTS);
-    for (u16 i = 0; i < cap; i++)
-    {
-        if (pshots[i].active) continue;
-        pshots[i].x = fx;
-        pshots[i].y = fy;
-        pshots[i].vx = vx;
-        pshots[i].vy = vy;
-        pshots[i].mode = mode;
-        pshots[i].active = TRUE;
-        return;
-    }
+    FShot *shot=&pshots[slot];
+    shot->x=fx;shot->y=fy;shot->vx=vx;shot->vy=vy;
+    shot->mode=mode;shot->active=TRUE;shot->renderPose=0;
 }
 
 void SHOTS_firePlayer(void)
 {
+    u16 cap=currentLevel==0 ? TEST_shotLimit() :
+        (LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_PSHOTS);
+    if(cap>MAX_PSHOTS)cap=MAX_PSHOTS;
+    if(!cap)return; // a sala de carga permite desligar os projéteis
+
+    // Reserve o leque inteiro antes de escrever no pool. Use vagas livres
+    // primeiro; se a fase estiver no teto, substitua tiros anteriores em rodízio.
+    // Assim o teto de seis não transforma um disparo de cinco em só uma bala.
+    // A máscara impede que a reciclagem sobrescreva uma vaga deste mesmo leque.
+    u16 slots[SHOTS_MAX_POWER],reserved=0,count=0;
+    const u16 power=shotPower<cap ? shotPower : cap;
+    for(u16 i=0;i<cap && count<power;i++)if(!pshots[i].active) {
+        slots[count++]=i;reserved|=1u<<i;
+    }
+    if(recycleCursor>=cap)recycleCursor=0;
+    for(u16 checked=0;count<power && checked<cap;checked++) {
+        const u16 i=recycleCursor;
+        if(++recycleCursor==cap)recycleCursor=0;
+        if(!(reserved&(1u<<i)))slots[count++]=i;
+    }
+
     // a velocidade do tiro escala junto com o bônus da botinha, para a bala
     // nunca ficar mais lenta que o personagem
     u16 spd = PSHOT_SPEED * 64;
@@ -77,17 +91,21 @@ void SHOTS_firePlayer(void)
 
     // leque de `shotPower` balas em torno da direção; ~14° por passo (k = o/8),
     // com o índice `o` em meios-passos (-(power-1)..+(power-1), passo 2)
-    const s16 span = shotPower - 1;
-    for (s16 o = -span; o <= span; o += 2)
-        spawnPShot(fx, fy, bvx - (bvy * o) / SHOTS_ARC_SHEAR,
+    const s16 span = power - 1;
+    for (u16 i=0;i<power;i++) {
+        const s16 o=(s16)(i*2)-span;
+        spawnPShot(slots[i], fx, fy, bvx - (bvy * o) / SHOTS_ARC_SHEAR,
                    bvy + (bvx * o) / SHOTS_ARC_SHEAR, vmode);
+    }
 
     SFX_playerShot();
 }
 
-u16 SHOTS_updatePlayer(void)
+__attribute__((noinline)) u16 SHOTS_updatePlayer(void)
 {
     u16 killed = 0;
+    bool boundsReady=FALSE;
+    s16 left=32767,top=32767,right=-32768,bottom=-32768;
 
     for (u16 i = 0; i < MAX_PSHOTS; i++)
     {
@@ -106,6 +124,19 @@ u16 SHOTS_updatePlayer(void)
             continue;
         }
 
+        if(CF_shotHit(sx+4,sy-VIDEO_HEIGHT_OFFSET+4)){pshots[i].active=FALSE;continue;}
+        if(!boundsReady) {
+            left=top=32767;right=bottom=-32768;
+            for(u16 j=0;j<MAX_ENEMIES;j++)if(enemies[j].active) {
+                const Enemy *e=&enemies[j];const s16 size=ENEMY_SIZE(e);
+                if(e->x<left)left=e->x;if(e->y<top)top=e->y;
+                if(e->x+size>right)right=e->x+size;
+                if(e->y+size>bottom)bottom=e->y+size;
+            }
+            boundsReady=TRUE;
+        }
+        if(sx>=right || sx+8<=left || sy>=bottom || sy+8<=top)continue;
+
         // status pelo modo do PRÓPRIO tiro (a carga já foi gasta no disparo)
         const u8 pm = pshots[i].mode;
         const u8 status = (pm == SHOTMODE_ICE)  ? ENEMY_STATUS_FREEZE
@@ -117,10 +148,10 @@ u16 SHOTS_updatePlayer(void)
         if (hit != ENEMY_HIT_NONE)
         {
             pshots[i].active = FALSE;   // o tiro é consumido mesmo sem matar
-            if (hit == ENEMY_HIT_KILLED) killed++;
+            if (hit == ENEMY_HIT_KILLED){killed++;boundsReady=FALSE;}
 
             if (pm == SHOTMODE_CHAIN)   // raio: reação em cadeia no acerto
-                killed += ENEMIES_chainDamage(sx, sy, SHOTS_CHAIN_TARGETS, SHOTS_CHAIN_RANGE);
+            {killed += ENEMIES_chainDamage(sx, sy, SHOTS_CHAIN_TARGETS, SHOTS_CHAIN_RANGE);boundsReady=FALSE;}
         }
     }
 

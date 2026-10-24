@@ -1,0 +1,161 @@
+{
+  "rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "technical_only": true,
+  "compiled_comparisons": 18,
+  "phases": {
+    "3": {
+      "pixel_exact_native_reconstruction": true,
+      "geometry": {
+        "footprint": 16,
+        "free_positions": 6183,
+        "reachable_positions": 6183,
+        "all_free_positions_connected": true,
+        "swept16pxSamples": 2926
+      },
+      "memory": {
+        "scene_tiles": 554,
+        "objective_tiles": 0,
+        "total_tiles": 570,
+        "budget": 640,
+        "free_tiles": 86,
+        "graphics_bytes": 17728,
+        "map_bytes": 25600,
+        "palette_bytes": 32,
+        "exact_hv_deduplication": true,
+        "pixel_exact_reassembly": true,
+        "lossy_pattern_replacements": 0,
+        "tile_sha256": "df13348ba21c875f418bb1046bc1845d2ee42357f5fb516e1e3fc96c401a1b6e",
+        "damaged_scene_tiles": 570,
+        "max_state_tiles": 570,
+        "states_resident_simultaneously": false,
+        "background_tiles": 554,
+        "limit": 640
+      },
+      "native_sha256": "45a2debb6e2c965550e0d7be4d2d8a56866400eb1ae2a4eac3ea307c3a9ffcbd",
+      "damaged_reconstruction_exact": true
+    },
+    "6A": {
+      "pixel_exact_native_reconstruction": true,
+      "geometry": {
+        "footprint": 16,
+        "free_positions": 5554,
+        "reachable_positions": 5554,
+        "all_free_positions_connected": true,
+        "swept16pxSamples": 3200
+      },
+      "memory": {
+        "scene_tiles": 554,
+        "objective_tiles": 0,
+        "total_tiles": 554,
+        "budget": 640,
+        "exact_native_tile_reuse": true,
+        "lossy_tile_substitutions": 0,
+        "map_bytes": 30720,
+        "background_tiles": 554,
+        "limit": 640,
+        "graphics_bytes": 17728
+      },
+      "native_sha256": "ab71c67a907a42ca01d63ea2d706cab89f38c1d76c6546b91780c4cf6247dc43"
+    },
+    "6B": {
+      "pixel_exact_native_reconstruction": true,
+      "geometry": {
+        "footprint": 16,
+        "free_positions": 6074,
+        "reachable_positions": 6074,
+        "all_free_positions_connected": true,
+        "swept16pxSamples": 3174
+      },
+      "memory": {
+        "scene_tiles": 368,
+        "objective_tiles": 256,
+        "total_tiles": 624,
+        "budget": 640,
+        "exact_native_tile_reuse": true,
+        "lossy_tile_substitutions": 0,
+        "map_bytes": 30720,
+        "background_tiles": 368,
+        "limit": 640,
+        "graphics_bytes": 11776
+      },
+      "native_sha256": "0c4cace0abb13db32a2b94b8e25c30b6a32f3d0545e5d5afeb7cddb6b8bdafdc",
+      "gate_connectivity": {
+        "both_closed": "blocked",
+        "first_open": "blocked",
+        "both_open": "connected"
+      }
+    },
+    "9": {
+      "pixel_exact_native_reconstruction": true,
+      "geometry": {
+        "footprint": 16,
+        "free_positions": 5508,
+        "reachable_positions": 5508,
+        "all_free_positions_connected": true,
+        "swept16pxSamples": 2747
+      },
+      "memory": {
+        "tiles": 630,
+        "budget": 640,
+        "tile_bytes": 20160,
+        "map_bytes": 25600,
+        "exact_flip_reused": 12170,
+        "lossy_tile_substitutions": 0,
+        "native_grid": 1,
+        "fits": true,
+        "scene_tiles": 630,
+        "background_tiles": 630,
+        "objective_tiles": 0,
+        "total_tiles": 630,
+        "limit": 640,
+        "free_tiles": 10,
+        "graphics_bytes": 20160,
+        "palette_bytes": 32,
+        "collision_mask_words": 400
+      },
+      "native_sha256": "227e9a53b29c51ce9dae83f5cbaa271913782cf816cf3c04da380fa39de1b2c3"
+    },
+    "12": {
+      "pixel_exact_native_reconstruction": true,
+      "geometry": {
+        "footprint": 16,
+        "free_positions": 4904,
+        "reachable_positions": 4904,
+        "all_free_positions_connected": true,
+        "swept16pxSamples": 2864
+      },
+      "memory": {
+        "scene_tiles": 508,
+        "objective_tiles": 0,
+        "total_tiles": 508,
+        "budget": 640,
+        "free_tiles": 132,
+        "graphics_bytes": 16256,
+        "map_bytes": 30720,
+        "palette_bytes": 32,
+        "pixel_exact_reassembly": true,
+        "lossy_pattern_replacements": 0,
+        "background_tiles": 508,
+        "limit": 640
+      },
+      "native_sha256": "2fca984a22ce325b13475f6bfbaf256caf726475010126119fc96350a449d082"
+    }
+  },
+  "preserved_phases": [
+    "1",
+    "2A",
+    "2B",
+    "4",
+    "5",
+    "7",
+    "8",
+    "10",
+    "11",
+    "13A",
+    "13B",
+    "14",
+    "15",
+    "16"
+  ],
+  "passed": true
+}

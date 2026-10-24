@@ -1,0 +1,329 @@
+{
+  "baseline_rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "candidate_rom_sha256": "a8bdb3eafc2335f7408e462398efb0623cf5b1440131573befef6c9c12a84824",
+  "candidate_status": "needs-optimization",
+  "performance_target_met": false,
+  "comparison_method": "Same native_cadence preservation policy and real3sitem replay in both ROMs. Four-second warmup then1800physicalVBlanks. No death/transition tail. Earlier policy comparisons are diagnosis only and are not attributed as engine gains.",
+  "production_scope_reported_by_root": [
+    "HUD incremental composition",
+    "linear4MiBROMheader; independent change"
+  ],
+  "performance": [
+    {
+      "phase": "3",
+      "region": "ntsc",
+      "baselineFPS": 57.26667,
+      "candidateFPS": 60.0,
+      "candidateTargetMet": true,
+      "physicalFrames": 1800,
+      "lostFrames": 0,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "phase": "6A",
+      "region": "ntsc",
+      "baselineFPS": 56.9,
+      "candidateFPS": 60.0,
+      "candidateTargetMet": true,
+      "physicalFrames": 1800,
+      "lostFrames": 0,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "6B",
+      "region": "ntsc",
+      "baselineFPS": 56.9,
+      "candidateFPS": 59.86667,
+      "candidateTargetMet": false,
+      "physicalFrames": 1800,
+      "lostFrames": 4,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "12",
+      "region": "ntsc",
+      "baselineFPS": 56.16667,
+      "candidateFPS": 59.2,
+      "candidateTargetMet": false,
+      "physicalFrames": 1800,
+      "lostFrames": 24,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "9",
+      "region": "ntsc",
+      "baselineFPS": 57.83333,
+      "candidateFPS": 60.0,
+      "candidateTargetMet": true,
+      "physicalFrames": 1800,
+      "lostFrames": 0,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "3",
+      "region": "pal",
+      "baselineFPS": 47.94444,
+      "candidateFPS": 50.0,
+      "candidateTargetMet": true,
+      "physicalFrames": 1800,
+      "lostFrames": 0,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "phase": "6A",
+      "region": "pal",
+      "baselineFPS": 47.94444,
+      "candidateFPS": 50.0,
+      "candidateTargetMet": true,
+      "physicalFrames": 1800,
+      "lostFrames": 0,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "6B",
+      "region": "pal",
+      "baselineFPS": 47.94444,
+      "candidateFPS": 50.0,
+      "candidateTargetMet": true,
+      "physicalFrames": 1800,
+      "lostFrames": 0,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "12",
+      "region": "pal",
+      "baselineFPS": 47.19444,
+      "candidateFPS": 49.83333,
+      "candidateTargetMet": false,
+      "physicalFrames": 1800,
+      "lostFrames": 6,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "9",
+      "region": "pal",
+      "baselineFPS": 47.94444,
+      "candidateFPS": 50.0,
+      "candidateTargetMet": true,
+      "physicalFrames": 1800,
+      "lostFrames": 0,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    }
+  ],
+  "pixel_equivalence": [
+    {
+      "region": "ntsc",
+      "cases": 37,
+      "passed": true,
+      "report": "art/campaign-corridors-v3/corrections/performance/hud-incremental-ntsc/report.json"
+    },
+    {
+      "region": "pal",
+      "cases": 37,
+      "passed": true,
+      "report": "art/campaign-corridors-v3/corrections/performance/hud-incremental-pal/report.json"
+    }
+  ],
+  "remaining_failures": [
+    {
+      "phase": "6B",
+      "region": "ntsc",
+      "baselineFPS": 56.9,
+      "candidateFPS": 59.86667,
+      "candidateTargetMet": false,
+      "physicalFrames": 1800,
+      "lostFrames": 4,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "12",
+      "region": "ntsc",
+      "baselineFPS": 56.16667,
+      "candidateFPS": 59.2,
+      "candidateTargetMet": false,
+      "physicalFrames": 1800,
+      "lostFrames": 24,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "phase": "12",
+      "region": "pal",
+      "baselineFPS": 47.19444,
+      "candidateFPS": 49.83333,
+      "candidateTargetMet": false,
+      "physicalFrames": 1800,
+      "lostFrames": 6,
+      "same_seed_policy": true,
+      "same_native_roster_and_caps": true,
+      "native_item_duration_seconds": 3,
+      "native_cadences_preserved": true,
+      "camera_range": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    }
+  ],
+  "minimum_patch_followup": "Remaining12misses correlate with objective label redraw,6BNTSCmisses with shield digit ticks. Keep glyph/layout identical and gate exact updates==VBlanks; do not round59.xup to60."
+}

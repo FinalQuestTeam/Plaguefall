@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "comparisons": 68682752,
+  "allU16BombCountsAgainstAllU8SnapshotCounts": true,
+  "allSixItemBytes0to255": true,
+  "allFourSelections": true,
+  "readOnlyStorageVerified": true,
+  "productionFunctionsSHA256": "c7a93e5044b9af2d4b7fedd5510ae8a5625e840869a23e5fe4efffd57b5fec3c",
+  "method": "Exact extracted INV_view, INV_selected and INV_matches. Every bomb16value against every snapshot8count; every item byte/storage8value against every snapshot8value; all selections and invalid bomb type snapshots. No storage changes permitted.",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "productionModified": false,
+  "native68000TimingClaim": false
+}

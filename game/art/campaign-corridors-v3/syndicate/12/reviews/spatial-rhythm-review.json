@@ -1,0 +1,49 @@
+{
+  "phase": "12",
+  "status": "ready_for_integration_pending_real_ROM_review",
+  "spatial_fix": "Four complete160x128source-derived service annexes at432,1296,1984,2480, with physically supported16px threshold aprons. Source/roof/wall grammar reused exactly.",
+  "scene_tiles": 515,
+  "previous_scene_tiles": 515,
+  "added_tile_cost": 0,
+  "solids_count": 18,
+  "camera_interest_count": 10,
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "point_margin": 8,
+    "BFS_step": 8,
+    "connected_positions": 4904,
+    "all_points_reachable": true,
+    "swept16pxSamples": 2833,
+    "all_segments_collision_free": true,
+    "exit_reachable": true,
+    "open_depth": 192,
+    "service_neck_width": 32
+  },
+  "minimum_route_orthogonal_solid_clearance": 8,
+  "service_gap_pixels": 40,
+  "route_sampling": {
+    "samples": 345,
+    "requested_camera_step": 8,
+    "condition": "at least48px of facade width and32px height in actual target camera (roof excluded)",
+    "failures": [],
+    "setup_limit": "Synthetic settled close-escort target from current ARENA camera rules. It is not real camera footage or a controller traversal."
+  },
+  "native_visual_review": "Whole panorama and new annex previews reviewed at native scale. Whole roof endpoints, facade, door, plinth and source-supported apron are intact. South utility docks remain complete and human-scale; the new north volumes preserve40px through lanes. Four replicated service units are deliberately repeated architecture; no decorative fragments were introduced.",
+  "remaining_risks": [
+    "Real escort camera must prove the close-escort framing, particularly workshop entry.",
+    "Repeated service architecture is visible; alternating south docks, stepped rear enclosure, covered bay and union destination preserve changes of place.",
+    "515tiles/BFS success are technical evidence and do not constitute final visual approval."
+  ],
+  "bank_hashes": {
+    "build.py": "df4756f21c40be5758c5283de4e909eed9068f5375ce76d0ef37e36a63c4665b",
+    "manifest.json": "fa7396f73206723e8011cc513dd3276f53f269db24f354d9ff9c1b6e58aa74f3",
+    "complete-native.png": "d5c29d069059e894fcfc47bdaed46ed9f19603c9cc70633ce71a5020a6730b17",
+    "native/tiles.bin": "f3ae35a6c4c353d79c8a10983c45d6da8a3c61ba0a5937497e43a322c6a16731",
+    "native/map.bin": "e4c5c685a79e433a68f30115cf19dc20c974839e5c224c863f03824a76517f9a",
+    "native/palette.bin": "b48d03e0467ab40b96e7097337e0c22e22b81ff7a81030d78568ef954add889d"
+  },
+  "shared_C_resources_or_ROM_changed": false
+}

@@ -1,0 +1,16 @@
+{
+  "exitcode": 0,
+  "build_dir": "/private/tmp/campaign-factory-build/out/release",
+  "rom_sha256": "5173cbbc5d29dae81f1aea1e240eb6aebe41310bc61cadd0ac154c710b3265d9",
+  "region": "ntsc",
+  "command": "arch -x86_64 /usr/bin/python3 game/tools/test_campaign_factory_emulator.py --movie --build-dir /private/tmp/campaign-factory-build/out/release --output game/art/visual-composition-fixes-v1/factory/cycle-2/ntsc",
+  "scope": "isolated source build, not shared release",
+  "extra_captures": [
+    "9-obstacle-detour.png",
+    "11-valve-1.png"
+  ],
+  "extra_vram_checks": [
+    "native_graphics_obstacle",
+    "native_graphics_south"
+  ]
+}

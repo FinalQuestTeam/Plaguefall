@@ -1,0 +1,497 @@
+{
+  "rom_sha256": "df5cbc2584b1e2e536b57df0148b27bbe045a390b399503560170bc0e8b1b013",
+  "region": "PAL",
+  "purpose": "phase1 pattern prototype: real camera samples, movement probes and VRAM verification",
+  "setup": "Snapshots seed each real phase; RAM suppresses combat, progress and auto-interactions while player feet are moved to free positions. Native camera/streaming/rendering remain active.",
+  "phases": [
+    {
+      "phase": "1",
+      "node": 1,
+      "samples": [
+        {
+          "path": "1/x0-y0.png",
+          "position": [
+            32,
+            136
+          ],
+          "camera": [
+            0,
+            4
+          ],
+          "row": 0,
+          "col": 0,
+          "visible_world": [
+            0,
+            28,
+            320,
+            228
+          ],
+          "objectives": [],
+          "label": "Faixa superior"
+        },
+        {
+          "path": "1/x1-y0.png",
+          "position": [
+            248,
+            136
+          ],
+          "camera": [
+            96,
+            4
+          ],
+          "row": 0,
+          "col": 1,
+          "visible_world": [
+            96,
+            28,
+            416,
+            228
+          ],
+          "objectives": [],
+          "label": "Faixa superior"
+        },
+        {
+          "path": "1/x2-y0.png",
+          "position": [
+            384,
+            136
+          ],
+          "camera": [
+            192,
+            4
+          ],
+          "row": 0,
+          "col": 2,
+          "visible_world": [
+            192,
+            28,
+            512,
+            228
+          ],
+          "objectives": [],
+          "label": "Faixa superior"
+        },
+        {
+          "path": "1/x0-y1.png",
+          "position": [
+            32,
+            232
+          ],
+          "camera": [
+            0,
+            100
+          ],
+          "row": 1,
+          "col": 0,
+          "visible_world": [
+            0,
+            124,
+            320,
+            324
+          ],
+          "objectives": [],
+          "label": "Campo central"
+        },
+        {
+          "path": "1/x1-y1.png",
+          "position": [
+            248,
+            232
+          ],
+          "camera": [
+            96,
+            100
+          ],
+          "row": 1,
+          "col": 1,
+          "visible_world": [
+            96,
+            124,
+            416,
+            324
+          ],
+          "objectives": [],
+          "label": "Campo central"
+        },
+        {
+          "path": "1/x2-y1.png",
+          "position": [
+            384,
+            232
+          ],
+          "camera": [
+            192,
+            100
+          ],
+          "row": 1,
+          "col": 2,
+          "visible_world": [
+            192,
+            124,
+            512,
+            324
+          ],
+          "objectives": [],
+          "label": "Campo central"
+        },
+        {
+          "path": "1/x0-y2.png",
+          "position": [
+            32,
+            336
+          ],
+          "camera": [
+            0,
+            160
+          ],
+          "row": 2,
+          "col": 0,
+          "visible_world": [
+            0,
+            184,
+            320,
+            384
+          ],
+          "objectives": [],
+          "label": "Faixa inferior"
+        },
+        {
+          "path": "1/x1-y2.png",
+          "position": [
+            248,
+            336
+          ],
+          "camera": [
+            96,
+            160
+          ],
+          "row": 2,
+          "col": 1,
+          "visible_world": [
+            96,
+            184,
+            416,
+            384
+          ],
+          "objectives": [],
+          "label": "Faixa inferior"
+        },
+        {
+          "path": "1/x2-y2.png",
+          "position": [
+            384,
+            336
+          ],
+          "camera": [
+            192,
+            160
+          ],
+          "row": 2,
+          "col": 2,
+          "visible_world": [
+            192,
+            184,
+            512,
+            384
+          ],
+          "objectives": [],
+          "label": "Faixa inferior"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "controller_collision_probes": [
+      {
+        "label": "1-left",
+        "start": [
+          96,
+          188
+        ],
+        "direction": 7,
+        "end": [
+          112,
+          188
+        ],
+        "expected_axis": 112,
+        "path": "collision-1-left.png"
+      },
+      {
+        "label": "1-right",
+        "start": [
+          216,
+          188
+        ],
+        "direction": 6,
+        "end": [
+          200,
+          188
+        ],
+        "expected_axis": 200,
+        "path": "collision-1-right.png"
+      },
+      {
+        "label": "1-top",
+        "start": [
+          156,
+          144
+        ],
+        "direction": 5,
+        "end": [
+          156,
+          160
+        ],
+        "expected_axis": 160,
+        "path": "collision-1-top.png"
+      },
+      {
+        "label": "1-bottom",
+        "start": [
+          156,
+          232
+        ],
+        "direction": 4,
+        "end": [
+          156,
+          216
+        ],
+        "expected_axis": 216,
+        "path": "collision-1-bottom.png"
+      },
+      {
+        "label": "2-left",
+        "start": [
+          312,
+          220
+        ],
+        "direction": 7,
+        "end": [
+          328,
+          220
+        ],
+        "expected_axis": 328,
+        "path": "collision-2-left.png"
+      },
+      {
+        "label": "2-right",
+        "start": [
+          400,
+          220
+        ],
+        "direction": 6,
+        "end": [
+          384,
+          220
+        ],
+        "expected_axis": 384,
+        "path": "collision-2-right.png"
+      },
+      {
+        "label": "2-top",
+        "start": [
+          356,
+          176
+        ],
+        "direction": 5,
+        "end": [
+          356,
+          192
+        ],
+        "expected_axis": 192,
+        "path": "collision-2-top.png"
+      },
+      {
+        "label": "2-bottom",
+        "start": [
+          356,
+          264
+        ],
+        "direction": 4,
+        "end": [
+          356,
+          248
+        ],
+        "expected_axis": 248,
+        "path": "collision-2-bottom.png"
+      },
+      {
+        "label": "3-left",
+        "start": [
+          120,
+          284
+        ],
+        "direction": 7,
+        "end": [
+          136,
+          284
+        ],
+        "expected_axis": 136,
+        "path": "collision-3-left.png"
+      },
+      {
+        "label": "3-right",
+        "start": [
+          240,
+          284
+        ],
+        "direction": 6,
+        "end": [
+          224,
+          284
+        ],
+        "expected_axis": 224,
+        "path": "collision-3-right.png"
+      },
+      {
+        "label": "3-top",
+        "start": [
+          180,
+          240
+        ],
+        "direction": 5,
+        "end": [
+          180,
+          256
+        ],
+        "expected_axis": 256,
+        "path": "collision-3-top.png"
+      },
+      {
+        "label": "3-bottom",
+        "start": [
+          180,
+          328
+        ],
+        "direction": 4,
+        "end": [
+          180,
+          312
+        ],
+        "expected_axis": 312,
+        "path": "collision-3-bottom.png"
+      },
+      {
+        "label": "4-left",
+        "start": [
+          312,
+          308
+        ],
+        "direction": 7,
+        "end": [
+          328,
+          308
+        ],
+        "expected_axis": 328,
+        "path": "collision-4-left.png"
+      },
+      {
+        "label": "4-right",
+        "start": [
+          400,
+          308
+        ],
+        "direction": 6,
+        "end": [
+          384,
+          308
+        ],
+        "expected_axis": 384,
+        "path": "collision-4-right.png"
+      },
+      {
+        "label": "4-top",
+        "start": [
+          356,
+          264
+        ],
+        "direction": 5,
+        "end": [
+          356,
+          280
+        ],
+        "expected_axis": 280,
+        "path": "collision-4-top.png"
+      },
+      {
+        "label": "4-bottom",
+        "start": [
+          356,
+          336
+        ],
+        "direction": 4,
+        "end": [
+          356,
+          336
+        ],
+        "expected_axis": 336,
+        "path": "collision-4-bottom.png"
+      },
+      {
+        "label": "boundary-left",
+        "start": [
+          64,
+          248
+        ],
+        "direction": 6,
+        "end": [
+          24,
+          248
+        ],
+        "expected_axis": 24,
+        "path": "collision-boundary-left.png"
+      },
+      {
+        "label": "boundary-right",
+        "start": [
+          440,
+          248
+        ],
+        "direction": 7,
+        "end": [
+          472,
+          248
+        ],
+        "expected_axis": 472,
+        "path": "collision-boundary-right.png"
+      },
+      {
+        "label": "boundary-top",
+        "start": [
+          256,
+          160
+        ],
+        "direction": 4,
+        "end": [
+          256,
+          128
+        ],
+        "expected_axis": 128,
+        "path": "collision-boundary-top.png"
+      },
+      {
+        "label": "boundary-bottom",
+        "start": [
+          256,
+          304
+        ],
+        "direction": 5,
+        "end": [
+          256,
+          336
+        ],
+        "expected_axis": 336,
+        "path": "collision-boundary-bottom.png"
+      }
+    ],
+    "collision_probes_passed": 20,
+    "vram_graphic_bytes_verified": 20416,
+    "church_damage_triggered": true,
+    "compiled_bounds": [
+      24,
+      128,
+      487,
+      351
+    ],
+    "limitations": "RAM seeds positions, suspends combat and isolates each probe; not a normal-difficulty campaign victory."
+  }
+}

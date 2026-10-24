@@ -1,0 +1,807 @@
+{
+  "pattern": "phase01-pattern-v1/workflow.json",
+  "whole_image_first": true,
+  "composition_previews_are_not_emulator_captures": true,
+  "phases": [
+    {
+      "phase": "7",
+      "size": [
+        768,
+        384
+      ],
+      "bounds": [
+        40,
+        160,
+        727,
+        335
+      ],
+      "solids": [
+        [
+          40,
+          208,
+          112,
+          104
+        ],
+        [
+          248,
+          224,
+          136,
+          24
+        ],
+        [
+          448,
+          272,
+          136,
+          24
+        ],
+        [
+          216,
+          184,
+          32,
+          8
+        ],
+        [
+          376,
+          184,
+          32,
+          8
+        ],
+        [
+          536,
+          184,
+          32,
+          8
+        ],
+        [
+          200,
+          304,
+          32,
+          8
+        ],
+        [
+          608,
+          312,
+          32,
+          8
+        ]
+      ],
+      "start": [
+        80,
+        176
+      ],
+      "complete": "art/campaign-pattern-v2/resistance/complete/7-complete.png",
+      "background": "art/campaign-pattern-v2/resistance/native/favela/map-native.png",
+      "special_states": [],
+      "memory": {
+        "scene_tiles": 492,
+        "reserved_objective_tiles": 74,
+        "total_reserved_tiles": 566,
+        "limit": 640,
+        "margin_tiles": 74,
+        "tile_bytes": 15744,
+        "map_bytes": 9216,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "source": "art/campaign-pattern-v2/resistance/source/07-08-favela-cycle3.png",
+      "source_sha256": "7f70022ffdde3effa16aa5162358204f953594407a6ca3068f58430ac6ce2939",
+      "palette": {
+        "index0": [
+          0,
+          0,
+          0
+        ],
+        "format": "RGB333",
+        "palette_file": "art/campaign-pattern-v2/resistance/native/favela/palette.bin"
+      },
+      "objects": [
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            232,
+            184
+          ],
+          "canvas": [
+            216,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            219,
+            163,
+            247,
+            191
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            392,
+            184
+          ],
+          "canvas": [
+            376,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            379,
+            163,
+            407,
+            191
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            552,
+            184
+          ],
+          "canvas": [
+            536,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            539,
+            163,
+            567,
+            191
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            216,
+            304
+          ],
+          "canvas": [
+            200,
+            280,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            203,
+            283,
+            231,
+            311
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            624,
+            312
+          ],
+          "canvas": [
+            608,
+            288,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            611,
+            291,
+            639,
+            319
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 5,
+          "center": [
+            104,
+            328
+          ],
+          "canvas": [
+            88,
+            304,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            90,
+            307,
+            118,
+            335
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-5.png"
+        }
+      ],
+      "layout": "art/campaign-pattern-v2/resistance/layouts/7.png",
+      "camera_previews": [
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/7-0.png",
+          "camera": [
+            0,
+            72
+          ],
+          "actor_ground_top_left": [
+            80,
+            176
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/7-1.png",
+          "camera": [
+            224,
+            0
+          ],
+          "actor_ground_top_left": [
+            376,
+            160
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/7-2.png",
+          "camera": [
+            224,
+            160
+          ],
+          "actor_ground_top_left": [
+            376,
+            312
+          ],
+          "emulator_capture": false
+        }
+      ],
+      "access": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 1395,
+        "checks": [
+          {
+            "name": "cargo-1-front",
+            "reachable_samples": 23,
+            "example_feet": [
+              200,
+              184
+            ]
+          },
+          {
+            "name": "cargo-1-pickup",
+            "reachable_samples": 21,
+            "example_feet": [
+              232,
+              192
+            ]
+          },
+          {
+            "name": "cargo-2-front",
+            "reachable_samples": 23,
+            "example_feet": [
+              360,
+              184
+            ]
+          },
+          {
+            "name": "cargo-2-pickup",
+            "reachable_samples": 21,
+            "example_feet": [
+              392,
+              192
+            ]
+          },
+          {
+            "name": "cargo-3-front",
+            "reachable_samples": 23,
+            "example_feet": [
+              520,
+              184
+            ]
+          },
+          {
+            "name": "cargo-3-pickup",
+            "reachable_samples": 21,
+            "example_feet": [
+              552,
+              192
+            ]
+          },
+          {
+            "name": "cargo-4-front",
+            "reachable_samples": 16,
+            "example_feet": [
+              184,
+              304
+            ]
+          },
+          {
+            "name": "cargo-4-pickup",
+            "reachable_samples": 16,
+            "example_feet": [
+              216,
+              312
+            ]
+          },
+          {
+            "name": "cargo-5-front",
+            "reachable_samples": 9,
+            "example_feet": [
+              592,
+              312
+            ]
+          },
+          {
+            "name": "cargo-5-pickup",
+            "reachable_samples": 11,
+            "example_feet": [
+              624,
+              320
+            ]
+          },
+          {
+            "name": "depot-delivery",
+            "reachable_samples": 10,
+            "example_feet": [
+              80,
+              312
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+    },
+    {
+      "phase": "8",
+      "size": [
+        768,
+        384
+      ],
+      "bounds": [
+        40,
+        160,
+        727,
+        335
+      ],
+      "solids": [
+        [
+          40,
+          208,
+          112,
+          104
+        ],
+        [
+          248,
+          224,
+          136,
+          24
+        ],
+        [
+          448,
+          272,
+          136,
+          24
+        ]
+      ],
+      "start": [
+        80,
+        176
+      ],
+      "complete": "art/campaign-pattern-v2/resistance/complete/8-complete.png",
+      "background": "art/campaign-pattern-v2/resistance/native/favela/map-native.png",
+      "special_states": [],
+      "memory": {
+        "scene_tiles": 492,
+        "reserved_objective_tiles": 96,
+        "total_reserved_tiles": 588,
+        "limit": 640,
+        "margin_tiles": 52,
+        "tile_bytes": 15744,
+        "map_bytes": 9216,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "source": "art/campaign-pattern-v2/resistance/source/07-08-favela-cycle3.png",
+      "source_sha256": "7f70022ffdde3effa16aa5162358204f953594407a6ca3068f58430ac6ce2939",
+      "palette": {
+        "index0": [
+          0,
+          0,
+          0
+        ],
+        "format": "RGB333",
+        "palette_file": "art/campaign-pattern-v2/resistance/native/favela/palette.bin"
+      },
+      "objects": [
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            208,
+            168
+          ],
+          "canvas": [
+            192,
+            144,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            193,
+            147,
+            216,
+            175
+          ],
+          "ground_snapped_8px": false,
+          "source": "art/objective-sprites-v1/frames/transmitter-2.png"
+        },
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            424,
+            296
+          ],
+          "canvas": [
+            408,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            409,
+            275,
+            432,
+            303
+          ],
+          "ground_snapped_8px": false,
+          "source": "art/objective-sprites-v1/frames/transmitter-2.png"
+        },
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            672,
+            224
+          ],
+          "canvas": [
+            656,
+            200,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            657,
+            203,
+            680,
+            231
+          ],
+          "ground_snapped_8px": false,
+          "source": "art/objective-sprites-v1/frames/transmitter-2.png"
+        }
+      ],
+      "layout": "art/campaign-pattern-v2/resistance/layouts/8.png",
+      "camera_previews": [
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/8-0.png",
+          "camera": [
+            0,
+            72
+          ],
+          "actor_ground_top_left": [
+            80,
+            176
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/8-1.png",
+          "camera": [
+            224,
+            0
+          ],
+          "actor_ground_top_left": [
+            376,
+            160
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/8-2.png",
+          "camera": [
+            224,
+            160
+          ],
+          "actor_ground_top_left": [
+            376,
+            312
+          ],
+          "emulator_capture": false
+        }
+      ],
+      "access": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 1445,
+        "checks": [
+          {
+            "name": "transmitter-1",
+            "reachable_samples": 113,
+            "example_feet": [
+              152,
+              160
+            ]
+          },
+          {
+            "name": "transmitter-2",
+            "reachable_samples": 101,
+            "example_feet": [
+              368,
+              256
+            ]
+          },
+          {
+            "name": "transmitter-3",
+            "reachable_samples": 169,
+            "example_feet": [
+              616,
+              184
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+    },
+    {
+      "phase": "13A",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        24,
+        160,
+        487,
+        295
+      ],
+      "solids": [
+        [
+          80,
+          264,
+          104,
+          16
+        ],
+        [
+          216,
+          208,
+          104,
+          16
+        ],
+        [
+          352,
+          264,
+          104,
+          16
+        ]
+      ],
+      "start": [
+        280,
+        168
+      ],
+      "complete": "art/campaign-pattern-v2/resistance/complete/13A-complete.png",
+      "background": "art/campaign-pattern-v2/resistance/native/union/alive-native.png",
+      "special_states": [],
+      "memory": {
+        "scene_tiles": 620,
+        "reserved_objective_tiles": 0,
+        "total_reserved_tiles": 620,
+        "limit": 640,
+        "margin_tiles": 20,
+        "tile_bytes": 19840,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "source": "art/campaign-pattern-v2/resistance/source/13A-union.png",
+      "source_sha256": "926c9ffdc4da5d7a1d66b36b7053214d2a06ad4adc1ed8fdd910a049902c642c",
+      "palette": {
+        "index0": [
+          0,
+          0,
+          0
+        ],
+        "format": "RGB333",
+        "palette_file": "art/campaign-pattern-v2/resistance/native/union/palette.bin"
+      },
+      "objects": [],
+      "layout": "art/campaign-pattern-v2/resistance/layouts/13A.png",
+      "camera_previews": [
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/13A-0.png",
+          "camera": [
+            128,
+            64
+          ],
+          "actor_ground_top_left": [
+            280,
+            168
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/13A-1.png",
+          "camera": [
+            96,
+            0
+          ],
+          "actor_ground_top_left": [
+            248,
+            160
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/13A-2.png",
+          "camera": [
+            96,
+            160
+          ],
+          "actor_ground_top_left": [
+            248,
+            272
+          ],
+          "emulator_capture": false
+        }
+      ],
+      "access": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 786,
+        "checks": [],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+    },
+    {
+      "phase": "13B",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        24,
+        160,
+        487,
+        295
+      ],
+      "solids": [
+        [
+          80,
+          264,
+          104,
+          16
+        ],
+        [
+          216,
+          208,
+          104,
+          16
+        ],
+        [
+          352,
+          264,
+          104,
+          16
+        ]
+      ],
+      "start": [
+        280,
+        168
+      ],
+      "complete": "art/campaign-pattern-v2/resistance/complete/13B-complete.png",
+      "background": "art/campaign-pattern-v2/resistance/native/union/dead-native.png",
+      "special_states": [],
+      "memory": {
+        "scene_tiles": 620,
+        "reserved_objective_tiles": 0,
+        "total_reserved_tiles": 620,
+        "limit": 640,
+        "margin_tiles": 20,
+        "tile_bytes": 19840,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "source": "art/campaign-pattern-v2/resistance/source/13B-union-memorial.png",
+      "source_sha256": "09400961e6ed31a7f82ad07240c14b97c80e75d145ab60c7217daa723d4710cb",
+      "palette": {
+        "index0": [
+          0,
+          0,
+          0
+        ],
+        "format": "RGB333",
+        "palette_file": "art/campaign-pattern-v2/resistance/native/union/palette.bin"
+      },
+      "objects": [],
+      "layout": "art/campaign-pattern-v2/resistance/layouts/13B.png",
+      "camera_previews": [
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/13B-0.png",
+          "camera": [
+            128,
+            64
+          ],
+          "actor_ground_top_left": [
+            280,
+            168
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/13B-1.png",
+          "camera": [
+            96,
+            0
+          ],
+          "actor_ground_top_left": [
+            248,
+            160
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/resistance/camera-previews/13B-2.png",
+          "camera": [
+            96,
+            160
+          ],
+          "actor_ground_top_left": [
+            248,
+            272
+          ],
+          "emulator_capture": false
+        }
+      ],
+      "access": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 786,
+        "checks": [],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+    }
+  ]
+}

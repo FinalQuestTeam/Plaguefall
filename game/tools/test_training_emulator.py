@@ -4,7 +4,7 @@ Run with arch -x86_64 /usr/bin/python3. Room/settings menus and the gallery use
 only controls. Isolated contact, pickup and terrain probes declare RAM setup.
 """
 from pathlib import Path
-import argparse, ctypes as C, hashlib, json, statistics, struct, subprocess, wave, zlib
+import re, argparse, ctypes as C, hashlib, json, statistics, struct, subprocess, wave, zlib
 
 GAME=Path(__file__).resolve().parents[1]
 CORE=Path.home()/'Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib'
@@ -149,7 +149,7 @@ def main():
         ui(3);wait(lambda:state()==2,'pause');run(10)
     def switch(room):
         current=u8('testStage');pause();ui(5,3);ui(1);run(15)
-        ui(5,(room-current)%10);ui(1);run(fps)
+        ui(5,(room-current)%18);ui(1);run(fps)
         wait(lambda:state()==1 and u8('testStage')==room,'switch-room')
         assert u8('currentLevel')==0
     def configure(changes,action=None):
@@ -176,8 +176,8 @@ def main():
         save()
     run(120);ui(3);run(4*fps);ui(5,3);ui(1);run(fps);shot('room-selector')
     if args.only_death_rules:
-        # Up wraps from room 1 to room 10, exercising the scrolling selector.
-        ui(4);shot('room-selector-10');ui(1)
+        # Scroll to room 10; the suite now also contains eight mission prototypes.
+        ui(5,9);shot('room-selector-10');ui(1)
         wait(lambda:state()==1 and u8('testStage')==10,'rules-room',fps*20)
         run(fps//3);shot('rules-initial')
         def stock():
@@ -439,6 +439,9 @@ def main():
         path=fixtures/key/'map.bin'
         return path if path.exists() else GAME/f'res/routes/{key}/map.bin'
     def terrain_window(key):
+        tiles=(GAME/'src/system/video/sprites/tiles.h').read_text()
+        number=lambda name:int(re.search(r'^#define\s+'+name+r'\s+(\d+)',tiles,re.M)[1])
+        terrain_base=16+number('NUM_TILES')+number('ENEMY_CACHE_TILES')+120
         if key=='test':
             lava=[(36,32,14,8)];mud=[(42,10,14,6)];height=384
         else:
@@ -454,7 +457,7 @@ def main():
                 if rects:
                     mask=sum(bit for dx,dy,bit in [(0,-1,1),(1,0,2),(0,1,4),(-1,0,8)] if contains(rects,x+dx,y+dy))
                     variant=15+(x&3)+((y&1)<<2) if mask==15 else mask
-                    want=0x6000+545+(0 if rects is lava else 23)+variant;count+=1
+                    want=0x6000+terrain_base+(0 if rects is lava else 23)+variant;count+=1
                 got=vw(0xe000+((y&31)*64+(x&63))*2)
                 assert got==want,('portable terrain map',key,x,y,hex(got),hex(want))
         return count

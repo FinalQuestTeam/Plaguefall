@@ -1,0 +1,84 @@
+{
+  "phase": "9",
+  "revision": 3,
+  "status": "isolated revision3; two extended sheds from resident tiles; pending independent whole-map/five-camera review; not integrated or approved",
+  "critical_limits": [
+    "Two wide288pxsheds extend one existing128pxworkshop by exact intermediate roof/shutter strips. Their common clay-roof family remains visible; these are not newly generated industrial hangar assets.",
+    "All used8x8tiles and palette are from previous630tileproposal; exact tile reuse proves provenance/memory only, not composition quality.",
+    "The loading truck is now32pxahead of the wide north shed; rear/south warehouse has32pxservice depth before lowerwall.",
+    "Root must inspect whether the broad shutter/roof repetition reads as coherent working sheds rather than duplicated facade fragments.",
+    "Native actor/HUD previews are composed, not running-ROM captures. Active9andsharedC/ROMremainunchanged."
+  ],
+  "memory": {
+    "tiles": 630,
+    "budget": 640,
+    "tile_bytes": 20160,
+    "map_bytes": 25600,
+    "exact_flip_reused": 12170,
+    "lossy_tile_substitutions": 0,
+    "native_grid": 1,
+    "fits": true,
+    "scene_tiles": 630,
+    "background_tiles": 630,
+    "objective_tiles": 0,
+    "total_tiles": 630,
+    "limit": 640,
+    "free_tiles": 10,
+    "graphics_bytes": 20160,
+    "palette_bytes": 32,
+    "collision_mask_words": 400
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 5508,
+    "reachable_positions": 5508,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2747,
+    "margin_pixels": 8,
+    "swept_margin_samples": 2747,
+    "margin_free_positions": 4403,
+    "all_margin_positions_connected": true
+  },
+  "native_tile_provenance": {
+    "all_tiles_from_revision2_bank": true,
+    "previous_tiles": 630,
+    "new_unique_tiles": 0,
+    "palette_bytes_unchanged": true,
+    "whole_ends_preserved": {
+      "left": 48,
+      "right": 48,
+      "intermediate_strip": 16
+    },
+    "new_buildings": [
+      [
+        1152,
+        32,
+        288,
+        128
+      ],
+      [
+        1728,
+        144,
+        288,
+        128
+      ]
+    ],
+    "truck": [
+      1248,
+      192,
+      96,
+      64
+    ]
+  },
+  "bridge": {
+    "read_via_unmodified_root_bridge": true,
+    "tile_count": 630,
+    "map_bytes": 25600,
+    "palette_bytes": 32,
+    "source_paths_resolve": true,
+    "all_free_positions_connected": true,
+    "no_activation_or_shared_writes": true
+  },
+  "new_emulator_or_performance_test": false,
+  "active_or_shared_files_edited": false
+}

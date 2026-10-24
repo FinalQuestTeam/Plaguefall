@@ -1,0 +1,28 @@
+{
+  "base_rom_sha256": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+  "final_rom_sha256": "66aba7c700e66511a54c74133aaba24817341e56a5843d27e17877655cf61e84",
+  "identical_native_compositions": [
+    "1",
+    "2A",
+    "2B",
+    "4",
+    "5",
+    "6A",
+    "6B",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13A",
+    "13B",
+    "14",
+    "15",
+    "16"
+  ],
+  "changed_native_compositions": [
+    "3"
+  ],
+  "change": "3: remove only disconnected source-floor islands from vehicle alpha; five complete vehicles and geometry unchanged."
+}

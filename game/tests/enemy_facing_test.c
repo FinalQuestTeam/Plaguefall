@@ -4,12 +4,13 @@
 typedef int VDPPlane;
 #include "system/video/enemygfx.c"
 
-const u32 insect_frames[ENEMY_ASSET_LONGWORDS]={0},insect_icons[1920]={0};
+const u32 insect_frames[ENEMY_ASSET_LONGWORDS]={0},insect_icons[1920]={0},insect_shield_frames[ENEMY_ASSET_LONGWORDS]={0};
 Enemy enemies[MAX_ENEMIES];
-static const EnemyDef small={.size=16},medium={.size=24},large={.size=32};
+static const EnemyDef small={.size=16},medium={.size=24};
+static const EnemyDef smallPurple={.size=16,.color=COLOR_PURPLE},large={.size=32,.color=COLOR_PURPLE};
 static const EnemyDef orange={.size=16,.color=COLOR_ORANGE},boss={.size=48};
 const EnemyDef *const ENEMY_DEFS[ENEMY_TYPES]={
-    &small,&small,&large,&orange,&small,&small,&small,&orange,
+    &small,&small,&large,&orange,&small,&small,&smallPurple,&orange,
     &medium,&medium,&large,&orange,&medium,&medium,&boss};
 s16 px,py,chaseX,chaseY;
 u16 fps=60;
@@ -17,7 +18,7 @@ u8 currentLevel=1,testStage;
 static u16 bytes,uploads;
 static bool failDMA,preview;
 static u8 previewDir,previewPose;
-static u32 sourceWord;
+static u32 sourceWord;static bool lastShieldTransfer;
 u16 DMA_getQueueTransferSize(void){return bytes;}
 u16 DMA_getQueueSize(void){return uploads;}
 u16 DMA_getMaxQueueSize(void){return 80;}
@@ -25,7 +26,8 @@ bool DMA_queueDma(u8 kind,void *source,u16 dest,u16 words,u16 step)
 {
     (void)dest;assert(kind==DMA_VRAM && step==2);
     if(failDMA)return false;
-    sourceWord=(const u32 *)source-insect_frames;
+    lastShieldTransfer=(uintptr_t)source>=(uintptr_t)insect_shield_frames && (uintptr_t)source<(uintptr_t)(insect_shield_frames+ENEMY_ASSET_LONGWORDS);
+    sourceWord=((uintptr_t)source-(uintptr_t)(lastShieldTransfer?insect_shield_frames:insect_frames))/4;
     uploads++;bytes+=words*2;assert(uploads<=ENEMY_DMA_FRAMES);
     return true;
 }
@@ -101,7 +103,7 @@ static void attacks(void)
 static void mirrorWithoutBandwidth(void)
 {
     spawn(ENEMY_SQ_PUR);tick(0);assert(slots[0].dir==2);
-    chaseX=0;bytes=6500;uploads=0;ENEMYGFX_prepare(fps);
+    chaseX=0;bytes=6500;uploads=0;ENEMYGFX_prepare((fps+3)&~3);
     assert(!uploads && slots[0].dir==6 && ENEMYGFX_entityFlipH(0));
     // A failed upload keeps a complete old view, and a reused type stays hidden.
     chaseX=108;chaseY=0;failDMA=true;tick(0);assert(slots[0].dir==6);
@@ -109,9 +111,24 @@ static void mirrorWithoutBandwidth(void)
     failDMA=false;
 }
 
+static void shieldTransitions(void)
+{
+    const u8 kinds[3]={2,6,10},canonical[8]={0,1,2,3,4,3,2,1};
+    for(u16 k=0;k<3;k++)for(u8 dir=0;dir<8;dir++)for(u8 pose=0;pose<6;pose++){
+        Enemy *e=spawn(kinds[k]);currentLevel=0;testStage=1;preview=true;previewDir=dir;previewPose=pose;
+        tick(0);assert(!lastShieldTransfer&&slots[0].pose==pose);
+        const EnemyArt *art=&ENEMY_ART[e->type];
+        u32 expected=art->offset+(canonical[dir]*6+pose)*art->words;
+        assert(sourceWord==expected);
+        e->shielded=true;tick(0);assert(lastShieldTransfer&&slots[0].pose==(pose|128)&&sourceWord==expected);
+        e->shielded=false;tick(0);assert(!lastShieldTransfer&&slots[0].pose==pose&&sourceWord==expected);
+    }
+    preview=false;currentLevel=1;
+}
+
 int main(void)
 {
-    for(fps=50;fps<=60;fps+=10){gallery();movement();attacks();mirrorWithoutBandwidth();}
-    puts("1248 gallery frames; all 13 actors in 8 directions at 50/60Hz; movement, ice, recoil, locked charges, retreat, aggro, DMA failure and mirroring passed.");
+    for(fps=50;fps<=60;fps+=10){gallery();movement();attacks();mirrorWithoutBandwidth();shieldTransitions();}
+    puts("Shield on/off ROM banks in all 144 purple poses per region; 1248 gallery frames; all 13 actors in 8 directions at 50/60Hz; movement, ice, recoil, locked charges, retreat, aggro, DMA failure and mirroring passed.");
     return 0;
 }

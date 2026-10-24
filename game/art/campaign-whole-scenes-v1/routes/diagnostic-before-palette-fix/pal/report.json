@@ -1,0 +1,411 @@
+{
+  "passed": false,
+  "region": "PAL",
+  "romSHA256": "7dcad74455369fd2b9b25f5ab5caae1841c252291e114ad03b6717a898b6929b",
+  "buildDirectory": "game/out/release",
+  "emulatedRomSHA256": "1500eaaa545dc207fb32f604c6183589b68194a2abb5744b52e63f51c17367ed",
+  "movieEnabled": false,
+  "checks": {
+    "06a-bounds-atlas-ring-and-late-collision": true,
+    "06a-escort-death-outcome": {
+      "state": 3,
+      "objectiveFailed": false,
+      "expected": "restart"
+    },
+    "06a-player-death-priority": true,
+    "06a-full-controller-traversal": {
+      "seconds": 83.98,
+      "hp": 100,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "combatDisabled": true,
+      "gateOpenScenario": false,
+      "ramWritesDuringTraversal": false
+    },
+    "06a-stress": [
+      {
+        "forcedEnemies": 3,
+        "enemyRoster": [
+          4,
+          5
+        ],
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 53.74,
+        "p95CPULoadPct": 71.39,
+        "playerShots": 4,
+        "enemyShots": 4,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 21,
+        "busiestScanlineSprites": 8,
+        "busiestScanlinePixels": 120
+      },
+      {
+        "forcedEnemies": 3,
+        "enemyRoster": [
+          4,
+          5
+        ],
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 63.25,
+        "p95CPULoadPct": 80.96,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 25,
+        "busiestScanlineSprites": 8,
+        "busiestScanlinePixels": 120
+      },
+      {
+        "forcedEnemies": 4,
+        "enemyRoster": [
+          4,
+          5
+        ],
+        "peakActive": 4,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 67.29,
+        "p95CPULoadPct": 84.77,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 26,
+        "busiestScanlineSprites": 8,
+        "busiestScanlinePixels": 136
+      },
+      {
+        "forcedEnemies": 8,
+        "enemyRoster": [
+          4,
+          5
+        ],
+        "peakActive": 8,
+        "gameFPS": 40.0,
+        "meanCPULoadPct": 95.58,
+        "p95CPULoadPct": 114.45,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 30,
+        "busiestScanlineSprites": 11,
+        "busiestScanlinePixels": 160
+      },
+      {
+        "forcedEnemies": 16,
+        "enemyRoster": [
+          4,
+          5
+        ],
+        "peakActive": 16,
+        "gameFPS": 24.33,
+        "meanCPULoadPct": 131.32,
+        "p95CPULoadPct": 148.29,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 38,
+        "busiestScanlineSprites": 10,
+        "busiestScanlinePixels": 160
+      }
+    ],
+    "06a-ordinary-stationary-defense": {
+      "seconds": 45.0,
+      "state": 1,
+      "playerHP": 90,
+      "dinorahHP": 100,
+      "peakEnemies": 1,
+      "gameFPS": 49.51,
+      "ramWrites": false,
+      "limitation": "stationary shooting probe, not a completed combat escort"
+    },
+    "06b-bounds-atlas-ring-and-late-collision": true,
+    "06b-two-valves-and-four-shot-gates": true,
+    "06b-pause-preserves-compound-state": true,
+    "06b-escort-death-outcome": {
+      "state": 3,
+      "objectiveFailed": false,
+      "expected": "restart"
+    },
+    "06b-player-death-priority": true,
+    "06b-full-controller-traversal": {
+      "seconds": 86.92,
+      "hp": 100,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "combatDisabled": true,
+      "gateOpenScenario": true,
+      "ramWritesDuringTraversal": false
+    },
+    "06b-stress": [
+      {
+        "forcedEnemies": 3,
+        "enemyRoster": [
+          4,
+          5,
+          7
+        ],
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 65.97,
+        "p95CPULoadPct": 82.76,
+        "playerShots": 4,
+        "enemyShots": 4,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 25,
+        "busiestScanlineSprites": 8,
+        "busiestScanlinePixels": 152
+      },
+      {
+        "forcedEnemies": 3,
+        "enemyRoster": [
+          4,
+          5,
+          7
+        ],
+        "peakActive": 3,
+        "gameFPS": 47.0,
+        "meanCPULoadPct": 75.75,
+        "p95CPULoadPct": 92.77,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 29,
+        "busiestScanlineSprites": 8,
+        "busiestScanlinePixels": 152
+      },
+      {
+        "forcedEnemies": 4,
+        "enemyRoster": [
+          4,
+          5,
+          7
+        ],
+        "peakActive": 4,
+        "gameFPS": 47.0,
+        "meanCPULoadPct": 82.39,
+        "p95CPULoadPct": 99.61,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 30,
+        "busiestScanlineSprites": 9,
+        "busiestScanlinePixels": 168
+      },
+      {
+        "forcedEnemies": 8,
+        "enemyRoster": [
+          4,
+          5,
+          7
+        ],
+        "peakActive": 8,
+        "gameFPS": 24.67,
+        "meanCPULoadPct": 107.19,
+        "p95CPULoadPct": 125.88,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 34,
+        "busiestScanlineSprites": 11,
+        "busiestScanlinePixels": 192
+      },
+      {
+        "forcedEnemies": 16,
+        "enemyRoster": [
+          4,
+          5,
+          7
+        ],
+        "peakActive": 16,
+        "gameFPS": 24.67,
+        "meanCPULoadPct": 160.53,
+        "p95CPULoadPct": 176.46,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 42,
+        "busiestScanlineSprites": 10,
+        "busiestScanlinePixels": 192
+      }
+    ],
+    "06b-ordinary-stationary-defense": {
+      "seconds": 45.0,
+      "state": 1,
+      "playerHP": 70,
+      "dinorahHP": 90,
+      "peakEnemies": 1,
+      "gameFPS": 49.6,
+      "ramWrites": false,
+      "limitation": "stationary shooting probe, not a completed combat escort"
+    },
+    "12-bounds-atlas-ring-and-late-collision": true,
+    "12-escort-death-outcome": {
+      "state": 4,
+      "objectiveFailed": true,
+      "expected": "continue13B"
+    },
+    "12-player-death-priority": true,
+    "12-full-controller-traversal": {
+      "seconds": 85.12,
+      "hp": 100,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "combatDisabled": true,
+      "gateOpenScenario": false,
+      "ramWritesDuringTraversal": false
+    },
+    "12-stress": [
+      {
+        "forcedEnemies": 3,
+        "enemyRoster": [
+          4,
+          5,
+          2
+        ],
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 55.32,
+        "p95CPULoadPct": 72.95,
+        "playerShots": 4,
+        "enemyShots": 4,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 21,
+        "busiestScanlineSprites": 10,
+        "busiestScanlinePixels": 152
+      },
+      {
+        "forcedEnemies": 3,
+        "enemyRoster": [
+          4,
+          5,
+          2
+        ],
+        "peakActive": 3,
+        "gameFPS": 47.0,
+        "meanCPULoadPct": 64.88,
+        "p95CPULoadPct": 82.47,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 25,
+        "busiestScanlineSprites": 10,
+        "busiestScanlinePixels": 152
+      },
+      {
+        "forcedEnemies": 4,
+        "enemyRoster": [
+          4,
+          5,
+          2
+        ],
+        "peakActive": 4,
+        "gameFPS": 47.0,
+        "meanCPULoadPct": 73.14,
+        "p95CPULoadPct": 90.72,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 26,
+        "busiestScanlineSprites": 10,
+        "busiestScanlinePixels": 152
+      },
+      {
+        "forcedEnemies": 8,
+        "enemyRoster": [
+          4,
+          5,
+          2
+        ],
+        "peakActive": 8,
+        "gameFPS": 32.67,
+        "meanCPULoadPct": 101.57,
+        "p95CPULoadPct": 120.95,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 29,
+        "busiestScanlineSprites": 12,
+        "busiestScanlinePixels": 208
+      },
+      {
+        "forcedEnemies": 16,
+        "enemyRoster": [
+          4,
+          5,
+          2
+        ],
+        "peakActive": 16,
+        "gameFPS": 24.33,
+        "meanCPULoadPct": 128.61,
+        "p95CPULoadPct": 145.75,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true,
+        "peakVisibleSprites": 38,
+        "busiestScanlineSprites": 11,
+        "busiestScanlinePixels": 208
+      }
+    ],
+    "12-ordinary-stationary-defense": {
+      "seconds": 17.08,
+      "state": 4,
+      "playerHP": 90,
+      "dinorahHP": 0,
+      "peakEnemies": 3,
+      "gameFPS": 46.43,
+      "ramWrites": false,
+      "limitation": "stationary shooting probe, not a completed combat escort"
+    },
+    "06b-all-six-mechanism-frames-exact": {
+      "poses": [
+        {
+          "frame": 0,
+          "gateOpaqueCells": 16,
+          "valveOpaqueCells": 10
+        },
+        {
+          "frame": 1,
+          "gateOpaqueCells": 17,
+          "valveOpaqueCells": 10
+        },
+        {
+          "frame": 2,
+          "gateOpaqueCells": 16,
+          "valveOpaqueCells": 10
+        },
+        {
+          "frame": 3,
+          "gateOpaqueCells": 20,
+          "valveOpaqueCells": 11
+        },
+        {
+          "frame": 4,
+          "gateOpaqueCells": 24,
+          "valveOpaqueCells": 12
+        },
+        {
+          "frame": 5,
+          "gateOpaqueCells": 20,
+          "valveOpaqueCells": 10
+        }
+      ],
+      "isolatedRamFrameSelection": true,
+      "renderingAndDma": "production",
+      "sceneryAtlasPreserved": true
+    }
+  },
+  "functionalPassed": true,
+  "visualReviewPassed": false,
+  "diagnosticOnly": true,
+  "visualIssue": "Palette slot0 was a visible ground color in6A/12, but GenesisBG_B index0 is transparent; native previews differed from emulated pixels. Generator fixed; waiting rebuild."
+}

@@ -49,4 +49,7 @@ void PLAYER_waitFireRelease(void);
 // sprite oculto neste frame? (pisca após dano; escudo mantém visível)
 bool PLAYER_hidden(void);
 
+// Training load room only: hold the same damage immunity used by the measured experiment.
+void PLAYER_testProtect(void);
+
 #endif // PLAYER_H

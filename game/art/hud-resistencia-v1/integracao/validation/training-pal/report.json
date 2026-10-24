@@ -1,0 +1,186 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "be309ac43e3c55aa00dc854f9259e18b51f304010ae125a2139224a0e1a4277e",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "gallery": {
+      "passed": true,
+      "details": {
+        "types": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14
+        ],
+        "fixed_positions": true,
+        "idle_and_walk_all_13": true,
+        "eight_directions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "death_previews": [
+          0,
+          2,
+          12
+        ],
+        "controller_only": true
+      }
+    },
+    "room-2-entry": {
+      "passed": true,
+      "details": {
+        "stage": 2,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-3-entry": {
+      "passed": true,
+      "details": {
+        "stage": 3,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-4-entry": {
+      "passed": true,
+      "details": {
+        "stage": 4,
+        "arena_active": true,
+        "enemies": 0,
+        "controller_only": true
+      }
+    },
+    "room-5-entry": {
+      "passed": true,
+      "details": {
+        "stage": 5,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "room-6-entry": {
+      "passed": true,
+      "details": {
+        "stage": 6,
+        "arena_active": true,
+        "enemies": 4,
+        "controller_only": true
+      }
+    },
+    "load-controls": {
+      "passed": true,
+      "details": {
+        "max_enemies": 16,
+        "hud_fps": 18,
+        "peak_cpu_pct": 221,
+        "controller_only": true
+      }
+    },
+    "santa-success": {
+      "passed": true,
+      "details": {
+        "real_30_second_timer": true,
+        "result_frozen": true,
+        "controller_only": true
+      }
+    },
+    "menu-controls": {
+      "passed": true,
+      "details": {
+        "configuration_cancel_rolls_back": true,
+        "restart_resets_room": true,
+        "room_selector_cancel_resumes": true,
+        "controller_only": true
+      }
+    },
+    "no-defeat": {
+      "passed": true,
+      "details": {
+        "lethal_projectile_no_defeat_hp": 1,
+        "normal_life_defeats": true,
+        "setup": "controller settings, isolated 1 HP and stationary lethal projectile"
+      }
+    },
+    "item-bench": {
+      "passed": true,
+      "details": {
+        "eight_types": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "healing": 40,
+        "power": 2,
+        "speed_bonus": 20,
+        "chain_targets_killed": 2,
+        "dummy_ice_frames": 230,
+        "dummy_burn_frames": 280,
+        "replenishment": true,
+        "setup": "real pickups/activation/shots; player repositioning only"
+      }
+    },
+    "behavior-boss": {
+      "passed": true,
+      "details": {
+        "boss_moves": true,
+        "real_minion_summon": true,
+        "setup": "controller selects boss, cycle accelerated for summon"
+      }
+    },
+    "santa-failure": {
+      "passed": true,
+      "details": {
+        "real_contact_damage": [
+          88,
+          76,
+          64,
+          52,
+          40,
+          28,
+          16,
+          4,
+          0
+        ],
+        "no_npc_hp_writes": true,
+        "result_frozen": true
+      }
+    },
+    "collision-terrain": {
+      "passed": true,
+      "details": {
+        "lava_hp": [
+          99,
+          95
+        ],
+        "mud_slow": 50,
+        "mud_exit_reset": true
+      }
+    }
+  },
+  "failures": []
+}

@@ -1,0 +1,3240 @@
+{
+  "romSHA256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "bootstrapSHA256": "f2b38b90303eb7c69515fab5b37ee86a4409e34a819402083a7ee6e27cead95e",
+  "region": "NTSC",
+  "passed": false,
+  "requiredFPS": 60,
+  "physicalFramesPerCase": 1800,
+  "warmupSeconds": 4,
+  "shieldClock": "item",
+  "cases": [
+    {
+      "phase": "3",
+      "policy": "native_cadence",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ],
+        [
+          224,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1718,
+      "gameFPS": 57.26667,
+      "targetMet": false,
+      "meanCPULoadPct": 75.56,
+      "p95CPULoadPct": 101.074,
+      "maximumCPULoadPct": 103.906,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "satMaximumSampled": [
+        15,
+        10,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 2,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 3,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 4,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 65,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 66,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 120,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 180,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 181,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 182,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 243,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 244,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 245,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 298,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 299,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 300,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 360,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 361,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 362,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 423,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 478,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 538,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 539,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 540,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 601,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 602,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 603,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 656,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 657,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 658,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 718,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 719,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 780,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 781,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 835,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 836,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 837,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 897,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 898,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 959,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 960,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 961,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1014,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1015,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1016,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1076,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1077,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1078,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1139,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1140,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1141,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1193,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1194,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1195,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1255,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1317,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1318,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1319,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1372,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1373,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1374,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1434,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1435,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1496,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1497,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1551,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1552,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1553,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1613,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1614,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1615,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1676,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1677,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1730,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1731,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1732,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1792,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1793,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1794,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        }
+      ],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6A",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1707,
+      "gameFPS": 56.9,
+      "targetMet": false,
+      "meanCPULoadPct": 75.821,
+      "p95CPULoadPct": 101.221,
+      "maximumCPULoadPct": 104.102,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        19,
+        8,
+        112
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 2,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 3,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 4,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 65,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 66,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 67,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 120,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 121,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 181,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 182,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 183,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 244,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 245,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 246,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 298,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 299,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 300,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 360,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 361,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 362,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 423,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 478,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 479,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 539,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 540,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 541,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 602,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 603,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 604,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 656,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 657,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 658,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 718,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 719,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 720,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 781,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 782,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 783,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 835,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 836,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 837,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 897,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 898,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 899,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 960,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 961,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 962,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1014,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1015,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1016,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1076,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1077,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1078,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1139,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1140,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1141,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1193,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1194,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1195,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1255,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1318,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1319,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1320,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1372,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1373,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1374,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1434,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1435,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1436,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1497,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1498,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1499,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1551,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1552,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1553,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1613,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1614,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1615,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1676,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1677,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1678,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1730,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1731,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1732,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1792,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1793,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1794,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        }
+      ],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6B",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1707,
+      "gameFPS": 56.9,
+      "targetMet": false,
+      "meanCPULoadPct": 84.74,
+      "p95CPULoadPct": 110.693,
+      "maximumCPULoadPct": 113.672,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        23,
+        9,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 2,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 3,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 4,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 65,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 66,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 67,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 120,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 121,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 181,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 182,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 183,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 244,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 245,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 246,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 298,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 299,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 300,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 360,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 361,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 362,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 423,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 478,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 479,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 539,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 540,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 541,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 602,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 603,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 604,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 656,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 657,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 658,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 718,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 719,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 720,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 781,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 782,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 783,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 835,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 836,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 837,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 897,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 898,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 899,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 960,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 961,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 962,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1014,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1015,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1016,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1076,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1077,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1078,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1139,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1140,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1141,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1193,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1194,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1195,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1255,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1318,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1319,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1320,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1372,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1373,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1374,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1434,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1435,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1436,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1497,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1498,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1499,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1551,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1552,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1553,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1613,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1614,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1615,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1676,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1677,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1678,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1730,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1731,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1732,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1792,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1793,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1794,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        }
+      ],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1685,
+      "gameFPS": 56.16667,
+      "targetMet": false,
+      "meanCPULoadPct": 79.037,
+      "p95CPULoadPct": 103.369,
+      "maximumCPULoadPct": 122.998,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        18,
+        10,
+        168
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 3,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 4,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 5,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 66,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 67,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 68,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 89,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 40
+        },
+        {
+          "physicalOffset": 90,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 40
+        },
+        {
+          "physicalOffset": 102,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 29
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 120,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 121,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 181,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 182,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 183,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 244,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 245,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 246,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 251,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 56
+        },
+        {
+          "physicalOffset": 252,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 56
+        },
+        {
+          "physicalOffset": 264,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 45
+        },
+        {
+          "physicalOffset": 298,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 299,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 300,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 360,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 361,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 362,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 410,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 73
+        },
+        {
+          "physicalOffset": 422,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 62
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 426,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 427,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 478,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 479,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 539,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 540,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 541,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 571,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 91
+        },
+        {
+          "physicalOffset": 572,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 91
+        },
+        {
+          "physicalOffset": 584,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 80
+        },
+        {
+          "physicalOffset": 605,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 606,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 607,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 656,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 657,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 717,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 718,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 719,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 732,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 108
+        },
+        {
+          "physicalOffset": 744,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 97
+        },
+        {
+          "physicalOffset": 782,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 783,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 784,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 835,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 836,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 837,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 890,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 127
+        },
+        {
+          "physicalOffset": 891,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 127
+        },
+        {
+          "physicalOffset": 899,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 900,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 901,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 906,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 116
+        },
+        {
+          "physicalOffset": 963,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 964,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1014,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1015,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1016,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1051,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 145
+        },
+        {
+          "physicalOffset": 1063,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 134
+        },
+        {
+          "physicalOffset": 1078,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1079,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1080,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1141,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1142,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1143,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1193,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1194,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1211,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 163
+        },
+        {
+          "physicalOffset": 1223,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 152
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1258,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1319,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1320,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1368,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 13
+        },
+        {
+          "physicalOffset": 1372,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1373,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1374,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1383,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 171
+        },
+        {
+          "physicalOffset": 1435,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1436,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1437,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1498,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1499,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1500,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1529,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 32
+        },
+        {
+          "physicalOffset": 1530,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 32
+        },
+        {
+          "physicalOffset": 1542,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 21
+        },
+        {
+          "physicalOffset": 1551,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1552,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1553,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1613,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1614,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1615,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1676,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1677,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1678,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1691,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 48
+        },
+        {
+          "physicalOffset": 1703,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 37
+        },
+        {
+          "physicalOffset": 1730,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1731,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1791,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1792,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1793,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        }
+      ],
+      "dinorahStateTransitions": [
+        {
+          "physicalOffset": 88,
+          "gameFrame": 547,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 101,
+          "gameFrame": 558,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 250,
+          "gameFrame": 697,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 263,
+          "gameFrame": 708,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 409,
+          "gameFrame": 847,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 421,
+          "gameFrame": 858,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 570,
+          "gameFrame": 997,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 583,
+          "gameFrame": 1008,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 731,
+          "gameFrame": 1147,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 743,
+          "gameFrame": 1158,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 889,
+          "gameFrame": 1297,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 905,
+          "gameFrame": 1308,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1050,
+          "gameFrame": 1447,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1062,
+          "gameFrame": 1458,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1210,
+          "gameFrame": 1597,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1222,
+          "gameFrame": 1608,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1367,
+          "gameFrame": 1747,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1382,
+          "gameFrame": 1758,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1528,
+          "gameFrame": 1897,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1541,
+          "gameFrame": 1908,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1690,
+          "gameFrame": 2047,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1702,
+          "gameFrame": 2058,
+          "previous": 3,
+          "current": 1
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "9",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        2,
+        9
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1735,
+      "gameFPS": 57.83333,
+      "targetMet": false,
+      "meanCPULoadPct": 67.42,
+      "p95CPULoadPct": 92.627,
+      "maximumCPULoadPct": 97.314,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        14,
+        10,
+        152
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 1,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 2,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 3,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 64,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 65,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 120,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 180,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 181,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 182,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 243,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 244,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 245,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 298,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 299,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 359,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 360,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 421,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 422,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 478,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 538,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 539,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 600,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 601,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 656,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 657,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 717,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 718,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 779,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 780,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 835,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 836,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 896,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 897,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 958,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 959,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1014,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1015,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1075,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1076,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1137,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1138,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1193,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1194,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1254,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1255,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1316,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1317,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1372,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1373,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1433,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1434,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1495,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1496,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1551,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1552,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1612,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1613,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1674,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1675,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1730,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1731,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 179
+        },
+        {
+          "physicalOffset": 1791,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1792,
+          "gameDelta": 0,
+          "dinorahState": 0,
+          "shieldTimer": 120
+        }
+      ],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    }
+  ],
+  "method": "Same production ROM and node snapshot per policy. Invulnerability and enemy HP isolate timing; Dinorah waits. Legacy resets complete records each VBlank; preserving policies retain AI/render clocks and velocities. No transition or death settling is included. Static camera load, not route difficulty.",
+  "status": "needs-optimization"
+}

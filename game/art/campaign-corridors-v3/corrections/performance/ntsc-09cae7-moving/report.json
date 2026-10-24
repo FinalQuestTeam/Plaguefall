@@ -1,0 +1,929 @@
+{
+  "romSHA256": "09cae7026892ea22c34d5af6268860c88c7bc674dcb6e6e089fa6cae80be1189",
+  "bootstrapSHA256": "f2b38b90303eb7c69515fab5b37ee86a4409e34a819402083a7ee6e27cead95e",
+  "region": "NTSC",
+  "passed": false,
+  "requiredFPS": 60,
+  "physicalFramesPerCase": 1800,
+  "warmupSeconds": 4,
+  "shieldClock": "item",
+  "motion": "patrol",
+  "measuredPhases": [
+    "6B",
+    "12"
+  ],
+  "policies": [
+    "native_cadence"
+  ],
+  "instrumentedTimingDiagnosticOnly": false,
+  "cases": [
+    {
+      "phase": "6B",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1786,
+      "gameFPS": 59.53333,
+      "targetMet": false,
+      "meanCPULoadPct": 83.352,
+      "p95CPULoadPct": 86.523,
+      "maximumCPULoadPct": 95.459,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0
+      ],
+      "cameraRange": [
+        [
+          0,
+          70
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "playerPositionRange": [
+        [
+          40,
+          272
+        ],
+        [
+          224,
+          224
+        ]
+      ],
+      "visibleEnemiesRange": [
+        3,
+        3
+      ],
+      "visibleProjectilesRange": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "satMaximumSampled": [
+        17,
+        6,
+        112
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 178,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 120,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002beb0"
+          }
+        },
+        {
+          "physicalOffset": 318,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 159,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bc80"
+          }
+        },
+        {
+          "physicalOffset": 404,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 74,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002beb0"
+          }
+        },
+        {
+          "physicalOffset": 456,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 23,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a200000542ae00000001000000000002bc80"
+          }
+        },
+        {
+          "physicalOffset": 536,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 120,
+          "cpu": {
+            "pc": 344572,
+            "pcHex": "0x541fc",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bd26"
+          }
+        },
+        {
+          "physicalOffset": 597,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 60,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800050001000542ae000000010000000000050000"
+          }
+        },
+        {
+          "physicalOffset": 608,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 50,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800050001000542ae000000010000000000000000"
+          }
+        },
+        {
+          "physicalOffset": 729,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 106,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800000001000542ae00000001000000000002e3ba"
+          }
+        },
+        {
+          "physicalOffset": 813,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 23,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800050001000542ae000000010000000000050000"
+          }
+        },
+        {
+          "physicalOffset": 835,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 179,
+          "cpu": {
+            "pc": 344572,
+            "pcHex": "0x541fc",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c802e20001000542ae000000010000000000182319"
+          }
+        },
+        {
+          "physicalOffset": 1292,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 80,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002beb0"
+          }
+        },
+        {
+          "physicalOffset": 1313,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 60,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800000001000542ae000000010000000043110000"
+          }
+        },
+        {
+          "physicalOffset": 1534,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 17,
+          "cpu": {
+            "pc": 344572,
+            "pcHex": "0x541fc",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800050001000542ae0000000100000000000a0000"
+          }
+        },
+        {
+          "physicalOffset": 1551,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 179,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a200000542ae00000001000000000002beb0"
+          }
+        }
+      ],
+      "dinorahStateTransitions": [
+        {
+          "physicalOffset": 25,
+          "gameFrame": 501,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 221,
+          "gameFrame": 696,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 258,
+          "gameFrame": 733,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 455,
+          "gameFrame": 928,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 493,
+          "gameFrame": 965,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 691,
+          "gameFrame": 1160,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 728,
+          "gameFrame": 1197,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 926,
+          "gameFrame": 1392,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 963,
+          "gameFrame": 1429,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1158,
+          "gameFrame": 1624,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1195,
+          "gameFrame": 1661,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1392,
+          "gameFrame": 1856,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1429,
+          "gameFrame": 1893,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1626,
+          "gameFrame": 2088,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1663,
+          "gameFrame": 2125,
+          "previous": 1,
+          "current": 2
+        }
+      ],
+      "instrumented": false,
+      "profileSubTicks": {},
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1786,
+      "gameFPS": 59.53333,
+      "targetMet": false,
+      "meanCPULoadPct": 78.616,
+      "p95CPULoadPct": 82.715,
+      "maximumCPULoadPct": 87.988,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          80
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "playerPositionRange": [
+        [
+          48,
+          288
+        ],
+        [
+          208,
+          208
+        ]
+      ],
+      "visibleEnemiesRange": [
+        3,
+        3
+      ],
+      "visibleProjectilesRange": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "satMaximumSampled": [
+        18,
+        9,
+        152
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 69,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 50,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bc80"
+          }
+        },
+        {
+          "physicalOffset": 81,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 39,
+          "cpu": {
+            "pc": 344572,
+            "pcHex": "0x541fc",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bd26"
+          }
+        },
+        {
+          "physicalOffset": 221,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 77,
+          "cpu": {
+            "pc": 344572,
+            "pcHex": "0x541fc",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bc80"
+          }
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 105,
+          "cpu": {
+            "pc": 344572,
+            "pcHex": "0x541fc",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bc80"
+          }
+        },
+        {
+          "physicalOffset": 384,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 94,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800050001000542ae000000010000000043110000"
+          }
+        },
+        {
+          "physicalOffset": 535,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 121,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800050001000542ae000000010000000000000000"
+          }
+        },
+        {
+          "physicalOffset": 675,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 160,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800000001000542ae00000001000000000002e3ba"
+          }
+        },
+        {
+          "physicalOffset": 687,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 149,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800050001000542ae000000010000000043110000"
+          }
+        },
+        {
+          "physicalOffset": 827,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 10,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002beb0"
+          }
+        },
+        {
+          "physicalOffset": 978,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 36,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bc80"
+          }
+        },
+        {
+          "physicalOffset": 990,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 25,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002bd26"
+          }
+        },
+        {
+          "physicalOffset": 1430,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 121,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae00000001000000000002beb0"
+          }
+        },
+        {
+          "physicalOffset": 1581,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 149,
+          "cpu": {
+            "pc": 344562,
+            "pcHex": "0x541f2",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c800000001000542ae00000001000000000002e3ba"
+          }
+        },
+        {
+          "physicalOffset": 1593,
+          "gameDelta": 0,
+          "dinorahState": 2,
+          "shieldTimer": 138,
+          "cpu": {
+            "pc": 344568,
+            "pcHex": "0x541f8",
+            "symbol": "VDP_waitVBlank.constprop.0",
+            "spHex": "0xe0fffcf0",
+            "stackTopHex": "0000000100000000000547c80005a201000542ae000000010000000098000000"
+          }
+        }
+      ],
+      "dinorahStateTransitions": [
+        {
+          "physicalOffset": 30,
+          "gameFrame": 509,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 68,
+          "gameFrame": 547,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 80,
+          "gameFrame": 558,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 220,
+          "gameFrame": 697,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 232,
+          "gameFrame": 708,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 236,
+          "gameFrame": 712,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 273,
+          "gameFrame": 749,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 371,
+          "gameFrame": 847,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 383,
+          "gameFrame": 858,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 478,
+          "gameFrame": 952,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 515,
+          "gameFrame": 989,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 523,
+          "gameFrame": 997,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 534,
+          "gameFrame": 1008,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 674,
+          "gameFrame": 1147,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 686,
+          "gameFrame": 1158,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 721,
+          "gameFrame": 1192,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 758,
+          "gameFrame": 1229,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 826,
+          "gameFrame": 1297,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 838,
+          "gameFrame": 1308,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 962,
+          "gameFrame": 1432,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 977,
+          "gameFrame": 1447,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 989,
+          "gameFrame": 1458,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1001,
+          "gameFrame": 1469,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1129,
+          "gameFrame": 1597,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1140,
+          "gameFrame": 1608,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1204,
+          "gameFrame": 1672,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1241,
+          "gameFrame": 1709,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1279,
+          "gameFrame": 1747,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1290,
+          "gameFrame": 1758,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1429,
+          "gameFrame": 1897,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1441,
+          "gameFrame": 1908,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1445,
+          "gameFrame": 1912,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1482,
+          "gameFrame": 1949,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1580,
+          "gameFrame": 2047,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1592,
+          "gameFrame": 2058,
+          "previous": 3,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1687,
+          "gameFrame": 2152,
+          "previous": 2,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1724,
+          "gameFrame": 2189,
+          "previous": 1,
+          "current": 2
+        },
+        {
+          "physicalOffset": 1732,
+          "gameFrame": 2197,
+          "previous": 2,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1743,
+          "gameFrame": 2208,
+          "previous": 3,
+          "current": 2
+        }
+      ],
+      "instrumented": false,
+      "profileSubTicks": {},
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    }
+  ],
+  "method": "Same production ROM and node snapshot per policy. Invulnerability and enemy HP isolate timing; Dinorah waits. Legacy resets complete records each VBlank; preserving policies retain AI/render clocks and velocities. No transition or death settling is included. Static camera load, not route difficulty.",
+  "status": "needs-optimization"
+}

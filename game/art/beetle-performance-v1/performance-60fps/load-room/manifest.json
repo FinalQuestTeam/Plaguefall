@@ -1,0 +1,72 @@
+{
+  "parent_rom_sha256": "1fc88e9312b3a14023f98a55d874faacd747059625e51607eb737c7a1e8d4572",
+  "rom_sha256": "261c05c73b4256219a2828c8da47c9facb6a9793a6784a0acc15f8e4816429d2",
+  "rom_bytes": 1703936,
+  "defaults": {
+    "room": 6,
+    "enemies": 8,
+    "formation": "Baluarte",
+    "shot_slots_per_pool": 16,
+    "status": "permanent shield",
+    "automatic_deaths": false,
+    "player_hit_immunity": true
+  },
+  "changes": [
+    {
+      "path": "src/actors/player.c",
+      "before_sha256": "251990745f590a1f78cfc38d7c23af213ef2294bd039289fb9b582fb6340ddb5",
+      "after_sha256": "d5549d03966ba85fd4dfe76925189f39e5a7ac9abba76672431ce9de64feb5de"
+    },
+    {
+      "path": "src/actors/player.h",
+      "before_sha256": "c8638c0bc8a945d214f60793a99aa903a9d44f10e4bbe7a456c5e71b997b682e",
+      "after_sha256": "5fca42b7597c3c309fa0b46561796a7a1f2d624f765fabbf8f86e2551176b7d6"
+    },
+    {
+      "path": "src/enemies/enemies.c",
+      "before_sha256": "88bb59ce26254c70a58e66044e90b2517d6bf8574c7f9ade098434e485dd3e89",
+      "after_sha256": "ac9d8e212a6d9404b5ea39df35259ab2333ac6038aa84ede169886c620e04173"
+    },
+    {
+      "path": "src/levels/defs/test.c",
+      "before_sha256": "1db67d0734c968e92eb5978aaa3fb920fbb92ca5a3c431118f1c04142763fe5b",
+      "after_sha256": "fcffadfdbd681054ba7d7896892198f9db726c24e8a7f41d0796df86510be6b6"
+    },
+    {
+      "path": "src/levels/test.c",
+      "before_sha256": "80a861a1ebed0c8d54074e032c7a47dc15355dacab5e4627dc50dc84a60e301a",
+      "after_sha256": "8ea2500f25020a1bbad919bec061b839b306a7114d36f5bb11ec59fd195442d7"
+    },
+    {
+      "path": "src/levels/test_menu.c",
+      "before_sha256": "a9d1a0b4c435ee9716f964a0f3e98c35b4822ca5c5b5a4773ea2cf995c0f5bd7",
+      "after_sha256": "ea9b41d805cfca152869e39c0affacb13385c7ea45b3393a87c2d96e4455c9c2"
+    },
+    {
+      "path": "src/system/audio/music.c",
+      "before_sha256": "7fc7266e62238eb2e6277f89897b91f1633e266aa0460a279405266764e03bfa",
+      "after_sha256": "cd09e801b9650a2d773c7d6a3af1ce3958c2bcb41513c32f1afa44209202464b"
+    }
+  ],
+  "production_rom_at_start": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc",
+  "production_rom_at_end": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52",
+  "fresh_rebuild_matches": true,
+  "production_note": "No experimental source/resource/ROM was written into game/src, game/res or game/out. Production ROM changed independently while this isolated build was prepared.",
+  "verification": {
+    "controller_only": true,
+    "cases_per_region": 6,
+    "default_regional_target_met": true,
+    "mixed_ntsc_game_frames": 1798,
+    "mixed_ntsc_vblanks": 1800,
+    "all_eight_hardware_bodies_checked": true,
+    "death_loop": true,
+    "quantity_options": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "cancel_preserves_settings": true,
+    "audio_trace_frames_equal": 80000
+  }
+}

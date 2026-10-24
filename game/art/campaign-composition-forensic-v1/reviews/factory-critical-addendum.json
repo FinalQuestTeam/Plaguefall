@@ -1,0 +1,131 @@
+{
+  "scope": "Read-only critical check of report.json/review.html, EARLY4/5 and normalization of factory10/11 findings",
+  "original_review_preserved": "reviews/factory.json",
+  "runtime_art_or_code_changed": false,
+  "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "refinements": [
+    {
+      "finding_id": "EARLY-4-01",
+      "recommendation": "Reclassify from rejection/P1/confirmed assembly failure to adjustments/P2/editorial finish concern.",
+      "evidence": [
+        "details/4-south.png",
+        "maps/4-complete.png",
+        "captures/ntsc/4/x1-y2.png",
+        "game/art/campaign-whole-scenes-v1/build_early.py:116"
+      ],
+      "confirmed_fact": "The south boundary copies wall.crop((0,80,256,112)) at y352, mirrored horizontally for the second half.",
+      "not_proven": "Its crop provenance alone does not prove a broken asset. The visible band closes the bottom of the world, meets both side walls and begins at the walk boundary. It can represent a foreground wall/gate continuing beyond the world edge.",
+      "proposed_wording": "O fechamento sul reaproveita a faixa inferior da parede norte. Funciona como limite arquitetônico de primeiro plano, mas a transição piso/parede, sem um coroamento próprio, pode receber acabamento para tornar a perspectiva mais clara. Não há fragmento isolado interno comprovado."
+    },
+    {
+      "finding_id": "EARLY-5-01",
+      "recommendation": "Keep P2 spatial continuity as an editorial judgment, not a proven impossible building identity.",
+      "confirmed_fact": "Stage4 uses a dark brick/steel/shutter interior; stage5 shows arches, cloth and an older facade.",
+      "not_proven": "Different inside/outside materials do not establish that they cannot belong to the same adapted building. The blue entrance is a possible shared cue.",
+      "proposed_wording": "A ligação visual entre o interior4 e o pátio5 é fraca; um elemento arquitetônico comum mais claro ajudaria a reconhecer o mesmo galpão."
+    },
+    {
+      "finding_id": "FACTORY-SCENE-01",
+      "recommendation": "Retain as the strongest independent confirmed composition defect for10/11.",
+      "confirmed_fact": "A partial blue machinery housing from the lower perimeter is pasted as a supposed horizontal conduit and opaquely overwrites internal conveyor pixels. This occurs inside the map and is independent of viewport edges.",
+      "wording_note": "Avoid relying on emotive terms such as mutilated; source fragment, destination rectangles and paint order are sufficient evidence."
+    },
+    {
+      "finding_id": "FACTORY-SCENE-02",
+      "recommendation": "Keep P2 truncation finding but remove quantitative claim cut in half.",
+      "confirmed_fact": "The source crop ends at x48 through a column whose visible face continues to approximately55; the side face/lamp is cut.",
+      "not_proven": "There was no exact50percent width measurement.",
+      "proposed_title": "Face lateral e luminária dos pilares inferiores truncadas"
+    },
+    {
+      "finding_id": "FACTORY-COLLISION-01",
+      "recommendation": "Keep static geometry observation; treat the requirement for a blocking base as design judgment pending movement/depth probe, rather than a demonstrated runtime failure.",
+      "confirmed_fact": "The three cabinet footprints are absent from factory solids and the candidate16x16 footprints at(168,184),(392,184),(616,184) are statically free.",
+      "not_proven": "This review has not recorded Damião crossing the painted machine base. Some background machinery may intentionally be decorative/walkable. Its apparent volume suggests checking this, but does not by itself establish a technical bug.",
+      "suggested_priority": "P2 until explicit collision/depth expectation or recorded crossing confirms an actionable mismatch"
+    },
+    {
+      "finding_id": "FACTORY-11-01",
+      "recommendation": "Replace the original46/292 claim with the qualified table below; do not count valve2 as wholly independent from the already-overpainted conveyor defect.",
+      "proposed_title": "Válvula3 cobre a esteira; válvula2 ocupa a extremidade já sobrescrita pelo falso tubo",
+      "measurements": [
+        {
+          "valve": 2,
+          "valve_alpha_inside_conveyor_rectangle": 46,
+          "conservative_non_floor_color_filter_only": 27,
+          "exact_original_conveyor_flood_mask_intersection": 38,
+          "conveyor_layer_pixels_still_present_after_false_pipe_overpaint": 0
+        },
+        {
+          "valve": 3,
+          "valve_alpha_inside_conveyor_rectangle": 292,
+          "conservative_non_floor_color_filter_only": 250,
+          "exact_original_conveyor_flood_mask_intersection": 261,
+          "conveyor_layer_pixels_still_present_after_false_pipe_overpaint": 136
+        }
+      ],
+      "method": "Recreate indexed factory source with current generator palette; crop(152,200,392,248), nearest resize112x40, extend to160x40 exactly as lines67..71. Recreate stamp_obj border flood background indices{5,13,6}. Count valve0 RGBA alpha pixels inside that retained conveyor mask at ground-snapped valve positions(384,184)/(608,184). Finally remove the opaque horizontal conduit rectangles(128,200,48,16),(352,200,48,16),(576,200,48,16), which are painted after the conveyors.",
+      "interpretation": "46/292 prove alpha within a rectangle only.27/250 were a quick conservative color test, not exact masks.38/261 measure the intended conveyor before it is overwritten.0/136 refer to conveyor pixels preserved in actual layer order. Physical overlap is proven for valve3; whether a valve is deliberately mounted on machinery remains a visual-integration/design question.",
+      "source_art": "game/art/objective-sprites-v1/frames/valve-0.png",
+      "conveyor_world_rects_xywh": [
+        [
+          232,
+          200,
+          160,
+          40
+        ],
+        [
+          488,
+          200,
+          160,
+          40
+        ]
+      ],
+      "valve_world_rects_xywh": [
+        [
+          384,
+          184,
+          32,
+          32
+        ],
+        [
+          608,
+          184,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "finding_id": "FACTORY-11-02",
+      "recommendation": "Keep the framing observation, downgrade priority to P2 editorial/environment readability rather than a broken-asset claim.",
+      "confirmed_fact": "In the valve interaction view around cameraY68, the main northern machines are behind the HUD and the southern perimeter is below the viewport.",
+      "not_proven": "The environment is not absent: cabinets, pipes and conveyors remain visible and can communicate an industrial space. A main wall leaving a scrolling viewport is not itself an assembly defect.",
+      "proposed_title": "Enquadramento do objetivo deixa pouca referência da arquitetura principal"
+    },
+    {
+      "finding_id": "FACTORY-10-01",
+      "recommendation": "Keep suspected_depth_ambiguity; do not promote to confirmed floating nest.",
+      "confirmed_fact": "Upper nest support rows36..46 at top88 land at world124..134, inside floor beginning112. The egg body crossing the wall line is normal vertical projection. Only the x376 conduit intersection has ambiguous depth."
+    }
+  ],
+  "overall_effect": {
+    "phase4": "adjustments, not rejected solely from the copied south strip",
+    "phase5": "P2 editorial continuity suggestion",
+    "phase10": "Still requires correction for the independently proven partial-machine/conveyor overpaint; other claims have their stated limits",
+    "phase11": "Still requires correction for partial-machine/conveyor overpaint; reduce double counting and separate pixel overlap, static collision policy and editorial framing judgments"
+  },
+  "files_changed": [
+    "game/art/campaign-composition-forensic-v1/reviews/factory-critical-addendum.json"
+  ],
+  "agreed_final_report_policy": {
+    "numeric_alpha_counts": "Keep diagnostic calculations only in this historical addendum; omit them from the user-facing final report.",
+    "valve_wording": "Valve3 covers preserved conveyor pixels; valve2 is in the area already corrupted by the false conduit and is not counted as an independent defect.",
+    "phase4_status": "adjustments P2",
+    "global_counts": {
+      "acceptable": 3,
+      "adjustments": 6,
+      "rejected": 10
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "cachedVsUncachedComparisons": 2012000,
+  "exactCacheHits": 1004052,
+  "explicitInvalidationAssertions": 37,
+  "originAndTargetXYInvalidated": true,
+  "all4GateMasks": true,
+  "restartReset": true,
+  "trainingUncached": true,
+  "productionFunctionsSHA256": "92c58722d2d55adbe923b21d9bf32cdf7d937aebf012cf216592440b9beb8e1f",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "productionModified": false,
+  "native68000TimingClaim": false,
+  "contracts": [
+    "Cache keys include integer originXY and endpointXY, exact2bit gate occupancy.",
+    "HP>0 and collapseTicks>0 both mean the same occupied gate; HP changes do not change geometry.",
+    "DINORAH_clear resets count/cursor; DINORAH_start invokes clear; only campaign uses cache.",
+    "Static shotRows/bounds and geometry are immutable within each campaign escort. Read-only tests cannot damage gates."
+  ],
+  "method": "Exact cache and DDA functions extracted; one host entry counter added to uncached function only. Compare against uncached on static architecture plus all gate masks; exercise movement, eviction, restart and training bypass."
+}

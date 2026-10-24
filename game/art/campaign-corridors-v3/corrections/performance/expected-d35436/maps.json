@@ -1,0 +1,3122 @@
+{
+  "06a": {
+    "phase": "6A",
+    "size": [
+      3072,
+      320
+    ],
+    "bounds": [
+      24,
+      80,
+      3047,
+      271
+    ],
+    "start": [
+      40,
+      224
+    ],
+    "route_points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        776,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        880,
+        216
+      ],
+      [
+        880,
+        168
+      ],
+      [
+        1000,
+        168
+      ],
+      [
+        1168,
+        144
+      ],
+      [
+        1248,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1480,
+        136
+      ],
+      [
+        1552,
+        96
+      ],
+      [
+        1840,
+        96
+      ],
+      [
+        1840,
+        216
+      ],
+      [
+        2096,
+        216
+      ],
+      [
+        2160,
+        248
+      ],
+      [
+        2344,
+        248
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2688,
+        200
+      ],
+      [
+        2824,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "route_points_are": "centers",
+    "pauses": [
+      2,
+      10,
+      15,
+      19
+    ],
+    "exit": [
+      2976,
+      152,
+      64,
+      64
+    ],
+    "solids": [
+      [
+        0,
+        0,
+        3072,
+        80,
+        false
+      ],
+      [
+        2128,
+        80,
+        944,
+        8,
+        false
+      ],
+      [
+        0,
+        80,
+        824,
+        16,
+        false
+      ],
+      [
+        1272,
+        80,
+        184,
+        16,
+        false
+      ],
+      [
+        2128,
+        88,
+        416,
+        24,
+        false
+      ],
+      [
+        2128,
+        112,
+        32,
+        72,
+        false
+      ],
+      [
+        2352,
+        112,
+        192,
+        72,
+        false
+      ],
+      [
+        664,
+        96,
+        160,
+        112,
+        false
+      ],
+      [
+        0,
+        96,
+        24,
+        176,
+        false
+      ],
+      [
+        1272,
+        176,
+        184,
+        96,
+        false
+      ],
+      [
+        2128,
+        264,
+        416,
+        8,
+        false
+      ],
+      [
+        3048,
+        88,
+        24,
+        184,
+        false
+      ],
+      [
+        0,
+        272,
+        3072,
+        48,
+        false
+      ],
+      [
+        112,
+        32,
+        56,
+        80,
+        true
+      ],
+      [
+        80,
+        72,
+        144,
+        32,
+        true
+      ],
+      [
+        80,
+        184,
+        320,
+        32,
+        true
+      ],
+      [
+        224,
+        112,
+        176,
+        32,
+        true
+      ],
+      [
+        384,
+        128,
+        96,
+        88,
+        true
+      ],
+      [
+        1656,
+        112,
+        160,
+        32,
+        true
+      ],
+      [
+        1648,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1816,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1656,
+        240,
+        160,
+        32,
+        true
+      ],
+      [
+        1672,
+        128,
+        128,
+        104,
+        true
+      ],
+      [
+        2192,
+        120,
+        128,
+        104,
+        true
+      ],
+      [
+        2480,
+        104,
+        56,
+        80,
+        true
+      ],
+      [
+        2496,
+        200,
+        24,
+        32,
+        true
+      ],
+      [
+        2848,
+        112,
+        160,
+        32,
+        true
+      ],
+      [
+        2896,
+        80,
+        32,
+        32,
+        true
+      ],
+      [
+        2848,
+        72,
+        48,
+        48,
+        true
+      ],
+      [
+        2928,
+        48,
+        64,
+        80,
+        true
+      ],
+      [
+        80,
+        104,
+        144,
+        80,
+        false
+      ],
+      [
+        224,
+        144,
+        176,
+        40,
+        false
+      ],
+      [
+        912,
+        80,
+        48,
+        64,
+        false
+      ],
+      [
+        912,
+        192,
+        48,
+        80,
+        false
+      ],
+      [
+        1656,
+        144,
+        160,
+        96,
+        false
+      ],
+      [
+        2496,
+        184,
+        24,
+        16,
+        false
+      ]
+    ],
+    "gates": [],
+    "valves": [],
+    "valve_approaches": [],
+    "gate_shot_approaches": [],
+    "camera_interest": [
+      {
+        "name": "Cisterna e arco",
+        "bbox": [
+          72,
+          32,
+          168,
+          184
+        ],
+        "preferred_feet": [
+          40,
+          200
+        ],
+        "position": [
+          40,
+          200
+        ]
+      },
+      {
+        "name": "Ponte inteira",
+        "bbox": [
+          880,
+          136,
+          112,
+          96
+        ],
+        "preferred_feet": [
+          872,
+          160
+        ],
+        "position": [
+          872,
+          160
+        ]
+      },
+      {
+        "name": "Ilha de bombas",
+        "bbox": [
+          1648,
+          112,
+          176,
+          160
+        ],
+        "preferred_feet": [
+          1832,
+          192
+        ],
+        "position": [
+          1832,
+          192
+        ]
+      },
+      {
+        "name": "Recuo de manuten\u00e7\u00e3o",
+        "bbox": [
+          2160,
+          112,
+          192,
+          152
+        ],
+        "preferred_feet": [
+          2336,
+          240
+        ],
+        "position": [
+          2336,
+          240
+        ]
+      },
+      {
+        "name": "Abrigo",
+        "bbox": [
+          2848,
+          48,
+          160,
+          96
+        ],
+        "preferred_feet": [
+          3008,
+          168
+        ],
+        "position": [
+          3008,
+          168
+        ]
+      }
+    ],
+    "camera_player_y": 200,
+    "camera_player_y_samples": [
+      184,
+      200,
+      248
+    ],
+    "assembly_notes": [
+      [
+        "cistern",
+        [
+          72,
+          32,
+          408,
+          184
+        ]
+      ],
+      [
+        "bridge",
+        [
+          896,
+          48,
+          80,
+          256
+        ]
+      ],
+      [
+        "pump-island",
+        [
+          1648,
+          112,
+          176,
+          160
+        ]
+      ],
+      [
+        "refuge",
+        [
+          2848,
+          48,
+          160,
+          96
+        ]
+      ]
+    ],
+    "native": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin"
+    },
+    "memory": {
+      "scene_tiles": 554,
+      "objective_tiles": 0,
+      "total_tiles": 554,
+      "budget": 640,
+      "exact_native_tile_reuse": true,
+      "lossy_tile_substitutions": 0,
+      "map_bytes": 30720,
+      "background_tiles": 554,
+      "limit": 640,
+      "graphics_bytes": 17728
+    },
+    "status": "isolated crossing-context revision; needs whole-map/continuous-camera review; no activation",
+    "geometry_checks": {
+      "actor_feet": [
+        16,
+        16
+      ],
+      "margin": 8,
+      "swept_samples": 3200,
+      "reachable_centers": 4448,
+      "arrival_connected": true
+    },
+    "complete": "complete-native.png",
+    "sources": [
+      "../../complete-indexed.png"
+    ],
+    "material_revision": {
+      "source": "art/phase04-tunnels-v1/map-native.png",
+      "concrete_rect": [
+        360,
+        208,
+        16,
+        16
+      ],
+      "grain_grid": 1,
+      "texture_resampling": false,
+      "channel": "same existing quiet source grain, dark charcoal palette; mouth water pigments normalized without reshaping",
+      "architecture": "existing complete module alpha, cap, face and joint positions unchanged",
+      "first_discarded_trial": "Wet sludge crop repeated too visibly; rejected before review handoff.",
+      "objective_palette_changed": false,
+      "actor_palette_changed": false
+    },
+    "material_geometry_validation": {
+      "footprint": 16,
+      "free_positions": 5554,
+      "reachable_positions": 5554,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3200
+    },
+    "geometry_unchanged_from_canonical": true,
+    "preview_cameras": [
+      {
+        "id": "Cisterna e arco",
+        "position": [
+          40,
+          200
+        ],
+        "camera": [
+          0,
+          0
+        ],
+        "follower_feet": [
+          24,
+          200
+        ],
+        "preview": "camera-1.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "Ponte inteira",
+        "position": [
+          872,
+          160
+        ],
+        "camera": [
+          704,
+          8
+        ],
+        "follower_feet": [
+          840,
+          160
+        ],
+        "preview": "camera-2.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "Ilha de bombas",
+        "position": [
+          1832,
+          192
+        ],
+        "camera": [
+          1648,
+          48
+        ],
+        "follower_feet": [
+          1824,
+          192
+        ],
+        "preview": "camera-3.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "Recuo de manuten\u00e7\u00e3o",
+        "position": [
+          2336,
+          240
+        ],
+        "camera": [
+          2160,
+          40
+        ],
+        "follower_feet": [
+          2304,
+          240
+        ],
+        "preview": "camera-4.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "Abrigo",
+        "position": [
+          3008,
+          168
+        ],
+        "camera": [
+          2752,
+          0
+        ],
+        "follower_feet": [
+          2976,
+          168
+        ],
+        "preview": "camera-5.png",
+        "actor_y_anchor": "py-31"
+      }
+    ],
+    "art_limitations": [
+      "This changes materials only: existing long corridor composition, native outlines, pumps, bays and gates remain. It does not claim to redesign the spatial macrocomposition.",
+      "The 16x16 material is repeated exactly; sparse 1px grain can still reveal repetition at enlarged viewing scale.",
+      "Dark drainage is conveyed by charcoal pigment and depth of existing banks; blue pipework remains on mechanical equipment.",
+      "Cameras are native composed previews at previously measured legal runtime coordinates. Actor placement is illustrative; no new emulator or gameplay measurement is claimed.",
+      "Root/user whole-map and private-ROM review is still required; tile and geometry checks are not visual approval."
+    ],
+    "revision_placements": [
+      {
+        "id": "closed-pump-recess",
+        "source_bbox_xywh": [
+          1672,
+          128,
+          128,
+          104
+        ],
+        "position": [
+          688,
+          104
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "entry-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          48
+        ],
+        "position": [
+          512,
+          48
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "middle-north-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          56
+        ],
+        "position": [
+          1168,
+          24
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "middle-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          56
+        ],
+        "position": [
+          2000,
+          24
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "late-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          56
+        ],
+        "position": [
+          2704,
+          32
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      }
+    ],
+    "revision_scope": "Resident whole pump and maintenance unit only. Bounds/solids/route/camera/objectives unchanged.",
+    "continuous_preview_step_world_x": 160,
+    "continuous_previews": "continuous-cameras.json",
+    "revision_geometry_validation": {
+      "footprint": 16,
+      "free_positions": 5554,
+      "reachable_positions": 5554,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3200
+    },
+    "width": 3072,
+    "height": 320,
+    "points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        776,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        880,
+        216
+      ],
+      [
+        880,
+        168
+      ],
+      [
+        1000,
+        168
+      ],
+      [
+        1168,
+        144
+      ],
+      [
+        1248,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1480,
+        136
+      ],
+      [
+        1552,
+        96
+      ],
+      [
+        1840,
+        96
+      ],
+      [
+        1840,
+        216
+      ],
+      [
+        2096,
+        216
+      ],
+      [
+        2160,
+        248
+      ],
+      [
+        2344,
+        248
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2688,
+        200
+      ],
+      [
+        2824,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "traversal_points": [
+      [
+        40,
+        224
+      ],
+      [
+        272,
+        224
+      ],
+      [
+        536,
+        224
+      ],
+      [
+        640,
+        232
+      ],
+      [
+        768,
+        232
+      ],
+      [
+        840,
+        232
+      ],
+      [
+        872,
+        208
+      ],
+      [
+        872,
+        160
+      ],
+      [
+        992,
+        160
+      ],
+      [
+        1160,
+        136
+      ],
+      [
+        1240,
+        128
+      ],
+      [
+        1352,
+        128
+      ],
+      [
+        1472,
+        128
+      ],
+      [
+        1544,
+        88
+      ],
+      [
+        1832,
+        88
+      ],
+      [
+        1832,
+        208
+      ],
+      [
+        2088,
+        208
+      ],
+      [
+        2152,
+        240
+      ],
+      [
+        2336,
+        240
+      ],
+      [
+        2424,
+        240
+      ],
+      [
+        2536,
+        240
+      ],
+      [
+        2680,
+        192
+      ],
+      [
+        2816,
+        192
+      ],
+      [
+        3008,
+        168
+      ]
+    ],
+    "walkable": [
+      24,
+      80,
+      3024,
+      192
+    ],
+    "tiles": 554,
+    "tileBudget": 640,
+    "nativeTileSHA256": "12310aa8d26655d48181c8886d7426941a58731125e58a48206d66abd28fc8d4",
+    "native_bank": "art/campaign-corridors-v3/corrections/6A-guidebook/revisions/01-crossing-context/native",
+    "geometry_validation": {
+      "footprint": 16,
+      "free_positions": 5554,
+      "reachable_positions": 5554,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3200
+    },
+    "geometry": {
+      "swept16pxSamples": 3200
+    },
+    "swept16pxSamples": 3200
+  },
+  "06b": {
+    "phase": "6B",
+    "size": [
+      3072,
+      320
+    ],
+    "bounds": [
+      24,
+      80,
+      3047,
+      271
+    ],
+    "start": [
+      40,
+      224
+    ],
+    "route_points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        784,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        848,
+        192
+      ],
+      [
+        920,
+        160
+      ],
+      [
+        936,
+        152
+      ],
+      [
+        976,
+        152
+      ],
+      [
+        1032,
+        152
+      ],
+      [
+        1168,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1456,
+        136
+      ],
+      [
+        1456,
+        96
+      ],
+      [
+        1640,
+        96
+      ],
+      [
+        1840,
+        144
+      ],
+      [
+        1896,
+        248
+      ],
+      [
+        2040,
+        240
+      ],
+      [
+        2056,
+        232
+      ],
+      [
+        2096,
+        232
+      ],
+      [
+        2160,
+        232
+      ],
+      [
+        2240,
+        232
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2768,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "route_points_are": "centers",
+    "pauses": [
+      2,
+      7,
+      15,
+      18,
+      24
+    ],
+    "exit": [
+      2976,
+      152,
+      64,
+      64
+    ],
+    "solids": [
+      [
+        0,
+        0,
+        3072,
+        80,
+        false
+      ],
+      [
+        2064,
+        80,
+        1008,
+        8,
+        false
+      ],
+      [
+        0,
+        80,
+        832,
+        16,
+        false
+      ],
+      [
+        1232,
+        80,
+        208,
+        16,
+        false
+      ],
+      [
+        2064,
+        88,
+        160,
+        96,
+        false
+      ],
+      [
+        664,
+        96,
+        168,
+        112,
+        false
+      ],
+      [
+        0,
+        96,
+        24,
+        176,
+        false
+      ],
+      [
+        1232,
+        176,
+        208,
+        96,
+        false
+      ],
+      [
+        2064,
+        264,
+        160,
+        8,
+        false
+      ],
+      [
+        3048,
+        88,
+        24,
+        184,
+        false
+      ],
+      [
+        0,
+        272,
+        3072,
+        48,
+        false
+      ],
+      [
+        112,
+        32,
+        56,
+        80,
+        true
+      ],
+      [
+        80,
+        72,
+        144,
+        32,
+        true
+      ],
+      [
+        72,
+        104,
+        8,
+        80,
+        true
+      ],
+      [
+        224,
+        104,
+        8,
+        80,
+        true
+      ],
+      [
+        80,
+        184,
+        144,
+        32,
+        true
+      ],
+      [
+        1472,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1608,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1480,
+        112,
+        128,
+        32,
+        true
+      ],
+      [
+        1480,
+        240,
+        128,
+        32,
+        true
+      ],
+      [
+        1496,
+        136,
+        96,
+        80,
+        true
+      ],
+      [
+        2480,
+        104,
+        56,
+        80,
+        true
+      ],
+      [
+        2496,
+        200,
+        24,
+        32,
+        true
+      ],
+      [
+        2848,
+        112,
+        160,
+        32,
+        true
+      ],
+      [
+        2896,
+        80,
+        32,
+        32,
+        true
+      ],
+      [
+        2848,
+        72,
+        48,
+        48,
+        true
+      ],
+      [
+        2928,
+        48,
+        64,
+        80,
+        true
+      ],
+      [
+        984,
+        24,
+        32,
+        112,
+        true
+      ],
+      [
+        952,
+        168,
+        32,
+        152,
+        true
+      ],
+      [
+        808,
+        64,
+        96,
+        80,
+        true
+      ],
+      [
+        904,
+        104,
+        32,
+        32,
+        true
+      ],
+      [
+        2104,
+        24,
+        32,
+        192,
+        true
+      ],
+      [
+        2072,
+        248,
+        32,
+        72,
+        true
+      ],
+      [
+        1928,
+        144,
+        96,
+        80,
+        true
+      ],
+      [
+        2024,
+        184,
+        32,
+        32,
+        true
+      ],
+      [
+        80,
+        104,
+        144,
+        80,
+        false
+      ],
+      [
+        1480,
+        144,
+        128,
+        96,
+        false
+      ],
+      [
+        2496,
+        184,
+        24,
+        16,
+        false
+      ]
+    ],
+    "gates": [
+      [
+        960,
+        112,
+        32,
+        64
+      ],
+      [
+        2080,
+        192,
+        32,
+        64
+      ]
+    ],
+    "valves": [
+      [
+        920,
+        128
+      ],
+      [
+        2040,
+        208
+      ]
+    ],
+    "valve_approaches": [
+      [
+        912,
+        152
+      ],
+      [
+        2032,
+        232
+      ]
+    ],
+    "gate_shot_approaches": [
+      [
+        888,
+        152
+      ],
+      [
+        2008,
+        232
+      ]
+    ],
+    "approach_coordinates": "feet top-left, not centers",
+    "camera_interest": [
+      {
+        "name": "Cisterna de entrada",
+        "bbox": [
+          72,
+          32,
+          168,
+          184
+        ],
+        "preferred_feet": [
+          40,
+          200
+        ],
+        "position": [
+          40,
+          200
+        ]
+      },
+      {
+        "name": "C\u00e2mara de press\u00e3o alta",
+        "bbox": [
+          800,
+          64,
+          240,
+          184
+        ],
+        "preferred_feet": [
+          912,
+          152
+        ],
+        "position": [
+          912,
+          152
+        ]
+      },
+      {
+        "name": "Bacia de bombas",
+        "bbox": [
+          1472,
+          112,
+          144,
+          160
+        ],
+        "preferred_feet": [
+          1632,
+          192
+        ],
+        "position": [
+          1632,
+          192
+        ]
+      },
+      {
+        "name": "C\u00e2mara de press\u00e3o baixa",
+        "bbox": [
+          1920,
+          136,
+          224,
+          168
+        ],
+        "preferred_feet": [
+          2032,
+          232
+        ],
+        "position": [
+          2032,
+          232
+        ]
+      },
+      {
+        "name": "Abrigo",
+        "bbox": [
+          2848,
+          48,
+          160,
+          96
+        ],
+        "preferred_feet": [
+          3008,
+          168
+        ],
+        "position": [
+          3008,
+          168
+        ]
+      }
+    ],
+    "camera_player_y": 200,
+    "camera_player_y_samples": [
+      184,
+      200,
+      248
+    ],
+    "hardware": "Existing shared global gate191+valve65; no baked gate leaf; native diagonal bank ends persist after0.8s collapse+hide.",
+    "states": [
+      {
+        "name": "closed",
+        "file": "complete-closed-objectives.png",
+        "gate_frame": 0
+      },
+      {
+        "name": "collapse",
+        "file": "complete-collapse-objectives.png",
+        "gate_frame": 5,
+        "temporary": true,
+        "solid_until_seconds": 0.8
+      },
+      {
+        "name": "open",
+        "file": "complete-open-objectives.png",
+        "gate_visible": false,
+        "physical_opening": 32
+      }
+    ],
+    "native": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin"
+    },
+    "memory": {
+      "scene_tiles": 368,
+      "objective_tiles": 256,
+      "total_tiles": 624,
+      "budget": 640,
+      "exact_native_tile_reuse": true,
+      "lossy_tile_substitutions": 0,
+      "map_bytes": 30720,
+      "background_tiles": 368,
+      "limit": 640,
+      "graphics_bytes": 11776
+    },
+    "status": "isolated crossing-context revision; needs whole-map/continuous-camera review; no activation",
+    "geometry_checks": {
+      "actor_feet": [
+        16,
+        16
+      ],
+      "margin": 8,
+      "swept_samples": 3174,
+      "reachable_centers": 4946,
+      "arrival_connected": true,
+      "closed_gates_disconnect": true,
+      "first_gate_only_open_still_blocks_exit": true,
+      "open_gap": 32
+    },
+    "complete": "complete-native.png",
+    "sources": [
+      "../../complete-indexed.png"
+    ],
+    "material_revision": {
+      "source": "art/phase04-tunnels-v1/map-native.png",
+      "concrete_rect": [
+        360,
+        208,
+        16,
+        16
+      ],
+      "grain_grid": 1,
+      "texture_resampling": false,
+      "channel": "same existing quiet source grain, dark charcoal palette; mouth water pigments normalized without reshaping",
+      "architecture": "existing complete module alpha, cap, face and joint positions unchanged",
+      "first_discarded_trial": "Wet sludge crop repeated too visibly; rejected before review handoff.",
+      "objective_palette_changed": false,
+      "actor_palette_changed": false
+    },
+    "material_geometry_validation": {
+      "footprint": 16,
+      "free_positions": 6074,
+      "reachable_positions": 6074,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3174
+    },
+    "geometry_unchanged_from_canonical": true,
+    "preview_cameras": [
+      {
+        "id": "Cisterna de entrada",
+        "position": [
+          40,
+          200
+        ],
+        "camera": [
+          0,
+          0
+        ],
+        "follower_feet": [
+          24,
+          200
+        ],
+        "preview": "camera-1.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "C\u00e2mara de press\u00e3o alta",
+        "position": [
+          912,
+          152
+        ],
+        "camera": [
+          744,
+          24
+        ],
+        "follower_feet": [
+          880,
+          152
+        ],
+        "preview": "camera-2.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "Bacia de bombas",
+        "position": [
+          1632,
+          192
+        ],
+        "camera": [
+          1472,
+          48
+        ],
+        "follower_feet": [
+          1616,
+          192
+        ],
+        "preview": "camera-3.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "C\u00e2mara de press\u00e3o baixa",
+        "position": [
+          2032,
+          232
+        ],
+        "camera": [
+          1864,
+          80
+        ],
+        "follower_feet": [
+          2000,
+          232
+        ],
+        "preview": "camera-4.png",
+        "actor_y_anchor": "py-31"
+      },
+      {
+        "id": "Abrigo",
+        "position": [
+          3008,
+          168
+        ],
+        "camera": [
+          2752,
+          0
+        ],
+        "follower_feet": [
+          2976,
+          168
+        ],
+        "preview": "camera-5.png",
+        "actor_y_anchor": "py-31"
+      }
+    ],
+    "art_limitations": [
+      "This changes materials only: existing long corridor composition, native outlines, pumps, bays and gates remain. It does not claim to redesign the spatial macrocomposition.",
+      "The 16x16 material is repeated exactly; sparse 1px grain can still reveal repetition at enlarged viewing scale.",
+      "Dark drainage is conveyed by charcoal pigment and depth of existing banks; blue pipework remains on mechanical equipment.",
+      "Cameras are native composed previews at previously measured legal runtime coordinates. Actor placement is illustrative; no new emulator or gameplay measurement is claimed.",
+      "Root/user whole-map and private-ROM review is still required; tile and geometry checks are not visual approval."
+    ],
+    "revision_placements": [
+      {
+        "id": "closed-pump-recess",
+        "source_bbox_xywh": [
+          808,
+          64,
+          96,
+          80
+        ],
+        "position": [
+          696,
+          112
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "entry-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          48
+        ],
+        "position": [
+          512,
+          48
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "middle-north-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          56
+        ],
+        "position": [
+          1168,
+          24
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "middle-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          56
+        ],
+        "position": [
+          1792,
+          24
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      },
+      {
+        "id": "late-maintenance-bay",
+        "source_bbox_xywh": [
+          2848,
+          72,
+          48,
+          56
+        ],
+        "position": [
+          2704,
+          32
+        ],
+        "complete_module": true,
+        "source": "../../complete-indexed.png",
+        "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
+      }
+    ],
+    "revision_scope": "Resident whole pump and maintenance unit only. Bounds/solids/route/camera/objectives unchanged.",
+    "continuous_preview_step_world_x": 160,
+    "continuous_previews": "continuous-cameras.json",
+    "revision_geometry_validation": {
+      "footprint": 16,
+      "free_positions": 6074,
+      "reachable_positions": 6074,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3174
+    },
+    "width": 3072,
+    "height": 320,
+    "points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        784,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        848,
+        192
+      ],
+      [
+        920,
+        160
+      ],
+      [
+        936,
+        152
+      ],
+      [
+        976,
+        152
+      ],
+      [
+        1032,
+        152
+      ],
+      [
+        1168,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1456,
+        136
+      ],
+      [
+        1456,
+        96
+      ],
+      [
+        1640,
+        96
+      ],
+      [
+        1840,
+        144
+      ],
+      [
+        1896,
+        248
+      ],
+      [
+        2040,
+        240
+      ],
+      [
+        2056,
+        232
+      ],
+      [
+        2096,
+        232
+      ],
+      [
+        2160,
+        232
+      ],
+      [
+        2240,
+        232
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2768,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "traversal_points": [
+      [
+        40,
+        224
+      ],
+      [
+        272,
+        224
+      ],
+      [
+        536,
+        224
+      ],
+      [
+        640,
+        232
+      ],
+      [
+        776,
+        232
+      ],
+      [
+        840,
+        232
+      ],
+      [
+        840,
+        184
+      ],
+      [
+        912,
+        152
+      ],
+      [
+        928,
+        144
+      ],
+      [
+        968,
+        144
+      ],
+      [
+        1024,
+        144
+      ],
+      [
+        1160,
+        128
+      ],
+      [
+        1352,
+        128
+      ],
+      [
+        1448,
+        128
+      ],
+      [
+        1448,
+        88
+      ],
+      [
+        1632,
+        88
+      ],
+      [
+        1832,
+        136
+      ],
+      [
+        1888,
+        240
+      ],
+      [
+        2032,
+        232
+      ],
+      [
+        2048,
+        224
+      ],
+      [
+        2088,
+        224
+      ],
+      [
+        2152,
+        224
+      ],
+      [
+        2232,
+        224
+      ],
+      [
+        2424,
+        240
+      ],
+      [
+        2536,
+        240
+      ],
+      [
+        2760,
+        192
+      ],
+      [
+        3008,
+        168
+      ]
+    ],
+    "walkable": [
+      24,
+      80,
+      3024,
+      192
+    ],
+    "tiles": 368,
+    "tileBudget": 384,
+    "nativeTileSHA256": "13a9b2003cd83b77ed5d1b49499a59f93ec7b8c6c41d778218903965a8d41a92",
+    "native_bank": "art/campaign-corridors-v3/corrections/6B-guidebook/revisions/01-crossing-context/native",
+    "geometry_validation": {
+      "footprint": 16,
+      "free_positions": 6074,
+      "reachable_positions": 6074,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3174
+    },
+    "geometry": {
+      "swept16pxSamples": 3174
+    },
+    "swept16pxSamples": 3174
+  },
+  "12": {
+    "phase": "12",
+    "size": [
+      3072,
+      320
+    ],
+    "bounds": [
+      16,
+      96,
+      3055,
+      287
+    ],
+    "start": [
+      48,
+      208
+    ],
+    "solids": [
+      [
+        0,
+        0,
+        704,
+        96,
+        true
+      ],
+      [
+        704,
+        0,
+        640,
+        144,
+        true
+      ],
+      [
+        1344,
+        0,
+        864,
+        96,
+        true
+      ],
+      [
+        2208,
+        0,
+        864,
+        112,
+        true
+      ],
+      [
+        80,
+        32,
+        304,
+        160,
+        true
+      ],
+      [
+        432,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        736,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        1008,
+        200,
+        240,
+        112,
+        true
+      ],
+      [
+        1296,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        1488,
+        24,
+        304,
+        144,
+        true
+      ],
+      [
+        1760,
+        200,
+        240,
+        112,
+        true
+      ],
+      [
+        1984,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        2176,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        2304,
+        200,
+        240,
+        112,
+        true
+      ],
+      [
+        2480,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        2704,
+        24,
+        304,
+        176,
+        true
+      ],
+      [
+        224,
+        248,
+        72,
+        24,
+        true
+      ],
+      [
+        2560,
+        248,
+        72,
+        24,
+        true
+      ]
+    ],
+    "route_points": [
+      [
+        56,
+        216
+      ],
+      [
+        336,
+        216
+      ],
+      [
+        424,
+        232
+      ],
+      [
+        592,
+        232
+      ],
+      [
+        704,
+        232
+      ],
+      [
+        920,
+        232
+      ],
+      [
+        952,
+        184
+      ],
+      [
+        1264,
+        184
+      ],
+      [
+        1400,
+        184
+      ],
+      [
+        1496,
+        184
+      ],
+      [
+        1784,
+        184
+      ],
+      [
+        2024,
+        184
+      ],
+      [
+        2104,
+        208
+      ],
+      [
+        2168,
+        208
+      ],
+      [
+        2280,
+        184
+      ],
+      [
+        2560,
+        184
+      ],
+      [
+        2600,
+        216
+      ],
+      [
+        2856,
+        216
+      ]
+    ],
+    "point_semantics": "CENTERS; actor foot top-left=center\u22128",
+    "pauses": [
+      3,
+      7,
+      16
+    ],
+    "exit": [
+      2824,
+      192,
+      64,
+      64
+    ],
+    "camera_player_y": 200,
+    "camera_interest": [
+      {
+        "id": "workshop",
+        "bbox": [
+          80,
+          32,
+          304,
+          160
+        ],
+        "center": [
+          232,
+          112
+        ],
+        "camera": [
+          72,
+          8
+        ],
+        "position": [
+          224,
+          208
+        ],
+        "whole_inside_visible_world": true,
+        "name": "workshop"
+      },
+      {
+        "id": "covered-dock",
+        "bbox": [
+          1488,
+          24,
+          304,
+          144
+        ],
+        "center": [
+          1640,
+          96
+        ],
+        "camera": [
+          1480,
+          0
+        ],
+        "position": [
+          1624,
+          184
+        ],
+        "whole_inside_visible_world": true,
+        "name": "covered dock"
+      },
+      {
+        "id": "union-arrival",
+        "bbox": [
+          2704,
+          24,
+          304,
+          176
+        ],
+        "center": [
+          2856,
+          112
+        ],
+        "camera": [
+          2696,
+          0
+        ],
+        "position": [
+          2848,
+          200
+        ],
+        "whole_inside_visible_world": true,
+        "name": "union arrival"
+      },
+      {
+        "id": "south-dock1",
+        "bbox": [
+          1008,
+          200,
+          240,
+          112
+        ],
+        "center": [
+          1128,
+          256
+        ],
+        "camera": [
+          968,
+          88
+        ],
+        "position": [
+          1120,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "name": "south dock1"
+      },
+      {
+        "id": "south-dock2",
+        "bbox": [
+          1760,
+          200,
+          240,
+          112
+        ],
+        "center": [
+          1880,
+          256
+        ],
+        "camera": [
+          1720,
+          88
+        ],
+        "position": [
+          1880,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "name": "south dock2"
+      },
+      {
+        "id": "south-dock3",
+        "bbox": [
+          2304,
+          200,
+          240,
+          112
+        ],
+        "center": [
+          2424,
+          256
+        ],
+        "camera": [
+          2264,
+          88
+        ],
+        "position": [
+          2416,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "name": "south dock3"
+      },
+      {
+        "id": "service-annex1",
+        "bbox": [
+          432,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          512,
+          96
+        ],
+        "camera": [
+          352,
+          8
+        ],
+        "position": [
+          496,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "name": "service annex1"
+      },
+      {
+        "id": "service-annex2",
+        "bbox": [
+          1296,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          1376,
+          96
+        ],
+        "camera": [
+          1216,
+          8
+        ],
+        "position": [
+          1360,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "name": "service annex2"
+      },
+      {
+        "id": "service-annex3",
+        "bbox": [
+          1984,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          2064,
+          96
+        ],
+        "camera": [
+          1904,
+          8
+        ],
+        "position": [
+          2048,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "name": "service annex3"
+      },
+      {
+        "id": "service-annex4",
+        "bbox": [
+          2480,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          2560,
+          96
+        ],
+        "camera": [
+          2400,
+          8
+        ],
+        "position": [
+          2544,
+          168
+        ],
+        "whole_inside_visible_world": true,
+        "name": "service annex4"
+      }
+    ],
+    "sources": [
+      "source/existing-workshop-rgba.png",
+      "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
+      "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-post.png",
+      "../../../campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png",
+      "../../../campaign-pattern-v2/early/01-courtyard/modules/bench.png",
+      "../../../phase04-tunnels-v1/map-native.png",
+      "../../../campaign-pattern-v2/early/01-courtyard/modules/floor.png",
+      "../../../phase01-courtyard-v2/intact-native.png",
+      "../../../phase01-courtyard-v2/intact-native.png",
+      "../../../phase01-courtyard-v2/intact-native.png",
+      "../../../phase01-courtyard-v2/intact-native.png",
+      "../../syndicate/12/modules/window.png",
+      "../../syndicate/12/modules/door.png",
+      "../../syndicate/12/modules/banner.png",
+      "../../syndicate/12/modules/vent.png",
+      "source/existing-workshop-rgba.png",
+      "../../../phase04-tunnels-v1/map-native.png",
+      "../../../campaign-pattern-v2/factory/modules/factory-supply-header.png",
+      "../../syndicate/12/source/native-clean-1px.png",
+      "../../syndicate/12/source/native-clean-1px.png",
+      "../../syndicate/12/source/native-clean-1px.png"
+    ],
+    "memory": {
+      "scene_tiles": 508,
+      "objective_tiles": 0,
+      "total_tiles": 508,
+      "budget": 640,
+      "free_tiles": 132,
+      "graphics_bytes": 16256,
+      "map_bytes": 30720,
+      "palette_bytes": 32,
+      "pixel_exact_reassembly": true,
+      "lossy_pattern_replacements": 0,
+      "background_tiles": 508,
+      "limit": 640
+    },
+    "modules": [
+      {
+        "id": "legacy-workshop",
+        "path": "source/existing-workshop-rgba.png",
+        "bbox_xyxy": null,
+        "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437",
+        "legacy_parent": "art/phase03-street-v2/source/street-kit.png; cell443,0,887,443; normalized whole128x128",
+        "game_path": "art/campaign-corridors-v3/corrections/12-guidebook/source/existing-workshop-rgba.png"
+      },
+      {
+        "id": "wall",
+        "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
+        "bbox_xyxy": null,
+        "source_sha256": "29fb39300488e1027e2e2c3bea18124d978dc84c1522e2418840c02ed0389f7f",
+        "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png"
+      },
+      {
+        "id": "post",
+        "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-post.png",
+        "bbox_xyxy": null,
+        "source_sha256": "c02500aa5498e246da691df302252c6c2bc42e224aab99601116e1cadfe4ce3b",
+        "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-post.png"
+      },
+      {
+        "id": "vegetation",
+        "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png",
+        "bbox_xyxy": null,
+        "source_sha256": "356a36dcf3d85c8232c8e2822aadb7d594c4a49152aa1835597a9c0b9fccca22",
+        "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png"
+      },
+      {
+        "id": "bench",
+        "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/bench.png",
+        "bbox_xyxy": null,
+        "source_sha256": "c1a60e963fcc9a8215cf5fba8d471e5aa40e59c091468f2ade972d9e19ee438e",
+        "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/bench.png"
+      },
+      {
+        "id": "floor",
+        "path": "../../../phase04-tunnels-v1/map-native.png",
+        "bbox_xyxy": [
+          64,
+          112,
+          96,
+          144
+        ],
+        "source_sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd",
+        "game_path": "art/phase04-tunnels-v1/map-native.png"
+      },
+      {
+        "id": "rear-earth",
+        "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/floor.png",
+        "bbox_xyxy": null,
+        "source_sha256": "c477c32780874f6dde7ce28d50172bbe46b1bc326a465e44bf565c3b5a376472",
+        "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/floor.png"
+      },
+      {
+        "id": "plaster-0-0",
+        "path": "../../../phase01-courtyard-v2/intact-native.png",
+        "bbox_xyxy": [
+          64,
+          80,
+          72,
+          88
+        ],
+        "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
+        "game_path": "art/phase01-courtyard-v2/intact-native.png"
+      },
+      {
+        "id": "plaster-8-0",
+        "path": "../../../phase01-courtyard-v2/intact-native.png",
+        "bbox_xyxy": [
+          88,
+          80,
+          96,
+          88
+        ],
+        "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
+        "game_path": "art/phase01-courtyard-v2/intact-native.png"
+      },
+      {
+        "id": "plaster-0-8",
+        "path": "../../../phase01-courtyard-v2/intact-native.png",
+        "bbox_xyxy": [
+          116,
+          76,
+          124,
+          84
+        ],
+        "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
+        "game_path": "art/phase01-courtyard-v2/intact-native.png"
+      },
+      {
+        "id": "plaster-8-8",
+        "path": "../../../phase01-courtyard-v2/intact-native.png",
+        "bbox_xyxy": [
+          184,
+          72,
+          192,
+          80
+        ],
+        "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
+        "game_path": "art/phase01-courtyard-v2/intact-native.png"
+      },
+      {
+        "id": "window",
+        "path": "../../syndicate/12/modules/window.png",
+        "bbox_xyxy": null,
+        "source_sha256": "cf434666d3ca75c1de3a0f3b196fe8ac654905f742ebdc70d1cbae3a2709b4d9",
+        "game_path": "art/campaign-corridors-v3/syndicate/12/modules/window.png"
+      },
+      {
+        "id": "door",
+        "path": "../../syndicate/12/modules/door.png",
+        "bbox_xyxy": null,
+        "source_sha256": "b34e5d55933a80d2117e1b01617d0b6ef7f1c51795b1e91cb28525428ef1d4cc",
+        "game_path": "art/campaign-corridors-v3/syndicate/12/modules/door.png"
+      },
+      {
+        "id": "banner",
+        "path": "../../syndicate/12/modules/banner.png",
+        "bbox_xyxy": null,
+        "source_sha256": "ef9af69780c33a6ed0ecbdca905732d8b84b299cccdd5e9dbf49be04094824f3",
+        "game_path": "art/campaign-corridors-v3/syndicate/12/modules/banner.png"
+      },
+      {
+        "id": "vent",
+        "path": "../../syndicate/12/modules/vent.png",
+        "bbox_xyxy": null,
+        "source_sha256": "850d79063a45cfa1c2f2093cdb70dafd7502848dbdfa016637720aad5d30e3a6",
+        "game_path": "art/campaign-corridors-v3/syndicate/12/modules/vent.png"
+      },
+      {
+        "id": "whole-bay",
+        "path": "source/existing-workshop-rgba.png",
+        "bbox_xyxy": [
+          8,
+          64,
+          120,
+          128
+        ],
+        "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437",
+        "game_path": "art/campaign-corridors-v3/corrections/12-guidebook/source/existing-workshop-rgba.png"
+      },
+      {
+        "id": "industrial-wall",
+        "path": "../../../phase04-tunnels-v1/map-native.png",
+        "bbox_xyxy": [
+          80,
+          0,
+          144,
+          80
+        ],
+        "source_sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd",
+        "game_path": "art/phase04-tunnels-v1/map-native.png"
+      },
+      {
+        "id": "header",
+        "path": "../../../campaign-pattern-v2/factory/modules/factory-supply-header.png",
+        "bbox_xyxy": null,
+        "source_sha256": "86815237ac8181675bc93aa522070359b43c22fecfbba83e48defd820cd5747e",
+        "game_path": "art/campaign-pattern-v2/factory/modules/factory-supply-header.png"
+      },
+      {
+        "id": "steel-left",
+        "path": "../../syndicate/12/source/native-clean-1px.png",
+        "bbox_xyxy": [
+          672,
+          56,
+          696,
+          104
+        ],
+        "source_sha256": "b75e3d81670e59e7880bb41f9ca6f820f4c35bf3816dede19a4dac378a248dec",
+        "game_path": "art/campaign-corridors-v3/syndicate/12/source/native-clean-1px.png"
+      },
+      {
+        "id": "steel-run",
+        "path": "../../syndicate/12/source/native-clean-1px.png",
+        "bbox_xyxy": [
+          752,
+          56,
+          768,
+          104
+        ],
+        "source_sha256": "b75e3d81670e59e7880bb41f9ca6f820f4c35bf3816dede19a4dac378a248dec",
+        "game_path": "art/campaign-corridors-v3/syndicate/12/source/native-clean-1px.png"
+      },
+      {
+        "id": "steel-right",
+        "path": "../../syndicate/12/source/native-clean-1px.png",
+        "bbox_xyxy": [
+          880,
+          56,
+          904,
+          104
+        ],
+        "source_sha256": "b75e3d81670e59e7880bb41f9ca6f820f4c35bf3816dede19a4dac378a248dec",
+        "game_path": "art/campaign-corridors-v3/syndicate/12/source/native-clean-1px.png"
+      }
+    ],
+    "assemblies": [
+      {
+        "id": "workshop",
+        "size": [
+          304,
+          160
+        ],
+        "file": "modules/workshop-assembly-rgba.png",
+        "roof_height": 104
+      },
+      {
+        "id": "annex",
+        "size": [
+          160,
+          128
+        ],
+        "file": "modules/annex-assembly-rgba.png",
+        "roof_height": 88
+      },
+      {
+        "id": "covered",
+        "size": [
+          304,
+          144
+        ],
+        "file": "modules/covered-assembly-rgba.png",
+        "roof_height": 96
+      },
+      {
+        "id": "low-dock",
+        "size": [
+          240,
+          112
+        ],
+        "file": "modules/low-dock-assembly-rgba.png",
+        "roof_height": 72
+      },
+      {
+        "id": "union",
+        "size": [
+          304,
+          176
+        ],
+        "file": "modules/union-assembly-rgba.png",
+        "roof_height": 120
+      }
+    ],
+    "placements": [
+      [
+        "workshop",
+        80,
+        32
+      ],
+      [
+        "annex",
+        432,
+        32
+      ],
+      [
+        "annex",
+        736,
+        32
+      ],
+      [
+        "low-dock",
+        1008,
+        200
+      ],
+      [
+        "annex",
+        1296,
+        32
+      ],
+      [
+        "covered",
+        1488,
+        24
+      ],
+      [
+        "low-dock",
+        1760,
+        200
+      ],
+      [
+        "annex",
+        1984,
+        32
+      ],
+      [
+        "annex",
+        2176,
+        32
+      ],
+      [
+        "low-dock",
+        2304,
+        200
+      ],
+      [
+        "annex",
+        2480,
+        32
+      ],
+      [
+        "union",
+        2704,
+        24
+      ]
+    ],
+    "source_geometry": {
+      "principle": "Existing approved kit parts; whole roof canvases with native material runs, whole openings, original footings. No whole-building reshape.",
+      "active_geometry_origin": "art/campaign-corridors-v3/syndicate/12"
+    },
+    "geometry": {
+      "actor_footprint": [
+        16,
+        16
+      ],
+      "point_margin": 8,
+      "BFS_step": 8,
+      "connected_positions": 4904,
+      "all_points_reachable": true,
+      "swept16pxSamples": 2864,
+      "all_segments_collision_free": true,
+      "exit_reachable": true,
+      "open_depth": 192,
+      "service_neck_width": 32
+    },
+    "complete": "complete-native.png",
+    "layout": "layout.png",
+    "native": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin"
+    },
+    "status": "isolated_candidate_requires_parent_and_user_review",
+    "style_changes": {
+      "roof_heights": {
+        "workshop": 104,
+        "annex": 88,
+        "covered": 96,
+        "low-dock": 72,
+        "union": 120
+      },
+      "method": "Whole roof canvases: original ridge/eave/caps plus repeated native material band; separate whole openings preserved. No whole-building reshape.",
+      "floor": "Existing phase04 tunnel32x32patch,1px grid, palette normalization only.",
+      "roof_materials": "Unionhall terracotta; all other families steel fine1px crops at y56..104 (back wall y40..56 excluded).",
+      "perimeter": "Existing R04 complete64x80industrial wall with shared factory10header at constant y40; wholly inside existing blocked perimeter.",
+      "geometry": "Bounds,solids,start,route,exit,pauses and camera metadata retained byte-for-byte as values."
+    },
+    "proposal_previews": [
+      {
+        "id": "entry",
+        "feet": [
+          224,
+          208
+        ],
+        "camera": [
+          64,
+          8
+        ],
+        "preview": "reviews/camera-entry.png",
+        "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+      },
+      {
+        "id": "service-bend",
+        "feet": [
+          1112,
+          176
+        ],
+        "camera": [
+          944,
+          88
+        ],
+        "preview": "reviews/camera-service-bend.png",
+        "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+      },
+      {
+        "id": "covered",
+        "feet": [
+          1624,
+          184
+        ],
+        "camera": [
+          1472,
+          0
+        ],
+        "preview": "reviews/camera-covered.png",
+        "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+      },
+      {
+        "id": "dock-and-annex",
+        "feet": [
+          2048,
+          176
+        ],
+        "camera": [
+          1880,
+          0
+        ],
+        "preview": "reviews/camera-dock-and-annex.png",
+        "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+      },
+      {
+        "id": "union",
+        "feet": [
+          2848,
+          200
+        ],
+        "camera": [
+          2688,
+          0
+        ],
+        "preview": "reviews/camera-union.png",
+        "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+      }
+    ],
+    "width": 3072,
+    "height": 320,
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        336,
+        216
+      ],
+      [
+        424,
+        232
+      ],
+      [
+        592,
+        232
+      ],
+      [
+        704,
+        232
+      ],
+      [
+        920,
+        232
+      ],
+      [
+        952,
+        184
+      ],
+      [
+        1264,
+        184
+      ],
+      [
+        1400,
+        184
+      ],
+      [
+        1496,
+        184
+      ],
+      [
+        1784,
+        184
+      ],
+      [
+        2024,
+        184
+      ],
+      [
+        2104,
+        208
+      ],
+      [
+        2168,
+        208
+      ],
+      [
+        2280,
+        184
+      ],
+      [
+        2560,
+        184
+      ],
+      [
+        2600,
+        216
+      ],
+      [
+        2856,
+        216
+      ]
+    ],
+    "traversal_points": [
+      [
+        48,
+        208
+      ],
+      [
+        328,
+        208
+      ],
+      [
+        416,
+        224
+      ],
+      [
+        584,
+        224
+      ],
+      [
+        696,
+        224
+      ],
+      [
+        912,
+        224
+      ],
+      [
+        944,
+        176
+      ],
+      [
+        1256,
+        176
+      ],
+      [
+        1392,
+        176
+      ],
+      [
+        1488,
+        176
+      ],
+      [
+        1776,
+        176
+      ],
+      [
+        2016,
+        176
+      ],
+      [
+        2096,
+        200
+      ],
+      [
+        2160,
+        200
+      ],
+      [
+        2272,
+        176
+      ],
+      [
+        2552,
+        176
+      ],
+      [
+        2592,
+        208
+      ],
+      [
+        2848,
+        208
+      ]
+    ],
+    "walkable": [
+      16,
+      96,
+      3040,
+      192
+    ],
+    "tiles": 508,
+    "tileBudget": 640,
+    "nativeTileSHA256": "35f3f22983a4da92a770e1bf1d9c77d941b81664ffb0bb4e9b90062a50ec7a9c",
+    "native_bank": "art/campaign-corridors-v3/corrections/12-guidebook/native",
+    "geometry_validation": {
+      "footprint": 16,
+      "free_positions": 4904,
+      "reachable_positions": 4904,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 2864
+    },
+    "swept16pxSamples": 2864
+  }
+}

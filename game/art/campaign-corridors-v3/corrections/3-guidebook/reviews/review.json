@@ -1,0 +1,184 @@
+{
+  "status": "private_trial_only",
+  "phase": "3",
+  "source": "Existing parent draft; no new raster art",
+  "memory": {
+    "intact": {
+      "scene_tiles": 554,
+      "objective_tiles": 0,
+      "total_tiles": 554,
+      "budget": 640,
+      "free_tiles": 86,
+      "graphics_bytes": 17728,
+      "map_bytes": 25600,
+      "palette_bytes": 32,
+      "exact_hv_deduplication": true,
+      "pixel_exact_reassembly": true,
+      "lossy_pattern_replacements": 0,
+      "tile_sha256": "df13348ba21c875f418bb1046bc1845d2ee42357f5fb516e1e3fc96c401a1b6e"
+    },
+    "damaged": {
+      "scene_tiles": 570,
+      "objective_tiles": 0,
+      "total_tiles": 570,
+      "budget": 640,
+      "free_tiles": 70,
+      "graphics_bytes": 18240,
+      "map_bytes": 25600,
+      "palette_bytes": 32,
+      "exact_hv_deduplication": true,
+      "pixel_exact_reassembly": true,
+      "lossy_pattern_replacements": 0,
+      "tile_sha256": "309f892dcc8e41d078b40622d541649b4088d4e4cc2ff48a0adfd680ab8984f2"
+    }
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 6183,
+    "reachable_positions": 6183,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2926
+  },
+  "previews": [
+    {
+      "id": "church",
+      "feet": [
+        136,
+        176
+      ],
+      "camera": [
+        0,
+        0
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-church-intact.png",
+      "damaged_preview": "reviews/camera-church-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "market",
+      "feet": [
+        496,
+        264
+      ],
+      "camera": [
+        344,
+        64
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-market-intact.png",
+      "damaged_preview": "reviews/camera-market-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "garage-north",
+      "feet": [
+        1280,
+        160
+      ],
+      "camera": [
+        1128,
+        0
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-garage-north-intact.png",
+      "damaged_preview": "reviews/camera-garage-north-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "garage-south",
+      "feet": [
+        1824,
+        264
+      ],
+      "camera": [
+        1672,
+        64
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-garage-south-intact.png",
+      "damaged_preview": "reviews/camera-garage-south-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    },
+    {
+      "id": "warehouse",
+      "feet": [
+        2400,
+        176
+      ],
+      "camera": [
+        2240,
+        0
+      ],
+      "size": [
+        320,
+        224
+      ],
+      "scale": 1,
+      "preview": "reviews/camera-warehouse-intact.png",
+      "damaged_preview": "reviews/camera-warehouse-damaged.png",
+      "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+    }
+  ],
+  "opinion": {
+    "improvements": [
+      "Church is preserved pixel-for-pixel in both states, including its worn material and roof silhouette.",
+      "Roof area72/112 and88/128 now dominates ordinary buildings; separate short fronts retain complete doors/windows.",
+      "Existing1px roof/plaster/floor kit removes the previous large one-color street and flat building planes.",
+      "Existing north/south parcels, openings and paths are retained; no silhouette was shrunk to fit a tile count."
+    ],
+    "reservations": [
+      "The pale wall16x16patch repeats visibly, and orange terracotta roofs are very regular across different building families.",
+      "The shared ochre ground is recognizably the church material but reads as dry earth; asphalt distinction remains limited.",
+      "Warehouse roller and shortened garage openings are cleaner than the worn church; this is still an isolated style candidate.",
+      "Offline previews do not prove camera interpolation, collisions, FPS, combat readability or ROM palette upload."
+    ],
+    "decision": "Suitable for private comparative trial; no publication or final style approval."
+  },
+  "protected_hashes": {
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/streets/3/manifest.json": "9051db6a4b9cc0adbdff200b306492df70126b69650c1edd399118fda4733953",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/streets/3/native/map.bin": "2f677e165ac0e443fc0925c5919204d7ca7ec3dc7426fde0d814a1cf3820649c",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/streets/3/native/palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/streets/3/native/tiles.bin": "74d6dffff3a907811dd9b3b2a95cf5e49901e251df80ea750b80cdc0127cc00b",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/streets/3/damaged-native/map.bin": "d4948d2d33a950ba6e4ec708eb7e00b7ff63aae1399c2d4512e66564864bc060",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/streets/3/damaged-native/palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/streets/3/damaged-native/tiles.bin": "a65ceb032bd34f0fb75c2a3cc563df2bc232bcb8a299e8f4079ba28e469fc0b2",
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/corrections/3-guidebook/build.py": "cded2dc4945ef3ce14ccc2443e45fcdf137d09fc7d5905c7334598990920ac35"
+  },
+  "state_change_bbox_xyxy": [
+    176,
+    40,
+    248,
+    104
+  ],
+  "state_change_only_inside_church": true,
+  "whole_preview_review": {
+    "five_normal_cameras_read": true,
+    "actor_native_frame": [
+      32,
+      48
+    ],
+    "ordinary_roof_ratio": [
+      0.6428571428571429,
+      0.6875
+    ],
+    "all_five_landmarks_above_HUD_and_bases_inside_frame": true,
+    "scale_opinion": "Roof-dominant volumes and complete24px projected doors read consistently with the guide direction; the actor remains visibly independent of building texture. Compressed openings and repeated materials still require private ROM comparison, not automatic approval."
+  }
+}

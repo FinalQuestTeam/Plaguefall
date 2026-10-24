@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "enemyAxisComparisons": 19099368,
+  "allyAxisComparisons": 1251360,
+  "fallbackComparisons": 64,
+  "largestNumerator": 6553400,
+  "largestHardwareDivisor": 32711,
+  "largestHardwareQuotient": 460,
+  "largestAllyDivisor": 8160,
+  "largestAllyQuotient": 460,
+  "fps": [
+    50,
+    60
+  ],
+  "SGDKDistanceExact": true,
+  "all8MuzzleFacings": true,
+  "nestedTruncationExact": true,
+  "method": "HostC arithmetic/range proof with exact SGDKdistance, ASan/UBSan; not a68000instruction/timing benchmark.",
+  "productionModified": false
+}

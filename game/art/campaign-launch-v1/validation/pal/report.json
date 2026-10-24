@@ -1,0 +1,252 @@
+{
+  "region": "PAL",
+  "rom_sha256": "e4d476b9fded48425590a9a027ada4dd689f2f3ca61c7a557e52ed4a2f83def2",
+  "passed": true,
+  "nodes": {
+    "14": {
+      "entry": {
+        "passed": true,
+        "enemy_cap": 4,
+        "shot_cap": 4,
+        "world": [
+          512,
+          384
+        ]
+      },
+      "controller_generators": {
+        "passed": true,
+        "mask": 31,
+        "setup": "RAM clears pressure and delays spawn; all5front approaches and activation with controller only"
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              64,
+              72,
+              64,
+              72
+            ],
+            "end_x": 47,
+            "passed": true
+          },
+          {
+            "solid": [
+              352,
+              72,
+              64,
+              72
+            ],
+            "end_x": 335,
+            "passed": true
+          },
+          {
+            "solid": [
+              208,
+              272,
+              40,
+              56
+            ],
+            "end_x": 191,
+            "passed": true
+          }
+        ],
+        "setup": "RAM seed positions; controller pushes into each obstacle"
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 25.0,
+        "result": "timeout",
+        "remaining_hp": 100,
+        "damage_net": 0,
+        "radio_hp": null,
+        "peak_enemies": 4,
+        "simulation_fps": 50.0,
+        "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 50.0,
+        "seeded_enemies": 4,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 35.52,
+        "cpu_peak_percent": 37.4,
+        "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+      }
+    },
+    "15": {
+      "entry": {
+        "passed": true,
+        "enemy_cap": 3,
+        "shot_cap": 4,
+        "world": [
+          512,
+          384
+        ]
+      },
+      "timer_real_seconds": {
+        "passed": true,
+        "initial": 5994,
+        "after": 5844
+      },
+      "ignition_visual": {
+        "passed": true,
+        "stage": 1
+      },
+      "radio_loss_retries": {
+        "passed": true,
+        "state": 3
+      },
+      "radio_timer_win": {
+        "passed": true,
+        "state": 4
+      },
+      "full_hold_isolated": {
+        "passed": true,
+        "duration_seconds": 119.84,
+        "initial_timer_frames": 5992,
+        "setup": "RAM clears enemy pressure once; full120second countdown then real result transition; no writes during hold"
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              64,
+              72,
+              64,
+              72
+            ],
+            "end_x": 47,
+            "passed": true
+          },
+          {
+            "solid": [
+              352,
+              72,
+              64,
+              72
+            ],
+            "end_x": 335,
+            "passed": true
+          },
+          {
+            "solid": [
+              208,
+              272,
+              40,
+              56
+            ],
+            "end_x": 191,
+            "passed": true
+          }
+        ],
+        "setup": "RAM seed positions; controller pushes into each obstacle"
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 25.0,
+        "result": "timeout",
+        "remaining_hp": 94,
+        "damage_net": 6,
+        "radio_hp": 52,
+        "peak_enemies": 3,
+        "simulation_fps": 49.56,
+        "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 49.0,
+        "seeded_enemies": 3,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 34.33,
+        "cpu_peak_percent": 42.29,
+        "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+      }
+    },
+    "16": {
+      "entry": {
+        "passed": true,
+        "enemy_cap": 4,
+        "shot_cap": 4,
+        "world": [
+          512,
+          384
+        ]
+      },
+      "boss_spawn": {
+        "passed": true,
+        "count": 1,
+        "hp": 25
+      },
+      "controller_boss_damage": {
+        "passed": true,
+        "minimum_boss_hp": 1,
+        "defeated": true,
+        "duration_seconds": 24.22,
+        "setup": "RAM seeds heroHP30000 once to isolate combat; no bossHP mutation;120scontroller chase/fire attack"
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              64,
+              72,
+              64,
+              72
+            ],
+            "end_x": 47,
+            "passed": true
+          },
+          {
+            "solid": [
+              352,
+              72,
+              64,
+              72
+            ],
+            "end_x": 335,
+            "passed": true
+          },
+          {
+            "solid": [
+              208,
+              272,
+              40,
+              56
+            ],
+            "end_x": 191,
+            "passed": true
+          }
+        ],
+        "setup": "RAM seed positions; controller pushes into each obstacle"
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 17.54,
+        "result": "defeat",
+        "remaining_hp": 0,
+        "damage_net": 100,
+        "radio_hp": null,
+        "peak_enemies": 3,
+        "simulation_fps": 49.94,
+        "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 50.0,
+        "seeded_enemies": 4,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 38.57,
+        "cpu_peak_percent": 40.04,
+        "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+      }
+    }
+  },
+  "method": "RAM seeds node entry and explicit isolated probes; objective execution uses controller input. Stress is RAM seeded, FPS measures simulation frames per VBlank."
+}

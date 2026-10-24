@@ -1,0 +1,335 @@
+{
+  "phases": [
+    {
+      "phase": "9",
+      "complete": "factory/cycle-2/9-complete.png",
+      "bounds": [
+        16,
+        112,
+        2543,
+        303
+      ],
+      "size": [
+        2560,
+        320
+      ],
+      "start": [
+        48,
+        184
+      ],
+      "solids": [
+        [
+          0,
+          32,
+          2560,
+          80,
+          true
+        ],
+        [
+          0,
+          32,
+          16,
+          288,
+          true
+        ],
+        [
+          2544,
+          32,
+          16,
+          288,
+          true
+        ],
+        [
+          0,
+          304,
+          2560,
+          16,
+          true
+        ],
+        [
+          352,
+          160,
+          16,
+          160,
+          true
+        ],
+        [
+          816,
+          160,
+          16,
+          160,
+          true
+        ],
+        [
+          1088,
+          224,
+          16,
+          96,
+          true
+        ],
+        [
+          1584,
+          224,
+          16,
+          96,
+          true
+        ],
+        [
+          1712,
+          160,
+          16,
+          160,
+          true
+        ],
+        [
+          2112,
+          160,
+          16,
+          160,
+          true
+        ],
+        [
+          128,
+          32,
+          128,
+          128,
+          true
+        ],
+        [
+          640,
+          160,
+          128,
+          128,
+          true
+        ],
+        [
+          448,
+          176,
+          96,
+          64,
+          true
+        ],
+        [
+          1152,
+          32,
+          288,
+          128,
+          true
+        ],
+        [
+          1728,
+          144,
+          288,
+          128,
+          true
+        ],
+        [
+          1248,
+          192,
+          96,
+          64,
+          true
+        ]
+      ],
+      "memory": {
+        "tiles": 630,
+        "budget": 640,
+        "tile_bytes": 20160,
+        "map_bytes": 25600,
+        "exact_flip_reused": 12170,
+        "lossy_tile_substitutions": 0,
+        "native_grid": 1,
+        "fits": true,
+        "scene_tiles": 630,
+        "background_tiles": 630,
+        "objective_tiles": 0,
+        "total_tiles": 630,
+        "limit": 640,
+        "free_tiles": 10,
+        "graphics_bytes": 20160,
+        "palette_bytes": 32,
+        "collision_mask_words": 400
+      },
+      "sources": [
+        "art/campaign-corridors-v3/corrections/9-guidebook/../../../campaign-pattern-v2/factory/modules/factory-door.png",
+        "art/campaign-corridors-v3/corrections/9-guidebook/../../../phase01-courtyard-v2/intact-native.png",
+        "art/campaign-corridors-v3/corrections/9-guidebook/../../../phase03-street-v2/source/street-kit.png",
+        "art/campaign-corridors-v3/corrections/9-guidebook/../../../phase04-tunnels-v1/map-native.png",
+        "art/campaign-corridors-v3/corrections/9-guidebook/../../../routes-2048-v2/source/evacuation-cutouts.png",
+        "art/campaign-corridors-v3/corrections/9-guidebook/history/revision-2/complete-native.png"
+      ],
+      "special_states": {},
+      "objectives": [],
+      "logical_objectives": 0,
+      "visible_nest_slots": null
+    },
+    {
+      "phase": "10",
+      "complete": "factory/cycle-2/10-complete.png",
+      "bounds": [
+        16,
+        112,
+        751,
+        271
+      ],
+      "size": [
+        768,
+        320
+      ],
+      "start": [
+        48,
+        128
+      ],
+      "solids": [
+        [
+          128,
+          192,
+          80,
+          32
+        ],
+        [
+          576,
+          200,
+          40,
+          32
+        ]
+      ],
+      "memory": {
+        "scene_tiles": 460,
+        "scene_bytes": 14720,
+        "map_bytes": 7680,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 3380,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 150,
+        "total_tiles": 610,
+        "total_vram_bytes": 19520,
+        "margin_tiles": 30
+      },
+      "sources": [
+        "factory/source/factory-whole-cycle3.png"
+      ],
+      "special_states": {
+        "destroyed": "factory/cycle-2/10-destroyed.png"
+      },
+      "objectives": [
+        [
+          96,
+          168
+        ],
+        [
+          96,
+          248
+        ],
+        [
+          240,
+          168
+        ],
+        [
+          240,
+          248
+        ],
+        [
+          384,
+          168
+        ],
+        [
+          384,
+          248
+        ],
+        [
+          528,
+          168
+        ],
+        [
+          528,
+          248
+        ],
+        [
+          672,
+          168
+        ],
+        [
+          672,
+          248
+        ]
+      ],
+      "logical_objectives": 10,
+      "visible_nest_slots": 7
+    },
+    {
+      "phase": "11",
+      "complete": "factory/cycle-2/11-complete.png",
+      "bounds": [
+        16,
+        112,
+        751,
+        271
+      ],
+      "size": [
+        768,
+        320
+      ],
+      "start": [
+        48,
+        128
+      ],
+      "solids": [
+        [
+          128,
+          192,
+          80,
+          32
+        ],
+        [
+          576,
+          200,
+          40,
+          32
+        ]
+      ],
+      "memory": {
+        "scene_tiles": 460,
+        "scene_bytes": 14720,
+        "map_bytes": 7680,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 3380,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 65,
+        "total_tiles": 525,
+        "total_vram_bytes": 16800,
+        "margin_tiles": 115
+      },
+      "sources": [
+        "factory/source/factory-whole-cycle3.png"
+      ],
+      "special_states": {
+        "open": "factory/cycle-2/11-open.png"
+      },
+      "objectives": [
+        [
+          144,
+          104
+        ],
+        [
+          432,
+          104
+        ],
+        [
+          576,
+          104
+        ]
+      ],
+      "logical_objectives": 3,
+      "visible_nest_slots": null
+    }
+  ],
+  "visual_status": "Candidatos nativos revistos inteiros e em 9 c\u00e2meras por fase; aguardam revis\u00e3o integrada de movimento/HUD, sem aprova\u00e7\u00e3o autom\u00e1tica por mem\u00f3ria",
+  "geometry": "factory/geometry.json"
+}

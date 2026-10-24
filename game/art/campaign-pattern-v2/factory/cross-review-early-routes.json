@@ -1,0 +1,19 @@
+{
+  "scope": "Read-only independent static review, no inherited approvals; native whole maps plus actual-size entry/middle/exit crops",
+  "early": {
+    "01": "Church, bench, barrels and all corners complete; quiet combat field; no proven cut module.",
+    "03": "Complete church entry, repeated complete house bays, whole van and terminal industrial door; lower perimeter remains in low camera. Texture is strong but no proven checker/cut object.",
+    "04": "Whole workbenches/crate pile; north shutter/wall and south industrial closure plausible. Repeating masonry lattice is stronger than quiet field, P2 aesthetic concern.",
+    "05": "Singular complete gabled warehouse, whole Santa and barrel/crate props; foreground/corners continuous. Regular horizontal concrete joints are noticeable, no isolated assembly defect proven."
+  },
+  "routes": {
+    "06A": "Complete inlet arch/water, continuous blue service pipe and wall; complete shelter stair/tarp exit and bottom canal/corners. Floor cadence regular but not a checker.",
+    "06B": "Closed/collapse/open images preserve gate posts, valve placements and original floor. No proof of partial-machinery stamp. Runtime contact/gate collision still needs controller review.",
+    "12": "Entry garage and exit union hall singular and complete, intermediate bay modules joined; bottom railing and corners physically continuous."
+  },
+  "limitations": [
+    "Static review does not prove collision, animation state handoff or temporal VRAM.",
+    "Architectural viewpoint may crop a whole object at viewport edge; that is separate from amputated art.",
+    "Material repetition alone does not establish assembly corruption."
+  ]
+}

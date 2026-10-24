@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "61372627b51f4c2bbc04dfe5b4680726681180a5e64b6a75658255017bdab05b",
+  "buildDirectory": "game/out/routes-mechanism-6137",
+  "emulatedRomSHA256": "61372627b51f4c2bbc04dfe5b4680726681180a5e64b6a75658255017bdab05b",
+  "movieEnabled": false,
+  "checks": {
+    "06b-bounds-atlas-ring-and-late-collision": true,
+    "06b-gate-1-collapse-then-native-opening": {
+      "finalPoseObserved": true,
+      "delaySeconds": 0.8,
+      "permanentSpriteVisible": false,
+      "openingPixels": 32
+    },
+    "06b-gate-2-collapse-then-native-opening": {
+      "finalPoseObserved": true,
+      "delaySeconds": 0.8,
+      "permanentSpriteVisible": false,
+      "openingPixels": 32
+    },
+    "06b-two-valves-and-four-shot-gates": true,
+    "06b-pause-preserves-compound-state": true,
+    "06b-all-six-mechanism-frames-exact": {
+      "poses": [
+        {
+          "frame": 0,
+          "gateOpaqueCells": 31,
+          "valveOpaqueCells": 14
+        },
+        {
+          "frame": 1,
+          "gateOpaqueCells": 31,
+          "valveOpaqueCells": 14
+        },
+        {
+          "frame": 2,
+          "gateOpaqueCells": 33,
+          "valveOpaqueCells": 14
+        },
+        {
+          "frame": 3,
+          "gateOpaqueCells": 38,
+          "valveOpaqueCells": 14
+        },
+        {
+          "frame": 4,
+          "gateOpaqueCells": 33,
+          "valveOpaqueCells": 14
+        },
+        {
+          "frame": 5,
+          "gateOpaqueCells": 30,
+          "valveOpaqueCells": 14
+        }
+      ],
+      "isolatedRamFrameSelection": true,
+      "renderingAndDma": "production",
+      "sceneryAtlasPreserved": true
+    }
+  }
+}

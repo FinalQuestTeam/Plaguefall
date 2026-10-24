@@ -1,10 +1,18 @@
 # Plaguefall — arte do projeto
 
+## Campanha ativa · correção dos corredores v3
+
+A campanha reúne 19 variações em 16 etapas. O padrão separa áreas superior/inferior, limites laterais e elementos do campo; quantidade e posições variam conforme a história e o objetivo. As fontes do guidebook e os módulos existentes definem a direção artística.
+
+A [revisão integrada](campaign-corridors-v3/corrections/delivery-candidate/review.html) mostra os cenários completos, câmeras e ressalvas. O [manifesto ativo](campaign-corridors-v3/active.json) identifica as fontes usadas nos corredores 3, 6A, 6B, 9 e 12. As outras 14 composições permanecem no conjunto `campaign-pattern-v2`.
+
+A ROM `748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77` passou nas dez suítes funcionais NTSC/PAL. Os ensaios dos cinco corredores somaram 18.000 VBlanks sem perdas, com 60 FPS NTSC / 50 FPS PAL nas condições descritas no [aceite técnico](campaign-corridors-v3/corrections/delivery-candidate/acceptance.json). Não houve teste em console físico nem aprovação humana declarada. Os relatórios das versões anteriores são históricos.
+
 **Bornal de recuperação:** [bolsa de couro de cangaceiro aprovada](bolsa-recuperacao-v1/README.md), adaptada a 16×16 na paleta existente e integrada a todas as derrotas, com conteúdo definido pelo equipamento pré-morte e pela etapa da campanha. As oito páginas de ajuda incluem o sprite e as regras por trecho da campanha; capturas reais NTSC/PAL acompanham a validação.
 
 **Diálogos em holodeck:** a [opção C aprovada](dialogue-holodeck-v1/README.md) está integrada: monitor preto, títulos dourados, falas em cinza claro e dois retratos inferiores. Quem escuta fica escurecido, e quem fala conserva a paleta original. [Cores atuais e capturas NTSC/PAL](radio-text-colors-v1/validation/report.json); o pacote original conserva a validação das 51 falas.
 
-**Preparação no rádio:** objetivo, guia e contagem usam o monitor único da opção 1. Os retratos dos inimigos conservam os pixels e a paleta anteriores; a única contagem 3/2/1 cobre o carregamento e libera o combate ao terminar. Conversa, objetivo e contagem trocam de conteúdo mantendo a moldura visível, e as páginas do guia reutilizam o fundo. [Captura real da missão](countdown-radio-v4/continuous/interface-ntsc/prep-1.png), [contagem](countdown-radio-v4/continuous/loading-ntsc/countdown-3.png) e [validação quadro a quadro NTSC/PAL](countdown-radio-v4/continuous/report.json).
+**Preparação no rádio:** objetivo, guia e contagem usam o monitor único da opção 1. Dez inimigos menores usam retratos de 32×32 extraídos das mesmas fontes corrigidas de combate, na pose SE de repouso, sem geração de nova arte. O recorte, a redução por vizinho mais próximo e a indexação preservam o desenho original em outra resolução; não se trata de igualdade de pixels com os sprites de 16/24 pixels. O [manifesto de origem](mission-portraits-v3/sources.json) registra fontes, correções, pose, hashes e correspondência com o banco de combate. A paleta, os inimigos maiores e os alvos de treino permanecem; `game/tools/build_mission_portraits.py` empacota os mesmos 7.680 bytes. A única contagem 3/2/1 cobre o carregamento e libera o combate ao terminar. Conversa, objetivo e contagem trocam de conteúdo mantendo a moldura visível, e as páginas do guia reutilizam o fundo. [Comparação da fonte com o retrato](mission-portraits-v3/validation/comparacao-fontes.png), [missão na ROM](mission-portraits-v3/validation/interface-ntsc/prep-1.png) e [validação atual NTSC/PAL](mission-portraits-v3/validation/report.json). A pasta `mission-portraits-v2` conserva a releitura anterior e sua auditoria como histórico.
 
 **Morte dos protagonistas:** [Damião e Dinorah](actor-deaths-v1/README.md) têm quatro poses próprias de queda, integradas à campanha e ao treino. A sequência termina antes de mostrar o resultado.
 
@@ -57,3 +65,7 @@ o tema aprovado para a tela de derrota. Ambos tocam uma vez e deixam silêncio
 até a confirmação do jogador.
 
 A [abertura com trilha contínua](audio-abertura-v3/README.md) começa a música no logo Plaguefall e só permite pular com START. A [galeria Assets](gallery-v1/README.md) reúne Damião, Dinorah e quatro músicas. Os [itens atuais](cangaco-itens-v2/README.md) têm sprites16×16 e ícones8×8. A [ROM principal](../out/release/Plaguefall.bin) e o [relatório consolidado](../doc/build-validation.json) são as referências atuais; relatórios dentro dos estudos anteriores são históricos.
+
+## Objetivos das missões experimentais
+
+[objective-sprites-v1](objective-sprites-v1/README.md) reúne dez folhas próprias e 60 quadros, fontes ImageGen, prompts, exportação para a paleta existente, prévia animada e testes NTSC/PAL. A integração fica nas salas 11–18: energia pulsante, sacolas coletáveis, Dinorah no corredor e câmara de contenção.

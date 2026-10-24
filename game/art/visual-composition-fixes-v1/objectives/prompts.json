@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen",
+  "pixel_export": "objective-sprites-v1/export.py; six authored poses uniformlyscaled with exact production palette; ground dedup exact",
+  "prompts": {
+    "generator": "Transparent3x2sixcell sprite sheet; same32x32upright steelblue powercabinet, offwhitefront, cyan screen, darkoutline,8flatcolors. Idle2frames, poweredcyan3frames, darkdamage1frame; noorange/brown/noise.",
+    "radio": "Transparent3x2sixcell32x32radio terminal, steelblue rectangularconsole, offwhitefront, cyan displays and centraldishantenna, broadcastingcyanarcstates;8flatcolors,noorange/brown/texture.",
+    "cargo": "Transparent3x2sixcell32x32supplies hardcase, offwhitewithdarkblueedges andlarge redcross;closed,latchopen,halfopen,openpackages,emptyopen,emptyclosed.6flatcolors.",
+    "transmitter": "Transparent3x2sixcell32x32purplebeetle, hugecyanbulb, longforkedcyanantennae; walking2poses,twosignalarcposes,cracked,collapsed. No brown/orange,8flatcolors.",
+    "valve": "Transparent3x2sixcell32x32large redhandwheel,offwhitefourspokes, steelblueelbowpipe withleft/rightends;closed,primed,rotated,cyanflow,steam,broken.7flatcolors."
+  }
+}

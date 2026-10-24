@@ -1,0 +1,916 @@
+{
+  "phase": "12",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    16,
+    96,
+    3055,
+    287
+  ],
+  "start": [
+    48,
+    208
+  ],
+  "solids": [
+    [
+      0,
+      0,
+      704,
+      96
+    ],
+    [
+      704,
+      0,
+      640,
+      144
+    ],
+    [
+      1344,
+      0,
+      864,
+      96
+    ],
+    [
+      2208,
+      0,
+      864,
+      112
+    ],
+    [
+      80,
+      32,
+      304,
+      160
+    ],
+    [
+      432,
+      32,
+      160,
+      128
+    ],
+    [
+      736,
+      32,
+      160,
+      128
+    ],
+    [
+      1008,
+      200,
+      240,
+      112
+    ],
+    [
+      1296,
+      32,
+      160,
+      128
+    ],
+    [
+      1488,
+      24,
+      304,
+      144
+    ],
+    [
+      1760,
+      200,
+      240,
+      112
+    ],
+    [
+      1984,
+      32,
+      160,
+      128
+    ],
+    [
+      2176,
+      32,
+      160,
+      128
+    ],
+    [
+      2304,
+      200,
+      240,
+      112
+    ],
+    [
+      2480,
+      32,
+      160,
+      128
+    ],
+    [
+      2704,
+      24,
+      304,
+      176
+    ],
+    [
+      224,
+      248,
+      72,
+      24
+    ],
+    [
+      2560,
+      248,
+      72,
+      24
+    ]
+  ],
+  "route_points": [
+    [
+      56,
+      216
+    ],
+    [
+      336,
+      216
+    ],
+    [
+      424,
+      232
+    ],
+    [
+      592,
+      232
+    ],
+    [
+      704,
+      232
+    ],
+    [
+      920,
+      232
+    ],
+    [
+      952,
+      184
+    ],
+    [
+      1264,
+      184
+    ],
+    [
+      1400,
+      184
+    ],
+    [
+      1496,
+      184
+    ],
+    [
+      1784,
+      184
+    ],
+    [
+      2024,
+      184
+    ],
+    [
+      2104,
+      208
+    ],
+    [
+      2168,
+      208
+    ],
+    [
+      2280,
+      184
+    ],
+    [
+      2560,
+      184
+    ],
+    [
+      2600,
+      216
+    ],
+    [
+      2856,
+      216
+    ]
+  ],
+  "point_semantics": "CENTERS; actor foot top-left=center−8",
+  "pauses": [
+    3,
+    7,
+    16
+  ],
+  "exit": [
+    2824,
+    192,
+    64,
+    64
+  ],
+  "camera_player_y": 200,
+  "camera_interest": [
+    {
+      "id": "workshop",
+      "bbox": [
+        80,
+        32,
+        304,
+        160
+      ],
+      "center": [
+        232,
+        112
+      ],
+      "camera": [
+        72,
+        8
+      ],
+      "position": [
+        224,
+        208
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "covered-dock",
+      "bbox": [
+        1488,
+        24,
+        304,
+        144
+      ],
+      "center": [
+        1640,
+        96
+      ],
+      "camera": [
+        1480,
+        0
+      ],
+      "position": [
+        1624,
+        184
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "union-arrival",
+      "bbox": [
+        2704,
+        24,
+        304,
+        176
+      ],
+      "center": [
+        2856,
+        112
+      ],
+      "camera": [
+        2696,
+        0
+      ],
+      "position": [
+        2848,
+        200
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "south-dock1",
+      "bbox": [
+        1008,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        1128,
+        256
+      ],
+      "camera": [
+        968,
+        88
+      ],
+      "position": [
+        1120,
+        176
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "south-dock2",
+      "bbox": [
+        1760,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        1880,
+        256
+      ],
+      "camera": [
+        1720,
+        88
+      ],
+      "position": [
+        1880,
+        176
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "south-dock3",
+      "bbox": [
+        2304,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        2424,
+        256
+      ],
+      "camera": [
+        2264,
+        88
+      ],
+      "position": [
+        2416,
+        176
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "service-annex1",
+      "bbox": [
+        432,
+        32,
+        160,
+        128
+      ],
+      "center": [
+        512,
+        96
+      ],
+      "camera": [
+        352,
+        8
+      ],
+      "position": [
+        496,
+        176
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "service-annex2",
+      "bbox": [
+        1296,
+        32,
+        160,
+        128
+      ],
+      "center": [
+        1376,
+        96
+      ],
+      "camera": [
+        1216,
+        8
+      ],
+      "position": [
+        1360,
+        176
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "service-annex3",
+      "bbox": [
+        1984,
+        32,
+        160,
+        128
+      ],
+      "center": [
+        2064,
+        96
+      ],
+      "camera": [
+        1904,
+        8
+      ],
+      "position": [
+        2048,
+        176
+      ],
+      "whole_inside_visible_world": true
+    },
+    {
+      "id": "service-annex4",
+      "bbox": [
+        2480,
+        32,
+        160,
+        128
+      ],
+      "center": [
+        2560,
+        96
+      ],
+      "camera": [
+        2400,
+        8
+      ],
+      "position": [
+        2544,
+        168
+      ],
+      "whole_inside_visible_world": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "approved-workshop",
+      "path": "art/campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+      "bbox_xyxy": null,
+      "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437"
+    },
+    {
+      "id": "wall",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
+      "bbox_xyxy": null,
+      "source_sha256": "29fb39300488e1027e2e2c3bea18124d978dc84c1522e2418840c02ed0389f7f"
+    },
+    {
+      "id": "post",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-post.png",
+      "bbox_xyxy": null,
+      "source_sha256": "c02500aa5498e246da691df302252c6c2bc42e224aab99601116e1cadfe4ce3b"
+    },
+    {
+      "id": "vegetation",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png",
+      "bbox_xyxy": null,
+      "source_sha256": "356a36dcf3d85c8232c8e2822aadb7d594c4a49152aa1835597a9c0b9fccca22"
+    },
+    {
+      "id": "bench",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/bench.png",
+      "bbox_xyxy": null,
+      "source_sha256": "c1a60e963fcc9a8215cf5fba8d471e5aa40e59c091468f2ade972d9e19ee438e"
+    },
+    {
+      "id": "floor",
+      "path": "art/phase04-tunnels-v1/map-native.png",
+      "bbox_xyxy": [
+        64,
+        112,
+        96,
+        144
+      ],
+      "source_sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd"
+    },
+    {
+      "id": "rear-earth",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/floor.png",
+      "bbox_xyxy": null,
+      "source_sha256": "c477c32780874f6dde7ce28d50172bbe46b1bc326a465e44bf565c3b5a376472"
+    },
+    {
+      "id": "plaster-0-0",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        64,
+        80,
+        72,
+        88
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "plaster-8-0",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        88,
+        80,
+        96,
+        88
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "plaster-0-8",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        116,
+        76,
+        124,
+        84
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "plaster-8-8",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        184,
+        72,
+        192,
+        80
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "window",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/window.png",
+      "bbox_xyxy": null,
+      "source_sha256": "cf434666d3ca75c1de3a0f3b196fe8ac654905f742ebdc70d1cbae3a2709b4d9"
+    },
+    {
+      "id": "door",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/door.png",
+      "bbox_xyxy": null,
+      "source_sha256": "b34e5d55933a80d2117e1b01617d0b6ef7f1c51795b1e91cb28525428ef1d4cc"
+    },
+    {
+      "id": "banner",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/banner.png",
+      "bbox_xyxy": null,
+      "source_sha256": "ef9af69780c33a6ed0ecbdca905732d8b84b299cccdd5e9dbf49be04094824f3"
+    },
+    {
+      "id": "vent",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/vent.png",
+      "bbox_xyxy": null,
+      "source_sha256": "850d79063a45cfa1c2f2093cdb70dafd7502848dbdfa016637720aad5d30e3a6"
+    },
+    {
+      "id": "whole-bay",
+      "path": "art/campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+      "bbox_xyxy": [
+        8,
+        64,
+        120,
+        128
+      ],
+      "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437"
+    }
+  ],
+  "memory": {
+    "scene_tiles": 447,
+    "objective_tiles": 0,
+    "total_tiles": 447,
+    "budget": 640,
+    "free_tiles": 193,
+    "pixel_exact_reassembly": true,
+    "lossy_pattern_replacements": 0
+  },
+  "modules": [
+    {
+      "id": "approved-workshop",
+      "path": "art/campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+      "bbox_xyxy": null,
+      "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437"
+    },
+    {
+      "id": "wall",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
+      "bbox_xyxy": null,
+      "source_sha256": "29fb39300488e1027e2e2c3bea18124d978dc84c1522e2418840c02ed0389f7f"
+    },
+    {
+      "id": "post",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-post.png",
+      "bbox_xyxy": null,
+      "source_sha256": "c02500aa5498e246da691df302252c6c2bc42e224aab99601116e1cadfe4ce3b"
+    },
+    {
+      "id": "vegetation",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png",
+      "bbox_xyxy": null,
+      "source_sha256": "356a36dcf3d85c8232c8e2822aadb7d594c4a49152aa1835597a9c0b9fccca22"
+    },
+    {
+      "id": "bench",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/bench.png",
+      "bbox_xyxy": null,
+      "source_sha256": "c1a60e963fcc9a8215cf5fba8d471e5aa40e59c091468f2ade972d9e19ee438e"
+    },
+    {
+      "id": "floor",
+      "path": "art/phase04-tunnels-v1/map-native.png",
+      "bbox_xyxy": [
+        64,
+        112,
+        96,
+        144
+      ],
+      "source_sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd"
+    },
+    {
+      "id": "rear-earth",
+      "path": "art/campaign-pattern-v2/early/01-courtyard/modules/floor.png",
+      "bbox_xyxy": null,
+      "source_sha256": "c477c32780874f6dde7ce28d50172bbe46b1bc326a465e44bf565c3b5a376472"
+    },
+    {
+      "id": "plaster-0-0",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        64,
+        80,
+        72,
+        88
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "plaster-8-0",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        88,
+        80,
+        96,
+        88
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "plaster-0-8",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        116,
+        76,
+        124,
+        84
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "plaster-8-8",
+      "path": "art/phase01-courtyard-v2/intact-native.png",
+      "bbox_xyxy": [
+        184,
+        72,
+        192,
+        80
+      ],
+      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "id": "window",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/window.png",
+      "bbox_xyxy": null,
+      "source_sha256": "cf434666d3ca75c1de3a0f3b196fe8ac654905f742ebdc70d1cbae3a2709b4d9"
+    },
+    {
+      "id": "door",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/door.png",
+      "bbox_xyxy": null,
+      "source_sha256": "b34e5d55933a80d2117e1b01617d0b6ef7f1c51795b1e91cb28525428ef1d4cc"
+    },
+    {
+      "id": "banner",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/banner.png",
+      "bbox_xyxy": null,
+      "source_sha256": "ef9af69780c33a6ed0ecbdca905732d8b84b299cccdd5e9dbf49be04094824f3"
+    },
+    {
+      "id": "vent",
+      "path": "art/campaign-corridors-v3/syndicate/12/modules/vent.png",
+      "bbox_xyxy": null,
+      "source_sha256": "850d79063a45cfa1c2f2093cdb70dafd7502848dbdfa016637720aad5d30e3a6"
+    },
+    {
+      "id": "whole-bay",
+      "path": "art/campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+      "bbox_xyxy": [
+        8,
+        64,
+        120,
+        128
+      ],
+      "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "workshop",
+      "size": [
+        304,
+        160
+      ],
+      "file": "modules/workshop-assembly-rgba.png",
+      "roof_height": 104
+    },
+    {
+      "id": "annex",
+      "size": [
+        160,
+        128
+      ],
+      "file": "modules/annex-assembly-rgba.png",
+      "roof_height": 88
+    },
+    {
+      "id": "covered",
+      "size": [
+        304,
+        144
+      ],
+      "file": "modules/covered-assembly-rgba.png",
+      "roof_height": 96
+    },
+    {
+      "id": "low-dock",
+      "size": [
+        240,
+        112
+      ],
+      "file": "modules/low-dock-assembly-rgba.png",
+      "roof_height": 72
+    },
+    {
+      "id": "union",
+      "size": [
+        304,
+        176
+      ],
+      "file": "modules/union-assembly-rgba.png",
+      "roof_height": 120
+    }
+  ],
+  "placements": [
+    [
+      "workshop",
+      80,
+      32
+    ],
+    [
+      "annex",
+      432,
+      32
+    ],
+    [
+      "annex",
+      736,
+      32
+    ],
+    [
+      "low-dock",
+      1008,
+      200
+    ],
+    [
+      "annex",
+      1296,
+      32
+    ],
+    [
+      "covered",
+      1488,
+      24
+    ],
+    [
+      "low-dock",
+      1760,
+      200
+    ],
+    [
+      "annex",
+      1984,
+      32
+    ],
+    [
+      "annex",
+      2176,
+      32
+    ],
+    [
+      "low-dock",
+      2304,
+      200
+    ],
+    [
+      "annex",
+      2480,
+      32
+    ],
+    [
+      "union",
+      2704,
+      24
+    ]
+  ],
+  "source_geometry": {
+    "principle": "Existing approved kit parts; whole roof canvases with native material runs, whole openings, original footings. No whole-building reshape.",
+    "active_geometry_origin": "art/campaign-corridors-v3/syndicate/12"
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "point_margin": 8,
+    "BFS_step": 8,
+    "connected_positions": 4904,
+    "all_points_reachable": true,
+    "swept16pxSamples": 2833,
+    "all_segments_collision_free": true,
+    "exit_reachable": true,
+    "open_depth": 192,
+    "service_neck_width": 32
+  },
+  "complete": "complete-native.png",
+  "layout": "layout.png",
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "status": "isolated_candidate_requires_parent_and_user_review",
+  "style_changes": {
+    "roof_heights": {
+      "workshop": 104,
+      "annex": 88,
+      "covered": 96,
+      "low-dock": 72,
+      "union": 120
+    },
+    "method": "Whole roof canvases: original ridge/eave/caps plus repeated native material band; separate whole openings preserved. No whole-building reshape.",
+    "floor": "Existing phase04tunnel32x32patch,1px grid, palette normalization only.",
+    "geometry": "Bounds,solids,start,route,exit,pauses and camera metadata retained byte-for-byte as values."
+  },
+  "proposal_previews": [
+    {
+      "id": "entry",
+      "feet": [
+        224,
+        208
+      ],
+      "camera": [
+        64,
+        8
+      ],
+      "preview": "reviews/camera-entry.png",
+      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+    },
+    {
+      "id": "service-bend",
+      "feet": [
+        1112,
+        176
+      ],
+      "camera": [
+        944,
+        88
+      ],
+      "preview": "reviews/camera-service-bend.png",
+      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+    },
+    {
+      "id": "covered",
+      "feet": [
+        1624,
+        184
+      ],
+      "camera": [
+        1472,
+        0
+      ],
+      "preview": "reviews/camera-covered.png",
+      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+    },
+    {
+      "id": "dock-and-annex",
+      "feet": [
+        2048,
+        176
+      ],
+      "camera": [
+        1880,
+        0
+      ],
+      "preview": "reviews/camera-dock-and-annex.png",
+      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+    },
+    {
+      "id": "union",
+      "feet": [
+        2848,
+        200
+      ],
+      "camera": [
+        2688,
+        0
+      ],
+      "preview": "reviews/camera-union.png",
+      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
+    }
+  ]
+}

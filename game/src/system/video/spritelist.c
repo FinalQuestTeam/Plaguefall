@@ -18,201 +18,104 @@
 #include "levels/arena.h"
 #include "levels/levels.h"
 #include "levels/test.h"
+#include "levels/operations.h"
+#include "levels/campaign_resistance.h"
+#include "levels/graph.h"
 #include "system/video/screens/hud.h"
 
-// Four exact scanlines per 32-bit word: each byte is an independent lane.
-// Counts stay <=20 and widths (in8px units) <=40, so packed adds never carry
-// into the next scanline. This preserves exact pixel-row limits without
-// scanning every row three times for each32x48 actor on the68000.
-#define LINE_WORDS (224/4)
-static u32 lineSprites[LINE_WORDS];
-static u32 linePixels[LINE_WORDS];
-static u32 usedSpriteBits,usedPixelBits;
-// Stage a frame, then certify its combined scanline load with one prefix sum.
-// Only overloaded frames need the detailed priority-preserving admission pass.
-typedef struct { s16 x,y; u16 attr; u8 size,pieces; } PendingSprite;
-static PendingSprite pending[80];
-// Keep PendingSprite eight bytes: indexing ten-byte records costs a multiply
-// on the 68000 in the hot enqueue path. Only markers need a parent reference.
-static u8 markerParent[80];
-static u16 lineDelta[225];
-static u16 totalWidths,firstLine,lastLine;
-static bool deferred;
-
-static void beginSprites(void)
-{
-    memset(lineDelta,0,sizeof lineDelta);
-    memset(markerParent,0,sizeof markerParent);
-    totalWidths=0;firstLine=224;lastLine=0;deferred=TRUE;
-}
-
+// Conservative 8px scanline bands. Each band reserves the full width of
+// every intersecting sprite, so real scanline limits can never be exceeded.
+static u16 bandLoad[28],widthBound;
+static void beginSprites(void){memset(bandLoad,0,sizeof bandLoad);widthBound=0;}
 #ifdef RENDER_PROFILE
 volatile u16 renderProfileTicks[4];
 #define PROFILE_START() u32 profileClock=getSubTick()
-#define PROFILE_MARK(index) do {u32 now=getSubTick();renderProfileTicks[index]=now-profileClock;profileClock=now;}while(0)
+#define PROFILE_MARK(i) do {u32 now=getSubTick();renderProfileTicks[i]=now-profileClock;profileClock=now;}while(0)
 #else
 #define PROFILE_START()
-#define PROFILE_MARK(index)
+#define PROFILE_MARK(i)
 #endif
-
-
 static bool reserve(u16 n,s16 x,s16 y,u16 w,u16 h,u16 pieces)
 {
     if(n+pieces>80 || x>=320 || x+(s16)w<=0 || y>=224 || y+(s16)h<=0)return FALSE;
-    const u16 first=y<0 ? 0 : y;
-    const u16 last=y+(s16)h>224 ? 224 : y+h;
-    const u16 begin=first>>2,end=(last-1)>>2;
-    const u32 firstMask=0x80808080UL<<((first&3)*8);
-    const u32 lastMask=0x80808080UL>>((3-((last-1)&3))*8);
-    const u16 rowCount=pieces==4 ? 2 : 1;
-    const u32 countBias=pieces==4 ? 0x6d6d6d6dUL : 0x6c6c6c6cUL;
-    const u32 countStep=pieces==4 ? 0x02020202UL : 0x01010101UL;
-    const u32 pixels=w==48 ? 0x06060606UL : w==32 ? 0x04040404UL : w==24 ? 0x03030303UL :
-                     w==16 ? 0x02020202UL : 0x01010101UL;
-    const u32 pixelBias=0x57575757UL+pixels;
-    // OR is a conservative upper bound for each byte lane. Most ordinary
-    // frames are far below the limits, so no per-word admission scan is needed.
-    if(((usedSpriteBits+countBias)|(usedPixelBits+pixelBias))&0x80808080UL)
-    {
-        for(u16 i=begin;i<=end;i++)
-        {
-            u32 mask=0x80808080UL;
-            if(i==begin)mask&=firstMask;
-            if(i==end)mask&=lastMask;
-            if(((lineSprites[i]+countBias)|(linePixels[i]+pixelBias))&mask)return FALSE;
-        }
-    }
-    // Commit only after the whole interval passes. Handle partial edge words
-    // once; the interior is a straight packed add with advancing pointers.
-    u32 countBits=usedSpriteBits,pixelBits=usedPixelBits;
-    u32 lanes=(firstMask&(begin==end ? lastMask : 0x80808080UL))>>7;
-    u32 bytes=(lanes<<8)-lanes;
-    u32 count=lineSprites[begin]+lanes*rowCount;
-    u32 width=linePixels[begin]+(pixels&bytes);
-    lineSprites[begin]=count;linePixels[begin]=width;
-    countBits|=count;pixelBits|=width;
-    if(begin!=end)
-    {
-        u32 *counts=&lineSprites[begin+1],*widths=&linePixels[begin+1];
-        u16 remaining=end-begin-1;
-        while(remaining--)
-        {
-            count=*counts+countStep;width=*widths+pixels;
-            *counts++=count;*widths++=width;
-            countBits|=count;pixelBits|=width;
-        }
-        lanes=lastMask>>7;bytes=(lanes<<8)-lanes;
-        count=lineSprites[end]+lanes*rowCount;width=linePixels[end]+(pixels&bytes);
-        lineSprites[end]=count;linePixels[end]=width;
-        countBits|=count;pixelBits|=width;
-    }
-    usedSpriteBits=countBits;usedPixelBits=pixelBits;
-    return TRUE;
-}
-
-__attribute__((always_inline)) static inline bool admit(u16 n,s16 x,s16 y,u16 w,u16 h,u16 pieces,u8 size,u16 attr)
-{
-    if(!deferred)return reserve(n,x,y,w,h,pieces);
-    const s16 right=x+w,bottom=y+h;
-    if((u16)(n+pieces)>80 || x>=320 || right<=0 || y>=224 || bottom<=0)return FALSE;
-    const u16 first=y<0 ? 0 : y,last=bottom>224 ? 224 : bottom;
+    const u16 first=(y<0 ? 0 : y)>>3,last=((y+(s16)h>224 ? 224 : y+h)-1)>>3;
     const u16 load=(pieces==4 ? 0x200 : 0x100)+(w>>3);
-    lineDelta[first]+=load;lineDelta[last]-=load;
-    if(first<firstLine)firstLine=first;
-    if(last>lastLine)lastLine=last;
-    totalWidths+=w>>3;
-    pending[n]=(PendingSprite){x,y,attr,size,pieces};
+    u16 *start=bandLoad+first,*end=bandLoad+last+1;
+    if(n+pieces>20 || widthBound+(w>>3)>40)
+        for(u16 *p=start;p<end;p++)if((u16)(*p+load+0x6b57u)&0x8080u)return FALSE;
+    for(u16 *p=start;p<end;p++)*p+=load;
+    widthBound+=w>>3;
     return TRUE;
 }
-
+__attribute__((always_inline)) static inline void writeSprite(u16 n,s16 x,s16 y,u8 size,u16 attr)
+{
+    VDPSprite *sprite=&vdpSpriteCache[n];
+    sprite->y=y+128;sprite->size_link=((u16)size<<8)|(n+1);
+    sprite->attribut=attr;sprite->x=x+128;
+}
+static bool emitSmall(u16 *n,s16 x,s16 y,u16 attr)
+{
+    x-=cameraX;y-=cameraY;
+    if(*n>=80 || x>=320 || x+8<=0 || y>=224 || y+8<=0)return FALSE;
+    const u16 first=(y<0 ? 0 : y)>>3,last=(y+7>223 ? 223 : y+7)>>3;
+    if(((u16)(bandLoad[first]+0x6c58u)|(u16)(bandLoad[last]+0x6c58u))&0x8080u)return FALSE;
+    bandLoad[first]+=0x101;if(first!=last)bandLoad[last]+=0x101;
+    widthBound++;
+    writeSprite(*n,x,y,SPRITE_SIZE(1,1),attr&0x7fff);(*n)++;return TRUE;
+}
 bool SPRITES_emit(u16 *n,s16 x,s16 y,u8 size,u16 attr)
 {
-    attr&=0x7fff; // The opaque, high-priority HUD always covers world sprites.
+    if(!size)return emitSmall(n,x,y,attr);
     x-=cameraX;y-=cameraY;
     const u16 w=(((size>>2)&3)+1)*8,h=((size&3)+1)*8;
-    if(!admit(*n,x,y,w,h,1,size,attr))return FALSE;
-    if(!deferred)VDP_setSpriteFull(*n,x,y,size,attr,*n+1);
-    (*n)++;
-    return TRUE;
+    if(!reserve(*n,x,y,w,h,1))return FALSE;
+    writeSprite(*n,x,y,size,attr&0x7fff);(*n)++;return TRUE;
 }
-
 static bool emitActor(u16 *n,s16 x,s16 y,u16 attr)
 {
-    attr&=0x7fff;
     x-=cameraX;y-=cameraY;
-    // The two hardware pieces occupy disjoint rows: one count per row.
-    if(!admit(*n,x,y,32,48,2,SPRITE_SIZE(4,4),attr))return FALSE;
-    if(!deferred)
-    {
-        VDP_setSpriteFull(*n,x,y,SPRITE_SIZE(4,4),attr,*n+1);
-        VDP_setSpriteFull(*n+1,x,y+32,SPRITE_SIZE(4,2),attr+16,*n+2);
-    }
-    *n+=2;
-    return TRUE;
+    if(!reserve(*n,x,y,32,48,2))return FALSE;
+    attr&=0x7fff;
+    writeSprite(*n,x,y,SPRITE_SIZE(4,4),attr);
+    writeSprite(*n+1,x,y+32,SPRITE_SIZE(4,2),attr+16);
+    *n+=2;return TRUE;
 }
-
 static u16 writeBoss(u16 n,s16 x,s16 y,u16 attr)
 {
     const bool flip=(attr&(1u<<11))!=0;
     const s16 left=x+(flip?16:0),right=x+(flip?0:32);
-    VDP_setSpriteFull(n,left,y,SPRITE_SIZE(4,4),attr,n+1);n++;
-    VDP_setSpriteFull(n,left,y+32,SPRITE_SIZE(4,2),attr+16,n+1);n++;
-    VDP_setSpriteFull(n,right,y,SPRITE_SIZE(2,4),attr+24,n+1);n++;
-    VDP_setSpriteFull(n,right,y+32,SPRITE_SIZE(2,2),attr+32,n+1);n++;
+    writeSprite(n++,left,y,SPRITE_SIZE(4,4),attr);
+    writeSprite(n++,left,y+32,SPRITE_SIZE(4,2),attr+16);
+    writeSprite(n++,right,y,SPRITE_SIZE(2,4),attr+24);
+    writeSprite(n++,right,y+32,SPRITE_SIZE(2,2),attr+32);
     return n;
 }
-
 static bool emitBoss(u16 *n,s16 x,s16 y,u16 attr)
 {
-    attr&=0x7fff;
     x-=cameraX;y-=cameraY;
-    // Reserve the whole 48x48 box atomically. Both columns count on each
-    // scanline; retaining one atomic group avoids partially rendered bosses.
-    if(!admit(*n,x,y,48,48,4,SPRITE_SIZE(4,4),attr))return FALSE;
-    if(!deferred)writeBoss(*n,x,y,attr);
-    *n+=4;return TRUE;
+    if(!reserve(*n,x,y,48,48,4))return FALSE;
+    *n=writeBoss(*n,x,y,attr&0x7fff);return TRUE;
 }
+static u16 finishSprites(u16 count){return count;}
 
-static u16 finishSprites(u16 count)
+// Keep the two dense projectile loops outside the large scene renderer.
+__attribute__((noinline)) static u16 drawShots(u16 n,FShot *shot,u16 count,bool enemy)
 {
-    bool overloaded=FALSE;
-    if(count>20 || totalWidths>40)
-    {
-        u16 load=0;
-        for(u16 y=firstLine;y<lastLine;y++)
-        {
-            load+=lineDelta[y];
-            // Byte lanes: >20 entries or >40 eight-pixel units. A width
-            // carry requires >=64 entries, which already fails the count lane.
-            if((u16)(load+0x6b57u)&0x8080u){overloaded=TRUE;break;}
-        }
-    }
-    if(overloaded)
-    {
-        memset(lineSprites,0,sizeof lineSprites);memset(linePixels,0,sizeof linePixels);
-        usedSpriteBits=usedPixelBits=0;
-    }
-    deferred=FALSE;
-    u16 n=0;
-    bool admitted[80];
-    for(u16 i=0;i<count;)
-    {
-        const u16 source=i;
-        const PendingSprite *s=&pending[i];
-        const u16 w=s->pieces==4 ? 48 : (((s->size>>2)&3)+1)*8,h=s->pieces>=2 ? 48 : ((s->size&3)+1)*8;
-        i+=s->pieces;
-        if(overloaded) {
-            admitted[source]=FALSE;
-            if(markerParent[source] && !admitted[markerParent[source]-1])continue;
-            if(!reserve(n,s->x,s->y,w,h,s->pieces))continue;
-            admitted[source]=TRUE;
-        }
-        if(s->pieces==4){n=writeBoss(n,s->x,s->y,s->attr);continue;}
-        VDP_setSpriteFull(n,s->x,s->y,s->size,s->attr,n+1);n++;
-        if(s->pieces==2)
-        {
-            VDP_setSpriteFull(n,s->x,s->y+32,SPRITE_SIZE(4,2),s->attr+16,n+1);n++;
-        }
+    const s16 cx=cameraX,cy=cameraY+VIDEO_HEIGHT_OFFSET;
+    const u16 *table=COMBATGFX_shotTable();
+    VDPSprite *sprite=&vdpSpriteCache[n];
+    for(FShot *end=shot+count;shot<end;shot++) {
+        if(!shot->active)continue;
+        const s16 x=(shot->x>>6)-cx,y=(shot->y>>6)-cy;
+        if(n>=80)break;
+        if((u16)(x+7)>=327 || (u16)(y+7)>=231)continue;
+        const u16 first=(u16)(y<0?0:y)>>3,last=(u16)(y+7>223?223:y+7)>>3;
+        if(((u16)(bandLoad[first]+0x6c58u)|(u16)(bandLoad[last]+0x6c58u))&0x8080u)continue;
+        bandLoad[first]+=0x101;if(first!=last)bandLoad[last]+=0x101;
+        widthBound++;
+        const u16 attr=table && shot->renderPose ? table[shot->renderPose] : COMBATGFX_cachedShotAttr(shot,enemy?(shot->mode?shot->mode:1):0);
+        sprite->y=y+128;sprite->size_link=++n;sprite->attribut=attr&0x7fff;sprite->x=x+128;sprite++;
+
     }
     return n;
 }
@@ -279,7 +182,9 @@ void SPRITES_draw(void)
     {
         const u16 i=(k+frame)&(MAX_ENEMIES-1);
         const Enemy *e=&enemies[i];
-        if (!e->active) continue;
+        if (!e->active || CAMPAIGN_RESISTANCE_hideEnemy(i)) continue;
+        // Mission transmitters own their authored32px bodies and destruction.
+        if(!currentLevel && testStage==14 && i<3 && !(operations.done&(1u<<i)))continue;
         const EnemyDef *d=ENEMY_DEF(e);
         const u16 pal=e->hitFlash ? PAL0 : PAL1;
         const bool target=e->type==ENEMY_DUMMY || e->type==ENEMY_TARGET;
@@ -297,9 +202,9 @@ void SPRITES_draw(void)
             if(!SPRITES_emit(&n,x,y,SPRITE_SIZE(size/8,size/8),attr))continue;
         }
         else if(!emitBoss(&n,x,y,attr))continue;
-        if(e->shielded || e->burn || e->frozen) {
+        if((e->shielded && d->color!=COLOR_PURPLE) || e->burn || e->frozen) {
             statuses[statusCount++]=(StatusMarker){x,y,size,bodyIndex+1,
-                (e->shielded ? 1 : 0)|(e->burn ? 2 : 0)|(e->frozen ? 4 : 0)};
+                (e->shielded && d->color!=COLOR_PURPLE ? 1 : 0)|(e->burn ? 2 : 0)|(e->frozen ? 4 : 0)};
         }
         // Status marks use the existing checkerboard, subject to the same limits.
         if (e->frozen || e->burnFlash)
@@ -309,7 +214,7 @@ void SPRITES_draw(void)
                 TILE_ATTR_FULL(statusPal,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_STATUS));
         }
     }
-    if (NPC_active() && !ARENA_npcInMap() && !NPC_hidden())
+    if (NPC_active() && currentLevel!=N_15 && !ARENA_npcInMap() && !NPC_hidden())
     {
             if ((frame%60)>=30)
                 SPRITES_emit(&n,npcX+8,npcY,SPRITE_SIZE(1,1),
@@ -320,15 +225,9 @@ void SPRITES_draw(void)
     for(u16 i=0;i<2;i++)if(allyShots[i].active)
         SPRITES_emit(&n,allyShots[i].x>>6,VIDEO_PROJECT_Y(allyShots[i].y>>6),SPRITE_SIZE(1,1),COMBATGFX_shotAttr(0,allyShots[i].vx,allyShots[i].vy));
     OBJECTIVE_drawMarkers(&n);
-    for (u16 i=0;i<MAX_PSHOTS;i++)
-        if (pshots[i].active)
-            // Shot simulation remains in ground coordinates; draw at gun height.
-            SPRITES_emit(&n,pshots[i].x>>6,(pshots[i].y>>6)-VIDEO_HEIGHT_OFFSET,SPRITE_SIZE(1,1),
-                COMBATGFX_shotAttr(0,pshots[i].vx,pshots[i].vy));
-    for (u16 i=0;i<MAX_ESHOTS;i++)
-        if (eshots[i].active)
-            SPRITES_emit(&n,eshots[i].x>>6,VIDEO_PROJECT_Y(eshots[i].y>>6),SPRITE_SIZE(1,1),
-                COMBATGFX_shotAttr(eshots[i].mode ? eshots[i].mode : 1,eshots[i].vx,eshots[i].vy));
+    if(!currentLevel && testStage>=OPS_FIRST_ROOM)OPS_draw(&n);
+    n=drawShots(n,pshots,MAX_PSHOTS,FALSE);
+    n=drawShots(n,eshots,MAX_ESHOTS,TRUE);
     // Admit bodies and projectiles before optional status markers. Crowded
     // scanlines may shed a marker, never an actor to make room for its icon.
     const StatusMarker *marker=statuses;
@@ -336,6 +235,17 @@ void SPRITES_draw(void)
     {
         const s16 size=marker->size,bodyY=marker->y;
         const u8 flags=marker->flags;
+        if(flags==1) {
+            s16 x=marker->x+(size-8)/2,y=bodyY-10;
+            if(y<cameraY+HUD_HEIGHT+2) {
+                y=bodyY+(size-8)/2;x=marker->x+size+2;
+                if(x+8>cameraX+320)x=marker->x-10;
+            }
+            if(x<cameraX)x=cameraX;if(x>cameraX+312)x=cameraX+312;
+            if(y<cameraY+HUD_HEIGHT+2)y=cameraY+HUD_HEIGHT+2;
+            emitSmall(&n,x,y,TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_ENEMY_SHIELD));
+            continue;
+        }
         const u16 count=((flags&1)!=0)+((flags&2)!=0)+((flags&4)!=0);
         const s16 width=count*10-2;
         s16 x=marker->x+(size-width)/2,y=bodyY-10;
@@ -351,10 +261,8 @@ void SPRITES_draw(void)
         if(y<cameraY+HUD_HEIGHT+2)y=cameraY+HUD_HEIGHT+2;
         static const u16 tiles[3]={TILE_ENEMY_SHIELD,TILE_ENEMY_FIRE,TILE_ENEMY_ICE};
         for(u16 status=0;status<3;status++)if(flags&(1u<<status)) {
-            const u16 markerIndex=n;
-            if(SPRITES_emit(&n,x,y,SPRITE_SIZE(1,1),
-                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+tiles[status])))
-                markerParent[markerIndex]=marker->parent;
+            SPRITES_emit(&n,x,y,SPRITE_SIZE(1,1),
+                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+tiles[status]));
             x+=10;
         }
     }

@@ -5,23 +5,27 @@ Plaguefall se passa num Brasil futuro em que a promessa de conquistar o espaço 
 ## Leitura
 
 - [Concept art dos cenários](../../art/concepts/fases-v1/README.md): 20 fases e um epílogo com estudos de elementos e narrativa ambiental.
-- [Auditoria de fases e saídas (21/10/2026)](auditoria-fases.md): objetivos dos 20 nós, condições reais e bloqueio da rota de falha na proteção.
-- [Fluxo proposto da história](tratamento-proposto.md): fuga da igreja, resgate, ruptura com Dinorah na rota de falha e demolição dos ninhos, com cenas e diálogos por fase.
+- [Auditoria de fases e saídas (21/10/2026)](auditoria-fases.md): registro da campanha anterior, com 20 nós e suas condições de saída.
+- [História completa e impactos das rotas](tratamento-proposto.md): roteiro de 23/10/2026, com as 16 fases por partida, diálogos, três bifurcações, participação final de Dinorah e oito combinações de encerramento.
+- [Storyboard visual da campanha](storyboard-campanha.md): começa com os 14 planos da animação existente e segue com sete pranchas de campanha, 28 quadros, falas e impactos; inclui PDF de 21 páginas.
+- [Guia de produção visual das fases](guia-producao-visual-fases.md): 19 fichas, inventário de recursos existentes e cinco kits com 30 famílias de elementos para aprovação antes da produção.
 - [Abertura](abertura.md): monólogo, encenação e adaptação para a tela atual.
 - [Storyboard do monólogo](storyboard-abertura-v2.md): 14 planos e 18 cartelas, falas, som, cortes e tempo de referência.
 - [Abertura animada](../../art/intro-monologo-v2/README.md): monólogo antes do menu, vídeo da ROM e música contínua desde o logo Plaguefall e somente START para pular.
 - [Universo e personagens](universo.md): premissa, conflito, religião, cangaço e regras de continuidade.
-- [Campanha proposta](campanha.md): resumo dos 20 nós, consequências que persistem entre fases e adaptação necessária ao jogo.
+- [Campanha proposta](campanha.md): resumo dos 19 nós propostos, objetivos, consequências persistentes e adaptação necessária ao jogo.
 - [Roteiro executável](../../src/levels/story.c): falas que o jogo apresenta.
 - [Sistema de história](../plano-historia.md): formato, controles e limites técnicos.
 
 ## O que cada material representa
 
-A abertura animada e os diálogos em `src/levels/story.c` representam a versão já integrada ao motor. O [novo tratamento](tratamento-proposto.md) refaz a campanha a partir da fuga da igreja: uma bomba pode danificá-la, proteger o sinalizador na santa permite o resgate, e a falha leva à discussão e à partida de Dinorah. O confronto com o Escorpião abre caminho para instalar cargas e destruir os ninhos. O final confirma a região livre, com o restante do planeta ainda infestado.
+A abertura animada e os diálogos em `src/levels/story.c` representam o roteiro integrado ao motor. A [revisão de 23/10/2026](tratamento-proposto.md) organiza a campanha em retirada, recuperação de recursos e ataque aos foguetes. O uso de bomba altera a igreja; a defesa da santa determina as perdas civis; a escolta da fase 12 determina a sobrevivência de Dinorah.
 
-O tratamento, a campanha proposta e as seções correspondentes do universo descrevem essa revisão narrativa. A nova continuidade ainda não foi aplicada à ROM. Em especial, diálogos após as convergências precisarão respeitar os resultados da igreja e do resgate; a participação atual de Dinorah na fase 7 é incondicional.
+Dinorah permanece na operação depois de qualquer resultado do resgate. Se sobreviver à fase 12, participa das conversas das fases 14, 15 e 16, conduz a ignição e chega ao epílogo. Se morrer, Damião e o padre conduzem a etapa final. Os três resultados independentes compõem oito combinações de encerramento.
 
-O jogo mantém Damião humano, os insetos cibernéticos, Nossa Senhora Aparecida como objetivo estático e Escorpião. [Damião, Comando e Dinorah têm retratos de conversa baseados nos concepts](../../art/dialogue-portraits-v1/README.md); Escorpião mantém o retrato provisório. Não há ator aliado na arena, sistema jogável de resgate ou colocação de cargas. Esses acontecimentos podem ser apresentados nas cenas da revisão.
+A história completa e o resumo da campanha são a referência da nova continuidade. Sua integração à ROM permanece pendente. As missões experimentais já oferecem referências de mecânicas, mas não representam a aplicação deste roteiro à campanha. A auditoria de 21/10/2026 documenta a versão anterior.
+
+O jogo mantém Damião humano, os insetos cibernéticos, Nossa Senhora Aparecida e Escorpião. [Damião, Comando e Dinorah têm retratos de conversa baseados nos concepts](../../art/dialogue-portraits-v1/README.md); Escorpião mantém o retrato provisório. A nova campanha exige adaptar objetivos, percursos, cenas e seleção de diálogos por resultado.
 
 As premissas antigas de treinamento militar, mech vermelho e colônia espacial deixam de orientar o roteiro. Os estudos de arte anteriores continuam preservados.
 

@@ -1,0 +1,69 @@
+{
+  "status": "implemented",
+  "approved": {
+    "shots": "A — Quitina",
+    "death": "2 — Recuo, patas e queda"
+  },
+  "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1",
+  "romBytes": 1441792,
+  "regions": [
+    "NTSC",
+    "PAL"
+  ],
+  "deathSpecies": 13,
+  "deathFrames": 39,
+  "shotArtBytes": 480,
+  "deathArtBytes": 11808,
+  "deathRecordBytes": 14,
+  "deathPoolRAMBytes": 56,
+  "deathVRAMReservedBytes": 2304,
+  "sceneBaseUnchanged": 785,
+  "deathConcurrency": {
+    "normal": 4,
+    "bossAndNormal": {
+      "boss": 1,
+      "normal": 2
+    }
+  },
+  "reports": {
+    "ntsc": {
+      "passed": true,
+      "report": "integracao/validation/ntsc/report.json",
+      "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1"
+    },
+    "pal": {
+      "passed": true,
+      "report": "integracao/validation/pal/report.json",
+      "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1"
+    },
+    "interface-ntsc": {
+      "passed": true,
+      "report": "integracao/validation/interface-ntsc/report.json",
+      "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1"
+    },
+    "interface-pal": {
+      "passed": true,
+      "report": "integracao/validation/interface-pal/report.json",
+      "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1"
+    },
+    "results-ntsc": {
+      "passed": true,
+      "report": "integracao/validation/results-ntsc/report.json",
+      "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1"
+    },
+    "results-pal": {
+      "passed": true,
+      "report": "integracao/validation/results-pal/report.json",
+      "romSHA256": "1928321fe1aaa430079a296ac0ca6ef837a99b840b87359789fe5d91de947ba1"
+    }
+  },
+  "sources": {
+    "game/src/system/video/combatgfx.c": "814c8d83314f3437398f1f480e41345517736622aaf27859451d6ae0c5794cd6",
+    "game/src/system/video/combatgfx.h": "a6af1f5256e75ebf142be638c6f85519c2c8bfd8194a48bd376f5a7f5163772e",
+    "game/src/core/flow.c": "c4891d5f2eeba2b1b807f6f136dd32304f4d66c15e3b19f9fc3930fb9435d808",
+    "game/src/enemies/enemies.c": "48e478cc37dfb8c211e877f32d15ba770c80bd12423d2974de5aa99a85830db0",
+    "game/src/system/video/spritelist.c": "2812965d5afea7450a1b272481b32b7ad10025b87b2880a735ced9c632355a0f",
+    "game/src/actors/shots_enemy.c": "dd864141713a4b74b7a04278751998e5a84a12fe0021851f6afd4c584eca7450"
+  },
+  "dropDoesNotCoverDeath": true
+}

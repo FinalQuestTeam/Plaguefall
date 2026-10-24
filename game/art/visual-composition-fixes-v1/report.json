@@ -1,0 +1,622 @@
+{
+  "complete": false,
+  "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "summary": "As aprovações deste painel foram substituídas pela reavaliação das 19 variações: 3 aceitáveis nesta revisão, 6 precisam de ajustes e 10 reprovadas. Consulte o relatório integral com imagens completas e evidências por fase.",
+  "phases": [
+    {
+      "phase": "3",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "changes": [
+        "Faixa de chão acima dos telhados removida; fundo discreto e fachadas com janelas, portas e coberturas coerentes.",
+        "Cinco desvios principais alternados, incluindo o fim do percurso; carros e barricadas com silhuetas maiores.",
+        "Porta industrial do destino extraída da imagem completa do interior 4, ligando os dois lugares.",
+        "Igreja preservada pixel a pixel nos dois desfechos."
+      ],
+      "review": [
+        "Casas com aberturas vizinhas cortadas e telhado recomposto: As fachadas foram recortadas de três posições diferentes e unidas a um telhado comum. Há aberturas parciais nas bordas, beirais sem continuidade e repetição de um miolo 16×16 no telhado. O erro está nos módulos dentro do mapa, além de qualquer corte da câmera.",
+        "Faixa azul e repetição comprimem a leitura de uma rua: O plano azul uniforme tem 72 px de altura e termina numa fileira quase ininterrupta do mesmo telhado. Falta transição de profundidade, separação entre lotes e variação de quarteirões. Nas rotas inferiores o HUD esconde ainda mais a arquitetura; os carros e barreiras existem, mas não resolvem o pano de fundo."
+      ],
+      "source": "../campaign-whole-scenes-v1/early/source/03-street.png",
+      "native": "../campaign-whole-scenes-v1/early/03-street/map-native.png",
+      "frames": [
+        {
+          "path": "../phase03-clipping-review-v1/evidence.png",
+          "label": "Reavaliação · cortes internos confirmados"
+        },
+        {
+          "path": "../campaign-integrated-v1/early/ntsc/03-entry.png",
+          "label": "Entrada real · igreja original preservada"
+        },
+        {
+          "path": "../campaign-integrated-v1/early/ntsc/03-camera-sample-1.png",
+          "label": "Rua e barricadas no trecho central"
+        },
+        {
+          "path": "../campaign-integrated-v1/early/ntsc/03-traversal-complete.png",
+          "label": "Chegada real ao portão industrial"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/early/ntsc/03-playtest-1.mp4",
+      "test_report": "../campaign-integrated-v1/early/ntsc/report.json",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Revisar",
+          "finding": "Detalhes em2px borravam fachadas ao lado da igreja nativa."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Revisar chegada",
+          "finding": "Percurso e igreja funcionam; galpão ainda parecia outra casa e sobrava uma borda vazia."
+        },
+        {
+          "cycle": 3,
+          "verdict": "Aceitação retirada na reavaliação",
+          "finding": "A chegada industrial melhorou, mas a revisão deixou passar os cortes nas casas; fase continua reprovada."
+        }
+      ],
+      "followup_review": "../phase03-clipping-review-v1/report.json",
+      "prior_acceptance_withdrawn": true,
+      "current_review": "../campaign-composition-forensic-v1/review.html#p3"
+    },
+    {
+      "phase": "4",
+      "status": "adjustments",
+      "status_label": "Precisa de ajustes",
+      "changes": [
+        "Nova imagem inteira do galpão com materiais simples, porta industrial e prateleiras laterais contínuas.",
+        "Piso de duas cores com juntas amplas e objetos sem retângulos de piso nas bordas.",
+        "Colisão das prateleiras alinhada aos limites da área de caminhada; início enquadra a fachada interna.",
+        "Perímetro sul usa faixas de revestimento industrial da própria imagem, sem novos tiles; limite de caminhada ajustado à parede."
+      ],
+      "review": [
+        "Fechamento sul precisa de leitura mais clara como parede de primeiro plano: A faixa y 352..384 reutiliza a parte baixa da persiana e dos pilares norte. Ela fecha o mundo, liga-se às laterais e coincide com o limite dos pés: pode representar uma parede de primeiro plano continuando para fora do mapa. Não há prova suficiente de objeto amputado dentro da arena. Recomendo melhorar o coroamento e a separação do piso para tornar essa leitura inequívoca; é um ajuste de acabamento, não uma reprovação por fragmentos."
+      ],
+      "source": "../campaign-whole-scenes-v1/early/source/04-warehouse-v2.png",
+      "native": "../campaign-whole-scenes-v1/early/04-warehouse/map-native.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/early/ntsc/04-entry.png",
+          "label": "Entrada real · porta e racks"
+        },
+        {
+          "path": "../campaign-integrated-v1/early/ntsc/04-camera-sample-2.png",
+          "label": "Parte sul com carrinho e perímetro"
+        },
+        {
+          "path": "../campaign-integrated-v1/early/ntsc/04-camera-sample-4.png",
+          "label": "Parte sul central · arquitetura ainda visível"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/early/ntsc/04-playtest-1.mp4",
+      "test_report": "../campaign-integrated-v1/early/ntsc/report.json",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever extremo sul",
+          "finding": "Materiais e recortes resolvidos, mas o enquadramento inferior central ainda mostrava pouco da construção."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Fechamento sul reaproveita revestimento industrial e permanece visível mesmo fora das paredes laterais."
+        }
+      ],
+      "current_review": "../campaign-composition-forensic-v1/review.html#p4"
+    },
+    {
+      "phase": "6A",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "changes": [
+        "Piso calmo e fundo escuro contínuo substituem a grade forte e as faixas repetidas.",
+        "Drenagens, inspeção central e saída iluminada orientam a travessia."
+      ],
+      "review": [
+        "Meias vertentes e tubos cortados se repetem nas emendas: O módulo chamado Intervalo arquitetônico recorta x 450..580 da fonte: o arco, a saída d’água e o cano horizontal continuam para além da borda direita. A mesma peça 32 px é colocada lado a lado, produzindo duas vertentes sem a metade direita e canos com terminações abruptas. Não é somente repetição de uma construção completa.",
+        "Marco central sobrepõe parte de outro pórtico: O marco circular ocupa x 1408..1503. A baia de fundo começa em x 1472 e vai até 1583: os primeiros 32 px dessa baia são sobrescritos, deixando em x 1504 uma fração de arco grande sem a sua fundação esquerda original. O círculo de inspeção e o arco vizinho são unidos por um corte vertical, em vez de uma transição arquitetônica autoral.",
+        "Faixa caminhável quase toda reduzida a uma única cor: Na área x 16..3055,y 192..295,91,78% dos pixels são exatamenteRGB109,109,109. O pavimento vem de um único pixel da fonte ampliado, então nenhuma junta, sombra de implantação ou diferença de setor do whole scene chega ao piso jogável. As capturas exibem uma grande faixa cinza vazia entre a arquitetura e o canal. O piso calmo é útil, mas aqui a redução elimina também os marcos de implantação e profundidade."
+      ],
+      "source": "../campaign-whole-scenes-v1/routes/source/06a-complete.png",
+      "native": "../campaign-whole-scenes-v1/routes/06a-native-complete.png",
+      "test_report": "../campaign-integrated-v1/escorts/ntsc/report.json",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/06a-entrada.png",
+          "label": "Entrada real · NTSC"
+        },
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/06a-meio.png",
+          "label": "Trecho central real · NTSC"
+        },
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/06a-saida.png",
+          "label": "Chegada real · NTSC"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/escorts/ntsc/06a-traversal.mp4",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Repetição excessiva na parede e poucos marcos, apesar do piso mais limpo."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Rever 6B; demais candidatas aceitáveis",
+          "finding": "Portão legível; recortes de água e pilar prejudicavam o contato com a alvenaria."
+        },
+        {
+          "cycle": 3,
+          "verdict": "Aceitável",
+          "finding": "Alvenaria, tubulação e estados dos portões conferidos no jogo; marcos de chegada visíveis."
+        }
+      ],
+      "current_review": "../campaign-composition-forensic-v1/review.html#p6A"
+    },
+    {
+      "phase": "6B",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "changes": [
+        "Mesma base de materiais da 6A; alvenaria sólida nos suportes dos portões.",
+        "Portão metálico com folha visível, rompimento e passagem livre; colisão 32×64 alinhada à arte.",
+        "Volante rubro conectado à tubulação azul contínua, sem número sobreposto."
+      ],
+      "review": [
+        "A folha e seus suportes não encostam na alvenaria do vão: O bloco superior termina em y 207 e o inferior começa em y 272. A porta 64 px é montada com canvas em y 208, mas a arte fechada tem bbox alfa y 1..62: começa em y 209 e termina em 270. Logo há uma linha inteira de piso em y 208 e outra em 271 separando as extremidades dos blocos. Além disso a folha diagonal e seus pilares saem lateralmente do bloco 32 px, tornando o contato aparente ainda menos convincente na captura 5 x.",
+        "Tubo da válvula nasce na queda d’água, sem junção mecânica legível: O tubo emL está em x 944..946,y 176..223, com a boca horizontal atéx 955. Sua extremidade superior é colocada na vertente azul da baia decorativa; não há flange, cotovelo ou ligação desenhada com a casa de comporta em x 976..1039. A parte que chega ao volante está ligada, mas a origem da alimentação se confunde com a água do cenário. A mesma situação se repete 1024 px adiante.",
+        "Peça de água e casa de comporta terminam em bordas retas do recorte: O recorte central x 450..830,y 0..370 contém porções do canal superior. Reduzido a 64 x 80 e colado sobre baias existentes, deixa fragmentos azuis de água imediatamente acima da moldura e corta paredes/canos nas laterais. O zoom do marco central mostra o filete de água com cortes verticais em x 1408/1472; nas estações o mesmo recorte ocupa x 976..1040 e 2000..2064. A silhueta parece montagem de fragmentos, em vez de uma casa de pressão inteira.",
+        "Piso sem implantação dos elementos do objetivo: 92,05% da faixa x 16..3055,y 192..295 usa exatamenteRGB109,109,109. Porta, válvula, blocos e tubulação se apoiam diretamente nesse campo plano, sem base, sombra de implantação ou mudança de material que faça o conjunto pertencer ao mesmo sistema. O problema se vê especialmente no portão aberto, quando os suportes parecem peças avulsas no piso."
+      ],
+      "source": "../campaign-whole-scenes-v1/routes/source/06b-complete.png",
+      "native": "../campaign-whole-scenes-v1/routes/06b-native-complete.png",
+      "test_report": "../campaign-integrated-v1/escorts/ntsc/report.json",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/06b-portao-1-fechado.png",
+          "label": "Portão fechado e válvula conectada"
+        },
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/06b-portao-1-aberto.png",
+          "label": "Passagem após romper o portão"
+        },
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/06b-saida.png",
+          "label": "Chegada após as duas estações"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/escorts/ntsc/06b-traversal.mp4",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Repetição excessiva na parede e poucos marcos, apesar do piso mais limpo."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Rever 6B; demais candidatas aceitáveis",
+          "finding": "Portão legível; recortes de água e pilar prejudicavam o contato com a alvenaria."
+        },
+        {
+          "cycle": 3,
+          "verdict": "Aceitável",
+          "finding": "Alvenaria, tubulação e estados dos portões conferidos no jogo; marcos de chegada visíveis."
+        }
+      ],
+      "current_review": "../campaign-composition-forensic-v1/review.html#p6B"
+    },
+    {
+      "phase": "7",
+      "status": "adjustments",
+      "status_label": "Precisa de ajustes",
+      "test_report": "../campaign-integrated-v1/resistance/ntsc/report.json",
+      "source": "resistance/cycle-1/source/07-08-favela-calm.png",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/resistance/ntsc/7-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        },
+        {
+          "path": "../campaign-integrated-v1/resistance/ntsc/7-delivery-1.png",
+          "label": "Entrega diante do depósito coberto"
+        }
+      ],
+      "changes": [
+        "Piso calmo extraído da imagem completa; portas com contraste reduzido.",
+        "Depósito coberto conectado à fachada; novo sólido testado pela frente acessível.",
+        "Cargas claras com cruz vermelha; maleta coletada permanece vazia."
+      ],
+      "review": [
+        "Recorte da barricada corta a caixa da extremidade direita: A barricada não é um módulo completo: a caixa marrom à direita continua além do recorte. O mapa termina esse volume num corte vertical e horizontal abrupto. O mesmo recorte é repetido nas duas barricadas e nas duas fases."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Aceitável",
+          "finding": "Primeira extração do piso ainda tinha manchas; recorte limpo da própria imagem eliminou repetição."
+        }
+      ],
+      "movie": "../campaign-integrated-v1/resistance/ntsc/7-playtest.mp4",
+      "current_review": "../campaign-composition-forensic-v1/review.html#p7"
+    },
+    {
+      "phase": "8",
+      "status": "adjustments",
+      "status_label": "Precisa de ajustes",
+      "test_report": "../campaign-integrated-v1/resistance/ntsc/report.json",
+      "source": "resistance/cycle-1/source/07-08-favela-calm.png",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/resistance/ntsc/8-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        },
+        {
+          "path": "final-frames/8-signal-0.35.png",
+          "label": "Emissão ativa · quadro do vídeo em 0,35 s"
+        }
+      ],
+      "changes": [
+        "Mesmo piso e arquitetura da favela preservam continuidade.",
+        "Emissores roxos/ciano com arcos ativos distinguem prioritários dos inimigos comuns."
+      ],
+      "review": [
+        "Recorte da barricada corta a caixa da extremidade direita: A barricada não é um módulo completo: a caixa marrom à direita continua além do recorte. O mapa termina esse volume num corte vertical e horizontal abrupto. O mesmo recorte é repetido nas duas barricadas e nas duas fases."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Aceitável",
+          "finding": "Piso limpo e emissores ativos passaram a separar função e combate."
+        }
+      ],
+      "movie": "../campaign-integrated-v1/resistance/ntsc/8-playtest.mp4",
+      "current_review": "../campaign-composition-forensic-v1/review.html#p8"
+    },
+    {
+      "phase": "9",
+      "status": "adjustments",
+      "status_label": "Precisa de ajustes",
+      "changes": [
+        "Três setores: oficinas de tijolo, docas e tanques na aproximação da fábrica.",
+        "Quatro obstáculos visíveis e sólidos interrompem a rota reta; desvios pelo norte e sul."
+      ],
+      "review": [
+        "Recorte maior que a imagem cria faixa preta na saída: gate mede 64×112. O recorte direito solicita y 0..128 e o PIL completa 16 linhas com índice 0. A guia repintada em y 144..152 cobre só metade; sobram 24×8 pixels pretos no piso, em x 2536..2559,y 152..159. A captura real mostra a parte visível no canto direito. Não é falha de streaming: os pixels já estão pretos no mapa nativo."
+      ],
+      "source": "../campaign-whole-scenes-v1/factory/source/street-cycle1-complete.png",
+      "native": "../campaign-whole-scenes-v1/factory/street-native.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/factory/ntsc/9-entry.png",
+          "label": "Entrada nas oficinas"
+        },
+        {
+          "path": "../campaign-integrated-v1/factory/ntsc/9-obstacle-detour.png",
+          "label": "Obstáculo com desvio real"
+        },
+        {
+          "path": "../campaign-integrated-v1/factory/ntsc/9-camera-exit.png",
+          "label": "Aproximação do portão da fábrica"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/factory/ntsc/9-playtest.mp4",
+      "test_report": "../campaign-integrated-v1/factory/ntsc/report.json",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Piso pontilhado e parede com detalhes repetidos; orçamento de tiles excedido."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Materiais calmos, peças estruturais reutilizadas e objetivos reconhecíveis; colisões e estados exercitados."
+        }
+      ],
+      "current_review": "../campaign-composition-forensic-v1/review.html#p9"
+    },
+    {
+      "phase": "10",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "changes": [
+        "Ninhos de ovos claros e agrupados se distinguem dos insetos móveis.",
+        "Esteiras com corpo 160 px, máquinas e colunas mantêm contexto industrial no enquadramento sul."
+      ],
+      "review": [
+        "Falso tubo contém fragmento azul de máquina e mutila as esteiras: O recorte source(112,312)-(176,328) contém o topo de uma carcaça azul e parte do rodapé industrial. Ele não é um tubo horizontal completo. É estampado em três posições após as esteiras. As cópias de x 352 e 576 sobrescrevem a faixa superior das duas esteiras: a primeira até sua extremidade direita, a segunda no meio do tapete. A carcaça parcial fica sem corpo nem apoio próprio.",
+        "Recorte lateral trunca a face e a luminária dos pilares inferiores: A coluna original ocupa aproximadamente x 35..55 na fonte normalizada. O recorte termina em x 48, atravessando a tampa, a face e a luminária da coluna. As quatro cópias mantêm esse corte reto na borda direita; a face e a luminária não ficam inteiras. O fato de a parte inferior continuar para fora do mapa é coerente com o perímetro, mas o corte lateral da face/lâmpada ocorre dentro da arena e permanece visível."
+      ],
+      "source": "../campaign-whole-scenes-v1/factory/source/factory-cycle1-complete.png",
+      "native": "../campaign-whole-scenes-v1/factory/factory-native.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/factory/ntsc/10-entry.png",
+          "label": "Entrada real · ovos claros"
+        },
+        {
+          "path": "../campaign-integrated-v1/factory/ntsc/10-eggs-2.png",
+          "label": "Fábrica visível na parte sul"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/factory/ntsc/10-playtest.mp4",
+      "test_report": "../campaign-integrated-v1/factory/ntsc/report.json",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Piso pontilhado e parede com detalhes repetidos; orçamento de tiles excedido."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Materiais calmos, peças estruturais reutilizadas e objetivos reconhecíveis; colisões e estados exercitados."
+        }
+      ],
+      "current_review": "../campaign-composition-forensic-v1/review.html#p10"
+    },
+    {
+      "phase": "11",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "changes": [
+        "Válvulas rubras ligadas a tubos, gabinetes e instalações reais da fábrica.",
+        "Roda aberta e indicação de energia mostram progresso sem números sobre os objetivos."
+      ],
+      "review": [
+        "Falso tubo contém fragmento azul de máquina e mutila as esteiras: O recorte source(112,312)-(176,328) contém o topo de uma carcaça azul e parte do rodapé industrial. Ele não é um tubo horizontal completo. É estampado em três posições após as esteiras. As cópias de x 352 e 576 sobrescrevem a faixa superior das duas esteiras: a primeira até sua extremidade direita, a segunda no meio do tapete. A carcaça parcial fica sem corpo nem apoio próprio.",
+        "Recorte lateral trunca a face e a luminária dos pilares inferiores: A coluna original ocupa aproximadamente x 35..55 na fonte normalizada. O recorte termina em x 48, atravessando a tampa, a face e a luminária da coluna. As quatro cópias mantêm esse corte reto na borda direita; a face e a luminária não ficam inteiras. O fato de a parte inferior continuar para fora do mapa é coerente com o perímetro, mas o corte lateral da face/lâmpada ocorre dentro da arena e permanece visível.",
+        "Válvula sobre a esteira sem montagem física resolvida: A válvula 3 cobre pixels da esteira preservada. A válvula 2 está na região já sobrescrita pelo falso tubo, portanto não conto sua sobreposição como um segundo defeito independente. Os objetivos não apresentam uma montagem física clara entre roda, carcaça e tapete. Contagens feitas apenas contra a caixa retangular da esteira não medem a interseção de silhuetas e foram retiradas do parecer final.",
+        "O enquadramento das válvulas elimina a arquitetura principal do interior: Garagem/fornos/tanques ficam em y 8..80; o perímetro inferior começa em y 320. Na operação das válvulas em y 208, a câmera acompanha o personagem em y 68 (inferido pelo alinhamento dos tubos e gabinetes na captura, coerente com a fórmula da câmera): o HUD encobre o que resta das máquinas do norte, e a parede sul fica abaixo da viewport. As capturas 11-valve-1 e 2 mostram predominantemente piso vazio, cabos verticais, um gabinete e esteiras; resta só o rodapé superior. A fábrica no mapa completo parece mais construída do que no enquadramento do objetivo principal. A constatação de enquadramento é objetiva; a prioridadeP1 reflete o critério solicitado de ambiente reconhecível durante a ação. Trata-se de um problema de enquadramento/contexto; esse corte de viewport não comprova, isoladamente, uma imagem amputada no asset."
+      ],
+      "source": "../campaign-whole-scenes-v1/factory/source/factory-cycle1-complete.png",
+      "native": "../campaign-whole-scenes-v1/factory/factory-native.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/factory/ntsc/11-entry.png",
+          "label": "Válvula conectada à estação"
+        },
+        {
+          "path": "../campaign-integrated-v1/factory/ntsc/11-valve-1.png",
+          "label": "Estado depois da liberação"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/factory/ntsc/11-playtest.mp4",
+      "test_report": "../campaign-integrated-v1/factory/ntsc/report.json",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Piso pontilhado e parede com detalhes repetidos; orçamento de tiles excedido."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Materiais calmos, peças estruturais reutilizadas e objetivos reconhecíveis; colisões e estados exercitados."
+        }
+      ],
+      "current_review": "../campaign-composition-forensic-v1/review.html#p11"
+    },
+    {
+      "phase": "12",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "changes": [
+        "Piso calmo sem carimbos alaranjados e céu escuro sem faixas artificiais.",
+        "Oficinas, manutenção e prédio sindical branco marcam entrada, trecho central e destino."
+      ],
+      "review": [
+        "Fragmento 16 x 16 vira obstáculo de listras diagonais: O material denominado água/canal técnico é apenas o recorte 16 x 16 em x 710,y 690 da fonte. Ele contém uma faixa preta diagonal e um pedaço de superfície, sem o contexto construtivo do canal. Repetido dentro dos retângulos sólidos, forma painéis/listras idênticas em vez de um vão de manutenção legível. A falha aparece em x 936..1032,y 240..304; x 1904..2000,y 224..304; x 2656..2768,y 240..304, e no rodapé inteiro.",
+        "Canos e treliças do telhado não continuam entre módulos: As baias e os intervalos foram recortados em escalas/aspectos diferentes (680 x 390→112 x 96 e 280 x 360→64 x 96) e recebem a mesma linha de base. Nas emendas x 112,176 e 240, as tubulações inclinadas e a cobertura recomeçam em outra altura; partes de treliça ficam com extremidades abruptas contra o céu. A sequência lida em panorama é uma colagem de cortes repetidos, e não uma linha contínua de oficinas.",
+        "Céu e topo da chegada são cortados pelo enquadramento do HUD: O prédio de chegada começa em y 80; a bandeira e a infraestrutura superior estão perto de sua borda superior. Nas capturas de saída/chegada, a câmera está aproximadamente em y 69 (dedutível pelo obstáculo de y 240 surgindo na linha 171), e o HUD cobre as primeiras 24 linhas. Assim a parte worldy 80..92 do prédio/bandeira fica atrás do HUD; a chegada não mostra o marco superior completo, embora apareça inteira no mapa canônico. Trata-se de um problema de enquadramento/contexto; esse corte de viewport não comprova, isoladamente, uma imagem amputada no asset.",
+        "Percurso visualmente vazio no piso jogável: 94,23% da faixa x 16..3055,y 192..295 tem a mesma corRGB109,109,109. Todo o movimento acontece num retângulo cinza; a história do estaleiro fica concentrada na faixa superior e nos retângulos listrados. As fachadas distinguem a chegada, mas o piso não contribui para setores, profundidade ou integração das oficinas."
+      ],
+      "source": "../campaign-whole-scenes-v1/routes/source/12-complete.png",
+      "native": "../campaign-whole-scenes-v1/routes/12-native-complete.png",
+      "test_report": "../campaign-integrated-v1/escorts/ntsc/report.json",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/12-entrada.png",
+          "label": "Entrada real · NTSC"
+        },
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/12-meio.png",
+          "label": "Trecho central real · NTSC"
+        },
+        {
+          "path": "../campaign-integrated-v1/escorts/ntsc/12-saida.png",
+          "label": "Chegada real · NTSC"
+        }
+      ],
+      "movie": "../campaign-integrated-v1/escorts/ntsc/12-traversal.mp4",
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Repetição excessiva na parede e poucos marcos, apesar do piso mais limpo."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Rever 6B; demais candidatas aceitáveis",
+          "finding": "Portão legível; recortes de água e pilar prejudicavam o contato com a alvenaria."
+        },
+        {
+          "cycle": 3,
+          "verdict": "Aceitável",
+          "finding": "Alvenaria, tubulação e estados dos portões conferidos no jogo; marcos de chegada visíveis."
+        }
+      ],
+      "current_review": "../campaign-composition-forensic-v1/review.html#p12"
+    },
+    {
+      "phase": "13B",
+      "status": "adjustments",
+      "status_label": "Precisa de ajustes",
+      "test_report": "../campaign-integrated-v1/resistance/ntsc/report.json",
+      "source": "resistance/cycle-2/source/13B-memorial.png",
+      "native": "../campaign-whole-scenes-v1/resistance/native/union/dead-native.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/resistance/ntsc/13B-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        }
+      ],
+      "changes": [
+        "Imagem inteira nova de memorial com retrato claro, faixa de luto e duas velas.",
+        "Recorte globalmente quantizado em 1 px mantém leitura do rosto; restante da sala compartilhada é 2 px.",
+        "Somente entrada 13B mudou para 280,176, enquadrando o memorial sem deslocar o guichê."
+      ],
+      "review": [
+        "O módulo direito apaga 8 px do chanfro do guichê: O guichê ocupa x 256..376, mas o banco/armários espelhado à direita começa em x 368 e sobrescreve seus 8 px finais. A quina inclinada e parte da base/sombra da fonte são substituídas por uma junção vertical reta com o móvel vizinho. O local permanece reconhecível, porém a montagem mostra uma emenda arquitetônica artificial."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Cadeira/bandana ainda pareciam adereço pequeno."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Retrato e velas claros; entrada diante do memorial resolveu o corte sem deformar arquitetura."
+        }
+      ],
+      "movie": "../campaign-integrated-v1/resistance/ntsc/13B-playtest.mp4",
+      "current_review": "../campaign-composition-forensic-v1/review.html#p13B"
+    },
+    {
+      "phase": "14",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "test_report": "../campaign-integrated-v1/launch/ntsc/report.json",
+      "source": "launch/cycle-2/source/14-15-station-circuit.png",
+      "native": "../campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/launch/ntsc/14-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        },
+        {
+          "path": "../campaign-integrated-v1/launch/ntsc/14-generator-2.png",
+          "label": "Conexões e estados das máquinas durante o percurso"
+        }
+      ],
+      "changes": [
+        "Piso uniforme, estação e conduítes fazem parte da extração da imagem completa.",
+        "Gabinetes azuis/claros têm mesma silhueta desligados e ligados.",
+        "Conduítes com seção contínua 3 px substituem pontilhado claro."
+      ],
+      "review": [
+        "A estação elevada é atravessável e Damião pisa sobre seu console: No vídeo integrado da 14, o percurso entre as duas máquinas superiores passa pelo console central. Em 3,0 s Damião está desenhado em cima da tela/mesa. O mapa tem somente o sólido da ilha inferior; a estação inteira está livre para os pés e não tem ordenação de profundidade. Na 15 a geometria é a mesma, portanto a condição estrutural persiste, mas este parecer não afirma ter visto esse mesmo cruzamento num frame da 15.",
+        "Conduítes formam cruzes e pontas sem acabamento nos cantos: As seções retas se sobrepõem e passam dos cantos. Emx 136,y 276 a vertical segue atéy 284; em x 368,y 276 a horizontal termina além da vertical. Pequenos prolongamentos e os retângulos de 3 px deixam aspecto de traçado técnico/seleção, especialmente na 15 quando faltam as máquinas. A largura é uniforme, mas as terminações não estão resolvidas como conectores físicos."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Conduítes finos pontilhados lembravam seleção de editor."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Seção uniforme extraída do próprio cano eliminou o pontilhado; revisão com gabinetes sobrepostos."
+        }
+      ],
+      "movie": "../campaign-integrated-v1/launch/ntsc/14-generators-playtest.mp4",
+      "current_review": "../campaign-composition-forensic-v1/review.html#p14"
+    },
+    {
+      "phase": "15",
+      "status": "rejected",
+      "status_label": "Reprovada",
+      "test_report": "../campaign-integrated-v1/launch/ntsc/report.json",
+      "source": "launch/cycle-2/source/15-station-ignition.png",
+      "native": "../campaign-whole-scenes-v1/launch/previews/15-radio-fire-native-reconstructed.png",
+      "frames": [
+        {
+          "path": "../campaign-integrated-v1/launch/ntsc/15-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        },
+        {
+          "path": "../campaign-integrated-v1/launch/ntsc/15-ignition-focus.png",
+          "label": "Ignição real · combate pausado"
+        },
+        {
+          "path": "../campaign-integrated-v1/launch/ntsc/15-ignition-return.png",
+          "label": "Câmera devolvida para retomar defesa"
+        }
+      ],
+      "changes": [
+        "Estação maior com mastro/antena dá foco ao console azul/ciano.",
+        "Atlas de ignição próprio 15 mantém fase 16 intacta.",
+        "Breve foco nos motores pausa combate/contador e devolve câmera antes retomar."
+      ],
+      "review": [
+        "A estação elevada é atravessável e Damião pisa sobre seu console: No vídeo integrado da 14, o percurso entre as duas máquinas superiores passa pelo console central. Em 3,0 s Damião está desenhado em cima da tela/mesa. O mapa tem somente o sólido da ilha inferior; a estação inteira está livre para os pés e não tem ordenação de profundidade. Na 15 a geometria é a mesma, portanto a condição estrutural persiste, mas este parecer não afirma ter visto esse mesmo cruzamento num frame da 15.",
+        "Conduítes formam cruzes e pontas sem acabamento nos cantos: As seções retas se sobrepõem e passam dos cantos. Emx 136,y 276 a vertical segue atéy 284; em x 368,y 276 a horizontal termina além da vertical. Pequenos prolongamentos e os retângulos de 3 px deixam aspecto de traçado técnico/seleção, especialmente na 15 quando faltam as máquinas. A largura é uniforme, mas as terminações não estão resolvidas como conectores físicos.",
+        "Os cinco geradores desaparecem depois de ligados: A14 e a 15 compartilham o mesmo fundo, ilha e coordenadas. A14 tem cinco gabinetes instalados nos conduítes; a 15 carrega somente o rádio e deixa os lugares dos cinco gabinetes vazios. A energia continua operante na história, mas os corpos das máquinas desaparecem sem destroços ou transição. Isso também deixa cabos terminando no vazio."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Nova estação e motor legíveis; conduítes precisavam perder pontilhado."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Foco real nos motores e retorno seguro validados em NTSC/PAL; contador mede 120 s ativos."
+        }
+      ],
+      "movie": "../campaign-integrated-v1/launch/ntsc/15-ignition-playtest.mp4",
+      "current_review": "../campaign-composition-forensic-v1/review.html#p15"
+    }
+  ],
+  "preserved": [
+    "1",
+    "2A",
+    "2B",
+    "5",
+    "13A",
+    "16"
+  ],
+  "limitations": [
+    "Reuso de peças arquitetônicas permanece visível nos panoramas para respeitar 640 tiles.",
+    "As amostras automáticas não substituem campanha humana completa para ajustar dificuldade.",
+    "Sob carga máxima, algumas fases ficam abaixo de 60/50 FPS; valores e tetos estão nos relatórios."
+  ],
+  "native_checks": "check.py passed before the final early4 perimeter; validate_early and emulator tests repeated after that change.",
+  "technical_reports": [
+    "game/art/campaign-integrated-v1/early/ntsc/report.json",
+    "game/art/campaign-integrated-v1/early/pal/report.json",
+    "game/art/campaign-integrated-v1/escorts/ntsc/report.json",
+    "game/art/campaign-integrated-v1/escorts/pal/report.json",
+    "game/art/campaign-integrated-v1/resistance/ntsc/report.json",
+    "game/art/campaign-integrated-v1/resistance/pal/report.json",
+    "game/art/campaign-integrated-v1/factory/ntsc/report.json",
+    "game/art/campaign-integrated-v1/factory/pal/report.json",
+    "game/art/campaign-integrated-v1/launch/ntsc/report.json",
+    "game/art/campaign-integrated-v1/launch/pal/report.json"
+  ],
+  "technical_suites_passed": 10,
+  "production_rom_bytes": 2490368,
+  "frame_review_contact": "final-contact.png",
+  "review_type": "Manual game/level design judgment from whole native scenes and emulator views; not an automatic art score or external player study.",
+  "rejected_phases": [
+    "3",
+    "6A",
+    "6B",
+    "10",
+    "11",
+    "12",
+    "13A",
+    "14",
+    "15",
+    "16"
+  ],
+  "superseded_by": "../campaign-composition-forensic-v1/review.html"
+}

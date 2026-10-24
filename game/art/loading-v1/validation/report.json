@@ -1,0 +1,191 @@
+{
+  "passed": true,
+  "romSHA256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+  "minimumLoadingSeconds": 3,
+  "minimumAppliesTo": "One loading screen at campaign phase entry, after mission confirmation; countdown starts afterwards. Map/radio transitions do not repeat the minimum.",
+  "nativeChecks": "python3 game/tools/check.py: passed",
+  "campaigns": [
+    {
+      "region": "ntsc",
+      "route": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        18,
+        19,
+        20
+      ],
+      "transitions": 79,
+      "minimumVisibleLoadingSeconds": 3.033333333333333,
+      "maximumAudioServiceGapFrames": 2,
+      "maximumBlackSeconds": 0.43333333333333335,
+      "phase4ResultToMap": {
+        "name": "result-to-next-4",
+        "frames": 70,
+        "blackFrames": 6,
+        "longestBlack": 6,
+        "longestMusicStall": 1,
+        "longestFrozenPSGCache": 1,
+        "displayOffFrames": 4,
+        "loadingFrames": 0,
+        "visibleLoadingFrames": 0,
+        "functionsWhileAudioStalled": [
+          [
+            "line.part.0",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "region": "pal",
+      "route": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        18,
+        19,
+        20
+      ],
+      "transitions": 79,
+      "minimumVisibleLoadingSeconds": 3.04,
+      "maximumAudioServiceGapFrames": 1,
+      "maximumBlackSeconds": 0.44,
+      "phase4ResultToMap": {
+        "name": "result-to-next-4",
+        "frames": 60,
+        "blackFrames": 6,
+        "longestBlack": 6,
+        "longestMusicStall": 1,
+        "longestFrozenPSGCache": 1,
+        "displayOffFrames": 3,
+        "loadingFrames": 0,
+        "visibleLoadingFrames": 0,
+        "functionsWhileAudioStalled": [
+          [
+            "line.part.0",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "region": "ntsc-b",
+      "route": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20
+      ],
+      "transitions": 79,
+      "minimumVisibleLoadingSeconds": 3.033333333333333,
+      "maximumAudioServiceGapFrames": 2,
+      "maximumBlackSeconds": 0.43333333333333335,
+      "phase4ResultToMap": {
+        "name": "result-to-next-4",
+        "frames": 70,
+        "blackFrames": 6,
+        "longestBlack": 6,
+        "longestMusicStall": 1,
+        "longestFrozenPSGCache": 1,
+        "displayOffFrames": 4,
+        "loadingFrames": 0,
+        "visibleLoadingFrames": 0,
+        "functionsWhileAudioStalled": [
+          [
+            "line.part.0",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "region": "pal-b",
+      "route": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20
+      ],
+      "transitions": 79,
+      "minimumVisibleLoadingSeconds": 3.04,
+      "maximumAudioServiceGapFrames": 1,
+      "maximumBlackSeconds": 0.44,
+      "phase4ResultToMap": {
+        "name": "result-to-next-4",
+        "frames": 60,
+        "blackFrames": 6,
+        "longestBlack": 6,
+        "longestMusicStall": 1,
+        "longestFrozenPSGCache": 1,
+        "displayOffFrames": 3,
+        "loadingFrames": 0,
+        "visibleLoadingFrames": 0,
+        "functionsWhileAudioStalled": [
+          [
+            "line.part.0",
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "results": [
+    {
+      "region": "ntsc",
+      "passed": true,
+      "defeatPhases": 20
+    },
+    {
+      "region": "pal",
+      "passed": true,
+      "defeatPhases": 20
+    }
+  ],
+  "shippingRomMatchesValidation": true,
+  "sourcesChangedSinceValidationSnapshot": []
+}

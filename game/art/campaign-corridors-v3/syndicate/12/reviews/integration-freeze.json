@@ -1,0 +1,8 @@
+{
+  "phase": "12",
+  "status": "frozen_after_parent_native_composition_acceptance",
+  "parent_acceptance": "Parent reviewed the complete native panorama and320px poses, accepted for integrated ROM runtime review, and froze source/banks/manifest.",
+  "scope": "Private source/build/manifest/native data only; no shared runtime resources or ROM built here.",
+  "runtime_status": "Pending final integrated ROM captures and central tests. Earlier capture reports are diagnostic snapshots of earlier hashes.",
+  "mutations_allowed": "Review JSON/images only until a real failure is reported to parent."
+}

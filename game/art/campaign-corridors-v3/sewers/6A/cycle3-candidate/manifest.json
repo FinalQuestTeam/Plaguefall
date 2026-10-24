@@ -1,0 +1,526 @@
+{
+  "phase": "6A",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    24,
+    80,
+    3047,
+    271
+  ],
+  "start": [
+    40,
+    224
+  ],
+  "route_points": [
+    [
+      48,
+      232
+    ],
+    [
+      280,
+      232
+    ],
+    [
+      544,
+      232
+    ],
+    [
+      648,
+      240
+    ],
+    [
+      776,
+      240
+    ],
+    [
+      848,
+      240
+    ],
+    [
+      880,
+      216
+    ],
+    [
+      880,
+      168
+    ],
+    [
+      1000,
+      168
+    ],
+    [
+      1168,
+      144
+    ],
+    [
+      1248,
+      136
+    ],
+    [
+      1360,
+      136
+    ],
+    [
+      1480,
+      136
+    ],
+    [
+      1552,
+      96
+    ],
+    [
+      1840,
+      96
+    ],
+    [
+      1840,
+      216
+    ],
+    [
+      2096,
+      216
+    ],
+    [
+      2160,
+      248
+    ],
+    [
+      2344,
+      248
+    ],
+    [
+      2432,
+      248
+    ],
+    [
+      2544,
+      248
+    ],
+    [
+      2688,
+      200
+    ],
+    [
+      2824,
+      200
+    ],
+    [
+      3016,
+      176
+    ]
+  ],
+  "route_points_are": "centers",
+  "pauses": [
+    2,
+    10,
+    15,
+    19
+  ],
+  "exit": [
+    2976,
+    152,
+    64,
+    64
+  ],
+  "solids": [
+    [
+      0,
+      0,
+      3072,
+      80,
+      false
+    ],
+    [
+      2128,
+      80,
+      944,
+      8,
+      false
+    ],
+    [
+      0,
+      80,
+      824,
+      16,
+      false
+    ],
+    [
+      1272,
+      80,
+      184,
+      16,
+      false
+    ],
+    [
+      2128,
+      88,
+      416,
+      24,
+      false
+    ],
+    [
+      2128,
+      112,
+      32,
+      72,
+      false
+    ],
+    [
+      2352,
+      112,
+      192,
+      72,
+      false
+    ],
+    [
+      664,
+      96,
+      160,
+      112,
+      false
+    ],
+    [
+      0,
+      96,
+      24,
+      176,
+      false
+    ],
+    [
+      1272,
+      176,
+      184,
+      96,
+      false
+    ],
+    [
+      2128,
+      264,
+      416,
+      8,
+      false
+    ],
+    [
+      3048,
+      88,
+      24,
+      184,
+      false
+    ],
+    [
+      0,
+      272,
+      3072,
+      48,
+      false
+    ],
+    [
+      112,
+      32,
+      56,
+      80,
+      true
+    ],
+    [
+      80,
+      72,
+      144,
+      32,
+      true
+    ],
+    [
+      80,
+      184,
+      320,
+      32,
+      true
+    ],
+    [
+      224,
+      112,
+      176,
+      32,
+      true
+    ],
+    [
+      384,
+      128,
+      96,
+      88,
+      true
+    ],
+    [
+      1656,
+      112,
+      160,
+      32,
+      true
+    ],
+    [
+      1648,
+      144,
+      8,
+      96,
+      true
+    ],
+    [
+      1816,
+      144,
+      8,
+      96,
+      true
+    ],
+    [
+      1656,
+      240,
+      160,
+      32,
+      true
+    ],
+    [
+      1672,
+      128,
+      128,
+      104,
+      true
+    ],
+    [
+      2192,
+      120,
+      128,
+      104,
+      true
+    ],
+    [
+      2480,
+      104,
+      56,
+      80,
+      true
+    ],
+    [
+      2496,
+      200,
+      24,
+      32,
+      true
+    ],
+    [
+      2848,
+      112,
+      160,
+      32,
+      true
+    ],
+    [
+      2896,
+      80,
+      32,
+      32,
+      true
+    ],
+    [
+      2848,
+      72,
+      48,
+      48,
+      true
+    ],
+    [
+      2928,
+      48,
+      64,
+      80,
+      true
+    ],
+    [
+      80,
+      104,
+      144,
+      80,
+      false
+    ],
+    [
+      224,
+      144,
+      176,
+      40,
+      false
+    ],
+    [
+      912,
+      80,
+      48,
+      64,
+      false
+    ],
+    [
+      912,
+      192,
+      48,
+      80,
+      false
+    ],
+    [
+      1656,
+      144,
+      160,
+      96,
+      false
+    ],
+    [
+      2496,
+      184,
+      24,
+      16,
+      false
+    ]
+  ],
+  "gates": [],
+  "valves": [],
+  "valve_approaches": [],
+  "gate_shot_approaches": [],
+  "camera_interest": [
+    {
+      "name": "Cisterna e arco",
+      "bbox": [
+        72,
+        32,
+        168,
+        184
+      ],
+      "preferred_feet": [
+        40,
+        200
+      ]
+    },
+    {
+      "name": "Ponte inteira",
+      "bbox": [
+        880,
+        136,
+        112,
+        96
+      ],
+      "preferred_feet": [
+        872,
+        160
+      ]
+    },
+    {
+      "name": "Ilha de bombas",
+      "bbox": [
+        1648,
+        112,
+        176,
+        160
+      ],
+      "preferred_feet": [
+        1832,
+        192
+      ]
+    },
+    {
+      "name": "Recuo de manutenção",
+      "bbox": [
+        2160,
+        112,
+        192,
+        152
+      ],
+      "preferred_feet": [
+        2336,
+        240
+      ]
+    },
+    {
+      "name": "Abrigo",
+      "bbox": [
+        2848,
+        48,
+        160,
+        96
+      ],
+      "preferred_feet": [
+        3008,
+        168
+      ]
+    }
+  ],
+  "camera_player_y": 200,
+  "camera_player_y_samples": [
+    184,
+    200,
+    248
+  ],
+  "sourcePaths": [
+    "source/whole-v1.png",
+    "source/whole-v2-clean.png"
+  ],
+  "assembly_notes": [
+    [
+      "cistern",
+      [
+        72,
+        32,
+        408,
+        184
+      ]
+    ],
+    [
+      "bridge",
+      [
+        896,
+        48,
+        80,
+        256
+      ]
+    ],
+    [
+      "pump-island",
+      [
+        1648,
+        112,
+        176,
+        160
+      ]
+    ],
+    [
+      "refuge",
+      [
+        2848,
+        48,
+        160,
+        96
+      ]
+    ]
+  ],
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin",
+    "image": "complete-native.png",
+    "objectives": "complete-objectives.png"
+  },
+  "memory": {
+    "scene_tiles": 556,
+    "objective_tiles": 0,
+    "total_tiles": 556,
+    "budget": 640,
+    "approximate_tile_replacements": 0
+  },
+  "status": "private_candidate_pending_final_geometry_and_visual_review",
+  "geometry_checks": {
+    "actor_feet": [
+      16,
+      16
+    ],
+    "margin": 8,
+    "swept_samples": 3200,
+    "reachable_centers": 4448,
+    "arrival_connected": true
+  }
+}

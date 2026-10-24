@@ -1,0 +1,150 @@
+{
+  "favela_tiles": 492,
+  "union_tiles": 620,
+  "favela_bounds": [
+    40,
+    160,
+    727,
+    335
+  ],
+  "union_bounds": [
+    24,
+    160,
+    487,
+    295
+  ],
+  "favela_solids": [
+    [
+      40,
+      208,
+      112,
+      104
+    ],
+    [
+      248,
+      224,
+      136,
+      24
+    ],
+    [
+      448,
+      272,
+      136,
+      24
+    ]
+  ],
+  "cargo_solids": [
+    [
+      216,
+      184,
+      32,
+      8
+    ],
+    [
+      376,
+      184,
+      32,
+      8
+    ],
+    [
+      536,
+      184,
+      32,
+      8
+    ],
+    [
+      200,
+      304,
+      32,
+      8
+    ],
+    [
+      608,
+      312,
+      32,
+      8
+    ]
+  ],
+  "cargo_solids_dynamic_until_collected": true,
+  "union_solids": [
+    [
+      80,
+      264,
+      104,
+      16
+    ],
+    [
+      216,
+      208,
+      104,
+      16
+    ],
+    [
+      352,
+      264,
+      104,
+      16
+    ]
+  ],
+  "cargo": [
+    [
+      232,
+      184
+    ],
+    [
+      392,
+      184
+    ],
+    [
+      552,
+      184
+    ],
+    [
+      216,
+      304
+    ],
+    [
+      624,
+      312
+    ]
+  ],
+  "depot": [
+    104,
+    328
+  ],
+  "transmitters": [
+    [
+      200,
+      176
+    ],
+    [
+      416,
+      304
+    ],
+    [
+      664,
+      232
+    ]
+  ],
+  "worlds": {
+    "7/8": [
+      768,
+      384
+    ],
+    "13A/13B": [
+      512,
+      384
+    ]
+  },
+  "whole_source_first": true,
+  "pixel_exact_reassembly": true,
+  "lossy_tile_replacements": 0,
+  "dinorah_occluded_below_y": 108,
+  "source_favela_crop": [
+    0,
+    128,
+    1774,
+    887
+  ],
+  "roof_and_prop_extents_review_required": true
+}

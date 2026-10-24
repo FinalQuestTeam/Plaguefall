@@ -25,10 +25,18 @@ static void spawnEShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 dmg, u8 style)
         eshots[i].dmg = dmg;
         eshots[i].mode = style;
         eshots[i].active = TRUE;
+        eshots[i].renderPose=0;
         return;
     }
 }
 
+static s32 aimedVelocity(s16 delta,u32 distance)
+{
+    const s32 numerator=(s32)delta*(ESHOT_SPEED*64);
+    // The normalized two-pixel velocity fits s16. Retain the long-divide
+    // fallback for a divisor outside the signed hardware instruction range.
+    return distance<=32767 ? divs(numerator,distance) : numerator/(s32)distance;
+}
 void fireEnemyShot(s16 ex, s16 ey, u8 style)
 {
     s16 dx = shotTargetX - (ex + 8);
@@ -37,8 +45,8 @@ void fireEnemyShot(s16 ex, s16 ey, u8 style)
     if (dist == 0) dist = 1;
 
     spawnEShot((s32) (ex + 4) << 6, (s32) (ey + 4) << 6,
-               ((s32) dx * ESHOT_SPEED << 6) / (s32) dist,
-               ((s32) dy * ESHOT_SPEED << 6) / (s32) dist, ESHOT_DAMAGE, style);
+               aimedVelocity(dx,dist),
+               aimedVelocity(dy,dist), ESHOT_DAMAGE, style);
     SFX_enemyShot();
 }
 
@@ -49,8 +57,8 @@ void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg, u8 style)
     u32 dist = getApproximatedDistance(dx, dy);
     if (dist == 0) { dx = 1; dist = 1; }
 
-    const s32 bvx = ((s32) dx * ESHOT_SPEED << 6) / (s32) dist;
-    const s32 bvy = ((s32) dy * ESHOT_SPEED << 6) / (s32) dist;
+    const s32 bvx = aimedVelocity(dx,dist);
+    const s32 bvy = aimedVelocity(dy,dist);
     const s32 fx = (s32) (ex + 4) << 6, fy = (s32) (ey + 4) << 6;
 
     // rotação aproximada por cisalhamento: ~18° por passo (k = s/3)
@@ -66,8 +74,9 @@ void fireEnemySpread(s16 ex, s16 ey, u8 count, u8 style)
     fireEnemySpreadDmg(ex, ey, count, ESHOT_DAMAGE, style);
 }
 
-void SHOTS_updateEnemy(void)
+__attribute__((noinline)) void SHOTS_updateEnemy(void)
 {
+    bool allyAlive=DINORAH_alive();
     for (u16 i = 0; i < MAX_ESHOTS; i++)
     {
         if (!eshots[i].active) continue;
@@ -85,10 +94,10 @@ void SHOTS_updateEnemy(void)
             continue;
         }
 
-        if(DINORAH_alive()) {
+        if(allyAlive) {
             const s16 ax=sx+4-dinorahX-8,ay=sy+4-dinorahY-8;
             if(ax>=-10 && ax<=10 && ay>=-10 && ay<=10 && ax*ax+ay*ay<=100) {
-                eshots[i].active=FALSE;DINORAH_damage(eshots[i].dmg);continue;
+                eshots[i].active=FALSE;DINORAH_damage(eshots[i].dmg);allyAlive=DINORAH_alive();continue;
             }
         }
         // colisão com o círculo do jogador (raio 7 + raio do tiro 3)

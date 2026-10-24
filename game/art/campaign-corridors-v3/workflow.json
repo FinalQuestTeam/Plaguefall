@@ -1,0 +1,107 @@
+{
+  "scope": [
+    "3",
+    "6A",
+    "6B",
+    "9",
+    "12"
+  ],
+  "authorization": "Implementar no game o redesenho dos cinco corredores reprovados. Execução em paralelo autorizada no trabalho anterior.",
+  "baseline_rom_sha256": "66aba7c700e66511a54c74133aaba24817341e56a5843d27e17877655cf61e84",
+  "story_lengths": {
+    "3": 2560,
+    "6A": 3072,
+    "6B": 3072,
+    "9": 2560,
+    "12": 3072
+  },
+  "world_height": 320,
+  "physics": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "route_clearance_pixels": 8,
+    "target_open_depth": 160,
+    "target_passage_width": 32,
+    "collision_words_per_mask": 512,
+    "largest_world_words": 480
+  },
+  "graphic_tiles": {
+    "background_plus_objectives": 640,
+    "6B_background": 384,
+    "6B_objective_reserve": 256
+  },
+  "ownership": {
+    "fabrica": [
+      "3",
+      "9"
+    ],
+    "esgotos_escolta": [
+      "6A",
+      "6B"
+    ],
+    "estaleiro_final": [
+      "12"
+    ],
+    "root": "Integração dos geradores e C compartilhado, revisão visual, ROM e testes."
+  },
+  "acceptance": [
+    "O panorama precisa mostrar pelo menos três espaços distintos conectados, perceptíveis pela implantação da arquitetura e pelo percurso.",
+    "A faixa superior e a inferior não são linhas fixas: recuos, volumes e pátios precisam modificar a forma do campo.",
+    "A câmera deve revelar estrutura, aproximação e chegada; telas vazias não podem dominar o caminho.",
+    "Construções e objetos mantêm escala, projeção, silhueta completa, sombra de contato e base física.",
+    "Materiais e módulos inteiros podem se repetir; intervalos e silhuetas não devem repetir uma única fórmula durante todo o percurso.",
+    "O projeto geométrico deve permitir o caminho de Damião e de Dinorah, com margem de navegação e interações acessíveis.",
+    "6B deve ficar bloqueada pelos portões fechados e liberar passagens claras depois do colapso.",
+    "Fontes inteiras e composição nativa são revisadas antes da integração. Nenhum teste técnico aprova a composição visual.",
+    "Comparar o antes e depois tanto em panoramas quanto em câmeras reais da ROM final."
+  ],
+  "invariants": [
+    "As outras14composições permanecem preservadas.",
+    "História, objetivos e oito percursos de consequências permanecem válidos.",
+    "A igreja da3 mantém identidade e estado intacto ou arruinado.",
+    "6B preserva válvulas, quatro tiros e colapso de0,8s antes da abertura.",
+    "Sem compilação ou testes globais simultâneos pelos agentes."
+  ],
+  "production_flow": [
+    "Imagem inteira da sequência espacial",
+    "Revisão das construções e dos contornos",
+    "Extração de materiais e componentes completos",
+    "Composição nativa com módulos nítidos e repetíveis",
+    "Revisão do panorama e de vistas320x224",
+    "Validação geométrica com pés16x16 e folga de navegação",
+    "Exportação exata4bpp para aROM",
+    "Playtests NTSC/PAL, mecanismo, colisão, percurso e carga",
+    "Revisão das câmeras reais e publicação das evidências da mesmaROM"
+  ],
+  "rejected_approaches": [
+    "Aprovação estética baseada somente em orçamento ou testes",
+    "Faixa uniforme com poucos objetos isolados",
+    "Repetir uma parede que já contém portas ou lampiões como se fosse material limpo",
+    "Amostrar a cena inteira em4px e perder silhuetas, aberturas e identidade",
+    "Colisões sem correspondência com água, muros e construções visíveis"
+  ],
+  "authoritative_art_references": [
+    "game/doc/historia/guia-producao-visual-fases.md",
+    "game/doc/historia/storyboard-campanha.md",
+    "game/art/phase01-courtyard-v2/intact-native.png",
+    "game/art/phase04-tunnels-v1/map-native.png"
+  ],
+  "correction_contract": "corrections/contract.json",
+  "continuous_camera_review": {
+    "viewport": [
+      320,
+      224
+    ],
+    "step_x_pixels": 160,
+    "include_intervals_between_landmarks": true,
+    "entire_scene_before_native_export": true
+  },
+  "independent_delivery_gates": [
+    "artistic_reference_and_whole_scene_review",
+    "native_memory_collision_and_compiled_bank_provenance",
+    "same_rom_gameplay_branches_and_region_tests",
+    "same_rom_configured_load_frame_budget"
+  ]
+}

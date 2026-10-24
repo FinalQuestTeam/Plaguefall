@@ -1,0 +1,277 @@
+[
+  {
+    "slug": "01-igreja-rua-galpao",
+    "title": "Kit 1 Igreja rua e galpão",
+    "elements": [
+      [
+        "K1A",
+        "Porta e parede da igreja",
+        "96x64",
+        "1, 2A, 2B",
+        "Adaptar",
+        "Reboco, telhas, porta azul; encaixe modular."
+      ],
+      [
+        "K1B",
+        "Destroços da igreja",
+        "64x48",
+        "2B e epílogo",
+        "Novo",
+        "Separar entulho baixo atravessável de bloco alto sólido."
+      ],
+      [
+        "K1C",
+        "Esquina e piso urbano",
+        "64x64",
+        "3 e 9",
+        "Adaptar",
+        "Sarjeta e quina; leitura clara da rua."
+      ],
+      [
+        "K1D",
+        "Entrada do galpão",
+        "96x64",
+        "3, 4 e 5",
+        "Adaptar",
+        "Mesmo portão e mesmos materiais nas três fases."
+      ],
+      [
+        "K1E",
+        "Pilar industrial",
+        "32x64",
+        "4, 10, 11 e 13",
+        "Adaptar",
+        "Base de colisão pequena, topo visível."
+      ],
+      [
+        "K1F",
+        "Banco e barricada baixa",
+        "48x32",
+        "1, 2 e 5",
+        "Reutilizar",
+        "Cobertura visual sem inventar bloqueio de tiro."
+      ]
+    ],
+    "prompt": "A: modular whitewashed church wall with a small blue timber door and terracotta eave, no saint figure, cropped to a reusable architectural module, target 96x64 native.\nB: TWO rubble states side by side: low scattered broken terracotta and stones traversable, and one tall coherent collapsed masonry chunk that blocks movement, target 64x48 each. Different silhouettes, no people.\nC: reusable dusty concrete street corner module with curb, gutter and a short wall corner, target 64x64. Avoid a scenic background.\nD: recognizable corrugated metal warehouse entry module with faded blue sliding door and a short canopy, target 96x64; clear ground threshold.\nE: one rusted warehouse structural pillar on a concrete footing, overhead view shows its top plate, target 32x64.\nF: one low wooden church bench used as an improvised barricade with a folded red blanket, target 48x32, low profile, no tall walls."
+  },
+  {
+    "slug": "02-esgotos-favela",
+    "title": "Kit 2 Esgotos e favela",
+    "elements": [
+      [
+        "K2A",
+        "Arco e canal de esgoto",
+        "96x64",
+        "6A e 6B",
+        "Novo",
+        "Borda seca, canal e parede com encaixes."
+      ],
+      [
+        "K2B",
+        "Válvula de pressão",
+        "32x32",
+        "6B e 11",
+        "Adaptar",
+        "Fechada, acionando, aberta; ponto de uso ao sul."
+      ],
+      [
+        "K2C",
+        "Portão e batentes",
+        "64x64",
+        "6B e 12",
+        "Adaptar",
+        "Folha estreita no muro; batentes permanecem após abertura."
+      ],
+      [
+        "K2D",
+        "Bocal e vapor",
+        "32x32 + FX",
+        "6B e 11",
+        "Novo",
+        "Vapor anunciado antes de bloquear ou ferir."
+      ],
+      [
+        "K2E",
+        "Módulo de casa da favela",
+        "96x64",
+        "7 e 8",
+        "Novo",
+        "Tijolo, laje, caixa d'água; preservar espaço de combate."
+      ],
+      [
+        "K2F",
+        "Depósito de entrega",
+        "64x48",
+        "7",
+        "Adaptar",
+        "Recebendo carga e completo; diferente das cinco coletas."
+      ]
+    ],
+    "prompt": "A: sewer brick arch and pipe-wall module attached to a narrow section of dry maintenance walkway beside a dark drainage channel, target 96x64; module only, not a full tunnel scene.\nB: TWO aligned states of one existing-style rusted pressure valve on a squat pipe base: closed handle up, open handle turned with a small pressure gauge lowered. Target 32x32 each, red wheel visible from overhead.\nC: TWO aligned states of the same narrow iron gate mounted along a NORTH-SOUTH wall axis: standing closed and fallen east, with permanent top and bottom stone jambs. Target 64x64 each. Leaf fits thickness of wall, not a broad theatrical door.\nD: steam outlet/nozzle in two small states: dark idle nozzle and short pale pixelated steam jet from SAME nozzle. Target 32x32 base with restrained 32x48 FX silhouette. No fog over neighboring cells.\nE: compact favela house wall and roof module of unfinished brick, patched concrete flat roof with small blue water tank and cable, target 96x64. No complete neighborhood scene.\nF: resistance supply delivery shelf under a small canvas cover with several neatly stored water cans and medical boxes, and a clear empty receiving bay, target 64x48. No readable letters or modern glowing quest marker."
+  },
+  {
+    "slug": "03-objetivos",
+    "title": "Kit 3 Objetivos e sinais de interação",
+    "elements": [
+      [
+        "K3A",
+        "Caixa de suprimentos",
+        "32x32",
+        "7",
+        "Adaptar",
+        "Fechada, abrindo e vazia; cinco instâncias, uma família."
+      ],
+      [
+        "K3B",
+        "Carga transportada",
+        "16x16",
+        "7",
+        "Adaptar",
+        "Bornal com marca de missão; não recuperar inventário de morte."
+      ],
+      [
+        "K3C",
+        "Inseto transmissor",
+        "32x32",
+        "8",
+        "Reutilizar",
+        "Pulsando, atingido, antena quebrada."
+      ],
+      [
+        "K3D",
+        "Conjunto de ovos",
+        "48x48",
+        "10",
+        "Adaptar",
+        "Intacto, atingido, rompendo, destruído persistente."
+      ],
+      [
+        "K3E",
+        "Gerador de energia",
+        "32x32",
+        "14",
+        "Reutilizar",
+        "Desligado, acionando e energizado; cinco instâncias."
+      ],
+      [
+        "K3F",
+        "Marco de saída e interação",
+        "16x16",
+        "3, 6, 7, 9 e 12",
+        "Adaptar",
+        "Marcas de piso discretas e coerentes com o HUD existente."
+      ]
+    ],
+    "prompt": "A: TWO states of one rugged existing-style wooden/metal supply crate: closed with latch and open with visibly empty interior, target 32x32 each. Do not draw exploding crate or treasure gold.\nB: one SMALL leather cangaceiro supply satchel with a tiny pale cyan cloth mission tag, target 16x16, simple high-contrast silhouette. One bag only, no huge icon, no arrows. Style matches existing recovery bornal but mission tag distinguishes cargo.\nC: TWO states of the same existing-style cyber-insect transmitter: alive with bent luminous antenna pulse, and collapsed dead with visibly snapped antenna. Target 32x32 each, NOT a giant boss, no new monster family.\nD: THREE aligned states of same egg clutch: whole membrane around several small eggs, cracked membrane, empty ruptured shell remains. Target 48x48 each. No dynamite, no bomb planted on nest, no fire ignition required.\nE: TWO states of one existing squat copper/iron power generator: dark OFF with lever up, then energized with lever down and small cyan coil pulse, target 32x32 each, not a tall modern science-fiction tower.\nF: TWO tiny world floor markers: a short chalk/paint exit chevron beside a bolted threshold and a small circular interaction footprint at the south edge of a generic service plate. Target 16x16 each. These are quiet material floor paint, not floating UI, no text or numbers."
+  },
+  {
+    "slug": "04-fabrica-estaleiro",
+    "title": "Kit 4 Fábrica e estaleiro",
+    "elements": [
+      [
+        "K4A",
+        "Tubulação modular",
+        "64x48",
+        "6, 10, 11 e 14",
+        "Adaptar",
+        "Retas, curva e junção com mesmas bordas."
+      ],
+      [
+        "K4B",
+        "Caldeira da fábrica",
+        "64x64",
+        "10 e 11",
+        "Novo",
+        "Fria e quente; cascas vazias não viram ovos novos."
+      ],
+      [
+        "K4C",
+        "Painel de manutenção",
+        "48x48",
+        "11, 13A, 13B e 14",
+        "Adaptar",
+        "Desligado, preparado e ativo."
+      ],
+      [
+        "K4D",
+        "Quadro de distribuição",
+        "48x48",
+        "14 e 15",
+        "Novo",
+        "Condutores e alavanca; distingue energia de ignição."
+      ],
+      [
+        "K4E",
+        "Bocal de motor do foguete",
+        "96x96",
+        "15 e 16",
+        "Novo",
+        "Apagado e aceso; grande estrutura no cenário."
+      ],
+      [
+        "K4F",
+        "Piso de lançamento",
+        "96x64",
+        "12, 14, 15 e 16",
+        "Novo",
+        "Placa repetível, canal técnico e manchas queimadas."
+      ]
+    ],
+    "prompt": "A: compact modular rusted blue industrial pipe set: straight segment, elbow and T junction, shown as one family inside cell, each up to 64x48 native; same orthographic camera and same pipe thickness.\nB: TWO states of same short factory boiler assembly: cold dark and hot amber vents, target 64x64 each. Metal and gauges, no flames filling room, no intact eggs reappearing.\nC: TWO states of rugged maintenance console viewed from above, monitor dark and monitor displaying simple cyan bars WITHOUT words, slanted keyboard, target 48x48.\nD: one electrical distribution cabinet with lever and thick insulated cables exiting downward, target 48x48. Small OFF and ready lamps but no rocket flame; this device distributes power, not an engine itself.\nE: TWO states of SAME rocket engine nozzle assembly attached to a short base gantry: idle dark nozzle and activated short amber exhaust flame jet with charcoal egg husks beneath, target 96x96 each. This is a prop module, no whole rocket, no launch scene, do not add stars or space.\nF: one isolated rectangular launchpad floor module, target 96x64, riveted steel plates, recessed service channel, one scorch patch and one safe lane edge. Keep floor subdued and traversable, not a floating diorama island."
+  },
+  {
+    "slug": "05-estados-narrativos",
+    "title": "Kit 5 Defesa estados e consequências",
+    "elements": [
+      [
+        "K5A",
+        "Rádio de controle",
+        "32x32",
+        "5 e 15",
+        "Reutilizar",
+        "Transmitindo, danificado e destruído; distinguir missão de decoração."
+      ],
+      [
+        "K5B",
+        "Mastro de sinal",
+        "48x64",
+        "5 e 15",
+        "Novo",
+        "Complementar o comunicador; Santa existente preservada."
+      ],
+      [
+        "K5C",
+        "Armário dos trabalhadores",
+        "48x64",
+        "13A e 13B",
+        "Novo",
+        "Mesmo cômodo nas duas rotas; decoração fora do corredor."
+      ],
+      [
+        "K5D",
+        "Chapéu e ferramentas de Dinorah",
+        "32x32",
+        "13B e epílogo",
+        "Novo",
+        "Somente na rota de morte; sem fantasma ou fala nova."
+      ],
+      [
+        "K5E",
+        "Civis para interlúdios",
+        "32x48",
+        "abertura, 5 e epílogo",
+        "Adaptar",
+        "Silhuetas distintas; cenas de evacuação, não nova escolta jogável."
+      ],
+      [
+        "K5F",
+        "Ferrão e aviso de impacto",
+        "48x48 + FX",
+        "16",
+        "Adaptar",
+        "Manter Escorpião; referência de leitura do ataque, sem redesenhar o chefe."
+      ]
+    ],
+    "prompt": "A: THREE tiny aligned states of the existing rugged portable radio data-link cabinet with antenna: transmitting small cyan pulse, damaged with tilted antenna, destroyed charred wreck. Target 32x32 each, no readable UI or text.\nB: two states of a compact collapsible communications antenna mast with a ground cable and small battery box, dark and lit, target 48x64 each. DO NOT draw or redesign a saint statue. This is support equipment for the already-existing Santa and radio.\nC: one worn workers locker with small rust-red cloth hanging on edge and a folded work jacket, seen from above, target 48x64; recognizable union/workshop era but no letters or slogans.\nD: a small respectful arrangement of Dinorah's rust-red riveted cangaceiro metal hat, a wrench and her technical satchel, target 32x32. Use reference woman's equipment identity. No body, face, ghost, religious altar or candles; this is an optional memorial prop only if she died.\nE: TWO different ordinary Brazilian sertao civilian sprites, an elderly woman with scarf and a younger adult worker in plain shirt, target 32x48 each, seen from same elevated camera as hero. Not soldiers, not copies of Damiao or Dinorah, no weapons. One static waiting pose each, relaxed silhouette.\nF: a study of the EXISTING yellow-ochre cybernetic Scorpion's articulated tail tip, target 48x48, one raised poised stinger and one lowered strike silhouette with a small ground dust ring. Preserve its yellow metal-organic shell; do not invent a new boss or draw a full monster."
+  }
+]

@@ -1,0 +1,618 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "rom": "/private/tmp/plaguefall-guidebook-milestones/748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77/rom.bin",
+  "isolated_build": true,
+  "method": "RAM only prepares isolated nodes/collision/load probes; ordinary matches enable a write guard and use controller only. FPS derived from logical phase frames / VBlanks, not host time.",
+  "stages": [
+    {
+      "phase": "01",
+      "node": 1,
+      "checks": {
+        "01/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              24,
+              128,
+              487,
+              351
+            ],
+            "target": 90,
+            "atlas_tiles": 636,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "01/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 5600,
+            "camera_return_checked": true
+          }
+        },
+        "01/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 16,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "free_positions": 1383,
+              "reachable_positions": 1383,
+              "all_free_positions_connected": true
+            }
+          }
+        },
+        "01/load": {
+          "passed": true,
+          "details": {
+            "frames": 597,
+            "vblanks": 600,
+            "fps": 59.7,
+            "nominal_region_fps": 60,
+            "cpu_mean_pct": 65.55,
+            "cpu_p95_pct": 72.46,
+            "peak_enemies": 4,
+            "peak_player_shots": 6,
+            "peak_enemy_shots": 6,
+            "setup": "4 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+          }
+        },
+        "01/timer-victory": {
+          "passed": true,
+          "details": {
+            "seconds": 90,
+            "remaining_timer_at_start": 5340,
+            "logical_frames_until_completion": 5340,
+            "physical_seconds": 89.03,
+            "timer_never_patched": true
+          }
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 52.23,
+          "physical_seconds": 53.68,
+          "fps": 58.38,
+          "kills": 8,
+          "hp": 0,
+          "minimum_npc_hp": null,
+          "peak_enemies": 4,
+          "damage_events": 13,
+          "ram_writes_during_attempt": false
+        }
+      ]
+    },
+    {
+      "phase": "02A",
+      "node": 2,
+      "checks": {
+        "02A/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              24,
+              128,
+              487,
+              351
+            ],
+            "target": 15,
+            "atlas_tiles": 636,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "02A/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 5600,
+            "camera_return_checked": true
+          }
+        },
+        "02A/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 16,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "free_positions": 1383,
+              "reachable_positions": 1383,
+              "all_free_positions_connected": true
+            }
+          }
+        },
+        "02A/load": {
+          "passed": true,
+          "details": {
+            "frames": 598,
+            "vblanks": 600,
+            "fps": 59.8,
+            "nominal_region_fps": 60,
+            "cpu_mean_pct": 65.09,
+            "cpu_p95_pct": 72.07,
+            "peak_enemies": 4,
+            "peak_player_shots": 6,
+            "peak_enemy_shots": 6,
+            "setup": "4 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+          }
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 74.23,
+          "physical_seconds": 75.65,
+          "fps": 58.88,
+          "kills": 13,
+          "hp": 0,
+          "minimum_npc_hp": null,
+          "peak_enemies": 3,
+          "damage_events": 10,
+          "ram_writes_during_attempt": false
+        }
+      ]
+    },
+    {
+      "phase": "02B",
+      "node": 3,
+      "checks": {
+        "02B/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              24,
+              128,
+              487,
+              351
+            ],
+            "target": 15,
+            "atlas_tiles": 603,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "02B/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 5600,
+            "camera_return_checked": true
+          }
+        },
+        "02B/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 28,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "free_positions": 1263,
+              "reachable_positions": 1263,
+              "all_free_positions_connected": true
+            }
+          }
+        },
+        "02B/load": {
+          "passed": true,
+          "details": {
+            "frames": 598,
+            "vblanks": 600,
+            "fps": 59.8,
+            "nominal_region_fps": 60,
+            "cpu_mean_pct": 65.28,
+            "cpu_p95_pct": 72.02,
+            "peak_enemies": 4,
+            "peak_player_shots": 6,
+            "peak_enemy_shots": 6,
+            "setup": "4 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+          }
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 42.22,
+          "physical_seconds": 43.62,
+          "fps": 58.07,
+          "kills": 6,
+          "hp": 0,
+          "minimum_npc_hp": null,
+          "peak_enemies": 4,
+          "damage_events": 11,
+          "ram_writes_during_attempt": false
+        }
+      ]
+    },
+    {
+      "phase": "03",
+      "node": 4,
+      "checks": {
+        "03/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              16,
+              80,
+              2543,
+              303
+            ],
+            "target": null,
+            "atlas_tiles": 554,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "03/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 5600,
+            "camera_return_checked": true
+          }
+        },
+        "03/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 49,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "free_positions": 6183,
+              "reachable_positions": 6183,
+              "all_free_positions_connected": true,
+              "swept16pxSamples": 2926
+            }
+          }
+        },
+        "03/load": {
+          "passed": true,
+          "details": {
+            "frames": 598,
+            "vblanks": 600,
+            "fps": 59.8,
+            "nominal_region_fps": 60,
+            "cpu_mean_pct": 69.82,
+            "cpu_p95_pct": 80.32,
+            "peak_enemies": 4,
+            "peak_player_shots": 6,
+            "peak_enemy_shots": 6,
+            "setup": "4 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+          }
+        },
+        "03/full-controller-traversal": {
+          "passed": true,
+          "details": {
+            "controller_only": true,
+            "combat_isolated": true,
+            "passed": true,
+            "waypoints": 15,
+            "samples": [
+              [
+                34,
+                184
+              ],
+              [
+                270,
+                184
+              ],
+              [
+                424,
+                98
+              ],
+              [
+                664,
+                98
+              ],
+              [
+                804,
+                198
+              ],
+              [
+                1044,
+                198
+              ],
+              [
+                1260,
+                222
+              ],
+              [
+                1500,
+                222
+              ],
+              [
+                1616,
+                98
+              ],
+              [
+                1856,
+                98
+              ],
+              [
+                2070,
+                124
+              ],
+              [
+                2204,
+                230
+              ]
+            ],
+            "seconds": 23.8,
+            "physical_seconds": 23.85
+          }
+        },
+        "03/church-continuity": {
+          "passed": true,
+          "details": {
+            "passed": true,
+            "variants": [
+              {
+                "ruined": false,
+                "tiles_compared": 1000
+              },
+              {
+                "ruined": true,
+                "tiles_compared": 1000
+              }
+            ],
+            "original_native_church": true
+          }
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "completed",
+          "objective_failed": false,
+          "game_seconds": 23.8,
+          "physical_seconds": 23.82,
+          "fps": 59.96,
+          "kills": 0,
+          "hp": 92,
+          "minimum_npc_hp": null,
+          "peak_enemies": 2,
+          "damage_events": 1,
+          "ram_writes_during_attempt": false
+        }
+      ]
+    },
+    {
+      "phase": "04",
+      "node": 5,
+      "checks": {
+        "04/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              32,
+              104,
+              479,
+              263
+            ],
+            "target": 20,
+            "atlas_tiles": 602,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "04/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 5600,
+            "camera_return_checked": true
+          }
+        },
+        "04/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 14,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "free_positions": 800,
+              "reachable_positions": 800,
+              "all_free_positions_connected": true
+            }
+          }
+        },
+        "04/load": {
+          "passed": true,
+          "details": {
+            "frames": 598,
+            "vblanks": 600,
+            "fps": 59.8,
+            "nominal_region_fps": 60,
+            "cpu_mean_pct": 73.23,
+            "cpu_p95_pct": 81.93,
+            "peak_enemies": 4,
+            "peak_player_shots": 6,
+            "peak_enemy_shots": 6,
+            "setup": "4 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+          }
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "timeout",
+          "objective_failed": false,
+          "game_seconds": 150.0,
+          "physical_seconds": 150.0,
+          "fps": 60.0,
+          "kills": 3,
+          "hp": 80,
+          "minimum_npc_hp": null,
+          "peak_enemies": 4,
+          "damage_events": 2,
+          "ram_writes_during_attempt": false
+        }
+      ]
+    },
+    {
+      "phase": "05",
+      "node": 6,
+      "checks": {
+        "05/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              16,
+              112,
+              367,
+              271
+            ],
+            "target": 120,
+            "atlas_tiles": 631,
+            "enemy_cap": 3,
+            "shots_each_pool": 6
+          }
+        },
+        "05/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 5600,
+            "camera_return_checked": true
+          }
+        },
+        "05/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 15,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "free_positions": 691,
+              "reachable_positions": 691,
+              "all_free_positions_connected": true
+            }
+          }
+        },
+        "05/load": {
+          "passed": true,
+          "details": {
+            "frames": 495,
+            "vblanks": 600,
+            "fps": 49.5,
+            "nominal_region_fps": 60,
+            "cpu_mean_pct": 89.86,
+            "cpu_p95_pct": 96.14,
+            "peak_enemies": 3,
+            "peak_player_shots": 6,
+            "peak_enemy_shots": 6,
+            "setup": "3 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+          }
+        },
+        "05/timer-victory": {
+          "passed": true,
+          "details": {
+            "seconds": 120,
+            "remaining_timer_at_start": 7142,
+            "logical_frames_until_completion": 7142,
+            "physical_seconds": 119.07,
+            "timer_never_patched": true
+          }
+        },
+        "05/abandonment-failure": {
+          "passed": true,
+          "details": {
+            "loss_after_seconds": 35.47,
+            "initial_hp": 180,
+            "contact_damage_events": [
+              {
+                "frame": 1,
+                "hp": 168
+              },
+              {
+                "frame": 152,
+                "hp": 156
+              },
+              {
+                "frame": 304,
+                "hp": 144
+              },
+              {
+                "frame": 456,
+                "hp": 132
+              },
+              {
+                "frame": 608,
+                "hp": 120
+              },
+              {
+                "frame": 760,
+                "hp": 108
+              },
+              {
+                "frame": 912,
+                "hp": 96
+              },
+              {
+                "frame": 1064,
+                "hp": 84
+              },
+              {
+                "frame": 1216,
+                "hp": 72
+              },
+              {
+                "frame": 1368,
+                "hp": 60
+              },
+              {
+                "frame": 1520,
+                "hp": 48
+              },
+              {
+                "frame": 1672,
+                "hp": 36
+              },
+              {
+                "frame": 1824,
+                "hp": 24
+              },
+              {
+                "frame": 1976,
+                "hp": 12
+              },
+              {
+                "frame": 2128,
+                "hp": 0
+              }
+            ],
+            "npc_hp_never_written": true
+          }
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 89.23,
+          "physical_seconds": 91.23,
+          "fps": 58.68,
+          "kills": 21,
+          "hp": 0,
+          "minimum_npc_hp": 60,
+          "peak_enemies": 3,
+          "damage_events": 11,
+          "ram_writes_during_attempt": false
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

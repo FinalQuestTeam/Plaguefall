@@ -12,6 +12,9 @@ TILE_DEFS=Path(os.environ.get('PLAGUEFALL_TILE_DEFS',str(GAME/'src/system/video/
 def tile_constant(name):return int(re.search(r'^#define\s+'+name+r'\s+(\d+)',TILE_DEFS,re.M).group(1))
 OBJECT_END=16+tile_constant('NUM_TILES')
 ICON_BASE=OBJECT_END+tile_constant('ENEMY_CACHE_TILES')
+import re
+CAMPAIGN_NODE_COUNT=len(re.findall(r'\bN_[A-Za-z0-9]+\b',re.search(r'typedef enum\s*\{(.*?)NODE_MAX',(GAME/'src/levels/graph.h').read_text(),re.S)[1]))
+
 CORE=Path.home()/'Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib'
 
 def png(path,w,h,rgb):
@@ -270,7 +273,7 @@ def main():
         enter(4);write(syms['flow_state'][0],struct.pack('>I',3));press(3)
         until(lambda:state()==6 and u8('radioActive')==1 and not u8('transitioning'),'skip-entry');run(3);press(3);prep()
         report['startSkipsPartialScene']=True
-        for node in range(1,21):
+        for node in range(1,CAMPAIGN_NODE_COUNT+1):
             restore(baseline);write(syms['pendingLevel'][0],bytes([node]));press(1)
             native_hud='countdownActive' in syms
             def countdown_active():return u8('countdownActive') if native_hud else u32('savedCountdown')!=0

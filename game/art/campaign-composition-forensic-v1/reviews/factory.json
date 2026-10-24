@@ -1,0 +1,618 @@
+{
+  "reviewer": "factory subagent, author of the audited composition",
+  "review_mode": "fresh forensic read-only; previous approvals discarded",
+  "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "prior_approval_used_as_evidence": false,
+  "runtime_art_modified": false,
+  "coordinate_convention": "All world/source rectangles are pixels; xywh or xyxy explicitly labeled. Source coordinates use the normalized dimensions consumed by the generator. Screen rectangles refer to320×224 captured output.",
+  "method": [
+    "Read complete ImageGen sources and canonical native maps, not just thumbnails",
+    "Read generator crop order and runtime placements/collision",
+    "Inspect current integrated NTSC captures and confirm report ROM SHA equals current release",
+    "Inspect whole-scene forensic boards with all10nests/all3valves and geometry",
+    "Inspect temporary nearest-neighbor zooms of source/native crops; no source/art/C/ROM changes",
+    "Count exact palette indices of exit defect and alpha intersections of valve poses with conveyor rectangles"
+  ],
+  "phases": [
+    {
+      "phase": "9",
+      "verdict": "requer_correcao",
+      "summary": "Três setores e quatro obstáculos existem, mas a saída contém erro de recorte confirmado; há suspeita de resíduos de piso no compressor.",
+      "findings": [
+        "FACTORY-09-01",
+        "FACTORY-09-02"
+      ],
+      "complete_board": "game/art/campaign-composition-forensic-v1/boards/9-whole.png"
+    },
+    {
+      "phase": "10",
+      "verdict": "reprovada",
+      "summary": "Os ninhos são legíveis e as bases estão no piso; a cena contém fragmentos de máquina sobre as esteiras, pilares cortados e gabinetes sem base sólida.",
+      "findings": [
+        "FACTORY-SCENE-01",
+        "FACTORY-SCENE-02",
+        "FACTORY-COLLISION-01",
+        "FACTORY-10-01"
+      ],
+      "complete_board": "game/art/campaign-composition-forensic-v1/boards/10-whole.png"
+    },
+    {
+      "phase": "11",
+      "verdict": "reprovada",
+      "summary": "Acumula fragmentos do cenário, sobreposição de duas válvulas às esteiras e perda de contexto arquitetônico no enquadramento principal.",
+      "findings": [
+        "FACTORY-SCENE-01",
+        "FACTORY-SCENE-02",
+        "FACTORY-COLLISION-01",
+        "FACTORY-11-01",
+        "FACTORY-11-02"
+      ],
+      "complete_board": "game/art/campaign-composition-forensic-v1/boards/11-whole.png"
+    }
+  ],
+  "findings": [
+    {
+      "id": "FACTORY-09-01",
+      "phases": [
+        "9"
+      ],
+      "severity": "P1",
+      "status": "confirmed",
+      "title": "Recorte maior que a imagem cria faixa preta na saída",
+      "description": "gate mede64×112. O recorte direito solicita y0..128 e o PIL completa16linhas com índice0. A guia repintada em y144..152 cobre só metade; sobram24×8pixels pretos no piso, em x2536..2559,y152..159. A captura real mostra a parte visível no canto direito. Não é falha de streaming: os pixels já estão pretos no mapa nativo.",
+      "world_rects_xywh": [
+        [
+          2536,
+          152,
+          24,
+          8
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 97,
+          "line_end": 105
+        },
+        {
+          "path": "game/art/campaign-whole-scenes-v1/factory/street-native.png",
+          "world_rect": [
+            2536,
+            152,
+            24,
+            8
+          ]
+        },
+        {
+          "path": "game/art/campaign-integrated-v1/factory/ntsc/9-camera-exit.png",
+          "camera": [
+            2226,
+            58
+          ],
+          "screen_rect": [
+            310,
+            94,
+            10,
+            8
+          ]
+        }
+      ],
+      "proof": {
+        "pixel_indices_in_rect": [
+          0
+        ],
+        "pixel_count": 192,
+        "padded_crop_height": 128,
+        "actual_gate_height": 112
+      }
+    },
+    {
+      "id": "FACTORY-SCENE-01",
+      "phases": [
+        "10",
+        "11"
+      ],
+      "severity": "P1",
+      "status": "confirmed",
+      "title": "Falso tubo contém fragmento azul de máquina e mutila as esteiras",
+      "description": "O recorte source(112,312)-(176,328) contém o topo de uma carcaça azul e parte do rodapé industrial. Ele não é um tubo horizontal completo. É estampado em três posições após as esteiras. As cópias de x352 e576 sobrescrevem a faixa superior das duas esteiras: a primeira até sua extremidade direita, a segunda no meio do tapete. A carcaça parcial fica sem corpo nem apoio próprio.",
+      "source_coordinates": {
+        "normalized_source_size": [
+          768,
+          384
+        ],
+        "crop_xyxy": [
+          112,
+          312,
+          176,
+          328
+        ]
+      },
+      "world_rects_xywh": [
+        [
+          128,
+          200,
+          48,
+          16
+        ],
+        [
+          352,
+          200,
+          48,
+          16
+        ],
+        [
+          576,
+          200,
+          48,
+          16
+        ]
+      ],
+      "conveyor_overpaint_xywh": [
+        [
+          352,
+          200,
+          40,
+          16
+        ],
+        [
+          576,
+          200,
+          48,
+          16
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 67,
+          "line_end": 78
+        },
+        {
+          "path": "game/art/campaign-whole-scenes-v1/factory/source/factory-cycle1-complete.png",
+          "normalized_size": [
+            768,
+            384
+          ],
+          "source_crop_xyxy": [
+            112,
+            312,
+            176,
+            328
+          ]
+        },
+        {
+          "path": "game/art/campaign-whole-scenes-v1/factory/factory-native.png",
+          "world_rect": [
+            224,
+            192,
+            424,
+            56
+          ]
+        },
+        {
+          "path": "game/art/campaign-integrated-v1/factory/ntsc/11-valve-2.png"
+        },
+        {
+          "path": "game/art/campaign-composition-forensic-v1/maps/11-complete.png"
+        }
+      ]
+    },
+    {
+      "id": "FACTORY-SCENE-02",
+      "phases": [
+        "10",
+        "11"
+      ],
+      "severity": "P2",
+      "status": "confirmed",
+      "title": "Pilares inferiores foram recortados pela metade longitudinalmente",
+      "description": "A coluna original ocupa aproximadamente x35..55 na fonte normalizada. O recorte termina em x48, atravessando a tampa, a face e a luminária da coluna. As quatro cópias mantêm esse corte reto na borda direita; não são pilares completos. O fato de a parte inferior continuar para fora do mapa é coerente com o perímetro, mas o corte lateral da face/lâmpada ocorre dentro da arena e permanece visível.",
+      "source_coordinates": {
+        "normalized_source_size": [
+          768,
+          384
+        ],
+        "crop_xyxy": [
+          32,
+          280,
+          48,
+          384
+        ]
+      },
+      "world_rects_xywh": [
+        [
+          32,
+          280,
+          16,
+          104
+        ],
+        [
+          288,
+          280,
+          16,
+          104
+        ],
+        [
+          544,
+          280,
+          16,
+          104
+        ],
+        [
+          736,
+          280,
+          16,
+          104
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 54
+        },
+        {
+          "path": "game/art/campaign-whole-scenes-v1/factory/source/factory-cycle1-complete.png",
+          "normalized_size": [
+            768,
+            384
+          ],
+          "source_crop_xyxy": [
+            16,
+            264,
+            64,
+            384
+          ]
+        },
+        {
+          "path": "game/art/campaign-whole-scenes-v1/factory/factory-native.png",
+          "world_rect": [
+            16,
+            264,
+            64,
+            120
+          ]
+        },
+        {
+          "path": "game/art/campaign-integrated-v1/factory/ntsc/10-eggs-2.png"
+        }
+      ]
+    },
+    {
+      "id": "FACTORY-COLLISION-01",
+      "phases": [
+        "10",
+        "11"
+      ],
+      "severity": "P1",
+      "status": "confirmed_static_geometry",
+      "title": "Gabinetes com volume de máquina não possuem base sólida",
+      "description": "Os três gabinetes são desenhados em x160/384/608,y160,40×40. Nenhuma base deles consta nos seis sólidos da fábrica. Os footprints16×16 em (168,184),(392,184),(616,184) são livres, embora ocupem o pé do gabinete. ARENA_blocked usa apenas bounds e a máscara desses sólidos nessas fases; o bloqueio dinâmico CR_OPS só atua em6B. Assim há divergência demonstrável entre máquina desenhada e superfície caminhável. Esta auditoria não executou uma nova travessia no emulador.",
+      "world_rects_xywh": [
+        [
+          160,
+          160,
+          40,
+          40
+        ],
+        [
+          384,
+          160,
+          40,
+          40
+        ],
+        [
+          608,
+          160,
+          40,
+          40
+        ]
+      ],
+      "free_footprints_xywh": [
+        [
+          168,
+          184,
+          16,
+          16
+        ],
+        [
+          392,
+          184,
+          16,
+          16
+        ],
+        [
+          616,
+          184,
+          16,
+          16
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 16,
+          "line_end": 17
+        },
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 75,
+          "line_end": 78
+        },
+        {
+          "path": "game/src/levels/campaign_factory_scenes.c",
+          "line_start": 533,
+          "line_end": 534
+        },
+        {
+          "path": "game/src/levels/arena.c",
+          "line_start": 198,
+          "line_end": 204
+        },
+        {
+          "path": "game/src/levels/campaign_route_ops.c",
+          "line_start": 22,
+          "line_end": 23
+        },
+        {
+          "path": "game/art/campaign-composition-forensic-v1/layouts/11.png"
+        }
+      ]
+    },
+    {
+      "id": "FACTORY-11-01",
+      "phases": [
+        "11"
+      ],
+      "severity": "P1",
+      "status": "confirmed",
+      "title": "Válvulas2 e3 sobrepõem pixels opacos às esteiras",
+      "description": "As rodas e suas bases são inseridas como objetivos independentes. A válvula2 pisa na extremidade da primeira esteira e a3 pisa sobre a faixa da segunda. Não se trata apenas de bounding boxes transparentes: o alpha da pose0 contém46pixels opacos de válvula sobre a primeira e292sobre a segunda. A composição não desenha uma montagem que integre roda, carcaça e tapete; os objetivos simplesmente cobrem parte da esteira.",
+      "world_object_boxes_xywh": [
+        [
+          384,
+          184,
+          32,
+          32
+        ],
+        [
+          608,
+          184,
+          32,
+          32
+        ]
+      ],
+      "opaque_intersections": [
+        {
+          "valve": 2,
+          "conveyor": 1,
+          "pixels": 46,
+          "bounds_xyxy": [
+            387,
+            205,
+            392,
+            215
+          ]
+        },
+        {
+          "valve": 3,
+          "conveyor": 2,
+          "pixels": 292,
+          "bounds_xyxy": [
+            611,
+            200,
+            638,
+            215
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "path": "game/src/levels/campaign_factory.c",
+          "line_start": 15
+        },
+        {
+          "path": "game/src/system/video/objectivegfx.c",
+          "line_start": 144,
+          "line_end": 146
+        },
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 72,
+          "line_end": 78
+        },
+        {
+          "path": "game/art/objective-sprites-v1/frames/valve-0.png"
+        },
+        {
+          "path": "game/art/campaign-composition-forensic-v1/maps/11-complete.png"
+        },
+        {
+          "path": "game/art/campaign-integrated-v1/factory/ntsc/11-valve-2.png"
+        }
+      ]
+    },
+    {
+      "id": "FACTORY-11-02",
+      "phases": [
+        "11"
+      ],
+      "severity": "P1",
+      "status": "confirmed_framing_with_editorial_judgment",
+      "title": "O enquadramento das válvulas elimina a arquitetura principal do interior",
+      "description": "Garagem/fornos/tanques ficam em y8..80; o perímetro inferior começa em y320. Na operação das válvulas em y208, a câmera acompanha o personagem em y68 (inferido pelo alinhamento dos tubos e gabinetes na captura, coerente com a fórmula da câmera): o HUD encobre o que resta das máquinas do norte, e a parede sul fica abaixo da viewport. As capturas11-valve-1 e2 mostram predominantemente piso vazio, cabos verticais, um gabinete e esteiras; resta só o rodapé superior. A fábrica no mapa completo parece mais construída do que no enquadramento do objetivo principal. A constatação de enquadramento é objetiva; a prioridadeP1 reflete o critério solicitado de ambiente reconhecível durante a ação.",
+      "world_architecture_ranges_y": {
+        "north_machinery": [
+          8,
+          80
+        ],
+        "north_plinth": [
+          80,
+          112
+        ],
+        "south_perimeter": [
+          320,
+          384
+        ]
+      },
+      "evidence": [
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 46,
+          "line_end": 54
+        },
+        {
+          "path": "game/src/levels/campaign_factory.c",
+          "line_start": 15
+        },
+        {
+          "path": "game/src/levels/arena.c",
+          "line_start": 246,
+          "line_end": 270
+        },
+        {
+          "path": "game/art/campaign-integrated-v1/factory/ntsc/11-valve-1.png"
+        },
+        {
+          "path": "game/art/campaign-integrated-v1/factory/ntsc/11-valve-2.png"
+        }
+      ],
+      "camera_y_evidence": 68,
+      "screen_ranges_y": {
+        "north_machinery": [
+          -60,
+          12
+        ],
+        "north_plinth": [
+          12,
+          44
+        ],
+        "south_perimeter": [
+          252,
+          316
+        ],
+        "fixed_hud": [
+          0,
+          24
+        ]
+      },
+      "architecture_visible_after_hud": "Only20px of plinth; no main northern machinery or southern perimeter"
+    },
+    {
+      "id": "FACTORY-09-02",
+      "phases": [
+        "9"
+      ],
+      "severity": "P2",
+      "status": "suspected",
+      "title": "Fragmentos ciano de pintura de piso ao redor do compressor",
+      "description": "Há pequenas ilhas ciano ao lado dos cones e da máquina, sem conexão com o corpo do compressor. A fonte contém faixas brancas de estacionamento nessa região. O flood remove diversos índices de piso, mas preserva o índice13,ciano, podendo deixar resíduos da pintura. A inspeção visual é compatível com resíduo de recorte; não prova que toda ilha seja piso indevido, portanto permanece suspeita. A máquina principal está inteira; o cabo da fonte também foi encurtado pelo limite do recorte.",
+      "world_rects_xywh": [
+        [
+          2088,
+          192,
+          80,
+          40
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 110,
+          "line_end": 120
+        },
+        {
+          "path": "game/art/campaign-whole-scenes-v1/factory/street-native.png",
+          "world_rect": [
+            2080,
+            184,
+            104,
+            56
+          ]
+        },
+        {
+          "path": "game/art/campaign-whole-scenes-v1/factory/source/street-cycle1-complete.png",
+          "normalized_size": [
+            1280,
+            512
+          ],
+          "source_crop_xyxy": [
+            872,
+            296,
+            1080,
+            400
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FACTORY-10-01",
+      "phases": [
+        "10"
+      ],
+      "severity": "P2",
+      "status": "suspected_depth_ambiguity",
+      "title": "Ninho norte de x376 cobre parte do conduto vertical",
+      "description": "A caixa do ninho é x352..400,y88..136 e cruza o conduto x352..368,y96..208. A prancha completa mostra a silhueta do ninho sobre a faixa do conduto. Se o conduto for piso baixo, a sobreposição pode representar um ninho sobre o tubo; se for uma coluna/estrutura elevada, a profundidade é incoerente. A arte reutilizada de parede deixa essa interpretação ambígua. Não classifico como ninho flutuando na parede sem resolver essa leitura.",
+      "world_rects_xywh": [
+        [
+          352,
+          88,
+          48,
+          48
+        ],
+        [
+          352,
+          96,
+          16,
+          112
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "game/src/levels/campaign_factory.c",
+          "line_start": 14
+        },
+        {
+          "path": "game/tools/build_campaign_factory.py",
+          "line_start": 76
+        },
+        {
+          "path": "game/art/campaign-composition-forensic-v1/maps/10-complete.png"
+        }
+      ]
+    }
+  ],
+  "non_findings_and_limits": [
+    {
+      "topic": "Upper nests overlap wall band",
+      "assessment": "The white egg bodies cross y112, but the support/base occupies frame rows36..46. With top88 its base is world124..134, which is inside the walkable floor beginning112. Body overlap alone is not proof of wall placement or floating. Nests at x104/240/512/648 have no demonstrated support error; the x376 conduit ambiguity is separately labeled suspected."
+    },
+    {
+      "topic": "Four street barriers versus collision",
+      "assessment": "Drawn80×40 objects start at y160/192;80×32 collision starts8px lower, at168/200. All four collision bases remain inside the visual extents. No invisible extension beyond the visible barrier rectangle was found. Collision tests are not used to approve the artwork."
+    },
+    {
+      "topic": "Factory low-camera architecture",
+      "assessment": "The south camera10-eggs-2 retains pipes, pillars and blue machinery; there is no complete loss of architecture there. That does not resolve the middle valve framing."
+    },
+    {
+      "topic": "Native atlas/VRAM tests",
+      "assessment": "They prove the authored pixels were transferred faithfully. They cannot disprove semantic fragments, cropped machines, wrong placement or poor framing."
+    },
+    {
+      "topic": "Street extreme south camera",
+      "assessment": "Geometry predicts less of the upper facade remains atcameraY96. Current cited action capture hascameraY82. Treat overall readability at the absolute south camera as pending dedicated samples, not a confirmed defect."
+    }
+  ],
+  "evidence_sources": {
+    "generator": "game/tools/build_campaign_factory.py",
+    "factory_source": "game/art/campaign-whole-scenes-v1/factory/source/factory-cycle1-complete.png",
+    "street_source": "game/art/campaign-whole-scenes-v1/factory/source/street-cycle1-complete.png",
+    "native_factory": "game/art/campaign-whole-scenes-v1/factory/factory-native.png",
+    "native_street": "game/art/campaign-whole-scenes-v1/factory/street-native.png",
+    "current_runtime_report": "game/art/campaign-integrated-v1/factory/ntsc/report.json",
+    "geometry": "game/art/campaign-factory-v1/geometry.json",
+    "forensic_manifest": "game/art/campaign-composition-forensic-v1/manifest.json"
+  }
+}

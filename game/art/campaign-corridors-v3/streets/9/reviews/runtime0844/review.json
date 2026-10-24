@@ -1,0 +1,166 @@
+{
+  "phase": "9",
+  "rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "scope": "Actual integrated emulator screenshots, both NTSC/PAL. Native previews were not used as runtime proof.",
+  "status": "visual_runtime_accepted",
+  "regions": {
+    "ntsc": {
+      "frames": 61,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime0844/capture-ntsc.json"
+    },
+    "pal": {
+      "frames": 61,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime0844/capture-pal.json"
+    }
+  },
+  "frames_visually_reviewed": 122,
+  "review_method": "All3sweep sheets of each region and both10-landmark sheets inspected. All10NTSClandmarks inspected at320x224; criticalPALlandmark board inspected. Screenshots were snapshotted locally to preserve this exact ROM evidence. NewNTSC/PAL10-landmarkboards and the isolated changed truck frames were reviewed; all other114screenshots are pixel-identical to the earlier visually reviewed snapshots.",
+  "general_observations": [
+    "Every declared landmark is whole and outside the HUD at its legal focus pose.",
+    "Damião feet remain aligned to the walkable floor; no roof penetration or floating contact found in the inspected poses.",
+    "No VRAM stripe, shifted palette block or broken streaming corner found across the inspected sweep.",
+    "Partial buildings entering ordinary scrolling views are expected; full assembly proof is assessed at the separate focus landmarks."
+  ],
+  "limits": [
+    "Screenshot setup suppresses combat/progress and relocates player feet. These frames prove rendering/framing; they are not a completed normal-combat run.",
+    "Dinorah appears beside Damião at the12entry but is not moved alongside every teleported focus pose. Central controller tests separately exercise actual escort traversal.",
+    "NTSC/PAL animation and some escort-camera targets differ slightly as real timers/NPCs settle; matching pixel hashes were not used to excuse visual differences."
+  ],
+  "mutations": "Read-only audit of final ROM captures; no art/bank/manifest/C/emulator mutations.",
+  "composition_observations": [
+    "Graphite asphalt reads as road; blue is retained on loading roofs and machinery.",
+    "Mechanical and tank yards have supported fences/posts meeting the rear boundary, avoiding the earlier floating light-pad reading.",
+    "Closed gate uses physical posts/leaf solids and is framed whole; the player stands on the foreground asphalt.",
+    "Truck is now isolated on graphite asphalt: garage stripes, neighboring crate and parking bollards are absent; cargo/cabin/mirrors/wheels/bumper remain whole in the actual new-ROM frames."
+  ],
+  "blocking_findings": [],
+  "framing_notes": [
+    {
+      "id": "north-exploration-open-asphalt",
+      "severity": "normal_camera_limit_outside_guided_route",
+      "evidence": "captures-ntsc/9/x3-y0.png",
+      "position": [
+        504,
+        104
+      ],
+      "camera": [
+        352,
+        0
+      ],
+      "description": "A legal pose beside the north wall shows mostly asphalt/rear fence and16px of southern roof. Guided route feetY176/216in this sector selectY88and show the service shed whole. This sparse exploration angle is distinct from an empty guided-route camera."
+    }
+  ],
+  "comparison_to_232e": {
+    "pixel_identical_frames": 114,
+    "total_frames": 122,
+    "changed_frames": [
+      {
+        "region": "ntsc",
+        "path": "9/x7-y1.png",
+        "difference_bbox": [
+          56,
+          104,
+          128,
+          224
+        ],
+        "matches_projected_truck_region": true
+      },
+      {
+        "region": "ntsc",
+        "path": "9/x6-y2.png",
+        "difference_bbox": [
+          216,
+          104,
+          288,
+          224
+        ],
+        "matches_projected_truck_region": true
+      },
+      {
+        "region": "ntsc",
+        "path": "9/x7-y2.png",
+        "difference_bbox": [
+          56,
+          104,
+          128,
+          224
+        ],
+        "matches_projected_truck_region": true
+      },
+      {
+        "region": "ntsc",
+        "path": "9/landmark-3.png",
+        "difference_bbox": [
+          124,
+          104,
+          196,
+          224
+        ],
+        "matches_projected_truck_region": true
+      },
+      {
+        "region": "pal",
+        "path": "9/x7-y1.png",
+        "difference_bbox": [
+          56,
+          104,
+          128,
+          224
+        ],
+        "matches_projected_truck_region": true
+      },
+      {
+        "region": "pal",
+        "path": "9/x6-y2.png",
+        "difference_bbox": [
+          216,
+          104,
+          288,
+          224
+        ],
+        "matches_projected_truck_region": true
+      },
+      {
+        "region": "pal",
+        "path": "9/x7-y2.png",
+        "difference_bbox": [
+          56,
+          104,
+          128,
+          224
+        ],
+        "matches_projected_truck_region": true
+      },
+      {
+        "region": "pal",
+        "path": "9/landmark-3.png",
+        "difference_bbox": [
+          124,
+          104,
+          196,
+          224
+        ],
+        "matches_projected_truck_region": true
+      }
+    ],
+    "interpretation": "12all140frames remain pixel-identical.9has114identicalframes;8changedframes are restricted exactly to the corrected72x120truck source rectangle. The correction is visible in both regions."
+  },
+  "resolved_findings": [
+    {
+      "id": "truck-source-background-residue",
+      "found_in_ROM": "232eac030e985dfc2ea029722ed20ae8ffff5da5131daadae8c53e296fd3b2e0",
+      "confirmed_fixed_in_ROM": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+      "evidence": [
+        "captures-ntsc/9/landmark-3.png",
+        "captures-pal/9/landmark-3.png"
+      ],
+      "native_correction": "../truck-fix/report.json",
+      "memory_tiles": 540,
+      "geometry_palette_camera_unchanged": true
+    }
+  ]
+}

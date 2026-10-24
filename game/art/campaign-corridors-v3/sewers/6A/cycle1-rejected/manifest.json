@@ -1,0 +1,1061 @@
+{
+  "solids": [
+    [
+      320,
+      80,
+      240,
+      64,
+      true
+    ],
+    [
+      576,
+      80,
+      224,
+      128,
+      false
+    ],
+    [
+      384,
+      248,
+      192,
+      72,
+      false
+    ],
+    [
+      864,
+      192,
+      224,
+      128,
+      false
+    ],
+    [
+      1328,
+      168,
+      144,
+      112,
+      true
+    ],
+    [
+      1744,
+      80,
+      304,
+      120,
+      true
+    ],
+    [
+      2144,
+      216,
+      320,
+      104,
+      false
+    ],
+    [
+      40,
+      24,
+      96,
+      88,
+      true
+    ],
+    [
+      2936,
+      24,
+      96,
+      120,
+      true
+    ]
+  ],
+  "route_points": [
+    [
+      48,
+      200
+    ],
+    [
+      264,
+      200
+    ],
+    [
+      352,
+      200
+    ],
+    [
+      520,
+      200
+    ],
+    [
+      560,
+      232
+    ],
+    [
+      744,
+      232
+    ],
+    [
+      832,
+      232
+    ],
+    [
+      832,
+      152
+    ],
+    [
+      1120,
+      152
+    ],
+    [
+      1288,
+      128
+    ],
+    [
+      1504,
+      128
+    ],
+    [
+      1664,
+      168
+    ],
+    [
+      1712,
+      232
+    ],
+    [
+      2080,
+      232
+    ],
+    [
+      2112,
+      176
+    ],
+    [
+      2400,
+      176
+    ],
+    [
+      2520,
+      200
+    ],
+    [
+      2784,
+      200
+    ],
+    [
+      3016,
+      176
+    ]
+  ],
+  "pauses": [
+    4,
+    9,
+    15
+  ],
+  "sectors": [
+    {
+      "name": "Cisterna de entrada",
+      "rect": [
+        24,
+        80,
+        552,
+        216
+      ]
+    },
+    {
+      "name": "Canal em curva e ponte",
+      "rect": [
+        576,
+        80,
+        512,
+        216
+      ]
+    },
+    {
+      "name": "Câmara de manutenção",
+      "rect": [
+        1088,
+        80,
+        1056,
+        216
+      ]
+    },
+    {
+      "name": "Abrigo e escada",
+      "rect": [
+        2144,
+        80,
+        904,
+        216
+      ]
+    }
+  ],
+  "camera_interest": [
+    {
+      "name": "Arco e cisterna",
+      "bbox": [
+        32,
+        24,
+        176,
+        144
+      ]
+    },
+    {
+      "name": "Curva e ponte",
+      "bbox": [
+        560,
+        144,
+        288,
+        144
+      ]
+    },
+    {
+      "name": "Bomba completa",
+      "bbox": [
+        1312,
+        144,
+        176,
+        144
+      ]
+    },
+    {
+      "name": "Escada de chegada",
+      "bbox": [
+        2896,
+        24,
+        152,
+        160
+      ]
+    }
+  ],
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    24,
+    80,
+    3047,
+    295
+  ],
+  "start": [
+    40,
+    192
+  ],
+  "exit": [
+    2976,
+    152,
+    64,
+    64
+  ],
+  "route_points_are": "centers",
+  "footprint": [
+    16,
+    16
+  ],
+  "route_clearance": 8,
+  "gates": [],
+  "valves": [],
+  "geometry_checks": {
+    "swept_16px_footprint_with_8px_margin": 3155,
+    "bfs_reachable_centers": 6302,
+    "arrival_connected": true,
+    "closed_gates_disconnect": false
+  },
+  "phase": "6A",
+  "sourcePaths": [
+    "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/sewers/6A/source/whole-v1.png"
+  ],
+  "modules": [
+    {
+      "id": "floor",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        160,
+        385,
+        288,
+        449
+      ],
+      "size": [
+        32,
+        16
+      ],
+      "uniformScale": 0.25,
+      "repeat_axis": "xy",
+      "alpha": "none"
+    },
+    {
+      "id": "water",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        208,
+        644,
+        272,
+        668
+      ],
+      "size": [
+        16,
+        8
+      ],
+      "uniformScale": 0.25,
+      "repeat_axis": "xy",
+      "alpha": "none"
+    },
+    {
+      "id": "bank-front",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        208,
+        520,
+        240,
+        648
+      ],
+      "size": [
+        8,
+        32
+      ],
+      "uniformScale": 0.25,
+      "repeat_axis": "x",
+      "alpha": "none"
+    },
+    {
+      "id": "bank-side",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        20,
+        324,
+        84,
+        388
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "uniformScale": 0.25,
+      "repeat_axis": "y",
+      "alpha": "none"
+    },
+    {
+      "id": "wall-cap",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        1284,
+        76,
+        1412,
+        108
+      ],
+      "size": [
+        32,
+        8
+      ],
+      "uniformScale": 0.25,
+      "repeat_axis": "x",
+      "alpha": "none"
+    },
+    {
+      "id": "brick",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        208,
+        552,
+        240,
+        584
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "uniformScale": 0.25,
+      "repeat_axis": "xy",
+      "alpha": "none"
+    },
+    {
+      "id": "corner",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        16,
+        488,
+        96,
+        656
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "uniformScale": 0.19047619047619047,
+      "repeat_axis": "none",
+      "alpha": "dark exterior connected to boundary only"
+    },
+    {
+      "id": "entrance",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        48,
+        12,
+        400,
+        336
+      ],
+      "size": [
+        96,
+        88
+      ],
+      "uniformScale": 0.2716049382716049,
+      "repeat_axis": "none",
+      "alpha": "dark exterior connected to boundary only"
+    },
+    {
+      "id": "pump",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        1112,
+        204,
+        1580,
+        584
+      ],
+      "size": [
+        112,
+        96
+      ],
+      "uniformScale": 0.23931623931623933,
+      "repeat_axis": "none",
+      "alpha": "none"
+    },
+    {
+      "id": "arrival",
+      "source": "6A/source/whole-v1.png",
+      "crop": [
+        1812,
+        18,
+        2154,
+        450
+      ],
+      "size": [
+        96,
+        120
+      ],
+      "uniformScale": 0.2777777777777778,
+      "repeat_axis": "none",
+      "alpha": "dark exterior connected to boundary only"
+    }
+  ],
+  "placements": [
+    {
+      "module": "water",
+      "rect": [
+        0,
+        0,
+        3072,
+        320
+      ]
+    },
+    {
+      "module": "floor",
+      "rect": [
+        24,
+        80,
+        3024,
+        216
+      ]
+    },
+    {
+      "module": "brick",
+      "rect": [
+        0,
+        24,
+        3072,
+        56
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        0,
+        24,
+        3072,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        0,
+        48,
+        3072,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        0,
+        32,
+        16,
+        16
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        3056,
+        32,
+        16,
+        16
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        0,
+        48
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        3056,
+        48
+      ],
+      "mirror": true
+    },
+    {
+      "module": "brick",
+      "rect": [
+        0,
+        296,
+        3072,
+        24
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        0,
+        296,
+        3072,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        0,
+        288,
+        3072,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        0,
+        304,
+        16,
+        0
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        3056,
+        304,
+        16,
+        0
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        0,
+        288
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        3056,
+        288
+      ],
+      "mirror": true
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        0,
+        80,
+        24,
+        216
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        3048,
+        80,
+        24,
+        216
+      ]
+    },
+    {
+      "module": "brick",
+      "rect": [
+        320,
+        80,
+        240,
+        64
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        320,
+        80,
+        240,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        320,
+        112,
+        240,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        320,
+        88,
+        16,
+        24
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        544,
+        88,
+        16,
+        24
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        320,
+        112
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        544,
+        112
+      ],
+      "mirror": true
+    },
+    {
+      "module": "water",
+      "rect": [
+        576,
+        80,
+        224,
+        128
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        576,
+        80,
+        224,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        576,
+        176,
+        224,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        576,
+        88,
+        16,
+        88
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        784,
+        88,
+        16,
+        88
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        576,
+        176
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        784,
+        176
+      ],
+      "mirror": true
+    },
+    {
+      "module": "water",
+      "rect": [
+        384,
+        248,
+        192,
+        72
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        384,
+        248,
+        192,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        384,
+        288,
+        192,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        384,
+        256,
+        16,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        560,
+        256,
+        16,
+        32
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        384,
+        288
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        560,
+        288
+      ],
+      "mirror": true
+    },
+    {
+      "module": "water",
+      "rect": [
+        864,
+        192,
+        224,
+        128
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        864,
+        192,
+        224,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        864,
+        288,
+        224,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        864,
+        200,
+        16,
+        88
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        1072,
+        200,
+        16,
+        88
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        864,
+        288
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        1072,
+        288
+      ],
+      "mirror": true
+    },
+    {
+      "module": "brick",
+      "rect": [
+        1328,
+        168,
+        144,
+        112
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        1328,
+        168,
+        144,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        1328,
+        248,
+        144,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        1328,
+        176,
+        16,
+        72
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        1456,
+        176,
+        16,
+        72
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        1328,
+        248
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        1456,
+        248
+      ],
+      "mirror": true
+    },
+    {
+      "module": "brick",
+      "rect": [
+        1744,
+        80,
+        304,
+        120
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        1744,
+        80,
+        304,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        1744,
+        168,
+        304,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        1744,
+        88,
+        16,
+        80
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        2032,
+        88,
+        16,
+        80
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        1744,
+        168
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        2032,
+        168
+      ],
+      "mirror": true
+    },
+    {
+      "module": "water",
+      "rect": [
+        2144,
+        216,
+        320,
+        104
+      ]
+    },
+    {
+      "module": "wall-cap",
+      "rect": [
+        2144,
+        216,
+        320,
+        8
+      ]
+    },
+    {
+      "module": "bank-front",
+      "rect": [
+        2144,
+        288,
+        320,
+        32
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        2144,
+        224,
+        16,
+        64
+      ]
+    },
+    {
+      "module": "bank-side",
+      "rect": [
+        2448,
+        224,
+        16,
+        64
+      ]
+    },
+    {
+      "module": "corner",
+      "position": [
+        2144,
+        288
+      ],
+      "mirror": false
+    },
+    {
+      "module": "corner",
+      "position": [
+        2448,
+        288
+      ],
+      "mirror": true
+    },
+    {
+      "module": "entrance",
+      "position": [
+        40,
+        24
+      ],
+      "mirror": false
+    },
+    {
+      "module": "pump",
+      "position": [
+        1344,
+        176
+      ],
+      "mirror": false
+    },
+    {
+      "module": "arrival",
+      "position": [
+        2936,
+        24
+      ],
+      "mirror": false
+    }
+  ],
+  "memory": {
+    "scene_tiles": 515,
+    "objective_tiles": 0,
+    "total_tiles": 515,
+    "budget": 640,
+    "exact_pattern_replacements": 0
+  },
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin",
+    "image": "complete-native.png"
+  },
+  "status": "native_candidate_pending_visual_review"
+}

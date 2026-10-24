@@ -1,0 +1,74 @@
+[
+  [
+    "R01",
+    "Abertura existente",
+    "14 planos, 18 cartelas e 101 s; preservar ordem e falas.",
+    "game/art/intro-monologo-v2/README.md"
+  ],
+  [
+    "R02",
+    "Pátio aprovado",
+    "512x384, igreja intacta/danificada, muros, banco e chão.",
+    "game/art/phase01-courtyard-v2/README.md"
+  ],
+  [
+    "R03",
+    "Primeiros cenários",
+    "Módulos de rua, abrigo, túneis, resgate e retirada; remapear para o novo roteiro.",
+    "game/art/phases02-06-v1/README.md"
+  ],
+  [
+    "R04",
+    "Percursos contínuos",
+    "Corredores de 2.048 px como base técnica; novos comprimentos são 2.560 e 3.072 px.",
+    "game/art/routes-2048-v2/README.md"
+  ],
+  [
+    "R05",
+    "Santa iso60",
+    "40x48; brilho, barra, contato pelos quatro lados e alvo existente.",
+    "game/art/santa-iso60-v2/README.md"
+  ],
+  [
+    "R06",
+    "Objetos de missão",
+    "Ninho, gerador, caixa, transmissor, válvula, grade e rádio, com seis poses por arte no pacote atual.",
+    "game/art/objective-sprites-v1/README.md"
+  ],
+  [
+    "R07",
+    "Dinorah",
+    "Célula 32x48, paleta dos humanos, direções e animações existentes; consultar também o ator atual.",
+    "game/art/cangaco-parceira-iso60-v1/README.md"
+  ],
+  [
+    "R08",
+    "Morte dos protagonistas",
+    "Quatro poses de 32x48 por ator; reutilizar na perda de Dinorah.",
+    "game/art/actor-deaths-v1/README.md"
+  ],
+  [
+    "R09",
+    "Bornal",
+    "Sprite 16x16 existente; carga da missão deve ter identidade e regra separadas da recuperação de morte.",
+    "game/art/bolsa-recuperacao-v1/README.md"
+  ],
+  [
+    "R10",
+    "Retratos",
+    "Damião, padre e Dinorah já possuem retratos; expressões novas não são requisito de cada fase.",
+    "game/art/dialogue-portraits-v1/README.md"
+  ],
+  [
+    "R11",
+    "Protótipos de objetivo",
+    "Transporte, energia, caça de emissores, válvulas, escolta e rádio já têm referências de funcionamento.",
+    "game/doc/fases-experimentais.md"
+  ],
+  [
+    "R12",
+    "História e impactos",
+    "Fonte dos objetivos, três bifurcações e oito combinações de epílogo.",
+    "game/doc/historia/tratamento-proposto.md"
+  ]
+]

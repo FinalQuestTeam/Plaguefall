@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "comparisons": 131072,
+  "regions": [
+    {
+      "fps": 50,
+      "allU16Timers": 65536,
+      "largestNumerator": 65584,
+      "largestQuotient": 1311,
+      "divisorFitsU16": true,
+      "quotientFitsU16": true
+    },
+    {
+      "fps": 60,
+      "allU16Timers": 65536,
+      "largestNumerator": 65594,
+      "largestQuotient": 1093,
+      "divisorFitsU16": true,
+      "quotientFitsU16": true
+    }
+  ],
+  "productionSourceSHA256": "bcff312ae5fc2dfc041596a3fde71f83013aad95fc5cf5e247f2fcbb953ed9b3",
+  "method": "All unsigned16timer values, exact positive C quotient versus unsigned32by16DIVU arithmetic and operand/quotient range. No68000instruction/timing claim.",
+  "bothSourceOccurrencesExplicitDIVU": true,
+  "productionModified": false,
+  "compiledROM_SHA256": "8d6872d5d3939fd46e7adc53ef205ef94f4accbc112c8e1041760f33a96ac8b9",
+  "assembly": {
+    "HUD_drawInventory": {
+      "DIVUInstructions": 1,
+      "softwareSignedDivideCalls": 0,
+      "softwareUnsignedDivideCalls": 0
+    },
+    "HUD_drawInventoryIfDirty.part.0": {
+      "DIVUInstructions": 1,
+      "softwareSignedDivideCalls": 0,
+      "softwareUnsignedDivideCalls": 0
+    }
+  },
+  "softwareDivideRemovedFromBothHUDPaths": true
+}

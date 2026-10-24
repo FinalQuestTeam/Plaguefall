@@ -1,0 +1,37 @@
+{
+  "phase": "3",
+  "status": "rejected",
+  "status_label": "Reprovada na reavaliação: casas cortadas",
+  "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "runtime_or_art_changed": false,
+  "evidence": "evidence.png",
+  "findings": [
+    {
+      "problem": "Fragmentos de vizinhos nas bordas dos módulos",
+      "evidence": "house-3.png mostra abertura parcial à esquerda; limites de corte não seguem o contorno de uma casa completa.",
+      "code": "game/art/campaign-whole-scenes-v1/build_early.py:30"
+    },
+    {
+      "problem": "Telhado e fachada recompostos de trechos diferentes",
+      "evidence": "Um telhado comum recebe três fachadas distintas; divisórias laterais e altura do beiral não se conectam naturalmente.",
+      "code": "game/art/campaign-whole-scenes-v1/build_early.py:27"
+    },
+    {
+      "problem": "Cobertura repetida com emendas aparentes",
+      "evidence": "O miolo16×16 repete dentro do telhado, criando linhas que não respeitam seu contorno/perspectiva.",
+      "code": "game/art/campaign-whole-scenes-v1/build_early.py:28"
+    },
+    {
+      "problem": "Enquadramento encobre o topo das construções",
+      "evidence": "As casas começam em worldY72; a câmera acompanha o deslocamento vertical e o HUD ocupa a faixa superior. Há perda adicional de contexto arquitetônico durante os desvios.",
+      "code": "game/src/levels/arena.c:250"
+    }
+  ],
+  "correction_required": [
+    "Usar casas inteiras com contorno fechado, beiral e laterais completos; eliminar fragmentos de vizinhos.",
+    "Definir módulos que terminem em paredes/divisas reais e verificar todas as emendas antes de repetir.",
+    "Compor a faixa superior da rua com altura suficiente para manter contexto no enquadramento de combate.",
+    "Revisar entrada, cada fronteira entre módulos e extremos verticais da câmera antes de aprovar novamente."
+  ],
+  "prior_approval": "Retirada: a avaliação anterior não identificou cortes existentes nos próprios assets."
+}

@@ -1,0 +1,2961 @@
+{
+  "06a": {
+    "phase": "6A",
+    "size": [
+      3072,
+      320
+    ],
+    "bounds": [
+      24,
+      80,
+      3047,
+      271
+    ],
+    "start": [
+      40,
+      224
+    ],
+    "route_points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        776,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        880,
+        216
+      ],
+      [
+        880,
+        168
+      ],
+      [
+        1000,
+        168
+      ],
+      [
+        1168,
+        144
+      ],
+      [
+        1248,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1480,
+        136
+      ],
+      [
+        1552,
+        96
+      ],
+      [
+        1840,
+        96
+      ],
+      [
+        1840,
+        216
+      ],
+      [
+        2096,
+        216
+      ],
+      [
+        2160,
+        248
+      ],
+      [
+        2344,
+        248
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2688,
+        200
+      ],
+      [
+        2824,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "route_points_are": "centers",
+    "pauses": [
+      2,
+      10,
+      15,
+      19
+    ],
+    "exit": [
+      2976,
+      152,
+      64,
+      64
+    ],
+    "solids": [
+      [
+        0,
+        0,
+        3072,
+        80,
+        false
+      ],
+      [
+        2128,
+        80,
+        944,
+        8,
+        false
+      ],
+      [
+        0,
+        80,
+        824,
+        16,
+        false
+      ],
+      [
+        1272,
+        80,
+        184,
+        16,
+        false
+      ],
+      [
+        2128,
+        88,
+        416,
+        24,
+        false
+      ],
+      [
+        2128,
+        112,
+        32,
+        72,
+        false
+      ],
+      [
+        2352,
+        112,
+        192,
+        72,
+        false
+      ],
+      [
+        664,
+        96,
+        160,
+        112,
+        false
+      ],
+      [
+        0,
+        96,
+        24,
+        176,
+        false
+      ],
+      [
+        1272,
+        176,
+        184,
+        96,
+        false
+      ],
+      [
+        2128,
+        264,
+        416,
+        8,
+        false
+      ],
+      [
+        3048,
+        88,
+        24,
+        184,
+        false
+      ],
+      [
+        0,
+        272,
+        3072,
+        48,
+        false
+      ],
+      [
+        112,
+        32,
+        56,
+        80,
+        true
+      ],
+      [
+        80,
+        72,
+        144,
+        32,
+        true
+      ],
+      [
+        80,
+        184,
+        320,
+        32,
+        true
+      ],
+      [
+        224,
+        112,
+        176,
+        32,
+        true
+      ],
+      [
+        384,
+        128,
+        96,
+        88,
+        true
+      ],
+      [
+        1656,
+        112,
+        160,
+        32,
+        true
+      ],
+      [
+        1648,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1816,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1656,
+        240,
+        160,
+        32,
+        true
+      ],
+      [
+        1672,
+        128,
+        128,
+        104,
+        true
+      ],
+      [
+        2192,
+        120,
+        128,
+        104,
+        true
+      ],
+      [
+        2480,
+        104,
+        56,
+        80,
+        true
+      ],
+      [
+        2496,
+        200,
+        24,
+        32,
+        true
+      ],
+      [
+        2848,
+        112,
+        160,
+        32,
+        true
+      ],
+      [
+        2896,
+        80,
+        32,
+        32,
+        true
+      ],
+      [
+        2848,
+        72,
+        48,
+        48,
+        true
+      ],
+      [
+        2928,
+        48,
+        64,
+        80,
+        true
+      ],
+      [
+        80,
+        104,
+        144,
+        80,
+        false
+      ],
+      [
+        224,
+        144,
+        176,
+        40,
+        false
+      ],
+      [
+        912,
+        80,
+        48,
+        64,
+        false
+      ],
+      [
+        912,
+        192,
+        48,
+        80,
+        false
+      ],
+      [
+        1656,
+        144,
+        160,
+        96,
+        false
+      ],
+      [
+        2496,
+        184,
+        24,
+        16,
+        false
+      ]
+    ],
+    "gates": [],
+    "valves": [],
+    "valve_approaches": [],
+    "gate_shot_approaches": [],
+    "camera_interest": [
+      {
+        "name": "Cisterna e arco",
+        "bbox": [
+          72,
+          32,
+          168,
+          184
+        ],
+        "preferred_feet": [
+          40,
+          200
+        ],
+        "position": [
+          40,
+          200
+        ]
+      },
+      {
+        "name": "Ponte inteira",
+        "bbox": [
+          880,
+          136,
+          112,
+          96
+        ],
+        "preferred_feet": [
+          872,
+          160
+        ],
+        "position": [
+          872,
+          160
+        ]
+      },
+      {
+        "name": "Ilha de bombas",
+        "bbox": [
+          1648,
+          112,
+          176,
+          160
+        ],
+        "preferred_feet": [
+          1832,
+          192
+        ],
+        "position": [
+          1832,
+          192
+        ]
+      },
+      {
+        "name": "Recuo de manutenção",
+        "bbox": [
+          2160,
+          112,
+          192,
+          152
+        ],
+        "preferred_feet": [
+          2336,
+          240
+        ],
+        "position": [
+          2336,
+          240
+        ]
+      },
+      {
+        "name": "Abrigo",
+        "bbox": [
+          2848,
+          48,
+          160,
+          96
+        ],
+        "preferred_feet": [
+          3008,
+          168
+        ],
+        "position": [
+          3008,
+          168
+        ]
+      }
+    ],
+    "camera_player_y": 200,
+    "camera_player_y_samples": [
+      184,
+      200,
+      248
+    ],
+    "sourcePaths": [
+      "source/whole-v1.png",
+      "source/whole-v2-clean.png"
+    ],
+    "assembly_notes": [
+      [
+        "cistern",
+        [
+          72,
+          32,
+          408,
+          184
+        ]
+      ],
+      [
+        "bridge",
+        [
+          896,
+          48,
+          80,
+          256
+        ]
+      ],
+      [
+        "pump-island",
+        [
+          1648,
+          112,
+          176,
+          160
+        ]
+      ],
+      [
+        "refuge",
+        [
+          2848,
+          48,
+          160,
+          96
+        ]
+      ]
+    ],
+    "native": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin",
+      "image": "complete-native.png",
+      "objectives": "complete-objectives.png"
+    },
+    "memory": {
+      "scene_tiles": 556,
+      "objective_tiles": 0,
+      "total_tiles": 556,
+      "budget": 640,
+      "approximate_tile_replacements": 0,
+      "background_tiles": 556,
+      "limit": 640,
+      "map_bytes": 30720,
+      "graphics_bytes": 17792
+    },
+    "status": "private_candidate_pending_final_geometry_and_visual_review",
+    "geometry_checks": {
+      "actor_feet": [
+        16,
+        16
+      ],
+      "margin": 8,
+      "swept_samples": 3200,
+      "reachable_centers": 4448,
+      "arrival_connected": true
+    },
+    "width": 3072,
+    "height": 320,
+    "points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        776,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        880,
+        216
+      ],
+      [
+        880,
+        168
+      ],
+      [
+        1000,
+        168
+      ],
+      [
+        1168,
+        144
+      ],
+      [
+        1248,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1480,
+        136
+      ],
+      [
+        1552,
+        96
+      ],
+      [
+        1840,
+        96
+      ],
+      [
+        1840,
+        216
+      ],
+      [
+        2096,
+        216
+      ],
+      [
+        2160,
+        248
+      ],
+      [
+        2344,
+        248
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2688,
+        200
+      ],
+      [
+        2824,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "traversal_points": [
+      [
+        40,
+        224
+      ],
+      [
+        272,
+        224
+      ],
+      [
+        536,
+        224
+      ],
+      [
+        640,
+        232
+      ],
+      [
+        768,
+        232
+      ],
+      [
+        840,
+        232
+      ],
+      [
+        872,
+        208
+      ],
+      [
+        872,
+        160
+      ],
+      [
+        992,
+        160
+      ],
+      [
+        1160,
+        136
+      ],
+      [
+        1240,
+        128
+      ],
+      [
+        1352,
+        128
+      ],
+      [
+        1472,
+        128
+      ],
+      [
+        1544,
+        88
+      ],
+      [
+        1832,
+        88
+      ],
+      [
+        1832,
+        208
+      ],
+      [
+        2088,
+        208
+      ],
+      [
+        2152,
+        240
+      ],
+      [
+        2336,
+        240
+      ],
+      [
+        2424,
+        240
+      ],
+      [
+        2536,
+        240
+      ],
+      [
+        2680,
+        192
+      ],
+      [
+        2816,
+        192
+      ],
+      [
+        3008,
+        168
+      ]
+    ],
+    "sources": [
+      "source/whole-v1.png",
+      "source/whole-v2-clean.png"
+    ],
+    "walkable": [
+      24,
+      80,
+      3024,
+      192
+    ],
+    "tiles": 556,
+    "tileBudget": 640,
+    "nativeTileSHA256": "9386da2892bce07b01214acf9894963cc1d8c594d7eb9abbebed4c5639b85153",
+    "native_bank": "art/campaign-corridors-v3/sewers/6A/native",
+    "geometry_validation": {
+      "footprint": 16,
+      "free_positions": 5554,
+      "reachable_positions": 5554,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3200
+    },
+    "geometry": {
+      "swept16pxSamples": 3200
+    },
+    "swept16pxSamples": 3200,
+    "routeLengthPx": 3173.6,
+    "unopposedMinimumSeconds": 92.2,
+    "cap": 3,
+    "spawn": 3,
+    "art": {
+      "nativeImage": "art/campaign-corridors-v3/sewers/6A/complete-native.png",
+      "method": "Whole scene first; complete modules; exact native export",
+      "lossyTileReplacements": 0
+    },
+    "source_directory": "art/campaign-corridors-v3/sewers/6A"
+  },
+  "06b": {
+    "phase": "6B",
+    "size": [
+      3072,
+      320
+    ],
+    "bounds": [
+      24,
+      80,
+      3047,
+      271
+    ],
+    "start": [
+      40,
+      224
+    ],
+    "route_points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        784,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        848,
+        192
+      ],
+      [
+        920,
+        160
+      ],
+      [
+        936,
+        152
+      ],
+      [
+        976,
+        152
+      ],
+      [
+        1032,
+        152
+      ],
+      [
+        1168,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1456,
+        136
+      ],
+      [
+        1456,
+        96
+      ],
+      [
+        1640,
+        96
+      ],
+      [
+        1840,
+        144
+      ],
+      [
+        1896,
+        248
+      ],
+      [
+        2040,
+        240
+      ],
+      [
+        2056,
+        232
+      ],
+      [
+        2096,
+        232
+      ],
+      [
+        2160,
+        232
+      ],
+      [
+        2240,
+        232
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2768,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "route_points_are": "centers",
+    "pauses": [
+      2,
+      7,
+      15,
+      18,
+      24
+    ],
+    "exit": [
+      2976,
+      152,
+      64,
+      64
+    ],
+    "solids": [
+      [
+        0,
+        0,
+        3072,
+        80,
+        false
+      ],
+      [
+        2064,
+        80,
+        1008,
+        8,
+        false
+      ],
+      [
+        0,
+        80,
+        832,
+        16,
+        false
+      ],
+      [
+        1232,
+        80,
+        208,
+        16,
+        false
+      ],
+      [
+        2064,
+        88,
+        160,
+        96,
+        false
+      ],
+      [
+        664,
+        96,
+        168,
+        112,
+        false
+      ],
+      [
+        0,
+        96,
+        24,
+        176,
+        false
+      ],
+      [
+        1232,
+        176,
+        208,
+        96,
+        false
+      ],
+      [
+        2064,
+        264,
+        160,
+        8,
+        false
+      ],
+      [
+        3048,
+        88,
+        24,
+        184,
+        false
+      ],
+      [
+        0,
+        272,
+        3072,
+        48,
+        false
+      ],
+      [
+        112,
+        32,
+        56,
+        80,
+        true
+      ],
+      [
+        80,
+        72,
+        144,
+        32,
+        true
+      ],
+      [
+        72,
+        104,
+        8,
+        80,
+        true
+      ],
+      [
+        224,
+        104,
+        8,
+        80,
+        true
+      ],
+      [
+        80,
+        184,
+        144,
+        32,
+        true
+      ],
+      [
+        1472,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1608,
+        144,
+        8,
+        96,
+        true
+      ],
+      [
+        1480,
+        112,
+        128,
+        32,
+        true
+      ],
+      [
+        1480,
+        240,
+        128,
+        32,
+        true
+      ],
+      [
+        1496,
+        136,
+        96,
+        80,
+        true
+      ],
+      [
+        2480,
+        104,
+        56,
+        80,
+        true
+      ],
+      [
+        2496,
+        200,
+        24,
+        32,
+        true
+      ],
+      [
+        2848,
+        112,
+        160,
+        32,
+        true
+      ],
+      [
+        2896,
+        80,
+        32,
+        32,
+        true
+      ],
+      [
+        2848,
+        72,
+        48,
+        48,
+        true
+      ],
+      [
+        2928,
+        48,
+        64,
+        80,
+        true
+      ],
+      [
+        984,
+        24,
+        32,
+        112,
+        true
+      ],
+      [
+        952,
+        168,
+        32,
+        152,
+        true
+      ],
+      [
+        808,
+        64,
+        96,
+        80,
+        true
+      ],
+      [
+        904,
+        104,
+        32,
+        32,
+        true
+      ],
+      [
+        2104,
+        24,
+        32,
+        192,
+        true
+      ],
+      [
+        2072,
+        248,
+        32,
+        72,
+        true
+      ],
+      [
+        1928,
+        144,
+        96,
+        80,
+        true
+      ],
+      [
+        2024,
+        184,
+        32,
+        32,
+        true
+      ],
+      [
+        80,
+        104,
+        144,
+        80,
+        false
+      ],
+      [
+        1480,
+        144,
+        128,
+        96,
+        false
+      ],
+      [
+        2496,
+        184,
+        24,
+        16,
+        false
+      ]
+    ],
+    "gates": [
+      [
+        960,
+        112,
+        32,
+        64
+      ],
+      [
+        2080,
+        192,
+        32,
+        64
+      ]
+    ],
+    "valves": [
+      [
+        920,
+        128
+      ],
+      [
+        2040,
+        208
+      ]
+    ],
+    "valve_approaches": [
+      [
+        912,
+        152
+      ],
+      [
+        2032,
+        232
+      ]
+    ],
+    "gate_shot_approaches": [
+      [
+        888,
+        152
+      ],
+      [
+        2008,
+        232
+      ]
+    ],
+    "approach_coordinates": "feet top-left, not centers",
+    "camera_interest": [
+      {
+        "name": "Cisterna de entrada",
+        "bbox": [
+          72,
+          32,
+          168,
+          184
+        ],
+        "preferred_feet": [
+          40,
+          200
+        ],
+        "position": [
+          40,
+          200
+        ]
+      },
+      {
+        "name": "Câmara de pressão alta",
+        "bbox": [
+          800,
+          64,
+          240,
+          184
+        ],
+        "preferred_feet": [
+          912,
+          152
+        ],
+        "position": [
+          912,
+          152
+        ]
+      },
+      {
+        "name": "Bacia de bombas",
+        "bbox": [
+          1472,
+          112,
+          144,
+          160
+        ],
+        "preferred_feet": [
+          1632,
+          192
+        ],
+        "position": [
+          1632,
+          192
+        ]
+      },
+      {
+        "name": "Câmara de pressão baixa",
+        "bbox": [
+          1920,
+          136,
+          224,
+          168
+        ],
+        "preferred_feet": [
+          2032,
+          232
+        ],
+        "position": [
+          2032,
+          232
+        ]
+      },
+      {
+        "name": "Abrigo",
+        "bbox": [
+          2848,
+          48,
+          160,
+          96
+        ],
+        "preferred_feet": [
+          3008,
+          168
+        ],
+        "position": [
+          3008,
+          168
+        ]
+      }
+    ],
+    "camera_player_y": 200,
+    "camera_player_y_samples": [
+      184,
+      200,
+      248
+    ],
+    "sourcePaths": [
+      "source/whole-v1.png",
+      "source/whole-v2.png",
+      "source/whole-v3-open-hardware.png",
+      "../6A/source/whole-v2-clean.png"
+    ],
+    "hardware": "Existing shared global gate191+valve65; no baked gate leaf; native diagonal bank ends persist after0.8s collapse+hide.",
+    "states": [
+      {
+        "name": "closed",
+        "file": "complete-closed-objectives.png",
+        "gate_frame": 0
+      },
+      {
+        "name": "collapse",
+        "file": "complete-collapse-objectives.png",
+        "gate_frame": 5,
+        "temporary": true,
+        "solid_until_seconds": 0.8
+      },
+      {
+        "name": "open",
+        "file": "complete-open-objectives.png",
+        "gate_visible": false,
+        "physical_opening": 32
+      }
+    ],
+    "native": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin",
+      "image": "complete-native.png",
+      "objectives": "complete-closed-objectives.png"
+    },
+    "memory": {
+      "scene_tiles": 378,
+      "objective_tiles": 256,
+      "total_tiles": 634,
+      "budget": 640,
+      "approximate_tile_replacements": 0,
+      "background_tiles": 378,
+      "limit": 640,
+      "map_bytes": 30720,
+      "graphics_bytes": 12096
+    },
+    "status": "private_candidate_pending_geometry_and_visual_review",
+    "geometry_checks": {
+      "actor_feet": [
+        16,
+        16
+      ],
+      "margin": 8,
+      "swept_samples": 3174,
+      "reachable_centers": 4946,
+      "arrival_connected": true,
+      "closed_gates_disconnect": true,
+      "first_gate_only_open_still_blocks_exit": true,
+      "open_gap": 32
+    },
+    "width": 3072,
+    "height": 320,
+    "points": [
+      [
+        48,
+        232
+      ],
+      [
+        280,
+        232
+      ],
+      [
+        544,
+        232
+      ],
+      [
+        648,
+        240
+      ],
+      [
+        784,
+        240
+      ],
+      [
+        848,
+        240
+      ],
+      [
+        848,
+        192
+      ],
+      [
+        920,
+        160
+      ],
+      [
+        936,
+        152
+      ],
+      [
+        976,
+        152
+      ],
+      [
+        1032,
+        152
+      ],
+      [
+        1168,
+        136
+      ],
+      [
+        1360,
+        136
+      ],
+      [
+        1456,
+        136
+      ],
+      [
+        1456,
+        96
+      ],
+      [
+        1640,
+        96
+      ],
+      [
+        1840,
+        144
+      ],
+      [
+        1896,
+        248
+      ],
+      [
+        2040,
+        240
+      ],
+      [
+        2056,
+        232
+      ],
+      [
+        2096,
+        232
+      ],
+      [
+        2160,
+        232
+      ],
+      [
+        2240,
+        232
+      ],
+      [
+        2432,
+        248
+      ],
+      [
+        2544,
+        248
+      ],
+      [
+        2768,
+        200
+      ],
+      [
+        3016,
+        176
+      ]
+    ],
+    "traversal_points": [
+      [
+        40,
+        224
+      ],
+      [
+        272,
+        224
+      ],
+      [
+        536,
+        224
+      ],
+      [
+        640,
+        232
+      ],
+      [
+        776,
+        232
+      ],
+      [
+        840,
+        232
+      ],
+      [
+        840,
+        184
+      ],
+      [
+        912,
+        152
+      ],
+      [
+        928,
+        144
+      ],
+      [
+        968,
+        144
+      ],
+      [
+        1024,
+        144
+      ],
+      [
+        1160,
+        128
+      ],
+      [
+        1352,
+        128
+      ],
+      [
+        1448,
+        128
+      ],
+      [
+        1448,
+        88
+      ],
+      [
+        1632,
+        88
+      ],
+      [
+        1832,
+        136
+      ],
+      [
+        1888,
+        240
+      ],
+      [
+        2032,
+        232
+      ],
+      [
+        2048,
+        224
+      ],
+      [
+        2088,
+        224
+      ],
+      [
+        2152,
+        224
+      ],
+      [
+        2232,
+        224
+      ],
+      [
+        2424,
+        240
+      ],
+      [
+        2536,
+        240
+      ],
+      [
+        2760,
+        192
+      ],
+      [
+        3008,
+        168
+      ]
+    ],
+    "sources": [
+      "source/whole-v1.png",
+      "source/whole-v2.png",
+      "source/whole-v3-open-hardware.png",
+      "../6A/source/whole-v2-clean.png"
+    ],
+    "walkable": [
+      24,
+      80,
+      3024,
+      192
+    ],
+    "tiles": 378,
+    "tileBudget": 384,
+    "nativeTileSHA256": "41c0289c7304845e3e0ff8fa5d6297b6ab0f8bdb3ee2aa9809b08f31db8d8120",
+    "native_bank": "art/campaign-corridors-v3/sewers/6B/native",
+    "geometry_validation": {
+      "footprint": 16,
+      "free_positions": 6074,
+      "reachable_positions": 6074,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3174
+    },
+    "geometry": {
+      "swept16pxSamples": 3174
+    },
+    "swept16pxSamples": 3174,
+    "routeLengthPx": 3142.7,
+    "unopposedMinimumSeconds": 92.3,
+    "cap": 3,
+    "spawn": 3,
+    "art": {
+      "nativeImage": "art/campaign-corridors-v3/sewers/6B/complete-native.png",
+      "method": "Whole scene first; complete modules; exact native export",
+      "lossyTileReplacements": 0
+    },
+    "source_directory": "art/campaign-corridors-v3/sewers/6B"
+  },
+  "12": {
+    "phase": "12",
+    "size": [
+      3072,
+      320
+    ],
+    "bounds": [
+      16,
+      96,
+      3055,
+      287
+    ],
+    "start": [
+      48,
+      208
+    ],
+    "solids": [
+      [
+        0,
+        0,
+        704,
+        96,
+        true
+      ],
+      [
+        704,
+        0,
+        640,
+        144,
+        true
+      ],
+      [
+        1344,
+        0,
+        864,
+        96,
+        true
+      ],
+      [
+        2208,
+        0,
+        864,
+        112,
+        true
+      ],
+      [
+        80,
+        32,
+        304,
+        160,
+        true
+      ],
+      [
+        432,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        736,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        1008,
+        200,
+        240,
+        112,
+        true
+      ],
+      [
+        1296,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        1488,
+        24,
+        304,
+        144,
+        true
+      ],
+      [
+        1760,
+        200,
+        240,
+        112,
+        true
+      ],
+      [
+        1984,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        2176,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        2304,
+        200,
+        240,
+        112,
+        true
+      ],
+      [
+        2480,
+        32,
+        160,
+        128,
+        true
+      ],
+      [
+        2704,
+        24,
+        304,
+        176,
+        true
+      ],
+      [
+        224,
+        248,
+        72,
+        24,
+        true
+      ],
+      [
+        2560,
+        248,
+        72,
+        24,
+        true
+      ]
+    ],
+    "route_points": [
+      [
+        56,
+        216
+      ],
+      [
+        336,
+        216
+      ],
+      [
+        424,
+        232
+      ],
+      [
+        592,
+        232
+      ],
+      [
+        704,
+        232
+      ],
+      [
+        920,
+        232
+      ],
+      [
+        952,
+        184
+      ],
+      [
+        1264,
+        184
+      ],
+      [
+        1400,
+        184
+      ],
+      [
+        1496,
+        184
+      ],
+      [
+        1784,
+        184
+      ],
+      [
+        2024,
+        184
+      ],
+      [
+        2104,
+        208
+      ],
+      [
+        2168,
+        208
+      ],
+      [
+        2280,
+        184
+      ],
+      [
+        2560,
+        184
+      ],
+      [
+        2600,
+        216
+      ],
+      [
+        2856,
+        216
+      ]
+    ],
+    "point_semantics": "CENTERS; actor foot top-left=center−8",
+    "pauses": [
+      3,
+      7,
+      16
+    ],
+    "exit": [
+      2824,
+      192,
+      64,
+      64
+    ],
+    "camera_player_y": 200,
+    "camera_interest": [
+      {
+        "id": "workshop",
+        "bbox": [
+          80,
+          32,
+          304,
+          160
+        ],
+        "center": [
+          232,
+          112
+        ],
+        "camera": [
+          72,
+          8
+        ],
+        "position": [
+          224,
+          208
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-workshop.png",
+        "name": "workshop"
+      },
+      {
+        "id": "covered-dock",
+        "bbox": [
+          1488,
+          24,
+          304,
+          144
+        ],
+        "center": [
+          1640,
+          96
+        ],
+        "camera": [
+          1480,
+          0
+        ],
+        "position": [
+          1624,
+          184
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-covered-dock.png",
+        "name": "covered dock"
+      },
+      {
+        "id": "union-arrival",
+        "bbox": [
+          2704,
+          24,
+          304,
+          176
+        ],
+        "center": [
+          2856,
+          112
+        ],
+        "camera": [
+          2696,
+          0
+        ],
+        "position": [
+          2848,
+          200
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-union-arrival.png",
+        "name": "union arrival"
+      },
+      {
+        "id": "south-dock1",
+        "bbox": [
+          1008,
+          200,
+          240,
+          112
+        ],
+        "center": [
+          1128,
+          256
+        ],
+        "camera": [
+          968,
+          88
+        ],
+        "position": [
+          1120,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-south-dock1.png",
+        "name": "south dock1"
+      },
+      {
+        "id": "south-dock2",
+        "bbox": [
+          1760,
+          200,
+          240,
+          112
+        ],
+        "center": [
+          1880,
+          256
+        ],
+        "camera": [
+          1720,
+          88
+        ],
+        "position": [
+          1880,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-south-dock2.png",
+        "name": "south dock2"
+      },
+      {
+        "id": "south-dock3",
+        "bbox": [
+          2304,
+          200,
+          240,
+          112
+        ],
+        "center": [
+          2424,
+          256
+        ],
+        "camera": [
+          2264,
+          88
+        ],
+        "position": [
+          2416,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-south-dock3.png",
+        "name": "south dock3"
+      },
+      {
+        "id": "service-annex1",
+        "bbox": [
+          432,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          512,
+          96
+        ],
+        "camera": [
+          352,
+          8
+        ],
+        "position": [
+          496,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-service-annex1.png",
+        "name": "service annex1"
+      },
+      {
+        "id": "service-annex2",
+        "bbox": [
+          1296,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          1376,
+          96
+        ],
+        "camera": [
+          1216,
+          8
+        ],
+        "position": [
+          1360,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-service-annex2.png",
+        "name": "service annex2"
+      },
+      {
+        "id": "service-annex3",
+        "bbox": [
+          1984,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          2064,
+          96
+        ],
+        "camera": [
+          1904,
+          8
+        ],
+        "position": [
+          2048,
+          176
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-service-annex3.png",
+        "name": "service annex3"
+      },
+      {
+        "id": "service-annex4",
+        "bbox": [
+          2480,
+          32,
+          160,
+          128
+        ],
+        "center": [
+          2560,
+          96
+        ],
+        "camera": [
+          2400,
+          8
+        ],
+        "position": [
+          2544,
+          168
+        ],
+        "whole_inside_visible_world": true,
+        "preview": "reviews/camera-service-annex4.png",
+        "name": "service annex4"
+      }
+    ],
+    "sources": [
+      "source/12-whole-cycle3.png"
+    ],
+    "memory": {
+      "scene_tiles": 515,
+      "objective_tiles": 0,
+      "total_tiles": 515,
+      "budget": 640,
+      "free_tiles": 125,
+      "graphics_bytes": 16480,
+      "map_bytes": 30720,
+      "palette_bytes": 32,
+      "collision_mask_words": 480,
+      "lossy_pattern_replacements": 0,
+      "pixel_exact_reassembly": true,
+      "background_tiles": 515,
+      "limit": 640
+    },
+    "modules": [
+      {
+        "id": "terra-left",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          32,
+          0,
+          56,
+          88
+        ],
+        "source_bbox_original": [
+          51,
+          160,
+          89,
+          300
+        ],
+        "size": [
+          24,
+          88
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "terra-run",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          112,
+          0,
+          128,
+          88
+        ],
+        "source_bbox_original": [
+          179,
+          160,
+          204,
+          300
+        ],
+        "size": [
+          16,
+          88
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "terra-right",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          280,
+          0,
+          304,
+          88
+        ],
+        "source_bbox_original": [
+          447,
+          160,
+          486,
+          300
+        ],
+        "size": [
+          24,
+          88
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "steel-left",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          672,
+          40,
+          696,
+          104
+        ],
+        "source_bbox_original": [
+          1073,
+          224,
+          1112,
+          325
+        ],
+        "size": [
+          24,
+          64
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "steel-run",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          752,
+          40,
+          768,
+          104
+        ],
+        "source_bbox_original": [
+          1201,
+          224,
+          1227,
+          325
+        ],
+        "size": [
+          16,
+          64
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "steel-right",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          880,
+          40,
+          904,
+          104
+        ],
+        "source_bbox_original": [
+          1405,
+          224,
+          1444,
+          325
+        ],
+        "size": [
+          24,
+          64
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "brick",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          1080,
+          80,
+          1096,
+          88
+        ],
+        "source_bbox_original": [
+          1725,
+          287,
+          1750,
+          300
+        ],
+        "size": [
+          16,
+          8
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "plinth",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          64,
+          216,
+          96,
+          224
+        ],
+        "source_bbox_original": [
+          102,
+          503,
+          153,
+          516
+        ],
+        "size": [
+          32,
+          8
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "column-cap",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          40,
+          184,
+          56,
+          200
+        ],
+        "source_bbox_original": [
+          64,
+          452,
+          89,
+          478
+        ],
+        "size": [
+          16,
+          16
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "column-run",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          40,
+          200,
+          56,
+          216
+        ],
+        "source_bbox_original": [
+          64,
+          478,
+          89,
+          503
+        ],
+        "size": [
+          16,
+          16
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "column-foot",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          40,
+          216,
+          56,
+          224
+        ],
+        "source_bbox_original": [
+          64,
+          503,
+          89,
+          516
+        ],
+        "size": [
+          16,
+          8
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "wall-run",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          64,
+          200,
+          96,
+          224
+        ],
+        "source_bbox_original": [
+          102,
+          478,
+          153,
+          516
+        ],
+        "size": [
+          32,
+          24
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "foliage-context",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          312,
+          0,
+          376,
+          72
+        ],
+        "source_bbox_original": [
+          498,
+          160,
+          600,
+          274
+        ],
+        "size": [
+          64,
+          72
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "window",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          1088,
+          80,
+          1160,
+          128
+        ],
+        "source_bbox_original": [
+          1738,
+          287,
+          1853,
+          363
+        ],
+        "size": [
+          72,
+          48
+        ],
+        "grid": 1,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "door",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          1184,
+          128,
+          1224,
+          168
+        ],
+        "source_bbox_original": [
+          1891,
+          363,
+          1955,
+          427
+        ],
+        "size": [
+          40,
+          40
+        ],
+        "grid": 1,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "banner",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          1168,
+          64,
+          1232,
+          128
+        ],
+        "source_bbox_original": [
+          1865,
+          262,
+          1968,
+          363
+        ],
+        "size": [
+          64,
+          64
+        ],
+        "grid": 1,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "workshop-opening",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          80,
+          80,
+          192,
+          144
+        ],
+        "source_bbox_original": [
+          128,
+          287,
+          307,
+          389
+        ],
+        "size": [
+          112,
+          64
+        ],
+        "grid": 1,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "vent",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          408,
+          32,
+          440,
+          64
+        ],
+        "source_bbox_original": [
+          652,
+          211,
+          703,
+          262
+        ],
+        "size": [
+          32,
+          32
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "bench",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          104,
+          160,
+          176,
+          184
+        ],
+        "source_bbox_original": [
+          166,
+          414,
+          281,
+          452
+        ],
+        "size": [
+          72,
+          24
+        ],
+        "grid": 1,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "paving-warm",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          188,
+          152,
+          204,
+          168
+        ],
+        "source_bbox_original": [
+          300,
+          402,
+          326,
+          427
+        ],
+        "size": [
+          16,
+          16
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "paving-service",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          188,
+          152,
+          204,
+          168
+        ],
+        "source_bbox_original": [
+          300,
+          402,
+          326,
+          427
+        ],
+        "size": [
+          16,
+          16
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "paving-union",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          188,
+          152,
+          204,
+          168
+        ],
+        "source_bbox_original": [
+          300,
+          402,
+          326,
+          427
+        ],
+        "size": [
+          16,
+          16
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      },
+      {
+        "id": "paving-step",
+        "source": "source/12-whole-cycle3.png",
+        "source_bbox_native_scaled": [
+          1200,
+          168,
+          1208,
+          176
+        ],
+        "source_bbox_original": [
+          1916,
+          427,
+          1929,
+          440
+        ],
+        "size": [
+          8,
+          8
+        ],
+        "grid": 2,
+        "function": "complete end/cap/opening or repeatable material cross-section"
+      }
+    ],
+    "assemblies": [
+      {
+        "id": "workshop",
+        "size": [
+          304,
+          160
+        ],
+        "file": "modules/workshop-assembly.png"
+      },
+      {
+        "id": "annex",
+        "size": [
+          160,
+          128
+        ],
+        "file": "modules/annex-assembly.png"
+      },
+      {
+        "id": "covered",
+        "size": [
+          304,
+          144
+        ],
+        "file": "modules/covered-assembly.png"
+      },
+      {
+        "id": "low-dock",
+        "size": [
+          240,
+          112
+        ],
+        "file": "modules/low-dock-assembly.png"
+      },
+      {
+        "id": "union",
+        "size": [
+          304,
+          176
+        ],
+        "file": "modules/union-assembly.png"
+      }
+    ],
+    "placements": [
+      [
+        "workshop",
+        80,
+        32
+      ],
+      [
+        "annex",
+        432,
+        32
+      ],
+      [
+        "annex",
+        736,
+        32
+      ],
+      [
+        "low-dock",
+        1008,
+        200
+      ],
+      [
+        "annex",
+        1296,
+        32
+      ],
+      [
+        "covered",
+        1488,
+        24
+      ],
+      [
+        "low-dock",
+        1760,
+        200
+      ],
+      [
+        "annex",
+        1984,
+        32
+      ],
+      [
+        "annex",
+        2176,
+        32
+      ],
+      [
+        "low-dock",
+        2304,
+        200
+      ],
+      [
+        "annex",
+        2480,
+        32
+      ],
+      [
+        "union",
+        2704,
+        24
+      ]
+    ],
+    "source_geometry": {
+      "blockout": "blockout.json",
+      "principle": "Full source first. Closed roof ends plus authored repeatable roof/wall cross-sections and complete sharp openings form whole closed buildings; no approximate tile substitution. North enclosure steps96→144→96→112 and south volumes project to200, creating distinct courts/crossings.",
+      "first_native": "reviews/cycle1/rejected-native.png",
+      "first_native_verdict": "Rejected by author and parent:4px mosaic, floating masses, broad empty field."
+    },
+    "geometry": {
+      "actor_footprint": [
+        16,
+        16
+      ],
+      "point_margin": 8,
+      "BFS_step": 8,
+      "connected_positions": 4904,
+      "all_points_reachable": true,
+      "swept16pxSamples": 2864,
+      "all_segments_collision_free": true,
+      "exit_reachable": true,
+      "open_depth": 192,
+      "service_neck_width": 32
+    },
+    "complete": "complete-native.png",
+    "layout": "layout.png",
+    "native": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin"
+    },
+    "status": "final_native_material_fix_pending_parent_visual_review",
+    "width": 3072,
+    "height": 320,
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        336,
+        216
+      ],
+      [
+        424,
+        232
+      ],
+      [
+        592,
+        232
+      ],
+      [
+        704,
+        232
+      ],
+      [
+        920,
+        232
+      ],
+      [
+        952,
+        184
+      ],
+      [
+        1264,
+        184
+      ],
+      [
+        1400,
+        184
+      ],
+      [
+        1496,
+        184
+      ],
+      [
+        1784,
+        184
+      ],
+      [
+        2024,
+        184
+      ],
+      [
+        2104,
+        208
+      ],
+      [
+        2168,
+        208
+      ],
+      [
+        2280,
+        184
+      ],
+      [
+        2560,
+        184
+      ],
+      [
+        2600,
+        216
+      ],
+      [
+        2856,
+        216
+      ]
+    ],
+    "traversal_points": [
+      [
+        48,
+        208
+      ],
+      [
+        328,
+        208
+      ],
+      [
+        416,
+        224
+      ],
+      [
+        584,
+        224
+      ],
+      [
+        696,
+        224
+      ],
+      [
+        912,
+        224
+      ],
+      [
+        944,
+        176
+      ],
+      [
+        1256,
+        176
+      ],
+      [
+        1392,
+        176
+      ],
+      [
+        1488,
+        176
+      ],
+      [
+        1776,
+        176
+      ],
+      [
+        2016,
+        176
+      ],
+      [
+        2096,
+        200
+      ],
+      [
+        2160,
+        200
+      ],
+      [
+        2272,
+        176
+      ],
+      [
+        2552,
+        176
+      ],
+      [
+        2592,
+        208
+      ],
+      [
+        2848,
+        208
+      ]
+    ],
+    "walkable": [
+      16,
+      96,
+      3040,
+      192
+    ],
+    "tiles": 515,
+    "tileBudget": 640,
+    "nativeTileSHA256": "f3ae35a6c4c353d79c8a10983c45d6da8a3c61ba0a5937497e43a322c6a16731",
+    "native_bank": "art/campaign-corridors-v3/syndicate/12/native",
+    "geometry_validation": {
+      "footprint": 16,
+      "free_positions": 4904,
+      "reachable_positions": 4904,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 2864
+    },
+    "swept16pxSamples": 2864,
+    "routeLengthPx": 2844.4,
+    "unopposedMinimumSeconds": 82.0,
+    "cap": 3,
+    "spawn": 2,
+    "art": {
+      "nativeImage": "art/campaign-corridors-v3/syndicate/12/complete-native.png",
+      "method": "Whole scene first; complete modules; exact native export",
+      "lossyTileReplacements": 0
+    },
+    "source_directory": "art/campaign-corridors-v3/syndicate/12"
+  }
+}

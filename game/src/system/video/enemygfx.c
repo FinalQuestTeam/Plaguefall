@@ -147,7 +147,7 @@ void ENEMYGFX_prepare(u16 frame)
     pinnedSlots=0;
     const u16 runPhase=divu(frame,ACTOR_RUN_TICKS(fps))&(ACTOR_RUN_FRAMES-1);
     const u16 idlePhase=divu(frame,ACTOR_IDLE_TICKS(fps))&(ACTOR_IDLE_FRAMES-1);
-    for (u16 i=0; i<MAX_ENEMIES; i++)
+    for (u16 i=frame&3; i<MAX_ENEMIES; i+=4)
     {
         FrameSlot *s=&slots[i];
         const Enemy *e=&enemies[i];
@@ -165,15 +165,16 @@ void ENEMYGFX_prepare(u16 frame)
             ACTOR_IDLE_FRAMES+((runPhase+i)&(ACTOR_RUN_FRAMES-1)) :
             (idlePhase+i)&(ACTOR_IDLE_FRAMES-1);
         if(currentLevel==0 && testStage==1)TEST_animation(i,&s->wantedDir,&s->wantedPose);
+        if(e->shielded && ENEMY_DEF(e)->color==COLOR_PURPLE)s->wantedPose|=128;
         // Mirroring needs no upload, even when another actor uses the last
         // DMA allowance or this actor's next animation pose is still pending.
         if(s->valid && CANON[s->dir]==CANON[s->wantedDir])s->dir=s->wantedDir;
         s->x=e->x; s->y=e->y; s->seen=TRUE;
     }
     // Round-robin keeps a frequently turning enemy from starving other slots.
-    for (u16 k=0; k<MAX_ENEMIES && transfers<allowance; k++)
+    for (u16 k=0; k<4 && transfers<allowance; k++)
     {
-        const u16 i=(nextSlot+k)&(MAX_ENEMIES-1);
+        const u16 i=(frame&3)+(((k+(frame>>2))&3)<<2);
         FrameSlot *s=&slots[i];
         const Enemy *e=&enemies[i];
         if (!e->active || !newArt(e->type)) continue;
@@ -186,8 +187,8 @@ void ENEMYGFX_prepare(u16 frame)
         if (DMA_getQueueTransferSize()+bytes+1024>DMA_TRANSFER_CAPACITY_NTSC ||
             DMA_getQueueSize()+3>=DMA_getMaxQueueSize()) break;
         if(!allocateSlot(i,art->tiles))continue;
-        const u32 *source=(const u32 *)insect_frames+art->offset+
-            (CANON[s->wantedDir]*ACTOR_VIEW_FRAMES+s->wantedPose)*art->words;
+        const u32 *source=(const u32 *)(s->wantedPose&128 ? insect_shield_frames : insect_frames)+art->offset+
+            (CANON[s->wantedDir]*ACTOR_VIEW_FRAMES+(s->wantedPose&127))*art->words;
         if (!DMA_queueDma(DMA_VRAM,(void *)source,(TILE_USER_INDEX+s->tile)*32,art->tiles*16,2)) break;
         pinnedSlots|=1u<<i;
         s->type=e->type; s->dir=s->wantedDir; s->pose=s->wantedPose; s->valid=TRUE;

@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "7dcad74455369fd2b9b25f5ab5caae1841c252291e114ad03b6717a898b6929b",
+  "buildDirectory": "game/out/release",
+  "emulatedRomSHA256": "1500eaaa545dc207fb32f604c6183589b68194a2abb5744b52e63f51c17367ed",
+  "movieEnabled": false,
+  "checks": {
+    "06b-bounds-atlas-ring-and-late-collision": true,
+    "06b-two-valves-and-four-shot-gates": true,
+    "06b-pause-preserves-compound-state": true,
+    "06b-all-six-mechanism-frames-exact": {
+      "poses": [
+        {
+          "frame": 0,
+          "gateOpaqueCells": 16,
+          "valveOpaqueCells": 10
+        },
+        {
+          "frame": 1,
+          "gateOpaqueCells": 17,
+          "valveOpaqueCells": 10
+        },
+        {
+          "frame": 2,
+          "gateOpaqueCells": 16,
+          "valveOpaqueCells": 10
+        },
+        {
+          "frame": 3,
+          "gateOpaqueCells": 20,
+          "valveOpaqueCells": 11
+        },
+        {
+          "frame": 4,
+          "gateOpaqueCells": 24,
+          "valveOpaqueCells": 12
+        },
+        {
+          "frame": 5,
+          "gateOpaqueCells": 20,
+          "valveOpaqueCells": 10
+        }
+      ],
+      "isolatedRamFrameSelection": true,
+      "renderingAndDma": "production",
+      "sceneryAtlasPreserved": true
+    }
+  }
+}

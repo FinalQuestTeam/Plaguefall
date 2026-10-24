@@ -1,0 +1,130 @@
+{
+  "cases": [
+    {
+      "current": "1",
+      "next": "2A",
+      "cause": "VOCÊ NÃO USOU BOMBAS.",
+      "consequence": "O POVO SAIU. A IGREJA FICOU EM PÉ."
+    },
+    {
+      "current": "1",
+      "next": "2B",
+      "cause": "A EXPLOSÃO DANIFICOU A IGREJA.",
+      "consequence": "TODOS SAÍRAM. HÁ DESTROÇOS NO PÁTIO."
+    },
+    {
+      "current": "5",
+      "next": "6A",
+      "cause": "O SINAL ALCANÇOU O RESGATE.",
+      "consequence": "TODOS OS CIVIS EMBARCARAM."
+    },
+    {
+      "current": "5",
+      "next": "6B",
+      "cause": "O SINAL FOI INTERROMPIDO.",
+      "consequence": "PARTE DOS CIVIS NÃO ESCAPOU."
+    },
+    {
+      "current": "12",
+      "next": "13A",
+      "cause": "VOCÊ PROTEGEU DINORAH.",
+      "consequence": "ELA VAI APOIAR A INCURSÃO FINAL."
+    },
+    {
+      "current": "12",
+      "next": "13B",
+      "cause": "DINORAH MORREU NA ESCOLTA.",
+      "consequence": "DAMIÃO SEGUE COM O PADRE NO RÁDIO."
+    },
+    {
+      "current": "2A",
+      "next": "3",
+      "cause": "O PÁTIO ESTÁ LIMPO.",
+      "consequence": "ABRA A RUA ATÉ O GALPÃO."
+    },
+    {
+      "current": "2B",
+      "next": "3",
+      "cause": "O PÁTIO ESTÁ LIMPO.",
+      "consequence": "ABRA A RUA ATÉ O GALPÃO."
+    },
+    {
+      "current": "3",
+      "next": "4",
+      "cause": "O POVO PODE ATRAVESSAR A RUA.",
+      "consequence": "LIMPE O INTERIOR DO GALPÃO."
+    },
+    {
+      "current": "4",
+      "next": "5",
+      "cause": "O GALPÃO ESTÁ SEGURO.",
+      "consequence": "ATIVEM O SINAL NA SANTA."
+    },
+    {
+      "current": "6A",
+      "next": "7",
+      "cause": "DINORAH CHEGOU AO ABRIGO.",
+      "consequence": "RECUPERE OS SUPRIMENTOS."
+    },
+    {
+      "current": "6B",
+      "next": "7",
+      "cause": "DINORAH ATRAVESSOU OS PORTÕES.",
+      "consequence": "RECUPERE OS SUPRIMENTOS."
+    },
+    {
+      "current": "7",
+      "next": "8",
+      "cause": "AS CINCO CARGAS FORAM RECUPERADAS.",
+      "consequence": "CORTE O CHAMADO DOS REFORÇOS."
+    },
+    {
+      "current": "8",
+      "next": "9",
+      "cause": "OS TRANSMISSORES FORAM ELIMINADOS.",
+      "consequence": "SIGA ATÉ A FÁBRICA."
+    },
+    {
+      "current": "9",
+      "next": "10",
+      "cause": "VOCÊ CHEGOU À FÁBRICA.",
+      "consequence": "DESTRUA OS OVOS."
+    },
+    {
+      "current": "10",
+      "next": "11",
+      "cause": "OS DEZ NINHOS FORAM DESTRUÍDOS.",
+      "consequence": "REAQUEÇA AS MÁQUINAS."
+    },
+    {
+      "current": "11",
+      "next": "12",
+      "cause": "O CALOR ATRAIU O ENXAME.",
+      "consequence": "ESCOLTE DINORAH AO SINDICATO."
+    },
+    {
+      "current": "13A",
+      "next": "14",
+      "cause": "DINORAH ESTÁ SEGURA NO CONSOLE.",
+      "consequence": "RELIGUE A ENERGIA DO ESTALEIRO."
+    },
+    {
+      "current": "13B",
+      "next": "14",
+      "cause": "A SALA FOI LIMPA.",
+      "consequence": "RELIGUE A ENERGIA DO ESTALEIRO."
+    },
+    {
+      "current": "14",
+      "next": "15",
+      "cause": "OS CINCO GERADORES ESTÃO LIGADOS.",
+      "consequence": "PROTEJA O RÁDIO DE IGNIÇÃO."
+    },
+    {
+      "current": "15",
+      "next": "16",
+      "cause": "A IGNIÇÃO QUEIMOU OS NINHOS.",
+      "consequence": "O ESCORPIÃO SURGIU DO FOGO."
+    }
+  ]
+}

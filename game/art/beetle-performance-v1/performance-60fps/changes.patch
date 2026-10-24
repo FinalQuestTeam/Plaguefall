@@ -1,0 +1,968 @@
+--- a/src/actors/shots.h
++++ b/src/actors/shots.h
+@@ -33,7 +33,7 @@
+ 
+ // 26.6 fixed. mode is SHOTMODE_* for player shots, visual style1..4 for enemies.
+ // dmg is enemy damage to the player (default ESHOT_DAMAGE; boss uses more).
+-typedef struct { s32 x, y; s32 vx, vy; u8 mode; u8 dmg; bool active; } FShot;
++typedef struct { s32 x, y; s32 vx, vy; u8 mode; u8 dmg; bool active; u8 renderPose; } FShot;
+ 
+ extern FShot pshots[MAX_PSHOTS];
+ extern FShot eshots[MAX_ESHOTS];
+--- a/src/actors/shots_enemy.c
++++ b/src/actors/shots_enemy.c
+@@ -25,6 +25,7 @@
+         eshots[i].dmg = dmg;
+         eshots[i].mode = style;
+         eshots[i].active = TRUE;
++        eshots[i].renderPose=0;
+         return;
+     }
+ }
+@@ -66,8 +67,9 @@
+     fireEnemySpreadDmg(ex, ey, count, ESHOT_DAMAGE, style);
+ }
+ 
+-void SHOTS_updateEnemy(void)
++__attribute__((noinline)) void SHOTS_updateEnemy(void)
+ {
++    bool allyAlive=DINORAH_alive();
+     for (u16 i = 0; i < MAX_ESHOTS; i++)
+     {
+         if (!eshots[i].active) continue;
+@@ -85,10 +87,10 @@
+             continue;
+         }
+ 
+-        if(DINORAH_alive()) {
++        if(allyAlive) {
+             const s16 ax=sx+4-dinorahX-8,ay=sy+4-dinorahY-8;
+             if(ax>=-10 && ax<=10 && ay>=-10 && ay<=10 && ax*ax+ay*ay<=100) {
+-                eshots[i].active=FALSE;DINORAH_damage(eshots[i].dmg);continue;
++                eshots[i].active=FALSE;DINORAH_damage(eshots[i].dmg);allyAlive=DINORAH_alive();continue;
+             }
+         }
+         // colisão com o círculo do jogador (raio 7 + raio do tiro 3)
+--- a/src/actors/shots_player.c
++++ b/src/actors/shots_player.c
+@@ -40,6 +40,7 @@
+         pshots[i].vy = vy;
+         pshots[i].mode = mode;
+         pshots[i].active = TRUE;
++        pshots[i].renderPose=0;
+         return;
+     }
+ }
+@@ -85,9 +86,11 @@
+     SFX_playerShot();
+ }
+ 
+-u16 SHOTS_updatePlayer(void)
++__attribute__((noinline)) u16 SHOTS_updatePlayer(void)
+ {
+     u16 killed = 0;
++    bool boundsReady=FALSE;
++    s16 left=32767,top=32767,right=-32768,bottom=-32768;
+ 
+     for (u16 i = 0; i < MAX_PSHOTS; i++)
+     {
+@@ -106,6 +109,18 @@
+             continue;
+         }
+ 
++        if(!boundsReady) {
++            left=top=32767;right=bottom=-32768;
++            for(u16 j=0;j<MAX_ENEMIES;j++)if(enemies[j].active) {
++                const Enemy *e=&enemies[j];const s16 size=ENEMY_SIZE(e);
++                if(e->x<left)left=e->x;if(e->y<top)top=e->y;
++                if(e->x+size>right)right=e->x+size;
++                if(e->y+size>bottom)bottom=e->y+size;
++            }
++            boundsReady=TRUE;
++        }
++        if(sx>=right || sx+8<=left || sy>=bottom || sy+8<=top)continue;
++
+         // status pelo modo do PRÓPRIO tiro (a carga já foi gasta no disparo)
+         const u8 pm = pshots[i].mode;
+         const u8 status = (pm == SHOTMODE_ICE)  ? ENEMY_STATUS_FREEZE
+@@ -117,10 +132,10 @@
+         if (hit != ENEMY_HIT_NONE)
+         {
+             pshots[i].active = FALSE;   // o tiro é consumido mesmo sem matar
+-            if (hit == ENEMY_HIT_KILLED) killed++;
++            if (hit == ENEMY_HIT_KILLED){killed++;boundsReady=FALSE;}
+ 
+             if (pm == SHOTMODE_CHAIN)   // raio: reação em cadeia no acerto
+-                killed += ENEMIES_chainDamage(sx, sy, SHOTS_CHAIN_TARGETS, SHOTS_CHAIN_RANGE);
++            {killed += ENEMIES_chainDamage(sx, sy, SHOTS_CHAIN_TARGETS, SHOTS_CHAIN_RANGE);boundsReady=FALSE;}
+         }
+     }
+ 
+--- a/src/enemies/enemies.c
++++ b/src/enemies/enemies.c
+@@ -136,7 +136,7 @@
+ {
+     const s16 size = ENEMY_SIZE(e);
+ 
+-    ARENA_move(&e->fx, &e->fy, e->vx, e->vy, size);
++    ARENA_move(&e->fx, &e->fy, e->vx*ENEMY_UPDATE_STEP(e), e->vy*ENEMY_UPDATE_STEP(e), size);
+ 
+     e->x = (s16) (e->fx >> 6);
+     e->y = (s16) (e->fy >> 6);
+@@ -144,6 +144,7 @@
+ 
+ void ENEMIES_chase(Enemy *e, u16 speedFp)
+ {
++    const u16 step=ENEMY_UPDATE_STEP(e);
+     const s16 half = ENEMY_SIZE(e) / 2;
+ 
+     // lentidão aplicada por elementos da fase (ex.: lama)
+@@ -152,14 +153,14 @@
+     // recuando após colisão: mantém a velocidade de recuo
+     if (e->stun)
+     {
+-        e->stun--;
++        e->stun=e->stun>step ? e->stun-step : 0;
+         if (e->stun == 0) e->retarget = 0;  // ao acabar, volta a mirar já
+         ENEMIES_integrate(e);
+         return;
+     }
+ 
+     // recalcula a direção periodicamente
+-    if (e->retarget) e->retarget--;
++    if (e->retarget) e->retarget=e->retarget>step ? e->retarget-step : 0;
+     else
+     {
+         // alvo: o aliado (chaseX/Y) ou o JOGADOR (aggro dividido no PROTEGER)
+@@ -193,86 +194,53 @@
+ // parcial, nunca total) recebe um pequeno empurrão em direções opostas. O total
+ // por inimigo é limitado a SEP_MAX por quadro → afastamento lento. Aplica-se a
+ // TODOS os inimigos (inclusive os atiradores parados). SEM divisões no laço.
+-static void ENEMIES_separate(void)
+-{
+-    // gentil: roda em quadros alternados (30 Hz) — metade do custo O(N²) e o
+-    // afastamento lento não precisa de precisão a 60 Hz.
+-    static u8 tick = 0;
+-    if (++tick & 1) return;
+-
+-    s32 pushX[MAX_ENEMIES];
+-    s32 pushY[MAX_ENEMIES];
+-    memset(pushX, 0, sizeof(pushX));
+-    memset(pushY, 0, sizeof(pushY));
+-
+-    for (u16 i = 0; i < MAX_ENEMIES; i++)
+-    {
+-        Enemy *a = &enemies[i];
+-        if (!a->active) continue;
+-
+-        const s16 ha = ENEMY_SIZE(a) / 2;
+-        const s16 acx = a->x + ha, acy = a->y + ha;
+-
+-        for (u16 j = i + 1; j < MAX_ENEMIES; j++)
+-        {
+-            Enemy *b = &enemies[j];
+-            if (!b->active) continue;
+-
+-            const s16 hb = ENEMY_SIZE(b) / 2;
+-            s16 dx = (b->x + hb) - acx;
+-            s16 dy = (b->y + hb) - acy;
+-
+-            // distância mínima entre os centros (sobreposição parcial). Fração
+-            // com denominador potência de 2 → mult + shift, SEM divisão no laço.
+-            const s16 minDist = (s16) (((ha + hb) * SEP_MIN_NUM) >> SEP_MIN_SHIFT);
+-
+-            // caixa + distância aproximada INLINE (max + min/2), sem chamar o
+-            // getApproximatedDistance (caro no 68000). Rejeita a maioria dos pares.
+-            s16 adx = dx < 0 ? -dx : dx;
+-            s16 ady = dy < 0 ? -dy : dy;
+-            if ((adx >= minDist) || (ady >= minDist)) continue;
+-
+-            s16 dist = (adx >= ady) ? (s16) (adx + (ady >> 1)) : (s16) (ady + (adx >> 1));
+-
+-            // centros coincidentes: empurra num eixo determinístico (destrava)
+-            if (dist == 0)
+-            {
+-                dx = adx = (s16) (1 + (i & 3));
+-                dy = ady = (s16) (1 + (j & 3));
+-                dist = (adx >= ady) ? (s16) (adx + (ady >> 1)) : (s16) (ady + (adx >> 1));
+-            }
+-            else if (dist >= minDist) continue;
+-
+-            // empurrão proporcional à sobreposição, com teto (afastamento lento)
+-            s16 push = (s16) ((minDist - dist) * SEP_STRENGTH);
+-            if (push > SEP_MAX) push = SEP_MAX;
+-
+-            // normaliza por tabela: pv = d * push * (64/dist) / 64  ≈  (d/dist) * push
+-            const s16 k = (s16) (push * SEP_RECIP[dist]);
+-            const s32 pvx = ((s32) dx * k) >> 6;
+-            const s32 pvy = ((s32) dy * k) >> 6;
+-            pushX[i] -= pvx; pushY[i] -= pvy;   // i afasta de j
+-            pushX[j] += pvx; pushY[j] += pvy;   // j afasta de i
+-        }
+-    }
+-
+-    // aplica os empurrões (26.6), com teto por inimigo, contendo na arena
+-    for (u16 i = 0; i < MAX_ENEMIES; i++)
+-    {
+-        Enemy *e = &enemies[i];
+-        if (!e->active) continue;
+-        if ((pushX[i] | pushY[i]) == 0) continue;
+-
+-        if (pushX[i] >  SEP_MAX) pushX[i] =  SEP_MAX;
+-        if (pushX[i] < -SEP_MAX) pushX[i] = -SEP_MAX;
+-        if (pushY[i] >  SEP_MAX) pushY[i] =  SEP_MAX;
+-        if (pushY[i] < -SEP_MAX) pushY[i] = -SEP_MAX;
+-
+-        const s16 size = ENEMY_SIZE(e);
+-        ARENA_move(&e->fx, &e->fy, (s16)pushX[i], (s16)pushY[i], size);
+-
+-        e->x = (s16) (e->fx >> 6);
+-        e->y = (s16) (e->fy >> 6);
++// Experimental replacement only. Timing, displacement cap and arena movement
++// stay unchanged. Compact bodies avoid repeated enemy/definition lookups.
++
++#define SEPARATION_COMPASS
++// Incremental separation: each body receives its accumulated repulsion once
++// every four frames. Four cohorts bound the worst per-frame work. The 2x
++// displacement preserves the previous per-second displacement cap.
++__attribute__((noinline)) static void ENEMIES_separate(void)
++{
++    static u8 tick;tick++;
++    typedef struct {s16 x,y;u8 slot,half;} Body;
++    Body bodies[MAX_ENEMIES],*end=bodies;
++    for(u16 i=0;i<MAX_ENEMIES;i++)if(enemies[i].active) {
++        const Enemy *e=&enemies[i];const u16 half=ENEMY_SIZE(e)/2;
++        *end++=(Body){e->x+half,e->y+half,i,half};
++    }
++    for(Body *a=bodies;a<end;a++) {
++        if((a->slot+tick)&3)continue;
++        s16 pushX=0,pushY=0;
++        for(Body *b=bodies;b<end;b++) {
++            if(a==b)continue;
++            s16 dx=b->x-a->x,dy=b->y-a->y;
++            const s16 minDist=((a->half+b->half)*SEP_MIN_NUM)>>SEP_MIN_SHIFT;
++            s16 ax=dx<0?-dx:dx,ay=dy<0?-dy:dy;
++            if(ax>=minDist || ay>=minDist)continue;
++            s16 dist=ax>=ay ? ax+(ay>>1) : ay+(ax>>1);
++            if(!dist) {
++                const u8 lo=a->slot<b->slot?a->slot:b->slot,hi=a->slot<b->slot?b->slot:a->slot;
++                ax=1+(lo&3);ay=1+(hi&3);
++                dx=a->slot<b->slot?ax:-ax;dy=a->slot<b->slot?ay:-ay;
++                dist=ax>=ay?ax+(ay>>1):ay+(ax>>1);
++            } else if(dist>=minDist)continue;
++            s16 push=(minDist-dist)*SEP_STRENGTH;
++            if(push>SEP_MAX)push=SEP_MAX;
++            s16 vx=0,vy=0;
++            if(ax>=ay*2)vx=push;
++            else if(ay>=ax*2)vy=push;
++            else vx=vy=(push*3)>>2;
++            if(dx<0)vx=-vx;if(dy<0)vy=-vy;
++            pushX-=vx;pushY-=vy;
++        }
++        if(!(pushX|pushY))continue;
++        if(pushX>SEP_MAX)pushX=SEP_MAX;else if(pushX<-SEP_MAX)pushX=-SEP_MAX;
++        if(pushY>SEP_MAX)pushY=SEP_MAX;else if(pushY<-SEP_MAX)pushY=-SEP_MAX;
++        Enemy *e=&enemies[a->slot];
++        ARENA_move(&e->fx,&e->fy,pushX*2,pushY*2,a->half*2);
++        e->x=e->fx>>6;e->y=e->fy>>6;
+     }
+ }
+ 
+@@ -321,9 +289,10 @@
+     }
+     return dead;
+ }
+-u16 ENEMIES_update(void)
++__attribute__((noinline)) u16 ENEMIES_update(void)
+ {
+     if(currentLevel==0 && TEST_staticEnemies())return updateStaticTraining();
++    static u8 aiTick;aiTick++;
+     u16 burnKills = 0;
+ 
+     for (u16 i = 0; i < MAX_ENEMIES; i++)
+@@ -338,15 +307,17 @@
+         }
+ 
+         const EnemyDef *def = ENEMY_DEF(e);
+-
+-        if (e->hitFlash) e->hitFlash--;     // decai o brilho branco do dano
+-        if (e->burnFlash) e->burnFlash--;   // decai o pulso vermelho do fogo
++        const u16 step=ENEMY_UPDATE_STEP(e);
++        if(step==4 && ((i+aiTick)&3))continue;
++
++        if (e->hitFlash) e->hitFlash=e->hitFlash>step ? e->hitFlash-step : 0;     // decai o brilho branco do dano
++        if (e->burnFlash) e->burnFlash=e->burnFlash>step ? e->burnFlash-step : 0;   // decai o pulso vermelho do fogo
+ 
+         // queimadura (fogo): 1 de dano a cada FIRE_TICK_SEC, por FIRE_BURN_SEC
+         if (e->burn)
+         {
+-            e->burn--;
+-            if (e->burnTick) e->burnTick--;
++            e->burn=e->burn>step ? e->burn-step : 0;
++            if (e->burnTick) e->burnTick=e->burnTick>step ? e->burnTick-step : 0;
+             if (e->burnTick == 0)
+             {
+                 e->burnTick = FIRE_TICK_SEC * fps;
+@@ -356,7 +327,7 @@
+         }
+ 
+         // congelado (gelo): parado, sem comportamento nem dano de contato
+-        if (e->frozen) { e->frozen--; continue; }
++        if (e->frozen) { e->frozen=e->frozen>step ? e->frozen-step : 0; continue; }
+ 
+         def->behavior(e, def);      // comportamento pela cor (via config)
+ 
+--- a/src/enemies/enemies.h
++++ b/src/enemies/enemies.h
+@@ -124,6 +124,7 @@
+ 
+ #define ENEMY_DEF(e)    (ENEMY_DEFS[(e)->type])
+ #define ENEMY_SIZE(e)   (ENEMY_DEF(e)->size)
++#define ENEMY_UPDATE_STEP(e) (((e)->type<12 && (((e)->type+1)&2)) ? 4 : 1)
+ 
+ extern Enemy enemies[MAX_ENEMIES];
+ 
+--- a/src/enemies/enemy_purple.c
++++ b/src/enemies/enemy_purple.c
+@@ -11,7 +11,7 @@
+     ENEMIES_chase(e, def->speedFp);
+ 
+     // ciclo de escudo
+-    if (e->tA) e->tA--;
++    if (e->tA) e->tA=e->tA>4 ? e->tA-4 : 0;
+     else
+     {
+         e->shielded = !e->shielded;
+@@ -21,7 +21,7 @@
+     // Fortaleza: invoca um perseguidor rápido a cada ~1,5 s enquanto blindado
+     if (def->extra == EXTRA_SUMMON && e->shielded)
+     {
+-        if (e->tB) e->tB--;
++        if (e->tB) e->tB=e->tB>4 ? e->tB-4 : 0;
+         else
+         {
+             ENEMIES_spawnAt(ENEMY_TRI_YEL, e->x, e->y);
+--- a/src/levels/arena.c
++++ b/src/levels/arena.c
+@@ -42,6 +42,7 @@
+ static s16 residentTop=-1,residentLeft;
+ static u32 collisionRows[64][8], shotRows[64][8];
+ static bool hasShotSolids;
++static s16 solidLeft,solidTop,solidRight,solidBottom;
+ static bool npcVisible=TRUE;
+ static u16 npcBarHp=0xFFFF, npcBarMaximum;
+ static void streamRow(u16 row,TransferMethod method,bool clearDecals);
+@@ -57,9 +58,15 @@
+         arenaMinX=def->minX;arenaMinY=def->minY;arenaMaxX=def->maxX;arenaMaxY=def->maxY;
+         memset(collisionRows,0,sizeof collisionRows);memset(shotRows,0,sizeof shotRows);
+         hasShotSolids=FALSE;
++        solidLeft=solidTop=32767;solidRight=solidBottom=-32768;
+         for(u16 i=0;i<def->solidCount;i++) {
+             const ArenaRect *r=&def->solids[i];
+             if(r->blocksShots)hasShotSolids=TRUE;
++            const s16 l=(r->x/8)*8,t=(r->y/8)*8,rr=((r->x+r->w)/8)*8,bb=((r->y+r->h)/8)*8;
++            if(rr>l && bb>t) {
++                if(l<solidLeft)solidLeft=l;if(t<solidTop)solidTop=t;
++                if(rr>solidRight)solidRight=rr;if(bb>solidBottom)solidBottom=bb;
++            }
+             for(u16 y=r->y/8;y<(r->y+r->h)/8;y++)
+                 for(u16 x=r->x/8;x<(r->x+r->w)/8;x++) {
+                     const u32 bit=0x80000000UL>>(x&31);
+@@ -160,7 +167,7 @@
+ }
+ static bool outside(s16 x,s16 y,u16 w,u16 h)
+ {
+-    return x<arenaMinX || y<arenaMinY || x+w-1>arenaMaxX || y+h-1>arenaMaxY;
++    return (u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-w+1) || (u16)(y-arenaMinY)>(u16)(arenaMaxY-arenaMinY-h+1);
+ }
+ static bool occupied(const u32 rows[64][8],s16 x,s16 y,u16 w,u16 h)
+ {
+@@ -173,13 +180,16 @@
+ }
+ bool ARENA_blocked(s16 x,s16 y,u16 w,u16 h)
+ {
+-    return outside(x,y,w,h) || (world && occupied(collisionRows,x,y,w,h));
++    if(outside(x,y,w,h))return TRUE;
++    if(!world || x>=solidRight || x+(s16)w<=solidLeft || y>=solidBottom || y+(s16)h<=solidTop)return FALSE;
++    return occupied(collisionRows,x,y,w,h);
+ }
+ bool ARENA_shotBlocked(s16 x,s16 y)
+ {
+     // Bullets are drawn 16px above ground. Wall tests use that visible plane.
+     y-=VIDEO_HEIGHT_OFFSET;
+-    if(x<arenaMinX || x+7>arenaMaxX || y<arenaMinY-VIDEO_HEIGHT_OFFSET || y+7>arenaMaxY)return TRUE;
++    if((u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-7) ||
++       (u16)(y-arenaMinY+VIDEO_HEIGHT_OFFSET)>(u16)(arenaMaxY-arenaMinY+VIDEO_HEIGHT_OFFSET-7))return TRUE;
+     return hasShotSolids && occupied(shotRows,x,y,8,8);
+ }
+ bool ARENA_playerShotBlocked(s16 x,s16 y)
+@@ -187,7 +197,8 @@
+     // The 8x8 bullet has a transparent one-pixel border. Test its visible 6x6
+     // footprint, so padding cannot consume a shot alongside a wall.
+     x++;y+=1-VIDEO_HEIGHT_OFFSET;
+-    if(x<arenaMinX || x+5>arenaMaxX || y<arenaMinY-VIDEO_HEIGHT_OFFSET || y+5>arenaMaxY)return TRUE;
++    if((u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-5) ||
++       (u16)(y-arenaMinY+VIDEO_HEIGHT_OFFSET)>(u16)(arenaMaxY-arenaMinY+VIDEO_HEIGHT_OFFSET-5))return TRUE;
+     return hasShotSolids && occupied(shotRows,x,y,6,6);
+ }
+ void ARENA_move(s32 *x,s32 *y,s16 dx,s16 dy,u16 size)
+@@ -199,8 +210,15 @@
+     if(nx>rx)nx=rx;
+     if(ny<ly)ny=ly;
+     if(ny>ry)ny=ry;
+-    if(!world || !ARENA_blocked(nx>>6,*y>>6,size,size))*x=nx;
+-    if(!world || !ARENA_blocked(*x>>6,ny>>6,size,size))*y=ny;
++    // Both axis sweeps are provably clear south of the solid tile bounds.
++    // nx/ny were clamped above; the horizontal sweep also needs its old Y
++    // inside the arena, including calls that start at an invalid coordinate.
++    const s16 oldY=*y>>6,clearY=solidBottom>arenaMinY?solidBottom:arenaMinY;
++    if(world && oldY>=clearY && oldY<=arenaMaxY-(s16)size+1 && (ny>>6)>=solidBottom) {
++        *x=nx;*y=ny;return;
++    }
++    if((nx>>6)==(*x>>6) || !world || !ARENA_blocked(nx>>6,*y>>6,size,size))*x=nx;
++    if((ny>>6)==(*y>>6) || !world || !ARENA_blocked(*x>>6,ny>>6,size,size))*y=ny;
+ }
+ void ARENA_camera(void)
+ {
+--- a/src/system/audio/music.c
++++ b/src/system/audio/music.c
+@@ -36,6 +36,7 @@
+     u16 step, stepFramesCur, stepFramesTgt;
+     s16 countdown;
+     u8 rCalmUntil, rEnemyMax, rStepCalm, rStepHot;
++    u8 rampLastCount;bool rampCached;
+ } MusicState;
+ static MusicState music = {
+     .track = MUSIC_DEFAULT_TRACK,
+@@ -206,6 +207,7 @@
+ 
+ void MUSIC_init(void)
+ {
++    music.rampCached=FALSE;
+     MUSIC_stopResultCue();
+     MUSIC_syncClock();
+     AUDIO_silenceAll();
+@@ -220,6 +222,7 @@
+ 
+ void MUSIC_setRamp(u8 calmUntil, u8 enemyMax, u8 stepCalm, u8 stepHot)
+ {
++    music.rampCached=FALSE;
+     // 0 em qualquer campo => mantém o padrão do CONFIG (music.h)
+     music.rCalmUntil = calmUntil ? calmUntil : MUSIC_CALM_UNTIL;
+     music.rEnemyMax  = enemyMax  ? enemyMax  : MUSIC_ENEMY_MAX;
+@@ -232,6 +235,8 @@
+ void MUSIC_setEnemies(u8 count)
+ {
+     if (count > music.rEnemyMax) count = music.rEnemyMax;
++    if(music.rampCached && music.rampLastCount==count)return;
++    music.rampLastCount=count;music.rampCached=TRUE;
+     if (count <= music.rCalmUntil)                    // poucos inimigos: fica calmo
+     {
+         music.stepFramesTgt = music.rStepCalm;
+--- a/src/system/video/combatgfx.c
++++ b/src/system/video/combatgfx.c
+@@ -11,11 +11,11 @@
+ typedef char death_scratch_fits[(BOSS_ROT_COUNT>=68)?1:-1];
+ CombatDeath combatDeaths[COMBAT_DEATH_CAP];
+ static bool shotsReady,bossLayout;
+-static u8 deathCursor;
++static u8 deathCursor,deathActiveCount;
+ static u16 duration(u8 type) {return (fps*(type==ENEMY_BOSS ? 5 : 3)+9)/10;}
+ void COMBATGFX_clear(void)
+ {
+-    memset(combatDeaths,0,sizeof combatDeaths);bossLayout=FALSE;deathCursor=0;shotsReady=FALSE;
++    memset(combatDeaths,0,sizeof combatDeaths);bossLayout=FALSE;deathCursor=0;deathActiveCount=0;shotsReady=FALSE;
+ }
+ void COMBATGFX_invalidate(void)
+ {
+@@ -28,7 +28,7 @@
+     if(type==ENEMY_BOSS)
+     {
+         // A boss uses36tiles. Reclaim normal effects, never live enemy frames.
+-        memset(combatDeaths,0,sizeof combatDeaths);bossLayout=TRUE;
++        memset(combatDeaths,0,sizeof combatDeaths);deathActiveCount=0;bossLayout=TRUE;
+     }
+     const u16 first=bossLayout && type!=ENEMY_BOSS ? 1 : 0;
+     const u16 cap=bossLayout ? (type==ENEMY_BOSS ? 1 : 3) : COMBAT_DEATH_CAP;
+@@ -36,6 +36,7 @@
+     {
+         CombatDeath *d=&combatDeaths[i];if(d->active)continue;
+         const u16 offset=bossLayout ? (i ? 36+(i-1)*16 : 0) : i*16;
++        deathActiveCount++;
+         *d=(CombatDeath){x,y,0,BOSS_ROT_BASE+offset,type,ENEMY_DEFS[type]->size,255,TRUE,FALSE,0};
+         return;
+     }
+@@ -43,17 +44,19 @@
+ }
+ void COMBATGFX_update(void)
+ {
++    if(!deathActiveCount)return;
+     bool any=FALSE;
+     for(u16 i=0;i<COMBAT_DEATH_CAP;i++)
+     {
+         CombatDeath *d=&combatDeaths[i];if(!d->active)continue;
+-        if(++d->age>=duration(d->type)){d->active=FALSE;continue;}
++        if(++d->age>=duration(d->type)){d->active=FALSE;deathActiveCount--;continue;}
+         any=TRUE;
+     }
+     if(!any)bossLayout=FALSE;
+ }
+ u16 COMBATGFX_remaining(void)
+ {
++    if(!deathActiveCount)return 0;
+     u16 left=0;
+     for(u16 i=0;i<COMBAT_DEATH_CAP;i++)if(combatDeaths[i].active)
+     {
+@@ -70,6 +73,7 @@
+            DMA_getQueueSize()+3<DMA_getMaxQueueSize() &&
+            DMA_queueDma(DMA_VRAM,(void *)combat_shots,(TILE_USER_INDEX+SHOT_BASE)*32,240,2))shotsReady=TRUE;
+     }
++    if(!deathActiveCount)return;
+     for(u16 k=0;k<COMBAT_DEATH_CAP && transfers<ENEMY_DMA_FRAMES;k++)
+     {
+         CombatDeath *d=&combatDeaths[(deathCursor+k)%COMBAT_DEATH_CAP];if(!d->active)continue;
+@@ -91,10 +95,35 @@
+ {
+     const s32 ax=vx<0 ? -vx : vx,ay=vy<0 ? -vy : vy;
+     u16 pose;bool h=FALSE,v=FALSE;
+-    if(ax*2<ay){pose=1;v=vy<0;}
+-    else if(ay*2<ax){pose=0;h=vx<0;}
++    if((!vx && vy) || ax*2<ay){pose=1;v=vy<0;}
++    else if((!vy && vx) || ay*2<ax){pose=0;h=vx<0;}
+     else {pose=2;h=vx<0;v=vy<0;}
+     if(style>4)style=1;
+     const u16 tile=shotsReady ? SHOT_BASE+style*3+pose : (style ? TILE_ESHOT : TILE_PSHOT);
+     return TILE_ATTR_FULL(PAL1,TRUE,v,h,TILE_USER_INDEX+tile);
+ }
++
++static const u16 attrs[80]={
++    TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+1),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+2),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+1),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+2),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+1),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+2),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+0),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+1),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+2),
++    TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+4),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+5),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+4),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+5),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+4),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+5),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+3),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+4),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+5),
++    TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+7),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+8),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+7),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+8),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+7),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+8),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+6),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+7),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+8),
++    TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+10),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+11),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+10),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+11),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+10),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+11),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+9),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+10),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+11),
++    TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+13),TILE_ATTR_FULL(PAL1,TRUE,0,0,TILE_USER_INDEX+SHOT_BASE+14),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+13),TILE_ATTR_FULL(PAL1,TRUE,0,1,TILE_USER_INDEX+SHOT_BASE+14),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+13),TILE_ATTR_FULL(PAL1,TRUE,1,0,TILE_USER_INDEX+SHOT_BASE+14),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+12),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+13),TILE_ATTR_FULL(PAL1,TRUE,1,1,TILE_USER_INDEX+SHOT_BASE+14)
++};
++
++const u16 *COMBATGFX_shotTable(void){return shotsReady?attrs:NULL;}
++u16 COMBATGFX_cachedShotAttr(FShot *shot,u8 style)
++{
++    u8 key=shot->renderPose;
++    if(!key) {
++        const s32 vx=shot->vx,vy=shot->vy;
++        const s32 ax=vx<0?-vx:vx,ay=vy<0?-vy:vy;
++        if(ax*2<ay)key=2|(vy<0?8:0);
++        else if(ay*2<ax)key=1|(vx<0?4:0);
++        else key=3|(vx<0?4:0)|(vy<0?8:0);
++        if(style>4)style=1;
++        shot->renderPose=key|style<<4;
++    }
++    if(shotsReady)return attrs[shot->renderPose];
++    return TILE_ATTR_FULL(PAL1,TRUE,(key&8)!=0,(key&4)!=0,TILE_USER_INDEX+(style?TILE_ESHOT:TILE_PSHOT));
++}
+--- a/src/system/video/combatgfx.h
++++ b/src/system/video/combatgfx.h
+@@ -1,6 +1,7 @@
+ #ifndef COMBATGFX_H
+ #define COMBATGFX_H
+ #include <genesis.h>
++#include "actors/shots.h"
+ #define COMBAT_DEATH_CAP 4
+ // Logical death is immediate. These records own no enemy pointer or hitbox.
+ typedef struct {
+@@ -17,4 +18,8 @@
+ // Runs after actor uploads, with their remaining shared frame allowance.
+ void COMBATGFX_prepare(u16 actorTransfers);
+ u16 COMBATGFX_shotAttr(u8 style,s32 vx,s32 vy);
++
++u16 COMBATGFX_cachedShotAttr(FShot *shot,u8 style);
++
++const u16 *COMBATGFX_shotTable(void);
+ #endif
+--- a/src/system/video/enemygfx.c
++++ b/src/system/video/enemygfx.c
+@@ -147,7 +147,7 @@
+     pinnedSlots=0;
+     const u16 runPhase=divu(frame,ACTOR_RUN_TICKS(fps))&(ACTOR_RUN_FRAMES-1);
+     const u16 idlePhase=divu(frame,ACTOR_IDLE_TICKS(fps))&(ACTOR_IDLE_FRAMES-1);
+-    for (u16 i=0; i<MAX_ENEMIES; i++)
++    for (u16 i=frame&3; i<MAX_ENEMIES; i+=4)
+     {
+         FrameSlot *s=&slots[i];
+         const Enemy *e=&enemies[i];
+@@ -165,15 +165,16 @@
+             ACTOR_IDLE_FRAMES+((runPhase+i)&(ACTOR_RUN_FRAMES-1)) :
+             (idlePhase+i)&(ACTOR_IDLE_FRAMES-1);
+         if(currentLevel==0 && testStage==1)TEST_animation(i,&s->wantedDir,&s->wantedPose);
++        if(e->shielded && ENEMY_DEF(e)->color==COLOR_PURPLE)s->wantedPose|=128;
+         // Mirroring needs no upload, even when another actor uses the last
+         // DMA allowance or this actor's next animation pose is still pending.
+         if(s->valid && CANON[s->dir]==CANON[s->wantedDir])s->dir=s->wantedDir;
+         s->x=e->x; s->y=e->y; s->seen=TRUE;
+     }
+     // Round-robin keeps a frequently turning enemy from starving other slots.
+-    for (u16 k=0; k<MAX_ENEMIES && transfers<allowance; k++)
+-    {
+-        const u16 i=(nextSlot+k)&(MAX_ENEMIES-1);
++    for (u16 k=0; k<4 && transfers<allowance; k++)
++    {
++        const u16 i=(frame&3)+(((k+(frame>>2))&3)<<2);
+         FrameSlot *s=&slots[i];
+         const Enemy *e=&enemies[i];
+         if (!e->active || !newArt(e->type)) continue;
+@@ -186,8 +187,8 @@
+         if (DMA_getQueueTransferSize()+bytes+1024>DMA_TRANSFER_CAPACITY_NTSC ||
+             DMA_getQueueSize()+3>=DMA_getMaxQueueSize()) break;
+         if(!allocateSlot(i,art->tiles))continue;
+-        const u32 *source=(const u32 *)insect_frames+art->offset+
+-            (CANON[s->wantedDir]*ACTOR_VIEW_FRAMES+s->wantedPose)*art->words;
++        const u32 *source=(const u32 *)(s->wantedPose&128 ? insect_shield_frames : insect_frames)+art->offset+
++            (CANON[s->wantedDir]*ACTOR_VIEW_FRAMES+(s->wantedPose&127))*art->words;
+         if (!DMA_queueDma(DMA_VRAM,(void *)source,(TILE_USER_INDEX+s->tile)*32,art->tiles*16,2)) break;
+         pinnedSlots|=1u<<i;
+         s->type=e->type; s->dir=s->wantedDir; s->pose=s->wantedPose; s->valid=TRUE;
+--- a/src/system/video/spritelist.c
++++ b/src/system/video/spritelist.c
+@@ -20,199 +20,99 @@
+ #include "levels/test.h"
+ #include "system/video/screens/hud.h"
+ 
+-// Four exact scanlines per 32-bit word: each byte is an independent lane.
+-// Counts stay <=20 and widths (in8px units) <=40, so packed adds never carry
+-// into the next scanline. This preserves exact pixel-row limits without
+-// scanning every row three times for each32x48 actor on the68000.
+-#define LINE_WORDS (224/4)
+-static u32 lineSprites[LINE_WORDS];
+-static u32 linePixels[LINE_WORDS];
+-static u32 usedSpriteBits,usedPixelBits;
+-// Stage a frame, then certify its combined scanline load with one prefix sum.
+-// Only overloaded frames need the detailed priority-preserving admission pass.
+-typedef struct { s16 x,y; u16 attr; u8 size,pieces; } PendingSprite;
+-static PendingSprite pending[80];
+-// Keep PendingSprite eight bytes: indexing ten-byte records costs a multiply
+-// on the 68000 in the hot enqueue path. Only markers need a parent reference.
+-static u8 markerParent[80];
+-static u16 lineDelta[225];
+-static u16 totalWidths,firstLine,lastLine;
+-static bool deferred;
+-
+-static void beginSprites(void)
+-{
+-    memset(lineDelta,0,sizeof lineDelta);
+-    memset(markerParent,0,sizeof markerParent);
+-    totalWidths=0;firstLine=224;lastLine=0;deferred=TRUE;
+-}
+-
++// Conservative 8px scanline bands. Each band reserves the full width of
++// every intersecting sprite, so real scanline limits can never be exceeded.
++static u16 bandLoad[28],widthBound;
++static void beginSprites(void){memset(bandLoad,0,sizeof bandLoad);widthBound=0;}
+ #ifdef RENDER_PROFILE
+ volatile u16 renderProfileTicks[4];
+ #define PROFILE_START() u32 profileClock=getSubTick()
+-#define PROFILE_MARK(index) do {u32 now=getSubTick();renderProfileTicks[index]=now-profileClock;profileClock=now;}while(0)
++#define PROFILE_MARK(i) do {u32 now=getSubTick();renderProfileTicks[i]=now-profileClock;profileClock=now;}while(0)
+ #else
+ #define PROFILE_START()
+-#define PROFILE_MARK(index)
++#define PROFILE_MARK(i)
+ #endif
+-
+-
+ static bool reserve(u16 n,s16 x,s16 y,u16 w,u16 h,u16 pieces)
+ {
+     if(n+pieces>80 || x>=320 || x+(s16)w<=0 || y>=224 || y+(s16)h<=0)return FALSE;
+-    const u16 first=y<0 ? 0 : y;
+-    const u16 last=y+(s16)h>224 ? 224 : y+h;
+-    const u16 begin=first>>2,end=(last-1)>>2;
+-    const u32 firstMask=0x80808080UL<<((first&3)*8);
+-    const u32 lastMask=0x80808080UL>>((3-((last-1)&3))*8);
+-    const u16 rowCount=pieces==4 ? 2 : 1;
+-    const u32 countBias=pieces==4 ? 0x6d6d6d6dUL : 0x6c6c6c6cUL;
+-    const u32 countStep=pieces==4 ? 0x02020202UL : 0x01010101UL;
+-    const u32 pixels=w==48 ? 0x06060606UL : w==32 ? 0x04040404UL : w==24 ? 0x03030303UL :
+-                     w==16 ? 0x02020202UL : 0x01010101UL;
+-    const u32 pixelBias=0x57575757UL+pixels;
+-    // OR is a conservative upper bound for each byte lane. Most ordinary
+-    // frames are far below the limits, so no per-word admission scan is needed.
+-    if(((usedSpriteBits+countBias)|(usedPixelBits+pixelBias))&0x80808080UL)
+-    {
+-        for(u16 i=begin;i<=end;i++)
+-        {
+-            u32 mask=0x80808080UL;
+-            if(i==begin)mask&=firstMask;
+-            if(i==end)mask&=lastMask;
+-            if(((lineSprites[i]+countBias)|(linePixels[i]+pixelBias))&mask)return FALSE;
+-        }
+-    }
+-    // Commit only after the whole interval passes. Handle partial edge words
+-    // once; the interior is a straight packed add with advancing pointers.
+-    u32 countBits=usedSpriteBits,pixelBits=usedPixelBits;
+-    u32 lanes=(firstMask&(begin==end ? lastMask : 0x80808080UL))>>7;
+-    u32 bytes=(lanes<<8)-lanes;
+-    u32 count=lineSprites[begin]+lanes*rowCount;
+-    u32 width=linePixels[begin]+(pixels&bytes);
+-    lineSprites[begin]=count;linePixels[begin]=width;
+-    countBits|=count;pixelBits|=width;
+-    if(begin!=end)
+-    {
+-        u32 *counts=&lineSprites[begin+1],*widths=&linePixels[begin+1];
+-        u16 remaining=end-begin-1;
+-        while(remaining--)
+-        {
+-            count=*counts+countStep;width=*widths+pixels;
+-            *counts++=count;*widths++=width;
+-            countBits|=count;pixelBits|=width;
+-        }
+-        lanes=lastMask>>7;bytes=(lanes<<8)-lanes;
+-        count=lineSprites[end]+lanes*rowCount;width=linePixels[end]+(pixels&bytes);
+-        lineSprites[end]=count;linePixels[end]=width;
+-        countBits|=count;pixelBits|=width;
+-    }
+-    usedSpriteBits=countBits;usedPixelBits=pixelBits;
++    const u16 first=(y<0 ? 0 : y)>>3,last=((y+(s16)h>224 ? 224 : y+h)-1)>>3;
++    const u16 load=(pieces==4 ? 0x200 : 0x100)+(w>>3);
++    u16 *start=bandLoad+first,*end=bandLoad+last+1;
++    if(n+pieces>20 || widthBound+(w>>3)>40)
++        for(u16 *p=start;p<end;p++)if((u16)(*p+load+0x6b57u)&0x8080u)return FALSE;
++    for(u16 *p=start;p<end;p++)*p+=load;
++    widthBound+=w>>3;
+     return TRUE;
+ }
+-
+-__attribute__((always_inline)) static inline bool admit(u16 n,s16 x,s16 y,u16 w,u16 h,u16 pieces,u8 size,u16 attr)
+-{
+-    if(!deferred)return reserve(n,x,y,w,h,pieces);
+-    const s16 right=x+w,bottom=y+h;
+-    if((u16)(n+pieces)>80 || x>=320 || right<=0 || y>=224 || bottom<=0)return FALSE;
+-    const u16 first=y<0 ? 0 : y,last=bottom>224 ? 224 : bottom;
+-    const u16 load=(pieces==4 ? 0x200 : 0x100)+(w>>3);
+-    lineDelta[first]+=load;lineDelta[last]-=load;
+-    if(first<firstLine)firstLine=first;
+-    if(last>lastLine)lastLine=last;
+-    totalWidths+=w>>3;
+-    pending[n]=(PendingSprite){x,y,attr,size,pieces};
+-    return TRUE;
+-}
+-
++__attribute__((always_inline)) static inline void writeSprite(u16 n,s16 x,s16 y,u8 size,u16 attr)
++{
++    VDPSprite *sprite=&vdpSpriteCache[n];
++    sprite->y=y+128;sprite->size_link=((u16)size<<8)|(n+1);
++    sprite->attribut=attr;sprite->x=x+128;
++}
++static bool emitSmall(u16 *n,s16 x,s16 y,u16 attr)
++{
++    x-=cameraX;y-=cameraY;
++    if(*n>=80 || x>=320 || x+8<=0 || y>=224 || y+8<=0)return FALSE;
++    const u16 first=(y<0 ? 0 : y)>>3,last=(y+7>223 ? 223 : y+7)>>3;
++    if(((u16)(bandLoad[first]+0x6c58u)|(u16)(bandLoad[last]+0x6c58u))&0x8080u)return FALSE;
++    bandLoad[first]+=0x101;if(first!=last)bandLoad[last]+=0x101;
++    widthBound++;
++    writeSprite(*n,x,y,SPRITE_SIZE(1,1),attr&0x7fff);(*n)++;return TRUE;
++}
+ bool SPRITES_emit(u16 *n,s16 x,s16 y,u8 size,u16 attr)
+ {
+-    attr&=0x7fff; // The opaque, high-priority HUD always covers world sprites.
++    if(!size)return emitSmall(n,x,y,attr);
+     x-=cameraX;y-=cameraY;
+     const u16 w=(((size>>2)&3)+1)*8,h=((size&3)+1)*8;
+-    if(!admit(*n,x,y,w,h,1,size,attr))return FALSE;
+-    if(!deferred)VDP_setSpriteFull(*n,x,y,size,attr,*n+1);
+-    (*n)++;
+-    return TRUE;
+-}
+-
++    if(!reserve(*n,x,y,w,h,1))return FALSE;
++    writeSprite(*n,x,y,size,attr&0x7fff);(*n)++;return TRUE;
++}
+ static bool emitActor(u16 *n,s16 x,s16 y,u16 attr)
+ {
++    x-=cameraX;y-=cameraY;
++    if(!reserve(*n,x,y,32,48,2))return FALSE;
+     attr&=0x7fff;
+-    x-=cameraX;y-=cameraY;
+-    // The two hardware pieces occupy disjoint rows: one count per row.
+-    if(!admit(*n,x,y,32,48,2,SPRITE_SIZE(4,4),attr))return FALSE;
+-    if(!deferred)
+-    {
+-        VDP_setSpriteFull(*n,x,y,SPRITE_SIZE(4,4),attr,*n+1);
+-        VDP_setSpriteFull(*n+1,x,y+32,SPRITE_SIZE(4,2),attr+16,*n+2);
+-    }
+-    *n+=2;
+-    return TRUE;
+-}
+-
++    writeSprite(*n,x,y,SPRITE_SIZE(4,4),attr);
++    writeSprite(*n+1,x,y+32,SPRITE_SIZE(4,2),attr+16);
++    *n+=2;return TRUE;
++}
+ static u16 writeBoss(u16 n,s16 x,s16 y,u16 attr)
+ {
+     const bool flip=(attr&(1u<<11))!=0;
+     const s16 left=x+(flip?16:0),right=x+(flip?0:32);
+-    VDP_setSpriteFull(n,left,y,SPRITE_SIZE(4,4),attr,n+1);n++;
+-    VDP_setSpriteFull(n,left,y+32,SPRITE_SIZE(4,2),attr+16,n+1);n++;
+-    VDP_setSpriteFull(n,right,y,SPRITE_SIZE(2,4),attr+24,n+1);n++;
+-    VDP_setSpriteFull(n,right,y+32,SPRITE_SIZE(2,2),attr+32,n+1);n++;
++    writeSprite(n++,left,y,SPRITE_SIZE(4,4),attr);
++    writeSprite(n++,left,y+32,SPRITE_SIZE(4,2),attr+16);
++    writeSprite(n++,right,y,SPRITE_SIZE(2,4),attr+24);
++    writeSprite(n++,right,y+32,SPRITE_SIZE(2,2),attr+32);
+     return n;
+ }
+-
+ static bool emitBoss(u16 *n,s16 x,s16 y,u16 attr)
+ {
+-    attr&=0x7fff;
+     x-=cameraX;y-=cameraY;
+-    // Reserve the whole 48x48 box atomically. Both columns count on each
+-    // scanline; retaining one atomic group avoids partially rendered bosses.
+-    if(!admit(*n,x,y,48,48,4,SPRITE_SIZE(4,4),attr))return FALSE;
+-    if(!deferred)writeBoss(*n,x,y,attr);
+-    *n+=4;return TRUE;
+-}
+-
+-static u16 finishSprites(u16 count)
+-{
+-    bool overloaded=FALSE;
+-    if(count>20 || totalWidths>40)
+-    {
+-        u16 load=0;
+-        for(u16 y=firstLine;y<lastLine;y++)
+-        {
+-            load+=lineDelta[y];
+-            // Byte lanes: >20 entries or >40 eight-pixel units. A width
+-            // carry requires >=64 entries, which already fails the count lane.
+-            if((u16)(load+0x6b57u)&0x8080u){overloaded=TRUE;break;}
+-        }
+-    }
+-    if(overloaded)
+-    {
+-        memset(lineSprites,0,sizeof lineSprites);memset(linePixels,0,sizeof linePixels);
+-        usedSpriteBits=usedPixelBits=0;
+-    }
+-    deferred=FALSE;
+-    u16 n=0;
+-    bool admitted[80];
+-    for(u16 i=0;i<count;)
+-    {
+-        const u16 source=i;
+-        const PendingSprite *s=&pending[i];
+-        const u16 w=s->pieces==4 ? 48 : (((s->size>>2)&3)+1)*8,h=s->pieces>=2 ? 48 : ((s->size&3)+1)*8;
+-        i+=s->pieces;
+-        if(overloaded) {
+-            admitted[source]=FALSE;
+-            if(markerParent[source] && !admitted[markerParent[source]-1])continue;
+-            if(!reserve(n,s->x,s->y,w,h,s->pieces))continue;
+-            admitted[source]=TRUE;
+-        }
+-        if(s->pieces==4){n=writeBoss(n,s->x,s->y,s->attr);continue;}
+-        VDP_setSpriteFull(n,s->x,s->y,s->size,s->attr,n+1);n++;
+-        if(s->pieces==2)
+-        {
+-            VDP_setSpriteFull(n,s->x,s->y+32,SPRITE_SIZE(4,2),s->attr+16,n+1);n++;
+-        }
++    if(!reserve(*n,x,y,48,48,4))return FALSE;
++    *n=writeBoss(*n,x,y,attr&0x7fff);return TRUE;
++}
++static u16 finishSprites(u16 count){return count;}
++
++// Keep the two dense projectile loops outside the large scene renderer.
++__attribute__((noinline)) static u16 drawShots(u16 n,FShot *shot,u16 count,bool enemy)
++{
++    const s16 cx=cameraX,cy=cameraY+VIDEO_HEIGHT_OFFSET;
++    const u16 *table=COMBATGFX_shotTable();
++    VDPSprite *sprite=&vdpSpriteCache[n];
++    for(FShot *end=shot+count;shot<end;shot++) {
++        if(!shot->active)continue;
++        const s16 x=(shot->x>>6)-cx,y=(shot->y>>6)-cy;
++        if(n>=80)break;
++        if((u16)(x+7)>=327 || (u16)(y+7)>=231)continue;
++        const u16 first=(u16)(y<0?0:y)>>3,last=(u16)(y+7>223?223:y+7)>>3;
++        if(((u16)(bandLoad[first]+0x6c58u)|(u16)(bandLoad[last]+0x6c58u))&0x8080u)continue;
++        bandLoad[first]+=0x101;if(first!=last)bandLoad[last]+=0x101;
++        widthBound++;
++        const u16 attr=table && shot->renderPose ? table[shot->renderPose] : COMBATGFX_cachedShotAttr(shot,enemy?(shot->mode?shot->mode:1):0);
++        sprite->y=y+128;sprite->size_link=++n;sprite->attribut=attr&0x7fff;sprite->x=x+128;sprite++;
++
+     }
+     return n;
+ }
+@@ -297,9 +197,9 @@
+             if(!SPRITES_emit(&n,x,y,SPRITE_SIZE(size/8,size/8),attr))continue;
+         }
+         else if(!emitBoss(&n,x,y,attr))continue;
+-        if(e->shielded || e->burn || e->frozen) {
++        if((e->shielded && d->color!=COLOR_PURPLE) || e->burn || e->frozen) {
+             statuses[statusCount++]=(StatusMarker){x,y,size,bodyIndex+1,
+-                (e->shielded ? 1 : 0)|(e->burn ? 2 : 0)|(e->frozen ? 4 : 0)};
++                (e->shielded && d->color!=COLOR_PURPLE ? 1 : 0)|(e->burn ? 2 : 0)|(e->frozen ? 4 : 0)};
+         }
+         // Status marks use the existing checkerboard, subject to the same limits.
+         if (e->frozen || e->burnFlash)
+@@ -320,15 +220,8 @@
+     for(u16 i=0;i<2;i++)if(allyShots[i].active)
+         SPRITES_emit(&n,allyShots[i].x>>6,VIDEO_PROJECT_Y(allyShots[i].y>>6),SPRITE_SIZE(1,1),COMBATGFX_shotAttr(0,allyShots[i].vx,allyShots[i].vy));
+     OBJECTIVE_drawMarkers(&n);
+-    for (u16 i=0;i<MAX_PSHOTS;i++)
+-        if (pshots[i].active)
+-            // Shot simulation remains in ground coordinates; draw at gun height.
+-            SPRITES_emit(&n,pshots[i].x>>6,(pshots[i].y>>6)-VIDEO_HEIGHT_OFFSET,SPRITE_SIZE(1,1),
+-                COMBATGFX_shotAttr(0,pshots[i].vx,pshots[i].vy));
+-    for (u16 i=0;i<MAX_ESHOTS;i++)
+-        if (eshots[i].active)
+-            SPRITES_emit(&n,eshots[i].x>>6,VIDEO_PROJECT_Y(eshots[i].y>>6),SPRITE_SIZE(1,1),
+-                COMBATGFX_shotAttr(eshots[i].mode ? eshots[i].mode : 1,eshots[i].vx,eshots[i].vy));
++    n=drawShots(n,pshots,MAX_PSHOTS,FALSE);
++    n=drawShots(n,eshots,MAX_ESHOTS,TRUE);
+     // Admit bodies and projectiles before optional status markers. Crowded
+     // scanlines may shed a marker, never an actor to make room for its icon.
+     const StatusMarker *marker=statuses;
+@@ -336,6 +229,17 @@
+     {
+         const s16 size=marker->size,bodyY=marker->y;
+         const u8 flags=marker->flags;
++        if(flags==1) {
++            s16 x=marker->x+(size-8)/2,y=bodyY-10;
++            if(y<cameraY+HUD_HEIGHT+2) {
++                y=bodyY+(size-8)/2;x=marker->x+size+2;
++                if(x+8>cameraX+320)x=marker->x-10;
++            }
++            if(x<cameraX)x=cameraX;if(x>cameraX+312)x=cameraX+312;
++            if(y<cameraY+HUD_HEIGHT+2)y=cameraY+HUD_HEIGHT+2;
++            emitSmall(&n,x,y,TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_ENEMY_SHIELD));
++            continue;
++        }
+         const u16 count=((flags&1)!=0)+((flags&2)!=0)+((flags&4)!=0);
+         const s16 width=count*10-2;
+         s16 x=marker->x+(size-width)/2,y=bodyY-10;
+@@ -351,10 +255,8 @@
+         if(y<cameraY+HUD_HEIGHT+2)y=cameraY+HUD_HEIGHT+2;
+         static const u16 tiles[3]={TILE_ENEMY_SHIELD,TILE_ENEMY_FIRE,TILE_ENEMY_ICE};
+         for(u16 status=0;status<3;status++)if(flags&(1u<<status)) {
+-            const u16 markerIndex=n;
+-            if(SPRITES_emit(&n,x,y,SPRITE_SIZE(1,1),
+-                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+tiles[status])))
+-                markerParent[markerIndex]=marker->parent;
++            SPRITES_emit(&n,x,y,SPRITE_SIZE(1,1),
++                TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+tiles[status]));
+             x+=10;
+         }
+     }
+--- a/res/insects.h
++++ b/res/insects.h
+@@ -6,5 +6,6 @@
+ extern const u8 insect_frames[118080];
+ extern const u8 insect_icons[7680];
+ extern const u8 insect_palette[32];
++extern const u8 insect_shield_frames[118080];
+ 
+ #endif // _RES_INSECTS_H_
+--- a/res/insects.res
++++ b/res/insects.res
+@@ -1,3 +1,5 @@
+ BIN insect_frames "insects/frames.bin" 4
+ BIN insect_icons "insects/icons.bin" 4
+ BIN insect_palette "insects/palette.bin" 2
++
++BIN insect_shield_frames "insects/shield_frames.bin" 4

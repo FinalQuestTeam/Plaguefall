@@ -1,0 +1,36 @@
+PASS 01/entry
+PASS 01/atlas-camera
+PASS 01/collision
+PASS 01/load
+MATCH 01 {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 52.82, 'physical_seconds': 54.38, 'fps': 48.57, 'kills': 8, 'hp': 0, 'minimum_npc_hp': None, 'peak_enemies': 4, 'damage_events': 15, 'ram_writes_during_attempt': False}
+PASS 01/timer-victory
+PASS 02A/entry
+PASS 02A/atlas-camera
+PASS 02A/collision
+PASS 02A/load
+MATCH 02A {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 48.78, 'physical_seconds': 50.16, 'fps': 48.62, 'kills': 8, 'hp': 0, 'minimum_npc_hp': None, 'peak_enemies': 2, 'damage_events': 11, 'ram_writes_during_attempt': False}
+PASS 02B/entry
+PASS 02B/atlas-camera
+PASS 02B/collision
+PASS 02B/load
+MATCH 02B {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 36.96, 'physical_seconds': 38.5, 'fps': 48.0, 'kills': 2, 'hp': 0, 'minimum_npc_hp': None, 'peak_enemies': 4, 'damage_events': 13, 'ram_writes_during_attempt': False}
+PASS 03/entry
+PASS 03/atlas-camera
+PASS 03/collision
+PASS 03/load
+PASS 03/full-controller-traversal
+PASS 03/church-continuity
+MATCH 03 {'attempt': 1, 'result': 'completed', 'objective_failed': False, 'game_seconds': 25.72, 'physical_seconds': 25.74, 'fps': 49.96, 'kills': 1, 'hp': 91, 'minimum_npc_hp': None, 'peak_enemies': 2, 'damage_events': 3, 'ram_writes_during_attempt': False}
+PASS 04/entry
+PASS 04/atlas-camera
+PASS 04/collision
+PASS 04/load
+MATCH 04 {'attempt': 1, 'result': 'timeout', 'objective_failed': False, 'game_seconds': 150.0, 'physical_seconds': 150.0, 'fps': 50.0, 'kills': 1, 'hp': 100, 'minimum_npc_hp': None, 'peak_enemies': 4, 'damage_events': 0, 'ram_writes_during_attempt': False}
+PASS 05/entry
+PASS 05/atlas-camera
+PASS 05/collision
+PASS 05/load
+MATCH 05 {'attempt': 1, 'result': 'defeat', 'objective_failed': False, 'game_seconds': 33.82, 'physical_seconds': 35.54, 'fps': 47.58, 'kills': 4, 'hp': 0, 'minimum_npc_hp': 108, 'peak_enemies': 3, 'damage_events': 10, 'ram_writes_during_attempt': False}
+PASS 05/timer-victory
+PASS 05/abandonment-failure
+{"passed": true, "failures": [], "output": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-pattern-v2/playtests/early/pal/report.json"}

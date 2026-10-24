@@ -1,0 +1,171 @@
+Portuguese font: 96 tiles / 3072 bytes per variant; 12 accented glyphs; no extra VRAM.
+Text: compiled encoding, NFC, escapes, ASCII art, 12 distinct accents and both 96-tile font variants passed.
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/actor-deaths-v1/export.py:58: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  frame.putdata([0 if a<220 else min(range(1,16),key=lambda i:sum((p-PALETTE[i][k])**2 for k,p in enumerate((r,g,b)))) for r,g,b,a in cell.getdata()])
+Actor deaths verified: 8 frames, PAL2, 6144 ROM bytes
+{
+  "passed": true,
+  "storyboard": "art/storyboard-abertura-v2/storyboard.json",
+  "shots": 14,
+  "captions": 18,
+  "seconds": 101,
+  "image_size": [
+    336,
+    176
+  ],
+  "viewport": [
+    320,
+    176
+  ],
+  "frame_tiles": 924,
+  "frame_vram_bytes": 29568,
+  "palettes_per_shot": 2,
+  "caption_box": [
+    36,
+    4
+  ]
+}
+{
+  "regions": 4,
+  "size": [
+    320,
+    160
+  ],
+  "tilesPerRegion": 800,
+  "artVRAMBytes": 25600,
+  "paletteBanksPerRegion": 2,
+  "onePalettePerTile": true,
+  "rgb333": true,
+  "lossyTileSubstitutions": 0,
+  "roundtripExact": true,
+  "sourceSHA256": "288b748679f27619324a47987f621151f47148d9bf9116a6bd55849c3177a065",
+  "files": {
+    "res/routemap/tiles.bin": {
+      "bytes": 102400,
+      "sha256": "b62020fc5a3346c8a0b2e2e8028752a4821b6c71fa20dc0aba7e43d08bbc7bc9"
+    },
+    "res/routemap/groups.bin": {
+      "bytes": 3200,
+      "sha256": "6a5a302d0ebe20eb1878dc54ae89ff67630f71805bd48d150b8d2ac5f8de5c7e"
+    },
+    "res/routemap/palettes.bin": {
+      "bytes": 256,
+      "sha256": "de97273400f77743064cbf3c08fb8261e4b47bcf58e996f3fff5d2ed7984fcc5"
+    },
+    "res/routemap_data.res": {
+      "bytes": 196,
+      "sha256": "290d36abb6ed0d43565be8ad87d0dfd0a6b570f9ee1079efd016f35e7919ad06"
+    }
+  }
+}
+Footer: 23 graph edges; 9 approved examples; all lines <=38 columns.
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:15: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  colors=list(dict.fromkeys(snap(p) for p in Image.open(ROOT/'source/painel-nativo.png').convert('RGB').getdata()))
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:19: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  px=list(map(index,im.getdata()));tiles=[];lookup={};mapping=[]
+Interface: 545 tiles / 17440 bytes; 15 opaque colors; 20 mission records.
+Mission: 15 native 32x32 portraits, 7680 ROM bytes; original insect palette.
+Portuguese font: 96 tiles / 3072 bytes per variant; 12 accented glyphs; no extra VRAM.
+{"radioTiles": 155, "countdownTiles": 180, "countdownBytes": 18816, "palettesAdded": 0}
+HUD panel: 120 native tiles, existing object palette, opaque pixels.
+Training: native scene export verified.
+50Hz: all four diagonal idles, both release orders, stationary autofire and deliberate turns passed.
+60Hz: all four diagonal idles, both release orders, stationary autofire and deliberate turns passed.
+1248 gallery frames; all 13 actors in 8 directions at 50/60Hz; movement, ice, recoil, locked charges, retreat, aggro, DMA failure and mirroring passed.
+sq_red 16 4 3840
+sq_yellow 16 4 7680
+sq_purple 32 16 23040
+sq_orange 16 4 26880
+tri_red 16 4 30720
+tri_yellow 16 4 34560
+tri_purple 16 4 38400
+tri_orange 16 4 42240
+pen_red 24 9 50880
+pen_yellow 24 9 59520
+pen_purple 32 16 74880
+pen_orange 24 9 83520
+boss 48 36 118080
+Verified 118080 bytes
+{
+  "layout": {
+    "idle_source_poses": [
+      0,
+      2
+    ],
+    "run_source_poses": [
+      4,
+      6,
+      7,
+      9
+    ],
+    "canonical_directions": [
+      "N",
+      "NE",
+      "L",
+      "SE",
+      "S"
+    ],
+    "horizontal_mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    },
+    "idle_step_fps_ratio": [
+      2,
+      5
+    ],
+    "run_step_fps_ratio": [
+      3,
+      20
+    ],
+    "enemy_art_directory": "art/cangaco-insects-sized-v3"
+  },
+  "actors": {
+    "insects": {
+      "characters": 13,
+      "canonical_frames": 390,
+      "rom_bytes": 118080,
+      "previous_rom_bytes": 499200,
+      "sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb"
+    },
+    "heroi": {
+      "characters": 1,
+      "canonical_frames": 30,
+      "rom_bytes": 23040,
+      "previous_rom_bytes": 38400,
+      "sha256": "815e8fa2930cd4fe099a8c7e0b90d4b22d3b8e5d097fdbf9b6419c32e466a995"
+    },
+    "dinorah_gallery": {
+      "canonical_frames": 10,
+      "rom_bytes": 7680,
+      "previous_rom_bytes": 23040,
+      "sha256": "12727ee6fffbb7533394a1f7c721da8b22e2f0034f5d9e5088352a8c9133983d"
+    }
+  }
+}
+
+{
+  "passed": true,
+  "scope": "native PNGs, all poses, palette, margins, ROM bytes and HFLIP mirrors; no legacy runtime harness",
+  "enemies": 13,
+  "directions": 104,
+  "frame_references": 624,
+  "canonical_frames": 390,
+  "raw_sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb"
+}
+Terrain: 23 connected variants/material, native map textures, scene palette adaptation verified.
+PASS: connected rectangles/L shapes, material boundaries, world coordinates, transparent gaps, blood preservation scene palette remapping/transparency and PAL/NTSC animation/DMA backpressure.
+{"04": {"tiles": 448, "length": 2899, "seconds": 84.5}, "06b": {"tiles": 357, "length": 2351, "seconds": 69.3}}
+Baiao de Ferrugem / original: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / melancolico: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / sombrio: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / igreja: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / catalog / 4 tracks: 16 bars, 128 steps; score verified.
+O Sonho Atendido: continuous score, 4-second logo prelude + 101-second storyboard + 3-second tail; score verified.
+PASS: 50/60 Hz timing (67 calm / 100 hot steps in 10s), loops, envelopes, SFX, all four tracks, exact preview restoration, missed/duplicate VBlanks and clock wraparound.
+PASS: 50/60 Hz timing (60 calm / 86 hot steps in 10s), loops, envelopes, SFX, all four tracks, exact preview restoration, missed/duplicate VBlanks and clock wraparound.
+PASS: 50/60 Hz timing (50 calm / 75 hot steps in 10s), loops, envelopes, SFX, all four tracks, exact preview restoration, missed/duplicate VBlanks and clock wraparound.
+60 Hz: continuous 106s, longest musical rest 4 frames.
+50 Hz: continuous 106s, longest musical rest 3 frames.
+PASS: continuous logo-to-intro score, independent VInt clock, no scene fades/restarts, START fade, callback teardown and untouched gameplay music.
+All generated resources and native audio/player checks passed.

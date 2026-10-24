@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "queries": 1550692,
+  "orderedSamples": 9176096,
+  "everyFirstObstruction": true,
+  "signedTruncationExact": true,
+  "SGDKDistanceExact": true,
+  "productionSource": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/src/actors/dinorah.c",
+  "productionFunctionSHA256": "2056b6aa933495cf9a6a0253fbb3dfdcbe91ef72d62c084c6a32abffdf6c7dee",
+  "vectorRange": [
+    -120,
+    120
+  ],
+  "distanceGuard": 112,
+  "origins": [
+    [
+      0,
+      0
+    ],
+    [
+      -32,
+      -32
+    ],
+    [
+      40,
+      200
+    ],
+    [
+      3056,
+      304
+    ]
+  ],
+  "method": "Exact extracted production clearShot compiled unchanged with collision observer. Each ordered sample equals old signed division; every possible first blocked sample and fully clear ray tested.",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "productionModified": false,
+  "native68000TimingClaim": false
+}

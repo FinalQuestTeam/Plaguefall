@@ -1,0 +1,7 @@
+{
+  "command": "arch -x86_64 /usr/bin/python3 game/tools/test_campaign_resistance_emulator.py --movie --build-dir game/out/release --output game/art/campaign-integrated-v1/resistance/pal --pal",
+  "exit_code": 0,
+  "passed": true,
+  "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+  "videos": 4
+}

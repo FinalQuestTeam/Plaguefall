@@ -1,0 +1,588 @@
+{
+  "region": "NTSC",
+  "rom_sha256": "66aba7c700e66511a54c74133aaba24817341e56a5843d27e17877655cf61e84",
+  "passed": true,
+  "nodes": {
+    "9": {
+      "entry": {
+        "passed": true,
+        "enemy_cap": 3,
+        "shot_cap": 4,
+        "width": 2560
+      },
+      "native_graphics_entry": {
+        "passed": true,
+        "palette_index_zero_black": true,
+        "scene_tiles": 613,
+        "atlas_bytes_compared": 19616,
+        "atlas_differing_tiles": [],
+        "visible_cells_checked": 1120,
+        "visible_flipped_cells": 399,
+        "tilemap_errors": [],
+        "camera": [
+          0,
+          20
+        ],
+        "method": "exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware"
+      },
+      "native_graphics_obstacle": {
+        "passed": true,
+        "palette_index_zero_black": true,
+        "scene_tiles": 613,
+        "atlas_bytes_compared": 19616,
+        "atlas_differing_tiles": [],
+        "visible_cells_checked": 1120,
+        "visible_flipped_cells": 409,
+        "tilemap_errors": [],
+        "camera": [
+          270,
+          32
+        ],
+        "method": "exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware"
+      },
+      "native_graphics_middle": {
+        "passed": true,
+        "palette_index_zero_black": true,
+        "scene_tiles": 613,
+        "atlas_bytes_compared": 19616,
+        "atlas_differing_tiles": [],
+        "visible_cells_checked": 1120,
+        "visible_flipped_cells": 413,
+        "tilemap_errors": [],
+        "camera": [
+          1126,
+          32
+        ],
+        "method": "exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware"
+      },
+      "native_graphics_exit": {
+        "passed": true,
+        "palette_index_zero_black": true,
+        "scene_tiles": 613,
+        "atlas_bytes_compared": 19616,
+        "atlas_differing_tiles": [],
+        "visible_cells_checked": 1120,
+        "visible_flipped_cells": 420,
+        "tilemap_errors": [],
+        "camera": [
+          2226,
+          32
+        ],
+        "method": "exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware"
+      },
+      "controller_corridor": {
+        "passed": true,
+        "ending_x": 2502,
+        "detour_waypoints": [
+          [
+            424,
+            184
+          ],
+          [
+            520,
+            184
+          ],
+          [
+            968,
+            144
+          ],
+          [
+            1104,
+            144
+          ],
+          [
+            1528,
+            184
+          ],
+          [
+            1632,
+            184
+          ],
+          [
+            2056,
+            128
+          ],
+          [
+            2192,
+            128
+          ]
+        ],
+        "method": "controller only after isolated spawn-delay setup; four physical barriers require north/south detours"
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              456,
+              144,
+              40,
+              32
+            ],
+            "passed": true,
+            "end_x": 439
+          },
+          {
+            "solid": [
+              1000,
+              168,
+              80,
+              24
+            ],
+            "passed": true,
+            "end_x": 983
+          },
+          {
+            "solid": [
+              1568,
+              144,
+              48,
+              32
+            ],
+            "passed": true,
+            "end_x": 1551
+          },
+          {
+            "solid": [
+              2096,
+              152,
+              64,
+              40
+            ],
+            "passed": true,
+            "end_x": 2079
+          }
+        ]
+      },
+      "straight_route_blocked": {
+        "passed": true,
+        "probes": [
+          {
+            "obstacle_x": 456,
+            "passed": true,
+            "position": [
+              439,
+              168
+            ]
+          },
+          {
+            "obstacle_x": 1000,
+            "passed": true,
+            "position": [
+              983,
+              168
+            ]
+          },
+          {
+            "obstacle_x": 1568,
+            "passed": true,
+            "position": [
+              1551,
+              168
+            ]
+          },
+          {
+            "obstacle_x": 2096,
+            "passed": true,
+            "position": [
+              2079,
+              168
+            ]
+          }
+        ],
+        "method": "controller RIGHT at canonical baseline y168; all four barriers stop the direct route"
+      },
+      "controller_world_bounds": {
+        "passed": true,
+        "probes": [
+          {
+            "edge": "north",
+            "passed": true,
+            "position": [
+              48,
+              112
+            ]
+          },
+          {
+            "edge": "south",
+            "passed": true,
+            "position": [
+              48,
+              198
+            ]
+          },
+          {
+            "edge": "west",
+            "passed": true,
+            "position": [
+              16,
+              128
+            ]
+          },
+          {
+            "edge": "east",
+            "passed": true,
+            "position": [
+              2528,
+              128
+            ]
+          }
+        ]
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 20.0,
+        "video_duration_seconds": 20.0,
+        "result": "timeout",
+        "remaining_hp": 65,
+        "damage_net": 35,
+        "peak_enemies": 3,
+        "simulation_fps": 59.95,
+        "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+        "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+      },
+      "saturation": {
+        "passed": true,
+        "peak_enemies": 3,
+        "cap": 3,
+        "simulation_fps": 60.0,
+        "setup": "health reseed only; normal production spawning, no shooting"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 3,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 63.13,
+        "cpu_peak_percent": 65.14,
+        "setup": "RAM seeded full formations and pools each frame; stress only"
+      }
+    },
+    "10": {
+      "entry": {
+        "passed": true,
+        "enemy_cap": 4,
+        "shot_cap": 6,
+        "width": 768
+      },
+      "native_graphics_entry": {
+        "passed": true,
+        "palette_index_zero_black": true,
+        "scene_tiles": 460,
+        "atlas_bytes_compared": 14720,
+        "atlas_differing_tiles": [],
+        "visible_cells_checked": 1120,
+        "visible_flipped_cells": 272,
+        "tilemap_errors": [],
+        "camera": [
+          0,
+          0
+        ],
+        "method": "exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware"
+      },
+      "kills_do_not_count": {
+        "passed": true
+      },
+      "native_graphics_south": {
+        "passed": true,
+        "palette_index_zero_black": true,
+        "scene_tiles": 460,
+        "atlas_bytes_compared": 14720,
+        "atlas_differing_tiles": [],
+        "visible_cells_checked": 1120,
+        "visible_flipped_cells": 256,
+        "tilemap_errors": [],
+        "camera": [
+          0,
+          96
+        ],
+        "method": "exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware"
+      },
+      "controller_egg_hits": {
+        "passed": true,
+        "destroyed_mask": 1023,
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "method": "RAM position setup per clutch; controller firing with ordinary write guard; no objective-state seeds"
+      },
+      "controller_bomb": {
+        "passed": true,
+        "destroyed_mask": 5,
+        "expected_visible_mask": 5,
+        "setup": "one bomb seeded, controller B activates; only viewport eggs may die"
+      },
+      "pause_persistence": {
+        "heap_blocks": [
+          [
+            19834,
+            1283
+          ],
+          [
+            21116,
+            8195
+          ],
+          [
+            29310,
+            32290
+          ],
+          [
+            61600,
+            1374
+          ]
+        ],
+        "passed": true,
+        "destroyed_mask": 5,
+        "paused_state": 2,
+        "resumed_state": 1,
+        "heap_pointer": 3774827898,
+        "saved_pointer": 0,
+        "mission_map_pointer": 0,
+        "loading_saved_pointer": 0,
+        "loading_active": 0,
+        "result_active": 0,
+        "card_pointer": 0
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              128,
+              192,
+              80,
+              32
+            ],
+            "passed": true,
+            "end_x": 111
+          },
+          {
+            "solid": [
+              576,
+              200,
+              40,
+              32
+            ],
+            "passed": true,
+            "end_x": 559
+          }
+        ]
+      },
+      "controller_world_bounds": {
+        "passed": true,
+        "probes": [
+          {
+            "edge": "north",
+            "passed": true,
+            "position": [
+              48,
+              112
+            ]
+          },
+          {
+            "edge": "south",
+            "passed": true,
+            "position": [
+              48,
+              256
+            ]
+          },
+          {
+            "edge": "west",
+            "passed": true,
+            "position": [
+              16,
+              128
+            ]
+          },
+          {
+            "edge": "east",
+            "passed": true,
+            "position": [
+              736,
+              128
+            ]
+          }
+        ]
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 20.0,
+        "video_duration_seconds": 20.0,
+        "result": "timeout",
+        "remaining_hp": 100,
+        "damage_net": 0,
+        "peak_enemies": 4,
+        "simulation_fps": 59.1,
+        "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+        "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+      },
+      "saturation": {
+        "passed": true,
+        "peak_enemies": 4,
+        "cap": 4,
+        "simulation_fps": 60.0,
+        "setup": "health reseed only; normal production spawning, no shooting"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 59.2,
+        "seeded_visible_enemies": 4,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 85.24,
+        "cpu_peak_percent": 95.9,
+        "setup": "RAM seeded full formations and pools each frame; stress only"
+      }
+    },
+    "11": {
+      "entry": {
+        "passed": true,
+        "enemy_cap": 3,
+        "shot_cap": 6,
+        "width": 768
+      },
+      "native_graphics_entry": {
+        "passed": true,
+        "palette_index_zero_black": true,
+        "scene_tiles": 460,
+        "atlas_bytes_compared": 14720,
+        "atlas_differing_tiles": [],
+        "visible_cells_checked": 1120,
+        "visible_flipped_cells": 272,
+        "tilemap_errors": [],
+        "camera": [
+          0,
+          0
+        ],
+        "method": "exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware"
+      },
+      "controller_valves": {
+        "passed": true,
+        "probes": [
+          {
+            "valve": 0,
+            "fire_blocks_work": true,
+            "opened": true
+          },
+          {
+            "valve": 1,
+            "fire_blocks_work": true,
+            "opened": true
+          },
+          {
+            "valve": 2,
+            "fire_blocks_work": true,
+            "opened": true
+          }
+        ],
+        "opened_mask": 7,
+        "method": "RAM position per valve; runtime interaction and A rejection controller only"
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              128,
+              192,
+              80,
+              32
+            ],
+            "passed": true,
+            "end_x": 111
+          },
+          {
+            "solid": [
+              576,
+              200,
+              40,
+              32
+            ],
+            "passed": true,
+            "end_x": 559
+          }
+        ]
+      },
+      "controller_world_bounds": {
+        "passed": true,
+        "probes": [
+          {
+            "edge": "north",
+            "passed": true,
+            "position": [
+              48,
+              112
+            ]
+          },
+          {
+            "edge": "south",
+            "passed": true,
+            "position": [
+              48,
+              256
+            ]
+          },
+          {
+            "edge": "west",
+            "passed": true,
+            "position": [
+              16,
+              128
+            ]
+          },
+          {
+            "edge": "east",
+            "passed": true,
+            "position": [
+              736,
+              128
+            ]
+          }
+        ]
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 20.0,
+        "video_duration_seconds": 20.0,
+        "result": "timeout",
+        "remaining_hp": 53,
+        "damage_net": 47,
+        "peak_enemies": 3,
+        "simulation_fps": 59.95,
+        "fps_measurement": "Active gameplay only; death settling freezes phaseStats and is excluded",
+        "scope": "Up to20s movement/fire patrol bot pressure sample; does not attempt the route or provide a human difficulty rating"
+      },
+      "saturation": {
+        "passed": true,
+        "peak_enemies": 3,
+        "cap": 3,
+        "simulation_fps": 60.0,
+        "setup": "health reseed only; normal production spawning, no shooting"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 3,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 72.52,
+        "cpu_peak_percent": 73.78,
+        "setup": "RAM seeded full formations and pools each frame; stress only"
+      }
+    }
+  },
+  "method": "RAM seeds node entry and explicit isolated probes; objective execution uses controller input. Stress is RAM seeded, FPS measures simulation frames per VBlank.",
+  "scene_export_sha256": "32e494532e06f462163d687b8e027b6292f6c78ac678a4fb7703ab4257f1d8fd",
+  "geometry_sha256": "889effd40bc111b14d6bdc7e29446031f696dcf07512498f547b06f4a0f6f972"
+}

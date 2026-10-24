@@ -1,0 +1,94 @@
+{
+  "tiles": 556,
+  "platforms": [
+    [
+      24,
+      96,
+      640,
+      176
+    ],
+    [
+      664,
+      208,
+      160,
+      64
+    ],
+    [
+      824,
+      80,
+      448,
+      192
+    ],
+    [
+      1272,
+      96,
+      184,
+      80
+    ],
+    [
+      1456,
+      80,
+      672,
+      192
+    ],
+    [
+      2128,
+      184,
+      416,
+      80
+    ],
+    [
+      2160,
+      112,
+      192,
+      152
+    ],
+    [
+      2544,
+      88,
+      504,
+      184
+    ]
+  ],
+  "assemblies": [
+    [
+      "cistern",
+      [
+        72,
+        32,
+        408,
+        184
+      ]
+    ],
+    [
+      "bridge",
+      [
+        896,
+        48,
+        80,
+        256
+      ]
+    ],
+    [
+      "pump-island",
+      [
+        1648,
+        112,
+        176,
+        160
+      ]
+    ],
+    [
+      "refuge",
+      [
+        2848,
+        48,
+        160,
+        96
+      ]
+    ]
+  ],
+  "status": "composition_checkpoint_not_integrated",
+  "source": "source/whole-v2-clean.png",
+  "details": "Full1px source structures and complete material cross-sections; no coarse room masses and no tile substitution."
+}

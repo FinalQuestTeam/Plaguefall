@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "84854411069b0577f02c749bf59497991bcc0539457270444cfa24d8c4cc9a64",
+  "emulated_rom_sha256": "84854411069b0577f02c749bf59497991bcc0539457270444cfa24d8c4cc9a64",
+  "production_rom": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release/rom.bin",
+  "temporary_build": false,
+  "region_header_override_in_memory_only": false,
+  "core_fps": 59.92274340431231,
+  "stages": [],
+  "failures": [],
+  "method": "Real production HUD/VDP patterns. RAM prepares phases, inventory, counters and isolated projectiles. Selection, item use, pause/resume and rendering use normal production code.",
+  "checks": {
+    "equipment": {
+      "passed": true,
+      "details": {
+        "four_selection_borders": true,
+        "real_ice_activation": true,
+        "charges": 3,
+        "native_scale": true
+      }
+    },
+    "protection-life": {
+      "passed": true,
+      "details": {
+        "opaque_320x24": true,
+        "actual_projectile_damage": [
+          100,
+          76,
+          24
+        ],
+        "numeric_and_bar_agree": true,
+        "low_life_red": true
+      }
+    },
+    "occlusion-pause-camera": {
+      "passed": true,
+      "details": {
+        "sprites_cannot_cover_panel": true,
+        "pause_exact_restore": true,
+        "near_santa_headroom": true,
+        "south_wall_player_visible": true
+      }
+    },
+    "objectives": {
+      "passed": true,
+      "details": {
+        "kill_counter": true,
+        "route_exit": true,
+        "companion_state": "DINORAH",
+        "boss_live_hp": true,
+        "classic_arena_hud": true
+      }
+    },
+    "zero-life": {
+      "passed": true,
+      "details": {
+        "lethal_hit_zero_hp": true,
+        "bar_empty": true,
+        "result_loaded": true
+      }
+    }
+  },
+  "heap_sentinel_intact": true
+}

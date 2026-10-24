@@ -1,0 +1,9 @@
+{
+  "mode": "built-in image_gen.imagegen",
+  "skill": "/Users/fabiocantarimmelo/.codex/skills/.system/imagegen/SKILL.md",
+  "source": "source/rubble.png",
+  "transparent_background": true,
+  "prompt": "Use case: stylized-concept. Asset type: native game rubble sprite, single object. Create ONE small low pile of broken terracotta roof tiles and pale ochre church masonry stones on a fully transparent background. This is a 16-bit Sega Mega Drive overhead action game in northeastern Brazil. Camera orthographic elevated view 60 degrees above ground, north side is top, broad top surfaces, very short vertical faces, no isometric diamond. Crisp pixel art conceived for a final 56 pixels wide by 32 pixels tall sprite; limit visual detail so it remains readable at that size. Warm sun from upper left. Silhouette must be an irregular clean complete mound with isolated stones near its base and absolutely no rectangular backdrop, wall, floor, scenery, text, outline box, or cast shadow outside the pile. Color palette charcoal, terracotta orange, dark red-brown, sandstone tan, pale cream; no greens or blues. The mound covers about 85% of the canvas width with transparent padding on all four sides. Only one rubble pile. This asset will be downsampled once and reduced to existing 16 game colors, so use flat chunky color clusters and no smooth rendering.",
+  "normalization": "alpha bounds, one downsample to fit56x32, nearest native16-color palette, silhouette composited on existing floor",
+  "original_file": "/Users/fabiocantarimmelo/.codex/generated_images/01a16982-f17e-75b0-86ee-2df2f6c1e217/exec-5ba6975b-7605-4f1b-a633-cdbe5a887120.png"
+}

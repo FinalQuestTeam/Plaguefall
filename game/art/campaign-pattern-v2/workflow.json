@@ -1,0 +1,100 @@
+{
+  "name": "Composição de fases por faixas e módulos completos",
+  "status": "Fluxo adotado na recriação completa autorizada pelo usuário",
+  "input": "source/user-pattern.png",
+  "principle": "Projetar primeiro o cenário inteiro. Sua decomposição em módulos deve preservar construções, objetos, junções e área de circulação.",
+  "regions": [
+    {
+      "id": "upper",
+      "name": "Área superior",
+      "purpose": "Identidade do lugar, arquitetura principal, horizonte e entradas/saídas narrativas."
+    },
+    {
+      "id": "lower",
+      "name": "Área inferior",
+      "purpose": "Limite de primeiro plano com material, coroamento e cantos próprios; deve continuar legível nas câmeras baixas."
+    },
+    {
+      "id": "sides",
+      "name": "Limitadores laterais",
+      "purpose": "Conter o campo e conectar as duas faixas, com início, trecho repetível, canto e término explícitos."
+    },
+    {
+      "id": "field",
+      "name": "Elementos do campo",
+      "purpose": "Obstáculos completos que organizam o combate; cada peça tem silhueta, base, sombra e comportamento físico definidos."
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "Definir objetivo e escala",
+      "deliverable": "Dimensões do mundo, duração, personagens, entradas/saídas e escala de referência. Na fase1: segurar90s, um tipo de inseto, civis evacuando pela igreja."
+    },
+    {
+      "step": 2,
+      "title": "Desenhar as quatro regiões",
+      "deliverable": "Diagrama do mundo com limites e área de circulação. Os cantos pertencem ao projeto; não são sobras de recortes."
+    },
+    {
+      "step": 3,
+      "title": "Desenhar uma cena completa",
+      "deliverable": "Uma imagem inteira coerente, sem HUD. Revisar perspectiva, iluminação, escala, bordas e narrativa antes de extrair peças."
+    },
+    {
+      "step": 4,
+      "title": "Definir a gramática de repetição",
+      "deliverable": "Peças de início/meio/fim e junção. Piso se repete em duas dimensões, muros somente no seu eixo, objetos completos em pontos deliberados. Arquitetura singular não é esticada para preencher espaço."
+    },
+    {
+      "step": 5,
+      "title": "Extrair módulos inteiros",
+      "deliverable": "Atlas com contorno, sombra e base preservados; nada de metade de banco, janela vizinha ou coluna cortada no meio do campo."
+    },
+    {
+      "step": 6,
+      "title": "Montar a versão nativa",
+      "deliverable": "Grade8×8, paleta e materiais comuns, junções verificadas. Enxugar a diversidade de módulos em caso de excesso; nunca substituir um tile por outro apenas parecido."
+    },
+    {
+      "step": 7,
+      "title": "Definir circulação e profundidade",
+      "deliverable": "Limites e bases físicas dos obstáculos. Validar todos os caminhos, pontos de entrada e apoio dos personagens; projetar oclusão quando um objeto puder ser contornado."
+    },
+    {
+      "step": 8,
+      "title": "Medir memória real",
+      "deliverable": "Tiles únicos, bytes gráficos, mapas, paleta e margem para estados. Medir o cenário montado, sem usar o tamanho do PNG como custo de VRAM."
+    },
+    {
+      "step": 9,
+      "title": "Revisar cenário inteiro e câmeras",
+      "deliverable": "Imagem completa, comparação com o esquema, junções ampliadas, enquadramentos superior/central/inferior e personagem em escala real. Distinguir recorte de viewport de asset amputado."
+    },
+    {
+      "step": 10,
+      "title": "Revisar e integrar cada fase",
+      "deliverable": "Padrão autorizado para19variações. Integrar em produção, revisar cenário inteiro e câmeras, executar objetivos/colisões/carga na mesma ROM e registrar limites. O parecer visual é independente dos testes."
+    }
+  ],
+  "repeat_rules": [
+    "Repetir módulos com conexão física válida; não carimbar fragmentos aleatórios.",
+    "Preservar o mesmo ponto de luz; espelhar não é automaticamente válido para sombras e volumes.",
+    "Alternar variantes de piso de forma determinística e de baixo contraste, sem criar setas ou manchas que concorram com o combate.",
+    "Manter um marco arquitetônico principal; repetir materiais e vãos completos, não multiplicar a igreja.",
+    "Para corredores longos, repetir setores com mesma altura e conexões compatíveis, usando marcos de progressão em intervalos deliberados.",
+    "Ao aumentar o mundo, mapas crescem; gráficos só crescem quando entram peças inéditas. Confirmar também o limite do streaming e o tamanho dos mapas na ROM.",
+    "O orçamento inclui estados alternativos compartilhados, como dano. Não aprovar o conjunto com base apenas no estado intacto."
+  ],
+  "acceptance": [
+    "Quatro regiões reconhecíveis no mundo inteiro.",
+    "Construções e objetos completos, junções sem lacunas e chão residual controlado.",
+    "Piso e obstáculos mantêm escala, perspectiva e iluminação.",
+    "Circulação do personagem conectada e consistente com o apoio visual.",
+    "Campo legível nos enquadramentos reais e com HUD.",
+    "Recursos cabem no orçamento medido e reconstrução dos tiles é exata.",
+    "Parecer visual e resultado técnico registrados separadamente, com limitações explícitas. A extensão às19variações foi autorizada pelo usuário."
+  ],
+  "interpretation": "As regiões são uma base estrutural. Os quatro retângulos internos do desenho eram exemplos; não fixam quantidade, posição, dimensão ou tipo de elementos. Cada fase deriva seu layout do objetivo, história e circulação.",
+  "scope": "Campanha completa,19variações; implementação em paralelo autorizada pelo usuário."
+}

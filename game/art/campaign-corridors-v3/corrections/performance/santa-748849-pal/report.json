@@ -1,0 +1,85 @@
+{
+  "romSHA256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "region": "PAL",
+  "passed": true,
+  "method": "Real contact identifies NPC blink timer, then diagnostic hold of its hidden phase only. Player feet positions are isolated RAM setup. Production camera, rendering, stream and DMA remain active. No HP/npcVisible/VRAM/map writes.",
+  "limit": "Santa cols22..26 remain resident in every legal384px-world camera; the generic streamColumn hidden-overlay branch is unreachable. This proves reachable full-ring content while hidden and legal camera scrolling, not that unreachable branch.",
+  "samples": [
+    {
+      "name": "south-west",
+      "feet": [
+        32,
+        248
+      ],
+      "camera": [
+        0,
+        80
+      ],
+      "hidden": true
+    },
+    {
+      "name": "south-east",
+      "feet": [
+        344,
+        248
+      ],
+      "camera": [
+        64,
+        80
+      ],
+      "hidden": true
+    },
+    {
+      "name": "north-east",
+      "feet": [
+        344,
+        128
+      ],
+      "camera": [
+        64,
+        0
+      ],
+      "hidden": true
+    },
+    {
+      "name": "north-west",
+      "feet": [
+        32,
+        128
+      ],
+      "camera": [
+        0,
+        0
+      ],
+      "hidden": true
+    },
+    {
+      "name": "return",
+      "feet": [
+        64,
+        232
+      ],
+      "camera": [
+        0,
+        80
+      ],
+      "hidden": true
+    }
+  ],
+  "expectedBanksFromImmutableROMSymbols": true,
+  "initialHP": 180,
+  "realContactHP": 168,
+  "npcTimerAddress": "0x7d2",
+  "framesCompared": 123,
+  "exactCells": 251904,
+  "cameraRange": [
+    [
+      0,
+      64
+    ],
+    [
+      0,
+      80
+    ]
+  ]
+}

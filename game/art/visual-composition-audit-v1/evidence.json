@@ -1,0 +1,752 @@
+{
+  "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+  "scope": "19 campaign variants, all phases including approved1/2/5; review only, no runtime/art mutation",
+  "method": "Whole native maps, NTSC entry/movement/action or route middle/end; PAL entry; cinematic/branch special states. Visual conclusions are manual design judgments, not automatic pixel scores.",
+  "variants": [
+    {
+      "phase": "1",
+      "name": "Pátio da igreja",
+      "goal": "Sobreviver 90 s",
+      "group": "early",
+      "native": "maps/1.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/1-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/01-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "36f4ecd8f6510541b47e9b109b08b25b29582f528f50f15be2c5e56ddbefaaf3"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/1-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/01-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/1-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/01-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/1-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/01-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "36f4ecd8f6510541b47e9b109b08b25b29582f528f50f15be2c5e56ddbefaaf3"
+        }
+      ]
+    },
+    {
+      "phase": "2A",
+      "name": "Igreja preservada",
+      "goal": "Eliminar 15 insetos",
+      "group": "early",
+      "native": "maps/2A.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/2A-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "cd58ec782598f6bd3eb78f0ccd905531d7c1d1100d90787bf6083c0aadb4cf72"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/2A-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02A-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/2A-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02A-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/2A-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/02A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "cd58ec782598f6bd3eb78f0ccd905531d7c1d1100d90787bf6083c0aadb4cf72"
+        }
+      ]
+    },
+    {
+      "phase": "2B",
+      "name": "Igreja destruída",
+      "goal": "Eliminar 15 insetos; entulho sólido",
+      "group": "early",
+      "native": "maps/2B.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/2B-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "14777e3f95a05d36b989c5251e67c50a1c86898531f6d5ce824ded460bd6343c"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/2B-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02B-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/2B-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02B-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/2B-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/02B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "14777e3f95a05d36b989c5251e67c50a1c86898531f6d5ce824ded460bd6343c"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "name": "Rua ao galpão",
+      "goal": "Percorrer 2560 px com desvios e cobertura",
+      "group": "early",
+      "native": "../campaign-whole-scenes-v1/early/03-street/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/3-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "442677a59518f248b729724ca94a2d3b4dc58460a2761d7b6b7ca0a646612f1f"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/3-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/3-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/3-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/03-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "442677a59518f248b729724ca94a2d3b4dc58460a2761d7b6b7ca0a646612f1f"
+        },
+        {
+          "label": "special-0",
+          "path": "frames/3-special-0.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-church-ruined.png",
+          "method": "existing emulator PNG",
+          "sha256": "cdd48c7ea8c8fc218852f102f2bb6a616ffd4d6a88008bc26f506a4c810e3c95"
+        }
+      ]
+    },
+    {
+      "phase": "4",
+      "name": "Interior do galpão",
+      "goal": "Eliminar 20 insetos",
+      "group": "early",
+      "native": "../campaign-whole-scenes-v1/early/04-warehouse/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/4-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/04-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "35c7000ae7a8edb7a42d0cac8eb80f6f58843061f88ad43e67e26b69ad349f39"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/4-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/04-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/4-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/04-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/4-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/04-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "35c7000ae7a8edb7a42d0cac8eb80f6f58843061f88ad43e67e26b69ad349f39"
+        }
+      ]
+    },
+    {
+      "phase": "5",
+      "name": "Sinal na Santa",
+      "goal": "Proteger 120 s",
+      "group": "early",
+      "native": "maps/5.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/5-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/05-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "7cadf56eb29f377a5237b26d6e77f54206edfe76154653a27691ce22bf98ca21"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/5-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/05-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/5-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/05-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/5-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/05-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "7cadf56eb29f377a5237b26d6e77f54206edfe76154653a27691ce22bf98ca21"
+        }
+      ]
+    },
+    {
+      "phase": "6A",
+      "name": "Esgotos",
+      "goal": "Escolta 3072 px",
+      "group": "escorts",
+      "native": "../campaign-whole-scenes-v1/routes/06a-native-complete.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/6A-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06a-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "ccbb7ccfe57bb9a758b5b14cf883b1a4fe85993e98219b1853d2a74e4827105b"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/6A-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06a-meio.png",
+          "method": "existing emulator PNG",
+          "sha256": "437d4cba84216043b91e150c101695f99b78dd2f91e68827453168f878d3b794"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/6A-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06a-saida.png",
+          "method": "existing emulator PNG",
+          "sha256": "fcbbb3a6cdce8f79fb0b9d93324983e1bb258e4c89063a647be7006a7c9eb4f1"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/6A-pal-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/pal/06a-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "b68ce1f079054cfb169e8c7da6abd99c2a170d5bd69eb356b5eccb4f95874fda"
+        }
+      ]
+    },
+    {
+      "phase": "6B",
+      "name": "Esgotos sob pressão",
+      "goal": "Escolta 3072 px;2 válvulas e 2 portões",
+      "group": "escorts",
+      "native": "../campaign-whole-scenes-v1/routes/06b-native-complete.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/6B-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "818b07555bc1ee3155ff183f139f6c5817f050bc31c28dddbbe3504b40c5e0a0"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/6B-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-meio.png",
+          "method": "existing emulator PNG",
+          "sha256": "838649becc4b8c16b715c3b01f17ce05f76c6c8bf11669255ebbb4a895159767"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/6B-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-saida.png",
+          "method": "existing emulator PNG",
+          "sha256": "497a67b098dbb5c67832d6327eae52084713a05921c8218ce1cc7d0f9e9ec5b7"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/6B-pal-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/pal/06b-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "422da6fd686500036014d0cc5a9cc3a7c84e8ea3c831fd0fbdcc13da900f96db"
+        },
+        {
+          "label": "special-0",
+          "path": "frames/6B-special-0.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-aberto.png",
+          "method": "existing emulator PNG",
+          "sha256": "4a2e42e7e40f464e40e8f47a8450d021b8fd8b076c48d275fd1e9da68079671b"
+        },
+        {
+          "label": "special-1",
+          "path": "frames/6B-special-1.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-fechado.png",
+          "method": "existing emulator PNG",
+          "sha256": "060ee32a67d22629d546bc1db4e7a2bb09315c5deee8eb3ced01e4023d37e563"
+        },
+        {
+          "label": "special-2",
+          "path": "frames/6B-special-2.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-aberto.png",
+          "method": "existing emulator PNG",
+          "sha256": "41167dac786d981a56d59bbf409a47158e64f6eb5bba34f2c3545f26a8ef75a1"
+        },
+        {
+          "label": "special-3",
+          "path": "frames/6B-special-3.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-fechado.png",
+          "method": "existing emulator PNG",
+          "sha256": "db5d1df2f198c1460219fd9da601195473649a0ec87b7a7485bc3e005c961bf4"
+        }
+      ]
+    },
+    {
+      "phase": "7",
+      "name": "Abrigo O Último Chão",
+      "goal": "Transportar 5 cargas",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/7-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/7-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "94231cf86a6f0a7fe9cdfa0df7868961e85c8c20d7c9e1e2eb99c91567fc57f4"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/7-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/7-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/7-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/7-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/7-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/7-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "94231cf86a6f0a7fe9cdfa0df7868961e85c8c20d7c9e1e2eb99c91567fc57f4"
+        }
+      ]
+    },
+    {
+      "phase": "8",
+      "name": "Transmissores",
+      "goal": "Eliminar 3 prioritários",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/8-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/8-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "b07e2f9428871f36714190da08d8b93763a549ee5dc3f0db1bfae3babb8de3ed"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/8-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/8-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/8-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/8-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/8-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/8-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "b07e2f9428871f36714190da08d8b93763a549ee5dc3f0db1bfae3babb8de3ed"
+        }
+      ]
+    },
+    {
+      "phase": "9",
+      "name": "Caminho da fábrica",
+      "goal": "Percorrer 2560 px",
+      "group": "factory",
+      "native": "../campaign-whole-scenes-v1/factory/street-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/9-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/9-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f2ad20aa4435589810de86f2c96ef48135b8a85269d479f8274b77ddf2171a57"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/9-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/9-camera-middle.png",
+          "method": "existing emulator PNG",
+          "sha256": "66467c8f1c408ac1135b1377a35a683791aaa735139512e1b7b2513f3cfcfe33"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/9-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/9-camera-exit.png",
+          "method": "existing emulator PNG",
+          "sha256": "ad58d048cf9c331d8b68172a28010853acaeed0f85f414422b79ab2903fab560"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/9-pal-entry.png",
+          "source": "art/campaign-integrated-v1/factory/pal/9-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f2ad20aa4435589810de86f2c96ef48135b8a85269d479f8274b77ddf2171a57"
+        }
+      ]
+    },
+    {
+      "phase": "10",
+      "name": "Ovos na fábrica",
+      "goal": "Destruir 10 ninhos",
+      "group": "factory",
+      "native": "../campaign-whole-scenes-v1/factory/factory-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/10-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/10-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "8797e1ef2934e3c30e5a3ca691909b3788ec98735ca26b709359d63718c8a6ed"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/10-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/10-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/10-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/10-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/10-pal-entry.png",
+          "source": "art/campaign-integrated-v1/factory/pal/10-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "8797e1ef2934e3c30e5a3ca691909b3788ec98735ca26b709359d63718c8a6ed"
+        }
+      ]
+    },
+    {
+      "phase": "11",
+      "name": "Fábrica aquecida",
+      "goal": "Liberar 3 válvulas",
+      "group": "factory",
+      "native": "../campaign-whole-scenes-v1/factory/factory-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/11-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/11-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "679d83904509cfb715cae010b210192887f442154d407fa6dc18a75e02441540"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/11-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/11-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/11-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/11-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/11-pal-entry.png",
+          "source": "art/campaign-integrated-v1/factory/pal/11-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "679d83904509cfb715cae010b210192887f442154d407fa6dc18a75e02441540"
+        }
+      ]
+    },
+    {
+      "phase": "12",
+      "name": "Caminho ao sindicato",
+      "goal": "Escolta 3072 px; morte permanente deDinorah",
+      "group": "escorts",
+      "native": "../campaign-whole-scenes-v1/routes/12-native-complete.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/12-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/12-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "3f0d1d88e0eaf3f8d95f4afc56830ecebb3032f33ce99ae480dcd681e08a3f32"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/12-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/12-meio.png",
+          "method": "existing emulator PNG",
+          "sha256": "70f551279740e595d5e995422d73a94decd8465347359963bfe1801efaba8fae"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/12-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/12-saida.png",
+          "method": "existing emulator PNG",
+          "sha256": "cd82d609cc22c546213ee3e5e10ae8b08a306a6b66a149e08eb8fa35b398ccc9"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/12-pal-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/pal/12-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "3b42053ec76305a35ed995787f5b6e5ba0771765bafc6870bb17533f42cbe374"
+        }
+      ]
+    },
+    {
+      "phase": "13A",
+      "name": "Sala do sindicato",
+      "goal": "Eliminar 30;Dinorah protegida",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/union/alive-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/13A-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f1be70652d8da8e566decbb78e787994c2f53a8857780f8b38d297a597de021e"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/13A-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13A-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 5.792
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/13A-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13A-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 11.585
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/13A-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/13A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f1be70652d8da8e566decbb78e787994c2f53a8857780f8b38d297a597de021e"
+        }
+      ]
+    },
+    {
+      "phase": "13B",
+      "name": "Sala do sindicato em luto",
+      "goal": "Eliminar 45;Dinorah morta",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/union/dead-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/13B-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "2019405844da2b54d362bc18077568796786fc62d2c0be6ffd5e9d1d58999634"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/13B-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13B-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 5.792
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/13B-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13B-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 11.585
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/13B-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/13B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "2019405844da2b54d362bc18077568796786fc62d2c0be6ffd5e9d1d58999634"
+        }
+      ]
+    },
+    {
+      "phase": "14",
+      "name": "Energia do estaleiro",
+      "goal": "Ligar 5 geradores",
+      "group": "launch",
+      "native": "../campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/14-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/14-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "1c6ab89a1d96077f9b22574cfdb41e87f974cf70ada553a0e4f99e818edec5b5"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/14-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/14-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/14-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/14-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/14-pal-entry.png",
+          "source": "art/campaign-integrated-v1/launch/pal/14-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "1c6ab89a1d96077f9b22574cfdb41e87f974cf70ada553a0e4f99e818edec5b5"
+        }
+      ]
+    },
+    {
+      "phase": "15",
+      "name": "Rádio de ignição",
+      "goal": "Proteger 120 s",
+      "group": "launch",
+      "native": "../campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/15-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "e59e1d7d44fce5a54c297dc3af4aa0d72462fde08b1142346ad90c00bf636df8"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/15-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/15-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/15-pal-entry.png",
+          "source": "art/campaign-integrated-v1/launch/pal/15-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "e59e1d7d44fce5a54c297dc3af4aa0d72462fde08b1142346ad90c00bf636df8"
+        },
+        {
+          "label": "special-0",
+          "path": "frames/15-special-0.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-ignition.png",
+          "method": "existing emulator PNG",
+          "sha256": "990deb2d2120f65d1cbaf44b74fb1c0481594f93dfef6267070aed5c7b0e4916"
+        }
+      ]
+    },
+    {
+      "phase": "16",
+      "name": "Escorpião",
+      "goal": "Derrotar o chefe",
+      "group": "launch",
+      "native": "../campaign-whole-scenes-v1/launch/previews/16-fire-native-reconstructed.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/16-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/16-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "16c0c5b8c3501198bb510f2c94c7ef0bbcc26b3012b2ecc9f99ecff3ea4b9eed"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/16-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/16-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/16-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/16-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/16-pal-entry.png",
+          "source": "art/campaign-integrated-v1/launch/pal/16-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "16c0c5b8c3501198bb510f2c94c7ef0bbcc26b3012b2ecc9f99ecff3ea4b9eed"
+        }
+      ]
+    }
+  ]
+}

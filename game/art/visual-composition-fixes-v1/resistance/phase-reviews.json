@@ -1,0 +1,107 @@
+{
+  "scope": "isolated candidate; merge these visual reviews after central release tests",
+  "rom_sha256": "4b6ddf2fb375b22fd3c9ab8ccd35917317268421e2705f501430718df9ebecd6",
+  "phases": [
+    {
+      "phase": "7",
+      "status": "accepted",
+      "status_label": "Aceitável na revisão visual da versão isolada",
+      "test_report": "resistance/cycle-2/ntsc/report.json",
+      "source": "resistance/cycle-1/source/07-08-favela-calm.png",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "path": "resistance/cycle-2/ntsc/7-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        },
+        {
+          "path": "resistance/cycle-2/ntsc/7-delivery-1.png",
+          "label": "Entrega diante do depósito coberto"
+        }
+      ],
+      "changes": [
+        "Piso calmo extraído da imagem completa; portas com contraste reduzido.",
+        "Depósito coberto conectado à fachada; novo sólido testado pela frente acessível.",
+        "Cargas claras com cruz vermelha; maleta coletada permanece vazia."
+      ],
+      "review": [
+        "Carga e entrega distinguíveis do inseto sem letras.",
+        "Canopy e balcão formam destino arquitetônico; movimento de entrega e cinco coletas passaram."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Aceitável",
+          "finding": "Primeira extração do piso ainda tinha manchas; recorte limpo da própria imagem eliminou repetição."
+        }
+      ],
+      "movie": "resistance/cycle-2/ntsc/7-playtest.mp4"
+    },
+    {
+      "phase": "8",
+      "status": "accepted",
+      "status_label": "Aceitável na revisão visual da versão isolada",
+      "test_report": "resistance/cycle-2/ntsc/report.json",
+      "source": "resistance/cycle-1/source/07-08-favela-calm.png",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "path": "resistance/cycle-2/ntsc/8-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        }
+      ],
+      "changes": [
+        "Mesmo piso e arquitetura da favela preservam continuidade.",
+        "Emissores roxos/ciano com arcos ativos distinguem prioritários dos inimigos comuns."
+      ],
+      "review": [
+        "Sinal de emissão aparece na captura de entrada, sem números.",
+        "Os três alvos usam HP e morte reais; objetivo e carga máxima passaram."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Aceitável",
+          "finding": "Piso limpo e emissores ativos passaram a separar função e combate."
+        }
+      ],
+      "movie": "resistance/cycle-2/ntsc/8-playtest.mp4"
+    },
+    {
+      "phase": "13B",
+      "status": "accepted",
+      "status_label": "Aceitável na revisão visual da versão isolada",
+      "test_report": "resistance/cycle-2/ntsc/report.json",
+      "source": "resistance/cycle-2/source/13B-memorial.png",
+      "native": "../campaign-whole-scenes-v1/resistance/native/union/dead-native.png",
+      "frames": [
+        {
+          "path": "resistance/cycle-2/ntsc/13B-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        }
+      ],
+      "changes": [
+        "Imagem inteira nova de memorial com retrato claro, faixa de luto e duas velas.",
+        "Recorte globalmente quantizado em1px mantém leitura do rosto; restante da sala compartilhada é2px.",
+        "Somente entrada13B mudou para280,176, enquadrando o memorial sem deslocar o guichê."
+      ],
+      "review": [
+        "Retrato e velas visíveis inteiros na câmera de entrada.",
+        "13A permanece pixel a pixel idêntica; salas mantêm os mesmos bancos/colisões."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Cadeira/bandana ainda pareciam adereço pequeno."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Retrato e velas claros; entrada diante do memorial resolveu o corte sem deformar arquitetura."
+        }
+      ],
+      "movie": "resistance/cycle-2/ntsc/13B-playtest.mp4"
+    }
+  ]
+}

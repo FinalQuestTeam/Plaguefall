@@ -1,0 +1,15 @@
+{
+  "pending_style_phases": ["3", "6A", "6B", "12"],
+  "rejected_phases": [
+    {
+      "phase": "9",
+      "reason": "O usuário rejeitou a nova composição e apontou que esses elementos não existiam antes. O parecer anterior de composição aceitável foi retirado.",
+      "observations": [
+        "Os galpões, cercas, tanques e caminhão desta composição foram introduzidos no redesenho da rodada v3.",
+        "A implementação mudou a identidade visual em relação à composição anterior; continuidade de arte e escala precisam ser revistas.",
+        "A ROM continua contendo esta versão. Esta atualização corrige o parecer da revisão, não o cenário do jogo.",
+        "Os testes de colisão, memória e execução permanecem válidos tecnicamente e não constituem aprovação visual."
+      ]
+    }
+  ]
+}

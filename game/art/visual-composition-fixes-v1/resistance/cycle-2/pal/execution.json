@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "rom_sha256": "4b6ddf2fb375b22fd3c9ab8ccd35917317268421e2705f501430718df9ebecd6",
+  "build_kind": "isolated checkout; not central release",
+  "command": "arch -x86_64 /usr/bin/python3 game/tools/test_campaign_resistance_emulator.py --movie --pal --build-dir /private/tmp/visualfix-launch/game/out/release --output /Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/visual-composition-fixes-v1/resistance/cycle-2/pal",
+  "purpose": "controller objectives, collision, boundaries, native tile/palette pixels, difficulty sample and full enemy/projectile pools"
+}

@@ -1,0 +1,72 @@
+{
+  "tiles": 533,
+  "platforms": [
+    [
+      24,
+      96,
+      640,
+      176
+    ],
+    [
+      664,
+      208,
+      160,
+      64
+    ],
+    [
+      824,
+      80,
+      448,
+      192
+    ],
+    [
+      1272,
+      96,
+      184,
+      80
+    ],
+    [
+      1456,
+      80,
+      672,
+      192
+    ],
+    [
+      2128,
+      184,
+      416,
+      80
+    ],
+    [
+      2544,
+      88,
+      504,
+      184
+    ]
+  ],
+  "assemblies": [
+    [
+      "cistern",
+      40,
+      32
+    ],
+    [
+      "bridge",
+      864,
+      80
+    ],
+    [
+      "maintenance",
+      1536,
+      48
+    ],
+    [
+      "refuge",
+      2848,
+      48
+    ]
+  ],
+  "status": "composition_checkpoint_not_integrated",
+  "source": "source/whole-v2-clean.png",
+  "details": "Exact full cropped1px inlet/bridge arch/tank/stair overlays; broad complete room masses4px prequantized to4colors; no tile substitution."
+}

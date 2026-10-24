@@ -1,0 +1,750 @@
+{
+  "06a": {
+    "name": "Pela passagem de baixo",
+    "cap": 3,
+    "spawn": 3,
+    "solids": [
+      [
+        352,
+        96,
+        160,
+        64
+      ],
+      [
+        800,
+        240,
+        176,
+        64
+      ],
+      [
+        1376,
+        96,
+        160,
+        64
+      ],
+      [
+        1824,
+        240,
+        176,
+        64
+      ],
+      [
+        2400,
+        96,
+        160,
+        64
+      ],
+      [
+        2656,
+        240,
+        112,
+        64
+      ]
+    ],
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        280,
+        216
+      ],
+      [
+        568,
+        216
+      ],
+      [
+        744,
+        216
+      ],
+      [
+        1008,
+        200
+      ],
+      [
+        1304,
+        200
+      ],
+      [
+        1584,
+        216
+      ],
+      [
+        1760,
+        216
+      ],
+      [
+        2056,
+        200
+      ],
+      [
+        2320,
+        200
+      ],
+      [
+        2640,
+        216
+      ],
+      [
+        3016,
+        208
+      ]
+    ],
+    "pauses": [
+      3,
+      7
+    ],
+    "width": 3072,
+    "height": 320,
+    "walkable": [
+      16,
+      192,
+      3040,
+      112
+    ],
+    "gates": [],
+    "valves": [],
+    "exit": [
+      2992,
+      184,
+      48,
+      48
+    ],
+    "tiles": 599,
+    "tileBudget": 640,
+    "swept16pxSamples": 2976,
+    "routeLengthPx": 2961.9,
+    "unopposedMinimumSeconds": 84.3,
+    "art": {
+      "wholeImage": "art/visual-composition-fixes-v1/routes/cycle-1/source/06a-scene.png",
+      "wholeImageSHA256": "8fbf2e2d983800a80fc0f6d83bfc8ac992720119c187fa48a5555ff7e3c16d4a",
+      "method": "Whole ImageGen scene first; complete architectural module extraction; exact 8x8 deduplication",
+      "architectureBays": 24,
+      "sourceModules": [
+        {
+          "name": "Pavimento continuo",
+          "source": [
+            452,
+            426,
+            460,
+            434
+          ],
+          "nativeSize": [
+            8,
+            8
+          ]
+        },
+        {
+          "name": "Cobertura e infraestrutura",
+          "source": [
+            1400,
+            20,
+            1408,
+            28
+          ],
+          "nativeSize": [
+            8,
+            8
+          ]
+        },
+        {
+          "name": "Agua ou canal tecnico",
+          "source": [
+            200,
+            550,
+            216,
+            566
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Borda construida do canal",
+          "source": [
+            300,
+            490,
+            316,
+            498
+          ],
+          "nativeSize": [
+            16,
+            8
+          ]
+        },
+        {
+          "name": "Baia arquitetonica completa",
+          "source": [
+            0,
+            0,
+            450,
+            420
+          ],
+          "nativeSize": [
+            128,
+            96
+          ]
+        },
+        {
+          "name": "Marco de inspecao/manutencao",
+          "source": [
+            790,
+            10,
+            1180,
+            400
+          ],
+          "nativeSize": [
+            112,
+            96
+          ]
+        },
+        {
+          "name": "Construcao distinta da chegada",
+          "source": [
+            1630,
+            0,
+            2172,
+            480
+          ],
+          "nativeSize": [
+            144,
+            112
+          ]
+        }
+      ],
+      "lossyTileReplacements": 0,
+      "nativeImage": "art/visual-composition-fixes-v1/routes/cycle-1/06a-native-complete.png"
+    },
+    "nativeTileSHA256": "923d8daba3bba4476e9bcd3a9d000114ceb3b339e970b1b2391f641c7d6ff945"
+  },
+  "06b": {
+    "name": "O peso dos que ficaram",
+    "cap": 3,
+    "spawn": 3,
+    "solids": [
+      [
+        352,
+        96,
+        128,
+        64
+      ],
+      [
+        768,
+        240,
+        144,
+        64
+      ],
+      [
+        1376,
+        96,
+        144,
+        64
+      ],
+      [
+        1792,
+        240,
+        144,
+        64
+      ],
+      [
+        2400,
+        96,
+        160,
+        64
+      ],
+      [
+        1008,
+        192,
+        32,
+        16
+      ],
+      [
+        1008,
+        272,
+        32,
+        32
+      ],
+      [
+        2032,
+        192,
+        32,
+        16
+      ],
+      [
+        2032,
+        272,
+        32,
+        32
+      ],
+      [
+        2656,
+        240,
+        112,
+        64
+      ]
+    ],
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        280,
+        216
+      ],
+      [
+        552,
+        208
+      ],
+      [
+        744,
+        208
+      ],
+      [
+        944,
+        216
+      ],
+      [
+        960,
+        240
+      ],
+      [
+        1048,
+        240
+      ],
+      [
+        1080,
+        216
+      ],
+      [
+        1304,
+        216
+      ],
+      [
+        1584,
+        208
+      ],
+      [
+        1760,
+        208
+      ],
+      [
+        1968,
+        216
+      ],
+      [
+        1984,
+        240
+      ],
+      [
+        2072,
+        240
+      ],
+      [
+        2104,
+        216
+      ],
+      [
+        2320,
+        216
+      ],
+      [
+        2640,
+        216
+      ],
+      [
+        3016,
+        208
+      ]
+    ],
+    "pauses": [
+      4,
+      11
+    ],
+    "width": 3072,
+    "height": 320,
+    "walkable": [
+      16,
+      192,
+      3040,
+      112
+    ],
+    "gates": [
+      [
+        1008,
+        208,
+        32,
+        64
+      ],
+      [
+        2032,
+        208,
+        32,
+        64
+      ]
+    ],
+    "valves": [
+      [
+        968,
+        224
+      ],
+      [
+        1992,
+        224
+      ]
+    ],
+    "exit": [
+      2992,
+      184,
+      48,
+      48
+    ],
+    "tiles": 337,
+    "tileBudget": 450,
+    "swept16pxSamples": 3024,
+    "routeLengthPx": 3002.3,
+    "unopposedMinimumSeconds": 85.4,
+    "art": {
+      "wholeImage": "art/visual-composition-fixes-v1/routes/cycle-1/source/06b-scene.png",
+      "wholeImageSHA256": "f4ff785ec171bf7b3923ea6cbebf030b1be640f732d19c177c5be448ff2880a3",
+      "method": "Whole ImageGen scene first; complete architectural module extraction; exact 8x8 deduplication",
+      "architectureBays": 32,
+      "sourceModules": [
+        {
+          "name": "Pavimento continuo",
+          "source": [
+            1748,
+            382,
+            1756,
+            390
+          ],
+          "nativeSize": [
+            8,
+            8
+          ]
+        },
+        {
+          "name": "Cobertura e infraestrutura",
+          "source": [
+            64,
+            32,
+            72,
+            40
+          ],
+          "nativeSize": [
+            8,
+            8
+          ]
+        },
+        {
+          "name": "Agua ou canal tecnico",
+          "source": [
+            600,
+            570,
+            616,
+            586
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Borda construida do canal",
+          "source": [
+            600,
+            650,
+            616,
+            658
+          ],
+          "nativeSize": [
+            16,
+            8
+          ]
+        },
+        {
+          "name": "Baia arquitetonica completa",
+          "source": [
+            0,
+            0,
+            450,
+            350
+          ],
+          "nativeSize": [
+            96,
+            80
+          ]
+        },
+        {
+          "name": "Marco de inspecao/manutencao",
+          "source": [
+            450,
+            0,
+            830,
+            370
+          ],
+          "nativeSize": [
+            64,
+            80
+          ]
+        },
+        {
+          "name": "Construcao distinta da chegada",
+          "source": [
+            1900,
+            0,
+            2172,
+            420
+          ],
+          "nativeSize": [
+            96,
+            80
+          ]
+        },
+        {
+          "name": "Tubo fisico conectado a valvula",
+          "source": [
+            530,
+            130,
+            550,
+            260
+          ],
+          "nativeSize": [
+            8,
+            48
+          ]
+        }
+      ],
+      "lossyTileReplacements": 0,
+      "nativeImage": "art/visual-composition-fixes-v1/routes/cycle-1/06b-native-complete.png"
+    },
+    "nativeTileSHA256": "8725df21e9bbe74ce5cbf45659b4055bbaeb1d2af1277185fd6f7fa395d09402"
+  },
+  "12": {
+    "name": "A ultima travessia",
+    "cap": 3,
+    "spawn": 2,
+    "solids": [
+      [
+        456,
+        96,
+        96,
+        80
+      ],
+      [
+        936,
+        240,
+        96,
+        64
+      ],
+      [
+        1400,
+        96,
+        96,
+        88
+      ],
+      [
+        1904,
+        224,
+        96,
+        80
+      ],
+      [
+        2416,
+        96,
+        96,
+        80
+      ],
+      [
+        2656,
+        240,
+        112,
+        64
+      ]
+    ],
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        328,
+        216
+      ],
+      [
+        624,
+        216
+      ],
+      [
+        848,
+        208
+      ],
+      [
+        1104,
+        200
+      ],
+      [
+        1304,
+        216
+      ],
+      [
+        1576,
+        216
+      ],
+      [
+        1808,
+        208
+      ],
+      [
+        2072,
+        208
+      ],
+      [
+        2304,
+        216
+      ],
+      [
+        2592,
+        216
+      ],
+      [
+        2824,
+        208
+      ],
+      [
+        3016,
+        208
+      ]
+    ],
+    "pauses": [
+      3,
+      7,
+      10
+    ],
+    "width": 3072,
+    "height": 320,
+    "walkable": [
+      16,
+      192,
+      3040,
+      112
+    ],
+    "gates": [],
+    "valves": [],
+    "exit": [
+      2992,
+      184,
+      48,
+      48
+    ],
+    "tiles": 600,
+    "tileBudget": 640,
+    "swept16pxSamples": 2978,
+    "routeLengthPx": 2961.3,
+    "unopposedMinimumSeconds": 85.3,
+    "art": {
+      "wholeImage": "art/visual-composition-fixes-v1/routes/cycle-1/source/12-scene.png",
+      "wholeImageSHA256": "63f531d9025991b26ee45db4efce30a2ecd0bdd3d5d48527ad8fa1bb4be113ff",
+      "method": "Whole ImageGen scene first; complete architectural module extraction; exact 8x8 deduplication",
+      "architectureBays": 24,
+      "sourceModules": [
+        {
+          "name": "Pavimento continuo",
+          "source": [
+            446,
+            530,
+            454,
+            538
+          ],
+          "nativeSize": [
+            8,
+            8
+          ]
+        },
+        {
+          "name": "Cobertura e infraestrutura",
+          "source": [
+            1600,
+            30,
+            1608,
+            38
+          ],
+          "nativeSize": [
+            8,
+            8
+          ]
+        },
+        {
+          "name": "Agua ou canal tecnico",
+          "source": [
+            710,
+            642,
+            726,
+            658
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Borda construida do canal",
+          "source": [
+            710,
+            630,
+            726,
+            638
+          ],
+          "nativeSize": [
+            16,
+            8
+          ]
+        },
+        {
+          "name": "Baia arquitetonica completa",
+          "source": [
+            0,
+            70,
+            680,
+            460
+          ],
+          "nativeSize": [
+            128,
+            96
+          ]
+        },
+        {
+          "name": "Marco de inspecao/manutencao",
+          "source": [
+            750,
+            150,
+            1240,
+            490
+          ],
+          "nativeSize": [
+            112,
+            96
+          ]
+        },
+        {
+          "name": "Construcao distinta da chegada",
+          "source": [
+            1510,
+            40,
+            2172,
+            590
+          ],
+          "nativeSize": [
+            144,
+            112
+          ]
+        }
+      ],
+      "lossyTileReplacements": 0,
+      "nativeImage": "art/visual-composition-fixes-v1/routes/cycle-1/12-native-complete.png"
+    },
+    "nativeTileSHA256": "e95e71657f6ca244ec02d809b5023a358f0e8d31b014b84d886259fa3a8b9fe1"
+  }
+}

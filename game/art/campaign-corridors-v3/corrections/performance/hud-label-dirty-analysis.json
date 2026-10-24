@@ -1,0 +1,84 @@
+{
+  "romSHA256": "ce8b35d9db76174d47a7c1bc8127c36893b54e2d6e336a1aa9b9b4b3e3a0dc82",
+  "source": "hud-ce8b35-ntsc canvas binaries, whose pixels/VRAM exactly match0844",
+  "comparisons": [
+    {
+      "from": "00-waiting-s0-m0-c0-canvas.bin",
+      "to": "01-aiming-s0-m0-c0-canvas.bin",
+      "differingTileIndices": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        41,
+        42,
+        43,
+        44,
+        46,
+        47,
+        48,
+        49
+      ],
+      "exactChangedTiles": 16,
+      "currentMarkRectTiles": 18,
+      "exactSavedDMABytes": 64
+    },
+    {
+      "from": "00-waiting-s0-m0-c0-canvas.bin",
+      "to": "02-pausing-s0-m0-c0-canvas.bin",
+      "differingTileIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "exactChangedTiles": 18,
+      "currentMarkRectTiles": 18,
+      "exactSavedDMABytes": 0
+    },
+    {
+      "from": "01-aiming-s0-m0-c0-canvas.bin",
+      "to": "02-pausing-s0-m0-c0-canvas.bin",
+      "differingTileIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "exactChangedTiles": 16,
+      "currentMarkRectTiles": 18,
+      "exactSavedDMABytes": 64
+    }
+  ],
+  "claim": "Only proves exact dirty-tile reduction; no prospective FPS claim."
+}

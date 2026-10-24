@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "rom": "out/release/Plaguefall.bin",
+  "rom_sha256": "1879d590bd877f6202cd2acaef495ee29e5c8ef90bd0dfbdffe36d90b873c279",
+  "rom_bytes": 1572864,
+  "font": {
+    "glyphs": 96,
+    "size": [
+      8,
+      8
+    ],
+    "additionalCharacters": "ÀÁÂÃÉÊÍÓÔÕÚÇ",
+    "reusedSlots": "a..l",
+    "vramBytes": 3072,
+    "extraVramBytes": 0,
+    "unchangedGlyphs": 84,
+    "authoredEncoding": "UTF-8 NFC uppercase",
+    "romEncoding": "one byte per glyph, build-time C string conversion"
+  },
+  "nativeAndResources": {
+    "passed": true,
+    "command": "python3 game/tools/check.py"
+  },
+  "openingPixels": {
+    "passed": true,
+    "report": "pixel-validation.json",
+    "stationaryBackgrounds": 56,
+    "captionCaptures": 36
+  },
+  "emulator": {
+    "ntsc": {
+      "intro": {
+        "passed": true,
+        "report": "intro-ntsc/report.json",
+        "shots": 14,
+        "captions": 18
+      },
+      "interface": {
+        "passed": true,
+        "report": "interface-ntsc/report.json",
+        "phases": 20
+      },
+      "radio": {
+        "passed": true,
+        "report": "radio-ntsc/report.json",
+        "dialogues": 51,
+        "countdowns": 20
+      },
+      "results": {
+        "passed": true,
+        "report": "results-ntsc/report.json",
+        "defeatPhases": 20
+      },
+      "hud": {
+        "passed": true,
+        "report": "hud-ntsc/report.json",
+        "checks": 5
+      },
+      "routemap": {
+        "passed": true,
+        "report": "routemap-ntsc/report.json",
+        "edges": 23,
+        "histories": 2
+      }
+    },
+    "pal": {
+      "intro": {
+        "passed": true,
+        "report": "intro-pal/report.json",
+        "shots": 14,
+        "captions": 18
+      },
+      "interface": {
+        "passed": true,
+        "report": "interface-pal/report.json",
+        "phases": 20
+      },
+      "radio": {
+        "passed": true,
+        "report": "radio-pal/report.json",
+        "dialogues": 51,
+        "countdowns": 20
+      },
+      "results": {
+        "passed": true,
+        "report": "results-pal/report.json",
+        "defeatPhases": 20
+      },
+      "hud": {
+        "passed": true,
+        "report": "hud-pal/report.json",
+        "checks": 5
+      },
+      "routemap": {
+        "passed": true,
+        "report": "routemap-pal/report.json",
+        "edges": 23,
+        "histories": 2
+      }
+    }
+  }
+}

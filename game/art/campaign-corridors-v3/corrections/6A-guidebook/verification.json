@@ -1,0 +1,66 @@
+{
+  "phase": "6A",
+  "status": "PASS private data contract; visual approval not implied",
+  "builder_check": {
+    "exit_code": 0,
+    "byte_exact_outputs": 38,
+    "writes": 0,
+    "command": "python3 game/art/campaign-corridors-v3/corrections/6A-guidebook/build_materials.py --check"
+  },
+  "native_decode": {
+    "exact_index_pixels": true,
+    "exact_rgb_pixels": true,
+    "palette_rgb333_exact": true,
+    "palette_zero_black": true,
+    "width": 3072,
+    "height": 320,
+    "tile_count": 554,
+    "objective_reserve": 0,
+    "total_tiles": 554,
+    "h_v_flip_decode_verified": true
+  },
+  "geometry_equal_fields": [
+    "size",
+    "bounds",
+    "start",
+    "route_points",
+    "pauses",
+    "exit",
+    "solids",
+    "gates",
+    "valves",
+    "valve_approaches",
+    "gate_shot_approaches",
+    "camera_interest",
+    "camera_player_y"
+  ],
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 5554,
+    "reachable_positions": 5554,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3200
+  },
+  "objective_sprite_files_unchanged": [],
+  "files": {
+    "tiles": {
+      "bytes": 17728,
+      "sha256": "3e122821115206f16fd7361d45ebc39099d0441f1392d6e4ad4e6ac44211ff17"
+    },
+    "map": {
+      "bytes": 30720,
+      "sha256": "2fbec621a2b686fe99ec638c63c03ede68ca79fa111a42fb82903e896600fe27"
+    },
+    "palette": {
+      "bytes": 32,
+      "sha256": "52f253bacc58eae0fb3a53db5f4e526909b1f575fce09f21b3966d6d2db1d71a"
+    }
+  },
+  "full_native_png_sha256": "5dba9c51612bc0206e44cee16a91ffaf1d936c4711c0e1a298a810daa53788f2",
+  "active_scene_edited": false,
+  "rom_built_or_executed": false,
+  "limits": [
+    "No new gameplay/performance measurements: this only validates isolated existing geometry and exported banks.",
+    "Cameras use old measured positions with composed actors/HUD. Private-ROM review must confirm streaming, palette loading and visibility."
+  ]
+}

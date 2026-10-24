@@ -1,0 +1,45 @@
+{
+  "phase": "9",
+  "status": "isolated_correction_ready_for_reexport",
+  "prior_ROM": "232eac030e985dfc2ea029722ed20ae8ffff5da5131daadae8c53e296fd3b2e0",
+  "cause": "Whole truck rectangle retained a garage-door fragment, neighboring parking bollards and partial crate from the original source.",
+  "fix": "Source-local complete-vehicle polygon; source RGB composited against actual neutral asphalt RGB72,72,72 before2px resampling and exact RGB333 nearest palette conversion.",
+  "source_bbox": [
+    924,
+    154,
+    1040,
+    336
+  ],
+  "world_changed_bbox_exclusive": [
+    1048,
+    192,
+    1120,
+    312
+  ],
+  "changed_pixels": 4028,
+  "all_pixels_outside_truck_unchanged": true,
+  "geometry_camera_palette_unchanged": true,
+  "scene_tiles_before": 580,
+  "scene_tiles_after": 540,
+  "geometry_proof": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "BFS_step": 8,
+    "connected_positions": 4239,
+    "all_points_reachable": true,
+    "swept16pxSamples": 2606,
+    "all_segments_collision_free": true
+  },
+  "visual_review": "Whole load, cabin, mirrors, tires and bumper remain. Detached garage, crate and bollards removed; native320view reviewed. No runtime claim for corrected bank until root rebuilds.",
+  "evidence": "comparison.png",
+  "frozen_hashes": {
+    "build.py": "7ccebe50ed4d787bf77340e9017197462ed8ad5222d55809715b2c866f119bd2",
+    "manifest.json": "427e79695a4921ae3524c28f605d8e6c2d1723ca6ce08ec53e7eaabc43b69647",
+    "complete-native.png": "46ee96da2812ac34a59f015f81998b3dbe2652599bb9fc344b0f793a711398ca",
+    "native/tiles.bin": "79de722106e51087275ef098b9d6db1895e135583cf1213a12cca2417f9d16a7",
+    "native/map.bin": "3024932cb066be124ecb6becf77642e5e8ddd5f5c953288e7b330cf195826295",
+    "native/palette.bin": "a8121ecc116c1e3354e65838ad3556d730847f4a029ee7203aa008098bbbcbef"
+  }
+}

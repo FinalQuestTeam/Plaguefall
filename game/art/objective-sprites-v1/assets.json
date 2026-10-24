@@ -1,0 +1,567 @@
+{
+  "palette": "cangaco-insects-sized-v3/palette.json",
+  "assets": [
+    {
+      "name": "nest",
+      "width": 48,
+      "height": 48,
+      "frames": 6,
+      "tiles_per_frame": 36,
+      "offset_words": 0,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_sha256": "171ebed0246725d9f67fe354e4e19c2406b08da835c42c110049b412ca6999bc",
+      "source_boxes": [
+        [
+          39,
+          113,
+          472,
+          475
+        ],
+        [
+          33,
+          113,
+          466,
+          475
+        ],
+        [
+          22,
+          107,
+          483,
+          475
+        ],
+        [
+          40,
+          90,
+          480,
+          422
+        ],
+        [
+          41,
+          182,
+          468,
+          422
+        ],
+        [
+          35,
+          175,
+          473,
+          422
+        ]
+      ],
+      "bytes": 6912
+    },
+    {
+      "name": "generator",
+      "width": 32,
+      "height": 32,
+      "frames": 6,
+      "tiles_per_frame": 16,
+      "offset_words": 1728,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        3
+      ],
+      "source_sha256": "732c8a60879bb4e682f159e01ef68d378ceada02c1cab7197abefafbbcb8af73",
+      "source_boxes": [
+        [
+          148,
+          51,
+          441,
+          483
+        ],
+        [
+          110,
+          51,
+          403,
+          483
+        ],
+        [
+          72,
+          51,
+          366,
+          483
+        ],
+        [
+          147,
+          24,
+          441,
+          457
+        ],
+        [
+          110,
+          24,
+          443,
+          458
+        ],
+        [
+          72,
+          24,
+          366,
+          457
+        ]
+      ],
+      "bytes": 3072
+    },
+    {
+      "name": "cargo",
+      "width": 32,
+      "height": 32,
+      "frames": 6,
+      "tiles_per_frame": 16,
+      "offset_words": 2496,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        4
+      ],
+      "source_sha256": "ed24306d717b6d76354d52876e10994368c7e8b7956dfabde506be1947a9d7fe",
+      "source_boxes": [
+        [
+          56,
+          80,
+          486,
+          512
+        ],
+        [
+          39,
+          79,
+          472,
+          512
+        ],
+        [
+          27,
+          48,
+          464,
+          425
+        ],
+        [
+          57,
+          0,
+          486,
+          431
+        ],
+        [
+          41,
+          0,
+          471,
+          431
+        ],
+        [
+          27,
+          70,
+          462,
+          419
+        ]
+      ],
+      "bytes": 3072
+    },
+    {
+      "name": "transmitter",
+      "width": 32,
+      "height": 32,
+      "frames": 6,
+      "tiles_per_frame": 16,
+      "offset_words": 3264,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_sha256": "6bf908ad21023b6432fca539e7e2fa95d6eb7273c04d235856cc65a56ca3f1c2",
+      "source_boxes": [
+        [
+          134,
+          139,
+          472,
+          482
+        ],
+        [
+          76,
+          136,
+          424,
+          488
+        ],
+        [
+          6,
+          11,
+          401,
+          488
+        ],
+        [
+          131,
+          3,
+          512,
+          490
+        ],
+        [
+          0,
+          65,
+          449,
+          486
+        ],
+        [
+          5,
+          265,
+          491,
+          490
+        ]
+      ],
+      "bytes": 3072
+    },
+    {
+      "name": "valve",
+      "width": 32,
+      "height": 32,
+      "frames": 6,
+      "tiles_per_frame": 16,
+      "offset_words": 4032,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        3
+      ],
+      "source_sha256": "b13ed8647c5855beb3e13afb1745a759e1164b6183217c71a770516ed8490381",
+      "source_boxes": [
+        [
+          36,
+          26,
+          489,
+          486
+        ],
+        [
+          29,
+          26,
+          482,
+          486
+        ],
+        [
+          22,
+          26,
+          476,
+          486
+        ],
+        [
+          37,
+          21,
+          512,
+          480
+        ],
+        [
+          0,
+          21,
+          512,
+          480
+        ],
+        [
+          0,
+          16,
+          476,
+          480
+        ]
+      ],
+      "bytes": 3072
+    },
+    {
+      "name": "gate",
+      "width": 64,
+      "height": 64,
+      "frames": 6,
+      "tiles_per_frame": 64,
+      "offset_words": 4800,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_sha256": "23b42ff08500b74028d99c6c42d012119c81c6cb2d6563285564533d85a706c5",
+      "source_boxes": [
+        [
+          115,
+          8,
+          444,
+          487
+        ],
+        [
+          98,
+          8,
+          428,
+          487
+        ],
+        [
+          85,
+          8,
+          413,
+          487
+        ],
+        [
+          115,
+          0,
+          444,
+          465
+        ],
+        [
+          96,
+          0,
+          430,
+          466
+        ],
+        [
+          84,
+          0,
+          414,
+          466
+        ]
+      ],
+      "bytes": 12288
+    },
+    {
+      "name": "trap",
+      "width": 32,
+      "height": 32,
+      "frames": 6,
+      "tiles_per_frame": 16,
+      "offset_words": 7872,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_sha256": "f6946142e434ea9e012ab6a5ded4a8032bb5735bfda002ae3cff5940a8774648",
+      "source_boxes": [
+        [
+          89,
+          119,
+          459,
+          419
+        ],
+        [
+          79,
+          119,
+          449,
+          419
+        ],
+        [
+          78,
+          101,
+          446,
+          420
+        ],
+        [
+          74,
+          59,
+          454,
+          419
+        ],
+        [
+          78,
+          11,
+          449,
+          420
+        ],
+        [
+          80,
+          114,
+          452,
+          420
+        ]
+      ],
+      "bytes": 3072
+    },
+    {
+      "name": "radio",
+      "width": 32,
+      "height": 32,
+      "frames": 6,
+      "tiles_per_frame": 16,
+      "offset_words": 8640,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_sha256": "f67e4799dd28eea040479cb6e17be1ecac6be25fac56b68d87b96748dbe1474a",
+      "source_boxes": [
+        [
+          52,
+          26,
+          472,
+          482
+        ],
+        [
+          47,
+          26,
+          466,
+          482
+        ],
+        [
+          43,
+          21,
+          462,
+          482
+        ],
+        [
+          52,
+          20,
+          472,
+          474
+        ],
+        [
+          47,
+          19,
+          466,
+          474
+        ],
+        [
+          42,
+          16,
+          462,
+          473
+        ]
+      ],
+      "bytes": 3072
+    },
+    {
+      "name": "refugee",
+      "width": 32,
+      "height": 48,
+      "frames": 6,
+      "tiles_per_frame": 24,
+      "offset_words": 9408,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_sha256": "2f8a3c6f658ec25ff2a27f04d242cfa4e6a319be78bd4472e47b5e6a311251a9",
+      "source_boxes": [
+        [
+          184,
+          76,
+          370,
+          482
+        ],
+        [
+          145,
+          76,
+          373,
+          476
+        ],
+        [
+          136,
+          77,
+          348,
+          485
+        ],
+        [
+          178,
+          44,
+          391,
+          450
+        ],
+        [
+          151,
+          43,
+          365,
+          450
+        ],
+        [
+          136,
+          43,
+          373,
+          450
+        ]
+      ],
+      "bytes": 4608
+    },
+    {
+      "name": "cage",
+      "width": 64,
+      "height": 64,
+      "frames": 6,
+      "tiles_per_frame": 64,
+      "offset_words": 10560,
+      "pose_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_sha256": "70cd278852e878237ea2a2f4e8df76d024e1100f30097d61a37de085f7fae1e7",
+      "source_boxes": [
+        [
+          36,
+          51,
+          486,
+          459
+        ],
+        [
+          35,
+          51,
+          486,
+          459
+        ],
+        [
+          35,
+          51,
+          486,
+          459
+        ],
+        [
+          36,
+          40,
+          486,
+          460
+        ],
+        [
+          35,
+          49,
+          486,
+          460
+        ],
+        [
+          35,
+          50,
+          485,
+          460
+        ]
+      ],
+      "bytes": 12288
+    }
+  ],
+  "total_bytes": 54528,
+  "export": "imagegen sources; shared scale and ground anchor; nearest-neighbor; existing 15 opaque colors"
+}

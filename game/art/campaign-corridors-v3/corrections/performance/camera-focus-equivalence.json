@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "source": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/campaign-corridors-v3/corrections/performance/expected-ce8b35/maps.json",
+  "proof": "dx,dy are nonnegative distances to an AABB. With strict dx+dy<nearest, dx>=nearest cannot select the rectangle, including ties. Current world ranges cannot overflow signed16.",
+  "productionModified": false,
+  "phases": {
+    "06a": {
+      "integerFootCoordinates": 983040,
+      "focusRectEvaluations": 4915200,
+      "dyCalculationsAvoided": 4450240,
+      "avoidedPercent": 90.5404,
+      "focusAndTieSelectionExact": true
+    },
+    "06b": {
+      "integerFootCoordinates": 983040,
+      "focusRectEvaluations": 4915200,
+      "dyCalculationsAvoided": 4409280,
+      "avoidedPercent": 89.707,
+      "focusAndTieSelectionExact": true
+    },
+    "12": {
+      "integerFootCoordinates": 983040,
+      "focusRectEvaluations": 9830400,
+      "dyCalculationsAvoided": 8769824,
+      "avoidedPercent": 89.2113,
+      "focusAndTieSelectionExact": true
+    }
+  }
+}

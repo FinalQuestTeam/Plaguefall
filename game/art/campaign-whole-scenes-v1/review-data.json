@@ -1,0 +1,625 @@
+{
+  "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "stages": [
+    {
+      "phase": "3",
+      "title": "Rua da igreja ao galpão",
+      "objective": "Abrir caminho por2.560px; a igreja acompanha a escolha da bomba.",
+      "source": "early/source/03-street.png",
+      "native": "early/03-street/map-native.png",
+      "group": "early",
+      "key": "03",
+      "tiles": 571,
+      "cut": "early/03-street/sprites-8x8.png",
+      "report": "../campaign-integrated-v1/early/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "frames": 539,
+        "vblanks": 600,
+        "fps": 53.9,
+        "nominal_region_fps": 60,
+        "cpu_mean_pct": 81.76,
+        "cpu_p95_pct": 107.18,
+        "peak_enemies": 4,
+        "peak_player_shots": 6,
+        "peak_enemy_shots": 6,
+        "setup": "4 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+      },
+      "capture": "../campaign-integrated-v1/early/ntsc/03-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/early/ntsc/03-playtest-1.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "4",
+      "title": "Interior do galpão",
+      "objective": "Eliminar20insetos e preparar abrigo para os civis.",
+      "source": "early/source/04-warehouse-v2.png",
+      "native": "early/04-warehouse/map-native.png",
+      "group": "early",
+      "key": "04",
+      "tiles": 636,
+      "cut": "early/04-warehouse/sprites-8x8.png",
+      "report": "../campaign-integrated-v1/early/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "frames": 577,
+        "vblanks": 600,
+        "fps": 57.7,
+        "nominal_region_fps": 60,
+        "cpu_mean_pct": 79.02,
+        "cpu_p95_pct": 104.93,
+        "peak_enemies": 4,
+        "peak_player_shots": 6,
+        "peak_enemy_shots": 6,
+        "setup": "4 enemies and six shots per pool refreshed each VBlank; RAM controlled load, full production update/render"
+      },
+      "capture": "../campaign-integrated-v1/early/ntsc/04-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/early/ntsc/04-playtest-1.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "6A",
+      "title": "Esgotos após o resgate",
+      "objective": "Escoltar Dinorah por3.072px.",
+      "source": "routes/source/06a-complete.png",
+      "native": "routes/06a-native-complete.png",
+      "group": "escorts",
+      "key": "06a",
+      "tiles": 591,
+      "cut": null,
+      "report": "../campaign-integrated-v1/escorts/ntsc/report.json",
+      "verified": true,
+      "load": [
+        {
+          "forcedEnemies": 3,
+          "enemyRoster": [
+            4,
+            5
+          ],
+          "peakActive": 3,
+          "gameFPS": 57.33,
+          "meanCPULoadPct": 79.88,
+          "p95CPULoadPct": 102.78,
+          "playerShots": 4,
+          "enemyShots": 4,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 21,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 120
+        },
+        {
+          "forcedEnemies": 3,
+          "enemyRoster": [
+            4,
+            5
+          ],
+          "peakActive": 3,
+          "gameFPS": 55.67,
+          "meanCPULoadPct": 89.36,
+          "p95CPULoadPct": 112.01,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 25,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 120
+        },
+        {
+          "forcedEnemies": 4,
+          "enemyRoster": [
+            4,
+            5
+          ],
+          "peakActive": 4,
+          "gameFPS": 55.0,
+          "meanCPULoadPct": 93.57,
+          "p95CPULoadPct": 115.77,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 26,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 136
+        },
+        {
+          "forcedEnemies": 8,
+          "enemyRoster": [
+            4,
+            5
+          ],
+          "peakActive": 8,
+          "gameFPS": 29.33,
+          "meanCPULoadPct": 117.36,
+          "p95CPULoadPct": 140.28,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 30,
+          "busiestScanlineSprites": 11,
+          "busiestScanlinePixels": 160
+        },
+        {
+          "forcedEnemies": 16,
+          "enemyRoster": [
+            4,
+            5
+          ],
+          "peakActive": 16,
+          "gameFPS": 29.67,
+          "meanCPULoadPct": 175.9,
+          "p95CPULoadPct": 198.49,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 38,
+          "busiestScanlineSprites": 10,
+          "busiestScanlinePixels": 160
+        }
+      ],
+      "capture": "../campaign-integrated-v1/escorts/ntsc/06a-entrada.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/escorts/ntsc/06a-traversal.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "6B",
+      "title": "Esgotos sob pressão",
+      "objective": "Escoltar Dinorah, liberar2válvulas e romper2portões.",
+      "source": "routes/source/06b-complete.png",
+      "native": "routes/06b-native-complete.png",
+      "group": "escorts",
+      "key": "06b",
+      "tiles": 370,
+      "cut": null,
+      "report": "../campaign-integrated-v1/escorts/ntsc/report.json",
+      "verified": true,
+      "load": [
+        {
+          "forcedEnemies": 3,
+          "enemyRoster": [
+            4,
+            5,
+            7
+          ],
+          "peakActive": 3,
+          "gameFPS": 55.67,
+          "meanCPULoadPct": 92.01,
+          "p95CPULoadPct": 114.45,
+          "playerShots": 4,
+          "enemyShots": 4,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 25,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 144
+        },
+        {
+          "forcedEnemies": 3,
+          "enemyRoster": [
+            4,
+            5,
+            7
+          ],
+          "peakActive": 3,
+          "gameFPS": 49.33,
+          "meanCPULoadPct": 101.42,
+          "p95CPULoadPct": 125.34,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 29,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 144
+        },
+        {
+          "forcedEnemies": 4,
+          "enemyRoster": [
+            4,
+            5,
+            7
+          ],
+          "peakActive": 4,
+          "gameFPS": 32.33,
+          "meanCPULoadPct": 108.13,
+          "p95CPULoadPct": 132.52,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 30,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 160
+        },
+        {
+          "forcedEnemies": 8,
+          "enemyRoster": [
+            4,
+            5,
+            7
+          ],
+          "peakActive": 8,
+          "gameFPS": 29.33,
+          "meanCPULoadPct": 135.28,
+          "p95CPULoadPct": 158.64,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 34,
+          "busiestScanlineSprites": 11,
+          "busiestScanlinePixels": 192
+        },
+        {
+          "forcedEnemies": 16,
+          "enemyRoster": [
+            4,
+            5,
+            7
+          ],
+          "peakActive": 16,
+          "gameFPS": 23.0,
+          "meanCPULoadPct": 207.47,
+          "p95CPULoadPct": 229.05,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 42,
+          "busiestScanlineSprites": 10,
+          "busiestScanlinePixels": 192
+        }
+      ],
+      "capture": "../campaign-integrated-v1/escorts/ntsc/06b-entrada.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/escorts/ntsc/06b-traversal.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "7",
+      "title": "Favela — O Último Chão",
+      "objective": "Recolher5cargas e levá-las ao depósito.",
+      "source": "../visual-composition-fixes-v1/resistance/cycle-1/source/07-08-favela-calm.png",
+      "native": "resistance/native/favela/map-native.png",
+      "group": "resistance",
+      "key": "7",
+      "tiles": 538,
+      "cut": "resistance/native/favela/sprites-8x8.png",
+      "report": "../campaign-integrated-v1/resistance/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 4,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 51.14,
+        "cpu_peak_percent": 52.44,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      },
+      "capture": "../campaign-integrated-v1/resistance/ntsc/7-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/resistance/ntsc/7-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "8",
+      "title": "Favela comprometida",
+      "objective": "Eliminar3transmissores e conter o enxame.",
+      "source": "../visual-composition-fixes-v1/resistance/cycle-1/source/07-08-favela-calm.png",
+      "native": "resistance/native/favela/map-native.png",
+      "group": "resistance",
+      "key": "8",
+      "tiles": 538,
+      "cut": "resistance/native/favela/sprites-8x8.png",
+      "report": "../campaign-integrated-v1/resistance/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 6,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 53.07,
+        "cpu_peak_percent": 54.74,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      },
+      "capture": "../campaign-integrated-v1/resistance/ntsc/8-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/resistance/ntsc/8-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "9",
+      "title": "Rua industrial",
+      "objective": "Abrir caminho por2.560px até a fábrica.",
+      "source": "factory/source/street-cycle1-complete.png",
+      "native": "factory/street-native.png",
+      "group": "factory",
+      "key": "9",
+      "tiles": 627,
+      "cut": null,
+      "report": "../campaign-integrated-v1/factory/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 3,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 62.94,
+        "cpu_peak_percent": 64.94,
+        "setup": "RAM seeded full formations and pools each frame; stress only"
+      },
+      "capture": "../campaign-integrated-v1/factory/ntsc/9-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/factory/ntsc/9-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "10",
+      "title": "Interior da fábrica",
+      "objective": "Destruir10ninhos.",
+      "source": "factory/source/factory-cycle1-complete.png",
+      "native": "factory/factory-native.png",
+      "group": "factory",
+      "key": "10",
+      "tiles": 476,
+      "cut": null,
+      "report": "../campaign-integrated-v1/factory/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 4,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 84.71,
+        "cpu_peak_percent": 86.23,
+        "setup": "RAM seeded full formations and pools each frame; stress only"
+      },
+      "capture": "../campaign-integrated-v1/factory/ntsc/10-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/factory/ntsc/10-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "11",
+      "title": "Interior da fábrica",
+      "objective": "Liberar3válvulas; o calor atrai os insetos e abre a rota aos foguetes.",
+      "source": "factory/source/factory-cycle1-complete.png",
+      "native": "factory/factory-native.png",
+      "group": "factory",
+      "key": "11",
+      "tiles": 476,
+      "cut": null,
+      "report": "../campaign-integrated-v1/factory/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 3,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 72.17,
+        "cpu_peak_percent": 73.58,
+        "setup": "RAM seeded full formations and pools each frame; stress only"
+      },
+      "capture": "../campaign-integrated-v1/factory/ntsc/11-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/factory/ntsc/11-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "12",
+      "title": "Oficinas do estaleiro",
+      "objective": "Escoltar Dinorah até o sindicato; sua sobrevivência afeta a etapa final.",
+      "source": "routes/source/12-complete.png",
+      "native": "routes/12-native-complete.png",
+      "group": "escorts",
+      "key": "12",
+      "tiles": 624,
+      "cut": null,
+      "report": "../campaign-integrated-v1/escorts/ntsc/report.json",
+      "verified": true,
+      "load": [
+        {
+          "forcedEnemies": 3,
+          "enemyRoster": [
+            4,
+            5,
+            2
+          ],
+          "peakActive": 3,
+          "gameFPS": 57.33,
+          "meanCPULoadPct": 80.77,
+          "p95CPULoadPct": 103.86,
+          "playerShots": 4,
+          "enemyShots": 4,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 21,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 144
+        },
+        {
+          "forcedEnemies": 3,
+          "enemyRoster": [
+            4,
+            5,
+            2
+          ],
+          "peakActive": 3,
+          "gameFPS": 55.67,
+          "meanCPULoadPct": 90.38,
+          "p95CPULoadPct": 113.23,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 25,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 144
+        },
+        {
+          "forcedEnemies": 4,
+          "enemyRoster": [
+            4,
+            5,
+            2
+          ],
+          "peakActive": 4,
+          "gameFPS": 55.0,
+          "meanCPULoadPct": 98.73,
+          "p95CPULoadPct": 121.09,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 26,
+          "busiestScanlineSprites": 9,
+          "busiestScanlinePixels": 152
+        },
+        {
+          "forcedEnemies": 8,
+          "enemyRoster": [
+            4,
+            5,
+            2
+          ],
+          "peakActive": 8,
+          "gameFPS": 29.33,
+          "meanCPULoadPct": 121.32,
+          "p95CPULoadPct": 144.09,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 30,
+          "busiestScanlineSprites": 11,
+          "busiestScanlinePixels": 208
+        },
+        {
+          "forcedEnemies": 16,
+          "enemyRoster": [
+            4,
+            5,
+            2
+          ],
+          "peakActive": 16,
+          "gameFPS": 29.33,
+          "meanCPULoadPct": 171.82,
+          "p95CPULoadPct": 193.7,
+          "playerShots": 6,
+          "enemyShots": 6,
+          "ramSetupEveryFrame": true,
+          "peakVisibleSprites": 38,
+          "busiestScanlineSprites": 11,
+          "busiestScanlinePixels": 208
+        }
+      ],
+      "capture": "../campaign-integrated-v1/escorts/ntsc/12-entrada.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/escorts/ntsc/12-traversal.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "13A",
+      "title": "Sindicato — Dinorah viva",
+      "objective": "Eliminar30insetos; Dinorah prepara recursos e participa do final.",
+      "source": "resistance/source/13-union.png",
+      "native": "resistance/native/union/alive-native.png",
+      "group": "resistance",
+      "key": "13A",
+      "tiles": 612,
+      "cut": "resistance/native/union/sprites-8x8.png",
+      "report": "../campaign-integrated-v1/resistance/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 49.79,
+        "cpu_peak_percent": 51.37,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      },
+      "capture": "../campaign-integrated-v1/resistance/ntsc/13A-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/resistance/ntsc/13A-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "13B",
+      "title": "Sindicato — Dinorah morta",
+      "objective": "Eliminar45insetos; a perda permanece na história.",
+      "source": "../visual-composition-fixes-v1/resistance/cycle-2/source/13B-memorial.png",
+      "native": "resistance/native/union/dead-native.png",
+      "group": "resistance",
+      "key": "13B",
+      "tiles": 612,
+      "cut": "resistance/native/union/sprites-8x8.png",
+      "report": "../campaign-integrated-v1/resistance/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 47.96,
+        "cpu_peak_percent": 49.22,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      },
+      "capture": "../campaign-integrated-v1/resistance/ntsc/13B-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/resistance/ntsc/13B-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "14",
+      "title": "Energia do estaleiro",
+      "objective": "Ativar5geradores.",
+      "source": "../visual-composition-fixes-v1/launch/cycle-2/source/14-15-station-circuit.png",
+      "native": "launch/previews/14-15-normal-native-reconstructed.png",
+      "group": "launch",
+      "key": "14",
+      "tiles": 540,
+      "cut": null,
+      "report": "../campaign-integrated-v1/launch/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_enemies": 4,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 54.9,
+        "cpu_peak_percent": 56.2,
+        "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+      },
+      "capture": "../campaign-integrated-v1/launch/ntsc/14-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/launch/ntsc/14-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "15",
+      "title": "Rádio e ignição",
+      "objective": "Proteger o rádio por120s; o estaleiro entra em chamas.",
+      "source": "../visual-composition-fixes-v1/launch/cycle-2/source/14-15-station-circuit.png",
+      "native": "launch/previews/14-15-normal-native-reconstructed.png",
+      "group": "launch",
+      "key": "15",
+      "tiles": 540,
+      "cut": null,
+      "report": "../campaign-integrated-v1/launch/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 59.0,
+        "seeded_enemies": 3,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 53.45,
+        "cpu_peak_percent": 60.89,
+        "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+      },
+      "capture": "../campaign-integrated-v1/launch/ntsc/15-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/launch/ntsc/15-playtest.mp4?v=ea9caca81c9b"
+    },
+    {
+      "phase": "16",
+      "title": "Escorpião",
+      "objective": "Derrotar o chefe que emerge do fogo.",
+      "source": "launch/source/16-spaceport-fire.png",
+      "native": "launch/previews/16-fire-native-reconstructed.png",
+      "group": "launch",
+      "key": "16",
+      "tiles": 560,
+      "cut": null,
+      "report": "../campaign-integrated-v1/launch/ntsc/report.json",
+      "verified": true,
+      "load": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_enemies": 4,
+        "seeded_player_shots": 4,
+        "seeded_enemy_shots": 4,
+        "cpu_mean_percent": 58.38,
+        "cpu_peak_percent": 59.86,
+        "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+      },
+      "capture": "../campaign-integrated-v1/launch/ntsc/16-entry.png?v=ea9caca81c9b",
+      "movie": "../campaign-integrated-v1/launch/ntsc/16-playtest.mp4?v=ea9caca81c9b"
+    }
+  ]
+}

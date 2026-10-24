@@ -8,6 +8,9 @@ import os,argparse, ctypes as C, hashlib, json, statistics, struct, subprocess, 
 
 from text_codec import encode, decode
 GAME=Path(__file__).resolve().parents[1]
+import re
+CAMPAIGN_NODE_COUNT=len(re.findall(r'\bN_[A-Za-z0-9]+\b',re.search(r'typedef enum\s*\{(.*?)NODE_MAX',(GAME/'src/levels/graph.h').read_text(),re.S)[1]))
+
 CORE=Path.home()/'Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib'
 
 def png(path,w,h,rgb):
@@ -250,7 +253,7 @@ def main():
                 x,y,ttl,kind,active=struct.unpack('>hhHBB',read(address+i*8,8))
                 if active and kind==8:result.append((x,y,ttl))
             return result
-        for node in range(1,21):
+        for node in range(1,CAMPAIGN_NODE_COUNT+1):
             enter(node);equipment()
             # Ensure the lethal hit also wins over a fulfilled kill target.
             # Start between shimmer uploads so the final gameplay frame cannot

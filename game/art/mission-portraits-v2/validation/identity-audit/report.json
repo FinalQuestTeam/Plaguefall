@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-23",
+  "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+  "resources_match_current_rom": {
+    "mission_portraits": {
+      "matches_rom": true,
+      "offset": 1238436,
+      "bytes": 7680,
+      "sha256": "d911ef49ecb642157d86a95a691cc55b5d20db74caf0c38deba985c3c6bd49ec"
+    },
+    "insect_frames": {
+      "matches_rom": true,
+      "offset": 543996,
+      "bytes": 118080,
+      "sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb"
+    },
+    "insect_icons": {
+      "matches_rom": true,
+      "offset": 662076,
+      "bytes": 7680,
+      "sha256": "a5c82c6995c590190110e8dfa833cc8cab8024357cd55d78b5d1b353e317840e"
+    },
+    "insect_palette": {
+      "matches_rom": true,
+      "offset": 669756,
+      "bytes": 32,
+      "sha256": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288"
+    }
+  },
+  "exact_combat_copies": 0,
+  "redrawn_portraits_checked": 10,
+  "records": [
+    {
+      "id": "sq_red",
+      "name": "Torreão",
+      "combat_native_size": [
+        16,
+        16
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "sq_yellow",
+      "name": "Batedor",
+      "combat_native_size": [
+        16,
+        16
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "sq_orange",
+      "name": "Aríete",
+      "combat_native_size": [
+        16,
+        16
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "tri_red",
+      "name": "Fuzileiro",
+      "combat_native_size": [
+        16,
+        16
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "tri_yellow",
+      "name": "Caçador",
+      "combat_native_size": [
+        16,
+        16
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "tri_purple",
+      "name": "Escudeiro",
+      "combat_native_size": [
+        16,
+        16
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "tri_orange",
+      "name": "Adaga",
+      "combat_native_size": [
+        16,
+        16
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "pen_red",
+      "name": "Artilheiro",
+      "combat_native_size": [
+        24,
+        24
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "pen_yellow",
+      "name": "Alcateia",
+      "combat_native_size": [
+        24,
+        24
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    },
+    {
+      "id": "pen_orange",
+      "name": "Meteoro",
+      "combat_native_size": [
+        24,
+        24
+      ],
+      "portrait_size": [
+        32,
+        32
+      ],
+      "exact_matches_among_48_combat_frames_after_nearest_scaling": [],
+      "identical_to_any_combat_frame": false,
+      "same_as_previous_portrait": false
+    }
+  ],
+  "method": "Compare indexed native portrait pixels with all 8 facings x 6 poses of the applied combat master, enlarged to 32x32 by nearest neighbour; confirm resource bytes embedded in the ROM using ELF symbols. Display source SE pose alongside native combat SE and new portrait.",
+  "history": [
+    {
+      "commit": "1f286f5",
+      "date": "2026-10-20",
+      "finding": "Integrated the native 16/24/32/48 insect sprites, retaining previous art as history."
+    },
+    {
+      "commit": "a271029",
+      "date": "2026-10-22",
+      "finding": "Integrated corrected directions and tip portraits derived from combat icons; commit explicitly preserves enemy art and palette."
+    },
+    {
+      "path": "game/art/mission-portraits-v2/prompts.json",
+      "finding": "Ten new portraits generated using spritesheets as style/identity references only; prompts request exaggerated anatomy and new proportions."
+    }
+  ],
+  "gameplay_art_modified_by_this_audit": false,
+  "rom_modified_by_this_audit": false
+}

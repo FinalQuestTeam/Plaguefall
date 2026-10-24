@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "e81a960eee9dc36452677eb7e98aeaff36ce61db5b286ac904006174db2155f2",
+  "checks": {
+    "reachFullRouteControllerOnly": true,
+    "horizontalAndVerticalRingPast512": true,
+    "pauseRestoresExtendedMap": true,
+    "reachWinsWithoutKills": true,
+    "reachIgnoresKillQuota": true,
+    "holesBlockFeetButNotBullets": true,
+    "escortWaitsForCover": true,
+    "escortFullRouteControllerOnly": {
+      "seconds": 32.7,
+      "hp": 100,
+      "states": [
+        0,
+        2
+      ]
+    },
+    "escortPauseFreezesAndRestoresSprite": true,
+    "escortBulletDamageAndLocalInvulnerability": true,
+    "allyShotKillsWithoutInventoryOrFriendlyFire": {
+      "peakBullets": 1,
+      "kills": 1
+    },
+    "enemyShooterAimsAssignedActor": true,
+    "escortContactDamage": true,
+    "escortNeedsBothActorsAndConfirmation": true,
+    "escortFailureOnEnemyBullet": true,
+    "escortRetryResetsSameStage": true,
+    "sectorSpawnsAvoidActorsHolesAndExit": {
+      "samples": 70
+    },
+    "pilotLoadPerformance": {
+      "gameFPS": 59.17,
+      "regionFPS": 60
+    }
+  }
+}

@@ -9,6 +9,7 @@
 #include "system/video/projection.h"
 #include "system/audio/sfx.h"
 #include "core/game.h"
+#include "levels/campaign_route_ops.h"
 #include <dinorah.h>
 #define BASE (TILE_USER_INDEX+HERO_TILE_BASE+24)
 static const u8 CANON[8]={0,1,2,3,4,3,2,1};
@@ -24,7 +25,13 @@ static s32 stepStartFx,stepStartFy,stepEndFx,stepEndFy;
 static u16 dinorahInvTimer,dinorahPauseTimer,dinorahFireTimer,dinorahAimTimer,dinorahAnimTick;
 static u8 dir,loadedDir,loadedPose,aimTarget,runDir;
 static bool waiting,loaded,running,stepEndsNode;
-void DINORAH_clear(void){path=NULL;dinorahHp=0;memset(allyShots,0,sizeof allyShots);loaded=FALSE;ACTORDEATH_clear(ACTOR_DEATH_DINORAH);}
+// Four exact read-only rays. Campaign shot geometry is static except the
+// two pressure gates; origin/endpoint or gate footprint changes invalidate.
+// Training has other mutable doors and always uses the uncached path.
+typedef struct {s16 x,y,tx,ty;u8 gates;bool clear;} SightRay;
+static SightRay sightRays[4];
+static u8 sightCount,sightNext;
+void DINORAH_clear(void){sightCount=sightNext=0;path=NULL;dinorahHp=0;memset(allyShots,0,sizeof allyShots);loaded=FALSE;ACTORDEATH_clear(ACTOR_DEATH_DINORAH);}
 bool DINORAH_active(void){return path!=NULL;}
 bool DINORAH_alive(void){return path && dinorahHp>0;}
 bool DINORAH_hidden(void){return !DINORAH_active() || (DINORAH_alive() && dinorahInvTimer && ((dinorahInvTimer>>2)&1));}
@@ -65,8 +72,10 @@ static bool safe(s16 x,s16 y)
 static void moveStep(void)
 {
     const u16 length=ACTOR_RUN_TICKS(fps)*ACTOR_RUN_FRAMES;
-    const s32 nx=stepStartFx+(stepEndFx-stepStartFx)*(dinorahAnimTick+1)/length;
-    const s32 ny=stepStartFy+(stepEndFy-stepStartFy)*(dinorahAnimTick+1)/length;
+    // A committed stride is less than36px. Its fixed-point interpolation
+    // quotient fits s16; DIVS preserves C's truncation without a long divide.
+    const s32 nx=stepStartFx+divs((stepEndFx-stepStartFx)*(dinorahAnimTick+1),length);
+    const s32 ny=stepStartFy+divs((stepEndFy-stepStartFy)*(dinorahAnimTick+1),length);
     if(safe(nx>>6,ny>>6)) {
         dinorahFx=nx;dinorahFy=ny;
         dinorahX=nx>>6;dinorahY=ny>>6;
@@ -76,12 +85,39 @@ static void moveStep(void)
         running=FALSE;dinorahAnimTick=0;dinorahState=DIN_WAITING;
     }
 }
-static bool clearShot(s16 tx,s16 ty)
+static bool uncachedClearShot(s16 tx,s16 ty)
 {
     s16 dx=tx-(dinorahX+8),dy=ty-(dinorahY+8);
     u16 dist=getApproximatedDistance(dx,dy),steps=dist/8+1;
-    for(u16 i=1;i<steps;i++)if(ARENA_playerShotBlocked(dinorahX+4+(s32)dx*i/steps,dinorahY+4+(s32)dy*i/steps))return FALSE;
+    // Reproduce trunc(dx*i/steps) and trunc(dy*i/steps) exactly with
+    // quotient/remainder accumulation. Two DIVS per ray replace two per
+    // sample; the original collision points and their order stay identical.
+    const s16 qx=divs(dx,steps),qy=divs(dy,steps);
+    const u16 rx=abs(dx-qx*steps),ry=abs(dy-qy*steps);
+    const s16 sx=dx<0 ? -1 : 1,sy=dy<0 ? -1 : 1;
+    s16 x=dinorahX+4,y=dinorahY+4;
+    u16 errorX=0,errorY=0;
+    // Read-only probes must never damage destructible doors.
+    for(u16 i=1;i<steps;i++) {
+        x+=qx;y+=qy;errorX+=rx;errorY+=ry;
+        if(errorX>=steps){errorX-=steps;x+=sx;}
+        if(errorY>=steps){errorY-=steps;y+=sy;}
+        if(ARENA_shotBlocked(x,y))return FALSE;
+    }
     return TRUE;
+}
+static bool clearShot(s16 tx,s16 ty)
+{
+    if(!currentLevel)return uncachedClearShot(tx,ty);
+    const u8 gates=CR_OPS_gateBlockMask();
+    for(u8 i=0;i<sightCount;i++) {
+        const SightRay *r=&sightRays[i];
+        if(r->x==dinorahX && r->y==dinorahY && r->tx==tx && r->ty==ty && r->gates==gates)return r->clear;
+    }
+    const bool clear=uncachedClearShot(tx,ty);
+    sightRays[sightNext]=(SightRay){dinorahX,dinorahY,tx,ty,gates,clear};
+    sightNext=(sightNext+1)&3;if(sightCount<4)sightCount++;
+    return clear;
 }
 static void fire(void)
 {
@@ -93,7 +129,7 @@ static void fire(void)
     const s16 mx=dinorahX-8+(MIRROR[loadedDir] ? 32-anchor[0] : anchor[0]),my=dinorahY-31+anchor[1]+VIDEO_HEIGHT_OFFSET;
     dx=e->x+half-mx;dy=e->y+half-my;dist=getApproximatedDistance(dx,dy);if(!dist)dist=1;
     for(u16 i=0;i<2;i++)if(!allyShots[i].active) {
-        allyShots[i]=(FShot){(s32)(mx-4)*64,(s32)(my-4)*64,((s32)dx*180*64/fps)/dist,((s32)dy*180*64/fps)/dist,0,1,TRUE};
+        allyShots[i]=(FShot){(s32)(mx-4)*64,(s32)(my-4)*64,divs((s32)dx*(180*64),fps*dist),divs((s32)dy*(180*64),fps*dist),0,1,TRUE,0};
         SFX_playerShot();return;
     }
 }
@@ -144,6 +180,9 @@ u16 DINORAH_update(void)
         return kills;
     }
     if(!dinorahFireTimer) {
+        // Closed doors can hide every nearby target. Retry at 6 Hz instead
+        // of tracing up to four blocked sightlines on every game frame.
+        dinorahFireTimer=fps/6;
         u16 nearest=97;u8 target=0xff;
         for(u16 i=0;i<MAX_ENEMIES;i++) {
             Enemy *e=&enemies[i];if(!e->active)continue;
@@ -173,8 +212,8 @@ u16 DINORAH_update(void)
     if(stepEndsNode) {
         stepEndFx=(s32)(p->x-8)*64;stepEndFy=(s32)(p->y-8)*64;
     } else {
-        stepEndFx=dinorahFx+(s32)dx*stride/dist;
-        stepEndFy=dinorahFy+(s32)dy*stride/dist;
+        stepEndFx=dinorahFx+divs((s32)dx*stride,dist);
+        stepEndFy=dinorahFy+divs((s32)dy*stride,dist);
     }
     running=TRUE;runDir=dir;dinorahAnimTick=0;moveStep();
     return kills;

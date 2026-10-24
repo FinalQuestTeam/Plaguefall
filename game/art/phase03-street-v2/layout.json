@@ -1,0 +1,483 @@
+{
+  "tiles": 615,
+  "map_sha256": "0e6ebe70a462135962fd7c33c732f0f7c390441f1831918d233032fd9fd383c5",
+  "atlas_sha256": "2719973a15fef68470cdd2ac2b7c22a7bfe4c77e591e52cf0037f1426c439236",
+  "width": 2560,
+  "height": 320,
+  "palette_colors": 16,
+  "lossy_tile_replacements": 0,
+  "native_modules_only": false,
+  "bounds": [
+    16,
+    144,
+    2543,
+    303
+  ],
+  "start": [
+    48,
+    144
+  ],
+  "solids": [
+    [
+      248,
+      208,
+      24,
+      24,
+      true
+    ],
+    [
+      408,
+      144,
+      32,
+      32,
+      true
+    ],
+    [
+      416,
+      176,
+      32,
+      32,
+      true
+    ],
+    [
+      408,
+      208,
+      32,
+      32,
+      true
+    ],
+    [
+      1336,
+      144,
+      32,
+      32,
+      true
+    ],
+    [
+      1344,
+      176,
+      32,
+      32,
+      true
+    ],
+    [
+      1336,
+      208,
+      32,
+      32,
+      true
+    ],
+    [
+      856,
+      208,
+      24,
+      24,
+      true
+    ],
+    [
+      864,
+      232,
+      24,
+      24,
+      true
+    ],
+    [
+      856,
+      256,
+      24,
+      24,
+      true
+    ],
+    [
+      864,
+      280,
+      24,
+      24,
+      true
+    ],
+    [
+      1792,
+      208,
+      24,
+      24,
+      true
+    ],
+    [
+      1800,
+      232,
+      24,
+      24,
+      true
+    ],
+    [
+      1792,
+      256,
+      24,
+      24,
+      true
+    ],
+    [
+      1800,
+      280,
+      24,
+      24,
+      true
+    ],
+    [
+      648,
+      232,
+      32,
+      16,
+      false
+    ],
+    [
+      1104,
+      152,
+      32,
+      16,
+      false
+    ],
+    [
+      1568,
+      248,
+      32,
+      16,
+      false
+    ],
+    [
+      2048,
+      152,
+      32,
+      16,
+      false
+    ],
+    [
+      2264,
+      224,
+      32,
+      16,
+      false
+    ]
+  ],
+  "exit": [
+    2472,
+    176,
+    48,
+    48
+  ],
+  "objective": "reach",
+  "enemy_cap": 4,
+  "shot_cap": 6,
+  "spawn_seconds": 4,
+  "roster": [
+    1,
+    0
+  ],
+  "traversal_points": [
+    [
+      48,
+      144
+    ],
+    [
+      384,
+      144
+    ],
+    [
+      384,
+      248
+    ],
+    [
+      624,
+      248
+    ],
+    [
+      624,
+      208
+    ],
+    [
+      832,
+      208
+    ],
+    [
+      832,
+      184
+    ],
+    [
+      1312,
+      184
+    ],
+    [
+      1312,
+      248
+    ],
+    [
+      1544,
+      248
+    ],
+    [
+      1544,
+      224
+    ],
+    [
+      1768,
+      224
+    ],
+    [
+      1768,
+      184
+    ],
+    [
+      2480,
+      184
+    ]
+  ],
+  "placements": [
+    {
+      "asset": "car",
+      "x": 240,
+      "y": 208,
+      "collision": [
+        248,
+        208,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "van",
+      "x": 400,
+      "y": 144,
+      "collision": [
+        408,
+        144,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "van",
+      "x": 408,
+      "y": 176,
+      "collision": [
+        416,
+        176,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "van",
+      "x": 400,
+      "y": 208,
+      "collision": [
+        408,
+        208,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "van",
+      "x": 1328,
+      "y": 144,
+      "collision": [
+        1336,
+        144,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "van",
+      "x": 1336,
+      "y": 176,
+      "collision": [
+        1344,
+        176,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "van",
+      "x": 1328,
+      "y": 208,
+      "collision": [
+        1336,
+        208,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 848,
+      "y": 208,
+      "collision": [
+        856,
+        208,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 856,
+      "y": 232,
+      "collision": [
+        864,
+        232,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 848,
+      "y": 256,
+      "collision": [
+        856,
+        256,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 856,
+      "y": 280,
+      "collision": [
+        864,
+        280,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 1784,
+      "y": 208,
+      "collision": [
+        1792,
+        208,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 1792,
+      "y": 232,
+      "collision": [
+        1800,
+        232,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 1784,
+      "y": 256,
+      "collision": [
+        1792,
+        256,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "car",
+      "x": 1792,
+      "y": 280,
+      "collision": [
+        1800,
+        280,
+        24,
+        24
+      ],
+      "blocks_shots": true
+    },
+    {
+      "asset": "barricade",
+      "x": 640,
+      "y": 224,
+      "collision": [
+        648,
+        232,
+        32,
+        16
+      ],
+      "blocks_shots": false
+    },
+    {
+      "asset": "barricade",
+      "x": 1096,
+      "y": 144,
+      "collision": [
+        1104,
+        152,
+        32,
+        16
+      ],
+      "blocks_shots": false
+    },
+    {
+      "asset": "barricade",
+      "x": 1560,
+      "y": 240,
+      "collision": [
+        1568,
+        248,
+        32,
+        16
+      ],
+      "blocks_shots": false
+    },
+    {
+      "asset": "barricade",
+      "x": 2040,
+      "y": 144,
+      "collision": [
+        2048,
+        152,
+        32,
+        16
+      ],
+      "blocks_shots": false
+    },
+    {
+      "asset": "barricade",
+      "x": 2256,
+      "y": 216,
+      "collision": [
+        2264,
+        224,
+        32,
+        16
+      ],
+      "blocks_shots": false
+    }
+  ],
+  "church_exact_tiles": 288,
+  "church_pixel_identical": true,
+  "source_sha256": "6b72c0d2c395b70e2b9f261166d1b3b079132a606cd6c61ba5e57ce8422cb45e",
+  "path_steps": 342,
+  "connected_positions": 5668,
+  "minimum_designed_passage": 48,
+  "two_church_outcomes": true
+}

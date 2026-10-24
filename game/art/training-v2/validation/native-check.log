@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "storyboard": "art/storyboard-abertura-v2/storyboard.json",
+  "shots": 14,
+  "captions": 18,
+  "seconds": 101,
+  "image_size": [
+    336,
+    176
+  ],
+  "viewport": [
+    320,
+    176
+  ],
+  "frame_tiles": 924,
+  "frame_vram_bytes": 29568,
+  "palettes_per_shot": 2,
+  "caption_box": [
+    36,
+    4
+  ]
+}
+{
+  "regions": 4,
+  "size": [
+    320,
+    160
+  ],
+  "tilesPerRegion": 800,
+  "artVRAMBytes": 25600,
+  "paletteBanksPerRegion": 2,
+  "onePalettePerTile": true,
+  "rgb333": true,
+  "lossyTileSubstitutions": 0,
+  "roundtripExact": true,
+  "sourceSHA256": "288b748679f27619324a47987f621151f47148d9bf9116a6bd55849c3177a065",
+  "files": {
+    "res/routemap/tiles.bin": {
+      "bytes": 102400,
+      "sha256": "b62020fc5a3346c8a0b2e2e8028752a4821b6c71fa20dc0aba7e43d08bbc7bc9"
+    },
+    "res/routemap/groups.bin": {
+      "bytes": 3200,
+      "sha256": "6a5a302d0ebe20eb1878dc54ae89ff67630f71805bd48d150b8d2ac5f8de5c7e"
+    },
+    "res/routemap/palettes.bin": {
+      "bytes": 256,
+      "sha256": "de97273400f77743064cbf3c08fb8261e4b47bcf58e996f3fff5d2ed7984fcc5"
+    },
+    "res/routemap_data.res": {
+      "bytes": 196,
+      "sha256": "290d36abb6ed0d43565be8ad87d0dfd0a6b570f9ee1079efd016f35e7919ad06"
+    }
+  }
+}
+Footer: 23 graph edges; 9 approved examples; all lines <=38 columns.
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:12: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  colors=list(dict.fromkeys(snap(p) for p in Image.open(ROOT/'source/painel-nativo.png').convert('RGB').getdata()))
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:16: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  px=list(map(index,im.getdata()));tiles=[];lookup={};mapping=[]
+Traceback (most recent call last):
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py", line 52, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py", line 49, in main
+    if args.check:assert path.read_bytes()==content,str(path)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/src/system/video/screens/mission_copy.h
+Traceback (most recent call last):
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/check.py", line 46, in <module>
+    main()
+    ~~~~^^
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/check.py", line 19, in main
+    run("python3", "game/art/interface-ux-v2/exportar.py", "--check")
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/check.py", line 12, in run
+    subprocess.run(args, cwd=ROOT, check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '('python3', 'game/art/interface-ux-v2/exportar.py', '--check')' returned non-zero exit status 1.

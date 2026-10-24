@@ -1,19 +1,6 @@
-// Fase 14: lava+lama — pentágonos pesados, trios.
-
+// Five generators power the launch systems. Release fire at each front panel.
 #include "levels/levels.h"
-
-static const u8 roster[] = { ENEMY_PEN_PUR, ENEMY_PEN_ORG, ENEMY_PEN_YEL, ENEMY_TRI_YEL };
-
-const LevelDef LEVEL14_def =
-{
-    .killTarget   = 37,
-    .spawnSeconds = 2,
-    .spawnCount   = 3,
-    .lava         = COMBO_LAVA,
-    .lavaCount    = LAYOUT_RECTS,
-    .mud          = COMBO_MUD,
-    .mudCount     = LAYOUT_RECTS,
-    .floor        = FLOOR_MIX,
-    .musicTrack   = MUSIC_TRACK_BREU,
-    LVL_ROSTER(roster),
-};
+#include "levels/campaign_launch.h"
+static const u8 roster[]={ENEMY_TRI_YEL,ENEMY_SQ_RED,ENEMY_TRI_RED};
+const LevelDef LEVEL14_def={.objective=OBJ_POWER,.objTarget=5,.spawnSeconds=3,.spawnCount=1,
+ .enemyCap=4,.shotCap=4,.arena=&CAMPAIGN_LAUNCH_POWER,.musicTrack=MUSIC_TRACK_BREU,LVL_ROSTER(roster)};

@@ -1,0 +1,187 @@
+{
+  "rom_sha256": "632478ce909e91c37bb44bbda292463afac1e914d5692cda0bf1e4e4046bee25",
+  "performance_target_met": false,
+  "scope": "Critical6B/12real controller patrol, authored roster/cap, native cadences,3sshield,4swarmup+1800VB. Performance failure remains separate from pixel/VRAM equivalence.",
+  "performance": [
+    {
+      "phase": "6B",
+      "region": "ntsc",
+      "fps": 57.66667,
+      "target_met": false,
+      "lost_frames": 70,
+      "camera_range": [
+        [
+          0,
+          70
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "visible_enemies": [
+        3,
+        3
+      ],
+      "visible_projectiles": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "phase": "12",
+      "region": "ntsc",
+      "fps": 59.63333,
+      "target_met": false,
+      "lost_frames": 11,
+      "camera_range": [
+        [
+          40,
+          80
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "visible_enemies": [
+        3,
+        3
+      ],
+      "visible_projectiles": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "phase": "6B",
+      "region": "pal",
+      "fps": 49.97222,
+      "target_met": false,
+      "lost_frames": 1,
+      "camera_range": [
+        [
+          0,
+          66
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "visible_enemies": [
+        3,
+        3
+      ],
+      "visible_projectiles": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "phase": "12",
+      "region": "pal",
+      "fps": 49.88889,
+      "target_met": false,
+      "lost_frames": 4,
+      "camera_range": [
+        [
+          40,
+          78
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "visible_enemies": [
+        2,
+        3
+      ],
+      "visible_projectiles": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  ],
+  "vram": [
+    {
+      "region": "ntsc",
+      "passed": true,
+      "samples": 44,
+      "cells": 90112,
+      "HV_classes_by_phase": {
+        "06a": [
+          0
+        ],
+        "06b": [
+          0
+        ],
+        "12": [
+          0,
+          2048
+        ]
+      },
+      "santa_hidden_overlay_covered": false
+    },
+    {
+      "region": "pal",
+      "passed": true,
+      "samples": 44,
+      "cells": 90112,
+      "HV_classes_by_phase": {
+        "06a": [
+          0
+        ],
+        "06b": [
+          0
+        ],
+        "12": [
+          0,
+          2048
+        ]
+      },
+      "santa_hidden_overlay_covered": false
+    }
+  ],
+  "hud": [
+    {
+      "region": "ntsc",
+      "passed": true,
+      "cases": 37,
+      "reference": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779"
+    },
+    {
+      "region": "pal",
+      "passed": true,
+      "cases": 37,
+      "reference": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779"
+    }
+  ],
+  "instrumented_profile_report": "profile-a9c764-moving/report.json",
+  "instrumented_profile_is_performance_approval": false
+}

@@ -15,6 +15,8 @@ const LevelDef TEST4_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COLLISION_arena,
     .modularTerrain=TRUE,
     .lava=TEST_lava,.lavaCount=1,.mud=TEST_mud,.mudCount=1,LVL_ROSTER(dummy)};
 const LevelDef TEST5_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(all)};
-const LevelDef TEST6_def={.enemyCap=16,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(all)};
+// Same arena as the measured eight-shield stress experiment.
+const LevelDef TEST6_def={.enemyCap=16,.shotCap=16,.musicTrack=MUSIC_TRACK_LADAINHA,
+    .musCalmUntil=1,.musEnemyMax=4,.arena=&COURTYARD_arena,LVL_ROSTER(all)};
 // Isolated loss/recovery lab: no enemies or hazards are spawned.
 const LevelDef TEST10_def={.enemyCap=1,.shotCap=16,.arena=&TEST_COMBAT_arena,LVL_ROSTER(dummy)};

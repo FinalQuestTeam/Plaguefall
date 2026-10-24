@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "revision": "Dez retratos próprios de 32x32 para inimigos menores nas dicas e no guia",
+  "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+  "portrait_rom_bytes": 7680,
+  "portrait_size": [
+    32,
+    32
+  ],
+  "redrawn": [
+    "sq_red",
+    "sq_yellow",
+    "sq_orange",
+    "tri_red",
+    "tri_yellow",
+    "tri_purple",
+    "tri_orange",
+    "pen_red",
+    "pen_yellow",
+    "pen_orange"
+  ],
+  "portrait_checks": {
+    "sq_red": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "sq_yellow": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "sq_purple": {
+      "redrawn": false,
+      "previous_portrait_preserved": true
+    },
+    "sq_orange": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "tri_red": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "tri_yellow": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "tri_purple": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "tri_orange": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "pen_red": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "pen_yellow": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "pen_purple": {
+      "redrawn": false,
+      "previous_portrait_preserved": true
+    },
+    "pen_orange": {
+      "redrawn": true,
+      "previous_portrait_preserved": false
+    },
+    "dummy": {
+      "redrawn": false,
+      "previous_portrait_preserved": true
+    },
+    "target": {
+      "redrawn": false,
+      "previous_portrait_preserved": true
+    },
+    "boss": {
+      "redrawn": false,
+      "previous_portrait_preserved": true
+    }
+  },
+  "combat_art": {
+    "game/res/insects/icons.bin": {
+      "sha256": "a5c82c6995c590190110e8dfa833cc8cab8024357cd55d78b5d1b353e317840e",
+      "unchanged": true
+    },
+    "game/res/insects/frames.bin": {
+      "sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb",
+      "unchanged": true
+    },
+    "game/res/insects/palette.bin": {
+      "sha256": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288",
+      "unchanged": true
+    }
+  },
+  "runtime_code_changed": false,
+  "palette_changed": false,
+  "extra_runtime_ram_bytes": 0,
+  "extra_portrait_vram_tiles": 0,
+  "generation_mode": "built-in image_gen",
+  "prompts": "../prompts.json",
+  "native_checks_passed": true,
+  "checks": {
+    "interface-ntsc": {
+      "passed": true,
+      "report": "interface-ntsc/report.json",
+      "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+      "localities": 20,
+      "persistent_content_frames_checked": 916
+    },
+    "interface-pal": {
+      "passed": true,
+      "report": "interface-pal/report.json",
+      "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+      "localities": 20,
+      "persistent_content_frames_checked": 916
+    },
+    "loading-ntsc": {
+      "passed": true,
+      "report": "loading-ntsc/report.json",
+      "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+      "continuous_radio_transitions": 32,
+      "continuous_radio_black_frames": 0
+    },
+    "loading-pal": {
+      "passed": true,
+      "report": "loading-pal/report.json",
+      "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+      "continuous_radio_transitions": 32,
+      "continuous_radio_black_frames": 0
+    }
+  }
+}

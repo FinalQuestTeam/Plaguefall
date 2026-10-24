@@ -1,0 +1,6 @@
+{
+  "tool": "builtin image_gen",
+  "prompt": "Background-extraction from this pixel-art source crop. Extract ONLY the ONE COMPLETE cream light cargo truck, preserving its exact camera, silhouette, proportions, colors, pixel-art style, doors, cab, all wheels, open cargo bed and lumber/crate INSIDE the bed. Remove EVERYTHING outside the truck: workshop, spare tire behind the cab, stacked crates behind it, plant foreground, all paving and backdrop. Keep a small coherent contact shadow beneath the truck. Transparent background with generous clear padding around the WHOLE truck. No added pieces, no text, no separate wheels, no redraw into a different vehicle. The loose spare tire visible ABOVE the cargo bed is background workshop equipment and must disappear; the crate INSIDE the truck bed stays.",
+  "source": "whole-folded-cycle3.png (whole truck with background workshop tyre/crates removed)",
+  "output": "truck-extracted.png"
+}

@@ -1,0 +1,89 @@
+{
+  "root": "/private/tmp/plaguefall-60fps-o3f7l4ke",
+  "baseline": "/private/tmp/plaguefall-60fps-o3f7l4ke/baseline",
+  "production_rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "candidate": "final2",
+  "baseline_source_sha256": "0b67e2893d7ec780d04a57f71e58cdc1316a49e3c9e08926bcda7c32a9d2deec",
+  "baseline_rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "experimental_rom_sha256": "1fc88e9312b3a14023f98a55d874faacd747059625e51607eb737c7a1e8d4572",
+  "experimental_rom_bytes": 1703936,
+  "production_rom_sha256_at_packaging": "ae50b73f73b5eb19537d12f6fe1c0a5c16f82bb0325d11befe5f700d4dafb7ce",
+  "production_note": "The experiment never writes to game/src, game/res or game/out. The production ROM changed independently during the run; its end hash differs from the initial hash. These results compare isolated captures, not subsequent workspace edits.",
+  "changes": [
+    {
+      "path": "src/actors/shots.h",
+      "before_sha256": "ba3883d9bf0506bffbce27833bec554b054ffb9a0479f56999710a4b478fecec",
+      "after_sha256": "c07bc1d7973125d19025229efa2467867d899b092f04b7f14e5a43d99a984c4b"
+    },
+    {
+      "path": "src/actors/shots_enemy.c",
+      "before_sha256": "10499dbfd8348b2c36eeb4867b6d406b824ef63b05e05b36630d4b4d683fd7ab",
+      "after_sha256": "e98f7ec9393c7ed79660b868099c52a625a500e7e2407b84ca00586951469164"
+    },
+    {
+      "path": "src/actors/shots_player.c",
+      "before_sha256": "95e60fc5d0f86e8a6f96927e1027833a848efad04031db082cceabc16c083b35",
+      "after_sha256": "367904e4ac0f15394ad42f1fb3fe21b601c59128adb187f303535c38f492a4d8"
+    },
+    {
+      "path": "src/enemies/enemies.c",
+      "before_sha256": "61922d0102e1dc2174ebec737476fcbef5a9f2be879c61ff33edd89a3999373d",
+      "after_sha256": "88bb59ce26254c70a58e66044e90b2517d6bf8574c7f9ade098434e485dd3e89"
+    },
+    {
+      "path": "src/enemies/enemies.h",
+      "before_sha256": "6e115b7d778c74f70652f486524ce8f1e6223d025aa57fe07d090db179225a62",
+      "after_sha256": "722c9e48663c181d8440ba9ea4993eac7380c88b575a885ed670de2d15c3d3f5"
+    },
+    {
+      "path": "src/enemies/enemy_purple.c",
+      "before_sha256": "746f9c8fcee031e0e7f8df9cc00898287c68b93a46c9d905c1cad5e145ff685c",
+      "after_sha256": "f13e3cbfb3e9c3526d9222259365b89d3ac561dec2742e4d9b43bcd617623797"
+    },
+    {
+      "path": "src/levels/arena.c",
+      "before_sha256": "dae8f71ef3b398418309d1bae6e651ecf0f4196bc96c7ac0d4433d9992e243fe",
+      "after_sha256": "e4b94331132dc3c7ca7772137c5a61ad211c957e2b3da83fc8e786d89fefd0d7"
+    },
+    {
+      "path": "src/system/audio/music.c",
+      "before_sha256": "3f7b323157afbd88a82eb9e9ed9f940476a49627570ff65dcddeb792aa010f16",
+      "after_sha256": "7fc7266e62238eb2e6277f89897b91f1633e266aa0460a279405266764e03bfa"
+    },
+    {
+      "path": "src/system/video/combatgfx.c",
+      "before_sha256": "814c8d83314f3437398f1f480e41345517736622aaf27859451d6ae0c5794cd6",
+      "after_sha256": "5d4da662dc6c21228c2e503ad1ea3f48dce4cc65ae7f5cca8698b9436d4075b4"
+    },
+    {
+      "path": "src/system/video/combatgfx.h",
+      "before_sha256": "a6af1f5256e75ebf142be638c6f85519c2c8bfd8194a48bd376f5a7f5163772e",
+      "after_sha256": "d8c080064a483768fa5ee4c3358438e9ed55711577aa4f7b1e7e40616b83c048"
+    },
+    {
+      "path": "src/system/video/enemygfx.c",
+      "before_sha256": "08a57579e1c23cdea676b7f4f30eb0aebc86a960e3126a606b2b0c312f0ffee2",
+      "after_sha256": "d408f42c5a9eeda7119541f6666913b6e4aad25c3311c7032eeb1cdcdb7e86cd"
+    },
+    {
+      "path": "src/system/video/spritelist.c",
+      "before_sha256": "cc6d9571159a05bc83fa49fa65237ecb89e656537c3bddf436399b84c5757a56",
+      "after_sha256": "7de9ea70ddf828e90d5116291bda5d3dcb61aa961e6f8cc143372c13917ceaad"
+    },
+    {
+      "path": "res/insects/shield_frames.bin",
+      "before_sha256": null,
+      "after_sha256": "3029faec5bef139c168a2b2f1166c0e1c425c9e91af72ac79cacf19abd021257"
+    },
+    {
+      "path": "res/insects.h",
+      "before_sha256": "de6da2fc2d34669ec7b296e9827e10fe4a76db33000c395ce042e1f8a380177b",
+      "after_sha256": "0589154cb47ad3e8ca7dada3083030dffe0570058678fa764a2d60410c33e9a6"
+    },
+    {
+      "path": "res/insects.res",
+      "before_sha256": "5a870e21fb5b3b741f5a6be284cb1cdd20ff1f4c553c3c9015c0cae03e13145d",
+      "after_sha256": "4c39e569aacabebc859a822233bb77809785ae6e6618a472dbe9b9fbdba61771"
+    }
+  ]
+}

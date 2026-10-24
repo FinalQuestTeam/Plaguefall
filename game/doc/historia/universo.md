@@ -42,11 +42,11 @@ O cangaço orienta silhueta, deslocamento por território hostil, emboscada, rá
 
 ## Nossa Senhora Aparecida e a fé
 
-Na proposta revisada, o padre retira a santa da igreja durante a fuga pelo pátio. Ela acompanha os refugiados até o abrigo de manutenção e depois até a plataforma de evacuação. A igreja pode ser poupada ou parcialmente destruída por uma bomba de Damião; a santa já está com o grupo quando isso acontece.
+Na campanha de 23/10/2026, o padre retira a santa antes do combate inicial. Ela acompanha o povo até o galpão mesmo se a igreja for destruída. O dispositivo escondido na base da imagem identifica o ponto de resgate para transportes humanos operados por sobreviventes.
 
-Dentro da imagem há um dispositivo de sinalização que transmite às naves humanas de resgate a identificação e a posição de um pouso seguro. Proteger a santa por 30 segundos permite concluir o sinal. Essas naves são operadas por sobreviventes e levam os refugiados a um posto seguro fora do corredor infestado. São distintas das cargas contaminadas que trouxeram os invasores.
+O primeiro grupo já embarcou antes da defesa da fase 5. Proteger a santa e o comunicador por 2 minutos permite concluir a retirada de todos; a destruição do objetivo deixa parte do povo sem resgate e provoca mortes. As duas rotas seguem pelos esgotos com Dinorah. O padre acompanha a evacuação e continua pelo rádio.
 
-Se o sinalizador for destruído antes da confirmação, as naves abortam a aproximação. Dinorah discute com Damião e parte com os refugiados para procurar uma saída por terra; o padre tenta intervir e depois mantém o contato de rádio com ele. A imagem conserva seu valor religioso, além da função do dispositivo. A defesa jogável continua sendo a de um objeto estático com vida.
+A imagem conserva seu valor religioso, além da função do dispositivo. A igreja inteira ou destruída, o resultado do resgate e a sobrevivência posterior de Dinorah são estados independentes, preservados até o epílogo.
 
 Há gente que reza, gente que não reza e gente que faz as duas coisas conforme o dia. A propaganda do Consórcio usa linguagem de ascensão e salvação, mas não representa toda religião. A campanha pode criticar a venda de milagres e tratar a fé comunitária com respeito ao mesmo tempo.
 
@@ -54,7 +54,7 @@ Há gente que reza, gente que não reza e gente que faz as duas coisas conforme 
 
 Escorpião é o nome usado pelos humanos para a matriz que coordena a ocupação local. Sua aparência segue o concept do escorpião-amarelo-do-Nordeste, com carapaça ocre, pinças e cauda segmentada com ferrão. A função de matriz não implica uma monarquia alienígena nem uma única matriz no planeta.
 
-Ela se ligou à instalação de pouso subterrânea e trata peças, pessoas e território como material disponível. Suas frases chegam como voz traduzida pela interferência no rádio de Damião. É uma explicação narrativa para o retrato já existente, sem propor uma mecânica de comunicação durante a luta.
+Escorpião ocupa a área dos foguetes e emerge do incêndio provocado pela ignição dos motores. É o primeiro inseto a se comunicar com os humanos; suas frases podem chegar traduzidas pelo rádio de Damião. Trata pessoas e território como material disponível e tenta justificar a invasão dizendo que o mundo já estava podre. A história não adota essa justificativa como verdade.
 
 As famílias e cores mantêm os comportamentos atuais:
 
@@ -81,16 +81,20 @@ Os itens continuam sendo suprimentos de combate. Coração cura; não é órgão
 
 ## Dinorah — parceira de Damião
 
-**Dinorah** é técnica de campo do Bando e participa da organização da fuga e do cuidado com os refugiados. Sua arte já existe em marrom e vermelho. Na proposta revisada, sua relação com Damião depende do resultado do resgate da fase 5.
+**Dinorah** é técnica de campo de O Último Chão e tem experiência de organização sindical entre os trabalhadores do estaleiro. Chega ao pátio do galpão na fase 5, ajuda na evacuação e permanece na operação tanto depois do resgate completo quanto depois das perdas civis. A dureza com que fala das baixas contrasta com o luto de Damião, sem provocar uma saída dela da campanha.
 
-Se o sinal é transmitido e o povo embarca, ela permanece para planejar com Damião uma investigação dos ninhos perto da base de lançamento. Ajuda a interpretar sinais e mapas, mantendo sua própria competência técnica. Se o resgate falha, briga com ele, não aceita a tentativa de conciliação do padre e vai embora com os refugiados. A prioridade dela é procurar uma retirada por terra. Ela não retoma a função de orientadora de Damião nas fases seguintes dessa rota nem lhe oferece perdão automático no final.
+Damião a escolta pelos esgotos na 6A ou 6B e volta a protegê-la no caminho até a sala dos trabalhadores na fase 12. Nas escoltas da fase 6, sua morte reinicia a missão. Na fase 12, sua morte com Damião vivo é definitiva e leva à 13B. Chegar com ela viva leva à 13A.
 
-O nome da personagem é **Dinorah**. Os recursos de arte mantêm o identificador técnico `parceira`. Ela já tem um retrato de conversa exibido como DINORAH. A ROM atual ainda apresenta apenas sua fala por rádio antes da fase 7; a participação anterior e as diferenças de continuidade precisam ser adaptadas ao roteiro. Não há segundo ator integrado nem IA aliada. Ela não substitui a santa nem usa o retrato de Comando.
+Se sobreviver, Dinorah acessa um painel de manutenção em posição protegida. Orienta os circuitos na fase 14, conduz a ignição na 15, participa do confronto final por rádio e se reúne com Damião para a reconstrução. Se morrer, as conversas finais ficam com Damião e o padre, e o epílogo a homenageia. As fases finais não criam outra condição de morte dela.
+
+O nome da personagem é **Dinorah**. Os recursos de arte mantêm o identificador técnico `parceira`; o retrato de conversa é DINORAH. Sua presença e as variantes de fala da nova campanha precisam ser adaptadas ao roteiro executável. As escoltas experimentais são referências de mecânica, não comprovação de integração desta continuidade à ROM.
 
 ## Desfecho e limites
 
-No novo fluxo, derrotar o Escorpião permite a Damião alcançar os acessos dos ninhos para instalar cargas de demolição recuperadas na base. Ele se retira pelos túneis de manutenção antes da detonação. As explosões destroem os criadouros; nos dias seguintes, a comunidade elimina os insetos isolados e confirma que a região está livre. O planeta continua infestado.
+Na revisão de 23/10/2026, Damião destrói os ovos da fábrica e reativa suas máquinas para atrair parte do enxame. No estaleiro, liga cinco máquinas de energia e protege por 2 minutos o rádio que sustenta o enlace de controle da ignição. Os motores queimam os criadouros dos foguetes. Escorpião emerge do fogo, e sua derrota permite a retirada de Damião.
 
-O resultado militar é comum a todas as rotas. Os diálogos e as imagens finais preservam o estado da igreja e a relação com Dinorah: ela participa do retorno na rota do resgate bem-sucedido e permanece afastada de Damião na rota da falha. O retorno dos refugiados acontece por nave ou por terra conforme o percurso. Essas variações pertencem ao novo tratamento; o seletor atual da ROM ainda não as implementa.
+Nos dias seguintes, a resistência elimina os focos restantes e confirma a libertação de São Jerônimo. O planeta continua infestado. O final não depende de instalar cargas depois do chefe nem de guardar bombas no inventário.
 
-Não reintroduzir a premissa de simulação de treinamento. A morte do chefe não cura todos os implantes nem elimina os insetos instantaneamente. A libertação regional decorre da destruição dos ninhos e da eliminação dos focos restantes. As cargas do encerramento são recursos da missão e não exigem bombas guardadas no inventário de combate.
+A igreja aparece inteira ou destruída; o retorno dos civis preserva a evacuação completa ou as perdas; Dinorah participa da reconstrução ou é homenageada. São três resultados independentes e oito combinações de encerramento. A vitória não apaga mortes anteriores.
+
+A [história completa e os impactos das rotas](tratamento-proposto.md) define as cenas, os objetivos e as regras de continuidade desta versão. Não reintroduzir a premissa de simulação de treinamento, a cura instantânea dos implantes ou a eliminação automática de todos os insetos do planeta.

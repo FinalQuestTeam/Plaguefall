@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "revision": "Retratos menores extraídos das mesmas fontes originais corrigidas de combate, sem reinterpretar os inimigos",
+  "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9",
+  "source_manifest": "../sources.json",
+  "same_original_pose": true,
+  "new_art_generated": false,
+  "native_pixels_identical_to_smaller_combat_sprites": false,
+  "note": "The exact existing authored pose is cropped and exported at a different resolution, with nearest-neighbour scaling and the existing insect palette.",
+  "portraits_from_original_sources": 10,
+  "source_pose_hashes_verified": 10,
+  "legacy_portraits_unchanged": [
+    "sq_purple",
+    "pen_purple",
+    "dummy",
+    "target",
+    "boss"
+  ],
+  "combat_art": {
+    "game/res/insects/frames.bin": {
+      "sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb",
+      "unchanged": true
+    },
+    "game/res/insects/icons.bin": {
+      "sha256": "a5c82c6995c590190110e8dfa833cc8cab8024357cd55d78b5d1b353e317840e",
+      "unchanged": true
+    },
+    "game/res/insects/palette.bin": {
+      "sha256": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288",
+      "unchanged": true
+    }
+  },
+  "palette_changed": false,
+  "portrait_rom_bytes": 7680,
+  "extra_portrait_vram_tiles": 0,
+  "extra_runtime_ram_bytes": 0,
+  "rom_diff": {
+    "previous_rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+    "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9",
+    "portrait_start": 1238436,
+    "portrait_bytes": 7680,
+    "changed_bytes": 2835,
+    "other_changes_outside_portraits_and_header_checksum": 0
+  },
+  "native_checks_passed": true,
+  "checks": {
+    "interface-ntsc": {
+      "passed": true,
+      "report": "interface-ntsc/report.json",
+      "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9",
+      "localities": 20,
+      "persistent_content_frames_checked": 916
+    },
+    "interface-pal": {
+      "passed": true,
+      "report": "interface-pal/report.json",
+      "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9",
+      "localities": 20,
+      "persistent_content_frames_checked": 916
+    },
+    "loading-ntsc": {
+      "passed": true,
+      "report": "loading-ntsc/report.json",
+      "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9",
+      "continuous_radio_transitions": 32,
+      "continuous_radio_black_frames": 0
+    },
+    "loading-pal": {
+      "passed": true,
+      "report": "loading-pal/report.json",
+      "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9",
+      "continuous_radio_transitions": 32,
+      "continuous_radio_black_frames": 0
+    }
+  }
+}

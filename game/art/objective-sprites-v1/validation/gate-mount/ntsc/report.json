@@ -1,0 +1,264 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "5964565a940ebeb4cd9389d410fb9148022c7a67d2981ee0d400353b72fe1b07",
+  "checks": {
+    "room-16-entry": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "room": 16,
+        "state": {
+          "work": [
+            0,
+            0,
+            0
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 0,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 0,
+          "bonus": 0,
+          "post": 60
+        },
+        "enemies": 1
+      }
+    },
+    "room-16-pause": {
+      "passed": true,
+      "details": {
+        "pause_seconds": 2,
+        "frozen": true
+      }
+    },
+    "room-16-gate-mount": {
+      "passed": true,
+      "details": {
+        "north_south_orientation": true,
+        "closed_leaf_width_pixels": 9,
+        "mounts": [
+          {
+            "leaf": [
+              160,
+              168,
+              16,
+              48
+            ],
+            "north_jamb": [
+              160,
+              160,
+              16,
+              8
+            ],
+            "south_jamb": [
+              160,
+              216,
+              16,
+              8
+            ]
+          },
+          {
+            "leaf": [
+              288,
+              168,
+              16,
+              48
+            ],
+            "north_jamb": [
+              288,
+              160,
+              16,
+              8
+            ],
+            "south_jamb": [
+              288,
+              216,
+              16,
+              8
+            ]
+          },
+          {
+            "leaf": [
+              416,
+              168,
+              16,
+              48
+            ],
+            "north_jamb": [
+              416,
+              160,
+              16,
+              8
+            ],
+            "south_jamb": [
+              416,
+              216,
+              16,
+              8
+            ]
+          }
+        ]
+      }
+    },
+    "room-16-art-residency": {
+      "passed": true,
+      "details": {
+        "palette": "production PAL1",
+        "resident_assets": [
+          [
+            817,
+            1201,
+            "gate"
+          ],
+          [
+            1201,
+            1345,
+            "refugee"
+          ]
+        ],
+        "all_frames_match_rom": true
+      }
+    },
+    "room-16-solution": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "state": {
+          "work": [
+            120,
+            120,
+            120
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 7,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            0,
+            0,
+            0
+          ],
+          "outcome": 1,
+          "bonus": 0,
+          "post": 60
+        },
+        "hp": 100,
+        "game_frames": 1191,
+        "animations": {
+          "frame_masks": {
+            "gate": "0x3f",
+            "refugee": "0x3e"
+          },
+          "events": {
+            "gate": 3,
+            "refugee": 6
+          },
+          "continues_after_result": false,
+          "native_captures": 8,
+          "ground_map_samples": 145,
+          "active_game_fps": 60.0,
+          "missed_vblanks_during_actions": 0
+        }
+      }
+    },
+    "room-16-boundaries": {
+      "passed": true,
+      "details": {
+        "isolated_ram_setup": true,
+        "exit_guard": true,
+        "rule_boundary": true
+      }
+    },
+    "room-16-difficulty-probe": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "no_defeat": false,
+        "bot_won": false,
+        "hp_remaining": 80,
+        "active_seconds": 7.58,
+        "damage_taken": 20,
+        "outcome": {
+          "work": [
+            0,
+            0,
+            0
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 0,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 0,
+          "bonus": 0,
+          "post": 60
+        },
+        "bot_limit": "AssertionError({'work': (0, 0, 0), 'clock': 0, 'captured': 0, 'done': 0, 'delivered': 0, 'cargo': 255, 'phase': 0, 'gates': [4, 4, 4], 'outcome': 0, 'bonus': 0, 'post': 60})"
+      }
+    },
+    "room-16-normal-performance": {
+      "passed": true,
+      "details": {
+        "profile": "normal reinforcement cadence, controller fire, no-defeat enabled",
+        "game_ram_setup": false,
+        "radio_held_alive_for_measurement": false,
+        "game_frames": 1800,
+        "physical_frames": 1800,
+        "fps": 60.0,
+        "missed_vblanks": 0,
+        "target_met": true,
+        "enemies_min": 1,
+        "enemies_max": 4,
+        "player_shots_max": 2,
+        "enemy_shots_max": 1,
+        "cpu_max_pct": 58.59,
+        "cpu_p95_pct": 55.27,
+        "minimum_hp": 1,
+        "damage_taken": 320,
+        "profiling": {},
+        "acceptance_minimum_fps": 58.8
+      }
+    },
+    "room-16-stress-performance": {
+      "passed": true,
+      "details": {
+        "profile": "seeded 4 enemies, 6+6 projectiles, max equipment",
+        "game_ram_setup": true,
+        "radio_held_alive_for_measurement": false,
+        "game_frames": 1781,
+        "physical_frames": 1800,
+        "fps": 59.3667,
+        "missed_vblanks": 19,
+        "target_met": false,
+        "enemies_min": 4,
+        "enemies_max": 4,
+        "player_shots_max": 6,
+        "enemy_shots_max": 6,
+        "cpu_max_pct": 99.66,
+        "cpu_p95_pct": 89.89,
+        "minimum_hp": 1,
+        "damage_taken": 400,
+        "profiling": {},
+        "acceptance_minimum_fps": 57.0
+      }
+    }
+  },
+  "failures": [],
+  "method": "Controller-only entry, configuration and solutions. RAM seeds only explicitly labelled boundary and worst-case stress probes."
+}

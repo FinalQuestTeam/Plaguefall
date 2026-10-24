@@ -1,6 +1,10 @@
 // Sistema de objetivos de fase — ver objective.h.
 
 #include "core/objective.h"
+#include "levels/campaign_route_ops.h"
+#include "levels/campaign_resistance.h"
+#include "levels/campaign_factory.h"
+#include "levels/campaign_launch.h"
 #include "core/game.h"
 #include "levels/graph.h"
 #include "actors/npc.h"
@@ -11,6 +15,7 @@
 #include "enemies/enemies.h"                     // ENEMIES_setAggroSplit (PROTEGER)
 #include "items/items.h"                        // ITEM_* (item alvo do COLETAR)
 #include "system/video/screens/hud.h"
+#include "system/video/screens/hud_label_data.h"
 #include "system/video/sprites/tiles.h"
 
 static const LevelDef *cur;
@@ -73,6 +78,7 @@ void OBJECTIVE_start(const LevelDef *def)
         NPC_clear();
         ENEMIES_setAggroSplit(def->objective==OBJ_ESCORT ? 2 : 0);       // demais objetivos: todos no alvo padrão
     }
+    CR_OPS_start();CAMPAIGN_RESISTANCE_start();CF_start();CL_start();
 }
 
 void OBJECTIVE_addCollected(u8 itemType)
@@ -83,6 +89,10 @@ void OBJECTIVE_addCollected(u8 itemType)
 
 u8 OBJECTIVE_update(u16 kills)
 {
+    if(CAMPAIGN_RESISTANCE_active())return CAMPAIGN_RESISTANCE_update();
+    if(CF_active())return CF_update();
+    if(CL_active())return CL_update();
+    CR_OPS_update();
     switch (cur->objective)
     {
         case OBJ_REACH:
@@ -125,8 +135,20 @@ u8 OBJECTIVE_update(u16 kills)
 static u16 secsLeft(void) { return (u16) ((surviveLeft + fps - 1) / fps); }
 
 // Values are composed inside the fixed left section of the24px panel.
-void OBJECTIVE_drawHUD(u16 kills)
+// Escort HUD values are bounded to0..100. Keep their exact three digits
+// without the general-purpose formatter on a target/cover state transition.
+static void objectiveNumber3(char *out,u16 value)
 {
+    if(value<=100) {
+        const char *digits=HUD_OBJECTIVE_NUMBERS[value];
+        out[0]=digits[0];out[1]=digits[1];out[2]=digits[2];out[3]=0;return;
+    }
+    const u16 hundreds=divu(value,100),rest=value-hundreds*100,tens=divu(rest,10);
+    out[0]='0'+hundreds;out[1]='0'+tens;out[2]='0'+rest-tens*10;out[3]=0;
+}
+static void drawBaseHUD(u16 kills)
+{
+    if(CAMPAIGN_RESISTANCE_drawHUD() || CF_drawHUD() || CL_drawHUD())return;
     char value[20],aux[12];
     switch(cur->objective) {
         case OBJ_REACH:
@@ -138,9 +160,9 @@ void OBJECTIVE_drawHUD(u16 kills)
             if(sig==hudLast)return;
             hudLast=sig;
             if(cur->objective==OBJ_REACH) {
-                sprintf(value,"%03u%%",progress);HUD_drawObjective("SAÍDA",arrow,value,0,"");
+                objectiveNumber3(value,progress);HUD_drawObjective("SAÍDA",arrow,value,0,"");
             } else {
-                sprintf(value,"%03u",dinorahHp);sprintf(aux,"%03u%%",progress);
+                objectiveNumber3(value,dinorahHp);objectiveNumber3(aux,progress);
                 HUD_drawObjective(dinorahState==DIN_WAITING ? "COBERTURA" : dinorahState==DIN_PAUSING ? "PASSAGEM" : "DINORAH",TILE_ICON_SHIELD,value,arrow,aux);
             }
             break;
@@ -176,6 +198,10 @@ void OBJECTIVE_drawHUD(u16 kills)
             break;
     }
 }
+void OBJECTIVE_drawHUD(u16 kills)
+{
+    drawBaseHUD(kills);CR_OPS_drawHUD();
+}
 
 // redesenho incondicional (invalida o gate): para quando outro código pode ter
 // escrito na linha 0 (ex.: volta da pausa) — desenha o HUD do objetivo ATIVO,
@@ -183,11 +209,13 @@ void OBJECTIVE_drawHUD(u16 kills)
 void OBJECTIVE_forceHUD(u16 kills)
 {
     hudLast = 0xFFFF;
+    CAMPAIGN_RESISTANCE_forceHUD();CF_forceHUD();CL_forceHUD();
     OBJECTIVE_drawHUD(kills);
 }
 
 void OBJECTIVE_prepText(char *buf, const LevelDef *def)
 {
+    if(CR_OPS_prepText(buf,def) || CAMPAIGN_RESISTANCE_prepText(buf,def) || CF_prepText(buf,def) || CL_prepText(buf,def))return;
     switch (def->objective)
     {
         case OBJ_REACH: strcpy(buf,"CHEGUE A SAÍDA SINALIZADA."); break;
@@ -206,13 +234,14 @@ u16 OBJECTIVE_collected(void){return collected;}
 u16 OBJECTIVE_progress(void)
 {
     if(!cur || !cur->route)return 0;
-    if(cur->objective==OBJ_ESCORT)return dinorahNode>=cur->route->count ? 100 : (u16)(dinorahNode-1)*100/(cur->route->count-1);
+    if(cur->objective==OBJ_ESCORT)return dinorahNode>=cur->route->count ? 100 : divu((u32)(dinorahNode-1)*100,cur->route->count-1);
     const s16 start=cur->route->points[0].x,end=cur->route->exit.x+cur->route->exit.w/2;
     s16 p=px+8-start;if(p<0)p=0;if(p>end-start)p=end-start;
-    return (u32)p*100/(end-start);
+    return divu((u32)p*100,end-start);
 }
 void OBJECTIVE_drawMarkers(u16 *n)
 {
+    CR_OPS_draw(n);CAMPAIGN_RESISTANCE_draw(n);CF_draw(n);CL_draw(n);
     if(!cur || !cur->route || (cur->objective!=OBJ_REACH && cur->objective!=OBJ_ESCORT))return;
     const ArenaRect *r=&cur->route->exit;
     MARKERS_destination(n,r->x+r->w/2,r->y+r->h/2);

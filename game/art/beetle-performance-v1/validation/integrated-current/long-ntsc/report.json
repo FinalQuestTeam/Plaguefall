@@ -1,0 +1,110 @@
+{
+  "region_fps": 60,
+  "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+  "emulated_rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+  "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+  "benchmark_sha256": "1d670a417856d5f74686058a1bd15d56a63db66a3c54f6ec97529a0cbc9efa45",
+  "frames_per_case": 18000,
+  "repeats": 1,
+  "cases": [
+    {
+      "formation": "Baluarte",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 18000,
+      "game_frames": 18000,
+      "fps": 60.0,
+      "target_fps": 60,
+      "target_met": true,
+      "cpu_mean": 85.68,
+      "cpu_p95": 87.94,
+      "shots_after_step": [
+        {
+          "min": 6,
+          "mean": 12.31,
+          "max": 14
+        },
+        {
+          "min": 11,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 18000,
+      "all_enemies_visible_frames": 18000,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        106,
+        101
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 8,
+      "distinct_graphics_min": 8,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true,
+      "hardware_sprites": {
+        "enemy_bodies_min": 8,
+        "player_bullets_mean": 12.31,
+        "enemy_bullets_mean": 8.04,
+        "sat_count_max": 39,
+        "scanline_limits_checked": true
+      }
+    },
+    {
+      "formation": "Baluarte + Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 18000,
+      "game_frames": 18000,
+      "fps": 60.0,
+      "target_fps": 60,
+      "target_met": true,
+      "cpu_mean": 86.32,
+      "cpu_p95": 88.87,
+      "shots_after_step": [
+        {
+          "min": 5,
+          "mean": 12.32,
+          "max": 14
+        },
+        {
+          "min": 11,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 18000,
+      "all_enemies_visible_frames": 18000,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        102,
+        100
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 8,
+      "distinct_graphics_min": 8,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true,
+      "hardware_sprites": {
+        "enemy_bodies_min": 8,
+        "player_bullets_mean": 12.32,
+        "enemy_bullets_mean": 8.04,
+        "sat_count_max": 39,
+        "scanline_limits_checked": true
+      }
+    }
+  ],
+  "method": "Production phase-1 loop, 8 initially overlapping shielded enemies; normal movement, separation, collision, rendering, audio and HUD. RAM setup disables new spawns and summons, pins enemy shields and grants player hit immunity. A is held in projectile cases. Moving player/enemy projectiles replenish inactive slots up to 6 or 16 per pool before each physical frame. Purple enemies do not gain a shooting behaviour: enemy bullets are an injected load. Zero-projectile controls do not hold A. 180 physical warmup frames; FPS counts phaseStats updates / vtimer VBlanks. This is controlled stress, not a normal campaign attempt.",
+  "test_completed": true,
+  "performance_target_met": true
+}

@@ -136,7 +136,7 @@ void ENEMIES_integrate(Enemy *e)
 {
     const s16 size = ENEMY_SIZE(e);
 
-    ARENA_move(&e->fx, &e->fy, e->vx, e->vy, size);
+    ARENA_move(&e->fx, &e->fy, e->vx*ENEMY_UPDATE_STEP(e), e->vy*ENEMY_UPDATE_STEP(e), size);
 
     e->x = (s16) (e->fx >> 6);
     e->y = (s16) (e->fy >> 6);
@@ -144,6 +144,7 @@ void ENEMIES_integrate(Enemy *e)
 
 void ENEMIES_chase(Enemy *e, u16 speedFp)
 {
+    const u16 step=ENEMY_UPDATE_STEP(e);
     const s16 half = ENEMY_SIZE(e) / 2;
 
     // lentidão aplicada por elementos da fase (ex.: lama)
@@ -152,14 +153,14 @@ void ENEMIES_chase(Enemy *e, u16 speedFp)
     // recuando após colisão: mantém a velocidade de recuo
     if (e->stun)
     {
-        e->stun--;
+        e->stun=e->stun>step ? e->stun-step : 0;
         if (e->stun == 0) e->retarget = 0;  // ao acabar, volta a mirar já
         ENEMIES_integrate(e);
         return;
     }
 
     // recalcula a direção periodicamente
-    if (e->retarget) e->retarget--;
+    if (e->retarget) e->retarget=e->retarget>step ? e->retarget-step : 0;
     else
     {
         // alvo: o aliado (chaseX/Y) ou o JOGADOR (aggro dividido no PROTEGER)
@@ -188,91 +189,50 @@ static const u8 SEP_RECIP[32] =
      4,  4,  4,  3,  3,  3,  3,  3,  3,  3,  2,  2,  2,  2,  2,  2,
 };
 
-// Separação anti-empilhamento: cada par de inimigos ativos cujos centros estão
-// mais perto que a distância mínima (derivada dos tamanhos → permite sobreposição
-// parcial, nunca total) recebe um pequeno empurrão em direções opostas. O total
-// por inimigo é limitado a SEP_MAX por quadro → afastamento lento. Aplica-se a
-// TODOS os inimigos (inclusive os atiradores parados). SEM divisões no laço.
-static void ENEMIES_separate(void)
+// Incremental separation: each body receives its accumulated repulsion once
+// every four frames. Four cohorts bound the worst per-frame work. The 2x
+// displacement preserves the previous per-second displacement cap. Compact
+// bodies and eight push directions avoid repeated lookups and normalization.
+__attribute__((noinline)) static void ENEMIES_separate(void)
 {
-    // gentil: roda em quadros alternados (30 Hz) — metade do custo O(N²) e o
-    // afastamento lento não precisa de precisão a 60 Hz.
-    static u8 tick = 0;
-    if (++tick & 1) return;
-
-    s32 pushX[MAX_ENEMIES];
-    s32 pushY[MAX_ENEMIES];
-    memset(pushX, 0, sizeof(pushX));
-    memset(pushY, 0, sizeof(pushY));
-
-    for (u16 i = 0; i < MAX_ENEMIES; i++)
-    {
-        Enemy *a = &enemies[i];
-        if (!a->active) continue;
-
-        const s16 ha = ENEMY_SIZE(a) / 2;
-        const s16 acx = a->x + ha, acy = a->y + ha;
-
-        for (u16 j = i + 1; j < MAX_ENEMIES; j++)
-        {
-            Enemy *b = &enemies[j];
-            if (!b->active) continue;
-
-            const s16 hb = ENEMY_SIZE(b) / 2;
-            s16 dx = (b->x + hb) - acx;
-            s16 dy = (b->y + hb) - acy;
-
-            // distância mínima entre os centros (sobreposição parcial). Fração
-            // com denominador potência de 2 → mult + shift, SEM divisão no laço.
-            const s16 minDist = (s16) (((ha + hb) * SEP_MIN_NUM) >> SEP_MIN_SHIFT);
-
-            // caixa + distância aproximada INLINE (max + min/2), sem chamar o
-            // getApproximatedDistance (caro no 68000). Rejeita a maioria dos pares.
-            s16 adx = dx < 0 ? -dx : dx;
-            s16 ady = dy < 0 ? -dy : dy;
-            if ((adx >= minDist) || (ady >= minDist)) continue;
-
-            s16 dist = (adx >= ady) ? (s16) (adx + (ady >> 1)) : (s16) (ady + (adx >> 1));
-
-            // centros coincidentes: empurra num eixo determinístico (destrava)
-            if (dist == 0)
-            {
-                dx = adx = (s16) (1 + (i & 3));
-                dy = ady = (s16) (1 + (j & 3));
-                dist = (adx >= ady) ? (s16) (adx + (ady >> 1)) : (s16) (ady + (adx >> 1));
-            }
-            else if (dist >= minDist) continue;
-
-            // empurrão proporcional à sobreposição, com teto (afastamento lento)
-            s16 push = (s16) ((minDist - dist) * SEP_STRENGTH);
-            if (push > SEP_MAX) push = SEP_MAX;
-
-            // normaliza por tabela: pv = d * push * (64/dist) / 64  ≈  (d/dist) * push
-            const s16 k = (s16) (push * SEP_RECIP[dist]);
-            const s32 pvx = ((s32) dx * k) >> 6;
-            const s32 pvy = ((s32) dy * k) >> 6;
-            pushX[i] -= pvx; pushY[i] -= pvy;   // i afasta de j
-            pushX[j] += pvx; pushY[j] += pvy;   // j afasta de i
-        }
+    static u8 tick;tick++;
+    typedef struct {s16 x,y;u8 slot,half;} Body;
+    Body bodies[MAX_ENEMIES],*end=bodies;
+    for(u16 i=0;i<MAX_ENEMIES;i++)if(enemies[i].active) {
+        const Enemy *e=&enemies[i];const u16 half=ENEMY_SIZE(e)/2;
+        *end++=(Body){e->x+half,e->y+half,i,half};
     }
-
-    // aplica os empurrões (26.6), com teto por inimigo, contendo na arena
-    for (u16 i = 0; i < MAX_ENEMIES; i++)
-    {
-        Enemy *e = &enemies[i];
-        if (!e->active) continue;
-        if ((pushX[i] | pushY[i]) == 0) continue;
-
-        if (pushX[i] >  SEP_MAX) pushX[i] =  SEP_MAX;
-        if (pushX[i] < -SEP_MAX) pushX[i] = -SEP_MAX;
-        if (pushY[i] >  SEP_MAX) pushY[i] =  SEP_MAX;
-        if (pushY[i] < -SEP_MAX) pushY[i] = -SEP_MAX;
-
-        const s16 size = ENEMY_SIZE(e);
-        ARENA_move(&e->fx, &e->fy, (s16)pushX[i], (s16)pushY[i], size);
-
-        e->x = (s16) (e->fx >> 6);
-        e->y = (s16) (e->fy >> 6);
+    for(Body *a=bodies;a<end;a++) {
+        if((a->slot+tick)&3)continue;
+        s16 pushX=0,pushY=0;
+        for(Body *b=bodies;b<end;b++) {
+            if(a==b)continue;
+            s16 dx=b->x-a->x,dy=b->y-a->y;
+            const s16 minDist=((a->half+b->half)*SEP_MIN_NUM)>>SEP_MIN_SHIFT;
+            s16 ax=dx<0?-dx:dx,ay=dy<0?-dy:dy;
+            if(ax>=minDist || ay>=minDist)continue;
+            s16 dist=ax>=ay ? ax+(ay>>1) : ay+(ax>>1);
+            if(!dist) {
+                const u8 lo=a->slot<b->slot?a->slot:b->slot,hi=a->slot<b->slot?b->slot:a->slot;
+                ax=1+(lo&3);ay=1+(hi&3);
+                dx=a->slot<b->slot?ax:-ax;dy=a->slot<b->slot?ay:-ay;
+                dist=ax>=ay?ax+(ay>>1):ay+(ax>>1);
+            } else if(dist>=minDist)continue;
+            s16 push=(minDist-dist)*SEP_STRENGTH;
+            if(push>SEP_MAX)push=SEP_MAX;
+            s16 vx=0,vy=0;
+            if(ax>=ay*2)vx=push;
+            else if(ay>=ax*2)vy=push;
+            else vx=vy=(push*3)>>2;
+            if(dx<0)vx=-vx;if(dy<0)vy=-vy;
+            pushX-=vx;pushY-=vy;
+        }
+        if(!(pushX|pushY))continue;
+        if(pushX>SEP_MAX)pushX=SEP_MAX;else if(pushX<-SEP_MAX)pushX=-SEP_MAX;
+        if(pushY>SEP_MAX)pushY=SEP_MAX;else if(pushY<-SEP_MAX)pushY=-SEP_MAX;
+        Enemy *e=&enemies[a->slot];
+        ARENA_move(&e->fx,&e->fy,pushX*2,pushY*2,a->half*2);
+        e->x=e->fx>>6;e->y=e->fy>>6;
     }
 }
 
@@ -321,16 +281,18 @@ static u16 updateStaticTraining(void)
     }
     return dead;
 }
-u16 ENEMIES_update(void)
+__attribute__((noinline)) u16 ENEMIES_update(void)
 {
     if(currentLevel==0 && TEST_staticEnemies())return updateStaticTraining();
+    static u8 aiTick;aiTick++;
     u16 burnKills = 0;
+    const bool routeActive=LEVEL_current()->route!=NULL;
 
     for (u16 i = 0; i < MAX_ENEMIES; i++)
     {
         Enemy *e = &enemies[i];
         if (!e->active) continue;
-        if(LEVEL_current()->route) {
+        if(routeActive) {
             const s16 focus=DINORAH_alive() ? dinorahX : px;
             if((e->x<focus-240 || e->x>focus+400) && (e->x+ENEMY_SIZE(e)<cameraX || e->x>cameraX+320)) {
                 e->active=FALSE;continue; // out of the active sector; no kill/drop
@@ -338,15 +300,17 @@ u16 ENEMIES_update(void)
         }
 
         const EnemyDef *def = ENEMY_DEF(e);
+        const u16 step=ENEMY_UPDATE_STEP(e);
+        if(step==4 && ((i+aiTick)&3))continue;
 
-        if (e->hitFlash) e->hitFlash--;     // decai o brilho branco do dano
-        if (e->burnFlash) e->burnFlash--;   // decai o pulso vermelho do fogo
+        if (e->hitFlash) e->hitFlash=e->hitFlash>step ? e->hitFlash-step : 0;     // decai o brilho branco do dano
+        if (e->burnFlash) e->burnFlash=e->burnFlash>step ? e->burnFlash-step : 0;   // decai o pulso vermelho do fogo
 
         // queimadura (fogo): 1 de dano a cada FIRE_TICK_SEC, por FIRE_BURN_SEC
         if (e->burn)
         {
-            e->burn--;
-            if (e->burnTick) e->burnTick--;
+            e->burn=e->burn>step ? e->burn-step : 0;
+            if (e->burnTick) e->burnTick=e->burnTick>step ? e->burnTick-step : 0;
             if (e->burnTick == 0)
             {
                 e->burnTick = FIRE_TICK_SEC * fps;
@@ -356,7 +320,7 @@ u16 ENEMIES_update(void)
         }
 
         // congelado (gelo): parado, sem comportamento nem dano de contato
-        if (e->frozen) { e->frozen--; continue; }
+        if (e->frozen) { e->frozen=e->frozen>step ? e->frozen-step : 0; continue; }
 
         def->behavior(e, def);      // comportamento pela cor (via config)
 

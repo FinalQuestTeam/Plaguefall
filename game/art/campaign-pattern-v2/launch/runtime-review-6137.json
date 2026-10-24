@@ -1,0 +1,4024 @@
+{
+  "rom_sha256": "61372627b51f4c2bbc04dfe5b4680726681180a5e64b6a75658255017bdab05b",
+  "method": "Read-only visual review of all9real camera captures per phase per region; RAM suppresses combat/progress for camera sampling. Actual runtime rendering, projection and camera remain in use. Separate playtest harness covers controls and difficulty.",
+  "result": "visual_pass_pending_gameplay_checks",
+  "phases": [
+    {
+      "phase": "14",
+      "visual_result": "pass_for_camera_composition",
+      "findings": [],
+      "positive_checks": [
+        "All5machines are present at cable ends.",
+        "Station and island both keep base/support, no sampled actor penetrates them.",
+        "Engines remain complete when camera includes upper band."
+      ],
+      "normal_camera_limits": "Upper architecture exits the viewport in lower camera, and actors at the left edge may be viewport-clipped. Complete native maps confirm full assets; no such clipping is treated as an asset amputation.",
+      "evidence": [
+        {
+          "region": "ntsc",
+          "board": "art/campaign-pattern-v2/launch/reviews/runtime/6137/14-ntsc-board.png",
+          "samples": [
+            {
+              "path": "14/x0-y0.png",
+              "position": [
+                40,
+                136
+              ],
+              "camera": [
+                0,
+                4
+              ],
+              "row": 0,
+              "col": 0,
+              "visible_world": [
+                0,
+                28,
+                320,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 1,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "14/x1-y0.png",
+              "position": [
+                232,
+                136
+              ],
+              "camera": [
+                80,
+                4
+              ],
+              "row": 0,
+              "col": 1,
+              "visible_world": [
+                80,
+                28,
+                400,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "14/x2-y0.png",
+              "position": [
+                384,
+                136
+              ],
+              "camera": [
+                192,
+                4
+              ],
+              "row": 0,
+              "col": 2,
+              "visible_world": [
+                192,
+                28,
+                512,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "14/x0-y1.png",
+              "position": [
+                48,
+                216
+              ],
+              "camera": [
+                0,
+                84
+              ],
+              "row": 1,
+              "col": 0,
+              "visible_world": [
+                0,
+                108,
+                320,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "14/x1-y1.png",
+              "position": [
+                248,
+                216
+              ],
+              "camera": [
+                96,
+                84
+              ],
+              "row": 1,
+              "col": 1,
+              "visible_world": [
+                96,
+                108,
+                416,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "14/x2-y1.png",
+              "position": [
+                384,
+                216
+              ],
+              "camera": [
+                192,
+                84
+              ],
+              "row": 1,
+              "col": 2,
+              "visible_world": [
+                192,
+                108,
+                512,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 1,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "14/x0-y2.png",
+              "position": [
+                48,
+                304
+              ],
+              "camera": [
+                0,
+                160
+              ],
+              "row": 2,
+              "col": 0,
+              "visible_world": [
+                0,
+                184,
+                320,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "14/x1-y2.png",
+              "position": [
+                248,
+                304
+              ],
+              "camera": [
+                96,
+                160
+              ],
+              "row": 2,
+              "col": 1,
+              "visible_world": [
+                96,
+                184,
+                416,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "14/x2-y2.png",
+              "position": [
+                384,
+                304
+              ],
+              "camera": [
+                192,
+                160
+              ],
+              "row": 2,
+              "col": 2,
+              "visible_world": [
+                192,
+                184,
+                512,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 1,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            }
+          ]
+        },
+        {
+          "region": "pal",
+          "board": "art/campaign-pattern-v2/launch/reviews/runtime/6137/14-pal-board.png",
+          "samples": [
+            {
+              "path": "14/x0-y0.png",
+              "position": [
+                40,
+                136
+              ],
+              "camera": [
+                0,
+                4
+              ],
+              "row": 0,
+              "col": 0,
+              "visible_world": [
+                0,
+                28,
+                320,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 1,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "14/x1-y0.png",
+              "position": [
+                232,
+                136
+              ],
+              "camera": [
+                80,
+                4
+              ],
+              "row": 0,
+              "col": 1,
+              "visible_world": [
+                80,
+                28,
+                400,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "14/x2-y0.png",
+              "position": [
+                384,
+                136
+              ],
+              "camera": [
+                192,
+                4
+              ],
+              "row": 0,
+              "col": 2,
+              "visible_world": [
+                192,
+                28,
+                512,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "14/x0-y1.png",
+              "position": [
+                48,
+                216
+              ],
+              "camera": [
+                0,
+                84
+              ],
+              "row": 1,
+              "col": 0,
+              "visible_world": [
+                0,
+                108,
+                320,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "14/x1-y1.png",
+              "position": [
+                248,
+                216
+              ],
+              "camera": [
+                96,
+                84
+              ],
+              "row": 1,
+              "col": 1,
+              "visible_world": [
+                96,
+                108,
+                416,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "14/x2-y1.png",
+              "position": [
+                384,
+                216
+              ],
+              "camera": [
+                192,
+                84
+              ],
+              "row": 1,
+              "col": 2,
+              "visible_world": [
+                192,
+                108,
+                512,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 1,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "14/x0-y2.png",
+              "position": [
+                48,
+                304
+              ],
+              "camera": [
+                0,
+                160
+              ],
+              "row": 2,
+              "col": 0,
+              "visible_world": [
+                0,
+                184,
+                320,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "14/x1-y2.png",
+              "position": [
+                248,
+                304
+              ],
+              "camera": [
+                96,
+                160
+              ],
+              "row": 2,
+              "col": 1,
+              "visible_world": [
+                96,
+                184,
+                416,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "14/x2-y2.png",
+              "position": [
+                384,
+                304
+              ],
+              "camera": [
+                192,
+                160
+              ],
+              "row": 2,
+              "col": 2,
+              "visible_world": [
+                192,
+                184,
+                512,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 1,
+                  "mode": 0,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 0,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "15",
+      "visual_result": "pass_for_camera_composition",
+      "findings": [],
+      "positive_checks": [
+        "Radio fits the central mounting recess.",
+        "All5powered generators persist with unchanged cable routing.",
+        "Viewport clips the station in the bottom camera normally; the whole station is preserved in the map."
+      ],
+      "normal_camera_limits": "Upper architecture exits the viewport in lower camera, and actors at the left edge may be viewport-clipped. Complete native maps confirm full assets; no such clipping is treated as an asset amputation.",
+      "evidence": [
+        {
+          "region": "ntsc",
+          "board": "art/campaign-pattern-v2/launch/reviews/runtime/6137/15-ntsc-board.png",
+          "samples": [
+            {
+              "path": "15/x0-y0.png",
+              "position": [
+                40,
+                136
+              ],
+              "camera": [
+                0,
+                4
+              ],
+              "row": 0,
+              "col": 0,
+              "visible_world": [
+                0,
+                28,
+                320,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "15/x1-y0.png",
+              "position": [
+                232,
+                136
+              ],
+              "camera": [
+                80,
+                4
+              ],
+              "row": 0,
+              "col": 1,
+              "visible_world": [
+                80,
+                28,
+                400,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "15/x2-y0.png",
+              "position": [
+                384,
+                136
+              ],
+              "camera": [
+                192,
+                4
+              ],
+              "row": 0,
+              "col": 2,
+              "visible_world": [
+                192,
+                28,
+                512,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "15/x0-y1.png",
+              "position": [
+                48,
+                216
+              ],
+              "camera": [
+                0,
+                84
+              ],
+              "row": 1,
+              "col": 0,
+              "visible_world": [
+                0,
+                108,
+                320,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "15/x1-y1.png",
+              "position": [
+                248,
+                216
+              ],
+              "camera": [
+                96,
+                84
+              ],
+              "row": 1,
+              "col": 1,
+              "visible_world": [
+                96,
+                108,
+                416,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "15/x2-y1.png",
+              "position": [
+                384,
+                216
+              ],
+              "camera": [
+                192,
+                84
+              ],
+              "row": 1,
+              "col": 2,
+              "visible_world": [
+                192,
+                108,
+                512,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "15/x0-y2.png",
+              "position": [
+                48,
+                304
+              ],
+              "camera": [
+                0,
+                160
+              ],
+              "row": 2,
+              "col": 0,
+              "visible_world": [
+                0,
+                184,
+                320,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "15/x1-y2.png",
+              "position": [
+                248,
+                304
+              ],
+              "camera": [
+                96,
+                160
+              ],
+              "row": 2,
+              "col": 1,
+              "visible_world": [
+                96,
+                184,
+                416,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "15/x2-y2.png",
+              "position": [
+                384,
+                304
+              ],
+              "camera": [
+                192,
+                160
+              ],
+              "row": 2,
+              "col": 2,
+              "visible_world": [
+                192,
+                184,
+                512,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            }
+          ]
+        },
+        {
+          "region": "pal",
+          "board": "art/campaign-pattern-v2/launch/reviews/runtime/6137/15-pal-board.png",
+          "samples": [
+            {
+              "path": "15/x0-y0.png",
+              "position": [
+                40,
+                136
+              ],
+              "camera": [
+                0,
+                4
+              ],
+              "row": 0,
+              "col": 0,
+              "visible_world": [
+                0,
+                28,
+                320,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "15/x1-y0.png",
+              "position": [
+                232,
+                136
+              ],
+              "camera": [
+                80,
+                4
+              ],
+              "row": 0,
+              "col": 1,
+              "visible_world": [
+                80,
+                28,
+                400,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "15/x2-y0.png",
+              "position": [
+                384,
+                136
+              ],
+              "camera": [
+                192,
+                4
+              ],
+              "row": 0,
+              "col": 2,
+              "visible_world": [
+                192,
+                28,
+                512,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "15/x0-y1.png",
+              "position": [
+                48,
+                216
+              ],
+              "camera": [
+                0,
+                84
+              ],
+              "row": 1,
+              "col": 0,
+              "visible_world": [
+                0,
+                108,
+                320,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "15/x1-y1.png",
+              "position": [
+                248,
+                216
+              ],
+              "camera": [
+                96,
+                84
+              ],
+              "row": 1,
+              "col": 1,
+              "visible_world": [
+                96,
+                108,
+                416,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "15/x2-y1.png",
+              "position": [
+                384,
+                216
+              ],
+              "camera": [
+                192,
+                84
+              ],
+              "row": 1,
+              "col": 2,
+              "visible_world": [
+                192,
+                108,
+                512,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "15/x0-y2.png",
+              "position": [
+                48,
+                304
+              ],
+              "camera": [
+                0,
+                160
+              ],
+              "row": 2,
+              "col": 0,
+              "visible_world": [
+                0,
+                184,
+                320,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "15/x1-y2.png",
+              "position": [
+                248,
+                304
+              ],
+              "camera": [
+                96,
+                160
+              ],
+              "row": 2,
+              "col": 1,
+              "visible_world": [
+                96,
+                184,
+                416,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 2,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "15/x2-y2.png",
+              "position": [
+                384,
+                304
+              ],
+              "camera": [
+                192,
+                160
+              ],
+              "row": 2,
+              "col": 2,
+              "visible_world": [
+                192,
+                184,
+                512,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 3,
+                  "mode": 0,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "16",
+      "visual_result": "pass_for_camera_composition",
+      "findings": [],
+      "positive_checks": [
+        "Both fires end inside their engine chambers; no amputated jet in the visible upper camera.",
+        "The five machines and damaged radio remain after ignition.",
+        "Boss retains its full48px silhouette except normal viewport clipping at left edge."
+      ],
+      "normal_camera_limits": "Upper architecture exits the viewport in lower camera, and actors at the left edge may be viewport-clipped. Complete native maps confirm full assets; no such clipping is treated as an asset amputation.",
+      "evidence": [
+        {
+          "region": "ntsc",
+          "board": "art/campaign-pattern-v2/launch/reviews/runtime/6137/16-ntsc-board.png",
+          "samples": [
+            {
+              "path": "16/x0-y0.png",
+              "position": [
+                40,
+                136
+              ],
+              "camera": [
+                0,
+                4
+              ],
+              "row": 0,
+              "col": 0,
+              "visible_world": [
+                0,
+                28,
+                320,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "16/x1-y0.png",
+              "position": [
+                232,
+                136
+              ],
+              "camera": [
+                80,
+                4
+              ],
+              "row": 0,
+              "col": 1,
+              "visible_world": [
+                80,
+                28,
+                400,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "16/x2-y0.png",
+              "position": [
+                384,
+                136
+              ],
+              "camera": [
+                192,
+                4
+              ],
+              "row": 0,
+              "col": 2,
+              "visible_world": [
+                192,
+                28,
+                512,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "16/x0-y1.png",
+              "position": [
+                48,
+                216
+              ],
+              "camera": [
+                0,
+                84
+              ],
+              "row": 1,
+              "col": 0,
+              "visible_world": [
+                0,
+                108,
+                320,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "16/x1-y1.png",
+              "position": [
+                248,
+                216
+              ],
+              "camera": [
+                96,
+                84
+              ],
+              "row": 1,
+              "col": 1,
+              "visible_world": [
+                96,
+                108,
+                416,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "16/x2-y1.png",
+              "position": [
+                384,
+                216
+              ],
+              "camera": [
+                192,
+                84
+              ],
+              "row": 1,
+              "col": 2,
+              "visible_world": [
+                192,
+                108,
+                512,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "16/x0-y2.png",
+              "position": [
+                48,
+                304
+              ],
+              "camera": [
+                0,
+                160
+              ],
+              "row": 2,
+              "col": 0,
+              "visible_world": [
+                0,
+                184,
+                320,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "16/x1-y2.png",
+              "position": [
+                248,
+                304
+              ],
+              "camera": [
+                96,
+                160
+              ],
+              "row": 2,
+              "col": 1,
+              "visible_world": [
+                96,
+                184,
+                416,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "16/x2-y2.png",
+              "position": [
+                384,
+                304
+              ],
+              "camera": [
+                192,
+                160
+              ],
+              "row": 2,
+              "col": 2,
+              "visible_world": [
+                192,
+                184,
+                512,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            }
+          ]
+        },
+        {
+          "region": "pal",
+          "board": "art/campaign-pattern-v2/launch/reviews/runtime/6137/16-pal-board.png",
+          "samples": [
+            {
+              "path": "16/x0-y0.png",
+              "position": [
+                40,
+                136
+              ],
+              "camera": [
+                0,
+                4
+              ],
+              "row": 0,
+              "col": 0,
+              "visible_world": [
+                0,
+                28,
+                320,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "16/x1-y0.png",
+              "position": [
+                232,
+                136
+              ],
+              "camera": [
+                80,
+                4
+              ],
+              "row": 0,
+              "col": 1,
+              "visible_world": [
+                80,
+                28,
+                400,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "16/x2-y0.png",
+              "position": [
+                384,
+                136
+              ],
+              "camera": [
+                192,
+                4
+              ],
+              "row": 0,
+              "col": 2,
+              "visible_world": [
+                192,
+                28,
+                512,
+                228
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa superior"
+            },
+            {
+              "path": "16/x0-y1.png",
+              "position": [
+                48,
+                216
+              ],
+              "camera": [
+                0,
+                84
+              ],
+              "row": 1,
+              "col": 0,
+              "visible_world": [
+                0,
+                108,
+                320,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "16/x1-y1.png",
+              "position": [
+                248,
+                216
+              ],
+              "camera": [
+                96,
+                84
+              ],
+              "row": 1,
+              "col": 1,
+              "visible_world": [
+                96,
+                108,
+                416,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "16/x2-y1.png",
+              "position": [
+                384,
+                216
+              ],
+              "camera": [
+                192,
+                84
+              ],
+              "row": 1,
+              "col": 2,
+              "visible_world": [
+                192,
+                108,
+                512,
+                308
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Campo central"
+            },
+            {
+              "path": "16/x0-y2.png",
+              "position": [
+                48,
+                304
+              ],
+              "camera": [
+                0,
+                160
+              ],
+              "row": 2,
+              "col": 0,
+              "visible_world": [
+                0,
+                184,
+                320,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "16/x1-y2.png",
+              "position": [
+                248,
+                304
+              ],
+              "camera": [
+                96,
+                160
+              ],
+              "row": 2,
+              "col": 1,
+              "visible_world": [
+                96,
+                184,
+                416,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 2,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            },
+            {
+              "path": "16/x2-y2.png",
+              "position": [
+                384,
+                304
+              ],
+              "camera": [
+                192,
+                160
+              ],
+              "row": 2,
+              "col": 2,
+              "visible_world": [
+                192,
+                184,
+                512,
+                384
+              ],
+              "objectives": [
+                {
+                  "slot": 0,
+                  "x": 64,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 1,
+                  "x": 448,
+                  "y": 136,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 2,
+                  "x": 400,
+                  "y": 208,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 3,
+                  "x": 416,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 4,
+                  "x": 96,
+                  "y": 296,
+                  "art": 1,
+                  "frame": 3,
+                  "mode": 2,
+                  "ground": 1
+                },
+                {
+                  "slot": 5,
+                  "x": 256,
+                  "y": 192,
+                  "art": 7,
+                  "frame": 4,
+                  "mode": 4,
+                  "ground": 1
+                }
+              ],
+              "label": "Faixa inferior"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

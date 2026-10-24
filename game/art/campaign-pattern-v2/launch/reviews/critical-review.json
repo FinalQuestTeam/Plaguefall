@@ -1,0 +1,246 @@
+{
+  "scope": "Cada variação reavaliada; a autoria não substitui inspeção visual.",
+  "cycles": {
+    "favela": [
+      "Ciclo1 rejeitado: telhados cortados pela própria fonte.",
+      "Ciclo2 rejeitado: ápice central ainda cortado.",
+      "Ciclo3 fonte completa com margens; recortes estruturais completos confirmados em proof e montagem com objetivos."
+    ],
+    "union": [
+      "Cena inteira nova com guichê apoiado e bancos completos.",
+      "Montagem inicial rejeitada por vazio cinza no topo.",
+      "Montagem final recompõe viga inteira, sobrepõe busto e restaura tampo; memorial na mesma estrutura."
+    ],
+    "launch": [
+      "Cena inteira normal + edição inteira da ignição pareada.",
+      "Montagem remove gabinetes pintados, extrai conduítes e recoloca objetivos globais reais.",
+      "Montagem final de todas as variantes/estados conserva cinco máquinas, console sólido e soleiras completas."
+    ]
+  },
+  "source_creation": "ImageGen built-in; no SVG/code-generated replacement art",
+  "source_prompts": "art/campaign-pattern-v2/prompts.json",
+  "reviews": [
+    {
+      "phase": "14",
+      "reviewed_whole_before_judgment": "art/campaign-pattern-v2/launch/complete/14-complete.png",
+      "reviewed_camera_previews": [
+        "art/campaign-pattern-v2/launch/camera-previews/14-0.png",
+        "art/campaign-pattern-v2/launch/camera-previews/14-1.png",
+        "art/campaign-pattern-v2/launch/camera-previews/14-2.png"
+      ],
+      "result": "Composição nativa completa aceita como candidata à integração; não é aprovação de playtest.",
+      "observations": [
+        "Cinco geradores reais encaixados nas extremidades de conduítes; gabinetes pintados da fonte foram excluídos antes da sobreposição. Console elevado tem corpo sólido e mastro bloqueado.",
+        "Máquinas usam escala de32px do atlas global.482tiles de cenário,151reservados para estados/equipamentos; margem de7tiles."
+      ],
+      "geometry_checks": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 949,
+        "checks": [
+          {
+            "name": "generator-1-front",
+            "reachable_samples": 26,
+            "example_feet": [
+              40,
+              136
+            ]
+          },
+          {
+            "name": "generator-2-front",
+            "reachable_samples": 26,
+            "example_feet": [
+              416,
+              136
+            ]
+          },
+          {
+            "name": "generator-3-front",
+            "reachable_samples": 31,
+            "example_feet": [
+              368,
+              208
+            ]
+          },
+          {
+            "name": "generator-4-front",
+            "reachable_samples": 10,
+            "example_feet": [
+              384,
+              296
+            ]
+          },
+          {
+            "name": "generator-5-front",
+            "reachable_samples": 10,
+            "example_feet": [
+              64,
+              296
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "unresolved_visual_blockers": [],
+      "required_runtime_proof": [
+        "Câmera real com movimento e HUD",
+        "Contato e limites por controle",
+        "Pixels nativos/objetivos exatos após rolagem"
+      ],
+      "no_inherited_approval": true
+    },
+    {
+      "phase": "15",
+      "reviewed_whole_before_judgment": "art/campaign-pattern-v2/launch/complete/15-complete.png",
+      "reviewed_camera_previews": [
+        "art/campaign-pattern-v2/launch/camera-previews/15-0.png",
+        "art/campaign-pattern-v2/launch/camera-previews/15-1.png",
+        "art/campaign-pattern-v2/launch/camera-previews/15-2.png"
+      ],
+      "result": "Composição nativa completa aceita como candidata à integração; não é aprovação de playtest.",
+      "observations": [
+        "Os mesmos cinco geradores ligados permanecem. Rádio ocupa o encaixe da estação elevada. Ignição substitui apenas interiores completos dos dois motores, sem alterar paredes/solo/conduítes.",
+        "Console sólido recebe dano por contato externo; a passagem da câmera pausa combate e temporizador. Deve ser provado com inimigos/projéteis ativos na ROM."
+      ],
+      "geometry_checks": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 949,
+        "checks": [
+          {
+            "name": "console-south-edge",
+            "reachable_samples": 45,
+            "example_feet": [
+              192,
+              216
+            ]
+          },
+          {
+            "name": "console-west-edge",
+            "reachable_samples": 18,
+            "example_feet": [
+              176,
+              144
+            ]
+          },
+          {
+            "name": "console-east-edge",
+            "reachable_samples": 27,
+            "example_feet": [
+              312,
+              144
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "unresolved_visual_blockers": [],
+      "required_runtime_proof": [
+        "Câmera real com movimento e HUD",
+        "Contato e limites por controle",
+        "Pixels nativos/objetivos exatos após rolagem"
+      ],
+      "no_inherited_approval": true
+    },
+    {
+      "phase": "16",
+      "reviewed_whole_before_judgment": "art/campaign-pattern-v2/launch/complete/16-complete.png",
+      "reviewed_camera_previews": [
+        "art/campaign-pattern-v2/launch/camera-previews/16-0.png",
+        "art/campaign-pattern-v2/launch/camera-previews/16-1.png",
+        "art/campaign-pattern-v2/launch/camera-previews/16-2.png"
+      ],
+      "result": "Composição nativa completa aceita como candidata à integração; não é aprovação de playtest.",
+      "observations": [
+        "Mesmo estaleiro em ignição, com os cinco geradores e rádio avariado preservados. Motores têm recessos/silhueta inteira, e fogo acaba antes da soleira. Escorpião aparece no início real.",
+        "Pose do chefe no mapa é representativa; comportamento e possível oclusão durante combate só podem ser julgados em vídeo integrado."
+      ],
+      "geometry_checks": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 949,
+        "checks": [
+          {
+            "name": "console-south-edge",
+            "reachable_samples": 45,
+            "example_feet": [
+              192,
+              216
+            ]
+          },
+          {
+            "name": "console-west-edge",
+            "reachable_samples": 18,
+            "example_feet": [
+              176,
+              144
+            ]
+          },
+          {
+            "name": "console-east-edge",
+            "reachable_samples": 27,
+            "example_feet": [
+              312,
+              144
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "unresolved_visual_blockers": [],
+      "required_runtime_proof": [
+        "Câmera real com movimento e HUD",
+        "Contato e limites por controle",
+        "Pixels nativos/objetivos exatos após rolagem"
+      ],
+      "no_inherited_approval": true
+    }
+  ],
+  "integration_status": "Integrated c622 ROM: bothNTSC/PAL central suites pass, whole-map and allreal-camera visual reviews recorded in runtime-review.json.",
+  "runtime_review": "runtime-review.json"
+}

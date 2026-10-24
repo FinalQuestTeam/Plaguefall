@@ -1,0 +1,1144 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "1879d590bd877f6202cd2acaef495ee29e5c8ef90bd0dfbdffe36d90b873c279",
+  "setup": "RAM selects source phases, accelerates death/completion/boss only for scene entry. Radio navigation and every countdown run with normal production code/controller input, without RAM writes.",
+  "dialogues": [
+    {
+      "phase": "1",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "1",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "2A",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "2A",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "2B",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "2B",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "3",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "3",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "3",
+      "when": "ANTES",
+      "line": 3,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "4",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "4",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "5",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "5",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "5",
+      "when": "ANTES",
+      "line": 3,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "6A",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "6A",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DINORAH",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "6A",
+      "when": "ANTES",
+      "line": 3,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "6B",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_DINORAH",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "6B",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "6B",
+      "when": "ANTES",
+      "line": 3,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "6B",
+      "when": "ANTES",
+      "line": 4,
+      "portrait": "P_DINORAH",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "7",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "7",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "8",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "8",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "9",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "9",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "10A",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "10A",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "10B",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "10B",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "11",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "11",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "12",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "12",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "13A",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "13A",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "13B",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "13B",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "14",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "14",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "15",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "15",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "16",
+      "when": "ANTES",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "16",
+      "when": "ANTES",
+      "line": 2,
+      "portrait": "P_ESCORPIAO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "16",
+      "when": "ANTES",
+      "line": 3,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "15",
+      "when": "DEPOIS",
+      "line": 1,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "15",
+      "when": "DEPOIS",
+      "line": 2,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "16",
+      "when": "DEPOIS",
+      "line": 1,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "16",
+      "when": "DEPOIS",
+      "line": 2,
+      "portrait": "P_COMANDO",
+      "side": "DIREITA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    },
+    {
+      "phase": "16",
+      "when": "DEPOIS",
+      "line": 3,
+      "portrait": "P_DAMIAO",
+      "side": "ESQUERDA",
+      "wrapAndGlyphsExact": true,
+      "portraitPixelsAndAnchorsExact": true,
+      "simulationFrozen": true
+    }
+  ],
+  "countdowns": [
+    {
+      "phase": "1",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "2A",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "2B",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "3",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "4",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "5",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "6A",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "6B",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "7",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "8",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "9",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "10A",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "10B",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "11",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "12",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "13A",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "13B",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "14",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "15",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    },
+    {
+      "phase": "16",
+      "transitions": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          50
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          0,
+          150
+        ]
+      ],
+      "gapsFrames": [
+        50,
+        50,
+        50
+      ],
+      "freezeSeconds": 3,
+      "movesAtZero": true,
+      "firesAtZero": true,
+      "goTagThenRestore": true,
+      "pauseAfterGo": true
+    }
+  ],
+  "failures": [],
+  "maxDynamicTiles": 275,
+  "startSkipsPartialScene": true,
+  "heldMenuFireDoesNotLeak": true
+}

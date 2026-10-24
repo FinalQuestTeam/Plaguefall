@@ -1,0 +1,321 @@
+{
+  "status": "isolated candidate ready for root private ROM trial; not finally approved",
+  "revision": 2,
+  "memory": {
+    "tiles": 630,
+    "budget": 640,
+    "tile_bytes": 20160,
+    "map_bytes": 25600,
+    "exact_flip_reused": 12170,
+    "lossy_tile_substitutions": 0,
+    "native_grid": 1,
+    "fits": true
+  },
+  "scope": "Native composition only; active phase9 and all other phases/C/generators/ROM untouched",
+  "changes_after_first_review": [
+    "Full native04industrial wall replaces detached03maintenance rectangles and the large gray factory wall.",
+    "Existing10/11door embedded flush with industrial wall support atY112, RGB-pixel-identical.",
+    "Whole workshops alternateN/S/N; two worn trucks and whole service-wall panels bridge intervals.",
+    "Global lower/lateral limits and court returns use complete native corners and mirrored matching caps.",
+    "Five views now include complete roofs at legal proposed feet positions."
+  ],
+  "critical_limits": [
+    "Composed native preview, not emulator frames.",
+    "Static geometry validated; no running-ROM collision/control/performance test has been performed for this candidate.",
+    "Palette keeps all13colors of existing factory door exactly, adding the original church ochre floor colors in the two unused factory slots. No door pixel is recolored.",
+    "No new bitmap artwork, no generated buildings, no2pxgrid or approximate tile substitutions.",
+    "Three roofed workshop instances reuse one existing whole family; two trucks reuse one existing whole family. Repetition remains visible and must be judged on the complete panorama.",
+    "The factory is represented by its rusty industrial perimeter and exact entrance. A distant towering factory silhouette is not newly invented from incompatible art.",
+    "Player-camera compositions are previews with existing HUD/hero, not measurements from a running ROM."
+  ],
+  "technical_evidence": {
+    "tile_decode_exact": true,
+    "lossy_tile_substitutions": 0,
+    "pixel_grid": 1,
+    "background_budget": 640,
+    "used_tiles": 630,
+    "palette0_black": true,
+    "factory_door_rgb_exact": true
+  },
+  "sources": {
+    "dust-floor": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        224,
+        160,
+        256,
+        192
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 11
+    },
+    "complete-industrial-wall": {
+      "source": "art/phase04-tunnels-v1/map-native.png",
+      "crop": [
+        80,
+        0,
+        144,
+        80
+      ],
+      "size": [
+        64,
+        80
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 80
+    },
+    "lower-wall": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        224,
+        368,
+        256,
+        384
+      ],
+      "size": [
+        32,
+        16
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 7
+    },
+    "left-wall": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        0,
+        160,
+        16,
+        192
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 8
+    },
+    "lower-left-corner": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        0,
+        352,
+        16,
+        384
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 8
+    },
+    "complete-valve-service-wall": {
+      "source": "art/phase04-tunnels-v1/map-native.png",
+      "crop": [
+        336,
+        0,
+        432,
+        80
+      ],
+      "size": [
+        96,
+        80
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 100
+    },
+    "factory-door-exact": {
+      "source": "art/campaign-pattern-v2/factory/modules/factory-door.png",
+      "crop": null,
+      "size": [
+        80,
+        64
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 66
+    },
+    "whole-workshop": {
+      "source": "art/phase03-street-v2/source/street-kit.png",
+      "cell": [
+        443,
+        0,
+        887,
+        443
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "method": "complete alpha silhouette, nearest at1px, same16 church colors"
+    },
+    "whole-rust-truck": {
+      "source": "art/routes-2048-v2/source/evacuation-cutouts.png",
+      "cell": [
+        638,
+        0,
+        1277,
+        616
+      ],
+      "size": [
+        96,
+        64
+      ],
+      "method": "complete alpha silhouette, nearest at1px, same16 church colors"
+    }
+  },
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 6242,
+    "reachable_positions": 6242,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2815,
+    "margin_pixels": 8,
+    "swept_margin_samples": 2815,
+    "margin_free_positions": 5213,
+    "all_margin_positions_connected": true,
+    "invisible_floor_solids": 0
+  },
+  "bridge_validation": {
+    "read_via_unmodified_root_bridge": true,
+    "tile_count": 630,
+    "map_bytes": 25600,
+    "palette_bytes": 32,
+    "source_paths_resolve": true,
+    "all_free_positions_connected": true,
+    "no_activation_or_shared_writes": true
+  },
+  "camera_interest": [
+    {
+      "id": "repair-workshop",
+      "name": "repair-workshop",
+      "bbox": [
+        128,
+        32,
+        128,
+        128
+      ],
+      "player_feet": [
+        184,
+        184
+      ],
+      "position": [
+        184,
+        184
+      ],
+      "camera": [
+        32,
+        0
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "south-workshop",
+      "name": "south-workshop",
+      "bbox": [
+        640,
+        160,
+        128,
+        128
+      ],
+      "player_feet": [
+        608,
+        272
+      ],
+      "position": [
+        608,
+        272
+      ],
+      "camera": [
+        456,
+        72
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "service-dock",
+      "name": "service-dock",
+      "bbox": [
+        1216,
+        32,
+        312,
+        192
+      ],
+      "player_feet": [
+        1328,
+        208
+      ],
+      "position": [
+        1328,
+        208
+      ],
+      "camera": [
+        1208,
+        8
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "factory-office",
+      "name": "factory-office",
+      "bbox": [
+        1792,
+        32,
+        128,
+        128
+      ],
+      "player_feet": [
+        1840,
+        184
+      ],
+      "position": [
+        1840,
+        184
+      ],
+      "camera": [
+        1688,
+        0
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "factory-entry",
+      "name": "factory-entry",
+      "bbox": [
+        2392,
+        48,
+        80,
+        64
+      ],
+      "player_feet": [
+        2456,
+        184
+      ],
+      "position": [
+        2456,
+        184
+      ],
+      "camera": [
+        2240,
+        0
+      ],
+      "whole_below_HUD": true
+    }
+  ],
+  "art_limitations": [
+    "Three workshop buildings share one existing whole family, and two trucks share one existing whole family; repetition remains visible.",
+    "The candidate uses the old rusty tunnel wall as the exterior industrial boundary; no new distant factory silhouette was invented.",
+    "These five images are composed native previews, not running-ROM captures. Final visual/runtime approval remains with root/user after the isolated ROM trial."
+  ],
+  "geometry_notes": [
+    "All solids coincide with visible native walls, complete workshop bodies or truck silhouettes. No solid rect is placed on open floor.",
+    "Full projected bboxes keep the player out of baked architecture; tall volumes and trucks block feet and shots.",
+    "Primary route has8px clearance beyond16x16feet (32px envelope); the upper lane near south workshop has48px depth.",
+    "A visible16px rear strip behind south workshop exists off the main route; it is not an8px-margin route and is not masked by an invisible floor blocker. Physical and8px-margin free regions are each globally connected.",
+    "Global lower/lateral walls and courtyard returns have native whole matching caps/corners; no orphan enclosed yard.",
+    "Exit is the front apron of the exact old80x64factory entrance; story length2560 and single continuation to10 remain unchanged."
+  ]
+}

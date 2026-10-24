@@ -1,0 +1,769 @@
+{
+  "method": "Same1800VBcritical6B/12controllerpatrol,nativecadence,cachepreserved,real3srepeatedshield,4swarmup; no roster/cap changes or tail. Every nonexact60/50 is a FAIL.",
+  "allCandidatesPassed": false,
+  "candidates": [
+    {
+      "candidate": "ce8b35",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-ce8b35-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1793,
+              "gameFPS": 59.76667,
+              "targetMet": false,
+              "meanCPULoadPct": 83.561,
+              "p95CPULoadPct": 86.67,
+              "maximumCPULoadPct": 88.477
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1789,
+              "gameFPS": 59.63333,
+              "targetMet": false,
+              "meanCPULoadPct": 78.838,
+              "p95CPULoadPct": 83.008,
+              "maximumCPULoadPct": 92.676
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-ce8b35-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 58.239,
+              "p95CPULoadPct": 61.426,
+              "maximumCPULoadPct": 63.232
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 53.346,
+              "p95CPULoadPct": 57.52,
+              "maximumCPULoadPct": 61.475
+            }
+          ]
+        }
+      },
+      "romSHA256": "ce8b35d9db76174d47a7c1bc8127c36893b54e2d6e336a1aa9b9b4b3e3a0dc82",
+      "hudEquivalence": {
+        "ntsc": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-ce8b35-ntsc/report.json"
+        },
+        "pal": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-ce8b35-pal/report.json"
+        }
+      }
+    },
+    {
+      "candidate": "09cae7",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-09cae7-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1786,
+              "gameFPS": 59.53333,
+              "targetMet": false,
+              "meanCPULoadPct": 83.352,
+              "p95CPULoadPct": 86.523,
+              "maximumCPULoadPct": 95.459
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1786,
+              "gameFPS": 59.53333,
+              "targetMet": false,
+              "meanCPULoadPct": 78.616,
+              "p95CPULoadPct": 82.715,
+              "maximumCPULoadPct": 87.988
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-09cae7-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 58.009,
+              "p95CPULoadPct": 61.23,
+              "maximumCPULoadPct": 62.891
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 53.108,
+              "p95CPULoadPct": 57.324,
+              "maximumCPULoadPct": 61.182
+            }
+          ]
+        }
+      },
+      "romSHA256": "09cae7026892ea22c34d5af6268860c88c7bc674dcb6e6e089fa6cae80be1189",
+      "hudEquivalence": {
+        "ntsc": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-09cae7-ntsc/report.json"
+        },
+        "pal": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-09cae7-pal/report.json"
+        }
+      }
+    },
+    {
+      "candidate": "bf7213",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-bf7213-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1796,
+              "gameFPS": 59.86667,
+              "targetMet": false,
+              "meanCPULoadPct": 82.446,
+              "p95CPULoadPct": 85.596,
+              "maximumCPULoadPct": 95.508
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1791,
+              "gameFPS": 59.7,
+              "targetMet": false,
+              "meanCPULoadPct": 76.514,
+              "p95CPULoadPct": 80.713,
+              "maximumCPULoadPct": 89.844
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-bf7213-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 57.115,
+              "p95CPULoadPct": 60.303,
+              "maximumCPULoadPct": 61.963
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 50.807,
+              "p95CPULoadPct": 54.834,
+              "maximumCPULoadPct": 58.35
+            }
+          ]
+        }
+      },
+      "romSHA256": "bf721363a536e56ba871795c765aa2288a821b3c14cb5e15503ad8ce9c892ed1",
+      "hudEquivalence": {}
+    },
+    {
+      "candidate": "a5e8b2",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-a5e8b2-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1795,
+              "gameFPS": 59.83333,
+              "targetMet": false,
+              "meanCPULoadPct": 82.064,
+              "p95CPULoadPct": 85.205,
+              "maximumCPULoadPct": 97.51
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1791,
+              "gameFPS": 59.7,
+              "targetMet": false,
+              "meanCPULoadPct": 76.13,
+              "p95CPULoadPct": 80.273,
+              "maximumCPULoadPct": 83.887
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-a5e8b2-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 56.73,
+              "p95CPULoadPct": 59.912,
+              "maximumCPULoadPct": 61.572
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 50.421,
+              "p95CPULoadPct": 54.443,
+              "maximumCPULoadPct": 57.959
+            }
+          ]
+        }
+      },
+      "romSHA256": "a5e8b2bf53efe188d3c4cfc023c8fc0a4d15e086137a31119a3b6c0b4ccec578",
+      "hudEquivalence": {}
+    },
+    {
+      "candidate": "5d82ec",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-5d82ec-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1797,
+              "gameFPS": 59.9,
+              "targetMet": false,
+              "meanCPULoadPct": 81.892,
+              "p95CPULoadPct": 84.766,
+              "maximumCPULoadPct": 94.58
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 60.0,
+              "targetMet": true,
+              "meanCPULoadPct": 75.806,
+              "p95CPULoadPct": 79.199,
+              "maximumCPULoadPct": 84.814
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-5d82ec-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 56.555,
+              "p95CPULoadPct": 59.57,
+              "maximumCPULoadPct": 61.426
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 50.08,
+              "p95CPULoadPct": 53.662,
+              "maximumCPULoadPct": 57.129
+            }
+          ]
+        }
+      },
+      "romSHA256": "5d82ec602ab6dcd9a2fbda7be5914282efa5ebab2ba2647d697b77b7d297a58a",
+      "hudEquivalence": {
+        "ntsc": {
+          "passed": false,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-5d82ec-ntsc/report.json"
+        },
+        "pal": {
+          "passed": false,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-5d82ec-pal/report.json"
+        }
+      }
+    },
+    {
+      "candidate": "0fcfc0",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-0fcfc0-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1791,
+              "gameFPS": 59.7,
+              "targetMet": false,
+              "meanCPULoadPct": 82.278,
+              "p95CPULoadPct": 85.352,
+              "maximumCPULoadPct": 91.309
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1799,
+              "gameFPS": 59.96667,
+              "targetMet": false,
+              "meanCPULoadPct": 75.803,
+              "p95CPULoadPct": 79.297,
+              "maximumCPULoadPct": 84.277
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-0fcfc0-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 57.222,
+              "p95CPULoadPct": 60.254,
+              "maximumCPULoadPct": 62.109
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 50.04,
+              "p95CPULoadPct": 53.418,
+              "maximumCPULoadPct": 56.836
+            }
+          ]
+        }
+      },
+      "romSHA256": "0fcfc0e86cb5de99fff6495c1a1cb22b83fd5da1cd48317cbd466985947fd138",
+      "hudEquivalence": {
+        "ntsc": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-0fcfc0-ntsc/report.json"
+        },
+        "pal": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-0fcfc0-pal/report.json"
+        }
+      }
+    },
+    {
+      "candidate": "e9d4c0",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-e9d4c0-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1797,
+              "gameFPS": 59.9,
+              "targetMet": false,
+              "meanCPULoadPct": 81.654,
+              "p95CPULoadPct": 84.521,
+              "maximumCPULoadPct": 94.287
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 60.0,
+              "targetMet": true,
+              "meanCPULoadPct": 75.806,
+              "p95CPULoadPct": 79.199,
+              "maximumCPULoadPct": 84.814
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-e9d4c0-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 56.334,
+              "p95CPULoadPct": 59.375,
+              "maximumCPULoadPct": 61.182
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 50.081,
+              "p95CPULoadPct": 53.662,
+              "maximumCPULoadPct": 57.129
+            }
+          ]
+        }
+      },
+      "romSHA256": "e9d4c0fc6fa6a03f06528aba650ea0fa3a6947f54bdc2d1885b9039aed7a0ec3",
+      "hudEquivalence": {
+        "ntsc": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-e9d4c0-ntsc/report.json"
+        },
+        "pal": {
+          "passed": true,
+          "cases": 37,
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-e9d4c0-pal/report.json"
+        }
+      }
+    },
+    {
+      "candidate": "e0b83d",
+      "performanceTargetMet": false,
+      "regions": {
+        "ntsc": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-e0b83d-moving/report.json",
+          "passed": false,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1796,
+              "gameFPS": 59.86667,
+              "targetMet": false,
+              "meanCPULoadPct": 81.714,
+              "p95CPULoadPct": 84.619,
+              "maximumCPULoadPct": 90.43
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 60.0,
+              "targetMet": true,
+              "meanCPULoadPct": 75.813,
+              "p95CPULoadPct": 79.199,
+              "maximumCPULoadPct": 84.814
+            }
+          ]
+        },
+        "pal": {
+          "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-e0b83d-moving/report.json",
+          "passed": true,
+          "cases": [
+            {
+              "phase": "6B",
+              "roster": [
+                4,
+                5,
+                7
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 56.434,
+              "p95CPULoadPct": 59.473,
+              "maximumCPULoadPct": 61.279
+            },
+            {
+              "phase": "12",
+              "roster": [
+                4,
+                5,
+                2
+              ],
+              "enemyCap": 3,
+              "shotCapPerPool": 4,
+              "physicalFrames": 1800,
+              "gameFrames": 1800,
+              "gameFPS": 50.0,
+              "targetMet": true,
+              "meanCPULoadPct": 50.082,
+              "p95CPULoadPct": 53.613,
+              "maximumCPULoadPct": 57.129
+            }
+          ]
+        }
+      },
+      "romSHA256": "e0b83d242e33f143ba83d54a8b15a986ab4fee602fcfd4901c3eecbf235440a9",
+      "hudEquivalence": {}
+    }
+  ],
+  "limits": [
+    "Small differences between candidates do not isolate one instruction because a missed frame changes subsequent trajectories/timerphase.",
+    "Private RAM setup for timing only; not campaign playthrough or visual acceptance."
+  ]
+}

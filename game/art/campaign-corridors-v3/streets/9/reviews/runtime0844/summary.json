@@ -1,0 +1,1190 @@
+{
+  "phase": "9",
+  "rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "regions": {
+    "ntsc": {
+      "frames": 61,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime0844/capture-ntsc.json",
+      "landmark_details": [
+        {
+          "path": "9/landmark-0.png",
+          "position": [
+            208,
+            208
+          ],
+          "camera": [
+            56,
+            8
+          ],
+          "visible_world": [
+            56,
+            32,
+            376,
+            232
+          ],
+          "label": "office 64",
+          "bbox": [
+            64,
+            32,
+            304,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 0
+        },
+        {
+          "path": "9/landmark-1.png",
+          "position": [
+            488,
+            184
+          ],
+          "camera": [
+            336,
+            88
+          ],
+          "visible_world": [
+            336,
+            112,
+            656,
+            312
+          ],
+          "label": "utility 416",
+          "bbox": [
+            416,
+            208,
+            160,
+            104
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 1
+        },
+        {
+          "path": "9/landmark-2.png",
+          "position": [
+            816,
+            200
+          ],
+          "camera": [
+            664,
+            0
+          ],
+          "visible_world": [
+            664,
+            24,
+            984,
+            224
+          ],
+          "label": "dock 672",
+          "bbox": [
+            672,
+            24,
+            304,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 2
+        },
+        {
+          "path": "9/landmark-3.png",
+          "position": [
+            1076,
+            168
+          ],
+          "camera": [
+            924,
+            88
+          ],
+          "visible_world": [
+            924,
+            112,
+            1244,
+            312
+          ],
+          "label": "truck 1048",
+          "bbox": [
+            1048,
+            192,
+            72,
+            120
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 3
+        },
+        {
+          "path": "9/landmark-4.png",
+          "position": [
+            1336,
+            168
+          ],
+          "camera": [
+            1184,
+            0
+          ],
+          "visible_world": [
+            1184,
+            24,
+            1504,
+            224
+          ],
+          "label": "machine yard 1216",
+          "bbox": [
+            1216,
+            32,
+            256,
+            120
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 4
+        },
+        {
+          "path": "9/landmark-5.png",
+          "position": [
+            1568,
+            176
+          ],
+          "camera": [
+            1416,
+            88
+          ],
+          "visible_world": [
+            1416,
+            112,
+            1736,
+            312
+          ],
+          "label": "warehouse 1424",
+          "bbox": [
+            1424,
+            200,
+            304,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 5
+        },
+        {
+          "path": "9/landmark-6.png",
+          "position": [
+            1880,
+            200
+          ],
+          "camera": [
+            1728,
+            88
+          ],
+          "visible_world": [
+            1728,
+            112,
+            2048,
+            312
+          ],
+          "label": "utility low 1808",
+          "bbox": [
+            1808,
+            224,
+            160,
+            88
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 6
+        },
+        {
+          "path": "9/landmark-7.png",
+          "position": [
+            1912,
+            192
+          ],
+          "camera": [
+            1760,
+            0
+          ],
+          "visible_world": [
+            1760,
+            24,
+            2080,
+            224
+          ],
+          "label": "tank yard 1840",
+          "bbox": [
+            1840,
+            24,
+            160,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 7
+        },
+        {
+          "path": "9/landmark-8.png",
+          "position": [
+            2152,
+            200
+          ],
+          "camera": [
+            2000,
+            88
+          ],
+          "visible_world": [
+            2000,
+            112,
+            2320,
+            312
+          ],
+          "label": "utility low 2080",
+          "bbox": [
+            2080,
+            224,
+            160,
+            88
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 8
+        },
+        {
+          "path": "9/landmark-9.png",
+          "position": [
+            2392,
+            200
+          ],
+          "camera": [
+            2240,
+            0
+          ],
+          "visible_world": [
+            2240,
+            24,
+            2560,
+            224
+          ],
+          "label": "gate 2288",
+          "bbox": [
+            2288,
+            40,
+            224,
+            144
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 9
+        }
+      ]
+    },
+    "pal": {
+      "frames": 61,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime0844/capture-pal.json",
+      "landmark_details": [
+        {
+          "path": "9/landmark-0.png",
+          "position": [
+            208,
+            208
+          ],
+          "camera": [
+            56,
+            8
+          ],
+          "visible_world": [
+            56,
+            32,
+            376,
+            232
+          ],
+          "label": "office 64",
+          "bbox": [
+            64,
+            32,
+            304,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 0
+        },
+        {
+          "path": "9/landmark-1.png",
+          "position": [
+            488,
+            184
+          ],
+          "camera": [
+            336,
+            88
+          ],
+          "visible_world": [
+            336,
+            112,
+            656,
+            312
+          ],
+          "label": "utility 416",
+          "bbox": [
+            416,
+            208,
+            160,
+            104
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 1
+        },
+        {
+          "path": "9/landmark-2.png",
+          "position": [
+            816,
+            200
+          ],
+          "camera": [
+            664,
+            0
+          ],
+          "visible_world": [
+            664,
+            24,
+            984,
+            224
+          ],
+          "label": "dock 672",
+          "bbox": [
+            672,
+            24,
+            304,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 2
+        },
+        {
+          "path": "9/landmark-3.png",
+          "position": [
+            1076,
+            168
+          ],
+          "camera": [
+            924,
+            88
+          ],
+          "visible_world": [
+            924,
+            112,
+            1244,
+            312
+          ],
+          "label": "truck 1048",
+          "bbox": [
+            1048,
+            192,
+            72,
+            120
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 3
+        },
+        {
+          "path": "9/landmark-4.png",
+          "position": [
+            1336,
+            168
+          ],
+          "camera": [
+            1184,
+            0
+          ],
+          "visible_world": [
+            1184,
+            24,
+            1504,
+            224
+          ],
+          "label": "machine yard 1216",
+          "bbox": [
+            1216,
+            32,
+            256,
+            120
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 4
+        },
+        {
+          "path": "9/landmark-5.png",
+          "position": [
+            1568,
+            176
+          ],
+          "camera": [
+            1416,
+            88
+          ],
+          "visible_world": [
+            1416,
+            112,
+            1736,
+            312
+          ],
+          "label": "warehouse 1424",
+          "bbox": [
+            1424,
+            200,
+            304,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 5
+        },
+        {
+          "path": "9/landmark-6.png",
+          "position": [
+            1880,
+            200
+          ],
+          "camera": [
+            1728,
+            88
+          ],
+          "visible_world": [
+            1728,
+            112,
+            2048,
+            312
+          ],
+          "label": "utility low 1808",
+          "bbox": [
+            1808,
+            224,
+            160,
+            88
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 6
+        },
+        {
+          "path": "9/landmark-7.png",
+          "position": [
+            1912,
+            192
+          ],
+          "camera": [
+            1760,
+            0
+          ],
+          "visible_world": [
+            1760,
+            24,
+            2080,
+            224
+          ],
+          "label": "tank yard 1840",
+          "bbox": [
+            1840,
+            24,
+            160,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 7
+        },
+        {
+          "path": "9/landmark-8.png",
+          "position": [
+            2152,
+            200
+          ],
+          "camera": [
+            2000,
+            88
+          ],
+          "visible_world": [
+            2000,
+            112,
+            2320,
+            312
+          ],
+          "label": "utility low 2080",
+          "bbox": [
+            2080,
+            224,
+            160,
+            88
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 8
+        },
+        {
+          "path": "9/landmark-9.png",
+          "position": [
+            2392,
+            200
+          ],
+          "camera": [
+            2240,
+            0
+          ],
+          "visible_world": [
+            2240,
+            24,
+            2560,
+            224
+          ],
+          "label": "gate 2288",
+          "bbox": [
+            2288,
+            40,
+            224,
+            144
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 9
+        }
+      ]
+    }
+  },
+  "region_comparison": [
+    {
+      "path": "9/x0-y0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x1-y0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x2-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        291,
+        87,
+        317,
+        120
+      ]
+    },
+    {
+      "path": "9/x3-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        87,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x4-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x5-y0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x6-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x7-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        3,
+        87,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x8-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x9-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x10-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x11-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        99,
+        87,
+        125,
+        120
+      ]
+    },
+    {
+      "path": "9/x12-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        155,
+        87,
+        181,
+        120
+      ]
+    },
+    {
+      "path": "9/x13-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x14-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x15-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        179,
+        151,
+        276,
+        197
+      ]
+    },
+    {
+      "path": "9/x16-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        187,
+        151,
+        276,
+        197
+      ]
+    },
+    {
+      "path": "9/x0-y1.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x1-y1.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x2-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        275,
+        175,
+        313,
+        208
+      ]
+    },
+    {
+      "path": "9/x3-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        71,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x4-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x5-y1.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x6-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x7-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        71,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x8-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x9-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x10-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x11-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        99,
+        159,
+        125,
+        192
+      ]
+    },
+    {
+      "path": "9/x12-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        167,
+        173,
+        200
+      ]
+    },
+    {
+      "path": "9/x13-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x14-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        187,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/x15-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        179,
+        159,
+        276,
+        197
+      ]
+    },
+    {
+      "path": "9/x16-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        187,
+        159,
+        276,
+        197
+      ]
+    },
+    {
+      "path": "9/x0-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        19,
+        123,
+        313,
+        216
+      ]
+    },
+    {
+      "path": "9/x1-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        123,
+        313,
+        216
+      ]
+    },
+    {
+      "path": "9/x2-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        83,
+        99,
+        313,
+        192
+      ]
+    },
+    {
+      "path": "9/x3-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        87,
+        313,
+        120
+      ]
+    },
+    {
+      "path": "9/x4-y2.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x5-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        183,
+        173,
+        216
+      ]
+    },
+    {
+      "path": "9/x6-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        159,
+        173,
+        192
+      ]
+    },
+    {
+      "path": "9/x7-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        159,
+        173,
+        192
+      ]
+    },
+    {
+      "path": "9/x8-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        123,
+        313,
+        132
+      ]
+    },
+    {
+      "path": "9/x9-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x10-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x11-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        131,
+        159,
+        157,
+        192
+      ]
+    },
+    {
+      "path": "9/x12-y2.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/x13-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/x14-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        179,
+        99,
+        313,
+        192
+      ]
+    },
+    {
+      "path": "9/x15-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        179,
+        123,
+        276,
+        216
+      ]
+    },
+    {
+      "path": "9/x16-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        187,
+        123,
+        276,
+        216
+      ]
+    },
+    {
+      "path": "9/landmark-0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "9/landmark-1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        79,
+        313,
+        112
+      ]
+    },
+    {
+      "path": "9/landmark-2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        183,
+        313,
+        216
+      ]
+    },
+    {
+      "path": "9/landmark-3.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        63,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/landmark-4.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "9/landmark-5.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/landmark-6.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        95,
+        313,
+        128
+      ]
+    },
+    {
+      "path": "9/landmark-7.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        175,
+        173,
+        208
+      ]
+    },
+    {
+      "path": "9/landmark-8.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        303,
+        99,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "9/landmark-9.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        183,
+        276,
+        216
+      ]
+    }
+  ]
+}

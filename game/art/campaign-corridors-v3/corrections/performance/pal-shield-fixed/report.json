@@ -1,0 +1,518 @@
+{
+  "romSHA256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "bootstrapSHA256": "f2b38b90303eb7c69515fab5b37ee86a4409e34a819402083a7ee6e27cead95e",
+  "region": "PAL",
+  "passed": false,
+  "requiredFPS": 50,
+  "physicalFramesPerCase": 1800,
+  "warmupSeconds": 4,
+  "shieldClock": "fixed",
+  "cases": [
+    {
+      "phase": "3",
+      "policy": "native_cadence",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ],
+        [
+          224,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 50.0,
+      "targetMet": true,
+      "meanCPULoadPct": 46.023,
+      "p95CPULoadPct": 48.438,
+      "maximumCPULoadPct": 50.391,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "satMaximumSampled": [
+        15,
+        10,
+        128
+      ],
+      "nonUnitGameFrameSteps": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6A",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 50.0,
+      "targetMet": true,
+      "meanCPULoadPct": 46.492,
+      "p95CPULoadPct": 48.047,
+      "maximumCPULoadPct": 49.072,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        13,
+        5,
+        112
+      ],
+      "nonUnitGameFrameSteps": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6B",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 50.0,
+      "targetMet": true,
+      "meanCPULoadPct": 55.489,
+      "p95CPULoadPct": 57.861,
+      "maximumCPULoadPct": 59.18,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        17,
+        5,
+        112
+      ],
+      "nonUnitGameFrameSteps": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1772,
+      "gameFPS": 49.22222,
+      "targetMet": false,
+      "meanCPULoadPct": 49.227,
+      "p95CPULoadPct": 61.426,
+      "maximumCPULoadPct": 65.967,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        18,
+        9,
+        160
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 64,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 74,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 191,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 201,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 318,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 328,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 445,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 455,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 572,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 582,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 699,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 709,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 826,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 836,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 953,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 963,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1080,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1090,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1207,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1334,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1344,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1461,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1471,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1588,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1598,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1715,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "9",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        2,
+        9
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 50.0,
+      "targetMet": true,
+      "meanCPULoadPct": 37.877,
+      "p95CPULoadPct": 41.064,
+      "maximumCPULoadPct": 43.018,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        14,
+        10,
+        152
+      ],
+      "nonUnitGameFrameSteps": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    }
+  ],
+  "method": "Same production ROM and node snapshot per policy. Invulnerability and enemy HP isolate timing; Dinorah waits. Legacy resets complete records each VBlank; preserving policies retain AI/render clocks and velocities. No transition or death settling is included. Static camera load, not route difficulty.",
+  "status": "needs-optimization"
+}

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "transitions": 82000,
+  "changedTilesCheckedDirty": 314572,
+  "all0to100Pairs": true,
+  "full3840ByteCanvasCompared": true,
+  "fallbackLengthsCompared": true,
+  "romSHA256": "442390ac21328b74a427f2fc8c63742bdcb5abf80aea3fab4aee6e2ccf020ec8",
+  "sourceFunctionsSHA256": "0f09dbcf3258ceb85bf38ba69f6162d096c39cf55cd71beff4f980d56d59101f",
+  "positions": [
+    8,
+    20,
+    64,
+    72
+  ],
+  "colors": [
+    1,
+    4
+  ],
+  "allCompiledFontCopiesIdentical": true,
+  "method": "Exact extracted production rect/text/valueGlyph/editValue with exact ROMfont/mask. Compare all101x101numeric transitions against previous full clear/text; random neighbour pixels and every changed tile dirty bit checked.",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "productionModified": false,
+  "native68000TimingClaim": false
+}

@@ -20,6 +20,9 @@ typedef struct {
     bool npcInMap;
     const ArenaNpcVisual *npcVisual;
     u16 cols;                  // zero = legacy 64-column source
+    u16 cameraPlayerY;         // zero = arena follow; corridors retain facade headroom
+    const ArenaRect *cameraFocus;
+    u8 cameraFocusCount;
 } ArenaScene;
 typedef struct {
     u16 width, height;
@@ -36,6 +39,8 @@ extern bool arenaActive;
 extern u8 arenaDamaged;
 extern const ArenaDef COURTYARD_arena;
 
+u16 ARENA_sceneTileCount(void);
+u16 ARENA_backgroundAttr(s16 col,s16 row);
 void ARENA_configure(const ArenaDef *def);
 void ARENA_draw(void);
 void ARENA_leave(void);

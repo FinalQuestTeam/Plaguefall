@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "1208bce136bf947beb864122ee2fdcff490690236a55411647dc12a26debde8b",
+  "method": "Menu entry, room switching, settings and gallery previews use controller input only. Isolated contact/terrain probes explicitly use RAM setup.",
+  "checks": {
+    "room-4-entry": {
+      "passed": true,
+      "details": {
+        "stage": 4,
+        "arena_active": true,
+        "enemies": 0,
+        "controller_only": true
+      }
+    },
+    "room-7-entry": {
+      "passed": true,
+      "details": {
+        "stage": 7,
+        "arena_active": true,
+        "enemies": 2,
+        "controller_only": true
+      }
+    },
+    "room-8-entry": {
+      "passed": true,
+      "details": {
+        "stage": 8,
+        "arena_active": true,
+        "enemies": 1,
+        "controller_only": true
+      }
+    },
+    "route-graphics": {
+      "passed": true,
+      "details": {
+        "fragment_sites_checked": 15,
+        "native_floor_and_map_intact": true,
+        "both_room_entries": true
+      }
+    },
+    "traversal": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "route_width": 2048,
+        "wins_without_kills": true,
+        "frozen_result": true,
+        "restart": true
+      }
+    },
+    "escort": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "waits_for_cover": true,
+        "pause_freezes": true,
+        "wins_with_both_actors": true,
+        "hp": 100,
+        "frozen_result": true,
+        "restart": true
+      }
+    },
+    "portable-terrain": {
+      "passed": true,
+      "details": {
+        "shared_palette": true,
+        "lava_frames": 2,
+        "mud_atlas_exact": true,
+        "pause_restores_layer": true,
+        "independent_scenery_and_overlay": true,
+        "scrolling_2048px_checked_by_route_tests": true,
+        "resident_tiles": 38,
+        "setup": "Positioning only for screenshots; entry, animation, pause and routes use production rendering."
+      }
+    },
+    "escort-failure": {
+      "passed": true,
+      "details": {
+        "real_projectile_damage": true,
+        "damiao_no_defeat_does_not_protect_dinorah": true,
+        "frozen_failure": true,
+        "restart_hp": 100,
+        "setup": "isolated lethal projectile and 10 HP"
+      }
+    },
+    "collision-terrain": {
+      "passed": true,
+      "details": {
+        "lava_hp": [
+          99,
+          95
+        ],
+        "mud_slow": 50,
+        "mud_exit_reset": true
+      }
+    }
+  },
+  "failures": []
+}

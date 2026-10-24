@@ -1,0 +1,29 @@
+{
+  "status": "revisar materiais 6B antes de aceitar",
+  "evidence": [
+    "emulator/ntsc/06b-portao-1-fechado.png",
+    "emulator/ntsc/06b-portao-1-aberto.png",
+    "emulator/ntsc/06a-meio.png",
+    "emulator/ntsc/12-saida.png"
+  ],
+  "findings": {
+    "06a": [
+      "Piso calmo, sem grades nem diagonais.",
+      "Marcos centrais e chegada mais claros, montagem exata.",
+      "Textura de água da borda ainda pode ser mais natural."
+    ],
+    "06b": [
+      "Folha sólida e passagem rompida reconhecíveis sem rótulos.",
+      "Footprint32x64 e âncora corrigidos; base das folhas encontra a faixa de passagem.",
+      "Bank extraído de água virou retângulo azul: usar alvenaria real.",
+      "Cano recortado incluía pilar escuro: usar seção azul do whole6A e extrusão exata de3px."
+    ],
+    "12": [
+      "Chegada branca com bandeira claramente se destaca de oficinas.",
+      "Fundo contínuo sem faixas laranja/azuis acima dos telhados.",
+      "Corredor limpo permite separar os personagens; canal técnico precisa material menos repetitivo."
+    ]
+  },
+  "functionalNtsc": "passed24checks",
+  "decision": "Ciclo3 restrito a materiais de canal, alvenaria e tubulação; preservar gate e geometria."
+}

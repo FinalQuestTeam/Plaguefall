@@ -1,0 +1,746 @@
+{
+  "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "scope": [
+    "7",
+    "8",
+    "13A",
+    "13B",
+    "14",
+    "15",
+    "16"
+  ],
+  "read_only_runtime": true,
+  "previous_approvals_used": false,
+  "method": "Cada variação revista no panorama completo com objetivos e layout, fonte inteira, geração dos módulos e capturas/vídeos reais da ROM integrada. Revisão visual rigorosa; testes verdes e autoria anterior não foram usados como aprovação.",
+  "coordinate_convention": "world_regions e code usam pixels nativos e retângulo[x,y,w,h]; ROIs derivados são ampliações nearest3× com origem explicitada. Vídeos reais são640×448 (2×), capturas diretas320×224.",
+  "changed_files_scope": "Somente este relatório e provas derivadas em forensic/evidence/resistance-launch. Nenhuma arte-fonte, C, gerador, mapa ou ROM alterados.",
+  "severity_definitions": {
+    "P1": "corrigir antes de declarar composição final: objeto cortado, profundidade física incorreta ou continuidade espacial quebrada",
+    "P2": "emenda/acabamento ou repetição que reduz a coerência visual",
+    "suspected": "não conta como defeito confirmado; requer prova adicional"
+  },
+  "summary": {
+    "reviewed_variants": 7,
+    "confirmed_unique_findings": 9,
+    "P1_unique": 6,
+    "P2_unique": 3,
+    "unresolved_suspicions": 4,
+    "all_prior_acceptance_reassessed": true
+  },
+  "cases": [
+    {
+      "phase": "7",
+      "verdict": "needs_correction",
+      "finding_ids": [
+        "RL-01"
+      ],
+      "whole_board": "boards/7-whole.png",
+      "specific_review": "Cinco maletas e depósito estão em posições livres de barricadas. A estrutura coberta é reconhecível; o defeito verificável está nas caixas cortadas das barricadas, não numa falta geral de edifícios.",
+      "normal_camera_limits": [
+        "A fachada norte e a borda sul nunca cabem juntas no recorte224px; isso é enquadramento normal de um mundo384px.",
+        "Entrega enquadra o depósito completo em7-delivery-1; o telhado superior cortado no entry é borda do viewport."
+      ],
+      "suspicions": [
+        "S-01"
+      ]
+    },
+    {
+      "phase": "8",
+      "verdict": "needs_correction",
+      "finding_ids": [
+        "RL-01"
+      ],
+      "whole_board": "boards/8-whole.png",
+      "specific_review": "Os emissores ciano têm silhueta e sinal distintos dos insetos comuns; não sobrepõem as duas barricadas nas posições iniciais. O primeiro arco luminoso toca a região das escadas por sua altura, enquanto os pés do emissor permanecem no pátio; isso não prova arquitetura invadindo a área jogável. A mesma caixa cortada da7 está presente.",
+      "normal_camera_limits": [
+        "Emissores distantes fora da tela inicial são consequência do mundo768px, não sprites faltando."
+      ],
+      "suspicions": []
+    },
+    {
+      "phase": "13A",
+      "verdict": "needs_correction",
+      "finding_ids": [
+        "RL-02",
+        "RL-03"
+      ],
+      "whole_board": "boards/13A-whole.png",
+      "specific_review": "Armários, quadro e bancos mantêm escala e perspectiva de sala. A figura inteira diante do vidro não tem sustentação; a quina direita do guichê é sobrescrita. Não uso a aprovação anterior nem o hash preservado como evidência de qualidade.",
+      "normal_camera_limits": [
+        "A entrada cameraX0 recorta a extremidade direita de Dinorah x320..326; no mapa nativo a figura está inteira. Isso é um problema de enquadramento narrativo, não recorte do arquivo.",
+        "Quando a câmera segue Damião para o sul, parte da parede norte sai da tela; o mapa completo mantém essa parede."
+      ],
+      "suspicions": [
+        "S-02"
+      ]
+    },
+    {
+      "phase": "13B",
+      "verdict": "minor_correction",
+      "finding_ids": [
+        "RL-03"
+      ],
+      "whole_board": "boards/13B-whole.png",
+      "specific_review": "Retrato, faixa de luto e duas velas estão sustentados no balcão e aparecem inteiros na entrada. Não encontrei novo defeito de encaixe no recorte do memorial. Persiste a emenda de8px na lateral direita do guichê, compartilhada com13A. Os três bancos conservam pés/sombra, sem evidência de pedaços de banco repetidos no piso.",
+      "normal_camera_limits": [
+        "A entrada280,176 enquadra o retrato; limites do fundo512px explicam armários laterais fora da tela."
+      ],
+      "suspicions": [
+        "S-02"
+      ]
+    },
+    {
+      "phase": "14",
+      "verdict": "needs_correction",
+      "finding_ids": [
+        "RL-04",
+        "RL-05"
+      ],
+      "whole_board": "boards/14-whole.png",
+      "specific_review": "Os cinco gabinetes cabem no mapa e se distinguem por cor/forma. O problema mais grave é a estação elevada atravessável, demonstrada pelo movimento real, além dos cantos dos conduítes. Recorte estático sem ator havia ocultado essa relação de profundidade.",
+      "normal_camera_limits": [
+        "Máquinas superiores saírem pelo topo quando Damião vai ao sul é corte normal de câmera; os cinco corpos existem na composição completa.",
+        "Os motores norte ficam parcialmente fora do enquadramento normal de jogo, mas não estão amputados no mapa14."
+      ],
+      "suspicions": [
+        "S-03"
+      ]
+    },
+    {
+      "phase": "15",
+      "verdict": "needs_correction",
+      "finding_ids": [
+        "RL-04",
+        "RL-05",
+        "RL-06"
+      ],
+      "whole_board": "boards/15-whole.png",
+      "specific_review": "A estação/radio é identificável sem letraR e o enquadramento da ignição mostra um motor. Porém os cinco geradores ligados desaparecem, deixando terminações vazias; a geometria da estação permanece sem footprint. O crossing real foi observado14; em15 fica comprovada a mesma ausência estrutural, não uma captura de cruzamento nova.",
+      "normal_camera_limits": [
+        "O foco x0,y24 mostra o motor esquerdo e não o direito por largura320px. Os dois motores existem no mapa completo.",
+        "A pausa da apresentação e o retorno de câmera reduzem risco de combate durante o foco; isso não corrige encaixes do cenário."
+      ],
+      "suspicions": [
+        "S-04"
+      ]
+    },
+    {
+      "phase": "16",
+      "verdict": "needs_correction",
+      "finding_ids": [
+        "RL-07",
+        "RL-08",
+        "RL-09"
+      ],
+      "whole_board": "boards/16-whole.png",
+      "specific_review": "O Escorpião tem silhueta própria e escala maior que os insetos comuns. O motor tem um jato realmente amputado no asset, e o estaleiro muda sua estação/piso entre15e16. A preservação do mapa16 anterior não o isenta da revisão atual.",
+      "normal_camera_limits": [
+        "Corpo48px do boss pode se projetar acima do limite dos pés em3/4; isso não significa que seu spawn invada um sólido.",
+        "Corte do telhado pelo HUD/câmera é normal; já o término do jato emy120 continua visível dentro do viewport e é defeito do recorte."
+      ],
+      "suspicions": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "RL-01",
+      "severity": "P1",
+      "classification": "confirmed_asset_crop",
+      "phases": [
+        "7",
+        "8"
+      ],
+      "title": "Recorte da barricada corta a caixa da extremidade direita",
+      "description": "A barricada não é um módulo completo: a caixa marrom à direita continua além do recorte. O mapa termina esse volume num corte vertical e horizontal abrupto. O mesmo recorte é repetido nas duas barricadas e nas duas fases.",
+      "world_regions": [
+        [
+          332,
+          224,
+          12,
+          24
+        ],
+        [
+          580,
+          272,
+          12,
+          24
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "evidence/resistance-launch/7-barrier-native.png",
+          "note": "ROI mundo224,192→360,256; ampliação3× sem alteração dos pixels."
+        },
+        {
+          "path": "evidence/resistance-launch/7-barrier-source.png",
+          "note": "ROI da fonte quantizada224,184→360,256; caixa e sombra continuam à direita/abaixo do recorte."
+        },
+        {
+          "path": "maps/7-complete.png"
+        },
+        {
+          "path": "maps/8-complete.png"
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_resistance.py",
+          "start_line": 32,
+          "end_line": 33,
+          "reason": "wall crop232,192→344,240 exclui parte da caixa; segunda cópia deslocada248px/48px."
+        }
+      ],
+      "confidence": "high",
+      "recommendation": "Extrair a barricada incluindo a caixa e sua sombra inteira, ou retirar a caixa completa antes de compor o módulo. Revalidar alcance e sólido."
+    },
+    {
+      "id": "RL-02",
+      "severity": "P1",
+      "classification": "confirmed_depth_placement",
+      "phases": [
+        "13A"
+      ],
+      "title": "Dinorah de corpo inteiro flutua sobre o vidro do guichê",
+      "description": "A figura inteira, incluindo botas, é aplicada na superfície azul do vidro. Os pés terminam perto de y119 enquanto o peitoril começa em aproximadamentey124. Não há chão, assento ou oclusão que sustente o corpo nessa posição. Parece um adesivo diante da janela, não alguém atrás do balcão.",
+      "world_regions": [
+        [
+          296,
+          72,
+          32,
+          48
+        ],
+        [
+          288,
+          116,
+          48,
+          20
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "evidence/resistance-launch/13A-booth-native.png",
+          "note": "ROI256,64→376,144, ampliação3×. Botas visíveis e espaço azul sob os pés."
+        },
+        {
+          "path": "maps/13A-complete.png"
+        },
+        {
+          "path": "art/campaign-integrated-v1/resistance/ntsc/13A-entry.png",
+          "box_xywh": [
+            290,
+            34,
+            30,
+            48
+          ],
+          "coordinate_space": "screenshot320×224",
+          "note": "Na borda direita da entrada; mapa completo confirma que a figura não foi cortada no asset."
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_resistance.py",
+          "start_line": 58,
+          "end_line": 64,
+          "reason": "alpha_composite da pose32×48 inteira em296,72; alpha bbox da pose=(1,10,30,47), logo corpo efetivo297,82→326,119."
+        }
+      ],
+      "confidence": "high",
+      "recommendation": "Representar Dinorah atrás do balcão com oclusão adequada ou posicionar uma pose sustentada num plano de piso real."
+    },
+    {
+      "id": "RL-03",
+      "severity": "P2",
+      "classification": "confirmed_module_overlap",
+      "phases": [
+        "13A",
+        "13B"
+      ],
+      "title": "O módulo direito apaga8px do chanfro do guichê",
+      "description": "O guichê ocupa x256..376, mas o banco/armários espelhado à direita começa emx368 e sobrescreve seus8px finais. A quina inclinada e parte da base/sombra da fonte são substituídas por uma junção vertical reta com o móvel vizinho. O local permanece reconhecível, porém a montagem mostra uma emenda arquitetônica artificial.",
+      "world_regions": [
+        [
+          368,
+          96,
+          8,
+          48
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "evidence/resistance-launch/13-booth-right-native.png",
+          "note": "ROI344,96→400,152,3×; término reto da lateral."
+        },
+        {
+          "path": "evidence/resistance-launch/13-booth-right-source.png",
+          "note": "Mesmo ROI da fonte quantizada; o volume chanfrado/sombra é mais largo."
+        },
+        {
+          "path": "boards/13B-whole.png"
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_resistance.py",
+          "start_line": 50,
+          "end_line": 52,
+          "reason": "booth crop256,24→376,144; bank espelhado colado em368,24 sobrepõe8px."
+        }
+      ],
+      "confidence": "high",
+      "recommendation": "Manter a quina completa e encaixar o módulo vizinho fora do chanfro, com uma junta/parede coerente."
+    },
+    {
+      "id": "RL-04",
+      "severity": "P1",
+      "classification": "confirmed_actor_object_overlap",
+      "phases": [
+        "14",
+        "15"
+      ],
+      "title": "A estação elevada é atravessável e Damião pisa sobre seu console",
+      "description": "No vídeo integrado da14, o percurso entre as duas máquinas superiores passa pelo console central. Em3,0s Damião está desenhado em cima da tela/mesa. O mapa tem somente o sólido da ilha inferior; a estação inteira está livre para os pés e não tem ordenação de profundidade. Na15 a geometria é a mesma, portanto a condição estrutural persiste, mas este parecer não afirma ter visto esse mesmo cruzamento num frame da15.",
+      "world_regions": [
+        [
+          216,
+          164,
+          80,
+          52
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "evidence/resistance-launch/14-video-2p5s.png",
+          "note": "Vídeo real14-generators-playtest.mp4 em2,5s; aproximação pela esquerda."
+        },
+        {
+          "path": "evidence/resistance-launch/14-video-3s.png",
+          "box_xywh": [
+            290,
+            225,
+            65,
+            85
+          ],
+          "coordinate_space": "video frame640×448",
+          "note": "Em3,0s os pés/sombra estão sobre a tela azul do console."
+        },
+        {
+          "path": "evidence/resistance-launch/14-video-3p5s.png",
+          "note": "Em3,5s já atravessou e saiu pela direita."
+        },
+        {
+          "path": "layouts/14.png"
+        },
+        {
+          "path": "layouts/15.png"
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 17,
+          "end_line": 17,
+          "reason": "Único sólido=[216,256,80,56], distante da estação central."
+        },
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 99,
+          "end_line": 100,
+          "reason": "Estação elevada/desenhada em208,120→304,224."
+        },
+        {
+          "path": "src/levels/campaign_launch.c",
+          "start_line": 43,
+          "end_line": 45,
+          "reason": "Rádio15 é aplicado sobre a mesma estação, sem sólido adicional."
+        }
+      ],
+      "confidence": "high for14; structural confirmation for15, no15crossing frame",
+      "recommendation": "Definir plano físico/footprint e profundidade da estação; evitar que o jogador atravesse a mesa. Ajustar aproximação/defesa do rádio e testar movimento real ao redor."
+    },
+    {
+      "id": "RL-05",
+      "severity": "P2",
+      "classification": "confirmed_connection_finish",
+      "phases": [
+        "14",
+        "15"
+      ],
+      "title": "Conduítes formam cruzes e pontas sem acabamento nos cantos",
+      "description": "As seções retas se sobrepõem e passam dos cantos. Emx136,y276 a vertical segue atéy284; emx368,y276 a horizontal termina além da vertical. Pequenos prolongamentos e os retângulos de3px deixam aspecto de traçado técnico/seleção, especialmente na15 quando faltam as máquinas. A largura é uniforme, mas as terminações não estão resolvidas como conectores físicos.",
+      "world_regions": [
+        [
+          132,
+          272,
+          12,
+          16
+        ],
+        [
+          364,
+          272,
+          16,
+          16
+        ],
+        [
+          204,
+          144,
+          16,
+          16
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "evidence/resistance-launch/14-pipe-corners.png",
+          "note": "ROI128,268→224,292,3×; sobra de vertical abaixo do canto."
+        },
+        {
+          "path": "maps/14-complete.png"
+        },
+        {
+          "path": "maps/15-complete.png"
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 88,
+          "end_line": 98,
+          "reason": "tile reto extrudado por ranges de8px; a última seção vertical276..284 cruza a horizontal276..279, e horizontais deixam pontas para além do encontro."
+        }
+      ],
+      "confidence": "high for geometric overshoot; debug-like appearance is visual judgment",
+      "recommendation": "Usar cotovelos/terminais completos, ligando a seção a um conector visível, e não cruzar duas barras além do ponto de encontro."
+    },
+    {
+      "id": "RL-06",
+      "severity": "P1",
+      "classification": "confirmed_interphase_continuity",
+      "phases": [
+        "15"
+      ],
+      "title": "Os cinco geradores desaparecem depois de ligados",
+      "description": "A14 e a15 compartilham o mesmo fundo, ilha e coordenadas. A14 tem cinco gabinetes instalados nos conduítes; a15 carrega somente o rádio e deixa os lugares dos cinco gabinetes vazios. A energia continua operante na história, mas os corpos das máquinas desaparecem sem destroços ou transição. Isso também deixa cabos terminando no vazio.",
+      "world_regions": [
+        [
+          120,
+          120,
+          32,
+          32
+        ],
+        [
+          352,
+          120,
+          32,
+          32
+        ],
+        [
+          408,
+          168,
+          32,
+          32
+        ],
+        [
+          336,
+          248,
+          32,
+          32
+        ],
+        [
+          136,
+          248,
+          32,
+          32
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "maps/14-on-complete.png",
+          "note": "Máquinas ligadas no fim da14."
+        },
+        {
+          "path": "maps/15-complete.png",
+          "note": "Mesmas posições vazias na15, apenas rádio presente."
+        },
+        {
+          "path": "art/campaign-integrated-v1/launch/ntsc/15-entry.png"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/levels/campaign_launch.c",
+          "start_line": 39,
+          "end_line": 45,
+          "reason": "14instancia cinco OART_GENERATOR;15instancia só OART_RADIO. Fundo normal é compartilhado."
+        }
+      ],
+      "confidence": "high",
+      "recommendation": "Preservar as máquinas ligadas como objetos/arquitetura de fundo na15, ou narrar e desenhar uma alteração física coerente."
+    },
+    {
+      "id": "RL-07",
+      "severity": "P1",
+      "classification": "confirmed_asset_crop",
+      "phases": [
+        "16"
+      ],
+      "title": "O jato dos motores termina num corte horizontal emy120",
+      "description": "A fonte16 tem chama, iluminação e rastro de escape continuando pelo pátio. O motor é recortado num retângulo que termina emy120 e colado sobre outro piso. O jato fica amputado numa linha horizontal reta, sem dissipação ou contato com o piso; o problema existe no mapa inteiro, independente de câmera.",
+      "world_regions": [
+        [
+          56,
+          104,
+          96,
+          32
+        ],
+        [
+          360,
+          104,
+          96,
+          32
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "evidence/resistance-launch/16-engine-native.png",
+          "note": "ROI48,64→168,160,3×; fogo termina reto emy120."
+        },
+        {
+          "path": "evidence/resistance-launch/16-engine-source.png",
+          "note": "Mesmo ROI da fonte quantizada; jato/rastro continuam abaixo de120."
+        },
+        {
+          "path": "maps/16-complete.png"
+        },
+        {
+          "path": "art/campaign-integrated-v1/launch/ntsc/16-entry.png",
+          "box_xywh": [
+            52,
+            24,
+            105,
+            24
+          ],
+          "coordinate_space": "screenshot320×224",
+          "note": "O término reto do motor aparece abaixo do HUD; não é a borda da câmera."
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 15,
+          "end_line": 15,
+          "reason": "motor=(56,8,152,120)."
+        },
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 26,
+          "end_line": 41,
+          "reason": "assemble_old recorta motor nesse retângulo e o cola sobre piso repetido; usado16 emlinha68."
+        }
+      ],
+      "confidence": "high",
+      "recommendation": "Manter a cauda completa do jato/contato com o piso ou compor uma terminação desenhada; não usar o limite do recorte como borda da chama."
+    },
+    {
+      "id": "RL-08",
+      "severity": "P1",
+      "classification": "confirmed_interphase_scene_discontinuity",
+      "phases": [
+        "16"
+      ],
+      "title": "O mesmo estaleiro perde a estação e troca todo o piso na passagem15→16",
+      "description": "Após a ignição na15 a estação central tem mastro, mesa e plataforma. Na16, mantendo ilha inferior, motores, bounds e spawn, esse volume96×104 é substituído por um quadrado16×16 no cruzamento amarelo. Os conduítes também desaparecem e o piso liso muda para textura diagonal. Não é somente fogo/ruína: a disposição de construções e de marcações muda entre dois estados consecutivos do mesmo lugar.",
+      "world_regions": [
+        [
+          208,
+          120,
+          96,
+          104
+        ],
+        [
+          56,
+          128,
+          400,
+          200
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "evidence/resistance-launch/15-console-native.png",
+          "note": "ROI208,120→304,224 do estado pós-ignição15."
+        },
+        {
+          "path": "evidence/resistance-launch/16-console-native.png",
+          "note": "Mesmo ROI16: sem estação, só quadrado central e marcações diferentes."
+        },
+        {
+          "path": "maps/15-fire-complete.png"
+        },
+        {
+          "path": "maps/16-complete.png"
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 67,
+          "end_line": 70,
+          "reason": "16usa composição antiga;14/15 usam novas fontes/assemble_station."
+        },
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 103,
+          "end_line": 114,
+          "reason": "normal/radioFire/fire são atlas independentes, BOSS usa fire antigo."
+        }
+      ],
+      "confidence": "high for visual discontinuity; no narrative explanation assumed",
+      "recommendation": "Produzir16 como evolução espacial da15 com ruínas/elementos persistentes, ou deixar explícita uma mudança de local. Preservar hashes anteriores não é critério de composição."
+    },
+    {
+      "id": "RL-09",
+      "severity": "P2",
+      "classification": "confirmed_repetitive_floor_pattern",
+      "phases": [
+        "16"
+      ],
+      "title": "Piso é um carimbo diagonal repetido em toda a arena de combate",
+      "description": "As marcas escuras diagonais se repetem a cada32px nos dois eixos; não são fragmentos de banco/peça, mas um padrão de material que se torna evidente. Foram encontradas38cópias pixel-idênticas de um bloco32×32 numa amostra do piso livre. As pequenas marcas competem com projéteis e pequenos insetos no plano onde se joga.",
+      "world_regions": [
+        [
+          64,
+          128,
+          384,
+          192
+        ]
+      ],
+      "evidence": [
+        {
+          "path": "maps/16-complete.png"
+        },
+        {
+          "path": "art/campaign-integrated-v1/launch/ntsc/16-stress.png"
+        }
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_launch.py",
+          "start_line": 30,
+          "end_line": 33,
+          "reason": "Piso normal antigo32×32 é repetido em todo o fundo16."
+        }
+      ],
+      "measurement": {
+        "sample_xywh": [
+          64,
+          128,
+          32,
+          32
+        ],
+        "identical_unmodified_copies_in_sampled_open_region": 38,
+        "some_origins": [
+          [
+            64,
+            128
+          ],
+          [
+            96,
+            128
+          ],
+          [
+            160,
+            128
+          ],
+          [
+            192,
+            128
+          ],
+          [
+            288,
+            128
+          ],
+          [
+            320,
+            128
+          ]
+        ]
+      },
+      "confidence": "high for repetition; readability severity is visual judgment",
+      "recommendation": "Material de piso com densidade menor e manchas distribuídas de modo coeso; preservar apenas marcações estruturais relevantes."
+    }
+  ],
+  "suspicions": [
+    {
+      "id": "S-01",
+      "phase": "7",
+      "classification": "requires_movement_confirmation",
+      "description": "O sólido do depósito termina emy280 e a fachada do balcão continua atéy312. Pode permitir contato visual profundo demais;7-delivery-1 sozinho não demonstra atravessamento porque sprite e collider usam âncoras diferentes. Não classificado como defeito comprovado.",
+      "world_regions": [
+        [
+          64,
+          240,
+          56,
+          72
+        ]
+      ],
+      "code": [
+        {
+          "path": "tools/build_campaign_resistance.py",
+          "start_line": 37,
+          "end_line": 37,
+          "reason": "Recorte visual do depósito até312."
+        },
+        {
+          "path": "tools/build_campaign_resistance.py",
+          "start_line": 74,
+          "end_line": 74,
+          "reason": "Sólido do depósito até280."
+        }
+      ]
+    },
+    {
+      "id": "S-02",
+      "phases": [
+        "13A",
+        "13B"
+      ],
+      "classification": "art_direction_judgment",
+      "description": "Juntas64×64 do piso são muito regulares e ocupam boa parte do quadro, mas a repetição corresponde a lajes completas. Não há prova de fragmentos de mobiliário no solo; suavizar contraste é decisão de direção de arte, não erro de recorte demonstrado."
+    },
+    {
+      "id": "S-03",
+      "phase": "14",
+      "classification": "requires_movement_confirmation",
+      "description": "Os cinco gabinetes interativos também não têm sólidos próprios. Seria necessário aproximar-se por trás/lateral para provar um atravessamento visual deles, além da estação já confirmada. A mera ausência de sólido não determina sozinha o defeito de composição."
+    },
+    {
+      "id": "S-04",
+      "phase": "15",
+      "classification": "interpretation_uncertain",
+      "description": "O rádio32×32 é aplicado sobre uma estação que já contém mesa/tela/parabólica desenhadas. Há possível duplicação de mini-console, mas na captura pode ler como painel instalado na plataforma. Não reportado como erro comprovado sem examinar mais poses/oclusão."
+    }
+  ],
+  "integrated_reports_checked": [
+    "art/campaign-integrated-v1/resistance/ntsc/report.json",
+    "art/campaign-integrated-v1/resistance/pal/report.json",
+    "art/campaign-integrated-v1/launch/ntsc/report.json",
+    "art/campaign-integrated-v1/launch/pal/report.json"
+  ],
+  "evidence_image_hashes": {
+    "evidence/resistance-launch/14-video-2p5s.png": "2efbc5e0999b1a266dd097772730d61e1c27eee9a9fdd7e7b1d65376e7c99db9",
+    "evidence/resistance-launch/7-barrier-native.png": "da06a1ddb6bf228360418c8f09aad24bd6b381522ed850b941c297958bf4374a",
+    "evidence/resistance-launch/15-console-native.png": "b7ab3e5dce6e99bc0a8d2f8c1c481b284103ecffb232b89574f7025abb81608f",
+    "evidence/resistance-launch/13-booth-right-source.png": "9636f2aa8807c0cb8742a81ea92b4ec89c4f50d753365fb5f3330fc8c54cab1b",
+    "evidence/resistance-launch/7-depot-native.png": "6e66a3c0071c9fb17c342095dde7b5c875665768f40d967e69c370a3f0f4999c",
+    "evidence/resistance-launch/16-engine-source.png": "55a8b5154d51c5626cb4618c149416a4c05d0b8b7811308688dad6c26f7ed46a",
+    "evidence/resistance-launch/13A-booth-native.png": "6e21cebb0ccaebcccdce4e3bcd1c1a721de4a6e777cd8eaa9f216e32ca6faa46",
+    "evidence/resistance-launch/14-pipe-corners.png": "a5b1aa5a9455c8884f81d336da4e3af78f395a72596dcc6986093d7064e205fe",
+    "evidence/resistance-launch/16-console-native.png": "993bf43f6d6ca6d3ab3ddf888841c506d01dbc8e3ed4cbd00db9d185dccda389",
+    "evidence/resistance-launch/14-video-3p5s.png": "7753918879e38f2ab9828492a73b9ef7216e0422baaf2bdd7be1fe4655cc456d",
+    "evidence/resistance-launch/14-video-3s.png": "b1275f4c9e609fe295f4dee52ab8cfc62542519fd91698d515a72c0973610213",
+    "evidence/resistance-launch/7-barrier-source.png": "4144dda5a0a57472f40dc103991f057288167dc4d9f65455f0d5e8f5571f8a0b",
+    "evidence/resistance-launch/7-depot-source.png": "adb819c743df37c355602bfa8d20952ac505d9660fab67e6933b7e59fb0b99d2",
+    "evidence/resistance-launch/16-engine-native.png": "469e6de5048f6cef9c33351811a1aa6219edacc7057ef0b9bdabdbc25473ad5c",
+    "evidence/resistance-launch/14-video-5s.png": "db02909d768d6c8cd530ecadece673db6e01db0389cc8511867882a0d4a3b246",
+    "evidence/resistance-launch/13-booth-right-native.png": "0bca5e7fd214f856266b4ea431306e44ebe83e08268960b5b7f3a0506afa330d",
+    "evidence/resistance-launch/14-video-8s.png": "93e444e051df324749345c602477d1d472b110353c6a8a0467cc028ba7d45f48"
+  }
+}

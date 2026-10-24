@@ -1,0 +1,621 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_bytes": 1703936,
+  "text_bytes": 1663864,
+  "data_bytes": 148,
+  "bss_bytes": 18956,
+  "static_ram_bytes": 19104,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "revision": "Leques completos de 1–5 projéteis com reciclagem no teto de carga da fase",
+  "rom_sha256": "9b5d08575a56675248341c1f0ebacb1e0f543fbf45f7260a01d5ee56e5e3826b",
+  "native_checks_passed": true,
+  "player_shots": {
+    "test": "../tools/test_player_shots.py",
+    "regions_hz": [
+      50,
+      60
+    ],
+    "powers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "directions": 8,
+    "speed_bonuses_pct": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+    ],
+    "pool_caps": [
+      6,
+      16
+    ],
+    "exhaustive_pool_occupancy": true,
+    "sanitizers": [
+      "ASan",
+      "UBSan"
+    ],
+    "policy": "Vagas livres primeiro; no teto, substitui projéteis anteriores em rodízio. Sala de carga com zero tiros não consome cargas."
+  },
+  "checks": {
+    "aim-ntsc": {
+      "passed": true,
+      "report": "/private/tmp/plaguefall-shot-fix-aim-ntsc/report.json",
+      "rom_sha256": "9b5d08575a56675248341c1f0ebacb1e0f543fbf45f7260a01d5ee56e5e3826b",
+      "game_ram_writes": false
+    },
+    "aim-pal": {
+      "passed": true,
+      "report": "/private/tmp/plaguefall-shot-fix-aim-pal/report.json",
+      "rom_sha256": "9b5d08575a56675248341c1f0ebacb1e0f543fbf45f7260a01d5ee56e5e3826b",
+      "game_ram_writes": false
+    },
+    "volleys-ntsc": {
+      "passed": true,
+      "report": "../art/player-shots-v1/validation/ntsc/report.json",
+      "rom_sha256": "9b5d08575a56675248341c1f0ebacb1e0f543fbf45f7260a01d5ee56e5e3826b",
+      "cases": 14652,
+      "volleys": 14952,
+      "projectiles": 55560,
+      "incomplete_volleys": 0
+    },
+    "volleys-pal": {
+      "passed": true,
+      "report": "../art/player-shots-v1/validation/pal/report.json",
+      "rom_sha256": "9b5d08575a56675248341c1f0ebacb1e0f543fbf45f7260a01d5ee56e5e3826b",
+      "cases": 14652,
+      "volleys": 14952,
+      "projectiles": 55560,
+      "incomplete_volleys": 0
+    }
+  },
+  "previous_validation": {
+    "passed": true,
+    "date": "2026-10-23",
+    "rom": "../out/release/Plaguefall.bin",
+    "named_rom": "../out/release/Plaguefall.bin",
+    "rom_bytes": 1703936,
+    "text_bytes": 1664196,
+    "data_bytes": 148,
+    "bss_bytes": 18959,
+    "static_ram_bytes": 19107,
+    "emulator": "Genesis Plus GX",
+    "physical_hardware_tested": false,
+    "revision": "Retratos menores extraídos das mesmas fontes originais corrigidas de combate, sem reinterpretar os inimigos",
+    "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9",
+    "checks": {
+      "interface-ntsc": {
+        "passed": true,
+        "report": "../art/mission-portraits-v3/validation/interface-ntsc/report.json",
+        "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9"
+      },
+      "interface-pal": {
+        "passed": true,
+        "report": "../art/mission-portraits-v3/validation/interface-pal/report.json",
+        "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9"
+      },
+      "loading-ntsc": {
+        "passed": true,
+        "report": "../art/mission-portraits-v3/validation/loading-ntsc/report.json",
+        "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9"
+      },
+      "loading-pal": {
+        "passed": true,
+        "report": "../art/mission-portraits-v3/validation/loading-pal/report.json",
+        "rom_sha256": "17a43eb9eb69c34aff21bd398f2f4f3f7417769ef2c708d6c8db14c2f2d938e9"
+      }
+    },
+    "portrait_report": "../art/mission-portraits-v3/validation/report.json",
+    "native_checks_passed": true,
+    "previous_validation": {
+      "passed": true,
+      "date": "2026-10-23",
+      "rom": "../out/release/Plaguefall.bin",
+      "named_rom": "../out/release/Plaguefall.bin",
+      "rom_bytes": 1703936,
+      "text_bytes": 1664196,
+      "data_bytes": 148,
+      "bss_bytes": 18959,
+      "static_ram_bytes": 19107,
+      "emulator": "Genesis Plus GX",
+      "physical_hardware_tested": false,
+      "revision": "Dez retratos próprios de 32x32 para inimigos menores nas dicas e no guia",
+      "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9",
+      "checks": {
+        "interface-ntsc": {
+          "passed": true,
+          "report": "../art/mission-portraits-v2/validation/interface-ntsc/report.json",
+          "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9"
+        },
+        "interface-pal": {
+          "passed": true,
+          "report": "../art/mission-portraits-v2/validation/interface-pal/report.json",
+          "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9"
+        },
+        "loading-ntsc": {
+          "passed": true,
+          "report": "../art/mission-portraits-v2/validation/loading-ntsc/report.json",
+          "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9"
+        },
+        "loading-pal": {
+          "passed": true,
+          "report": "../art/mission-portraits-v2/validation/loading-pal/report.json",
+          "rom_sha256": "b3bbd0e3445a0bc370933d3b0ad6a95138d64272c73e5ff3f3662836517690d9"
+        }
+      },
+      "portrait_report": "../art/mission-portraits-v2/validation/report.json",
+      "native_checks_passed": true,
+      "previous_validation": {
+        "passed": true,
+        "date": "2026-10-23",
+        "revision": "Correção dos blindados integrada ao jogo atual e sala 6 de carga preparada",
+        "rom": "../out/release/Plaguefall.bin",
+        "named_rom": "../out/release/Plaguefall.bin",
+        "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+        "rom_bytes": 1703936,
+        "text_bytes": 1664196,
+        "data_bytes": 148,
+        "bss_bytes": 18959,
+        "static_ram_bytes": 19107,
+        "emulator": "Genesis Plus GX",
+        "physical_hardware_tested": false,
+        "checks": {
+          "ntsc": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/ntsc/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+            "cases": 12,
+            "performance_target_met": true,
+            "fps_min": 60.0,
+            "fps_max": 60.0
+          },
+          "pal": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/pal/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+            "cases": 12,
+            "performance_target_met": true,
+            "fps_min": 50.0,
+            "fps_max": 50.0
+          },
+          "long-ntsc": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/long-ntsc/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+            "cases": 2,
+            "performance_target_met": true,
+            "fps_min": 60.0,
+            "fps_max": 60.0
+          },
+          "load-room-ntsc": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/load-room-ntsc/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+            "cases": 6,
+            "performance_target_met": false,
+            "fps_min": 59.9,
+            "fps_max": 60.0
+          },
+          "load-room-pal": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/load-room-pal/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3",
+            "cases": 6,
+            "performance_target_met": true,
+            "fps_min": 50.0,
+            "fps_max": 50.0
+          },
+          "facing-ntsc": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/facing-ntsc/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3"
+          },
+          "facing-pal": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/facing-pal/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3"
+          },
+          "loading-ntsc": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/loading-ntsc/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3"
+          },
+          "loading-pal": {
+            "passed": true,
+            "report": "../art/beetle-performance-v1/validation/integrated-current/loading-pal/report.json",
+            "rom_sha256": "2f62a3b7e8062feb9e37711739ac86868e6615911d1cb721be2a1ab4e7623ae3"
+          }
+        },
+        "native_checks_passed": true,
+        "performance_report": "../art/beetle-performance-v1/validation/integrated-current/report.json",
+        "all_performance_targets_met": false,
+        "performance_limitation": "Sala 6 NTSC: grupo misto perdeu 3/1800 quadros (59,90 FPS); Fortaleza perdeu 1/1800 (59,9667 FPS). Padrão Baluarte 60 FPS. Matriz de combate 60/50 FPS e dois ensaios de cinco minutos a 60 FPS sem perdas.",
+        "previous_validation": {
+          "passed": true,
+          "date": "2026-10-23",
+          "revision": "Rádio com títulos dourados, descrições em cinza claro e contagem dourada; fundo contínuo e imagens dos inimigos preservados",
+          "rom": "../out/release/Plaguefall.bin",
+          "named_rom": "../out/release/Plaguefall.bin",
+          "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52",
+          "rom_bytes": 1572864,
+          "text_bytes": 1544812,
+          "data_bytes": 144,
+          "bss_bytes": 20156,
+          "static_ram_bytes": 20300,
+          "emulator": "Genesis Plus GX",
+          "physical_hardware_tested": false,
+          "checks": {
+            "loading-pal": {
+              "passed": true,
+              "report": "../art/radio-text-colors-v1/validation/loading-pal/report.json",
+              "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
+            },
+            "interface-ntsc": {
+              "passed": true,
+              "report": "../art/radio-text-colors-v1/validation/interface-ntsc/report.json",
+              "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
+            },
+            "loading-ntsc": {
+              "passed": true,
+              "report": "../art/radio-text-colors-v1/validation/loading-ntsc/report.json",
+              "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
+            },
+            "interface-pal": {
+              "passed": true,
+              "report": "../art/radio-text-colors-v1/validation/interface-pal/report.json",
+              "rom_sha256": "4b49a97fb7734a581c32c0cb454349eeb069325e9e2fac6907562193e685ac52"
+            }
+          },
+          "text_colors_report": "../art/radio-text-colors-v1/validation/report.json",
+          "native_checks_passed": true,
+          "previous_validation": {
+            "passed": true,
+            "date": "2026-10-22",
+            "revision": "Rádio contínuo entre conversa, missão, guia e contagem; conteúdo trocado em VBlank; retratos dos inimigos preservados",
+            "rom": "../out/release/Plaguefall.bin",
+            "named_rom": "../out/release/Plaguefall.bin",
+            "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc",
+            "rom_bytes": 1572864,
+            "text_bytes": 1544632,
+            "data_bytes": 144,
+            "bss_bytes": 20156,
+            "static_ram_bytes": 20300,
+            "emulator": "Genesis Plus GX",
+            "physical_hardware_tested": false,
+            "checks": {
+              "loading-pal": {
+                "passed": true,
+                "report": "../art/countdown-radio-v4/continuous/loading-pal/report.json",
+                "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+              },
+              "loading-ntsc-b": {
+                "passed": true,
+                "report": "../art/countdown-radio-v4/continuous/loading-ntsc-b/report.json",
+                "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+              },
+              "interface-ntsc": {
+                "passed": true,
+                "report": "../art/countdown-radio-v4/continuous/interface-ntsc/report.json",
+                "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+              },
+              "loading-pal-b": {
+                "passed": true,
+                "report": "../art/countdown-radio-v4/continuous/loading-pal-b/report.json",
+                "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+              },
+              "loading-ntsc": {
+                "passed": true,
+                "report": "../art/countdown-radio-v4/continuous/loading-ntsc/report.json",
+                "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+              },
+              "interface-pal": {
+                "passed": true,
+                "report": "../art/countdown-radio-v4/continuous/interface-pal/report.json",
+                "rom_sha256": "fd6e29e2b38c10fb3a8391ef7d017c1adaec95802801c0fe857c4fb24c4dd5dc"
+              }
+            },
+            "persistent_radio_report": "../art/countdown-radio-v4/continuous/report.json",
+            "native_checks_passed": true,
+            "clean_publish_source_native_checks_passed": true,
+            "clean_publish_source_build_rom_matches": true,
+            "previous_validation": {
+              "passed": true,
+              "date": "2026-10-22",
+              "revision": "Bolsa em toda derrota com fotografia pré-morte, recuperação por etapa sem piso 3 e sem bônus novos; sala 10 e Como jogar atualizados",
+              "rom": "../out/release/Plaguefall.bin",
+              "named_rom": "../out/release/Plaguefall.bin",
+              "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+              "rom_bytes": 1572864,
+              "text_bytes": 1537620,
+              "data_bytes": 148,
+              "bss_bytes": 20462,
+              "static_ram_bytes": 20610,
+              "emulator": "Genesis Plus GX",
+              "physical_hardware_tested": false,
+              "checks": {
+                "ntsc": {
+                  "passed": true,
+                  "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/ntsc/report.json",
+                  "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+                },
+                "pal": {
+                  "passed": true,
+                  "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/pal/report.json",
+                  "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+                },
+                "training_ntsc": {
+                  "passed": true,
+                  "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/training-ntsc/report.json",
+                  "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+                },
+                "training_pal": {
+                  "passed": true,
+                  "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/training-pal/report.json",
+                  "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+                },
+                "interface_ntsc": {
+                  "passed": true,
+                  "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/interface-ntsc/report.json",
+                  "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+                },
+                "interface_pal": {
+                  "passed": true,
+                  "report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/interface-pal/report.json",
+                  "rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b"
+                }
+              },
+              "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/native-checks.txt",
+              "native_checks_passed": true,
+              "previous_validation": {
+                "date": "2026-10-22",
+                "revision": "Sala 10: ensaio das três regras reais de morte por controles, equipamento configurável, contador e recuperação do bornal; regressão da sala 9 em NTSC/PAL",
+                "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+                "rom_bytes": 1572864,
+                "checks": {
+                  "training_ntsc": {
+                    "passed": true,
+                    "report": "../art/bolsa-recuperacao-v1/validation/training-ntsc/report.json",
+                    "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+                    "controller_only": true
+                  },
+                  "training_pal": {
+                    "passed": true,
+                    "report": "../art/bolsa-recuperacao-v1/validation/training-pal/report.json",
+                    "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+                    "controller_only": true
+                  },
+                  "room9_regression_ntsc": {
+                    "passed": true,
+                    "report": "../art/bolsa-recuperacao-v1/validation/room9-regression-ntsc/report.json",
+                    "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+                    "controller_only": true
+                  },
+                  "room9_regression_pal": {
+                    "passed": true,
+                    "report": "../art/bolsa-recuperacao-v1/validation/room9-regression-pal/report.json",
+                    "rom_sha256": "343d6c9fdebf5219ac2e0c61026dc0a8979ed60d1f4e329e573afcbba851411b",
+                    "controller_only": true
+                  }
+                },
+                "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/training-native-checks.txt",
+                "death_rules_report": "../art/bolsa-recuperacao-v1/validation/training-report.json",
+                "previous_validation": {
+                  "date": "2026-10-22",
+                  "revision": "Bornal de couro 16x16, regras de derrota por etapa e oito páginas de Como jogar; validação NTSC/PAL nas 20 fases/rotas",
+                  "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+                  "rom_bytes": 1572864,
+                  "checks": {
+                    "results_ntsc": {
+                      "passed": true,
+                      "report": "../art/bolsa-recuperacao-v1/validation/ntsc/report.json",
+                      "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+                      "localities": 20,
+                      "deathPolicyApplied": true,
+                      "bagPickupOnce": true,
+                      "bagReplacedOnNextDeath": true
+                    },
+                    "results_pal": {
+                      "passed": true,
+                      "report": "../art/bolsa-recuperacao-v1/validation/pal/report.json",
+                      "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+                      "localities": 20,
+                      "deathPolicyApplied": true,
+                      "bagPickupOnce": true,
+                      "bagReplacedOnNextDeath": true
+                    },
+                    "interface_ntsc": {
+                      "passed": true,
+                      "report": "../art/bolsa-recuperacao-v1/validation/interface-ntsc/report.json",
+                      "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+                      "localities": 20,
+                      "helpPages": 8
+                    },
+                    "interface_pal": {
+                      "passed": true,
+                      "report": "../art/bolsa-recuperacao-v1/validation/interface-pal/report.json",
+                      "rom_sha256": "50c4ae10af7842cf39d53b60737acb4a1491ac950c2c4eecf56dabd41f907dbc",
+                      "localities": 20,
+                      "helpPages": 8
+                    }
+                  },
+                  "native_audio_player_resources": "../art/bolsa-recuperacao-v1/validation/native-checks.txt",
+                  "death_rules_report": "../art/bolsa-recuperacao-v1/validation/report.json",
+                  "previous_validation": {
+                    "date": "2026-10-21",
+                    "revision": "Centred partial resistance result cards: defeat/retry, safe exit, objective completion, signal branches, final victory and new campaign",
+                    "rom_sha256": "3bfa4cbdc6dc076612cd7bd6817e1373547c9d2aae08c2eb3e98418308faf06e",
+                    "rom_bytes": 1310720,
+                    "checks": {
+                      "interface_ntsc": {
+                        "passed": true,
+                        "report": "../art/resultados-ux-v1/integracao/validation/interface-ntsc/report.json",
+                        "localities": 20,
+                        "helpPages": 6,
+                        "graphicsRestoredExactly": true,
+                        "simulationFrozen": true
+                      },
+                      "routemap_ntsc": {
+                        "passed": true,
+                        "report": "../art/resultados-ux-v1/integracao/validation/map-ntsc/report.json",
+                        "edges": 23,
+                        "completeHistories": 2,
+                        "maxOverlayTiles": 140
+                      },
+                      "interface_pal": {
+                        "passed": true,
+                        "report": "../art/resultados-ux-v1/integracao/validation/interface-pal/report.json",
+                        "localities": 20,
+                        "helpPages": 6,
+                        "graphicsRestoredExactly": true,
+                        "simulationFrozen": true
+                      },
+                      "routemap_pal": {
+                        "passed": true,
+                        "report": "../art/resultados-ux-v1/integracao/validation/map-pal/report.json",
+                        "edges": 23,
+                        "completeHistories": 2,
+                        "maxOverlayTiles": 140
+                      },
+                      "results_ntsc": {
+                        "passed": true,
+                        "report": "../art/resultados-ux-v1/integracao/validation/ntsc/report.json",
+                        "localities": 20,
+                        "samePhaseRetry": true,
+                        "equipmentReset": true,
+                        "routes": [
+                          "6A",
+                          "6B"
+                        ],
+                        "replayFullReset": true,
+                        "sandboxRetry": true
+                      },
+                      "results_pal": {
+                        "passed": true,
+                        "report": "../art/resultados-ux-v1/integracao/validation/pal/report.json",
+                        "localities": 20,
+                        "samePhaseRetry": true,
+                        "equipmentReset": true,
+                        "routes": [
+                          "6A",
+                          "6B"
+                        ],
+                        "replayFullReset": true,
+                        "sandboxRetry": true
+                      }
+                    },
+                    "map_limits": {
+                      "screen": [
+                        320,
+                        224
+                      ],
+                      "painting": [
+                        320,
+                        160
+                      ],
+                      "art_tiles": 800,
+                      "art_base": 101,
+                      "overlay_budget": 192,
+                      "overlay_max_observed": 140,
+                      "pin_tiles": 4,
+                      "pin_base": 1093,
+                      "font_base": 1440,
+                      "art_palettes": 2,
+                      "row_buffer_bytes": 1280,
+                      "borrowed_graphics_restored": true
+                    },
+                    "interface_limits": {
+                      "artTiles": 545,
+                      "artBase": 101,
+                      "scratchBase": 646,
+                      "scratchTiles": 112,
+                      "lastBorrowedTile": 757,
+                      "fontBase": 1440,
+                      "backgroundColors": 15,
+                      "artBytes": 17440,
+                      "graphicsSnapshotBytes": 32288,
+                      "snapshotLifetime": "allocated once for a panel and its help subpages, freed on exit",
+                      "simulationResetOnResume": false,
+                      "portrait": [
+                        48,
+                        48
+                      ],
+                      "dialogueWidth": 34,
+                      "dialogueRows": 4,
+                      "dialogueLineSpacing": 16,
+                      "dialogueLinesChecked": 51,
+                      "releaseShortcuts": "DEV_SHORTCUTS opt-in; disabled in production"
+                    },
+                    "result_limits": {
+                      "width": 256,
+                      "heights": {
+                        "defeat": 184,
+                        "exit": 152,
+                        "completion": 128,
+                        "victory": 176
+                      },
+                      "alignment": "exact pixel centre; original 8x8 glyphs",
+                      "fontMaskBytes": 768,
+                      "palette": "PAL2; actors hidden; original scenery PAL0/1/3 retained",
+                      "backgroundTileCap": 680,
+                      "maxBackgroundTilesObserved": 406,
+                      "cardTilesMax": 736,
+                      "lastTileLimit": 1431,
+                      "lastTileObserved": 1157,
+                      "temporaryCaptureBytesMax": 34048,
+                      "cardBufferBytes": 23552,
+                      "memoryLifetime": "capture buffers freed before card allocation; card freed on exit; object/floor patterns and actor cache rebuilt",
+                      "transientBloodDecals": "hidden with actors in mapped arenas",
+                      "inputGateMilliseconds": 350,
+                      "automaticSeconds": {
+                        "completion": 2,
+                        "signalLost": 3,
+                        "defeat": null,
+                        "final": null
+                      }
+                    },
+                    "native_audio_player_resources": "../art/resultados-ux-v1/integracao/validation/native-checks.txt",
+                    "previous_validation": "../art/resultados-ux-v1/integracao/validation/build-before.json"
+                  }
+                }
+              },
+              "footer": {
+                "coveredEdges": 23,
+                "body": "centered on 8px tile grid",
+                "actions": "right aligned, 8px margin",
+                "goldPalette": "PAL3, restored on exit",
+                "maxCharacters": 37,
+                "fontTilesAdded": 0,
+                "rows": [
+                  22,
+                  23,
+                  24,
+                  26
+                ],
+                "readyAndTravelValidated": true
+              },
+              "death_rules_report": "../art/bolsa-recuperacao-v1/validation/bag-rules-v2/report.json"
+            }
+          }
+        }
+      }
+    }
+  },
+  "player_shots_emulator": {
+    "passed": true,
+    "report": "../art/player-shots-v1/validation/report.json",
+    "cases": 29304,
+    "volleys": 29904,
+    "projectiles": 111120,
+    "incomplete_volleys": 0,
+    "ram_fixtures": true
+  }
+}

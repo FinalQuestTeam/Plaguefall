@@ -1,0 +1,51 @@
+{
+  "phase": "3",
+  "status": "accepted",
+  "status_label": "Aceitável nesta revisão visual",
+  "changes": [
+    "Faixa de chão acima dos telhados removida; fundo discreto e fachadas com janelas, portas e coberturas coerentes.",
+    "Cinco desvios principais alternados, incluindo o fim do percurso; carros e barricadas com silhuetas maiores.",
+    "Porta industrial do destino extraída da imagem completa do interior 4, ligando os dois lugares.",
+    "Igreja preservada pixel a pixel nos dois desfechos."
+  ],
+  "review": [
+    "Fundo separado da rua, fachadas reconhecíveis e carros com massa sólida sem halos.",
+    "Cinco desvios alternados percorridos por controle; chegada agora termina no portão industrial.",
+    "Igreja idêntica nos dois estados. Reuso de fachadas continua perceptível no panorama."
+  ],
+  "source": "../campaign-whole-scenes-v1/early/source/03-street.png",
+  "native": "../campaign-whole-scenes-v1/early/03-street/map-native.png",
+  "frames": [
+    {
+      "path": "../campaign-integrated-v1/early/ntsc/03-entry.png",
+      "label": "Entrada real · igreja original preservada"
+    },
+    {
+      "path": "../campaign-integrated-v1/early/ntsc/03-camera-sample-1.png",
+      "label": "Rua e barricadas no trecho central"
+    },
+    {
+      "path": "../campaign-integrated-v1/early/ntsc/03-traversal-complete.png",
+      "label": "Chegada real ao portão industrial"
+    }
+  ],
+  "movie": "../campaign-integrated-v1/early/ntsc/03-playtest-1.mp4",
+  "test_report": "../campaign-integrated-v1/early/ntsc/report.json",
+  "cycles": [
+    {
+      "cycle": 1,
+      "verdict": "Revisar",
+      "finding": "Detalhes em2px borravam fachadas ao lado da igreja nativa."
+    },
+    {
+      "cycle": 2,
+      "verdict": "Revisar chegada",
+      "finding": "Percurso e igreja funcionam; galpão ainda parecia outra casa e sobrava uma borda vazia."
+    },
+    {
+      "cycle": 3,
+      "verdict": "Aceitável",
+      "finding": "Portão da mesma fonte do interior 4 fecha a chegada; mapa e câmera real conferidos."
+    }
+  ]
+}

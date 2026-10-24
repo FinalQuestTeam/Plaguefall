@@ -1,0 +1,1207 @@
+{
+  "phase": "9",
+  "size": [
+    2560,
+    320
+  ],
+  "bounds": [
+    16,
+    96,
+    2543,
+    279
+  ],
+  "start": [
+    24,
+    216
+  ],
+  "solids": [
+    [
+      0,
+      0,
+      608,
+      96
+    ],
+    [
+      608,
+      0,
+      544,
+      104
+    ],
+    [
+      1152,
+      0,
+      656,
+      96
+    ],
+    [
+      1808,
+      0,
+      752,
+      104
+    ],
+    [
+      64,
+      32,
+      304,
+      160
+    ],
+    [
+      416,
+      208,
+      160,
+      104
+    ],
+    [
+      672,
+      24,
+      304,
+      160
+    ],
+    [
+      1048,
+      192,
+      72,
+      120
+    ],
+    [
+      1216,
+      32,
+      256,
+      120
+    ],
+    [
+      1424,
+      200,
+      304,
+      112
+    ],
+    [
+      1808,
+      224,
+      160,
+      88
+    ],
+    [
+      1840,
+      24,
+      160,
+      160
+    ],
+    [
+      2080,
+      224,
+      160,
+      88
+    ],
+    [
+      2288,
+      40,
+      24,
+      144
+    ],
+    [
+      2488,
+      40,
+      24,
+      144
+    ],
+    [
+      2312,
+      96,
+      176,
+      72
+    ]
+  ],
+  "route_points": [
+    [
+      32,
+      224
+    ],
+    [
+      392,
+      224
+    ],
+    [
+      392,
+      184
+    ],
+    [
+      616,
+      184
+    ],
+    [
+      640,
+      224
+    ],
+    [
+      1000,
+      224
+    ],
+    [
+      1000,
+      168
+    ],
+    [
+      1144,
+      168
+    ],
+    [
+      1184,
+      184
+    ],
+    [
+      1400,
+      184
+    ],
+    [
+      1752,
+      184
+    ],
+    [
+      1808,
+      208
+    ],
+    [
+      2032,
+      208
+    ],
+    [
+      2264,
+      208
+    ],
+    [
+      2512,
+      216
+    ]
+  ],
+  "point_semantics": "CENTERS; actor feet top-left=center−8",
+  "player_waypoints": [
+    [
+      24,
+      216
+    ],
+    [
+      384,
+      216
+    ],
+    [
+      384,
+      176
+    ],
+    [
+      608,
+      176
+    ],
+    [
+      632,
+      216
+    ],
+    [
+      992,
+      216
+    ],
+    [
+      992,
+      160
+    ],
+    [
+      1136,
+      160
+    ],
+    [
+      1176,
+      176
+    ],
+    [
+      1392,
+      176
+    ],
+    [
+      1744,
+      176
+    ],
+    [
+      1800,
+      200
+    ],
+    [
+      2024,
+      200
+    ],
+    [
+      2256,
+      200
+    ],
+    [
+      2504,
+      208
+    ]
+  ],
+  "pauses": [],
+  "exit": [
+    2480,
+    192,
+    64,
+    64
+  ],
+  "camera_player_y": 200,
+  "camera_interest": [
+    {
+      "id": "office-64",
+      "bbox": [
+        64,
+        32,
+        304,
+        160
+      ],
+      "center": [
+        216,
+        112
+      ],
+      "position": [
+        208,
+        208
+      ],
+      "preview": "reviews/camera-office-64.png"
+    },
+    {
+      "id": "utility-416",
+      "bbox": [
+        416,
+        208,
+        160,
+        104
+      ],
+      "center": [
+        496,
+        260
+      ],
+      "position": [
+        488,
+        184
+      ],
+      "preview": "reviews/camera-utility-416.png"
+    },
+    {
+      "id": "dock-672",
+      "bbox": [
+        672,
+        24,
+        304,
+        160
+      ],
+      "center": [
+        824,
+        104
+      ],
+      "position": [
+        816,
+        200
+      ],
+      "preview": "reviews/camera-dock-672.png"
+    },
+    {
+      "id": "truck-1048",
+      "bbox": [
+        1048,
+        192,
+        72,
+        120
+      ],
+      "center": [
+        1084,
+        252
+      ],
+      "position": [
+        1076,
+        168
+      ],
+      "preview": "reviews/camera-truck-1048.png"
+    },
+    {
+      "id": "machine-yard-1216",
+      "bbox": [
+        1216,
+        32,
+        256,
+        120
+      ],
+      "center": [
+        1344,
+        92
+      ],
+      "position": [
+        1336,
+        168
+      ],
+      "preview": "reviews/camera-machine-yard-1216.png"
+    },
+    {
+      "id": "warehouse-1424",
+      "bbox": [
+        1424,
+        200,
+        304,
+        112
+      ],
+      "center": [
+        1576,
+        256
+      ],
+      "position": [
+        1568,
+        176
+      ],
+      "preview": "reviews/camera-warehouse-1424.png"
+    },
+    {
+      "id": "utility-low-1808",
+      "bbox": [
+        1808,
+        224,
+        160,
+        88
+      ],
+      "center": [
+        1888,
+        268
+      ],
+      "position": [
+        1880,
+        200
+      ],
+      "preview": "reviews/camera-utility-low-1808.png"
+    },
+    {
+      "id": "tank-yard-1840",
+      "bbox": [
+        1840,
+        24,
+        160,
+        160
+      ],
+      "center": [
+        1920,
+        104
+      ],
+      "position": [
+        1912,
+        192
+      ],
+      "preview": "reviews/camera-tank-yard-1840.png"
+    },
+    {
+      "id": "utility-low-2080",
+      "bbox": [
+        2080,
+        224,
+        160,
+        88
+      ],
+      "center": [
+        2160,
+        268
+      ],
+      "position": [
+        2152,
+        200
+      ],
+      "preview": "reviews/camera-utility-low-2080.png"
+    },
+    {
+      "id": "gate-2288",
+      "bbox": [
+        2288,
+        40,
+        224,
+        144
+      ],
+      "center": [
+        2400,
+        112
+      ],
+      "position": [
+        2392,
+        200
+      ],
+      "preview": "reviews/camera-gate-2288.png"
+    }
+  ],
+  "sources": [
+    {
+      "path": "source/whole-folded-cycle3.png",
+      "sha256": "54107c326190e7f86af70aaa5b4680e1eca12afe57b2b6df223b087b196a9feb",
+      "authoring": "Whole folded scene built with native ImageGen by factory agent; source was reviewed internally before modular extraction; the user rejected the resulting scene."
+    }
+  ],
+  "memory": {
+    "scene_tiles": 540,
+    "objective_tiles": 0,
+    "total_tiles": 540,
+    "budget": 640,
+    "free_tiles": 100,
+    "graphics_bytes": 17280,
+    "map_bytes": 20480,
+    "palette_bytes": 32,
+    "collision_mask_words": 400,
+    "lossy_pattern_replacements": 0,
+    "pixel_exact_reassembly": true
+  },
+  "modules": [
+    {
+      "id": "blue-left",
+      "source_bbox": [
+        526,
+        6,
+        590,
+        142
+      ],
+      "size": [
+        32,
+        64
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "blue-run",
+      "source_bbox": [
+        730,
+        8,
+        762,
+        142
+      ],
+      "size": [
+        16,
+        64
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "blue-right",
+      "source_bbox": [
+        1070,
+        8,
+        1136,
+        142
+      ],
+      "size": [
+        32,
+        64
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "flat-left",
+      "source_bbox": [
+        64,
+        40,
+        104,
+        120
+      ],
+      "size": [
+        24,
+        56
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "flat-run",
+      "source_bbox": [
+        180,
+        40,
+        212,
+        120
+      ],
+      "size": [
+        16,
+        56
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "flat-right",
+      "source_bbox": [
+        284,
+        40,
+        324,
+        120
+      ],
+      "size": [
+        24,
+        56
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "wall",
+      "source_bbox": [
+        112,
+        170,
+        128,
+        186
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "cream",
+      "source_bbox": [
+        180,
+        304,
+        196,
+        320
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "plinth",
+      "source_bbox": [
+        100,
+        206,
+        132,
+        218
+      ],
+      "size": [
+        16,
+        8
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "office-window",
+      "source_bbox": [
+        110,
+        130,
+        145,
+        158
+      ],
+      "size": [
+        32,
+        24
+      ],
+      "grid": 1,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "office-door",
+      "source_bbox": [
+        150,
+        156,
+        198,
+        214
+      ],
+      "size": [
+        32,
+        40
+      ],
+      "grid": 1,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "blue-window",
+      "source_bbox": [
+        752,
+        1078,
+        804,
+        1102
+      ],
+      "size": [
+        40,
+        24
+      ],
+      "grid": 1,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "dock-door",
+      "source_bbox": [
+        606,
+        134,
+        688,
+        196
+      ],
+      "size": [
+        64,
+        48
+      ],
+      "grid": 1,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "roll-door",
+      "source_bbox": [
+        130,
+        1084,
+        224,
+        1138
+      ],
+      "size": [
+        64,
+        48
+      ],
+      "grid": 1,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "truck",
+      "source": "source/whole-folded-cycle3.png",
+      "source_bbox": [
+        924,
+        154,
+        1040,
+        336
+      ],
+      "size": [
+        72,
+        120
+      ],
+      "grid": 2,
+      "extraction_polygon_source_local": [
+        [
+          14,
+          0
+        ],
+        [
+          58,
+          0
+        ],
+        [
+          60,
+          8
+        ],
+        [
+          66,
+          20
+        ],
+        [
+          71,
+          32
+        ],
+        [
+          76,
+          46
+        ],
+        [
+          82,
+          64
+        ],
+        [
+          87,
+          80
+        ],
+        [
+          92,
+          90
+        ],
+        [
+          94,
+          96
+        ],
+        [
+          100,
+          100
+        ],
+        [
+          100,
+          111
+        ],
+        [
+          104,
+          119
+        ],
+        [
+          109,
+          121
+        ],
+        [
+          112,
+          126
+        ],
+        [
+          112,
+          137
+        ],
+        [
+          107,
+          140
+        ],
+        [
+          106,
+          165
+        ],
+        [
+          108,
+          174
+        ],
+        [
+          104,
+          181
+        ],
+        [
+          56,
+          181
+        ],
+        [
+          48,
+          180
+        ],
+        [
+          44,
+          173
+        ],
+        [
+          42,
+          163
+        ],
+        [
+          40,
+          150
+        ],
+        [
+          38,
+          140
+        ],
+        [
+          35,
+          123
+        ],
+        [
+          32,
+          109
+        ],
+        [
+          29,
+          96
+        ],
+        [
+          26,
+          80
+        ],
+        [
+          23,
+          65
+        ],
+        [
+          20,
+          48
+        ],
+        [
+          17,
+          30
+        ],
+        [
+          14,
+          10
+        ]
+      ],
+      "background": "RGB asphalt PAL5 before palette conversion; garage, bollards and partial crate excluded"
+    },
+    {
+      "id": "engine-body",
+      "source_bbox": [
+        680,
+        580,
+        922,
+        672
+      ],
+      "size": [
+        112,
+        40
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "pipe-arch",
+      "source_bbox": [
+        716,
+        520,
+        808,
+        614
+      ],
+      "size": [
+        40,
+        48
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "pipe-elbow",
+      "source_bbox": [
+        908,
+        592,
+        990,
+        708
+      ],
+      "size": [
+        32,
+        48
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "pipe-stack",
+      "source_bbox": [
+        1032,
+        584,
+        1118,
+        710
+      ],
+      "size": [
+        32,
+        48
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "tank-top",
+      "source_bbox": [
+        550,
+        974,
+        630,
+        1014
+      ],
+      "size": [
+        48,
+        24
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "tank-body",
+      "source_bbox": [
+        554,
+        1022,
+        630,
+        1046
+      ],
+      "size": [
+        48,
+        16
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "tank-foot",
+      "source_bbox": [
+        550,
+        1096,
+        630,
+        1128
+      ],
+      "size": [
+        48,
+        16
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "gate-post",
+      "source_bbox": [
+        864,
+        1004,
+        900,
+        1156
+      ],
+      "size": [
+        24,
+        144
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "gate-run",
+      "source_bbox": [
+        948,
+        1040,
+        980,
+        1148
+      ],
+      "size": [
+        16,
+        72
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "gate-header",
+      "source_bbox": [
+        932,
+        1028,
+        964,
+        1052
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "fence",
+      "source_bbox": [
+        232,
+        366,
+        264,
+        438
+      ],
+      "size": [
+        16,
+        40
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "foliage",
+      "source_bbox": [
+        332,
+        12,
+        396,
+        76
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "post",
+      "source_bbox": [
+        220,
+        358,
+        240,
+        442
+      ],
+      "size": [
+        16,
+        48
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "road",
+      "source_bbox": [
+        704,
+        1240,
+        720,
+        1256
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "pad",
+      "source_bbox": [
+        760,
+        280,
+        776,
+        296
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "curb",
+      "source_bbox": [
+        200,
+        430,
+        232,
+        438
+      ],
+      "size": [
+        16,
+        8
+      ],
+      "grid": 2,
+      "source": "source/whole-folded-cycle3.png"
+    },
+    {
+      "id": "dash",
+      "source_bbox": [
+        500,
+        430,
+        540,
+        438
+      ],
+      "size": [
+        24,
+        4
+      ],
+      "grid": 1,
+      "source": "source/whole-folded-cycle3.png"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "office",
+      "size": [
+        304,
+        160
+      ]
+    },
+    {
+      "id": "dock",
+      "size": [
+        304,
+        160
+      ]
+    },
+    {
+      "id": "warehouse",
+      "size": [
+        304,
+        112
+      ]
+    },
+    {
+      "id": "utility",
+      "size": [
+        160,
+        104
+      ]
+    },
+    {
+      "id": "utility-low",
+      "size": [
+        160,
+        88
+      ]
+    },
+    {
+      "id": "truck",
+      "size": [
+        72,
+        120
+      ]
+    },
+    {
+      "id": "machine-yard",
+      "size": [
+        256,
+        120
+      ]
+    },
+    {
+      "id": "tank-yard",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "gate",
+      "size": [
+        224,
+        144
+      ]
+    }
+  ],
+  "placements": [
+    [
+      "office",
+      64,
+      32
+    ],
+    [
+      "utility",
+      416,
+      208
+    ],
+    [
+      "dock",
+      672,
+      24
+    ],
+    [
+      "truck",
+      1048,
+      192
+    ],
+    [
+      "machine-yard",
+      1216,
+      32
+    ],
+    [
+      "warehouse",
+      1424,
+      200
+    ],
+    [
+      "utility-low",
+      1808,
+      224
+    ],
+    [
+      "tank-yard",
+      1840,
+      24
+    ],
+    [
+      "utility-low",
+      2080,
+      224
+    ],
+    [
+      "gate",
+      2288,
+      40
+    ]
+  ],
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "BFS_step": 8,
+    "connected_positions": 4239,
+    "all_points_reachable": true,
+    "swept16pxSamples": 2606,
+    "all_segments_collision_free": true
+  },
+  "complete": "complete-native.png",
+  "layout": "layout.png",
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "status": "candidate_requires_visual_review"
+}

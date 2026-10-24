@@ -1,0 +1,17 @@
+PASS 06a-bounds-atlas-ring-and-late-collision True
+PASS 06a-escort-death-outcome {'state': 3, 'objectiveFailed': False, 'expected': 'restart'}
+PASS 06a-player-death-priority True
+PASS 06a-full-controller-traversal {'seconds': 85.33, 'hp': 100, 'states': [0, 1, 2], 'combatDisabled': True, 'gateOpenScenario': False, 'ramWritesDuringTraversal': False}
+PASS 06a-stress [{'forcedEnemies': 3, 'enemyRoster': [4, 5], 'peakActive': 3, 'gameFPS': 56.67, 'meanCPULoadPct': 80.54, 'p95CPULoadPct': 103.52, 'playerShots': 4, 'enemyShots': 4, 'ramSetupEveryFrame': True, 'peakVisibleSprites': 22, 'busiestScanlineSprites': 6, 'busiestScanlinePixels': 104}, {'forcedEnemies': 3, 'enemyRoster': [4, 5], 'peakActive': 3, 'gameFPS': 55.0, 'meanCPULoadPct': 90.3, 'p95CPULoadPct': 112.4, 'playerShots': 6, 'enemyShots': 6, 'ramSetupEveryFrame': True, 'peakVisibleSprites': 26, 'busiestScanlineSprites': 6, 'busiestScanlinePixels': 104}, {'forcedEnemies': 4, 'enemyRoster': [4, 5], 'peakActive': 4, 'gameFPS': 55.0, 'meanCPULoadPct': 94.45, 'p95CPULoadPct': 115.97, 'playerShots': 6, 'enemyShots': 6, 'ramSetupEveryFrame': True, 'peakVisibleSprites': 27, 'busiestScanlineSprites': 6, 'busiestScanlinePixels': 104}, {'forcedEnemies': 8, 'enemyRoster': [4, 5], 'peakActive': 8, 'gameFPS': 29.33, 'meanCPULoadPct': 118.36, 'p95CPULoadPct': 140.82, 'playerShots': 6, 'enemyShots': 6, 'ramSetupEveryFrame': True, 'peakVisibleSprites': 30, 'busiestScanlineSprites': 9, 'busiestScanlinePixels': 104}, {'forcedEnemies': 16, 'enemyRoster': [4, 5], 'peakActive': 16, 'gameFPS': 29.67, 'meanCPULoadPct': 179.32, 'p95CPULoadPct': 201.27, 'playerShots': 6, 'enemyShots': 6, 'ramSetupEveryFrame': True, 'peakVisibleSprites': 37, 'busiestScanlineSprites': 10, 'busiestScanlinePixels': 112}]
+PASS 06a-ordinary-stationary-defense {'seconds': 45.0, 'state': 1, 'playerHP': 92, 'dinorahHP': 90, 'peakEnemies': 2, 'gameFPS': 59.51, 'ramWrites': False, 'limitation': 'stationary shooting probe, not a completed combat escort'}
+PASS 06b-bounds-atlas-ring-and-late-collision True
+Traceback (most recent call last):
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/test_campaign_escorts_emulator.py", line 408, in <module>
+    if __name__=='__main__':main()
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/test_campaign_escorts_emulator.py", line 262, in main
+    verify_gate_pixels(i,gx,gy);shot(key+'-portao-'+str(i+1)+'-colapso');sawFinal=True
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/test_campaign_escorts_emulator.py", line 235, in verify_gate_pixels
+    def verify_gate_pixels(slot,gx,gy):return verify_object_pixels(slot)
+  File "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/test_campaign_escorts_emulator.py", line 231, in verify_object_pixels
+    assert vr((attr&2047)*32,32)==expected,('mechanism pixel mismatch',slot,art,frame,tx,ty,attr&2047)
+AssertionError: ('mechanism pixel mismatch', 0, 5, 5, 1, 4, 1355)

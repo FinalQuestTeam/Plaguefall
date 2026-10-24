@@ -1,0 +1,364 @@
+{
+  "method": "Existing corrected combat source pose; no new generation or redrawing",
+  "enemy_art_directory": "art/cangaco-insects-sized-v3",
+  "transforms": [
+    "existing pose extraction",
+    "nearest-neighbour resize",
+    "centering",
+    "existing combat palette indexing"
+  ],
+  "canvas": [
+    32,
+    32
+  ],
+  "maximum_silhouette": [
+    30,
+    30
+  ],
+  "palette": "res/insects/palette.bin",
+  "new_art_generated": false,
+  "pixel_identical_to_smaller_combat_frame": false,
+  "note": "Same authored pose at a different resolution, not identical native pixels.",
+  "assets": [
+    {
+      "id": "sq_red",
+      "name": "Torreão",
+      "source": "art/cangaco-insects-sized-v3/originals/sq_red.png",
+      "source_sha256": "22edd6e2c5aa90cbbc9bd1f537324c92a5a7adbeb1ee07ef2b3ee9f77584a95b",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        38,
+        711,
+        202,
+        862
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        164,
+        151
+      ],
+      "source_pose_rgba_sha256": "ea3da8514a733d7b82537410c2394caca6575e648a11c33ff09a94e799af354d",
+      "fitted_size": [
+        30,
+        28
+      ],
+      "canvas_position": [
+        1,
+        2
+      ],
+      "combat_native_size": 16,
+      "combat_frame_sha256": "5d868aa50450205ac56d816ff073fc994b71b7b8515e7f122fa8e18db4147c89",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "07481347b757b2ea9dbac79fd94564886fb1f2d1c391cb7f614fc777d2ec1266"
+    },
+    {
+      "id": "sq_yellow",
+      "name": "Batedor",
+      "source": "art/cangaco-insects-sized-v3/originals/sq_yellow-se-direction-fix.png",
+      "source_sha256": "4f0cbd65f23b27974cc4a84373794fa2c881085bb2bb322f9ae84ae8feb262ca",
+      "source_row_override": true,
+      "source_pose_bounds": [
+        52,
+        256,
+        341,
+        474
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        289,
+        218
+      ],
+      "source_pose_rgba_sha256": "bd4adc150076d300ff81cdc163de23ced46651cae3380a6c8b511d0c97d1e952",
+      "fitted_size": [
+        30,
+        23
+      ],
+      "canvas_position": [
+        1,
+        4
+      ],
+      "combat_native_size": 16,
+      "combat_frame_sha256": "f4a634d7c6106b17401d5d30c4ab5f3c28bf253b344c5289a72623ee7f772ab6",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "971498689e3fae7c7bb1bebc04b393eca0d57680f67eb144f807b9cc5868cf0d"
+    },
+    {
+      "id": "sq_orange",
+      "name": "Aríete",
+      "source": "art/cangaco-insects-sized-v3/originals/sq_orange.png",
+      "source_sha256": "e1dbb3ca36ab94caf678f4578481d1d237e802bcab3bf8a6e1e254ee7dd2db20",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        32,
+        704,
+        215,
+        868
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        183,
+        164
+      ],
+      "source_pose_rgba_sha256": "0943a47660fe2e2cd8a3b28cd491da9fc208025296d24b355bd13e069197ca39",
+      "fitted_size": [
+        30,
+        27
+      ],
+      "canvas_position": [
+        1,
+        2
+      ],
+      "combat_native_size": 16,
+      "combat_frame_sha256": "09c74b03a53de14410a0e3616dec49572f739a7f2e89edf560ac43cec65a8118",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "3e2fab89b71584ed524491cee4051cbabb6e8579d1ae3dbfa016e16adc5c6429"
+    },
+    {
+      "id": "tri_red",
+      "name": "Fuzileiro",
+      "source": "art/cangaco-insects-sized-v3/originals/tri_red.png",
+      "source_sha256": "c1472846bf50d03121b8a4f637ef2c23decb7310f84a1d440b2de2bcfa45a526",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        41,
+        704,
+        218,
+        871
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        177,
+        167
+      ],
+      "source_pose_rgba_sha256": "af8884ef88c447a4836eac8f5b15da6996706c405216f2666aa445ecef171369",
+      "fitted_size": [
+        30,
+        28
+      ],
+      "canvas_position": [
+        1,
+        2
+      ],
+      "combat_native_size": 16,
+      "combat_frame_sha256": "e9596377f3ac7b854b81167bebad8f3747400c83d34bcf8d6bd0de05731c2087",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "33deada0f66109d055dbcf8e0b84ba9056a2403f79082260a64820397b9c3793"
+    },
+    {
+      "id": "tri_yellow",
+      "name": "Caçador",
+      "source": "art/cangaco-insects-sized-v3/originals/tri_yellow.png",
+      "source_sha256": "b90b3a0433c49429abd692f7f034cf42e26fbca605dd7a000f304ed30396c1b7",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        48,
+        704,
+        213,
+        871
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        165,
+        167
+      ],
+      "source_pose_rgba_sha256": "2aafa610a6ea5422439051e1309572342730fa97a11aad8567626276e6e7d8de",
+      "fitted_size": [
+        30,
+        30
+      ],
+      "canvas_position": [
+        1,
+        1
+      ],
+      "combat_native_size": 16,
+      "combat_frame_sha256": "822010ab77634795ed7a01054cb9f01a44656fb01b9ba33a2eb2563ad36e9206",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "03ba5e9a91ae40fa696d3d324160a304e37fe94e14aa7c5dd954a606bb2e117f"
+    },
+    {
+      "id": "tri_purple",
+      "name": "Escudeiro",
+      "source": "art/cangaco-insects-sized-v3/originals/tri_purple.png",
+      "source_sha256": "ac20375fb2e9f2c2608bd14f569915721c2365704205841505f3ca73400aff6a",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        40,
+        698,
+        207,
+        864
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        167,
+        166
+      ],
+      "source_pose_rgba_sha256": "e9b151dac30a13938ed7eee0b922c2300bf7d88b51aecd60046336cbe9579c34",
+      "fitted_size": [
+        30,
+        30
+      ],
+      "canvas_position": [
+        1,
+        1
+      ],
+      "combat_native_size": 16,
+      "combat_frame_sha256": "cee72a24529b984a8db330896f5721aab73c29bdf2981c4ebdd3dc103f8b0cff",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "7a971081652ccd3486c9112e039f8171099b083c191d45e4827b0374b5caebab"
+    },
+    {
+      "id": "tri_orange",
+      "name": "Adaga",
+      "source": "art/cangaco-insects-sized-v3/originals/tri_orange.png",
+      "source_sha256": "b4c1b132ac88087712192715cc14c1ed9b7a0686150aee3ddf1ef7e425c48928",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        59,
+        697,
+        203,
+        853
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        144,
+        156
+      ],
+      "source_pose_rgba_sha256": "973fdb41151e6216e097af36a3a0cb386ef6c84f80be9414e902b3f0da3b3583",
+      "fitted_size": [
+        28,
+        30
+      ],
+      "canvas_position": [
+        2,
+        1
+      ],
+      "combat_native_size": 16,
+      "combat_frame_sha256": "bd3a40a539bae3fff7c6c42149ace24ea281844dfcbcdb0347832de2fc8ff394",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "cb27123937d9cad2ca6a53a3dad323668692a9602fb9ca8c64ccce6727a56ce1"
+    },
+    {
+      "id": "pen_red",
+      "name": "Artilheiro",
+      "source": "art/cangaco-insects-sized-v3/originals/pen_red.png",
+      "source_sha256": "18d264357e64d47e9bbd511b443640d24cde950ed4dba61d62aeb1f6a48a8181",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        40,
+        716,
+        199,
+        865
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        159,
+        149
+      ],
+      "source_pose_rgba_sha256": "a723bbd34a8c29349f595d99502c7c6706fa2fde070fd9b1677fe8bc20b0b4bd",
+      "fitted_size": [
+        30,
+        28
+      ],
+      "canvas_position": [
+        1,
+        2
+      ],
+      "combat_native_size": 24,
+      "combat_frame_sha256": "6fea14629b1aeaca52f607714c16c342d87c4388bd8661c5ffa8939e6c83033f",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "85182ffe6d2ba32777f691884140b84edc43fcd629213c185c90b6ca63c2353b"
+    },
+    {
+      "id": "pen_yellow",
+      "name": "Alcateia",
+      "source": "art/cangaco-insects-sized-v3/originals/pen_yellow.png",
+      "source_sha256": "5566e57f827993c5b074563fbf2bbbfcc3a3134c5cb7a29c1512536b05a2dbce",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        53,
+        723,
+        212,
+        858
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        159,
+        135
+      ],
+      "source_pose_rgba_sha256": "096e018b96a8b61fbcf33bc1a1a216b0874be9508dbe46ecaabb190ae23346a1",
+      "fitted_size": [
+        30,
+        25
+      ],
+      "canvas_position": [
+        1,
+        3
+      ],
+      "combat_native_size": 24,
+      "combat_frame_sha256": "4efe386f149c403e9393451e733a2785904b79cfb4492536ef112511b0fd7eca",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "0f597e1f9ae07460a2f6425a208351cd14e335a6c9c998aeaa86cca318b42374"
+    },
+    {
+      "id": "pen_orange",
+      "name": "Meteoro",
+      "source": "art/cangaco-insects-sized-v3/originals/pen_orange.png",
+      "source_sha256": "ae68670c814745aa92f39f143424b08eb144778b14d41adeaa1655c38a2962e8",
+      "source_row_override": false,
+      "source_pose_bounds": [
+        42,
+        726,
+        197,
+        876
+      ],
+      "direction": "SE",
+      "direction_index": 3,
+      "pose": 0,
+      "horizontal_flip": false,
+      "source_pose_size": [
+        155,
+        150
+      ],
+      "source_pose_rgba_sha256": "951d6bdcb071f44d547efd362f9ced8c317851b1accdf70c303bc176113641de",
+      "fitted_size": [
+        30,
+        29
+      ],
+      "canvas_position": [
+        1,
+        1
+      ],
+      "combat_native_size": 24,
+      "combat_frame_sha256": "35a1c173186aea98f8be7d61f9f36d887bf42dda6fee00c02c55757aa40fdb2f",
+      "combat_frame_matches_runtime_bank": true,
+      "portrait_pixel_sha256": "190585de409841230edb75936255266b03b351dea423b6c0b33b014078ad18e8"
+    }
+  ]
+}

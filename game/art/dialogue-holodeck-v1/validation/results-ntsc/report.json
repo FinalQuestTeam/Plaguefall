@@ -1,0 +1,211 @@
+{
+  "passed": true,
+  "romSHA256": "d0eb603294a2f6ae67766b1ff6ee8c29215f9147168b43dca524822633b089a2",
+  "region": "NTSC",
+  "setup": "RAM selects phases, seeds resources, stabilises shimmer before capture, injects lethal projectile and accelerates counters/boss. Actual result entry, drawing, menu navigation, resets and route transitions run through production code. No ROM patch.",
+  "defeatPhases": [
+    {
+      "id": "1",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "2A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "2B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "3",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "4",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "5",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "6A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "6B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "7",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "8",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "9",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "10A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "10B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "11",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "12",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "13A",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "13B",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "14",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "15",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    },
+    {
+      "id": "16",
+      "backgroundUnchanged": true,
+      "simulationFrozen": true,
+      "retrySamePhase": true,
+      "resetLifePowerSpeed": true,
+      "pauseAfterRetry": true
+    }
+  ],
+  "failures": [],
+  "maxBackgroundTiles": 439,
+  "lastTileObserved": 1190,
+  "equipmentReset": true,
+  "heldFireDoesNotConfirm": true,
+  "confirmedTitleExit": true,
+  "transitions": [
+    {
+      "name": "gameplay-to-completion",
+      "frames": 39,
+      "blackIntervals": 0,
+      "blackFrames": 0
+    },
+    {
+      "name": "completion-to-map-or-radio",
+      "frames": 87,
+      "blackIntervals": 1,
+      "blackFrames": 74
+    },
+    {
+      "name": "map-to-arrival-radio",
+      "frames": 168,
+      "blackIntervals": 1,
+      "blackFrames": 36
+    },
+    {
+      "name": "radio-to-mission",
+      "frames": 70,
+      "blackIntervals": 1,
+      "blackFrames": 21
+    }
+  ],
+  "completionConfirmation": true,
+  "mapWaitsForInput": true,
+  "protectionRoutes": [
+    "6A",
+    "6B"
+  ],
+  "waitsForConfirmation": true,
+  "sandboxRetry": true,
+  "finalWaits": true,
+  "replayFullReset": true,
+  "finalStartTitle": true
+}

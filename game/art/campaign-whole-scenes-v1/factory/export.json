@@ -1,0 +1,128 @@
+{
+  "method": "ImageGen full scenes FIRST; large coherent architectural modules extracted AFTER; exact bit-identical flip deduplication only",
+  "arbitrary_tile_replacements": 0,
+  "scenes": {
+    "factory": {
+      "source": "factory-cycle1-complete.png",
+      "source_size": [
+        768,
+        384
+      ],
+      "pixel_grid": 1,
+      "architecture_source": [
+        48,
+        0,
+        208,
+        112
+      ],
+      "architecture_sectors": 3,
+      "floor_plate": [
+        80,
+        248,
+        8,
+        8
+      ],
+      "conveyor_positions": [
+        [
+          232,
+          200
+        ],
+        [
+          488,
+          200
+        ]
+      ],
+      "conveyor_size": [
+        160,
+        40
+      ],
+      "pipe_connections": [
+        [
+          128,
+          96,
+          16,
+          112
+        ],
+        [
+          352,
+          96,
+          16,
+          112
+        ],
+        [
+          576,
+          96,
+          16,
+          112
+        ]
+      ],
+      "lower_architecture": true,
+      "size": [
+        768,
+        384
+      ],
+      "tiles": 476,
+      "budget": 490,
+      "exact_reused_tiles": 4132,
+      "tile_decode_pixel_identical": true,
+      "source_sha256": "51900ebb3143eb332ef7c74211717c365664faca35b3ddd9c9533e0ecb87a828"
+    },
+    "street": {
+      "source": "street-cycle1-complete.png",
+      "source_size": [
+        1280,
+        512
+      ],
+      "pixel_grid": 1,
+      "architecture_source": [
+        56,
+        0,
+        208,
+        224
+      ],
+      "architecture_sectors": [
+        "brick workshops",
+        "loading docks",
+        "tank farm and factory gate"
+      ],
+      "floor_plate": [
+        352,
+        280,
+        1,
+        1
+      ],
+      "obstacle_positions": [
+        [
+          456,
+          160
+        ],
+        [
+          1000,
+          192
+        ],
+        [
+          1544,
+          160
+        ],
+        [
+          2088,
+          192
+        ]
+      ],
+      "obstacle_size": [
+        80,
+        40
+      ],
+      "floor_rectangular_cutouts": false,
+      "size": [
+        2560,
+        320
+      ],
+      "tiles": 627,
+      "budget": 640,
+      "exact_reused_tiles": 12173,
+      "tile_decode_pixel_identical": true,
+      "source_sha256": "8766043334e9f63fedbdbe222621289ea97508ce3c2038e968735eb2a9691c73"
+    }
+  }
+}

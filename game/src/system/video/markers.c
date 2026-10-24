@@ -9,6 +9,23 @@
 #include "routes.h"
 #define BASE (TILE_USER_INDEX+ENEMY_ICON_BASE+180)
 typedef char badges_fit_between_countdown_and_shots[(GAME_MARKER_TILES<=45)?1:-1];
+static u32 pulseTimer=0xffffffffUL;
+static u16 pulseRate,pulseOffset,pulsePhase;
+static u16 pulse(void)
+{
+    const u32 now=vtimer;
+    if(now!=pulseTimer || fps!=pulseRate) {
+        const u16 half=fps/2,period=half*2;
+        // Preserve the exact absolute-vtimer animation. Normal consecutive
+        // frames advance its remainder without a software32-bit divide.
+        if(fps==pulseRate && now>=pulseTimer && now-pulseTimer<period) {
+            pulsePhase+=(u16)(now-pulseTimer);
+            if(pulsePhase>=period)pulsePhase-=period;
+        } else pulsePhase=now%period;
+        pulseOffset=pulsePhase>=half ? 4 : 0;pulseTimer=now;pulseRate=fps;
+    }
+    return pulseOffset;
+}
 void MARKERS_load(void){VDP_loadTileData((const u32 *)game_markers,BASE,GAME_MARKER_TILES,DMA);}
 u16 MARKERS_hudArrow(s16 dx,s16 dy)
 {
@@ -20,9 +37,9 @@ const u32 *MARKERS_iconData(u16 symbol)
 }
 static void arrow(u16 *n,s16 x,s16 y,u16 direction)
 {
-    const u16 pulse=((vtimer/(fps/2))&1)*4;
+    const u16 offset=pulse();
     const bool vertical=direction==MARKER_HUD_S || direction==MARKER_HUD_N;
-    SPRITES_emit(n,x,y,SPRITE_SIZE(2,2),TILE_ATTR_FULL(PAL1,TRUE,direction==MARKER_HUD_N,direction==MARKER_HUD_W,BASE+(vertical ? 8 : 0)+pulse));
+    SPRITES_emit(n,x,y,SPRITE_SIZE(2,2),TILE_ATTR_FULL(PAL1,TRUE,direction==MARKER_HUD_N,direction==MARKER_HUD_W,BASE+(vertical ? 8 : 0)+offset));
 }
 void MARKERS_destination(u16 *n,s16 centerX,s16 centerY)
 {
@@ -45,5 +62,5 @@ void MARKERS_alert(u16 *n,s16 centerX,s16 feetY)
     if(x>cameraX+300)x=cameraX+300;
     if(y<top)y=top;
     if(y>cameraY+204)y=cameraY+204;
-    SPRITES_emit(n,x,y,SPRITE_SIZE(2,2),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,BASE+16+((vtimer/(fps/2))&1)*4));
+    SPRITES_emit(n,x,y,SPRITE_SIZE(2,2),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,BASE+16+pulse()));
 }

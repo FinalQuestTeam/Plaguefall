@@ -1,0 +1,2018 @@
+{
+  "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "scope": "19 variantes da campanha, todas reavaliadas sem aprovação herdada",
+  "method": "Imagens completas reconstruídas dos pixels nativos e sprites exportados nas posições estáticas do runtime; overlays de geometria em arquivo separado. Capturas reais são a prova do enquadramento e da profundidade dos atores. Nenhuma imagem nova de conceito substitui o cenário real.",
+  "runtime_art_changed": false,
+  "sprite_ground_placement": "objectivegfx.c: x=(centerX-width/2)/8*8; y=(centerY-height+8)/8*8. Sprites móveis usam projeção16px.",
+  "phases": [
+    {
+      "phase": "1",
+      "node": 1,
+      "name": "Pátio da igreja",
+      "goal": "Sobreviver 90 s",
+      "group": "early",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/1-background.png",
+      "complete": "maps/1-complete.png",
+      "layout": "layouts/1.png",
+      "bounds": [
+        16,
+        112,
+        495,
+        367
+      ],
+      "solids": [
+        [
+          48,
+          104,
+          72,
+          8,
+          false
+        ],
+        [
+          272,
+          96,
+          56,
+          8,
+          false
+        ]
+      ],
+      "start": [
+        256,
+        160
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/1-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/early/ntsc/01-entry.png"
+        },
+        {
+          "path": "frames/1-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/early/pal/01-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-composition-forensic-v1/maps/1-background.png",
+      "native_sha256": "8f8fae9e9c9546f78fd0b952f70f1b2cdf33e592a37cf4e7a099e4a4a9ec4a90"
+    },
+    {
+      "phase": "2A",
+      "node": 2,
+      "name": "Igreja preservada",
+      "goal": "Eliminar 15 insetos",
+      "group": "early",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/2A-background.png",
+      "complete": "maps/2A-complete.png",
+      "layout": "layouts/2A.png",
+      "bounds": [
+        16,
+        112,
+        495,
+        367
+      ],
+      "solids": [
+        [
+          48,
+          104,
+          72,
+          8,
+          false
+        ],
+        [
+          272,
+          96,
+          56,
+          8,
+          false
+        ]
+      ],
+      "start": [
+        256,
+        160
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/2A-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/early/ntsc/02A-entry.png"
+        },
+        {
+          "path": "frames/2A-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/early/pal/02A-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-composition-forensic-v1/maps/2A-background.png",
+      "native_sha256": "8f8fae9e9c9546f78fd0b952f70f1b2cdf33e592a37cf4e7a099e4a4a9ec4a90"
+    },
+    {
+      "phase": "2B",
+      "node": 3,
+      "name": "Igreja destruída",
+      "goal": "Eliminar 15 insetos; entulho sólido",
+      "group": "early",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/2B-background.png",
+      "complete": "maps/2B-complete.png",
+      "layout": "layouts/2B.png",
+      "bounds": [
+        16,
+        112,
+        495,
+        367
+      ],
+      "solids": [
+        [
+          48,
+          104,
+          72,
+          8,
+          false
+        ],
+        [
+          272,
+          96,
+          56,
+          8,
+          false
+        ],
+        [
+          168,
+          152,
+          40,
+          16,
+          false
+        ],
+        [
+          320,
+          224,
+          40,
+          16,
+          false
+        ],
+        [
+          80,
+          288,
+          40,
+          16,
+          false
+        ]
+      ],
+      "start": [
+        256,
+        160
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/2B-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/early/ntsc/02B-entry.png"
+        },
+        {
+          "path": "frames/2B-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/early/pal/02B-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-composition-forensic-v1/maps/2B-background.png",
+      "native_sha256": "7619ba741fdf45d0bb6af4d6bf0c80f132d4c7b4538416f0747bed75cd9662f1"
+    },
+    {
+      "phase": "3",
+      "node": 4,
+      "name": "Rua ao galpão",
+      "goal": "Percorrer 2560 px com desvios e cobertura",
+      "group": "early",
+      "size": [
+        2560,
+        320
+      ],
+      "background": "maps/3-background.png",
+      "complete": "maps/3-complete.png",
+      "layout": "layouts/3.png",
+      "bounds": [
+        16,
+        176,
+        2543,
+        303
+      ],
+      "solids": [
+        [
+          288,
+          208,
+          80,
+          40,
+          true
+        ],
+        [
+          312,
+          176,
+          32,
+          32,
+          true
+        ],
+        [
+          856,
+          224,
+          80,
+          40,
+          true
+        ],
+        [
+          880,
+          264,
+          32,
+          40,
+          true
+        ],
+        [
+          1336,
+          208,
+          80,
+          40,
+          true
+        ],
+        [
+          1360,
+          176,
+          32,
+          32,
+          true
+        ],
+        [
+          1792,
+          224,
+          80,
+          40,
+          true
+        ],
+        [
+          1816,
+          264,
+          32,
+          40,
+          true
+        ],
+        [
+          2248,
+          208,
+          80,
+          40,
+          true
+        ],
+        [
+          2272,
+          176,
+          32,
+          32,
+          true
+        ],
+        [
+          648,
+          240,
+          32,
+          8,
+          false
+        ],
+        [
+          1104,
+          184,
+          32,
+          8,
+          false
+        ],
+        [
+          1576,
+          256,
+          32,
+          8,
+          false
+        ],
+        [
+          2040,
+          184,
+          32,
+          8,
+          false
+        ]
+      ],
+      "start": [
+        48,
+        176
+      ],
+      "objects": [],
+      "special_states": [
+        {
+          "label": "Igreja em ruínas",
+          "path": "maps/3-ruined-complete.png"
+        }
+      ],
+      "frames": [
+        {
+          "path": "frames/3-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-entry.png"
+        },
+        {
+          "path": "frames/3-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/early/pal/03-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/early/03-street/map-native.png",
+      "native_sha256": "dab6e615bcd2b73a3b31574f36126f8afba696c49620fdd0140bfe017f36142b"
+    },
+    {
+      "phase": "4",
+      "node": 5,
+      "name": "Interior do galpão",
+      "goal": "Eliminar 20 insetos",
+      "group": "early",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/4-background.png",
+      "complete": "maps/4-complete.png",
+      "layout": "layouts/4.png",
+      "bounds": [
+        32,
+        128,
+        479,
+        351
+      ],
+      "solids": [
+        [
+          104,
+          216,
+          80,
+          32,
+          true
+        ],
+        [
+          336,
+          264,
+          88,
+          32,
+          true
+        ]
+      ],
+      "start": [
+        48,
+        144
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/4-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/early/ntsc/04-entry.png"
+        },
+        {
+          "path": "frames/4-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/early/pal/04-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/early/04-warehouse/map-native.png",
+      "native_sha256": "bc4abd87fe9e6664cec4783b3e3af6bf2a8e3036f26e018eaf9be91d4c760dc4"
+    },
+    {
+      "phase": "5",
+      "node": 6,
+      "name": "Sinal na Santa",
+      "goal": "Proteger 120 s",
+      "group": "early",
+      "size": [
+        384,
+        384
+      ],
+      "background": "maps/5-background.png",
+      "complete": "maps/5-complete.png",
+      "layout": "layouts/5.png",
+      "bounds": [
+        16,
+        96,
+        367,
+        367
+      ],
+      "solids": [
+        [
+          176,
+          176,
+          40,
+          48,
+          false
+        ]
+      ],
+      "start": [
+        64,
+        288
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/5-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/early/ntsc/05-entry.png"
+        },
+        {
+          "path": "frames/5-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/early/pal/05-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-composition-forensic-v1/maps/5-background.png",
+      "native_sha256": "8fd85c956ef8c7696afaa1160c8b7e510db637eceef2054fac73d28186e55c62"
+    },
+    {
+      "phase": "6A",
+      "node": 7,
+      "name": "Esgotos",
+      "goal": "Escolta 3072 px",
+      "group": "escorts",
+      "size": [
+        3072,
+        320
+      ],
+      "background": "maps/6A-background.png",
+      "complete": "maps/6A-complete.png",
+      "layout": "layouts/6A.png",
+      "bounds": [
+        16,
+        192,
+        3055,
+        303
+      ],
+      "solids": [
+        [
+          352,
+          96,
+          160,
+          64
+        ],
+        [
+          800,
+          240,
+          176,
+          64
+        ],
+        [
+          1376,
+          96,
+          160,
+          64
+        ],
+        [
+          1824,
+          240,
+          176,
+          64
+        ],
+        [
+          2400,
+          96,
+          160,
+          64
+        ],
+        [
+          2656,
+          240,
+          112,
+          64
+        ]
+      ],
+      "start": [
+        48,
+        208
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/6A-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06a-entrada.png"
+        },
+        {
+          "path": "frames/6A-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/escorts/pal/06a-entrada.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/routes/06a-native-complete.png",
+      "native_sha256": "b66047f6c1b37cabfb943354d7d1e967e3c9010e70498c40bd8e2d31ccc84e6c"
+    },
+    {
+      "phase": "6B",
+      "node": 8,
+      "name": "Esgotos sob pressão",
+      "goal": "Escolta 3072 px;2 válvulas e 2 portões",
+      "group": "escorts",
+      "size": [
+        3072,
+        320
+      ],
+      "background": "maps/6B-background.png",
+      "complete": "maps/6B-complete.png",
+      "layout": "layouts/6B.png",
+      "bounds": [
+        16,
+        192,
+        3055,
+        303
+      ],
+      "solids": [
+        [
+          352,
+          96,
+          128,
+          64
+        ],
+        [
+          768,
+          240,
+          144,
+          64
+        ],
+        [
+          1376,
+          96,
+          144,
+          64
+        ],
+        [
+          1792,
+          240,
+          144,
+          64
+        ],
+        [
+          2400,
+          96,
+          160,
+          64
+        ],
+        [
+          1008,
+          192,
+          32,
+          16
+        ],
+        [
+          1008,
+          272,
+          32,
+          32
+        ],
+        [
+          2032,
+          192,
+          32,
+          16
+        ],
+        [
+          2032,
+          272,
+          32,
+          32
+        ],
+        [
+          2656,
+          240,
+          112,
+          64
+        ]
+      ],
+      "start": [
+        48,
+        208
+      ],
+      "objects": [
+        {
+          "asset": "gate",
+          "frame": 0,
+          "center": [
+            1024,
+            264
+          ],
+          "canvas": [
+            992,
+            208,
+            64,
+            64
+          ],
+          "ink_bbox": [
+            1003,
+            209,
+            1046,
+            271
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "gate",
+          "frame": 0,
+          "center": [
+            2048,
+            264
+          ],
+          "canvas": [
+            2016,
+            208,
+            64,
+            64
+          ],
+          "ink_bbox": [
+            2027,
+            209,
+            2070,
+            271
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "valve",
+          "frame": 0,
+          "center": [
+            968,
+            224
+          ],
+          "canvas": [
+            952,
+            200,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            955,
+            204,
+            982,
+            231
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "valve",
+          "frame": 0,
+          "center": [
+            1992,
+            224
+          ],
+          "canvas": [
+            1976,
+            200,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            1979,
+            204,
+            2006,
+            231
+          ],
+          "ground_snapped_8px": true
+        }
+      ],
+      "special_states": [
+        {
+          "label": "Portões rompidos / válvulas liberadas",
+          "path": "maps/6B-open-complete.png"
+        }
+      ],
+      "frames": [
+        {
+          "path": "frames/6B-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-entrada.png"
+        },
+        {
+          "path": "frames/6B-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/escorts/pal/06b-entrada.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/routes/06b-native-complete.png",
+      "native_sha256": "0fbd1091595a9141c7c7a2d2b17c0f9fd8f80dd7373bf2bbfcff975ad8006a9b"
+    },
+    {
+      "phase": "7",
+      "node": 9,
+      "name": "Abrigo O Último Chão",
+      "goal": "Transportar 5 cargas",
+      "group": "resistance",
+      "size": [
+        768,
+        384
+      ],
+      "background": "maps/7-background.png",
+      "complete": "maps/7-complete.png",
+      "layout": "layouts/7.png",
+      "bounds": [
+        64,
+        160,
+        703,
+        343
+      ],
+      "solids": [
+        [
+          232,
+          216,
+          112,
+          24
+        ],
+        [
+          480,
+          264,
+          112,
+          24
+        ],
+        [
+          64,
+          240,
+          56,
+          40
+        ]
+      ],
+      "start": [
+        80,
+        176
+      ],
+      "objects": [
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            128,
+            192
+          ],
+          "canvas": [
+            112,
+            168,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            115,
+            171,
+            143,
+            199
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            400,
+            184
+          ],
+          "canvas": [
+            384,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            387,
+            163,
+            415,
+            191
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            640,
+            184
+          ],
+          "canvas": [
+            624,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            627,
+            163,
+            655,
+            191
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            176,
+            296
+          ],
+          "canvas": [
+            160,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            163,
+            275,
+            191,
+            303
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            624,
+            304
+          ],
+          "canvas": [
+            608,
+            280,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            611,
+            283,
+            639,
+            311
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "cargo",
+          "frame": 5,
+          "center": [
+            88,
+            304
+          ],
+          "canvas": [
+            72,
+            280,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            74,
+            283,
+            102,
+            311
+          ],
+          "ground_snapped_8px": true
+        }
+      ],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/7-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/7-entry.png"
+        },
+        {
+          "path": "frames/7-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/resistance/pal/7-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "native_sha256": "6bd719f8c449acb678ff60acd850833ce0e7a8818d63b891deead13dc336d7dc"
+    },
+    {
+      "phase": "8",
+      "node": 10,
+      "name": "Transmissores",
+      "goal": "Eliminar 3 prioritários",
+      "group": "resistance",
+      "size": [
+        768,
+        384
+      ],
+      "background": "maps/8-background.png",
+      "complete": "maps/8-complete.png",
+      "layout": "layouts/8.png",
+      "bounds": [
+        64,
+        160,
+        703,
+        343
+      ],
+      "solids": [
+        [
+          232,
+          216,
+          112,
+          24
+        ],
+        [
+          480,
+          264,
+          112,
+          24
+        ],
+        [
+          64,
+          240,
+          56,
+          40
+        ]
+      ],
+      "start": [
+        80,
+        176
+      ],
+      "objects": [
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            232,
+            168
+          ],
+          "canvas": [
+            216,
+            144,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            217,
+            147,
+            240,
+            175
+          ],
+          "ground_snapped_8px": false
+        },
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            440,
+            296
+          ],
+          "canvas": [
+            424,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            425,
+            275,
+            448,
+            303
+          ],
+          "ground_snapped_8px": false
+        },
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            656,
+            224
+          ],
+          "canvas": [
+            640,
+            200,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            641,
+            203,
+            664,
+            231
+          ],
+          "ground_snapped_8px": false
+        }
+      ],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/8-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/8-entry.png"
+        },
+        {
+          "path": "frames/8-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/resistance/pal/8-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "native_sha256": "6bd719f8c449acb678ff60acd850833ce0e7a8818d63b891deead13dc336d7dc"
+    },
+    {
+      "phase": "9",
+      "node": 11,
+      "name": "Caminho da fábrica",
+      "goal": "Percorrer 2560 px",
+      "group": "factory",
+      "size": [
+        2560,
+        320
+      ],
+      "background": "maps/9-background.png",
+      "complete": "maps/9-complete.png",
+      "layout": "layouts/9.png",
+      "bounds": [
+        16,
+        152,
+        2543,
+        271
+      ],
+      "solids": [
+        [
+          456,
+          168,
+          80,
+          32
+        ],
+        [
+          1000,
+          200,
+          80,
+          32
+        ],
+        [
+          1544,
+          168,
+          80,
+          32
+        ],
+        [
+          2088,
+          200,
+          80,
+          32
+        ]
+      ],
+      "start": [
+        48,
+        176
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/9-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/factory/ntsc/9-entry.png"
+        },
+        {
+          "path": "frames/9-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/factory/pal/9-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/factory/street-native.png",
+      "native_sha256": "2a6c20e8b55d9cf5dc6e975a27dcdce4638e8cf1e3a6756f27b36eb3e0334e69"
+    },
+    {
+      "phase": "10",
+      "node": 12,
+      "name": "Ovos na fábrica",
+      "goal": "Destruir 10 ninhos",
+      "group": "factory",
+      "size": [
+        768,
+        384
+      ],
+      "background": "maps/10-background.png",
+      "complete": "maps/10-complete.png",
+      "layout": "layouts/10.png",
+      "bounds": [
+        16,
+        112,
+        751,
+        319
+      ],
+      "solids": [
+        [
+          232,
+          216,
+          160,
+          24
+        ],
+        [
+          488,
+          216,
+          160,
+          24
+        ],
+        [
+          32,
+          280,
+          16,
+          40
+        ],
+        [
+          288,
+          280,
+          16,
+          40
+        ],
+        [
+          544,
+          280,
+          16,
+          40
+        ],
+        [
+          736,
+          280,
+          16,
+          40
+        ]
+      ],
+      "start": [
+        48,
+        112
+      ],
+      "objects": [
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            104,
+            128
+          ],
+          "canvas": [
+            80,
+            88,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            83,
+            99,
+            126,
+            135
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            104,
+            296
+          ],
+          "canvas": [
+            80,
+            256,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            83,
+            267,
+            126,
+            303
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            240,
+            128
+          ],
+          "canvas": [
+            216,
+            88,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            219,
+            99,
+            262,
+            135
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            240,
+            296
+          ],
+          "canvas": [
+            216,
+            256,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            219,
+            267,
+            262,
+            303
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            376,
+            128
+          ],
+          "canvas": [
+            352,
+            88,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            355,
+            99,
+            398,
+            135
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            376,
+            296
+          ],
+          "canvas": [
+            352,
+            256,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            355,
+            267,
+            398,
+            303
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            512,
+            128
+          ],
+          "canvas": [
+            488,
+            88,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            491,
+            99,
+            534,
+            135
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            512,
+            296
+          ],
+          "canvas": [
+            488,
+            256,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            491,
+            267,
+            534,
+            303
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            648,
+            128
+          ],
+          "canvas": [
+            624,
+            88,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            627,
+            99,
+            670,
+            135
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "nest",
+          "frame": 0,
+          "center": [
+            648,
+            296
+          ],
+          "canvas": [
+            624,
+            256,
+            48,
+            48
+          ],
+          "ink_bbox": [
+            627,
+            267,
+            670,
+            303
+          ],
+          "ground_snapped_8px": true
+        }
+      ],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/10-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/factory/ntsc/10-entry.png"
+        },
+        {
+          "path": "frames/10-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/factory/pal/10-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/factory/factory-native.png",
+      "native_sha256": "d265216da8be3b3f3bf2dc763acf4bc93a97f04a4fd599ba55a9abc41cbaa858"
+    },
+    {
+      "phase": "11",
+      "node": 13,
+      "name": "Fábrica aquecida",
+      "goal": "Liberar 3 válvulas",
+      "group": "factory",
+      "size": [
+        768,
+        384
+      ],
+      "background": "maps/11-background.png",
+      "complete": "maps/11-complete.png",
+      "layout": "layouts/11.png",
+      "bounds": [
+        16,
+        112,
+        751,
+        319
+      ],
+      "solids": [
+        [
+          232,
+          216,
+          160,
+          24
+        ],
+        [
+          488,
+          216,
+          160,
+          24
+        ],
+        [
+          32,
+          280,
+          16,
+          40
+        ],
+        [
+          288,
+          280,
+          16,
+          40
+        ],
+        [
+          544,
+          280,
+          16,
+          40
+        ],
+        [
+          736,
+          280,
+          16,
+          40
+        ]
+      ],
+      "start": [
+        48,
+        112
+      ],
+      "objects": [
+        {
+          "asset": "valve",
+          "frame": 0,
+          "center": [
+            176,
+            208
+          ],
+          "canvas": [
+            160,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            163,
+            188,
+            190,
+            215
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "valve",
+          "frame": 0,
+          "center": [
+            400,
+            208
+          ],
+          "canvas": [
+            384,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            387,
+            188,
+            414,
+            215
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "valve",
+          "frame": 0,
+          "center": [
+            624,
+            208
+          ],
+          "canvas": [
+            608,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            611,
+            188,
+            638,
+            215
+          ],
+          "ground_snapped_8px": true
+        }
+      ],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/11-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/factory/ntsc/11-entry.png"
+        },
+        {
+          "path": "frames/11-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/factory/pal/11-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/factory/factory-native.png",
+      "native_sha256": "d265216da8be3b3f3bf2dc763acf4bc93a97f04a4fd599ba55a9abc41cbaa858"
+    },
+    {
+      "phase": "12",
+      "node": 14,
+      "name": "Caminho ao sindicato",
+      "goal": "Escolta 3072 px; morte permanente deDinorah",
+      "group": "escorts",
+      "size": [
+        3072,
+        320
+      ],
+      "background": "maps/12-background.png",
+      "complete": "maps/12-complete.png",
+      "layout": "layouts/12.png",
+      "bounds": [
+        16,
+        192,
+        3055,
+        303
+      ],
+      "solids": [
+        [
+          456,
+          96,
+          96,
+          80
+        ],
+        [
+          936,
+          240,
+          96,
+          64
+        ],
+        [
+          1400,
+          96,
+          96,
+          88
+        ],
+        [
+          1904,
+          224,
+          96,
+          80
+        ],
+        [
+          2416,
+          96,
+          96,
+          80
+        ],
+        [
+          2656,
+          240,
+          112,
+          64
+        ]
+      ],
+      "start": [
+        48,
+        208
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/12-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/12-entrada.png"
+        },
+        {
+          "path": "frames/12-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/escorts/pal/12-entrada.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/routes/12-native-complete.png",
+      "native_sha256": "1e5c3455d79ccfaa7b79d5e9c3e3acd9148c7aacb6084a33a885b07ffde63217"
+    },
+    {
+      "phase": "13A",
+      "node": 15,
+      "name": "Sala do sindicato",
+      "goal": "Eliminar 30;Dinorah protegida",
+      "group": "resistance",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/13A-background.png",
+      "complete": "maps/13A-complete.png",
+      "layout": "layouts/13A.png",
+      "bounds": [
+        24,
+        160,
+        487,
+        367
+      ],
+      "solids": [
+        [
+          88,
+          280,
+          80,
+          16
+        ],
+        [
+          216,
+          224,
+          80,
+          16
+        ],
+        [
+          344,
+          280,
+          80,
+          16
+        ]
+      ],
+      "start": [
+        48,
+        176
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/13A-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13A-entry.png"
+        },
+        {
+          "path": "frames/13A-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/resistance/pal/13A-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/resistance/native/union/alive-native.png",
+      "native_sha256": "0fef6c46d99b487d6b97d884a010d708b2b4ebae296feaaa3677ea65f4c07cd8"
+    },
+    {
+      "phase": "13B",
+      "node": 16,
+      "name": "Sala do sindicato em luto",
+      "goal": "Eliminar 45;Dinorah morta",
+      "group": "resistance",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/13B-background.png",
+      "complete": "maps/13B-complete.png",
+      "layout": "layouts/13B.png",
+      "bounds": [
+        24,
+        160,
+        487,
+        367
+      ],
+      "solids": [
+        [
+          88,
+          280,
+          80,
+          16
+        ],
+        [
+          216,
+          224,
+          80,
+          16
+        ],
+        [
+          344,
+          280,
+          80,
+          16
+        ]
+      ],
+      "start": [
+        280,
+        176
+      ],
+      "objects": [],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/13B-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13B-entry.png"
+        },
+        {
+          "path": "frames/13B-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/resistance/pal/13B-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/resistance/native/union/dead-native.png",
+      "native_sha256": "4e771483ad415fea1cd90e0fe4c6bd38a20ce355d976b05e0907bd7fa7b285c6"
+    },
+    {
+      "phase": "14",
+      "node": 17,
+      "name": "Energia do estaleiro",
+      "goal": "Ligar 5 geradores",
+      "group": "launch",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/14-background.png",
+      "complete": "maps/14-complete.png",
+      "layout": "layouts/14.png",
+      "bounds": [
+        56,
+        128,
+        455,
+        327
+      ],
+      "solids": [
+        [
+          216,
+          256,
+          80,
+          56
+        ]
+      ],
+      "start": [
+        64,
+        208
+      ],
+      "objects": [
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            139,
+            145
+          ],
+          "canvas": [
+            120,
+            120,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            129,
+            121,
+            149,
+            151
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            373,
+            145
+          ],
+          "canvas": [
+            352,
+            120,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            361,
+            121,
+            381,
+            151
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            424,
+            196
+          ],
+          "canvas": [
+            408,
+            168,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            417,
+            169,
+            437,
+            199
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            353,
+            277
+          ],
+          "canvas": [
+            336,
+            248,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            345,
+            249,
+            365,
+            279
+          ],
+          "ground_snapped_8px": true
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            159,
+            277
+          ],
+          "canvas": [
+            136,
+            248,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            145,
+            249,
+            165,
+            279
+          ],
+          "ground_snapped_8px": true
+        }
+      ],
+      "special_states": [
+        {
+          "label": "Cinco máquinas ligadas",
+          "path": "maps/14-on-complete.png"
+        }
+      ],
+      "frames": [
+        {
+          "path": "frames/14-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/launch/ntsc/14-entry.png"
+        },
+        {
+          "path": "frames/14-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/launch/pal/14-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "native_sha256": "124427d5cd690c0c8db24ecd52f8d4da5633a6e1bef5e233d67f9a6b4117729b"
+    },
+    {
+      "phase": "15",
+      "node": 18,
+      "name": "Rádio de ignição",
+      "goal": "Proteger 120 s",
+      "group": "launch",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/15-background.png",
+      "complete": "maps/15-complete.png",
+      "layout": "layouts/15.png",
+      "bounds": [
+        56,
+        128,
+        455,
+        327
+      ],
+      "solids": [
+        [
+          216,
+          256,
+          80,
+          56
+        ]
+      ],
+      "start": [
+        64,
+        208
+      ],
+      "objects": [
+        {
+          "asset": "radio",
+          "frame": 2,
+          "center": [
+            256,
+            187
+          ],
+          "canvas": [
+            240,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            242,
+            161,
+            269,
+            191
+          ],
+          "ground_snapped_8px": true
+        }
+      ],
+      "special_states": [
+        {
+          "label": "Rádio e cenário após ignição",
+          "path": "maps/15-fire-complete.png"
+        }
+      ],
+      "frames": [
+        {
+          "path": "frames/15-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-entry.png"
+        },
+        {
+          "path": "frames/15-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/launch/pal/15-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "native_sha256": "124427d5cd690c0c8db24ecd52f8d4da5633a6e1bef5e233d67f9a6b4117729b"
+    },
+    {
+      "phase": "16",
+      "node": 19,
+      "name": "Escorpião",
+      "goal": "Derrotar o chefe",
+      "group": "launch",
+      "size": [
+        512,
+        384
+      ],
+      "background": "maps/16-background.png",
+      "complete": "maps/16-complete.png",
+      "layout": "layouts/16.png",
+      "bounds": [
+        56,
+        128,
+        455,
+        327
+      ],
+      "solids": [
+        [
+          216,
+          256,
+          80,
+          56
+        ]
+      ],
+      "start": [
+        64,
+        208
+      ],
+      "objects": [
+        {
+          "asset": "boss",
+          "frame": "native direction0 pose0",
+          "canvas": [
+            140,
+            112,
+            48,
+            48
+          ],
+          "representative_spawn_pose": true
+        }
+      ],
+      "special_states": [],
+      "frames": [
+        {
+          "path": "frames/16-ntsc-entry.png",
+          "label": "Entrada real · NTSC",
+          "source": "art/campaign-integrated-v1/launch/ntsc/16-entry.png"
+        },
+        {
+          "path": "frames/16-pal-entry.png",
+          "label": "Entrada real · PAL",
+          "source": "art/campaign-integrated-v1/launch/pal/16-entry.png"
+        }
+      ],
+      "source_native": "art/campaign-whole-scenes-v1/launch/previews/16-fire-native-reconstructed.png",
+      "native_sha256": "4f8fd9885449b60ed05ca06fcff05647cf8a08e9096b003305f638bbe4ff1953"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "species": [
+    {
+      "id": "sq_red",
+      "size": 16,
+      "frames": 3,
+      "rom_bytes": 384
+    },
+    {
+      "id": "sq_yellow",
+      "size": 16,
+      "frames": 3,
+      "rom_bytes": 384
+    },
+    {
+      "id": "sq_purple",
+      "size": 32,
+      "frames": 3,
+      "rom_bytes": 1536
+    },
+    {
+      "id": "sq_orange",
+      "size": 16,
+      "frames": 3,
+      "rom_bytes": 384
+    },
+    {
+      "id": "tri_red",
+      "size": 16,
+      "frames": 3,
+      "rom_bytes": 384
+    },
+    {
+      "id": "tri_yellow",
+      "size": 16,
+      "frames": 3,
+      "rom_bytes": 384
+    },
+    {
+      "id": "tri_purple",
+      "size": 16,
+      "frames": 3,
+      "rom_bytes": 384
+    },
+    {
+      "id": "tri_orange",
+      "size": 16,
+      "frames": 3,
+      "rom_bytes": 384
+    },
+    {
+      "id": "pen_red",
+      "size": 24,
+      "frames": 3,
+      "rom_bytes": 864
+    },
+    {
+      "id": "pen_yellow",
+      "size": 24,
+      "frames": 3,
+      "rom_bytes": 864
+    },
+    {
+      "id": "pen_purple",
+      "size": 32,
+      "frames": 3,
+      "rom_bytes": 1536
+    },
+    {
+      "id": "pen_orange",
+      "size": 24,
+      "frames": 3,
+      "rom_bytes": 864
+    },
+    {
+      "id": "boss",
+      "size": 48,
+      "frames": 3,
+      "rom_bytes": 3456
+    }
+  ],
+  "shot_bytes": 480,
+  "death_bytes": 11808,
+  "palette": "Existing PAL1",
+  "sources": {
+    "source/mortes-0.png": "1e96b99292576db04675be1486b6aa36e481e9d309698f6c5ef3c793f709f09d",
+    "source/mortes-1.png": "7c32598b70267403f5f512865a07feab258d2d9a1e8b3adbd52bc325418c4f21",
+    "source/mortes-2.png": "e1d7920dfd798afc8689f6f30cc1f97b16d567a727788973cce1517f9d0eb11c",
+    "source/mortes-3.png": "2707646c581df2c9b2e8f149b3372c50e142a5cb95b89420116d2a30b41c9ad2"
+  }
+}

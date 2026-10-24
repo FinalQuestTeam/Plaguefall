@@ -1,0 +1,97 @@
+[
+  {
+    "id": "church",
+    "feet": [
+      136,
+      176
+    ],
+    "camera": [
+      0,
+      0
+    ],
+    "size": [
+      320,
+      224
+    ],
+    "scale": 1,
+    "preview": "reviews/camera-church-intact.png",
+    "damaged_preview": "reviews/camera-church-damaged.png",
+    "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+  },
+  {
+    "id": "market",
+    "feet": [
+      496,
+      264
+    ],
+    "camera": [
+      344,
+      64
+    ],
+    "size": [
+      320,
+      224
+    ],
+    "scale": 1,
+    "preview": "reviews/camera-market-intact.png",
+    "damaged_preview": "reviews/camera-market-damaged.png",
+    "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+  },
+  {
+    "id": "garage-north",
+    "feet": [
+      1280,
+      160
+    ],
+    "camera": [
+      1128,
+      0
+    ],
+    "size": [
+      320,
+      224
+    ],
+    "scale": 1,
+    "preview": "reviews/camera-garage-north-intact.png",
+    "damaged_preview": "reviews/camera-garage-north-damaged.png",
+    "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+  },
+  {
+    "id": "garage-south",
+    "feet": [
+      1824,
+      264
+    ],
+    "camera": [
+      1672,
+      64
+    ],
+    "size": [
+      320,
+      224
+    ],
+    "scale": 1,
+    "preview": "reviews/camera-garage-south-intact.png",
+    "damaged_preview": "reviews/camera-garage-south-damaged.png",
+    "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+  },
+  {
+    "id": "warehouse",
+    "feet": [
+      2400,
+      176
+    ],
+    "camera": [
+      2240,
+      0
+    ],
+    "size": [
+      320,
+      224
+    ],
+    "scale": 1,
+    "preview": "reviews/camera-warehouse-intact.png",
+    "damaged_preview": "reviews/camera-warehouse-damaged.png",
+    "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
+  }
+]

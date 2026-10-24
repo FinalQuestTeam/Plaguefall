@@ -21,6 +21,10 @@ def main():
     output = args.output.resolve()
     rom = output / 'rom.bin'
     data = rom.read_bytes()
+    rom_start = int.from_bytes(data[0x1a0:0x1a4], 'big')
+    rom_end = int.from_bytes(data[0x1a4:0x1a8], 'big')
+    if rom_start != 0 or rom_end + 1 < len(data):
+        raise SystemExit('ROM header range does not cover the complete binary; fix rom_header.c and rebuild.')
     for offset in (0x120, 0x150):
         if data[offset:offset + 48].decode('ascii').strip() != 'PLAGUEFALL':
             raise SystemExit('ROM header title must be PLAGUEFALL before packaging.')

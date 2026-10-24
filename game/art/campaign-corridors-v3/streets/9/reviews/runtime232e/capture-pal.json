@@ -1,0 +1,1352 @@
+{
+  "rom_sha256": "232eac030e985dfc2ea029722ed20ae8ffff5da5131daadae8c53e296fd3b2e0",
+  "region": "pal",
+  "setup": "Snapshots seed each real phase; RAM suppresses combat, progress and auto-interactions while player feet are moved to free positions. Native camera/streaming/rendering remain active.",
+  "phase": {
+    "phase": "9",
+    "node": 11,
+    "samples": [
+      {
+        "path": "9/x0-y0.png",
+        "position": [
+          24,
+          104
+        ],
+        "camera": [
+          16,
+          0
+        ],
+        "row": 0,
+        "col": 0,
+        "visible_world": [
+          16,
+          24,
+          336,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x1-y0.png",
+        "position": [
+          184,
+          192
+        ],
+        "camera": [
+          48,
+          0
+        ],
+        "row": 0,
+        "col": 1,
+        "visible_world": [
+          48,
+          24,
+          368,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x2-y0.png",
+        "position": [
+          368,
+          104
+        ],
+        "camera": [
+          72,
+          0
+        ],
+        "row": 0,
+        "col": 2,
+        "visible_world": [
+          72,
+          24,
+          392,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x3-y0.png",
+        "position": [
+          504,
+          104
+        ],
+        "camera": [
+          352,
+          0
+        ],
+        "row": 0,
+        "col": 3,
+        "visible_world": [
+          352,
+          24,
+          672,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x4-y0.png",
+        "position": [
+          656,
+          104
+        ],
+        "camera": [
+          648,
+          0
+        ],
+        "row": 0,
+        "col": 4,
+        "visible_world": [
+          648,
+          24,
+          968,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x5-y0.png",
+        "position": [
+          824,
+          184
+        ],
+        "camera": [
+          672,
+          0
+        ],
+        "row": 0,
+        "col": 5,
+        "visible_world": [
+          672,
+          24,
+          992,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x6-y0.png",
+        "position": [
+          984,
+          104
+        ],
+        "camera": [
+          688,
+          0
+        ],
+        "row": 0,
+        "col": 6,
+        "visible_world": [
+          688,
+          24,
+          1008,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x7-y0.png",
+        "position": [
+          1144,
+          104
+        ],
+        "camera": [
+          1136,
+          0
+        ],
+        "row": 0,
+        "col": 7,
+        "visible_world": [
+          1136,
+          24,
+          1456,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x8-y0.png",
+        "position": [
+          1304,
+          152
+        ],
+        "camera": [
+          1152,
+          0
+        ],
+        "row": 0,
+        "col": 8,
+        "visible_world": [
+          1152,
+          24,
+          1472,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x9-y0.png",
+        "position": [
+          1472,
+          104
+        ],
+        "camera": [
+          1216,
+          0
+        ],
+        "row": 0,
+        "col": 9,
+        "visible_world": [
+          1216,
+          24,
+          1536,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x10-y0.png",
+        "position": [
+          1624,
+          104
+        ],
+        "camera": [
+          1472,
+          0
+        ],
+        "row": 0,
+        "col": 10,
+        "visible_world": [
+          1472,
+          24,
+          1792,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x11-y0.png",
+        "position": [
+          1784,
+          104
+        ],
+        "camera": [
+          1680,
+          0
+        ],
+        "row": 0,
+        "col": 11,
+        "visible_world": [
+          1680,
+          24,
+          2000,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x12-y0.png",
+        "position": [
+          2000,
+          104
+        ],
+        "camera": [
+          1840,
+          0
+        ],
+        "row": 0,
+        "col": 12,
+        "visible_world": [
+          1840,
+          24,
+          2160,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x13-y0.png",
+        "position": [
+          2104,
+          104
+        ],
+        "camera": [
+          1952,
+          0
+        ],
+        "row": 0,
+        "col": 13,
+        "visible_world": [
+          1952,
+          24,
+          2272,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x14-y0.png",
+        "position": [
+          2264,
+          104
+        ],
+        "camera": [
+          2192,
+          0
+        ],
+        "row": 0,
+        "col": 14,
+        "visible_world": [
+          2192,
+          24,
+          2512,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x15-y0.png",
+        "position": [
+          2424,
+          168
+        ],
+        "camera": [
+          2240,
+          0
+        ],
+        "row": 0,
+        "col": 15,
+        "visible_world": [
+          2240,
+          24,
+          2560,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x16-y0.png",
+        "position": [
+          2432,
+          168
+        ],
+        "camera": [
+          2240,
+          0
+        ],
+        "row": 0,
+        "col": 16,
+        "visible_world": [
+          2240,
+          24,
+          2560,
+          224
+        ],
+        "objectives": [],
+        "label": "Faixa superior"
+      },
+      {
+        "path": "9/x0-y1.png",
+        "position": [
+          24,
+          176
+        ],
+        "camera": [
+          16,
+          0
+        ],
+        "row": 1,
+        "col": 0,
+        "visible_world": [
+          16,
+          24,
+          336,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x1-y1.png",
+        "position": [
+          184,
+          192
+        ],
+        "camera": [
+          48,
+          0
+        ],
+        "row": 1,
+        "col": 1,
+        "visible_world": [
+          48,
+          24,
+          368,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x2-y1.png",
+        "position": [
+          344,
+          192
+        ],
+        "camera": [
+          64,
+          0
+        ],
+        "row": 1,
+        "col": 2,
+        "visible_world": [
+          64,
+          24,
+          384,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x3-y1.png",
+        "position": [
+          504,
+          176
+        ],
+        "camera": [
+          352,
+          88
+        ],
+        "row": 1,
+        "col": 3,
+        "visible_world": [
+          352,
+          112,
+          672,
+          312
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x4-y1.png",
+        "position": [
+          664,
+          184
+        ],
+        "camera": [
+          656,
+          0
+        ],
+        "row": 1,
+        "col": 4,
+        "visible_world": [
+          656,
+          24,
+          976,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x5-y1.png",
+        "position": [
+          824,
+          184
+        ],
+        "camera": [
+          672,
+          0
+        ],
+        "row": 1,
+        "col": 5,
+        "visible_world": [
+          672,
+          24,
+          992,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x6-y1.png",
+        "position": [
+          984,
+          176
+        ],
+        "camera": [
+          688,
+          0
+        ],
+        "row": 1,
+        "col": 6,
+        "visible_world": [
+          688,
+          24,
+          1008,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x7-y1.png",
+        "position": [
+          1144,
+          176
+        ],
+        "camera": [
+          992,
+          88
+        ],
+        "row": 1,
+        "col": 7,
+        "visible_world": [
+          992,
+          112,
+          1312,
+          312
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x8-y1.png",
+        "position": [
+          1304,
+          176
+        ],
+        "camera": [
+          1152,
+          0
+        ],
+        "row": 1,
+        "col": 8,
+        "visible_world": [
+          1152,
+          24,
+          1472,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x9-y1.png",
+        "position": [
+          1464,
+          176
+        ],
+        "camera": [
+          1408,
+          88
+        ],
+        "row": 1,
+        "col": 9,
+        "visible_world": [
+          1408,
+          112,
+          1728,
+          312
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x10-y1.png",
+        "position": [
+          1624,
+          176
+        ],
+        "camera": [
+          1424,
+          88
+        ],
+        "row": 1,
+        "col": 10,
+        "visible_world": [
+          1424,
+          112,
+          1744,
+          312
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x11-y1.png",
+        "position": [
+          1784,
+          176
+        ],
+        "camera": [
+          1680,
+          0
+        ],
+        "row": 1,
+        "col": 11,
+        "visible_world": [
+          1680,
+          24,
+          2000,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x12-y1.png",
+        "position": [
+          1944,
+          184
+        ],
+        "camera": [
+          1792,
+          0
+        ],
+        "row": 1,
+        "col": 12,
+        "visible_world": [
+          1792,
+          24,
+          2112,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x13-y1.png",
+        "position": [
+          2104,
+          176
+        ],
+        "camera": [
+          1952,
+          88
+        ],
+        "row": 1,
+        "col": 13,
+        "visible_world": [
+          1952,
+          112,
+          2272,
+          312
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x14-y1.png",
+        "position": [
+          2264,
+          176
+        ],
+        "camera": [
+          2192,
+          0
+        ],
+        "row": 1,
+        "col": 14,
+        "visible_world": [
+          2192,
+          24,
+          2512,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x15-y1.png",
+        "position": [
+          2424,
+          176
+        ],
+        "camera": [
+          2240,
+          0
+        ],
+        "row": 1,
+        "col": 15,
+        "visible_world": [
+          2240,
+          24,
+          2560,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x16-y1.png",
+        "position": [
+          2432,
+          176
+        ],
+        "camera": [
+          2240,
+          0
+        ],
+        "row": 1,
+        "col": 16,
+        "visible_world": [
+          2240,
+          24,
+          2560,
+          224
+        ],
+        "objectives": [],
+        "label": "Campo central"
+      },
+      {
+        "path": "9/x0-y2.png",
+        "position": [
+          24,
+          264
+        ],
+        "camera": [
+          0,
+          64
+        ],
+        "row": 2,
+        "col": 0,
+        "visible_world": [
+          0,
+          88,
+          320,
+          288
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x1-y2.png",
+        "position": [
+          184,
+          264
+        ],
+        "camera": [
+          32,
+          64
+        ],
+        "row": 2,
+        "col": 1,
+        "visible_world": [
+          32,
+          88,
+          352,
+          288
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x2-y2.png",
+        "position": [
+          344,
+          264
+        ],
+        "camera": [
+          256,
+          88
+        ],
+        "row": 2,
+        "col": 2,
+        "visible_world": [
+          256,
+          112,
+          576,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x3-y2.png",
+        "position": [
+          504,
+          192
+        ],
+        "camera": [
+          352,
+          88
+        ],
+        "row": 2,
+        "col": 3,
+        "visible_world": [
+          352,
+          112,
+          672,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x4-y2.png",
+        "position": [
+          664,
+          264
+        ],
+        "camera": [
+          512,
+          64
+        ],
+        "row": 2,
+        "col": 4,
+        "visible_world": [
+          512,
+          88,
+          832,
+          288
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x5-y2.png",
+        "position": [
+          824,
+          264
+        ],
+        "camera": [
+          672,
+          64
+        ],
+        "row": 2,
+        "col": 5,
+        "visible_world": [
+          672,
+          88,
+          992,
+          288
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x6-y2.png",
+        "position": [
+          984,
+          264
+        ],
+        "camera": [
+          832,
+          88
+        ],
+        "row": 2,
+        "col": 6,
+        "visible_world": [
+          832,
+          112,
+          1152,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x7-y2.png",
+        "position": [
+          1144,
+          264
+        ],
+        "camera": [
+          992,
+          88
+        ],
+        "row": 2,
+        "col": 7,
+        "visible_world": [
+          992,
+          112,
+          1312,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x8-y2.png",
+        "position": [
+          1304,
+          264
+        ],
+        "camera": [
+          1152,
+          64
+        ],
+        "row": 2,
+        "col": 8,
+        "visible_world": [
+          1152,
+          88,
+          1472,
+          288
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x9-y2.png",
+        "position": [
+          1408,
+          264
+        ],
+        "camera": [
+          1400,
+          88
+        ],
+        "row": 2,
+        "col": 9,
+        "visible_world": [
+          1400,
+          112,
+          1720,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x10-y2.png",
+        "position": [
+          1624,
+          184
+        ],
+        "camera": [
+          1424,
+          88
+        ],
+        "row": 2,
+        "col": 10,
+        "visible_world": [
+          1424,
+          112,
+          1744,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x11-y2.png",
+        "position": [
+          1784,
+          264
+        ],
+        "camera": [
+          1648,
+          88
+        ],
+        "row": 2,
+        "col": 11,
+        "visible_world": [
+          1648,
+          112,
+          1968,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x12-y2.png",
+        "position": [
+          1968,
+          264
+        ],
+        "camera": [
+          1808,
+          88
+        ],
+        "row": 2,
+        "col": 12,
+        "visible_world": [
+          1808,
+          112,
+          2128,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x13-y2.png",
+        "position": [
+          2064,
+          264
+        ],
+        "camera": [
+          1920,
+          88
+        ],
+        "row": 2,
+        "col": 13,
+        "visible_world": [
+          1920,
+          112,
+          2240,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x14-y2.png",
+        "position": [
+          2264,
+          264
+        ],
+        "camera": [
+          2080,
+          88
+        ],
+        "row": 2,
+        "col": 14,
+        "visible_world": [
+          2080,
+          112,
+          2400,
+          312
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x15-y2.png",
+        "position": [
+          2424,
+          264
+        ],
+        "camera": [
+          2240,
+          64
+        ],
+        "row": 2,
+        "col": 15,
+        "visible_world": [
+          2240,
+          88,
+          2560,
+          288
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/x16-y2.png",
+        "position": [
+          2432,
+          264
+        ],
+        "camera": [
+          2240,
+          64
+        ],
+        "row": 2,
+        "col": 16,
+        "visible_world": [
+          2240,
+          88,
+          2560,
+          288
+        ],
+        "objectives": [],
+        "label": "Faixa inferior"
+      },
+      {
+        "path": "9/landmark-0.png",
+        "position": [
+          208,
+          208
+        ],
+        "camera": [
+          56,
+          8
+        ],
+        "visible_world": [
+          56,
+          32,
+          376,
+          232
+        ],
+        "label": "office 64",
+        "bbox": [
+          64,
+          32,
+          304,
+          160
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 0
+      },
+      {
+        "path": "9/landmark-1.png",
+        "position": [
+          488,
+          184
+        ],
+        "camera": [
+          336,
+          88
+        ],
+        "visible_world": [
+          336,
+          112,
+          656,
+          312
+        ],
+        "label": "utility 416",
+        "bbox": [
+          416,
+          208,
+          160,
+          104
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 1
+      },
+      {
+        "path": "9/landmark-2.png",
+        "position": [
+          816,
+          200
+        ],
+        "camera": [
+          664,
+          0
+        ],
+        "visible_world": [
+          664,
+          24,
+          984,
+          224
+        ],
+        "label": "dock 672",
+        "bbox": [
+          672,
+          24,
+          304,
+          160
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 2
+      },
+      {
+        "path": "9/landmark-3.png",
+        "position": [
+          1076,
+          168
+        ],
+        "camera": [
+          924,
+          88
+        ],
+        "visible_world": [
+          924,
+          112,
+          1244,
+          312
+        ],
+        "label": "truck 1048",
+        "bbox": [
+          1048,
+          192,
+          72,
+          120
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 3
+      },
+      {
+        "path": "9/landmark-4.png",
+        "position": [
+          1336,
+          168
+        ],
+        "camera": [
+          1184,
+          0
+        ],
+        "visible_world": [
+          1184,
+          24,
+          1504,
+          224
+        ],
+        "label": "machine yard 1216",
+        "bbox": [
+          1216,
+          32,
+          256,
+          120
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 4
+      },
+      {
+        "path": "9/landmark-5.png",
+        "position": [
+          1568,
+          176
+        ],
+        "camera": [
+          1416,
+          88
+        ],
+        "visible_world": [
+          1416,
+          112,
+          1736,
+          312
+        ],
+        "label": "warehouse 1424",
+        "bbox": [
+          1424,
+          200,
+          304,
+          112
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 5
+      },
+      {
+        "path": "9/landmark-6.png",
+        "position": [
+          1880,
+          200
+        ],
+        "camera": [
+          1728,
+          88
+        ],
+        "visible_world": [
+          1728,
+          112,
+          2048,
+          312
+        ],
+        "label": "utility low 1808",
+        "bbox": [
+          1808,
+          224,
+          160,
+          88
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 6
+      },
+      {
+        "path": "9/landmark-7.png",
+        "position": [
+          1912,
+          192
+        ],
+        "camera": [
+          1760,
+          0
+        ],
+        "visible_world": [
+          1760,
+          24,
+          2080,
+          224
+        ],
+        "label": "tank yard 1840",
+        "bbox": [
+          1840,
+          24,
+          160,
+          160
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 7
+      },
+      {
+        "path": "9/landmark-8.png",
+        "position": [
+          2152,
+          200
+        ],
+        "camera": [
+          2000,
+          88
+        ],
+        "visible_world": [
+          2000,
+          112,
+          2320,
+          312
+        ],
+        "label": "utility low 2080",
+        "bbox": [
+          2080,
+          224,
+          160,
+          88
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 8
+      },
+      {
+        "path": "9/landmark-9.png",
+        "position": [
+          2392,
+          200
+        ],
+        "camera": [
+          2240,
+          0
+        ],
+        "visible_world": [
+          2240,
+          24,
+          2560,
+          224
+        ],
+        "label": "gate 2288",
+        "bbox": [
+          2288,
+          40,
+          224,
+          144
+        ],
+        "landmark_entirely_visible": true,
+        "row": 3,
+        "col": 9
+      }
+    ]
+  }
+}

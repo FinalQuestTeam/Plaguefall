@@ -1,0 +1,211 @@
+{
+  "romSHA256": "e0b83d242e33f143ba83d54a8b15a986ab4fee602fcfd4901c3eecbf235440a9",
+  "traceReadOnlyReproducesOriginalFPS": true,
+  "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-e0b83d-event-trace-xy/report.json",
+  "events": [
+    {
+      "missOffset": 119,
+      "eventOffset": 118,
+      "player": [
+        260,
+        224
+      ],
+      "dinorah": [
+        173,
+        224
+      ],
+      "cameraBefore": [
+        64,
+        8
+      ],
+      "cameraAfter": [
+        63,
+        8
+      ],
+      "dinorahFireTimer": [
+        1,
+        10
+      ],
+      "residentLeft": [
+        8,
+        7
+      ],
+      "queueBytes": [
+        112,
+        192
+      ],
+      "enemyPositions": [
+        [
+          4,
+          80,
+          200
+        ],
+        [
+          5,
+          128,
+          200
+        ],
+        [
+          7,
+          176,
+          200
+        ]
+      ],
+      "graphicsSlotsChanged": false,
+      "hudDirtyChanged": false
+    },
+    {
+      "missOffset": 1280,
+      "eventOffset": 1279,
+      "player": [
+        260,
+        224
+      ],
+      "dinorah": [
+        173,
+        224
+      ],
+      "cameraBefore": [
+        64,
+        8
+      ],
+      "cameraAfter": [
+        63,
+        8
+      ],
+      "dinorahFireTimer": [
+        1,
+        10
+      ],
+      "residentLeft": [
+        8,
+        7
+      ],
+      "queueBytes": [
+        112,
+        240
+      ],
+      "enemyPositions": [
+        [
+          4,
+          80,
+          200
+        ],
+        [
+          5,
+          128,
+          200
+        ],
+        [
+          7,
+          176,
+          200
+        ]
+      ],
+      "graphicsSlotsChanged": false,
+      "hudDirtyChanged": false
+    },
+    {
+      "missOffset": 1521,
+      "eventOffset": 1520,
+      "player": [
+        244,
+        224
+      ],
+      "dinorah": [
+        173,
+        224
+      ],
+      "cameraBefore": [
+        56,
+        8
+      ],
+      "cameraAfter": [
+        55,
+        8
+      ],
+      "dinorahFireTimer": [
+        1,
+        10
+      ],
+      "residentLeft": [
+        7,
+        6
+      ],
+      "queueBytes": [
+        112,
+        240
+      ],
+      "enemyPositions": [
+        [
+          4,
+          80,
+          200
+        ],
+        [
+          5,
+          128,
+          200
+        ],
+        [
+          7,
+          176,
+          200
+        ]
+      ],
+      "graphicsSlotsChanged": false,
+      "hudDirtyChanged": false
+    },
+    {
+      "missOffset": 1762,
+      "eventOffset": 1761,
+      "player": [
+        228,
+        224
+      ],
+      "dinorah": [
+        173,
+        224
+      ],
+      "cameraBefore": [
+        48,
+        8
+      ],
+      "cameraAfter": [
+        47,
+        8
+      ],
+      "dinorahFireTimer": [
+        1,
+        10
+      ],
+      "residentLeft": [
+        6,
+        5
+      ],
+      "queueBytes": [
+        112,
+        240
+      ],
+      "enemyPositions": [
+        [
+          4,
+          80,
+          200
+        ],
+        [
+          5,
+          128,
+          200
+        ],
+        [
+          7,
+          176,
+          200
+        ]
+      ],
+      "graphicsSlotsChanged": false,
+      "hudDirtyChanged": false
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "dust-floor": {
+    "source": "art/phase01-courtyard-v2/intact-native.png",
+    "crop": [
+      224,
+      160,
+      256,
+      192
+    ],
+    "size": [
+      32,
+      32
+    ],
+    "grid": 1,
+    "exact_flip_unique_tiles": 11
+  },
+  "complete-industrial-wall": {
+    "source": "art/phase04-tunnels-v1/map-native.png",
+    "crop": [
+      80,
+      0,
+      144,
+      80
+    ],
+    "size": [
+      64,
+      80
+    ],
+    "grid": 1,
+    "exact_flip_unique_tiles": 80
+  },
+  "lower-wall": {
+    "source": "art/phase01-courtyard-v2/intact-native.png",
+    "crop": [
+      224,
+      368,
+      256,
+      384
+    ],
+    "size": [
+      32,
+      16
+    ],
+    "grid": 1,
+    "exact_flip_unique_tiles": 7
+  },
+  "left-wall": {
+    "source": "art/phase01-courtyard-v2/intact-native.png",
+    "crop": [
+      0,
+      160,
+      16,
+      192
+    ],
+    "size": [
+      16,
+      32
+    ],
+    "grid": 1,
+    "exact_flip_unique_tiles": 8
+  },
+  "lower-left-corner": {
+    "source": "art/phase01-courtyard-v2/intact-native.png",
+    "crop": [
+      0,
+      352,
+      16,
+      384
+    ],
+    "size": [
+      16,
+      32
+    ],
+    "grid": 1,
+    "exact_flip_unique_tiles": 8
+  },
+  "complete-valve-service-wall": {
+    "source": "art/phase04-tunnels-v1/map-native.png",
+    "crop": [
+      336,
+      0,
+      432,
+      80
+    ],
+    "size": [
+      96,
+      80
+    ],
+    "grid": 1,
+    "exact_flip_unique_tiles": 100
+  },
+  "factory-door-exact": {
+    "source": "art/campaign-pattern-v2/factory/modules/factory-door.png",
+    "crop": null,
+    "size": [
+      80,
+      64
+    ],
+    "grid": 1,
+    "exact_flip_unique_tiles": 66
+  },
+  "whole-workshop": {
+    "source": "art/phase03-street-v2/source/street-kit.png",
+    "cell": [
+      443,
+      0,
+      887,
+      443
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "method": "complete alpha silhouette, nearest at1px, same16 church colors"
+  },
+  "whole-rust-truck": {
+    "source": "art/routes-2048-v2/source/evacuation-cutouts.png",
+    "cell": [
+      638,
+      0,
+      1277,
+      616
+    ],
+    "size": [
+      96,
+      64
+    ],
+    "method": "complete alpha silhouette, nearest at1px, same16 church colors"
+  }
+}

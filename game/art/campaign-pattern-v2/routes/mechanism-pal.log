@@ -1,0 +1,6 @@
+PASS 06b-bounds-atlas-ring-and-late-collision True
+PASS 06b-gate-1-collapse-then-native-opening {'finalPoseObserved': True, 'delaySeconds': 0.8, 'permanentSpriteVisible': False, 'openingPixels': 32}
+PASS 06b-gate-2-collapse-then-native-opening {'finalPoseObserved': True, 'delaySeconds': 0.8, 'permanentSpriteVisible': False, 'openingPixels': 32}
+PASS 06b-two-valves-and-four-shot-gates True
+PASS 06b-pause-preserves-compound-state True
+PASS 06b-all-six-mechanism-frames-exact {'poses': [{'frame': 0, 'gateOpaqueCells': 31, 'valveOpaqueCells': 14}, {'frame': 1, 'gateOpaqueCells': 31, 'valveOpaqueCells': 14}, {'frame': 2, 'gateOpaqueCells': 33, 'valveOpaqueCells': 14}, {'frame': 3, 'gateOpaqueCells': 38, 'valveOpaqueCells': 14}, {'frame': 4, 'gateOpaqueCells': 33, 'valveOpaqueCells': 14}, {'frame': 5, 'gateOpaqueCells': 30, 'valveOpaqueCells': 14}], 'isolatedRamFrameSelection': True, 'renderingAndDma': 'production', 'sceneryAtlasPreserved': True}

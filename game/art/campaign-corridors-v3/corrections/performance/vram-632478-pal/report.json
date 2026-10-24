@@ -1,0 +1,757 @@
+{
+  "romSHA256": "632478ce909e91c37bb44bbda292463afac1e914d5692cda0bf1e4e4046bee25",
+  "region": "PAL",
+  "passed": true,
+  "phases": {
+    "06a": {
+      "passed": true,
+      "samples": [
+        {
+          "name": "entry",
+          "feet": [
+            40,
+            224
+          ],
+          "camera": [
+            0,
+            8
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Cisterna e arco",
+          "feet": [
+            40,
+            200
+          ],
+          "camera": [
+            0,
+            8
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Ponte inteira",
+          "feet": [
+            872,
+            160
+          ],
+          "camera": [
+            720,
+            8
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Ilha de bombas",
+          "feet": [
+            1832,
+            192
+          ],
+          "camera": [
+            1648,
+            48
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Recuo de manuten\u00e7\u00e3o",
+          "feet": [
+            2336,
+            240
+          ],
+          "camera": [
+            2160,
+            40
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Abrigo",
+          "feet": [
+            3008,
+            168
+          ],
+          "camera": [
+            2752,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "NW",
+          "feet": [
+            24,
+            96
+          ],
+          "camera": [
+            0,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "NE",
+          "feet": [
+            3032,
+            88
+          ],
+          "camera": [
+            2752,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "SW",
+          "feet": [
+            24,
+            256
+          ],
+          "camera": [
+            0,
+            40
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "SE",
+          "feet": [
+            3032,
+            256
+          ],
+          "camera": [
+            2752,
+            56
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "middle-high",
+          "feet": [
+            1536,
+            80
+          ],
+          "camera": [
+            1384,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "middle-low",
+          "feet": [
+            1536,
+            256
+          ],
+          "camera": [
+            1384,
+            56
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "return",
+          "feet": [
+            24,
+            96
+          ],
+          "camera": [
+            0,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        }
+      ],
+      "mapHVClasses": [
+        0
+      ],
+      "inspectedHVClasses": [
+        0
+      ]
+    },
+    "06b": {
+      "passed": true,
+      "samples": [
+        {
+          "name": "entry",
+          "feet": [
+            40,
+            224
+          ],
+          "camera": [
+            0,
+            8
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Cisterna de entrada",
+          "feet": [
+            40,
+            200
+          ],
+          "camera": [
+            0,
+            8
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "C\u00e2mara de press\u00e3o alta",
+          "feet": [
+            912,
+            152
+          ],
+          "camera": [
+            760,
+            24
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Bacia de bombas",
+          "feet": [
+            1632,
+            192
+          ],
+          "camera": [
+            1472,
+            48
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "C\u00e2mara de press\u00e3o baixa",
+          "feet": [
+            2032,
+            232
+          ],
+          "camera": [
+            1880,
+            80
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "Abrigo",
+          "feet": [
+            3008,
+            168
+          ],
+          "camera": [
+            2752,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "NW",
+          "feet": [
+            24,
+            96
+          ],
+          "camera": [
+            0,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "NE",
+          "feet": [
+            3032,
+            88
+          ],
+          "camera": [
+            2752,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "SW",
+          "feet": [
+            24,
+            256
+          ],
+          "camera": [
+            0,
+            40
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "SE",
+          "feet": [
+            3032,
+            256
+          ],
+          "camera": [
+            2752,
+            56
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "middle-high",
+          "feet": [
+            1536,
+            80
+          ],
+          "camera": [
+            1384,
+            9
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "middle-low",
+          "feet": [
+            1464,
+            256
+          ],
+          "camera": [
+            1312,
+            56
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "return",
+          "feet": [
+            24,
+            96
+          ],
+          "camera": [
+            0,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        }
+      ],
+      "mapHVClasses": [
+        0
+      ],
+      "inspectedHVClasses": [
+        0
+      ]
+    },
+    "12": {
+      "passed": true,
+      "samples": [
+        {
+          "name": "entry",
+          "feet": [
+            48,
+            208
+          ],
+          "camera": [
+            40,
+            8
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0,
+            2048
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "workshop",
+          "feet": [
+            224,
+            208
+          ],
+          "camera": [
+            64,
+            8
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0,
+            2048
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "covered dock",
+          "feet": [
+            1624,
+            184
+          ],
+          "camera": [
+            1472,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "union arrival",
+          "feet": [
+            2848,
+            200
+          ],
+          "camera": [
+            2696,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0,
+            2048
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "south dock1",
+          "feet": [
+            1120,
+            176
+          ],
+          "camera": [
+            968,
+            88
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "south dock2",
+          "feet": [
+            1880,
+            176
+          ],
+          "camera": [
+            1728,
+            88
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "south dock3",
+          "feet": [
+            2416,
+            176
+          ],
+          "camera": [
+            2264,
+            88
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "service annex1",
+          "feet": [
+            496,
+            176
+          ],
+          "camera": [
+            344,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0,
+            2048
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "service annex2",
+          "feet": [
+            1360,
+            176
+          ],
+          "camera": [
+            1208,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "service annex3",
+          "feet": [
+            2048,
+            176
+          ],
+          "camera": [
+            1896,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "service annex4",
+          "feet": [
+            2544,
+            168
+          ],
+          "camera": [
+            2392,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "NW",
+          "feet": [
+            16,
+            96
+          ],
+          "camera": [
+            8,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0,
+            2048
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "NE",
+          "feet": [
+            3040,
+            112
+          ],
+          "camera": [
+            2744,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0,
+            2048
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "SW",
+          "feet": [
+            16,
+            272
+          ],
+          "camera": [
+            0,
+            56
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "SE",
+          "feet": [
+            3040,
+            272
+          ],
+          "camera": [
+            2752,
+            72
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "middle-high",
+          "feet": [
+            1472,
+            96
+          ],
+          "camera": [
+            1464,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "middle-low",
+          "feet": [
+            1536,
+            272
+          ],
+          "camera": [
+            1384,
+            72
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0
+          ],
+          "atlasExact": true
+        },
+        {
+          "name": "return",
+          "feet": [
+            16,
+            96
+          ],
+          "camera": [
+            8,
+            0
+          ],
+          "exactCells": 2048,
+          "HVClasses": [
+            0,
+            2048
+          ],
+          "atlasExact": true
+        }
+      ],
+      "mapHVClasses": [
+        0,
+        2048
+      ],
+      "inspectedHVClasses": [
+        0,
+        2048
+      ]
+    }
+  },
+  "method": "RAM selects legal feet positions, suspends enemies and Dinorah traversal. Production camera interpolation, ring streaming and DMA continue. Compare complete resident64x32map cells and native pattern bytes, including H/V and padded out-of-world cells. Not a playthrough or difficulty test.",
+  "notCovered": [
+    "Santa hidden-floor overlay; these phases contain Dinorah, not the Santa."
+  ]
+}

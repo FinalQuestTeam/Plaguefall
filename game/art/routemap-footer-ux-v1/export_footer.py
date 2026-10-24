@@ -26,8 +26,8 @@ EXTRA=[
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');args=ap.parse_args()
- approved=json.loads((ROOT/'proposta.json').read_text())['cases']
- rows=[(c['current'],c['next'],c['cause'],c['consequence']) for c in approved]+EXTRA
+ approved=json.loads((ROOT/'campanha-v2.json').read_text())['cases']
+ rows=[(c['current'],c['next'],c['cause'],c['consequence']) for c in approved]
  assert len(set((a,b) for a,b,_,_ in rows))==len(rows)
  graph=re.sub(r'//[^\n]*','',(GAME/'src/levels/graph.c').read_text()).split('const LevelNode GRAPH')[1]
  nodes=list(re.finditer(r'\[N_(\w+)\]\s*=\s*FASE(?:_FINAL)?\("([^"]+)"',graph))

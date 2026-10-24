@@ -41,6 +41,10 @@
 #include "levels/graph.h"
 #include "core/stats.h"
 #include "levels/test.h"
+#include "levels/operations.h"
+#include "levels/campaign_resistance.h"
+#include "levels/campaign_launch.h"
+#include "core/campaign_state.h"
 #include "enemies/enemies.h"
 #include "items/items.h"
 
@@ -256,6 +260,7 @@ static void finishSettled(void)
 {
     const u8 kind=settleKind;settleKind=0;settleTimer=0;
     SFX_silence();FLASH_stop();
+    if(currentLevel && (kind==1 || kind==2 || kind==4))CAMPAIGN_record(currentLevel,kind==4);
     if(kind==2)
     {
         LOADING_workBegin();
@@ -299,10 +304,18 @@ static void settleDeath(u8 kind)
 // ---------------------------------------------------------------------------
 // Um quadro de jogo ativo (ST_PLAY, fora do congelamento)
 // ---------------------------------------------------------------------------
+#ifdef OPS_PROFILE
+volatile u16 playProfileTicks[4];
+#define PLAY_PROFILE_START() u32 playClock=getSubTick()
+#define PLAY_PROFILE_MARK(i) do{u32 now=getSubTick();playProfileTicks[i]=now-playClock;playClock=now;}while(0)
+#else
+#define PLAY_PROFILE_START()
+#define PLAY_PROFILE_MARK(i)
+#endif
 static void updatePlay(u16 joy, u16 pressed)
 {
     if(currentLevel==0) {
-        if(testResult){COMBATGFX_update();return;}
+        if(testResult){COMBATGFX_update();if(OPS_active())OPS_animateResult();return;}
         if(testStage==TEST_DEATH_ROOM)TEST_deathInput(pressed);
         else if(testStage==TEST_RULE_ROOM)TEST_ruleInput(pressed);
         TEST_beforeUpdate();
@@ -310,14 +323,23 @@ static void updatePlay(u16 joy, u16 pressed)
     if(currentLevel || TEST_effectTick())COMBATGFX_update();
     if(!currentLevel && testStage==TEST_DEATH_ROOM){TEST_afterUpdate();return;}
     STATS_tick();               // tempo de fase (condições de saída por tempo)
+    if(currentLevel)CAMPAIGN_RESISTANCE_beforeUpdate();
     PLAYER_update(joy);
+    if(hp<=0){gameOver=TRUE;return;}
+    PLAY_PROFILE_START();
     kills+=DINORAH_update();
+    PLAY_PROFILE_MARK(0);
     ARENA_camera();
     LEVEL_update();                 // elementos da fase (ex.: lava/lama)
+    PLAY_PROFILE_MARK(1);
     if (gameOver) return;
 
     // alvo da perseguição dos inimigos: o aliado no PROTEGER, senão o jogador
-    if (LEVEL_current()->objective == OBJ_PROTECT && NPC_active())
+    s16 objectiveX,objectiveY;
+    if(CL_target(&objectiveX,&objectiveY))ENEMIES_setChaseTarget(objectiveX,objectiveY);
+    else if (OPS_active() && testStage==18 && !operations.phase)
+        ENEMIES_setChaseTarget(256,200);
+    else if (LEVEL_current()->objective == OBJ_PROTECT && NPC_active())
         ENEMIES_setChaseTarget(npcX + NPC_size() / 2, npcY + NPC_size() / 2);
     else if(DINORAH_alive())
         ENEMIES_setChaseTarget(dinorahX+8,dinorahY+8);
@@ -328,6 +350,7 @@ static void updatePlay(u16 joy, u16 pressed)
     SHOTS_updateEnemy();
     kills += ENEMIES_update();      // + mortes pela queimadura (fogo)
     MUSIC_setEnemies(ENEMIES_activeCount());   // + inimigos = BPM sobe (perigo)
+    PLAY_PROFILE_MARK(2);
     if (gameOver) return; // um golpe fatal não pode recolher a bolsa ou outros itens
     ITEMS_update();
 
@@ -337,6 +360,7 @@ static void updatePlay(u16 joy, u16 pressed)
     if (currentLevel == 0)
     {
         TEST_afterUpdate();
+        PLAY_PROFILE_MARK(3);
 
         // Objective rooms freeze on success/failure until restarted.
         if (TEST_objectiveRoom())
@@ -353,6 +377,7 @@ static void updatePlay(u16 joy, u16 pressed)
     // título. Sem meta por contagem nem spawn regular (só o chefe e lacaios).
     if (GRAPH_isFinal(currentLevel))
     {
+        CL_update();
         OBJECTIVE_drawHUD(kills);
         if (bossDefeated)
         {
@@ -378,7 +403,7 @@ static void updatePlay(u16 joy, u16 pressed)
         SFX_silence();FLASH_stop();
         if (GRAPH_hasFailExit(currentLevel))
         {
-            phaseStats.objFailed = TRUE;state = ST_DONE;
+            phaseStats.objFailed = TRUE;CAMPAIGN_record(currentLevel,TRUE);state = ST_DONE;
             ITEMS_clear();NPC_clear();RESULT_complete(kills,TRUE);
             return;
         }
@@ -386,6 +411,7 @@ static void updatePlay(u16 joy, u16 pressed)
         return;
     }
 
+    if(CAMPAIGN_RESISTANCE_managesSpawn())return;
     if (spawnTimer) spawnTimer--;
     else
     {
@@ -399,6 +425,7 @@ static void updatePlay(u16 joy, u16 pressed)
 
 static void resetCampaign(void)
 {
+    CAMPAIGN_reset();
     DEATH_reset();
     PLAYER_fullHp();BOMB_reset();SHOTS_resetPower();SHOTS_resetChain();
     PLAYER_resetSpeed();INV_clear();ROUTEMAP_reset();STORYSCR_reset();STATS_reset();

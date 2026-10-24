@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "revision": "Oito missões experimentais nas salas 11–18; campanha preservada",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_bytes": 1835008,
+  "rom_sha256": "602309eae1708698c18f868fc3bcd1de5e29d9e4b314e7e2e230f4d031017f68",
+  "text_bytes": 1734348,
+  "data_bytes": 152,
+  "bss_bytes": 19326,
+  "static_ram_bytes": 19478,
+  "native_checks_passed": true,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "operations": {
+    "rooms": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "checks_passed": 112,
+    "enemy_cap": 4,
+    "shots_per_side": 6,
+    "strict_fps_target_met_in_all_scenarios": false,
+    "normal_acceptance_fraction": 0.98,
+    "stress_acceptance_fraction": 0.95,
+    "reports": {
+      "ntsc": "../art/operations-v1/validation/ntsc/report.json",
+      "pal": "../art/operations-v1/validation/pal/report.json"
+    }
+  },
+  "regressions": {
+    "death-rules": {
+      "passed": true,
+      "report": "../art/operations-v1/death-rules-regression.json"
+    },
+    "routes": {
+      "passed": true,
+      "report": "../art/operations-v1/routes-regression.json"
+    }
+  },
+  "previous_validation": "../art/operations-v1/previous-build-validation.json"
+}

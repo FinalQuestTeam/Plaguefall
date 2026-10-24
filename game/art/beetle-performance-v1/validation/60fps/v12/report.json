@@ -1,0 +1,55 @@
+{
+  "region_fps": 60,
+  "rom_sha256": "246daf0c70b57b98c12986721234ca33d131497cf54cc709d58fff5e68123f42",
+  "emulated_rom_sha256": "246daf0c70b57b98c12986721234ca33d131497cf54cc709d58fff5e68123f42",
+  "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+  "benchmark_sha256": "1145f336fef72a18e9d25fbfff9a1e2b4b1ae0dc3eb2acbef198a9533fde120b",
+  "frames_per_case": 1800,
+  "repeats": 1,
+  "cases": [
+    {
+      "formation": "Baluarte",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 1800,
+      "game_frames": 1743,
+      "fps": 58.1,
+      "target_fps": 60,
+      "target_met": false,
+      "cpu_mean": 93.08,
+      "cpu_p95": 96.58,
+      "shots_after_step": [
+        {
+          "min": 7,
+          "mean": 12.18,
+          "max": 16
+        },
+        {
+          "min": 13,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        104,
+        100
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 8,
+      "distinct_graphics_min": 8,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    }
+  ],
+  "method": "Production phase-1 loop, 8 initially overlapping shielded enemies; normal movement, separation, collision, rendering, audio and HUD. RAM setup disables new spawns and summons, pins enemy shields and grants player hit immunity. A is held in projectile cases. Moving player/enemy projectiles replenish inactive slots up to 6 or 16 per pool before each physical frame. Purple enemies do not gain a shooting behaviour: enemy bullets are an injected load. Zero-projectile controls do not hold A. 180 physical warmup frames; FPS counts phaseStats updates / vtimer VBlanks. This is controlled stress, not a normal campaign attempt.",
+  "test_completed": true,
+  "performance_target_met": false
+}

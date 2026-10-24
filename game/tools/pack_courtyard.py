@@ -51,6 +51,18 @@ def assemble(source):
     return canvas
 
 def main():
+    active=GAME/'art/campaign-pattern-v2/early'
+    if (active/'geometry.json').exists():
+        import runpy,sys,shutil
+        if '--check' in sys.argv:
+            runpy.run_path(str(active/'validate.py'),run_name='__main__')
+        else:
+            runpy.run_path(str(active/'build_church.py'),run_name='__main__')
+            for name in ('map.bin','damaged.bin','palette.bin'):
+                shutil.copy2(active/'01-courtyard/native'/name,OUT/name)
+            data=(active/'01-courtyard/native/tiles.bin').read_bytes()
+            (OUT/'tiles.bin').write_bytes(data+bytes(BUDGET*32-len(data)))
+        return
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
     sources=[Image.open(ART/'source'/name).convert('RGB').resize((WIDTH,HEIGHT),Image.Resampling.LANCZOS)
              for name in ('intact.png','damaged.png')]

@@ -1,0 +1,670 @@
+{
+  "phase": "06b",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    24,
+    192,
+    3047,
+    287
+  ],
+  "start": [
+    48,
+    208
+  ],
+  "exit": [
+    2992,
+    184,
+    48,
+    48
+  ],
+  "solids": [
+    [
+      448,
+      256,
+      32,
+      24
+    ],
+    [
+      1504,
+      192,
+      32,
+      24
+    ],
+    [
+      2528,
+      256,
+      32,
+      24
+    ],
+    [
+      1032,
+      192,
+      16,
+      48
+    ],
+    [
+      2056,
+      192,
+      16,
+      48
+    ],
+    [
+      1000,
+      256,
+      24,
+      32
+    ],
+    [
+      2024,
+      256,
+      24,
+      32
+    ]
+  ],
+  "points": [
+    [
+      56,
+      216
+    ],
+    [
+      280,
+      216
+    ],
+    [
+      552,
+      216
+    ],
+    [
+      744,
+      216
+    ],
+    [
+      944,
+      232
+    ],
+    [
+      960,
+      248
+    ],
+    [
+      1048,
+      248
+    ],
+    [
+      1080,
+      232
+    ],
+    [
+      1304,
+      216
+    ],
+    [
+      1456,
+      240
+    ],
+    [
+      1584,
+      240
+    ],
+    [
+      1760,
+      216
+    ],
+    [
+      1968,
+      232
+    ],
+    [
+      1984,
+      248
+    ],
+    [
+      2072,
+      248
+    ],
+    [
+      2104,
+      232
+    ],
+    [
+      2320,
+      216
+    ],
+    [
+      2640,
+      216
+    ],
+    [
+      3016,
+      208
+    ]
+  ],
+  "pauses": [
+    4,
+    12
+  ],
+  "modules": [
+    {
+      "id": "ceiling",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        100,
+        0,
+        196,
+        24
+      ],
+      "native_size": [
+        32,
+        8
+      ],
+      "repeat_axis": "xy",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "wall",
+      "source": "../source/06b-whole.png",
+      "source_rect": [
+        766,
+        80,
+        1030,
+        210
+      ],
+      "native_size": [
+        48,
+        64
+      ],
+      "repeat_axis": "x",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "pressure-house",
+      "source": "../source/06b-whole.png",
+      "source_rect": [
+        480,
+        0,
+        766,
+        365
+      ],
+      "native_size": [
+        64,
+        96
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "arrival",
+      "source": "../source/06b-whole.png",
+      "source_rect": [
+        1970,
+        58,
+        2140,
+        290
+      ],
+      "native_size": [
+        64,
+        80
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "floor",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        980,
+        346,
+        1250,
+        480
+      ],
+      "native_size": [
+        64,
+        32
+      ],
+      "repeat_axis": "xy",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "lower",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        530,
+        510,
+        765,
+        724
+      ],
+      "native_size": [
+        32,
+        32
+      ],
+      "repeat_axis": "x",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "side-left",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        0,
+        330,
+        70,
+        430
+      ],
+      "native_size": [
+        24,
+        32
+      ],
+      "repeat_axis": "y",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "side-right",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        2102,
+        330,
+        2172,
+        430
+      ],
+      "native_size": [
+        24,
+        32
+      ],
+      "repeat_axis": "y",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-upper-left",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        0,
+        24,
+        70,
+        320
+      ],
+      "native_size": [
+        24,
+        64
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-upper-right",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        2102,
+        24,
+        2172,
+        320
+      ],
+      "native_size": [
+        24,
+        64
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-lower-left",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        0,
+        480,
+        80,
+        724
+      ],
+      "native_size": [
+        24,
+        32
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-lower-right",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        2092,
+        480,
+        2172,
+        724
+      ],
+      "native_size": [
+        24,
+        32
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "partition",
+      "source": "../source/06b-whole.png",
+      "source_rect": [
+        20,
+        300,
+        64,
+        400
+      ],
+      "native_size": [
+        16,
+        32
+      ],
+      "repeat_axis": "y",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "partition-end",
+      "source": "../source/06b-whole.png",
+      "source_rect": [
+        536,
+        480,
+        576,
+        642
+      ],
+      "native_size": [
+        16,
+        40
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "pipe",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        590,
+        129,
+        591,
+        132
+      ],
+      "native_size": [
+        1,
+        3
+      ],
+      "repeat_axis": "pipe",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "cabinet",
+      "source": "../source/06a-whole.png",
+      "source_rect": [
+        526,
+        194,
+        666,
+        323
+      ],
+      "native_size": [
+        32,
+        24
+      ],
+      "repeat_axis": "object",
+      "extraction": "complete silhouette"
+    }
+  ],
+  "placements": [
+    {
+      "module": "floor",
+      "position": [
+        0,
+        0
+      ],
+      "area": [
+        3072,
+        320
+      ],
+      "repeat_axis": "xy"
+    },
+    {
+      "module": "ceiling",
+      "position": [
+        0,
+        0
+      ],
+      "area": [
+        3072,
+        128
+      ],
+      "repeat_axis": "xy"
+    },
+    {
+      "module": "wall",
+      "position": [
+        24,
+        128
+      ],
+      "area": [
+        3024,
+        64
+      ],
+      "repeat_axis": "x"
+    },
+    {
+      "module": "pressure-house",
+      "position": [
+        968,
+        96
+      ],
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "module": "pressure-house",
+      "position": [
+        1992,
+        96
+      ],
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "module": "arrival",
+      "position": [
+        2984,
+        112
+      ],
+      "size": [
+        64,
+        80
+      ]
+    },
+    {
+      "module": "side-left",
+      "position": [
+        0,
+        192
+      ],
+      "area": [
+        24,
+        96
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "side-right",
+      "position": [
+        3048,
+        192
+      ],
+      "area": [
+        24,
+        96
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "lower",
+      "position": [
+        24,
+        288
+      ],
+      "area": [
+        3024,
+        32
+      ],
+      "repeat_axis": "x"
+    },
+    {
+      "module": "corner-upper-left",
+      "position": [
+        0,
+        128
+      ],
+      "size": [
+        24,
+        64
+      ]
+    },
+    {
+      "module": "corner-upper-right",
+      "position": [
+        3048,
+        128
+      ],
+      "size": [
+        24,
+        64
+      ]
+    },
+    {
+      "module": "corner-lower-left",
+      "position": [
+        0,
+        288
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "corner-lower-right",
+      "position": [
+        3048,
+        288
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "partition",
+      "position": [
+        1032,
+        192
+      ],
+      "area": [
+        16,
+        24
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "partition-end",
+      "position": [
+        1032,
+        200
+      ],
+      "size": [
+        16,
+        40
+      ]
+    },
+    {
+      "module": "partition",
+      "position": [
+        1000,
+        256
+      ],
+      "area": [
+        24,
+        32
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "partition",
+      "position": [
+        2056,
+        192
+      ],
+      "area": [
+        16,
+        24
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "partition-end",
+      "position": [
+        2056,
+        200
+      ],
+      "size": [
+        16,
+        40
+      ]
+    },
+    {
+      "module": "partition",
+      "position": [
+        2024,
+        256
+      ],
+      "area": [
+        24,
+        32
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "cabinet",
+      "position": [
+        448,
+        256
+      ],
+      "size": [
+        32,
+        24
+      ]
+    },
+    {
+      "module": "cabinet",
+      "position": [
+        1504,
+        192
+      ],
+      "size": [
+        32,
+        24
+      ]
+    },
+    {
+      "module": "cabinet",
+      "position": [
+        2528,
+        256
+      ],
+      "size": [
+        32,
+        24
+      ]
+    }
+  ],
+  "memory": {
+    "scene_tiles": 395,
+    "objective_tiles": 256,
+    "total_tiles": 651,
+    "budget": 640,
+    "lossy_pattern_replacements": 0
+  },
+  "source_stage": "whole scene created and inspected before extraction",
+  "status": "native_candidate_not_approved"
+}

@@ -1,0 +1,77 @@
+{
+  "stages": 6,
+  "walkable_16px_origins": 16592,
+  "runtime_checks": 54,
+  "ordinary_matches": 18,
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "fps_by_stage": {
+        "01": 57.7,
+        "02A": 58.0,
+        "02B": 57.9,
+        "03": 55.0,
+        "04": 57.9,
+        "05": 51.2
+      },
+      "matches": {
+        "01": [
+          "defeat"
+        ],
+        "02A": [
+          "defeat"
+        ],
+        "02B": [
+          "defeat"
+        ],
+        "03": [
+          "completed"
+        ],
+        "04": [
+          "defeat"
+        ],
+        "05": [
+          "completed"
+        ]
+      }
+    },
+    "pal": {
+      "passed": true,
+      "fps_by_stage": {
+        "01": 48.0,
+        "02A": 48.0,
+        "02B": 48.0,
+        "03": 47.58,
+        "04": 48.0,
+        "05": 46.0
+      },
+      "matches": {
+        "01": [
+          "completed",
+          "completed"
+        ],
+        "02A": [
+          "defeat",
+          "completed"
+        ],
+        "02B": [
+          "completed",
+          "defeat"
+        ],
+        "03": [
+          "completed",
+          "completed"
+        ],
+        "04": [
+          "defeat",
+          "defeat"
+        ],
+        "05": [
+          "defeat",
+          "completed"
+        ]
+      }
+    }
+  },
+  "extra_warehouse_matches": 4
+}

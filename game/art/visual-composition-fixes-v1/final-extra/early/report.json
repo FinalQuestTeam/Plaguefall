@@ -1,0 +1,181 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "199310615d328c9395ae014b9f20ce2f646b1430ab51ca0cd928ec067dec5b60",
+  "rom": "game/out/release/rom.bin",
+  "isolated_build": false,
+  "method": "RAM only prepares isolated nodes/collision/load probes; ordinary matches enable a write guard and use controller only. FPS derived from logical phase frames / VBlanks, not host time.",
+  "stages": [
+    {
+      "phase": "03",
+      "node": 4,
+      "checks": {
+        "03/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              16,
+              176,
+              2543,
+              303
+            ],
+            "target": null,
+            "atlas_tiles": 571,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "03/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 4480,
+            "camera_return_checked": true
+          }
+        },
+        "03/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 48,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "reachable_positions": 4270,
+              "free_positions": 4270,
+              "all_free_positions_connected": true,
+              "bounds_checks": 17080
+            }
+          }
+        },
+        "03/full-controller-traversal": {
+          "passed": true,
+          "details": {
+            "controller_only": true,
+            "combat_isolated": true,
+            "passed": true,
+            "waypoints": 15,
+            "samples": [
+              [
+                50,
+                176
+              ],
+              [
+                262,
+                196
+              ],
+              [
+                436,
+                254
+              ],
+              [
+                668,
+                254
+              ],
+              [
+                848,
+                202
+              ],
+              [
+                1080,
+                202
+              ],
+              [
+                1310,
+                204
+              ],
+              [
+                1492,
+                254
+              ],
+              [
+                1704,
+                234
+              ],
+              [
+                1904,
+                202
+              ],
+              [
+                2136,
+                202
+              ],
+              [
+                2316,
+                254
+              ],
+              [
+                2470,
+                202
+              ]
+            ],
+            "seconds": 23.28,
+            "physical_seconds": 24.12
+          }
+        },
+        "03/church-continuity": {
+          "passed": true,
+          "details": {
+            "passed": true,
+            "variants": [
+              {
+                "ruined": false,
+                "tiles_compared": 288
+              },
+              {
+                "ruined": true,
+                "tiles_compared": 288
+              }
+            ],
+            "original_native_church": true
+          }
+        }
+      },
+      "ordinary_matches": []
+    },
+    {
+      "phase": "04",
+      "node": 5,
+      "checks": {
+        "04/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              32,
+              128,
+              479,
+              367
+            ],
+            "target": 20,
+            "atlas_tiles": 636,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "04/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 4480,
+            "camera_return_checked": true
+          }
+        },
+        "04/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 12,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "reachable_positions": 1480,
+              "free_positions": 1480,
+              "all_free_positions_connected": true,
+              "bounds_checks": 5920
+            }
+          }
+        }
+      },
+      "ordinary_matches": []
+    }
+  ],
+  "failures": []
+}

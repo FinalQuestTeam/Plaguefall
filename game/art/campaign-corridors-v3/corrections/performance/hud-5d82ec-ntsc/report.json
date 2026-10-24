@@ -1,0 +1,1196 @@
+{
+  "romSHA256": "5d82ec602ab6dcd9a2fbda7be5914282efa5ebab2ba2647d697b77b7d297a58a",
+  "region": "NTSC",
+  "passed": false,
+  "cases": [
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 0,
+      "name": "00-waiting-s0-m0-c0",
+      "canvasSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "displayedRGB_SHA256": "4ff9ffe4e0a2fb10d4628a92510eb0ac867f6c7130d051bf0eaa4481ee2b9189",
+      "committedTilesSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "aiming",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 1,
+      "name": "01-aiming-s0-m0-c0",
+      "canvasSHA256": "51c3f98951df2b2c64f2d31bbe310c1cc057e5dcf1f263bc8914d8adeb630f54",
+      "displayedRGB_SHA256": "a0d18338bad314e2d86c91187e865d5a60036deec74dbf2b6f4c271651e40ba7",
+      "committedTilesSHA256": "51c3f98951df2b2c64f2d31bbe310c1cc057e5dcf1f263bc8914d8adeb630f54",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "pausing",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 2,
+      "name": "02-pausing-s0-m0-c0",
+      "canvasSHA256": "255add48e781c710ce211c4419445c52b5fdfb9a583afc20fa47dc589517bb0c",
+      "displayedRGB_SHA256": "a6042f82617f2a268651a680f07f0cf7bfbf1702955b502a7ebd89d573865209",
+      "committedTilesSHA256": "255add48e781c710ce211c4419445c52b5fdfb9a583afc20fa47dc589517bb0c",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 3,
+      "name": "03-waiting-s0-m0-c0",
+      "canvasSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "displayedRGB_SHA256": "4ff9ffe4e0a2fb10d4628a92510eb0ac867f6c7130d051bf0eaa4481ee2b9189",
+      "committedTilesSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "aiming",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 4,
+      "name": "04-aiming-s0-m0-c0",
+      "canvasSHA256": "51c3f98951df2b2c64f2d31bbe310c1cc057e5dcf1f263bc8914d8adeb630f54",
+      "displayedRGB_SHA256": "a0d18338bad314e2d86c91187e865d5a60036deec74dbf2b6f4c271651e40ba7",
+      "committedTilesSHA256": "51c3f98951df2b2c64f2d31bbe310c1cc057e5dcf1f263bc8914d8adeb630f54",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 5,
+      "name": "05-waiting-s0-m0-c0",
+      "canvasSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "displayedRGB_SHA256": "4ff9ffe4e0a2fb10d4628a92510eb0ac867f6c7130d051bf0eaa4481ee2b9189",
+      "committedTilesSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 0,
+      "charges": 0,
+      "index": 6,
+      "name": "06-waiting-s3-m0-c0",
+      "canvasSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "displayedRGB_SHA256": "51bfd9eb119024560e00395b6b26cbdc6790a31076dbdc7326c9ab546f7646a3",
+      "committedTilesSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 2,
+      "mode": 0,
+      "charges": 0,
+      "index": 7,
+      "name": "07-waiting-s2-m0-c0",
+      "canvasSHA256": "0868e12353777627a817c073c158e217856f351a37bef6dc057e94315a8878c9",
+      "displayedRGB_SHA256": "62993d21035b48eb5b6ec3596aca055bbddea5d1fd748eebdeba5510077d11ea",
+      "committedTilesSHA256": "0868e12353777627a817c073c158e217856f351a37bef6dc057e94315a8878c9",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 1,
+      "mode": 0,
+      "charges": 0,
+      "index": 8,
+      "name": "08-waiting-s1-m0-c0",
+      "canvasSHA256": "87fbfd37d14f6f9b63ef38d87b904c5b24213db27928c89254adcc9a7bbbe129",
+      "displayedRGB_SHA256": "0cfbc3378aab844b5dfa1e71337f1c70b9c9baf88d45775fc4b83e5e1fbee9d1",
+      "committedTilesSHA256": "87fbfd37d14f6f9b63ef38d87b904c5b24213db27928c89254adcc9a7bbbe129",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 9,
+      "name": "09-waiting-s0-m0-c0",
+      "canvasSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "displayedRGB_SHA256": "4ff9ffe4e0a2fb10d4628a92510eb0ac867f6c7130d051bf0eaa4481ee2b9189",
+      "committedTilesSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 1,
+      "charges": 3,
+      "index": 10,
+      "name": "10-waiting-s0-m1-c3",
+      "canvasSHA256": "b7e754d66b51e2404d5c822cd8394edc5856fd7bf20a6d354866b1a31686bbc9",
+      "displayedRGB_SHA256": "d60f5faa928f8fefdde578264cab51860f2724f4fffc972ef605aa65307b318a",
+      "committedTilesSHA256": "b7e754d66b51e2404d5c822cd8394edc5856fd7bf20a6d354866b1a31686bbc9",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 1,
+      "charges": 2,
+      "index": 11,
+      "name": "11-waiting-s0-m1-c2",
+      "canvasSHA256": "3c0b50cb8d1610f4109ca7517735074ac7279a8c4e4b3cf001e82792fbd0db64",
+      "displayedRGB_SHA256": "ed4412ba2f77f984279a42bccc72a403028e18e58ce62533d3c83361f33409e0",
+      "committedTilesSHA256": "3c0b50cb8d1610f4109ca7517735074ac7279a8c4e4b3cf001e82792fbd0db64",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 1,
+      "charges": 1,
+      "index": 12,
+      "name": "12-waiting-s0-m1-c1",
+      "canvasSHA256": "baa8f258aee577d8b901ff9a088d0220866412abc2fc784a4079d6fcff8fcdd5",
+      "displayedRGB_SHA256": "8b1a1e865d2687b5e6faa60edc3e9012e8aff07eb7cc23ce5e0dceb546e5dee8",
+      "committedTilesSHA256": "baa8f258aee577d8b901ff9a088d0220866412abc2fc784a4079d6fcff8fcdd5",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 1,
+      "charges": 0,
+      "index": 13,
+      "name": "13-waiting-s0-m1-c0",
+      "canvasSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "displayedRGB_SHA256": "4ff9ffe4e0a2fb10d4628a92510eb0ac867f6c7130d051bf0eaa4481ee2b9189",
+      "committedTilesSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 1,
+      "charges": 3,
+      "index": 14,
+      "name": "14-waiting-s3-m1-c3",
+      "canvasSHA256": "66714f1b5866e5363841982b4627c0e323fc99288c1bd12ffa8d254bbeeb085f",
+      "displayedRGB_SHA256": "965964dd1e1d96db4c6e8bec3bc245fa4e9b5231589d18c4742bd0fc2665eb04",
+      "committedTilesSHA256": "66714f1b5866e5363841982b4627c0e323fc99288c1bd12ffa8d254bbeeb085f",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 1,
+      "charges": 2,
+      "index": 15,
+      "name": "15-waiting-s3-m1-c2",
+      "canvasSHA256": "5fa1e1f295a8064a79ba16fabfdb1e67bb5906b334e0912dd5769aea6dc16dca",
+      "displayedRGB_SHA256": "b3f746d6455b1e9a18bca31cbd71e8c50bdb282743b84c727c619aa9de02a969",
+      "committedTilesSHA256": "5fa1e1f295a8064a79ba16fabfdb1e67bb5906b334e0912dd5769aea6dc16dca",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 1,
+      "charges": 1,
+      "index": 16,
+      "name": "16-waiting-s3-m1-c1",
+      "canvasSHA256": "372bbdbefd253cc2c891903682c4d0c7df7929f6195f1e3ed60f6c8557bbb5e8",
+      "displayedRGB_SHA256": "6ac69fa2909ad6c916cb11612ac326f7eb4ea6e4daa50932c8f13aaa68ce7dd8",
+      "committedTilesSHA256": "372bbdbefd253cc2c891903682c4d0c7df7929f6195f1e3ed60f6c8557bbb5e8",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 1,
+      "charges": 0,
+      "index": 17,
+      "name": "17-waiting-s3-m1-c0",
+      "canvasSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "displayedRGB_SHA256": "51bfd9eb119024560e00395b6b26cbdc6790a31076dbdc7326c9ab546f7646a3",
+      "committedTilesSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 2,
+      "charges": 3,
+      "index": 18,
+      "name": "18-waiting-s0-m2-c3",
+      "canvasSHA256": "a7cab9f461a2de33ebfe73d3bd611b2001ca4617cf5673c699ca6b212fa39b1a",
+      "displayedRGB_SHA256": "de399245024851ebb108709c02a65cfb23a3c4dfb009660d1cb2282146cfe273",
+      "committedTilesSHA256": "a7cab9f461a2de33ebfe73d3bd611b2001ca4617cf5673c699ca6b212fa39b1a",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 2,
+      "charges": 2,
+      "index": 19,
+      "name": "19-waiting-s0-m2-c2",
+      "canvasSHA256": "d3aa051ab7ebb44678b8ef9be537561cbf3453b7e12d0b4dd97a44b7c9d9fdb4",
+      "displayedRGB_SHA256": "46fef3e5336465e202c9ca53f2852297e8b0d6539bc18ee35a1b03465c4a73b5",
+      "committedTilesSHA256": "d3aa051ab7ebb44678b8ef9be537561cbf3453b7e12d0b4dd97a44b7c9d9fdb4",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 2,
+      "charges": 1,
+      "index": 20,
+      "name": "20-waiting-s0-m2-c1",
+      "canvasSHA256": "8f0d48613b376ef191dc08f3bead8cd22d0861607c94a1f903d5984d754dffc2",
+      "displayedRGB_SHA256": "19e73d10f89885ffc238c8e7eb4346654a2754c1b962e5ebffc991319a56c347",
+      "committedTilesSHA256": "8f0d48613b376ef191dc08f3bead8cd22d0861607c94a1f903d5984d754dffc2",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 2,
+      "charges": 0,
+      "index": 21,
+      "name": "21-waiting-s0-m2-c0",
+      "canvasSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "displayedRGB_SHA256": "4ff9ffe4e0a2fb10d4628a92510eb0ac867f6c7130d051bf0eaa4481ee2b9189",
+      "committedTilesSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 2,
+      "charges": 3,
+      "index": 22,
+      "name": "22-waiting-s3-m2-c3",
+      "canvasSHA256": "8f01b51af51f3347c87be47528ec767d6ab0fea663cf77045da4948920787021",
+      "displayedRGB_SHA256": "ac66d1d830701a5f6895742c64b5d4ba1c14523881d7c7cf272d934a84288223",
+      "committedTilesSHA256": "8f01b51af51f3347c87be47528ec767d6ab0fea663cf77045da4948920787021",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 2,
+      "charges": 2,
+      "index": 23,
+      "name": "23-waiting-s3-m2-c2",
+      "canvasSHA256": "9b4b19d6fd78b2b9a312243e9c2da992c03d5391751910c4746f40a4f3c41c4a",
+      "displayedRGB_SHA256": "59b393d673941e06781a6b05e2d483c3479d9200437472f2e7047c2b6e2ad409",
+      "committedTilesSHA256": "9b4b19d6fd78b2b9a312243e9c2da992c03d5391751910c4746f40a4f3c41c4a",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 2,
+      "charges": 1,
+      "index": 24,
+      "name": "24-waiting-s3-m2-c1",
+      "canvasSHA256": "de993ed1fb79888b4372bdd5b52bc22a5cbc75dc13019a440c066c914c53783f",
+      "displayedRGB_SHA256": "e64ac5c690e2e92c3bcb99ef5c8e0941cd6a9ea64b8d1088a263e6ab4ba3d9ed",
+      "committedTilesSHA256": "de993ed1fb79888b4372bdd5b52bc22a5cbc75dc13019a440c066c914c53783f",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 2,
+      "charges": 0,
+      "index": 25,
+      "name": "25-waiting-s3-m2-c0",
+      "canvasSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "displayedRGB_SHA256": "51bfd9eb119024560e00395b6b26cbdc6790a31076dbdc7326c9ab546f7646a3",
+      "committedTilesSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 3,
+      "charges": 3,
+      "index": 26,
+      "name": "26-waiting-s0-m3-c3",
+      "canvasSHA256": "ac39158fff93c86dce6c22b046776e058ee3c18b37ab3427547c227ce7afdf25",
+      "displayedRGB_SHA256": "721f6b1e09c82b25afef9ebe5a05fc2a0419e61caf1d4292876b6b4100814d7b",
+      "committedTilesSHA256": "ac39158fff93c86dce6c22b046776e058ee3c18b37ab3427547c227ce7afdf25",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 3,
+      "charges": 2,
+      "index": 27,
+      "name": "27-waiting-s0-m3-c2",
+      "canvasSHA256": "e6e8ddc3ef422e5bb97f2b465420aa2deb65ff14264ed846f12500870728f300",
+      "displayedRGB_SHA256": "f391402e1479a8413ec4b76684b82fc41265383848688da2289ccd2f66ba5df9",
+      "committedTilesSHA256": "e6e8ddc3ef422e5bb97f2b465420aa2deb65ff14264ed846f12500870728f300",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 3,
+      "charges": 1,
+      "index": 28,
+      "name": "28-waiting-s0-m3-c1",
+      "canvasSHA256": "c2af2dd2d3baadd311e7f37c3b2514ab319001df85ae910e47f0e028f65fce5c",
+      "displayedRGB_SHA256": "356764ffb6e14b1da36af1e19852e3e7fe7d220cfa131721261dd2799da47619",
+      "committedTilesSHA256": "c2af2dd2d3baadd311e7f37c3b2514ab319001df85ae910e47f0e028f65fce5c",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 0,
+      "mode": 3,
+      "charges": 0,
+      "index": 29,
+      "name": "29-waiting-s0-m3-c0",
+      "canvasSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "displayedRGB_SHA256": "4ff9ffe4e0a2fb10d4628a92510eb0ac867f6c7130d051bf0eaa4481ee2b9189",
+      "committedTilesSHA256": "eb8ee97f1a47cc30688f2b9fdbb05f76a38327557b62bfc3fdef3bcc878dc063",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 3,
+      "charges": 3,
+      "index": 30,
+      "name": "30-waiting-s3-m3-c3",
+      "canvasSHA256": "1d9e3828d7888825e404b73f58c0d60ffd12845079d10e2341103631ac326fea",
+      "displayedRGB_SHA256": "657919528a5de589fc013ebbf682c0dda77f2fdf17f6e860743d4cc20d05beaa",
+      "committedTilesSHA256": "1d9e3828d7888825e404b73f58c0d60ffd12845079d10e2341103631ac326fea",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 3,
+      "charges": 2,
+      "index": 31,
+      "name": "31-waiting-s3-m3-c2",
+      "canvasSHA256": "ee2906307b124b9e06d3e551169ed46a5057aec6b6c4caf12f12036ede6600e4",
+      "displayedRGB_SHA256": "4e96c0e7a6776e6e2f8359ea9365f353b0050ed6ce67ced655ff696683d401c9",
+      "committedTilesSHA256": "ee2906307b124b9e06d3e551169ed46a5057aec6b6c4caf12f12036ede6600e4",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 3,
+      "charges": 1,
+      "index": 32,
+      "name": "32-waiting-s3-m3-c1",
+      "canvasSHA256": "2b959ab9e5403eccb31c17bac57e38765778a651b346269c100134879b059822",
+      "displayedRGB_SHA256": "4305feccfc480cf30c0d6725ce96e9720014f85364fc5283b9d162220cfba243",
+      "committedTilesSHA256": "2b959ab9e5403eccb31c17bac57e38765778a651b346269c100134879b059822",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 3,
+      "mode": 3,
+      "charges": 0,
+      "index": 33,
+      "name": "33-waiting-s3-m3-c0",
+      "canvasSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "displayedRGB_SHA256": "51bfd9eb119024560e00395b6b26cbdc6790a31076dbdc7326c9ab546f7646a3",
+      "committedTilesSHA256": "2f3431062bd6800607e274d7c817d5375d5ff60c3ecb9eba2530fb8b60ea8219",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "aiming",
+      "shield": 2,
+      "mode": 1,
+      "charges": 2,
+      "bag": "full",
+      "index": 34,
+      "name": "34-aiming-s2-m1-c2",
+      "canvasSHA256": "ccf6282936a14a5d610c5b2b6f82eec84adf2d53b93c29e0e41e04dcca08a0f2",
+      "displayedRGB_SHA256": "a79461c2fcbcee27a7aa023b1540bd5c790377cfbdcead1aa8a47567019a8d24",
+      "committedTilesSHA256": "ccf6282936a14a5d610c5b2b6f82eec84adf2d53b93c29e0e41e04dcca08a0f2",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "waiting",
+      "shield": 1,
+      "mode": 1,
+      "charges": 1,
+      "bag": "empty",
+      "index": 35,
+      "name": "35-waiting-s1-m1-c1",
+      "canvasSHA256": "d9a7bbb23209d7783c5f80b1c1a205b0108355a8f614c4cf5593d5afb19e0dd9",
+      "displayedRGB_SHA256": "efe743b5c0a98412293afcf9fb94edf78015170fd93a6dcc50c8888be1537c00",
+      "committedTilesSHA256": "d9a7bbb23209d7783c5f80b1c1a205b0108355a8f614c4cf5593d5afb19e0dd9",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    },
+    {
+      "label": "pausing",
+      "shield": 0,
+      "mode": 0,
+      "charges": 0,
+      "index": 36,
+      "name": "36-pausing-s0-m0-c0",
+      "canvasSHA256": "255add48e781c710ce211c4419445c52b5fdfb9a583afc20fa47dc589517bb0c",
+      "displayedRGB_SHA256": "a6042f82617f2a268651a680f07f0cf7bfbf1702955b502a7ebd89d573865209",
+      "committedTilesSHA256": "255add48e781c710ce211c4419445c52b5fdfb9a583afc20fa47dc589517bb0c",
+      "passed": false,
+      "differences": [
+        {
+          "bank": "canvas.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "vram.bin",
+          "differentBytes": 17,
+          "expectedBytes": 3840,
+          "actualBytes": 3840
+        },
+        {
+          "bank": "rgb.bin",
+          "differentBytes": 57,
+          "expectedBytes": 23040,
+          "actualBytes": 23040
+        }
+      ]
+    }
+  ],
+  "method": "Identical explicit HUD semantic states; native UI update and DMA only. Compare all3840canvas bytes, committed120tiles and320x24display pixels. Insect combat isolated; this is UI equivalence, not timing or gameplay.",
+  "referenceROM_SHA256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "caseCount": 37
+}

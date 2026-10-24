@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "revision": "Approved resistance panel in preparation, pause, six help pages and fixed portrait dialogue; safe exit confirmation; release debug shortcuts disabled",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "70004ffb25201aeba387ad12b16b2acd6b3ef9b4c958aa6d36bb50e23593ec99",
+  "rom_bytes": 1310720,
+  "text_bytes": 1263580,
+  "data_bytes": 140,
+  "bss_bytes": 8808,
+  "static_ram_bytes": 8948,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "interface_ntsc": {
+      "passed": true,
+      "report": "../art/interface-ux-v2/integracao/validation/ntsc/report.json",
+      "localities": 20,
+      "helpPages": 6,
+      "graphicsRestoredExactly": true,
+      "simulationFrozen": true
+    },
+    "routemap_ntsc": {
+      "passed": true,
+      "report": "../art/interface-ux-v2/integracao/validation/map-ntsc/report.json",
+      "edges": 23,
+      "completeHistories": 2,
+      "maxOverlayTiles": 140
+    },
+    "interface_pal": {
+      "passed": true,
+      "report": "../art/interface-ux-v2/integracao/validation/pal/report.json",
+      "localities": 20,
+      "helpPages": 6,
+      "graphicsRestoredExactly": true,
+      "simulationFrozen": true
+    },
+    "routemap_pal": {
+      "passed": true,
+      "report": "../art/interface-ux-v2/integracao/validation/map-pal/report.json",
+      "edges": 23,
+      "completeHistories": 2,
+      "maxOverlayTiles": 140
+    }
+  },
+  "native_audio_player_resources": "../art/interface-ux-v2/integracao/validation/native-checks.txt",
+  "native_checks_passed": true,
+  "map_limits": {
+    "screen": [
+      320,
+      224
+    ],
+    "painting": [
+      320,
+      160
+    ],
+    "art_tiles": 800,
+    "art_base": 101,
+    "overlay_budget": 192,
+    "overlay_max_observed": 140,
+    "pin_tiles": 4,
+    "pin_base": 1093,
+    "font_base": 1440,
+    "art_palettes": 2,
+    "row_buffer_bytes": 1280,
+    "borrowed_graphics_restored": true
+  },
+  "previous_validation": "../art/interface-ux-v2/integracao/validation/build-before.json",
+  "footer": {
+    "coveredEdges": 23,
+    "body": "centered on 8px tile grid",
+    "actions": "right aligned, 8px margin",
+    "goldPalette": "PAL3, restored on exit",
+    "maxCharacters": 37,
+    "fontTilesAdded": 0,
+    "rows": [
+      22,
+      23,
+      24,
+      26
+    ],
+    "readyAndTravelValidated": true
+  },
+  "interface_limits": {
+    "artTiles": 545,
+    "artBase": 101,
+    "scratchBase": 646,
+    "scratchTiles": 112,
+    "lastBorrowedTile": 757,
+    "fontBase": 1440,
+    "backgroundColors": 15,
+    "artBytes": 17440,
+    "graphicsSnapshotBytes": 32288,
+    "snapshotLifetime": "allocated once for a panel and its help subpages, freed on exit",
+    "simulationResetOnResume": false,
+    "portrait": [
+      48,
+      48
+    ],
+    "dialogueWidth": 34,
+    "dialogueRows": 4,
+    "dialogueLineSpacing": 16,
+    "dialogueLinesChecked": 51,
+    "releaseShortcuts": "DEV_SHORTCUTS opt-in; disabled in production"
+  }
+}

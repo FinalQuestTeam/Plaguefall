@@ -1,0 +1,292 @@
+{
+  "phase": "12",
+  "rom_sha256": "44c5dab0c45d36452330427fc4014459bc8d5aea4e44ff1b93303e2d86791f60",
+  "region": "NTSC",
+  "scope": "visual camera inspection, not a gameplay completion test",
+  "status": "camera_corrections_required_before_final_approval",
+  "visual_reviewed_landmarks": 6,
+  "capture_setup_limit": "Snapshots seed each real phase; RAM suppresses combat, progress and auto-interactions while player feet are moved to free positions. Native camera/streaming/rendering remain active.",
+  "gameplay_result": "Independent of these snapshots. Parent reported escort reached the endpoint; first harness failed at an obsolete fixed photo threshold2890, later replaced with the new route endpoint2856.",
+  "findings": [
+    {
+      "id": "workshop-right-cap-clipped",
+      "severity": "camera_framing",
+      "landmark": 0,
+      "evidence": "runtime-44c5/landmark-0.png",
+      "world_bbox": [
+        80,
+        32,
+        304,
+        160
+      ],
+      "visible_world": [
+        0,
+        32,
+        320,
+        232
+      ],
+      "lost_pixels": {
+        "right": 64
+      },
+      "visual": "Workshop right roof and structural closing cap are outside the image. Left of the view contains a broad portion of the entrance wall.",
+      "recommendation": "Focus X between64 and80 when both escort actors fit. CameraX72 contains the full workshop and both seeded actors."
+    },
+    {
+      "id": "union-top-under-hud",
+      "severity": "camera_framing",
+      "landmark": 2,
+      "evidence": "runtime-44c5/landmark-2.png",
+      "world_bbox": [
+        2704,
+        24,
+        304,
+        176
+      ],
+      "visible_world": [
+        2696,
+        28,
+        3016,
+        228
+      ],
+      "lost_pixels": {
+        "top": 4
+      },
+      "visual": "Union roof touches the HUD; four pixels of declared whole-building context are hidden. Door, red union cloth, blue windows and human scale remain legible.",
+      "recommendation": "Capture a legal feet pose[2848,200], allowing cameraY0 and the full declared bbox without clipping the visible hero."
+    },
+    {
+      "id": "south-dock1-left-cap-clipped",
+      "severity": "camera_framing",
+      "landmark": 3,
+      "evidence": "runtime-44c5/landmark-3.png",
+      "world_bbox": [
+        1008,
+        200,
+        240,
+        112
+      ],
+      "visible_world": [
+        1024,
+        112,
+        1344,
+        312
+      ],
+      "lost_pixels": {
+        "left": 16
+      },
+      "visual": "The utility dock enters the left edge without its complete enclosing structure.",
+      "recommendation": "A legal feet pose[1120,176] gives a more central framing. Otherwise clamp cameraX into928..1008 while actors remain visible."
+    },
+    {
+      "id": "south-bases-no-context",
+      "severity": "framing_note",
+      "landmarks": [
+        3,
+        4,
+        5
+      ],
+      "evidence": [
+        "runtime-44c5/landmark-3.png",
+        "runtime-44c5/landmark-4.png",
+        "runtime-44c5/landmark-5.png"
+      ],
+      "visual": "All base pixels of southern buildings reach the last viewport row at cameraY88; there is no extra ground context below. This is an exact fit, distinct from the actual side clipping in landmark3.",
+      "recommendation": "CameraY96 could leave8px of context if actor visibility permits."
+    }
+  ],
+  "landmarks": [
+    {
+      "id": 0,
+      "path": "12/landmark-0.png",
+      "position": [
+        224,
+        208
+      ],
+      "camera": [
+        0,
+        8
+      ],
+      "visible_world": [
+        0,
+        32,
+        320,
+        232
+      ],
+      "label": "0",
+      "bbox": [
+        80,
+        32,
+        304,
+        160
+      ],
+      "landmark_entirely_visible": false,
+      "row": 3,
+      "col": 0
+    },
+    {
+      "id": 1,
+      "path": "12/landmark-1.png",
+      "position": [
+        1624,
+        184
+      ],
+      "camera": [
+        1472,
+        0
+      ],
+      "visible_world": [
+        1472,
+        24,
+        1792,
+        224
+      ],
+      "label": "1",
+      "bbox": [
+        1488,
+        24,
+        304,
+        144
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 1
+    },
+    {
+      "id": 2,
+      "path": "12/landmark-2.png",
+      "position": [
+        2848,
+        208
+      ],
+      "camera": [
+        2696,
+        4
+      ],
+      "visible_world": [
+        2696,
+        28,
+        3016,
+        228
+      ],
+      "label": "2",
+      "bbox": [
+        2704,
+        24,
+        304,
+        176
+      ],
+      "landmark_entirely_visible": false,
+      "row": 3,
+      "col": 2
+    },
+    {
+      "id": 3,
+      "path": "12/landmark-3.png",
+      "position": [
+        1176,
+        176
+      ],
+      "camera": [
+        1024,
+        88
+      ],
+      "visible_world": [
+        1024,
+        112,
+        1344,
+        312
+      ],
+      "label": "3",
+      "bbox": [
+        1008,
+        200,
+        240,
+        112
+      ],
+      "landmark_entirely_visible": false,
+      "row": 3,
+      "col": 3
+    },
+    {
+      "id": 4,
+      "path": "12/landmark-4.png",
+      "position": [
+        1880,
+        176
+      ],
+      "camera": [
+        1728,
+        88
+      ],
+      "visible_world": [
+        1728,
+        112,
+        2048,
+        312
+      ],
+      "label": "4",
+      "bbox": [
+        1760,
+        200,
+        240,
+        112
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 4
+    },
+    {
+      "id": 5,
+      "path": "12/landmark-5.png",
+      "position": [
+        2416,
+        176
+      ],
+      "camera": [
+        2264,
+        88
+      ],
+      "visible_world": [
+        2264,
+        112,
+        2584,
+        312
+      ],
+      "label": "5",
+      "bbox": [
+        2304,
+        200,
+        240,
+        112
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 5
+    }
+  ],
+  "frozen_files_unchanged": true,
+  "current_frozen_hashes": {
+    "build.py": "3d5288a8966ca51dd73b935e3f54c94aa061b26852756b923e4546105ecdb5e6",
+    "manifest.json": "4af797f5fc79e0a079f49476e7b7c0c7e5796b488a2e35506dbeca0de574e541",
+    "complete-native.png": "9e4b91f5d9bd731bb68ac917a1cbae410b0411904d884e15c38a5aa24d35ccec",
+    "native/tiles.bin": "d234ecaad0eccebcef708db230ac45b09bcc8c28d1f5e94b1d4290e33a698398",
+    "native/map.bin": "4fdc9b524bce416ec07da7c174eef4a6e3eb2fead20eb72a3aaa1e81ae81643e",
+    "native/palette.bin": "b48d03e0467ab40b96e7097337e0c22e22b81ff7a81030d78568ef954add889d"
+  },
+  "no_shared_C_ROM_or_art_bank_edits": true,
+  "sweep_review": {
+    "frames": 60,
+    "evidence": [
+      "runtime-44c5/sweep-row-0.png",
+      "runtime-44c5/sweep-row-1.png",
+      "runtime-44c5/sweep-row-2.png"
+    ],
+    "observations": [
+      "All three20-column scan sheets visually inspected; sampled native frames x15-y1 and x18-y1 inspected at full320x224 to distinguish sheet boundaries from actual repeated architecture.",
+      "No missing tile strips, shifted palette fields, isolated box fragments or unconnected building corners found in the sweep.",
+      "Buildings partially entering a scrolling camera are normal; whole-building proof is assessed separately at the six declared landmark poses.",
+      "At x15-y1 hero feet begin184 and the16px body ends200, exactly touching the southern roof solid at200; the near contact is consistent with collision, not evidence of walking on the roof.",
+      "This capture setup suppresses combat and relocates player feet; it does not demonstrate normal escort separation or load performance. Those remain the central controller suite responsibility."
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "status": "implemented-verified",
+  "rom_sha256": "3ef99e13ae4af490144c91b00b415943433072ff2e8a7832f3bb9f019dd73390",
+  "obstacles": 20,
+  "tiles": 615,
+  "connected_16px_positions": 5668,
+  "church_exact_native_tiles": 288,
+  "church_outcomes": 2,
+  "regions": {
+    "ntsc": {
+      "load_fps": 53.2,
+      "cpu_p95": 106.93,
+      "peak_enemies": 4,
+      "collision_probes": 58,
+      "match": {
+        "attempt": 1,
+        "result": "completed",
+        "objective_failed": false,
+        "game_seconds": 22.87,
+        "physical_seconds": 23.02,
+        "fps": 59.61,
+        "kills": 0,
+        "hp": 100,
+        "minimum_npc_hp": null,
+        "peak_enemies": 1,
+        "damage_events": 0,
+        "ram_writes_during_attempt": false
+      }
+    },
+    "pal": {
+      "load_fps": 47.75,
+      "cpu_p95": 76.71,
+      "peak_enemies": 4,
+      "collision_probes": 58,
+      "match": {
+        "attempt": 1,
+        "result": "completed",
+        "objective_failed": false,
+        "game_seconds": 27.36,
+        "physical_seconds": 27.36,
+        "fps": 50.0,
+        "kills": 1,
+        "hp": 100,
+        "minimum_npc_hp": null,
+        "peak_enemies": 2,
+        "damage_events": 0,
+        "ram_writes_during_attempt": false
+      }
+    }
+  }
+}

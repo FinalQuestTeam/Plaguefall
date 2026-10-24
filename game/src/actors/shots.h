@@ -33,7 +33,7 @@
 
 // 26.6 fixed. mode is SHOTMODE_* for player shots, visual style1..4 for enemies.
 // dmg is enemy damage to the player (default ESHOT_DAMAGE; boss uses more).
-typedef struct { s32 x, y; s32 vx, vy; u8 mode; u8 dmg; bool active; } FShot;
+typedef struct { s32 x, y; s32 vx, vy; u8 mode; u8 dmg; bool active; u8 renderPose; } FShot;
 
 extern FShot pshots[MAX_PSHOTS];
 extern FShot eshots[MAX_ESHOTS];

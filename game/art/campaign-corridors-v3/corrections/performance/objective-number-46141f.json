@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "compiledStrings": 101,
+  "tableBytes": 404,
+  "allU16ValuesAndFallback": 65536,
+  "romSHA256": "46141f917b867dacbdec8c57e98ed5c62fdb6ef0b8777f4ea1c860e6707358bb",
+  "productionFunctionSHA256": "705bf01e9e1fa7ceef726e671127c6dc035de8a559691a0556a0c1c61719ff6e",
+  "compiledTableSHA256": "71fcce6bd5918448dca852f5023be06778ea2410bc728638e31a86a097ca3a64",
+  "method": "All101compiledROMstrings equal exact3digits+NUL; unchanged extracted helper matches priorDIVUformula for everyu16value including fallback.",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "productionModified": false,
+  "native68000TimingClaim": false
+}

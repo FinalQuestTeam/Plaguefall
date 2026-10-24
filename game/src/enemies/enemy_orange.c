@@ -20,8 +20,10 @@ static void aimAt(Enemy *e, u16 speedFp)
     s16 dy = (DINORAH_alive() && !e->aggroPlayer ? dinorahY+8 : py+8) - (e->y + half);
     u32 dist = getApproximatedDistance(dx, dy);
     if (dist == 0) dist = 1;
-    e->vx = (s16) (((s32) dx * speedFp) / (s32) dist);
-    e->vy = (s16) (((s32) dy * speedFp) / (s32) dist);
+    // Authored worlds keep the divisor below32768 and the200fp dash
+    // quotient safely within s16. DIVS retains the original signed truncation.
+    e->vx = dist<=32767 ? divs((s32)dx*speedFp,dist) : (s16)(((s32)dx*speedFp)/(s32)dist);
+    e->vy = dist<=32767 ? divs((s32)dy*speedFp,dist) : (s16)(((s32)dy*speedFp)/(s32)dist);
 }
 
 void ENEMYORANGE_update(Enemy *e, const EnemyDef *def)

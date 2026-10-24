@@ -8,6 +8,7 @@
 #include "actors/shots.h"
 #include "system/video/herogfx.h"
 #include "levels/test.h"
+#include "levels/levels.h"
 
 // tunáveis em actors/player.h (bloco CONFIG)
 
@@ -54,6 +55,7 @@ void PLAYER_observeFireRelease(u16 joy)
     if(!(joy&BUTTON_A))fireArmed=TRUE;
 }
 void PLAYER_waitFireRelease(void){fireArmed=FALSE;}
+void PLAYER_testProtect(void){if(!currentLevel && testStage==6 && invTimer<fps)invTimer=60000;}
 
 void PLAYER_fullHp(void)
 {

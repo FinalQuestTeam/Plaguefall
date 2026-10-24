@@ -1,0 +1,429 @@
+{
+  "complete": true,
+  "scope": "isolated visual candidate; central production release has separate checksum/test runs",
+  "rom_sha256": "4b6ddf2fb375b22fd3c9ab8ccd35917317268421e2705f501430718df9ebecd6",
+  "rom_bytes": 2365956,
+  "four_process_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "preserved_rgb_hashes": {
+    "game/art/campaign-whole-scenes-v1/resistance/native/union/alive-native.png": "0fef6c46d99b487d6b97d884a010d708b2b4ebae296feaaa3677ea65f4c07cd8",
+    "game/art/campaign-whole-scenes-v1/launch/previews/16-fire-native-reconstructed.png": "4f8fd9885449b60ed05ca06fcff05647cf8a08e9096b003305f638bbe4ff1953"
+  },
+  "scene_tiles": {
+    "favela": 538,
+    "union_alive_dead": 612,
+    "launch_normal": 540,
+    "launch_radio_fire": 553,
+    "launch_boss_fire": 560
+  },
+  "scene_plus_objectives_tiles": {
+    "7": 612,
+    "8": 634,
+    "13A/13B": 612,
+    "14": 605,
+    "15_normal": 626,
+    "15_fire": 639,
+    "16": 560
+  },
+  "vram_arena_limit": 640,
+  "phase13B_start": [
+    280,
+    176
+  ],
+  "phase13A_start": [
+    48,
+    176
+  ],
+  "collision_alignment": 8,
+  "ignition": "120active seconds plus ~1second paused focus and camera return; NPC/heroHP, full enemy structs and19physics bytes of each projectile remain unchanged. Sole excluded byte is renderPose visual cache.",
+  "runs": [
+    {
+      "group": "resistance",
+      "region": "ntsc",
+      "passed": true,
+      "nodes": {
+        "7": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_visible_enemies": 4,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 51.15,
+            "cpu_peak_percent": 52.44,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 19.43,
+            "result": "defeat",
+            "initial_hp": 100,
+            "remaining_hp": 0,
+            "damage_net": 100,
+            "peak_enemies": 4,
+            "simulation_fps": 59.79,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        },
+        "8": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_visible_enemies": 6,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 53.07,
+            "cpu_peak_percent": 54.79,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 32,
+            "damage_net": 68,
+            "peak_enemies": 6,
+            "simulation_fps": 59.8,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        },
+        "13A": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_visible_enemies": 5,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 49.81,
+            "cpu_peak_percent": 51.42,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 16.55,
+            "result": "defeat",
+            "initial_hp": 100,
+            "remaining_hp": 0,
+            "damage_net": 100,
+            "peak_enemies": 5,
+            "simulation_fps": 59.64,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        },
+        "13B": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_visible_enemies": 5,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 47.98,
+            "cpu_peak_percent": 49.22,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 4,
+            "damage_net": 96,
+            "peak_enemies": 5,
+            "simulation_fps": 59.75,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        }
+      }
+    },
+    {
+      "group": "resistance",
+      "region": "pal",
+      "passed": true,
+      "nodes": {
+        "7": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_visible_enemies": 4,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 25.25,
+            "cpu_peak_percent": 26.51,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 55,
+            "damage_net": 45,
+            "peak_enemies": 4,
+            "simulation_fps": 49.95,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        },
+        "8": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_visible_enemies": 6,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 27.21,
+            "cpu_peak_percent": 28.96,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 16.3,
+            "result": "defeat",
+            "initial_hp": 100,
+            "remaining_hp": 0,
+            "damage_net": 100,
+            "peak_enemies": 6,
+            "simulation_fps": 49.75,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        },
+        "13A": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_visible_enemies": 5,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 23.96,
+            "cpu_peak_percent": 25.68,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 28,
+            "damage_net": 72,
+            "peak_enemies": 5,
+            "simulation_fps": 49.95,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        },
+        "13B": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_visible_enemies": 5,
+            "seeded_player_shots": 6,
+            "seeded_enemy_shots": 6,
+            "cpu_mean_percent": 22.07,
+            "cpu_peak_percent": 23.54,
+            "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 20.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 80,
+            "damage_net": 20,
+            "peak_enemies": 5,
+            "simulation_fps": 50.0,
+            "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+          },
+          "collision_probes": 3,
+          "bounds_probes": 4
+        }
+      }
+    },
+    {
+      "group": "launch",
+      "region": "ntsc",
+      "passed": true,
+      "nodes": {
+        "14": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_enemies": 4,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 54.89,
+            "cpu_peak_percent": 56.2,
+            "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 25.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 72,
+            "damage_net": 28,
+            "radio_hp": null,
+            "peak_enemies": 4,
+            "simulation_fps": 59.92,
+            "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+          },
+          "collision_probes": 1,
+          "bounds_probes": 4
+        },
+        "15": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 59.0,
+            "seeded_enemies": 3,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 53.45,
+            "cpu_peak_percent": 60.89,
+            "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 25.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 77,
+            "damage_net": 23,
+            "radio_hp": 52,
+            "peak_enemies": 3,
+            "simulation_fps": 59.0,
+            "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+          },
+          "collision_probes": 1,
+          "bounds_probes": 4
+        },
+        "16": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 60.0,
+            "seeded_enemies": 4,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 58.38,
+            "cpu_peak_percent": 59.91,
+            "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 18.2,
+            "result": "defeat",
+            "initial_hp": 100,
+            "remaining_hp": 0,
+            "damage_net": 100,
+            "radio_hp": null,
+            "peak_enemies": 3,
+            "simulation_fps": 59.95,
+            "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+          },
+          "collision_probes": 1,
+          "bounds_probes": 4
+        }
+      }
+    },
+    {
+      "group": "launch",
+      "region": "pal",
+      "passed": true,
+      "nodes": {
+        "14": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_enemies": 4,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 28.96,
+            "cpu_peak_percent": 30.03,
+            "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 25.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 8,
+            "damage_net": 92,
+            "radio_hp": null,
+            "peak_enemies": 4,
+            "simulation_fps": 49.96,
+            "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+          },
+          "collision_probes": 1,
+          "bounds_probes": 4
+        },
+        "15": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_enemies": 3,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 27.83,
+            "cpu_peak_percent": 35.69,
+            "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 25.0,
+            "result": "timeout",
+            "initial_hp": 100,
+            "remaining_hp": 40,
+            "damage_net": 60,
+            "radio_hp": 52,
+            "peak_enemies": 3,
+            "simulation_fps": 49.72,
+            "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+          },
+          "collision_probes": 1,
+          "bounds_probes": 4
+        },
+        "16": {
+          "stress": {
+            "passed": true,
+            "simulation_fps": 50.0,
+            "seeded_enemies": 4,
+            "seeded_player_shots": 4,
+            "seeded_enemy_shots": 4,
+            "cpu_mean_percent": 32.5,
+            "cpu_peak_percent": 33.79,
+            "setup": "RAM re-seeds simultaneous cap and full4shot pools eachframe; artificial stress"
+          },
+          "difficulty_sample": {
+            "controller_only": true,
+            "duration_seconds": 11.68,
+            "result": "defeat",
+            "initial_hp": 100,
+            "remaining_hp": 0,
+            "damage_net": 100,
+            "radio_hp": null,
+            "peak_enemies": 3,
+            "simulation_fps": 50.0,
+            "scope": "25s automated movement/fire; limited sample, not human difficulty rating"
+          },
+          "collision_probes": 1,
+          "bounds_probes": 4
+        }
+      }
+    }
+  ]
+}

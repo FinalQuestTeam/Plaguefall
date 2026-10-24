@@ -1,0 +1,547 @@
+{
+  "reviewer": "routes agent; independent reassessment of own prior work",
+  "review_type": "READONLY forensic visual inspection, no ROM/source/art edits",
+  "previous_approval_disregarded": true,
+  "captured_rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "world_coordinates": "native3072x320; rectangles are[x,y,w,h], right/bottom exclusive",
+  "source_coordinates": "canonical source images, not native world coordinates",
+  "native_map_caveat": "Base canonical maps exclude runtime objects. Final opinion also reviewed the root-generated complete boards, closed/open6B complete maps, exact object ink bboxes, geometry overlays, and actual NTSC/PAL captures.",
+  "evidence_method": "Lossless crop and integer NEAREST enlargement of existing PNGs, no repaint, no new art.",
+  "technical_passes_are_not_visual_acceptance": true,
+  "phases": [
+    {
+      "phase": "6A",
+      "status": "reprovada",
+      "priority": "P1",
+      "reviewed_individually": true,
+      "native": "game/art/campaign-whole-scenes-v1/routes/06a-native-complete.png",
+      "source": "game/art/campaign-whole-scenes-v1/routes/source/06a-complete.png",
+      "captures": [
+        "game/art/campaign-integrated-v1/escorts/ntsc/06a-entrada.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06a-meio.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06a-saida.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06a-chegada.png"
+      ],
+      "findings": [
+        {
+          "id": "6A-01",
+          "priority": "P1",
+          "confidence": "confirmed",
+          "title": "Meias vertentes e tubos cortados se repetem nas emendas",
+          "description": "O módulo chamado Intervalo arquitetônico recorta x450..580 da fonte: o arco, a saída d’água e o cano horizontal continuam para além da borda direita. A mesma peça32px é colocada lado a lado, produzindo duas vertentes sem a metade direita e canos com terminações abruptas. Não é somente repetição de uma construção completa.",
+          "world_rect": [
+            112,
+            96,
+            64,
+            96
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06a-wall-source-cut.png",
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06a-wall-join.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06a-entrada.png",
+            "game/art/campaign-composition-forensic-v1/boards/6A-whole.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 33
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 68
+            }
+          ],
+          "screen_rect": [
+            112,
+            24,
+            64,
+            96
+          ],
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "6A-02",
+          "priority": "P1",
+          "confidence": "confirmed",
+          "title": "Marco central sobrepõe parte de outro pórtico",
+          "description": "O marco circular ocupa x1408..1503. A baia de fundo começa emx1472 e vai até1583: os primeiros32px dessa baia são sobrescritos, deixando emx1504 uma fração de arco grande sem a sua fundação esquerda original. O círculo de inspeção e o arco vizinho são unidos por um corte vertical, em vez de uma transição arquitetônica autoral.",
+          "world_rect": [
+            1472,
+            96,
+            112,
+            96
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06a-central-overlay.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06a-meio.png",
+            "game/art/campaign-composition-forensic-v1/boards/6A-whole.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 70
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 65
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "6A-03",
+          "priority": "P2",
+          "confidence": "confirmed",
+          "title": "Faixa caminhável quase toda reduzida a uma única cor",
+          "description": "Na área x16..3055,y192..295,91,78% dos pixels são exatamenteRGB109,109,109. O pavimento vem de um único pixel da fonte ampliado, então nenhuma junta, sombra de implantação ou diferença de setor do whole scene chega ao piso jogável. As capturas exibem uma grande faixa cinza vazia entre a arquitetura e o canal. O piso calmo é útil, mas aqui a redução elimina também os marcos de implantação e profundidade.",
+          "world_rect": [
+            16,
+            192,
+            3040,
+            104
+          ],
+          "evidence": [
+            "game/art/campaign-integrated-v1/escorts/ntsc/06a-entrada.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06a-meio.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06a-chegada.png",
+            "game/art/campaign-whole-scenes-v1/routes/06a-native-complete.png",
+            "game/art/campaign-composition-forensic-v1/boards/6A-whole.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 33
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 60
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        }
+      ],
+      "unproven_suspicions": [],
+      "judgment": "Os recortes interrompidos impedem aprovação visual, ainda que a rota esteja tecnicamente conectada.",
+      "complete_board": "game/art/campaign-composition-forensic-v1/boards/6A-whole.png",
+      "complete_map": "game/art/campaign-composition-forensic-v1/maps/6A-complete.png",
+      "geometry_overlay": "game/art/campaign-composition-forensic-v1/layouts/6A.png",
+      "complete_panorama_judgment": "Rechecked entire3072px panorama with objects before finalizing this opinion; listed defects remain visible and are not inferred from a technical test."
+    },
+    {
+      "phase": "6B",
+      "status": "reprovada",
+      "priority": "P1",
+      "reviewed_individually": true,
+      "native": "game/art/campaign-whole-scenes-v1/routes/06b-native-complete.png",
+      "source": "game/art/campaign-whole-scenes-v1/routes/source/06b-complete.png",
+      "captures": [
+        "game/art/campaign-integrated-v1/escorts/ntsc/06b-entrada.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-fechado.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-aberto.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-fechado.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-aberto.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06b-meio.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/06b-saida.png"
+      ],
+      "findings": [
+        {
+          "id": "6B-01",
+          "priority": "P2",
+          "confidence": "confirmed",
+          "title": "A folha e seus suportes não encostam na alvenaria do vão",
+          "description": "O bloco superior termina emy207 e o inferior começa emy272. A porta64px é montada com canvas emy208, mas a arte fechada tem bbox alfa y1..62: começa emy209 e termina em270. Logo há uma linha inteira de piso emy208 e outra em271 separando as extremidades dos blocos. Além disso a folha diagonal e seus pilares saem lateralmente do bloco32px, tornando o contato aparente ainda menos convincente na captura5x.",
+          "world_rect": [
+            992,
+            192,
+            64,
+            112
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-portao-1-fechado-actual5x.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-fechado.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-fechado.png",
+            "game/art/objective-sprites-v1/frames/gate-0.png",
+            "game/art/campaign-composition-forensic-v1/boards/6B-whole.png",
+            "game/art/campaign-composition-forensic-v1/maps/6B-open-complete.png"
+          ],
+          "code": [
+            {
+              "path": "game/src/levels/campaign_route_ops.c",
+              "line": 39
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 15
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 87
+            }
+          ],
+          "screen_rect": [
+            192,
+            96,
+            64,
+            112
+          ],
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "6B-02",
+          "priority": "P2",
+          "confidence": "confirmed",
+          "title": "Tubo da válvula nasce na queda d’água, sem junção mecânica legível",
+          "description": "O tubo emL está emx944..946,y176..223, com a boca horizontal atéx955. Sua extremidade superior é colocada na vertente azul da baia decorativa; não há flange, cotovelo ou ligação desenhada com a casa de comporta emx976..1039. A parte que chega ao volante está ligada, mas a origem da alimentação se confunde com a água do cenário. A mesma situação se repete1024px adiante.",
+          "world_rect": [
+            936,
+            168,
+            112,
+            64
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-pipe-gate-area.png",
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-portao-1-fechado-actual5x.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-fechado.png",
+            "game/art/campaign-composition-forensic-v1/boards/6B-whole.png",
+            "game/art/campaign-composition-forensic-v1/maps/6B-open-complete.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 76
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 79
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 81
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "6B-03",
+          "priority": "P1",
+          "confidence": "confirmed",
+          "title": "Peça de água e casa de comporta terminam em bordas retas do recorte",
+          "description": "O recorte central x450..830,y0..370 contém porções do canal superior. Reduzido a64x80 e colado sobre baias existentes, deixa fragmentos azuis de água imediatamente acima da moldura e corta paredes/canos nas laterais. O zoom do marco central mostra o filete de água com cortes verticais emx1408/1472; nas estações o mesmo recorte ocupa x976..1040 e2000..2064. A silhueta parece montagem de fragmentos, em vez de uma casa de pressão inteira.",
+          "world_rect": [
+            1408,
+            112,
+            64,
+            80
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-central-overlay.png",
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-pipe-gate-area.png",
+            "game/art/campaign-whole-scenes-v1/routes/06b-native-complete.png",
+            "game/art/campaign-composition-forensic-v1/boards/6B-whole.png",
+            "game/art/campaign-composition-forensic-v1/maps/6B-open-complete.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 34
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 70
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 77
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "6B-04",
+          "priority": "P2",
+          "confidence": "confirmed",
+          "title": "Piso sem implantação dos elementos do objetivo",
+          "description": "92,05% da faixa x16..3055,y192..295 usa exatamenteRGB109,109,109. Porta, válvula, blocos e tubulação se apoiam diretamente nesse campo plano, sem base, sombra de implantação ou mudança de material que faça o conjunto pertencer ao mesmo sistema. O problema se vê especialmente no portão aberto, quando os suportes parecem peças avulsas no piso.",
+          "world_rect": [
+            16,
+            192,
+            3040,
+            104
+          ],
+          "evidence": [
+            "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-aberto.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-aberto.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06b-meio.png",
+            "game/art/campaign-composition-forensic-v1/boards/6B-whole.png",
+            "game/art/campaign-composition-forensic-v1/maps/6B-open-complete.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 46
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 60
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        }
+      ],
+      "unproven_suspicions": [
+        {
+          "id": "6B-S01",
+          "priority": "P1",
+          "confidence": "suspected_runtime_crossing",
+          "title": "Pilares remanescentes aparentam invadir área caminhável sem colisão",
+          "description": "Depois de gateHp chegar a0,CR_OPS_blocked deixa de bloquear o retângulo inteiro. Só ficam sólidos os jambs emy192..207 e272..303, enquanto a arte gate-5 ainda desenha pilares/debris dentro dey211..270. Um retângulo de personagem16x16 emx1008,y256 não sobrepõe os jambs e cruza161pixels opacos da arte final. Isso prova a divergência estática arte/máscara, mas nenhuma captura atual mostra o personagem atravessando o pilar; o atravessamento em movimento permanece suspeita, a ser reproduzida.",
+          "world_rect": [
+            1008,
+            256,
+            16,
+            16
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-portao-1-aberto-actual5x.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-aberto.png",
+            "game/art/objective-sprites-v1/frames/gate-5.png",
+            "game/art/campaign-composition-forensic-v1/boards/6B-whole.png",
+            "game/art/campaign-composition-forensic-v1/maps/6B-open-complete.png"
+          ],
+          "code": [
+            {
+              "path": "game/src/levels/campaign_route_ops.c",
+              "line": 44
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 19
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        }
+      ],
+      "judgment": "A porta é reconhecível como objeto, mas ainda não está integrada fisicamente ao cenário; o sistema hidráulico e os recortes requerem correção visual.",
+      "complete_board": "game/art/campaign-composition-forensic-v1/boards/6B-whole.png",
+      "complete_map": "game/art/campaign-composition-forensic-v1/maps/6B-complete.png",
+      "geometry_overlay": "game/art/campaign-composition-forensic-v1/layouts/6B.png",
+      "complete_panorama_judgment": "Rechecked entire3072px panorama with objects before finalizing this opinion; listed defects remain visible and are not inferred from a technical test.",
+      "open_complete_map": "game/art/campaign-composition-forensic-v1/maps/6B-open-complete.png"
+    },
+    {
+      "phase": "12",
+      "status": "reprovada",
+      "priority": "P1",
+      "reviewed_individually": true,
+      "native": "game/art/campaign-whole-scenes-v1/routes/12-native-complete.png",
+      "source": "game/art/campaign-whole-scenes-v1/routes/source/12-complete.png",
+      "captures": [
+        "game/art/campaign-integrated-v1/escorts/ntsc/12-entrada.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/12-meio.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/12-saida.png",
+        "game/art/campaign-integrated-v1/escorts/ntsc/12-chegada.png"
+      ],
+      "findings": [
+        {
+          "id": "12-01",
+          "priority": "P1",
+          "confidence": "confirmed",
+          "title": "Fragmento16x16 vira obstáculo de listras diagonais",
+          "description": "O material denominado água/canal técnico é apenas o recorte16x16 emx710,y690 da fonte. Ele contém uma faixa preta diagonal e um pedaço de superfície, sem o contexto construtivo do canal. Repetido dentro dos retângulos sólidos, forma painéis/listras idênticas em vez de um vão de manutenção legível. A falha aparece emx936..1032,y240..304; x1904..2000,y224..304; x2656..2768,y240..304, e no rodapé inteiro.",
+          "world_rect": [
+            1904,
+            224,
+            96,
+            80
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-servicepit-source-fragment.png",
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-servicepit.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-saida.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-chegada.png",
+            "game/art/campaign-composition-forensic-v1/boards/12-whole.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 35
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 89
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 82
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "12-02",
+          "priority": "P1",
+          "confidence": "confirmed",
+          "title": "Canos e treliças do telhado não continuam entre módulos",
+          "description": "As baias e os intervalos foram recortados em escalas/aspectos diferentes (680x390→112x96 e280x360→64x96) e recebem a mesma linha de base. Nas emendas x112,176 e240, as tubulações inclinadas e a cobertura recomeçam em outra altura; partes de treliça ficam com extremidades abruptas contra o céu. A sequência lida em panorama é uma colagem de cortes repetidos, e não uma linha contínua de oficinas.",
+          "world_rect": [
+            80,
+            96,
+            240,
+            96
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-facade-joins.png",
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-wall-source-cut.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-entrada.png",
+            "game/art/campaign-composition-forensic-v1/boards/12-whole.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 35
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 65
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 68
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "12-03",
+          "priority": "P2",
+          "confidence": "confirmed",
+          "title": "Céu e topo da chegada são cortados pelo enquadramento do HUD",
+          "description": "O prédio de chegada começa emy80; a bandeira e a infraestrutura superior estão perto de sua borda superior. Nas capturas de saída/chegada, a câmera está aproximadamente emy69 (dedutível pelo obstáculo de y240 surgindo na linha171), e o HUD cobre as primeiras24linhas. Assim a parte worldy80..92 do prédio/bandeira fica atrás do HUD; a chegada não mostra o marco superior completo, embora apareça inteira no mapa canônico.",
+          "world_rect": [
+            2944,
+            80,
+            128,
+            32
+          ],
+          "evidence": [
+            "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-arrival.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-saida.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-chegada.png",
+            "game/art/campaign-composition-forensic-v1/boards/12-whole.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 35
+            },
+            {
+              "path": "game/src/levels/arena.c",
+              "line": 249
+            }
+          ],
+          "screen_rect": [
+            192,
+            0,
+            128,
+            43
+          ],
+          "technical_tests_do_not_resolve": true
+        },
+        {
+          "id": "12-04",
+          "priority": "P2",
+          "confidence": "confirmed",
+          "title": "Percurso visualmente vazio no piso jogável",
+          "description": "94,23% da faixa x16..3055,y192..295 tem a mesma corRGB109,109,109. Todo o movimento acontece num retângulo cinza; a história do estaleiro fica concentrada na faixa superior e nos retângulos listrados. As fachadas distinguem a chegada, mas o piso não contribui para setores, profundidade ou integração das oficinas.",
+          "world_rect": [
+            16,
+            192,
+            3040,
+            104
+          ],
+          "evidence": [
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-entrada.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-meio.png",
+            "game/art/campaign-integrated-v1/escorts/ntsc/12-chegada.png",
+            "game/art/campaign-whole-scenes-v1/routes/12-native-complete.png",
+            "game/art/campaign-composition-forensic-v1/boards/12-whole.png"
+          ],
+          "code": [
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 35
+            },
+            {
+              "path": "game/tools/build_campaign_routes.py",
+              "line": 60
+            }
+          ],
+          "screen_rect": null,
+          "technical_tests_do_not_resolve": true
+        }
+      ],
+      "unproven_suspicions": [],
+      "judgment": "O edifício sindical se distingue das oficinas, mas os obstáculos são fragmentos repetidos e as conexões das fachadas não passam na revisão rigorosa.",
+      "complete_board": "game/art/campaign-composition-forensic-v1/boards/12-whole.png",
+      "complete_map": "game/art/campaign-composition-forensic-v1/maps/12-complete.png",
+      "geometry_overlay": "game/art/campaign-composition-forensic-v1/layouts/12.png",
+      "complete_panorama_judgment": "Rechecked entire3072px panorama with objects before finalizing this opinion; listed defects remain visible and are not inferred from a technical test."
+    }
+  ],
+  "counts": {
+    "reprovada": 3,
+    "confirmed_findings": 11,
+    "suspected_findings": 1
+  },
+  "readonly_verification": "No generator/build/emulator was run and no game/shared source was modified; only this JSON and diagnostic crops in reviews/routes-evidence were written.",
+  "evidence_hashes": {
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06a-central-overlay.png": "ac0e0ca48c9aaf2334b3171c2a78b9f9da1ed37549372d3433e7ef05e0c3764d",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06a-wall-join.png": "f3819225d23f5eee72c2f3aa440ae0c855fefff6a0c2cd6ff275fee7d7ed791d",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06a-wall-source-cut.png": "4c38074476e1c9be67026d8b7e2ec3a8b09f94e5a24a9b84d614dba96173e252",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-central-overlay.png": "8ba93ed987210424ba250873154f9b088829d449e715f93afe048f0153341f63",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-pipe-gate-area.png": "cbfb40a4253df59cce5ff1215e4b7cc6055acad5af1e1dd730430113dde9e41e",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-portao-1-aberto-actual5x.png": "437be4a825a5b8290823cf07cb24f23ea37ecc91aab7fbab7bb1ed3215e7c8d0",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/06b-portao-1-fechado-actual5x.png": "7f97e23bccfc88db4066c57cb4d2f4df06af951b856a3ef918412790487573a0",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-arrival.png": "7ce41f2b3fb28e9a1ba5533df093fadeb4fefba758c3a287c93c8f02cc98fbd0",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-facade-joins.png": "fbe8442a4cc59c55bb4a0ba8e5bef13ac06f35e49b0c8d5b0bf461194d539ea1",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-servicepit-source-fragment.png": "e52e3a53e4d7b65017a07fd0a8d4672340860577b8282b3e170ca4a89c752cfc",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-servicepit.png": "2c7762c9e439357f65caec8781ddbdd63575de5b698991e35cec50ee6f4a86be",
+    "game/art/campaign-composition-forensic-v1/reviews/routes-evidence/12-wall-source-cut.png": "85b2d971a1bb138ccc851adbbf80b63aa413ca486cdd3daa5e6f5f7a62e27717",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06a-chegada.png": "93a93855e1190d3855ba7615c0fc4133ddaece4efa1922dfbd609531ce444371",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06a-entrada.png": "f4bb69482929860b77f7653ed2d65ecc3cf36e402fb613ea84edeb08fb12c72c",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06a-meio.png": "7e1f5836dba3fff821e0b37b01628050a95169734416fa4d7c954e86b39fef43",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06b-meio.png": "c61facfd1eb34c18052d5b5241433e566bc8d42408a1a91d8bb6b3868d6658ca",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-aberto.png": "0f911a12f0e14669fc6dcdc9ee1ecbfe14494ab57e3531af75276c2cfe777f00",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-fechado.png": "5b0939de441c1a337b951f878844d99067113555957486d6cebceb73411efa51",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-aberto.png": "4fb804271c17c2a8f2e13a24d9526398f4ac5d27f84d55287ee17b9dba60cde4",
+    "game/art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-fechado.png": "ecd42e736046dcb91583701ff57760218f0ea52634af7f3ebbb8db9df44e3403",
+    "game/art/campaign-integrated-v1/escorts/ntsc/12-chegada.png": "6538f9a00729c333828804ba251578ba764a63876f0d220293348b9fc9dd5965",
+    "game/art/campaign-integrated-v1/escorts/ntsc/12-entrada.png": "257f625b762426cd5d9ff78a7ca28f6856f3f05dc1490a8654dd51eacb210e0e",
+    "game/art/campaign-integrated-v1/escorts/ntsc/12-meio.png": "4873ed1be0079582af74a9cdcecfbec85276e26fbf521e5cfeef3076181c7a3a",
+    "game/art/campaign-integrated-v1/escorts/ntsc/12-saida.png": "eb3c30125e8be3d60042dd7a2edcbe814aec3fad8bcf374d67dede71ecc811d5",
+    "game/art/campaign-whole-scenes-v1/routes/06a-native-complete.png": "4030f1c5e93d3868485c3df8b690d0ce35e9f28451b1a4391c75241471bf524d",
+    "game/art/campaign-whole-scenes-v1/routes/06b-native-complete.png": "b68a0be852c2364d29ea428d8f6ee15b659f8b257a7754db7b4cdcb06e81cc6d",
+    "game/art/campaign-whole-scenes-v1/routes/12-native-complete.png": "568bcd74ad5ea9c64f75ae6400a2e2a5153b459315237992e1667592dc3e7256",
+    "game/art/objective-sprites-v1/frames/gate-0.png": "d310849d742de53bbb1ca4c78bd6ff4f2a105c44775d4da301bbfb0a6d6a9527",
+    "game/art/objective-sprites-v1/frames/gate-5.png": "b8d5bd72ec41a79990bc80581056f006261150b9a50b0e441453aee0c904782b",
+    "game/art/campaign-composition-forensic-v1/boards/6A-whole.png": "7f134a56fff206c880b3264d8cc77a3f3d7befbc8b150883494027598c8866a8",
+    "game/art/campaign-composition-forensic-v1/boards/6B-whole.png": "779125ab64de395de828096916d20af38cb34d3578583beb519cce2e8a68a8eb",
+    "game/art/campaign-composition-forensic-v1/maps/6B-open-complete.png": "25b10b5ff1c89d66690c97502011bda7a514316faec80c56239a0300f8837f98",
+    "game/art/campaign-composition-forensic-v1/boards/12-whole.png": "750cd6e7278044a5a294e75a33c87e62234cb41e5f122b6fb67faf8dbef02503"
+  },
+  "complete_boards_reviewed_before_final_opinion": true,
+  "complete_board_manifest": "game/art/campaign-composition-forensic-v1/manifest.json",
+  "complete_board_rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "regions_reviewed": [
+    "NTSC integrated entries/middle/exit/arrival and mechanisms",
+    "PAL representative middle6A,gate closed/open6B,arrival12"
+  ]
+}

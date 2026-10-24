@@ -1,0 +1,63 @@
+{
+  "status": "aceito para revisão integrada",
+  "visualReviewPerformed": true,
+  "cycle": 3,
+  "romSHA256": "199310615d328c9395ae014b9f20ce2f646b1430ab51ca0cd928ec067dec5b60",
+  "isolatedBuild": "game/out/routes-composition-v1",
+  "functional": {
+    "ntsc": {
+      "exitCode": 0,
+      "passed": true,
+      "checks": 24
+    },
+    "pal": {
+      "exitCode": 0,
+      "passed": true,
+      "checks": 24
+    }
+  },
+  "phases": {
+    "06a": {
+      "status": "aceito",
+      "review": [
+        "Pavimento contínuo e calmo, sem grade forte nem carimbo diagonal.",
+        "Intervalos de parede e pequenas vertentes separam os arcos maiores.",
+        "Marco central circular e escada iluminada com tecido na saída identificam progressão.",
+        "Água azul legível sob as bordas de pedra, sem blocos pretos de transparência."
+      ],
+      "remainingLimitation": "Reuso de módulos arquitetônicos continua visível no panorama, por orçamento de tiles."
+    },
+    "06b": {
+      "status": "aceito",
+      "review": [
+        "Folha metálica diagonal forma porta real reconhecível sem número de objeto.",
+        "A ruptura deixa passagem reconhecível; suportes permanentes e alvenaria mantêm contato com a passagem32x64.",
+        "Volante rubro e tubo azul contínuo3px ligam válvula à infraestrutura.",
+        "Duas estações e a saída iluminada marcam os setores; mesmo piso/paleta6A."
+      ],
+      "evidence": [
+        "emulator/ntsc/06b-portao-1-fechado.png",
+        "emulator/ntsc/06b-portao-1-aberto.png",
+        "emulator/ntsc/06b-portao-2-fechado.png",
+        "emulator/ntsc/06b-portao-2-aberto.png"
+      ],
+      "remainingLimitation": "A perspectiva diagonal simplifica a projeção da colisão retangular; rota e tiros foram testados nas duas estações."
+    },
+    "12": {
+      "status": "aceito",
+      "review": [
+        "Removidas faixas gráficas atrás das oficinas, com céu escuro coeso.",
+        "Piso cinza mantém os dois personagens legíveis.",
+        "Baias abertas/fechadas, manutenção com reservatório e chegada sindical branca/bandeira criam três marcos.",
+        "Prédio sindical permanece visível no enquadramento final inferior."
+      ],
+      "remainingLimitation": "Oficinas ainda reutilizam peças; não se afirma uma arquitetura única a cada tela."
+    }
+  },
+  "performanceLimitations": [
+    "Cap configurado3 insetos e4 tiros: stress controlado55.67–57.33FPS NTSC e47.33FPS PAL; SAT dentro dos limites.",
+    "Defesa parada sem escritaRAM não é vitória de escolta.12 perdeu por morte de Damião em24.25s NTSC e por Dinorah em17.08s PAL.",
+    "Stress8/16 excede o teto de produção e cai para23–40FPS; não validado como condição normal."
+  ],
+  "sourceTool": "ImageGen nativo, depois extração técnica e indexação RGB333; sem substituição aproximada de tiles."
+}

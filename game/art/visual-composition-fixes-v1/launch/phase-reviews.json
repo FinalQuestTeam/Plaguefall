@@ -1,0 +1,90 @@
+{
+  "scope": "isolated candidate; merge these visual reviews after central release tests",
+  "rom_sha256": "4b6ddf2fb375b22fd3c9ab8ccd35917317268421e2705f501430718df9ebecd6",
+  "phases": [
+    {
+      "phase": "14",
+      "status": "accepted",
+      "status_label": "Aceitável na revisão visual da versão isolada",
+      "test_report": "launch/cycle-2/ntsc/report.json",
+      "source": "launch/cycle-2/source/14-15-station-circuit.png",
+      "native": "../campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "frames": [
+        {
+          "path": "launch/cycle-2/ntsc/14-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        },
+        {
+          "path": "launch/cycle-2/ntsc/14-generator-2.png",
+          "label": "Conexões e estados das máquinas durante o percurso"
+        }
+      ],
+      "changes": [
+        "Piso uniforme, estação e conduítes fazem parte da extração da imagem completa.",
+        "Gabinetes azuis/claros têm mesma silhueta desligados e ligados.",
+        "Conduítes com seção contínua3px substituem pontilhado claro."
+      ],
+      "review": [
+        "Máquinas ligadas se leem pelo painel iluminado sem números.",
+        "Cinco aproximações e ativações reais com controle, colisão e rolagem passaram."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Conduítes finos pontilhados lembravam seleção de editor."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Seção uniforme extraída do próprio cano eliminou o pontilhado; revisão com gabinetes sobrepostos."
+        }
+      ],
+      "movie": "launch/cycle-2/ntsc/14-generators-playtest.mp4"
+    },
+    {
+      "phase": "15",
+      "status": "accepted",
+      "status_label": "Aceitável na revisão visual da versão isolada",
+      "test_report": "launch/cycle-2/ntsc/report.json",
+      "source": "launch/cycle-2/source/15-station-ignition.png",
+      "native": "../campaign-whole-scenes-v1/launch/previews/15-radio-fire-native-reconstructed.png",
+      "frames": [
+        {
+          "path": "launch/cycle-2/ntsc/15-entry.png",
+          "label": "Entrada real · NTSC · sem letras nos objetivos"
+        },
+        {
+          "path": "launch/cycle-2/ntsc/15-ignition-focus.png",
+          "label": "Ignição real · combate pausado"
+        },
+        {
+          "path": "launch/cycle-2/ntsc/15-ignition-return.png",
+          "label": "Câmera devolvida para retomar defesa"
+        }
+      ],
+      "changes": [
+        "Estação maior com mastro/antena dá foco ao console azul/ciano.",
+        "Atlas de ignição próprio15 mantém fase16 intacta.",
+        "Breve foco nos motores pausa combate/contador e devolve câmera antes retomar."
+      ],
+      "review": [
+        "Objeto protegido reconhecível sem letraR.",
+        "Fogo sai claramente do motor; inimigo e projéteis ativos permanecem congelados durante a apresentação."
+      ],
+      "cycles": [
+        {
+          "cycle": 1,
+          "verdict": "Rever",
+          "finding": "Nova estação e motor legíveis; conduítes precisavam perder pontilhado."
+        },
+        {
+          "cycle": 2,
+          "verdict": "Aceitável",
+          "finding": "Foco real nos motores e retorno seguro validados em NTSC/PAL; contador mede120s ativos."
+        }
+      ],
+      "movie": "launch/cycle-2/ntsc/15-ignition-playtest.mp4"
+    }
+  ]
+}

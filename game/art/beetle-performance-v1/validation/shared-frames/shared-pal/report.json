@@ -1,0 +1,506 @@
+{
+  "region_fps": 50,
+  "rom_sha256": "f3d79de1c91ece7e36c96775842c6cedf6500d6ccc589818cfa71ece42ef841b",
+  "emulated_rom_sha256": "801960d93f37c585bd95762d037dbe0dd068f697c64677ad7d69a2076d5914f3",
+  "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+  "benchmark_sha256": "9b003d8c2fd04e5ede7ea53b2fa12c04f93458c0a5a73164676746124556ac3c",
+  "frames_per_case": 1800,
+  "repeats": 1,
+  "cases": [
+    {
+      "formation": "Baluarte",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 0,
+      "physical_frames": 1800,
+      "game_frames": 901,
+      "fps": 25.03,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 117.53,
+      "cpu_p95": 121.92,
+      "shots_after_step": [
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        },
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 0,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        98,
+        95
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.59,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": false
+    },
+    {
+      "formation": "Baluarte",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 6,
+      "physical_frames": 1800,
+      "game_frames": 900,
+      "fps": 25.0,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 139.0,
+      "cpu_p95": 146.34,
+      "shots_after_step": [
+        {
+          "min": 1,
+          "mean": 5.16,
+          "max": 6
+        },
+        {
+          "min": 5,
+          "mean": 5.97,
+          "max": 6
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        98,
+        95
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.64,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    },
+    {
+      "formation": "Baluarte",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 1800,
+      "game_frames": 737,
+      "fps": 20.47,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 184.82,
+      "cpu_p95": 214.55,
+      "shots_after_step": [
+        {
+          "min": 7,
+          "mean": 14.31,
+          "max": 16
+        },
+        {
+          "min": 14,
+          "mean": 15.94,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        98,
+        95
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.54,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    },
+    {
+      "formation": "Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 0,
+      "physical_frames": 1800,
+      "game_frames": 901,
+      "fps": 25.03,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 118.16,
+      "cpu_p95": 122.71,
+      "shots_after_step": [
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        },
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 0,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        95,
+        92
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.31,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": false
+    },
+    {
+      "formation": "Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 6,
+      "physical_frames": 1800,
+      "game_frames": 900,
+      "fps": 25.0,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 140.45,
+      "cpu_p95": 148.19,
+      "shots_after_step": [
+        {
+          "min": 2,
+          "mean": 5.09,
+          "max": 6
+        },
+        {
+          "min": 5,
+          "mean": 5.97,
+          "max": 6
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        95,
+        92
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.36,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    },
+    {
+      "formation": "Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 1800,
+      "game_frames": 743,
+      "fps": 20.64,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 182.57,
+      "cpu_p95": 188.18,
+      "shots_after_step": [
+        {
+          "min": 7,
+          "mean": 14.19,
+          "max": 16
+        },
+        {
+          "min": 14,
+          "mean": 15.94,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        95,
+        92
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.31,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    },
+    {
+      "formation": "Escudeiro",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 0,
+      "physical_frames": 1800,
+      "game_frames": 998,
+      "fps": 27.72,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 102.13,
+      "cpu_p95": 106.05,
+      "shots_after_step": [
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        },
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 0,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        52,
+        28
+      ],
+      "max_group_span": [
+        90,
+        50
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 6.16,
+      "distinct_graphics_min": 4,
+      "distinct_graphics_max": 8,
+      "autofire_observed": false
+    },
+    {
+      "formation": "Escudeiro",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 6,
+      "physical_frames": 1800,
+      "game_frames": 900,
+      "fps": 25.0,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 117.41,
+      "cpu_p95": 121.88,
+      "shots_after_step": [
+        {
+          "min": 2,
+          "mean": 5.41,
+          "max": 6
+        },
+        {
+          "min": 5,
+          "mean": 5.97,
+          "max": 6
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        52,
+        28
+      ],
+      "max_group_span": [
+        90,
+        50
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 5.95,
+      "distinct_graphics_min": 4,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    },
+    {
+      "formation": "Escudeiro",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 1800,
+      "game_frames": 898,
+      "fps": 24.94,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 161.2,
+      "cpu_p95": 167.63,
+      "shots_after_step": [
+        {
+          "min": 8,
+          "mean": 14.68,
+          "max": 16
+        },
+        {
+          "min": 13,
+          "mean": 15.93,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        52,
+        28
+      ],
+      "max_group_span": [
+        90,
+        50
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 5.92,
+      "distinct_graphics_min": 4,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    },
+    {
+      "formation": "Baluarte + Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 0,
+      "physical_frames": 1800,
+      "game_frames": 900,
+      "fps": 25.0,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 118.27,
+      "cpu_p95": 122.56,
+      "shots_after_step": [
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        },
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 0,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        101,
+        92
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.42,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": false
+    },
+    {
+      "formation": "Baluarte + Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 6,
+      "physical_frames": 1800,
+      "game_frames": 900,
+      "fps": 25.0,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 140.39,
+      "cpu_p95": 147.02,
+      "shots_after_step": [
+        {
+          "min": 1,
+          "mean": 5.2,
+          "max": 6
+        },
+        {
+          "min": 5,
+          "mean": 5.97,
+          "max": 6
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        101,
+        92
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.46,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    },
+    {
+      "formation": "Baluarte + Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 1800,
+      "game_frames": 745,
+      "fps": 20.69,
+      "target_fps": 50,
+      "target_met": false,
+      "cpu_mean": 183.17,
+      "cpu_p95": 189.31,
+      "shots_after_step": [
+        {
+          "min": 7,
+          "mean": 14.33,
+          "max": 16
+        },
+        {
+          "min": 14,
+          "mean": 15.94,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 1800,
+      "all_enemies_visible_frames": 1800,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        101,
+        92
+      ],
+      "ready_enemy_frames_min": 7,
+      "distinct_graphics_mean": 7.34,
+      "distinct_graphics_min": 5,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true
+    }
+  ],
+  "method": "Production phase-1 loop, 8 initially overlapping shielded enemies; normal movement, separation, collision, rendering, audio and HUD. RAM setup disables new spawns and summons, pins enemy shields and grants player hit immunity. A is held in projectile cases. Moving player/enemy projectiles replenish inactive slots up to 6 or 16 per pool before each physical frame. Purple enemies do not gain a shooting behaviour: enemy bullets are an injected load. Zero-projectile controls do not hold A. 180 physical warmup frames; FPS counts phaseStats updates / vtimer VBlanks. This is controlled stress, not a normal campaign attempt.",
+  "test_completed": true,
+  "performance_target_met": false
+}

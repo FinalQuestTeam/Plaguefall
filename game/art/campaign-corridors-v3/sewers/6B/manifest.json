@@ -1,0 +1,582 @@
+{
+  "phase": "6B",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    24,
+    80,
+    3047,
+    271
+  ],
+  "start": [
+    40,
+    224
+  ],
+  "route_points": [
+    [
+      48,
+      232
+    ],
+    [
+      280,
+      232
+    ],
+    [
+      544,
+      232
+    ],
+    [
+      648,
+      240
+    ],
+    [
+      784,
+      240
+    ],
+    [
+      848,
+      240
+    ],
+    [
+      848,
+      192
+    ],
+    [
+      920,
+      160
+    ],
+    [
+      936,
+      152
+    ],
+    [
+      976,
+      152
+    ],
+    [
+      1032,
+      152
+    ],
+    [
+      1168,
+      136
+    ],
+    [
+      1360,
+      136
+    ],
+    [
+      1456,
+      136
+    ],
+    [
+      1456,
+      96
+    ],
+    [
+      1640,
+      96
+    ],
+    [
+      1840,
+      144
+    ],
+    [
+      1896,
+      248
+    ],
+    [
+      2040,
+      240
+    ],
+    [
+      2056,
+      232
+    ],
+    [
+      2096,
+      232
+    ],
+    [
+      2160,
+      232
+    ],
+    [
+      2240,
+      232
+    ],
+    [
+      2432,
+      248
+    ],
+    [
+      2544,
+      248
+    ],
+    [
+      2768,
+      200
+    ],
+    [
+      3016,
+      176
+    ]
+  ],
+  "route_points_are": "centers",
+  "pauses": [
+    2,
+    7,
+    15,
+    18,
+    24
+  ],
+  "exit": [
+    2976,
+    152,
+    64,
+    64
+  ],
+  "solids": [
+    [
+      0,
+      0,
+      3072,
+      80,
+      false
+    ],
+    [
+      2064,
+      80,
+      1008,
+      8,
+      false
+    ],
+    [
+      0,
+      80,
+      832,
+      16,
+      false
+    ],
+    [
+      1232,
+      80,
+      208,
+      16,
+      false
+    ],
+    [
+      2064,
+      88,
+      160,
+      96,
+      false
+    ],
+    [
+      664,
+      96,
+      168,
+      112,
+      false
+    ],
+    [
+      0,
+      96,
+      24,
+      176,
+      false
+    ],
+    [
+      1232,
+      176,
+      208,
+      96,
+      false
+    ],
+    [
+      2064,
+      264,
+      160,
+      8,
+      false
+    ],
+    [
+      3048,
+      88,
+      24,
+      184,
+      false
+    ],
+    [
+      0,
+      272,
+      3072,
+      48,
+      false
+    ],
+    [
+      112,
+      32,
+      56,
+      80,
+      true
+    ],
+    [
+      80,
+      72,
+      144,
+      32,
+      true
+    ],
+    [
+      72,
+      104,
+      8,
+      80,
+      true
+    ],
+    [
+      224,
+      104,
+      8,
+      80,
+      true
+    ],
+    [
+      80,
+      184,
+      144,
+      32,
+      true
+    ],
+    [
+      1472,
+      144,
+      8,
+      96,
+      true
+    ],
+    [
+      1608,
+      144,
+      8,
+      96,
+      true
+    ],
+    [
+      1480,
+      112,
+      128,
+      32,
+      true
+    ],
+    [
+      1480,
+      240,
+      128,
+      32,
+      true
+    ],
+    [
+      1496,
+      136,
+      96,
+      80,
+      true
+    ],
+    [
+      2480,
+      104,
+      56,
+      80,
+      true
+    ],
+    [
+      2496,
+      200,
+      24,
+      32,
+      true
+    ],
+    [
+      2848,
+      112,
+      160,
+      32,
+      true
+    ],
+    [
+      2896,
+      80,
+      32,
+      32,
+      true
+    ],
+    [
+      2848,
+      72,
+      48,
+      48,
+      true
+    ],
+    [
+      2928,
+      48,
+      64,
+      80,
+      true
+    ],
+    [
+      984,
+      24,
+      32,
+      112,
+      true
+    ],
+    [
+      952,
+      168,
+      32,
+      152,
+      true
+    ],
+    [
+      808,
+      64,
+      96,
+      80,
+      true
+    ],
+    [
+      904,
+      104,
+      32,
+      32,
+      true
+    ],
+    [
+      2104,
+      24,
+      32,
+      192,
+      true
+    ],
+    [
+      2072,
+      248,
+      32,
+      72,
+      true
+    ],
+    [
+      1928,
+      144,
+      96,
+      80,
+      true
+    ],
+    [
+      2024,
+      184,
+      32,
+      32,
+      true
+    ],
+    [
+      80,
+      104,
+      144,
+      80,
+      false
+    ],
+    [
+      1480,
+      144,
+      128,
+      96,
+      false
+    ],
+    [
+      2496,
+      184,
+      24,
+      16,
+      false
+    ]
+  ],
+  "gates": [
+    [
+      960,
+      112,
+      32,
+      64
+    ],
+    [
+      2080,
+      192,
+      32,
+      64
+    ]
+  ],
+  "valves": [
+    [
+      920,
+      128
+    ],
+    [
+      2040,
+      208
+    ]
+  ],
+  "valve_approaches": [
+    [
+      912,
+      152
+    ],
+    [
+      2032,
+      232
+    ]
+  ],
+  "gate_shot_approaches": [
+    [
+      888,
+      152
+    ],
+    [
+      2008,
+      232
+    ]
+  ],
+  "approach_coordinates": "feet top-left, not centers",
+  "camera_interest": [
+    {
+      "name": "Cisterna de entrada",
+      "bbox": [
+        72,
+        32,
+        168,
+        184
+      ],
+      "preferred_feet": [
+        40,
+        200
+      ]
+    },
+    {
+      "name": "Câmara de pressão alta",
+      "bbox": [
+        800,
+        64,
+        240,
+        184
+      ],
+      "preferred_feet": [
+        912,
+        152
+      ]
+    },
+    {
+      "name": "Bacia de bombas",
+      "bbox": [
+        1472,
+        112,
+        144,
+        160
+      ],
+      "preferred_feet": [
+        1632,
+        192
+      ]
+    },
+    {
+      "name": "Câmara de pressão baixa",
+      "bbox": [
+        1920,
+        136,
+        224,
+        168
+      ],
+      "preferred_feet": [
+        2032,
+        232
+      ]
+    },
+    {
+      "name": "Abrigo",
+      "bbox": [
+        2848,
+        48,
+        160,
+        96
+      ],
+      "preferred_feet": [
+        3008,
+        168
+      ]
+    }
+  ],
+  "camera_player_y": 200,
+  "camera_player_y_samples": [
+    184,
+    200,
+    248
+  ],
+  "sourcePaths": [
+    "source/whole-v1.png",
+    "source/whole-v2.png",
+    "source/whole-v3-open-hardware.png",
+    "../6A/source/whole-v2-clean.png"
+  ],
+  "hardware": "Existing shared global gate191+valve65; no baked gate leaf; native diagonal bank ends persist after0.8s collapse+hide.",
+  "states": [
+    {
+      "name": "closed",
+      "file": "complete-closed-objectives.png",
+      "gate_frame": 0
+    },
+    {
+      "name": "collapse",
+      "file": "complete-collapse-objectives.png",
+      "gate_frame": 5,
+      "temporary": true,
+      "solid_until_seconds": 0.8
+    },
+    {
+      "name": "open",
+      "file": "complete-open-objectives.png",
+      "gate_visible": false,
+      "physical_opening": 32
+    }
+  ],
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin",
+    "image": "complete-native.png",
+    "objectives": "complete-closed-objectives.png"
+  },
+  "memory": {
+    "scene_tiles": 378,
+    "objective_tiles": 256,
+    "total_tiles": 634,
+    "budget": 640,
+    "approximate_tile_replacements": 0
+  },
+  "status": "private_candidate_pending_geometry_and_visual_review",
+  "geometry_checks": {
+    "actor_feet": [
+      16,
+      16
+    ],
+    "margin": 8,
+    "swept_samples": 3174,
+    "reachable_centers": 4946,
+    "arrival_connected": true,
+    "closed_gates_disconnect": true,
+    "first_gate_only_open_still_blocks_exit": true,
+    "open_gap": 32
+  }
+}

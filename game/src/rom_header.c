@@ -19,7 +19,7 @@ const ROMHeader rom_header = {
 #if (ENABLE_BANK_SWITCH != 0)
     0x003FFFFF,
 #else
-    0x001FFFFF, // Linear ROM resources now exceed 1 MiB.
+    0x003FFFFF, // Linear campaign resources exceed 2 MiB; use the 4 MiB cart range.
 #endif
     0xE0FF0000,
     0xE0FFFFFF,

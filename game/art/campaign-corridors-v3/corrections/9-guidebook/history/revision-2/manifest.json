@@ -1,0 +1,855 @@
+{
+  "phase": "9",
+  "status": "isolated candidate: visual family and connected entry accepted for private ROM trial by root; not published or finally approved",
+  "size": [
+    2560,
+    320
+  ],
+  "whole": "complete-native.png",
+  "views": [
+    {
+      "file": "cameras/01.png",
+      "feet": [
+        184,
+        184
+      ],
+      "camera": [
+        32,
+        0
+      ]
+    },
+    {
+      "file": "cameras/02.png",
+      "feet": [
+        608,
+        272
+      ],
+      "camera": [
+        456,
+        72
+      ]
+    },
+    {
+      "file": "cameras/03.png",
+      "feet": [
+        1328,
+        208
+      ],
+      "camera": [
+        1208,
+        8
+      ]
+    },
+    {
+      "file": "cameras/04.png",
+      "feet": [
+        1840,
+        184
+      ],
+      "camera": [
+        1688,
+        0
+      ]
+    },
+    {
+      "file": "cameras/05.png",
+      "feet": [
+        2456,
+        184
+      ],
+      "camera": [
+        2240,
+        0
+      ]
+    }
+  ],
+  "memory": {
+    "tiles": 630,
+    "budget": 640,
+    "tile_bytes": 20160,
+    "map_bytes": 25600,
+    "exact_flip_reused": 12170,
+    "lossy_tile_substitutions": 0,
+    "native_grid": 1,
+    "fits": true,
+    "scene_tiles": 630,
+    "background_tiles": 630,
+    "objective_tiles": 0,
+    "total_tiles": 630,
+    "limit": 640,
+    "free_tiles": 10,
+    "graphics_bytes": 20160,
+    "palette_bytes": 32,
+    "collision_mask_words": 400
+  },
+  "sources": [
+    {
+      "path": "../../../campaign-pattern-v2/factory/modules/factory-door.png",
+      "game_path": "art/campaign-pattern-v2/factory/modules/factory-door.png",
+      "sha256": "9d6b67c117f66795c6fa2601c749b296cb7516ad1bae71f2b2c6869f7ff80083"
+    },
+    {
+      "path": "../../../phase01-courtyard-v2/intact-native.png",
+      "game_path": "art/phase01-courtyard-v2/intact-native.png",
+      "sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e"
+    },
+    {
+      "path": "../../../phase03-street-v2/source/street-kit.png",
+      "game_path": "art/phase03-street-v2/source/street-kit.png",
+      "sha256": "6b72c0d2c395b70e2b9f261166d1b3b079132a606cd6c61ba5e57ce8422cb45e"
+    },
+    {
+      "path": "../../../phase04-tunnels-v1/map-native.png",
+      "game_path": "art/phase04-tunnels-v1/map-native.png",
+      "sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd"
+    },
+    {
+      "path": "../../../routes-2048-v2/source/evacuation-cutouts.png",
+      "game_path": "art/routes-2048-v2/source/evacuation-cutouts.png",
+      "sha256": "f8e94ba62e8feff26f540259b3a0e3ad98b7b20009cc9e756182d6e674bede57"
+    }
+  ],
+  "landmarks": [
+    "roofed service block with loading truck and lower workshop court",
+    "rusty service dock with complete valve-wall bays and loaded truck",
+    "stepped factory forecourt with lower workshop and exact10/11door embedded in original rusty tunnel wall"
+  ],
+  "limits": [
+    "Composed native preview, not emulator frames.",
+    "Static geometry validated; no running-ROM collision/control/performance test has been performed for this candidate.",
+    "Palette keeps all13colors of existing factory door exactly, adding the original church ochre floor colors in the two unused factory slots. No door pixel is recolored.",
+    "No new bitmap artwork, no generated buildings, no2pxgrid or approximate tile substitutions.",
+    "Three roofed workshop instances reuse one existing whole family; two trucks reuse one existing whole family. Repetition remains visible and must be judged on the complete panorama.",
+    "The factory is represented by its rusty industrial perimeter and exact entrance. A distant towering factory silhouette is not newly invented from incompatible art.",
+    "Player-camera compositions are previews with existing HUD/hero, not measurements from a running ROM."
+  ],
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "native_sha256": "e41b26381f5887208e7a1cac2216dec2f7cdcbe3b46ca0209206b63897039f88",
+  "factory_entry": {
+    "bbox": [
+      2392,
+      48,
+      80,
+      64
+    ],
+    "source": "art/campaign-pattern-v2/factory/modules/factory-door.png",
+    "rgb_pixel_identical": true
+  },
+  "composition_revision": 2,
+  "review_status": "awaiting root whole-map and five-camera review; not integrated",
+  "bounds": [
+    16,
+    112,
+    2543,
+    303
+  ],
+  "start": [
+    48,
+    184
+  ],
+  "solids": [
+    [
+      0,
+      32,
+      2560,
+      80,
+      true
+    ],
+    [
+      0,
+      32,
+      16,
+      288,
+      true
+    ],
+    [
+      2544,
+      32,
+      16,
+      288,
+      true
+    ],
+    [
+      0,
+      304,
+      2560,
+      16,
+      true
+    ],
+    [
+      352,
+      160,
+      16,
+      160,
+      true
+    ],
+    [
+      816,
+      160,
+      16,
+      160,
+      true
+    ],
+    [
+      1088,
+      224,
+      16,
+      96,
+      true
+    ],
+    [
+      1584,
+      224,
+      16,
+      96,
+      true
+    ],
+    [
+      1712,
+      160,
+      16,
+      160,
+      true
+    ],
+    [
+      2112,
+      160,
+      16,
+      160,
+      true
+    ],
+    [
+      128,
+      32,
+      128,
+      128,
+      true
+    ],
+    [
+      640,
+      160,
+      128,
+      128,
+      true
+    ],
+    [
+      1792,
+      32,
+      128,
+      128,
+      true
+    ],
+    [
+      448,
+      176,
+      96,
+      64,
+      true
+    ],
+    [
+      1216,
+      160,
+      96,
+      64,
+      true
+    ]
+  ],
+  "exit": [
+    2384,
+    112,
+    96,
+    64
+  ],
+  "camera_player_y": 200,
+  "player_waypoints": [
+    [
+      48,
+      184
+    ],
+    [
+      288,
+      184
+    ],
+    [
+      320,
+      184
+    ],
+    [
+      320,
+      128
+    ],
+    [
+      848,
+      128
+    ],
+    [
+      1056,
+      128
+    ],
+    [
+      1056,
+      184
+    ],
+    [
+      1152,
+      184
+    ],
+    [
+      1152,
+      248
+    ],
+    [
+      1344,
+      248
+    ],
+    [
+      1376,
+      248
+    ],
+    [
+      1376,
+      184
+    ],
+    [
+      1664,
+      184
+    ],
+    [
+      1680,
+      184
+    ],
+    [
+      1680,
+      128
+    ],
+    [
+      1744,
+      128
+    ],
+    [
+      1752,
+      128
+    ],
+    [
+      1752,
+      184
+    ],
+    [
+      1960,
+      184
+    ],
+    [
+      2048,
+      184
+    ],
+    [
+      2048,
+      128
+    ],
+    [
+      2160,
+      128
+    ],
+    [
+      2424,
+      128
+    ],
+    [
+      2424,
+      136
+    ]
+  ],
+  "route_points": [
+    [
+      56,
+      192
+    ],
+    [
+      296,
+      192
+    ],
+    [
+      328,
+      192
+    ],
+    [
+      328,
+      136
+    ],
+    [
+      856,
+      136
+    ],
+    [
+      1064,
+      136
+    ],
+    [
+      1064,
+      192
+    ],
+    [
+      1160,
+      192
+    ],
+    [
+      1160,
+      256
+    ],
+    [
+      1352,
+      256
+    ],
+    [
+      1384,
+      256
+    ],
+    [
+      1384,
+      192
+    ],
+    [
+      1672,
+      192
+    ],
+    [
+      1688,
+      192
+    ],
+    [
+      1688,
+      136
+    ],
+    [
+      1752,
+      136
+    ],
+    [
+      1760,
+      136
+    ],
+    [
+      1760,
+      192
+    ],
+    [
+      1968,
+      192
+    ],
+    [
+      2056,
+      192
+    ],
+    [
+      2056,
+      136
+    ],
+    [
+      2168,
+      136
+    ],
+    [
+      2432,
+      136
+    ],
+    [
+      2432,
+      144
+    ]
+  ],
+  "points": [
+    [
+      56,
+      192
+    ],
+    [
+      296,
+      192
+    ],
+    [
+      328,
+      192
+    ],
+    [
+      328,
+      136
+    ],
+    [
+      856,
+      136
+    ],
+    [
+      1064,
+      136
+    ],
+    [
+      1064,
+      192
+    ],
+    [
+      1160,
+      192
+    ],
+    [
+      1160,
+      256
+    ],
+    [
+      1352,
+      256
+    ],
+    [
+      1384,
+      256
+    ],
+    [
+      1384,
+      192
+    ],
+    [
+      1672,
+      192
+    ],
+    [
+      1688,
+      192
+    ],
+    [
+      1688,
+      136
+    ],
+    [
+      1752,
+      136
+    ],
+    [
+      1760,
+      136
+    ],
+    [
+      1760,
+      192
+    ],
+    [
+      1968,
+      192
+    ],
+    [
+      2056,
+      192
+    ],
+    [
+      2056,
+      136
+    ],
+    [
+      2168,
+      136
+    ],
+    [
+      2432,
+      136
+    ],
+    [
+      2432,
+      144
+    ]
+  ],
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 6242,
+    "reachable_positions": 6242,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2815,
+    "margin_pixels": 8,
+    "swept_margin_samples": 2815,
+    "margin_free_positions": 5213,
+    "all_margin_positions_connected": true,
+    "invisible_floor_solids": 0
+  },
+  "camera_interest": [
+    {
+      "id": "repair-workshop",
+      "name": "repair-workshop",
+      "bbox": [
+        128,
+        32,
+        128,
+        128
+      ],
+      "player_feet": [
+        184,
+        184
+      ],
+      "position": [
+        184,
+        184
+      ],
+      "camera": [
+        32,
+        0
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "south-workshop",
+      "name": "south-workshop",
+      "bbox": [
+        640,
+        160,
+        128,
+        128
+      ],
+      "player_feet": [
+        608,
+        272
+      ],
+      "position": [
+        608,
+        272
+      ],
+      "camera": [
+        456,
+        72
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "service-dock",
+      "name": "service-dock",
+      "bbox": [
+        1216,
+        32,
+        312,
+        192
+      ],
+      "player_feet": [
+        1328,
+        208
+      ],
+      "position": [
+        1328,
+        208
+      ],
+      "camera": [
+        1208,
+        8
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "factory-office",
+      "name": "factory-office",
+      "bbox": [
+        1792,
+        32,
+        128,
+        128
+      ],
+      "player_feet": [
+        1840,
+        184
+      ],
+      "position": [
+        1840,
+        184
+      ],
+      "camera": [
+        1688,
+        0
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "factory-entry",
+      "name": "factory-entry",
+      "bbox": [
+        2392,
+        48,
+        80,
+        64
+      ],
+      "player_feet": [
+        2456,
+        184
+      ],
+      "position": [
+        2456,
+        184
+      ],
+      "camera": [
+        2240,
+        0
+      ],
+      "whole_below_HUD": true
+    }
+  ],
+  "module_provenance": {
+    "dust-floor": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        224,
+        160,
+        256,
+        192
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 11
+    },
+    "complete-industrial-wall": {
+      "source": "art/phase04-tunnels-v1/map-native.png",
+      "crop": [
+        80,
+        0,
+        144,
+        80
+      ],
+      "size": [
+        64,
+        80
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 80
+    },
+    "lower-wall": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        224,
+        368,
+        256,
+        384
+      ],
+      "size": [
+        32,
+        16
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 7
+    },
+    "left-wall": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        0,
+        160,
+        16,
+        192
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 8
+    },
+    "lower-left-corner": {
+      "source": "art/phase01-courtyard-v2/intact-native.png",
+      "crop": [
+        0,
+        352,
+        16,
+        384
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 8
+    },
+    "complete-valve-service-wall": {
+      "source": "art/phase04-tunnels-v1/map-native.png",
+      "crop": [
+        336,
+        0,
+        432,
+        80
+      ],
+      "size": [
+        96,
+        80
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 100
+    },
+    "factory-door-exact": {
+      "source": "art/campaign-pattern-v2/factory/modules/factory-door.png",
+      "crop": null,
+      "size": [
+        80,
+        64
+      ],
+      "grid": 1,
+      "exact_flip_unique_tiles": 66
+    },
+    "whole-workshop": {
+      "source": "art/phase03-street-v2/source/street-kit.png",
+      "cell": [
+        443,
+        0,
+        887,
+        443
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "method": "complete alpha silhouette, nearest at1px, same16 church colors"
+    },
+    "whole-rust-truck": {
+      "source": "art/routes-2048-v2/source/evacuation-cutouts.png",
+      "cell": [
+        638,
+        0,
+        1277,
+        616
+      ],
+      "size": [
+        96,
+        64
+      ],
+      "method": "complete alpha silhouette, nearest at1px, same16 church colors"
+    }
+  },
+  "source_paths_game": [
+    "art/campaign-pattern-v2/factory/modules/factory-door.png",
+    "art/phase01-courtyard-v2/intact-native.png",
+    "art/phase03-street-v2/source/street-kit.png",
+    "art/phase04-tunnels-v1/map-native.png",
+    "art/routes-2048-v2/source/evacuation-cutouts.png"
+  ],
+  "complete": "complete-native.png",
+  "layout": "layout.png",
+  "route_point_semantics": "CENTERS; player_waypoints/start are top-left16px FEET; center=feet+8",
+  "point_semantics": "CENTERS; player_waypoints/start are top-left16px FEET; center=feet+8",
+  "pauses": [],
+  "geometry_notes": [
+    "All solids coincide with visible native walls, complete workshop bodies or truck silhouettes. No solid rect is placed on open floor.",
+    "Full projected bboxes keep the player out of baked architecture; tall volumes and trucks block feet and shots.",
+    "Primary route has8px clearance beyond16x16feet (32px envelope); the upper lane near south workshop has48px depth.",
+    "A visible16px rear strip behind south workshop exists off the main route; it is not an8px-margin route and is not masked by an invisible floor blocker. Physical and8px-margin free regions are each globally connected.",
+    "Global lower/lateral walls and courtyard returns have native whole matching caps/corners; no orphan enclosed yard.",
+    "Exit is the front apron of the exact old80x64factory entrance; story length2560 and single continuation to10 remain unchanged."
+  ],
+  "art_limitations": [
+    "Three workshop buildings share one existing whole family, and two trucks share one existing whole family; repetition remains visible.",
+    "The candidate uses the old rusty tunnel wall as the exterior industrial boundary; no new distant factory silhouette was invented.",
+    "These five images are composed native previews, not running-ROM captures. Final visual/runtime approval remains with root/user after the isolated ROM trial."
+  ],
+  "bridge_validation": {
+    "read_via_unmodified_root_bridge": true,
+    "tile_count": 630,
+    "map_bytes": 25600,
+    "palette_bytes": 32,
+    "source_paths_resolve": true,
+    "all_free_positions_connected": true,
+    "no_activation_or_shared_writes": true
+  }
+}

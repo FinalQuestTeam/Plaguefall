@@ -1,0 +1,205 @@
+{
+  "rom_sha256": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+  "phases": [
+    "6A",
+    "6B",
+    "12"
+  ],
+  "regions": [
+    "NTSC",
+    "PAL"
+  ],
+  "screenshots_reviewed": 360,
+  "scope": "Visual review of actual emulator rendering and camera samples. Not a live escort/combat completion, load, collision or branch test.",
+  "capture_setup": "Root capturer seeds real phases, suppresses combat/progress/auto-interactions and moves player feet. Native camera, streaming and renderer remain active. Dinorah remains at start after player teleport; her absence later is setup, not a proven disappearance bug.",
+  "status": "final_camera_visual_acceptance_with_recorded_framing_and_repetition_limits; integration owner retains final approval",
+  "qa_sheets": "runtime-evidence/rom-c622defb/index.json",
+  "reviewed_dimensions": [
+    3072,
+    272
+  ],
+  "per_phase": {
+    "6A": {
+      "status": "coherent with HUD framing limit",
+      "observed": [
+        "Full entrance arch, mid-route circular inspection hatch and refuge arrival distinguish the long route.",
+        "Lower canal/water wall and left/right returns remain continuous at cy48.",
+        "Low cabinets remain complete and distinguishable from floor.",
+        "No isolated architectural fragment or corrupted tile mosaic identified in final360-shot review."
+      ],
+      "evidence": [
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-1.png",
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-2.png",
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-3.png",
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-4.png",
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-5.png",
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-6.png",
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-7.png",
+        "runtime-evidence/rom-c622defb/6A-pal-sector-1.png",
+        "runtime-evidence/rom-c622defb/6A-pal-sector-2.png",
+        "runtime-evidence/rom-c622defb/6A-pal-sector-3.png",
+        "runtime-evidence/rom-c622defb/6A-pal-sector-4.png",
+        "runtime-evidence/rom-c622defb/6A-pal-sector-5.png",
+        "runtime-evidence/rom-c622defb/6A-pal-sector-6.png",
+        "runtime-evidence/rom-c622defb/6A-pal-sector-7.png"
+      ],
+      "reservations": [
+        "R1",
+        "R3"
+      ],
+      "screenshots_reviewed": 120
+    },
+    "6B": {
+      "status": "closed mechanism composition coherent in finalcamera sweep; animation test belongs to separate root suite",
+      "observed": [
+        "Pressure house is whole; blue feed pipe reaches the valve assembly rather than ending in water.",
+        "Second closed gate and native fixed supports contact the floor and remain separate from player silhouette in x5 samples.",
+        "Lower margin and arrival stair remain complete during camera movement.",
+        "Numerous edge objective markers are visible, producing more clutter than6A."
+      ],
+      "evidence": [
+        "runtime-evidence/rom-c622defb/6B-ntsc-sector-1.png",
+        "runtime-evidence/rom-c622defb/6B-ntsc-sector-2.png",
+        "runtime-evidence/rom-c622defb/6B-ntsc-sector-3.png",
+        "runtime-evidence/rom-c622defb/6B-ntsc-sector-4.png",
+        "runtime-evidence/rom-c622defb/6B-ntsc-sector-5.png",
+        "runtime-evidence/rom-c622defb/6B-ntsc-sector-6.png",
+        "runtime-evidence/rom-c622defb/6B-ntsc-sector-7.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-1.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-2.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-3.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-4.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-5.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-6.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-7.png"
+      ],
+      "reservations": [
+        "R2",
+        "R3"
+      ],
+      "not_proven_by_these_shots": [
+        "Actual valve operation, gate collapse/hide and Dinorah traversing both openings during combat; finalROM gameplay validation is owned by root suite."
+      ],
+      "screenshots_reviewed": 120
+    },
+    "12": {
+      "status": "coherent with long repetitive exterior",
+      "observed": [
+        "Garage entrance, maintenance bay and union facade distinguish the route.",
+        "Repeated garage bays preserve both sides; no half-building seam identified.",
+        "Foreground concrete wall/blue rail and complete side returns remain visible in lower samples.",
+        "Hero silhouette is clear against low-contrast field.",
+        "Large upper sky and long repetitive bays remain compositional limitations rather than newly claimed defects."
+      ],
+      "evidence": [
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-1.png",
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-2.png",
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-3.png",
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-4.png",
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-5.png",
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-6.png",
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-7.png",
+        "runtime-evidence/rom-c622defb/12-pal-sector-1.png",
+        "runtime-evidence/rom-c622defb/12-pal-sector-2.png",
+        "runtime-evidence/rom-c622defb/12-pal-sector-3.png",
+        "runtime-evidence/rom-c622defb/12-pal-sector-4.png",
+        "runtime-evidence/rom-c622defb/12-pal-sector-5.png",
+        "runtime-evidence/rom-c622defb/12-pal-sector-6.png",
+        "runtime-evidence/rom-c622defb/12-pal-sector-7.png"
+      ],
+      "reservations": [
+        "R3"
+      ],
+      "screenshots_reviewed": 120
+    }
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "P2 framing limit",
+      "phase": "6A",
+      "confirmed": true,
+      "global_bounds": [
+        [
+          24,
+          56,
+          128,
+          16
+        ],
+        [
+          2936,
+          56,
+          112,
+          16
+        ]
+      ],
+      "camera_y": 48,
+      "screen_y_before_hud": [
+        8,
+        23
+      ],
+      "description": "HUD covers16px of the highest entrance/arrival architecture in the lower camera. The arrival canopy top is visibly cropped; arch opening, stair and destination remain legible. This is HUD/camera framing, not an internal cut fragment.",
+      "proof": [
+        "../captures/ntsc/6A/x0-y2.png",
+        "../captures/ntsc/6A/x18-y1.png",
+        "../captures/ntsc/6A/x19-y2.png",
+        "../captures/pal/6A/x19-y2.png"
+      ],
+      "action": "Disclosed to root before any correction. No artwork/core/ROM changed during runtime review."
+    },
+    {
+      "id": "R2",
+      "priority": "P2 visual clutter",
+      "phase": "6B",
+      "confirmed": true,
+      "description": "Offscreen escort/valve/gate direction markers crowd both screen edges, occasionally stacking beside each other. House, valve wheel and gate leaf remain readable in the full station view.",
+      "proof": [
+        "../captures/ntsc/6B/x10-y0.png",
+        "../captures/ntsc/6B/x12-y1.png",
+        "../captures/pal/6B/x13-y1.png"
+      ],
+      "action": "Record as HUD/marker limitation; no shared marker changes authorized by this visual review."
+    },
+    {
+      "id": "R3",
+      "priority": "P3 composition limitation",
+      "phases": [
+        "6A",
+        "6B",
+        "12"
+      ],
+      "confirmed": true,
+      "description": "Paving/garage-bay repetition is obvious in long ordinary sectors. Floor remains continuous and low contrast, with no checker replacement or isolated geometric mosaic identified.12 also retains generous upper sky.",
+      "proof": [
+        "runtime-evidence/rom-c622defb/6A-ntsc-sector-4.png",
+        "runtime-evidence/rom-c622defb/6B-pal-sector-4.png",
+        "runtime-evidence/rom-c622defb/12-ntsc-sector-4.png"
+      ]
+    }
+  ],
+  "limits": [
+    "Each phase/region includes20horizontal positions with overlapping320px views and3vertical bands; this is broader camera coverage, not a complete combat match.",
+    "NoFPS/SAT/performance results inferred from still images.",
+    "Initial6137mechanism test remains in separate initialreport; no emulator was launched by this finalvisualconfirmation.",
+    "Gate collapse/hide on finalROM is tracked by root gameplay suite.",
+    "HUD framing, edge marker clutter, paving/garage repetition and generous12sky remain explicit reservations."
+  ],
+  "changes_during_review": [
+    "QA sheet assembler, image contact sheets and review documents only. NoROM, C, scene resources or artwork changes. No new emulation."
+  ],
+  "sampling": {
+    "per_phase_per_region": 60,
+    "horizontal_positions": 20,
+    "vertical_rows": 3,
+    "nominal_horizontal_step": 160,
+    "overlapping_views": true,
+    "note": "20 authored player positions; camera clamps at each extreme, so some extreme viewports repeat."
+  },
+  "prior_review": {
+    "rom_sha256": "61372627b51f4c2bbc04dfe5b4680726681180a5e64b6a75658255017bdab05b",
+    "report": "runtime-review-initial-61372627.json",
+    "archived_qa": "runtime-evidence/rom-61372627/index.json",
+    "note": "Initial162 screenshot review and mechanism validation preserved separately; not counted as finalROM gameplay proof."
+  },
+  "final_confirmation": "Examined all360real screenshots through42sector boards (7per phase/region). Upper/central/lower views remain coherent across the denser overlapping sweep. No new isolated architectural fragments, free-floating water/pipe chunks or tile mosaic identified."
+}

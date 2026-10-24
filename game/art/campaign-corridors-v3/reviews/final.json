@@ -1,0 +1,399 @@
+{
+  "status": "integrated_reviewed_with_documented_limits",
+  "rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "review_is_independent_of_tests": true,
+  "scope": {
+    "redesigned": [
+      "3",
+      "6A",
+      "6B",
+      "9",
+      "12"
+    ],
+    "preserved": [
+      "1",
+      "2A",
+      "2B",
+      "4",
+      "5",
+      "7",
+      "8",
+      "10",
+      "11",
+      "13A",
+      "13B",
+      "14",
+      "15",
+      "16"
+    ]
+  },
+  "coverage": {
+    "complete_native_worlds": 19,
+    "regions": [
+      "NTSC",
+      "PAL"
+    ],
+    "actual_camera_samples": 878,
+    "compiled_bank_comparisons": 18
+  },
+  "open_visual_blockers": [],
+  "global_limits": [
+    "Carga medida: primeiro trecho de cada corredor, movimento por controle, inimigos/tiros nos tetos, cadência nativa e escudo de 3 s. Invulnerabilidade/HP isolam custo; não é uma partida completa nem dificuldade humana.",
+    "Os 16 inimigos forçados das provas de sobrecarga excedem os tetos autorais; não entram no critério de 60/50 FPS.",
+    "Módulos e materiais se repetem; os panoramas e as câmeras foram avaliados separadamente do orçamento de tiles.",
+    "Capturas de composição suspendem combate e progresso porRAM; hardware físico não foi testado."
+  ],
+  "phases": [
+    {
+      "phase": "1",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "7b39acce008b12fda378697f5b34563e15658ecddb5c1528e3b2796ae9d9aa21",
+      "whole_scene": "maps/1-complete.png"
+    },
+    {
+      "phase": "2A",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "7b39acce008b12fda378697f5b34563e15658ecddb5c1528e3b2796ae9d9aa21",
+      "whole_scene": "maps/2A-complete.png"
+    },
+    {
+      "phase": "2B",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "1caf2b6b98bbf9c5d984f39542728a82232a218246c567e75138f80f89542403",
+      "whole_scene": "maps/2B-complete.png"
+    },
+    {
+      "phase": "3",
+      "verdict": "Revista para integração, com ressalvas",
+      "native_sha256": "45a2debb6e2c965550e0d7be4d2d8a56866400eb1ae2a4eac3ea307c3a9ffcbd",
+      "whole_scene": "maps/3-complete.png",
+      "observations": [
+        "Igreja integral preservada nos dois estados; a diferença de pixels fica em[176,40,72,64].",
+        "Cinco câmeras320×224 mostram base, telhado e Damião; norte/sul alternam sem reduzir a construção toda.",
+        "Coberturas grandes agora predominam sobre a frente; piso e materiais não estão em grade4px."
+      ],
+      "material_reservations": [
+        {
+          "id": "3-repeat",
+          "severity": "ressalva",
+          "description": "Telhas e reboco16x16 repetem claramente nas construções novas. O desgaste continua nativo1px, mas é mais regular que a igreja; não basta a cobertura atingir72/112 ou88/128.",
+          "evidence": [
+            {
+              "path": "3-guidebook/complete-native.png",
+              "bbox_xywh": [
+                800,
+                32,
+                160,
+                112
+              ]
+            },
+            {
+              "path": "3-guidebook/reviews/camera-garage-south-intact.png"
+            }
+          ]
+        },
+        {
+          "id": "3-street-material",
+          "severity": "ressalva",
+          "description": "O piso contínuo usa o ocre do pátio. Recupera a família visual, porém distingue pouco rua e terreiro; sarjetas e quinas sustentam a rota.",
+          "evidence": [
+            {
+              "path": "3-guidebook/complete-native.png",
+              "bbox_xywh": [
+                704,
+                144,
+                448,
+                160
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3-short-front",
+          "severity": "ressalva",
+          "description": "Portas e frentes24px preservam a leitura de projeção alta; garagem/roller parecem mais limpos que a igreja e pedem confirmação1x em movimento.",
+          "evidence": [
+            {
+              "path": "3-guidebook/reviews/camera-garage-north-intact.png"
+            },
+            {
+              "path": "3-guidebook/reviews/camera-warehouse-intact.png"
+            }
+          ]
+        }
+      ],
+      "technical": "corrections/delivery-candidate/acceptance.json"
+    },
+    {
+      "phase": "4",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "2392a0e531422b71fa66636d8e3884debfb8aa85a1bd0baafd9d606117272a35",
+      "whole_scene": "maps/4-complete.png"
+    },
+    {
+      "phase": "5",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "6f30f978ca7c28d3d407adac201930869a2344cc253a4d32ad455a03bdf7d90f",
+      "whole_scene": "maps/5-complete.png"
+    },
+    {
+      "phase": "6A",
+      "verdict": "Revista para integração, com ressalvas",
+      "native_sha256": "ab71c67a907a42ca01d63ea2d706cab89f38c1d76c6546b91780c4cf6247dc43",
+      "whole_scene": "maps/6A-complete.png",
+      "observations": [
+        "Piso recupera grão1px nativo; máquinas azuis e sinais mantêm contraste sobre concreto.",
+        "Os cinco conjuntos principais estão inteiros nas prévias; não encontrei silhueta de máquina partida por recorte.",
+        "Arco emx2480 existe: a janela2400..2720 NÃO está vazia. A avaliação inicial baseada no panorama reduzido foi corrigida."
+      ],
+      "material_reservations": [
+        {
+          "id": "6A-surface-period",
+          "severity": "ressalva",
+          "description": "O grão de16px aparece como pequenas diagonais repetidas. A origem é o piso nativo04, portanto não é ruído novo; repetição ainda precisa ser julgada em rolagem.",
+          "evidence": [
+            {
+              "path": "6A-guidebook/cameras/03-closed.png"
+            }
+          ]
+        },
+        {
+          "id": "6A-charcoal-water",
+          "severity": "ressalva",
+          "description": "O canal carvão é distinto da área caminhável, mas parado pode parecer vazio preto. Borda e bocais sustentam a leitura de drenagem; confirmar na execução.",
+          "evidence": [
+            {
+              "path": "6A-guidebook/cameras/01-closed.png"
+            }
+          ]
+        },
+        {
+          "id": "6A-maintenance-repeat",
+          "severity": "ressalva",
+          "description": "Quatro postos de manutenção reutilizam o mesmo módulo48px. Compõem o perímetro sem cobrir o campo, mas a repetição continua visível; isto é acabamento pontual para ensaio, não reaprovação definitiva da macrocomposição.",
+          "evidence": [
+            {
+              "path": "6A-guidebook/revisions/01-crossing-context/complete-native.png"
+            }
+          ]
+        }
+      ],
+      "technical": "corrections/delivery-candidate/acceptance.json"
+    },
+    {
+      "phase": "6B",
+      "verdict": "Revista para integração, com ressalvas",
+      "native_sha256": "d6ed29ff56e054587d6960d2e815bafcf5afcb74f2332c1008c89b84fd9d7bf6",
+      "whole_scene": "maps/6B-complete.png",
+      "observations": [
+        "Piso recupera grão1px nativo; máquinas azuis e sinais mantêm contraste sobre concreto.",
+        "Os cinco conjuntos principais estão inteiros nas prévias; não encontrei silhueta de máquina partida por recorte.",
+        "Arco emx2480 existe: a janela2400..2720 NÃO está vazia. A avaliação inicial baseada no panorama reduzido foi corrigida."
+      ],
+      "material_reservations": [
+        {
+          "id": "6B-surface-period",
+          "severity": "ressalva",
+          "description": "O grão de16px aparece como pequenas diagonais repetidas. A origem é o piso nativo04, portanto não é ruído novo; repetição ainda precisa ser julgada em rolagem.",
+          "evidence": [
+            {
+              "path": "6B-guidebook/cameras/03-closed.png"
+            }
+          ]
+        },
+        {
+          "id": "6B-charcoal-water",
+          "severity": "ressalva",
+          "description": "O canal carvão é distinto da área caminhável, mas parado pode parecer vazio preto. Borda e bocais sustentam a leitura de drenagem; confirmar na execução.",
+          "evidence": [
+            {
+              "path": "6B-guidebook/cameras/01-closed.png"
+            }
+          ]
+        },
+        {
+          "id": "6B-maintenance-repeat",
+          "severity": "ressalva",
+          "description": "Quatro postos de manutenção reutilizam o mesmo módulo48px. Compõem o perímetro sem cobrir o campo, mas a repetição continua visível; isto é acabamento pontual para ensaio, não reaprovação definitiva da macrocomposição.",
+          "evidence": [
+            {
+              "path": "6B-guidebook/revisions/01-crossing-context/complete-native.png"
+            }
+          ]
+        }
+      ],
+      "technical": "corrections/delivery-candidate/acceptance.json"
+    },
+    {
+      "phase": "7",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "5f2406e944420509a1e0d10e2e2e9a15c3a3996e28bca20cff3ebc51380fad10",
+      "whole_scene": "maps/7-complete.png"
+    },
+    {
+      "phase": "8",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "04746f24c700ee07cdc79e841ce45b1dcb620f5eb709688af5e82f3cc4c7b1e4",
+      "whole_scene": "maps/8-complete.png"
+    },
+    {
+      "phase": "9",
+      "verdict": "Revista para integração, com ressalvas",
+      "native_sha256": "227e9a53b29c51ce9dae83f5cbaa271913782cf816cf3c04da380fa39de1b2c3",
+      "whole_scene": "maps/9-complete.png",
+      "observations": [
+        "Pátina, cores de ferrugem e grão1px estão mais próximos das referências do que o asfalto/navy original.",
+        "A porta80×64 de10/11 é reutilizada pixel a pixel e está apoiada no muro industrial; continuidade da porta está resolvida.",
+        "Não é necessário inventar biblioteca nova: compor galpões maiores com os mesmos materiais e extremidades pode recuperar volume."
+      ],
+      "material_reservations": [
+        {
+          "id": "9-repeat",
+          "severity": "ressalva",
+          "description": "As três oficinas são a mesma silhueta; o muro nativo64×80 repete a mesma tubulação em toda a largura. Reuso é apropriado, mas a variação precisa vir da montagem e dos setores, sem criar outra biblioteca.",
+          "evidence": [
+            {
+              "path": "9-guidebook/camera-sheet.png"
+            }
+          ]
+        },
+        {
+          "id": "9-projection",
+          "severity": "ressalva",
+          "description": "A oficina inteira128×128 preserva seu toldo e a pátina, porém tem frente relativamente alta em comparação com a igreja. Julgar a família dos próximos galpões contra Damião; não tratar fonte antiga como aprovação de escala automática.",
+          "evidence": [
+            {
+              "path": "9-guidebook/modules/whole-workshop-rgba.png"
+            },
+            {
+              "path": "9-guidebook/cameras/01.png"
+            }
+          ]
+        },
+        {
+          "id": "9-final-approach",
+          "severity": "ressalva",
+          "description": "A aproximação final[2080..2392] ainda depende do muro industrial e do piso, sem novo volume coberto. Agora há identidade e pátina no próprio muro; avaliar o ritmo real, sem usar630tiles como aprovação.",
+          "evidence": [
+            {
+              "path": "reviews/9-revision3-continuous/continuous-page-3.png"
+            }
+          ]
+        }
+      ],
+      "technical": "corrections/delivery-candidate/acceptance.json"
+    },
+    {
+      "phase": "10",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "f29344eda688b5fc4197e88cd94e0bf2b3c2f12f5adcc6618e8da2d56b30afa6",
+      "whole_scene": "maps/10-complete.png"
+    },
+    {
+      "phase": "11",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "0b82caa494271dd2964d2090d3148cf8d783b148d40493926c928b2e1cf40ec0",
+      "whole_scene": "maps/11-complete.png"
+    },
+    {
+      "phase": "12",
+      "verdict": "Revista para integração, com ressalvas",
+      "native_sha256": "2fca984a22ce325b13475f6bfbaf256caf726475010126119fc96350a449d082",
+      "whole_scene": "maps/12-complete.png",
+      "observations": [
+        "Metal predomina no caminho e a telha é reservada ao sindicato; não parece mais uma aldeia de casas iguais.",
+        "Perímetro industrial e tubo horizontal têm apoio de parede, com ferrugem na família do native04.",
+        "Volumes completos N/S, bancos inteiros e anexos distribuídos mantêm marcos durante a travessia; não encontrei prédio cortado nas cinco vistas.",
+        "Atores são apresentados no eixo py−31, compatível com o renderer; escalas32×48 foram mantidas."
+      ],
+      "material_reservations": [
+        {
+          "id": "12-steel-plane",
+          "severity": "ressalva_forte",
+          "description": "Coberturas de metal agora ocupam cerca de2/3 do volume e preservam a identidade do estaleiro, mas os planos azuis são muito uniformes. O detalhe de ferrugem concentra-se na borda; esse contraste com o reboco1px é a maior fraqueza material remanescente.",
+          "evidence": [
+            {
+              "path": "12-guidebook/reviews/camera-entry.png"
+            },
+            {
+              "path": "12-guidebook/reviews/camera-covered.png"
+            }
+          ]
+        },
+        {
+          "id": "12-annex-repeat",
+          "severity": "ressalva",
+          "description": "A mesma família de anexo reaparece seis vezes. N/S e recuos mantêm o ritmo espacial, mas a silhueta e posição de porta/ventilação repetem-se.",
+          "evidence": [
+            {
+              "path": "12-guidebook/complete-native.png",
+              "bbox_xywh": [
+                432,
+                32,
+                2080,
+                128
+              ]
+            }
+          ]
+        },
+        {
+          "id": "12-union-sign",
+          "severity": "ressalva",
+          "description": "O emblema inteiro sobrepõe cobertura e porta na chegada. Lê como placa elevada, mas seu apoio deve continuar convincente com HUD e câmera em movimento.",
+          "evidence": [
+            {
+              "path": "12-guidebook/reviews/camera-union.png"
+            }
+          ]
+        }
+      ],
+      "technical": "corrections/delivery-candidate/acceptance.json"
+    },
+    {
+      "phase": "13A",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "1a984c9528837cdff0b3112192bcbaa67aef03d36984a05ad6f04ebb1769c51c",
+      "whole_scene": "maps/13A-complete.png"
+    },
+    {
+      "phase": "13B",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "a978309080cf3b619c36525cdbe3a901f9619000646d6681555d7885ee33d821",
+      "whole_scene": "maps/13B-complete.png"
+    },
+    {
+      "phase": "14",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "48f310a9c773c0704c8a743077a145e2ee8f94fae2eefb30704e206446cdf373",
+      "whole_scene": "maps/14-complete.png"
+    },
+    {
+      "phase": "15",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "9be037676a4476cb40877f511a68fe0ea6d011c1de998c3e7cad16703b92b57f",
+      "whole_scene": "maps/15-complete.png"
+    },
+    {
+      "phase": "16",
+      "verdict": "Composição preservada",
+      "preserved_from_baseline": true,
+      "native_sha256": "522934b0756ef93a00638e7fcc4751efb7c13cf346b33b42ddb41bacfa0c1f55",
+      "whole_scene": "maps/16-complete.png"
+    }
+  ],
+  "technical": "corrections/delivery-candidate/acceptance.json",
+  "artistic_review": "corrections/reviews/candidate-family-audit.json"
+}

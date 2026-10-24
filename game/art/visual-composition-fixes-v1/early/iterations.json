@@ -1,0 +1,78 @@
+{
+  "owner": "root",
+  "criteria": "Whole source, native composition and actual emulator camera; technical checks are separate from design judgment.",
+  "phases": {
+    "3": {
+      "baseline": "reprovada",
+      "cycles": [
+        {
+          "cycle": 1,
+          "result": "revisar",
+          "findings": [
+            "Fundo de chão removido; fachadas e carros ainda borrados no grid2px."
+          ],
+          "evidence": [
+            "cycle-1/03-entry.png",
+            "cycle-1/03-middle.png",
+            "cycle-1/03-exit.png"
+          ]
+        },
+        {
+          "cycle": 2,
+          "result": "revisar",
+          "findings": [
+            "Grid1px combina comigreja e carros legíveis;5desvios alcançáveis. Chegada ainda parecida com casa e borda direita vazia."
+          ],
+          "evidence": [
+            "cycle-2/ntsc/03-entry.png",
+            "cycle-2/03-action-12.png",
+            "cycle-2/ntsc/03-traversal-complete.png"
+          ],
+          "technical_report": "cycle-2/ntsc/report.json"
+        },
+        {
+          "cycle": 3,
+          "result": "aceitável na ROM final",
+          "changes": [
+            "Galpão com grande porta industrial azul, extraída da mesma imagem completa usada no interior4. Fachada fecha o limite do mapa."
+          ],
+          "evidence": [
+            "cycle-3/03-native.png"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "baseline": "reprovada",
+      "cycles": [
+        {
+          "cycle": 1,
+          "result": "aceitável provisoriamente; conferir extremo sul na revisãointegrada",
+          "changes": [
+            "Nova imagem completa com materiais simples, racks contínuos nas laterais e portaindustrial.",
+            "Piso de duas cores com juntas amplas; recorte de chão conectado elimina halos.",
+            "Bounds32..479 impedem caminhar sobre racks; início144enquadra melhor arquitetura."
+          ],
+          "evidence": [
+            "cycle-3/04-native.png",
+            "cycle-2/ntsc/04-entry.png",
+            "cycle-2/04-action-12.png"
+          ],
+          "technical_report": "cycle-2/ntsc/report.json"
+        },
+        {
+          "cycle": 2,
+          "result": "aceitável",
+          "changes": [
+            "Fechamento sul da própria imagem de origem, com reutilização exata de tiles; área livre conectada1370posições."
+          ],
+          "evidence": [
+            "../../campaign-integrated-v1/early/ntsc/04-camera-sample-4.png"
+          ]
+        }
+      ]
+    }
+  },
+  "final_rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "final_report": "../report.json"
+}

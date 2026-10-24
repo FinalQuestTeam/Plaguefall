@@ -1,0 +1,258 @@
+[
+  {
+    "id": "ceiling",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      710,
+      160,
+      838,
+      224
+    ],
+    "native_size": [
+      32,
+      16
+    ],
+    "repeat_axis": "xy",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "wall",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      690,
+      24,
+      864,
+      300
+    ],
+    "native_size": [
+      32,
+      96
+    ],
+    "repeat_axis": "x",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "pressure-house",
+    "source": "../source/06b-whole.png",
+    "source_rect": [
+      480,
+      0,
+      766,
+      365
+    ],
+    "native_size": [
+      64,
+      80
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "arrival",
+    "source": "../source/06b-whole.png",
+    "source_rect": [
+      1970,
+      58,
+      2140,
+      290
+    ],
+    "native_size": [
+      64,
+      88
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "floor",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      980,
+      346,
+      1114,
+      480
+    ],
+    "native_size": [
+      32,
+      32
+    ],
+    "repeat_axis": "xy",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "lower",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      530,
+      510,
+      648,
+      724
+    ],
+    "native_size": [
+      16,
+      32
+    ],
+    "repeat_axis": "x",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "side-left",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      0,
+      330,
+      70,
+      430
+    ],
+    "native_size": [
+      24,
+      32
+    ],
+    "repeat_axis": "y",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "side-right",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      2102,
+      330,
+      2172,
+      430
+    ],
+    "native_size": [
+      24,
+      32
+    ],
+    "repeat_axis": "y",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-upper-left",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      0,
+      24,
+      70,
+      320
+    ],
+    "native_size": [
+      24,
+      64
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-upper-right",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      2102,
+      24,
+      2172,
+      320
+    ],
+    "native_size": [
+      24,
+      64
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-lower-left",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      0,
+      480,
+      80,
+      724
+    ],
+    "native_size": [
+      24,
+      32
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "corner-lower-right",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      2092,
+      480,
+      2172,
+      724
+    ],
+    "native_size": [
+      24,
+      32
+    ],
+    "repeat_axis": "none",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "partition",
+    "source": "../source/06b-whole.png",
+    "source_rect": [
+      20,
+      300,
+      64,
+      400
+    ],
+    "native_size": [
+      16,
+      32
+    ],
+    "repeat_axis": "y",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "partition-end",
+    "source": "../source/06b-whole.png",
+    "source_rect": [
+      516,
+      480,
+      592,
+      650
+    ],
+    "native_size": [
+      16,
+      40
+    ],
+    "repeat_axis": "object",
+    "extraction": "complete silhouette"
+  },
+  {
+    "id": "pipe",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      590,
+      129,
+      591,
+      132
+    ],
+    "native_size": [
+      1,
+      3
+    ],
+    "repeat_axis": "pipe",
+    "extraction": "complete structure or full material cross-section"
+  },
+  {
+    "id": "cabinet",
+    "source": "../source/06a-whole.png",
+    "source_rect": [
+      510,
+      180,
+      690,
+      330
+    ],
+    "native_size": [
+      32,
+      24
+    ],
+    "repeat_axis": "object",
+    "extraction": "complete silhouette"
+  }
+]

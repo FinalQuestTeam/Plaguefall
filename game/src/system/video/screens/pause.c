@@ -16,6 +16,9 @@
 #include "enemies/enemies.h"
 #include "items/items.h"
 #include "levels/test.h"
+#include "levels/campaign_resistance.h"
+#include "levels/campaign_factory.h"
+#include "levels/campaign_launch.h"
 static u16 pauseKills;
 static u8 choice,pauseView,exitChoice;
 static const char *itemName(u8 item)
@@ -50,8 +53,11 @@ static void drawMenu(void)
     else if(def->objective==OBJ_PROTECT)sprintf(buf,"FALTAM %u S / SINAL: %u DE %u",OBJECTIVE_secondsLeft(),npcHp<0 ? 0 : npcHp,npcHpMax);
     else if(def->objective==OBJ_SURVIVE)sprintf(buf,"FALTAM %u SEGUNDOS",OBJECTIVE_secondsLeft());
     else if(def->objective==OBJ_COLLECT)sprintf(buf,"COLETADOS: %u DE %u",OBJECTIVE_collected(),def->objTarget);
-    else if(currentLevel==N_9)sprintf(buf,"INIMIGOS: %u/%u / DANO NA FASE: %u",pauseKills,def->killTarget,phaseStats.damageTaken);
-    else if(currentLevel==N_12)sprintf(buf,"INIMIGOS: %u/%u / TEMPO: %u S",pauseKills,def->killTarget,STATS_seconds());
+    else if(def->objective==OBJ_CARGO)sprintf(buf,"ENTREGAS: %u/5 / CARGA: %s",campaignResistance.delivered,campaignResistance.cargo==255 ? "VAZIA" : "CARREGANDO");
+    else if(def->objective==OBJ_PRIORITY){u8 m=campaignResistance.priorityDone; sprintf(buf,"TRANSMISSORES: %u/3",(m&1)+((m>>1)&1)+((m>>2)&1));}
+    else if(def->objective==OBJ_EGGS || def->objective==OBJ_VALVES)sprintf(buf,"%s: %u/%u",def->objective==OBJ_EGGS ? "NINHOS" : "VÁLVULAS",campaignFactory.done,def->objTarget);
+    else if(def->objective==OBJ_POWER){u8 m=campaignLaunch.powered,n=0;while(m){n+=m&1;m>>=1;}sprintf(buf,"GERADORES: %u/5",n);}
+    else if(def->objective==OBJ_RADIO)sprintf(buf,"FALTAM %u S / RÁDIO: %d/100",(campaignLaunch.left+fps-1)/fps,npcHp<0 ? 0 : npcHp);
     else sprintf(buf,"INIMIGOS: %u DE %u",pauseKills,def->killTarget);
     PANEL_wrap(buf,2,12,36,1,PANEL_BODY);
     sprintf(buf,"VIDA: %03u/100     BOMBAS: %u",hp<0 ? 0 : hp,BOMB_count());PANEL_text(buf,2,14,PANEL_BODY);

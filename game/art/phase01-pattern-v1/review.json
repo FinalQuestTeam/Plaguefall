@@ -1,0 +1,76 @@
+{
+  "status": "candidate_for_user_review",
+  "scope": "Fase1; expansão para a campanha depende da avaliação deste protótipo.",
+  "production_rom_changed": false,
+  "production_rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "prototype_rom_sha256": "df5cbc2584b1e2e536b57df0148b27bbe045a390b399503560170bc0e8b1b013",
+  "visual_decision": "Pronto para avaliação do usuário, sem aprovação automática.",
+  "applied_pattern": [
+    {
+      "region": "Área superior",
+      "result": "Igreja inteira e portão de evacuação mantêm a identidade da primeira fase. Materiais de muro e vegetação se repetem no restante da faixa."
+    },
+    {
+      "region": "Área inferior",
+      "result": "Muro próprio de primeiro plano com coroamento, dois pilares e dois cantos que fecham as laterais."
+    },
+    {
+      "region": "Limitadores laterais",
+      "result": "Paredes contínuas com materiais compatíveis, conectadas ao limite inferior; os módulos esquerdo e direito conservam sua iluminação própria."
+    },
+    {
+      "region": "Elementos do campo",
+      "result": "Dois bancos e dois pares de barris, extraídos inteiros. As posições deixam a passagem central e os contornos conectados."
+    }
+  ],
+  "native_art_review": [
+    "Os quatro setores existem no cenário completo; cada elemento de campo tem silhueta e apoio visíveis.",
+    "A igreja é reutilizada inteira, sem combinar telhado e fachadas de construções diferentes.",
+    "As peças inferiores foram extraídas da parede completa da nova cena, incluindo seu coroamento e cantos.",
+    "O piso nativo é mais discreto que o da imagem de desenho, para reduzir textura repetida e manter leitura de personagens.",
+    "A vegetação superior tem repetição perceptível na resolução nativa. É material de fundo; não é uma sequência de edifícios ou objetos truncados."
+  ],
+  "technical": {
+    "ntsc": {
+      "camera_samples": 9,
+      "collision_probes": 20,
+      "vram_bytes": 20416,
+      "damage": true
+    },
+    "pal": {
+      "camera_samples": 9,
+      "collision_probes": 20,
+      "vram_bytes": 20416,
+      "damage": true
+    }
+  },
+  "memory": {
+    "unique_tiles": 638,
+    "budget": 640,
+    "graphic_bytes": 20416,
+    "budget_bytes": 20480,
+    "free_tiles": 2,
+    "tilemap_bytes_per_state": 6144,
+    "palette_bytes": 32,
+    "states": 2,
+    "exact_tile_reassembly": true,
+    "lossy_tile_replacements": 0
+  },
+  "geometry": {
+    "footprint": [
+      16,
+      16
+    ],
+    "free_sampled_positions": 1347,
+    "connected_positions": 1347,
+    "connected": true
+  },
+  "limits": [
+    "512×384 é o tamanho do mundo; o jogo mostra320×224 por vez. Todas as quatro bordas não aparecem simultaneamente durante a movimentação.",
+    "638de640tiles deixam apenas2tiles livres. O repertório deste piloto está fechado; adicionar mais desenhos exige reaproveitamento ou revisão do orçamento.",
+    "As caixas físicas dos objetos baixos cobrem conservadoramente a silhueta completa, em grade8×8. É a escolha deste piloto para impedir passagem por dentro da arte sem adicionar oclusão dinâmica.",
+    "Os testes usam RAM para preparar posições e suspender combate. Não são uma vitória humana nem uma nova calibração da dificuldade.",
+    "A ROM é um protótipo isolado com dados substituídos e tabela própria de obstáculos. Somente a fase1foi validada; outras fases dessa cópia podem usar recursos da igreja compartilhados.",
+    "Nada foi integrado à campanha de produção. A avaliação visual do usuário precede a extensão do padrão."
+  ]
+}

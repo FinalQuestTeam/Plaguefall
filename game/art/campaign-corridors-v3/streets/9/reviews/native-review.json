@@ -1,0 +1,78 @@
+{
+  "phase": "9",
+  "status": "candidate_ready_for_parent_whole_and_camera_review",
+  "visual_cycles": [
+    {
+      "cycle": 1,
+      "verdict": "Rejected before approval:1299tiles; full source-yard cuts were too expensive and two material samples introduced wrong repeated details."
+    },
+    {
+      "cycle": 2,
+      "verdict": "Parent rejected navy asphalt (read as water) and detached light equipment pads; neutral existing grayscale asphalt replaces only road material, bounded equipment courtyards now have complete rear/front fences and side supports joining the perimeter."
+    }
+  ],
+  "composition": [
+    "Entrance office court, southern service shed and passage bending north of it.",
+    "Three-bay loading warehouse, entire truck and a real upper detour.",
+    "Closed machine enclosure north opposite red warehouse south, with48px service gap.",
+    "Twin tank enclosure, two lower utilities and closed factory-gate arrival."
+  ],
+  "source": "source/whole-folded-cycle3.png",
+  "module_integrity": "Whole closed buildings assembled from caps, repeatable roof/wall material and complete doors/windows. Truck remains a complete source extraction. Compressor/stack, cylinder caps/body/base, gate posts/header/leaves use exact authored parts inside physical enclosures. No4px resampling or approximate tile replacements.",
+  "palette": "16RGB333, literal black0. Neutral asphalt uses existing gray index5; source road-dash silhouette uses yellow index14 on the same gray. Steel blues remain on equipment and roofs.",
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "BFS_step": 8,
+    "connected_positions": 4239,
+    "all_points_reachable": true,
+    "swept16pxSamples": 2606,
+    "all_segments_collision_free": true,
+    "eight_pixel_route_clearance": true,
+    "minimum_service_neck": 40,
+    "exit_reachable": true,
+    "solids_count": 16,
+    "closed_gate_solids": "Two24x144posts and176x72closedleaf. Air below the leaf is free, avoiding an invisible whole-bbox barrier."
+  },
+  "memory": {
+    "scene_tiles": 540,
+    "objective_tiles": 0,
+    "total_tiles": 540,
+    "budget": 640,
+    "free_tiles": 100,
+    "graphics_bytes": 17280,
+    "map_bytes": 20480,
+    "palette_bytes": 32,
+    "collision_mask_words": 400,
+    "lossy_pattern_replacements": 0,
+    "pixel_exact_reassembly": true
+  },
+  "route_camera_proof": {
+    "samples": 281,
+    "step": 8,
+    "failed": 0,
+    "criterion": "Every settled player-only route camera has visible architecture/equipment at least48px wide and32px high, excluding building roofs.",
+    "limitation": "Synthetic framing model, not emulator footage. Final controller/camera/streaming tests remain root responsibility."
+  },
+  "visual_reviewed": [
+    "complete-native.png",
+    "reviews/camera-*.png",
+    "reviews/passage-cameras.png"
+  ],
+  "remaining_risks": [
+    "Repeated office/utility roof grammar is visible but changes of volume, north/south placement and industrial equipment distinguish sectors.",
+    "Compressor pipes are smaller than the loading bays; the full enclosures provide physical context and human-scale cylinders/truck remain legible.",
+    "No ROM was built or playtested by this private generator; native approval does not prove runtime."
+  ],
+  "bank_hashes": {
+    "build.py": "7ccebe50ed4d787bf77340e9017197462ed8ad5222d55809715b2c866f119bd2",
+    "manifest.json": "427e79695a4921ae3524c28f605d8e6c2d1723ca6ce08ec53e7eaabc43b69647",
+    "complete-native.png": "46ee96da2812ac34a59f015f81998b3dbe2652599bb9fc344b0f793a711398ca",
+    "native/tiles.bin": "79de722106e51087275ef098b9d6db1895e135583cf1213a12cca2417f9d16a7",
+    "native/map.bin": "3024932cb066be124ecb6becf77642e5e8ddd5f5c953288e7b330cf195826295",
+    "native/palette.bin": "a8121ecc116c1e3354e65838ad3556d730847f4a029ee7203aa008098bbbcbef"
+  },
+  "shared_C_resources_ROM_or_factory10_11_changed": false
+}

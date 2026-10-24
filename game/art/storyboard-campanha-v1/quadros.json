@@ -1,0 +1,304 @@
+[
+  {
+    "slug": "01-igreja",
+    "title": "A retirada da igreja",
+    "panels": "A TOP LEFT, SHORT MISSION CALL AFTER THE EXISTING OPENING AND MENU: Damiao is already outside the church, answering the radio. Church courtyard and blue door behind him. No workshop, rocket, eggs or new prologue.\nB TOP RIGHT, PHASE 1: elevated wide establishing shot of the ochre church courtyard at dusk, intact whitewashed church, clay roof, blue doors, cactus and improvised benches; Damiao holds a lane against simple crawling beetle enemies, while priest guides the LAST civilians out a safe rear gate carrying a small dark blue Our Lady Aparecida statue. One enemy type only.\nC BOTTOM LEFT, PHASE 2A: same courtyard and architecture still standing, exhausted Damiao faces a new spitting projectile insect alongside a basic crawler. Priest in safe doorway gestures grateful, distant civilian line already outside. Clearly preserved church.\nD BOTTOM RIGHT, PHASE 2B ALTERNATIVE TO C: matching camera and same church, roof and wall collapsed after a bomb, clearly substantial structural destruction. Stone and clay tile rubble make traversable detours through the courtyard; Damiao fights a spitting insect. Priest safely outside mourns the building. No civilian casualties here. This is an alternative outcome, NOT a later event after C.",
+    "frames": [
+      {
+        "stage": "Chamada da missão",
+        "title": "Retomada no pátio",
+        "camera": "Plano médio de Damião já no pátio da igreja, atendendo ao rádio.",
+        "action": "Depois da animação existente e do menu, a nova partida retoma a defesa da retirada. Sem outra cena na oficina.",
+        "objective": "Ligar a abertura já exibida à fase 1, sem repetir o monólogo.",
+        "dialogue": "Padre: “Damião, aqui é o padre. Segure o pátio. Tem gente fugindo pelo fundo.” Damião: “Tô indo. Hoje ninguém vai pro céu antes da hora.”",
+        "impact": "A abertura completa aparece antes, nos 14 planos preservados. A chamada curta termina e começa a defesa de 1min30s."
+      },
+      {
+        "stage": "Fase 1",
+        "title": "Até o último sair",
+        "camera": "Plano geral elevado; acompanhar a linha de defesa.",
+        "action": "Damião segura insetos básicos enquanto o padre retira os últimos civis e leva a santa.",
+        "objective": "Sobreviver por 1min30s; um único tipo de inimigo.",
+        "dialogue": "Padre: “Uma explosão aqui pode derrubar a igreja.”",
+        "impact": "Rádio marca a saída do último civil. Sem bomba, cortar para 2A; com qualquer bomba, para 2B."
+      },
+      {
+        "stage": "Fase 2A",
+        "title": "A igreja de pé",
+        "camera": "Repetir o eixo do pátio com a fachada inteira.",
+        "action": "Um inseto de disparo aparece ao lado dos inimigos de contato; Damião termina a limpeza.",
+        "objective": "Eliminar 15 insetos.",
+        "dialogue": "Padre: “Você protegeu nosso povo e manteve a igreja de pé.”",
+        "impact": "Alternativa a 2B. A igreja permanece inteira no epílogo. Os civis já saíram; seguir para a rua."
+      },
+      {
+        "stage": "Fase 2B",
+        "title": "Entre os escombros",
+        "camera": "Mesmo eixo de 2A; destacar o desvio entre destroços.",
+        "action": "Parede e telhado caídos mudam circulação e cobertura. Damião enfrenta os mesmos tipos da 2A.",
+        "objective": "Eliminar 15 insetos, contornando bloqueios.",
+        "dialogue": "Damião: “Vidas valem mais que prédios, padre.”",
+        "impact": "Alternativa a 2A. Não há mortes civis por esta escolha. A igreja continua destruída no retorno; seguir para a rua."
+      }
+    ],
+    "image": "01-igreja-v2.png"
+  },
+  {
+    "slug": "02-galpao-resgate",
+    "title": "Abrigo e resgate",
+    "panels": "A TOP LEFT, PHASE 3: long industrial street in dry Brazilian town, eye-level wide perspective leading to a recognizable corrugated-metal warehouse far ahead. Damiao advances alone opening the road, civilians and priest wait safely far behind. Concrete houses, cables, cactus, barriers and insect ambush points.\nB TOP RIGHT, PHASE 4: inside that warehouse, wide elevated shot with pillars, stacked materials, loading area, Damiao clearing insect defenders. Warm light enters warehouse doors; civilians remain OUTSIDE behind priest until cleared. No escort companion in the combat.\nC BOTTOM LEFT, PHASE 5 SUCCESSFUL DEFENSE: in front of the warehouse, small dark-blue Our Lady Aparecida statue on a waist-high plinth, exposed communication unit in its base, signal light, Damiao defending the central objective. Dinorah arriving from side to help coordinate. Human rescue shuttle at rear boarding civilians and priest. Other human shuttles approach in sky, rocket-like alien cargo ships absent. Hopeful amid pressure.\nD BOTTOM RIGHT, PHASE 5 FAILED DEFENSE ALTERNATIVE: exact same courtyard under attack, transmitter at statue base shattered, blue signal extinguished, one human rescue shuttle already departing carrying survivors. Dropped civilian luggage and several still covered figures indicate people lost before evacuation completed, no gore. Damiao devastated, Dinorah beside him urging withdrawal; priest on departing shuttle, NOT standing beside Damiao. Avoid implying nobody escaped.",
+    "frames": [
+      {
+        "stage": "Fase 3",
+        "title": "Abram caminho",
+        "camera": "Plano geral em perspectiva; deslocamento rumo ao galpão.",
+        "action": "Damião avança pela rua. O povo e o padre aguardam atrás da zona de combate.",
+        "objective": "Alcançar o galpão em um corredor de 2.560 pixels.",
+        "dialogue": "Padre: “Vá na frente e abra caminho.” Damião: “Só venham quando eu avisar.”",
+        "impact": "Passos e tiros conduzem ao portão. Chegar basta; não exigir eliminar todos os insetos da rua."
+      },
+      {
+        "stage": "Fase 4",
+        "title": "Um teto para a noite",
+        "camera": "Plano geral do interior; pilares criam profundidade.",
+        "action": "Damião limpa o galpão antes da entrada das famílias, ainda protegidas do lado de fora.",
+        "objective": "Eliminar 20 insetos.",
+        "dialogue": "Padre: “Precisamos de um teto para esta noite.”",
+        "impact": "Após a limpeza, os civis entram. Pelo rádio surge a possibilidade de resgate antes da noite."
+      },
+      {
+        "stage": "Fase 5",
+        "title": "O sinal da santa",
+        "camera": "Plano aberto com santa em primeiro plano e embarque ao fundo.",
+        "action": "Damião defende o comunicador. Dinorah chega e organiza o embarque. O padre acompanha o povo.",
+        "objective": "Proteger a santa e o comunicador por 2 minutos.",
+        "dialogue": "Padre: “O primeiro grupo já embarcou. Precisamos manter o sinal.”",
+        "impact": "Chamado e primeiro embarque acontecem antes do cronômetro. Sucesso salva todos e leva à 6A."
+      },
+      {
+        "stage": "Fase 5 falha",
+        "title": "O sinal interrompido",
+        "camera": "Repetir a composição anterior; aproximar o equipamento quebrado.",
+        "action": "A posição cai. Uma nave sai com sobreviventes; malas e corpos cobertos mostram as perdas no chão.",
+        "objective": "Falha do objetivo com Damião vivo permite continuar.",
+        "dialogue": "Padre: “Quem já embarcou conseguiu sair… Perdemos gente aqui embaixo.”",
+        "impact": "Alternativa ao resgate completo. Não morreram todos. Dinorah fica; o padre segue na nave e no rádio. Cortar para 6B."
+      }
+    ]
+  },
+  {
+    "slug": "03-esgotos-base",
+    "title": "Os esgotos e O Último Chão",
+    "panels": "A TOP LEFT, PHASE 6A: broad sewer maintenance passage, readable dry walkway next to dark water. Damiao leads and shields Dinorah from pursuing insects, she stays close alive with rifle and technical bag. Unobstructed passage and distant refuge entrance, cool green overhead lights.\nB TOP RIGHT, PHASE 6B ALTERNATIVE: related sewer branch with a CLOSED iron gate farther ahead and conspicuous large red pressure valve in foreground, venting steam blocks a section. Damiao turns the valve from safe side while Dinorah waits behind cover alive; insect threat beyond. Visually demonstrate protection plus valve plus gate in one legible shot. No priest physically in sewers.\nC BOTTOM LEFT, PHASE 7: resistance refuge in dense Brazilian favela, brick houses, stairs, water tanks, electrical cables. Wide shot of Damiao carrying ONE supply satchel toward a designated storage shelter, with FIVE visually distinct supply cache locations across the scene (foreground, stair landing, rooftop access, broken clinic, far alley), Dinorah coordinating from cover. Clear recovery and delivery theme, no text or labels.\nD BOTTOM RIGHT, PHASE 8: same compromised favela perimeter; THREE conspicuous signal-emitter insects with glowing biological antennae coordinate ordinary insect reinforcements. Damiao aims deliberately at an emitter while bypassing common enemies; Dinorah points toward priority target from cover. Clear target hierarchy and encroaching swarm, no floating markers.",
+    "frames": [
+      {
+        "stage": "Fase 6A",
+        "title": "Pela passagem de baixo",
+        "camera": "Plano geral do esgoto; seguir a dupla pelo caminho seco.",
+        "action": "Damião abre espaço para Dinorah, que espera cobertura e mantém distância segura.",
+        "objective": "Escoltar Dinorah por 3.072 pixels até o abrigo.",
+        "dialogue": "Dinorah: “Agora me leve até a base e eu arranjo recursos.”",
+        "impact": "Resgate completo. Percurso simples. Se Dinorah morrer aqui, reiniciar; chegar viva leva à 7."
+      },
+      {
+        "stage": "Fase 6B",
+        "title": "O peso dos que ficaram",
+        "camera": "Plano de conjunto; válvula em primeiro plano e portão adiante.",
+        "action": "Damião libera pressão e abre barreiras. Dinorah aguarda em cobertura; o padre fala pelo rádio.",
+        "objective": "Escoltar por 3.072 pixels, com portões e válvulas.",
+        "dialogue": "Damião: “Eram meu povo…” Padre: “Agora precisamos seguir com fé.”",
+        "impact": "Resgate parcial. Manter espaço para o choro antes da resposta. Morte de Dinorah reinicia; chegada leva à 7."
+      },
+      {
+        "stage": "Fase 7",
+        "title": "O que ainda resta",
+        "camera": "Plano amplo da favela; destacar coleta, transporte e depósito.",
+        "action": "Damião carrega uma carga por vez. Dinorah coordena o recolhimento dos suprimentos espalhados.",
+        "objective": "Recuperar e entregar cargas de 5 pontos.",
+        "dialogue": "Damião: “Esses suprimentos mantêm a resistência viva.”",
+        "impact": "A quinta entrega encerra. Acrescentar alívio se todos foram resgatados ou lembrança dos mortos se houve perdas."
+      },
+      {
+        "stage": "Fase 8",
+        "title": "Cortar o chamado",
+        "camera": "Plano aberto com profundidade; emissores se distinguem pelo brilho.",
+        "action": "Damião prioriza os insetos que chamam reforços, evitando gastar tudo em inimigos comuns.",
+        "objective": "Eliminar alvos prioritários; sugestão inicial: 3.",
+        "dialogue": "Dinorah: “Use a cabeça. Mate quem está chamando o resto.”",
+        "impact": "Cada emissor morto reduz reforços. A base continua comprometida. Cortar para a investigação na fábrica."
+      }
+    ]
+  },
+  {
+    "slug": "04-fabrica-escolta",
+    "title": "A fábrica e a última travessia",
+    "panels": "A TOP LEFT, PHASE 9: long road corridor toward towering old factory, dry ground, pipe bridges and broken heavy vehicles. Damiao alone opens the route between melee and ranged insects; strong perspective showing a distant factory entrance as goal, no civilians and no companion physically in combat.\nB TOP RIGHT, PHASE 10: factory interior whose machinery is infested by egg clusters; show TEN DISTINCT egg clutches spread across the wide environment, some near foreground some along the walkway, readable as targets. Damiao firing at one clutch, insect defenders, visible rocket service access in background. No Dinorah beside him.\nC BOTTOM LEFT, PHASE 11: connected factory machinery room, THREE large red industrial pressure valves on separate accessible pipe stations, first valve turned by Damiao. Boilers warm with orange light and steam, visible insects converging toward hot machines outside the walkway. Dinorah monitors a service console from protected side. Destroyed egg shells remain empty, no intact new eggs magically reappear.\nD BOTTOM RIGHT, PHASE 12: exposed service passage connecting factory and spaceport, rocket gantries visible ahead. Damiao shields Dinorah as they move toward a recognizable workers rest-room building with benches and lockers visible through doorway. Both alive; insects closing the corridor; escort stakes clear. No priest physically present.",
+    "frames": [
+      {
+        "stage": "Fase 9",
+        "title": "O caminho dos ovos",
+        "camera": "Plano geral longitudinal; fábrica como destino reconhecível.",
+        "action": "Damião atravessa a rua industrial entre emboscadas e inimigos de disparo. Aliados ficam no rádio.",
+        "objective": "Alcançar a fábrica; corredor de 2.560 pixels.",
+        "dialogue": "Padre: “Foi naquela fábrica que ouvi os primeiros relatos sobre os ovos.”",
+        "impact": "Chegar leva à fase 10 única. Dano sofrido não cria 10A ou 10B nesta campanha."
+      },
+      {
+        "stage": "Fase 10",
+        "title": "O berçário",
+        "camera": "Plano geral elevado com ovos distribuídos entre máquinas.",
+        "action": "Damião destrói conjuntos de ovos protegidos por insetos e reconhece a ligação de serviço ao estaleiro.",
+        "objective": "Destruir 10 conjuntos de ovos.",
+        "dialogue": "Damião: “Nunca vi tanto ovo junto.” Dinorah: “Vai ficar olhando com medo?”",
+        "impact": "Cada conjunto destruído conta uma unidade. O fluxo de insetos revela os foguetes como próximo alvo."
+      },
+      {
+        "stage": "Fase 11",
+        "title": "Acender a isca",
+        "camera": "Plano de conjunto dos circuitos; calor e vapor crescem por setor.",
+        "action": "Damião abre válvulas. A fábrica aquece e atrai insetos, deixando o caminho ao estaleiro menos pressionado.",
+        "objective": "Liberar válvulas; sugestão inicial: 3.",
+        "dialogue": "Padre: “Podemos fazer desta fábrica um chamado para elas.”",
+        "impact": "Ovos destruídos não reaparecem. Os insetos tentam formar novo ninho. O ruído das máquinas cria uma janela de travessia."
+      },
+      {
+        "stage": "Fase 12",
+        "title": "A última travessia",
+        "camera": "Plano geral do acesso; sala dos trabalhadores ao fundo.",
+        "action": "Dinorah se reúne com Damião e atravessa o trecho exposto sob sua proteção.",
+        "objective": "Escoltar Dinorah por 3.072 pixels até a sala.",
+        "dialogue": "Dinorah: “Me leve até a sala do sindicato. Conheço aquele setor.”",
+        "impact": "Chegar viva leva à 13A. Sua morte com Damião vivo leva à 13B; morte de Damião, inclusive simultânea, reinicia."
+      }
+    ]
+  },
+  {
+    "slug": "05-sindicato-ignicao",
+    "title": "A preparação do ataque final",
+    "panels": "A TOP LEFT, PHASE 13A: occupied workers rest room with lockers, old labor banners WITHOUT READABLE WORDS, benches and maintenance access. Damiao clearing insects, Dinorah alive taking cover in a safe side compartment beside service console. Recognition and relief, no priest physically here.\nB TOP RIGHT, PHASE 13B ALTERNATIVE: same room from matching framing but colder and emptier; Damiao alone slumped briefly beside the console, Dinorah's rust-red hat and tool satchel placed respectfully on a bench, more insects in far doorway. Dinorah has died in escort and must NOT appear as a living person or ghost. No priest physically present; radio light indicates support.\nC BOTTOM LEFT, PHASE 14: broad spaceport electrical substation with FIVE DISTINCT power machines/generators, insulated cables running to launchpad. Damiao physically energizes a foreground machine; four others clearly placed along path. Light activation in sequence. Rockets in distance remain idle, NO engine fire yet. No other person beside him.\nD BOTTOM RIGHT, PHASE 15: Damiao holds a communication post against insects; recognizable rugged radio/data-link cabinet with antenna and status lights central. In background multiple rocket engines begin a staged ignition, flames burn nests BELOW rockets. At far side, a small visible protected control booth contains living Dinorah operating console for the alive route. NOT a second combat companion. Priest absent physically.",
+    "frames": [
+      {
+        "stage": "Fase 13A",
+        "title": "Velhos piquetes",
+        "camera": "Plano aberto da sala com compartimento lateral protegido.",
+        "action": "Damião limpa a sala. Dinorah viva se abriga junto ao painel e reconhece o lugar de seus piquetes.",
+        "objective": "Eliminar 30 insetos.",
+        "dialogue": "Dinorah: “Fiz muito piquete saindo dessa sala.”",
+        "impact": "Alternativa a 13B. Depois da limpeza, ela assume o painel. A proteção da vida dela não vira novo objetivo na arena."
+      },
+      {
+        "stage": "Fase 13B",
+        "title": "Um lugar vazio",
+        "camera": "Repetir o espaço da 13A com enquadramento mais vazio.",
+        "action": "Damião entra sozinho. Chapéu e ferramentas de Dinorah no banco marcam sua ausência; o rádio do padre segue ativo.",
+        "objective": "Eliminar 45 insetos acumulados.",
+        "dialogue": "Damião: “Ela era grosseira… Mas eu respeitava aquela mulher.”",
+        "impact": "Dinorah morreu na escolta. Não aparece viva nem em fantasma. Damião prepara os comandos técnicos; seguir para 14."
+      },
+      {
+        "stage": "Fase 14",
+        "title": "Devolver a força às máquinas",
+        "camera": "Plano amplo da subestação; cabos conduzem aos foguetes.",
+        "action": "Damião ativa cinco máquinas. As luzes voltam por setor, com motores ainda apagados.",
+        "objective": "Ativar 5 máquinas de energia.",
+        "dialogue": "Viva, Dinorah: “Ligue as cinco máquinas e eu preparo o comando de ignição.”",
+        "impact": "Sem Dinorah, Damião prepara a sequência e o padre coordena o perímetro. Não há incêndio antes da fase 15."
+      },
+      {
+        "stage": "Fase 15",
+        "title": "Não deixem o sinal cair",
+        "camera": "Plano aberto do rádio com lançamento ao fundo.",
+        "action": "Damião protege o enlace enquanto os motores acendem. A cabine mostra a rota com Dinorah viva, operando de um ponto seguro.",
+        "objective": "Proteger o rádio por 2 minutos.",
+        "dialogue": "Viva, Dinorah: “Primeiro motor aceso. Segure mais um pouco!”",
+        "impact": "Sem Dinorah, cabine vazia, sequência automática preparada por Damião e falas do padre. Rádio destruído reinicia; sucesso leva à 16."
+      }
+    ]
+  },
+  {
+    "slug": "06-escorpiao-dinorah",
+    "title": "Escorpião e o destino de Dinorah",
+    "panels": "A TOP LEFT, PHASE 16 FIRST CONTACT: tremendous yellow-ochre cybernetic SCORPION from reference, articulated tail with curved stinger and TWO LARGE PINCERS, low many-legged arachnid body, emerges from rocket engine flames. Damiao in foreground dwarfed but resolute, his radio glows. Wide dramatic composition, not a centipede, not humanoid monster. No text and no speech bubbles.\nB TOP RIGHT, PHASE 16 COMBAT: wide elevated view of same launch area, Damiao dodges the SCORPION tail strike and fires at an exposed joint; engine fire behind, clear service exit on one side, eggs charred below rockets. Strong readable combat staging, no other humans on arena. Keep boss anatomy consistent.\nC BOTTOM LEFT, EPILOGUE DINORAH ALIVE: after time passes, Damiao and Dinorah meet outside protected maintenance shelter and begin reconstruction in workers neighborhood, both tired but trading dry smiles, her technical competence visible as she distributes repair tools to workers. Priest further away reunites families. Ordinary daylight, no new fighting, no rebuilt intact church forced in background.\nD BOTTOM RIGHT, EPILOGUE DINORAH DEAD ALTERNATIVE: matching neighborhood, Damiao and priest pay respects at a modest workers memorial with Dinorah's recognizable rust-red hat and tools, single red cloth, no readable words. Dinorah NOT physically present and no ghost. Workers continue rebuilding further behind. Restrained grief, victory with lasting absence.",
+    "frames": [
+      {
+        "stage": "Fase 16 chegada",
+        "title": "A voz do enxame",
+        "camera": "Plano geral baixo; Damião pequeno diante do Escorpião.",
+        "action": "O chefe emerge do fogo com pinças e ferrão. A primeira fala alienígena chega pelo rádio.",
+        "objective": "Apresentar o chefe e iniciar o confronto.",
+        "dialogue": "Escorpião: “Este mundo já estava podre antes de chegarmos.”",
+        "impact": "Viva, Dinorah reage: “Essa coisa está falando?” Morta, somente padre e Damião respondem. Não mostrar Dinorah fisicamente na arena."
+      },
+      {
+        "stage": "Fase 16 combate",
+        "title": "Nossa casa",
+        "camera": "Plano geral elevado; saída de serviço visível no limite da arena.",
+        "action": "Damião evita investida e ferrão, explora uma janela de ataque. O fogo queima os ninhos sob os foguetes.",
+        "objective": "Derrotar Escorpião.",
+        "dialogue": "Damião: “Estranho é você achar que a gente ia entregar nossa casa.”",
+        "impact": "Dinorah viva orienta a saída pelo rádio; morta, o padre acompanha. Chefe derrotado permite fuga; não há instalação posterior de cargas."
+      },
+      {
+        "stage": "Epílogo Dinorah viva",
+        "title": "O trabalho continua",
+        "camera": "Plano de conjunto após passagem de tempo; rostos e ferramentas.",
+        "action": "Dinorah e Damião se reencontram e ajudam a organizar reparos. O padre reúne as famílias.",
+        "objective": "Confirmar sobrevivência e papel na reconstrução.",
+        "dialogue": "Dinorah: “Agora dá trabalho reconstruir.” Damião: “Quero ver você fugir do serviço.”",
+        "impact": "Usar depois de 13A, com qualquer igreja e qualquer resultado de resgate. Ela participou das fases 14, 15 e 16."
+      },
+      {
+        "stage": "Epílogo Dinorah morta",
+        "title": "A ausência permanece",
+        "camera": "Plano de conjunto sóbrio; memorial dos trabalhadores em primeiro plano.",
+        "action": "Damião e padre homenageiam Dinorah. Seu chapéu e suas ferramentas ficam no memorial, sem imagem sobrenatural.",
+        "objective": "Preservar o luto depois da vitória.",
+        "dialogue": "Damião: “Ela devia estar aqui para ver.”",
+        "impact": "Usar depois de 13B. Nenhuma fala nova de Dinorah. O memorial dela não determina se houve perdas entre os civis."
+      }
+    ]
+  },
+  {
+    "slug": "07-impactos-epilogo",
+    "title": "O que permanece depois da vitória",
+    "panels": "A TOP LEFT, CHURCH PRESERVED ENDING COMPONENT: same Brazilian whitewashed church with blue doors, clay roof and bell gable as courtyard reference, intact after liberation, families reopen the gate in daylight, cactus and repaired street. No fighting, no Dinorah specifically pictured so this component fits either survival route.\nB TOP RIGHT, CHURCH DESTROYED ENDING COMPONENT: same framing and same church, roof and substantial wall still collapsed, survivors begin clearing rubble and lay construction materials. Do NOT magically rebuild it; reconstruction just beginning. No fighting and no Dinorah specifically pictured.\nC BOTTOM LEFT, COMPLETE RESCUE ENDING COMPONENT: outside liberated neighborhood at human transport shuttle arrival, families reunited and coming home with luggage, elderly adults and children safe, priest welcoming people, Damiao relieved. No memorial or civilian losses implied in THIS panel; no Dinorah specifically pictured so this remains independent of her fate.\nD BOTTOM RIGHT, PARTIAL RESCUE ENDING COMPONENT: same neighborhood with returned survivors, a modest memorial row of candles, flowers and empty household chairs honors CIVILIAN victims, Damiao respectfully remembers the people who did not return, priest supports grieving families. No gore. Dinorah's distinctive hat and tools must NOT be on this civilian memorial, since she may be alive independently. Not all civilians died.",
+    "frames": [
+      {
+        "stage": "Epílogo igreja inteira",
+        "title": "Um lugar para voltar",
+        "camera": "Repetir a fachada do prólogo em luz de dia.",
+        "action": "Famílias reabrem o portão da igreja intacta, agora num bairro libertado e em reparos.",
+        "objective": "Mostrar a consequência de não usar bomba na fase 1.",
+        "dialogue": "Padre: “A igreja continua de pé. Agora precisamos fazer o bairro voltar a viver.”",
+        "impact": "Combinar com resgate completo ou parcial e Dinorah viva ou morta. Igreja preservada não significa ausência de perdas."
+      },
+      {
+        "stage": "Epílogo igreja destruída",
+        "title": "Levantar as paredes",
+        "camera": "Mesmo eixo do quadro A; ruínas reconhecíveis e materiais novos.",
+        "action": "Sobreviventes retiram escombros e começam a reconstrução. O telhado ainda não voltou.",
+        "objective": "Mostrar a consequência de usar bomba na fase 1.",
+        "dialogue": "Padre: “Primeiro, cuidar de quem voltou.”",
+        "impact": "Alternativa ao quadro A. Não restaurar magicamente a igreja; combinar de forma independente com os demais resultados."
+      },
+      {
+        "stage": "Epílogo resgate completo",
+        "title": "O retorno do povo",
+        "camera": "Plano amplo do desembarque; aproximar os reencontros.",
+        "action": "Transportes humanos trazem as famílias salvas. Crianças e idosos reencontram a comunidade.",
+        "objective": "Confirmar que todos os civis daquela retirada sobreviveram.",
+        "dialogue": "Damião: “Todo mundo que saiu daquela igreja conseguiu voltar.”",
+        "impact": "Não significa que Dinorah sobreviveu. Combinar com seu destino e com a igreja. Evitar afirmar que toda a guerra foi sem perdas."
+      },
+      {
+        "stage": "Epílogo resgate parcial",
+        "title": "Os nomes que faltam",
+        "camera": "Plano de conjunto, cadeiras vazias e flores em primeiro plano.",
+        "action": "Sobreviventes retornam e lembram as vítimas civis. O padre acolhe as famílias; Damião reconhece as ausências.",
+        "objective": "Confirmar perdas da fase 5, apesar da libertação.",
+        "dialogue": "Damião: “Ainda vai faltar gente quando chamarem os nomes.”",
+        "impact": "Não usar objetos de Dinorah neste memorial: ela pode estar viva. Combinar com seu destino e com o estado da igreja."
+      }
+    ]
+  }
+]

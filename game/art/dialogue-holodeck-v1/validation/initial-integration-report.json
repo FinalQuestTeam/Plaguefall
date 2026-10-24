@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "revision": "Approved option C holodeck console with black monitor, yellow text and dimmed listening portrait",
+  "rom": "../../../out/release/Plaguefall.bin",
+  "romSHA256": "ec267f9da39cbc8b3077a947bf9284b8d7e298322bf4542c95f24b91d4df0d51",
+  "romBytes": 1572864,
+  "emulator": "Genesis Plus GX",
+  "physicalHardwareTested": false,
+  "reports": {
+    "ntsc": {
+      "report": "ntsc/report.json",
+      "passed": true,
+      "dialogues": 51,
+      "countdowns": 20
+    },
+    "pal": {
+      "report": "pal/report.json",
+      "passed": true,
+      "dialogues": 51,
+      "countdowns": 20
+    },
+    "results-ntsc": {
+      "report": "results-ntsc/report.json",
+      "passed": true,
+      "defeatPhases": 20
+    },
+    "results-pal": {
+      "report": "results-pal/report.json",
+      "passed": true,
+      "defeatPhases": 20
+    }
+  },
+  "nativeChecks": {
+    "passed": true,
+    "command": "python3 game/tools/check.py",
+    "log": "native-checks.txt"
+  },
+  "art": {
+    "nativeSize": [
+      320,
+      224
+    ],
+    "consoleTiles": 155,
+    "portraitTiles": 72,
+    "dynamicTileCapacity": 400,
+    "maxObservedDynamicTiles": 178,
+    "fontPreserved": true,
+    "baseArtPreserved": true,
+    "portraitPixelsPreserved": true
+  },
+  "scope": "New console integration, dialogue/controller coverage, countdown and result transition regressions. Other validation reports in the repository identify earlier ROM revisions."
+}

@@ -1,0 +1,249 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "9852b0de2a311ead585ea5b3c5b1712b1ad187348977cebeb9853b9805368180",
+  "checks": {
+    "06a-bounds-atlas-ring-and-late-collision": true,
+    "06a-escort-death-outcome": {
+      "state": 3,
+      "expected": "restart"
+    },
+    "06a-player-death-priority": true,
+    "06a-full-controller-traversal": {
+      "seconds": 83.98,
+      "hp": 100,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "combatDisabled": true,
+      "gateOpenScenario": false,
+      "ramWritesDuringTraversal": false
+    },
+    "06a-stress": [
+      {
+        "forcedEnemies": 3,
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 50.91,
+        "p95CPULoadPct": 69.97,
+        "playerShots": 4,
+        "enemyShots": 4,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 3,
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 60.33,
+        "p95CPULoadPct": 79.35,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 4,
+        "peakActive": 4,
+        "gameFPS": 47.0,
+        "meanCPULoadPct": 67.07,
+        "p95CPULoadPct": 85.84,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 8,
+        "peakActive": 8,
+        "gameFPS": 45.67,
+        "meanCPULoadPct": 92.19,
+        "p95CPULoadPct": 110.01,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 16,
+        "peakActive": 16,
+        "gameFPS": 24.67,
+        "meanCPULoadPct": 124.76,
+        "p95CPULoadPct": 142.58,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      }
+    ],
+    "06a-ordinary-stationary-defense": {
+      "seconds": 15.88,
+      "state": 3,
+      "playerHP": 0,
+      "dinorahHP": 100,
+      "peakEnemies": 2,
+      "gameFPS": 45.09,
+      "ramWrites": false,
+      "limitation": "stationary shooting probe, not a completed combat escort"
+    },
+    "06b-bounds-atlas-ring-and-late-collision": true,
+    "06b-two-valves-and-four-shot-gates": true,
+    "06b-pause-preserves-compound-state": true,
+    "06b-escort-death-outcome": {
+      "state": 3,
+      "expected": "restart"
+    },
+    "06b-player-death-priority": true,
+    "06b-full-controller-traversal": {
+      "seconds": 90.4,
+      "hp": 100,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "combatDisabled": true,
+      "gateOpenScenario": true,
+      "ramWritesDuringTraversal": false
+    },
+    "06b-stress": [
+      {
+        "forcedEnemies": 3,
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 61.03,
+        "p95CPULoadPct": 79.98,
+        "playerShots": 4,
+        "enemyShots": 4,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 3,
+        "peakActive": 3,
+        "gameFPS": 46.67,
+        "meanCPULoadPct": 71.04,
+        "p95CPULoadPct": 90.48,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 4,
+        "peakActive": 4,
+        "gameFPS": 46.67,
+        "meanCPULoadPct": 77.56,
+        "p95CPULoadPct": 96.29,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 8,
+        "peakActive": 8,
+        "gameFPS": 28.67,
+        "meanCPULoadPct": 104.0,
+        "p95CPULoadPct": 120.9,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 16,
+        "peakActive": 16,
+        "gameFPS": 24.67,
+        "meanCPULoadPct": 134.5,
+        "p95CPULoadPct": 151.27,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      }
+    ],
+    "06b-ordinary-stationary-defense": {
+      "seconds": 13.1,
+      "state": 3,
+      "playerHP": 0,
+      "dinorahHP": 100,
+      "peakEnemies": 2,
+      "gameFPS": 44.2,
+      "ramWrites": false,
+      "limitation": "stationary shooting probe, not a completed combat escort"
+    },
+    "12-bounds-atlas-ring-and-late-collision": true,
+    "12-escort-death-outcome": {
+      "state": 4,
+      "expected": "continue13B"
+    },
+    "12-player-death-priority": true,
+    "12-full-controller-traversal": {
+      "seconds": 85.12,
+      "hp": 100,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "combatDisabled": true,
+      "gateOpenScenario": false,
+      "ramWritesDuringTraversal": false
+    },
+    "12-stress": [
+      {
+        "forcedEnemies": 3,
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 50.98,
+        "p95CPULoadPct": 71.48,
+        "playerShots": 4,
+        "enemyShots": 4,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 3,
+        "peakActive": 3,
+        "gameFPS": 47.33,
+        "meanCPULoadPct": 60.41,
+        "p95CPULoadPct": 80.86,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 4,
+        "peakActive": 4,
+        "gameFPS": 47.0,
+        "meanCPULoadPct": 67.15,
+        "p95CPULoadPct": 87.4,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 8,
+        "peakActive": 8,
+        "gameFPS": 45.33,
+        "meanCPULoadPct": 92.6,
+        "p95CPULoadPct": 110.25,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      },
+      {
+        "forcedEnemies": 16,
+        "peakActive": 16,
+        "gameFPS": 24.67,
+        "meanCPULoadPct": 125.07,
+        "p95CPULoadPct": 142.97,
+        "playerShots": 6,
+        "enemyShots": 6,
+        "ramSetupEveryFrame": true
+      }
+    ],
+    "12-ordinary-stationary-defense": {
+      "seconds": 17.4,
+      "state": 3,
+      "playerHP": 0,
+      "dinorahHP": 100,
+      "peakEnemies": 3,
+      "gameFPS": 45.23,
+      "ramWrites": false,
+      "limitation": "stationary shooting probe, not a completed combat escort"
+    }
+  }
+}

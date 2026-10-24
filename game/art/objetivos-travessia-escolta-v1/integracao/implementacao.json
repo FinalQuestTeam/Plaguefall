@@ -1,0 +1,139 @@
+{
+  "status": "implementado e validado",
+  "romSHA256": "e81a960eee9dc36452677eb7e98aeaff36ce61db5b286ac904006174db2155f2",
+  "romBytes": 1572864,
+  "campaignScope": [
+    "4 — Túneis de manutenção",
+    "6B — Retirada por terra"
+  ],
+  "worldWidths": {
+    "previous": 512,
+    "current": 1024
+  },
+  "objectives": {
+    "4": "OBJ_REACH — jogador vivo na área de saída por 0,4 s; sem cota de mortes",
+    "6B": "OBJ_ESCORT — Dinorah viva na saída, jogador vivo a até 64 px, confirmação de 0,4 s"
+  },
+  "escort": {
+    "speedPixelsPerSecond": 36,
+    "routePoints": 18,
+    "plannedPausesSeconds": [
+      2,
+      2
+    ],
+    "shotIntervalSeconds": 2.5,
+    "targetRange": 96,
+    "allyBulletCap": 2,
+    "health": 100,
+    "damageInvulnerabilitySeconds": 0.75,
+    "stopDistanceXY": [
+      112,
+      64
+    ],
+    "resumeDistanceXY": [
+      80,
+      48
+    ],
+    "playerBlocking": false,
+    "friendlyFire": false,
+    "inventoryUse": false
+  },
+  "encounters": {
+    "4": {
+      "waveSeconds": 2,
+      "waveCount": 2,
+      "enemyCap": 4
+    },
+    "6B": {
+      "waveSeconds": 2,
+      "waveCount": 1,
+      "enemyCap": 4
+    },
+    "sectorSpawns": true,
+    "outOfSectorRetirementCountsAsKill": false
+  },
+  "nativeAssets": {
+    "tileBudget": 640,
+    "stage4Tiles": 582,
+    "stage6bTiles": 549,
+    "mapColumns": 128,
+    "vdpRing": [
+      64,
+      32
+    ],
+    "paletteAdded": false,
+    "dinorahFrameTiles": 24,
+    "dinorahAbsoluteTiles": [
+      761,
+      784
+    ],
+    "beaconAbsoluteTiles": [
+      605,
+      612
+    ],
+    "additionalCollisionMaskRAMBytes": 1024
+  },
+  "validation": {
+    "ntsc": {
+      "path": "game/art/objetivos-travessia-escolta-v1/integracao/validation/ntsc/report.json",
+      "sha256": "40a99ea1f78b37ae91a6b6f09dd75522d544e4f8506d73845f480037c84e7114",
+      "passed": true
+    },
+    "pal": {
+      "path": "game/art/objetivos-travessia-escolta-v1/integracao/validation/pal/report.json",
+      "sha256": "3ad718d7d2a2a1c1557acfca9c2f6d544c336697897b7b3b28d227bf4d6b35d6",
+      "passed": true
+    },
+    "regression-combat": {
+      "path": "game/art/objetivos-travessia-escolta-v1/integracao/validation/regression-combat/report.json",
+      "sha256": "fbf1d970ef64ad66d2fbeeb6b8649173c4c3b03cf4894888f969defb8bfbdeeb",
+      "passed": true
+    },
+    "regression-interface": {
+      "path": "game/art/objetivos-travessia-escolta-v1/integracao/validation/regression-interface/report.json",
+      "sha256": "ec42a2104a5f663ab3d35dfa2404a1d5693e607c371ea403cc31fe92b5e2f192",
+      "passed": true
+    },
+    "regression-radio": {
+      "path": "game/art/objetivos-travessia-escolta-v1/integracao/validation/regression-radio/report.json",
+      "sha256": "2574c72fb8d034931ef52cb2c918d529573111bb413448fad291fbb994fdeaf6",
+      "passed": true
+    },
+    "regression-training": {
+      "path": "game/art/objetivos-travessia-escolta-v1/integracao/validation/regression-training/report.json",
+      "sha256": "f25d048d0c1678717bbcf30024577fbc26a2f661339ae06eece7c1f2e3b43a4c",
+      "passed": true
+    }
+  },
+  "nativeChecks": "python3 game/tools/check.py — passed",
+  "build": "make -C game -j4 release — passed; zero compiler warnings",
+  "testMethod": "Objetivos PAL/NTSC: preparação isolada por RAM; percursos completos só por controle após setup. Cenários separados para dano, tiros, spawns e carga. Sem alteração da ROM em NTSC; em PAL, apenas região do cabeçalho em memória.",
+  "limitations": [
+    "Dificuldade deve ser afinada em partidas humanas.",
+    "Buracos impedem passagem; não há salto ou queda fatal.",
+    "Caminho de Dinorah usa pontos seguros validados; não usa busca global de rotas."
+  ],
+  "sourceSHA256": {
+    "src/actors/dinorah.c": "59e306c724bd6f47a640dcab7fdd41992a1e2f216fa9378c67b61fbe7c39c760",
+    "src/actors/dinorah.h": "db48d9c8f41082f7ecd344782cebde09b7cadb887f2933df6d905eacf9cfed90",
+    "src/core/objective.c": "ca073e53f4268d6969738aad72da6c0c863bd9ea573d81ffc62bffab882577e8",
+    "src/core/flow.c": "b63bc9cf8acdc78797602e3d60d8a1aeffa3da4010196a55151b876cb30bc13b",
+    "src/levels/arena.c": "20b3441249fa48b9fec089acc45872fe894cade4dcd81b2970a30e0c540d2bc6",
+    "src/levels/arena.h": "eb54d499e94e409db271bb9eaeb7a119d4e3204f3cf052ea9e1f2306a483e0b3",
+    "src/levels/levels.h": "677c4ce61fac2d16a799c61b8b937d303af9f4e54132e916085a387b97c3ad61",
+    "src/levels/route_stages.c": "485ee1819f00284b1e168d6bb6801f7fa320908b2b2950905d9233c4f6b8ac63",
+    "src/levels/route_stages.h": "cc669eaefc5d3c04b10a8f1205a3c1ecd127c381c9716cb3b0ec02a157d81fdd",
+    "src/levels/defs/level04.c": "d31d04c29f3f9b93c22f6f05798d7e38129c95b9964b8f38bada3adf6c242402",
+    "src/levels/defs/level06b.c": "091171cb8ae95f5c1a6cb901173df3492d98833e9b6847cf6b3f2842d54dd0a2",
+    "src/enemies/enemies.c": "9c97c9f11beafeb66fbab9dc6263893f9a4d901c435de14c8a5685a95445b9cf",
+    "src/enemies/enemy_red.c": "f33ab96be5b9817bb70128db8a09ff990b57a36e6cfc8e4545b201dacfe4b4bb",
+    "src/enemies/enemy_orange.c": "8d6d2c3f52ab166edd9f546c8d356f250c457a48e5acecfb2adbea3deac0f3c1",
+    "src/actors/shots_enemy.c": "10499dbfd8348b2c36eeb4867b6d406b824ef63b05e05b36630d4b4d683fd7ab",
+    "src/system/video/spritelist.c": "6b7d83364b802ae076c48ae2a691524aaca212720f32a688f20162117a7df29b",
+    "src/system/video/screens/mission_copy.h": "0b6e97c02ee8c94e4343b438e29aae348142a33dd12dacf550ea5cea322c0aa6",
+    "src/system/video/screens/pause.c": "88ad52498d0bf124c16f91fe777b5f45790ce90ab7ca96c714f0f958911d25f4",
+    "src/system/video/screens/result.c": "84c10944593ddd710291ebbf8cf9f075a090da716c7ed961a2d3aabe44ea91c6",
+    "tools/build_route_stages.py": "1222403a715c6bd6ffab05e75393d76417155a1baaf3439831b001eb9d5d10be",
+    "tools/test_route_objectives_emulator.py": "4b9925a27cf6ec5d7ea928e71333d088e9331bb2b586c4dfbd2f17f3ea42f0b7"
+  }
+}

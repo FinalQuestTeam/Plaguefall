@@ -8,6 +8,7 @@ typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
 typedef uint32_t u32;
+static inline u16 divu(u32 value, u16 divisor) { return (u16)(value / divisor); }
 extern volatile u32 vtimer;
 #define TRUE true
 #define FALSE false

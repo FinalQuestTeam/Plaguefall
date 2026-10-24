@@ -1,0 +1,1966 @@
+{
+  "rom_sha256": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+  "scope": "19variações reconstruídas segundo regiões e objetivos próprios",
+  "method": "Fonte inteira → módulos completos → reconstrução exata → composição com objetivos → câmeras reais. Imagem inteira é distinta da câmera em movimento.",
+  "phases": [
+    {
+      "phase": "1",
+      "node": 1,
+      "name": "Pátio da igreja",
+      "goal": "Sobreviver 90 s e evacuar os civis; bomba define o estado da igreja.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        24,
+        128,
+        487,
+        351
+      ],
+      "solids": [
+        [
+          88,
+          184,
+          72,
+          40,
+          false
+        ],
+        [
+          136,
+          288,
+          72,
+          40,
+          false
+        ],
+        [
+          392,
+          264,
+          40,
+          40,
+          false
+        ]
+      ],
+      "start": [
+        256,
+        160
+      ],
+      "memory": {
+        "background_tiles": 636,
+        "total_tiles": 636,
+        "limit": 640
+      },
+      "sources": [
+        "early/01-courtyard/source/whole-scene.png"
+      ],
+      "complete": "maps/1-complete.png",
+      "layout": "layouts/1.png",
+      "special_states": [
+        {
+          "label": "Após bomba",
+          "path": "early/01-courtyard/damaged-native.png"
+        }
+      ],
+      "objects": [],
+      "native_source": "early/01-courtyard/complete-native.png",
+      "native_sha256": "7b39acce008b12fda378697f5b34563e15658ecddb5c1528e3b2796ae9d9aa21"
+    },
+    {
+      "phase": "2A",
+      "node": 2,
+      "name": "Igreja preservada",
+      "goal": "Eliminar 15 insetos, incluindo o novo atirador.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        24,
+        128,
+        487,
+        351
+      ],
+      "solids": [
+        [
+          88,
+          184,
+          72,
+          40,
+          false
+        ],
+        [
+          136,
+          288,
+          72,
+          40,
+          false
+        ],
+        [
+          392,
+          264,
+          40,
+          40,
+          false
+        ]
+      ],
+      "start": [
+        256,
+        160
+      ],
+      "memory": {
+        "background_tiles": 636,
+        "total_tiles": 636,
+        "limit": 640
+      },
+      "sources": [
+        "early/01-courtyard/source/whole-scene.png"
+      ],
+      "complete": "maps/2A-complete.png",
+      "layout": "layouts/2A.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "early/01-courtyard/complete-native.png",
+      "native_sha256": "7b39acce008b12fda378697f5b34563e15658ecddb5c1528e3b2796ae9d9aa21"
+    },
+    {
+      "phase": "2B",
+      "node": 3,
+      "name": "Igreja após a bomba",
+      "goal": "Eliminar 15 insetos entre destroços completos.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        24,
+        128,
+        487,
+        351
+      ],
+      "solids": [
+        [
+          88,
+          184,
+          72,
+          40,
+          false
+        ],
+        [
+          136,
+          288,
+          72,
+          40,
+          false
+        ],
+        [
+          392,
+          264,
+          40,
+          40,
+          false
+        ],
+        [
+          168,
+          152,
+          56,
+          32,
+          false
+        ],
+        [
+          280,
+          216,
+          56,
+          32,
+          false
+        ],
+        [
+          72,
+          248,
+          56,
+          32,
+          false
+        ]
+      ],
+      "start": [
+        256,
+        160
+      ],
+      "memory": {
+        "background_tiles": 603,
+        "total_tiles": 603,
+        "limit": 640
+      },
+      "sources": [
+        "early/source/../01-courtyard/source/whole-scene.png"
+      ],
+      "complete": "maps/2B-complete.png",
+      "layout": "layouts/2B.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "early/02B-ruins/map-native.png",
+      "native_sha256": "1caf2b6b98bbf9c5d984f39542728a82232a218246c567e75138f80f89542403"
+    },
+    {
+      "phase": "3",
+      "node": 4,
+      "name": "Rua até o galpão",
+      "goal": "Abrir caminho até o galpão; percurso 2560 px.",
+      "size": [
+        2560,
+        256
+      ],
+      "bounds": [
+        16,
+        136,
+        2543,
+        223
+      ],
+      "solids": [
+        [
+          328,
+          136,
+          72,
+          40,
+          true
+        ],
+        [
+          800,
+          184,
+          72,
+          40,
+          true
+        ],
+        [
+          1288,
+          136,
+          72,
+          40,
+          true
+        ],
+        [
+          1760,
+          184,
+          72,
+          40,
+          true
+        ],
+        [
+          2200,
+          136,
+          72,
+          40,
+          true
+        ]
+      ],
+      "start": [
+        48,
+        144
+      ],
+      "memory": {
+        "background_tiles": 605,
+        "total_tiles": 605,
+        "limit": 640
+      },
+      "sources": [
+        "early/source/03-street-whole.png"
+      ],
+      "complete": "maps/3-complete.png",
+      "layout": "layouts/3.png",
+      "special_states": [
+        {
+          "label": "Continuidade da igreja destruída",
+          "path": "early/03-street-ruined/map-native.png"
+        }
+      ],
+      "objects": [],
+      "native_source": "early/03-street/map-native.png",
+      "native_sha256": "ac1da08235fa48459fd5f6438b37f4e080dd20c02cd9e6d70e3fb28b6d232f8c"
+    },
+    {
+      "phase": "4",
+      "node": 5,
+      "name": "Interior do galpão",
+      "goal": "Eliminar 20 insetos para receber os civis.",
+      "size": [
+        512,
+        320
+      ],
+      "bounds": [
+        32,
+        104,
+        479,
+        263
+      ],
+      "solids": [
+        [
+          64,
+          120,
+          96,
+          48,
+          true
+        ],
+        [
+          336,
+          168,
+          96,
+          48,
+          true
+        ],
+        [
+          208,
+          208,
+          64,
+          48,
+          true
+        ]
+      ],
+      "start": [
+        48,
+        112
+      ],
+      "memory": {
+        "background_tiles": 602,
+        "total_tiles": 602,
+        "limit": 640
+      },
+      "sources": [
+        "early/source/04-warehouse-whole.png"
+      ],
+      "complete": "maps/4-complete.png",
+      "layout": "layouts/4.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "early/04-warehouse/map-native.png",
+      "native_sha256": "2392a0e531422b71fa66636d8e3884debfb8aa85a1bd0baafd9d606117272a35"
+    },
+    {
+      "phase": "5",
+      "node": 6,
+      "name": "Sinal na Santa",
+      "goal": "Defender a Santa por 120 s; resgate completo ou perdas civis.",
+      "size": [
+        384,
+        320
+      ],
+      "bounds": [
+        16,
+        112,
+        367,
+        271
+      ],
+      "solids": [
+        [
+          176,
+          176,
+          40,
+          48,
+          false
+        ],
+        [
+          40,
+          144,
+          56,
+          40,
+          true
+        ],
+        [
+          304,
+          224,
+          40,
+          40,
+          false
+        ]
+      ],
+      "start": [
+        64,
+        232
+      ],
+      "memory": {
+        "background_tiles": 631,
+        "total_tiles": 631,
+        "limit": 640
+      },
+      "sources": [
+        "early/source/05-signal-whole.png"
+      ],
+      "complete": "maps/5-complete.png",
+      "layout": "layouts/5.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "early/05-signal/map-native.png",
+      "native_sha256": "6f30f978ca7c28d3d407adac201930869a2344cc253a4d32ad455a03bdf7d90f"
+    },
+    {
+      "phase": "6A",
+      "node": 7,
+      "name": "Esgotos: evacuação completa",
+      "goal": "Escoltar Dinorah pelos 3072 px de esgoto.",
+      "size": [
+        3072,
+        272
+      ],
+      "bounds": [
+        24,
+        144,
+        3047,
+        239
+      ],
+      "solids": [
+        [
+          448,
+          144,
+          40,
+          32
+        ],
+        [
+          1472,
+          208,
+          40,
+          32
+        ],
+        [
+          2448,
+          144,
+          40,
+          32
+        ]
+      ],
+      "start": [
+        48,
+        160
+      ],
+      "memory": {
+        "scene_tiles": 602,
+        "objective_tiles": 0,
+        "total_tiles": 602,
+        "budget": 640,
+        "lossy_pattern_replacements": 0,
+        "graphics_bytes": 19264,
+        "map_bytes": 26112,
+        "palette_bytes": 32,
+        "free_tiles": 38,
+        "all_objective_frames_included": true
+      },
+      "sources": [
+        "routes/cycle-1/source/06a-whole.png"
+      ],
+      "complete": "maps/6A-complete.png",
+      "layout": "layouts/6A.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "routes/current/06a/complete-native.png",
+      "native_sha256": "6867e0a2e1a143ee079e092fcfc6131db037a17045404e5d86d75cd719ab4370"
+    },
+    {
+      "phase": "6B",
+      "node": 8,
+      "name": "Esgotos: perdas civis",
+      "goal": "Escoltar Dinorah, liberar válvulas e romper 2 portões.",
+      "size": [
+        3072,
+        272
+      ],
+      "bounds": [
+        24,
+        144,
+        3047,
+        239
+      ],
+      "solids": [
+        [
+          448,
+          216,
+          32,
+          24
+        ],
+        [
+          1504,
+          144,
+          32,
+          24
+        ],
+        [
+          2528,
+          216,
+          32,
+          24
+        ],
+        [
+          1032,
+          144,
+          16,
+          40
+        ],
+        [
+          2056,
+          144,
+          16,
+          40
+        ],
+        [
+          1000,
+          216,
+          16,
+          24
+        ],
+        [
+          2024,
+          216,
+          16,
+          24
+        ]
+      ],
+      "start": [
+        48,
+        160
+      ],
+      "memory": {
+        "scene_tiles": 373,
+        "objective_tiles": 256,
+        "total_tiles": 629,
+        "budget": 640,
+        "lossy_pattern_replacements": 0,
+        "graphics_bytes": 20128,
+        "map_bytes": 26112,
+        "palette_bytes": 32,
+        "free_tiles": 11,
+        "all_objective_frames_included": true
+      },
+      "sources": [
+        "routes/cycle-1/source/06b-whole.png"
+      ],
+      "complete": "maps/6B-complete.png",
+      "layout": "layouts/6B.png",
+      "special_states": [
+        {
+          "label": "Colapso transitório",
+          "path": "routes/current/06b/complete-collapse-objectives.png"
+        },
+        {
+          "label": "Aberto: passagem livre e apoios preservados",
+          "path": "routes/current/06b/complete-open-objectives.png"
+        }
+      ],
+      "objects": [],
+      "native_source": "routes/current/06b/complete-closed-objectives.png",
+      "native_sha256": "562663f30638ab852bb7d5519207280270b8c492d1fff7223d567e8ff04b2859",
+      "gates": [
+        [
+          1008,
+          160,
+          32,
+          64
+        ],
+        [
+          2032,
+          160,
+          32,
+          64
+        ]
+      ]
+    },
+    {
+      "phase": "7",
+      "node": 9,
+      "name": "Suprimentos do abrigo",
+      "goal": "Transportar 5 suprimentos para o depósito.",
+      "size": [
+        768,
+        384
+      ],
+      "bounds": [
+        40,
+        160,
+        727,
+        335
+      ],
+      "solids": [
+        [
+          40,
+          208,
+          112,
+          104
+        ],
+        [
+          248,
+          224,
+          136,
+          24
+        ],
+        [
+          448,
+          272,
+          136,
+          24
+        ],
+        [
+          216,
+          184,
+          32,
+          8
+        ],
+        [
+          376,
+          184,
+          32,
+          8
+        ],
+        [
+          536,
+          184,
+          32,
+          8
+        ],
+        [
+          200,
+          304,
+          32,
+          8
+        ],
+        [
+          608,
+          312,
+          32,
+          8
+        ]
+      ],
+      "start": [
+        80,
+        176
+      ],
+      "memory": {
+        "scene_tiles": 492,
+        "reserved_objective_tiles": 74,
+        "total_reserved_tiles": 566,
+        "limit": 640,
+        "margin_tiles": 74,
+        "tile_bytes": 15744,
+        "map_bytes": 9216,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "sources": [
+        "resistance/source/07-08-favela-cycle3.png"
+      ],
+      "complete": "maps/7-complete.png",
+      "layout": "layouts/7.png",
+      "special_states": [],
+      "objects": [
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            232,
+            184
+          ],
+          "canvas": [
+            216,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            219,
+            163,
+            247,
+            191
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            392,
+            184
+          ],
+          "canvas": [
+            376,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            379,
+            163,
+            407,
+            191
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            552,
+            184
+          ],
+          "canvas": [
+            536,
+            160,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            539,
+            163,
+            567,
+            191
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            216,
+            304
+          ],
+          "canvas": [
+            200,
+            280,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            203,
+            283,
+            231,
+            311
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 0,
+          "center": [
+            624,
+            312
+          ],
+          "canvas": [
+            608,
+            288,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            611,
+            291,
+            639,
+            319
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-0.png"
+        },
+        {
+          "asset": "cargo",
+          "frame": 5,
+          "center": [
+            104,
+            328
+          ],
+          "canvas": [
+            88,
+            304,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            90,
+            307,
+            118,
+            335
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/cargo-5.png"
+        }
+      ],
+      "native_source": "resistance/complete/7-complete.png",
+      "native_sha256": "5f2406e944420509a1e0d10e2e2e9a15c3a3996e28bca20cff3ebc51380fad10"
+    },
+    {
+      "phase": "8",
+      "node": 10,
+      "name": "Emissores do enxame",
+      "goal": "Eliminar 3 emissores prioritários do enxame.",
+      "size": [
+        768,
+        384
+      ],
+      "bounds": [
+        40,
+        160,
+        727,
+        335
+      ],
+      "solids": [
+        [
+          40,
+          208,
+          112,
+          104
+        ],
+        [
+          248,
+          224,
+          136,
+          24
+        ],
+        [
+          448,
+          272,
+          136,
+          24
+        ]
+      ],
+      "start": [
+        80,
+        176
+      ],
+      "memory": {
+        "scene_tiles": 492,
+        "reserved_objective_tiles": 96,
+        "total_reserved_tiles": 588,
+        "limit": 640,
+        "margin_tiles": 52,
+        "tile_bytes": 15744,
+        "map_bytes": 9216,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "sources": [
+        "resistance/source/07-08-favela-cycle3.png"
+      ],
+      "complete": "maps/8-complete.png",
+      "layout": "layouts/8.png",
+      "special_states": [],
+      "objects": [
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            208,
+            168
+          ],
+          "canvas": [
+            192,
+            144,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            193,
+            147,
+            216,
+            175
+          ],
+          "ground_snapped_8px": false,
+          "source": "art/objective-sprites-v1/frames/transmitter-2.png"
+        },
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            424,
+            296
+          ],
+          "canvas": [
+            408,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            409,
+            275,
+            432,
+            303
+          ],
+          "ground_snapped_8px": false,
+          "source": "art/objective-sprites-v1/frames/transmitter-2.png"
+        },
+        {
+          "asset": "transmitter",
+          "frame": 2,
+          "center": [
+            672,
+            224
+          ],
+          "canvas": [
+            656,
+            200,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            657,
+            203,
+            680,
+            231
+          ],
+          "ground_snapped_8px": false,
+          "source": "art/objective-sprites-v1/frames/transmitter-2.png"
+        }
+      ],
+      "native_source": "resistance/complete/8-complete.png",
+      "native_sha256": "04746f24c700ee07cdc79e841ce45b1dcb620f5eb709688af5e82f3cc4c7b1e4"
+    },
+    {
+      "phase": "9",
+      "node": 11,
+      "name": "Rua industrial",
+      "goal": "Chegar à fábrica após 2560 px de rua industrial.",
+      "size": [
+        2560,
+        256
+      ],
+      "bounds": [
+        16,
+        112,
+        2543,
+        213
+      ],
+      "solids": [
+        [
+          456,
+          144,
+          40,
+          32
+        ],
+        [
+          1000,
+          168,
+          80,
+          24
+        ],
+        [
+          1568,
+          144,
+          48,
+          32
+        ],
+        [
+          2096,
+          152,
+          64,
+          40
+        ]
+      ],
+      "start": [
+        48,
+        152
+      ],
+      "memory": {
+        "scene_tiles": 613,
+        "scene_bytes": 19616,
+        "map_bytes": 20480,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 9627,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 0,
+        "total_tiles": 613,
+        "total_vram_bytes": 19616,
+        "margin_tiles": 27
+      },
+      "sources": [
+        "factory/source/street-whole-cycle1.png"
+      ],
+      "complete": "maps/9-complete.png",
+      "layout": "layouts/9.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "factory/cycle-2/9-complete.png",
+      "native_sha256": "bafb8b19eba646e1126af0728a5623b592a52eac404fb3915b5a664d65d42874"
+    },
+    {
+      "phase": "10",
+      "node": 12,
+      "name": "Ovos na fábrica",
+      "goal": "Destruir 10 ovos.",
+      "size": [
+        768,
+        320
+      ],
+      "bounds": [
+        16,
+        112,
+        751,
+        271
+      ],
+      "solids": [
+        [
+          128,
+          192,
+          80,
+          32
+        ],
+        [
+          576,
+          200,
+          40,
+          32
+        ]
+      ],
+      "start": [
+        48,
+        128
+      ],
+      "memory": {
+        "scene_tiles": 460,
+        "scene_bytes": 14720,
+        "map_bytes": 7680,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 3380,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 150,
+        "total_tiles": 610,
+        "total_vram_bytes": 19520,
+        "margin_tiles": 30
+      },
+      "sources": [
+        "factory/source/factory-whole-cycle3.png"
+      ],
+      "complete": "maps/10-complete.png",
+      "layout": "layouts/10.png",
+      "special_states": [
+        {
+          "label": "destroyed",
+          "path": "factory/cycle-2/10-destroyed.png"
+        }
+      ],
+      "objects": [],
+      "native_source": "factory/cycle-2/10-complete.png",
+      "native_sha256": "f29344eda688b5fc4197e88cd94e0bf2b3c2f12f5adcc6618e8da2d56b30afa6"
+    },
+    {
+      "phase": "11",
+      "node": 13,
+      "name": "Ativação da fábrica",
+      "goal": "Liberar 3 válvulas e atrair o enxame com calor.",
+      "size": [
+        768,
+        320
+      ],
+      "bounds": [
+        16,
+        112,
+        751,
+        271
+      ],
+      "solids": [
+        [
+          128,
+          192,
+          80,
+          32
+        ],
+        [
+          576,
+          200,
+          40,
+          32
+        ]
+      ],
+      "start": [
+        48,
+        128
+      ],
+      "memory": {
+        "scene_tiles": 460,
+        "scene_bytes": 14720,
+        "map_bytes": 7680,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 3380,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 65,
+        "total_tiles": 525,
+        "total_vram_bytes": 16800,
+        "margin_tiles": 115
+      },
+      "sources": [
+        "factory/source/factory-whole-cycle3.png"
+      ],
+      "complete": "maps/11-complete.png",
+      "layout": "layouts/11.png",
+      "special_states": [
+        {
+          "label": "open",
+          "path": "factory/cycle-2/11-open.png"
+        }
+      ],
+      "objects": [],
+      "native_source": "factory/cycle-2/11-complete.png",
+      "native_sha256": "0b82caa494271dd2964d2090d3148cf8d783b148d40493926c928b2e1cf40ec0"
+    },
+    {
+      "phase": "12",
+      "node": 14,
+      "name": "Caminho do sindicato",
+      "goal": "Escoltar Dinorah pelos 3072 px até o sindicato.",
+      "size": [
+        3072,
+        272
+      ],
+      "bounds": [
+        24,
+        144,
+        3047,
+        239
+      ],
+      "solids": [
+        [
+          576,
+          144,
+          40,
+          24
+        ],
+        [
+          1568,
+          216,
+          40,
+          24
+        ],
+        [
+          2464,
+          144,
+          40,
+          24
+        ]
+      ],
+      "start": [
+        48,
+        160
+      ],
+      "memory": {
+        "scene_tiles": 600,
+        "objective_tiles": 0,
+        "total_tiles": 600,
+        "budget": 640,
+        "lossy_pattern_replacements": 0,
+        "graphics_bytes": 19200,
+        "map_bytes": 26112,
+        "palette_bytes": 32,
+        "free_tiles": 40,
+        "all_objective_frames_included": true
+      },
+      "sources": [
+        "routes/cycle-1/source/12-whole.png"
+      ],
+      "complete": "maps/12-complete.png",
+      "layout": "layouts/12.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "routes/current/12/complete-native.png",
+      "native_sha256": "810f802b670fc70785b84fb88997666054196578550fadac30fb4b08355031f8"
+    },
+    {
+      "phase": "13A",
+      "node": 15,
+      "name": "Sindicato: Dinorah viva",
+      "goal": "Eliminar 30 insetos; Dinorah permanece viva.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        24,
+        160,
+        487,
+        295
+      ],
+      "solids": [
+        [
+          80,
+          264,
+          104,
+          16
+        ],
+        [
+          216,
+          208,
+          104,
+          16
+        ],
+        [
+          352,
+          264,
+          104,
+          16
+        ]
+      ],
+      "start": [
+        280,
+        168
+      ],
+      "memory": {
+        "scene_tiles": 620,
+        "reserved_objective_tiles": 0,
+        "total_reserved_tiles": 620,
+        "limit": 640,
+        "margin_tiles": 20,
+        "tile_bytes": 19840,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "sources": [
+        "resistance/source/13A-union.png"
+      ],
+      "complete": "maps/13A-complete.png",
+      "layout": "layouts/13A.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "resistance/complete/13A-complete.png",
+      "native_sha256": "1a984c9528837cdff0b3112192bcbaa67aef03d36984a05ad6f04ebb1769c51c"
+    },
+    {
+      "phase": "13B",
+      "node": 16,
+      "name": "Sindicato: memorial",
+      "goal": "Eliminar 45 insetos após a morte de Dinorah.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        24,
+        160,
+        487,
+        295
+      ],
+      "solids": [
+        [
+          80,
+          264,
+          104,
+          16
+        ],
+        [
+          216,
+          208,
+          104,
+          16
+        ],
+        [
+          352,
+          264,
+          104,
+          16
+        ]
+      ],
+      "start": [
+        280,
+        168
+      ],
+      "memory": {
+        "scene_tiles": 620,
+        "reserved_objective_tiles": 0,
+        "total_reserved_tiles": 620,
+        "limit": 640,
+        "margin_tiles": 20,
+        "tile_bytes": 19840,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "sources": [
+        "resistance/source/13B-union-memorial.png"
+      ],
+      "complete": "maps/13B-complete.png",
+      "layout": "layouts/13B.png",
+      "special_states": [],
+      "objects": [],
+      "native_source": "resistance/complete/13B-complete.png",
+      "native_sha256": "a978309080cf3b619c36525cdbe3a901f9619000646d6681555d7885ee33d821"
+    },
+    {
+      "phase": "14",
+      "node": 17,
+      "name": "Energia do estaleiro",
+      "goal": "Ativar 5 máquinas conectadas à estação.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        40,
+        128,
+        471,
+        319
+      ],
+      "solids": [
+        [
+          200,
+          152,
+          112,
+          64
+        ],
+        [
+          248,
+          136,
+          16,
+          16
+        ],
+        [
+          216,
+          256,
+          80,
+          48
+        ],
+        [
+          56,
+          128,
+          24,
+          16
+        ],
+        [
+          440,
+          128,
+          24,
+          16
+        ],
+        [
+          392,
+          200,
+          24,
+          16
+        ],
+        [
+          408,
+          288,
+          24,
+          16
+        ],
+        [
+          88,
+          288,
+          24,
+          16
+        ]
+      ],
+      "start": [
+        48,
+        200
+      ],
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "sources": [
+        "launch/source/14-16-shipyard.png"
+      ],
+      "complete": "maps/14-complete.png",
+      "layout": "layouts/14.png",
+      "special_states": [
+        {
+          "label": "Cinco máquinas ligadas",
+          "complete": "art/campaign-pattern-v2/launch/complete/14-on-complete.png",
+          "path": "launch/complete/14-on-complete.png"
+        }
+      ],
+      "objects": [
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            64,
+            136
+          ],
+          "canvas": [
+            48,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            57,
+            113,
+            77,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            448,
+            136
+          ],
+          "canvas": [
+            432,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            441,
+            113,
+            461,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            400,
+            208
+          ],
+          "canvas": [
+            384,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            393,
+            185,
+            413,
+            215
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            416,
+            296
+          ],
+          "canvas": [
+            400,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            409,
+            273,
+            429,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            96,
+            296
+          ],
+          "canvas": [
+            80,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            89,
+            273,
+            109,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        }
+      ],
+      "native_source": "launch/complete/14-complete.png",
+      "native_sha256": "48f310a9c773c0704c8a743077a145e2ee8f94fae2eefb30704e206446cdf373"
+    },
+    {
+      "phase": "15",
+      "node": 18,
+      "name": "Rádio e ignição",
+      "goal": "Defender o rádio por 120 s até a ignição.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        40,
+        128,
+        471,
+        319
+      ],
+      "solids": [
+        [
+          200,
+          152,
+          112,
+          64
+        ],
+        [
+          248,
+          136,
+          16,
+          16
+        ],
+        [
+          216,
+          256,
+          80,
+          48
+        ],
+        [
+          56,
+          128,
+          24,
+          16
+        ],
+        [
+          440,
+          128,
+          24,
+          16
+        ],
+        [
+          392,
+          200,
+          24,
+          16
+        ],
+        [
+          408,
+          288,
+          24,
+          16
+        ],
+        [
+          88,
+          288,
+          24,
+          16
+        ]
+      ],
+      "start": [
+        48,
+        200
+      ],
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "sources": [
+        "launch/source/14-16-shipyard.png"
+      ],
+      "complete": "maps/15-complete.png",
+      "layout": "layouts/15.png",
+      "special_states": [
+        {
+          "label": "Ignição, cinco geradores preservados",
+          "complete": "art/campaign-pattern-v2/launch/complete/15-fire-complete.png",
+          "path": "launch/complete/15-fire-complete.png"
+        }
+      ],
+      "objects": [
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            64,
+            136
+          ],
+          "canvas": [
+            48,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            56,
+            113,
+            76,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            448,
+            136
+          ],
+          "canvas": [
+            432,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            440,
+            113,
+            460,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            400,
+            208
+          ],
+          "canvas": [
+            384,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            392,
+            185,
+            412,
+            215
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            416,
+            296
+          ],
+          "canvas": [
+            400,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            408,
+            273,
+            428,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            96,
+            296
+          ],
+          "canvas": [
+            80,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            88,
+            273,
+            108,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "radio",
+          "frame": 2,
+          "center": [
+            256,
+            192
+          ],
+          "canvas": [
+            240,
+            168,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            242,
+            169,
+            269,
+            199
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/radio-2.png"
+        }
+      ],
+      "native_source": "launch/complete/15-complete.png",
+      "native_sha256": "9be037676a4476cb40877f511a68fe0ea6d011c1de998c3e7cad16703b92b57f"
+    },
+    {
+      "phase": "16",
+      "node": 19,
+      "name": "O Escorpião",
+      "goal": "Derrotar o chefe; diálogo varia com Dinorah viva ou morta.",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        40,
+        128,
+        471,
+        319
+      ],
+      "solids": [
+        [
+          200,
+          152,
+          112,
+          64
+        ],
+        [
+          248,
+          136,
+          16,
+          16
+        ],
+        [
+          216,
+          256,
+          80,
+          48
+        ],
+        [
+          56,
+          128,
+          24,
+          16
+        ],
+        [
+          440,
+          128,
+          24,
+          16
+        ],
+        [
+          392,
+          200,
+          24,
+          16
+        ],
+        [
+          408,
+          288,
+          24,
+          16
+        ],
+        [
+          88,
+          288,
+          24,
+          16
+        ]
+      ],
+      "start": [
+        48,
+        200
+      ],
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "sources": [
+        "launch/source/15-16-shipyard-ignition.png"
+      ],
+      "complete": "maps/16-complete.png",
+      "layout": "layouts/16.png",
+      "special_states": [],
+      "objects": [
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            64,
+            136
+          ],
+          "canvas": [
+            48,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            56,
+            113,
+            76,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            448,
+            136
+          ],
+          "canvas": [
+            432,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            440,
+            113,
+            460,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            400,
+            208
+          ],
+          "canvas": [
+            384,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            392,
+            185,
+            412,
+            215
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            416,
+            296
+          ],
+          "canvas": [
+            400,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            408,
+            273,
+            428,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            96,
+            296
+          ],
+          "canvas": [
+            80,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            88,
+            273,
+            108,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "radio",
+          "frame": 4,
+          "center": [
+            256,
+            192
+          ],
+          "canvas": [
+            240,
+            168,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            242,
+            169,
+            269,
+            199
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/radio-4.png"
+        },
+        {
+          "asset": "boss",
+          "canvas": [
+            140,
+            112,
+            48,
+            48
+          ],
+          "representative_spawn_pose": true
+        }
+      ],
+      "native_source": "launch/complete/16-complete.png",
+      "native_sha256": "522934b0756ef93a00638e7fcc4751efb7c13cf346b33b42ddb41bacfa0c1f55"
+    }
+  ]
+}

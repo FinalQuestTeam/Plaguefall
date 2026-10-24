@@ -44,7 +44,7 @@ typedef struct
 typedef enum
 {
     N_1 = 1, N_2A, N_2B, N_3, N_4, N_5, N_6A, N_6B, N_7, N_8,
-    N_9, N_10A, N_10B, N_11, N_12, N_13A, N_13B, N_14, N_15, N_16,
+    N_9, N_10, N_11, N_12, N_13A, N_13B, N_14, N_15, N_16,
     NODE_MAX
 } NodeId;
 

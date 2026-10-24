@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "queries": 115496800,
+  "sameWord": 107329520,
+  "crossWord": 8167280,
+  "occupiedResults": 75517925,
+  "productionSource": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/src/levels/arena.c",
+  "productionFunctionSHA256": "6bf0c45168fc0bf052168536e775cdccf4e3200365a383120a8ad416e850560d",
+  "footprints": [
+    [
+      6,
+      6
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      16,
+      16
+    ],
+    [
+      24,
+      24
+    ],
+    [
+      32,
+      32
+    ],
+    [
+      48,
+      48
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      8,
+      6
+    ],
+    [
+      16,
+      24
+    ],
+    [
+      24,
+      16
+    ],
+    [
+      32,
+      48
+    ],
+    [
+      48,
+      32
+    ]
+  ],
+  "widths": [
+    384,
+    512,
+    2560,
+    3072
+  ],
+  "height": 320,
+  "masks": [
+    "empty",
+    "full",
+    "alternating",
+    "singleBitPerWord",
+    "deterministicXorshift32"
+  ],
+  "coordinates": "Every integer x,y contained in the world for each footprint; includes every8px and256px crossing.",
+  "preconditions": "occupied() is only called after outside/bounds guards; negative/out-of-world inputs are excluded as in production.",
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "native68000TimingClaim": false,
+  "reference": "Former variable32bit-shift masks plus independent per-cell occupancy. Exact extracted production LUT/function is compiled unchanged."
+}

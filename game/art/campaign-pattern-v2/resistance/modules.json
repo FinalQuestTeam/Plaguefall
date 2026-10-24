@@ -1,0 +1,338 @@
+{
+  "full_sources_before_extraction": [
+    {
+      "path": "art/campaign-pattern-v2/resistance/source/07-08-favela.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "b205be4873d50c328e5a3f59496dd2c001a2dc8cae30a36640dd76bb4cfb31e7",
+      "authoring": "Native ImageGen; prompt/provenance in campaign-pattern-v2/prompts.json",
+      "accepted_for_extraction": false
+    },
+    {
+      "path": "art/campaign-pattern-v2/resistance/source/07-08-favela-cycle3.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "7f70022ffdde3effa16aa5162358204f953594407a6ca3068f58430ac6ce2939",
+      "authoring": "Native ImageGen; prompt/provenance in campaign-pattern-v2/prompts.json",
+      "accepted_for_extraction": true
+    },
+    {
+      "path": "art/campaign-pattern-v2/resistance/source/07-08-favela-cycle2.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "804bc70b33251b1d67e3063735a078fa2bad6769c867c8c48d3796e85b21e5fe",
+      "authoring": "Native ImageGen; prompt/provenance in campaign-pattern-v2/prompts.json",
+      "accepted_for_extraction": false
+    },
+    {
+      "path": "art/campaign-pattern-v2/resistance/source/13B-union-memorial.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "09400961e6ed31a7f82ad07240c14b97c80e75d145ab60c7217daa723d4710cb",
+      "authoring": "Native ImageGen; prompt/provenance in campaign-pattern-v2/prompts.json",
+      "accepted_for_extraction": true
+    },
+    {
+      "path": "art/campaign-pattern-v2/resistance/source/13A-union.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "926c9ffdc4da5d7a1d66b36b7053214d2a06ad4adc1ed8fdd910a049902c642c",
+      "authoring": "Native ImageGen; prompt/provenance in campaign-pattern-v2/prompts.json",
+      "accepted_for_extraction": true
+    }
+  ],
+  "module_extraction": [
+    {
+      "name": "tree-material",
+      "source_plane": "fq",
+      "source_bbox_world_scaled": [
+        16,
+        8,
+        17,
+        9
+      ],
+      "size": [
+        1,
+        1
+      ],
+      "source_line": 40,
+      "directory": "favela",
+      "complete_silhouette": true
+    },
+    {
+      "name": "house-complete",
+      "source_plane": "fq",
+      "source_bbox_world_scaled": [
+        80,
+        24,
+        192,
+        160
+      ],
+      "size": [
+        112,
+        136
+      ],
+      "source_line": 43,
+      "directory": "favela",
+      "complete_silhouette": true
+    },
+    {
+      "name": "refuge-complete",
+      "source_plane": "fd",
+      "source_bbox_world_scaled": [
+        328,
+        8,
+        432,
+        160
+      ],
+      "size": [
+        104,
+        152
+      ],
+      "source_line": 44,
+      "directory": "favela",
+      "complete_silhouette": true
+    },
+    {
+      "name": "front-wall-bay",
+      "source_plane": "fq",
+      "source_bbox_world_scaled": [
+        160,
+        320,
+        288,
+        368
+      ],
+      "size": [
+        128,
+        48
+      ],
+      "source_line": 45,
+      "directory": "favela",
+      "complete_silhouette": true
+    },
+    {
+      "name": "side-middle",
+      "source_plane": "fq",
+      "source_bbox_world_scaled": [
+        16,
+        240,
+        48,
+        304
+      ],
+      "size": [
+        32,
+        64
+      ],
+      "source_line": 49,
+      "directory": "favela",
+      "complete_silhouette": true
+    },
+    {
+      "name": "depot-complete",
+      "source_plane": "fd",
+      "source_bbox_world_scaled": [
+        40,
+        192,
+        176,
+        312
+      ],
+      "size": [
+        136,
+        120
+      ],
+      "source_line": 52,
+      "directory": "favela",
+      "complete_silhouette": true
+    },
+    {
+      "name": "barricade-complete-with-shadow",
+      "source_plane": "fd",
+      "source_bbox_world_scaled": [
+        240,
+        208,
+        400,
+        256
+      ],
+      "size": [
+        160,
+        48
+      ],
+      "source_line": 53,
+      "directory": "favela",
+      "complete_silhouette": true
+    },
+    {
+      "name": "locker-window-bay",
+      "source_plane": "ud",
+      "source_bbox_world_scaled": [
+        16,
+        0,
+        176,
+        128
+      ],
+      "size": [
+        160,
+        128
+      ],
+      "source_line": 61,
+      "directory": "union",
+      "complete_silhouette": true
+    },
+    {
+      "name": "side-middle",
+      "source_plane": "uq",
+      "source_bbox_world_scaled": [
+        0,
+        128,
+        16,
+        192
+      ],
+      "size": [
+        16,
+        64
+      ],
+      "source_line": 66,
+      "directory": "union",
+      "complete_silhouette": true
+    },
+    {
+      "name": "lower-bay-complete",
+      "source_plane": "uq",
+      "source_bbox_world_scaled": [
+        32,
+        304,
+        208,
+        384
+      ],
+      "size": [
+        176,
+        80
+      ],
+      "source_line": 69,
+      "directory": "union",
+      "complete_silhouette": true
+    },
+    {
+      "name": "bench-complete-shadow",
+      "source_plane": "ud",
+      "source_bbox_world_scaled": [
+        72,
+        240,
+        200,
+        288
+      ],
+      "size": [
+        128,
+        48
+      ],
+      "source_line": 71,
+      "directory": "union",
+      "complete_silhouette": true
+    },
+    {
+      "name": "union-banner-bay",
+      "source_plane": "uq",
+      "source_bbox_world_scaled": [
+        176,
+        0,
+        264,
+        128
+      ],
+      "size": [
+        88,
+        128
+      ],
+      "source_line": 63,
+      "directory": "union",
+      "complete_silhouette": true
+    },
+    {
+      "name": "upper-beam-complete",
+      "source_plane": "uq",
+      "source_bbox_world_scaled": [
+        256,
+        0,
+        384,
+        24
+      ],
+      "size": [
+        128,
+        24
+      ],
+      "source_line": 64,
+      "directory": "union",
+      "complete_silhouette": true
+    },
+    {
+      "name": "booth-complete",
+      "source_plane": "ud",
+      "source_bbox_world_scaled": [
+        256,
+        24,
+        384,
+        152
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_line": 65,
+      "directory": "union",
+      "complete_silhouette": true
+    },
+    {
+      "name": "lower-door-complete",
+      "source_plane": "uq",
+      "source_bbox_world_scaled": [
+        208,
+        296,
+        304,
+        384
+      ],
+      "size": [
+        96,
+        88
+      ],
+      "source_line": 70,
+      "directory": "union",
+      "complete_silhouette": true
+    }
+  ],
+  "exact_deduplication": "H/V-identical8x8 tiles only, no similarity substitution",
+  "pixel_quantization": "Exact nearest RGB333 before8x8 cutting; no dithering.4px structural modules,2px focal objects;1px union portrait/actor. Source art determines all drawn pixels.",
+  "floor": "A single clean authored material pixel; no repeated object shadow or furniture fragment.",
+  "alpha_extraction": "Favela props keep protected complete bodies/caps; only edge-connected floor colors removed. Launch conduits use a16px-wide extraction mask around the complete authored path, including elbows/flanges; mask never draws pipe pixels.",
+  "full_module_crop_proofs": [
+    "art/campaign-pattern-v2/resistance/reviews/house-crop-proof.png",
+    "art/campaign-pattern-v2/resistance/reviews/refuge-crop-proof.png"
+  ],
+  "runtime_actor_scale": {
+    "hero_canvas": [
+      32,
+      48
+    ],
+    "hero_ink_bbox": [
+      3,
+      14,
+      29,
+      47
+    ],
+    "placement": [
+      "px-8",
+      "py-31"
+    ],
+    "union_counter_visible_bottom_y": 140,
+    "union_minimum_actor_ink_y": 143
+  },
+  "generator_source": "tools/build_campaign_resistance.py"
+}

@@ -1,0 +1,40 @@
+{
+  "bugReproduced": true,
+  "cause": "RADIO_line disabled the display, cleared BG_A and rebuilt the full console for each line.",
+  "regions": {
+    "ntsc": {
+      "previousRomSHA256": "ec267f9da39cbc8b3077a947bf9284b8d7e298322bf4542c95f24b91d4df0d51",
+      "firstLineTransitionBadFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "seconds": 0.2
+    },
+    "pal": {
+      "previousRomSHA256": "ec267f9da39cbc8b3077a947bf9284b8d7e298322bf4542c95f24b91d4df0d51",
+      "firstLineTransitionBadFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "seconds": 0.2
+    }
+  }
+}

@@ -1,0 +1,763 @@
+{
+  "06a": {
+    "name": "Pela passagem de baixo",
+    "cap": 3,
+    "spawn": 3,
+    "solids": [
+      [
+        352,
+        96,
+        160,
+        64
+      ],
+      [
+        800,
+        240,
+        176,
+        64
+      ],
+      [
+        1376,
+        96,
+        160,
+        64
+      ],
+      [
+        1824,
+        240,
+        176,
+        64
+      ],
+      [
+        2400,
+        96,
+        160,
+        64
+      ],
+      [
+        2656,
+        240,
+        112,
+        64
+      ]
+    ],
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        280,
+        216
+      ],
+      [
+        568,
+        216
+      ],
+      [
+        744,
+        216
+      ],
+      [
+        1008,
+        200
+      ],
+      [
+        1304,
+        200
+      ],
+      [
+        1584,
+        216
+      ],
+      [
+        1760,
+        216
+      ],
+      [
+        2056,
+        200
+      ],
+      [
+        2320,
+        200
+      ],
+      [
+        2640,
+        216
+      ],
+      [
+        3016,
+        208
+      ]
+    ],
+    "pauses": [
+      3,
+      7
+    ],
+    "width": 3072,
+    "height": 320,
+    "walkable": [
+      16,
+      192,
+      3040,
+      112
+    ],
+    "gates": [],
+    "valves": [],
+    "exit": [
+      2992,
+      184,
+      48,
+      48
+    ],
+    "tiles": 623,
+    "tileBudget": 640,
+    "swept16pxSamples": 2976,
+    "routeLengthPx": 2961.9,
+    "unopposedMinimumSeconds": 84.3,
+    "art": {
+      "wholeImage": "art/campaign-whole-scenes-v1/routes/06a-whole-scene.png",
+      "wholeImageSHA256": "c6ef1b9bd696fb117431d4704cfe103ef6fb5ad0b40e7c02d8218a7f9140d7df",
+      "method": "Whole ImageGen scene first; complete architectural module extraction; exact 8x8 deduplication",
+      "architectureBays": 24,
+      "sourceModules": [
+        {
+          "name": "Pavimento continuo",
+          "source": [
+            700,
+            242,
+            764,
+            274
+          ],
+          "nativeSize": [
+            32,
+            16
+          ]
+        },
+        {
+          "name": "Cobertura e infraestrutura",
+          "source": [
+            220,
+            8,
+            236,
+            24
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Agua ou canal tecnico",
+          "source": [
+            1000,
+            360,
+            1064,
+            420
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Borda construida do canal",
+          "source": [
+            1000,
+            280,
+            1064,
+            312
+          ],
+          "nativeSize": [
+            16,
+            8
+          ]
+        },
+        {
+          "name": "Portico completo 1",
+          "source": [
+            0,
+            0,
+            230,
+            240
+          ],
+          "nativeSize": [
+            128,
+            112
+          ]
+        },
+        {
+          "name": "Portico completo 2",
+          "source": [
+            650,
+            0,
+            1000,
+            240
+          ],
+          "nativeSize": [
+            128,
+            112
+          ]
+        },
+        {
+          "name": "Construcao completa da chegada",
+          "source": [
+            1950,
+            0,
+            2172,
+            320
+          ],
+          "nativeSize": [
+            64,
+            80
+          ]
+        },
+        {
+          "name": "Estacao de inspecao completa",
+          "source": [
+            1100,
+            0,
+            1320,
+            240
+          ],
+          "nativeSize": [
+            64,
+            80
+          ]
+        }
+      ],
+      "lossyTileReplacements": 0,
+      "nativeImage": "art/campaign-whole-scenes-v1/routes/06a-native-complete.png"
+    },
+    "nativeTileSHA256": "65eac16c16b2495f4183b0533382b79796ed9cdc990e69253378991723bc3e8a"
+  },
+  "06b": {
+    "name": "O peso dos que ficaram",
+    "cap": 3,
+    "spawn": 3,
+    "solids": [
+      [
+        352,
+        96,
+        128,
+        64
+      ],
+      [
+        768,
+        240,
+        144,
+        64
+      ],
+      [
+        1376,
+        96,
+        144,
+        64
+      ],
+      [
+        1792,
+        240,
+        144,
+        64
+      ],
+      [
+        2400,
+        96,
+        160,
+        64
+      ],
+      [
+        1008,
+        192,
+        16,
+        16
+      ],
+      [
+        1008,
+        272,
+        16,
+        32
+      ],
+      [
+        2032,
+        192,
+        16,
+        16
+      ],
+      [
+        2032,
+        272,
+        16,
+        32
+      ],
+      [
+        2656,
+        240,
+        112,
+        64
+      ]
+    ],
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        280,
+        216
+      ],
+      [
+        552,
+        208
+      ],
+      [
+        744,
+        208
+      ],
+      [
+        944,
+        216
+      ],
+      [
+        960,
+        240
+      ],
+      [
+        1048,
+        240
+      ],
+      [
+        1080,
+        216
+      ],
+      [
+        1304,
+        216
+      ],
+      [
+        1584,
+        208
+      ],
+      [
+        1760,
+        208
+      ],
+      [
+        1968,
+        216
+      ],
+      [
+        1984,
+        240
+      ],
+      [
+        2072,
+        240
+      ],
+      [
+        2104,
+        216
+      ],
+      [
+        2320,
+        216
+      ],
+      [
+        2640,
+        216
+      ],
+      [
+        3016,
+        208
+      ]
+    ],
+    "pauses": [
+      4,
+      11
+    ],
+    "width": 3072,
+    "height": 320,
+    "walkable": [
+      16,
+      192,
+      3040,
+      112
+    ],
+    "gates": [
+      [
+        1008,
+        208,
+        16,
+        64
+      ],
+      [
+        2032,
+        208,
+        16,
+        64
+      ]
+    ],
+    "valves": [
+      [
+        968,
+        224
+      ],
+      [
+        1992,
+        224
+      ]
+    ],
+    "exit": [
+      2992,
+      184,
+      48,
+      48
+    ],
+    "tiles": 458,
+    "tileBudget": 467,
+    "swept16pxSamples": 3024,
+    "routeLengthPx": 3002.3,
+    "unopposedMinimumSeconds": 85.4,
+    "art": {
+      "wholeImage": "art/campaign-whole-scenes-v1/routes/06b-whole-scene.png",
+      "wholeImageSHA256": "a9dbf8b1bb662de6481c5e4320dad5912deb4da4658f69c8dfe7840aab8e1826",
+      "method": "Whole ImageGen scene first; complete architectural module extraction; exact 8x8 deduplication",
+      "architectureBays": 32,
+      "sourceModules": [
+        {
+          "name": "Pavimento continuo",
+          "source": [
+            340,
+            382,
+            356,
+            398
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Cobertura e infraestrutura",
+          "source": [
+            64,
+            32,
+            80,
+            48
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Agua ou canal tecnico",
+          "source": [
+            600,
+            570,
+            664,
+            650
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Borda construida do canal",
+          "source": [
+            600,
+            650,
+            664,
+            710
+          ],
+          "nativeSize": [
+            16,
+            8
+          ]
+        },
+        {
+          "name": "Portico completo 1",
+          "source": [
+            0,
+            0,
+            450,
+            350
+          ],
+          "nativeSize": [
+            96,
+            96
+          ]
+        },
+        {
+          "name": "Portico completo 2",
+          "source": [
+            880,
+            0,
+            1200,
+            350
+          ],
+          "nativeSize": [
+            96,
+            96
+          ]
+        },
+        {
+          "name": "Construcao completa da chegada",
+          "source": [
+            1930,
+            0,
+            2172,
+            440
+          ],
+          "nativeSize": [
+            64,
+            80
+          ]
+        },
+        {
+          "name": "Casa de pressao completa",
+          "source": [
+            450,
+            0,
+            830,
+            370
+          ],
+          "nativeSize": [
+            64,
+            80
+          ]
+        }
+      ],
+      "lossyTileReplacements": 0,
+      "nativeImage": "art/campaign-whole-scenes-v1/routes/06b-native-complete.png"
+    },
+    "nativeTileSHA256": "73edf259009bd9c9ee0f2dcf680edbeebf0281077c44e2861fcf6a7ff321eb81"
+  },
+  "12": {
+    "name": "A ultima travessia",
+    "cap": 3,
+    "spawn": 2,
+    "solids": [
+      [
+        456,
+        96,
+        96,
+        80
+      ],
+      [
+        936,
+        240,
+        96,
+        64
+      ],
+      [
+        1400,
+        96,
+        96,
+        88
+      ],
+      [
+        1904,
+        224,
+        96,
+        80
+      ],
+      [
+        2416,
+        96,
+        96,
+        80
+      ],
+      [
+        2656,
+        240,
+        112,
+        64
+      ]
+    ],
+    "points": [
+      [
+        56,
+        216
+      ],
+      [
+        328,
+        216
+      ],
+      [
+        624,
+        216
+      ],
+      [
+        848,
+        208
+      ],
+      [
+        1104,
+        200
+      ],
+      [
+        1304,
+        216
+      ],
+      [
+        1576,
+        216
+      ],
+      [
+        1808,
+        208
+      ],
+      [
+        2072,
+        208
+      ],
+      [
+        2304,
+        216
+      ],
+      [
+        2592,
+        216
+      ],
+      [
+        2824,
+        208
+      ],
+      [
+        3016,
+        208
+      ]
+    ],
+    "pauses": [
+      3,
+      7,
+      10
+    ],
+    "width": 3072,
+    "height": 320,
+    "walkable": [
+      16,
+      192,
+      3040,
+      112
+    ],
+    "gates": [],
+    "valves": [],
+    "exit": [
+      2992,
+      184,
+      48,
+      48
+    ],
+    "tiles": 605,
+    "tileBudget": 640,
+    "swept16pxSamples": 2978,
+    "routeLengthPx": 2961.3,
+    "unopposedMinimumSeconds": 85.3,
+    "art": {
+      "wholeImage": "art/campaign-whole-scenes-v1/routes/12-whole-scene.png",
+      "wholeImageSHA256": "7fd964e6476e9a34a4ed4d4533cbe0770fbb58e0172f70b36bd1910508fa4e8e",
+      "method": "Whole ImageGen scene first; complete architectural module extraction; exact 8x8 deduplication",
+      "architectureBays": 24,
+      "sourceModules": [
+        {
+          "name": "Pavimento continuo",
+          "source": [
+            920,
+            580,
+            936,
+            596
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Cobertura e infraestrutura",
+          "source": [
+            1070,
+            0,
+            1100,
+            80
+          ],
+          "nativeSize": [
+            8,
+            48
+          ]
+        },
+        {
+          "name": "Agua ou canal tecnico",
+          "source": [
+            900,
+            580,
+            980,
+            680
+          ],
+          "nativeSize": [
+            16,
+            16
+          ]
+        },
+        {
+          "name": "Borda construida do canal",
+          "source": [
+            900,
+            580,
+            964,
+            612
+          ],
+          "nativeSize": [
+            16,
+            8
+          ]
+        },
+        {
+          "name": "Portico completo 1",
+          "source": [
+            0,
+            70,
+            675,
+            450
+          ],
+          "nativeSize": [
+            128,
+            112
+          ]
+        },
+        {
+          "name": "Portico completo 2",
+          "source": [
+            675,
+            135,
+            1320,
+            510
+          ],
+          "nativeSize": [
+            128,
+            112
+          ]
+        },
+        {
+          "name": "Construcao completa da chegada",
+          "source": [
+            1830,
+            160,
+            2172,
+            610
+          ],
+          "nativeSize": [
+            80,
+            112
+          ]
+        }
+      ],
+      "lossyTileReplacements": 0,
+      "nativeImage": "art/campaign-whole-scenes-v1/routes/12-native-complete.png"
+    },
+    "nativeTileSHA256": "c0eac137063d909d43dbf5f7cbc3f262cf43843f9c2189e5779e404288bfd84c"
+  }
+}

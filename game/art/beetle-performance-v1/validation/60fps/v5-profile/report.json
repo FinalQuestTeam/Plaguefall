@@ -1,0 +1,74 @@
+{
+  "region_fps": 60,
+  "rom_sha256": "8f84802d6592e60415cc65365df8fa452f36c3e75cefb345a9ba7d4c4fee6e30",
+  "emulated_rom_sha256": "8f84802d6592e60415cc65365df8fa452f36c3e75cefb345a9ba7d4c4fee6e30",
+  "core": "/Users/fabiocantarimmelo/Library/Application Support/RetroArch/cores/genesis_plus_gx_libretro.dylib",
+  "benchmark_sha256": "1145f336fef72a18e9d25fbfff9a1e2b4b1ae0dc3eb2acbef198a9533fde120b",
+  "frames_per_case": 600,
+  "repeats": 1,
+  "cases": [
+    {
+      "formation": "Baluarte",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 600,
+      "game_frames": 302,
+      "fps": 30.2,
+      "target_fps": 60,
+      "target_met": false,
+      "cpu_mean": 125.47,
+      "cpu_p95": 128.76,
+      "shots_after_step": [
+        {
+          "min": 7,
+          "mean": 13.66,
+          "max": 16
+        },
+        {
+          "min": 14,
+          "mean": 15.92,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 600,
+      "all_enemies_visible_frames": 600,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        101,
+        82
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 8,
+      "distinct_graphics_min": 8,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true,
+      "renderProfileTicks": [
+        13.32,
+        6.34,
+        110.48,
+        70.74,
+        409.82,
+        5.55,
+        23.31,
+        4.18,
+        14.91
+      ],
+      "logicProfileTicks": [
+        0,
+        0.83,
+        215.88,
+        84.43,
+        292.06,
+        40.43
+      ]
+    }
+  ],
+  "method": "Production phase-1 loop, 8 initially overlapping shielded enemies; normal movement, separation, collision, rendering, audio and HUD. RAM setup disables new spawns and summons, pins enemy shields and grants player hit immunity. A is held in projectile cases. Moving player/enemy projectiles replenish inactive slots up to 6 or 16 per pool before each physical frame. Purple enemies do not gain a shooting behaviour: enemy bullets are an injected load. Zero-projectile controls do not hold A. 180 physical warmup frames; FPS counts phaseStats updates / vtimer VBlanks. This is controlled stress, not a normal campaign attempt.",
+  "test_completed": true,
+  "performance_target_met": false
+}

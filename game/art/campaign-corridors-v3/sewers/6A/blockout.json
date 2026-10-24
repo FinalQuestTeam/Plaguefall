@@ -1,0 +1,246 @@
+{
+  "solids": [
+    [
+      320,
+      80,
+      240,
+      64,
+      true
+    ],
+    [
+      576,
+      80,
+      224,
+      128,
+      false
+    ],
+    [
+      384,
+      248,
+      192,
+      72,
+      false
+    ],
+    [
+      864,
+      192,
+      224,
+      128,
+      false
+    ],
+    [
+      1328,
+      168,
+      144,
+      112,
+      true
+    ],
+    [
+      1744,
+      80,
+      304,
+      120,
+      true
+    ],
+    [
+      2144,
+      216,
+      320,
+      104,
+      false
+    ]
+  ],
+  "route_points": [
+    [
+      48,
+      200
+    ],
+    [
+      264,
+      200
+    ],
+    [
+      352,
+      200
+    ],
+    [
+      520,
+      200
+    ],
+    [
+      560,
+      232
+    ],
+    [
+      744,
+      232
+    ],
+    [
+      832,
+      232
+    ],
+    [
+      832,
+      152
+    ],
+    [
+      1120,
+      152
+    ],
+    [
+      1288,
+      128
+    ],
+    [
+      1504,
+      128
+    ],
+    [
+      1664,
+      168
+    ],
+    [
+      1712,
+      232
+    ],
+    [
+      2080,
+      232
+    ],
+    [
+      2112,
+      176
+    ],
+    [
+      2400,
+      176
+    ],
+    [
+      2520,
+      200
+    ],
+    [
+      2784,
+      200
+    ],
+    [
+      3016,
+      176
+    ]
+  ],
+  "pauses": [
+    4,
+    9,
+    15
+  ],
+  "sectors": [
+    {
+      "name": "Cisterna de entrada",
+      "rect": [
+        24,
+        80,
+        552,
+        216
+      ]
+    },
+    {
+      "name": "Canal em curva e ponte",
+      "rect": [
+        576,
+        80,
+        512,
+        216
+      ]
+    },
+    {
+      "name": "Câmara de manutenção",
+      "rect": [
+        1088,
+        80,
+        1056,
+        216
+      ]
+    },
+    {
+      "name": "Abrigo e escada",
+      "rect": [
+        2144,
+        80,
+        904,
+        216
+      ]
+    }
+  ],
+  "camera_interest": [
+    {
+      "name": "Arco e cisterna",
+      "bbox": [
+        32,
+        24,
+        176,
+        144
+      ]
+    },
+    {
+      "name": "Curva e ponte",
+      "bbox": [
+        560,
+        144,
+        288,
+        144
+      ]
+    },
+    {
+      "name": "Bomba completa",
+      "bbox": [
+        1312,
+        144,
+        176,
+        144
+      ]
+    },
+    {
+      "name": "Escada de chegada",
+      "bbox": [
+        2896,
+        24,
+        152,
+        160
+      ]
+    }
+  ],
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    24,
+    80,
+    3047,
+    295
+  ],
+  "start": [
+    48,
+    200
+  ],
+  "exit": [
+    2976,
+    152,
+    64,
+    64
+  ],
+  "route_points_are": "centers",
+  "footprint": [
+    16,
+    16
+  ],
+  "route_clearance": 8,
+  "gates": [],
+  "valves": [],
+  "geometry_checks": {
+    "swept_16px_footprint_with_8px_margin": 3155,
+    "bfs_reachable_centers": 6302,
+    "arrival_connected": true,
+    "closed_gates_disconnect": false
+  }
+}

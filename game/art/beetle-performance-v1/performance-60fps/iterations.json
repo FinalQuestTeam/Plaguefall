@@ -1,0 +1,1163 @@
+[
+  {
+    "variant": "v1",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 293,
+        "fps": 29.3,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 161.07,
+        "cpu_p95": 191.65,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 13.7,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.92,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          102,
+          84
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v2",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 300,
+        "fps": 30.0,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 137.87,
+        "cpu_p95": 142.97,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 13.65,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.92,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          102,
+          84
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v3",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 300,
+        "fps": 30.0,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 135.5,
+        "cpu_p95": 140.87,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 13.65,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.92,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          102,
+          84
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v3-o2",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 300,
+        "fps": 30.0,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 151.5,
+        "cpu_p95": 157.67,
+        "shots_after_step": [
+          {
+            "min": 6,
+            "mean": 13.64,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.92,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          99,
+          81
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v4",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 302,
+        "fps": 30.2,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 123.44,
+        "cpu_p95": 126.71,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 13.66,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.92,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          101,
+          82
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v5",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 327,
+        "fps": 32.7,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 119.74,
+        "cpu_p95": 123.63,
+        "shots_after_step": [
+          {
+            "min": 6,
+            "mean": 13.46,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.91,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          101,
+          86
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v6",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 396,
+        "fps": 39.6,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 107.32,
+        "cpu_p95": 112.89,
+        "shots_after_step": [
+          {
+            "min": 6,
+            "mean": 13.0,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.92,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          102,
+          87
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v7",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 348,
+        "fps": 34.8,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 104.09,
+        "cpu_p95": 107.23,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 13.43,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.91,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          103,
+          89
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v8",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 400,
+        "fps": 40.0,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 102.39,
+        "cpu_p95": 110.55,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 13.07,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.91,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          103,
+          89
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v9",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 475,
+        "fps": 47.5,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 95.83,
+        "cpu_p95": 101.76,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 12.6,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.89,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          104,
+          97
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v10",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 432,
+        "fps": 43.2,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 100.01,
+        "cpu_p95": 106.25,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 12.86,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.91,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          104,
+          97
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v11",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 600,
+        "game_frames": 599,
+        "fps": 59.9,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 90.4,
+        "cpu_p95": 93.12,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 11.76,
+            "max": 16
+          },
+          {
+            "min": 14,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 600,
+        "all_enemies_visible_frames": 600,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          104,
+          99
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v12",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1743,
+        "fps": 58.1,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 93.08,
+        "cpu_p95": 96.58,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 12.18,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          104,
+          100
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v13",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1799,
+        "fps": 59.97,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 88.53,
+        "cpu_p95": 91.6,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 12.08,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          106,
+          100
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      },
+      {
+        "formation": "Fortaleza",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1799,
+        "fps": 59.97,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 88.6,
+        "cpu_p95": 91.55,
+        "shots_after_step": [
+          {
+            "min": 6,
+            "mean": 12.12,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          98,
+          96
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      },
+      {
+        "formation": "Escudeiro",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1799,
+        "fps": 59.97,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 86.1,
+        "cpu_p95": 89.5,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 13.25,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          52,
+          28
+        ],
+        "max_group_span": [
+          99,
+          57
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      },
+      {
+        "formation": "Baluarte + Fortaleza",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1797,
+        "fps": 59.9,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 88.86,
+        "cpu_p95": 91.99,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 12.1,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          102,
+          98
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true
+      }
+    ]
+  },
+  {
+    "variant": "v14",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1800,
+        "fps": 60.0,
+        "target_fps": 60,
+        "target_met": true,
+        "cpu_mean": 87.16,
+        "cpu_p95": 90.14,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 12.08,
+            "max": 14
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          106,
+          100
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 12.08,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 39,
+          "scanline_limits_checked": true
+        }
+      },
+      {
+        "formation": "Fortaleza",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1799,
+        "fps": 59.97,
+        "target_fps": 60,
+        "target_met": false,
+        "cpu_mean": 87.24,
+        "cpu_p95": 90.19,
+        "shots_after_step": [
+          {
+            "min": 6,
+            "mean": 12.12,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          98,
+          96
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 12.11,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 38,
+          "scanline_limits_checked": true
+        }
+      },
+      {
+        "formation": "Escudeiro",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1800,
+        "fps": 60.0,
+        "target_fps": 60,
+        "target_met": true,
+        "cpu_mean": 84.73,
+        "cpu_p95": 88.18,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 13.24,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          52,
+          28
+        ],
+        "max_group_span": [
+          99,
+          57
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 13.25,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 40,
+          "scanline_limits_checked": true
+        }
+      },
+      {
+        "formation": "Baluarte + Fortaleza",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1800,
+        "fps": 60.0,
+        "target_fps": 60,
+        "target_met": true,
+        "cpu_mean": 87.47,
+        "cpu_p95": 90.58,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 12.09,
+            "max": 14
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          102,
+          98
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 12.09,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 38,
+          "scanline_limits_checked": true
+        }
+      }
+    ]
+  },
+  {
+    "variant": "v15",
+    "cases": [
+      {
+        "formation": "Baluarte",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1800,
+        "fps": 60.0,
+        "target_fps": 60,
+        "target_met": true,
+        "cpu_mean": 86.45,
+        "cpu_p95": 89.4,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 12.08,
+            "max": 14
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          106,
+          100
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 12.08,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 39,
+          "scanline_limits_checked": true
+        }
+      },
+      {
+        "formation": "Fortaleza",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1800,
+        "fps": 60.0,
+        "target_fps": 60,
+        "target_met": true,
+        "cpu_mean": 86.76,
+        "cpu_p95": 89.55,
+        "shots_after_step": [
+          {
+            "min": 6,
+            "mean": 12.11,
+            "max": 14
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          98,
+          96
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 12.11,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 38,
+          "scanline_limits_checked": true
+        }
+      },
+      {
+        "formation": "Escudeiro",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1800,
+        "fps": 60.0,
+        "target_fps": 60,
+        "target_met": true,
+        "cpu_mean": 83.78,
+        "cpu_p95": 87.16,
+        "shots_after_step": [
+          {
+            "min": 8,
+            "mean": 13.24,
+            "max": 16
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          52,
+          28
+        ],
+        "max_group_span": [
+          99,
+          57
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 13.25,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 40,
+          "scanline_limits_checked": true
+        }
+      },
+      {
+        "formation": "Baluarte + Fortaleza",
+        "repeat": 1,
+        "enemies": 8,
+        "shields": 8,
+        "shot_target_per_pool": 16,
+        "physical_frames": 1800,
+        "game_frames": 1800,
+        "fps": 60.0,
+        "target_fps": 60,
+        "target_met": true,
+        "cpu_mean": 86.88,
+        "cpu_p95": 89.89,
+        "shots_after_step": [
+          {
+            "min": 7,
+            "mean": 12.09,
+            "max": 14
+          },
+          {
+            "min": 13,
+            "mean": 15.86,
+            "max": 16
+          }
+        ],
+        "both_projectile_pools_nonempty_frames": 1800,
+        "all_enemies_visible_frames": 1800,
+        "initial_group_span": [
+          68,
+          44
+        ],
+        "max_group_span": [
+          102,
+          98
+        ],
+        "ready_enemy_frames_min": 8,
+        "distinct_graphics_mean": 8,
+        "distinct_graphics_min": 8,
+        "distinct_graphics_max": 8,
+        "autofire_observed": true,
+        "hardware_sprites": {
+          "enemy_bodies_min": 8,
+          "player_bullets_mean": 12.09,
+          "enemy_bullets_mean": 7.98,
+          "sat_count_max": 38,
+          "scanline_limits_checked": true
+        }
+      }
+    ]
+  }
+]

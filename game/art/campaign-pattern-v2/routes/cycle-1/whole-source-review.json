@@ -1,0 +1,40 @@
+{
+  "stage": "complete sources before extraction",
+  "tool": "built-in ImageGen, three separate full-background calls",
+  "reference": "game/art/phase01-pattern-v1/source/whole-scene.png",
+  "sources": {
+    "06a": {
+      "path": "source/06a-whole.png",
+      "sha256": "bf650205ab505259b14343745d1233a9be5db8182c7cd5c4c83f5fca839e707c",
+      "prompt": "prompts/06a.txt"
+    },
+    "06b": {
+      "path": "source/06b-whole.png",
+      "sha256": "219db21fe59db2df645cf0a8f232a3706bc17bbbc71ee0f9387f8274b2196e9f",
+      "prompt": "prompts/06b.txt"
+    },
+    "12": {
+      "path": "source/12-whole.png",
+      "sha256": "881b8a9819d284de9c7b73b1a2ebaeac4f2510aa29f480be86e0d4b6cd00e59b",
+      "prompt": "prompts/12.txt"
+    }
+  },
+  "review": {
+    "06a": [
+      "Whole connected stone sewer with left drain, central hatch, right refuge stair, full lower water wall and both side returns.",
+      "Complete cabinets near upper wall; broad paved lane with low-contrast joints.",
+      "No module extracted yet; preserve complete arch and refuse partial circular/drain crops."
+    ],
+    "06b": [
+      "Complete pressure branch, two pressure houses, foreground water bounded by stone, complete side corners.",
+      "Generated passage has paired vertical side walls; native placement must reconcile this with the existing oblique dynamic gate without clipping source arch.",
+      "Vegetation/daylight is stronger than6A; choose shared stone/pavement palette during conversion and flag difference for review."
+    ],
+    "12": [
+      "Entire workshop line, middle maintenance bay and distinct union building, complete lower service wall/pylons/corner returns.",
+      "Front-facing horizontal roofline makes repeat grammar much safer than prior sloped roof crops.",
+      "Source includes loose upper-edge crates/cabinets: extract whole silhouettes or retain whole bay, never crop half a crate."
+    ]
+  },
+  "status": "sources_ready_for_parent_review_not_approved"
+}

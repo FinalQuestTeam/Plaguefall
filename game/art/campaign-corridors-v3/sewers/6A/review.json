@@ -1,0 +1,101 @@
+{
+  "phase": "6A",
+  "status": "native_accepted_for_integration_by_root; final ROM camera/gameplay review pending",
+  "size": [
+    3072,
+    320
+  ],
+  "story": "Dinorah escort and existing consequences preserved; no objective type or branching changes.",
+  "method": "Complete ImageGen world source before module extraction;1px complete architectural components and whole cross-section materials; authored connected chambers/galleries; exact palette mapping and8x8 pattern dedup. No post-pack tile approximation.",
+  "source_files": [
+    "source/whole-v1.png",
+    "source/whole-v2-clean.png"
+  ],
+  "source_sha256": {
+    "source/whole-v1.png": "70d9ad785a7f30f038bcad44582d194e5aa26701143ec839da29a3dec2b4f830",
+    "source/whole-v2-clean.png": "7689e9aab2676532856d640166d482b65f9f6f6632c1a74f05ace195b6e61b36"
+  },
+  "memory": {
+    "scene_tiles": 556,
+    "objective_tiles": 0,
+    "total_tiles": 556,
+    "budget": 640,
+    "approximate_tile_replacements": 0
+  },
+  "geometry": {
+    "actor_feet": [
+      16,
+      16
+    ],
+    "margin": 8,
+    "swept_samples": 3200,
+    "reachable_centers": 4448,
+    "arrival_connected": true
+  },
+  "static_evidence": [
+    "complete-native.png",
+    "complete-objectives.png",
+    "qa-interest.png",
+    "qa-interest.json"
+  ],
+  "remaining_limits": [
+    "Quiet floor intentionally retained for the escort and insect silhouettes.",
+    "Shared pipe/pump installations repeat as one infrastructure family.",
+    "Static QA uses actual production hero pixels but is not an emulator capture.",
+    "No new FPS/SAT, live combat difficulty, Dinorah traversal or finalROM branch result claimed by this private art handoff."
+  ],
+  "approval_is_not_implied_by_tests": true,
+  "tests": {
+    "tiles": 556,
+    "total_tiles": 556,
+    "exact_pixel_mismatches": 0,
+    "all_palette_words_rgb333": true,
+    "palette0_black": true,
+    "visible_pixel0_count": 0,
+    "scene_bin_sha256": "9386da2892bce07b01214acf9894963cc1d8c594d7eb9abbebed4c5639b85153",
+    "generator_reproduces_canonical": true,
+    "shared_validator": {
+      "footprint": 16,
+      "free_positions": 5554,
+      "reachable_positions": 5554,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3200
+    }
+  },
+  "handoff": {
+    "generator": "compose_modules.py",
+    "command": "python3 game/art/campaign-corridors-v3/sewers/6A/compose_modules.py --publish",
+    "render_api": "render('6A') returns (dict[str,bytes], manifest); module execution refreshes only own candidate previews.",
+    "binary_files": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin",
+      "image": "complete-native.png",
+      "objectives": "complete-objectives.png"
+    },
+    "coordinates": {
+      "start": "feet top-left",
+      "route_points": "centers, subtract8 for feet",
+      "solids": "x,y,w,h,bool;False water stops feet and lets shots pass;True masonry/machinery stops both",
+      "camera_interest": "architecture bbox x,y,w,h≤320×200;preferred_feet legal player top-left",
+      "approaches": "not applicable"
+    }
+  },
+  "iteration_critique": [
+    {
+      "cycle": 1,
+      "status": "rejected",
+      "reason": "Source cistern/curve/pump/refuge reduced to straight textured strip with grille-like water; archivedcycle1-rejected."
+    },
+    {
+      "cycle": 2,
+      "status": "rejected",
+      "reason": "Whole room crops sampled4px lost openings/stairs and read as blotches; preservedcycle2-candidate."
+    },
+    {
+      "cycle": 3,
+      "status": "accepted direction and finish for integration",
+      "reason": "Intact1px inlet, curved canal, bridge, complete pump basin, stair and canopy assembled into actual rooms/galleries; water material and maintenance recess restore approach rhythm. Geometry micro-island between canopy/stair filled by visible32×32parapet."
+    }
+  ]
+}

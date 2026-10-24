@@ -1,0 +1,252 @@
+{
+  "passed": true,
+  "rom_sha256": "261c05c73b4256219a2828c8da47c9facb6a9793a6784a0acc15f8e4816429d2",
+  "region_fps": 50,
+  "controller_only": true,
+  "ram_writes": 0,
+  "cases": [
+    {
+      "label": "baluarte-16",
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "fps": 50.0,
+      "target_met": true,
+      "enemy_count_min": 8,
+      "enemy_count_max": 8,
+      "shields_min": 8,
+      "player_hp_min": 100,
+      "hud_fps": 50,
+      "cpu_mean": 62.82,
+      "cpu_p95": 65.09,
+      "projectiles": [
+        {
+          "min": 7,
+          "mean": 12.2,
+          "max": 14
+        },
+        {
+          "min": 13,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "kind": 1,
+      "shot_setting": 2,
+      "hardware_bodies_min": 8,
+      "enemy_types": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "label": "mixed-16",
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "fps": 50.0,
+      "target_met": true,
+      "enemy_count_min": 8,
+      "enemy_count_max": 8,
+      "shields_min": 8,
+      "player_hp_min": 100,
+      "hud_fps": 50,
+      "cpu_mean": 62.33,
+      "cpu_p95": 64.84,
+      "projectiles": [
+        {
+          "min": 6,
+          "mean": 12.27,
+          "max": 14
+        },
+        {
+          "min": 13,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "kind": 0,
+      "shot_setting": 2,
+      "hardware_bodies_min": 8,
+      "enemy_types": [
+        2,
+        10,
+        2,
+        10,
+        2,
+        10,
+        2,
+        10
+      ]
+    },
+    {
+      "label": "fortaleza-16",
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "fps": 50.0,
+      "target_met": true,
+      "enemy_count_min": 8,
+      "enemy_count_max": 8,
+      "shields_min": 8,
+      "player_hp_min": 100,
+      "hud_fps": 50,
+      "cpu_mean": 62.47,
+      "cpu_p95": 65.14,
+      "projectiles": [
+        {
+          "min": 7,
+          "mean": 12.22,
+          "max": 14
+        },
+        {
+          "min": 13,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "kind": 2,
+      "shot_setting": 2,
+      "hardware_bodies_min": 8,
+      "enemy_types": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "label": "escudeiro-16",
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "fps": 50.0,
+      "target_met": true,
+      "enemy_count_min": 8,
+      "enemy_count_max": 8,
+      "shields_min": 8,
+      "player_hp_min": 100,
+      "hud_fps": 50,
+      "cpu_mean": 59.08,
+      "cpu_p95": 61.62,
+      "projectiles": [
+        {
+          "min": 7,
+          "mean": 13.67,
+          "max": 16
+        },
+        {
+          "min": 13,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "kind": 3,
+      "shot_setting": 2,
+      "hardware_bodies_min": 8,
+      "enemy_types": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "label": "escudeiro-6",
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "fps": 50.0,
+      "target_met": true,
+      "enemy_count_min": 8,
+      "enemy_count_max": 8,
+      "shields_min": 8,
+      "player_hp_min": 100,
+      "hud_fps": 50,
+      "cpu_mean": 42.15,
+      "cpu_p95": 43.85,
+      "projectiles": [
+        {
+          "min": 2,
+          "mean": 4.95,
+          "max": 6
+        },
+        {
+          "min": 4,
+          "mean": 5.95,
+          "max": 6
+        }
+      ],
+      "kind": 3,
+      "shot_setting": 1,
+      "hardware_bodies_min": 8,
+      "enemy_types": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "label": "escudeiro-0",
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "fps": 50.0,
+      "target_met": true,
+      "enemy_count_min": 8,
+      "enemy_count_max": 8,
+      "shields_min": 8,
+      "player_hp_min": 100,
+      "hud_fps": 50,
+      "cpu_mean": 28.97,
+      "cpu_p95": 30.27,
+      "projectiles": [
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        },
+        {
+          "min": 0,
+          "mean": 0,
+          "max": 0
+        }
+      ],
+      "kind": 3,
+      "shot_setting": 0,
+      "hardware_bodies_min": 8,
+      "enemy_types": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    }
+  ],
+  "death_loop_works": true,
+  "quantity_options_work": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "configuration_cancel_preserves_settings": true,
+  "performance_target_met": true
+}

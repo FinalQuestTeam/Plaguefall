@@ -2,6 +2,11 @@
 #include "system/video/screens/loading.h"
 // Per-stage worlds, 64x32 VDP ring. Only newly exposed rows/columns are transferred.
 #include "levels/arena.h"
+#include "levels/operations.h"
+#include "levels/graph.h"
+#include "levels/campaign_route_ops.h"
+#include "levels/campaign_launch.h"
+#include "levels/campaign_resistance.h"
 #include "system/video/floor.h"
 #include "system/video/projection.h"
 #include "system/video/screens/hud.h"
@@ -20,7 +25,7 @@ typedef char scene_vram_fits[(NPC_BAR_BASE + 4 <= 1440) ? 1 : -1];
 // Low evacuation belongings: solid for feet, below the projectile plane.
 // The church/walls are outside the playable bounds, not hidden floor boxes.
 static const ArenaRect solids[] = {
-    {48, 104, 72, 8, FALSE}, {272, 96, 56, 8, FALSE}
+    {88, 184, 72, 40, FALSE}, {136, 288, 72, 40, FALSE}, {392, 264, 40, 40, FALSE}
 };
 static const ArenaScene courtyardScene = {
     .tiles=(const u32 *)courtyard_tiles, .map=(const u16 *)courtyard_map,
@@ -28,7 +33,7 @@ static const ArenaScene courtyardScene = {
     .tileCount=COURTYARD_TILE_COUNT, .rows=COURTYARD_MAP_ROWS
 };
 const ArenaDef COURTYARD_arena = {
-    512, 384, 16, 112, 495, 367, 256, 160, solids, sizeof(solids)/sizeof(solids[0]), &courtyardScene
+    512, 384, 24, 128, 487, 351, 256, 160, solids, sizeof(solids)/sizeof(solids[0]), &courtyardScene
 };
 s16 arenaMinX=8, arenaMinY=HUD_HEIGHT+32, arenaMaxX=311, arenaMaxY=215;
 s16 cameraX, cameraY;
@@ -40,8 +45,16 @@ static u16 glowClock,glowCursor;
 static u8 glowPhase;
 static bool glowUploading;
 static s16 residentTop=-1,residentLeft;
-static u32 collisionRows[64][8], shotRows[64][8];
+static bool cameraTargetValid,cameraFollowNpc;
+static s16 cameraPlayerX,cameraPlayerY,cameraNpcX,cameraNpcY,cameraTargetX,cameraTargetY;
+// Sized for the largest authored world: 3072x320 = 480 words per mask.
+// A dynamic row stride retains the original4KB RAM budget for both masks.
+#define COLLISION_WORDS 512
+static u32 collisionRows[COLLISION_WORDS],shotRows[COLLISION_WORDS];
+static u16 collisionStride;
 static bool hasShotSolids;
+static s16 solidLeft,solidTop,solidRight,solidBottom;
+static const u16 emptyMapLine[64]={0};
 static bool npcVisible=TRUE;
 static u16 npcBarHp=0xFFFF, npcBarMaximum;
 static void streamRow(u16 row,TransferMethod method,bool clearDecals);
@@ -50,21 +63,29 @@ static u16 mapCols(void){return scene->cols ? scene->cols : 64;}
 
 void ARENA_configure(const ArenaDef *def)
 {
+    cameraTargetValid=FALSE;
     if(!def)ARENA_leave();
     world=def;arenaActive=def!=NULL;
     scene=def ? (def->scene ? def->scene : &courtyardScene) : NULL;
     if(def) {
         arenaMinX=def->minX;arenaMinY=def->minY;arenaMaxX=def->maxX;arenaMaxY=def->maxY;
+        collisionStride=(def->width+255)/256;
         memset(collisionRows,0,sizeof collisionRows);memset(shotRows,0,sizeof shotRows);
         hasShotSolids=FALSE;
+        solidLeft=solidTop=32767;solidRight=solidBottom=-32768;
         for(u16 i=0;i<def->solidCount;i++) {
             const ArenaRect *r=&def->solids[i];
             if(r->blocksShots)hasShotSolids=TRUE;
-            for(u16 y=r->y/8;y<(r->y+r->h)/8;y++)
-                for(u16 x=r->x/8;x<(r->x+r->w)/8;x++) {
+            const s16 l=(r->x/8)*8,t=(r->y/8)*8,rr=((r->x+r->w)/8)*8,bb=((r->y+r->h)/8)*8;
+            if(rr>l && bb>t) {
+                if(l<solidLeft)solidLeft=l;if(t<solidTop)solidTop=t;
+                if(rr>solidRight)solidRight=rr;if(bb>solidBottom)solidBottom=bb;
+            }
+            for(u16 y=r->y/8;y<(r->y+r->h)/8 && y<64 && (y+1)*collisionStride<=COLLISION_WORDS;y++)
+                for(u16 x=r->x/8;x<(r->x+r->w)/8 && x<512;x++) {
                     const u32 bit=0x80000000UL>>(x&31);
-                    collisionRows[y][x>>5]|=bit;
-                    if(r->blocksShots)shotRows[y][x>>5]|=bit;
+                    collisionRows[y*collisionStride+(x>>5)]|=bit;
+                    if(r->blocksShots)shotRows[y*collisionStride+(x>>5)]|=bit;
                 }
             LOADING_poll();
         }
@@ -72,6 +93,7 @@ void ARENA_configure(const ArenaDef *def)
 }
 void ARENA_leave(void)
 {
+    cameraTargetValid=FALSE;
     TERRAIN_clear();
     if(arenaActive) {
         // The custom atlas borrows the legacy floor reservation. Clear its
@@ -100,6 +122,14 @@ static u16 npcTile(u16 col,u16 row,const u16 *map)
     if(!npcVisible && v && col>=v->col && col<v->col+v->cols && row>=v->row && row<v->row+v->rows)
         return v->floor[(row-v->row)*v->cols+col-v->col];
     return map[row*mapCols()+col];
+}
+
+u16 ARENA_sceneTileCount(void){return scene ? scene->tileCount : 0;}
+u16 ARENA_backgroundAttr(s16 col,s16 row)
+{
+    if(!scene || col<0 || row<0 || col>=mapCols() || row>=scene->rows)return 0;
+    const u16 *map=arenaDamaged && scene->damaged ? scene->damaged : scene->map;
+    return TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,SCENE_BASE+npcTile(col,row,map));
 }
 
 void ARENA_showNpc(bool visible)
@@ -160,26 +190,43 @@ void ARENA_update(void)
 }
 static bool outside(s16 x,s16 y,u16 w,u16 h)
 {
-    return x<arenaMinX || y<arenaMinY || x+w-1>arenaMaxX || y+h-1>arenaMaxY;
+    return (u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-w+1) || (u16)(y-arenaMinY)>(u16)(arenaMaxY-arenaMinY-h+1);
 }
-static bool occupied(const u32 rows[64][8],s16 x,s16 y,u16 w,u16 h)
+// Exact cell masks avoid two variable 32-bit shifts per collision query.
+static const u32 occupiedLeft[32]={0xffffffffUL,0x7fffffffUL,0x3fffffffUL,0x1fffffffUL,0x0fffffffUL,0x07ffffffUL,0x03ffffffUL,0x01ffffffUL,0x00ffffffUL,0x007fffffUL,0x003fffffUL,0x001fffffUL,0x000fffffUL,0x0007ffffUL,0x0003ffffUL,0x0001ffffUL,0x0000ffffUL,0x00007fffUL,0x00003fffUL,0x00001fffUL,0x00000fffUL,0x000007ffUL,0x000003ffUL,0x000001ffUL,0x000000ffUL,0x0000007fUL,0x0000003fUL,0x0000001fUL,0x0000000fUL,0x00000007UL,0x00000003UL,0x00000001UL};
+static const u32 occupiedRight[32]={0x80000000UL,0xc0000000UL,0xe0000000UL,0xf0000000UL,0xf8000000UL,0xfc000000UL,0xfe000000UL,0xff000000UL,0xff800000UL,0xffc00000UL,0xffe00000UL,0xfff00000UL,0xfff80000UL,0xfffc0000UL,0xfffe0000UL,0xffff0000UL,0xffff8000UL,0xffffc000UL,0xffffe000UL,0xfffff000UL,0xfffff800UL,0xfffffc00UL,0xfffffe00UL,0xffffff00UL,0xffffff80UL,0xffffffc0UL,0xffffffe0UL,0xfffffff0UL,0xfffffff8UL,0xfffffffcUL,0xfffffffeUL,0xffffffffUL};
+static bool occupied(const u32 *rows,s16 x,s16 y,u16 w,u16 h)
 {
     const u16 left=x>>3,right=(x+w-1)>>3,first=left>>5,last=right>>5;
-    u32 a=0xFFFFFFFFUL>>(left&31),b=0xFFFFFFFFUL<<(31-(right&31));
-    if(first==last)a&=b;
-    for(u16 row=y>>3;row<=(y+h-1)>>3;row++)
-        if((rows[row][first]&a) || (first!=last && (rows[row][last]&b)))return TRUE;
+    u32 a=occupiedLeft[left&31];const u32 b=occupiedRight[right&31];
+    const u16 count=((y+h-1)>>3)-(y>>3)+1;
+    const u32 *line=rows+(y>>3)*collisionStride+first;
+    if(first==last) {
+        a&=b;
+        for(u16 row=0;row<count;row++,line+=collisionStride)if(*line&a)return TRUE;
+    } else {
+        const u16 delta=last-first;
+        for(u16 row=0;row<count;row++,line+=collisionStride)if((*line&a) || (line[delta]&b))return TRUE;
+    }
     return FALSE;
 }
 bool ARENA_blocked(s16 x,s16 y,u16 w,u16 h)
 {
-    return outside(x,y,w,h) || (world && occupied(collisionRows,x,y,w,h));
+    if(outside(x,y,w,h))return TRUE;
+    if(CR_OPS_blocked(x,y,w,h))return TRUE;
+    if(CAMPAIGN_RESISTANCE_blocked(x,y,w,h))return TRUE;
+    if(!currentLevel && testStage>=OPS_FIRST_ROOM && OPS_blocked(x,y,w,h))return TRUE;
+    if(!world || x>=solidRight || x+(s16)w<=solidLeft || y>=solidBottom || y+(s16)h<=solidTop)return FALSE;
+    return occupied(collisionRows,x,y,w,h);
 }
 bool ARENA_shotBlocked(s16 x,s16 y)
 {
     // Bullets are drawn 16px above ground. Wall tests use that visible plane.
     y-=VIDEO_HEIGHT_OFFSET;
-    if(x<arenaMinX || x+7>arenaMaxX || y<arenaMinY-VIDEO_HEIGHT_OFFSET || y+7>arenaMaxY)return TRUE;
+    if(CR_OPS_shotBlocked(x,y,FALSE))return TRUE;
+    if(!currentLevel && testStage>=OPS_FIRST_ROOM && OPS_shotBlocked(x,y,FALSE))return TRUE;
+    if((u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-7) ||
+       (u16)(y-arenaMinY+VIDEO_HEIGHT_OFFSET)>(u16)(arenaMaxY-arenaMinY+VIDEO_HEIGHT_OFFSET-7))return TRUE;
     return hasShotSolids && occupied(shotRows,x,y,8,8);
 }
 bool ARENA_playerShotBlocked(s16 x,s16 y)
@@ -187,7 +234,10 @@ bool ARENA_playerShotBlocked(s16 x,s16 y)
     // The 8x8 bullet has a transparent one-pixel border. Test its visible 6x6
     // footprint, so padding cannot consume a shot alongside a wall.
     x++;y+=1-VIDEO_HEIGHT_OFFSET;
-    if(x<arenaMinX || x+5>arenaMaxX || y<arenaMinY-VIDEO_HEIGHT_OFFSET || y+5>arenaMaxY)return TRUE;
+    if(CR_OPS_shotBlocked(x,y,TRUE))return TRUE;
+    if(!currentLevel && testStage>=OPS_FIRST_ROOM && OPS_shotBlocked(x,y,TRUE))return TRUE;
+    if((u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-5) ||
+       (u16)(y-arenaMinY+VIDEO_HEIGHT_OFFSET)>(u16)(arenaMaxY-arenaMinY+VIDEO_HEIGHT_OFFSET-5))return TRUE;
     return hasShotSolids && occupied(shotRows,x,y,6,6);
 }
 void ARENA_move(s32 *x,s32 *y,s16 dx,s16 dy,u16 size)
@@ -199,17 +249,76 @@ void ARENA_move(s32 *x,s32 *y,s16 dx,s16 dy,u16 size)
     if(nx>rx)nx=rx;
     if(ny<ly)ny=ly;
     if(ny>ry)ny=ry;
-    if(!world || !ARENA_blocked(nx>>6,*y>>6,size,size))*x=nx;
-    if(!world || !ARENA_blocked(*x>>6,ny>>6,size,size))*y=ny;
+    // Both axis sweeps are provably clear south of the solid tile bounds.
+    // nx/ny were clamped above; the horizontal sweep also needs its old Y
+    // inside the arena, including calls that start at an invalid coordinate.
+    const s16 oldY=*y>>6,clearY=solidBottom>arenaMinY?solidBottom:arenaMinY;
+    if(!CR_OPS_active() && currentLevel!=N_7 && (currentLevel || testStage<OPS_FIRST_ROOM) && world && oldY>=clearY && oldY<=arenaMaxY-(s16)size+1 && (ny>>6)>=solidBottom) {
+        *x=nx;*y=ny;return;
+    }
+    if((nx>>6)==(*x>>6) || !world || !ARENA_blocked(nx>>6,*y>>6,size,size))*x=nx;
+    if((ny>>6)==(*y>>6) || !world || !ARENA_blocked(*x>>6,ny>>6,size,size))*y=ny;
 }
 void ARENA_camera(void)
 {
     if(!arenaActive)return;
     const s16 oldX=cameraX,oldY=cameraY;
-    s16 x=px+8-160,y=py+8-VIDEO_HEIGHT_OFFSET-(224+HUD_HEIGHT)/2;
-    if(DINORAH_alive() && abs(px-dinorahX)<200 && abs(py-dinorahY)<120) {
+    const bool followNpc=DINORAH_alive() && abs(px-dinorahX)<200 && abs(py-dinorahY)<120;
+    s16 x,y;
+    if(cameraTargetValid && cameraPlayerX==px && cameraPlayerY==py && cameraFollowNpc==followNpc &&
+       (!followNpc || (cameraNpcX==dinorahX && cameraNpcY==dinorahY))) {
+        x=cameraTargetX;y=cameraTargetY;
+    } else {
+    x=px+8-160;y=py+8-VIDEO_HEIGHT_OFFSET-(224+HUD_HEIGHT)/2;
+    if(followNpc) {
         x=(px+dinorahX)/2+8-160;y=(py+dinorahY)/2+8-VIDEO_HEIGHT_OFFSET-(224+HUD_HEIGHT)/2;
     }
+    if(scene->cameraPlayerY) {
+        const s16 anchor=scene->cameraPlayerY;
+        y=py-anchor;
+        if(followNpc)
+            y=(py+dinorahY)/2-anchor;
+        // A close, complete landmark supplies vertical context. Northern
+        // facades need roof headroom; southern docks need their full footing.
+        // Streaming still interpolates at4px/frame, so changing rooms cannot
+        // jump or reload the picture.
+        const ArenaRect *focus=NULL;
+        s16 nearest=65;
+        for(u8 i=0;i<scene->cameraFocusCount;i++) {
+            const ArenaRect *r=&scene->cameraFocus[i];
+            const s16 cx=px+8,cy=py+8;
+            const s16 dx=cx<r->x ? r->x-cx : (cx>r->x+r->w ? cx-r->x-r->w : 0);
+            if(dx>=nearest)continue;
+            const s16 dy=cy<r->y ? r->y-cy : (cy>r->y+r->h ? cy-r->y-r->h : 0);
+            if(dx+dy<nearest){nearest=dx+dy;focus=r;}
+        }
+        if(focus) {
+            const s16 low=focus->y+focus->h-224,high=focus->y-HUD_HEIGHT;
+            if(low<=high){if(y<low)y=low;if(y>high)y=high;}
+            const s16 left=focus->x+focus->w-320,right=focus->x;
+            if(left<=right){if(x<left)x=left;if(x>right)x=right;}
+        }
+        // Both actors stay inside the picture while the camera gives the
+        // approach to tall corridor buildings enough space above the HUD.
+        const s16 minimum=py+8-224;
+        if(y<minimum)y=minimum;
+        const s16 maximum=py-HUD_HEIGHT-VIDEO_HEIGHT_OFFSET-31;
+        if(y>maximum)y=maximum;
+        if(x<px+24-320)x=px+24-320;
+        if(x>px-8)x=px-8;
+        if(followNpc) {
+            const s16 escortMinimum=dinorahY+8-224;
+            if(y<escortMinimum)y=escortMinimum;
+            const s16 escortMaximum=dinorahY-HUD_HEIGHT-VIDEO_HEIGHT_OFFSET-31;
+            if(y>escortMaximum)y=escortMaximum;
+            if(x<dinorahX+24-320)x=dinorahX+24-320;
+            if(x>dinorahX-8)x=dinorahX-8;
+        }
+    }
+    cameraPlayerX=px;cameraPlayerY=py;cameraFollowNpc=followNpc;
+    cameraNpcX=dinorahX;cameraNpcY=dinorahY;cameraTargetX=x;cameraTargetY=y;cameraTargetValid=TRUE;
+    }
+    CL_camera(&x,&y);
     const s16 maxX=world->width>320 ? world->width-320 : 0;
     s16 maxY=world->height>224 ? world->height-224 : 0;
     // This defense arena fits the player feet and the objective marker in
@@ -285,20 +394,38 @@ static void streamRow(u16 row,TransferMethod method,bool clearDecals)
             data[x&63]=TERRAIN_attr(x,row);
             if((x&7)==0)LOADING_poll();
         }
-        else memset(data,0,sizeof data);
-        VDP_setTileMapDataRow(BG_A,data,row&31,0,64,method);
+        VDP_setTileMapDataRow(BG_A,TERRAIN_active() ? data : emptyMapLine,row&31,0,64,method);
     }
 }
 static void streamColumn(u16 col)
 {
     u16 data[32];const u16 cols=mapCols();
     const u16 *map=arenaDamaged && scene->damaged ? scene->damaged : scene->map;
-    for(u16 y=residentTop;y<residentTop+32;y++)data[y&31]=(col<cols && y<scene->rows) ?
-        TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,SCENE_BASE+npcTile(col,y,map)) : 0;
+    // Step through the ROM column directly. Its stride and the visibility
+    // test are invariant; there is no per-cell mapCols/multiply/NPC lookup.
+    memset(data,0,sizeof data);
+    if(col<cols && residentTop<scene->rows) {
+        u16 count=scene->rows-residentTop;if(count>32)count=32;
+        const u16 *source=map+residentTop*cols+col;
+        const u16 ring=residentTop&31;
+        u16 first=32-ring;if(first>count)first=count;
+        u16 *target=data+ring;
+        for(u16 i=0;i<first;i++,source+=cols)
+            *target++=TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,SCENE_BASE+*source);
+        target=data;
+        for(u16 i=first;i<count;i++,source+=cols)
+            *target++=TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,SCENE_BASE+*source);
+        const ArenaNpcVisual *v=scene->npcVisual;
+        if(!npcVisible && v && col>=v->col && col<v->col+v->cols) {
+            u16 top=residentTop>v->row ? residentTop : v->row;
+            u16 bottom=residentTop+count;if(bottom>v->row+v->rows)bottom=v->row+v->rows;
+            for(u16 y=top;y<bottom;y++)
+                data[y&31]=TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,SCENE_BASE+v->floor[(y-v->row)*v->cols+col-v->col]);
+        }
+    }
     VDP_setTileMapDataColumnFast(BG_B,data,col&63,0,32,DMA_QUEUE_COPY);
     if(TERRAIN_active())for(u16 y=residentTop;y<residentTop+32;y++)data[y&31]=TERRAIN_attr(col,y);
-    else memset(data,0,sizeof data);
-    VDP_setTileMapDataColumnFast(BG_A,data,col&63,0,32,DMA_QUEUE_COPY);
+    VDP_setTileMapDataColumnFast(BG_A,TERRAIN_active() ? data : emptyMapLine,col&63,0,32,DMA_QUEUE_COPY);
 }
 void ARENA_draw(void)
 {
@@ -320,6 +447,7 @@ void ARENA_draw(void)
 }
 void ARENA_damageChurch(void)
 {
+    if(currentLevel && currentLevel!=N_1)return;
     if(!arenaActive || !scene->damaged || scene->damaged==scene->map || arenaDamaged)return;
     arenaDamaged=1;
     const u16 *map=scene->damaged;

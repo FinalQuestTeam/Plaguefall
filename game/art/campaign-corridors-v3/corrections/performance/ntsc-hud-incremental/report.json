@@ -1,0 +1,1449 @@
+{
+  "romSHA256": "a8bdb3eafc2335f7408e462398efb0623cf5b1440131573befef6c9c12a84824",
+  "bootstrapSHA256": "f2b38b90303eb7c69515fab5b37ee86a4409e34a819402083a7ee6e27cead95e",
+  "region": "NTSC",
+  "passed": false,
+  "requiredFPS": 60,
+  "physicalFramesPerCase": 1800,
+  "warmupSeconds": 4,
+  "shieldClock": "item",
+  "measuredPhases": [
+    "3",
+    "6A",
+    "6B",
+    "12",
+    "9"
+  ],
+  "policies": [
+    "preserve_caches",
+    "native_cadence"
+  ],
+  "cases": [
+    {
+      "phase": "3",
+      "policy": "preserve_caches",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ],
+        [
+          224,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 60.0,
+      "targetMet": true,
+      "meanCPULoadPct": 71.744,
+      "p95CPULoadPct": 74.463,
+      "maximumCPULoadPct": 76.953,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "satMaximumSampled": [
+        15,
+        10,
+        128
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "3",
+      "policy": "native_cadence",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ],
+        [
+          224,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 60.0,
+      "targetMet": true,
+      "meanCPULoadPct": 71.807,
+      "p95CPULoadPct": 74.512,
+      "maximumCPULoadPct": 76.953,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "satMaximumSampled": [
+        15,
+        10,
+        128
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6A",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        5
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 60.0,
+      "targetMet": true,
+      "meanCPULoadPct": 71.924,
+      "p95CPULoadPct": 73.828,
+      "maximumCPULoadPct": 75.391,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        13,
+        5,
+        112
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6A",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 60.0,
+      "targetMet": true,
+      "meanCPULoadPct": 72.078,
+      "p95CPULoadPct": 74.072,
+      "maximumCPULoadPct": 75.586,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        13,
+        7,
+        112
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6B",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1796,
+      "gameFPS": 59.86667,
+      "targetMet": false,
+      "meanCPULoadPct": 80.917,
+      "p95CPULoadPct": 83.838,
+      "maximumCPULoadPct": 86.377,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        17,
+        5,
+        112
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1133,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1252,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1313,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        }
+      ],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6B",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1796,
+      "gameFPS": 59.86667,
+      "targetMet": false,
+      "meanCPULoadPct": 81.008,
+      "p95CPULoadPct": 83.887,
+      "maximumCPULoadPct": 86.377,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        17,
+        5,
+        112
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1133,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        },
+        {
+          "physicalOffset": 1252,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 120
+        },
+        {
+          "physicalOffset": 1313,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 60
+        }
+      ],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1776,
+      "gameFPS": 59.2,
+      "targetMet": false,
+      "meanCPULoadPct": 74.218,
+      "p95CPULoadPct": 80.127,
+      "maximumCPULoadPct": 84.131,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        18,
+        10,
+        168
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 71,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 48
+        },
+        {
+          "physicalOffset": 83,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 37
+        },
+        {
+          "physicalOffset": 223,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 75
+        },
+        {
+          "physicalOffset": 235,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 64
+        },
+        {
+          "physicalOffset": 375,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 102
+        },
+        {
+          "physicalOffset": 387,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 91
+        },
+        {
+          "physicalOffset": 527,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 129
+        },
+        {
+          "physicalOffset": 539,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 118
+        },
+        {
+          "physicalOffset": 679,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 156
+        },
+        {
+          "physicalOffset": 691,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 145
+        },
+        {
+          "physicalOffset": 831,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 6
+        },
+        {
+          "physicalOffset": 843,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 171
+        },
+        {
+          "physicalOffset": 983,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 32
+        },
+        {
+          "physicalOffset": 995,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 21
+        },
+        {
+          "physicalOffset": 1135,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 58
+        },
+        {
+          "physicalOffset": 1147,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 47
+        },
+        {
+          "physicalOffset": 1287,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 85
+        },
+        {
+          "physicalOffset": 1299,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 74
+        },
+        {
+          "physicalOffset": 1439,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 112
+        },
+        {
+          "physicalOffset": 1451,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 101
+        },
+        {
+          "physicalOffset": 1591,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 139
+        },
+        {
+          "physicalOffset": 1603,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 128
+        },
+        {
+          "physicalOffset": 1743,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 166
+        },
+        {
+          "physicalOffset": 1755,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 155
+        }
+      ],
+      "dinorahStateTransitions": [
+        {
+          "physicalOffset": 70,
+          "gameFrame": 547,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 82,
+          "gameFrame": 558,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 222,
+          "gameFrame": 697,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 234,
+          "gameFrame": 708,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 374,
+          "gameFrame": 847,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 386,
+          "gameFrame": 858,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 526,
+          "gameFrame": 997,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 538,
+          "gameFrame": 1008,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 678,
+          "gameFrame": 1147,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 690,
+          "gameFrame": 1158,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 830,
+          "gameFrame": 1297,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 842,
+          "gameFrame": 1308,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 982,
+          "gameFrame": 1447,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 994,
+          "gameFrame": 1458,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1134,
+          "gameFrame": 1597,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1146,
+          "gameFrame": 1608,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1286,
+          "gameFrame": 1747,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1298,
+          "gameFrame": 1758,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1438,
+          "gameFrame": 1897,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1450,
+          "gameFrame": 1908,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1590,
+          "gameFrame": 2047,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1602,
+          "gameFrame": 2058,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1742,
+          "gameFrame": 2197,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1754,
+          "gameFrame": 2208,
+          "previous": 3,
+          "current": 1
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1776,
+      "gameFPS": 59.2,
+      "targetMet": false,
+      "meanCPULoadPct": 74.293,
+      "p95CPULoadPct": 80.176,
+      "maximumCPULoadPct": 84.131,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        18,
+        10,
+        168
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 71,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 48
+        },
+        {
+          "physicalOffset": 83,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 37
+        },
+        {
+          "physicalOffset": 223,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 75
+        },
+        {
+          "physicalOffset": 235,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 64
+        },
+        {
+          "physicalOffset": 375,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 102
+        },
+        {
+          "physicalOffset": 387,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 91
+        },
+        {
+          "physicalOffset": 527,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 129
+        },
+        {
+          "physicalOffset": 539,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 118
+        },
+        {
+          "physicalOffset": 679,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 156
+        },
+        {
+          "physicalOffset": 691,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 145
+        },
+        {
+          "physicalOffset": 831,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 6
+        },
+        {
+          "physicalOffset": 843,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 171
+        },
+        {
+          "physicalOffset": 983,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 32
+        },
+        {
+          "physicalOffset": 995,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 21
+        },
+        {
+          "physicalOffset": 1135,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 58
+        },
+        {
+          "physicalOffset": 1147,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 47
+        },
+        {
+          "physicalOffset": 1287,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 85
+        },
+        {
+          "physicalOffset": 1299,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 74
+        },
+        {
+          "physicalOffset": 1439,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 112
+        },
+        {
+          "physicalOffset": 1451,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 101
+        },
+        {
+          "physicalOffset": 1591,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 139
+        },
+        {
+          "physicalOffset": 1603,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 128
+        },
+        {
+          "physicalOffset": 1743,
+          "gameDelta": 0,
+          "dinorahState": 3,
+          "shieldTimer": 166
+        },
+        {
+          "physicalOffset": 1755,
+          "gameDelta": 0,
+          "dinorahState": 1,
+          "shieldTimer": 155
+        }
+      ],
+      "dinorahStateTransitions": [
+        {
+          "physicalOffset": 70,
+          "gameFrame": 547,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 82,
+          "gameFrame": 558,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 222,
+          "gameFrame": 697,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 234,
+          "gameFrame": 708,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 374,
+          "gameFrame": 847,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 386,
+          "gameFrame": 858,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 526,
+          "gameFrame": 997,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 538,
+          "gameFrame": 1008,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 678,
+          "gameFrame": 1147,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 690,
+          "gameFrame": 1158,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 830,
+          "gameFrame": 1297,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 842,
+          "gameFrame": 1308,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 982,
+          "gameFrame": 1447,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 994,
+          "gameFrame": 1458,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1134,
+          "gameFrame": 1597,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1146,
+          "gameFrame": 1608,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1286,
+          "gameFrame": 1747,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1298,
+          "gameFrame": 1758,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1438,
+          "gameFrame": 1897,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1450,
+          "gameFrame": 1908,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1590,
+          "gameFrame": 2047,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1602,
+          "gameFrame": 2058,
+          "previous": 3,
+          "current": 1
+        },
+        {
+          "physicalOffset": 1742,
+          "gameFrame": 2197,
+          "previous": 1,
+          "current": 3
+        },
+        {
+          "physicalOffset": 1754,
+          "gameFrame": 2208,
+          "previous": 3,
+          "current": 1
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "9",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        2,
+        9
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 60.0,
+      "targetMet": true,
+      "meanCPULoadPct": 63.576,
+      "p95CPULoadPct": 66.748,
+      "maximumCPULoadPct": 70.312,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        14,
+        10,
+        152
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "9",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        2,
+        9
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 60.0,
+      "targetMet": true,
+      "meanCPULoadPct": 63.654,
+      "p95CPULoadPct": 66.797,
+      "maximumCPULoadPct": 70.312,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        14,
+        10,
+        152
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    }
+  ],
+  "method": "Same production ROM and node snapshot per policy. Invulnerability and enemy HP isolate timing; Dinorah waits. Legacy resets complete records each VBlank; preserving policies retain AI/render clocks and velocities. No transition or death settling is included. Static camera load, not route difficulty.",
+  "status": "needs-optimization"
+}

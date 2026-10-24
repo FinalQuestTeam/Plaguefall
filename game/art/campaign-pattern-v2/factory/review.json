@@ -1,0 +1,383 @@
+{
+  "status": "native_candidates_ready_for_integrated_review",
+  "automatic_visual_approval": false,
+  "runtime_test_status": "Not compiled or emulated in this authorship pass; central ROM/playtest delegated to root.",
+  "pipeline": [
+    "ImageGen whole street source cycle1",
+    "ImageGen whole factory source cycle1; full edits cycle2 cold/no wheels;cycle3 complete cabinets/couplings",
+    "Complete architectural modules and silhouettes extracted after source review",
+    "8px placement;1px raster detail;16colors with black index0;exact H/V tile dedup",
+    "Whole maps with exact objective ground snap and9 camera samples per phase reviewed"
+  ],
+  "cycles": {
+    "street": {
+      "source_cycles": 1,
+      "native_cycles": 2,
+      "discarded": "Native1 overbudget and sampled sky band inappropriate for facade; native2 corrected source material and kept all landmarks singular."
+    },
+    "factory": {
+      "source_cycles": 3,
+      "native_cycles": 2,
+      "discarded": "Whole1 had active fire and baked wheels. Whole2 still required full cabinet/feed treatment. Native initial individual east/west corners too costly; complete west corner mirrored under diffuse light for exact reuse, no tile replacement."
+    }
+  },
+  "decisions": {
+    "source_to_native": "Dimensions are not a scaled postcard: singular workshop/gantry/gate and three separate industrial landmarks assembled from complete-source architecture and complete ends/materials. No repeated chopped facade thumbnails.",
+    "floor": "One actual source floor sample, no checker/no texture stamps in combat field. Grain remains restricted to architectural contact gutter.",
+    "pipe_joint": "Background key shared grey with pipe/cabinet cap. Preserve only actual source pixels inside known complete coupling and cap regions; no new connector painted.",
+    "depth": "Cabinet and feed assemblies end y112 behind north walk boundary. Field conveyor/crate and four street props block their entire projected footprint instead of allowing an actor to stand inside background body art. Objective egg clutches retain original non-solid destruction mechanic.",
+    "states": "Ten logical nests,7 rendering slots; with x spacing144 a viewport encounters at most6 nearby clutches. Complete-map preview intentionally displays all10 logical objectives. Valve full-state65tile bank unchanged.",
+    "perimeter": "Purpose-authored southern wall with cap/face/footing and pipes; complete north/south corners; architectural crop bounds checked against source dimensions. No out-of-image black padding."
+  },
+  "phases": [
+    {
+      "phase": "9",
+      "whole": "factory/cycle-2/9-complete.png",
+      "memory": {
+        "scene_tiles": 613,
+        "scene_bytes": 19616,
+        "map_bytes": 20480,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 9627,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 0,
+        "total_tiles": 613,
+        "total_vram_bytes": 19616,
+        "margin_tiles": 27
+      },
+      "reviewed_whole": true,
+      "cameras_reviewed": [
+        "entry/top",
+        "entry/center",
+        "entry/bottom",
+        "middle/top",
+        "middle/center",
+        "middle/bottom",
+        "exit/top",
+        "exit/center",
+        "exit/bottom"
+      ],
+      "assessment": "Candidato: workshop de tijolos singular, doca intermediária inteira, tanques e portão terminal inteiro; quatro obstáculos completos com desvios alternados, piso quieto, perímetro inferior/cantos legíveis.",
+      "pending": "Integração, HUD, colisão e tempo de quadro na ROM central."
+    },
+    {
+      "phase": "10",
+      "whole": "factory/cycle-2/10-complete.png",
+      "memory": {
+        "scene_tiles": 460,
+        "scene_bytes": 14720,
+        "map_bytes": 7680,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 3380,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 150,
+        "total_tiles": 610,
+        "total_vram_bytes": 19520,
+        "margin_tiles": 30
+      },
+      "reviewed_whole": true,
+      "cameras_reviewed": [
+        "entry/top",
+        "entry/center",
+        "entry/bottom",
+        "middle/top",
+        "middle/center",
+        "middle/bottom",
+        "exit/top",
+        "exit/center",
+        "exit/bottom"
+      ],
+      "assessment": "Candidato: forno frio e tanques completos ao norte; parede de alvenaria/tubo dedicado no sul;10clutches claros em duas linhas sobre piso, sem sobreposição com máquina, parede ou esteira.",
+      "pending": "Integração, HUD, colisão e tempo de quadro na ROM central."
+    },
+    {
+      "phase": "11",
+      "whole": "factory/cycle-2/11-complete.png",
+      "memory": {
+        "scene_tiles": 460,
+        "scene_bytes": 14720,
+        "map_bytes": 7680,
+        "palette_bytes": 32,
+        "budget": 640,
+        "exact_reused_tiles": 3380,
+        "tile_decode_pixel_identical": true,
+        "palette0_black": true,
+        "palette_rgb333": true,
+        "objective_all_states_tiles": 65,
+        "total_tiles": 525,
+        "total_vram_bytes": 16800,
+        "margin_tiles": 115
+      },
+      "reviewed_whole": true,
+      "cameras_reviewed": [
+        "entry/top",
+        "entry/center",
+        "entry/bottom",
+        "middle/top",
+        "middle/center",
+        "middle/bottom",
+        "exit/top",
+        "exit/center",
+        "exit/bottom"
+      ],
+      "assessment": "Candidato:3válvulas deslocadas para portos azuis dos gabinetes no recuo norte; nenhuma sobre esteira. Gabinetes apoiados no plinto e fora do campo, alimentação conecta cabeçalho e tampo. Feedback conserva animação de abertura e indicador energético por estação.",
+      "pending": "Integração, HUD, colisão e tempo de quadro na ROM central."
+    }
+  ],
+  "limitations": [
+    "Native screenshots are authored previews with a scale actor, not emulator proof or HUD captures.",
+    "Final runtime must validate controller detours, objective interactions and static prop contacts at new coordinates in both NTSC/PAL.",
+    "Symmetric reuse of complete corners is acceptable under diffuse light here; not a general rule for modules with directional cast shadows.",
+    "The long street deliberately has long quiet cladding stretches between three singular landmarks; density is a design choice to review in motion.",
+    "High/low viewports naturally clip the opposite architecture; lower industrial perimeter preserves identity in factory low camera."
+  ],
+  "geometry": {
+    "street_controller_waypoints": [
+      [
+        424,
+        184
+      ],
+      [
+        520,
+        184
+      ],
+      [
+        968,
+        144
+      ],
+      [
+        1104,
+        144
+      ],
+      [
+        1528,
+        184
+      ],
+      [
+        1632,
+        184
+      ],
+      [
+        2056,
+        128
+      ],
+      [
+        2192,
+        128
+      ]
+    ],
+    "street_route": [
+      [
+        56,
+        152
+      ],
+      [
+        424,
+        184
+      ],
+      [
+        520,
+        184
+      ],
+      [
+        968,
+        144
+      ],
+      [
+        1104,
+        144
+      ],
+      [
+        1528,
+        184
+      ],
+      [
+        1632,
+        184
+      ],
+      [
+        2056,
+        128
+      ],
+      [
+        2192,
+        128
+      ],
+      [
+        2504,
+        144
+      ]
+    ],
+    "street_exit": [
+      2480,
+      112,
+      64,
+      64
+    ],
+    "street_finish": [
+      2504,
+      144
+    ],
+    "street_baseline_y": 168,
+    "straight_street_path_blocked": true,
+    "tiles": 460,
+    "scene_limit": 490,
+    "scene_plus_nest": 610,
+    "scene_plus_valve": 525,
+    "eggs": [
+      [
+        96,
+        168
+      ],
+      [
+        96,
+        248
+      ],
+      [
+        240,
+        168
+      ],
+      [
+        240,
+        248
+      ],
+      [
+        384,
+        168
+      ],
+      [
+        384,
+        248
+      ],
+      [
+        528,
+        168
+      ],
+      [
+        528,
+        248
+      ],
+      [
+        672,
+        168
+      ],
+      [
+        672,
+        248
+      ]
+    ],
+    "valves": [
+      [
+        144,
+        104
+      ],
+      [
+        432,
+        104
+      ],
+      [
+        576,
+        104
+      ]
+    ],
+    "valve_approaches": [
+      [
+        136,
+        112
+      ],
+      [
+        424,
+        112
+      ],
+      [
+        568,
+        112
+      ]
+    ],
+    "station_monitors": [
+      [
+        180,
+        88
+      ],
+      [
+        468,
+        88
+      ],
+      [
+        612,
+        88
+      ]
+    ],
+    "factory_solids": [
+      [
+        128,
+        192,
+        80,
+        32
+      ],
+      [
+        576,
+        200,
+        40,
+        32
+      ]
+    ],
+    "street_solids": [
+      [
+        456,
+        144,
+        40,
+        32
+      ],
+      [
+        1000,
+        168,
+        80,
+        24
+      ],
+      [
+        1568,
+        144,
+        48,
+        32
+      ],
+      [
+        2096,
+        152,
+        64,
+        40
+      ]
+    ],
+    "factory_size": [
+      768,
+      320
+    ],
+    "street_size": [
+      2560,
+      256
+    ],
+    "factory_start": [
+      48,
+      128
+    ],
+    "street_start": [
+      48,
+      152
+    ],
+    "factory_min_y": 112,
+    "factory_max_y": 271,
+    "street_min_y": 112,
+    "street_max_y": 213,
+    "factory_reachable": 1644,
+    "street_reachable": 3302,
+    "collision": "16px projected footprint flood reaches ten clutch approaches, three valve approaches and exit; field props block their full projected footprint to prevent standing inside background art; cabinets wholly behind walk boundary",
+    "pipeline": "whole-scene-first",
+    "minimum_bypass_width": 32
+  }
+}

@@ -2,6 +2,7 @@
 // todos os inimigos). O item de coleta (items/item_bomb.c) chama BOMB_add.
 
 #include "actors/bomb.h"
+#include "levels/campaign_factory.h"
 #include "core/stats.h"
 #include "levels/arena.h"
 #include "system/video/screens/hud.h"
@@ -32,6 +33,7 @@ u16 BOMB_use(void)
     bombs--;
     phaseStats.bombsUsed++;     // condições de saída do grafo (SEM/USOU_BOMBA)
     ARENA_damageChurch();
+    CF_bomb();
     SFX_bombBlast();
     FLASH_trigger();
 

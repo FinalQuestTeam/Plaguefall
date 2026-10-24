@@ -36,6 +36,7 @@ typedef struct {
     u16 step, stepFramesCur, stepFramesTgt;
     s16 countdown;
     u8 rCalmUntil, rEnemyMax, rStepCalm, rStepHot;
+    u8 rampLastCount;bool rampCached;
 } MusicState;
 static MusicState music = {
     .track = MUSIC_DEFAULT_TRACK,
@@ -160,7 +161,7 @@ static void applyVoice(Voice *v, u8 ch)
             const u16 release = v->gate / 4;
             vol = v->vmin + 2;
             if (v->left <= release)
-                vol += (u8) ((12 - v->vmin) * (release - v->left) / release);
+                vol += (u8) (divu((u32)(12-v->vmin)*(release-v->left),release));
             if (age >= 20 && !church)
             {
                 static const s8 vibrato[8] = { 0, 1, 2, 1, 0, -1, -2, -1 };
@@ -171,7 +172,7 @@ static void applyVoice(Voice *v, u8 ch)
         }
         else
         {
-            vol = (u8) (v->vmin + ((15 - v->vmin) * age) / v->gate);
+            vol = (u8) (v->vmin + divu((u32)(15-v->vmin)*age,(u16)v->gate));
             // A brief downward transient gives the root/fifth bass some body.
             if (ch == CH_BASS && age < 10)
                 freq += (u16) (((freq >> 3) * (10 - age)) / 10);
@@ -197,7 +198,7 @@ static void applyDrum(void)
     // gerador de ruído a cada frame = chiado). Ocioso: não requisita.
     if (music.drumLeft > 0)
     {
-        const u8 vol = (u8) (music.drumVmin + ((15 - music.drumVmin) * (music.drumGate - music.drumLeft)) / music.drumGate);
+        const u8 vol = (u8) (music.drumVmin + divu((u32)(15-music.drumVmin)*(music.drumGate-music.drumLeft),(u16)music.drumGate));
         AUDIO_noise(music.drumType, music.drumFreq, vol, AUD_PRIO_MUSIC);
     }
 }
@@ -206,6 +207,7 @@ void MUSIC_syncClock(void) { lastVBlank = vtimer; }
 
 void MUSIC_init(void)
 {
+    music.rampCached=FALSE;
     MUSIC_stopResultCue();
     MUSIC_syncClock();
     AUDIO_silenceAll();
@@ -220,6 +222,7 @@ void MUSIC_start(void) { }       // compat (a música já toca a partir de MUSIC
 
 void MUSIC_setRamp(u8 calmUntil, u8 enemyMax, u8 stepCalm, u8 stepHot)
 {
+    music.rampCached=FALSE;
     // 0 em qualquer campo => mantém o padrão do CONFIG (music.h)
     music.rCalmUntil = calmUntil ? calmUntil : MUSIC_CALM_UNTIL;
     music.rEnemyMax  = enemyMax  ? enemyMax  : MUSIC_ENEMY_MAX;
@@ -232,6 +235,8 @@ void MUSIC_setRamp(u8 calmUntil, u8 enemyMax, u8 stepCalm, u8 stepHot)
 void MUSIC_setEnemies(u8 count)
 {
     if (count > music.rEnemyMax) count = music.rEnemyMax;
+    if(music.rampCached && music.rampLastCount==count)return;
+    music.rampLastCount=count;music.rampCached=TRUE;
     if (count <= music.rCalmUntil)                    // poucos inimigos: fica calmo
     {
         music.stepFramesTgt = music.rStepCalm;

@@ -1,0 +1,77 @@
+{
+  "method": "Isolated data-only prototype; existing code addresses unchanged; source ELF used only for stable code/RAM symbol addresses.",
+  "production_rom_unchanged": true,
+  "production_rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "prototype_rom_sha256": "df5cbc2584b1e2e536b57df0148b27bbe045a390b399503560170bc0e8b1b013",
+  "prototype_rom_bytes": 2490624,
+  "resource_replacements": [
+    {
+      "symbol": "courtyard_tiles",
+      "address": 1114084,
+      "allocated_bytes": 20480,
+      "payload_bytes": 20416
+    },
+    {
+      "symbol": "courtyard_map",
+      "address": 1134564,
+      "allocated_bytes": 6144,
+      "payload_bytes": 6144
+    },
+    {
+      "symbol": "courtyard_damaged",
+      "address": 1140708,
+      "allocated_bytes": 6144,
+      "payload_bytes": 6144
+    },
+    {
+      "symbol": "courtyard_palette",
+      "address": 1146852,
+      "allocated_bytes": 32,
+      "payload_bytes": 32
+    }
+  ],
+  "arena_address": 700488,
+  "old_solid_table": 699940,
+  "new_solid_table": 2490368,
+  "bounds": [
+    24,
+    128,
+    487,
+    351
+  ],
+  "solids": [
+    [
+      128,
+      176,
+      72,
+      40,
+      false
+    ],
+    [
+      344,
+      208,
+      40,
+      40,
+      false
+    ],
+    [
+      152,
+      272,
+      72,
+      40,
+      false
+    ],
+    [
+      344,
+      296,
+      40,
+      40,
+      false
+    ]
+  ],
+  "limitations": [
+    "Fase1 é a única fase validada deste protótipo; recursos da igreja também são compartilhados por outras fases, que não estão aprovadas nesta ROM.",
+    "A ROM de produção e os recursos/C originais permanecem intactos.",
+    "O banco de cena mantém a reserva original640tiles;638são utilizados no protótipo."
+  ]
+}

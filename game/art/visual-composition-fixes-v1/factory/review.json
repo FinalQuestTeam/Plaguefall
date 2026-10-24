@@ -1,0 +1,66 @@
+{
+  "cycle1": {
+    "status": "rejected internally",
+    "factory_tiles": 584,
+    "problems": [
+      "Busy repeated rivet plate on upperwall",
+      "Floor crop contained speckles, creating dotted tiling",
+      "Bank exceeded490 scene tiles"
+    ],
+    "evidence": "cycle-1/factory-native.png"
+  },
+  "cycle2": {
+    "status": "visually accepted candidate; isolated emulator NTSC/PAL passed, exit0",
+    "factory_tiles": 476,
+    "street_tiles": 627,
+    "scene_plus_nest": 626,
+    "scene_plus_valve": 541,
+    "changes": [
+      "Exact quiet material cropped from whole generated source; no dotted floor",
+      "Brick workshops, loading docks, tanks and large factory gate differentiate progress",
+      "Four visible obstacles interrupt y192 baseline and provide real north/south detours",
+      "Full-frame conveyors expanded only in their repeated roller span",
+      "Valve station cabinet, vertical riser and horizontal supply pipe align to objective wheel",
+      "Lower factory perimeter contains structural columns and machinery in south camera"
+    ],
+    "limitations": [
+      "Architectural modules repeat within each industrial sector to fit Mega Drive memory",
+      "Surface detail is deliberately reduced on walkable floor for actor readability",
+      "ImageGen concept is recomposed into large coherent modules after complete scene generation"
+    ],
+    "palette": "16 entries; index0 black; other colors snapped to RGB333; exact nearest only",
+    "tile_replacement": "none; exact pixel-identical H/V tile reuse only",
+    "rom_sha256": "5173cbbc5d29dae81f1aea1e240eb6aebe41310bc61cadd0ac154c710b3265d9",
+    "tested": [
+      "Four street solids stop the baseline controller route; detour route completes",
+      "Real controller shooting destroys all10eggclutches; bomb and pause persistence pass",
+      "All3valves work only without A; opened station screen shows power",
+      "6factory solids and4world bounds perphase",
+      "Fullconfigured simultaneous enemy/shotpools hold60NTSC/50PALFPS",
+      "Exact sceneatlas/BG_B/flip comparison matches ROM and VRAM"
+    ],
+    "runtime_visual_review": {
+      "result": "acceptable",
+      "screenshots": [
+        "cycle-2/ntsc/9-entry.png",
+        "cycle-2/ntsc/9-obstacle-detour.png",
+        "cycle-2/ntsc/9-camera-middle.png",
+        "cycle-2/ntsc/9-camera-exit.png",
+        "cycle-2/ntsc/10-entry.png",
+        "cycle-2/ntsc/10-eggs-2.png",
+        "cycle-2/ntsc/11-valve-1.png"
+      ],
+      "observations": [
+        "Street sectors differ visibly as camera advances; barrier appears as a complete dark container against quiet gray lane",
+        "White eggs are distinct from brown insects and fit scene without a brown blob",
+        "South factory camera retains columns, perimeter pipes and blue machinery",
+        "Red wheel and blue pipe clearly connect to station; powered screen is visible after operation"
+      ],
+      "remaining_limitations": [
+        "Building detail repeats within each sector",
+        "A20second patrol bot cannot establish human difficulty or full campaign balance"
+      ],
+      "atlas_runtime": "Exact ROM-to-VRAM atlas and visible BG_B flips pass at entry, street obstacle/middle/exit and south factory camera"
+    }
+  }
+}

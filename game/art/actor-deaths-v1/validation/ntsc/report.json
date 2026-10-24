@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "b8958bd3dc773a2a572aa6627433f509a4c64bf5a8ab2eda56f548ccaa9c35dd",
+  "checks": {
+    "damiao-east": {
+      "poses": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        []
+      ],
+      "holdFrames": [
+        {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 29
+        },
+        {}
+      ],
+      "elapsedFrames": 80,
+      "pause": false
+    },
+    "damiao-west": {
+      "poses": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        []
+      ],
+      "holdFrames": [
+        {
+          "0": 8,
+          "1": 6,
+          "2": 8,
+          "3": 29
+        },
+        {}
+      ],
+      "elapsedFrames": 78,
+      "pause": true
+    },
+    "dinorah": {
+      "poses": [
+        [],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "holdFrames": [
+        {},
+        {
+          "0": 8,
+          "1": 6,
+          "2": 8,
+          "3": 29
+        }
+      ],
+      "elapsedFrames": 77,
+      "pause": true
+    },
+    "retryClearsBothDeaths": true,
+    "simultaneous": {
+      "poses": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "holdFrames": [
+        {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 29
+        },
+        {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 29
+        }
+      ],
+      "elapsedFrames": 78,
+      "pause": false
+    },
+    "lava": {
+      "poses": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        []
+      ],
+      "holdFrames": [
+        {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 29
+        },
+        {}
+      ],
+      "elapsedFrames": 80,
+      "pause": false
+    }
+  }
+}

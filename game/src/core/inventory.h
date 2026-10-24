@@ -24,5 +24,7 @@ u16  INV_activate(void);                    // B: ativa o selecionado; retorna m
 // leitura para o HUD: tipo e contagem da posição i (0 = bomba)
 void INV_view(u8 i, u8 *type, u8 *count);
 u8   INV_selected(void);
+// Read-only HUD comparison, including the live bomb count.
+bool INV_matches(const u8 *types,const u8 *counts);
 
 #endif // INVENTORY_H

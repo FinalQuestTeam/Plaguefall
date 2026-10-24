@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "cycle": 2,
+  "prompt": "Use case: precise-object-edit. Edit this ENTIRE full game room image, preserving the whole scene, allfour corners, cabinet positions, conveyor and crates, scale, camera, lighting and16bit pixel art style. Change only two things. First: the factory is currently OFF. Replace the bright orange illuminated furnace grill with a cold dark blue-gray metal grill of the SAME complete outline and bars; no yellow light and no bright fire. Preserve the orange unlit copper pipe metal as material. Second: remove the three RED circular handwheels from the three floor pressure stations. Leave a clean BLUE flanged pipe coupling at each former wheel center and continuous U-shaped blue pipe legs, no red pixels and no wheel silhouettes. These couplings are mounting points for a separate animated wheel sprite later. Preserve complete cabinet bodies, intact base, contact shadow, vertical feed pipe and every pipe elbow. Do not add objects, no new text, no arrow, no UI, no additional marker, no eggs or characters. Do not crop or change arrangement; this remains one whole2:1 room. Avoid leaving red ghost pixels from old wheels. Preserve source exactly everywhere outside those three handwheel disks and the furnace glowing grill.",
+  "source": "source/factory-whole-cycle1.png",
+  "output": "source/factory-whole-cycle2.png"
+}

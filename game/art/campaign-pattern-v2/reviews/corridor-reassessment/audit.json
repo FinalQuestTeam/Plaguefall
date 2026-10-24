@@ -1,0 +1,136 @@
+{
+  "rom_sha256": "66aba7c700e66511a54c74133aaba24817341e56a5843d27e17877655cf61e84",
+  "scope": [
+    "3",
+    "6A",
+    "6B",
+    "9",
+    "12"
+  ],
+  "verdict": "Todas as cinco composições de corredor estão reprovadas.",
+  "acknowledgement": "A aprovação anterior foi precipitada: a revisão aceitou integridade técnica dos recortes sem exigir ritmo espacial, proporção, identidade e progressão visual suficientes.",
+  "method": "Reavaliação das cinco imagens inteiras e oito enquadramentos reais NTSC por fase, comparando aproximação, meio e chegada nas faixas superior e inferior. Sem alterar arte, geometria, objetivos ou ROM.",
+  "systemic_findings": [
+    "O padrão por regiões virou uma fórmula de duas bordas retas e um piso estreito comprido.",
+    "As alturas foram reduzidas a256/272px e as áreas jogáveis têm somente88–102px de profundidade.",
+    "Repetição domina silhueta e espaçamento, além dos materiais.",
+    "Objetos pequenos e isolados têm pouca relação com a arquitetura e a história.",
+    "Faltam alternância de largura, direções, bolsões, enquadramentos e marcos de progressão.",
+    "Passar nos testes de colisão, memória e objetivos não aprova composição visual."
+  ],
+  "correction_principles": [
+    "Projetar primeiro uma sequência de espaços com início, desenvolvimento e chegada.",
+    "Manter os comprimentos narrativos de2560/3072px e reestudar a profundidade do mundo antes de extrair arte.",
+    "Repetir materiais e módulos arquitetônicos completos, variando sua implantação e agrupamento.",
+    "Relacionar obstáculos às construções, à circulação e ao objetivo de cada setor.",
+    "Avaliar a sequência da câmera e o panorama inteiro antes da conversão final."
+  ],
+  "phases": [
+    {
+      "phase": "3",
+      "name": "Rua até o galpão",
+      "verdict": "Reprovada em composição visual",
+      "problem": "Uma fileira de casas iguais sobre uma pista laranja extensa. Cinco vans idênticas, espaçadas, produzem um slalom artificial.",
+      "findings": [
+        "Muro e vegetação repetidos dominam a faixa superior; a textura compete com a arquitetura.",
+        "A igreja tem peso e escala diferentes das pequenas casas repetidas.",
+        "O piso central tem pouca organização de rua além de uma calçada reta; não há sequência de quarteirões, esquina ou abertura de chegada.",
+        "Os veículos mudam a passagem, mas parecem obstáculos distribuídos por fórmula, sem relação convincente com entradas, estacionamento ou tráfego."
+      ],
+      "redesign_direction": "Redesenhar saída da igreja, trecho residencial e chegada ao galpão como três espaços conectados, com hierarquia, mudanças de largura e implantação plausível dos veículos.",
+      "native_size": [
+        2560,
+        256
+      ],
+      "playable_height": 88,
+      "static_collision_rectangles": 5,
+      "whole_scene": "../../maps/3-complete.png",
+      "evidence_board": "3-board.png"
+    },
+    {
+      "phase": "6A",
+      "name": "Esgotos: evacuação completa",
+      "verdict": "Reprovada em composição visual",
+      "problem": "Uma parede contínua e um piso repetido por3072px; três pequenos objetos não dão ritmo à escolta.",
+      "findings": [
+        "Arco inicial e saída são praticamente os únicos acontecimentos arquitetônicos.",
+        "Longos trechos de câmera mostram somente muro, tubulação e piso.",
+        "O mesmo valor e a mesma textura cobrem grande parte da tela, enfraquecendo personagens e pontos de interesse.",
+        "A faixa de circulação uniforme não cria bolsões de combate, pontos de cobertura ou transições reconhecíveis."
+      ],
+      "redesign_direction": "Compor galerias, curvas, cruzamentos e câmaras de manutenção conectadas, com canais e passarelas que organizem o caminho da escolta.",
+      "native_size": [
+        3072,
+        272
+      ],
+      "playable_height": 96,
+      "static_collision_rectangles": 3,
+      "whole_scene": "../../maps/6A-complete.png",
+      "evidence_board": "6A-board.png"
+    },
+    {
+      "phase": "6B",
+      "name": "Esgotos: perdas civis",
+      "verdict": "Reprovada em composição visual",
+      "problem": "As duas estações de pressão foram colocadas sobre o mesmo corredor vazio, sem organizar uma instalação convincente.",
+      "findings": [
+        "Entre os mecanismos, reaparece a extensa composição de muro e piso da6A.",
+        "Estrutura frontal, portão inclinado e caixas físicas não comunicam uma comporta única com clareza visual.",
+        "Acúmulo de setas e marcadores compete com a própria leitura do mecanismo.",
+        "As duas estações têm implantação quase idêntica e pouca preparação visual da aproximação."
+      ],
+      "redesign_direction": "Projetar duas câmaras de pressão completas, com entrada, válvula ligada à instalação, barreira atravessando a passagem e saída claramente revelada após a abertura.",
+      "native_size": [
+        3072,
+        272
+      ],
+      "playable_height": 96,
+      "static_collision_rectangles": 7,
+      "whole_scene": "../../maps/6B-complete.png",
+      "evidence_board": "6B-board.png"
+    },
+    {
+      "phase": "9",
+      "name": "Rua industrial",
+      "verdict": "Reprovada em composição visual",
+      "problem": "Pista cinza quase vazia diante de um paredão industrial. Quatro equipamentos pequenos ficam isolados por grandes distâncias.",
+      "findings": [
+        "O piso e a parede formam duas superfícies grandes sem hierarquia ou ritmo.",
+        "Os equipamentos têm presença pequena em relação à câmera e ao comprimento do percurso.",
+        "Várias telas mostram nenhum obstáculo ou estrutura singular no campo.",
+        "A aproximação da fábrica tem pouca construção visual entre início, meio e chegada."
+      ],
+      "redesign_direction": "Construir sequência de acesso industrial, docas/carga, pátio de máquinas e entrada da fábrica, com volumes inteiros, escala comum e circulação organizada por esses volumes.",
+      "native_size": [
+        2560,
+        256
+      ],
+      "playable_height": 102,
+      "static_collision_rectangles": 4,
+      "whole_scene": "../../maps/9-complete.png",
+      "evidence_board": "9-board.png"
+    },
+    {
+      "phase": "12",
+      "name": "Caminho do sindicato",
+      "verdict": "Reprovada em composição visual",
+      "problem": "Uma fachada de garagens repetidas, céu chapado e chão quase vazio. O cenário parece uma maquete comprida.",
+      "findings": [
+        "Três pequenos obstáculos ao longo de3072px deixam grandes trechos sem acontecimentos no campo.",
+        "As fachadas são pequenas e repetidas em intervalos rígidos; portas e telhados não estabelecem escala consistente com o ator.",
+        "Céu, fachada, chão e muro inferior viram quatro listras paralelas.",
+        "A chegada ao sindicato e a preparação da última incursão têm pouca ênfase espacial."
+      ],
+      "redesign_direction": "Separar oficinas, trecho de serviço do estaleiro e acesso ao sindicato em setores reconhecíveis; usar construções de escala coerente, mudanças de implantação e uma chegada com hierarquia.",
+      "native_size": [
+        3072,
+        272
+      ],
+      "playable_height": 96,
+      "static_collision_rectangles": 3,
+      "whole_scene": "../../maps/12-complete.png",
+      "evidence_board": "12-board.png"
+    }
+  ],
+  "production_rom_changed": false
+}

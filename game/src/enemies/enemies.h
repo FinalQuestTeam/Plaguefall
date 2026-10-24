@@ -124,6 +124,9 @@ extern const EnemyDef *const ENEMY_DEFS[ENEMY_TYPES];
 
 #define ENEMY_DEF(e)    (ENEMY_DEFS[(e)->type])
 #define ENEMY_SIZE(e)   (ENEMY_DEF(e)->size)
+// Yellow/purple logic runs in four cohorts; velocities/timers remain per frame.
+// Red, orange, targets and boss retain the full update rate.
+#define ENEMY_UPDATE_STEP(e) (((e)->type<12 && (((e)->type+1)&2)) ? 4 : 1)
 
 extern Enemy enemies[MAX_ENEMIES];
 

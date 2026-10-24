@@ -1,0 +1,243 @@
+{
+  "romSHA256": "ce8b35d9db76174d47a7c1bc8127c36893b54e2d6e336a1aa9b9b4b3e3a0dc82",
+  "passed": false,
+  "performanceTargetMet": false,
+  "productionROMModified": false,
+  "method": "Four-second steady warmup then1800physical VBlanks per case, ST_PLAY throughout, unchanged configured roster/caps, native cadence/cache preservation and controller patrol. Repeated real3s item grants retain HUD countdown. No death or transition tail.",
+  "performance": {
+    "ntsc": {
+      "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-ce8b35-moving/report.json",
+      "exitCode": 3,
+      "cases": [
+        {
+          "phase": "6B",
+          "policy": "native_cadence",
+          "roster": [
+            4,
+            5,
+            7
+          ],
+          "enemyCap": 3,
+          "shotCapPerPool": 4,
+          "physicalFrames": 1800,
+          "gameFrames": 1793,
+          "gameFPS": 59.76667,
+          "targetMet": false,
+          "meanCPULoadPct": 83.561,
+          "p95CPULoadPct": 86.67,
+          "maximumCPULoadPct": 88.477,
+          "cameraRange": [
+            [
+              0,
+              70
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "visibleEnemiesRange": [
+            3,
+            3
+          ],
+          "visibleProjectilesRange": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "satMaximumSampled": [
+            18,
+            6,
+            120
+          ]
+        },
+        {
+          "phase": "12",
+          "policy": "native_cadence",
+          "roster": [
+            4,
+            5,
+            2
+          ],
+          "enemyCap": 3,
+          "shotCapPerPool": 4,
+          "physicalFrames": 1800,
+          "gameFrames": 1789,
+          "gameFPS": 59.63333,
+          "targetMet": false,
+          "meanCPULoadPct": 78.838,
+          "p95CPULoadPct": 83.008,
+          "maximumCPULoadPct": 92.676,
+          "cameraRange": [
+            [
+              40,
+              80
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "visibleEnemiesRange": [
+            3,
+            3
+          ],
+          "visibleProjectilesRange": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "satMaximumSampled": [
+            18,
+            9,
+            152
+          ],
+          "missesWithinOneVBlankOfStateTransition": 11
+        }
+      ]
+    },
+    "pal": {
+      "evidence": "game/art/campaign-corridors-v3/corrections/performance/pal-ce8b35-moving/report.json",
+      "exitCode": 0,
+      "cases": [
+        {
+          "phase": "6B",
+          "policy": "native_cadence",
+          "roster": [
+            4,
+            5,
+            7
+          ],
+          "enemyCap": 3,
+          "shotCapPerPool": 4,
+          "physicalFrames": 1800,
+          "gameFrames": 1800,
+          "gameFPS": 50.0,
+          "targetMet": true,
+          "meanCPULoadPct": 58.239,
+          "p95CPULoadPct": 61.426,
+          "maximumCPULoadPct": 63.232,
+          "cameraRange": [
+            [
+              0,
+              66
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "visibleEnemiesRange": [
+            3,
+            3
+          ],
+          "visibleProjectilesRange": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "satMaximumSampled": [
+            17,
+            5,
+            112
+          ]
+        },
+        {
+          "phase": "12",
+          "policy": "native_cadence",
+          "roster": [
+            4,
+            5,
+            2
+          ],
+          "enemyCap": 3,
+          "shotCapPerPool": 4,
+          "physicalFrames": 1800,
+          "gameFrames": 1800,
+          "gameFPS": 50.0,
+          "targetMet": true,
+          "meanCPULoadPct": 53.346,
+          "p95CPULoadPct": 57.52,
+          "maximumCPULoadPct": 61.475,
+          "cameraRange": [
+            [
+              40,
+              78
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "visibleEnemiesRange": [
+            2,
+            3
+          ],
+          "visibleProjectilesRange": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "satMaximumSampled": [
+            18,
+            9,
+            152
+          ],
+          "missesWithinOneVBlankOfStateTransition": 0
+        }
+      ]
+    }
+  },
+  "pixelEquivalence": {
+    "ntsc": {
+      "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-ce8b35-ntsc/report.json",
+      "passed": true,
+      "cases": 37
+    },
+    "pal": {
+      "evidence": "game/art/campaign-corridors-v3/corrections/performance/hud-ce8b35-pal/report.json",
+      "passed": true,
+      "cases": 37
+    }
+  },
+  "residentVRAM": {
+    "ntsc": {
+      "evidence": "game/art/campaign-corridors-v3/corrections/performance/vram-ce8b35-ntsc/report.json",
+      "passed": true,
+      "samples": 44,
+      "exactCells": 90112
+    },
+    "pal": {
+      "evidence": "game/art/campaign-corridors-v3/corrections/performance/vram-ce8b35-pal/report.json",
+      "passed": true,
+      "samples": 44,
+      "exactCells": 90112
+    }
+  },
+  "limits": [
+    "Only critical6B/12 patrol timing measured for this candidate; no claim for all5corridors.",
+    "Dinorah held by diagnostic pause/invulnerability RAM flags; enemies preserve native firing/AI clocks and are HP-protected.",
+    "VRAM covers6A/6B/12; Santa hidden-floor overlay absent; no Vflip attrs present, Hflip observed in12."
+  ],
+  "expectedBanksSnapshot": "game/art/campaign-corridors-v3/corrections/performance/expected-ce8b35/provenance.json"
+}

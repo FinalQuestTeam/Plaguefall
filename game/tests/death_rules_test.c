@@ -14,7 +14,8 @@
 
 u16 fps=60;bool gameOver,arenaActive;
 s16 arenaMinX=8,arenaMinY=32,arenaMaxX=311,arenaMaxY=215;
-u8 currentLevel;
+u8 currentLevel, testStage;
+Enemy enemies[MAX_ENEMIES];
 PhaseStats phaseStats;
 FShot pshots[MAX_PSHOTS],eshots[MAX_ESHOTS];
 static LevelDef level;

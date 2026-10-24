@@ -1,0 +1,63 @@
+{
+  "tiles": 334,
+  "limit": 10000,
+  "lossy_tile_replacements": 0,
+  "maps": {
+    "workshop": {
+      "size": [
+        296,
+        160
+      ],
+      "sha256": "f52f75516c9eb8c8be3cb86e041223c8abe1541c92f7f87ac4e0e48d76698710",
+      "pixel_exact_reassembly": true
+    },
+    "annex": {
+      "size": [
+        160,
+        136
+      ],
+      "sha256": "93dace12e174c9f77da86d9841cb51f02b3a9f2c591e340c3607704aabfbed5c",
+      "pixel_exact_reassembly": true
+    },
+    "covered": {
+      "size": [
+        312,
+        160
+      ],
+      "sha256": "e01c91d38334854b80928753dd307c693f748276ec3cb8bb217ea822c97031d8",
+      "pixel_exact_reassembly": true
+    },
+    "lowdock": {
+      "size": [
+        248,
+        88
+      ],
+      "sha256": "f8a4a3b0c0d36f832ad6ca0c8115d09c4ec3f720dde563a8c55f7712143bd92a",
+      "pixel_exact_reassembly": true
+    },
+    "union": {
+      "size": [
+        304,
+        176
+      ],
+      "sha256": "79e9cd0e5764400c4a1f6fb5305d69f1084eb9a8c9de9b4bcf238d7f3c33b670",
+      "pixel_exact_reassembly": true
+    },
+    "wall": {
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "9f0889f31d8c6342992d92e834cad73e068755e55382a329595ae3b5e6d31f00",
+      "pixel_exact_reassembly": true
+    },
+    "bench": {
+      "size": [
+        72,
+        24
+      ],
+      "sha256": "7b9adc10f8a5325a806920f87be51eb74e9cd6740e431f24a007d7dde9d3fa2e",
+      "pixel_exact_reassembly": true
+    }
+  }
+}

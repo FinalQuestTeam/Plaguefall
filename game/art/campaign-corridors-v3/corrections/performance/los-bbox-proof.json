@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "rays": 4182976,
+  "containedSamples": 38755584,
+  "boundsImplications": 116266752,
+  "gateImplications": 232533504,
+  "SGDKDistanceExact": true,
+  "signedTruncation": true,
+  "negativeOriginsIncluded": true,
+  "cellSetContainment": true,
+  "method": "HostC signed truncation, exact SGDK distance, every admitted dx/dy and every original ray sample, representative negative/boundary/global origins; ASan/UBSan. No native68000timing claim.",
+  "productionClearShotSHA256": "bab14f30b8010b35a2031370441c2cba45d6379bc2844b5e075af87bf8d85744",
+  "sourceContracts": {
+    "shotBitsSubsetOfFootBits": "ARENA_configure always sets collisionRows and sets shotRows only under blocksShots",
+    "gateBoxMonotonic": "CR_OPS_blocked and CR_OPS_shotBlocked use same hp/ticks states and same strict-overlap rectangles; clearShot requests playerFALSE",
+    "boundsMonotonic": "Box inside feet bounds implies all contained8x8samples inside shot bounds; shot north bound is16pxmore permissive",
+    "negativeCoordinates": "Only containment is tested for negatives; occupied() is never called there because ARENA_blocked outside rejects first",
+    "training": "Fastpath is guarded by currentLevel, so training-only shot barriers remain on original sampler",
+    "fallback": "Any blocked AABB retains every original DIVS sample and side-effect-free playerFALSEgate visibility test"
+  },
+  "productionModified": false
+}

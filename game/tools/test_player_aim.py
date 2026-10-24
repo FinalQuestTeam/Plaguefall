@@ -31,6 +31,7 @@ void ARENA_move(s32 *,s32 *,s16,s16,u16);
     'system/audio/sfx.h': 'void SFX_playerHit(void);\n',
     'system/video/screens/hud.h': '#include <genesis.h>\nvoid HUD_drawLife(s16);\n',
     'actors/shots.h': 'void SHOTS_firePlayer(void);\n',
+    'levels/levels.h': '#include <genesis.h>\nextern u8 currentLevel, testStage;\n',
     'system/video/herogfx.h': '#include <genesis.h>\nu8 HERO_direction(s16,s16);\nvoid HERO_prepare(u8);\n',
 }
 TEST = r'''
@@ -42,6 +43,7 @@ TEST = r'''
 #include "core/stats.h"
 #include "system/video/herogfx.h"
 u16 fps; bool gameOver; PhaseStats phaseStats;
+u8 currentLevel=1, testStage;
 static unsigned shots,prepared; static s16 shotX,shotY;
 s16 ARENA_startX(void){return 100;} s16 ARENA_startY(void){return 100;}
 void ARENA_move(s32 *x,s32 *y,s16 dx,s16 dy,u16 size){(void)size;*x+=dx;*y+=dy;}

@@ -1,0 +1,681 @@
+{
+  "phase": "3",
+  "status": "candidate awaiting independent whole-map visual review",
+  "size": [
+    2560,
+    320
+  ],
+  "bounds": [
+    16,
+    80,
+    2543,
+    303
+  ],
+  "start": [
+    32,
+    184
+  ],
+  "solids": [
+    [
+      352,
+      128,
+      16,
+      192
+    ],
+    [
+      656,
+      128,
+      16,
+      192
+    ],
+    [
+      352,
+      288,
+      320,
+      32
+    ],
+    [
+      1648,
+      128,
+      16,
+      192
+    ],
+    [
+      1984,
+      128,
+      16,
+      192
+    ],
+    [
+      1648,
+      288,
+      352,
+      32
+    ],
+    [
+      48,
+      32,
+      200,
+      112
+    ],
+    [
+      416,
+      144,
+      192,
+      112
+    ],
+    [
+      800,
+      32,
+      160,
+      112
+    ],
+    [
+      1248,
+      32,
+      192,
+      112
+    ],
+    [
+      1712,
+      144,
+      240,
+      112
+    ],
+    [
+      2288,
+      32,
+      240,
+      128
+    ],
+    [
+      1312,
+      160,
+      96,
+      56
+    ],
+    [
+      2224,
+      176,
+      40,
+      40
+    ],
+    [
+      0,
+      0,
+      320,
+      32
+    ],
+    [
+      320,
+      0,
+      432,
+      32
+    ],
+    [
+      752,
+      0,
+      256,
+      32
+    ],
+    [
+      1008,
+      32,
+      192,
+      32
+    ],
+    [
+      1200,
+      0,
+      352,
+      32
+    ],
+    [
+      1552,
+      0,
+      496,
+      32
+    ],
+    [
+      2048,
+      32,
+      128,
+      32
+    ],
+    [
+      2176,
+      0,
+      384,
+      32
+    ],
+    [
+      352,
+      128,
+      16,
+      32
+    ],
+    [
+      608,
+      128,
+      64,
+      32
+    ],
+    [
+      1648,
+      128,
+      16,
+      32
+    ],
+    [
+      1952,
+      128,
+      48,
+      32
+    ]
+  ],
+  "route_points": [
+    [
+      40,
+      192
+    ],
+    [
+      336,
+      192
+    ],
+    [
+      336,
+      104
+    ],
+    [
+      704,
+      104
+    ],
+    [
+      704,
+      208
+    ],
+    [
+      1168,
+      208
+    ],
+    [
+      1168,
+      232
+    ],
+    [
+      1608,
+      232
+    ],
+    [
+      1608,
+      104
+    ],
+    [
+      2080,
+      104
+    ],
+    [
+      2080,
+      208
+    ],
+    [
+      2168,
+      208
+    ],
+    [
+      2168,
+      240
+    ],
+    [
+      2440,
+      240
+    ],
+    [
+      2440,
+      208
+    ]
+  ],
+  "player_waypoints": [
+    [
+      32,
+      184
+    ],
+    [
+      328,
+      184
+    ],
+    [
+      328,
+      96
+    ],
+    [
+      696,
+      96
+    ],
+    [
+      696,
+      200
+    ],
+    [
+      1160,
+      200
+    ],
+    [
+      1160,
+      224
+    ],
+    [
+      1600,
+      224
+    ],
+    [
+      1600,
+      96
+    ],
+    [
+      2072,
+      96
+    ],
+    [
+      2072,
+      200
+    ],
+    [
+      2160,
+      200
+    ],
+    [
+      2160,
+      232
+    ],
+    [
+      2432,
+      232
+    ],
+    [
+      2432,
+      200
+    ]
+  ],
+  "route_margin": 8,
+  "route_validation": {
+    "footprint": [
+      16,
+      16
+    ],
+    "grid_step": 8,
+    "walk_samples": 365,
+    "all_samples_clear_with_margin": true,
+    "movement": "axis-aligned segments; intermediate 8px samples validated"
+  },
+  "exit": [
+    2384,
+    176,
+    112,
+    80
+  ],
+  "camera_player_y": 200,
+  "camera_interest": [
+    {
+      "id": "church-48",
+      "bbox": [
+        48,
+        32,
+        200,
+        112
+      ],
+      "player_feet": [
+        136,
+        176
+      ],
+      "camera": [
+        0,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD."
+    },
+    {
+      "id": "market-416",
+      "bbox": [
+        416,
+        144,
+        192,
+        112
+      ],
+      "player_feet": [
+        496,
+        264
+      ],
+      "camera": [
+        344,
+        96
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD."
+    },
+    {
+      "id": "house-800",
+      "bbox": [
+        800,
+        32,
+        160,
+        112
+      ],
+      "player_feet": [
+        872,
+        176
+      ],
+      "camera": [
+        720,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD."
+    },
+    {
+      "id": "garage-1248",
+      "bbox": [
+        1248,
+        32,
+        192,
+        112
+      ],
+      "player_feet": [
+        1280,
+        160
+      ],
+      "camera": [
+        1128,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD."
+    },
+    {
+      "id": "garage-1712",
+      "bbox": [
+        1712,
+        144,
+        240,
+        112
+      ],
+      "player_feet": [
+        1824,
+        264
+      ],
+      "camera": [
+        1672,
+        96
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD."
+    },
+    {
+      "id": "warehouse-2288",
+      "bbox": [
+        2288,
+        32,
+        240,
+        128
+      ],
+      "player_feet": [
+        2400,
+        176
+      ],
+      "camera": [
+        2240,
+        8
+      ],
+      "purpose": "Entire building silhouette, base and door visible below reserved HUD."
+    }
+  ],
+  "church_bbox": [
+    48,
+    32,
+    200,
+    112
+  ],
+  "church_original_bbox": [
+    16,
+    0,
+    200,
+    112
+  ],
+  "church_identity": {
+    "intact_source": "../../../campaign-pattern-v2/early/01-courtyard/complete-native.png",
+    "damaged_source": "../../../campaign-pattern-v2/early/01-courtyard/damaged-native.png",
+    "exact_pixels_both_states": true
+  },
+  "sources": [
+    "source/whole-folded-cycle2.png",
+    "source/whole-folded-cycle3.png",
+    "source/truck-extracted.png"
+  ],
+  "complete": "native/complete.png",
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "damaged_native": {
+    "complete": "damaged-native/complete.png",
+    "tiles": "damaged-native/tiles.bin",
+    "map": "damaged-native/map.bin",
+    "palette": "damaged-native/palette.bin"
+  },
+  "memory": {
+    "scene_tiles": 624,
+    "objective_tiles": 0,
+    "total_tiles": 624,
+    "budget": 640,
+    "tile_bytes": 19968,
+    "map_bytes": 25600,
+    "palette_bytes": 32,
+    "exact_flip_reuse": 12176,
+    "pixel_identical_decode": true,
+    "sha256": "04bf8dfd7195ba38b1f032dfc186a86695331bcb41678a730dda3e3705264e02"
+  },
+  "special_states": [
+    {
+      "state": "church destroyed by bomb in phase1",
+      "path": "damaged-native/complete.png",
+      "memory": {
+        "scene_tiles": 640,
+        "objective_tiles": 0,
+        "total_tiles": 640,
+        "budget": 640,
+        "tile_bytes": 20480,
+        "map_bytes": 25600,
+        "palette_bytes": 32,
+        "exact_flip_reuse": 12160,
+        "pixel_identical_decode": true,
+        "sha256": "c3839876b7ca7fa097adc0d2251b46e20d837d30ef3909a661913d94188e09a1"
+      }
+    }
+  ],
+  "palette": {
+    "index0": "black",
+    "colors": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        36,
+        36,
+        36
+      ],
+      [
+        36,
+        36,
+        72
+      ],
+      [
+        36,
+        72,
+        109
+      ],
+      [
+        72,
+        109,
+        145
+      ],
+      [
+        72,
+        109,
+        72
+      ],
+      [
+        109,
+        109,
+        36
+      ],
+      [
+        109,
+        72,
+        36
+      ],
+      [
+        145,
+        109,
+        72
+      ],
+      [
+        182,
+        145,
+        72
+      ],
+      [
+        218,
+        182,
+        109
+      ],
+      [
+        218,
+        145,
+        72
+      ],
+      [
+        182,
+        72,
+        36
+      ],
+      [
+        109,
+        36,
+        0
+      ],
+      [
+        218,
+        218,
+        182
+      ],
+      [
+        255,
+        255,
+        218
+      ]
+    ],
+    "encoding": "RGB333 16 entries, big-endian Mega Drive words"
+  },
+  "layout": "layout.svg",
+  "module_trace": "draft/modules.json",
+  "engineering_notes": [
+    "Curbs are low walkable pavement edges; green garden material is walkable unless bounded by listed walls/buildings.",
+    "All visible buildings, perimeter wall segments, truck and barrel pair have solid footprints. Full projected building bboxes are conservative to keep baked background architecture in front of the player.",
+    "Shared roofs/plaster/frames/slats retain their material; complete doors, canopy ends, garage jambs and church are never approximated by similar tiles.",
+    "RGBA truck/barrels composited in RGB against actual ground before nearest palette conversion, avoiding palette-index alpha interpolation.",
+    "Camera views are composed native previews with existing hero sprite, not emulator screenshots; runtime confirmation belongs to root."
+  ],
+  "critical_review": {
+    "improvements": [
+      "Street bends around north/south parcels; church plaza, market block, workshop and arrival forecourt are distinct spaces.",
+      "South facades retain their full base; all six principal buildings have complete legal camera previews.",
+      "Church is pixel-identical in both conditions; no roof/bush crop replacement."
+    ],
+    "limitations": [
+      "Repeated roof grammar and quiet flat road are deliberate memory tradeoffs; independent visual reviewer must decide whether parcel rhythm remains too regular.",
+      "Damaged bank uses all640tiles, leaving no room for additional background art.",
+      "Whole-scene source is decomposed into shared architectural materials and complete openings; final native panorama is not a literal downscale of the source."
+    ]
+  },
+  "global_connectivity": {
+    "0": {
+      "free_positions": 6183,
+      "connected_to_start": 6183,
+      "unreachable": 0
+    },
+    "8": {
+      "free_positions": 5042,
+      "connected_to_start": 5042,
+      "unreachable": 0
+    }
+  },
+  "southern_parcels": {
+    "closed_to_bottom": [
+      [
+        352,
+        128,
+        320,
+        192
+      ],
+      [
+        1648,
+        128,
+        352,
+        192
+      ]
+    ],
+    "northwest_openings": [
+      [
+        368,
+        128,
+        48,
+        32
+      ],
+      [
+        1664,
+        128,
+        48,
+        32
+      ]
+    ],
+    "walls": [
+      [
+        352,
+        128,
+        16,
+        192
+      ],
+      [
+        656,
+        128,
+        16,
+        192
+      ],
+      [
+        352,
+        288,
+        320,
+        32
+      ],
+      [
+        1648,
+        128,
+        16,
+        192
+      ],
+      [
+        1984,
+        128,
+        16,
+        192
+      ],
+      [
+        1648,
+        288,
+        352,
+        32
+      ]
+    ],
+    "inner_yards_connected": true,
+    "floor_y280_is_not_a_straight_bypass": true
+  }
+}

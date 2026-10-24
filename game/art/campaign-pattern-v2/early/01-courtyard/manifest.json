@@ -1,0 +1,394 @@
+{
+  "phase": "1",
+  "node": 1,
+  "name": "Pátio da igreja · padrão por faixas",
+  "goal": "Sobreviver90s; um tipo de inimigo; evacuação pelo portão superior",
+  "size": [
+    512,
+    384
+  ],
+  "bounds": [
+    24,
+    128,
+    487,
+    351
+  ],
+  "solids": [
+    [
+      88,
+      184,
+      72,
+      40,
+      false
+    ],
+    [
+      136,
+      288,
+      72,
+      40,
+      false
+    ],
+    [
+      392,
+      264,
+      40,
+      40,
+      false
+    ]
+  ],
+  "start": [
+    256,
+    160
+  ],
+  "complete": "complete-native.png",
+  "background": "complete-native.png",
+  "objects": [],
+  "special_states": [
+    {
+      "label": "Igreja danificada",
+      "path": "damaged-native.png"
+    }
+  ],
+  "placements": [
+    {
+      "module": "floor",
+      "position": [
+        0,
+        0
+      ],
+      "area": [
+        512,
+        384
+      ],
+      "repeat": "xy"
+    },
+    {
+      "module": "upper-vegetation",
+      "position": [
+        0,
+        0
+      ],
+      "area": [
+        512,
+        48
+      ],
+      "repeat": "x"
+    },
+    {
+      "module": "upper-wall",
+      "position": [
+        16,
+        48
+      ],
+      "area": [
+        480,
+        56
+      ],
+      "repeat": "x"
+    },
+    {
+      "module": "church",
+      "position": [
+        16,
+        0
+      ],
+      "size": [
+        200,
+        112
+      ]
+    },
+    {
+      "module": "evacuation-gate",
+      "position": [
+        368,
+        48
+      ],
+      "size": [
+        120,
+        56
+      ]
+    },
+    {
+      "module": "side-left",
+      "position": [
+        0,
+        112
+      ],
+      "area": [
+        16,
+        240
+      ],
+      "repeat": "y"
+    },
+    {
+      "module": "side-right",
+      "position": [
+        496,
+        112
+      ],
+      "area": [
+        16,
+        240
+      ],
+      "repeat": "y"
+    },
+    {
+      "module": "lower-wall",
+      "position": [
+        24,
+        352
+      ],
+      "area": [
+        464,
+        32
+      ],
+      "repeat": "x"
+    },
+    {
+      "module": "lower-post",
+      "position": [
+        208,
+        352
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "lower-post",
+      "position": [
+        280,
+        352
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "corner-left",
+      "position": [
+        0,
+        352
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "corner-right",
+      "position": [
+        488,
+        352
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "bench",
+      "position": [
+        88,
+        184
+      ],
+      "size": [
+        72,
+        40
+      ]
+    },
+    {
+      "module": "bench",
+      "position": [
+        136,
+        288
+      ],
+      "size": [
+        72,
+        40
+      ]
+    },
+    {
+      "module": "barrels",
+      "position": [
+        392,
+        264
+      ],
+      "size": [
+        40,
+        40
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "church",
+      "region": "upper",
+      "size": [
+        200,
+        112
+      ],
+      "path": "modules/church.png",
+      "origin": "existing phase1, complete church x16..215",
+      "repeat": "none"
+    },
+    {
+      "id": "upper-vegetation",
+      "region": "upper",
+      "size": [
+        16,
+        48
+      ],
+      "path": "modules/upper-vegetation.png",
+      "origin": "existing phase1, repeatable background material",
+      "repeat": "x"
+    },
+    {
+      "id": "upper-wall",
+      "region": "upper",
+      "size": [
+        16,
+        56
+      ],
+      "path": "modules/upper-wall.png",
+      "origin": "existing phase1, full height of the repeatable wall material",
+      "repeat": "x"
+    },
+    {
+      "id": "evacuation-gate",
+      "region": "upper",
+      "size": [
+        120,
+        56
+      ],
+      "path": "modules/evacuation-gate.png",
+      "origin": "existing phase1, whole gate and posts",
+      "repeat": "none"
+    },
+    {
+      "id": "side-left",
+      "region": "sides",
+      "size": [
+        16,
+        32
+      ],
+      "path": "modules/side-left.png",
+      "origin": "whole generated scene, straight left wall",
+      "repeat": "y"
+    },
+    {
+      "id": "side-right",
+      "region": "sides",
+      "size": [
+        16,
+        32
+      ],
+      "path": "modules/side-right.png",
+      "origin": "whole generated scene, straight right wall",
+      "repeat": "y"
+    },
+    {
+      "id": "lower-wall",
+      "region": "lower",
+      "size": [
+        16,
+        32
+      ],
+      "path": "modules/lower-wall.png",
+      "origin": "whole generated scene, complete wall height",
+      "repeat": "x"
+    },
+    {
+      "id": "lower-post",
+      "region": "lower",
+      "size": [
+        24,
+        32
+      ],
+      "path": "modules/lower-post.png",
+      "origin": "whole generated scene, whole post",
+      "repeat": "none"
+    },
+    {
+      "id": "corner-left",
+      "region": "lower",
+      "size": [
+        24,
+        32
+      ],
+      "path": "modules/corner-left.png",
+      "origin": "whole generated scene, complete bottom-left junction",
+      "repeat": "none"
+    },
+    {
+      "id": "corner-right",
+      "region": "lower",
+      "size": [
+        24,
+        32
+      ],
+      "path": "modules/corner-right.png",
+      "origin": "whole generated scene, complete bottom-right junction",
+      "repeat": "none"
+    },
+    {
+      "id": "floor",
+      "region": "field",
+      "size": [
+        32,
+        32
+      ],
+      "path": "modules/floor.png",
+      "origin": "whole generated scene, quiet earth material",
+      "repeat": "xy"
+    },
+    {
+      "id": "bench",
+      "region": "field",
+      "size": [
+        72,
+        40
+      ],
+      "path": "modules/bench.png",
+      "origin": "whole generated scene, complete first bench including contact shadow",
+      "repeat": "none"
+    },
+    {
+      "id": "barrels",
+      "region": "field",
+      "size": [
+        40,
+        40
+      ],
+      "path": "modules/barrels.png",
+      "origin": "whole generated scene, complete pair of barrels and contact shadow",
+      "repeat": "none"
+    }
+  ],
+  "memory": {
+    "unique_tiles": 636,
+    "budget": 640,
+    "graphic_bytes": 20352,
+    "budget_bytes": 20480,
+    "free_tiles": 4,
+    "tilemap_bytes_per_state": 6144,
+    "palette_bytes": 32,
+    "states": 2,
+    "exact_tile_reassembly": true,
+    "lossy_tile_replacements": 0
+  },
+  "geometry": {
+    "footprint": [
+      16,
+      16
+    ],
+    "free_sampled_positions": 1383,
+    "connected_positions": 1383,
+    "connected": true
+  },
+  "production_rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+  "status": "candidate_for_user_review",
+  "scope": "Production integration of church phases;3field objects preserve an open evacuation lane"
+}

@@ -1,0 +1,966 @@
+{
+  "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+  "scope": "Todas as19variantes de campanha; inclui1,2A,2B e5 como referências preservadas.",
+  "review_type": "Revisão manual de composição; evidências de playtests previamente gravados nestaROM. Os rótulos são julgamento de design, não resultados automáticos nem validação com jogadores externos.",
+  "criteria": [
+    "Cores e separação entre fundo, piso, personagens e objetivos",
+    "Profundidade e integração dos recortes",
+    "Escala, perspectiva e densidade de pixels",
+    "Repetição e marcos de orientação",
+    "Enquadramento inicial e durante movimentação",
+    "Legibilidade do objetivo de cada fase e de seus estados"
+  ],
+  "counts": {
+    "ressalvas": 6,
+    "reprovada": 8,
+    "ajustes": 5
+  },
+  "evidence_frames": 82,
+  "runtime_or_art_changed": false,
+  "variants": [
+    {
+      "phase": "1",
+      "name": "Pátio da igreja",
+      "goal": "Sobreviver 90 s",
+      "group": "early",
+      "native": "maps/1.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/1-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/01-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "36f4ecd8f6510541b47e9b109b08b25b29582f528f50f15be2c5e56ddbefaaf3"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/1-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/01-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/1-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/01-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/1-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/01-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "36f4ecd8f6510541b47e9b109b08b25b29582f528f50f15be2c5e56ddbefaaf3"
+        }
+      ],
+      "status": "ressalvas",
+      "priority": "P2",
+      "strength": "Igreja, muro e portão estabelecem o lugar; o espaço aberto atende à fase introdutória.",
+      "findings": [
+        "O enquadramento inicial mostra apenas parte da igreja; ao descer, a arquitetura desaparece e resta quase só o piso.",
+        "A textura do chão se repete e há pouca indicação visual do trajeto de evacuação."
+      ],
+      "correction": "Preservar o cenário aprovado. Revisar o enquadramento inicial e tornar a saída dos civis um ponto de atenção no perímetro, mantendo o centro livre.",
+      "acceptance": "No início, reconhecer igreja e portão; no combate, localizar o herói sem acrescentar decoração ao espaço de esquiva.",
+      "status_label": "Aceitável com ressalvas"
+    },
+    {
+      "phase": "2A",
+      "name": "Igreja preservada",
+      "goal": "Eliminar 15 insetos",
+      "group": "early",
+      "native": "maps/2A.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/2A-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "cd58ec782598f6bd3eb78f0ccd905531d7c1d1100d90787bf6083c0aadb4cf72"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/2A-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02A-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/2A-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02A-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/2A-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/02A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "cd58ec782598f6bd3eb78f0ccd905531d7c1d1100d90787bf6083c0aadb4cf72"
+        }
+      ],
+      "status": "ressalvas",
+      "priority": "P2",
+      "strength": "A continuidade com o pátio da primeira fase é clara.",
+      "findings": [
+        "A reutilização praticamente integral comunica pouco a mudança de situação.",
+        "Quando a câmera se afasta da borda norte, a preservação da igreja deixa de ser visível."
+      ],
+      "correction": "Manter arte aprovada; reforçar a apresentação da igreja intacta e a leitura do novo inimigo por silhueta e sinal de ataque.",
+      "acceptance": "A igreja preservada deve ser reconhecida na apresentação da fase; o atirador deve se diferenciar durante a ação.",
+      "status_label": "Aceitável com ressalvas"
+    },
+    {
+      "phase": "2B",
+      "name": "Igreja destruída",
+      "goal": "Eliminar 15 insetos; entulho sólido",
+      "group": "early",
+      "native": "maps/2B.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/2B-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "14777e3f95a05d36b989c5251e67c50a1c86898531f6d5ce824ded460bd6343c"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/2B-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02B-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/2B-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/02B-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/2B-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/02B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "14777e3f95a05d36b989c5251e67c50a1c86898531f6d5ce824ded460bd6343c"
+        }
+      ],
+      "status": "ressalvas",
+      "priority": "P2",
+      "strength": "Ruína e entulho diferenciam a consequência da bomba.",
+      "findings": [
+        "Entulhos compartilham cores do chão, reduzindo a leitura dos volumes que bloqueiam os pés.",
+        "A destruição fica no topo e pode sair do enquadramento durante o combate.",
+        "A ruína é parcial: grande parte do telhado permanece inteira. A intensidade da consequência precisa corresponder à apresentação narrativa."
+      ],
+      "correction": "Preservar a composição aprovada; reforçar contorno/sombra dos sólidos e apresentar a ruína antes da luta.",
+      "acceptance": "As pilhas sólidas devem ser distinguíveis das manchas decorativas, sem aumentar o ruído do piso.",
+      "status_label": "Aceitável com ressalvas"
+    },
+    {
+      "phase": "3",
+      "name": "Rua ao galpão",
+      "goal": "Percorrer 2560 px com desvios e cobertura",
+      "group": "early",
+      "native": "../campaign-whole-scenes-v1/early/03-street/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/3-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "442677a59518f248b729724ca94a2d3b4dc58460a2761d7b6b7ca0a646612f1f"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/3-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/3-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/3-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/03-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "442677a59518f248b729724ca94a2d3b4dc58460a2761d7b6b7ca0a646612f1f"
+        },
+        {
+          "label": "special-0",
+          "path": "frames/3-special-0.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/03-church-ruined.png",
+          "method": "existing emulator PNG",
+          "sha256": "cdd48c7ea8c8fc218852f102f2bb6a616ffd4d6a88008bc26f506a4c810e3c95"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P0",
+      "strength": "A igreja reaproveita a referência original e há quatro desvios principais.",
+      "findings": [
+        "A faixa atrás dos telhados repete uma textura de chão em verde/laranja; parece terreno subindo e não um fundo distante.",
+        "Casas idênticas, igreja mais detalhada e veículos reduzidos com pouca definição quebram a consistência de escala e pixels.",
+        "Chão quase uniforme e repetição das fachadas deixam trechos visualmente vazios; o caminho testado tem um trecho final reto de cerca de 700 px."
+      ],
+      "correction": "Recompor o quarteirão com fundo menos contrastado, muros/quintais/vegetação localizada e três ou quatro fachadas coerentes. Redesenhar a silhueta das barricadas e destacar o galpão na chegada.",
+      "acceptance": "Em entrada, meio e chegada, fundo separado do caminho, obstáculos reconhecíveis e um marco urbano identificável; a igreja mantém a referência.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "4",
+      "name": "Interior do galpão",
+      "goal": "Eliminar 20 insetos",
+      "group": "early",
+      "native": "../campaign-whole-scenes-v1/early/04-warehouse/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/4-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/04-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "35c7000ae7a8edb7a42d0cac8eb80f6f58843061f88ad43e67e26b69ad349f39"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/4-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/04-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/4-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/04-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/4-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/04-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "35c7000ae7a8edb7a42d0cac8eb80f6f58843061f88ad43e67e26b69ad349f39"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P1",
+      "strength": "Paredes, prateleiras e portão estabelecem um interior de galpão no mapa completo.",
+      "findings": [
+        "No enquadramento inicial, janelas e parte importante da parede ficam cortadas; ao mover, a fase volta a parecer um piso com caixas.",
+        "Grande área ocre quase lisa, caixas muito detalhadas e carrinho pouco definido não têm a mesma densidade visual.",
+        "As bordas dos recortes das caixas/carrinho deixam manchas de material diferentes do piso simplificado."
+      ],
+      "correction": "Recompor o piso e a integração dos objetos a partir de uma única linguagem de materiais. Enquadrar o portão e usar pilares/racks do perímetro como contexto visível.",
+      "acceptance": "Reconhecer o galpão em todos os três enquadramentos sem depender de uma caixa isolada; nenhum retângulo ou halo de piso recortado ao redor dos objetos.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "5",
+      "name": "Sinal na Santa",
+      "goal": "Proteger 120 s",
+      "group": "early",
+      "native": "maps/5.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/5-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/05-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "7cadf56eb29f377a5237b26d6e77f54206edfe76154653a27691ce22bf98ca21"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/5-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/05-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/5-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/early/ntsc/05-playtest-1.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/5-pal-entry.png",
+          "source": "art/campaign-integrated-v1/early/pal/05-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "7cadf56eb29f377a5237b26d6e77f54206edfe76154653a27691ce22bf98ca21"
+        }
+      ],
+      "status": "ressalvas",
+      "priority": "P2",
+      "strength": "A Santa e o círculo de proteção criam o foco mais claro entre as missões de defesa.",
+      "findings": [
+        "Piso texturado e várias setas competem entre si; a fachada do galpão aparece pouco nos enquadramentos inferiores.",
+        "O destaque amarelo do objetivo é eficaz, mas parte da sinalização é redundante."
+      ],
+      "correction": "Preservar o cenário aprovado e o foco na Santa; reduzir sinalização redundante e manter uma vista de contexto do galpão na apresentação.",
+      "acceptance": "A Santa permanece localizável com combate ativo, sem confundir os marcadores com projéteis ou inimigos.",
+      "status_label": "Aceitável com ressalvas"
+    },
+    {
+      "phase": "6A",
+      "name": "Esgotos",
+      "goal": "Escolta 3072 px",
+      "group": "escorts",
+      "native": "../campaign-whole-scenes-v1/routes/06a-native-complete.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/6A-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06a-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "ccbb7ccfe57bb9a758b5b14cf883b1a4fe85993e98219b1853d2a74e4827105b"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/6A-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06a-meio.png",
+          "method": "existing emulator PNG",
+          "sha256": "437d4cba84216043b91e150c101695f99b78dd2f91e68827453168f878d3b794"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/6A-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06a-saida.png",
+          "method": "existing emulator PNG",
+          "sha256": "fcbbb3a6cdce8f79fb0b9d93324983e1bb258e4c89063a647be7006a7c9eb4f1"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/6A-pal-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/pal/06a-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "b68ce1f079054cfb169e8c7da6abd99c2a170d5bd69eb356b5eccb4f95874fda"
+        }
+      ],
+      "status": "ajustes",
+      "priority": "P1",
+      "strength": "Arcos, canais e tubulações formam um esgoto reconhecível; a paleta não apresenta os buracos pretos do diagnóstico anterior.",
+      "findings": [
+        "O piso apresenta uma grade muito repetida e forte; detalhes da parede competem com os personagens escuros.",
+        "As baias se repetem por grande parte do percurso, com poucos marcos para indicar avanço."
+      ],
+      "correction": "Acalmar o piso, reduzir contraste dos detalhes de fundo e criar setores reconhecíveis de drenagem/inspeção. Melhorar separação entre Dinorah e a parede.",
+      "acceptance": "Herói e Dinorah distinguíveis sem depender apenas da barra amarela; entrada, meio e saída reconhecíveis pelo cenário.",
+      "status_label": "Precisa de ajustes"
+    },
+    {
+      "phase": "6B",
+      "name": "Esgotos sob pressão",
+      "goal": "Escolta 3072 px;2 válvulas e 2 portões",
+      "group": "escorts",
+      "native": "../campaign-whole-scenes-v1/routes/06b-native-complete.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/6B-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "818b07555bc1ee3155ff183f139f6c5817f050bc31c28dddbbe3504b40c5e0a0"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/6B-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-meio.png",
+          "method": "existing emulator PNG",
+          "sha256": "838649becc4b8c16b715c3b01f17ce05f76c6c8bf11669255ebbb4a895159767"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/6B-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-saida.png",
+          "method": "existing emulator PNG",
+          "sha256": "497a67b098dbb5c67832d6327eae52084713a05921c8218ce1cc7d0f9e9ec5b7"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/6B-pal-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/pal/06b-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "422da6fd686500036014d0cc5a9cc3a7c84e8ea3c831fd0fbdcc13da900f96db"
+        },
+        {
+          "label": "special-0",
+          "path": "frames/6B-special-0.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-aberto.png",
+          "method": "existing emulator PNG",
+          "sha256": "4a2e42e7e40f464e40e8f47a8450d021b8fd8b076c48d275fd1e9da68079671b"
+        },
+        {
+          "label": "special-1",
+          "path": "frames/6B-special-1.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-1-fechado.png",
+          "method": "existing emulator PNG",
+          "sha256": "060ee32a67d22629d546bc1db4e7a2bb09315c5deee8eb3ced01e4023d37e563"
+        },
+        {
+          "label": "special-2",
+          "path": "frames/6B-special-2.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-aberto.png",
+          "method": "existing emulator PNG",
+          "sha256": "41167dac786d981a56d59bbf409a47158e64f6eb5bba34f2c3545f26a8ef75a1"
+        },
+        {
+          "label": "special-3",
+          "path": "frames/6B-special-3.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/06b-portao-2-fechado.png",
+          "method": "existing emulator PNG",
+          "sha256": "db5d1df2f198c1460219fd9da601195473649a0ec87b7a7485bc3e005c961bf4"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P0",
+      "strength": "A arquitetura de esgoto e a sequência de passagem estão presentes.",
+      "findings": [
+        "O piso arroxeado e o padrão diagonal não mantêm a família de materiais da 6A.",
+        "Nos quadros dos portões fechados, a barreira se lê como postes/linhas muito finas; a válvula depende do número/marcador para ser reconhecida.",
+        "A relação entre portão, parede, tubulação e área de operação não fica evidente no espaço."
+      ],
+      "correction": "Unificar os materiais com 6A. Compor cada portão como uma abertura arquitetônica completa e conectar visualmente a válvula à tubulação; distinguir fechado, liberado e destruído.",
+      "acceptance": "Com HUD e números ocultos, identificar o portão fechado, a válvula e a passagem liberada nos quadros de interação.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "7",
+      "name": "Abrigo O Último Chão",
+      "goal": "Transportar 5 cargas",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/7-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/7-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "94231cf86a6f0a7fe9cdfa0df7868961e85c8c20d7c9e1e2eb99c91567fc57f4"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/7-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/7-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/7-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/7-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/7-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/7-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "94231cf86a6f0a7fe9cdfa0df7868961e85c8c20d7c9e1e2eb99c91567fc57f4"
+        }
+      ],
+      "status": "ajustes",
+      "priority": "P1",
+      "strength": "Casas, escadas e barricadas definem uma área residencial com rotas de transporte.",
+      "findings": [
+        "O piso tem manchas pequenas repetidas, e as portas azuis/laranjas do fundo atraem mais atenção que as cargas.",
+        "As cargas amarelo-marrons e o depósito marcado apenas com D têm pouca identidade própria em meio aos insetos."
+      ],
+      "correction": "Reduzir o ruído do solo e fortalecer silhueta de caixa/suprimento. Dar ao depósito uma estrutura reconhecível e um ponto de entrega coerente com o abrigo.",
+      "acceptance": "Distinguir carga, item carregado e depósito sem leitura das letras; manter livre a leitura das rotas entre barricadas.",
+      "status_label": "Precisa de ajustes"
+    },
+    {
+      "phase": "8",
+      "name": "Transmissores",
+      "goal": "Eliminar 3 prioritários",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/favela/map-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/8-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/8-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "b07e2f9428871f36714190da08d8b93763a549ee5dc3f0db1bfae3babb8de3ed"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/8-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/8-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/8-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/8-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/8-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/8-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "b07e2f9428871f36714190da08d8b93763a549ee5dc3f0db1bfae3babb8de3ed"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P0",
+      "strength": "Reutilizar a favela mantém a continuidade narrativa da base comprometida.",
+      "findings": [
+        "Os alvos prioritários e os insetos comuns compartilham tons e formas, e o piso texturado reduz sua separação.",
+        "A composição não destaca visualmente os emissores como origem do enxame; o objetivo depende demais do HUD."
+      ],
+      "correction": "Dar aos alvos prioritários silhueta e sinal de emissão próprios, com apoio visual no cenário. Acalmar o solo e reduzir a competição das fachadas.",
+      "acceptance": "Em uma captura de combate sem textos, apontar os alvos prioritários e diferenciá-los dos insetos comuns.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "9",
+      "name": "Caminho da fábrica",
+      "goal": "Percorrer 2560 px",
+      "group": "factory",
+      "native": "../campaign-whole-scenes-v1/factory/street-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/9-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/9-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f2ad20aa4435589810de86f2c96ef48135b8a85269d479f8274b77ddf2171a57"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/9-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/9-camera-middle.png",
+          "method": "existing emulator PNG",
+          "sha256": "66467c8f1c408ac1135b1377a35a683791aaa735139512e1b7b2513f3cfcfe33"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/9-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/9-camera-exit.png",
+          "method": "existing emulator PNG",
+          "sha256": "ad58d048cf9c331d8b68172a28010853acaeed0f85f414422b79ab2903fab560"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/9-pal-entry.png",
+          "source": "art/campaign-integrated-v1/factory/pal/9-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f2ad20aa4435589810de86f2c96ef48135b8a85269d479f8274b77ddf2171a57"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P1",
+      "strength": "Pista, fachadas industriais e pórtico final identificam o destino fabril.",
+      "findings": [
+        "Entrada e meio têm a mesma fachada e a mesma seção de pista, com pouca mudança de composição.",
+        "A geometria atual registra street_solids=[]: a faixa caminhável é um corredor livre, apesar do contexto de abrir caminho.",
+        "A passagem ao azul da pista é brusca em relação à rua anterior; falta uma transição de materiais contextualizada."
+      ],
+      "correction": "Dividir a aproximação em setores industriais reconhecíveis e compor obstáculos funcionais ligados ao cenário. Antecipar o pórtico da fábrica como marco de chegada e justificar os materiais da pista.",
+      "acceptance": "Entrada, meio e chegada diferentes à primeira vista; obstáculos visíveis correspondem ao percurso; o pórtico é reconhecido antes da saída.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "10",
+      "name": "Ovos na fábrica",
+      "goal": "Destruir 10 ninhos",
+      "group": "factory",
+      "native": "../campaign-whole-scenes-v1/factory/factory-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/10-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/10-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "8797e1ef2934e3c30e5a3ca691909b3788ec98735ca26b709359d63718c8a6ed"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/10-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/10-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/10-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/10-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/10-pal-entry.png",
+          "source": "art/campaign-integrated-v1/factory/pal/10-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "8797e1ef2934e3c30e5a3ca691909b3788ec98735ca26b709359d63718c8a6ed"
+        }
+      ],
+      "status": "ajustes",
+      "priority": "P1",
+      "strength": "Piso relativamente calmo, caldeiras e esteiras dão uma base industrial legível.",
+      "findings": [
+        "Ovos/ninhos e insetos se concentram em amarelo/marrom, dificultando a leitura rápida entre alvo estático e inimigo móvel.",
+        "A arquitetura se concentra na borda superior e repete o mesmo módulo; no miolo do mapa, as esteiras sustentam quase todo o contexto."
+      ],
+      "correction": "Fortalecer a silhueta de ovos agrupados e seu contato com o piso. Variar os setores fabris sem aumentar a textura no espaço de tiro.",
+      "acceptance": "Identificar os ninhos em uma captura movimentada sem setas; reconhecer que o combate ocorre em uma fábrica ao afastar a câmera do topo.",
+      "status_label": "Precisa de ajustes"
+    },
+    {
+      "phase": "11",
+      "name": "Fábrica aquecida",
+      "goal": "Liberar 3 válvulas",
+      "group": "factory",
+      "native": "../campaign-whole-scenes-v1/factory/factory-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/11-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/11-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "679d83904509cfb715cae010b210192887f442154d407fa6dc18a75e02441540"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/11-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/11-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/11-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/factory/ntsc/11-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/11-pal-entry.png",
+          "source": "art/campaign-integrated-v1/factory/pal/11-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "679d83904509cfb715cae010b210192887f442154d407fa6dc18a75e02441540"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P0",
+      "strength": "A mesma fábrica mantém a continuidade depois da destruição dos ninhos.",
+      "findings": [
+        "As válvulas aparecem como pequenos objetos marrons no piso, separados da tubulação e difíceis de reconhecer.",
+        "A mudança de fábrica desligada para funcionamento não tem uma hierarquia visual forte nos quadros de ação examinados."
+      ],
+      "correction": "Integrar válvulas e painéis à instalação fabril, preservando a área de interação. Diferenciar cada estado por forma, posição e sinal de funcionamento.",
+      "acceptance": "Reconhecer válvula e equipamento associado sem número; indicar visualmente o que passou a funcionar após cada interação.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "12",
+      "name": "Caminho ao sindicato",
+      "goal": "Escolta 3072 px; morte permanente deDinorah",
+      "group": "escorts",
+      "native": "../campaign-whole-scenes-v1/routes/12-native-complete.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/12-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/12-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "3f0d1d88e0eaf3f8d95f4afc56830ecebb3032f33ce99ae480dcd681e08a3f32"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/12-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/12-meio.png",
+          "method": "existing emulator PNG",
+          "sha256": "70f551279740e595d5e995422d73a94decd8465347359963bfe1801efaba8fae"
+        },
+        {
+          "label": "ntsc-end",
+          "path": "frames/12-ntsc-end.png",
+          "source": "art/campaign-integrated-v1/escorts/ntsc/12-saida.png",
+          "method": "existing emulator PNG",
+          "sha256": "cd82d609cc22c546213ee3e5e10ae8b08a306a6b66a149e08eb8fa35b398ccc9"
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/12-pal-entry.png",
+          "source": "art/campaign-integrated-v1/escorts/pal/12-entrada.png",
+          "method": "existing emulator PNG",
+          "sha256": "3b42053ec76305a35ed995787f5b6e5ba0771765bafc6870bb17533f42cbe374"
+        }
+      ],
+      "status": "ajustes",
+      "priority": "P1",
+      "strength": "Oficinas e portas iluminadas definem um acesso industrial ao estaleiro.",
+      "findings": [
+        "O piso repete um motivo diagonal alaranjado que parece um carimbo e pode ser confundido com pequenos objetos.",
+        "No mapa completo, faixas azuis e avermelhadas atrás das oficinas não formam um fundo espacial convincente.",
+        "Contraste e detalhes nas fachadas competem com a escolta; muitas baias têm a mesma aparência.",
+        "A chegada ao sindicato pouco se diferencia dos outros acessos industriais."
+      ],
+      "correction": "Remover o motivo repetitivo do piso, controlar o contraste de fundo e organizar marcos de progressão. Dar ao sindicato uma fachada e entrada próprias.",
+      "acceptance": "Dinorah e caminho devem ser lidos antes das texturas; o sindicato deve ser reconhecível antes do marcador de chegada.",
+      "status_label": "Precisa de ajustes"
+    },
+    {
+      "phase": "13A",
+      "name": "Sala do sindicato",
+      "goal": "Eliminar 30;Dinorah protegida",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/union/alive-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/13A-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f1be70652d8da8e566decbb78e787994c2f53a8857780f8b38d297a597de021e"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/13A-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13A-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 5.792
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/13A-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13A-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 11.585
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/13A-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/13A-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "f1be70652d8da8e566decbb78e787994c2f53a8857780f8b38d297a597de021e"
+        }
+      ],
+      "status": "ressalvas",
+      "priority": "P2",
+      "strength": "O piso limpo, bancos e guichê permitem ler a sala e o espaço de combate.",
+      "findings": [
+        "A grade grande do piso domina parte da composição e a paleta tende ao oliva acinzentado.",
+        "Dinorah no guichê e o símbolo sindical ficam próximos à borda superior, com pouca presença em parte dos enquadramentos."
+      ],
+      "correction": "Preservar a organização da sala; suavizar as juntas do piso e apresentar o guichê e a identidade sindical com enquadramento mais favorável.",
+      "acceptance": "A sala continua legível em combate; reconhecer Dinorah no guichê e o caráter de sala dos trabalhadores na apresentação.",
+      "status_label": "Aceitável com ressalvas"
+    },
+    {
+      "phase": "13B",
+      "name": "Sala do sindicato em luto",
+      "goal": "Eliminar 45;Dinorah morta",
+      "group": "resistance",
+      "native": "../campaign-whole-scenes-v1/resistance/native/union/dead-native.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/13B-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "2019405844da2b54d362bc18077568796786fc62d2c0be6ffd5e9d1d58999634"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/13B-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13B-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 5.792
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/13B-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/resistance/ntsc/13B-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 11.585
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/13B-pal-entry.png",
+          "source": "art/campaign-integrated-v1/resistance/pal/13B-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "2019405844da2b54d362bc18077568796786fc62d2c0be6ffd5e9d1d58999634"
+        }
+      ],
+      "status": "ajustes",
+      "priority": "P1",
+      "strength": "Manter a mesma sala é coerente com o local da variante13A.",
+      "findings": [
+        "O memorial é pequeno e discreto no topo; nos quadros de movimento, a diferença visual mais evidente acaba sendo o contador 45.",
+        "Os problemas de grade dominante e enquadramento superior da 13A permanecem."
+      ],
+      "correction": "Dar presença legível ao memorial no guichê, mantendo a sala compartilhada. Rever a apresentação da perda e suavizar as juntas do piso.",
+      "acceptance": "Ausência de Dinorah e presença do memorial devem ser perceptíveis sem depender de ler 30/45 no HUD; preservar a continuidade do lugar.",
+      "status_label": "Precisa de ajustes"
+    },
+    {
+      "phase": "14",
+      "name": "Energia do estaleiro",
+      "goal": "Ligar 5 geradores",
+      "group": "launch",
+      "native": "../campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/14-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/14-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "1c6ab89a1d96077f9b22574cfdb41e87f974cf70ada553a0e4f99e818edec5b5"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/14-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/14-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/14-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/14-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/14-pal-entry.png",
+          "source": "art/campaign-integrated-v1/launch/pal/14-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "1c6ab89a1d96077f9b22574cfdb41e87f974cf70ada553a0e4f99e818edec5b5"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P0",
+      "strength": "O perímetro industrial e as faixas no chão definem a área de operações.",
+      "findings": [
+        "Os geradores se apresentam como pequenos volumes amarelo-marrons semelhantes aos insetos, em vez de máquinas reconhecíveis.",
+        "O padrão diagonal do piso é repetitivo e se mistura com pequenos projéteis/objetos.",
+        "As máquinas não formam um circuito visual evidente com o estaleiro."
+      ],
+      "correction": "Redesenhar silhuetas de geradores/painéis e suas conexões. Limpar a textura do piso e criar hierarquia entre máquina, energia e arquitetura do perímetro.",
+      "acceptance": "Localizar as cinco máquinas e distinguir desligada/ligada sem texto, número ou confusão com insetos.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "15",
+      "name": "Rádio de ignição",
+      "goal": "Proteger 120 s",
+      "group": "launch",
+      "native": "../campaign-whole-scenes-v1/launch/previews/14-15-normal-native-reconstructed.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/15-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "e59e1d7d44fce5a54c297dc3af4aa0d72462fde08b1142346ad90c00bf636df8"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/15-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/15-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/15-pal-entry.png",
+          "source": "art/campaign-integrated-v1/launch/pal/15-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "e59e1d7d44fce5a54c297dc3af4aa0d72462fde08b1142346ad90c00bf636df8"
+        },
+        {
+          "label": "special-0",
+          "path": "frames/15-special-0.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/15-ignition.png",
+          "method": "existing emulator PNG",
+          "sha256": "990deb2d2120f65d1cbaf44b74fb1c0481594f93dfef6267070aed5c7b0e4916"
+        }
+      ],
+      "status": "reprovada",
+      "priority": "P0",
+      "strength": "O estado em chamas produz uma diferença de cor no perímetro.",
+      "findings": [
+        "O rádio é pequeno e depende da letra R para ser identificado; falta um foco de defesa tão claro quanto a Santa na fase5.",
+        "A ignição se concentra nas bordas; o enquadramento mostra pouco dos motores que explicam o incêndio.",
+        "O piso repetitivo compete com a leitura dos objetos pequenos durante a defesa."
+      ],
+      "correction": "Compor uma estação de rádio reconhecível, apoiada em um espaço de defesa legível. Enquadrar os motores na apresentação da ignição e reduzir o ruído do solo.",
+      "acceptance": "Sem HUD/letra R, identificar o objeto a proteger; na ignição, relacionar o fogo aos motores sem esconder os projéteis.",
+      "status_label": "Reprovada nesta revisão"
+    },
+    {
+      "phase": "16",
+      "name": "Escorpião",
+      "goal": "Derrotar o chefe",
+      "group": "launch",
+      "native": "../campaign-whole-scenes-v1/launch/previews/16-fire-native-reconstructed.png",
+      "frames": [
+        {
+          "label": "ntsc-entry",
+          "path": "frames/16-ntsc-entry.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/16-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "16c0c5b8c3501198bb510f2c94c7ef0bbcc26b3012b2ecc9f99ecff3ea4b9eed"
+        },
+        {
+          "label": "ntsc-middle",
+          "path": "frames/16-ntsc-middle.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/16-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 6
+        },
+        {
+          "label": "ntsc-action",
+          "path": "frames/16-ntsc-action.png",
+          "source": "art/campaign-integrated-v1/launch/ntsc/16-playtest.mp4",
+          "method": "recorded emulator video frame",
+          "time_seconds": 12
+        },
+        {
+          "label": "pal-entry",
+          "path": "frames/16-pal-entry.png",
+          "source": "art/campaign-integrated-v1/launch/pal/16-entry.png",
+          "method": "existing emulator PNG",
+          "sha256": "16c0c5b8c3501198bb510f2c94c7ef0bbcc26b3012b2ecc9f99ecff3ea4b9eed"
+        }
+      ],
+      "status": "ressalvas",
+      "priority": "P2",
+      "strength": "O Escorpião tem tamanho e silhueta distintos, com separação razoável do piso cinza.",
+      "findings": [
+        "O motivo diagonal do piso permanece muito visível e o pedestal central pode competir com a leitura da área de esquiva.",
+        "Os motores ficam parcialmente fora do enquadramento, enfraquecendo a origem visual do chefe no fogo."
+      ],
+      "correction": "Preservar o espaço aberto e a silhueta do chefe. Acalmar o chão e mostrar a relação entre motores, fogo e entrada do Escorpião na apresentação.",
+      "acceptance": "Distinguir chefe, projéteis e área segura em movimento; origem no fogo entendida na apresentação sem prejudicar a luta.",
+      "status_label": "Aceitável com ressalvas"
+    }
+  ]
+}

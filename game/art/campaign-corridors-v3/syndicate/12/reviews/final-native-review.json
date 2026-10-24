@@ -1,0 +1,239 @@
+{
+  "phase": "12",
+  "status": "accepted_native_candidate_frozen_pending_integrated_ROM_review",
+  "review_scope": "Whole3072x320 native panorama plus six320x224focus previews with native Damião/Dinorah pixels, before ROM integration. Source approval did not approve native automatically.",
+  "cycles": [
+    {
+      "cycle": 1,
+      "source": "source/12-whole-cycle2.png",
+      "native": "reviews/cycle1/rejected-native.png",
+      "verdict": "Rejected by author and parent:4pxsampling produced mosaics, detached masses and broad empty gray gaps."
+    },
+    {
+      "cycle": 2,
+      "source": "source/12-whole-cycle3.png",
+      "native": "reviews/cycle2/before-material-fix.png",
+      "verdict": "Spatial direction and human scale accepted, surfaces required calmer brick and continuous paving."
+    },
+    {
+      "cycle": 3,
+      "source": "source/12-whole-cycle3.png",
+      "native": "complete-native.png",
+      "verdict": "Calm authored wall sample replaces the false orange/blueVpattern; wrong paving crops removed; concrete now connects courts and building-supported sidewalks remain. Accepted for integration, runtime visual proof pending."
+    }
+  ],
+  "whole_scene_review": {
+    "space_sequence": [
+      "Departure workshop court with bench and full facade",
+      "Service bend between the stepped north enclosure and southern utility dock",
+      "Covered loading bay and narrow32px service lane, then regrouping pocket",
+      "Union forecourt with dominant terracotta roof, blue windows/door and red cloth emblem matching room13"
+    ],
+    "architecture_grammar": "Whole roof caps and repeatable cross-section, uniform wall material, complete sharp openings and supported bases; changing implantation north/south defines circulation.",
+    "surface_detail": "2px structural source and1px openings; no4px sampling in final. All parts come from full ImageGen source, not arbitrary tile similarity replacements.",
+    "scale": "Native actors show the doors at human scale; full primary buildings fit a320px width.",
+    "continuity": "Rear enclosures step96→144→96→112, changing field depth. Southern buildings end at312, eight pixels inside world320.",
+    "composition_does_not_equal_tests": "515tile result and BFS success are technical evidence, independent of this visual judgment."
+  },
+  "remaining_observations": [
+    {
+      "id": "south-base-context",
+      "severity": "framing_note",
+      "evidence": [
+        "reviews/camera-south-dock1.png",
+        "reviews/camera-south-dock2.png",
+        "reviews/camera-south-dock3.png"
+      ],
+      "note": "CameraY88 includes every base pixel throughworld311 at viewport bottom. CameraY96 leaves8px of ground/base context below the complete building; integration owner may choose it while keeping both actors visible."
+    },
+    {
+      "id": "open-departure-court",
+      "severity": "combat_review_note",
+      "world_range": [
+        384,
+        96,
+        736,
+        288
+      ],
+      "note": "The departure court intentionally opens for the first escort regrouping at592,232. Its352px width has little static field cover; integrated combat review should check that the enclosure step and approaching annex retain spatial identity at this pause."
+    }
+  ],
+  "camera_interest": [
+    {
+      "id": "workshop",
+      "bbox": [
+        80,
+        32,
+        304,
+        160
+      ],
+      "center": [
+        232,
+        112
+      ],
+      "camera": [
+        72,
+        8
+      ],
+      "position": [
+        224,
+        208
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-workshop.png"
+    },
+    {
+      "id": "covered-dock",
+      "bbox": [
+        1488,
+        24,
+        304,
+        144
+      ],
+      "center": [
+        1640,
+        96
+      ],
+      "camera": [
+        1480,
+        0
+      ],
+      "position": [
+        1624,
+        184
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-covered-dock.png"
+    },
+    {
+      "id": "union-arrival",
+      "bbox": [
+        2704,
+        24,
+        304,
+        176
+      ],
+      "center": [
+        2856,
+        112
+      ],
+      "camera": [
+        2696,
+        0
+      ],
+      "position": [
+        2848,
+        208
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-union-arrival.png"
+    },
+    {
+      "id": "south-dock1",
+      "bbox": [
+        1008,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        1128,
+        256
+      ],
+      "camera": [
+        968,
+        88
+      ],
+      "position": [
+        1176,
+        176
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-south-dock1.png"
+    },
+    {
+      "id": "south-dock2",
+      "bbox": [
+        1760,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        1880,
+        256
+      ],
+      "camera": [
+        1720,
+        88
+      ],
+      "position": [
+        1880,
+        176
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-south-dock2.png"
+    },
+    {
+      "id": "south-dock3",
+      "bbox": [
+        2304,
+        200,
+        240,
+        112
+      ],
+      "center": [
+        2424,
+        256
+      ],
+      "camera": [
+        2264,
+        88
+      ],
+      "position": [
+        2416,
+        176
+      ],
+      "whole_inside_visible_world": true,
+      "preview": "reviews/camera-south-dock3.png"
+    }
+  ],
+  "memory": {
+    "scene_tiles": 515,
+    "objective_tiles": 0,
+    "total_tiles": 515,
+    "budget": 640,
+    "free_tiles": 125,
+    "graphics_bytes": 16480,
+    "map_bytes": 24576,
+    "palette_bytes": 32,
+    "collision_mask_words": 480,
+    "lossy_pattern_replacements": 0,
+    "pixel_exact_reassembly": true
+  },
+  "geometry": {
+    "actor_footprint": [
+      16,
+      16
+    ],
+    "point_margin": 8,
+    "BFS_step": 8,
+    "connected_positions": 5492,
+    "all_points_reachable": true,
+    "swept16pxSamples": 2833,
+    "all_segments_collision_free": true,
+    "exit_reachable": true,
+    "open_depth": 192,
+    "service_neck_width": 32
+  },
+  "frozen_files": {
+    "build.py": "3d5288a8966ca51dd73b935e3f54c94aa061b26852756b923e4546105ecdb5e6",
+    "manifest.json": "4af797f5fc79e0a079f49476e7b7c0c7e5796b488a2e35506dbeca0de574e541",
+    "complete-native.png": "9e4b91f5d9bd731bb68ac917a1cbae410b0411904d884e15c38a5aa24d35ccec",
+    "native/tiles.bin": "d234ecaad0eccebcef708db230ac45b09bcc8c28d1f5e94b1d4290e33a698398",
+    "native/map.bin": "4fdc9b524bce416ec07da7c174eef4a6e3eb2fead20eb72a3aaa1e81ae81643e",
+    "native/palette.bin": "b48d03e0467ab40b96e7097337e0c22e22b81ff7a81030d78568ef954add889d"
+  },
+  "unrelated_phases_changed": false,
+  "shared_C_resources_or_ROM_changed": false
+}

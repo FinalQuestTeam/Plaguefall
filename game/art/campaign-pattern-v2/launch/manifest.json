@@ -1,0 +1,927 @@
+{
+  "pattern": "phase01-pattern-v1/workflow.json",
+  "whole_image_first": true,
+  "composition_previews_are_not_emulator_captures": true,
+  "phases": [
+    {
+      "phase": "14",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        40,
+        128,
+        471,
+        319
+      ],
+      "solids": [
+        [
+          200,
+          152,
+          112,
+          64
+        ],
+        [
+          248,
+          136,
+          16,
+          16
+        ],
+        [
+          216,
+          256,
+          80,
+          48
+        ],
+        [
+          56,
+          128,
+          24,
+          16
+        ],
+        [
+          440,
+          128,
+          24,
+          16
+        ],
+        [
+          392,
+          200,
+          24,
+          16
+        ],
+        [
+          408,
+          288,
+          24,
+          16
+        ],
+        [
+          88,
+          288,
+          24,
+          16
+        ]
+      ],
+      "start": [
+        48,
+        200
+      ],
+      "complete": "art/campaign-pattern-v2/launch/complete/14-complete.png",
+      "background": "art/campaign-pattern-v2/launch/native/normal/map-native.png",
+      "special_states": [
+        {
+          "label": "Cinco máquinas ligadas",
+          "complete": "art/campaign-pattern-v2/launch/complete/14-on-complete.png"
+        }
+      ],
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "source": "art/campaign-pattern-v2/launch/source/14-16-shipyard.png",
+      "source_sha256": "9b33cba5cc877c1418c966298cbb1b1166617e9f1f4c384636704d375024ad77",
+      "palette": {
+        "index0": [
+          0,
+          0,
+          0
+        ],
+        "format": "RGB333",
+        "palette_file": "art/campaign-pattern-v2/launch/native/normal/palette.bin"
+      },
+      "objects": [
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            64,
+            136
+          ],
+          "canvas": [
+            48,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            57,
+            113,
+            77,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            448,
+            136
+          ],
+          "canvas": [
+            432,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            441,
+            113,
+            461,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            400,
+            208
+          ],
+          "canvas": [
+            384,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            393,
+            185,
+            413,
+            215
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            416,
+            296
+          ],
+          "canvas": [
+            400,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            409,
+            273,
+            429,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 0,
+          "center": [
+            96,
+            296
+          ],
+          "canvas": [
+            80,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            89,
+            273,
+            109,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-0.png"
+        }
+      ],
+      "layout": "art/campaign-pattern-v2/launch/layouts/14.png",
+      "camera_previews": [
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/14-0.png",
+          "camera": [
+            0,
+            96
+          ],
+          "actor_ground_top_left": [
+            48,
+            200
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/14-1.png",
+          "camera": [
+            96,
+            0
+          ],
+          "actor_ground_top_left": [
+            264,
+            136
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/14-2.png",
+          "camera": [
+            96,
+            160
+          ],
+          "actor_ground_top_left": [
+            248,
+            304
+          ],
+          "emulator_capture": false
+        }
+      ],
+      "access": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 949,
+        "checks": [
+          {
+            "name": "generator-1-front",
+            "reachable_samples": 26,
+            "example_feet": [
+              40,
+              136
+            ]
+          },
+          {
+            "name": "generator-2-front",
+            "reachable_samples": 26,
+            "example_feet": [
+              416,
+              136
+            ]
+          },
+          {
+            "name": "generator-3-front",
+            "reachable_samples": 31,
+            "example_feet": [
+              368,
+              208
+            ]
+          },
+          {
+            "name": "generator-4-front",
+            "reachable_samples": 10,
+            "example_feet": [
+              384,
+              296
+            ]
+          },
+          {
+            "name": "generator-5-front",
+            "reachable_samples": 10,
+            "example_feet": [
+              64,
+              296
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+    },
+    {
+      "phase": "15",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        40,
+        128,
+        471,
+        319
+      ],
+      "solids": [
+        [
+          200,
+          152,
+          112,
+          64
+        ],
+        [
+          248,
+          136,
+          16,
+          16
+        ],
+        [
+          216,
+          256,
+          80,
+          48
+        ],
+        [
+          56,
+          128,
+          24,
+          16
+        ],
+        [
+          440,
+          128,
+          24,
+          16
+        ],
+        [
+          392,
+          200,
+          24,
+          16
+        ],
+        [
+          408,
+          288,
+          24,
+          16
+        ],
+        [
+          88,
+          288,
+          24,
+          16
+        ]
+      ],
+      "start": [
+        48,
+        200
+      ],
+      "complete": "art/campaign-pattern-v2/launch/complete/15-complete.png",
+      "background": "art/campaign-pattern-v2/launch/native/normal/map-native.png",
+      "special_states": [
+        {
+          "label": "Ignição, cinco geradores preservados",
+          "complete": "art/campaign-pattern-v2/launch/complete/15-fire-complete.png"
+        }
+      ],
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "source": "art/campaign-pattern-v2/launch/source/14-16-shipyard.png",
+      "source_sha256": "9b33cba5cc877c1418c966298cbb1b1166617e9f1f4c384636704d375024ad77",
+      "palette": {
+        "index0": [
+          0,
+          0,
+          0
+        ],
+        "format": "RGB333",
+        "palette_file": "art/campaign-pattern-v2/launch/native/normal/palette.bin"
+      },
+      "objects": [
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            64,
+            136
+          ],
+          "canvas": [
+            48,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            56,
+            113,
+            76,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            448,
+            136
+          ],
+          "canvas": [
+            432,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            440,
+            113,
+            460,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            400,
+            208
+          ],
+          "canvas": [
+            384,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            392,
+            185,
+            412,
+            215
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            416,
+            296
+          ],
+          "canvas": [
+            400,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            408,
+            273,
+            428,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            96,
+            296
+          ],
+          "canvas": [
+            80,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            88,
+            273,
+            108,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "radio",
+          "frame": 2,
+          "center": [
+            256,
+            192
+          ],
+          "canvas": [
+            240,
+            168,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            242,
+            169,
+            269,
+            199
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/radio-2.png"
+        }
+      ],
+      "layout": "art/campaign-pattern-v2/launch/layouts/15.png",
+      "camera_previews": [
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/15-0.png",
+          "camera": [
+            0,
+            96
+          ],
+          "actor_ground_top_left": [
+            48,
+            200
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/15-1.png",
+          "camera": [
+            96,
+            0
+          ],
+          "actor_ground_top_left": [
+            264,
+            136
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/15-2.png",
+          "camera": [
+            96,
+            160
+          ],
+          "actor_ground_top_left": [
+            248,
+            304
+          ],
+          "emulator_capture": false
+        }
+      ],
+      "access": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 949,
+        "checks": [
+          {
+            "name": "console-south-edge",
+            "reachable_samples": 45,
+            "example_feet": [
+              192,
+              216
+            ]
+          },
+          {
+            "name": "console-west-edge",
+            "reachable_samples": 18,
+            "example_feet": [
+              176,
+              144
+            ]
+          },
+          {
+            "name": "console-east-edge",
+            "reachable_samples": 27,
+            "example_feet": [
+              312,
+              144
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+    },
+    {
+      "phase": "16",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": [
+        40,
+        128,
+        471,
+        319
+      ],
+      "solids": [
+        [
+          200,
+          152,
+          112,
+          64
+        ],
+        [
+          248,
+          136,
+          16,
+          16
+        ],
+        [
+          216,
+          256,
+          80,
+          48
+        ],
+        [
+          56,
+          128,
+          24,
+          16
+        ],
+        [
+          440,
+          128,
+          24,
+          16
+        ],
+        [
+          392,
+          200,
+          24,
+          16
+        ],
+        [
+          408,
+          288,
+          24,
+          16
+        ],
+        [
+          88,
+          288,
+          24,
+          16
+        ]
+      ],
+      "start": [
+        48,
+        200
+      ],
+      "complete": "art/campaign-pattern-v2/launch/complete/16-complete.png",
+      "background": "art/campaign-pattern-v2/launch/native/fire/map-native.png",
+      "special_states": [],
+      "memory": {
+        "scene_tiles": 482,
+        "reserved_objective_tiles": 151,
+        "total_reserved_tiles": 633,
+        "limit": 640,
+        "margin_tiles": 7,
+        "tile_bytes": 15424,
+        "map_bytes": 6144,
+        "palette_bytes": 32,
+        "exact_reconstruction": true,
+        "lossy_tile_replacements": 0
+      },
+      "source": "art/campaign-pattern-v2/launch/source/15-16-shipyard-ignition.png",
+      "source_sha256": "33c6ab980c48b9fe430e809d90fb36a9f84f652244b6a51c1681700b77aef73e",
+      "palette": {
+        "index0": [
+          0,
+          0,
+          0
+        ],
+        "format": "RGB333",
+        "palette_file": "art/campaign-pattern-v2/launch/native/fire/palette.bin"
+      },
+      "objects": [
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            64,
+            136
+          ],
+          "canvas": [
+            48,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            56,
+            113,
+            76,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            448,
+            136
+          ],
+          "canvas": [
+            432,
+            112,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            440,
+            113,
+            460,
+            143
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            400,
+            208
+          ],
+          "canvas": [
+            384,
+            184,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            392,
+            185,
+            412,
+            215
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            416,
+            296
+          ],
+          "canvas": [
+            400,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            408,
+            273,
+            428,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "generator",
+          "frame": 3,
+          "center": [
+            96,
+            296
+          ],
+          "canvas": [
+            80,
+            272,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            88,
+            273,
+            108,
+            303
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/generator-3.png"
+        },
+        {
+          "asset": "radio",
+          "frame": 4,
+          "center": [
+            256,
+            192
+          ],
+          "canvas": [
+            240,
+            168,
+            32,
+            32
+          ],
+          "ink_bbox": [
+            242,
+            169,
+            269,
+            199
+          ],
+          "ground_snapped_8px": true,
+          "source": "art/objective-sprites-v1/frames/radio-4.png"
+        },
+        {
+          "asset": "boss",
+          "canvas": [
+            140,
+            112,
+            48,
+            48
+          ],
+          "representative_spawn_pose": true
+        }
+      ],
+      "layout": "art/campaign-pattern-v2/launch/layouts/16.png",
+      "camera_previews": [
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/16-0.png",
+          "camera": [
+            0,
+            96
+          ],
+          "actor_ground_top_left": [
+            48,
+            200
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/16-1.png",
+          "camera": [
+            96,
+            0
+          ],
+          "actor_ground_top_left": [
+            264,
+            136
+          ],
+          "emulator_capture": false
+        },
+        {
+          "path": "art/campaign-pattern-v2/launch/camera-previews/16-2.png",
+          "camera": [
+            96,
+            160
+          ],
+          "actor_ground_top_left": [
+            248,
+            304
+          ],
+          "emulator_capture": false
+        }
+      ],
+      "access": {
+        "footprint": [
+          16,
+          16
+        ],
+        "step_pixels": 8,
+        "reachable_grid_positions": 949,
+        "checks": [
+          {
+            "name": "console-south-edge",
+            "reachable_samples": 45,
+            "example_feet": [
+              192,
+              216
+            ]
+          },
+          {
+            "name": "console-west-edge",
+            "reachable_samples": 18,
+            "example_feet": [
+              176,
+              144
+            ]
+          },
+          {
+            "name": "console-east-edge",
+            "reachable_samples": 27,
+            "example_feet": [
+              312,
+              144
+            ]
+          }
+        ],
+        "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
+      },
+      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+    }
+  ]
+}

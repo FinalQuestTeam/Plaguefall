@@ -1,145 +1,133 @@
 {
-  "approvedExamples": 9,
-  "coveredEdges": 23,
-  "maxCharacters": 37,
+  "approvedExamples": 21,
+  "coveredEdges": 21,
+  "maxCharacters": 36,
   "cases": [
-    {
-      "current": "9",
-      "next": "10A",
-      "cause": "VOCÊ SAIU SEM SOFRER DANO.",
-      "consequence": "O ACESSO DOS TÉCNICOS FOI LIBERADO."
-    },
-    {
-      "current": "9",
-      "next": "10B",
-      "cause": "VOCÊ SOFREU DANO NO CONFRONTO.",
-      "consequence": "VAI PRECISAR CONTORNAR PELO DRENO."
-    },
     {
       "current": "1",
       "next": "2A",
       "cause": "VOCÊ NÃO USOU BOMBAS.",
-      "consequence": "A IGREJA FICOU PRESERVADA."
+      "consequence": "O POVO SAIU. A IGREJA FICOU EM PÉ."
     },
     {
       "current": "1",
       "next": "2B",
       "cause": "A EXPLOSÃO DANIFICOU A IGREJA.",
-      "consequence": "OS DESTROÇOS FORCARAM UM DESVIO."
+      "consequence": "TODOS SAÍRAM. HÁ DESTROÇOS NO PÁTIO."
     },
     {
       "current": "5",
       "next": "6A",
-      "cause": "VOCÊ PROTEGEU O SINALIZADOR.",
-      "consequence": "O RESGATE FOI CONFIRMADO."
+      "cause": "O SINAL ALCANÇOU O RESGATE.",
+      "consequence": "TODOS OS CIVIS EMBARCARAM."
     },
     {
       "current": "5",
       "next": "6B",
-      "cause": "O SINALIZADOR FOI DESTRUÍDO.",
-      "consequence": "A RETIRADA VAI SER POR TERRA."
+      "cause": "O SINAL FOI INTERROMPIDO.",
+      "consequence": "PARTE DOS CIVIS NÃO ESCAPOU."
     },
     {
       "current": "12",
       "next": "13A",
-      "cause": "VOCÊ TERMINOU EM MENOS DE 60 S.",
-      "consequence": "A COMPORTA AINDA ESTAVA ABERTA."
+      "cause": "VOCÊ PROTEGEU DINORAH.",
+      "consequence": "ELA VAI APOIAR A INCURSÃO FINAL."
     },
     {
       "current": "12",
       "next": "13B",
-      "cause": "VOCÊ LEVOU 60 SEGUNDOS OU MAIS.",
-      "consequence": "A COMPORTA FECHOU. SIGA PELO CANAL."
-    },
-    {
-      "current": "3",
-      "next": "4",
-      "cause": "O ABRIGO ESTÁ SEGURO POR ENQUANTO.",
-      "consequence": "OS TÚNEIS LEVAM A PLATAFORMA."
+      "cause": "DINORAH MORREU NA ESCOLTA.",
+      "consequence": "DAMIÃO SEGUE COM O PADRE NO RÁDIO."
     },
     {
       "current": "2A",
       "next": "3",
-      "cause": "A RETIRADA CHEGOU AO ABRIGO.",
-      "consequence": "AGORA É HORA DE DEFENDER O LOCAL."
+      "cause": "O PÁTIO ESTÁ LIMPO.",
+      "consequence": "ABRA A RUA ATÉ O GALPÃO."
     },
     {
       "current": "2B",
       "next": "3",
-      "cause": "O GRUPO CONSEGUIU VENCER O DESVIO.",
-      "consequence": "O ABRIGO PRECISA DE PROTEÇÃO."
+      "cause": "O PÁTIO ESTÁ LIMPO.",
+      "consequence": "ABRA A RUA ATÉ O GALPÃO."
+    },
+    {
+      "current": "3",
+      "next": "4",
+      "cause": "O POVO PODE ATRAVESSAR A RUA.",
+      "consequence": "LIMPE O INTERIOR DO GALPÃO."
     },
     {
       "current": "4",
       "next": "5",
-      "cause": "A PASSAGEM PELOS TÚNEIS FOI ABERTA.",
-      "consequence": "O POVO PODE CHEGAR A PLATAFORMA."
+      "cause": "O GALPÃO ESTÁ SEGURO.",
+      "consequence": "ATIVEM O SINAL NA SANTA."
     },
     {
       "current": "6A",
       "next": "7",
-      "cause": "O POVO CONSEGUIU EMBARCAR.",
-      "consequence": "OS RASTROS LEVAM A REDE DE ANTENAS."
+      "cause": "DINORAH CHEGOU AO ABRIGO.",
+      "consequence": "RECUPERE OS SUPRIMENTOS."
     },
     {
       "current": "6B",
       "next": "7",
-      "cause": "A RETIRADA POR TERRA CONTINUA.",
-      "consequence": "SIGA OS RASTROS ATÉ AS ANTENAS."
+      "cause": "DINORAH ATRAVESSOU OS PORTÕES.",
+      "consequence": "RECUPERE OS SUPRIMENTOS."
     },
     {
       "current": "7",
       "next": "8",
-      "cause": "OS RASTROS SEGUEM PELOS CABOS.",
-      "consequence": "ELES LEVAM A FORNALHA DA BASE."
+      "cause": "AS CINCO CARGAS FORAM RECUPERADAS.",
+      "consequence": "CORTE O CHAMADO DOS REFORÇOS."
     },
     {
       "current": "8",
       "next": "9",
-      "cause": "OS DUTOS APONTAM PARA A BASE.",
-      "consequence": "SIGA O RASTRO ATÉ A ALFÂNDEGA."
+      "cause": "OS TRANSMISSORES FORAM ELIMINADOS.",
+      "consequence": "SIGA ATÉ A FÁBRICA."
     },
     {
-      "current": "10A",
-      "next": "11",
-      "cause": "O ACESSO DOS TÉCNICOS FOI ABERTO.",
-      "consequence": "O DEPÓSITO FICA LOGO ADIANTE."
+      "current": "9",
+      "next": "10",
+      "cause": "VOCÊ CHEGOU À FÁBRICA.",
+      "consequence": "DESTRUA OS OVOS."
     },
     {
-      "current": "10B",
+      "current": "10",
       "next": "11",
-      "cause": "VOCÊ ATRAVESSOU O DRENO TÉRMICO.",
-      "consequence": "SIGA AO DEPÓSITO DE DEMOLIÇÃO."
+      "cause": "OS DEZ NINHOS FORAM DESTRUÍDOS.",
+      "consequence": "REAQUEÇA AS MÁQUINAS."
     },
     {
       "current": "11",
       "next": "12",
-      "cause": "AS CARGAS DE DEMOLIÇÃO ESTÃO AQUI.",
-      "consequence": "SIGA ATÉ A COMPORTA DE CARGA."
+      "cause": "O CALOR ATRAIU O ENXAME.",
+      "consequence": "ESCOLTE DINORAH AO SINDICATO."
     },
     {
       "current": "13A",
       "next": "14",
-      "cause": "A LINHA QUENTE FICOU PARA TRÁS.",
-      "consequence": "OS ENXAMES GUARDAM A ENTRADA."
+      "cause": "DINORAH ESTÁ SEGURA NO CONSOLE.",
+      "consequence": "RELIGUE A ENERGIA DO ESTALEIRO."
     },
     {
       "current": "13B",
       "next": "14",
-      "cause": "VOCÊ ATRAVESSOU A DECANTAÇÃO.",
-      "consequence": "OS ENXAMES GUARDAM A ENTRADA."
+      "cause": "A SALA FOI LIMPA.",
+      "consequence": "RELIGUE A ENERGIA DO ESTALEIRO."
     },
     {
       "current": "14",
       "next": "15",
-      "cause": "O PÁTIO DOS ENXAMES FOI VENCIDO.",
-      "consequence": "AS GALERIAS LEVAM AO NINHO CENTRAL."
+      "cause": "OS CINCO GERADORES ESTÃO LIGADOS.",
+      "consequence": "PROTEJA O RÁDIO DE IGNIÇÃO."
     },
     {
       "current": "15",
       "next": "16",
-      "cause": "O ÚLTIMO BLOQUEIO FICOU PARA TRÁS.",
-      "consequence": "O ESCORPIÃO ESPERA NA CÂMARA CENTRAL."
+      "cause": "A IGNIÇÃO QUEIMOU OS NINHOS.",
+      "consequence": "O ESCORPIÃO SURGIU DO FOGO."
     }
   ]
 }

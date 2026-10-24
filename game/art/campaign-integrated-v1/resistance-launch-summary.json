@@ -1,0 +1,36 @@
+{
+  "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+  "runs": {
+    "resistance-ntsc": {
+      "command": "arch -x86_64 /usr/bin/python3 game/tools/test_campaign_resistance_emulator.py --movie --build-dir game/out/release --output game/art/campaign-integrated-v1/resistance/ntsc",
+      "exit_code": 0,
+      "passed": true,
+      "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+      "videos": 4
+    },
+    "resistance-pal": {
+      "command": "arch -x86_64 /usr/bin/python3 game/tools/test_campaign_resistance_emulator.py --movie --build-dir game/out/release --output game/art/campaign-integrated-v1/resistance/pal --pal",
+      "exit_code": 0,
+      "passed": true,
+      "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+      "videos": 4
+    },
+    "launch-ntsc": {
+      "command": "arch -x86_64 /usr/bin/python3 game/tools/test_campaign_launch_emulator.py --movie --build-dir game/out/release --output game/art/campaign-integrated-v1/launch/ntsc",
+      "exit_code": 0,
+      "passed": true,
+      "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+      "videos": 3
+    },
+    "launch-pal": {
+      "command": "arch -x86_64 /usr/bin/python3 game/tools/test_campaign_launch_emulator.py --movie --build-dir game/out/release --output game/art/campaign-integrated-v1/launch/pal --pal",
+      "exit_code": 0,
+      "passed": true,
+      "rom_sha256": "bb9955bf90a25dab36aa280281909f5d08d98a0d9b313d8508849d68aa382a16",
+      "videos": 3
+    }
+  },
+  "no_rom_source_changes_during_qa": true,
+  "pixel_probe": "Scene atlas + visible BG_B H/V map; BG_A outside objectives; palette0 black; compact objective6pose reconstruction and VRAM residency",
+  "scope": "Controller objective execution after isolated pressure setup; RAM-seeded stress;20/25second ordinary combat samples; not a full human campaign completion"
+}

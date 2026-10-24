@@ -1,0 +1,139 @@
+{
+  "phase": "6B",
+  "status": "native_accepted_for_integration_by_root; final ROM camera/gameplay review pending",
+  "size": [
+    3072,
+    320
+  ],
+  "story": "Dinorah escort and existing consequences preserved; no objective type or branching changes.",
+  "method": "Complete ImageGen world source before module extraction;1px complete architectural components and whole cross-section materials; authored connected chambers/galleries; exact palette mapping and8x8 pattern dedup. No post-pack tile approximation.",
+  "source_files": [
+    "source/whole-v1.png",
+    "source/whole-v2.png",
+    "source/whole-v3-open-hardware.png",
+    "../6A/source/whole-v2-clean.png"
+  ],
+  "source_sha256": {
+    "source/whole-v3-open-hardware.png": "44b27d8365436a4ca2517389c6db619e08e09ddb290100cbaad2e7fdd4c2ba9a",
+    "source/whole-v1.png": "a1c02833de3ca8c9e62f0f53bfc39c55418b35b27ad38e132f1eb2eeef46a1ed",
+    "source/whole-v2.png": "8a3f8e12713c16bcbf61e5fa7658fb64dfb80388702f9b28842f7c217e938698"
+  },
+  "memory": {
+    "scene_tiles": 378,
+    "objective_tiles": 256,
+    "total_tiles": 634,
+    "budget": 640,
+    "approximate_tile_replacements": 0
+  },
+  "geometry": {
+    "actor_feet": [
+      16,
+      16
+    ],
+    "margin": 8,
+    "swept_samples": 3174,
+    "reachable_centers": 4946,
+    "arrival_connected": true,
+    "closed_gates_disconnect": true,
+    "first_gate_only_open_still_blocks_exit": true,
+    "open_gap": 32
+  },
+  "static_evidence": [
+    "complete-native.png",
+    "complete-objectives.png",
+    "qa-interest.png",
+    "qa-interest.json",
+    "complete-closed-objectives.png",
+    "complete-collapse-objectives.png",
+    "complete-open-objectives.png",
+    "qa-gate-states.png"
+  ],
+  "remaining_limits": [
+    "Quiet floor intentionally retained for the escort and insect silhouettes.",
+    "Shared pipe/pump installations repeat as one infrastructure family.",
+    "Static QA uses actual production hero pixels but is not an emulator capture.",
+    "No new FPS/SAT, live combat difficulty, Dinorah traversal or finalROM branch result claimed by this private art handoff."
+  ],
+  "approval_is_not_implied_by_tests": true,
+  "tests": {
+    "tiles": 378,
+    "total_tiles": 634,
+    "exact_pixel_mismatches": 0,
+    "all_palette_words_rgb333": true,
+    "palette0_black": true,
+    "visible_pixel0_count": 0,
+    "scene_bin_sha256": "41c0289c7304845e3e0ff8fa5d6297b6ab0f8bdb3ee2aa9809b08f31db8d8120",
+    "generator_reproduces_canonical": true,
+    "shared_validator": {
+      "footprint": 16,
+      "free_positions": 6074,
+      "reachable_positions": 6074,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 3174
+    }
+  },
+  "handoff": {
+    "generator": "compose.py",
+    "command": "python3 game/art/campaign-corridors-v3/sewers/6B/compose.py --publish",
+    "render_api": "render('6B') returns (dict[str,bytes], manifest); module execution refreshes only own candidate previews.",
+    "binary_files": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin",
+      "image": "complete-native.png",
+      "objectives": "complete-closed-objectives.png"
+    },
+    "coordinates": {
+      "start": "feet top-left",
+      "route_points": "centers, subtract8 for feet",
+      "solids": "x,y,w,h,bool;False water stops feet and lets shots pass;True masonry/machinery stops both",
+      "camera_interest": "architecture bbox x,y,w,h≤320×200;preferred_feet legal player top-left",
+      "approaches": "feet top-left, not centers"
+    }
+  },
+  "iteration_critique": [
+    {
+      "status": "sourcev1 rejected",
+      "reason": "Upper landing and right stair touched source frame; v2adds external margin and complete structures."
+    },
+    {
+      "status": "sourcev3 hardware preparation",
+      "reason": "Gate leaves/red wheels removed in ImageGen for separately animated global art; no baked leaf enters map."
+    },
+    {
+      "status": "native accepted direction, pillar finish requested",
+      "reason": "Repeated ornament looked like ladder. Replaced with whole32×128masonry shaft and capitals only at ends;378scene+256objectstates."
+    }
+  ],
+  "mechanisms": {
+    "shared_art": "Existing global gate191+valve65 unchanged",
+    "gate_hits": 4,
+    "pressure_seconds": 1.5,
+    "collapse_seconds": 0.8,
+    "solid_during_collapse": true,
+    "permanent_gate_sprite_visible": false,
+    "native_bank_ends_remain": true,
+    "physical_open_gap": 32,
+    "topology": "Both closed stops exit; first open+second closed still stops exit; both open connects all6074free foot positions.",
+    "valve_approaches_feet": [
+      [
+        912,
+        152
+      ],
+      [
+        2032,
+        232
+      ]
+    ],
+    "gate_shot_approaches_feet": [
+      [
+        888,
+        152
+      ],
+      [
+        2008,
+        232
+      ]
+    ]
+  }
+}

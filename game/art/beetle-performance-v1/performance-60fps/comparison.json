@@ -1,0 +1,391 @@
+{
+  "achieved": true,
+  "candidate_rom_sha256": "1fc88e9312b3a14023f98a55d874faacd747059625e51607eb737c7a1e8d4572",
+  "baseline_rom_sha256": "863c73c156834ef2137031ba599bf1e86df63bc10eae80d7ecf938a5c781bf6b",
+  "fresh_rebuild_matches_delivered_rom": true,
+  "cases": [
+    {
+      "region": "NTSC",
+      "formation": "Baluarte",
+      "shots_per_pool_target": 0,
+      "before_fps": 33.8,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Baluarte",
+      "shots_per_pool_target": 6,
+      "before_fps": 30.0,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Baluarte",
+      "shots_per_pool_target": 16,
+      "before_fps": 23.8,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Fortaleza",
+      "shots_per_pool_target": 0,
+      "before_fps": 33.2,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Fortaleza",
+      "shots_per_pool_target": 6,
+      "before_fps": 30.0,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Fortaleza",
+      "shots_per_pool_target": 16,
+      "before_fps": 23.93,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Escudeiro",
+      "shots_per_pool_target": 0,
+      "before_fps": 39.8,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Escudeiro",
+      "shots_per_pool_target": 6,
+      "before_fps": 30.0,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Escudeiro",
+      "shots_per_pool_target": 16,
+      "before_fps": 27.4,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool_target": 0,
+      "before_fps": 33.3,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool_target": 6,
+      "before_fps": 30.0,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "NTSC",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool_target": 16,
+      "before_fps": 24.0,
+      "after_fps": 60.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Baluarte",
+      "shots_per_pool_target": 0,
+      "before_fps": 33.44,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Baluarte",
+      "shots_per_pool_target": 6,
+      "before_fps": 25.06,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Baluarte",
+      "shots_per_pool_target": 16,
+      "before_fps": 24.75,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Fortaleza",
+      "shots_per_pool_target": 0,
+      "before_fps": 33.42,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Fortaleza",
+      "shots_per_pool_target": 6,
+      "before_fps": 25.0,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Fortaleza",
+      "shots_per_pool_target": 16,
+      "before_fps": 25.0,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Escudeiro",
+      "shots_per_pool_target": 0,
+      "before_fps": 39.17,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Escudeiro",
+      "shots_per_pool_target": 6,
+      "before_fps": 25.36,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Escudeiro",
+      "shots_per_pool_target": 16,
+      "before_fps": 25.0,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool_target": 0,
+      "before_fps": 33.44,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool_target": 6,
+      "before_fps": 25.03,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    },
+    {
+      "region": "PAL",
+      "formation": "Baluarte + Fortaleza",
+      "shots_per_pool_target": 16,
+      "before_fps": 24.92,
+      "after_fps": 50.0,
+      "game_frames": 1800,
+      "physical_frames": 1800,
+      "all_bodies_in_sat": true,
+      "scanline_limits_checked": true
+    }
+  ],
+  "long_runs": [
+    {
+      "formation": "Baluarte",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 18000,
+      "game_frames": 18000,
+      "fps": 60.0,
+      "target_fps": 60,
+      "target_met": true,
+      "cpu_mean": 86.09,
+      "cpu_p95": 88.57,
+      "shots_after_step": [
+        {
+          "min": 6,
+          "mean": 12.31,
+          "max": 14
+        },
+        {
+          "min": 11,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 18000,
+      "all_enemies_visible_frames": 18000,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        106,
+        101
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 8,
+      "distinct_graphics_min": 8,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true,
+      "hardware_sprites": {
+        "enemy_bodies_min": 8,
+        "player_bullets_mean": 12.31,
+        "enemy_bullets_mean": 8.04,
+        "sat_count_max": 39,
+        "scanline_limits_checked": true
+      }
+    },
+    {
+      "formation": "Baluarte + Fortaleza",
+      "repeat": 1,
+      "enemies": 8,
+      "shields": 8,
+      "shot_target_per_pool": 16,
+      "physical_frames": 18000,
+      "game_frames": 18000,
+      "fps": 60.0,
+      "target_fps": 60,
+      "target_met": true,
+      "cpu_mean": 86.73,
+      "cpu_p95": 89.55,
+      "shots_after_step": [
+        {
+          "min": 5,
+          "mean": 12.32,
+          "max": 14
+        },
+        {
+          "min": 11,
+          "mean": 15.86,
+          "max": 16
+        }
+      ],
+      "both_projectile_pools_nonempty_frames": 18000,
+      "all_enemies_visible_frames": 18000,
+      "initial_group_span": [
+        68,
+        44
+      ],
+      "max_group_span": [
+        102,
+        100
+      ],
+      "ready_enemy_frames_min": 8,
+      "distinct_graphics_mean": 8,
+      "distinct_graphics_min": 8,
+      "distinct_graphics_max": 8,
+      "autofire_observed": true,
+      "hardware_sprites": {
+        "enemy_bodies_min": 8,
+        "player_bullets_mean": 12.32,
+        "enemy_bullets_mean": 8.04,
+        "sat_count_max": 39,
+        "scanline_limits_checked": true
+      }
+    }
+  ],
+  "limitations": [
+    "Genesis Plus GX only; no claim for the entire campaign or real hardware.",
+    "AI/movement/contact/status update every four game frames for yellow and purple species, with 4x movement and saturating timer decrements; response and timer boundaries can differ by up to three frames.",
+    "All native enemy graphics are sampled in four cohorts; direction/new-slot presentation can lag three frames. Motion grace is measured in graphics samples.",
+    "Separation uses four cohorts, eight-direction forces and double displacement per application; group geometry changes.",
+    "Conservative eight-pixel sprite bands may reject optional sprites/projectiles earlier than exact per-scanline admission; projectile simulation/capacity are unchanged.",
+    "Purple shield badges are composed inside the sprite image; ordinary art stays intact in its original ROM bank. Extra bank: 118080 bytes.",
+    "Prototype only. The production ROM changed independently during this run; no experimental source/asset/ROM was applied to game/src, game/res or game/out."
+  ],
+  "native_checks": {
+    "collision_queries": 540000,
+    "valid_start_movement_equivalence": 86498,
+    "projectile_attribute_equivalence": 131072,
+    "randomized_sprite_scenes": 2048,
+    "graphics_native_gallery": 1248,
+    "shield_pose_bank_transitions_per_region": 144,
+    "all_13_death_species_50_60_hz": true,
+    "audio_sequencer_regressions": true,
+    "sanitizers": "ASan + UBSan"
+  },
+  "emulator_graphics_frames": 1248
+}

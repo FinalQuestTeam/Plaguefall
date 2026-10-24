@@ -1,0 +1,5660 @@
+{
+  "romSHA256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "bootstrapSHA256": "f2b38b90303eb7c69515fab5b37ee86a4409e34a819402083a7ee6e27cead95e",
+  "region": "PAL",
+  "passed": false,
+  "requiredFPS": 50,
+  "physicalFramesPerCase": 1800,
+  "warmupSeconds": 4,
+  "cases": [
+    {
+      "phase": "3",
+      "policy": "legacy_reset",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ],
+        [
+          224,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 50.382,
+      "p95CPULoadPct": 70.068,
+      "maximumCPULoadPct": 71.875,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "satMaximumSampled": [
+        15,
+        8,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "3",
+      "policy": "preserve_caches",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ],
+        [
+          224,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 49.494,
+      "p95CPULoadPct": 69.531,
+      "maximumCPULoadPct": 71.338,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "satMaximumSampled": [
+        15,
+        10,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "3",
+      "policy": "native_cadence",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ],
+        [
+          224,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 49.564,
+      "p95CPULoadPct": 69.58,
+      "maximumCPULoadPct": 72.021,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "satMaximumSampled": [
+        15,
+        10,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6A",
+      "policy": "legacy_reset",
+      "roster": [
+        4,
+        5
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 48.292,
+      "p95CPULoadPct": 68.359,
+      "maximumCPULoadPct": 69.385,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        19,
+        8,
+        112
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6A",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        5
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 49.93,
+      "p95CPULoadPct": 70.02,
+      "maximumCPULoadPct": 71.24,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        19,
+        8,
+        112
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6A",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 50.109,
+      "p95CPULoadPct": 70.068,
+      "maximumCPULoadPct": 71.484,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        19,
+        8,
+        112
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6B",
+      "policy": "legacy_reset",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 60.429,
+      "p95CPULoadPct": 80.127,
+      "maximumCPULoadPct": 82.129,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        21,
+        9,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6B",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 58.992,
+      "p95CPULoadPct": 79.102,
+      "maximumCPULoadPct": 80.811,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        21,
+        9,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "6B",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        7
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 59.091,
+      "p95CPULoadPct": 79.102,
+      "maximumCPULoadPct": 81.006,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        21,
+        9,
+        128
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "legacy_reset",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1704,
+      "gameFPS": 47.33333,
+      "targetMet": false,
+      "meanCPULoadPct": 56.529,
+      "p95CPULoadPct": 74.316,
+      "maximumCPULoadPct": 76.904,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        19,
+        9,
+        144
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 12,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 13,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 64,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 65,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 74,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 84,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 118,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 170,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 171,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 215,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 224,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 225,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 276,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 277,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 328,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 329,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 338,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 348,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 382,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 383,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 434,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 435,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 469,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 479,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 488,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 489,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 540,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 541,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 592,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 593,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 602,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 612,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 646,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 647,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 698,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 699,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 733,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 743,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 752,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 753,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 804,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 805,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 856,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 857,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 866,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 876,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 910,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 911,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 962,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 963,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1007,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1016,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1017,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1068,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1069,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1120,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1121,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1130,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1140,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1174,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1175,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1226,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1227,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1261,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1271,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1280,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1281,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1332,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1333,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1384,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1385,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1394,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1404,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1438,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1439,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1490,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1491,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1525,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1535,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1544,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1545,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1596,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1597,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1648,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1649,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1658,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1668,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1702,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1703,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1754,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1755,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1799,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1704,
+      "gameFPS": 47.33333,
+      "targetMet": false,
+      "meanCPULoadPct": 52.708,
+      "p95CPULoadPct": 70.703,
+      "maximumCPULoadPct": 74.316,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        18,
+        10,
+        160
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 12,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 13,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 64,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 65,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 74,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 84,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 118,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 170,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 171,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 215,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 224,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 225,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 276,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 277,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 328,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 329,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 338,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 348,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 382,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 383,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 434,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 435,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 469,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 479,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 488,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 489,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 540,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 541,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 592,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 593,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 602,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 612,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 646,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 647,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 698,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 699,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 733,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 743,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 752,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 753,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 804,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 805,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 856,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 857,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 866,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 876,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 910,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 911,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 962,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 963,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1007,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1016,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1017,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1068,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1069,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1120,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1121,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1130,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1140,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1174,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1175,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1226,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1227,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1261,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1271,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1280,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1281,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1332,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1333,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1384,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1385,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1394,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1404,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1438,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1439,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1490,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1491,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1525,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1535,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1544,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1545,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1596,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1597,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1648,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1649,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1658,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1668,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1702,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1703,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1754,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1755,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1799,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "12",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        5,
+        2
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1704,
+      "gameFPS": 47.33333,
+      "targetMet": false,
+      "meanCPULoadPct": 52.797,
+      "p95CPULoadPct": 70.752,
+      "maximumCPULoadPct": 74.316,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          40,
+          40
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        18,
+        10,
+        160
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 12,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 13,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 64,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 65,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 74,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 84,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 118,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 119,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 170,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 171,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 215,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 224,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 225,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 276,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 277,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 328,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 329,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 338,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 348,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 382,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 383,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 434,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 435,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 469,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 479,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 488,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 489,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 540,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 541,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 592,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 593,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 602,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 612,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 646,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 647,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 698,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 699,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 733,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 743,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 752,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 753,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 804,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 805,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 856,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 857,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 866,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 876,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 910,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 911,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 962,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 963,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1007,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1016,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1017,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1068,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1069,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1120,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1121,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1130,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1140,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1174,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1175,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1226,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1227,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1261,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1271,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1280,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1281,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1332,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1333,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1384,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1385,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1394,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1404,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1438,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1439,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1490,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1491,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1525,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1535,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1544,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1545,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1596,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1597,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1648,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1649,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1658,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1668,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1702,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1703,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1754,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1755,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1799,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "9",
+      "policy": "legacy_reset",
+      "roster": [
+        4,
+        2,
+        9
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 46.443,
+      "p95CPULoadPct": 66.211,
+      "maximumCPULoadPct": 67.822,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        14,
+        9,
+        136
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "9",
+      "policy": "preserve_caches",
+      "roster": [
+        4,
+        2,
+        9
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 41.352,
+      "p95CPULoadPct": 60.938,
+      "maximumCPULoadPct": 65.039,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        14,
+        10,
+        152
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    },
+    {
+      "phase": "9",
+      "policy": "native_cadence",
+      "roster": [
+        4,
+        2,
+        9
+      ],
+      "enemyCap": 3,
+      "shotCapPerPool": 4,
+      "enemyPositionsAtSetup": [
+        [
+          80,
+          200
+        ],
+        [
+          128,
+          200
+        ],
+        [
+          176,
+          200
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1730,
+      "gameFPS": 48.05556,
+      "targetMet": false,
+      "meanCPULoadPct": 41.438,
+      "p95CPULoadPct": 60.938,
+      "maximumCPULoadPct": 65.479,
+      "populationRange": [
+        3,
+        3
+      ],
+      "minimumShotsBeforeStep": [
+        4,
+        4
+      ],
+      "retargetValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        0,
+        1
+      ],
+      "cameraRange": [
+        [
+          16,
+          16
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "satMaximumSampled": [
+        14,
+        10,
+        152
+      ],
+      "nonUnitGameFrameSteps": [
+        {
+          "physicalOffset": 8,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 9,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 60,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 61,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 112,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 113,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 164,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 165,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 216,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 217,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 268,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 269,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 320,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 321,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 372,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 373,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 424,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 425,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 476,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 477,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 528,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 529,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 580,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 581,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 632,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 633,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 684,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 685,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 736,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 737,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 788,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 789,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 840,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 841,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 892,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 893,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 944,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 945,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 996,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 997,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1048,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1049,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1100,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1101,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1152,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1153,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1204,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1205,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1256,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1257,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1308,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1309,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1360,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1361,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1412,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1413,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1464,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1465,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1516,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1517,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1568,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1569,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1620,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1621,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1672,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1673,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1724,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1725,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1776,
+          "gameDelta": 0
+        },
+        {
+          "physicalOffset": 1777,
+          "gameDelta": 0
+        }
+      ],
+      "phaseStayedActive": true,
+      "deathTailIncluded": false
+    }
+  ],
+  "method": "Same production ROM and node snapshot per policy. Invulnerability and enemy HP isolate timing; Dinorah waits. Legacy resets complete records each VBlank; preserving policies retain AI/render clocks and velocities. No transition or death settling is included. Static camera load, not route difficulty.",
+  "status": "needs-optimization"
+}

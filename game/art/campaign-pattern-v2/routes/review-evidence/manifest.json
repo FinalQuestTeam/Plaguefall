@@ -1,0 +1,26 @@
+{
+  "kind": "static composition studies, not emulator captures",
+  "spriteSource": "production frames.bin, east idle, PAL2; exact32x48 decode",
+  "hudSource": "existing integrated NTSC capture, top24px only",
+  "worldCameraSamples": {
+    "x": [
+      0,
+      1360,
+      2752
+    ],
+    "y": [
+      0,
+      24,
+      48
+    ]
+  },
+  "world": [
+    3072,
+    272
+  ],
+  "footprint": [
+    16,
+    16
+  ],
+  "runtimeEmulatorReviewPending": true
+}

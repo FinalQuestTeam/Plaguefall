@@ -1,0 +1,325 @@
+{
+  "phase": "6B",
+  "status": "isolated candidate, awaiting whole-map and five-camera review",
+  "scope": "Material-only; no active metadata, shared generator, C, sprite palette or ROM edits",
+  "memory": {
+    "scene_tiles": 368,
+    "objective_tiles": 256,
+    "total_tiles": 624,
+    "budget": 640,
+    "approximate_tile_replacements": 0
+  },
+  "geometry_unchanged": true,
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 6074,
+    "reachable_positions": 6074,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3174
+  },
+  "production_reader_private_validation": true,
+  "native_decode_exact": true,
+  "lossy_tile_substitutions": 0,
+  "palette_zero_black": true,
+  "cameras": [
+    {
+      "path": "6B/landmark-0.png",
+      "position": [
+        40,
+        200
+      ],
+      "camera": [
+        0,
+        8
+      ],
+      "visible_world": [
+        0,
+        32,
+        320,
+        232
+      ],
+      "label": "Cisterna de entrada",
+      "bbox": [
+        72,
+        32,
+        168,
+        184
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 0,
+      "preview": "cameras/01-closed.png",
+      "follower_feet": [
+        24,
+        224
+      ],
+      "evidence": "composed native preview using prior real camera coordinates and unchanged existing sprite/HUD; not a new running-ROM capture"
+    },
+    {
+      "path": "6B/landmark-1.png",
+      "position": [
+        912,
+        152
+      ],
+      "camera": [
+        760,
+        24
+      ],
+      "visible_world": [
+        760,
+        48,
+        1080,
+        248
+      ],
+      "label": "Câmara de pressão alta",
+      "bbox": [
+        800,
+        64,
+        240,
+        184
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 1,
+      "preview": "cameras/02-closed.png",
+      "follower_feet": [
+        872,
+        176
+      ],
+      "evidence": "composed native preview using prior real camera coordinates and unchanged existing sprite/HUD; not a new running-ROM capture"
+    },
+    {
+      "path": "6B/landmark-2.png",
+      "position": [
+        1632,
+        192
+      ],
+      "camera": [
+        1472,
+        48
+      ],
+      "visible_world": [
+        1472,
+        72,
+        1792,
+        272
+      ],
+      "label": "Bacia de bombas",
+      "bbox": [
+        1472,
+        112,
+        144,
+        160
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 2,
+      "preview": "cameras/03-closed.png",
+      "follower_feet": [
+        1616,
+        216
+      ],
+      "evidence": "composed native preview using prior real camera coordinates and unchanged existing sprite/HUD; not a new running-ROM capture"
+    },
+    {
+      "path": "6B/landmark-3.png",
+      "position": [
+        2032,
+        232
+      ],
+      "camera": [
+        1880,
+        80
+      ],
+      "visible_world": [
+        1880,
+        104,
+        2200,
+        304
+      ],
+      "label": "Câmara de pressão baixa",
+      "bbox": [
+        1920,
+        136,
+        224,
+        168
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 3,
+      "preview": "cameras/04-closed.png",
+      "follower_feet": [
+        1992,
+        256
+      ],
+      "evidence": "composed native preview using prior real camera coordinates and unchanged existing sprite/HUD; not a new running-ROM capture"
+    },
+    {
+      "path": "6B/landmark-4.png",
+      "position": [
+        3008,
+        168
+      ],
+      "camera": [
+        2752,
+        0
+      ],
+      "visible_world": [
+        2752,
+        24,
+        3072,
+        224
+      ],
+      "label": "Abrigo",
+      "bbox": [
+        2848,
+        48,
+        160,
+        96
+      ],
+      "landmark_entirely_visible": true,
+      "row": 3,
+      "col": 4,
+      "preview": "cameras/05-closed.png",
+      "follower_feet": [
+        2968,
+        192
+      ],
+      "evidence": "composed native preview using prior real camera coordinates and unchanged existing sprite/HUD; not a new running-ROM capture"
+    }
+  ],
+  "limits": [
+    "This changes materials only: existing long corridor composition, native outlines, pumps, bays and gates remain. It does not claim to redesign the spatial macrocomposition.",
+    "The 16x16 material is repeated exactly; sparse 1px grain can still reveal repetition at enlarged viewing scale.",
+    "Dark drainage is conveyed by charcoal pigment and depth of existing banks; blue pipework remains on mechanical equipment.",
+    "Cameras are native composed previews at previously measured legal runtime coordinates. Actor placement is illustrative; no new emulator or gameplay measurement is claimed.",
+    "Root/user whole-map and private-ROM review is still required; tile and geometry checks are not visual approval."
+  ],
+  "sources": [
+    {
+      "path": "../../sewers/6B/manifest.json",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/manifest.json",
+      "sha256": "ba77fc1a8297368811f649ea2962cf7168196d845c3db17fa6b5bac65ac1ac80"
+    },
+    {
+      "path": "../../sewers/6B/complete-native.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/complete-native.png",
+      "sha256": "3a49a035f9485c74d581a03bf92729d0f6d7605228623b203db1a39a03ae5bd2"
+    },
+    {
+      "path": "../../sewers/6B/complete-indexed.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/complete-indexed.png",
+      "sha256": "4091922f69add5bb46507353b77b268309c724660838658c977904cfa568a4ab"
+    },
+    {
+      "path": "../../../phase04-tunnels-v1/map-native.png",
+      "game_path": "art/phase04-tunnels-v1/map-native.png",
+      "sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd"
+    },
+    {
+      "path": "../../sewers/6B/candidate/bank.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/bank.png",
+      "sha256": "d81bf746756ac4b5594f69a5216417f4cffcf5a9415dcad15e19287098f4ca15"
+    },
+    {
+      "path": "../../sewers/6B/candidate/brick.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/brick.png",
+      "sha256": "2bf1978818345e78c2c3fac2a266523ac354aa77782412f2062172a5f9c64ebc"
+    },
+    {
+      "path": "../../sewers/6B/candidate/bridge-detail.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/bridge-detail.png",
+      "sha256": "3fa13f1d500d9237e8f25d8eda82cf703f3982e58d8a250a77e1bf1762abbcc5"
+    },
+    {
+      "path": "../../sewers/6B/candidate/canopy.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/canopy.png",
+      "sha256": "141cee9f5eb5e042ae597b607c46c14be42938679a305e5e7b7cbe54bda52917"
+    },
+    {
+      "path": "../../sewers/6B/candidate/corner.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/corner.png",
+      "sha256": "f40f570753e3f61c44f9fdf4045f24e880127d6b7c3c7d48475eb0560caa5bf8"
+    },
+    {
+      "path": "../../sewers/6B/candidate/curve.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/curve.png",
+      "sha256": "45965ebe6d52e521b45a60e41ee8bb29fb9000834edc106fcb1b4231325db8fc"
+    },
+    {
+      "path": "../../sewers/6B/candidate/edge.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/edge.png",
+      "sha256": "d78ac97d22bc39413e57b50e70ff18ead185a3e81593907df6fd50f21c2ec2d0"
+    },
+    {
+      "path": "../../sewers/6B/candidate/feed-pipe.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/feed-pipe.png",
+      "sha256": "8376dd451daf06fec5c0efe0e59249edf0299b4a9ef71e0142ef19dfea44d264"
+    },
+    {
+      "path": "../../sewers/6B/candidate/floor.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/floor.png",
+      "sha256": "63948630c2b3f45197ebcfc9f57f55ef07cabf5934a3cc698b417d4c117ecf88"
+    },
+    {
+      "path": "../../sewers/6B/candidate/inlet-detail.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/inlet-detail.png",
+      "sha256": "75cb7172a26eaaad2d93358fd026fdcda20a03b7db7af3695c8cea4969a931dd"
+    },
+    {
+      "path": "../../sewers/6B/candidate/pillar-face.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/pillar-face.png",
+      "sha256": "6561c568d80c4bb8e4833233c018d0ab1e524471e61eb3499092e0c84090fa99"
+    },
+    {
+      "path": "../../sewers/6B/candidate/side.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/side.png",
+      "sha256": "dcfe749f7b3002aec33b25b7c7228d273545377b8f331aa20e7f67a59b4bba32"
+    },
+    {
+      "path": "../../sewers/6B/candidate/stairs-detail.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/stairs-detail.png",
+      "sha256": "18a1035595fcc3bb7b54574f7c63d8f8c428845d4e0330f48b9ab29169f816ef"
+    },
+    {
+      "path": "../../sewers/6B/candidate/tank-detail.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/tank-detail.png",
+      "sha256": "1738b93a98e05f54355ca0c84fddcf8fcebbbd2effe38d99c5da4959a30aca3c"
+    },
+    {
+      "path": "../../sewers/6B/candidate/water.png",
+      "game_path": "art/campaign-corridors-v3/sewers/6B/candidate/water.png",
+      "sha256": "ccb8843b020522b9196c7a1a6f22cca1ac7137c45940b626fcd30bed04d21bfd"
+    },
+    {
+      "path": "../../../campaign-pattern-v2/routes/review-evidence/damiao-production-frame.png",
+      "game_path": "art/campaign-pattern-v2/routes/review-evidence/damiao-production-frame.png",
+      "sha256": "f283feb008affcfb89ab77528eea48e58388b8cd5e5ef4db9ced74fb0b8e7af0"
+    },
+    {
+      "path": "../../../campaign-pattern-v2/routes/review-evidence/dinorah-production-frame.png",
+      "game_path": "art/campaign-pattern-v2/routes/review-evidence/dinorah-production-frame.png",
+      "sha256": "feed949cc2c219401d7ba2ca146bfc7a2a8795aa650a6221f88ca5acd25d7b68"
+    },
+    {
+      "path": "../../../objective-sprites-v1/frames/gate-0.png",
+      "game_path": "art/objective-sprites-v1/frames/gate-0.png",
+      "sha256": "d310849d742de53bbb1ca4c78bd6ff4f2a105c44775d4da301bbfb0a6d6a9527"
+    },
+    {
+      "path": "../../../objective-sprites-v1/frames/gate-5.png",
+      "game_path": "art/objective-sprites-v1/frames/gate-5.png",
+      "sha256": "b8d5bd72ec41a79990bc80581056f006261150b9a50b0e441453aee0c904782b"
+    },
+    {
+      "path": "../../../objective-sprites-v1/frames/valve-0.png",
+      "game_path": "art/objective-sprites-v1/frames/valve-0.png",
+      "sha256": "f12664986d33b5502c13e4afb5aee59da4785fd32eedd95a576d153b758478c5"
+    },
+    {
+      "path": "../../../objective-sprites-v1/frames/valve-3.png",
+      "game_path": "art/objective-sprites-v1/frames/valve-3.png",
+      "sha256": "55eb0399eeb4041447c112fb46e24f7cfd79586e793ac65eeac8e777a17ab539"
+    }
+  ]
+}

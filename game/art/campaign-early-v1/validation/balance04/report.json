@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "rom_sha256": "2632b4fdcd6e869208d52ad071bc130c6744deaa2992e4783019ee51f0a2609a",
+  "rom": "/tmp/plaguefall-early-build/game/out/release/rom.bin",
+  "isolated_build": true,
+  "method": "RAM only prepares isolated nodes/collision/load probes; ordinary matches enable a write guard and use controller only. FPS derived from logical phase frames / VBlanks, not host time.",
+  "stages": [
+    {
+      "phase": "04",
+      "node": 5,
+      "checks": {
+        "04/entry": {
+          "passed": true,
+          "details": {
+            "bounds": [
+              16,
+              96,
+              495,
+              367
+            ],
+            "target": 20,
+            "atlas_tiles": 372,
+            "enemy_cap": 4,
+            "shots_each_pool": 6
+          }
+        },
+        "04/atlas-camera": {
+          "passed": true,
+          "details": {
+            "atlas_matches": true,
+            "ring_cells_compared": 4480,
+            "camera_return_checked": true
+          }
+        },
+        "04/collision": {
+          "passed": true,
+          "details": {
+            "movement_face_probes": 12,
+            "player_footprint": 16,
+            "static_reachability": {
+              "footprint": 16,
+              "reachable_positions": 1907,
+              "free_positions": 1907,
+              "all_free_positions_connected": true,
+              "bounds_checks": 7628
+            }
+          }
+        }
+      },
+      "ordinary_matches": [
+        {
+          "attempt": 1,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 33.68,
+          "physical_seconds": 34.63,
+          "fps": 58.35,
+          "kills": 5,
+          "hp": 0,
+          "minimum_npc_hp": null,
+          "peak_enemies": 4,
+          "damage_events": 11,
+          "ram_writes_during_attempt": false
+        },
+        {
+          "attempt": 2,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 83.63,
+          "physical_seconds": 84.68,
+          "fps": 59.26,
+          "kills": 19,
+          "hp": 0,
+          "minimum_npc_hp": null,
+          "peak_enemies": 3,
+          "damage_events": 11,
+          "ram_writes_during_attempt": false
+        },
+        {
+          "attempt": 3,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 66.2,
+          "physical_seconds": 67.23,
+          "fps": 59.08,
+          "kills": 16,
+          "hp": 0,
+          "minimum_npc_hp": null,
+          "peak_enemies": 2,
+          "damage_events": 10,
+          "ram_writes_during_attempt": false
+        },
+        {
+          "attempt": 4,
+          "result": "defeat",
+          "objective_failed": false,
+          "game_seconds": 63.7,
+          "physical_seconds": 64.73,
+          "fps": 59.04,
+          "kills": 15,
+          "hp": 0,
+          "minimum_npc_hp": null,
+          "peak_enemies": 2,
+          "damage_events": 10,
+          "ram_writes_during_attempt": false
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

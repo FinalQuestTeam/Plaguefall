@@ -1,0 +1,539 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "e303fb6daec8037ee14658e31e9ac557542c171dd91fc204ec30e427a379526d",
+  "emulatedROMSHA256": "e303fb6daec8037ee14658e31e9ac557542c171dd91fc204ec30e427a379526d",
+  "productionROM": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/radio-dialogos-ux-v1/integracao/rom/rom.bin",
+  "setup": "Explicit RAM acceleration for source stage, stats and completion. Map idle/travel/exit run under a write guard.",
+  "edges": [
+    {
+      "from": "1",
+      "to": "2A",
+      "region": 1,
+      "overlayTiles": 129,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 8,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "1",
+      "to": "2B",
+      "region": 1,
+      "overlayTiles": 130,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 29,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "2A",
+      "to": "3",
+      "region": 1,
+      "overlayTiles": 128,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 8,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "2B",
+      "to": "3",
+      "region": 1,
+      "overlayTiles": 128,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 29,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "3",
+      "to": "4",
+      "region": 1,
+      "overlayTiles": 126,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 8,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "4",
+      "to": "5",
+      "region": 2,
+      "overlayTiles": 140,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 29,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "5",
+      "to": "6A",
+      "region": 2,
+      "overlayTiles": 130,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 8,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "5",
+      "to": "6B",
+      "region": 2,
+      "overlayTiles": 132,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 30,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "6A",
+      "to": "7",
+      "region": 2,
+      "overlayTiles": 131,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 22,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "6B",
+      "to": "7",
+      "region": 2,
+      "overlayTiles": 130,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 43,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "7",
+      "to": "8",
+      "region": 3,
+      "overlayTiles": 133,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 22,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "region": 3,
+      "overlayTiles": 123,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 43,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "9",
+      "to": "10A",
+      "region": 3,
+      "overlayTiles": 126,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 22,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "9",
+      "to": "10B",
+      "region": 3,
+      "overlayTiles": 127,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 45,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "10A",
+      "to": "11",
+      "region": 3,
+      "overlayTiles": 123,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 24,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "10B",
+      "to": "11",
+      "region": 3,
+      "overlayTiles": 126,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 45,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "11",
+      "to": "12",
+      "region": 4,
+      "overlayTiles": 121,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 24,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "12",
+      "to": "13A",
+      "region": 4,
+      "overlayTiles": 117,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 43,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "12",
+      "to": "13B",
+      "region": 4,
+      "overlayTiles": 116,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 22,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "13A",
+      "to": "14",
+      "region": 4,
+      "overlayTiles": 117,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 45,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "13B",
+      "to": "14",
+      "region": 4,
+      "overlayTiles": 117,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 24,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "14",
+      "to": "15",
+      "region": 4,
+      "overlayTiles": 113,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": true,
+      "exitWaitFrames": 45,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    },
+    {
+      "from": "15",
+      "to": "16",
+      "region": 4,
+      "overlayTiles": 115,
+      "idlePinPersistent": true,
+      "travelMoved": true,
+      "skipTested": false,
+      "exitWaitFrames": 22,
+      "artAndFontVRAMExact": true,
+      "fixedTilesPreserved": true,
+      "nextStageEntered": true,
+      "footer": {
+        "copyExact": true,
+        "bodyCentered": true,
+        "actionsRightAligned": true,
+        "goldTitleAndAction": true,
+        "solidBackgroundAndSpacing": true,
+        "travelActionReplaced": true
+      }
+    }
+  ],
+  "maxOverlayTiles": 140,
+  "failures": [],
+  "histories": [
+    {
+      "path": [
+        "1",
+        "2A",
+        "3",
+        "4",
+        "5",
+        "6A",
+        "7",
+        "8",
+        "9",
+        "10A",
+        "11",
+        "12",
+        "13A",
+        "14",
+        "15",
+        "16"
+      ],
+      "passed": true
+    },
+    {
+      "path": [
+        "1",
+        "2B",
+        "3",
+        "4",
+        "5",
+        "6B",
+        "7",
+        "8",
+        "9",
+        "10B",
+        "11",
+        "12",
+        "13B",
+        "14",
+        "15",
+        "16"
+      ],
+      "passed": true
+    }
+  ]
+}

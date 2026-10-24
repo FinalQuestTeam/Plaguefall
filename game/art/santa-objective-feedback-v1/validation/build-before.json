@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "date": "2026-10-21",
+  "revision": "Centred partial resistance result cards: defeat/retry, safe exit, objective completion, signal branches, final victory and new campaign",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "3bfa4cbdc6dc076612cd7bd6817e1373547c9d2aae08c2eb3e98418308faf06e",
+  "rom_bytes": 1310720,
+  "text_bytes": 1276016,
+  "data_bytes": 140,
+  "bss_bytes": 8962,
+  "static_ram_bytes": 9102,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "interface_ntsc": {
+      "passed": true,
+      "report": "../art/resultados-ux-v1/integracao/validation/interface-ntsc/report.json",
+      "localities": 20,
+      "helpPages": 6,
+      "graphicsRestoredExactly": true,
+      "simulationFrozen": true
+    },
+    "routemap_ntsc": {
+      "passed": true,
+      "report": "../art/resultados-ux-v1/integracao/validation/map-ntsc/report.json",
+      "edges": 23,
+      "completeHistories": 2,
+      "maxOverlayTiles": 140
+    },
+    "interface_pal": {
+      "passed": true,
+      "report": "../art/resultados-ux-v1/integracao/validation/interface-pal/report.json",
+      "localities": 20,
+      "helpPages": 6,
+      "graphicsRestoredExactly": true,
+      "simulationFrozen": true
+    },
+    "routemap_pal": {
+      "passed": true,
+      "report": "../art/resultados-ux-v1/integracao/validation/map-pal/report.json",
+      "edges": 23,
+      "completeHistories": 2,
+      "maxOverlayTiles": 140
+    },
+    "results_ntsc": {
+      "passed": true,
+      "report": "../art/resultados-ux-v1/integracao/validation/ntsc/report.json",
+      "localities": 20,
+      "samePhaseRetry": true,
+      "equipmentReset": true,
+      "routes": [
+        "6A",
+        "6B"
+      ],
+      "replayFullReset": true,
+      "sandboxRetry": true
+    },
+    "results_pal": {
+      "passed": true,
+      "report": "../art/resultados-ux-v1/integracao/validation/pal/report.json",
+      "localities": 20,
+      "samePhaseRetry": true,
+      "equipmentReset": true,
+      "routes": [
+        "6A",
+        "6B"
+      ],
+      "replayFullReset": true,
+      "sandboxRetry": true
+    }
+  },
+  "native_audio_player_resources": "../art/resultados-ux-v1/integracao/validation/native-checks.txt",
+  "native_checks_passed": true,
+  "map_limits": {
+    "screen": [
+      320,
+      224
+    ],
+    "painting": [
+      320,
+      160
+    ],
+    "art_tiles": 800,
+    "art_base": 101,
+    "overlay_budget": 192,
+    "overlay_max_observed": 140,
+    "pin_tiles": 4,
+    "pin_base": 1093,
+    "font_base": 1440,
+    "art_palettes": 2,
+    "row_buffer_bytes": 1280,
+    "borrowed_graphics_restored": true
+  },
+  "previous_validation": "../art/resultados-ux-v1/integracao/validation/build-before.json",
+  "footer": {
+    "coveredEdges": 23,
+    "body": "centered on 8px tile grid",
+    "actions": "right aligned, 8px margin",
+    "goldPalette": "PAL3, restored on exit",
+    "maxCharacters": 37,
+    "fontTilesAdded": 0,
+    "rows": [
+      22,
+      23,
+      24,
+      26
+    ],
+    "readyAndTravelValidated": true
+  },
+  "interface_limits": {
+    "artTiles": 545,
+    "artBase": 101,
+    "scratchBase": 646,
+    "scratchTiles": 112,
+    "lastBorrowedTile": 757,
+    "fontBase": 1440,
+    "backgroundColors": 15,
+    "artBytes": 17440,
+    "graphicsSnapshotBytes": 32288,
+    "snapshotLifetime": "allocated once for a panel and its help subpages, freed on exit",
+    "simulationResetOnResume": false,
+    "portrait": [
+      48,
+      48
+    ],
+    "dialogueWidth": 34,
+    "dialogueRows": 4,
+    "dialogueLineSpacing": 16,
+    "dialogueLinesChecked": 51,
+    "releaseShortcuts": "DEV_SHORTCUTS opt-in; disabled in production"
+  },
+  "result_limits": {
+    "width": 256,
+    "heights": {
+      "defeat": 184,
+      "exit": 152,
+      "completion": 128,
+      "victory": 176
+    },
+    "alignment": "exact pixel centre; original 8x8 glyphs",
+    "fontMaskBytes": 768,
+    "palette": "PAL2; actors hidden; original scenery PAL0/1/3 retained",
+    "backgroundTileCap": 680,
+    "maxBackgroundTilesObserved": 406,
+    "cardTilesMax": 736,
+    "lastTileLimit": 1431,
+    "lastTileObserved": 1157,
+    "temporaryCaptureBytesMax": 34048,
+    "cardBufferBytes": 23552,
+    "memoryLifetime": "capture buffers freed before card allocation; card freed on exit; object/floor patterns and actor cache rebuilt",
+    "transientBloodDecals": "hidden with actors in mapped arenas",
+    "inputGateMilliseconds": 350,
+    "automaticSeconds": {
+      "completion": 2,
+      "signalLost": 3,
+      "defeat": null,
+      "final": null
+    }
+  }
+}

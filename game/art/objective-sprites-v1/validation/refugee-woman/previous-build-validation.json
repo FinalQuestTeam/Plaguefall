@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "date": "2026-10-23",
+  "revision": "Civil sertanejo com chapéu de couro, camisa de algodão e sandálias; seis poses de animação preservadas",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "c0ab7f494781aadde7cf089d04f6bb33bf4324d3fb8534c6ce79d42951611ee6",
+  "rom_bytes": 1835008,
+  "text_bytes": 1788796,
+  "data_bytes": 152,
+  "bss_bytes": 19494,
+  "static_ram_bytes": 19646,
+  "native_checks_passed": true,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "objective_art": {
+    "new_assets": 9,
+    "authored_frames": 54,
+    "all_frames_distinct": true,
+    "generation": "built-in image_gen.imagegen",
+    "palette": "existing PAL1",
+    "tile_base": 817,
+    "maximum_resident_tiles": 528,
+    "vram_end_exclusive": 1345,
+    "checks_passed": 16,
+    "rooms": [
+      16
+    ],
+    "animations_finish_after_result": true,
+    "pause_freezes_animations": true,
+    "frame_patterns_verified_in_vram": true,
+    "ground_tiles_verified_during_camera_motion": true,
+    "strict_fps_target_met_in_all_scenarios": false,
+    "reports": {
+      "ntsc": "../art/objective-sprites-v1/validation/refugee-correction/ntsc/report.json",
+      "pal": "../art/objective-sprites-v1/validation/refugee-correction/pal/report.json"
+    },
+    "validation_scope": "Current costume revision: room 16 only, both regions. Previous full 128-check revision preserved in previous_validation."
+  },
+  "previous_validation": "../art/objective-sprites-v1/validation/refugee-correction/previous-build-validation.json"
+}

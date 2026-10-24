@@ -1,0 +1,186 @@
+{
+  "rom_sha256": "61372627b51f4c2bbc04dfe5b4680726681180a5e64b6a75658255017bdab05b",
+  "phases": [
+    "6A",
+    "6B",
+    "12"
+  ],
+  "regions": [
+    "NTSC",
+    "PAL"
+  ],
+  "screenshots_reviewed": 162,
+  "scope": "Visual review of actual emulator rendering and camera samples. Not a live escort/combat completion, load, collision or branch test.",
+  "capture_setup": "Root capturer seeds real phases, suppresses combat/progress/auto-interactions and moves player feet. Native camera, streaming and renderer remain active. Dinorah remains at start after player teleport; her absence later is setup, not a proven disappearance bug.",
+  "status": "visual_acceptance_with_recorded_framing_and_repetition_limits; integration owner retains final approval",
+  "qa_sheets": "runtime-evidence/index.json",
+  "reviewed_dimensions": [
+    3072,
+    272
+  ],
+  "per_phase": {
+    "6A": {
+      "status": "coherent with HUD framing limit",
+      "observed": [
+        "Full entrance arch, mid-route circular inspection hatch and refuge arrival distinguish the long route.",
+        "Lower canal/water wall and left/right returns remain continuous at cy48.",
+        "Low cabinets remain complete and distinguishable from floor.",
+        "No isolated architectural fragment or corrupted tile mosaic identified in current162-shot review."
+      ],
+      "evidence": [
+        "runtime-evidence/6A-ntsc-entry.png",
+        "runtime-evidence/6A-ntsc-middle.png",
+        "runtime-evidence/6A-ntsc-exit.png",
+        "runtime-evidence/6A-pal-entry.png",
+        "runtime-evidence/6A-pal-middle.png",
+        "runtime-evidence/6A-pal-exit.png"
+      ],
+      "reservations": [
+        "R1",
+        "R3"
+      ]
+    },
+    "6B": {
+      "status": "coherent closed/collapse/open mechanism composition in actual runtime",
+      "observed": [
+        "Pressure house is whole; blue feed pipe reaches the valve assembly rather than ending in water.",
+        "Second closed gate and native fixed supports contact the floor and remain separate from player silhouette in x5 samples.",
+        "Lower margin and arrival stair remain complete during camera movement.",
+        "Numerous edge objective markers are visible, producing more clutter than6A."
+      ],
+      "evidence": [
+        "runtime-evidence/6B-ntsc-entry.png",
+        "runtime-evidence/6B-ntsc-middle.png",
+        "runtime-evidence/6B-ntsc-exit.png",
+        "runtime-evidence/6B-pal-entry.png",
+        "runtime-evidence/6B-pal-middle.png",
+        "runtime-evidence/6B-pal-exit.png",
+        "runtime-evidence/6B-ntsc-actual-states.png",
+        "runtime-evidence/6B-pal-actual-states.png"
+      ],
+      "reservations": [
+        "R2",
+        "R3"
+      ],
+      "not_proven_by_these_shots": [
+        "Dinorah passing both openings during live combat."
+      ]
+    },
+    "12": {
+      "status": "coherent with long repetitive exterior",
+      "observed": [
+        "Garage entrance, maintenance bay and union facade distinguish the route.",
+        "Repeated garage bays preserve both sides; no half-building seam identified.",
+        "Foreground concrete wall/blue rail and complete side returns remain visible in lower samples.",
+        "Hero silhouette is clear against low-contrast field.",
+        "Large upper sky and long repetitive bays remain compositional limitations rather than newly claimed defects."
+      ],
+      "evidence": [
+        "runtime-evidence/12-ntsc-entry.png",
+        "runtime-evidence/12-ntsc-middle.png",
+        "runtime-evidence/12-ntsc-exit.png",
+        "runtime-evidence/12-pal-entry.png",
+        "runtime-evidence/12-pal-middle.png",
+        "runtime-evidence/12-pal-exit.png"
+      ],
+      "reservations": [
+        "R3"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "P2 framing limit",
+      "phase": "6A",
+      "confirmed": true,
+      "global_bounds": [
+        [
+          24,
+          56,
+          128,
+          16
+        ],
+        [
+          2936,
+          56,
+          112,
+          16
+        ]
+      ],
+      "camera_y": 48,
+      "screen_y_before_hud": [
+        8,
+        23
+      ],
+      "description": "HUD covers16px of the highest entrance/arrival architecture in the lower camera. The arrival canopy top is visibly cropped; arch opening, stair and destination remain legible. This is HUD/camera framing, not an internal cut fragment.",
+      "proof": [
+        "../captures/ntsc/6A/x0-y2.png",
+        "../captures/ntsc/6A/x8-y1.png",
+        "../captures/ntsc/6A/x8-y2.png",
+        "../captures/pal/6A/x8-y2.png"
+      ],
+      "action": "Disclosed to root before any correction. No artwork/core/ROM changed during runtime review."
+    },
+    {
+      "id": "R2",
+      "priority": "P2 visual clutter",
+      "phase": "6B",
+      "confirmed": true,
+      "description": "Offscreen escort/valve/gate direction markers crowd both screen edges, occasionally stacking beside each other. House, valve wheel and gate leaf remain readable in the full station view.",
+      "proof": [
+        "../captures/ntsc/6B/x4-y0.png",
+        "../captures/ntsc/6B/x5-y1.png",
+        "../captures/pal/6B/x4-y1.png"
+      ],
+      "action": "Record as HUD/marker limitation; no shared marker changes authorized by this visual review."
+    },
+    {
+      "id": "R3",
+      "priority": "P3 composition limitation",
+      "phases": [
+        "6A",
+        "6B",
+        "12"
+      ],
+      "confirmed": true,
+      "description": "Paving/garage-bay repetition is obvious in long ordinary sectors. Floor remains continuous and low contrast, with no checker replacement or isolated geometric mosaic identified.12 also retains generous upper sky.",
+      "proof": [
+        "runtime-evidence/6A-ntsc-middle.png",
+        "runtime-evidence/6B-pal-middle.png",
+        "runtime-evidence/12-ntsc-middle.png"
+      ]
+    }
+  ],
+  "limits": [
+    "Capture positions sample27 views per phase per region; they do not prove every pixel at every continuous camera offset.",
+    "No FPS/SAT/performance numbers inferred from still images.",
+    "No prior ROM approval reused.",
+    "Gate animation/hidden-state validation completed separately at50/60Hz on sameROM; no comparison relaxed."
+  ],
+  "changes_during_review": [
+    "QA sheet assembler and this report only; mechanism test harness waits for queued visual DMA commit. No ROM, scene resources or artwork edits."
+  ],
+  "mechanism_runtime_validation": {
+    "rom_sha256": "61372627b51f4c2bbc04dfe5b4680726681180a5e64b6a75658255017bdab05b",
+    "NTSC": {
+      "exitcode": 0,
+      "report": "mechanism-commit-validation/ntsc/report.json"
+    },
+    "PAL": {
+      "exitcode": 0,
+      "report": "mechanism-commit-validation/pal/report.json"
+    },
+    "observed": [
+      "Both genuine1.5s pressure operations and four-shot gates.",
+      "Frame5 observed while solid; after0.8s sprite hidden, native supports/background restored.",
+      "All six global gate and valve poses compared byte-for-byte in VRAM, with original animation source.",
+      "Pause preserves compound state."
+    ],
+    "harness_timing_fix": "After RAM entersframe5, advance2real VBlanks so DMA_QUEUE_COPY commits. Require frame5 remains visible and compare every opaque tile exactly. Same2VBlank commit after hide before background assertion. No color/tile mismatch tolerance added.",
+    "images": [
+      "runtime-evidence/6B-ntsc-actual-states.png",
+      "runtime-evidence/6B-pal-actual-states.png"
+    ]
+  }
+}

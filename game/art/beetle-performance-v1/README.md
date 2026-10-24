@@ -1,6 +1,10 @@
 # Investigação: lentidão com oito besouros blindados
 
-## Protótipo de 60 FPS pronto para avaliação
+## Correção integrada à ROM principal
+
+Em 23/10/2026, o conjunto aprovado foi aplicado às fontes atuais e à **ROM principal**, preservando as interfaces recentes. A sala 6 de carga também foi integrada. Consulte a [documentação da integração](../../doc/desempenho-blindados.md) e os [resultados da ROM atual](validation/integrated-current/report.json). As seções seguintes registram os experimentos anteriores e seus resultados nas respectivas revisões.
+
+## Histórico: protótipo de 60 FPS
 
 O conjunto experimental passou nos 24 casos: **60 FPS NTSC e 50 FPS PAL**, com oito blindados e cargas de 0/6/16 tiros por conjunto. Também passou em dois ensaios NTSC de cinco minutos com carga máxima, sem quadros perdidos. A ROM é separada; as mudanças de desempenho não foram aplicadas ao jogo principal.
 

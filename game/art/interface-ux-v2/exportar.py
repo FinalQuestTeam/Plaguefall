@@ -28,7 +28,7 @@ def main():
  outputs[GAME/'res/interface_data.res']=b'// Shared resistance panel. Background PAL3; transparent font and native icons.\nBIN interface_tiles "interface/tiles.bin" 4\nBIN interface_map "interface/map.bin" 2\nBIN interface_palette "interface/palette.bin" 2\n'
  constants=f'#ifndef PANEL_DATA_H\n#define PANEL_DATA_H\n#define PANEL_TILE_COUNT {len(tiles)}\n#define PANEL_RUST_INDEX {rust}\n#endif\n'
  outputs[GAME/'src/system/video/screens/panel_data.h']=constants.encode()
- phases=json.loads((ROOT/'conteudo-aprovado.json').read_text())['phases']
+ phases=json.loads((ROOT/'campanha-v2.json').read_text())['phases']
  header='#ifndef MISSION_COPY_H\n#define MISSION_COPY_H\ntypedef struct { const char *name, *attention, *route; } MissionCopy;\nstatic const MissionCopy MISSION_COPY[NODE_MAX] = {\n'
  for p in phases:
   header+=f'    [N_{p["id"]}] = {{ {json.dumps(p["name"],ensure_ascii=False)}, {json.dumps(p["attention"],ensure_ascii=False)}, {json.dumps(p["route"],ensure_ascii=False) if p["route"] else "NULL"} }},\n'
@@ -52,5 +52,5 @@ def main():
  for path,content in outputs.items():
   if args.check:assert path.read_bytes()==content,str(path)
   else:path.write_bytes(content)
- print(f'Interface: {len(tiles)} tiles / {len(tiles)*32} bytes; 15 opaque colors; 20 mission records.')
+ print(f'Interface: {len(tiles)} tiles / {len(tiles)*32} bytes; 15 opaque colors; {len(phases)} mission records.')
 if __name__=='__main__':main()

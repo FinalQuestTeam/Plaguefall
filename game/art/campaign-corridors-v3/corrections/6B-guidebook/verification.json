@@ -1,0 +1,87 @@
+{
+  "phase": "6B",
+  "status": "PASS private data contract; visual approval not implied",
+  "builder_check": {
+    "exit_code": 0,
+    "byte_exact_outputs": 38,
+    "writes": 0,
+    "command": "python3 game/art/campaign-corridors-v3/corrections/6A-guidebook/build_materials.py --check"
+  },
+  "native_decode": {
+    "exact_index_pixels": true,
+    "exact_rgb_pixels": true,
+    "palette_rgb333_exact": true,
+    "palette_zero_black": true,
+    "width": 3072,
+    "height": 320,
+    "tile_count": 368,
+    "objective_reserve": 256,
+    "total_tiles": 624,
+    "h_v_flip_decode_verified": true
+  },
+  "geometry_equal_fields": [
+    "size",
+    "bounds",
+    "start",
+    "route_points",
+    "pauses",
+    "exit",
+    "solids",
+    "gates",
+    "valves",
+    "valve_approaches",
+    "gate_shot_approaches",
+    "camera_interest",
+    "camera_player_y"
+  ],
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 6074,
+    "reachable_positions": 6074,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3174
+  },
+  "objective_sprite_files_unchanged": [
+    {
+      "path": "../../../objective-sprites-v1/frames/gate-0.png",
+      "game_path": "art/objective-sprites-v1/frames/gate-0.png",
+      "sha256": "d310849d742de53bbb1ca4c78bd6ff4f2a105c44775d4da301bbfb0a6d6a9527"
+    },
+    {
+      "path": "../../../objective-sprites-v1/frames/gate-5.png",
+      "game_path": "art/objective-sprites-v1/frames/gate-5.png",
+      "sha256": "b8d5bd72ec41a79990bc80581056f006261150b9a50b0e441453aee0c904782b"
+    },
+    {
+      "path": "../../../objective-sprites-v1/frames/valve-0.png",
+      "game_path": "art/objective-sprites-v1/frames/valve-0.png",
+      "sha256": "f12664986d33b5502c13e4afb5aee59da4785fd32eedd95a576d153b758478c5"
+    },
+    {
+      "path": "../../../objective-sprites-v1/frames/valve-3.png",
+      "game_path": "art/objective-sprites-v1/frames/valve-3.png",
+      "sha256": "55eb0399eeb4041447c112fb46e24f7cfd79586e793ac65eeac8e777a17ab539"
+    }
+  ],
+  "files": {
+    "tiles": {
+      "bytes": 11776,
+      "sha256": "a5beb467bcfa49cd0b785419ad6dc678fa412abe2b9ffcccc1803223f7d20c28"
+    },
+    "map": {
+      "bytes": 30720,
+      "sha256": "ca9b4a06636e1bed87e0118753c9625b2ba096637363a12235a07c29b71f920c"
+    },
+    "palette": {
+      "bytes": 32,
+      "sha256": "52f253bacc58eae0fb3a53db5f4e526909b1f575fce09f21b3966d6d2db1d71a"
+    }
+  },
+  "full_native_png_sha256": "5d1971b8957685a2a7c3a8410415ad2909d8c4430889266213e13244bf49d160",
+  "active_scene_edited": false,
+  "rom_built_or_executed": false,
+  "limits": [
+    "No new gameplay/performance measurements: this only validates isolated existing geometry and exported banks.",
+    "Cameras use old measured positions with composed actors/HUD. Private-ROM review must confirm streaming, palette loading and visibility."
+  ]
+}

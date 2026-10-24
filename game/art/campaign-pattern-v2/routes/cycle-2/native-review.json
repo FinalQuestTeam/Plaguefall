@@ -1,0 +1,223 @@
+{
+  "status": "candidate_pending_integrated_emulator_review",
+  "supersedes": "Previous route visual approvals and their old ROM results are not approval of this revision.",
+  "cycles_used": 2,
+  "maximum_cycles": 3,
+  "workflow": "Whole ImageGen scenes inspected first; complete modules and full material cross-sections; world assembly; exact palette/8x8 dedup; full world with objectives; static camera/production actor overlays; runtime pending.",
+  "sources": {
+    "06a": {
+      "image": "cycle-1/source/06a-whole.png",
+      "prompt": "cycle-1/prompts/06a.txt",
+      "sha256": "bf650205ab505259b14343745d1233a9be5db8182c7cd5c4c83f5fca839e707c"
+    },
+    "06b": {
+      "image": "cycle-1/source/06b-whole.png",
+      "prompt": "cycle-1/prompts/06b.txt",
+      "sha256": "219db21fe59db2df645cf0a8f232a3706bc17bbbc71ee0f9387f8274b2196e9f"
+    },
+    "12": {
+      "image": "cycle-1/source/12-whole.png",
+      "prompt": "cycle-1/prompts/12.txt",
+      "sha256": "881b8a9819d284de9c7b73b1a2ebaeac4f2510aa29f480be86e0d4b6cd00e59b"
+    }
+  },
+  "cycle1_critique": "cycle-1/native-review.json",
+  "cycle2_critique": {
+    "06a": {
+      "improved": [
+        "Whole drain portal and refuge stair/canopy preserved.",
+        "Upper continuous masonry, intact corner returns and lower water/canal wall.",
+        "Complete low pump cabinets change escort path without pinching it."
+      ],
+      "remaining": [
+        "Long repeated masonry bays and regular paving cadence are visible.",
+        "Actual camera tracking, enemies and occlusion still need integrated review."
+      ]
+    },
+    "06b": {
+      "improved": [
+        "Whole pressure houses retain roofs, sidewalls and blue pipe mouth.",
+        "Native fixed supports remain in closed/collapse/open states.",
+        "Global gate sprite disappears after collapse; no remaining uncollidable sprite pillars.",
+        "Valve pipe reaches its house and elbow, with no free-floating water/tube fragment."
+      ],
+      "remaining": [
+        "Only11 of640tiles free, including every global gate/valve state.",
+        "Sprite/support contact and passage opening must be verified during actual animation.",
+        "Floor repetition remains regular."
+      ]
+    },
+    "12": {
+      "improved": [
+        "Garage entrance, full maintenance bay and complete union facade distinguish route sectors.",
+        "Repeated frontage preserves both boundary pillars.",
+        "Lower concrete service wall/blue rail and complete corners close world boundary.",
+        "Complete cargo objects use silhouettes rather than striped floor excerpts."
+      ],
+      "remaining": [
+        "Upper sky occupies substantial area; root accepted exterior reading at panorama stage.",
+        "Repetition is intentionally visible along the long corridor.",
+        "Actual HUD/camera framing pending runtime."
+      ]
+    }
+  },
+  "independent_cross_review": {
+    "reviewer": "factory agent",
+    "mode": "READONLY static images",
+    "result": "No evident isolated fragments in full structures, lower corners or closed/collapse/open stations.",
+    "reservation": "P2 regular paving cadence in6A/6B; confirm character/gate contact and occlusion in runtime."
+  },
+  "world": {
+    "width": 3072,
+    "height": 272,
+    "regions": {
+      "upper": [
+        0,
+        143
+      ],
+      "field": [
+        144,
+        239
+      ],
+      "lower": [
+        240,
+        271
+      ],
+      "side_width": 24
+    },
+    "walkable": [
+      24,
+      144,
+      3047,
+      239
+    ],
+    "start": [
+      48,
+      160
+    ],
+    "camera_y_samples": [
+      0,
+      24,
+      48
+    ],
+    "camera_x_samples": [
+      0,
+      1360,
+      2752
+    ],
+    "footprint": [
+      16,
+      16
+    ]
+  },
+  "gate": {
+    "rects": [
+      [
+        1008,
+        160,
+        32,
+        64
+      ],
+      [
+        2032,
+        160,
+        32,
+        64
+      ]
+    ],
+    "valves": [
+      [
+        968,
+        176
+      ],
+      [
+        1992,
+        176
+      ]
+    ],
+    "pressure_work_seconds": 1.5,
+    "shots_after_pressure": 4,
+    "collapse_seconds": 0.8,
+    "solid_during_collapse": true,
+    "final_sprite_visible": false,
+    "native_fixed_supports_remain": true,
+    "opening_pixels": 32,
+    "states": [
+      "complete-closed-objectives.png",
+      "complete-collapse-objectives.png",
+      "complete-open-objectives.png"
+    ]
+  },
+  "costs": {
+    "06a": {
+      "scene_tiles": 602,
+      "objective_tiles": 0,
+      "total_tiles": 602,
+      "budget": 640,
+      "lossy_pattern_replacements": 0,
+      "graphics_bytes": 19264,
+      "map_bytes": 26112,
+      "palette_bytes": 32,
+      "free_tiles": 38,
+      "all_objective_frames_included": true
+    },
+    "06b": {
+      "scene_tiles": 373,
+      "objective_tiles": 256,
+      "total_tiles": 629,
+      "budget": 640,
+      "lossy_pattern_replacements": 0,
+      "graphics_bytes": 20128,
+      "map_bytes": 26112,
+      "palette_bytes": 32,
+      "free_tiles": 11,
+      "all_objective_frames_included": true
+    },
+    "12": {
+      "scene_tiles": 600,
+      "objective_tiles": 0,
+      "total_tiles": 600,
+      "budget": 640,
+      "lossy_pattern_replacements": 0,
+      "graphics_bytes": 19200,
+      "map_bytes": 26112,
+      "palette_bytes": 32,
+      "free_tiles": 40,
+      "all_objective_frames_included": true
+    }
+  },
+  "verified": [
+    "build_campaign_routes.py --check: reproducible production C, resources, reports and current canonical images.",
+    "verify_campaign_route_scenes.py: exact binary reconstruction, RGB333, zero pixel mismatches, connected16x16-footprint route and arrival, late collision.",
+    "test_campaign_route_ops.py: real C at50/60Hz, pressure, four shots,0.8s solid collapse, final hide, independent gates, reset.",
+    "pack_campaign_ground_art.py --check: unchanged global art exact reconstruction, all six poses."
+  ],
+  "not_verified": [
+    "No new ROM was compiled by this agent.",
+    "Static production character/HUD composites are not emulator captures.",
+    "No FPS, load, SAT, live difficulty, live collisions or integrated branch test result is claimed for this revision."
+  ],
+  "evidence": {
+    "whole_boards": [
+      "review-evidence/06a-whole-board.png",
+      "review-evidence/06b-whole-board.png",
+      "review-evidence/12-whole-board.png"
+    ],
+    "actor_camera_boards": [
+      "review-evidence/06a-camera-actor-board.png",
+      "review-evidence/06b-camera-actor-board.png",
+      "review-evidence/12-camera-actor-board.png"
+    ],
+    "modules": [
+      "review-evidence/06a-module-atlas.png",
+      "review-evidence/06b-module-atlas.png",
+      "review-evidence/12-module-atlas.png"
+    ],
+    "station_zooms": [
+      "review-evidence/06b-station-closed-4x.png",
+      "review-evidence/06b-station-collapse-4x.png",
+      "review-evidence/06b-station-open-4x.png"
+    ]
+  },
+  "integration": "campaign_routes.c/.h + res/campaign_routes; CR_OPS owns collapse and hides sprite after timer. Story, global objectives and Dinorah branching preserved. Root owns new shared build/emulator review."
+}

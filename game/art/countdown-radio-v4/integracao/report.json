@@ -1,0 +1,242 @@
+{
+  "passed": true,
+  "rom": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release/Plaguefall.bin",
+  "romSHA256": "ae50b73f73b5eb19537d12f6fe1c0a5c16f82bb0325d11befe5f700d4dafb7ce",
+  "selectedOption": 1,
+  "scope": [
+    "mission and guide inside native radio monitor",
+    "existing enemy portraits and palette preserved",
+    "single three-second countdown during loading"
+  ],
+  "enemyPortraitBaselineComparisons": [
+    {
+      "region": "ntsc",
+      "phase": "1",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "2A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "2B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "3",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "4",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "5",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "6A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "6B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "7",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "8",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "9",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "10A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "10B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "11",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "12",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "13A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "13B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "14",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "15",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "ntsc",
+      "phase": "16",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "1",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "2A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "2B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "3",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "4",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "5",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "6A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "6B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "7",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "8",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "9",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "10A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "10B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "11",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "12",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "13A",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "13B",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "14",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "15",
+      "portraitPixelsEqualPreviousCapture": true
+    },
+    {
+      "region": "pal",
+      "phase": "16",
+      "portraitPixelsEqualPreviousCapture": true
+    }
+  ],
+  "interfaceCases": 40,
+  "campaignRuns": 4,
+  "transitionsChecked": 316,
+  "countdownsChecked": 64,
+  "radioOverlayFramesChecked": 10690,
+  "maxAudioServiceGapFrames": 3,
+  "secondCountdownInGameplay": false,
+  "originalEnemyArtSHA256": {
+    "game/res/mission/portraits.bin": "d2ba832035c6a6bb3ebf161057af146368290cbafb5823fd2c56aa32cf261b99",
+    "game/res/insects/palette.bin": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288",
+    "game/res/insects/icons.bin": "a5c82c6995c590190110e8dfa833cc8cab8024357cd55d78b5d1b353e317840e",
+    "game/res/insects/frames.bin": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb"
+  },
+  "nativeChecksPassed": true,
+  "emulator": "Genesis Plus GX, NTSC/PAL",
+  "hardwareTested": false,
+  "details": {
+    "loading-pal": "loading-pal/report.json",
+    "loading-ntsc-b": "loading-ntsc-b/report.json",
+    "interface-ntsc": "interface-ntsc/report.json",
+    "loading-pal-b": "loading-pal-b/report.json",
+    "loading-ntsc": "loading-ntsc/report.json",
+    "interface-pal": "interface-pal/report.json"
+  },
+  "implementationNotes": [
+    "Shared single-monitor frame exported from the current radio tiles; original 8x8 font.",
+    "Loading temporarily borrows 167 low VRAM tiles and PAL0; destination writes to borrowed addresses are shadowed until release.",
+    "The temporary 5344-byte shadow is allocated only after the mission panel releases its snapshot, keeping pause/help memory available."
+  ]
+}

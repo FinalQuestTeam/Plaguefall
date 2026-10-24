@@ -1,0 +1,77 @@
+{
+  "data": "2026-10-23",
+  "roteiro": "../../doc/historia/tratamento-proposto.md",
+  "pranchas": [
+    {
+      "prancha": 1,
+      "arquivo": "imagens/01-igreja-v2.png",
+      "prompt": "prompts/01-igreja.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-7ddcaa8b-c75c-45d2-9dc9-6040664085f6.png",
+      "revision": "prompts/01-igreja-abertura-existente.txt",
+      "tool": "image_gen integrado",
+      "historico": [
+        {
+          "arquivo": "imagens/01-igreja.png",
+          "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-7dd9b0e8-2fe1-40b4-ab78-9fc27d9640b9.png",
+          "revision": "prompts/01-igreja-revisao.txt"
+        }
+      ]
+    },
+    {
+      "prancha": 2,
+      "arquivo": "imagens/02-galpao-resgate.png",
+      "prompt": "prompts/02-galpao-resgate.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-7743ff48-3dbc-4dfe-a5ed-bfc2873611b2.png",
+      "revision": null,
+      "tool": "image_gen integrado"
+    },
+    {
+      "prancha": 3,
+      "arquivo": "imagens/03-esgotos-base.png",
+      "prompt": "prompts/03-esgotos-base.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-3ff90831-8644-4e73-be5e-4342ec040c0c.png",
+      "revision": null,
+      "tool": "image_gen integrado"
+    },
+    {
+      "prancha": 4,
+      "arquivo": "imagens/04-fabrica-escolta.png",
+      "prompt": "prompts/04-fabrica-escolta.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-d64a6836-d904-46a9-b95a-7ba7c5581ed1.png",
+      "revision": null,
+      "tool": "image_gen integrado"
+    },
+    {
+      "prancha": 5,
+      "arquivo": "imagens/05-sindicato-ignicao.png",
+      "prompt": "prompts/05-sindicato-ignicao.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-eb0b2e6e-9e02-4390-85fd-02e3d7764c89.png",
+      "revision": null,
+      "tool": "image_gen integrado"
+    },
+    {
+      "prancha": 6,
+      "arquivo": "imagens/06-escorpiao-dinorah.png",
+      "prompt": "prompts/06-escorpiao-dinorah.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-e554658b-2b67-49b0-9861-1533e8a9c739.png",
+      "revision": null,
+      "tool": "image_gen integrado"
+    },
+    {
+      "prancha": 7,
+      "arquivo": "imagens/07-impactos-epilogo.png",
+      "prompt": "prompts/07-impactos-epilogo.txt",
+      "source": "/Users/fabiocantarimmelo/.codex/generated_images/01a16919-afaa-7641-95a5-01d833ee194c/exec-98b993e3-c244-4537-9f70-766634757949.png",
+      "revision": null,
+      "tool": "image_gen integrado"
+    }
+  ],
+  "abertura": {
+    "fonte": "../storyboard-abertura-v2/storyboard.json",
+    "capturas": "../intro-monologo-v2/emulator-ntsc",
+    "planos": 14,
+    "cartelas": 18,
+    "duracao_segundos": 101,
+    "continuidade": "animação existente → menu → nova partida → chamada curta → fase 1"
+  }
+}

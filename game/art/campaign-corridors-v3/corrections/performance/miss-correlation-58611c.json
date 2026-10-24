@@ -1,0 +1,291 @@
+{
+  "romSHA256": "58611c74ef142a73109772baa0861268ff0aa494e031b2f1a63ef2437b884ce8",
+  "readOnlyHostTraceReproducesOriginalFPS": true,
+  "evidence": "game/art/campaign-corridors-v3/corrections/performance/ntsc-58611c-event-trace/report.json",
+  "phases": [
+    {
+      "phase": "3",
+      "gameFPS": 55.76667,
+      "counts": {
+        "misses": 127,
+        "columnCrossing": 35,
+        "rowCrossing": 0,
+        "shieldDigitChange": 1,
+        "enemySlotChange": 103,
+        "blockOwnerChange": 0,
+        "enemyFireReload": 0,
+        "enemyRetargetReset": 12,
+        "hudDirtyChange": 0
+      },
+      "examples": [
+        {
+          "miss": 31,
+          "camera": [
+            0,
+            0
+          ],
+          "resident": [
+            0,
+            0
+          ],
+          "queue": [
+            240,
+            368
+          ],
+          "flags": {
+            "columnCrossing": false,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 44,
+          "camera": [
+            0,
+            0
+          ],
+          "resident": [
+            0,
+            0
+          ],
+          "queue": [
+            240,
+            384
+          ],
+          "flags": {
+            "columnCrossing": false,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 57,
+          "camera": [
+            0,
+            0
+          ],
+          "resident": [
+            0,
+            0
+          ],
+          "queue": [
+            240,
+            256
+          ],
+          "flags": {
+            "columnCrossing": false,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 70,
+          "camera": [
+            0,
+            0
+          ],
+          "resident": [
+            0,
+            0
+          ],
+          "queue": [
+            248,
+            376
+          ],
+          "flags": {
+            "columnCrossing": false,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 83,
+          "camera": [
+            0,
+            0
+          ],
+          "resident": [
+            0,
+            0
+          ],
+          "queue": [
+            224,
+            480
+          ],
+          "flags": {
+            "columnCrossing": false,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        }
+      ]
+    },
+    {
+      "phase": "9",
+      "gameFPS": 57.56667,
+      "counts": {
+        "misses": 73,
+        "columnCrossing": 56,
+        "rowCrossing": 0,
+        "shieldDigitChange": 2,
+        "enemySlotChange": 42,
+        "blockOwnerChange": 0,
+        "enemyFireReload": 0,
+        "enemyRetargetReset": 22,
+        "hudDirtyChange": 0
+      },
+      "examples": [
+        {
+          "miss": 58,
+          "camera": [
+            0,
+            0
+          ],
+          "resident": [
+            0,
+            0
+          ],
+          "queue": [
+            104,
+            360
+          ],
+          "flags": {
+            "columnCrossing": false,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 71,
+          "camera": [
+            14,
+            16
+          ],
+          "resident": [
+            1,
+            2
+          ],
+          "queue": [
+            616,
+            672
+          ],
+          "flags": {
+            "columnCrossing": true,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 84,
+          "camera": [
+            38,
+            40
+          ],
+          "resident": [
+            4,
+            5
+          ],
+          "queue": [
+            616,
+            672
+          ],
+          "flags": {
+            "columnCrossing": true,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": true,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 97,
+          "camera": [
+            62,
+            64
+          ],
+          "resident": [
+            7,
+            8
+          ],
+          "queue": [
+            104,
+            384
+          ],
+          "flags": {
+            "columnCrossing": true,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        },
+        {
+          "miss": 110,
+          "camera": [
+            86,
+            88
+          ],
+          "resident": [
+            10,
+            11
+          ],
+          "queue": [
+            616,
+            672
+          ],
+          "flags": {
+            "columnCrossing": true,
+            "rowCrossing": false,
+            "shieldDigitChange": false,
+            "enemySlotChange": true,
+            "blockOwnerChange": false,
+            "enemyFireReload": false,
+            "enemyRetargetReset": false,
+            "hudDirtyChange": false
+          }
+        }
+      ]
+    }
+  ]
+}

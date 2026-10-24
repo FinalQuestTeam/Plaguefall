@@ -1,0 +1,1274 @@
+{
+  "phase": "12",
+  "rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "regions": {
+    "ntsc": {
+      "frames": 70,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime0844/capture-ntsc.json",
+      "landmark_details": [
+        {
+          "path": "12/landmark-0.png",
+          "position": [
+            224,
+            208
+          ],
+          "camera": [
+            64,
+            8
+          ],
+          "visible_world": [
+            64,
+            32,
+            384,
+            232
+          ],
+          "label": "workshop",
+          "bbox": [
+            80,
+            32,
+            304,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 0
+        },
+        {
+          "path": "12/landmark-1.png",
+          "position": [
+            1624,
+            184
+          ],
+          "camera": [
+            1472,
+            0
+          ],
+          "visible_world": [
+            1472,
+            24,
+            1792,
+            224
+          ],
+          "label": "covered dock",
+          "bbox": [
+            1488,
+            24,
+            304,
+            144
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 1
+        },
+        {
+          "path": "12/landmark-2.png",
+          "position": [
+            2848,
+            200
+          ],
+          "camera": [
+            2696,
+            0
+          ],
+          "visible_world": [
+            2696,
+            24,
+            3016,
+            224
+          ],
+          "label": "union arrival",
+          "bbox": [
+            2704,
+            24,
+            304,
+            176
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 2
+        },
+        {
+          "path": "12/landmark-3.png",
+          "position": [
+            1120,
+            176
+          ],
+          "camera": [
+            968,
+            88
+          ],
+          "visible_world": [
+            968,
+            112,
+            1288,
+            312
+          ],
+          "label": "south dock1",
+          "bbox": [
+            1008,
+            200,
+            240,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 3
+        },
+        {
+          "path": "12/landmark-4.png",
+          "position": [
+            1880,
+            176
+          ],
+          "camera": [
+            1728,
+            88
+          ],
+          "visible_world": [
+            1728,
+            112,
+            2048,
+            312
+          ],
+          "label": "south dock2",
+          "bbox": [
+            1760,
+            200,
+            240,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 4
+        },
+        {
+          "path": "12/landmark-5.png",
+          "position": [
+            2416,
+            176
+          ],
+          "camera": [
+            2264,
+            88
+          ],
+          "visible_world": [
+            2264,
+            112,
+            2584,
+            312
+          ],
+          "label": "south dock3",
+          "bbox": [
+            2304,
+            200,
+            240,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 5
+        },
+        {
+          "path": "12/landmark-6.png",
+          "position": [
+            496,
+            176
+          ],
+          "camera": [
+            344,
+            0
+          ],
+          "visible_world": [
+            344,
+            24,
+            664,
+            224
+          ],
+          "label": "service annex1",
+          "bbox": [
+            432,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 6
+        },
+        {
+          "path": "12/landmark-7.png",
+          "position": [
+            1360,
+            176
+          ],
+          "camera": [
+            1208,
+            0
+          ],
+          "visible_world": [
+            1208,
+            24,
+            1528,
+            224
+          ],
+          "label": "service annex2",
+          "bbox": [
+            1296,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 7
+        },
+        {
+          "path": "12/landmark-8.png",
+          "position": [
+            2048,
+            176
+          ],
+          "camera": [
+            1896,
+            0
+          ],
+          "visible_world": [
+            1896,
+            24,
+            2216,
+            224
+          ],
+          "label": "service annex3",
+          "bbox": [
+            1984,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 8
+        },
+        {
+          "path": "12/landmark-9.png",
+          "position": [
+            2544,
+            168
+          ],
+          "camera": [
+            2392,
+            0
+          ],
+          "visible_world": [
+            2392,
+            24,
+            2712,
+            224
+          ],
+          "label": "service annex4",
+          "bbox": [
+            2480,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 9
+        }
+      ]
+    },
+    "pal": {
+      "frames": 70,
+      "landmarks": 10,
+      "whole_landmarks": 10,
+      "report": "reviews/runtime0844/capture-pal.json",
+      "landmark_details": [
+        {
+          "path": "12/landmark-0.png",
+          "position": [
+            224,
+            208
+          ],
+          "camera": [
+            64,
+            8
+          ],
+          "visible_world": [
+            64,
+            32,
+            384,
+            232
+          ],
+          "label": "workshop",
+          "bbox": [
+            80,
+            32,
+            304,
+            160
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 0
+        },
+        {
+          "path": "12/landmark-1.png",
+          "position": [
+            1624,
+            184
+          ],
+          "camera": [
+            1472,
+            0
+          ],
+          "visible_world": [
+            1472,
+            24,
+            1792,
+            224
+          ],
+          "label": "covered dock",
+          "bbox": [
+            1488,
+            24,
+            304,
+            144
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 1
+        },
+        {
+          "path": "12/landmark-2.png",
+          "position": [
+            2848,
+            200
+          ],
+          "camera": [
+            2696,
+            0
+          ],
+          "visible_world": [
+            2696,
+            24,
+            3016,
+            224
+          ],
+          "label": "union arrival",
+          "bbox": [
+            2704,
+            24,
+            304,
+            176
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 2
+        },
+        {
+          "path": "12/landmark-3.png",
+          "position": [
+            1120,
+            176
+          ],
+          "camera": [
+            968,
+            88
+          ],
+          "visible_world": [
+            968,
+            112,
+            1288,
+            312
+          ],
+          "label": "south dock1",
+          "bbox": [
+            1008,
+            200,
+            240,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 3
+        },
+        {
+          "path": "12/landmark-4.png",
+          "position": [
+            1880,
+            176
+          ],
+          "camera": [
+            1728,
+            88
+          ],
+          "visible_world": [
+            1728,
+            112,
+            2048,
+            312
+          ],
+          "label": "south dock2",
+          "bbox": [
+            1760,
+            200,
+            240,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 4
+        },
+        {
+          "path": "12/landmark-5.png",
+          "position": [
+            2416,
+            176
+          ],
+          "camera": [
+            2264,
+            88
+          ],
+          "visible_world": [
+            2264,
+            112,
+            2584,
+            312
+          ],
+          "label": "south dock3",
+          "bbox": [
+            2304,
+            200,
+            240,
+            112
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 5
+        },
+        {
+          "path": "12/landmark-6.png",
+          "position": [
+            496,
+            176
+          ],
+          "camera": [
+            344,
+            0
+          ],
+          "visible_world": [
+            344,
+            24,
+            664,
+            224
+          ],
+          "label": "service annex1",
+          "bbox": [
+            432,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 6
+        },
+        {
+          "path": "12/landmark-7.png",
+          "position": [
+            1360,
+            176
+          ],
+          "camera": [
+            1208,
+            0
+          ],
+          "visible_world": [
+            1208,
+            24,
+            1528,
+            224
+          ],
+          "label": "service annex2",
+          "bbox": [
+            1296,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 7
+        },
+        {
+          "path": "12/landmark-8.png",
+          "position": [
+            2048,
+            176
+          ],
+          "camera": [
+            1896,
+            0
+          ],
+          "visible_world": [
+            1896,
+            24,
+            2216,
+            224
+          ],
+          "label": "service annex3",
+          "bbox": [
+            1984,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 8
+        },
+        {
+          "path": "12/landmark-9.png",
+          "position": [
+            2544,
+            168
+          ],
+          "camera": [
+            2392,
+            0
+          ],
+          "visible_world": [
+            2392,
+            24,
+            2712,
+            224
+          ],
+          "label": "service annex4",
+          "bbox": [
+            2480,
+            32,
+            160,
+            128
+          ],
+          "landmark_entirely_visible": true,
+          "row": 3,
+          "col": 9
+        }
+      ]
+    }
+  },
+  "region_comparison": [
+    {
+      "path": "12/x0-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        44,
+        148,
+        78,
+        224
+      ]
+    },
+    {
+      "path": "12/x1-y0.png",
+      "same_camera": false,
+      "same_pixels": false,
+      "difference_bbox": [
+        0,
+        24,
+        320,
+        224
+      ]
+    },
+    {
+      "path": "12/x2-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        0,
+        87,
+        317,
+        206
+      ]
+    },
+    {
+      "path": "12/x3-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        143,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/x4-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/x5-y0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x6-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        51,
+        54,
+        77,
+        87
+      ]
+    },
+    {
+      "path": "12/x7-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        54,
+        173,
+        87
+      ]
+    },
+    {
+      "path": "12/x8-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        143,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/x9-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/x10-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        151,
+        173,
+        184
+      ]
+    },
+    {
+      "path": "12/x11-y0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x12-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        115,
+        87,
+        141,
+        120
+      ]
+    },
+    {
+      "path": "12/x13-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/x14-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        63,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "12/x15-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        99,
+        95,
+        125,
+        128
+      ]
+    },
+    {
+      "path": "12/x16-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        143,
+        173,
+        176
+      ]
+    },
+    {
+      "path": "12/x17-y0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        3,
+        95,
+        29,
+        128
+      ]
+    },
+    {
+      "path": "12/x18-y0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x19-y0.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x0-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        67,
+        169,
+        109,
+        224
+      ]
+    },
+    {
+      "path": "12/x1-y1.png",
+      "same_camera": false,
+      "same_pixels": false,
+      "difference_bbox": [
+        0,
+        24,
+        320,
+        224
+      ]
+    },
+    {
+      "path": "12/x2-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        0,
+        151,
+        313,
+        224
+      ]
+    },
+    {
+      "path": "12/x3-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        200
+      ]
+    },
+    {
+      "path": "12/x4-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/x5-y1.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x6-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        51,
+        79,
+        77,
+        112
+      ]
+    },
+    {
+      "path": "12/x7-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        79,
+        173,
+        112
+      ]
+    },
+    {
+      "path": "12/x8-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        200
+      ]
+    },
+    {
+      "path": "12/x9-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/x10-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        167,
+        173,
+        200
+      ]
+    },
+    {
+      "path": "12/x11-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        99,
+        79,
+        125,
+        112
+      ]
+    },
+    {
+      "path": "12/x12-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        179,
+        79,
+        205,
+        112
+      ]
+    },
+    {
+      "path": "12/x13-y1.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x14-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        63,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "12/x15-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        79,
+        173,
+        112
+      ]
+    },
+    {
+      "path": "12/x16-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        167,
+        173,
+        200
+      ]
+    },
+    {
+      "path": "12/x17-y1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        51,
+        183,
+        77,
+        216
+      ]
+    },
+    {
+      "path": "12/x18-y1.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x19-y1.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x0-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        95,
+        113,
+        313,
+        171
+      ]
+    },
+    {
+      "path": "12/x1-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        60,
+        92,
+        313,
+        224
+      ]
+    },
+    {
+      "path": "12/x2-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        79,
+        313,
+        216
+      ]
+    },
+    {
+      "path": "12/x3-y2.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x4-y2.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x5-y2.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/x6-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        51,
+        167,
+        77,
+        200
+      ]
+    },
+    {
+      "path": "12/x7-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        79,
+        173,
+        112
+      ]
+    },
+    {
+      "path": "12/x8-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        63,
+        317,
+        200
+      ]
+    },
+    {
+      "path": "12/x9-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        79,
+        313,
+        124
+      ]
+    },
+    {
+      "path": "12/x10-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        183,
+        173,
+        216
+      ]
+    },
+    {
+      "path": "12/x11-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        59,
+        167,
+        85,
+        200
+      ]
+    },
+    {
+      "path": "12/x12-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        63,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "12/x13-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        79,
+        313,
+        124
+      ]
+    },
+    {
+      "path": "12/x14-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        63,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "12/x15-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        79,
+        173,
+        112
+      ]
+    },
+    {
+      "path": "12/x16-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        63,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "12/x17-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        79,
+        268,
+        216
+      ]
+    },
+    {
+      "path": "12/x18-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        79,
+        108,
+        125
+      ]
+    },
+    {
+      "path": "12/x19-y2.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        79,
+        108,
+        125
+      ]
+    },
+    {
+      "path": "12/landmark-0.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        127,
+        161,
+        169,
+        219
+      ]
+    },
+    {
+      "path": "12/landmark-1.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        167,
+        173,
+        200
+      ]
+    },
+    {
+      "path": "12/landmark-2.png",
+      "same_camera": true,
+      "same_pixels": true,
+      "difference_bbox": null
+    },
+    {
+      "path": "12/landmark-3.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        71,
+        173,
+        104
+      ]
+    },
+    {
+      "path": "12/landmark-4.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        147,
+        71,
+        173,
+        104
+      ]
+    },
+    {
+      "path": "12/landmark-5.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        63,
+        313,
+        108
+      ]
+    },
+    {
+      "path": "12/landmark-6.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/landmark-7.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/landmark-8.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    },
+    {
+      "path": "12/landmark-9.png",
+      "same_camera": true,
+      "same_pixels": false,
+      "difference_bbox": [
+        10,
+        151,
+        313,
+        196
+      ]
+    }
+  ]
+}

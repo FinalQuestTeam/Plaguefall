@@ -1,0 +1,551 @@
+{
+  "phase": "12",
+  "size": [
+    3072,
+    272
+  ],
+  "bounds": [
+    24,
+    144,
+    3047,
+    239
+  ],
+  "start": [
+    48,
+    160
+  ],
+  "exit": [
+    2992,
+    136,
+    48,
+    48
+  ],
+  "gates": [],
+  "valves": [],
+  "solids": [
+    [
+      576,
+      144,
+      40,
+      24
+    ],
+    [
+      1568,
+      216,
+      40,
+      24
+    ],
+    [
+      2464,
+      144,
+      40,
+      24
+    ]
+  ],
+  "points": [
+    [
+      56,
+      168
+    ],
+    [
+      328,
+      168
+    ],
+    [
+      544,
+      184
+    ],
+    [
+      680,
+      184
+    ],
+    [
+      1104,
+      168
+    ],
+    [
+      1304,
+      168
+    ],
+    [
+      1576,
+      184
+    ],
+    [
+      1808,
+      168
+    ],
+    [
+      2072,
+      168
+    ],
+    [
+      2304,
+      168
+    ],
+    [
+      2424,
+      184
+    ],
+    [
+      2560,
+      184
+    ],
+    [
+      2824,
+      168
+    ],
+    [
+      3016,
+      160
+    ]
+  ],
+  "pauses": [
+    3,
+    7,
+    10
+  ],
+  "modules": [
+    {
+      "id": "ceiling",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        0,
+        0,
+        96,
+        40
+      ],
+      "native_size": [
+        32,
+        16
+      ],
+      "repeat_axis": "xy",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "wall",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        1264,
+        105,
+        1544,
+        310
+      ],
+      "native_size": [
+        72,
+        56
+      ],
+      "repeat_axis": "x",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "entrance",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        68,
+        55,
+        526,
+        314
+      ],
+      "native_size": [
+        128,
+        72
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "maintenance",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        978,
+        105,
+        1264,
+        314
+      ],
+      "native_size": [
+        96,
+        72
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "arrival",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        1664,
+        34,
+        2144,
+        315
+      ],
+      "native_size": [
+        128,
+        72
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "floor",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        810,
+        330,
+        938,
+        546
+      ],
+      "native_size": [
+        32,
+        48
+      ],
+      "repeat_axis": "xy",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "lower",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        435,
+        575,
+        665,
+        710
+      ],
+      "native_size": [
+        48,
+        32
+      ],
+      "repeat_axis": "x",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "side-left",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        0,
+        342,
+        50,
+        510
+      ],
+      "native_size": [
+        16,
+        48
+      ],
+      "repeat_axis": "y",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "side-right",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        2122,
+        342,
+        2172,
+        510
+      ],
+      "native_size": [
+        16,
+        48
+      ],
+      "repeat_axis": "y",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-upper-left",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        0,
+        140,
+        90,
+        340
+      ],
+      "native_size": [
+        24,
+        64
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-upper-right",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        2100,
+        140,
+        2172,
+        340
+      ],
+      "native_size": [
+        24,
+        64
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-lower-left",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        0,
+        568,
+        78,
+        724
+      ],
+      "native_size": [
+        24,
+        32
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "corner-lower-right",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        2094,
+        568,
+        2172,
+        724
+      ],
+      "native_size": [
+        24,
+        32
+      ],
+      "repeat_axis": "none",
+      "extraction": "complete structure or full material cross-section"
+    },
+    {
+      "id": "cargo",
+      "source": "../source/12-whole.png",
+      "source_rect": [
+        1550,
+        238,
+        1670,
+        314
+      ],
+      "native_size": [
+        40,
+        24
+      ],
+      "repeat_axis": "object",
+      "extraction": "complete silhouette"
+    }
+  ],
+  "placements": [
+    {
+      "module": "floor",
+      "position": [
+        0,
+        -48
+      ],
+      "area": [
+        3072,
+        320
+      ],
+      "repeat_axis": "xy"
+    },
+    {
+      "module": "ceiling",
+      "position": [
+        0,
+        -48
+      ],
+      "area": [
+        3072,
+        192
+      ],
+      "repeat_axis": "xy"
+    },
+    {
+      "module": "wall",
+      "position": [
+        24,
+        88
+      ],
+      "area": [
+        3024,
+        56
+      ],
+      "repeat_axis": "x"
+    },
+    {
+      "module": "entrance",
+      "position": [
+        24,
+        72
+      ],
+      "size": [
+        128,
+        72
+      ]
+    },
+    {
+      "module": "maintenance",
+      "position": [
+        1408,
+        72
+      ],
+      "size": [
+        96,
+        72
+      ]
+    },
+    {
+      "module": "arrival",
+      "position": [
+        2920,
+        72
+      ],
+      "size": [
+        128,
+        72
+      ]
+    },
+    {
+      "module": "side-left",
+      "position": [
+        0,
+        144
+      ],
+      "area": [
+        24,
+        96
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "side-right",
+      "position": [
+        3048,
+        144
+      ],
+      "area": [
+        24,
+        96
+      ],
+      "repeat_axis": "y"
+    },
+    {
+      "module": "lower",
+      "position": [
+        24,
+        240
+      ],
+      "area": [
+        3024,
+        32
+      ],
+      "repeat_axis": "x"
+    },
+    {
+      "module": "corner-upper-left",
+      "position": [
+        0,
+        80
+      ],
+      "size": [
+        24,
+        64
+      ]
+    },
+    {
+      "module": "corner-upper-right",
+      "position": [
+        3048,
+        80
+      ],
+      "size": [
+        24,
+        64
+      ]
+    },
+    {
+      "module": "corner-lower-left",
+      "position": [
+        0,
+        240
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "corner-lower-right",
+      "position": [
+        3048,
+        240
+      ],
+      "size": [
+        24,
+        32
+      ]
+    },
+    {
+      "module": "cargo",
+      "position": [
+        576,
+        144
+      ],
+      "size": [
+        40,
+        24
+      ]
+    },
+    {
+      "module": "cargo",
+      "position": [
+        1568,
+        216
+      ],
+      "size": [
+        40,
+        24
+      ]
+    },
+    {
+      "module": "cargo",
+      "position": [
+        2464,
+        144
+      ],
+      "size": [
+        40,
+        24
+      ]
+    }
+  ],
+  "memory": {
+    "scene_tiles": 600,
+    "objective_tiles": 0,
+    "total_tiles": 600,
+    "budget": 640,
+    "lossy_pattern_replacements": 0,
+    "graphics_bytes": 19200,
+    "map_bytes": 26112,
+    "palette_bytes": 32,
+    "free_tiles": 40,
+    "all_objective_frames_included": true
+  },
+  "source_stage": "whole scene created and inspected before extraction",
+  "status": "native_candidate_not_approved",
+  "geometry": {
+    "footprint": [
+      16,
+      16
+    ],
+    "swept16pxSamples": 2981,
+    "connectedPositions": 4093,
+    "arrivalConnected": true,
+    "physicalGateOpeningPx": null
+  },
+  "states": [
+    {
+      "name": "default",
+      "file": "complete-native.png"
+    }
+  ],
+  "sourceInputs": {
+    "12": "881b8a9819d284de9c7b73b1a2ebaeac4f2510aa29f480be86e0d4b6cd00e59b"
+  }
+}

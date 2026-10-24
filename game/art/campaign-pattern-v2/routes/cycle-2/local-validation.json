@@ -1,0 +1,71 @@
+{
+  "status": "PASS_local_only",
+  "romCompiled": false,
+  "emulatorExecuted": false,
+  "checks": [
+    {
+      "command": "python3 game/tools/build_campaign_routes.py --check",
+      "exitcode": 0,
+      "repeated_process_hashseeds": [
+        1,
+        2,
+        3
+      ],
+      "note": "Sorted sourceInputs prevents randomized set-order differences; all resource pixels unchanged."
+    },
+    {
+      "command": "python3 game/tools/verify_campaign_route_scenes.py",
+      "exitcode": 0,
+      "pixelsDifferent": 0,
+      "phases": {
+        "06a": {
+          "tiles": 602,
+          "connectedPositions": 4075
+        },
+        "06b": {
+          "tiles": 373,
+          "resident": 629,
+          "connectedPositions": 4054
+        },
+        "12": {
+          "tiles": 600,
+          "connectedPositions": 4093
+        }
+      }
+    },
+    {
+      "command": "python3 game/tools/test_campaign_route_ops.py",
+      "exitcode": 0,
+      "refreshRates": [
+        50,
+        60
+      ],
+      "contracts": [
+        "pressure1.5s",
+        "four shots",
+        "solid during0.8s collapse",
+        "hide final gate",
+        "reset",
+        "two-gate isolation",
+        "read-only probes"
+      ]
+    },
+    {
+      "command": "python3 game/tools/pack_campaign_ground_art.py --check",
+      "exitcode": 0,
+      "sixPoseTiles": [
+        150,
+        65,
+        74,
+        65,
+        191,
+        86
+      ]
+    },
+    {
+      "command": "python3 -m py_compile game/tools/test_campaign_escorts_emulator.py game/art/campaign-pattern-v2/routes/build_art.py",
+      "exitcode": 0
+    }
+  ],
+  "pending": "Shared integrated ROM visual/gameplay/load/SAT/branch suite by root."
+}

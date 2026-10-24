@@ -48,12 +48,18 @@ u16 HUD_iconAttr(u16 tile,u16 pal)
 // 3.8KiB native canvas permits exact pixel positions without extra palettes.
 #include "system/video/screens/hud_panel_data.h"
 #include "system/video/screens/result_font.h"
+#include "system/video/screens/hud_label_data.h"
 static u32 hudPixels[HUD_TILE_COUNT*8];
 // Shared scratch: composers run sequentially on the main thread. Keeping this
 // off the2.5KiB68000stack also protects the heap sentinel during interrupts.
 static u32 regionBefore[17*3*8];
 static u8 hudDirty[HUD_TILE_COUNT];
-static u32 s_invSig;
+static u8 inventoryTypes[INV_POS],inventoryCounts[INV_POS];
+static u8 inventorySelected,inventoryMode;
+static bool inventorySnapshotValid;
+static u32 s_invStructureSig;
+static u16 lastShieldSeconds;
+static u8 lastModeCharges;
 static s16 lastLife=-1;
 static bool hudPending;
 static const char *objectiveLabel;
@@ -139,7 +145,8 @@ static void endRegion(u16 left,u16 width,const u32 *old)
 void HUD_begin(void)
 {
     memcpy(hudPixels,HUD_PANEL_DATA,sizeof hudPixels);
-    memset(hudDirty,0,sizeof hudDirty);hudPending=FALSE;lastLife=-1;s_invSig=0xffffffffUL;objectiveLabel=NULL;
+    memset(hudDirty,0,sizeof hudDirty);hudPending=FALSE;lastLife=-1;inventorySnapshotValid=FALSE;objectiveLabel=NULL;
+    s_invStructureSig=0xffffffffUL;lastShieldSeconds=0xffff;lastModeCharges=0xff;
     LOADING_tiles(hudPixels,HUD_TILE_BASE,HUD_TILE_COUNT,DMA);
     HUD_present();
 }
@@ -175,11 +182,41 @@ static void markRect(u16 x,u16 y,u16 w,u16 h)
         for(u16 col=x>>3;col<=(x+w-1)>>3;col++)hudDirty[row*40+col]=TRUE;
     hudPending=TRUE;
 }
+static void valueGlyph(u8 glyph,u16 x,u16 color)
+{
+    const u32 ink=0x11111111UL*color;
+    const u16 shift=(x&7)*4;
+    u32 *pixel=hudPixels+(40+(x>>3))*8+5; // y13
+    const u32 *digit=glyph>='0' && glyph<='9' && (color==1 || color==2 || color==4) ? HUD_NATIVE_DIGITS[color==1 ? 0 : color==2 ? 1 : 2][glyph-'0'] : NULL;
+    if(digit && (shift==16 || !shift)) {
+        if(shift==16)for(u16 row=0;row<8;row++) {
+            const u32 data=digit[row];
+            pixel[0]=(pixel[0]&0xffff0000UL)|(data>>16);
+            pixel[8]=(pixel[8]&0x0000ffffUL)|(data<<16);
+            pixel++;if(row==2)pixel+=312;
+        } else for(u16 row=0;row<8;row++){*pixel++=digit[row];if(row==2)pixel+=312;}
+        markRect(x,13,8,8);return;
+    }
+    for(u16 row=0;row<8;row++) {
+        const u32 mask=glyph>=32 && glyph<128 ? HUD_FONT_MASK[RESULT_FONT[(glyph-32)*8+row]] : 0;
+        const u32 data=(0xbbbbbbbbUL&~mask)|(ink&mask);
+        if(!shift)*pixel=data;
+        else {
+            const u16 rest=32-shift;
+            pixel[0]=(pixel[0]&~(0xffffffffUL>>shift))|(data>>shift);
+            pixel[8]=(pixel[8]&~(0xffffffffUL<<rest))|(data<<rest);
+        }
+        pixel++;if(row==2)pixel+=312;
+    }
+    markRect(x,13,8,8);
+}
 static void editValue(const char *value,char *previous,u16 x,u16 color)
 {
     if(!strcmp(value,previous))return;
     const u16 length=strlen(value),oldLength=strlen(previous),width=(length>oldLength ? length : oldLength)*8;
-    rect(x,13,width,8,11);text(value,x,13,color);markRect(x,13,width,8);
+    if(length==oldLength) {
+        for(u16 i=0;i<length;i++)if(value[i]!=previous[i])valueGlyph(value[i],x+i*8,color);
+    } else {rect(x,13,width,8,11);text(value,x,13,color);markRect(x,13,width,8);}
     strcpy(previous,value);
 }
 void HUD_drawObjective(const char *label,u16 symbol,const char *value,u16 auxiliaryIcon,const char *auxiliary)
@@ -187,9 +224,40 @@ void HUD_drawObjective(const char *label,u16 symbol,const char *value,u16 auxili
     const u16 color=symbol==TILE_ICON_SAINT || symbol==TILE_ICON_SHIELD ? 1 : 4;
     // The common timer/HP tick edits only its digits, not39tiles of labels,
     // frame and icons. This keeps protection/combat updates within budget.
-    if(label==objectiveLabel && symbol==objectiveSymbol && auxiliaryIcon==objectiveAuxSymbol) {
-        editValue(value,objectiveValue,symbol ? 20 : 8,color);
-        editValue(auxiliary,objectiveAuxiliary,auxiliaryIcon ? 72 : 64,auxiliaryIcon ? 4 : 1);
+    if(objectiveLabel && symbol==objectiveSymbol && auxiliaryIcon==objectiveAuxSymbol) {
+        if(label!=objectiveLabel) {
+            const s16 cached=!strcmp(label,"DINORAH") ? 0 : !strcmp(label,"COBERTURA") ? 1 : !strcmp(label,"PASSAGEM") ? 2 : -1;
+            if(cached>=0) {
+                const u32 *source=HUD_ESCORT_LABELS[cached];
+                u32 *upper=hudPixels+11,*lower=hudPixels+328;
+                for(u16 col=0;col<9;col++) {
+                    if(upper[0]!=source[0] || upper[1]!=source[1] || upper[2]!=source[2] || upper[3]!=source[3] || upper[4]!=source[4]) {
+                        upper[0]=source[0];upper[1]=source[1];upper[2]=source[2];upper[3]=source[3];upper[4]=source[4];
+                        hudDirty[col+1]=TRUE;hudPending=TRUE;
+                    }
+                    if(lower[0]!=source[5] || lower[1]!=source[6] || lower[2]!=source[7]) {
+                        lower[0]=source[5];lower[1]=source[6];lower[2]=source[7];
+                        hudDirty[col+41]=TRUE;hudPending=TRUE;
+                    }
+                    upper+=8;lower+=8;source+=8;
+                }
+            } else {
+            const u16 oldLength=strlen(objectiveLabel),newLength=strlen(label);
+            const u16 length=oldLength>newLength ? oldLength : newLength;
+            // Labels share the same symbol/value layout. Restore only the
+            // upper glyph cells from the original panel, including its ink.
+            for(u16 y=3;y<11;y++)for(u16 col=1;col<=length && col<40;col++) {
+                const u16 word=((y>>3)*40+col)*8+(y&7);
+                hudPixels[word]=HUD_PANEL_DATA[word];
+            }
+            text(label,8,3,1);markRect(8,3,length*8,8);
+            }
+            objectiveLabel=label;
+        }
+        // Avoid the large glyph composer's register/stack setup when a
+        // state/progress update leaves the other field unchanged.
+        if(strcmp(value,objectiveValue))editValue(value,objectiveValue,symbol ? 20 : 8,color);
+        if(strcmp(auxiliary,objectiveAuxiliary))editValue(auxiliary,objectiveAuxiliary,auxiliaryIcon ? 72 : 64,auxiliaryIcon ? 4 : 1);
         return;
     }
     u32 *old=regionBefore;beginRegion(0,13,old);
@@ -228,15 +296,51 @@ static u16 iconTile(u8 type)
     switch(type){case ITEM_CHAIN:return TILE_BOLT;case ITEM_SHIELD:return TILE_ICON_SHIELD;
         case ITEM_ICE:return TILE_ICON_ICE;case ITEM_FIRE:return TILE_ICON_FIRE;default:return TILE_BOMB_ICON;}
 }
-static u32 hudInvSig(void)
+static void cacheInventoryState(void)
 {
-    u32 sig=INV_selected();
-    for(u8 i=0;i<INV_POS;i++){u8 type,count;INV_view(i,&type,&count);sig=sig*131u+((u32)type<<8)+count;}
-    sig=sig*131u+((u32)SHOTS_mode()<<8)+SHOTS_modeCharges();
-    return sig*131u+(PLAYER_shieldRemaining()+fps-1)/fps;
+    inventorySelected=INV_selected();inventoryMode=SHOTS_mode();
+    for(u8 i=0;i<INV_POS;i++)INV_view(i,&inventoryTypes[i],&inventoryCounts[i]);
+    inventorySnapshotValid=TRUE;
+}
+static void inventoryDigit(u8 glyph,u16 y,u16 color)
+{
+    const u32 ink=0x11111111UL*color;
+    u32 *pixel=hudPixels+((y>>3)*40+28)*8+(y&7);
+    const u32 *digit=glyph>='0' && glyph<='9' ? HUD_NATIVE_DIGITS[color==1 ? 0 : 1][glyph-'0'] : NULL;
+    for(u16 row=0;row<8;row++) {
+        const u32 mask=glyph>=32 && glyph<128 ? HUD_FONT_MASK[RESULT_FONT[(glyph-32)*8+row]] : 0;
+        const u32 data=digit ? digit[row] : (0xbbbbbbbbUL&~mask)|(ink&mask);
+        // The eight pixels at x225 straddle two tiles. Preserve their
+        // neighbours (the icon, frame and separator), replacing just glyph.
+        pixel[0]=(pixel[0]&0xf0000000UL)|(data>>4);
+        pixel[8]=(pixel[8]&0x0fffffffUL)|(data<<28);
+        pixel++;
+        if(!((y+row+1)&7))pixel+=312;
+    }
+    markRect(225,y,8,8);
 }
 void HUD_drawInventory(void)
 {
+    const u16 shieldSeconds=divu((u32)PLAYER_shieldRemaining()+fps-1,fps);
+    const u8 charges=SHOTS_modeCharges();
+    const bool modeActive=SHOTS_mode()!=SHOTMODE_NONE && charges;
+    u32 structure=INV_selected();
+    for(u8 i=0;i<INV_POS;i++){u8 type,count;INV_view(i,&type,&count);structure=structure*131u+((u32)type<<8)+count;}
+    structure=structure*131u+((u32)SHOTS_mode()<<2)+(modeActive ? 2 : 0)+(shieldSeconds ? 1 : 0);
+    // Countdown/charge ticks keep the same frame and icons. Repaint only
+    // the changing glyph instead of rebuilding all51 inventory tiles.
+    if(structure==s_invStructureSig) {
+        if(shieldSeconds && shieldSeconds!=lastShieldSeconds) {
+            const u16 y=modeActive ? 3 : 8;
+            inventoryDigit((u8)('0'+shieldSeconds),y,1);
+        }
+        if(modeActive && charges!=lastModeCharges) {
+            const u16 y=shieldSeconds ? 13 : 8;
+            inventoryDigit((u8)('0'+charges),y,2);
+        }
+        lastShieldSeconds=shieldSeconds;lastModeCharges=charges;cacheInventoryState();
+        return;
+    }
     u32 *old=regionBefore;beginRegion(13,17,old);
     for(u8 i=0;i<INV_POS;i++) {
         const u16 x=108+i*26;const bool selected=i==INV_selected();
@@ -249,8 +353,6 @@ void HUD_drawInventory(void)
             icon(iconTile(type),x+3,8);text(digit,x+14,8,1);
         }
     }
-    const u16 shieldSeconds=(PLAYER_shieldRemaining()+fps-1)/fps;
-    const bool modeActive=SHOTS_mode()!=SHOTMODE_NONE && SHOTS_modeCharges();
     if(shieldSeconds) {
         const u16 y=modeActive ? 2 : 4,h=modeActive ? 10 : 16,contentY=modeActive ? 3 : 8;
         rect(214,y,20,h,4);rect(215,y+1,18,h-2,11);
@@ -263,9 +365,26 @@ void HUD_drawInventory(void)
         icon(SHOTS_mode()==SHOTMODE_CHAIN ? TILE_BOLT : SHOTS_mode()==SHOTMODE_ICE ? TILE_ICON_ICE : TILE_ICON_FIRE,216,contentY);
         char digit[2]={(char)('0'+SHOTS_modeCharges()),0};text(digit,225,contentY,2);
     }
-    endRegion(13,17,old);s_invSig=hudInvSig();
+    endRegion(13,17,old);cacheInventoryState();
+    s_invStructureSig=structure;lastShieldSeconds=shieldSeconds;lastModeCharges=charges;
 }
 void HUD_drawInventoryIfDirty(void)
 {
-    if(hudInvSig()!=s_invSig)HUD_drawInventory();
+    // Check layout fields once. A countdown/charge tick with unchanged
+    // slots can update its glyph without rebuilding or rehashing inventory.
+    if(!inventorySnapshotValid || INV_selected()!=inventorySelected || SHOTS_mode()!=inventoryMode) {
+        HUD_drawInventory();return;
+    }
+    if(!INV_matches(inventoryTypes,inventoryCounts)){HUD_drawInventory();return;}
+    const u16 seconds=divu((u32)PLAYER_shieldRemaining()+fps-1,fps);
+    const u8 charges=SHOTS_modeCharges();
+    if(seconds==lastShieldSeconds && charges==lastModeCharges)return;
+    const bool modeActive=inventoryMode!=SHOTMODE_NONE && charges;
+    const bool wasModeActive=inventoryMode!=SHOTMODE_NONE && lastModeCharges;
+    if((seconds!=0)!=(lastShieldSeconds!=0) || modeActive!=wasModeActive) {
+        HUD_drawInventory();return;
+    }
+    if(seconds && seconds!=lastShieldSeconds)inventoryDigit('0'+seconds,modeActive ? 3 : 8,1);
+    if(modeActive && charges!=lastModeCharges)inventoryDigit('0'+charges,seconds ? 13 : 8,2);
+    lastShieldSeconds=seconds;lastModeCharges=charges;
 }

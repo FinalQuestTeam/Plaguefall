@@ -1,0 +1,475 @@
+{
+  "passed": false,
+  "region": "NTSC",
+  "rom_sha256": "77afbe6348d779cb1f52221f8a43fb200883e8e3bd1668bfaae3a7992811b42d",
+  "checks": {
+    "room-12-entry": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "room": 12,
+        "state": {
+          "work": [
+            0,
+            0,
+            0
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 0,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 0,
+          "bonus": 0,
+          "post": 60,
+          "trapped": 0,
+          "opened": 0,
+          "held": 0
+        },
+        "enemies": 1
+      }
+    },
+    "room-12-pause": {
+      "passed": true,
+      "details": {
+        "pause_seconds": 2,
+        "frozen": true
+      }
+    },
+    "room-12-art-residency": {
+      "passed": true,
+      "details": {
+        "palette": "production PAL1",
+        "resident_assets": [
+          [
+            817,
+            913,
+            "generator"
+          ]
+        ],
+        "all_frames_match_rom": true
+      }
+    },
+    "room-12-solution": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "state": {
+          "work": [
+            90,
+            90,
+            120
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 7,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 2,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 1,
+          "bonus": 0,
+          "post": 60,
+          "trapped": 0,
+          "opened": 0,
+          "held": 0
+        },
+        "hp": 95,
+        "game_frames": 838,
+        "powered_pulse_after_result": [
+          3,
+          4,
+          5
+        ],
+        "animations": {
+          "frame_masks": {
+            "generator": "0x3f"
+          },
+          "events": {
+            "generator": 3
+          },
+          "continues_after_result": true,
+          "native_captures": 4,
+          "ground_map_samples": 59,
+          "active_game_fps": 59.9222,
+          "missed_vblanks_during_actions": 1
+        }
+      }
+    },
+    "room-12-boundaries": {
+      "passed": true,
+      "details": {
+        "isolated_ram_setup": true,
+        "exit_guard": true,
+        "rule_boundary": true
+      }
+    },
+    "room-13-entry": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "room": 13,
+        "state": {
+          "work": [
+            0,
+            0,
+            0
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 0,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 0,
+          "bonus": 0,
+          "post": 60,
+          "trapped": 0,
+          "opened": 0,
+          "held": 0
+        },
+        "enemies": 1
+      }
+    },
+    "room-13-pause": {
+      "passed": true,
+      "details": {
+        "pause_seconds": 2,
+        "frozen": true
+      }
+    },
+    "room-13-art-residency": {
+      "passed": true,
+      "details": {
+        "palette": "production PAL1",
+        "resident_assets": [
+          [
+            817,
+            913,
+            "cargo"
+          ]
+        ],
+        "all_frames_match_rom": true
+      }
+    },
+    "room-13-solution": {
+      "passed": false,
+      "error": "AssertionError('touching a closed chest skipped the bag')"
+    },
+    "room-13-boundaries": {
+      "passed": true,
+      "details": {
+        "isolated_ram_setup": true,
+        "exit_guard": true,
+        "rule_boundary": true
+      }
+    },
+    "room-16-entry": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "room": 16,
+        "state": {
+          "work": [
+            0,
+            0,
+            0
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 0,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 0,
+          "bonus": 0,
+          "post": 60,
+          "trapped": 0,
+          "opened": 0,
+          "held": 0
+        },
+        "enemies": 1
+      }
+    },
+    "room-16-pause": {
+      "passed": true,
+      "details": {
+        "pause_seconds": 2,
+        "frozen": true
+      }
+    },
+    "room-16-gate-mount": {
+      "passed": true,
+      "details": {
+        "north_south_orientation": true,
+        "closed_leaf_width_pixels": 9,
+        "mounts": [
+          {
+            "leaf": [
+              160,
+              168,
+              16,
+              48
+            ],
+            "north_jamb": [
+              160,
+              160,
+              16,
+              8
+            ],
+            "south_jamb": [
+              160,
+              216,
+              16,
+              8
+            ]
+          },
+          {
+            "leaf": [
+              288,
+              256,
+              16,
+              48
+            ],
+            "north_jamb": [
+              288,
+              248,
+              16,
+              8
+            ],
+            "south_jamb": [
+              288,
+              304,
+              16,
+              8
+            ]
+          },
+          {
+            "leaf": [
+              416,
+              144,
+              16,
+              48
+            ],
+            "north_jamb": [
+              416,
+              136,
+              16,
+              8
+            ],
+            "south_jamb": [
+              416,
+              192,
+              16,
+              8
+            ]
+          }
+        ]
+      }
+    },
+    "room-16-art-residency": {
+      "passed": true,
+      "details": {
+        "palette": "production PAL1",
+        "resident_assets": [
+          [
+            817,
+            1201,
+            "gate"
+          ]
+        ],
+        "all_frames_match_rom": true
+      }
+    },
+    "room-16-solution": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "state": {
+          "work": [
+            0,
+            0,
+            0
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 7,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            0,
+            0,
+            0
+          ],
+          "outcome": 1,
+          "bonus": 0,
+          "post": 60,
+          "trapped": 0,
+          "opened": 0,
+          "held": 0
+        },
+        "hp": 100,
+        "game_frames": 1700,
+        "animations": {
+          "frame_masks": {
+            "gate": "0x3f"
+          },
+          "events": {
+            "gate": 3
+          },
+          "continues_after_result": false,
+          "native_captures": 4,
+          "ground_map_samples": 128,
+          "active_game_fps": 59.9633,
+          "missed_vblanks_during_actions": 1
+        }
+      }
+    },
+    "room-16-boundaries": {
+      "passed": true,
+      "details": {
+        "isolated_ram_setup": true,
+        "exit_guard": true,
+        "rule_boundary": true
+      }
+    },
+    "room-17-entry": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "room": 17,
+        "state": {
+          "work": [
+            0,
+            0,
+            0
+          ],
+          "clock": 0,
+          "captured": 0,
+          "done": 0,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 0,
+          "bonus": 0,
+          "post": 60,
+          "trapped": 0,
+          "opened": 0,
+          "held": 0
+        },
+        "enemies": 4
+      }
+    },
+    "room-17-pause": {
+      "passed": true,
+      "details": {
+        "pause_seconds": 2,
+        "frozen": true
+      }
+    },
+    "room-17-art-residency": {
+      "passed": true,
+      "details": {
+        "palette": "production PAL1",
+        "resident_assets": [
+          [
+            817,
+            913,
+            "trap"
+          ],
+          [
+            913,
+            1297,
+            "cage"
+          ]
+        ],
+        "all_frames_match_rom": true
+      }
+    },
+    "room-17-solution": {
+      "passed": true,
+      "details": {
+        "controller_only": true,
+        "state": {
+          "work": [
+            0,
+            120,
+            0
+          ],
+          "clock": 0,
+          "captured": 7,
+          "done": 0,
+          "delivered": 0,
+          "cargo": 255,
+          "phase": 0,
+          "gates": [
+            4,
+            4,
+            4
+          ],
+          "outcome": 1,
+          "bonus": 0,
+          "post": 60,
+          "trapped": 0,
+          "opened": 0,
+          "held": 0
+        },
+        "hp": 1,
+        "game_frames": 1515,
+        "animations": {
+          "frame_masks": {
+            "trap": "0x3f",
+            "cage": "0x3f"
+          },
+          "events": {
+            "trap": 3,
+            "cage": 10
+          },
+          "continues_after_result": true,
+          "native_captures": 7,
+          "ground_map_samples": 99,
+          "active_game_fps": 59.1826,
+          "missed_vblanks_during_actions": 20
+        }
+      }
+    },
+    "room-17-boundaries": {
+      "passed": true,
+      "details": {
+        "isolated_ram_setup": true,
+        "exit_guard": true,
+        "rule_boundary": true
+      }
+    }
+  },
+  "failures": [
+    "room-13-solution"
+  ],
+  "method": "Controller-only entry, configuration and solutions. RAM seeds only explicitly labelled boundary and worst-case stress probes."
+}

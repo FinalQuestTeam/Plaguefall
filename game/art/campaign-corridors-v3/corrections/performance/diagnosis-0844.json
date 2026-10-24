@@ -1,0 +1,243 @@
+{
+  "rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
+  "passed": false,
+  "status": "production_fails_exact_60_50_goal",
+  "production_modified_by_probe": false,
+  "minimum_physical_vblanks_per_case": 1800,
+  "warmup_seconds": 4,
+  "scope": "Static-camera configured-cap load; RAM preparations isolate timing and preserve enemy native cadence in native_cadence cases. No human difficulty verdict, no moving-camera coverage.",
+  "rows": [
+    {
+      "phase": "3",
+      "ntsc": {
+        "native_shield_item_fps": 57.26667,
+        "hit_timer_without_shield_fps": 60.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      "pal": {
+        "native_shield_item_fps": 47.94444,
+        "hit_timer_without_shield_fps": 50.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "phase": "6A",
+      "ntsc": {
+        "native_shield_item_fps": 56.9,
+        "hit_timer_without_shield_fps": 60.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      "pal": {
+        "native_shield_item_fps": 47.94444,
+        "hit_timer_without_shield_fps": 50.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "phase": "6B",
+      "ntsc": {
+        "native_shield_item_fps": 56.9,
+        "hit_timer_without_shield_fps": 60.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      "pal": {
+        "native_shield_item_fps": 47.94444,
+        "hit_timer_without_shield_fps": 50.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "phase": "12",
+      "ntsc": {
+        "native_shield_item_fps": 56.16667,
+        "hit_timer_without_shield_fps": 59.06667,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            40,
+            40
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      "pal": {
+        "native_shield_item_fps": 47.19444,
+        "hit_timer_without_shield_fps": 49.22222,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            40,
+            40
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "phase": "9",
+      "ntsc": {
+        "native_shield_item_fps": 57.83333,
+        "hit_timer_without_shield_fps": 60.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            16,
+            16
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      "pal": {
+        "native_shield_item_fps": 47.94444,
+        "hit_timer_without_shield_fps": 50.0,
+        "native_item_target_met": false,
+        "item_cameras": [
+          [
+            16,
+            16
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      }
+    }
+  ],
+  "findings": [
+    {
+      "priority": 1,
+      "issue": "Shield second tick redraws full51tile inventory region",
+      "code": "game/src/system/video/screens/hud.c:231-270",
+      "evidence": "PAL3/6A/6B/9 changed from48.05556 to50 on sameROM by holding shieldTimer constant; no enemy or camera changes. Real3sitem also fails, so this is production HUD cost.",
+      "minimum_patch": "Separate layout cache from scalar shield/charge cache; clear/redraw only changed digits, preserving layout, icons, palette and expiration transitions."
+    },
+    {
+      "priority": 1,
+      "issue": "Dinorah state label redraws full39tile objective region",
+      "code": "game/src/core/objective.c:154; game/src/system/video/screens/hud.c:185-204",
+      "evidence": {
+        "phase12_ntsc_without_shield_fps": 59.06667,
+        "lost_vblanks": 28,
+        "lost_within3_vblanks_of_wait_aim_label_transition": 28,
+        "state_transitions": 24,
+        "camera_range": [
+          [
+            40,
+            40
+          ],
+          [
+            8,
+            8
+          ]
+        ]
+      },
+      "minimum_patch": "When glyph/aux layouts match, update only the label stripe and changed values instead of beginRegion/endRegion over all13columns."
+    },
+    {
+      "priority": 2,
+      "issue": "Legacy full-record stress resets approved AI and render caches everyVBlank",
+      "code": "game/tools/test_campaign_escorts_emulator.py:148,395-407",
+      "evidence": "Preserving caches changes CPU but does not remove periodic misses. This is a methodology difference from the approved beetle benchmark, not the primary timing cause."
+    },
+    {
+      "priority": 2,
+      "issue": "Ordinary escort FPS includes death settling tail",
+      "code": "game/tools/test_campaign_escorts_emulator.py:412-422",
+      "evidence": "flow.c ST_PLAY settlement renders death without STATS_tick; factory tester already excludes this tail.",
+      "minimum_patch": "Close active measurement at death/settlement entry, report video duration separately; retain all functional and load checks."
+    }
+  ],
+  "retained_optimizations": {
+    "reference": "game/art/beetle-performance-v1/validation/integrated-current/report.json",
+    "identical_to_approved_source_hashes": [
+      "src/enemies/enemies.c",
+      "src/system/video/enemygfx.c",
+      "src/system/audio/music.c",
+      "src/system/video/combatgfx.c",
+      "src/system/video/screens/hud.c"
+    ],
+    "note": "HUD was already unchanged in the approved build; the beetle stress used invisible hit immunity, so it did not exercise shield-countdown redraw."
+  },
+  "evidence_reports": [
+    "art/campaign-corridors-v3/corrections/performance/ntsc-6A/report.json",
+    "art/campaign-corridors-v3/corrections/performance/ntsc/report.json",
+    "art/campaign-corridors-v3/corrections/performance/pal/report.json",
+    "art/campaign-corridors-v3/corrections/performance/pal-shield-fixed/report.json",
+    "art/campaign-corridors-v3/corrections/performance/ntsc-hit-immunity/report.json",
+    "art/campaign-corridors-v3/corrections/performance/pal-hit-immunity/report.json",
+    "art/campaign-corridors-v3/corrections/performance/12-hud-state-trace/report.json",
+    "art/campaign-corridors-v3/corrections/performance/ntsc-item-baseline/report.json",
+    "art/campaign-corridors-v3/corrections/performance/pal-item-baseline/report.json"
+  ],
+  "remaining": "Root owns actual HUD patch/build. Repeat item-based1800VB gate on newSHA without disabling visible shield or Dinorah labels; moving-camera ceiling remains a separate check."
+}

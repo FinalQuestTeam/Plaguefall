@@ -1,0 +1,83 @@
+{
+  "scope": "Private native asset checkpoint, no shared ROM or emulator build",
+  "status": "technical checks passed; independent visual review pending",
+  "checks": {
+    "size": [
+      2560,
+      320
+    ],
+    "bins_decode_to_png_exact_both_states": true,
+    "palette0_black": true,
+    "palette_same_both_states": true,
+    "church_pixels_exact_both_states": true,
+    "route_footprint": [
+      16,
+      16
+    ],
+    "route_margin": 8,
+    "route_samples": 365,
+    "all_route_samples_safe": true,
+    "camera_interest_count": 6,
+    "six_buildings_fit_legal_native_views_below_24px_HUD": true,
+    "southern_bypass_y280_blocked": true,
+    "global_connectivity": {
+      "0": {
+        "free_positions": 6183,
+        "connected_to_start": 6183,
+        "unreachable": 0
+      },
+      "8": {
+        "free_positions": 5042,
+        "connected_to_start": 5042,
+        "unreachable": 0
+      }
+    },
+    "visible_parcel_walls_match_solids": true,
+    "bounds": [
+      16,
+      80,
+      2543,
+      303
+    ],
+    "hud_safe_minimum_feet_y": 80
+  },
+  "memory": {
+    "intact": {
+      "scene_tiles": 624,
+      "objective_tiles": 0,
+      "total_tiles": 624,
+      "budget": 640,
+      "tile_bytes": 19968,
+      "map_bytes": 25600,
+      "palette_bytes": 32,
+      "exact_flip_reuse": 12176,
+      "pixel_identical_decode": true,
+      "sha256": "04bf8dfd7195ba38b1f032dfc186a86695331bcb41678a730dda3e3705264e02"
+    },
+    "damaged": {
+      "scene_tiles": 640,
+      "objective_tiles": 0,
+      "total_tiles": 640,
+      "budget": 640,
+      "tile_bytes": 20480,
+      "map_bytes": 25600,
+      "palette_bytes": 32,
+      "exact_flip_reuse": 12160,
+      "pixel_identical_decode": true,
+      "sha256": "c3839876b7ca7fa097adc0d2251b46e20d837d30ef3909a661913d94188e09a1"
+    }
+  },
+  "sha256": {
+    "native/map.bin": "2f677e165ac0e443fc0925c5919204d7ca7ec3dc7426fde0d814a1cf3820649c",
+    "native/palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "native/tiles.bin": "74d6dffff3a907811dd9b3b2a95cf5e49901e251df80ea750b80cdc0127cc00b",
+    "damaged-native/map.bin": "d4948d2d33a950ba6e4ec708eb7e00b7ff63aae1399c2d4512e66564864bc060",
+    "damaged-native/palette.bin": "adf8be860ba51a7ff218c64ba8edea7339df0dce5e2eb35e62090a7ab0c3a798",
+    "damaged-native/tiles.bin": "a65ceb032bd34f0fb75c2a3cc563df2bc232bcb8a299e8f4079ba28e469fc0b2"
+  },
+  "limits": [
+    "Native views are composed previews; ROM runtime and combat/camera follow-up is centralized by root.",
+    "Damaged background consumes full640tile budget.",
+    "Technical checks do not establish visual acceptance."
+  ]
+}

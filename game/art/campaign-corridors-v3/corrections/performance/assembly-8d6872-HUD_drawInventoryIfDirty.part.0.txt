@@ -1,0 +1,133 @@
+   3d74c:	4fef fff0      	lea %sp@(-16),%sp
+   3d750:	2f03           	movel %d3,%sp@-
+   3d752:	2f02           	movel %d2,%sp@-
+   3d754:	3239 e0ff 1ac2 	movew e0ff1ac2 <fps>,%d1
+   3d75a:	7400           	moveq #0,%d2
+   3d75c:	3439 e0ff 1290 	movew e0ff1290 <shieldTimer.lto_priv.0>,%d2
+   3d762:	7000           	moveq #0,%d0
+   3d764:	3001           	movew %d1,%d0
+   3d766:	2042           	moveal %d2,%a0
+   3d768:	41f0 08ff      	lea %a0@(ffffffffffffffff,%d0:l),%a0
+   3d76c:	2008           	movel %a0,%d0
+   3d76e:	80c1           	divuw %d1,%d0
+   3d770:	1439 e0ff 0e9a 	moveb e0ff0e9a <modeCharges.lto_priv.0>,%d2
+   3d776:	3279 e0ff 3a46 	moveaw e0ff3a46 <lastShieldSeconds>,%a1
+   3d77c:	b049           	cmpw %a1,%d0
+   3d77e:	6700 0096      	beqw 3d816 <HUD_drawInventoryIfDirty.part.0+0xca>
+   3d782:	4a40           	tstw %d0
+   3d784:	56c1           	sne %d1
+   3d786:	4401           	negb %d1
+   3d788:	4243           	clrw %d3
+   3d78a:	b649           	cmpw %a1,%d3
+   3d78c:	56c3           	sne %d3
+   3d78e:	4403           	negb %d3
+   3d790:	3043           	moveaw %d3,%a0
+   3d792:	4a39 e0ff 0192 	tstb e0ff0192 <inventoryMode.lto_priv.0>
+   3d798:	6734           	beqs 3d7ce <HUD_drawInventoryIfDirty.part.0+0x82>
+   3d79a:	4a02           	tstb %d2
+   3d79c:	6600 009c      	bnew 3d83a <HUD_drawInventoryIfDirty.part.0+0xee>
+   3d7a0:	422f 0013      	clrb %sp@(19)
+   3d7a4:	42af 0014      	clrl %sp@(20)
+   3d7a8:	3608           	movew %a0,%d3
+   3d7aa:	b203           	cmpb %d3,%d1
+   3d7ac:	6614           	bnes 3d7c2 <HUD_drawInventoryIfDirty.part.0+0x76>
+   3d7ae:	1239 e0ff 3a44 	moveb e0ff3a44 <lastModeCharges>,%d1
+   3d7b4:	3041           	moveaw %d1,%a0
+   3d7b6:	56c1           	sne %d1
+   3d7b8:	4401           	negb %d1
+   3d7ba:	b22f 0013      	cmpb %sp@(19),%d1
+   3d7be:	6700 008a      	beqw 3d84a <HUD_drawInventoryIfDirty.part.0+0xfe>
+   3d7c2:	241f           	movel %sp@+,%d2
+   3d7c4:	261f           	movel %sp@+,%d3
+   3d7c6:	4fef 0010      	lea %sp@(16),%sp
+   3d7ca:	6000 f2c6      	braw 3ca92 <HUD_drawInventory>
+   3d7ce:	b203           	cmpb %d3,%d1
+   3d7d0:	66f0           	bnes 3d7c2 <HUD_drawInventoryIfDirty.part.0+0x76>
+   3d7d2:	4a40           	tstw %d0
+   3d7d4:	672a           	beqs 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d7d6:	b049           	cmpw %a1,%d0
+   3d7d8:	6726           	beqs 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d7da:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3d7de:	4878 0008      	pea 8 <_Start_Of_Rom+0x8>
+   3d7e2:	1200           	moveb %d0,%d1
+   3d7e4:	0601 0030      	addib #48,%d1
+   3d7e8:	0281 0000 00ff 	andil #255,%d1
+   3d7ee:	2f01           	movel %d1,%sp@-
+   3d7f0:	2f40 0016      	movel %d0,%sp@(22)
+   3d7f4:	4eba af2c      	jsr %pc@(38722 <inventoryDigit>)
+   3d7f8:	4fef 000c      	lea %sp@(12),%sp
+   3d7fc:	202f 000a      	movel %sp@(10),%d0
+   3d800:	33c0 e0ff 3a46 	movew %d0,e0ff3a46 <lastShieldSeconds>
+   3d806:	13c2 e0ff 3a44 	moveb %d2,e0ff3a44 <lastModeCharges>
+   3d80c:	241f           	movel %sp@+,%d2
+   3d80e:	261f           	movel %sp@+,%d3
+   3d810:	4fef 0010      	lea %sp@(16),%sp
+   3d814:	4e75           	rts
+   3d816:	b439 e0ff 3a44 	cmpb e0ff3a44 <lastModeCharges>,%d2
+   3d81c:	67ee           	beqs 3d80c <HUD_drawInventoryIfDirty.part.0+0xc0>
+   3d81e:	4a40           	tstw %d0
+   3d820:	56c1           	sne %d1
+   3d822:	4401           	negb %d1
+   3d824:	4243           	clrw %d3
+   3d826:	b649           	cmpw %a1,%d3
+   3d828:	56c3           	sne %d3
+   3d82a:	4403           	negb %d3
+   3d82c:	3043           	moveaw %d3,%a0
+   3d82e:	4a39 e0ff 0192 	tstb e0ff0192 <inventoryMode.lto_priv.0>
+   3d834:	6798           	beqs 3d7ce <HUD_drawInventoryIfDirty.part.0+0x82>
+   3d836:	6000 ff62      	braw 3d79a <HUD_drawInventoryIfDirty.part.0+0x4e>
+   3d83a:	1f7c 0001 0013 	moveb #1,%sp@(19)
+   3d840:	7601           	moveq #1,%d3
+   3d842:	2f43 0014      	movel %d3,%sp@(20)
+   3d846:	6000 ff60      	braw 3d7a8 <HUD_drawInventoryIfDirty.part.0+0x5c>
+   3d84a:	4a40           	tstw %d0
+   3d84c:	6638           	bnes 3d886 <HUD_drawInventoryIfDirty.part.0+0x13a>
+   3d84e:	4aaf 0014      	tstl %sp@(20)
+   3d852:	67ac           	beqs 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d854:	3608           	movew %a0,%d3
+   3d856:	b403           	cmpb %d3,%d2
+   3d858:	67a6           	beqs 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d85a:	7208           	moveq #8,%d1
+   3d85c:	4878 0002      	pea 2 <_Start_Of_Rom+0x2>
+   3d860:	3f01           	movew %d1,%sp@-
+   3d862:	4267           	clrw %sp@-
+   3d864:	1202           	moveb %d2,%d1
+   3d866:	0601 0030      	addib #48,%d1
+   3d86a:	0281 0000 00ff 	andil #255,%d1
+   3d870:	2f01           	movel %d1,%sp@-
+   3d872:	2f40 0016      	movel %d0,%sp@(22)
+   3d876:	4eba aeaa      	jsr %pc@(38722 <inventoryDigit>)
+   3d87a:	4fef 000c      	lea %sp@(12),%sp
+   3d87e:	202f 000a      	movel %sp@(10),%d0
+   3d882:	6000 ff7c      	braw 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d886:	b049           	cmpw %a1,%d0
+   3d888:	6748           	beqs 3d8d2 <HUD_drawInventoryIfDirty.part.0+0x186>
+   3d88a:	4aaf 0014      	tstl %sp@(20)
+   3d88e:	6700 ff4a      	beqw 3d7da <HUD_drawInventoryIfDirty.part.0+0x8e>
+   3d892:	4878 0001      	pea 1 <_Start_Of_Rom+0x1>
+   3d896:	4878 0003      	pea 3 <_Start_Of_Rom+0x3>
+   3d89a:	1200           	moveb %d0,%d1
+   3d89c:	0601 0030      	addib #48,%d1
+   3d8a0:	0281 0000 00ff 	andil #255,%d1
+   3d8a6:	2f01           	movel %d1,%sp@-
+   3d8a8:	2f40 0016      	movel %d0,%sp@(22)
+   3d8ac:	2f48 001a      	movel %a0,%sp@(26)
+   3d8b0:	4eba ae70      	jsr %pc@(38722 <inventoryDigit>)
+   3d8b4:	4fef 000c      	lea %sp@(12),%sp
+   3d8b8:	202f 000a      	movel %sp@(10),%d0
+   3d8bc:	b42f 0011      	cmpb %sp@(17),%d2
+   3d8c0:	6700 ff3e      	beqw 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d8c4:	720d           	moveq #13,%d1
+   3d8c6:	4878 0002      	pea 2 <_Start_Of_Rom+0x2>
+   3d8ca:	3f01           	movew %d1,%sp@-
+   3d8cc:	4267           	clrw %sp@-
+   3d8ce:	1202           	moveb %d2,%d1
+   3d8d0:	6094           	bras 3d866 <HUD_drawInventoryIfDirty.part.0+0x11a>
+   3d8d2:	4aaf 0014      	tstl %sp@(20)
+   3d8d6:	6700 ff28      	beqw 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d8da:	3208           	movew %a0,%d1
+   3d8dc:	b401           	cmpb %d1,%d2
+   3d8de:	6700 ff20      	beqw 3d800 <HUD_drawInventoryIfDirty.part.0+0xb4>
+   3d8e2:	720d           	moveq #13,%d1
+   3d8e4:	60e0           	bras 3d8c6 <HUD_drawInventoryIfDirty.part.0+0x17a>
+

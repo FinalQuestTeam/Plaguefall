@@ -17,6 +17,12 @@
 #define OBJ_SURVIVE     1       // sobreviver objTarget segundos
 #define OBJ_COLLECT     2       // coletar objTarget itens
 #define OBJ_REACH       4
+#define OBJ_CARGO 6
+#define OBJ_PRIORITY 7
+#define OBJ_EGGS 8
+#define OBJ_VALVES 9
+#define OBJ_POWER 10
+#define OBJ_RADIO 11
 #define OBJ_ESCORT      5
 #define OBJ_PROTECT     3       // proteger o aliado (NPC) por objTarget segundos
 

@@ -1,0 +1,45 @@
+{
+  "tool": "image_gen.imagegen (built-in)",
+  "date": "2026-10-23",
+  "intent": "North-south gate leaf aligned with permanent wall jambs",
+  "previous_source": "history/gate-v1/gate.png",
+  "output": "source/gate.png",
+  "canvas": [
+    64,
+    64
+  ],
+  "source_mount_center_x": [
+    282,
+    257,
+    234,
+    282,
+    256,
+    233
+  ],
+  "mount_registration": "Per-frame source X is the center of the fixed south jamb; shared scale and bottom anchor.",
+  "world_leaf": {
+    "rectangles": [
+      [
+        160,
+        168,
+        16,
+        48
+      ],
+      [
+        288,
+        256,
+        16,
+        48
+      ],
+      [
+        416,
+        144,
+        16,
+        48
+      ]
+    ],
+    "route": "OPS_evacRoute in generated operations_scenes.c"
+  },
+  "fixed_jamb_height": 8,
+  "prompt": "A transparent pixel-art sprite sheet of one small mechanical folding fence, six animation poses in a regular3-column2-row grid, image1536x1024. Top-down elevated60-degree orthographic view. The fence is oriented NORTH-SOUTH, exactly vertical in screen space: a narrow dark teal metal leaf connects two small square fixed posts, one at the top and one at the bottom. The closed span is four times its width, like a16x64-pixel barrier drawn inside a64x64-pixel canvas. Not a frontal door elevation. Both square posts share the same center X and stay in the EXACT same locations in all poses. The six poses show the hinged leaf going from closed to folded aside to the RIGHT: pose0 straight vertical closed;pose1 latch turns;pose2 small center joint loosens;pose3 leaf folds toward right;pose4 leaf rests low to the right;pose5 leaf lies flat in folded sections to the right, leaving a clear route through the middle, with both fixed posts still present. Posts at cell center X256, topY80 and bottomY432. Closed fence width about80source pixels, north-south span352; folded panels contained within cellX420. Worn copper joints, rust brown, tiny mustard stripes, cream edge highlights, strong dark pixel outlines, simple bold16-bit Sega-era pixel clusters. No people, scenery, floor, shadows outside the object, letters, numbers, text or grid. Hard edges, no antialiasing or smooth gradients. Each complete pose is isolated and padded in its own square cell, identical camera and scale. True transparent alpha background."
+}

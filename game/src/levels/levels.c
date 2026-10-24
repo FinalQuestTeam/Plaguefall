@@ -4,6 +4,9 @@
 // arquivo); os terrenos reutilizáveis em levels/layouts.c.
 
 #include "levels/levels.h"
+#include "levels/campaign_early.h"
+#include "levels/operations.h"
+#include "levels/route_stages.h"
 #include "levels/graph.h"
 #include "system/video/sprites/tiles.h"
 #include "system/video/enemygfx.h"
@@ -25,13 +28,18 @@ u8 testStage = 1;
 
 // def da fase teste pelo estágio atual (independe de currentLevel — usado também
 // pelo LEVEL_loadGfx, que roda ANTES de currentLevel virar 0)
+static const u8 reachTrainingRoster[]={ENEMY_SQ_RED,ENEMY_SQ_PUR,ENEMY_TRI_YEL};
+static const u8 escortTrainingRoster[]={ENEMY_TRI_RED,ENEMY_TRI_YEL,ENEMY_TRI_ORG};
+static const LevelDef legacyReach={.objective=OBJ_REACH,.modularTerrain=TRUE,.route=&ROUTE04,.arena=&ROUTE_ARENA04,.spawnSeconds=2,.spawnCount=2,.mud=ROUTE04_hazards,.mudCount=15,.floor=FLOOR_FOREST,.musicTrack=MUSIC_TRACK_BREU,.musEnemyMax=4,.enemyCap=4,.shotCap=6,LVL_ROSTER(reachTrainingRoster)};
+static const LevelDef legacyEscort={.objective=OBJ_ESCORT,.modularTerrain=TRUE,.route=&ROUTE06B,.arena=&ROUTE_ARENA06B,.spawnSeconds=2,.lava=ROUTE06B_hazards,.lavaCount=8,.musCalmUntil=1,.musEnemyMax=4,.musStepCalm=8,.musStepHot=6,.musicTrack=MUSIC_TRACK_BREU,.enemyCap=4,.shotCap=6,LVL_ROSTER(escortTrainingRoster)};
 static const LevelDef *testDef(void)
 {
+    if(testStage>=OPS_FIRST_ROOM)return OPS_def(testStage);
     switch (testStage)
     {
         case 10: return &TEST10_def;
-        case 8:  return &LEVEL06B_def;
-        case 7:  return &LEVEL04_def;
+        case 8:  return &legacyEscort;
+        case 7:  return &legacyReach;
         case 6:  return &TEST6_def;
         case 5:  return &TEST5_def;
         case 4:  return &TEST4_def;
@@ -58,7 +66,7 @@ static void drawBorder(void)
 
 void LEVEL_draw(u8 n)
 {
-    currentLevel = n;
+    currentLevel = n;EARLY_prepare(n);
     const LevelDef *def = LEVEL_current();
     ARENA_configure(def->arena);LOADING_poll();
     TERRAIN_start(def->modularTerrain ? def->lava : NULL,def->modularTerrain ? def->lavaCount : 0,
@@ -86,6 +94,7 @@ void LEVEL_draw(u8 n)
 void LEVEL_preview(u8 node)
 {
     ARENA_leave();VDP_clearPlane(BG_A,TRUE);VDP_clearPlane(BG_B,TRUE);
+    EARLY_prepare(node);
     const LevelDef *def=GRAPH[node].def;
     const u8 previousDamage=arenaDamaged;arenaDamaged=0;
     ARENA_configure(def->arena);LOADING_poll();

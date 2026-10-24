@@ -1,0 +1,513 @@
+{
+  "street_controller_waypoints": [
+    [
+      288,
+      184
+    ],
+    [
+      320,
+      184
+    ],
+    [
+      320,
+      128
+    ],
+    [
+      848,
+      128
+    ],
+    [
+      1056,
+      128
+    ],
+    [
+      1056,
+      184
+    ],
+    [
+      1112,
+      184
+    ],
+    [
+      1112,
+      264
+    ],
+    [
+      1376,
+      264
+    ],
+    [
+      1552,
+      264
+    ],
+    [
+      1560,
+      264
+    ],
+    [
+      1560,
+      184
+    ],
+    [
+      1680,
+      184
+    ],
+    [
+      1680,
+      120
+    ],
+    [
+      2048,
+      120
+    ],
+    [
+      2160,
+      120
+    ],
+    [
+      2160,
+      128
+    ],
+    [
+      2424,
+      128
+    ]
+  ],
+  "street_route": [
+    [
+      56,
+      192
+    ],
+    [
+      296,
+      192
+    ],
+    [
+      328,
+      192
+    ],
+    [
+      328,
+      136
+    ],
+    [
+      856,
+      136
+    ],
+    [
+      1064,
+      136
+    ],
+    [
+      1064,
+      192
+    ],
+    [
+      1120,
+      192
+    ],
+    [
+      1120,
+      272
+    ],
+    [
+      1384,
+      272
+    ],
+    [
+      1560,
+      272
+    ],
+    [
+      1568,
+      272
+    ],
+    [
+      1568,
+      192
+    ],
+    [
+      1688,
+      192
+    ],
+    [
+      1688,
+      128
+    ],
+    [
+      2056,
+      128
+    ],
+    [
+      2168,
+      128
+    ],
+    [
+      2168,
+      136
+    ],
+    [
+      2432,
+      136
+    ],
+    [
+      2432,
+      144
+    ]
+  ],
+  "street_exit": [
+    2384,
+    112,
+    96,
+    64
+  ],
+  "street_finish": [
+    2424,
+    136
+  ],
+  "street_baseline_y": 184,
+  "straight_street_path_blocked": true,
+  "tiles": 460,
+  "scene_limit": 490,
+  "scene_plus_nest": 610,
+  "scene_plus_valve": 525,
+  "eggs": [
+    [
+      96,
+      168
+    ],
+    [
+      96,
+      248
+    ],
+    [
+      240,
+      168
+    ],
+    [
+      240,
+      248
+    ],
+    [
+      384,
+      168
+    ],
+    [
+      384,
+      248
+    ],
+    [
+      528,
+      168
+    ],
+    [
+      528,
+      248
+    ],
+    [
+      672,
+      168
+    ],
+    [
+      672,
+      248
+    ]
+  ],
+  "valves": [
+    [
+      144,
+      104
+    ],
+    [
+      432,
+      104
+    ],
+    [
+      576,
+      104
+    ]
+  ],
+  "valve_approaches": [
+    [
+      136,
+      112
+    ],
+    [
+      424,
+      112
+    ],
+    [
+      568,
+      112
+    ]
+  ],
+  "station_monitors": [
+    [
+      180,
+      88
+    ],
+    [
+      468,
+      88
+    ],
+    [
+      612,
+      88
+    ]
+  ],
+  "factory_solids": [
+    [
+      128,
+      192,
+      80,
+      32
+    ],
+    [
+      576,
+      200,
+      40,
+      32
+    ]
+  ],
+  "street_solids": [
+    [
+      0,
+      32,
+      2560,
+      80
+    ],
+    [
+      0,
+      32,
+      16,
+      288
+    ],
+    [
+      2544,
+      32,
+      16,
+      288
+    ],
+    [
+      0,
+      304,
+      2560,
+      16
+    ],
+    [
+      352,
+      160,
+      16,
+      160
+    ],
+    [
+      816,
+      160,
+      16,
+      160
+    ],
+    [
+      1088,
+      224,
+      16,
+      96
+    ],
+    [
+      1584,
+      224,
+      16,
+      96
+    ],
+    [
+      1712,
+      160,
+      16,
+      160
+    ],
+    [
+      2112,
+      160,
+      16,
+      160
+    ],
+    [
+      128,
+      32,
+      128,
+      128
+    ],
+    [
+      640,
+      160,
+      128,
+      128
+    ],
+    [
+      448,
+      176,
+      96,
+      64
+    ],
+    [
+      1152,
+      32,
+      288,
+      128
+    ],
+    [
+      1728,
+      144,
+      288,
+      128
+    ],
+    [
+      1248,
+      192,
+      96,
+      64
+    ]
+  ],
+  "factory_size": [
+    768,
+    320
+  ],
+  "street_size": [
+    2560,
+    320
+  ],
+  "factory_start": [
+    48,
+    128
+  ],
+  "street_start": [
+    48,
+    184
+  ],
+  "factory_min_y": 112,
+  "factory_max_y": 271,
+  "street_min_y": 112,
+  "street_max_y": 303,
+  "factory_reachable": 1644,
+  "street_reachable": 5508,
+  "collision": "16px projected footprint flood reaches ten clutch approaches, three valve approaches and exit; field props block their full projected footprint to prevent standing inside background art; cabinets wholly behind walk boundary",
+  "pipeline": "whole-scene-first",
+  "minimum_bypass_width": 32,
+  "street_native_bank": "art/campaign-corridors-v3/corrections/9-guidebook/native",
+  "street_camera_interest": [
+    {
+      "id": "repair-workshop",
+      "name": "repair-workshop",
+      "bbox": [
+        128,
+        32,
+        128,
+        128
+      ],
+      "player_feet": [
+        184,
+        184
+      ],
+      "position": [
+        184,
+        184
+      ],
+      "camera": [
+        32,
+        0
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "south-workshop",
+      "name": "south-workshop",
+      "bbox": [
+        640,
+        160,
+        128,
+        128
+      ],
+      "player_feet": [
+        608,
+        272
+      ],
+      "position": [
+        608,
+        272
+      ],
+      "camera": [
+        456,
+        72
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "loading-shed",
+      "name": "loading-shed",
+      "bbox": [
+        1152,
+        32,
+        288,
+        128
+      ],
+      "player_feet": [
+        1280,
+        168
+      ],
+      "position": [
+        1280,
+        168
+      ],
+      "camera": [
+        1128,
+        0
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "south-warehouse",
+      "name": "south-warehouse",
+      "bbox": [
+        1728,
+        144,
+        288,
+        128
+      ],
+      "player_feet": [
+        1864,
+        280
+      ],
+      "position": [
+        1864,
+        280
+      ],
+      "camera": [
+        1712,
+        80
+      ],
+      "whole_below_HUD": true
+    },
+    {
+      "id": "factory-entry",
+      "name": "factory-entry",
+      "bbox": [
+        2392,
+        48,
+        80,
+        64
+      ],
+      "player_feet": [
+        2456,
+        184
+      ],
+      "position": [
+        2456,
+        184
+      ],
+      "camera": [
+        2240,
+        0
+      ],
+      "whole_below_HUD": true
+    }
+  ]
+}

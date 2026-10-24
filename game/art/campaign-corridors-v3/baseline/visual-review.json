@@ -1,0 +1,491 @@
+{
+  "status": "corridor_compositions_rejected",
+  "rom_sha256": "66aba7c700e66511a54c74133aaba24817341e56a5843d27e17877655cf61e84",
+  "rom_bytes": 2359296,
+  "pattern": "workflow.json",
+  "not_a_fixed_four_obstacle_layout": true,
+  "review_method": "Fontes inteiras e panoramas nativos avaliados antes das câmeras. Revisões cruzadas por tema na c622,18composições idênticas verificadas por hash na ROM final e nova checagem de renderização NTSC/PAL de todas19. Fase3 revisada novamente após remover ilhas de chão.",
+  "review_is_independent_of_tests": true,
+  "final_delta": "final-delta.json",
+  "phase3_cleanup": {
+    "changed_pixels": 340,
+    "all_changes_inside_five_vehicle_rectangles": true,
+    "before": "cycle-2-c622defb/3-before-mask-fix.png",
+    "after": "../maps/3-complete.png"
+  },
+  "coverage": {
+    "complete_native_worlds": 19,
+    "regions": [
+      "NTSC",
+      "PAL"
+    ],
+    "actual_camera_samples": 816,
+    "horizontal_sampling_step": 160,
+    "viewport_width": 320
+  },
+  "technical": {
+    "region_suites_passed": 10,
+    "report": "../playtests/summary.json",
+    "physical_hardware_tested": false
+  },
+  "global_limits": [
+    "A câmera móvel mostra parte do mundo. O HUD pode ocultar o topo da arquitetura em alguns enquadramentos; o panorama nativo completo expõe a silhueta inteira.",
+    "Repetição de materiais permanece visível, especialmente vegetação, céu e chapas industriais.",
+    "Carga artificial apresenta quedas de FPS; testes também incluem sobrecarga de8/16inimigos além dos limites de fase.",
+    "Bots medem pressão e verificam objetivos; não substituem playtest humano de dificuldade."
+  ],
+  "phases": [
+    {
+      "phase": "1",
+      "verdict": "Composição aceitável com ressalvas",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Igreja, portão de evacuação, três pertences e perímetro compõem um lugar reconhecível.",
+        "Campo central aberto atende à sobrevivência e à evacuação; bancos e barris têm silhueta e contato próprios.",
+        "Vegetação superior tem repetição perceptível. O HUD e a rolagem ocultam parte da arquitetura em certos enquadramentos."
+      ],
+      "native_sha256": "7b39acce008b12fda378697f5b34563e15658ecddb5c1528e3b2796ae9d9aa21",
+      "whole_scene": "maps/1-complete.png",
+      "layout": "layouts/1.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": null,
+      "prior_review_rom": null,
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/1",
+        "captures/pal/1"
+      ]
+    },
+    {
+      "phase": "2A",
+      "verdict": "Composição aceitável",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Preserva o mesmo pátio e a igreja intacta para manter continuidade.",
+        "A dificuldade vem do novo atirador e da meta de 15 mortes; não há mudança arbitrária da arquitetura."
+      ],
+      "native_sha256": "7b39acce008b12fda378697f5b34563e15658ecddb5c1528e3b2796ae9d9aa21",
+      "whole_scene": "maps/2A-complete.png",
+      "layout": "layouts/2A.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": null,
+      "prior_review_rom": null,
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/2A",
+        "captures/pal/2A"
+      ]
+    },
+    {
+      "phase": "2B",
+      "verdict": "Composição aceitável",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Dano fica localizado na igreja; três conjuntos completos de destroços alteram a circulação.",
+        "Bancos e barris mantêm posição; os destroços não usam fragmentos de telhado como peças avulsas."
+      ],
+      "native_sha256": "1caf2b6b98bbf9c5d984f39542728a82232a218246c567e75138f80f89542403",
+      "whole_scene": "maps/2B-complete.png",
+      "layout": "layouts/2B.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": null,
+      "prior_review_rom": null,
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/2B",
+        "captures/pal/2B"
+      ]
+    },
+    {
+      "phase": "3",
+      "verdict": "Reprovada em composição visual",
+      "summary": "Uma fileira de casas iguais sobre uma pista laranja extensa. Cinco vans idênticas, espaçadas, produzem um slalom artificial.",
+      "observations": [
+        "Muro e vegetação repetidos dominam a faixa superior; a textura compete com a arquitetura.",
+        "A igreja tem peso e escala diferentes das pequenas casas repetidas.",
+        "O piso central tem pouca organização de rua além de uma calçada reta; não há sequência de quarteirões, esquina ou abertura de chegada.",
+        "Os veículos mudam a passagem, mas parecem obstáculos distribuídos por fórmula, sem relação convincente com entradas, estacionamento ou tráfego.",
+        "Redesenho necessário: Redesenhar saída da igreja, trecho residencial e chegada ao galpão como três espaços conectados, com hierarquia, mudanças de largura e implantação plausível dos veículos."
+      ],
+      "native_sha256": "34f43e9da583fdea3f20640a1eae73fe5ce019b41f7ad07d235a541a262db136",
+      "whole_scene": "maps/3-complete.png",
+      "layout": "layouts/3.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": null,
+      "prior_review_rom": null,
+      "native_unchanged_since_team_review": false,
+      "final_emulator_captures": [
+        "captures/ntsc/3",
+        "captures/pal/3"
+      ],
+      "previous_verdict": "Composição aceitável com ressalvas",
+      "previous_observations": [
+        "Igreja inteira na entrada, sete casas completas com calçada e galpão inteiro no destino.",
+        "Cinco veículos alternam passagens; guia usa margem de 8 px e travessia completa por controle passou.",
+        "Ilhas de chão acima das vans foram removidas na terceira revisão; máscaras preservam a silhueta principal e a sombra de contato.",
+        "Vegetação e muro se repetem; o HUD recorta parte da faixa superior durante a rolagem."
+      ],
+      "reassessment": "reviews/corridor-reassessment/audit.json",
+      "visual_approval_revoked": true
+    },
+    {
+      "phase": "4",
+      "verdict": "Composição aceitável com ressalvas",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Portão, vãos, laterais e fechamento inferior próprios caracterizam o interior do galpão.",
+        "Duas bancadas e um palete permanecem inteiros, com circulação conectada para o combate.",
+        "Piso foi simplificado; a textura da alvenaria ainda é forte."
+      ],
+      "native_sha256": "2392a0e531422b71fa66636d8e3884debfb8aa85a1bd0baafd9d606117272a35",
+      "whole_scene": "maps/4-complete.png",
+      "layout": "layouts/4.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": null,
+      "prior_review_rom": null,
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/4",
+        "captures/pal/4"
+      ]
+    },
+    {
+      "phase": "5",
+      "verdict": "Composição aceitável com ressalvas",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Fonte refeita como pátio externo; galpão inteiro, muros e cantos conectados.",
+        "Santa central com aproximações legíveis e objetos completos nos flancos.",
+        "Juntas do concreto têm repetição regular. A carga artificial desta defesa reduz a taxa de simulação; ver medições."
+      ],
+      "native_sha256": "6f30f978ca7c28d3d407adac201930869a2344cc253a4d32ad455a03bdf7d90f",
+      "whole_scene": "maps/5-complete.png",
+      "layout": "layouts/5.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": null,
+      "prior_review_rom": null,
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/5",
+        "captures/pal/5"
+      ]
+    },
+    {
+      "phase": "6A",
+      "verdict": "Reprovada em composição visual",
+      "summary": "Uma parede contínua e um piso repetido por3072px; três pequenos objetos não dão ritmo à escolta.",
+      "observations": [
+        "Arco inicial e saída são praticamente os únicos acontecimentos arquitetônicos.",
+        "Longos trechos de câmera mostram somente muro, tubulação e piso.",
+        "O mesmo valor e a mesma textura cobrem grande parte da tela, enfraquecendo personagens e pontos de interesse.",
+        "A faixa de circulação uniforme não cria bolsões de combate, pontos de cobertura ou transições reconhecíveis.",
+        "Redesenho necessário: Compor galerias, curvas, cruzamentos e câmaras de manutenção conectadas, com canais e passarelas que organizem o caminho da escolta."
+      ],
+      "native_sha256": "6867e0a2e1a143ee079e092fcfc6131db037a17045404e5d86d75cd719ab4370",
+      "whole_scene": "maps/6A-complete.png",
+      "layout": "layouts/6A.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "routes/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/6A",
+        "captures/pal/6A"
+      ],
+      "previous_verdict": "Composição aceitável com ressalvas",
+      "previous_observations": [
+        "Arcos, tubulação, marcos de manutenção, canal inferior e cantos estão completos no mundo.",
+        "Objetos do percurso criam pequenos desvios sem impedir a escolta.",
+        "Na câmera inferior, o HUD cobre 16 px do topo dos marcos de entrada/saída; portas e destino continuam legíveis."
+      ],
+      "reassessment": "reviews/corridor-reassessment/audit.json",
+      "visual_approval_revoked": true
+    },
+    {
+      "phase": "6B",
+      "verdict": "Reprovada em composição visual",
+      "summary": "As duas estações de pressão foram colocadas sobre o mesmo corredor vazio, sem organizar uma instalação convincente.",
+      "observations": [
+        "Entre os mecanismos, reaparece a extensa composição de muro e piso da6A.",
+        "Estrutura frontal, portão inclinado e caixas físicas não comunicam uma comporta única com clareza visual.",
+        "Acúmulo de setas e marcadores compete com a própria leitura do mecanismo.",
+        "As duas estações têm implantação quase idêntica e pouca preparação visual da aproximação.",
+        "Redesenho necessário: Projetar duas câmaras de pressão completas, com entrada, válvula ligada à instalação, barreira atravessando a passagem e saída claramente revelada após a abertura."
+      ],
+      "native_sha256": "562663f30638ab852bb7d5519207280270b8c492d1fff7223d567e8ff04b2859",
+      "whole_scene": "maps/6B-complete.png",
+      "layout": "layouts/6B.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "routes/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/6B",
+        "captures/pal/6B"
+      ],
+      "previous_verdict": "Composição aceitável com ressalvas",
+      "previous_observations": [
+        "Casas de pressão, válvulas e suportes permanecem inteiros antes e depois dos portões.",
+        "Colapso mantém bloqueio por 0,8 s; a grade desaparece e a passagem abre entre os apoios.",
+        "Há muitos marcadores nas bordas da câmera; a perspectiva inclinada do portão global foi preservada."
+      ],
+      "reassessment": "reviews/corridor-reassessment/audit.json",
+      "visual_approval_revoked": true
+    },
+    {
+      "phase": "7",
+      "verdict": "Composição aceitável",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Casas completas, entrada do abrigo, duas barricadas e depósito caracterizam a favela.",
+        "Colisor da construção inteira impede entrar na lona; cinco coletas e entregas reais passaram.",
+        "Bases dinâmicas das maletas liberam passagem depois da coleta."
+      ],
+      "native_sha256": "5f2406e944420509a1e0d10e2e2e9a15c3a3996e28bca20cff3ebc51380fad10",
+      "whole_scene": "maps/7-complete.png",
+      "layout": "layouts/7.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "resistance/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/7",
+        "captures/pal/7"
+      ]
+    },
+    {
+      "phase": "8",
+      "verdict": "Composição aceitável",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Mantém o mesmo abrigo comprometido; os três emissores têm leitura prioritária no campo.",
+        "Depósito e barricadas mantêm contato e não admitem penetração amostrada."
+      ],
+      "native_sha256": "04746f24c700ee07cdc79e841ce45b1dcb620f5eb709688af5e82f3cc4c7b1e4",
+      "whole_scene": "maps/8-complete.png",
+      "layout": "layouts/8.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "resistance/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/8",
+        "captures/pal/8"
+      ]
+    },
+    {
+      "phase": "9",
+      "verdict": "Reprovada em composição visual",
+      "summary": "Pista cinza quase vazia diante de um paredão industrial. Quatro equipamentos pequenos ficam isolados por grandes distâncias.",
+      "observations": [
+        "O piso e a parede formam duas superfícies grandes sem hierarquia ou ritmo.",
+        "Os equipamentos têm presença pequena em relação à câmera e ao comprimento do percurso.",
+        "Várias telas mostram nenhum obstáculo ou estrutura singular no campo.",
+        "A aproximação da fábrica tem pouca construção visual entre início, meio e chegada.",
+        "Redesenho necessário: Construir sequência de acesso industrial, docas/carga, pátio de máquinas e entrada da fábrica, com volumes inteiros, escala comum e circulação organizada por esses volumes."
+      ],
+      "native_sha256": "bafb8b19eba646e1126af0728a5623b592a52eac404fb3915b5a664d65d42874",
+      "whole_scene": "maps/9-complete.png",
+      "layout": "layouts/9.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "factory/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/9",
+        "captures/pal/9"
+      ],
+      "previous_verdict": "Composição aceitável com ressalvas",
+      "previous_observations": [
+        "Oficina, pórtico, tanques e portão terminal dão progressão industrial ao percurso.",
+        "Quatro obstáculos completos têm desvios físicos; amostras sobrepostas mostram tubos e caçamba inteiros.",
+        "Painéis industriais longos são repetidos; não há novo fragmento ou vazio preto de saída."
+      ],
+      "reassessment": "reviews/corridor-reassessment/audit.json",
+      "visual_approval_revoked": true
+    },
+    {
+      "phase": "10",
+      "verdict": "Composição aceitável com ressalvas",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Fábrica tem perímetro completo, forno frio, gabinetes, esteira e palete apoiados.",
+        "Dez conjuntos de ovos estão posicionados no piso; dano, bomba e persistência passaram.",
+        "Ovos continuam não sólidos, conforme a mecânica existente; sobreposição com o ator é possível."
+      ],
+      "native_sha256": "f29344eda688b5fc4197e88cd94e0bf2b3c2f12f5adcc6618e8da2d56b30afa6",
+      "whole_scene": "maps/10-complete.png",
+      "layout": "layouts/10.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "factory/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/10",
+        "captures/pal/10"
+      ]
+    },
+    {
+      "phase": "11",
+      "verdict": "Composição aceitável com ressalvas",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Três válvulas conectam-se a tubulações terminadas nos gabinetes.",
+        "Gabinetes ficam no recuo norte e o ator circula pela frente.",
+        "A câmera inferior oculta válvulas; marcadores indicam a direção."
+      ],
+      "native_sha256": "0b82caa494271dd2964d2090d3148cf8d783b148d40493926c928b2e1cf40ec0",
+      "whole_scene": "maps/11-complete.png",
+      "layout": "layouts/11.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "factory/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/11",
+        "captures/pal/11"
+      ]
+    },
+    {
+      "phase": "12",
+      "verdict": "Reprovada em composição visual",
+      "summary": "Uma fachada de garagens repetidas, céu chapado e chão quase vazio. O cenário parece uma maquete comprida.",
+      "observations": [
+        "Três pequenos obstáculos ao longo de3072px deixam grandes trechos sem acontecimentos no campo.",
+        "As fachadas são pequenas e repetidas em intervalos rígidos; portas e telhados não estabelecem escala consistente com o ator.",
+        "Céu, fachada, chão e muro inferior viram quatro listras paralelas.",
+        "A chegada ao sindicato e a preparação da última incursão têm pouca ênfase espacial.",
+        "Redesenho necessário: Separar oficinas, trecho de serviço do estaleiro e acesso ao sindicato em setores reconhecíveis; usar construções de escala coerente, mudanças de implantação e uma chegada com hierarquia."
+      ],
+      "native_sha256": "810f802b670fc70785b84fb88997666054196578550fadac30fb4b08355031f8",
+      "whole_scene": "maps/12-complete.png",
+      "layout": "layouts/12.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "routes/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/12",
+        "captures/pal/12"
+      ],
+      "previous_verdict": "Composição aceitável com ressalvas",
+      "previous_observations": [
+        "Fachadas e baías completas, pequenos obstáculos e entrada do sindicato encerram a escolta.",
+        "Limite inferior e laterais mantêm continuidade ao longo dos 3072 px.",
+        "Faixa de céu e módulos repetidos são visíveis; não foi identificado corte interno de edifício."
+      ],
+      "reassessment": "reviews/corridor-reassessment/audit.json",
+      "visual_approval_revoked": true
+    },
+    {
+      "phase": "13A",
+      "verdict": "Composição aceitável",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Sala fechada com viga superior contínua, três bancos inteiros e balcão apoiado.",
+        "Dinorah aparece como busto atrás do tampo; não há corpo flutuando no campo."
+      ],
+      "native_sha256": "1a984c9528837cdff0b3112192bcbaa67aef03d36984a05ad6f04ebb1769c51c",
+      "whole_scene": "maps/13A-complete.png",
+      "layout": "layouts/13A.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "resistance/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/13A",
+        "captures/pal/13A"
+      ]
+    },
+    {
+      "phase": "13B",
+      "verdict": "Composição aceitável",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Mesma sala e circulação preservadas; retrato, fita de luto e velas ocupam o balcão.",
+        "Memorial substitui a presença viva de Dinorah e respeita a mesma profundidade."
+      ],
+      "native_sha256": "a978309080cf3b619c36525cdbe3a901f9619000646d6681555d7885ee33d821",
+      "whole_scene": "maps/13B-complete.png",
+      "layout": "layouts/13B.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "resistance/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/13B",
+        "captures/pal/13B"
+      ]
+    },
+    {
+      "phase": "14",
+      "verdict": "Composição aceitável",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Cinco máquinas inteiras nas terminações dos cabos; estação e ilha têm volume e colisão próprios.",
+        "Motores ficam dentro de câmaras completas; as cinco ativações por controle passaram."
+      ],
+      "native_sha256": "48f310a9c773c0704c8a743077a145e2ee8f94fae2eefb30704e206446cdf373",
+      "whole_scene": "maps/14-complete.png",
+      "layout": "layouts/14.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "launch/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/14",
+        "captures/pal/14"
+      ]
+    },
+    {
+      "phase": "15",
+      "verdict": "Composição aceitável com ressalvas",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Estação com rádio montado e cinco geradores preservados.",
+        "Contato nas quatro bordas externas realmente danifica o rádio; defender 120 s ativos conclui a missão.",
+        "Ignição fica contida nas câmaras. A apresentação e o throughput tornam a duração de parede maior que 120 s."
+      ],
+      "native_sha256": "9be037676a4476cb40877f511a68fe0ea6d011c1de998c3e7cad16703b92b57f",
+      "whole_scene": "maps/15-complete.png",
+      "layout": "layouts/15.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "launch/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/15",
+        "captures/pal/15"
+      ]
+    },
+    {
+      "phase": "16",
+      "verdict": "Composição aceitável com ressalvas",
+      "summary": "Imagem inteira e enquadramentos da ROM revisados; limites específicos abaixo.",
+      "observations": [
+        "Mesma estação, geradores e chamas contidas mantêm continuidade após a ignição.",
+        "Escorpião aparece com escala nativa e encontro funcional.",
+        "Falas finais de Dinorah viva e ausência quando morta foram preservadas nos oito percursos."
+      ],
+      "native_sha256": "522934b0756ef93a00638e7fcc4751efb7c13cf346b33b42ddb41bacfa0c1f55",
+      "whole_scene": "maps/16-complete.png",
+      "layout": "layouts/16.png",
+      "technical_report": "playtests/summary.json",
+      "prior_team_review": "launch/runtime-review.json",
+      "prior_review_rom": "c622defb4e2cfdacb5e033a499581304d2f6f40a325243a4e8698c45409bb0c7",
+      "native_unchanged_since_team_review": true,
+      "final_emulator_captures": [
+        "captures/ntsc/16",
+        "captures/pal/16"
+      ]
+    }
+  ],
+  "reassessment": "corridor-reassessment/audit.json",
+  "open_visual_blockers": [
+    "3",
+    "6A",
+    "6B",
+    "9",
+    "12"
+  ]
+}
