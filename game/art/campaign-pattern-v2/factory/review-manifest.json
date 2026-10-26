@@ -5,9 +5,9 @@
       "complete": "factory/cycle-2/9-complete.png",
       "bounds": [
         16,
-        112,
+        96,
         2543,
-        303
+        287
       ],
       "size": [
         2560,
@@ -19,144 +19,77 @@
       ],
       "solids": [
         [
-          0,
+          128,
           32,
-          2560,
-          80,
+          128,
+          128,
           true
         ],
         [
-          0,
+          672,
+          160,
+          128,
+          128,
+          true
+        ],
+        [
+          1120,
           32,
-          16,
           288,
+          128,
           true
         ],
         [
-          2544,
-          32,
-          16,
+          1760,
+          160,
           288,
-          true
-        ],
-        [
-          0,
-          304,
-          2560,
-          16,
-          true
-        ],
-        [
-          352,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          816,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          1088,
-          224,
-          16,
-          96,
-          true
-        ],
-        [
-          1584,
-          224,
-          16,
-          96,
-          true
-        ],
-        [
-          1712,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          2112,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          128,
-          32,
-          128,
           128,
           true
         ],
         [
-          640,
-          160,
-          128,
-          128,
-          true
-        ],
-        [
-          448,
-          176,
+          400,
+          208,
           96,
           64,
           true
         ],
         [
-          1152,
-          32,
-          288,
-          128,
-          true
-        ],
-        [
-          1728,
-          144,
-          288,
-          128,
-          true
-        ],
-        [
           1248,
-          192,
+          224,
+          96,
+          64,
+          true
+        ],
+        [
+          2256,
+          176,
           96,
           64,
           true
         ]
       ],
       "memory": {
-        "tiles": 630,
-        "budget": 640,
-        "tile_bytes": 20160,
+        "source_tiles": 827,
+        "resident_tiles": 448,
+        "resident_bytes": 14336,
         "map_bytes": 25600,
-        "exact_flip_reused": 12170,
-        "lossy_tile_substitutions": 0,
-        "native_grid": 1,
-        "fits": true,
-        "scene_tiles": 630,
-        "background_tiles": 630,
-        "objective_tiles": 0,
-        "total_tiles": 630,
+        "rom_graphics_bytes": 26464,
         "limit": 640,
-        "free_tiles": 10,
-        "graphics_bytes": 20160,
-        "palette_bytes": 32,
-        "collision_mask_words": 400
+        "lossy_tile_substitutions": 0,
+        "scene_tiles": 448,
+        "background_tiles": 448,
+        "objective_tiles": 0,
+        "total_tiles": 448,
+        "graphics_bytes": 14336,
+        "map_stored_in_rom": true
       },
       "sources": [
-        "art/campaign-corridors-v3/corrections/9-guidebook/../../../campaign-pattern-v2/factory/modules/factory-door.png",
-        "art/campaign-corridors-v3/corrections/9-guidebook/../../../phase01-courtyard-v2/intact-native.png",
-        "art/campaign-corridors-v3/corrections/9-guidebook/../../../phase03-street-v2/source/street-kit.png",
-        "art/campaign-corridors-v3/corrections/9-guidebook/../../../phase04-tunnels-v1/map-native.png",
-        "art/campaign-corridors-v3/corrections/9-guidebook/../../../routes-2048-v2/source/evacuation-cutouts.png",
-        "art/campaign-corridors-v3/corrections/9-guidebook/history/revision-2/complete-native.png"
+        "art/phase09-three-segments-v1/source/industrial-street-base.png",
+        "art/phase09-three-segments-v1/../phase07-urban-v2/modules/asphalt-repeat.png",
+        "art/phase09-three-segments-v1/../campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+        "art/phase09-three-segments-v1/../campaign-corridors-v3/corrections/9-guidebook/modules/whole-rust-truck-rgba.png",
+        "art/phase09-three-segments-v1/../campaign-corridors-v3/corrections/9-guidebook/modules/factory-door-exact.png",
+        "art/phase09-three-segments-v1/../campaign-corridors-v3/corrections/9-guidebook/modules/left-wall.png"
       ],
       "special_states": {},
       "objectives": [],

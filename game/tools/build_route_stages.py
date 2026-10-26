@@ -160,7 +160,7 @@ def main():
                'art':{**art,'pixelScale':1,'tileBudget':640,'paletteColors':16,'lossyTileReplacements':0,'blockSimilarityToFirst':similarities}}
  from build_game_markers import generate as generate_markers
  files.update(generate_markers())
- res.append('BIN game_markers "routes/markers.bin" 4');decl.append('extern const u8 game_markers[768];')
+ res.append('BIN game_markers "routes/markers.bin" 4');decl.append(f'extern const u8 game_markers[{len(files[G/"res/routes/markers.bin"])}];')
  files[G/'src/levels/route_stages.c']=('\n'.join(src)+'\n').encode();files[G/'src/levels/route_stages.h']=('\n'.join(hdr+['#endif'])+'\n').encode();files[G/'res/routes.res']=('\n'.join(res)+'\n').encode();files[G/'res/routes.h']=('#include <genesis.h>\n\n#ifndef _RES_ROUTES_H_\n#define _RES_ROUTES_H_\n\n'+'\n'.join(decl)+'\n\n#endif // _RES_ROUTES_H_\n').encode();files[G/'art/objetivos-travessia-escolta-v1/integracao-2048/mapas.json']=(json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode()
  files[ART/'export.json']=(json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode()
  for p,b in files.items():

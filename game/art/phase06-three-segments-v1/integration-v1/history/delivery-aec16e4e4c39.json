@@ -1,0 +1,712 @@
+{
+  "date": "2026-10-26",
+  "status": "integrated-functional-with-performance-reservation",
+  "rom_sha256": "aec16e4e4c3992221bed1ffeb28e7d261cbfef47d34853810827b0216572cd69",
+  "rom_bytes": 2621440,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "human_approval_claimed": false,
+  "scene": {
+    "size": [
+      3072,
+      320
+    ],
+    "sequence": [
+      "A",
+      "B",
+      "B",
+      "B",
+      "B",
+      "C"
+    ],
+    "walkable_y": [
+      80,
+      271
+    ],
+    "lower_decorative_y": [
+      272,
+      319
+    ],
+    "npc_base": [
+      16,
+      16
+    ],
+    "arrival": [
+      2912,
+      144,
+      64,
+      48
+    ]
+  },
+  "memory": {
+    "source_patterns_per_variant": 1095,
+    "source_graphics_rom_bytes_per_variant": 35040,
+    "map_rom_bytes_per_variant": 30720,
+    "scene_cache_slots": 456,
+    "maximum_visible_source_patterns": 437,
+    "cache_heap_bytes": 5838,
+    "gate_tiles": 112,
+    "valve_tiles": 65,
+    "phase6A_resident_tiles": 456,
+    "phase6B_resident_tiles": 633,
+    "phase6B_resident_bytes": 20256,
+    "resident_limit_tiles": 640,
+    "spare_tiles_6B": 7,
+    "approximate_pixel_substitutions": 0
+  },
+  "checks": {
+    "native_pixels": true,
+    "forward_reverse_vertical_camera": true,
+    "contacts_per_region": {
+      "6A": 38,
+      "6B": 45
+    },
+    "pause": true,
+    "steam_damage_and_safe_valve_work": true,
+    "gate_hits": 4,
+    "pressure_seconds": 1.5,
+    "collapse_seconds": 0.8,
+    "all_six_gate_and_valve_frames": true,
+    "controller_escort_arrival": true,
+    "death_retries": true,
+    "selector_entries": 19,
+    "phase03_regression": true,
+    "phase45_regression": true
+  },
+  "loads": {
+    "ntsc": {
+      "06A": [
+        {
+          "section": "entrada",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 900,
+          "game_frames": 898,
+          "game_fps": 59.867,
+          "mean_cpu_pct": 74.81,
+          "p95_cpu_pct": 79.93,
+          "maximum_cpu_pct": 84.72,
+          "camera_range": [
+            108,
+            172
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            20,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              2
+            ]
+          ],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              898
+            ],
+            [
+              "drawShots.constprop.1",
+              1
+            ],
+            [
+              "MUSIC_update",
+              1
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "meio",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 900,
+          "game_frames": 897,
+          "game_fps": 59.8,
+          "mean_cpu_pct": 76.56,
+          "p95_cpu_pct": 80.27,
+          "maximum_cpu_pct": 83.06,
+          "camera_range": [
+            1268,
+            1332
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            20,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              3
+            ]
+          ],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              897
+            ],
+            [
+              "SPRITES_emit.part.0",
+              1
+            ],
+            [
+              "SPRITES_draw",
+              1
+            ],
+            [
+              "applyVoice.isra.0",
+              1
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "portao",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 900,
+          "game_frames": 897,
+          "game_fps": 59.8,
+          "mean_cpu_pct": 76.64,
+          "p95_cpu_pct": 80.37,
+          "maximum_cpu_pct": 83.15,
+          "camera_range": [
+            1588,
+            1652
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            20,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              3
+            ]
+          ],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              897
+            ],
+            [
+              "MUSIC_update",
+              2
+            ],
+            [
+              "SPRITES_emit.part.0",
+              1
+            ]
+          ],
+          "profile_means": {}
+        }
+      ],
+      "06B": [
+        {
+          "section": "entrada",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 900,
+          "game_frames": 891,
+          "game_fps": 59.4,
+          "mean_cpu_pct": 82.01,
+          "p95_cpu_pct": 85.99,
+          "maximum_cpu_pct": 96.24,
+          "camera_range": [
+            108,
+            172
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            21,
+            12,
+            160
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              9
+            ]
+          ],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              892
+            ],
+            [
+              "MARKERS_destination",
+              2
+            ],
+            [
+              "0x5e024",
+              1
+            ],
+            [
+              "MUSIC_update",
+              1
+            ],
+            [
+              "drawShots.constprop.0",
+              1
+            ],
+            [
+              "AUDIO_frameEnd",
+              1
+            ],
+            [
+              "drawShots.constprop.1",
+              1
+            ],
+            [
+              "SPRITES_draw",
+              1
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "meio",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 900,
+          "game_frames": 837,
+          "game_fps": 55.8,
+          "mean_cpu_pct": 85.35,
+          "p95_cpu_pct": 90.33,
+          "maximum_cpu_pct": 94.14,
+          "camera_range": [
+            1268,
+            1332
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            21,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              63
+            ]
+          ],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              837
+            ],
+            [
+              "applyVoice.isra.0",
+              15
+            ],
+            [
+              "AUDIO_frameEnd",
+              13
+            ],
+            [
+              "MUSIC_update",
+              9
+            ],
+            [
+              "SPRITES_emit.part.0",
+              6
+            ],
+            [
+              "DMA_queueDmaFast",
+              2
+            ],
+            [
+              "FLOW_run",
+              2
+            ],
+            [
+              "SPRITES_draw",
+              2
+            ],
+            [
+              "drawShots.constprop.0",
+              2
+            ],
+            [
+              "0x5dfba",
+              1
+            ],
+            [
+              "0x5dfc2",
+              1
+            ],
+            [
+              "emitActor.isra.0",
+              1
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "portao",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 900,
+          "game_frames": 834,
+          "game_fps": 55.6,
+          "mean_cpu_pct": 86.11,
+          "p95_cpu_pct": 97.56,
+          "maximum_cpu_pct": 116.85,
+          "camera_range": [
+            1588,
+            1652
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            21,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              66
+            ]
+          ],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              835
+            ],
+            [
+              "text",
+              14
+            ],
+            [
+              "applyVoice.isra.0",
+              8
+            ],
+            [
+              "AUDIO_frameEnd",
+              8
+            ],
+            [
+              "drawShots.constprop.0",
+              5
+            ],
+            [
+              "MUSIC_update",
+              5
+            ],
+            [
+              "drawShots.constprop.1",
+              5
+            ],
+            [
+              "SPRITES_draw",
+              2
+            ],
+            [
+              "DMA_queueDmaFast",
+              2
+            ],
+            [
+              "SFX_update",
+              2
+            ],
+            [
+              "FLOW_run",
+              2
+            ],
+            [
+              "0x5e046",
+              2
+            ]
+          ],
+          "profile_means": {}
+        }
+      ]
+    },
+    "pal": {
+      "06A": [
+        {
+          "section": "entrada",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 750,
+          "game_frames": 750,
+          "game_fps": 50.0,
+          "mean_cpu_pct": 49.63,
+          "p95_cpu_pct": 54.15,
+          "maximum_cpu_pct": 57.18,
+          "camera_range": [
+            108,
+            172
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            20,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              750
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "meio",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 750,
+          "game_frames": 750,
+          "game_fps": 50.0,
+          "mean_cpu_pct": 49.94,
+          "p95_cpu_pct": 53.37,
+          "maximum_cpu_pct": 55.81,
+          "camera_range": [
+            1268,
+            1332
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            20,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              750
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "portao",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 750,
+          "game_frames": 750,
+          "game_fps": 50.0,
+          "mean_cpu_pct": 50.02,
+          "p95_cpu_pct": 53.81,
+          "maximum_cpu_pct": 55.57,
+          "camera_range": [
+            1588,
+            1652
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            20,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              750
+            ]
+          ],
+          "profile_means": {}
+        }
+      ],
+      "06B": [
+        {
+          "section": "entrada",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 750,
+          "game_frames": 750,
+          "game_fps": 50.0,
+          "mean_cpu_pct": 55.69,
+          "p95_cpu_pct": 60.16,
+          "maximum_cpu_pct": 65.53,
+          "camera_range": [
+            108,
+            172
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            21,
+            10,
+            136
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              750
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "meio",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 750,
+          "game_frames": 750,
+          "game_fps": 50.0,
+          "mean_cpu_pct": 59.42,
+          "p95_cpu_pct": 62.6,
+          "maximum_cpu_pct": 66.02,
+          "camera_range": [
+            1268,
+            1332
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            20,
+            13,
+            176
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              750
+            ]
+          ],
+          "profile_means": {}
+        },
+        {
+          "section": "portao",
+          "enemies": 3,
+          "shots_per_pool": 4,
+          "physical_frames": 750,
+          "game_frames": 735,
+          "game_fps": 49.0,
+          "mean_cpu_pct": 60.52,
+          "p95_cpu_pct": 70.02,
+          "maximum_cpu_pct": 77.39,
+          "camera_range": [
+            1588,
+            1652
+          ],
+          "retarget_values": 17,
+          "sprite_limits": [
+            21,
+            11,
+            144
+          ],
+          "active_AI_and_trajectories_retained": true,
+          "miss_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              15
+            ]
+          ],
+          "all_pc": [
+            [
+              "VDP_waitVBlank.constprop.0",
+              735
+            ],
+            [
+              "HUD_drawObjective",
+              9
+            ],
+            [
+              "drawShots.constprop.1",
+              2
+            ],
+            [
+              "SPRITES_emit.part.0",
+              2
+            ],
+            [
+              "FLOW_run",
+              1
+            ],
+            [
+              "SPRITES_draw",
+              1
+            ]
+          ],
+          "profile_means": {}
+        }
+      ]
+    }
+  },
+  "native_combat": {
+    "ntsc": {
+      "06A": {
+        "seconds": 30.0,
+        "state": 1,
+        "minimum_player_hp": 48,
+        "dinorah_hp": 76,
+        "maximum_enemies": 2,
+        "game_fps": 59.833,
+        "ram_health_AI_grants": false,
+        "scope": "stationary defense, not a complete combat escort or human difficulty approval"
+      },
+      "06B": {
+        "seconds": 24.52,
+        "state": 3,
+        "minimum_player_hp": 0,
+        "dinorah_hp": 68,
+        "maximum_enemies": 2,
+        "game_fps": 57.308,
+        "ram_health_AI_grants": false,
+        "scope": "stationary defense, not a complete combat escort or human difficulty approval"
+      }
+    },
+    "pal": {
+      "06A": {
+        "seconds": 30.0,
+        "state": 1,
+        "minimum_player_hp": 58,
+        "dinorah_hp": 34,
+        "maximum_enemies": 2,
+        "game_fps": 50.0,
+        "ram_health_AI_grants": false,
+        "scope": "stationary defense, not a complete combat escort or human difficulty approval"
+      },
+      "06B": {
+        "seconds": 30.0,
+        "state": 1,
+        "minimum_player_hp": 80,
+        "dinorah_hp": 76,
+        "maximum_enemies": 1,
+        "game_fps": 50.0,
+        "ram_health_AI_grants": false,
+        "scope": "stationary defense, not a complete combat escort or human difficulty approval"
+      }
+    }
+  },
+  "limits": [
+    "A carga máxima medida não mantém60/50 FPS fixos:6A59,8–59,867NTSC e50PAL;6B55,6–59,4NTSC e49–50PAL.",
+    "A carga preserva IA e tiros ativos, protege vida e repõe apenas tiros inativos; cada trecho foi medido por15s.",
+    "As travessias completas isolam o combate e,na6B,abrem portões porRAM; as duas interações reais de válvula e tiro são verificadas separadamente.",
+    "Os pontos de parada são percorridos por controle; amostras de pixels durante o percurso esperam a câmera estabilizar. Os segundos do relatório de navegação não são um tempo mínimo de partida.",
+    "A defesa natural é uma amostra estacionária de até30s; não certifica uma escolta completa com combate nem a dificuldade humana."
+  ],
+  "reports": {
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json",
+    "phase03-ntsc": "validation/phase03-ntsc/report.json",
+    "phase03-pal": "validation/phase03-pal/report.json",
+    "phase45-ntsc": "validation/phase45-ntsc/report.json",
+    "phase45-pal": "validation/phase45-pal/report.json",
+    "selector-ntsc": "validation/selector-ntsc/report.json",
+    "selector-pal": "validation/selector-pal/report.json"
+  }
+}

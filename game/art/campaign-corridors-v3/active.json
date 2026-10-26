@@ -6,14 +6,14 @@
     "9",
     "12"
   ],
-  "state": "phase03-three-segments-integrated",
-  "rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf",
+  "state": "phase03-phase06-and-phase09-three-segments-integrated",
+  "rom_sha256": "37bf6f1866028c5affc90b43f93ec09099cb76eb8cd20cd33b5c778b23b78635",
   "published_rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf",
   "scene_folders": {
     "3": "../phase03-three-segments-v1/integration-v1",
-    "6A": "corrections/6A-guidebook/revisions/01-crossing-context",
-    "6B": "corrections/6B-guidebook/revisions/01-crossing-context",
-    "9": "corrections/9-guidebook",
+    "6A": "../phase06-three-segments-v1/integration-v1/6A",
+    "6B": "../phase06-three-segments-v1/integration-v1/6B",
+    "9": "../phase09-three-segments-v1",
     "12": "corrections/12-guidebook"
   },
   "replaces_rejected_rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",

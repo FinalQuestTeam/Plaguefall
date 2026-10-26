@@ -11,947 +11,462 @@
     271
   ],
   "start": [
-    40,
-    224
-  ],
-  "route_points": [
-    [
-      48,
-      232
-    ],
-    [
-      280,
-      232
-    ],
-    [
-      544,
-      232
-    ],
-    [
-      648,
-      240
-    ],
-    [
-      776,
-      240
-    ],
-    [
-      848,
-      240
-    ],
-    [
-      880,
-      216
-    ],
-    [
-      880,
-      168
-    ],
-    [
-      1000,
-      168
-    ],
-    [
-      1168,
-      144
-    ],
-    [
-      1248,
-      136
-    ],
-    [
-      1360,
-      136
-    ],
-    [
-      1480,
-      136
-    ],
-    [
-      1552,
-      96
-    ],
-    [
-      1840,
-      96
-    ],
-    [
-      1840,
-      216
-    ],
-    [
-      2096,
-      216
-    ],
-    [
-      2160,
-      248
-    ],
-    [
-      2344,
-      248
-    ],
-    [
-      2432,
-      248
-    ],
-    [
-      2544,
-      248
-    ],
-    [
-      2688,
-      200
-    ],
-    [
-      2824,
-      200
-    ],
-    [
-      3016,
-      176
-    ]
-  ],
-  "route_points_are": "centers",
-  "pauses": [
-    2,
-    10,
-    15,
-    19
-  ],
-  "exit": [
-    2976,
-    152,
-    64,
-    64
+    104,
+    192
   ],
   "solids": [
     [
-      0,
-      0,
-      3072,
-      80,
-      false
-    ],
-    [
-      2128,
-      80,
-      944,
-      8,
-      false
-    ],
-    [
-      0,
-      80,
-      824,
-      16,
-      false
-    ],
-    [
-      1272,
-      80,
-      184,
-      16,
-      false
-    ],
-    [
-      2128,
-      88,
-      416,
-      24,
-      false
-    ],
-    [
-      2128,
-      112,
-      32,
-      72,
-      false
-    ],
-    [
-      2352,
-      112,
-      192,
-      72,
-      false
-    ],
-    [
-      664,
-      96,
-      160,
-      112,
-      false
-    ],
-    [
-      0,
-      96,
-      24,
-      176,
-      false
-    ],
-    [
-      1272,
-      176,
-      184,
-      96,
-      false
-    ],
-    [
-      2128,
-      264,
-      416,
-      8,
-      false
-    ],
-    [
-      3048,
-      88,
-      24,
-      184,
-      false
-    ],
-    [
-      0,
-      272,
-      3072,
-      48,
-      false
-    ],
-    [
-      112,
-      32,
       56,
       80,
-      true
-    ],
-    [
-      80,
-      72,
-      144,
-      32,
-      true
-    ],
-    [
-      80,
-      184,
-      320,
-      32,
-      true
-    ],
-    [
-      224,
-      112,
-      176,
-      32,
-      true
-    ],
-    [
-      384,
-      128,
-      96,
+      104,
       88,
       true
     ],
     [
-      1656,
+      2880,
+      80,
+      128,
+      64,
+      true
+    ],
+    [
+      320,
+      224,
+      32,
+      16,
+      true
+    ],
+    [
+      656,
       112,
-      160,
-      32,
+      80,
+      48,
       true
     ],
     [
-      1648,
-      144,
-      8,
-      96,
-      true
-    ],
-    [
-      1816,
-      144,
-      8,
-      96,
-      true
-    ],
-    [
-      1656,
+      880,
       240,
-      160,
       32,
+      16,
+      true
+    ],
+    [
+      1168,
+      248,
+      48,
+      16,
+      false
+    ],
+    [
+      1376,
+      128,
+      32,
+      16,
       true
     ],
     [
       1672,
-      128,
-      128,
-      104,
-      true
-    ],
-    [
-      2192,
-      120,
-      128,
-      104,
-      true
-    ],
-    [
-      2480,
-      104,
-      56,
-      80,
-      true
-    ],
-    [
-      2496,
-      200,
-      24,
-      32,
-      true
-    ],
-    [
-      2848,
       112,
-      160,
-      32,
-      true
-    ],
-    [
-      2896,
       80,
-      32,
-      32,
-      true
-    ],
-    [
-      2848,
-      72,
-      48,
       48,
       true
     ],
     [
-      2928,
+      1968,
+      248,
       48,
-      64,
-      80,
-      true
-    ],
-    [
-      80,
-      104,
-      144,
-      80,
-      false
-    ],
-    [
-      224,
-      144,
-      176,
-      40,
-      false
-    ],
-    [
-      912,
-      80,
-      48,
-      64,
-      false
-    ],
-    [
-      912,
-      192,
-      48,
-      80,
-      false
-    ],
-    [
-      1656,
-      144,
-      160,
-      96,
-      false
-    ],
-    [
-      2496,
-      184,
-      24,
       16,
       false
+    ],
+    [
+      2184,
+      240,
+      32,
+      16,
+      true
+    ],
+    [
+      2368,
+      128,
+      40,
+      24,
+      false
+    ],
+    [
+      832,
+      80,
+      32,
+      32,
+      true
+    ],
+    [
+      832,
+      176,
+      32,
+      96,
+      true
+    ],
+    [
+      1856,
+      80,
+      32,
+      112,
+      true
+    ],
+    [
+      1856,
+      256,
+      32,
+      16,
+      true
     ]
   ],
-  "gates": [],
+  "exit": [
+    2912,
+    144,
+    64,
+    48
+  ],
+  "gates": [
+    [
+      840,
+      112,
+      16,
+      64
+    ],
+    [
+      1864,
+      192,
+      16,
+      64
+    ]
+  ],
   "valves": [],
   "valve_approaches": [],
-  "gate_shot_approaches": [],
+  "gate_shot_approaches": [
+    [
+      760,
+      152
+    ],
+    [
+      1784,
+      232
+    ]
+  ],
+  "camera_player_y": 200,
+  "camera_south_start": 192,
   "camera_interest": [
     {
-      "name": "Cisterna e arco",
+      "name": "Entrada dos esgotos",
       "bbox": [
-        72,
-        32,
-        168,
-        184
+        56,
+        24,
+        102,
+        144
       ],
       "preferred_feet": [
-        40,
-        200
-      ],
-      "position": [
-        40,
-        200
-      ]
-    },
-    {
-      "name": "Ponte inteira",
-      "bbox": [
-        880,
-        136,
-        112,
-        96
-      ],
-      "preferred_feet": [
-        872,
-        160
-      ],
-      "position": [
-        872,
-        160
-      ]
-    },
-    {
-      "name": "Ilha de bombas",
-      "bbox": [
-        1648,
-        112,
-        176,
-        160
-      ],
-      "preferred_feet": [
-        1832,
+        104,
         192
       ],
       "position": [
-        1832,
+        104,
         192
       ]
     },
     {
-      "name": "Recuo de manutenção",
+      "name": "Acesso ao abrigo",
       "bbox": [
-        2160,
-        112,
-        192,
-        152
+        2880,
+        24,
+        128,
+        115
       ],
       "preferred_feet": [
-        2336,
-        240
+        2936,
+        176
       ],
       "position": [
-        2336,
-        240
-      ]
-    },
-    {
-      "name": "Abrigo",
-      "bbox": [
-        2848,
-        48,
-        160,
-        96
-      ],
-      "preferred_feet": [
-        3008,
-        168
-      ],
-      "position": [
-        3008,
-        168
+        2936,
+        176
       ]
     }
   ],
-  "camera_player_y": 200,
-  "camera_player_y_samples": [
-    184,
-    200,
-    248
-  ],
-  "assembly_notes": [
-    [
-      "cistern",
-      [
-        72,
-        32,
-        408,
-        184
-      ]
-    ],
-    [
-      "bridge",
-      [
-        896,
-        48,
-        80,
-        256
-      ]
-    ],
-    [
-      "pump-island",
-      [
-        1648,
-        112,
-        176,
-        160
-      ]
-    ],
-    [
-      "refuge",
-      [
-        2848,
-        48,
-        160,
-        96
-      ]
-    ]
+  "sources": [
+    "../../palette-preview/panorama-6B-estatico.png"
   ],
   "native": {
     "tiles": "native/tiles.bin",
     "map": "native/map.bin",
     "palette": "native/palette.bin"
   },
+  "status": "native_export_for_active_phase06",
+  "streamed_tiles": {
+    "source_count": 1095,
+    "resident_budget": 456,
+    "maximum_visible_tiles": 437,
+    "peak_cell": [
+      5,
+      3
+    ],
+    "window": [
+      41,
+      26
+    ]
+  },
   "memory": {
-    "scene_tiles": 554,
-    "objective_tiles": 0,
-    "total_tiles": 554,
-    "budget": 640,
-    "exact_native_tile_reuse": true,
-    "lossy_tile_substitutions": 0,
+    "source_tiles": 1095,
+    "resident_budget": 456,
+    "maximum_visible_tiles": 437,
+    "source_graphics_rom_bytes": 35040,
+    "cache_heap_bytes": 5838,
     "map_bytes": 30720,
-    "background_tiles": 554,
+    "objective_tiles": 112,
+    "scene_tiles": 456,
+    "background_tiles": 456,
+    "total_tiles": 568,
     "limit": 640,
-    "graphics_bytes": 17728
+    "graphics_bytes": 14592,
+    "rom_graphics_bytes": 35040,
+    "map_stored_in_rom": true
   },
-  "status": "isolated crossing-context revision; needs whole-map/continuous-camera review; no activation",
-  "geometry_checks": {
-    "actor_feet": [
-      16,
-      16
-    ],
-    "margin": 8,
-    "swept_samples": 3200,
-    "reachable_centers": 4448,
-    "arrival_connected": true
-  },
-  "complete": "complete-native.png",
-  "sources": [
-    "../../complete-indexed.png"
+  "objective_tiles": 112,
+  "sequence": [
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C"
   ],
-  "material_revision": {
-    "source": "art/phase04-tunnels-v1/map-native.png",
-    "concrete_rect": [
-      360,
-      208,
-      16,
-      16
-    ],
-    "grain_grid": 1,
-    "texture_resampling": false,
-    "channel": "same existing quiet source grain, dark charcoal palette; mouth water pigments normalized without reshaping",
-    "architecture": "existing complete module alpha, cap, face and joint positions unchanged",
-    "first_discarded_trial": "Wet sludge crop repeated too visibly; rejected before review handoff.",
-    "objective_palette_changed": false,
-    "actor_palette_changed": false
-  },
-  "material_geometry_validation": {
-    "footprint": 16,
-    "free_positions": 5554,
-    "reachable_positions": 5554,
-    "all_free_positions_connected": true,
-    "swept16pxSamples": 3200
-  },
-  "geometry_unchanged_from_canonical": true,
-  "preview_cameras": [
-    {
-      "id": "Cisterna e arco",
-      "position": [
-        40,
-        200
-      ],
-      "camera": [
-        0,
-        0
-      ],
-      "follower_feet": [
-        24,
-        200
-      ],
-      "preview": "camera-1.png",
-      "actor_y_anchor": "py-31"
-    },
-    {
-      "id": "Ponte inteira",
-      "position": [
-        872,
-        160
-      ],
-      "camera": [
-        704,
-        8
-      ],
-      "follower_feet": [
-        840,
-        160
-      ],
-      "preview": "camera-2.png",
-      "actor_y_anchor": "py-31"
-    },
-    {
-      "id": "Ilha de bombas",
-      "position": [
-        1832,
-        192
-      ],
-      "camera": [
-        1648,
-        48
-      ],
-      "follower_feet": [
-        1824,
-        192
-      ],
-      "preview": "camera-3.png",
-      "actor_y_anchor": "py-31"
-    },
-    {
-      "id": "Recuo de manutenção",
-      "position": [
-        2336,
-        240
-      ],
-      "camera": [
-        2160,
-        40
-      ],
-      "follower_feet": [
-        2304,
-        240
-      ],
-      "preview": "camera-4.png",
-      "actor_y_anchor": "py-31"
-    },
-    {
-      "id": "Abrigo",
-      "position": [
-        3008,
-        168
-      ],
-      "camera": [
-        2752,
-        0
-      ],
-      "follower_feet": [
-        2976,
-        168
-      ],
-      "preview": "camera-5.png",
-      "actor_y_anchor": "py-31"
-    }
-  ],
-  "art_limitations": [
-    "This changes materials only: existing long corridor composition, native outlines, pumps, bays and gates remain. It does not claim to redesign the spatial macrocomposition.",
-    "The 16x16 material is repeated exactly; sparse 1px grain can still reveal repetition at enlarged viewing scale.",
-    "Dark drainage is conveyed by charcoal pigment and depth of existing banks; blue pipework remains on mechanical equipment.",
-    "Cameras are native composed previews at previously measured legal runtime coordinates. Actor placement is illustrative; no new emulator or gameplay measurement is claimed.",
-    "Root/user whole-map and private-ROM review is still required; tile and geometry checks are not visual approval."
-  ],
-  "revision_placements": [
-    {
-      "id": "closed-pump-recess",
-      "source_bbox_xywh": [
-        1672,
-        128,
-        128,
-        104
-      ],
-      "position": [
-        688,
-        104
-      ],
-      "complete_module": true,
-      "source": "../../complete-indexed.png",
-      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
-    },
-    {
-      "id": "entry-maintenance-bay",
-      "source_bbox_xywh": [
-        2848,
-        72,
-        48,
-        48
-      ],
-      "position": [
-        512,
-        48
-      ],
-      "complete_module": true,
-      "source": "../../complete-indexed.png",
-      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
-    },
-    {
-      "id": "middle-north-maintenance-bay",
-      "source_bbox_xywh": [
-        2848,
-        72,
-        48,
-        56
-      ],
-      "position": [
-        1168,
-        24
-      ],
-      "complete_module": true,
-      "source": "../../complete-indexed.png",
-      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
-    },
-    {
-      "id": "middle-maintenance-bay",
-      "source_bbox_xywh": [
-        2848,
-        72,
-        48,
-        56
-      ],
-      "position": [
-        2000,
-        24
-      ],
-      "complete_module": true,
-      "source": "../../complete-indexed.png",
-      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
-    },
-    {
-      "id": "late-maintenance-bay",
-      "source_bbox_xywh": [
-        2848,
-        72,
-        48,
-        56
-      ],
-      "position": [
-        2704,
-        32
-      ],
-      "complete_module": true,
-      "source": "../../complete-indexed.png",
-      "geometry": "Wholly inside the existing blocked northern region; no new feet/shot collider."
-    }
-  ],
-  "revision_scope": "Resident whole pump and maintenance unit only. Bounds/solids/route/camera/objectives unchanged.",
-  "continuous_preview_step_world_x": 160,
-  "continuous_previews": "continuous-cameras.json",
-  "revision_geometry_validation": {
-    "footprint": 16,
-    "free_positions": 5554,
-    "reachable_positions": 5554,
-    "all_free_positions_connected": true,
-    "swept16pxSamples": 3200
-  },
-  "width": 3072,
-  "height": 320,
-  "points": [
+  "route_points": [
     [
-      48,
-      232
+      112,
+      200
     ],
     [
-      280,
-      232
+      568,
+      200
     ],
     [
-      544,
-      232
+      568,
+      224
     ],
     [
-      648,
-      240
+      816,
+      224
     ],
     [
-      776,
-      240
-    ],
-    [
-      848,
-      240
-    ],
-    [
-      880,
-      216
-    ],
-    [
-      880,
-      168
-    ],
-    [
-      1000,
-      168
-    ],
-    [
-      1168,
+      816,
       144
     ],
     [
-      1248,
-      136
+      904,
+      144
     ],
     [
-      1360,
-      136
+      1128,
+      144
     ],
     [
-      1480,
-      136
+      1128,
+      184
     ],
     [
-      1552,
-      96
+      1336,
+      184
+    ],
+    [
+      1592,
+      184
+    ],
+    [
+      1592,
+      224
     ],
     [
       1840,
-      96
-    ],
-    [
-      1840,
-      216
-    ],
-    [
-      2096,
-      216
-    ],
-    [
-      2160,
-      248
-    ],
-    [
-      2344,
-      248
-    ],
-    [
-      2432,
-      248
-    ],
-    [
-      2544,
-      248
-    ],
-    [
-      2688,
-      200
-    ],
-    [
-      2824,
-      200
-    ],
-    [
-      3016,
-      176
-    ]
-  ],
-  "traversal_points": [
-    [
-      40,
       224
     ],
     [
-      272,
+      1920,
       224
-    ],
-    [
-      536,
-      224
-    ],
-    [
-      640,
-      232
-    ],
-    [
-      768,
-      232
-    ],
-    [
-      840,
-      232
-    ],
-    [
-      872,
-      208
-    ],
-    [
-      872,
-      160
-    ],
-    [
-      992,
-      160
-    ],
-    [
-      1160,
-      136
-    ],
-    [
-      1240,
-      128
-    ],
-    [
-      1352,
-      128
-    ],
-    [
-      1472,
-      128
-    ],
-    [
-      1544,
-      88
-    ],
-    [
-      1832,
-      88
-    ],
-    [
-      1832,
-      208
     ],
     [
       2088,
-      208
+      224
     ],
     [
-      2152,
-      240
-    ],
-    [
-      2336,
-      240
-    ],
-    [
-      2424,
-      240
+      2088,
+      184
     ],
     [
       2536,
-      240
+      184
     ],
     [
-      2680,
+      2944,
+      184
+    ]
+  ],
+  "points": [
+    [
+      112,
+      200
+    ],
+    [
+      568,
+      200
+    ],
+    [
+      568,
+      224
+    ],
+    [
+      816,
+      224
+    ],
+    [
+      816,
+      144
+    ],
+    [
+      904,
+      144
+    ],
+    [
+      1128,
+      144
+    ],
+    [
+      1128,
+      184
+    ],
+    [
+      1336,
+      184
+    ],
+    [
+      1592,
+      184
+    ],
+    [
+      1592,
+      224
+    ],
+    [
+      1840,
+      224
+    ],
+    [
+      1920,
+      224
+    ],
+    [
+      2088,
+      224
+    ],
+    [
+      2088,
+      184
+    ],
+    [
+      2536,
+      184
+    ],
+    [
+      2944,
+      184
+    ]
+  ],
+  "pauses": [
+    2,
+    8,
+    14,
+    15
+  ],
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 7941,
+    "reachable_positions": 7941,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3072
+  },
+  "gate_geometry_validation": {
+    "closed_gates_disconnect": true,
+    "first_open_second_still_blocks": true,
+    "both_open_connect": true,
+    "opening_height": 64
+  },
+  "width": 3072,
+  "height": 320,
+  "traversal_points": [
+    [
+      104,
       192
     ],
     [
-      2816,
+      560,
       192
     ],
     [
-      3008,
-      168
+      560,
+      216
+    ],
+    [
+      808,
+      216
+    ],
+    [
+      808,
+      136
+    ],
+    [
+      896,
+      136
+    ],
+    [
+      1120,
+      136
+    ],
+    [
+      1120,
+      176
+    ],
+    [
+      1328,
+      176
+    ],
+    [
+      1584,
+      176
+    ],
+    [
+      1584,
+      216
+    ],
+    [
+      1832,
+      216
+    ],
+    [
+      1912,
+      216
+    ],
+    [
+      2080,
+      216
+    ],
+    [
+      2080,
+      176
+    ],
+    [
+      2528,
+      176
+    ],
+    [
+      2936,
+      176
     ]
   ],
   "walkable": [
@@ -960,29 +475,23 @@
     3024,
     192
   ],
-  "tiles": 554,
-  "tileBudget": 640,
-  "nativeTileSHA256": "12310aa8d26655d48181c8886d7426941a58731125e58a48206d66abd28fc8d4",
-  "native_bank": "art/campaign-corridors-v3/corrections/6A-guidebook/revisions/01-crossing-context/native",
-  "geometry_validation": {
-    "footprint": 16,
-    "free_positions": 5554,
-    "reachable_positions": 5554,
-    "all_free_positions_connected": true,
-    "swept16pxSamples": 3200
-  },
+  "source_tiles": 1095,
+  "tiles": 456,
+  "tileBudget": 528,
+  "nativeTileSHA256": "ea025e3d58ffe098e13c149e3df921be44f11c7d73c3483ead7ce644a084c34d",
+  "native_bank": "art/phase06-three-segments-v1/integration-v1/6A/native",
   "geometry": {
-    "swept16pxSamples": 3200
+    "swept16pxSamples": 3072
   },
-  "swept16pxSamples": 3200,
-  "routeLengthPx": 3173.6,
-  "unopposedMinimumSeconds": 92.2,
+  "swept16pxSamples": 3072,
+  "routeLengthPx": 3056.0,
+  "unopposedMinimumSeconds": 88.9,
   "cap": 3,
   "spawn": 3,
   "art": {
-    "nativeImage": "art/campaign-corridors-v3/corrections/6A-guidebook/revisions/01-crossing-context/complete-native.png",
+    "nativeImage": "art/phase06-three-segments-v1/integration-v1/6A/complete-native.png",
     "method": "Whole scene first; complete modules; exact native export",
     "lossyTileReplacements": 0
   },
-  "source_directory": "art/campaign-corridors-v3/corrections/6A-guidebook/revisions/01-crossing-context"
+  "source_directory": "art/phase06-three-segments-v1/integration-v1/6A"
 }

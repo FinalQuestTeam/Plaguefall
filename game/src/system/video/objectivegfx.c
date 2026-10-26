@@ -3,6 +3,10 @@
 #include "system/video/objectivegfx.h"
 #include "system/video/objective_art_data.h"
 #include "system/video/campaign_ground_art.h"
+#include "system/video/sewer_gate_art.h"
+#include "system/video/phase08_transmitter.h"
+#include "system/video/scene_stream.h"
+#include "levels/graph.h"
 #include "system/video/floor.h"
 #include "system/video/spritelist.h"
 #include "system/video/screens/loading.h"
@@ -23,18 +27,27 @@ u16 objectiveAnimationEvents[OBJECTIVE_ART_COUNT];
 u8 objectiveAnimationFrameMask[OBJECTIVE_ART_COUNT];
 u16 objectiveArtBases[OBJECTIVE_ART_COUNT];
 static u8 drawnFrames[OBJECTIVE_VISUAL_CAP],drawnVisibility[OBJECTIVE_VISUAL_CAP];
-static s16 lastCol,lastRow;
+static s16 lastCol,lastRow,lastRight,lastBottom;
 static bool dirty,campaignArt;
 static u16 idleClock;
 
+static const CampaignGroundArt *packedArt(u8 art)
+{
+    if((currentLevel==N_6A || currentLevel==N_6B) && art==OART_GATE)return &sewerGateGround;
+    return &campaignGroundArt[art];
+}
 static void load(u8 art,u16 *cursor)
 {
     const ObjectiveArt *a=&objectiveArt[art];
     objectiveArtBases[art]=*cursor;
+    if(currentLevel==N_8 && art==OART_TRANSMITTER) {
+        VDP_loadTileData(phase08TransmitterTiles,*cursor,PHASE08_TRANSMITTER_TILES,DMA);
+        *cursor+=PHASE08_TRANSMITTER_TILES;return;
+    }
     // Ground-only campaign mechanisms can address exact shared tiles through
     // a map. Keep contiguous frame storage for moving sprite objectives.
-    if(campaignArt && campaignGroundArt[art].count) {
-        const CampaignGroundArt *packed=&campaignGroundArt[art];
+    if(campaignArt && packedArt(art)->count) {
+        const CampaignGroundArt *packed=packedArt(art);
         VDP_loadTileData(packed->tiles,*cursor,packed->count,DMA);*cursor+=packed->count;return;
     }
     const u32 *source=(const u32 *)objective_animations+a->offset;
@@ -67,8 +80,9 @@ bool OBJECTIVEGFX_startCampaign(u16 artMask)
     idleClock=0;lastCol=lastRow=-1;dirty=TRUE;campaignArt=TRUE;
     u16 cursor=TILE_USER_INDEX+FLOOR_TILE_BASE+ARENA_sceneTileCount(),required=0;
     for(u8 i=0;i<OBJECTIVE_ART_COUNT;i++)if(artMask&(1u<<i))
-        required+=campaignGroundArt[i].count ? campaignGroundArt[i].count : objectiveArt[i].tiles*6;
-    if(cursor+required>TILE_USER_INDEX+FLOOR_TILE_BASE+COURTYARD_TILE_COUNT)return FALSE;
+        required+=currentLevel==N_8 && i==OART_TRANSMITTER ? PHASE08_TRANSMITTER_TILES : packedArt(i)->count ? packedArt(i)->count : objectiveArt[i].tiles*6;
+    const u16 workTiles=currentLevel==N_6B ? ARENA_WORK_BAR_TILE_COUNT : 0;
+    if(cursor+required>TILE_USER_INDEX+FLOOR_TILE_BASE+COURTYARD_TILE_COUNT-workTiles)return FALSE;
     const bool enabled=VDP_getEnable();VDP_setEnable(FALSE);
     for(u8 i=0;i<OBJECTIVE_ART_COUNT;i++)if(artMask&(1u<<i))load(i,&cursor);
     VDP_setEnable(enabled);return TRUE;
@@ -159,13 +173,13 @@ static void mapVisual(u8 slot,s16 clipLeft,s16 clipTop,s16 clipRight,s16 clipBot
         u16 data[8];
         for(s16 c=left;c<right;c++) {
             const u16 local=(c-col)*height+r;
-            const bool ink=v->visible && objectiveTileVisible[(a->offset>>3)+v->frame*a->tiles+local];
+            const bool ink=v->visible && ((campaignArt && (currentLevel==N_6A || currentLevel==N_6B) && v->art==OART_GATE) ? sewerGateVisible[v->frame*a->tiles+local] : objectiveTileVisible[(a->offset>>3)+v->frame*a->tiles+local]);
             u16 tile=base+local;
-            if(campaignArt && campaignGroundArt[v->art].count) {
-                const u16 *indices=campaignGroundArt[v->art].map;
+            if(campaignArt && packedArt(v->art)->count) {
+                const u16 *indices=packedArt(v->art)->map;
                 tile=objectiveArtBases[v->art]+indices[v->frame*a->tiles+local];
             }
-            data[c-left]=ink ? TILE_ATTR_FULL(pal,foreground,FALSE,FALSE,tile) : (campaignArt ? ARENA_backgroundAttr(c,row+r) : OPS_backgroundAttr(c,row+r));
+            data[c-left]=ink ? TILE_ATTR_FULL(pal,foreground,FALSE,FALSE,tile) : (campaignArt ? (SCENESTREAM_active() ? 0 : ARENA_backgroundAttr(c,row+r)) : OPS_backgroundAttr(c,row+r));
         }
         VDP_setTileMapDataRow(BG_A,data,(row+r)&31,left&63,right-left,DMA_QUEUE_COPY);
     }
@@ -181,30 +195,44 @@ static void mapVisual(u8 slot,s16 clipLeft,s16 clipTop,s16 clipRight,s16 clipBot
 }
 void OBJECTIVEGFX_ground(bool force)
 {
-    const s16 col=cameraX/8,row=cameraY/8;
-    const bool moved=lastCol!=col || lastRow!=row;
+    const bool streamed=SCENESTREAM_active();
+    const s16 col=cameraX/8,row=(cameraY+(streamed ? 24 : 0))/8;
+    const s16 right=streamed ? (cameraX+319)/8+1 : col+64;
+    const s16 bottom=streamed ? (cameraY+223)/8+1 : row+32;
+    const bool moved=lastCol!=col || lastRow!=row || lastRight!=right || lastBottom!=bottom;
     if(!dirty && !force && !moved)return;
     for(u8 i=0;i<OBJECTIVE_VISUAL_CAP;i++) {
         const ObjectiveVisual *v=&objectiveVisuals[i];
         if(!v->ground || !objectiveArtBases[v->art])continue;
         const bool changed=drawnFrames[i]!=v->frame || drawnVisibility[i]!=v->visible;
-        if(force || changed || lastCol<0)mapVisual(i,col,row,col+64,row+32);
+        if(force || changed || lastCol<0)mapVisual(i,col,row,right,bottom);
         else if(moved && v->visible) {
-            // Match the arena's64x32 resident ring, not only its40x28 visible
-            // window. Scrolling repairs just newly streamed edges; redrawing
-            // three complete64px gates on each camera tile cost whole frames.
-            if(col<lastCol)mapVisual(i,col,row,lastCol,row+32);
-            else if(col>lastCol)mapVisual(i,lastCol+64,row,col+64,row+32);
-            if(row<lastRow)mapVisual(i,col,row,col+64,lastRow);
-            else if(row>lastRow)mapVisual(i,col,lastRow+32,col+64,row+32);
+            // Streamed maps pin only visible patterns. Paint the same edges
+            // cleared by SCENESTREAM_move, including partial-tile view changes.
+            if(col<lastCol)mapVisual(i,col,row,lastCol,bottom);
+            if(right>lastRight)mapVisual(i,lastRight,row,right,bottom);
+            if(row<lastRow)mapVisual(i,col,row,right,lastRow);
+            if(bottom>lastBottom)mapVisual(i,col,lastBottom,right,bottom);
         }
         drawnFrames[i]=v->frame;drawnVisibility[i]=v->visible;
     }
-    lastCol=col;lastRow=row;dirty=FALSE;
+    lastCol=col;lastRow=row;lastRight=right;lastBottom=bottom;dirty=FALSE;
 }
 static void sprite(u16 *n,u8 art,u8 frame,s16 x,s16 y,u8 palette)
 {
     const ObjectiveArt *a=&objectiveArt[art];
+    if(currentLevel==N_8 && art==OART_TRANSMITTER) {
+        // Cull the complete object before traversing its exact sprite strips.
+        // A priority target can be several screens away in the urban arena.
+        if(x+16<=cameraX || x-16>=cameraX+320 || y+8<=cameraY+24 || y-24>=cameraY+224)return;
+        for(u8 i=0;i<8;i++) {
+            const u8 strip=phase08TransmitterStrips[frame*8+i];
+            if(strip!=PHASE08_TRANSMITTER_BLANK)
+                SPRITES_emit(n,x-16+(i/2)*8,y-24+(i%2)*16,SPRITE_SIZE(1,2),
+                    TILE_ATTR_FULL(palette,TRUE,FALSE,FALSE,objectiveArtBases[art]+strip*2));
+        }
+        return;
+    }
     const u16 base=objectiveArtBases[art]+frame*a->tiles;
     // Moving objectives are at most32px wide; split tall civilians at32px.
     const s16 left=x-a->width/2,top=y-a->height+8;

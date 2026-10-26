@@ -1,0 +1,319 @@
+{
+  "date": "2026-10-26",
+  "revision": "Fase7: pátio ampliado e arte modular no estilo da fase1",
+  "status": "integrated-functional-with-NTSC-performance-reservation",
+  "rom_sha256": "a3a5f6bf18b6fde500edaaca0a8632512c3c275b26d529a1f3a96c0a11e54234",
+  "rom_bytes": 2621440,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "human_approval_claimed": false,
+  "before": {
+    "size": [
+      768,
+      384
+    ],
+    "bounds": [
+      40,
+      160,
+      727,
+      335
+    ],
+    "walkable_height": 176,
+    "whole_image_pixel_block": 4,
+    "scene_tiles": 492,
+    "cargo_tiles": 74
+  },
+  "after": {
+    "size": [
+      768,
+      544
+    ],
+    "bounds": [
+      32,
+      176,
+      735,
+      479
+    ],
+    "walkable_height": 304,
+    "vertical_increase_percent": 72.7,
+    "sources": [
+      [
+        232,
+        216
+      ],
+      [
+        440,
+        208
+      ],
+      [
+        664,
+        280
+      ],
+      [
+        280,
+        408
+      ],
+      [
+        608,
+        416
+      ]
+    ],
+    "depot": [
+      104,
+      392
+    ],
+    "solids": [
+      [
+        48,
+        256,
+        112,
+        104,
+        true
+      ],
+      [
+        440,
+        288,
+        112,
+        24,
+        true
+      ],
+      [
+        256,
+        352,
+        112,
+        24,
+        true
+      ]
+    ]
+  },
+  "memory": {
+    "source_patterns": 1048,
+    "source_graphics_bytes": 33536,
+    "map_bytes": 13056,
+    "scene_cache_slots": 560,
+    "cargo_tiles": 74,
+    "total_reserved_tiles": 634,
+    "resident_bytes": 20288,
+    "spare_tiles": 6,
+    "maximum_visible_patterns": 515,
+    "maximum_window_camera": [
+      192,
+      0
+    ],
+    "cache_heap_bytes": 6576,
+    "lossy_tile_replacements": 0
+  },
+  "checks": {
+    "source_and_native_generation": true,
+    "whole_scene_reviewed": true,
+    "native_pixels_and_cargo_overlays": true,
+    "full_forward_reverse_vertical_scroll": true,
+    "pause_restoration": true,
+    "all_static_contacts_and_bounds": true,
+    "dynamic_cases_block_until_collected": true,
+    "five_real_controller_deliveries_both_regions": true,
+    "all_free_grid_positions_connected": true,
+    "shared_phases_8_13A_13B": true,
+    "selector_all_19_entries": true
+  },
+  "loads": {
+    "ntsc": [
+      {
+        "section": "casas",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1196,
+        "physical_frames": 1200,
+        "game_fps": 59.8,
+        "mean_cpu_pct": 71.7,
+        "maximum_cpu_pct": 85.4,
+        "sprite_limits": [
+          19,
+          7,
+          128
+        ],
+        "camera_x_range": [
+          136,
+          264
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "deposito",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1155,
+        "physical_frames": 1200,
+        "game_fps": 57.75,
+        "mean_cpu_pct": 78.95,
+        "maximum_cpu_pct": 89.26,
+        "sprite_limits": [
+          19,
+          7,
+          112
+        ],
+        "camera_x_range": [
+          8,
+          136
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "inferior",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1198,
+        "physical_frames": 1200,
+        "game_fps": 59.9,
+        "mean_cpu_pct": 72.54,
+        "maximum_cpu_pct": 80.08,
+        "sprite_limits": [
+          19,
+          8,
+          112
+        ],
+        "camera_x_range": [
+          248,
+          376
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      }
+    ],
+    "pal": [
+      {
+        "section": "casas",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1000,
+        "physical_frames": 1000,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 47.05,
+        "maximum_cpu_pct": 59.42,
+        "sprite_limits": [
+          19,
+          7,
+          128
+        ],
+        "camera_x_range": [
+          136,
+          264
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "deposito",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1000,
+        "physical_frames": 1000,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 53.87,
+        "maximum_cpu_pct": 63.38,
+        "sprite_limits": [
+          19,
+          7,
+          128
+        ],
+        "camera_x_range": [
+          8,
+          136
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "inferior",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1000,
+        "physical_frames": 1000,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 46.68,
+        "maximum_cpu_pct": 53.27,
+        "sprite_limits": [
+          19,
+          8,
+          112
+        ],
+        "camera_x_range": [
+          248,
+          376
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      }
+    ]
+  },
+  "natural_combat": {
+    "ntsc": {
+      "seconds": 25.02,
+      "state": 3,
+      "minimum_hp": 0,
+      "peak_enemies": 4,
+      "game_fps": 57.562,
+      "ram_health_AI_grants": false,
+      "scope": "30s automated movement and fire; not human difficulty approval or complete natural transport"
+    },
+    "pal": {
+      "seconds": 30.0,
+      "state": 1,
+      "minimum_hp": 62,
+      "peak_enemies": 4,
+      "game_fps": 50.0,
+      "ram_health_AI_grants": false,
+      "scope": "30s automated movement and fire; not human difficulty approval or complete natural transport"
+    }
+  },
+  "visual_review": {
+    "cycles": 3,
+    "initial_problems": [
+      "176px de altura útil e pouco espaço ao sul das cargas.",
+      "Redução global em blocos4x4 e paleta antiga de dez cores.",
+      "Repetição de casas iguais com pouca definição e piso praticamente chapado."
+    ],
+    "current_findings": [
+      "304px úteis e304px de campo entre a arquitetura e a margem inferior.",
+      "Paleta física RGB333 da fase1; pixels nativos finos, sem reduzir a fase inteira em blocos4x4.",
+      "Três módulos de fachada completos (duas casas e o abrigo), fundações e telhados com folga.",
+      "Muros superior, inferior e laterais contínuos; suportes e sombras dos obstáculos preservados.",
+      "Cinco pontos de carga com aproximação sul e coleta lateral verificadas; barricadas permitem contorno.",
+      "Câmera revela a margem inferior inteira sem permitir caminhar sobre ela.",
+      "Três materiais de folhagem em sequência deslocada evitam o quadriculado evidente da repetição anterior, sem trocar a paleta."
+    ],
+    "functional_acceptance": true,
+    "performance_acceptance": "PAL met tested50FPS; NTSC reservation at depot",
+    "user_art_approval": false
+  },
+  "source": {
+    "path": "source/07-favela-whole.png",
+    "sha256": "c1093a40d6ad5c0a5d05412e2179d002e895b41973d67a8baacc7b6fa35aa96d",
+    "tool": "built-in image_gen",
+    "prompt": "prompts/whole-scene.txt",
+    "palette": "exact phase1 courtyard RGB333",
+    "whole_image_first": true
+  },
+  "reports": {
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json",
+    "shared-ntsc": "validation/shared-ntsc/report.json",
+    "shared-pal": "validation/shared-pal/report.json",
+    "selector-ntsc": "validation/selector-ntsc/report.json",
+    "selector-pal": "validation/selector-pal/report.json"
+  },
+  "limits": [
+    "O transporte das cinco cargas foi concluído por controle com os inimigos isolados; nenhuma posição ou estado da missão foi alterado durante as viagens.",
+    "A carga usa quatro inimigos, seis tiros do jogador e seis tiros inimigos. Mantém IA e trajetórias ativas, protege a vida e repõe apenas projéteis inativos. Foram20s por trecho e região.",
+    "NTSC:57,75–59,9FPS nas três regiões medidas; o trecho do depósito tem quedas. PAL:50FPS nesses ensaios. Os valores não garantem desempenho em todas as combinações de combate.",
+    "Combate natural: até30s de movimento e tiro automatizados, sem concessões de vida ou IA. Não equivale a transporte completo sob combate nem a aprovação humana da dificuldade. Hardware físico não testado."
+  ]
+}

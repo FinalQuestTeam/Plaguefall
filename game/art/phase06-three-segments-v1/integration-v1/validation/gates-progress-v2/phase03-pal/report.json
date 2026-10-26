@@ -1,0 +1,216 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "c658d5692ef31349a9194d8e2da6eaee05a7bc450371f099909cc73118281acf",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "ce771428cff383035653c28338722c5dac4a0bb0facb0c1666f8b833fcc338b1",
+  "movieEnabled": false,
+  "checks": {
+    "entry-native-pixels": {
+      "camera": [
+        32,
+        0
+      ],
+      "cells": 1000,
+      "resident": 512,
+      "peak": 512
+    },
+    "heap-before-pause": [
+      [
+        20032,
+        1282,
+        true
+      ],
+      [
+        21314,
+        8194,
+        true
+      ],
+      [
+        29508,
+        1282,
+        true
+      ],
+      [
+        30790,
+        1472,
+        false
+      ],
+      [
+        32262,
+        5346,
+        false
+      ],
+      [
+        37608,
+        9982,
+        true
+      ],
+      [
+        47590,
+        15384,
+        false
+      ]
+    ],
+    "pause-restores-exact-cache": {
+      "camera": [
+        32,
+        0
+      ],
+      "cells": 1000,
+      "resident": 512,
+      "peak": 512
+    },
+    "forward-reverse-and-vertical-stream": {
+      "samples": 51,
+      "peak": 637
+    },
+    "lower-border-visible-and-nonwalkable": {
+      "views": [
+        {
+          "section": "igreja",
+          "player": [
+            264,
+            248
+          ],
+          "camera": [
+            32,
+            96
+          ],
+          "cells": 1000,
+          "resident": 205,
+          "peak": 637
+        },
+        {
+          "section": "rua1",
+          "player": [
+            800,
+            248
+          ],
+          "camera": [
+            648,
+            96
+          ],
+          "cells": 1000,
+          "resident": 253,
+          "peak": 637
+        },
+        {
+          "section": "rua2",
+          "player": [
+            1320,
+            248
+          ],
+          "camera": [
+            1168,
+            96
+          ],
+          "cells": 1000,
+          "resident": 215,
+          "peak": 637
+        },
+        {
+          "section": "rua3",
+          "player": [
+            1840,
+            248
+          ],
+          "camera": [
+            1688,
+            96
+          ],
+          "cells": 1000,
+          "resident": 245,
+          "peak": 637
+        },
+        {
+          "section": "galpao",
+          "player": [
+            2304,
+            248
+          ],
+          "camera": [
+            2208,
+            96
+          ],
+          "cells": 1000,
+          "resident": 170,
+          "peak": 637
+        }
+      ],
+      "nonwalkable_y": 264,
+      "last_world_row": 39
+    },
+    "full640-slot-viewport-without-overflow": {
+      "camera": [
+        561,
+        1
+      ],
+      "cells": 1066,
+      "resident": 640,
+      "peak": 640
+    },
+    "pause-restores-full640-slot-cache": {
+      "camera": [
+        561,
+        1
+      ],
+      "cells": 1066,
+      "resident": 640,
+      "peak": 640
+    },
+    "street-prop-contact-faces": {
+      "contacts": 39,
+      "solids": 13
+    },
+    "high-props-stop-shots-low-rubble-does-not": [
+      {
+        "rect": [
+          656,
+          192,
+          64,
+          24,
+          true
+        ],
+        "shot_survives": false
+      },
+      {
+        "rect": [
+          344,
+          232,
+          48,
+          16,
+          false
+        ],
+        "shot_survives": true
+      }
+    ],
+    "complete-route-with-controls": {
+      "frames": 1126,
+      "seconds": 22.52,
+      "pixel_samples": 24,
+      "objective_finished": true
+    },
+    "persistent-church-damage-native-pixels": {
+      "camera": [
+        32,
+        0
+      ],
+      "cells": 1000,
+      "resident": 528,
+      "peak": 528
+    },
+    "source-palettes-match-both-states": true,
+    "native-combat-controller-smoke": {
+      "outcome": "completed",
+      "minimum_hp": 84,
+      "maximum_enemies": 2,
+      "active_game_frames": 1135,
+      "physical_frames": 1136,
+      "observed_game_fps": 49.956,
+      "health_or_ai_RAM_grants": false,
+      "difficulty_human_reviewed": false
+    }
+  },
+  "scope": "Phase3 only. Controller entry/route/pause and lower-boundary approach; RAM isolates enemies and branch/contact probes. The640-slot stress case seeds a cached camera target. Actual visible VRAM patterns checked against native source IDs."
+}

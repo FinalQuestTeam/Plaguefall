@@ -2,6 +2,8 @@
 // states, exactly one carried load, one depot. Targets own the first3slots;
 // reinforcement cannot reuse a dead target slot before its death is observed.
 #include "levels/campaign_resistance.h"
+#include "levels/phase07_layout.h"
+#include "levels/phase08_layout.h"
 #include "levels/graph.h"
 #include "core/game.h"
 #include "core/objective.h"
@@ -14,8 +16,8 @@
 #include "system/video/sprites/tiles.h"
 #include "system/audio/sfx.h"
 CampaignResistanceState campaignResistance;
-static const s16 sources[5][2]={{232,184},{392,184},{552,184},{216,304},{624,312}};
-static const s16 targets[3][2]={{200,176},{416,304},{664,232}};
+#define sources PHASE07_SOURCES
+#define targets PHASE08_TARGETS
 static u16 lastHUD;
 static bool near(s16 x,s16 y){return abs(px+8-x)<=22 && abs(py+8-y)<=22;}
 static u8 doneCount(void){return (campaignResistance.priorityDone&1)+((campaignResistance.priorityDone>>1)&1)+((campaignResistance.priorityDone>>2)&1);}
@@ -42,7 +44,7 @@ void CAMPAIGN_RESISTANCE_start(void)
     if(currentLevel==N_7){
         OBJECTIVEGFX_startCampaign(1u<<OART_CARGO);
         for(u8 i=0;i<5;i++)OBJECTIVEGFX_place(i,OART_CARGO,sources[i][0],sources[i][1],TRUE);
-        OBJECTIVEGFX_place(5,OART_CARGO,104,328,TRUE);OBJECTIVEGFX_settle(5,5);
+        OBJECTIVEGFX_place(5,OART_CARGO,PHASE07_DEPOT_X,PHASE07_DEPOT_Y,TRUE);OBJECTIVEGFX_settle(5,5);
     }else{
         OBJECTIVEGFX_startCampaign(1u<<OART_TRANSMITTER);
         for(u8 i=0;i<3;i++){
@@ -81,7 +83,7 @@ u8 CAMPAIGN_RESISTANCE_update(void)
                     campaignResistance.taken|=1u<<i;campaignResistance.cargo=i;OBJECTIVEGFX_settle(i,5);sfxItemPickup();break;
                 }
             }
-        }else if(near(104,328)){
+        }else if(near(PHASE07_DEPOT_X,PHASE07_DEPOT_Y)){
             campaignResistance.cargo=255;campaignResistance.delivered++;OBJECTIVEGFX_activate(5);sfxItemPickup();
             playerSlowPct=0;
         }
@@ -109,7 +111,7 @@ void CAMPAIGN_RESISTANCE_draw(u16 *n)
     if(currentLevel==N_7){
         for(u8 i=0;i<5;i++)if((campaignResistance.opened&(1u<<i)) && !(campaignResistance.taken&(1u<<i)) && objectiveVisuals[i].mode==2)
             OBJECTIVEGFX_cargo(n,sources[i][0]+24,sources[i][1]+16);
-        if(campaignResistance.cargo!=255){OBJECTIVEGFX_cargo(n,px+20,py-4);MARKERS_destination(n,104,328);}
+        if(campaignResistance.cargo!=255){OBJECTIVEGFX_cargo(n,px+20,py-4);MARKERS_destination(n,PHASE07_DEPOT_X,PHASE07_DEPOT_Y);}
     }
     OBJECTIVEGFX_draw(n);
 }

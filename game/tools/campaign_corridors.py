@@ -36,13 +36,14 @@ def read(phase):
     streamed=bool(d.get('streamed_tiles'))
     source_count=len(tiles)//32
     if streamed:d['source_tiles']=source_count
-    d['tiles']=640 if streamed else source_count
-    d['tileBudget']=384 if phase=='6B' else 640
+    d['tiles']=d['streamed_tiles'].get('resident_budget',640) if streamed else source_count
+    objective_tiles=d.get('objective_tiles',256 if phase=='6B' else 0)
+    d['tileBudget']=640-objective_tiles
     assert d['tiles']<=d['tileBudget']
     attrs=struct.unpack('>'+str(len(mapping)//2)+'H',mapping)
     assert max(attrs if streamed else (a&2047 for a in attrs))<source_count
-    if streamed:assert d['streamed_tiles']['maximum_visible_tiles']<=640
-    d['memory']=dict(d.get('memory',{}),scene_tiles=d['tiles'],background_tiles=d['tiles'],objective_tiles=256 if phase=='6B' else 0,total_tiles=d['tiles']+(256 if phase=='6B' else 0),limit=640,map_bytes=len(mapping),graphics_bytes=len(tiles))
+    if streamed:assert d['streamed_tiles']['maximum_visible_tiles']<=d['tiles']
+    d['memory']=dict(d.get('memory',{}),scene_tiles=d['tiles'],background_tiles=d['tiles'],objective_tiles=objective_tiles,total_tiles=d['tiles']+objective_tiles,limit=640,map_bytes=len(mapping),graphics_bytes=len(tiles))
     if streamed:d['memory'].update(graphics_bytes=d['tiles']*32,rom_graphics_bytes=len(tiles),map_stored_in_rom=True)
     if phase=='3':
         damaged=(folder/'damaged-native/tiles.bin').read_bytes()
@@ -69,7 +70,7 @@ def array(name,kind,data):
     unit=4 if kind=='u32' else 2
     vals=struct.unpack('>'+str(len(data)//unit)+('I' if unit==4 else 'H'),data)
     lines=[','.join(('0x%08xUL'%v if unit==4 else str(v)) for v in vals[i:i+16])+',' for i in range(0,len(vals),16)]
-    alignment=' __attribute__((aligned(32)))' if kind=='u32' and name in ('street_tiles','street_damaged_tiles') else ''
+    alignment=' __attribute__((aligned(32)))' if kind=='u32' and name in ('street_tiles','street_damaged_tiles','streetTiles') else ''
     return 'static const '+kind+' '+name+'[]'+alignment+'={\n'+'\n'.join(lines)+'\n};\n'
 
 def rects(name,solids):
@@ -119,7 +120,12 @@ def factory_override(files):
     d,p,tiles,mapping,palette=read('9')
     code=array('streetTiles','u32',tiles)+array('streetPalette','u16',palette)+array('streetMap','u16',mapping)
     focus_code,focus_fields=camera('streetCameraFocus',d);code+=focus_code
-    code+=f'static const ArenaScene streetScene={{.tiles=streetTiles,.map=streetMap,.palette=streetPalette,.tileCount={d["tiles"]},.rows=40,.cols={d["width"]//8},.cameraPlayerY={d.get("camera_player_y",184)},{focus_fields}}};\n'
+    extras=''
+    if d.get('streamed_tiles'):
+        code+=f'static const ArenaStream streetStream={{{len(tiles)//32}}};\n'
+        extras+=',.stream=&streetStream'
+    if d.get('camera_south_start'):extras+=f',.cameraSouthStart={d["camera_south_start"]}'
+    code+=f'static const ArenaScene streetScene={{.tiles=streetTiles,.map=streetMap,.palette=streetPalette,.tileCount={d["tiles"]},.rows=40,.cols={d["width"]//8},.cameraPlayerY={d.get("camera_player_y",184)},{focus_fields}{extras}}};\n'
     code+=rects('streetSolids',d['solids'])+arena('CF_STREET','streetScene','streetSolids',d)+route('CF_ROUTE09','points09',d)
     path=GAME/'src/levels/campaign_factory_scenes.c'
     text=files[path]
@@ -157,9 +163,15 @@ def route_files():
             d['solids']=[list(r[:4])+[bool(r[4]) if len(r)>4 else True] for r in d['solids']]
             d['camera_player_y']=0
         for kind,data in [('tiles',t),('map',m),('palette',pal)]:
-            relative=f'campaign_routes/{key}/{kind}.bin';files[GAME/'res'/relative]=data;sym=f'campaign_route{key}_{kind}';res.append(f'BIN {sym} "{relative}" {4 if kind=="tiles" else 2}');decl.append(f'extern const u8 {sym}[{len(data)}];')
+            relative=f'campaign_routes/{key}/{kind}.bin';files[GAME/'res'/relative]=data;sym=f'campaign_route{key}_{kind}';res.append(f'BIN {sym} "{relative}" {(32 if d.get("streamed_tiles") else 4) if kind=="tiles" else 2}');decl.append(f'extern const u8 {sym}[{len(data)}];')
         focus_code,focus_fields=camera('cameraFocus'+key,d);source.append(focus_code)
-        source.append(f'static const ArenaScene scene{key}={{.tiles=(const u32 *)campaign_route{key}_tiles,.map=(const u16 *)campaign_route{key}_map,.palette=(const u16 *)campaign_route{key}_palette,.tileCount={d["tiles"]},.rows={d["height"]//8},.cols={d["width"]//8},.cameraPlayerY={d.get("camera_player_y",200 if phase=="12" else 184)},{focus_fields}}};')
+        extras=''
+        if d.get('streamed_tiles'):
+            source.append(f'static const ArenaStream stream{key}={{{d["source_tiles"]}}};')
+            extras+=f',.stream=&stream{key}'
+            if d.get('gates'):extras+=',.streamOverlay=TRUE'
+        if d.get('camera_south_start'):extras+=f',.cameraSouthStart={d["camera_south_start"]}'
+        source.append(f'static const ArenaScene scene{key}={{.tiles=(const u32 *)campaign_route{key}_tiles,.map=(const u16 *)campaign_route{key}_map,.palette=(const u16 *)campaign_route{key}_palette,.tileCount={d["tiles"]},.rows={d["height"]//8},.cols={d["width"]//8},.cameraPlayerY={d.get("camera_player_y",200 if phase=="12" else 184)},{focus_fields}{extras}}};')
         source.append(rects('solids'+key,d['solids']))
         source.append(arena('CAMPAIGN_ARENA'+key.upper(),'scene'+key,'solids'+key,d))
         source.append(route('CAMPAIGN_ROUTE'+key.upper(),'points'+key,d))
@@ -174,11 +186,12 @@ def route_files():
             if (p/name).exists():files[GAME/'art/campaign-pattern-v2/routes/current'/key/name]=(p/name).read_bytes()
         native=native_path(p).read_bytes()
         files[GAME/'art/campaign-whole-scenes-v1/routes'/f'{key}-native-complete.png']=native
-        files[GAME/'art/campaign-whole-scenes-v1/routes'/f'{key}-composed-complete.png']=(p/'complete-closed-objectives.png').read_bytes() if phase=='6B' else native
+        files[GAME/'art/campaign-whole-scenes-v1/routes'/f'{key}-composed-complete.png']=(p/'complete-closed-objectives.png').read_bytes() if d.get('gates') else native
         files[GAME/'art/campaign-routes-v1'/f'mapa-{key}.png']=native
-    source.append('const ArenaRect CAMPAIGN_ROUTE06B_gates[2]={'+','.join('{'+','.join(map(str,r[:4]))+',TRUE}' for r in report['06b']['gates'])+'};')
+    assert report['06a']['gates']==report['06b']['gates'],'shared6A/6B gate footprints must agree'
+    source.append('const ArenaRect CAMPAIGN_ROUTE06_gates[2]={'+','.join('{'+','.join(map(str,r[:4]))+',TRUE}' for r in report['06b']['gates'])+'};')
     source.append('const RoutePoint CAMPAIGN_ROUTE06B_valves[2]={'+','.join('{%d,%d,0}'%(x,y) for x,y in report['06b']['valves'])+'};')
-    header.extend(['extern const ArenaRect CAMPAIGN_ROUTE06B_gates[2];','extern const RoutePoint CAMPAIGN_ROUTE06B_valves[2];','#endif'])
+    header.extend(['extern const ArenaRect CAMPAIGN_ROUTE06_gates[2];','extern const RoutePoint CAMPAIGN_ROUTE06B_valves[2];','#endif'])
     files[GAME/'src/levels/campaign_routes.c']=('\n'.join(source)+'\n').encode();files[GAME/'src/levels/campaign_routes.h']=('\n'.join(header)+'\n').encode()
     files[GAME/'res/campaign_routes.res']=('\n'.join(res)+'\n').encode();files[GAME/'res/campaign_routes.h']=('#include <genesis.h>\n\n#ifndef _RES_CAMPAIGN_ROUTES_H_\n#define _RES_CAMPAIGN_ROUTES_H_\n\n'+'\n'.join(decl)+'\n\n#endif // _RES_CAMPAIGN_ROUTES_H_\n').encode()
     data=(json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode()

@@ -64,3 +64,18 @@ void MARKERS_alert(u16 *n,s16 centerX,s16 feetY)
     if(y>cameraY+204)y=cameraY+204;
     SPRITES_emit(n,x,y,SPRITE_SIZE(2,2),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,BASE+16+pulse()));
 }
+
+void MARKERS_shoot(u16 *n,s16 centerX,s16 gateTop,u8 hits)
+{
+    s16 x=centerX-12,y=gateTop-24;
+    const s16 top=cameraY+HUD_HEIGHT+2;
+    // Keep the leaf readable when its northern support is behind the HUD.
+    if(y<top){x=centerX+12;y=gateTop+8;if(y<top)y=top;}
+    if(x<cameraX+2)x=cameraX+2;
+    if(x>cameraX+294)x=cameraX+294;
+    if(y>cameraY+198)y=cameraY+198;
+    if(hits>4)hits=4;
+    if(hits<4)SPRITES_emit(n,x,y,SPRITE_SIZE(3,2),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,BASE+GAME_SHOOT_BADGE_TILE));
+    // All five small frames stay resident: an impact changes tile IDs only.
+    SPRITES_emit(n,x,y+16,SPRITE_SIZE(3,1),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,BASE+GAME_SHOOT_PROGRESS_TILE+hits*3));
+}

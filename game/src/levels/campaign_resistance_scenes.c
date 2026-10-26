@@ -1807,7 +1807,7 @@ static const ArenaScene aliveScene={.tiles=union_tiles,.map=union_alive,.palette
 static const ArenaScene deadScene={.tiles=union_tiles,.map=union_dead,.palette=union_palette,.tileCount=620,.rows=48,.cols=64};
 static const ArenaRect favelaSolids[]={{40,208,112,104,TRUE},{248,224,136,24,TRUE},{448,272,136,24,TRUE}};
 static const ArenaRect unionSolids[]={{80,264,104,16,TRUE},{216,208,104,16,TRUE},{352,264,104,16,TRUE}};
-const ArenaDef CAMPAIGN_RESISTANCE_FAVELA={768,384,40,160,727,335,80,176,favelaSolids,3,&favScene};
-const ArenaDef CAMPAIGN_RESISTANCE_FAVELA_TARGETS={768,384,40,160,727,335,80,176,favelaSolids,3,&favScene};
+#include "levels/campaign_resistance_phase07.inc"
+#include "levels/campaign_resistance_phase08.inc"
 const ArenaDef CAMPAIGN_RESISTANCE_UNION_ALIVE={512,384,24,160,487,295,280,168,unionSolids,3,&aliveScene};
 const ArenaDef CAMPAIGN_RESISTANCE_UNION_DEAD={512,384,24,160,487,295,280,168,unionSolids,3,&deadScene};

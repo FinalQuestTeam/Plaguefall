@@ -16,7 +16,7 @@ def png(path,w,h,rgb):
     path.write_bytes(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(rows))+chunk(b'IEND',b''))
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--matches',type=int,default=2);parser.add_argument('--nodes',default='2,3,4,5,6,7,8');parser.add_argument('--seconds',type=int,default=150);parser.add_argument('--only-entry',action='store_true');parser.add_argument('--no-stress',action='store_true');parser.add_argument('--shield-tests',action='store_true');parser.add_argument('--build-dir',type=Path);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--matches',type=int,default=2);parser.add_argument('--nodes',default='2,3,4,5,6,7,8');parser.add_argument('--seconds',type=int,default=150);parser.add_argument('--only-entry',action='store_true');parser.add_argument('--no-stress',action='store_true');parser.add_argument('--shield-tests',action='store_true');parser.add_argument('--phases',default='7,8,13A,13B');parser.add_argument('--build-dir',type=Path);args=parser.parse_args()
     fps=50 if args.pal else 60
     out=args.output or GAME/'art/campaign-whole-scenes-v1/resistance/validation'/('pal' if args.pal else 'ntsc');out.mkdir(parents=True,exist_ok=True)
     build=args.build_dir or GAME/'out/release';rom=build/'rom.bin';original=rom.read_bytes();data=bytearray(original)
@@ -217,6 +217,7 @@ def main():
     if not scene_path.exists():scene_path=(build.parents[1]/'src/levels/campaign_resistance_scenes.c') if (build.parents[1]/'src/levels/campaign_resistance_scenes.c').exists() else GAME/'src/levels/campaign_resistance_scenes.c'
     scene_source=scene_path.read_text()
     palette_samples={}
+    scene_base=785
     from campaign_objective_probe import inspect_objectives
     def objective_pixels():return inspect_objectives(build.parents[1] if (build.parents[1]/'art/objective-sprites-v1/assets.json').exists() else GAME,read,vram,syms,signed('cameraX'),signed('cameraY'),u16('bga_addr'))
     def native_scene_check(prefix,mapname):
@@ -252,6 +253,8 @@ def main():
         else:palette_samples[prefix]=cram
         return {'passed':True,'atlas_bytes':len(expected),'pixel_exact':True,'hflip_vflip_supported':True,'camera':[signed('cameraX'),signed('cameraY')],'bg_a_clean':True,'palette_zero_black':True}
     for label in ('7','8','13A','13B'):
+        if label not in args.phases.split(','):continue
+        if label in ('7','8'):continue  # Streamed urban stages have dedicated native suites below.
         node=node_ids['N_'+label];r={};report['nodes'][label]=r
         base=enter(node);shot(label+'-entry')
         if label=='7':scene_base=int.from_bytes(read(syms['objectiveArtBases'][0]+4,2),'big')-geom['favela_tiles']
@@ -381,5 +384,15 @@ def main():
         save()
     report['passed']=all(v.get('passed',True) for node in report['nodes'].values() for v in node.values());save();print(json.dumps(report,indent=2))
     core.retro_unload_game();core.retro_deinit()
+    for urban_phase,script in [('7','test_phase07_spacious_emulator.py'),('8','test_phase08_urban_emulator.py')]:
+        if urban_phase not in args.phases.split(','):continue
+        import sys
+        target=out/('phase0'+urban_phase+'-current')
+        cmd=[sys.executable,str(GAME/'tools'/script),'--output',str(target),'--build-dir',str(build)]
+        if args.pal:cmd.append('--pal')
+        result=subprocess.run(cmd,check=False)
+        native=json.loads((target/'report.json').read_text()) if (target/'report.json').exists() else {}
+        report['nodes'][urban_phase]={'dedicated_native_suite':{'passed':result.returncode==0 and native.get('passed') is True,'report':target.name+'/report.json'}}
+        report['passed']=report['passed'] and report['nodes'][urban_phase]['dedicated_native_suite']['passed'];save()
     if not report['passed']:raise SystemExit(1)
 if __name__=='__main__':main()

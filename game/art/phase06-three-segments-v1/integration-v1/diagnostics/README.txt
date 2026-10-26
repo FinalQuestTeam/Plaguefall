@@ -1,0 +1,1 @@
+Historical timing diagnostics only. Geometry differs between the previous release and the new scenes; the comparison is not a controlled whole-route equivalence or a new release validation. Current release evidence is in ../validation/ntsc and ../validation/pal.

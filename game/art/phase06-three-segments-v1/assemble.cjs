@@ -81,12 +81,12 @@ function route(solids,waypoints,bounds=[24,80,3047,271]){
  for(const [x,y,w,h] of gates){if(y>80)barriers.push([x,80,w,y-80,true]);if(y+h<272)barriers.push([x,y+h,w,272-y-h,true]);}
  const base=C(3072,320);[A,B,B,B,B,D].forEach((im,i)=>stamp(base,im,i*512,0));
  const masonry=crop(wall,0,24,16,32);
- function scene(variant,props=true,open=false){const out=scale(base,3072,320);if(props)for(const p of placements)stamp(out,objects[p.asset],p.x,p.y);
+ function scene(variant,props=true,open=false,mechanisms=true){const out=scale(base,3072,320);if(props)for(const p of placements)stamp(out,objects[p.asset],p.x,p.y);
   if(variant==='6B'){
    for(const [x,y,w,h] of barriers){tile(out,masonry,x,y,w,h);tile(out,curb,x,y,w,8);}
-   for(let i=0;i<2;i++){const [x,y,w,h]=gates[i],[vx,vy]=valves[i];stamp(out,open?gateOpen:gateClosed,x-16,y);stamp(out,open?valveOpen:valveClosed,vx-16,vy-16);}
+   if(mechanisms)for(let i=0;i<2;i++){const [x,y,w,h]=gates[i],[vx,vy]=valves[i];stamp(out,open?gateOpen:gateClosed,x-16,y);stamp(out,open?valveOpen:valveClosed,vx-16,vy-16);}
   }return out;}
- const scenes={'6A':scene('6A'),'6B':scene('6B'), '6B-aberta':scene('6B',true,true),'sem-objetos':base,'6B-sem-objetos':scene('6B',false),'6B-aberta-sem-objetos':scene('6B',false,true)};
+ const scenes={'6A':scene('6A'),'6B':scene('6B'), '6B-aberta':scene('6B',true,true),'sem-objetos':base,'6B-sem-objetos':scene('6B',false),'6B-aberta-sem-objetos':scene('6B',false,true),'6B-estatico':scene('6B',true,false,false)};
  const gatePixels=g(scale(gateClosed,64,64)).getImageData(0,0,64,64).data,closedPixels=g(scenes['6B']).getImageData(0,0,3072,320).data;
  let checkedGatePixels=0;for(const [x,y] of gates)for(let yy=0;yy<64;yy++)for(let xx=0;xx<64;xx++){const a=(yy*64+xx)*4,b=((y+yy)*3072+x-16+xx)*4;if(gatePixels[a+3]<128)continue;for(let k=0;k<3;k++)if(gatePixels[a+k]!==closedPixels[b+k])throw Error('Restored gate pixels changed in panorama');checkedGatePixels++;}
  const comparison=C(512,256);g(comparison).fillStyle='#18231f';g(comparison).fillRect(0,0,512,256);g(comparison).font='14px ReviewFont';g(comparison).fillStyle='#ead29f';g(comparison).fillText('Export atual · diagonal',16,24);g(comparison).fillText('Original restaurado · vertical',264,24);g(comparison).drawImage(await load('art/objective-sprites-v1/frames/gate-0.png'),32,40,192,192);g(comparison).drawImage(gateClosed,288,40,192,192);save('gate-orientation-before-after.png',comparison);

@@ -1,0 +1,289 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "37bf6f1866028c5affc90b43f93ec09099cb76eb8cd20cd33b5c778b23b78635",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "c51294ac2a32cb52ecc02ee8d682f358cd4180be93a3a390aa130c13e907ce30",
+  "movieEnabled": false,
+  "checks": {
+    "entry-native-pixels": {
+      "camera": [
+        0,
+        0
+      ],
+      "visible_patterns": 400,
+      "peak": 400
+    },
+    "full-map-forward-reverse-vertical": {
+      "samples": 109,
+      "zero_pixel_mismatches": true,
+      "maximum_peak": 404
+    },
+    "seven-prop-collisions-and-bounds": {
+      "probes": [
+        [
+          104,
+          96,
+          7,
+          112
+        ],
+        [
+          264,
+          96,
+          6,
+          256
+        ],
+        [
+          128,
+          168,
+          4,
+          160
+        ],
+        [
+          648,
+          160,
+          7,
+          656
+        ],
+        [
+          808,
+          160,
+          6,
+          800
+        ],
+        [
+          672,
+          136,
+          5,
+          144
+        ],
+        [
+          1096,
+          96,
+          7,
+          1104
+        ],
+        [
+          1416,
+          96,
+          6,
+          1408
+        ],
+        [
+          1120,
+          168,
+          4,
+          160
+        ],
+        [
+          1736,
+          160,
+          7,
+          1744
+        ],
+        [
+          2056,
+          160,
+          6,
+          2048
+        ],
+        [
+          1760,
+          136,
+          5,
+          144
+        ],
+        [
+          376,
+          208,
+          7,
+          384
+        ],
+        [
+          504,
+          208,
+          6,
+          496
+        ],
+        [
+          400,
+          184,
+          5,
+          192
+        ],
+        [
+          1224,
+          224,
+          7,
+          1232
+        ],
+        [
+          1352,
+          224,
+          6,
+          1344
+        ],
+        [
+          1248,
+          200,
+          5,
+          208
+        ],
+        [
+          2232,
+          176,
+          7,
+          2240
+        ],
+        [
+          2360,
+          176,
+          6,
+          2352
+        ],
+        [
+          2256,
+          152,
+          5,
+          160
+        ],
+        [
+          2256,
+          248,
+          4,
+          240
+        ]
+      ],
+      "edges": 4
+    },
+    "pause-restores-native-pixels": {
+      "camera": [
+        904,
+        96
+      ],
+      "visible_patterns": 108,
+      "peak": 404
+    },
+    "full-controller-traversal": {
+      "won": true,
+      "visited": [
+        [
+          286,
+          184
+        ],
+        [
+          582,
+          184
+        ],
+        [
+          582,
+          122
+        ],
+        [
+          846,
+          122
+        ],
+        [
+          1030,
+          122
+        ],
+        [
+          1030,
+          174
+        ],
+        [
+          1454,
+          174
+        ],
+        [
+          1638,
+          174
+        ],
+        [
+          1638,
+          122
+        ],
+        [
+          2110,
+          122
+        ],
+        [
+          2430,
+          122
+        ]
+      ],
+      "ram_writes": 0,
+      "combat_isolated": true,
+      "physical_seconds": 28.88,
+      "method": "controller navigation; camera pixel probes and brief camera settling at bends; no position/progress writes"
+    },
+    "maximum-configured-load": [
+      {
+        "section": "arrival",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 48.34,
+        "sprite_limits": [
+          15,
+          5,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      },
+      {
+        "section": "loading",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 50.78,
+        "sprite_limits": [
+          15,
+          5,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      },
+      {
+        "section": "warehouse",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 48.44,
+        "sprite_limits": [
+          15,
+          7,
+          120
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      },
+      {
+        "section": "final-truck",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 48.19,
+        "sprite_limits": [
+          15,
+          7,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      }
+    ],
+    "natural-combat": {
+      "seconds": 27.62,
+      "state": 3,
+      "hp": 0,
+      "peak_enemies": 3,
+      "game_fps": 48.226,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    }
+  },
+  "scope": "Modular phase9: industrial perimeter, four workshop buildings and three trucks. Controller entry, full controller-only traversal and movement; RAM isolates enemy pressure for functional checks. Exact visible VRAM and overlay pixels, cache, pause, collision. Native max3-enemy/4+4-projectile load retains AI/active trajectories. Natural combat sample has no RAM health or AI grants."
+}

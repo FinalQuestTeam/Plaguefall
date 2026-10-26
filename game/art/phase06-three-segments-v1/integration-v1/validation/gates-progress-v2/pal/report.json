@@ -1,0 +1,579 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "c658d5692ef31349a9194d8e2da6eaee05a7bc450371f099909cc73118281acf",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "ce771428cff383035653c28338722c5dac4a0bb0facb0c1666f8b833fcc338b1",
+  "movieEnabled": false,
+  "checks": {
+    "06a-entry-exact-pixels": {
+      "camera": [
+        0,
+        0
+      ],
+      "resident": 386,
+      "peak": 386,
+      "mechanism_cells": 0
+    },
+    "06a-pause-restores-cache-and-mechanisms": {
+      "camera": [
+        0,
+        0
+      ],
+      "resident": 386,
+      "peak": 386,
+      "mechanism_cells": 0
+    },
+    "06a-full-forward-reverse-vertical-scroll": {
+      "samples": 54,
+      "maximum_visible_tiles": 419,
+      "zero_pixel_mismatches": true
+    },
+    "06a-lower-scenery-visible-nonwalkable": [
+      {
+        "camera": [
+          32,
+          96
+        ],
+        "resident": 155,
+        "peak": 433,
+        "mechanism_cells": 0
+      },
+      {
+        "camera": [
+          648,
+          96
+        ],
+        "resident": 144,
+        "peak": 433,
+        "mechanism_cells": 14
+      },
+      {
+        "camera": [
+          1168,
+          96
+        ],
+        "resident": 98,
+        "peak": 433,
+        "mechanism_cells": 0
+      },
+      {
+        "camera": [
+          1656,
+          96
+        ],
+        "resident": 132,
+        "peak": 433,
+        "mechanism_cells": 16
+      },
+      {
+        "camera": [
+          2248,
+          96
+        ],
+        "resident": 86,
+        "peak": 433,
+        "mechanism_cells": 0
+      },
+      {
+        "camera": [
+          2648,
+          96
+        ],
+        "resident": 93,
+        "peak": 433,
+        "mechanism_cells": 0
+      }
+    ],
+    "06a-all-prop-and-boundary-contact-faces": 45,
+    "06a-no-valves-or-steam": {
+      "pressure_mask": 3,
+      "valve_tiles": 0
+    },
+    "06a-gate-1": {
+      "pressure_seconds": 0,
+      "required_hits": 4,
+      "collapse_seconds": 0.8,
+      "vertical_frames_exact": true,
+      "opening_crossed": true
+    },
+    "06a-gate-2": {
+      "pressure_seconds": 0,
+      "required_hits": 4,
+      "collapse_seconds": 0.8,
+      "vertical_frames_exact": true,
+      "opening_crossed": true
+    },
+    "06a-six-native-poses": {
+      "poses": 6,
+      "selection": "RAM",
+      "renderer": "production"
+    },
+    "06a-escort-death-retries": true,
+    "06a-controller-escort-to-arrival": {
+      "seconds": 46.78,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "pixel_samples": 12,
+      "ram_writes_during_traversal": 0,
+      "combat_isolated": true,
+      "gates_seeded_open": true
+    },
+    "06a-authored-cap-load": [
+      {
+        "section": "entrada",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 750,
+        "game_frames": 750,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 54.51,
+        "p95_cpu_pct": 59.13,
+        "maximum_cpu_pct": 62.3,
+        "camera_range": [
+          108,
+          172
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          21,
+          11,
+          144
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            750
+          ]
+        ],
+        "profile_means": {}
+      },
+      {
+        "section": "meio",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 750,
+        "game_frames": 750,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 56.56,
+        "p95_cpu_pct": 60.21,
+        "maximum_cpu_pct": 62.84,
+        "camera_range": [
+          1268,
+          1332
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          21,
+          11,
+          144
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            750
+          ]
+        ],
+        "profile_means": {}
+      },
+      {
+        "section": "portao",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 750,
+        "game_frames": 738,
+        "game_fps": 49.2,
+        "mean_cpu_pct": 58.24,
+        "p95_cpu_pct": 67.68,
+        "maximum_cpu_pct": 75.88,
+        "camera_range": [
+          1588,
+          1652
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          21,
+          11,
+          144
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            12
+          ]
+        ],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            738
+          ],
+          [
+            "HUD_drawObjective",
+            7
+          ],
+          [
+            "0x5a4",
+            1
+          ],
+          [
+            "text",
+            1
+          ],
+          [
+            "MARKERS_alert",
+            1
+          ],
+          [
+            "DMA_queueDmaFast",
+            1
+          ],
+          [
+            "MUSIC_update",
+            1
+          ]
+        ],
+        "profile_means": {}
+      }
+    ],
+    "06a-natural-combat-smoke": {
+      "seconds": 30.0,
+      "state": 1,
+      "minimum_player_hp": 58,
+      "dinorah_hp": 34,
+      "maximum_enemies": 2,
+      "game_fps": 50.0,
+      "ram_health_AI_grants": false,
+      "scope": "stationary defense, not a complete combat escort or human difficulty approval"
+    },
+    "06b-entry-exact-pixels": {
+      "camera": [
+        0,
+        0
+      ],
+      "resident": 386,
+      "peak": 386,
+      "mechanism_cells": 0
+    },
+    "06b-pause-restores-cache-and-mechanisms": {
+      "camera": [
+        0,
+        0
+      ],
+      "resident": 386,
+      "peak": 386,
+      "mechanism_cells": 0
+    },
+    "06b-full-forward-reverse-vertical-scroll": {
+      "samples": 54,
+      "maximum_visible_tiles": 419,
+      "zero_pixel_mismatches": true
+    },
+    "06b-lower-scenery-visible-nonwalkable": [
+      {
+        "camera": [
+          32,
+          96
+        ],
+        "resident": 155,
+        "peak": 433,
+        "mechanism_cells": 0
+      },
+      {
+        "camera": [
+          648,
+          96
+        ],
+        "resident": 144,
+        "peak": 433,
+        "mechanism_cells": 26
+      },
+      {
+        "camera": [
+          1168,
+          96
+        ],
+        "resident": 98,
+        "peak": 433,
+        "mechanism_cells": 0
+      },
+      {
+        "camera": [
+          1656,
+          96
+        ],
+        "resident": 132,
+        "peak": 433,
+        "mechanism_cells": 30
+      },
+      {
+        "camera": [
+          2248,
+          96
+        ],
+        "resident": 86,
+        "peak": 433,
+        "mechanism_cells": 0
+      },
+      {
+        "camera": [
+          2648,
+          96
+        ],
+        "resident": 93,
+        "peak": 433,
+        "mechanism_cells": 0
+      }
+    ],
+    "06b-all-prop-and-boundary-contact-faces": 45,
+    "06b-gate-1": {
+      "pressure_seconds": 1.5,
+      "required_hits": 4,
+      "collapse_seconds": 0.8,
+      "vertical_frames_exact": true,
+      "opening_crossed": true
+    },
+    "06b-gate-2": {
+      "pressure_seconds": 1.5,
+      "required_hits": 4,
+      "collapse_seconds": 0.8,
+      "vertical_frames_exact": true,
+      "opening_crossed": true
+    },
+    "06b-world-valve-progress-bars": [
+      {
+        "valve": 1,
+        "samples": [
+          {
+            "work": 20,
+            "percent": 26.7,
+            "filled_pixels": 7,
+            "world_position": [
+              776,
+              100
+            ],
+            "visible_sprite": true
+          },
+          {
+            "work": 40,
+            "percent": 53.3,
+            "filled_pixels": 15,
+            "world_position": [
+              776,
+              100
+            ],
+            "visible_sprite": true
+          },
+          {
+            "work": 58,
+            "percent": 77.3,
+            "filled_pixels": 22,
+            "world_position": [
+              776,
+              100
+            ],
+            "visible_sprite": true
+          }
+        ],
+        "paused_work_preserved": true,
+        "shooting_stops_work": true
+      },
+      {
+        "valve": 2,
+        "samples": [
+          {
+            "work": 20,
+            "percent": 26.7,
+            "filled_pixels": 7,
+            "world_position": [
+              1800,
+              180
+            ],
+            "visible_sprite": true
+          },
+          {
+            "work": 40,
+            "percent": 53.3,
+            "filled_pixels": 15,
+            "world_position": [
+              1800,
+              180
+            ],
+            "visible_sprite": true
+          },
+          {
+            "work": 58,
+            "percent": 77.3,
+            "filled_pixels": 22,
+            "world_position": [
+              1800,
+              180
+            ],
+            "visible_sprite": true
+          }
+        ],
+        "paused_work_preserved": true,
+        "shooting_stops_work": true
+      }
+    ],
+    "06b-six-native-poses": {
+      "poses": 6,
+      "selection": "RAM",
+      "renderer": "production"
+    },
+    "06b-escort-death-retries": true,
+    "06b-controller-escort-to-arrival": {
+      "seconds": 49.82,
+      "states": [
+        0,
+        1,
+        2
+      ],
+      "pixel_samples": 13,
+      "ram_writes_during_traversal": 0,
+      "combat_isolated": true,
+      "gates_seeded_open": true
+    },
+    "06b-authored-cap-load": [
+      {
+        "section": "entrada",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 750,
+        "game_frames": 750,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 55.74,
+        "p95_cpu_pct": 60.25,
+        "maximum_cpu_pct": 65.58,
+        "camera_range": [
+          108,
+          172
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          21,
+          10,
+          136
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            750
+          ]
+        ],
+        "profile_means": {}
+      },
+      {
+        "section": "meio",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 750,
+        "game_frames": 750,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 58.69,
+        "p95_cpu_pct": 61.91,
+        "maximum_cpu_pct": 65.38,
+        "camera_range": [
+          1268,
+          1332
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          20,
+          13,
+          176
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            750
+          ]
+        ],
+        "profile_means": {}
+      },
+      {
+        "section": "portao",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 750,
+        "game_frames": 734,
+        "game_fps": 48.933,
+        "mean_cpu_pct": 59.38,
+        "p95_cpu_pct": 69.48,
+        "maximum_cpu_pct": 87.11,
+        "camera_range": [
+          1588,
+          1652
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          21,
+          11,
+          144
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            16
+          ]
+        ],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            735
+          ],
+          [
+            "HUD_drawObjective",
+            9
+          ],
+          [
+            "drawShots.constprop.0",
+            2
+          ],
+          [
+            "0x5e53e",
+            1
+          ],
+          [
+            "SPRITES_emit.part.0",
+            1
+          ],
+          [
+            "SPRITES_draw",
+            1
+          ],
+          [
+            "drawShots.constprop.1",
+            1
+          ]
+        ],
+        "profile_means": {}
+      }
+    ],
+    "06b-natural-combat-smoke": {
+      "seconds": 30.0,
+      "state": 1,
+      "minimum_player_hp": 80,
+      "dinorah_hp": 76,
+      "maximum_enemies": 1,
+      "game_fps": 50.0,
+      "ram_health_AI_grants": false,
+      "scope": "stationary defense, not a complete combat escort or human difficulty approval"
+    }
+  },
+  "scope": "6A/6B controller entry, escort traversal and pause; RAM isolates contact/camera/mechanism cases. Exact visible VRAM checked against source patterns. Load retains native AI clocks and active trajectories. Natural combat has no RAM health/AI grants.",
+  "performance_target_met": false,
+  "human_difficulty_approved": false
+}

@@ -1,0 +1,125 @@
+{
+  "width": 768,
+  "height": 544,
+  "size": [
+    768,
+    544
+  ],
+  "bounds": [
+    32,
+    176,
+    735,
+    479
+  ],
+  "start": [
+    64,
+    192
+  ],
+  "solids": [
+    [
+      48,
+      256,
+      112,
+      104,
+      true
+    ],
+    [
+      472,
+      256,
+      104,
+      88,
+      true
+    ],
+    [
+      256,
+      352,
+      104,
+      88,
+      true
+    ],
+    [
+      608,
+      176,
+      104,
+      64,
+      true
+    ]
+  ],
+  "stalls": [
+    [
+      48,
+      256
+    ],
+    [
+      464,
+      248
+    ],
+    [
+      248,
+      344
+    ],
+    [
+      600,
+      136
+    ]
+  ],
+  "manhole": {
+    "canvas": [
+      24,
+      184,
+      80,
+      40
+    ],
+    "landing": [
+      64,
+      192
+    ],
+    "source_phase": "6A/6B",
+    "walkable": true
+  },
+  "targets": [
+    [
+      232,
+      216
+    ],
+    [
+      440,
+      432
+    ],
+    [
+      664,
+      280
+    ]
+  ],
+  "points": [],
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2561,
+    "reachable_positions": 2561,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  },
+  "memory": {
+    "source_patterns": 978,
+    "source_graphics_bytes": 31296,
+    "map_bytes": 13056,
+    "scene_cache_slots": 560,
+    "cargo_tiles": 0,
+    "total_reserved_tiles": 636,
+    "resident_bytes": 20352,
+    "spare_tiles": 4,
+    "maximum_visible_patterns": 552,
+    "maximum_window_camera": [
+      0,
+      0
+    ],
+    "cache_heap_bytes": 6436,
+    "lossy_tile_replacements": 0,
+    "transmitter_tiles": 76
+  },
+  "shared_scene": "../phase07-urban-v2/complete-background.png",
+  "all_six_transmitter_frames_pixel_exact": true,
+  "runtime_animation_tile_DMA": false,
+  "transmitter_sprite_chunks": "up to8 nonblank 8x16 strips per transmitter",
+  "background_pixel_identical_to_phase7": true
+}

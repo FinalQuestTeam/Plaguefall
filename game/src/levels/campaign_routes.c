@@ -1,25 +1,27 @@
 // Exact native corridor export.
 #include "levels/campaign_routes.h"
 #include <campaign_routes.h>
-static const ArenaRect cameraFocus06a[]={{72,32,168,184,FALSE},{880,136,112,96,FALSE},{1648,112,176,160,FALSE},{2160,112,192,152,FALSE},{2848,48,160,96,FALSE}};
+static const ArenaRect cameraFocus06a[]={{56,24,102,144,FALSE},{2880,24,128,115,FALSE}};
 
-static const ArenaScene scene06a={.tiles=(const u32 *)campaign_route06a_tiles,.map=(const u16 *)campaign_route06a_map,.palette=(const u16 *)campaign_route06a_palette,.tileCount=554,.rows=40,.cols=384,.cameraPlayerY=200,.cameraFocus=cameraFocus06a,.cameraFocusCount=5};
-static const ArenaRect solids06a[]={{0,0,3072,80,FALSE},{2128,80,944,8,FALSE},{0,80,824,16,FALSE},{1272,80,184,16,FALSE},{2128,88,416,24,FALSE},{2128,112,32,72,FALSE},{2352,112,192,72,FALSE},{664,96,160,112,FALSE},{0,96,24,176,FALSE},{1272,176,184,96,FALSE},{2128,264,416,8,FALSE},{3048,88,24,184,FALSE},{0,272,3072,48,FALSE},{112,32,56,80,TRUE},{80,72,144,32,TRUE},{80,184,320,32,TRUE},{224,112,176,32,TRUE},{384,128,96,88,TRUE},{1656,112,160,32,TRUE},{1648,144,8,96,TRUE},{1816,144,8,96,TRUE},{1656,240,160,32,TRUE},{1672,128,128,104,TRUE},{2192,120,128,104,TRUE},{2480,104,56,80,TRUE},{2496,200,24,32,TRUE},{2848,112,160,32,TRUE},{2896,80,32,32,TRUE},{2848,72,48,48,TRUE},{2928,48,64,80,TRUE},{80,104,144,80,FALSE},{224,144,176,40,FALSE},{912,80,48,64,FALSE},{912,192,48,80,FALSE},{1656,144,160,96,FALSE},{2496,184,24,16,FALSE}};
+static const ArenaStream stream06a={1095};
+static const ArenaScene scene06a={.tiles=(const u32 *)campaign_route06a_tiles,.map=(const u16 *)campaign_route06a_map,.palette=(const u16 *)campaign_route06a_palette,.tileCount=456,.rows=40,.cols=384,.cameraPlayerY=200,.cameraFocus=cameraFocus06a,.cameraFocusCount=2,.stream=&stream06a,.streamOverlay=TRUE,.cameraSouthStart=192};
+static const ArenaRect solids06a[]={{56,80,104,88,TRUE},{2880,80,128,64,TRUE},{320,224,32,16,TRUE},{656,112,80,48,TRUE},{880,240,32,16,TRUE},{1168,248,48,16,FALSE},{1376,128,32,16,TRUE},{1672,112,80,48,TRUE},{1968,248,48,16,FALSE},{2184,240,32,16,TRUE},{2368,128,40,24,FALSE},{832,80,32,32,TRUE},{832,176,32,96,TRUE},{1856,80,32,112,TRUE},{1856,256,32,16,TRUE}};
 
-const ArenaDef CAMPAIGN_ARENA06A={3072,320,24,80,3047,271,40,224,solids06a,36,&scene06a};
+const ArenaDef CAMPAIGN_ARENA06A={3072,320,24,80,3047,271,104,192,solids06a,15,&scene06a};
 
-static const RoutePoint points06a[]={{48,232,0},{280,232,0},{544,232,1},{648,240,0},{776,240,0},{848,240,0},{880,216,0},{880,168,0},{1000,168,0},{1168,144,0},{1248,136,1},{1360,136,0},{1480,136,0},{1552,96,0},{1840,96,0},{1840,216,1},{2096,216,0},{2160,248,0},{2344,248,0},{2432,248,1},{2544,248,0},{2688,200,0},{2824,200,0},{3016,176,0}};
-const RouteDef CAMPAIGN_ROUTE06A={points06a,24,{2976,152,64,64,FALSE}};
+static const RoutePoint points06a[]={{112,200,0},{568,200,0},{568,224,1},{816,224,0},{816,144,0},{904,144,0},{1128,144,0},{1128,184,0},{1336,184,1},{1592,184,0},{1592,224,0},{1840,224,0},{1920,224,0},{2088,224,0},{2088,184,1},{2536,184,1},{2944,184,0}};
+const RouteDef CAMPAIGN_ROUTE06A={points06a,17,{2912,144,64,48,FALSE}};
 
-static const ArenaRect cameraFocus06b[]={{72,32,168,184,FALSE},{800,64,240,184,FALSE},{1472,112,144,160,FALSE},{1920,136,224,168,FALSE},{2848,48,160,96,FALSE}};
+static const ArenaRect cameraFocus06b[]={{56,24,102,144,FALSE},{2880,24,128,115,FALSE}};
 
-static const ArenaScene scene06b={.tiles=(const u32 *)campaign_route06b_tiles,.map=(const u16 *)campaign_route06b_map,.palette=(const u16 *)campaign_route06b_palette,.tileCount=368,.rows=40,.cols=384,.cameraPlayerY=200,.cameraFocus=cameraFocus06b,.cameraFocusCount=5};
-static const ArenaRect solids06b[]={{0,0,3072,80,FALSE},{2064,80,1008,8,FALSE},{0,80,832,16,FALSE},{1232,80,208,16,FALSE},{2064,88,160,96,FALSE},{664,96,168,112,FALSE},{0,96,24,176,FALSE},{1232,176,208,96,FALSE},{2064,264,160,8,FALSE},{3048,88,24,184,FALSE},{0,272,3072,48,FALSE},{112,32,56,80,TRUE},{80,72,144,32,TRUE},{72,104,8,80,TRUE},{224,104,8,80,TRUE},{80,184,144,32,TRUE},{1472,144,8,96,TRUE},{1608,144,8,96,TRUE},{1480,112,128,32,TRUE},{1480,240,128,32,TRUE},{1496,136,96,80,TRUE},{2480,104,56,80,TRUE},{2496,200,24,32,TRUE},{2848,112,160,32,TRUE},{2896,80,32,32,TRUE},{2848,72,48,48,TRUE},{2928,48,64,80,TRUE},{984,24,32,112,TRUE},{952,168,32,152,TRUE},{808,64,96,80,TRUE},{904,104,32,32,TRUE},{2104,24,32,192,TRUE},{2072,248,32,72,TRUE},{1928,144,96,80,TRUE},{2024,184,32,32,TRUE},{80,104,144,80,FALSE},{1480,144,128,96,FALSE},{2496,184,24,16,FALSE}};
+static const ArenaStream stream06b={1095};
+static const ArenaScene scene06b={.tiles=(const u32 *)campaign_route06b_tiles,.map=(const u16 *)campaign_route06b_map,.palette=(const u16 *)campaign_route06b_palette,.tileCount=456,.rows=40,.cols=384,.cameraPlayerY=200,.cameraFocus=cameraFocus06b,.cameraFocusCount=2,.stream=&stream06b,.streamOverlay=TRUE,.cameraSouthStart=192};
+static const ArenaRect solids06b[]={{56,80,104,88,TRUE},{2880,80,128,64,TRUE},{320,224,32,16,TRUE},{656,112,80,48,TRUE},{880,240,32,16,TRUE},{1168,248,48,16,FALSE},{1376,128,32,16,TRUE},{1672,112,80,48,TRUE},{1968,248,48,16,FALSE},{2184,240,32,16,TRUE},{2368,128,40,24,FALSE},{832,80,32,32,TRUE},{832,176,32,96,TRUE},{1856,80,32,112,TRUE},{1856,256,32,16,TRUE}};
 
-const ArenaDef CAMPAIGN_ARENA06B={3072,320,24,80,3047,271,40,224,solids06b,38,&scene06b};
+const ArenaDef CAMPAIGN_ARENA06B={3072,320,24,80,3047,271,104,192,solids06b,15,&scene06b};
 
-static const RoutePoint points06b[]={{48,232,0},{280,232,0},{544,232,1},{648,240,0},{784,240,0},{848,240,0},{848,192,0},{920,160,1},{936,152,0},{976,152,0},{1032,152,0},{1168,136,0},{1360,136,0},{1456,136,0},{1456,96,0},{1640,96,1},{1840,144,0},{1896,248,0},{2040,240,1},{2056,232,0},{2096,232,0},{2160,232,0},{2240,232,0},{2432,248,0},{2544,248,1},{2768,200,0},{3016,176,0}};
-const RouteDef CAMPAIGN_ROUTE06B={points06b,27,{2976,152,64,64,FALSE}};
+static const RoutePoint points06b[]={{112,200,0},{568,200,0},{568,224,1},{792,224,0},{792,160,0},{816,160,0},{816,144,0},{904,144,0},{1128,144,0},{1128,184,1},{1592,184,0},{1592,224,0},{1816,224,0},{1816,240,0},{1840,240,0},{1840,224,0},{1920,224,0},{2088,224,0},{2088,184,1},{2536,184,1},{2944,184,0}};
+const RouteDef CAMPAIGN_ROUTE06B={points06b,21,{2912,144,64,48,FALSE}};
 
 static const ArenaRect cameraFocus12[]={{80,32,304,160,FALSE},{1488,24,304,144,FALSE},{2704,24,304,176,FALSE},{1008,200,240,112,FALSE},{1760,200,240,112,FALSE},{2304,200,240,112,FALSE},{432,32,160,128,FALSE},{1296,32,160,128,FALSE},{1984,32,160,128,FALSE},{2480,32,160,128,FALSE}};
 
@@ -31,5 +33,5 @@ const ArenaDef CAMPAIGN_ARENA12={3072,320,16,96,3055,287,48,208,solids12,18,&sce
 static const RoutePoint points12[]={{56,216,0},{336,216,0},{424,232,0},{592,232,1},{704,232,0},{920,232,0},{952,184,0},{1264,184,1},{1400,184,0},{1496,184,0},{1784,184,0},{2024,184,0},{2104,208,0},{2168,208,0},{2280,184,0},{2560,184,0},{2600,216,1},{2856,216,0}};
 const RouteDef CAMPAIGN_ROUTE12={points12,18,{2824,192,64,64,FALSE}};
 
-const ArenaRect CAMPAIGN_ROUTE06B_gates[2]={{960,112,32,64,TRUE},{2080,192,32,64,TRUE}};
-const RoutePoint CAMPAIGN_ROUTE06B_valves[2]={{920,128,0},{2040,208,0}};
+const ArenaRect CAMPAIGN_ROUTE06_gates[2]={{840,112,16,64,TRUE},{1864,192,16,64,TRUE}};
+const RoutePoint CAMPAIGN_ROUTE06B_valves[2]={{792,128,0},{1816,208,0}};

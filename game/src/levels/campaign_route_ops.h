@@ -12,7 +12,7 @@ u8 CR_OPS_gateBlockMask(void);
 void CR_OPS_start(void);
 void CR_OPS_update(void);
 void CR_OPS_draw(u16 *sprites);
-void CR_OPS_drawHUD(void);
+bool CR_OPS_drawHUD(void);
 bool CR_OPS_prepText(char *buf,const LevelDef *def);
 bool CR_OPS_blocked(s16 x,s16 y,u16 w,u16 h);
 bool CR_OPS_shotBlocked(s16 x,s16 y,bool player);

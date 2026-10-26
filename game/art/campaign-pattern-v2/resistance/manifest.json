@@ -373,55 +373,61 @@
       "phase": "8",
       "size": [
         768,
-        384
+        544
       ],
       "bounds": [
-        40,
-        160,
-        727,
-        335
+        32,
+        176,
+        735,
+        479
       ],
       "solids": [
         [
-          40,
-          208,
+          48,
+          256,
           112,
           104
         ],
         [
-          248,
-          224,
-          136,
-          24
+          472,
+          256,
+          104,
+          88
         ],
         [
-          448,
-          272,
-          136,
-          24
+          256,
+          352,
+          104,
+          88
+        ],
+        [
+          608,
+          176,
+          104,
+          64
         ]
       ],
       "start": [
-        80,
-        176
+        64,
+        192
       ],
       "complete": "art/campaign-pattern-v2/resistance/complete/8-complete.png",
-      "background": "art/campaign-pattern-v2/resistance/native/favela/map-native.png",
+      "background": "art/phase08-urban-v1/complete-background.png",
       "special_states": [],
       "memory": {
-        "scene_tiles": 492,
-        "reserved_objective_tiles": 96,
-        "total_reserved_tiles": 588,
+        "scene_tiles": 560,
+        "reserved_objective_tiles": 76,
+        "total_reserved_tiles": 636,
         "limit": 640,
-        "margin_tiles": 52,
-        "tile_bytes": 15744,
-        "map_bytes": 9216,
+        "margin_tiles": 4,
+        "tile_bytes": 17920,
+        "map_bytes": 13056,
         "palette_bytes": 32,
         "exact_reconstruction": true,
         "lossy_tile_replacements": 0
       },
-      "source": "art/campaign-pattern-v2/resistance/source/07-08-favela-cycle3.png",
-      "source_sha256": "7f70022ffdde3effa16aa5162358204f953594407a6ca3068f58430ac6ce2939",
+      "source": "art/phase07-urban-v2/source/07-urban-whole.png",
+      "source_sha256": "2ef9266cfc96fe3d86727887c8ef82aab1f1de51ae7293c1dcd00332b473bd46",
       "palette": {
         "index0": [
           0,
@@ -429,27 +435,27 @@
           0
         ],
         "format": "RGB333",
-        "palette_file": "art/campaign-pattern-v2/resistance/native/favela/palette.bin"
+        "palette_file": "art/phase08-urban-v1/palette.bin"
       },
       "objects": [
         {
           "asset": "transmitter",
           "frame": 2,
           "center": [
-            208,
-            168
+            240,
+            208
           ],
           "canvas": [
-            192,
-            144,
+            224,
+            184,
             32,
             32
           ],
           "ink_bbox": [
-            193,
-            147,
-            216,
-            175
+            225,
+            187,
+            248,
+            215
           ],
           "ground_snapped_8px": false,
           "source": "art/objective-sprites-v1/frames/transmitter-2.png"
@@ -458,20 +464,20 @@
           "asset": "transmitter",
           "frame": 2,
           "center": [
-            424,
-            296
+            448,
+            424
           ],
           "canvas": [
-            408,
-            272,
+            432,
+            400,
             32,
             32
           ],
           "ink_bbox": [
-            409,
-            275,
-            432,
-            303
+            433,
+            403,
+            456,
+            431
           ],
           "ground_snapped_8px": false,
           "source": "art/objective-sprites-v1/frames/transmitter-2.png"
@@ -481,19 +487,19 @@
           "frame": 2,
           "center": [
             672,
-            224
+            272
           ],
           "canvas": [
             656,
-            200,
+            248,
             32,
             32
           ],
           "ink_bbox": [
             657,
-            203,
+            251,
             680,
-            231
+            279
           ],
           "ground_snapped_8px": false,
           "source": "art/objective-sprites-v1/frames/transmitter-2.png"
@@ -505,11 +511,11 @@
           "path": "art/campaign-pattern-v2/resistance/camera-previews/8-0.png",
           "camera": [
             0,
-            72
+            88
           ],
           "actor_ground_top_left": [
-            80,
-            176
+            64,
+            192
           ],
           "emulator_capture": false
         },
@@ -521,7 +527,7 @@
           ],
           "actor_ground_top_left": [
             376,
-            160
+            176
           ],
           "emulator_capture": false
         },
@@ -529,11 +535,11 @@
           "path": "art/campaign-pattern-v2/resistance/camera-previews/8-2.png",
           "camera": [
             224,
-            160
+            320
           ],
           "actor_ground_top_left": [
             376,
-            312
+            456
           ],
           "emulator_capture": false
         }
@@ -544,30 +550,30 @@
           16
         ],
         "step_pixels": 8,
-        "reachable_grid_positions": 1445,
+        "reachable_grid_positions": 2561,
         "checks": [
           {
             "name": "transmitter-1",
-            "reachable_samples": 113,
+            "reachable_samples": 156,
             "example_feet": [
-              152,
-              160
+              184,
+              176
             ]
           },
           {
             "name": "transmitter-2",
-            "reachable_samples": 101,
+            "reachable_samples": 143,
             "example_feet": [
-              368,
-              256
+              392,
+              384
             ]
           },
           {
             "name": "transmitter-3",
-            "reachable_samples": 169,
+            "reachable_samples": 157,
             "example_feet": [
               616,
-              184
+              240
             ]
           }
         ],

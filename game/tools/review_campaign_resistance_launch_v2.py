@@ -53,7 +53,9 @@ rows={'resistance':[],'launch':[]}
 for ph in ['7','8','13A','13B','14','15','16']:
  group='resistance' if ph in ['7','8','13A','13B']else'launch';A=BASE/group
  for folder in ['complete','layouts','camera-previews','reviews']:(A/folder).mkdir(exist_ok=True)
- if ph in ['7','8']:
+ if ph=='8':
+  urban=read(G/'art/phase08-urban-v1/manifest.json');bg=G/'art/phase08-urban-v1/complete-background.png';bounds=urban['bounds'];solids=[r[:4] for r in urban['solids']];start=urban['start'];source=G/'art/phase07-urban-v2/source/07-urban-whole.png';tiles=560;reserve=76
+ elif ph=='7':
   bg=A/'native/favela/map-native.png';bounds=rg['favela_bounds'];solids=rg['favela_solids']+(rg['cargo_solids']if ph=='7'else[]);start=[80,176];source=A/'source/07-08-favela-cycle3.png';tiles=rg['favela_tiles'];reserve=74 if ph=='7'else 96
  elif ph in ['13A','13B']:
   bg=A/f'native/union/{"alive"if ph=="13A"else"dead"}-native.png';bounds=rg['union_bounds'];solids=rg['union_solids'];start=[280,168];source=A/('source/13A-union.png'if ph=='13A'else'source/13B-union-memorial.png');tiles=rg['union_tiles'];reserve=0
@@ -65,7 +67,7 @@ for ph in ['7','8','13A','13B','14','15','16']:
   for x,y in rg['cargo']:add('cargo',x,y)
   add('cargo',*rg['depot'],5)
  if ph=='8':
-  for x,y in rg['transmitters']:add('transmitter',x+8,y-8,2,False)
+  for x,y in urban['targets']:add('transmitter',x+8,y-8,2,False)
  if ph in ['14','15','16']:
   for x,y in lg['machines']:add('generator',x,y,0 if ph=='14'else 3)
   if ph in ['15','16']:add('radio',*lg['radio'],2 if ph=='15'else 4)
@@ -91,7 +93,7 @@ for ph in ['7','8','13A','13B','14','15','16']:
  for i,(cx,cy)in enumerate(camera_positions):
   im=out.copy();pos=start if i==0 else ((w//2-8,160)if i==1 else(w//2-8,bounds[3]-23));pos=min(walkable,key=lambda p:abs(p[0]-pos[0])+abs(p[1]-pos[1]));im.alpha_composite(hero,(pos[0]-8,pos[1]-31))
   shot=im.crop((cx,cy,cx+320,cy+224)).convert('RGB');dr=ImageDraw.Draw(shot);dr.rectangle((0,0,319,23),fill='#152623');dr.text((5,5),'PREVIEW NATIVO - HUD RESERVADO',font=FONT,fill='#dedeb6');p=A/f'camera-previews/{ph}-{i}.png';shot.save(p);cameras.append({'path':str(p.relative_to(G)),'camera':[cx,cy],'actor_ground_top_left':list(pos),'emulator_capture':False})
- access=inspect_access(ph,bounds,solids,start,rg if group=='resistance'else lg)
+ access=inspect_access(ph,bounds,solids,start,{'transmitters':urban['targets']} if ph=='8' else rg if group=='resistance'else lg)
  row={'phase':ph,'size':list(out.size),'bounds':bounds,'solids':solids,'start':start,'complete':str(dest.relative_to(G)),'background':str(bg.relative_to(G)),'special_states':specials,'memory':{'scene_tiles':tiles,'reserved_objective_tiles':reserve,'total_reserved_tiles':tiles+reserve,'limit':640,'margin_tiles':640-tiles-reserve,'tile_bytes':tiles*32,'map_bytes':out.width*out.height//32,'palette_bytes':32,'exact_reconstruction':True,'lossy_tile_replacements':0},'source':str(source.relative_to(G)),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'palette':{'index0':[0,0,0],'format':'RGB333','palette_file':str(bg.with_name('palette.bin').relative_to(G))},'objects':objs,'layout':str((A/f'layouts/{ph}.png').relative_to(G)),'camera_previews':cameras,'access':access,'runtime_verification':'Pending parent integrated build; no new ROM compiled in this subtask.'}
  rows[group].append(row)
 for group,phases in rows.items():

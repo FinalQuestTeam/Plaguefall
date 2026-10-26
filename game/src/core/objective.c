@@ -204,7 +204,9 @@ static void drawBaseHUD(u16 kills)
 }
 void OBJECTIVE_drawHUD(u16 kills)
 {
-    drawBaseHUD(kills);CR_OPS_drawHUD();
+    // Nearby pressure mechanisms own the panel; avoid composing an escort
+    // label only to overwrite it again in the same frame.
+    if(!CR_OPS_drawHUD())drawBaseHUD(kills);
 }
 
 // redesenho incondicional (invalida o gate): para quando outro código pode ter

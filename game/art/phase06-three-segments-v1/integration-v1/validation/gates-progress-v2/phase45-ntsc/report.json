@@ -1,0 +1,244 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "c658d5692ef31349a9194d8e2da6eaee05a7bc450371f099909cc73118281acf",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "c658d5692ef31349a9194d8e2da6eaee05a7bc450371f099909cc73118281acf",
+  "movieEnabled": false,
+  "checks": {
+    "04-entry": {
+      "camera": [
+        0,
+        0
+      ],
+      "cells": 1000,
+      "bottom_world_row": 27
+    },
+    "04-vertical-forward-reverse-exact-map": [
+      {
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "bottom_world_row": 27
+      },
+      {
+        "camera": [
+          192,
+          0
+        ],
+        "cells": 1000,
+        "bottom_world_row": 27
+      },
+      {
+        "camera": [
+          0,
+          108
+        ],
+        "cells": 1040,
+        "bottom_world_row": 41
+      },
+      {
+        "camera": [
+          192,
+          108
+        ],
+        "cells": 1040,
+        "bottom_world_row": 41
+      },
+      {
+        "camera": [
+          0,
+          224
+        ],
+        "cells": 1000,
+        "bottom_world_row": 55
+      },
+      {
+        "camera": [
+          192,
+          224
+        ],
+        "cells": 1000,
+        "bottom_world_row": 55
+      },
+      {
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "bottom_world_row": 27
+      }
+    ],
+    "04-southern-wall-controller": {
+      "camera": [
+        0,
+        224
+      ],
+      "cells": 1000,
+      "bottom_world_row": 55
+    },
+    "04-contact-and-perimeter-collisions": {
+      "prop_faces": 12,
+      "perimeter_faces": 4
+    },
+    "04-pause-restores-expanded-map": {
+      "camera": [
+        0,
+        224
+      ],
+      "cells": 1000,
+      "bottom_world_row": 55
+    },
+    "04-maximum-cap-vertical-patrol-load": {
+      "enemy_cap": 4,
+      "maximum_visible_enemies": 4,
+      "projectiles_per_pool_seeded_to_cap": 6,
+      "game_frames": 1200,
+      "physical_frames": 1200,
+      "observed_fps": 60.0,
+      "frames_without_game_update": 0,
+      "player_y_range": [
+        224,
+        336
+      ],
+      "camera_y_range": [
+        92,
+        204
+      ],
+      "maximum_sat_sprites_scanline_sprites_pixels": [
+        16,
+        6,
+        64
+      ],
+      "RAM_health_contact_isolation": true
+    },
+    "05-entry": {
+      "camera": [
+        0,
+        160
+      ],
+      "cells": 1000,
+      "bottom_world_row": 47
+    },
+    "05-vertical-forward-reverse-exact-map": [
+      {
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "bottom_world_row": 27
+      },
+      {
+        "camera": [
+          64,
+          0
+        ],
+        "cells": 1000,
+        "bottom_world_row": 27
+      },
+      {
+        "camera": [
+          0,
+          108
+        ],
+        "cells": 1040,
+        "bottom_world_row": 41
+      },
+      {
+        "camera": [
+          64,
+          108
+        ],
+        "cells": 1040,
+        "bottom_world_row": 41
+      },
+      {
+        "camera": [
+          0,
+          201
+        ],
+        "cells": 1040,
+        "bottom_world_row": 53
+      },
+      {
+        "camera": [
+          64,
+          201
+        ],
+        "cells": 1040,
+        "bottom_world_row": 53
+      },
+      {
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "bottom_world_row": 27
+      }
+    ],
+    "05-southern-wall-controller": {
+      "camera": [
+        0,
+        224
+      ],
+      "cells": 1000,
+      "bottom_world_row": 55
+    },
+    "05-contact-and-perimeter-collisions": {
+      "prop_faces": 12,
+      "perimeter_faces": 4
+    },
+    "05-pause-restores-expanded-map": {
+      "camera": [
+        0,
+        201
+      ],
+      "cells": 1040,
+      "bottom_world_row": 53
+    },
+    "05-maximum-cap-vertical-patrol-load": {
+      "enemy_cap": 3,
+      "maximum_visible_enemies": 3,
+      "projectiles_per_pool_seeded_to_cap": 6,
+      "game_frames": 1200,
+      "physical_frames": 1200,
+      "observed_fps": 60.0,
+      "frames_without_game_update": 0,
+      "player_y_range": [
+        224,
+        336
+      ],
+      "camera_y_range": [
+        92,
+        160
+      ],
+      "maximum_sat_sprites_scanline_sprites_pixels": [
+        16,
+        6,
+        88
+      ],
+      "RAM_health_contact_isolation": true
+    },
+    "05-relocated-santa-contact-blink-and-floor": {
+      "camera": [
+        0,
+        148
+      ],
+      "cells": 1040,
+      "bottom_world_row": 46
+    },
+    "05-full-protect-clock": {
+      "remaining_game_frames_on_entry": 7189,
+      "active_game_frames_to_win": 7189,
+      "npc_hp_before_win": 180,
+      "npc_cleared_on_result": true,
+      "enemies_isolated": true
+    }
+  },
+  "scope": "Phases4/5 vertical expansion. Controller movement/collision and pause; RAM isolates enemies, selects preparation nodes and seeds contact/load cases. Real production AI and rendering. Difficulty is not human-certified."
+}

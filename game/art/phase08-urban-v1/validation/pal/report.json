@@ -1,0 +1,191 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "3c025560a9547d8dab162b687156ec7c6925707b9deaa75e214a08bcae5c7d0b",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "a0a94c8881ade93c4717f15259cdd1a4c063fc1d550fdb8be1dfda200491e157",
+  "movieEnabled": false,
+  "checks": {
+    "entry-native-pixels": {
+      "camera": [
+        0,
+        8
+      ],
+      "visible_patterns": 526,
+      "peak": 526
+    },
+    "transmitter-strips": {
+      "all_six_frames_exact": true,
+      "resident_tiles": 76,
+      "total_reserved": 636,
+      "sprite_strips_verified": 6
+    },
+    "full-map-scroll": {
+      "samples": 36,
+      "zero_pixel_mismatches": true
+    },
+    "four-stall-collisions-and-bounds": {
+      "probes": [
+        [
+          168,
+          256,
+          6,
+          160
+        ],
+        [
+          48,
+          232,
+          5,
+          240
+        ],
+        [
+          48,
+          368,
+          4,
+          360
+        ],
+        [
+          448,
+          256,
+          7,
+          456
+        ],
+        [
+          584,
+          256,
+          6,
+          576
+        ],
+        [
+          472,
+          232,
+          5,
+          240
+        ],
+        [
+          472,
+          352,
+          4,
+          344
+        ],
+        [
+          232,
+          352,
+          7,
+          240
+        ],
+        [
+          368,
+          352,
+          6,
+          360
+        ],
+        [
+          256,
+          328,
+          5,
+          336
+        ],
+        [
+          256,
+          448,
+          4,
+          440
+        ],
+        [
+          584,
+          176,
+          7,
+          592
+        ],
+        [
+          720,
+          176,
+          6,
+          712
+        ],
+        [
+          608,
+          248,
+          4,
+          240
+        ]
+      ],
+      "edges": 4
+    },
+    "pause-restores-native-pixels": {
+      "camera": [
+        240,
+        320
+      ],
+      "visible_patterns": 185,
+      "peak": 527
+    },
+    "three-controller-priority-kills": {
+      "killed": [
+        1,
+        2,
+        3
+      ],
+      "mask": 7,
+      "won": true,
+      "ram_writes_during_run": 0,
+      "reinforcement_and_return_fire_isolated": true
+    },
+    "ordinary-kill-counter-ignored": true,
+    "maximum-configured-load": [
+      {
+        "section": "upper",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 58.45,
+        "sprite_limits": [
+          25,
+          9,
+          144
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      },
+      {
+        "section": "market",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 76.95,
+        "sprite_limits": [
+          25,
+          7,
+          120
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      },
+      {
+        "section": "lower",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 72.75,
+        "sprite_limits": [
+          24,
+          11,
+          120
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      }
+    ],
+    "natural-combat": {
+      "seconds": 28.32,
+      "state": 3,
+      "hp": 0,
+      "peak_enemies": 6,
+      "game_fps": 47.987,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    }
+  },
+  "scope": "Urban phase8: asphalt, open sewer manhole and four white canvas stalls. Controller entry, three priority kills and movement; RAM isolates enemy pressure for functional checks. Exact visible VRAM and overlay pixels, cache, pause, collision. Native max6-enemy/6+6-projectile load retains AI/active trajectories. Natural combat sample has no RAM health or AI grants."
+}

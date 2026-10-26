@@ -1,0 +1,110 @@
+{
+  "width": 768,
+  "height": 544,
+  "size": [
+    768,
+    544
+  ],
+  "bounds": [
+    32,
+    176,
+    735,
+    479
+  ],
+  "start": [
+    64,
+    192
+  ],
+  "solids": [
+    [
+      48,
+      256,
+      112,
+      104,
+      true
+    ],
+    [
+      472,
+      256,
+      104,
+      88,
+      true
+    ],
+    [
+      256,
+      352,
+      104,
+      88,
+      true
+    ],
+    [
+      608,
+      176,
+      104,
+      64,
+      true
+    ]
+  ],
+  "points": [],
+  "cargo": [
+    [
+      232,
+      216
+    ],
+    [
+      440,
+      208
+    ],
+    [
+      664,
+      280
+    ],
+    [
+      440,
+      432
+    ],
+    [
+      608,
+      416
+    ]
+  ],
+  "depot": [
+    104,
+    392
+  ],
+  "camera_player_y": 184,
+  "camera_south_start": 352,
+  "stalls": [
+    [
+      48,
+      256
+    ],
+    [
+      464,
+      248
+    ],
+    [
+      248,
+      344
+    ],
+    [
+      600,
+      136
+    ]
+  ],
+  "manhole": {
+    "canvas": [
+      24,
+      184,
+      80,
+      40
+    ],
+    "landing": [
+      64,
+      192
+    ],
+    "source_phase": "6A/6B",
+    "walkable": true
+  },
+  "theme": "urban resistance market, asphalt, city facades, white canvas stalls"
+}

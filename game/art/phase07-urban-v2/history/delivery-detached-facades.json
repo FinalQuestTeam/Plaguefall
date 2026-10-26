@@ -1,0 +1,349 @@
+{
+  "date": "2026-10-26",
+  "revision": "Fase 7 urbana: asfalto, bueiro dos esgotos, comércio e quatro barracas de lona branca",
+  "status": "integrated-functional-with-performance-reservation",
+  "rom_sha256": "2dae35d4ebb52a1891ab5bf51e78fea564f6b4fbe8f797041cdf5086fca3406e",
+  "rom_bytes": 2621440,
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "human_approval_claimed": false,
+  "world": {
+    "size": [
+      768,
+      544
+    ],
+    "bounds": [
+      32,
+      176,
+      735,
+      479
+    ],
+    "start": [
+      64,
+      192
+    ],
+    "solids": [
+      [
+        48,
+        256,
+        112,
+        104,
+        true
+      ],
+      [
+        472,
+        256,
+        104,
+        88,
+        true
+      ],
+      [
+        256,
+        352,
+        104,
+        88,
+        true
+      ],
+      [
+        608,
+        168,
+        104,
+        16,
+        true
+      ]
+    ],
+    "cargo": [
+      [
+        232,
+        216
+      ],
+      [
+        440,
+        208
+      ],
+      [
+        664,
+        280
+      ],
+      [
+        440,
+        432
+      ],
+      [
+        608,
+        416
+      ]
+    ],
+    "depot": [
+      104,
+      392
+    ],
+    "stalls": [
+      [
+        48,
+        256
+      ],
+      [
+        464,
+        248
+      ],
+      [
+        248,
+        344
+      ],
+      [
+        600,
+        80
+      ]
+    ],
+    "manhole": {
+      "canvas": [
+        24,
+        184,
+        80,
+        40
+      ],
+      "landing": [
+        64,
+        192
+      ],
+      "source_phase": "6A/6B",
+      "walkable": true
+    },
+    "theme": "urban resistance market, asphalt, city facades, white canvas stalls"
+  },
+  "memory": {
+    "source_patterns": 924,
+    "source_graphics_bytes": 29568,
+    "map_bytes": 13056,
+    "scene_cache_slots": 560,
+    "cargo_tiles": 74,
+    "total_reserved_tiles": 634,
+    "resident_bytes": 20288,
+    "spare_tiles": 6,
+    "maximum_visible_patterns": 492,
+    "maximum_window_camera": [
+      56,
+      0
+    ],
+    "cache_heap_bytes": 6328,
+    "lossy_tile_replacements": 0
+  },
+  "source": {
+    "path": "source/07-urban-whole.png",
+    "sha256": "2ef9266cfc96fe3d86727887c8ef82aab1f1de51ae7293c1dcd00332b473bd46",
+    "tool": "built-in image_gen",
+    "prompt": "prompts/whole-scene.txt",
+    "palette": "urban RGB33316 colors: gray asphalt, white canvas, brick and blue storefronts",
+    "whole_image_first": true
+  },
+  "previous_version": "../phase07-spacious-v1/delivery.json",
+  "checks": {
+    "generated_resources": true,
+    "whole_native_composition_reviewed": true,
+    "asphalt_and_city_frontages": true,
+    "four_white_canvas_stalls": true,
+    "open_manhole_controller_exit": true,
+    "native_scene_and_cargo_overlay_pixels": true,
+    "forward_reverse_vertical_camera": true,
+    "static_collisions_and_bounds": true,
+    "dynamic_case_collision": true,
+    "five_controller_deliveries_ntsc": true,
+    "five_controller_deliveries_pal": true,
+    "pause_restoration": true,
+    "shared_phases_8_13A_13B": true,
+    "selector_all_19_entries": true
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2659,
+    "reachable_positions": 2659,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  },
+  "visual_review": {
+    "complete_roofs_and_storefronts": true,
+    "continuous_side_and_lower_urban_boundaries": true,
+    "whole_canvas_stalls_and_shadows": true,
+    "all_cargo_opening_pickup_and_return_routes_connected": true,
+    "no_forest_or_dirt_field": true,
+    "source_first": true,
+    "palette": "16-color RGB333 gray ramp for asphalt, cream/white canvas, warm brick and blue doors",
+    "module_reuse": "same complete stall at four anchors; complete storefront bays and repeated concrete/brick/curb/asphalt materials",
+    "approval": "functional; user art acceptance not claimed"
+  },
+  "loads": {
+    "ntsc": [
+      {
+        "section": "casas",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1182,
+        "physical_frames": 1200,
+        "game_fps": 59.1,
+        "mean_cpu_pct": 78.61,
+        "maximum_cpu_pct": 96.83,
+        "sprite_limits": [
+          19,
+          8,
+          112
+        ],
+        "camera_x_range": [
+          136,
+          264
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "deposito",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1132,
+        "physical_frames": 1200,
+        "game_fps": 56.6,
+        "mean_cpu_pct": 83.62,
+        "maximum_cpu_pct": 99.37,
+        "sprite_limits": [
+          19,
+          7,
+          112
+        ],
+        "camera_x_range": [
+          8,
+          136
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "inferior",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1103,
+        "physical_frames": 1200,
+        "game_fps": 55.15,
+        "mean_cpu_pct": 83.38,
+        "maximum_cpu_pct": 96.29,
+        "sprite_limits": [
+          20,
+          9,
+          128
+        ],
+        "camera_x_range": [
+          295,
+          424
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      }
+    ],
+    "pal": [
+      {
+        "section": "casas",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1000,
+        "physical_frames": 1000,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 53.54,
+        "maximum_cpu_pct": 62.01,
+        "sprite_limits": [
+          19,
+          8,
+          128
+        ],
+        "camera_x_range": [
+          136,
+          264
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "deposito",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 1000,
+        "physical_frames": 1000,
+        "game_fps": 50.0,
+        "mean_cpu_pct": 57.78,
+        "maximum_cpu_pct": 63.92,
+        "sprite_limits": [
+          19,
+          7,
+          128
+        ],
+        "camera_x_range": [
+          8,
+          136
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      },
+      {
+        "section": "inferior",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_frames": 999,
+        "physical_frames": 1000,
+        "game_fps": 49.95,
+        "mean_cpu_pct": 56.41,
+        "maximum_cpu_pct": 65.92,
+        "sprite_limits": [
+          20,
+          9,
+          112
+        ],
+        "camera_x_range": [
+          295,
+          424
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "health_protected": true
+      }
+    ]
+  },
+  "natural_combat": {
+    "ntsc": {
+      "seconds": 30.0,
+      "state": 1,
+      "minimum_hp": 35,
+      "peak_enemies": 4,
+      "game_fps": 59.4,
+      "ram_health_AI_grants": false,
+      "scope": "30s automated movement and fire; not human difficulty approval or complete natural transport"
+    },
+    "pal": {
+      "seconds": 26.02,
+      "state": 3,
+      "minimum_hp": 0,
+      "peak_enemies": 4,
+      "game_fps": 48.078,
+      "ram_health_AI_grants": false,
+      "scope": "30s automated movement and fire; not human difficulty approval or complete natural transport"
+    }
+  },
+  "performance_target_met": false,
+  "reports": {
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json",
+    "shared-ntsc": "validation/shared-ntsc/report.json",
+    "shared-pal": "validation/shared-pal/report.json",
+    "selector-ntsc": "validation/selector-ntsc/report.json",
+    "selector-pal": "validation/selector-pal/report.json"
+  },
+  "limits": [
+    "As cinco entregas usam controles normais com combate isolado. Nenhuma posição, progresso ou estado de missão foi escrito durante as viagens.",
+    "A carga usa quatro inimigos, seis tiros por grupo, IA e trajetórias ativas, vida protegida e reposição somente de tiros inativos. São 20 s por trecho e região; a patrulha pode interagir normalmente com as cargas.",
+    "Nos trechos medidos: 55,15–59,1 FPS no NTSC e 49,95–50 FPS no PAL. A meta de 60/50 FPS fixos não foi atingida em todos os trechos. A formação e o percurso inferior são específicos da geometria urbana; não são uma comparação direta de desempenho com o pátio anterior.",
+    "O bueiro é um marco visual de chegada da fase 6, com tampa afastada e escada aparente. Sua área permite saída por controle; não introduz dano, bloqueio ou uma animação de transição nova.",
+    "Combate natural de até 30 s sem concessões de vida/IA foi medido separadamente. Não certifica um transporte completo sob combate nem dificuldade humana. Hardware físico não testado."
+  ]
+}

@@ -1,0 +1,594 @@
+{
+  "width": 768,
+  "height": 544,
+  "size": [
+    768,
+    544
+  ],
+  "bounds": [
+    32,
+    176,
+    735,
+    479
+  ],
+  "start": [
+    64,
+    192
+  ],
+  "solids": [
+    [
+      48,
+      256,
+      112,
+      104,
+      true
+    ],
+    [
+      472,
+      256,
+      104,
+      88,
+      true
+    ],
+    [
+      256,
+      352,
+      104,
+      88,
+      true
+    ],
+    [
+      608,
+      168,
+      104,
+      16,
+      true
+    ]
+  ],
+  "points": [],
+  "cargo": [
+    [
+      232,
+      216
+    ],
+    [
+      440,
+      208
+    ],
+    [
+      664,
+      280
+    ],
+    [
+      440,
+      432
+    ],
+    [
+      608,
+      416
+    ]
+  ],
+  "depot": [
+    104,
+    392
+  ],
+  "camera_player_y": 184,
+  "camera_south_start": 352,
+  "stalls": [
+    [
+      48,
+      256
+    ],
+    [
+      464,
+      248
+    ],
+    [
+      248,
+      344
+    ],
+    [
+      600,
+      80
+    ]
+  ],
+  "manhole": {
+    "canvas": [
+      24,
+      184,
+      80,
+      40
+    ],
+    "landing": [
+      64,
+      192
+    ],
+    "source_phase": "6A/6B",
+    "walkable": true
+  },
+  "theme": "urban resistance market, asphalt, city facades, white canvas stalls",
+  "frontages": [
+    {
+      "name": "storefront",
+      "x": 0,
+      "y": 0,
+      "width": 112,
+      "height": 176
+    },
+    {
+      "name": "storefront",
+      "x": 112,
+      "y": 0,
+      "width": 112,
+      "height": 176
+    },
+    {
+      "name": "refuge",
+      "x": 224,
+      "y": 0,
+      "width": 96,
+      "height": 176
+    },
+    {
+      "name": "storefront",
+      "x": 320,
+      "y": 0,
+      "width": 112,
+      "height": 176
+    },
+    {
+      "name": "storefront",
+      "x": 432,
+      "y": 0,
+      "width": 112,
+      "height": 176
+    },
+    {
+      "name": "storefront",
+      "x": 544,
+      "y": 0,
+      "width": 112,
+      "height": 176
+    },
+    {
+      "name": "storefront",
+      "x": 656,
+      "y": 0,
+      "width": 112,
+      "height": 176
+    }
+  ],
+  "stall_alpha": {
+    "source": "stall-silhouette.json",
+    "precomposited": true,
+    "runtime_blending": false,
+    "positions_unchanged": true
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2659,
+    "reachable_positions": 2659,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  },
+  "cargo_solids": [
+    [
+      216,
+      216,
+      32,
+      8
+    ],
+    [
+      424,
+      208,
+      32,
+      8
+    ],
+    [
+      648,
+      280,
+      32,
+      8
+    ],
+    [
+      424,
+      432,
+      32,
+      8
+    ],
+    [
+      592,
+      416,
+      32,
+      8
+    ]
+  ],
+  "routes": [
+    {
+      "source": 0,
+      "opening": [
+        224,
+        232
+      ],
+      "pickup": [
+        256,
+        232
+      ],
+      "to_open": [
+        [
+          64,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          192,
+          232
+        ],
+        [
+          224,
+          232
+        ]
+      ],
+      "to_pickup": [
+        [
+          224,
+          232
+        ],
+        [
+          256,
+          232
+        ]
+      ],
+      "to_depot": [
+        [
+          256,
+          232
+        ],
+        [
+          168,
+          232
+        ],
+        [
+          168,
+          368
+        ],
+        [
+          96,
+          368
+        ],
+        [
+          96,
+          384
+        ]
+      ]
+    },
+    {
+      "source": 1,
+      "opening": [
+        432,
+        224
+      ],
+      "pickup": [
+        464,
+        224
+      ],
+      "to_open": [
+        [
+          64,
+          192
+        ],
+        [
+          400,
+          192
+        ],
+        [
+          400,
+          224
+        ],
+        [
+          432,
+          224
+        ]
+      ],
+      "to_pickup": [
+        [
+          432,
+          224
+        ],
+        [
+          464,
+          224
+        ]
+      ],
+      "to_depot": [
+        [
+          464,
+          224
+        ],
+        [
+          256,
+          224
+        ],
+        [
+          256,
+          232
+        ],
+        [
+          168,
+          232
+        ],
+        [
+          168,
+          368
+        ],
+        [
+          96,
+          368
+        ],
+        [
+          96,
+          384
+        ]
+      ]
+    },
+    {
+      "source": 2,
+      "opening": [
+        656,
+        296
+      ],
+      "pickup": [
+        688,
+        296
+      ],
+      "to_open": [
+        [
+          64,
+          192
+        ],
+        [
+          400,
+          192
+        ],
+        [
+          400,
+          224
+        ],
+        [
+          624,
+          224
+        ],
+        [
+          624,
+          296
+        ],
+        [
+          656,
+          296
+        ]
+      ],
+      "to_pickup": [
+        [
+          656,
+          296
+        ],
+        [
+          688,
+          296
+        ]
+      ],
+      "to_depot": [
+        [
+          688,
+          296
+        ],
+        [
+          584,
+          296
+        ],
+        [
+          584,
+          352
+        ],
+        [
+          368,
+          352
+        ],
+        [
+          368,
+          328
+        ],
+        [
+          168,
+          328
+        ],
+        [
+          168,
+          368
+        ],
+        [
+          96,
+          368
+        ],
+        [
+          96,
+          384
+        ]
+      ]
+    },
+    {
+      "source": 3,
+      "opening": [
+        432,
+        448
+      ],
+      "pickup": [
+        464,
+        448
+      ],
+      "to_open": [
+        [
+          64,
+          192
+        ],
+        [
+          400,
+          192
+        ],
+        [
+          400,
+          448
+        ],
+        [
+          432,
+          448
+        ]
+      ],
+      "to_pickup": [
+        [
+          432,
+          448
+        ],
+        [
+          464,
+          448
+        ]
+      ],
+      "to_depot": [
+        [
+          464,
+          448
+        ],
+        [
+          96,
+          448
+        ],
+        [
+          96,
+          384
+        ]
+      ]
+    },
+    {
+      "source": 4,
+      "opening": [
+        600,
+        432
+      ],
+      "pickup": [
+        632,
+        432
+      ],
+      "to_open": [
+        [
+          64,
+          192
+        ],
+        [
+          400,
+          192
+        ],
+        [
+          400,
+          224
+        ],
+        [
+          448,
+          224
+        ],
+        [
+          448,
+          352
+        ],
+        [
+          568,
+          352
+        ],
+        [
+          568,
+          432
+        ],
+        [
+          600,
+          432
+        ]
+      ],
+      "to_pickup": [
+        [
+          600,
+          432
+        ],
+        [
+          632,
+          432
+        ]
+      ],
+      "to_depot": [
+        [
+          632,
+          432
+        ],
+        [
+          464,
+          432
+        ],
+        [
+          464,
+          448
+        ],
+        [
+          96,
+          448
+        ],
+        [
+          96,
+          384
+        ]
+      ]
+    }
+  ],
+  "memory": {
+    "source_patterns": 994,
+    "source_graphics_bytes": 31808,
+    "map_bytes": 13056,
+    "scene_cache_slots": 560,
+    "cargo_tiles": 74,
+    "total_reserved_tiles": 634,
+    "resident_bytes": 20288,
+    "spare_tiles": 6,
+    "maximum_visible_patterns": 552,
+    "maximum_window_camera": [
+      0,
+      0
+    ],
+    "cache_heap_bytes": 6468,
+    "lossy_tile_replacements": 0
+  },
+  "source": {
+    "path": "source/07-urban-whole.png",
+    "sha256": "2ef9266cfc96fe3d86727887c8ef82aab1f1de51ae7293c1dcd00332b473bd46",
+    "tool": "built-in image_gen",
+    "prompt": "prompts/whole-scene.txt",
+    "palette": "urban RGB33316 colors: gray asphalt, white canvas, brick and blue storefronts",
+    "whole_image_first": true
+  },
+  "before": {
+    "artifact": "../phase07-spacious-v1/review.html",
+    "size": [
+      768,
+      544
+    ],
+    "bounds": [
+      32,
+      176,
+      735,
+      479
+    ],
+    "walkable_height": 304,
+    "theme": "rural courtyard with dirt and foliage",
+    "source_patterns": 1048
+  }
+}

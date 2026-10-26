@@ -35,6 +35,10 @@ def main():
     run("python3", "game/art/campaign-whole-scenes-v1/validate_early.py")
     run("python3", "game/tools/test_campaign_rules.py")
     run("python3", "game/tools/test_campaign_route_ops.py")
+    run("python3", "game/art/phase06-three-segments-v1/export-integration.py", "--check")
+    run("python3", "game/art/phase07-urban-v2/export.py", "--check")
+    run("python3", "game/art/phase08-urban-v1/export.py", "--check")
+    run("python3", "game/art/phase09-three-segments-v1/export.py", "--check")
     run("python3", "game/tools/build_campaign_routes.py", "--check")
     run("python3", "game/tools/verify_campaign_route_scenes.py")
     from campaign_corridors import active

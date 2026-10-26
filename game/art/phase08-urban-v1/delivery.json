@@ -1,0 +1,273 @@
+{
+  "date": "2026-10-26",
+  "revision": "Fase8 usa exatamente o cenário urbano atual da fase7",
+  "status": "integrated-functional-with-performance-reservation",
+  "rom_sha256": "5f443b87a621026298538b705b59051d6cfce2bc71c9904db61c5ac45b5280be",
+  "rom_bytes": 2621440,
+  "world": {
+    "width": 768,
+    "height": 544,
+    "size": [
+      768,
+      544
+    ],
+    "bounds": [
+      32,
+      176,
+      735,
+      479
+    ],
+    "start": [
+      64,
+      192
+    ],
+    "solids": [
+      [
+        48,
+        256,
+        112,
+        104,
+        true
+      ],
+      [
+        472,
+        256,
+        104,
+        88,
+        true
+      ],
+      [
+        256,
+        352,
+        104,
+        88,
+        true
+      ],
+      [
+        608,
+        176,
+        104,
+        64,
+        true
+      ]
+    ],
+    "stalls": [
+      [
+        48,
+        256
+      ],
+      [
+        464,
+        248
+      ],
+      [
+        248,
+        344
+      ],
+      [
+        600,
+        136
+      ]
+    ],
+    "manhole": {
+      "canvas": [
+        24,
+        184,
+        80,
+        40
+      ],
+      "landing": [
+        64,
+        192
+      ],
+      "source_phase": "6A/6B",
+      "walkable": true
+    },
+    "targets": [
+      [
+        232,
+        216
+      ],
+      [
+        440,
+        432
+      ],
+      [
+        664,
+        280
+      ]
+    ],
+    "points": [],
+    "geometry": {
+      "footprint": 16,
+      "free_positions": 2561,
+      "reachable_positions": 2561,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 0
+    },
+    "memory": {
+      "source_patterns": 978,
+      "source_graphics_bytes": 31296,
+      "map_bytes": 13056,
+      "scene_cache_slots": 560,
+      "cargo_tiles": 0,
+      "total_reserved_tiles": 636,
+      "resident_bytes": 20352,
+      "spare_tiles": 4,
+      "maximum_visible_patterns": 552,
+      "maximum_window_camera": [
+        0,
+        0
+      ],
+      "cache_heap_bytes": 6436,
+      "lossy_tile_replacements": 0,
+      "transmitter_tiles": 76
+    },
+    "shared_scene": "../phase07-urban-v2/complete-background.png",
+    "all_six_transmitter_frames_pixel_exact": true,
+    "runtime_animation_tile_DMA": false,
+    "transmitter_sprite_chunks": "up to8 nonblank 8x16 strips per transmitter",
+    "background_pixel_identical_to_phase7": true
+  },
+  "checks": {
+    "background_pixel_identical_to_phase7": true,
+    "same_shared_ROM_tiles_map_palette": true,
+    "same_four_stalls_and_collisions": true,
+    "walkable_height_304px": true,
+    "transmitter_all_six_poses_pixel_exact": true,
+    "transmitter_visible_SAT_strips_verified": true,
+    "native_pixels_camera_pause_and_collision_ntsc_pal": true,
+    "three_priority_kills_by_controller_ntsc_pal": true,
+    "mission_and_wave_rules_preserved": true,
+    "all_2561_walkable_grid_positions_connected": true,
+    "VRAM_636_of_640": true,
+    "sprite_scanline_limits_passed": true,
+    "phase07_union_and_selector_regressions": true
+  },
+  "loads": {
+    "ntsc": [
+      {
+        "section": "upper",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 88.48,
+        "sprite_limits": [
+          25,
+          9,
+          144
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      },
+      {
+        "section": "market",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 46.4,
+        "maximum_cpu_pct": 112.74,
+        "sprite_limits": [
+          25,
+          7,
+          112
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      },
+      {
+        "section": "lower",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 52.5,
+        "maximum_cpu_pct": 108.25,
+        "sprite_limits": [
+          25,
+          12,
+          128
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      }
+    ],
+    "pal": [
+      {
+        "section": "upper",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 58.45,
+        "sprite_limits": [
+          25,
+          9,
+          144
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      },
+      {
+        "section": "market",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 76.95,
+        "sprite_limits": [
+          25,
+          7,
+          120
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      },
+      {
+        "section": "lower",
+        "enemies": 6,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 72.75,
+        "sprite_limits": [
+          24,
+          11,
+          120
+        ],
+        "setup": "authored fixed3targets plus3real AI reinforcements; health protected; inactive shots replenished"
+      }
+    ]
+  },
+  "natural_combat": {
+    "ntsc": {
+      "seconds": 30.0,
+      "state": 1,
+      "hp": 44,
+      "peak_enemies": 6,
+      "game_fps": 59.0,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    },
+    "pal": {
+      "seconds": 28.32,
+      "state": 3,
+      "hp": 0,
+      "peak_enemies": 6,
+      "game_fps": 47.987,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    }
+  },
+  "reports": {
+    "ntsc": "../phase09-three-segments-v1/validation/phase08-ntsc/report.json",
+    "pal": "../phase09-three-segments-v1/validation/phase08-pal/report.json",
+    "union-ntsc": "../phase09-three-segments-v1/validation/union-ntsc/report.json",
+    "union-pal": "../phase09-three-segments-v1/validation/union-pal/report.json",
+    "selector-ntsc": "../phase09-three-segments-v1/validation/selector-ntsc/report.json",
+    "selector-pal": "../phase09-three-segments-v1/validation/selector-pal/report.json"
+  },
+  "limits": [
+    "Carga de 20 s por trecho: seis inimigos (três alvos nas posições autorais e três reforços com IA ativa), seis tiros por grupo, vida protegida e reposição somente de tiros inativos. NTSC:46,4–60 FPS; PAL:50 FPS. Meta de60 FPS fixos no NTSC não atingida.",
+    "A conclusão por controle isola reforços e tiros de retorno antes do percurso. Não altera HP dos alvos, posições, mortes ou progresso durante a execução.",
+    "Combate natural de até30 s é uma amostra automática, sem concessões de vida/IA; não certifica dificuldade humana. Hardware físico não testado."
+  ],
+  "human_approval_claimed": false,
+  "physical_hardware_tested": false,
+  "performance_target_met": false
+}

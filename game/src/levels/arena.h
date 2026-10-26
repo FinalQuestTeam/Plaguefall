@@ -24,7 +24,8 @@ typedef struct {
     u16 cameraPlayerY;         // zero = arena follow; corridors retain facade headroom
     const ArenaRect *cameraFocus;
     u8 cameraFocusCount;
-    const ArenaStream *stream; // optional exact ROM-to-visible640-tile cache
+    const ArenaStream *stream; // optional exact ROM-to-visible tile cache
+    bool streamOverlay;       // clear incoming BG_A strips for ground mechanisms
     u16 cameraSouthStart;      // optional player Y where the southern reveal starts
 } ArenaScene;
 typedef struct {
@@ -57,6 +58,8 @@ bool ARENA_npcInMap(void);
 const ArenaNpcVisual *ARENA_npcVisual(void);
 void ARENA_showNpc(bool visible);
 u16 ARENA_npcBar(u16 hp, u16 maximum);
+#define ARENA_WORK_BAR_TILE_COUNT 4
+u16 ARENA_workBar(u16 value,u16 maximum);
 bool ARENA_blocked(s16 x, s16 y, u16 w, u16 h);
 bool ARENA_shotBlocked(s16 x, s16 y);
 bool ARENA_playerShotBlocked(s16 x, s16 y);

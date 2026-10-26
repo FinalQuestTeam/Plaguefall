@@ -29,132 +29,15 @@
     },
     "street": {
       "phase": "9",
-      "status": "isolated revision3; two extended sheds from resident tiles; pending independent whole-map/five-camera review; not integrated or approved",
       "size": [
         2560,
         320
       ],
-      "whole": "complete-native.png",
-      "views": [
-        {
-          "file": "cameras/01.png",
-          "feet": [
-            184,
-            184
-          ],
-          "camera": [
-            32,
-            0
-          ]
-        },
-        {
-          "file": "cameras/02.png",
-          "feet": [
-            608,
-            272
-          ],
-          "camera": [
-            456,
-            72
-          ]
-        },
-        {
-          "file": "cameras/03.png",
-          "feet": [
-            1280,
-            168
-          ],
-          "camera": [
-            1128,
-            0
-          ]
-        },
-        {
-          "file": "cameras/04.png",
-          "feet": [
-            1864,
-            280
-          ],
-          "camera": [
-            1712,
-            80
-          ]
-        },
-        {
-          "file": "cameras/05.png",
-          "feet": [
-            2456,
-            184
-          ],
-          "camera": [
-            2240,
-            0
-          ]
-        }
-      ],
-      "memory": {
-        "tiles": 630,
-        "budget": 640,
-        "tile_bytes": 20160,
-        "map_bytes": 25600,
-        "exact_flip_reused": 12170,
-        "lossy_tile_substitutions": 0,
-        "native_grid": 1,
-        "fits": true,
-        "scene_tiles": 630,
-        "background_tiles": 630,
-        "objective_tiles": 0,
-        "total_tiles": 630,
-        "limit": 640,
-        "free_tiles": 10,
-        "graphics_bytes": 20160,
-        "palette_bytes": 32,
-        "collision_mask_words": 400
-      },
-      "sources": [
-        "../../../campaign-pattern-v2/factory/modules/factory-door.png",
-        "../../../phase01-courtyard-v2/intact-native.png",
-        "../../../phase03-street-v2/source/street-kit.png",
-        "../../../phase04-tunnels-v1/map-native.png",
-        "../../../routes-2048-v2/source/evacuation-cutouts.png",
-        "history/revision-2/complete-native.png"
-      ],
-      "landmarks": [
-        "repair workshops",
-        "wide loading shed with continuous roof/shutter and loaded truck",
-        "wide southern storage shed with32pxrear service lane",
-        "rusty original factory perimeter and exact10/11door"
-      ],
-      "limits": [
-        "Two wide288pxsheds extend one existing128pxworkshop by exact intermediate roof/shutter strips. Their common clay-roof family remains visible; these are not newly generated industrial hangar assets.",
-        "All used8x8tiles and palette are from previous630tileproposal; exact tile reuse proves provenance/memory only, not composition quality.",
-        "The loading truck is now32pxahead of the wide north shed; rear/south warehouse has32pxservice depth before lowerwall.",
-        "Root must inspect whether the broad shutter/roof repetition reads as coherent working sheds rather than duplicated facade fragments.",
-        "Native actor/HUD previews are composed, not running-ROM captures. Active9andsharedC/ROMremainunchanged."
-      ],
-      "native": {
-        "tiles": "native/tiles.bin",
-        "map": "native/map.bin",
-        "palette": "native/palette.bin"
-      },
-      "native_sha256": "227e9a53b29c51ce9dae83f5cbaa271913782cf816cf3c04da380fa39de1b2c3",
-      "factory_entry": {
-        "bbox": [
-          2392,
-          48,
-          80,
-          64
-        ],
-        "source": "art/campaign-pattern-v2/factory/modules/factory-door.png",
-        "rgb_pixel_identical": true
-      },
-      "composition_revision": 3,
-      "review_status": "isolated revision3; two extended sheds from resident tiles; pending independent whole-map/five-camera review; not integrated or approved",
       "bounds": [
         16,
-        112,
+        96,
         2543,
-        303
+        287
       ],
       "start": [
         48,
@@ -162,125 +45,113 @@
       ],
       "solids": [
         [
-          0,
+          128,
           32,
-          2560,
-          80,
+          128,
+          128,
           true
         ],
         [
-          0,
+          672,
+          160,
+          128,
+          128,
+          true
+        ],
+        [
+          1120,
           32,
-          16,
           288,
+          128,
           true
         ],
         [
-          2544,
-          32,
-          16,
+          1760,
+          160,
           288,
-          true
-        ],
-        [
-          0,
-          304,
-          2560,
-          16,
-          true
-        ],
-        [
-          352,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          816,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          1088,
-          224,
-          16,
-          96,
-          true
-        ],
-        [
-          1584,
-          224,
-          16,
-          96,
-          true
-        ],
-        [
-          1712,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          2112,
-          160,
-          16,
-          160,
-          true
-        ],
-        [
-          128,
-          32,
-          128,
           128,
           true
         ],
         [
-          640,
-          160,
-          128,
-          128,
-          true
-        ],
-        [
-          448,
-          176,
+          400,
+          208,
           96,
           64,
           true
         ],
         [
-          1152,
-          32,
-          288,
-          128,
-          true
-        ],
-        [
-          1728,
-          144,
-          288,
-          128,
-          true
-        ],
-        [
           1248,
-          192,
+          224,
+          96,
+          64,
+          true
+        ],
+        [
+          2256,
+          176,
           96,
           64,
           true
         ]
       ],
       "exit": [
-        2384,
-        112,
+        2400,
         96,
-        64
+        112,
+        80
       ],
-      "camera_player_y": 200,
+      "camera_player_y": 184,
+      "camera_south_start": 216,
+      "points": [
+        [
+          56,
+          192
+        ],
+        [
+          296,
+          192
+        ],
+        [
+          592,
+          192
+        ],
+        [
+          592,
+          128
+        ],
+        [
+          856,
+          128
+        ],
+        [
+          1040,
+          128
+        ],
+        [
+          1040,
+          184
+        ],
+        [
+          1464,
+          184
+        ],
+        [
+          1648,
+          184
+        ],
+        [
+          1648,
+          128
+        ],
+        [
+          2120,
+          128
+        ],
+        [
+          2456,
+          128
+        ]
+      ],
       "player_waypoints": [
         [
           48,
@@ -291,76 +162,44 @@
           184
         ],
         [
-          320,
+          584,
           184
         ],
         [
-          320,
-          128
+          584,
+          120
         ],
         [
           848,
-          128
-        ],
-        [
-          1056,
-          128
-        ],
-        [
-          1056,
-          184
-        ],
-        [
-          1112,
-          184
-        ],
-        [
-          1112,
-          264
-        ],
-        [
-          1376,
-          264
-        ],
-        [
-          1552,
-          264
-        ],
-        [
-          1560,
-          264
-        ],
-        [
-          1560,
-          184
-        ],
-        [
-          1680,
-          184
-        ],
-        [
-          1680,
           120
         ],
         [
-          2048,
+          1032,
           120
         ],
         [
-          2160,
+          1032,
+          176
+        ],
+        [
+          1456,
+          176
+        ],
+        [
+          1640,
+          176
+        ],
+        [
+          1640,
           120
         ],
         [
-          2160,
-          128
+          2112,
+          120
         ],
         [
-          2424,
-          128
-        ],
-        [
-          2424,
-          136
+          2448,
+          120
         ]
       ],
       "route_points": [
@@ -373,510 +212,238 @@
           192
         ],
         [
-          328,
+          592,
           192
         ],
         [
-          328,
-          136
+          592,
+          128
         ],
         [
           856,
-          136
-        ],
-        [
-          1064,
-          136
-        ],
-        [
-          1064,
-          192
-        ],
-        [
-          1120,
-          192
-        ],
-        [
-          1120,
-          272
-        ],
-        [
-          1384,
-          272
-        ],
-        [
-          1560,
-          272
-        ],
-        [
-          1568,
-          272
-        ],
-        [
-          1568,
-          192
-        ],
-        [
-          1688,
-          192
-        ],
-        [
-          1688,
           128
         ],
         [
-          2056,
+          1040,
           128
         ],
         [
-          2168,
+          1040,
+          184
+        ],
+        [
+          1464,
+          184
+        ],
+        [
+          1648,
+          184
+        ],
+        [
+          1648,
           128
         ],
         [
-          2168,
-          136
-        ],
-        [
-          2432,
-          136
-        ],
-        [
-          2432,
-          144
-        ]
-      ],
-      "points": [
-        [
-          56,
-          192
-        ],
-        [
-          296,
-          192
-        ],
-        [
-          328,
-          192
-        ],
-        [
-          328,
-          136
-        ],
-        [
-          856,
-          136
-        ],
-        [
-          1064,
-          136
-        ],
-        [
-          1064,
-          192
-        ],
-        [
-          1120,
-          192
-        ],
-        [
-          1120,
-          272
-        ],
-        [
-          1384,
-          272
-        ],
-        [
-          1560,
-          272
-        ],
-        [
-          1568,
-          272
-        ],
-        [
-          1568,
-          192
-        ],
-        [
-          1688,
-          192
-        ],
-        [
-          1688,
+          2120,
           128
         ],
         [
-          2056,
+          2456,
           128
-        ],
-        [
-          2168,
-          128
-        ],
-        [
-          2168,
-          136
-        ],
-        [
-          2432,
-          136
-        ],
-        [
-          2432,
-          144
         ]
       ],
       "geometry_validation": {
         "footprint": 16,
-        "free_positions": 5508,
-        "reachable_positions": 5508,
+        "free_positions": 5611,
+        "reachable_positions": 5611,
         "all_free_positions_connected": true,
-        "swept16pxSamples": 2747
+        "swept16pxSamples": 2587
       },
       "camera_interest": [
         {
-          "id": "repair-workshop",
-          "name": "repair-workshop",
+          "id": "arrival-workshop",
+          "name": "arrival-workshop",
           "bbox": [
             128,
             32,
             128,
             128
           ],
-          "player_feet": [
-            184,
-            184
-          ],
           "position": [
-            184,
-            184
-          ],
-          "camera": [
-            32,
-            0
-          ],
-          "whole_below_HUD": true
+            88,
+            168
+          ]
         },
         {
           "id": "south-workshop",
           "name": "south-workshop",
           "bbox": [
-            640,
+            672,
             160,
             128,
             128
           ],
-          "player_feet": [
-            608,
-            272
-          ],
           "position": [
-            608,
-            272
-          ],
-          "camera": [
-            456,
-            72
-          ],
-          "whole_below_HUD": true
+            632,
+            120
+          ]
         },
         {
           "id": "loading-shed",
           "name": "loading-shed",
           "bbox": [
-            1152,
+            1120,
             32,
             288,
             128
           ],
-          "player_feet": [
-            1280,
-            168
-          ],
           "position": [
-            1280,
+            1080,
             168
-          ],
-          "camera": [
-            1128,
-            0
-          ],
-          "whole_below_HUD": true
+          ]
         },
         {
           "id": "south-warehouse",
           "name": "south-warehouse",
           "bbox": [
-            1728,
-            144,
+            1760,
+            160,
             288,
             128
           ],
-          "player_feet": [
-            1864,
-            280
-          ],
           "position": [
-            1864,
-            280
-          ],
-          "camera": [
-            1712,
-            80
-          ],
-          "whole_below_HUD": true
+            1720,
+            120
+          ]
         },
         {
           "id": "factory-entry",
           "name": "factory-entry",
           "bbox": [
-            2392,
-            48,
+            2416,
+            32,
             80,
             64
-          ],
-          "player_feet": [
-            2456,
-            184
           ],
           "position": [
-            2456,
-            184
-          ],
-          "camera": [
-            2240,
-            0
-          ],
-          "whole_below_HUD": true
+            2448,
+            120
+          ]
         }
       ],
-      "module_provenance": {
-        "dust-floor": {
-          "source": "art/phase01-courtyard-v2/intact-native.png",
-          "crop": [
-            224,
-            160,
-            256,
-            192
-          ],
-          "size": [
-            32,
-            32
-          ],
-          "grid": 1,
-          "exact_flip_unique_tiles": 11
-        },
-        "complete-industrial-wall": {
-          "source": "art/phase04-tunnels-v1/map-native.png",
-          "crop": [
-            80,
-            0,
-            144,
-            80
-          ],
-          "size": [
-            64,
-            80
-          ],
-          "grid": 1,
-          "exact_flip_unique_tiles": 80
-        },
-        "lower-wall": {
-          "source": "art/phase01-courtyard-v2/intact-native.png",
-          "crop": [
-            224,
-            368,
-            256,
-            384
-          ],
-          "size": [
-            32,
-            16
-          ],
-          "grid": 1,
-          "exact_flip_unique_tiles": 7
-        },
-        "left-wall": {
-          "source": "art/phase01-courtyard-v2/intact-native.png",
-          "crop": [
-            0,
-            160,
-            16,
-            192
-          ],
-          "size": [
-            16,
-            32
-          ],
-          "grid": 1,
-          "exact_flip_unique_tiles": 8
-        },
-        "lower-left-corner": {
-          "source": "art/phase01-courtyard-v2/intact-native.png",
-          "crop": [
-            0,
-            352,
-            16,
-            384
-          ],
-          "size": [
-            16,
-            32
-          ],
-          "grid": 1,
-          "exact_flip_unique_tiles": 8
-        },
-        "complete-valve-service-wall": {
-          "source": "art/phase04-tunnels-v1/map-native.png",
-          "crop": [
-            336,
-            0,
-            432,
-            80
-          ],
-          "size": [
-            96,
-            80
-          ],
-          "grid": 1,
-          "exact_flip_unique_tiles": 100
-        },
-        "factory-door-exact": {
-          "source": "art/campaign-pattern-v2/factory/modules/factory-door.png",
-          "crop": null,
-          "size": [
-            80,
-            64
-          ],
-          "grid": 1,
-          "exact_flip_unique_tiles": 66
-        },
-        "whole-workshop": {
-          "source": "art/phase03-street-v2/source/street-kit.png",
-          "cell": [
-            443,
-            0,
-            887,
-            443
-          ],
-          "size": [
-            128,
-            128
-          ],
-          "method": "complete alpha silhouette, nearest at1px, same16 church colors"
-        },
-        "whole-rust-truck": {
-          "source": "art/routes-2048-v2/source/evacuation-cutouts.png",
-          "cell": [
-            638,
-            0,
-            1277,
-            616
-          ],
-          "size": [
-            96,
-            64
-          ],
-          "method": "complete alpha silhouette, nearest at1px, same16 church colors"
-        },
-        "extended-loading-shed": {
-          "source": "art/campaign-corridors-v3/corrections/9-guidebook/history/revision-2/complete-native.png",
-          "crop": [
-            128,
-            32,
-            128,
-            128
-          ],
-          "extension": "left48 + repeated exact center16 + right48",
-          "size": [
-            288,
-            128
-          ]
-        },
-        "extended-south-warehouse": {
-          "source": "art/campaign-corridors-v3/corrections/9-guidebook/history/revision-2/complete-native.png",
-          "crop": [
-            640,
-            160,
-            128,
-            128
-          ],
-          "extension": "left48 + repeated exact center16 + right48",
-          "size": [
-            288,
-            128
-          ]
-        }
+      "streamed_tiles": {
+        "resident_budget": 448,
+        "maximum_visible_tiles": 410,
+        "source_tiles": 827
       },
-      "source_paths_game": [
-        "art/campaign-pattern-v2/factory/modules/factory-door.png",
-        "art/phase01-courtyard-v2/intact-native.png",
-        "art/phase03-street-v2/source/street-kit.png",
-        "art/phase04-tunnels-v1/map-native.png",
-        "art/routes-2048-v2/source/evacuation-cutouts.png",
-        "art/campaign-corridors-v3/corrections/9-guidebook/history/revision-2/complete-native.png"
-      ],
-      "complete": "complete-native.png",
-      "layout": "layout.png",
-      "route_point_semantics": "CENTERS; player_waypoints/start are top-left16px FEET; center=feet+8",
-      "point_semantics": "CENTERS; player_waypoints/start are top-left16px FEET; center=feet+8",
-      "pauses": [],
-      "geometry_notes": [
-        "All solids coincide with visible native walls, complete workshop bodies or truck silhouettes. No solid rect is placed on open floor.",
-        "Full projected bboxes keep the player out of baked architecture; tall volumes and trucks block feet and shots.",
-        "Primary route has8px clearance beyond16x16feet (32px envelope); the upper lane near south workshop has48px depth.",
-        "A visible16px rear strip behind south workshop exists off the main route; it is not an8px-margin route and is not masked by an invisible floor blocker. Physical and8px-margin free regions are each globally connected.",
-        "Global lower/lateral walls and courtyard returns have native whole matching caps/corners; no orphan enclosed yard.",
-        "Exit is the front apron of the exact old80x64factory entrance; story length2560 and single continuation to10 remain unchanged."
-      ],
-      "art_limitations": [
-        "Two wide288pxsheds extend one existing128pxworkshop by exact intermediate roof/shutter strips. Their common clay-roof family remains visible; these are not newly generated industrial hangar assets.",
-        "All used8x8tiles and palette are from previous630tileproposal; exact tile reuse proves provenance/memory only, not composition quality.",
-        "The loading truck is now32pxahead of the wide north shed; rear/south warehouse has32pxservice depth before lowerwall.",
-        "Root must inspect whether the broad shutter/roof repetition reads as coherent working sheds rather than duplicated facade fragments.",
-        "Native actor/HUD previews are composed, not running-ROM captures. Active9andsharedC/ROMremainunchanged."
-      ],
-      "bridge_validation": {
-        "read_via_unmodified_root_bridge": true,
-        "tile_count": 630,
+      "memory": {
+        "source_tiles": 827,
+        "resident_tiles": 448,
+        "resident_bytes": 14336,
         "map_bytes": 25600,
-        "palette_bytes": 32,
-        "source_paths_resolve": true,
-        "all_free_positions_connected": true,
-        "no_activation_or_shared_writes": true
+        "rom_graphics_bytes": 26464,
+        "limit": 640,
+        "lossy_tile_substitutions": 0,
+        "scene_tiles": 448,
+        "background_tiles": 448,
+        "objective_tiles": 0,
+        "total_tiles": 448,
+        "graphics_bytes": 14336,
+        "map_stored_in_rom": true
       },
-      "revision3_tile_proof": {
-        "all_tiles_from_revision2_bank": true,
-        "previous_tiles": 630,
-        "new_unique_tiles": 0,
-        "palette_bytes_unchanged": true,
-        "whole_ends_preserved": {
-          "left": 48,
-          "right": 48,
-          "intermediate_strip": 16
+      "segments": [
+        "A",
+        "B",
+        "B",
+        "B",
+        "C"
+      ],
+      "segment_size": [
+        512,
+        320
+      ],
+      "placements": [
+        {
+          "name": "arrival-workshop",
+          "canvas": [
+            128,
+            32,
+            128,
+            128
+          ]
         },
-        "new_buildings": [
-          [
-            1152,
+        {
+          "name": "south-workshop",
+          "canvas": [
+            672,
+            160,
+            128,
+            128
+          ]
+        },
+        {
+          "name": "loading-shed",
+          "canvas": [
+            1120,
             32,
             288,
             128
-          ],
-          [
-            1728,
-            144,
+          ]
+        },
+        {
+          "name": "south-warehouse",
+          "canvas": [
+            1760,
+            160,
             288,
             128
           ]
-        ],
-        "truck": [
-          1248,
-          192,
-          96,
-          64
-        ]
+        },
+        {
+          "name": "street-truck",
+          "canvas": [
+            400,
+            208,
+            96,
+            64
+          ]
+        },
+        {
+          "name": "loading-truck",
+          "canvas": [
+            1248,
+            224,
+            96,
+            64
+          ]
+        },
+        {
+          "name": "final-truck",
+          "canvas": [
+            2256,
+            176,
+            96,
+            64
+          ]
+        }
+      ],
+      "sources": [
+        "source/industrial-street-base.png",
+        "../phase07-urban-v2/modules/asphalt-repeat.png",
+        "../campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+        "../campaign-corridors-v3/corrections/9-guidebook/modules/whole-rust-truck-rgba.png",
+        "../campaign-corridors-v3/corrections/9-guidebook/modules/factory-door-exact.png",
+        "../campaign-corridors-v3/corrections/9-guidebook/modules/left-wall.png"
+      ],
+      "native": {
+        "tiles": "native/tiles.bin",
+        "map": "native/map.bin",
+        "palette": "native/palette.bin"
       },
+      "status": "integrated; native tests passed; user visual acceptance not claimed",
+      "background_tool": "built-in image_gen",
+      "props_reused_from": "art/campaign-corridors-v3/corrections/9-guidebook",
+      "path_length_px": 2576.0,
       "width": 2560,
       "height": 320,
       "traversal_points": [
@@ -889,108 +456,74 @@
           184
         ],
         [
-          320,
+          584,
           184
         ],
         [
-          320,
-          128
+          584,
+          120
         ],
         [
           848,
-          128
-        ],
-        [
-          1056,
-          128
-        ],
-        [
-          1056,
-          184
-        ],
-        [
-          1112,
-          184
-        ],
-        [
-          1112,
-          264
-        ],
-        [
-          1376,
-          264
-        ],
-        [
-          1552,
-          264
-        ],
-        [
-          1560,
-          264
-        ],
-        [
-          1560,
-          184
-        ],
-        [
-          1680,
-          184
-        ],
-        [
-          1680,
           120
         ],
         [
-          2048,
+          1032,
           120
         ],
         [
-          2160,
+          1032,
+          176
+        ],
+        [
+          1456,
+          176
+        ],
+        [
+          1640,
+          176
+        ],
+        [
+          1640,
           120
         ],
         [
-          2160,
-          128
+          2112,
+          120
         ],
         [
-          2424,
-          128
-        ],
-        [
-          2424,
-          136
+          2448,
+          120
         ]
       ],
+      "pauses": [],
       "walkable": [
         16,
-        112,
+        96,
         2528,
         192
       ],
-      "tiles": 630,
+      "source_tiles": 827,
+      "tiles": 448,
       "tileBudget": 640,
-      "nativeTileSHA256": "351684ccade21b220d220ed9a7d6602ff1844177f8d2d50413d647aa4f4bbaf9",
-      "native_bank": "art/campaign-corridors-v3/corrections/9-guidebook/native",
+      "nativeTileSHA256": "d3fdb48ec5308ba81e2e710c5bbe016acca20d927556ec0b2f26ca5af60208c8",
+      "native_bank": "art/phase09-three-segments-v1/native",
       "geometry": {
-        "swept16pxSamples": 2747
+        "swept16pxSamples": 2587
       },
-      "swept16pxSamples": 2747,
-      "budget": 640,
-      "tile_bytes": 20160,
+      "swept16pxSamples": 2587,
+      "resident_tiles": 448,
+      "resident_bytes": 14336,
       "map_bytes": 25600,
-      "exact_flip_reused": 12170,
-      "lossy_tile_substitutions": 0,
-      "native_grid": 1,
-      "fits": true,
-      "scene_tiles": 630,
-      "background_tiles": 630,
-      "objective_tiles": 0,
-      "total_tiles": 630,
+      "rom_graphics_bytes": 26464,
       "limit": 640,
-      "free_tiles": 10,
-      "graphics_bytes": 20160,
-      "palette_bytes": 32,
-      "collision_mask_words": 400
+      "lossy_tile_substitutions": 0,
+      "scene_tiles": 448,
+      "background_tiles": 448,
+      "objective_tiles": 0,
+      "total_tiles": 448,
+      "graphics_bytes": 14336,
+      "map_stored_in_rom": true
     }
   }
 }

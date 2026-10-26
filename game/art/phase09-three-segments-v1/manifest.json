@@ -1,0 +1,433 @@
+{
+  "phase": "9",
+  "size": [
+    2560,
+    320
+  ],
+  "bounds": [
+    16,
+    96,
+    2543,
+    287
+  ],
+  "start": [
+    48,
+    184
+  ],
+  "solids": [
+    [
+      128,
+      32,
+      128,
+      128,
+      true
+    ],
+    [
+      672,
+      160,
+      128,
+      128,
+      true
+    ],
+    [
+      1120,
+      32,
+      288,
+      128,
+      true
+    ],
+    [
+      1760,
+      160,
+      288,
+      128,
+      true
+    ],
+    [
+      400,
+      208,
+      96,
+      64,
+      true
+    ],
+    [
+      1248,
+      224,
+      96,
+      64,
+      true
+    ],
+    [
+      2256,
+      176,
+      96,
+      64,
+      true
+    ]
+  ],
+  "exit": [
+    2400,
+    96,
+    112,
+    80
+  ],
+  "camera_player_y": 184,
+  "camera_south_start": 216,
+  "points": [
+    [
+      56,
+      192
+    ],
+    [
+      296,
+      192
+    ],
+    [
+      592,
+      192
+    ],
+    [
+      592,
+      128
+    ],
+    [
+      856,
+      128
+    ],
+    [
+      1040,
+      128
+    ],
+    [
+      1040,
+      184
+    ],
+    [
+      1464,
+      184
+    ],
+    [
+      1648,
+      184
+    ],
+    [
+      1648,
+      128
+    ],
+    [
+      2120,
+      128
+    ],
+    [
+      2456,
+      128
+    ]
+  ],
+  "player_waypoints": [
+    [
+      48,
+      184
+    ],
+    [
+      288,
+      184
+    ],
+    [
+      584,
+      184
+    ],
+    [
+      584,
+      120
+    ],
+    [
+      848,
+      120
+    ],
+    [
+      1032,
+      120
+    ],
+    [
+      1032,
+      176
+    ],
+    [
+      1456,
+      176
+    ],
+    [
+      1640,
+      176
+    ],
+    [
+      1640,
+      120
+    ],
+    [
+      2112,
+      120
+    ],
+    [
+      2448,
+      120
+    ]
+  ],
+  "route_points": [
+    [
+      56,
+      192
+    ],
+    [
+      296,
+      192
+    ],
+    [
+      592,
+      192
+    ],
+    [
+      592,
+      128
+    ],
+    [
+      856,
+      128
+    ],
+    [
+      1040,
+      128
+    ],
+    [
+      1040,
+      184
+    ],
+    [
+      1464,
+      184
+    ],
+    [
+      1648,
+      184
+    ],
+    [
+      1648,
+      128
+    ],
+    [
+      2120,
+      128
+    ],
+    [
+      2456,
+      128
+    ]
+  ],
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 5611,
+    "reachable_positions": 5611,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2587,
+    "margin_pixels": 8,
+    "swept_margin_samples": 2587,
+    "minimum_authored_passage_width": 64
+  },
+  "camera_interest": [
+    {
+      "id": "arrival-workshop",
+      "name": "arrival-workshop",
+      "bbox": [
+        128,
+        32,
+        128,
+        128
+      ],
+      "position": [
+        88,
+        168
+      ]
+    },
+    {
+      "id": "south-workshop",
+      "name": "south-workshop",
+      "bbox": [
+        672,
+        160,
+        128,
+        128
+      ],
+      "position": [
+        632,
+        120
+      ]
+    },
+    {
+      "id": "loading-shed",
+      "name": "loading-shed",
+      "bbox": [
+        1120,
+        32,
+        288,
+        128
+      ],
+      "position": [
+        1080,
+        168
+      ]
+    },
+    {
+      "id": "south-warehouse",
+      "name": "south-warehouse",
+      "bbox": [
+        1760,
+        160,
+        288,
+        128
+      ],
+      "position": [
+        1720,
+        120
+      ]
+    },
+    {
+      "id": "factory-entry",
+      "name": "factory-entry",
+      "bbox": [
+        2416,
+        32,
+        80,
+        64
+      ],
+      "position": [
+        2448,
+        120
+      ]
+    }
+  ],
+  "streamed_tiles": {
+    "resident_budget": 448,
+    "maximum_visible_tiles": 410,
+    "source_tiles": 827
+  },
+  "memory": {
+    "source_tiles": 827,
+    "resident_tiles": 448,
+    "resident_bytes": 14336,
+    "map_bytes": 25600,
+    "rom_graphics_bytes": 26464,
+    "limit": 640,
+    "lossy_tile_substitutions": 0
+  },
+  "segments": [
+    "A",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "segment_size": [
+    512,
+    320
+  ],
+  "placements": [
+    {
+      "name": "arrival-workshop",
+      "canvas": [
+        128,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "south-workshop",
+      "canvas": [
+        672,
+        160,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "loading-shed",
+      "canvas": [
+        1120,
+        32,
+        288,
+        128
+      ]
+    },
+    {
+      "name": "south-warehouse",
+      "canvas": [
+        1760,
+        160,
+        288,
+        128
+      ]
+    },
+    {
+      "name": "street-truck",
+      "canvas": [
+        400,
+        208,
+        96,
+        64
+      ]
+    },
+    {
+      "name": "loading-truck",
+      "canvas": [
+        1248,
+        224,
+        96,
+        64
+      ]
+    },
+    {
+      "name": "final-truck",
+      "canvas": [
+        2256,
+        176,
+        96,
+        64
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "source/industrial-street-base.png",
+      "sha256": "828767b97eb350d67fe5cfc866ea12e1cd6ee3d729ed9c60e46484dc77945bed"
+    },
+    {
+      "path": "../phase07-urban-v2/modules/asphalt-repeat.png",
+      "sha256": "9aa2f5d4700749ce4293cf90aba2145296397fdae29e7f1dcbb65251b3d3e1b0"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+      "sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/whole-rust-truck-rgba.png",
+      "sha256": "154b01d908f76b9fc6006476e5f2d1c2072f941ddd06d5c7a8f9920c325ffaa3"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/factory-door-exact.png",
+      "sha256": "72e0db453d8f78cda4d8bcaec75f952238b0a0337ecd4159c75b4e22efb8c457"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/left-wall.png",
+      "sha256": "2165de1c3f432218999ba74f7537e0af07b9828cb207817e95c2e16a758840e1"
+    }
+  ],
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "status": "integrated; native tests passed; user visual acceptance not claimed",
+  "background_tool": "built-in image_gen",
+  "props_reused_from": "art/campaign-corridors-v3/corrections/9-guidebook",
+  "path_length_px": 2576.0
+}

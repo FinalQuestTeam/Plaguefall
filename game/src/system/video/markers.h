@@ -11,4 +11,5 @@ u16 MARKERS_hudArrow(s16 dx,s16 dy);
 const u32 *MARKERS_iconData(u16 symbol);
 void MARKERS_destination(u16 *n,s16 centerX,s16 centerY);
 void MARKERS_alert(u16 *n,s16 centerX,s16 feetY);
+void MARKERS_shoot(u16 *n,s16 centerX,s16 gateTop,u8 hits);
 #endif

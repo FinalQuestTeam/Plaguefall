@@ -1,0 +1,585 @@
+{
+  "date": "2026-10-26",
+  "revision": "Fase9: rua industrial A+B+B+B+C, asfalto e contornos legíveis dos prédios",
+  "status": "integrated-functional; user visual acceptance not claimed",
+  "rom_sha256": "5f443b87a621026298538b705b59051d6cfce2bc71c9904db61c5ac45b5280be",
+  "rom_bytes": 2621440,
+  "emulator": "Genesis Plus GX",
+  "world": {
+    "phase": "9",
+    "size": [
+      2560,
+      320
+    ],
+    "bounds": [
+      16,
+      96,
+      2543,
+      287
+    ],
+    "start": [
+      48,
+      184
+    ],
+    "solids": [
+      [
+        128,
+        32,
+        128,
+        128,
+        true
+      ],
+      [
+        672,
+        160,
+        128,
+        128,
+        true
+      ],
+      [
+        1120,
+        32,
+        288,
+        128,
+        true
+      ],
+      [
+        1760,
+        160,
+        288,
+        128,
+        true
+      ],
+      [
+        400,
+        208,
+        96,
+        64,
+        true
+      ],
+      [
+        1248,
+        224,
+        96,
+        64,
+        true
+      ]
+    ],
+    "exit": [
+      2400,
+      96,
+      112,
+      80
+    ],
+    "camera_player_y": 184,
+    "camera_south_start": 216,
+    "points": [
+      [
+        56,
+        192
+      ],
+      [
+        296,
+        192
+      ],
+      [
+        592,
+        192
+      ],
+      [
+        592,
+        128
+      ],
+      [
+        856,
+        128
+      ],
+      [
+        1040,
+        128
+      ],
+      [
+        1040,
+        184
+      ],
+      [
+        1464,
+        184
+      ],
+      [
+        1648,
+        184
+      ],
+      [
+        1648,
+        128
+      ],
+      [
+        2120,
+        128
+      ],
+      [
+        2456,
+        128
+      ]
+    ],
+    "player_waypoints": [
+      [
+        48,
+        184
+      ],
+      [
+        288,
+        184
+      ],
+      [
+        584,
+        184
+      ],
+      [
+        584,
+        120
+      ],
+      [
+        848,
+        120
+      ],
+      [
+        1032,
+        120
+      ],
+      [
+        1032,
+        176
+      ],
+      [
+        1456,
+        176
+      ],
+      [
+        1640,
+        176
+      ],
+      [
+        1640,
+        120
+      ],
+      [
+        2112,
+        120
+      ],
+      [
+        2448,
+        120
+      ]
+    ],
+    "route_points": [
+      [
+        56,
+        192
+      ],
+      [
+        296,
+        192
+      ],
+      [
+        592,
+        192
+      ],
+      [
+        592,
+        128
+      ],
+      [
+        856,
+        128
+      ],
+      [
+        1040,
+        128
+      ],
+      [
+        1040,
+        184
+      ],
+      [
+        1464,
+        184
+      ],
+      [
+        1648,
+        184
+      ],
+      [
+        1648,
+        128
+      ],
+      [
+        2120,
+        128
+      ],
+      [
+        2456,
+        128
+      ]
+    ],
+    "geometry_validation": {
+      "footprint": 16,
+      "free_positions": 5728,
+      "reachable_positions": 5728,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 2587,
+      "margin_pixels": 8,
+      "swept_margin_samples": 2587,
+      "minimum_authored_passage_width": 64
+    },
+    "camera_interest": [
+      {
+        "id": "arrival-workshop",
+        "name": "arrival-workshop",
+        "bbox": [
+          128,
+          32,
+          128,
+          128
+        ],
+        "position": [
+          88,
+          168
+        ]
+      },
+      {
+        "id": "south-workshop",
+        "name": "south-workshop",
+        "bbox": [
+          672,
+          160,
+          128,
+          128
+        ],
+        "position": [
+          632,
+          120
+        ]
+      },
+      {
+        "id": "loading-shed",
+        "name": "loading-shed",
+        "bbox": [
+          1120,
+          32,
+          288,
+          128
+        ],
+        "position": [
+          1080,
+          168
+        ]
+      },
+      {
+        "id": "south-warehouse",
+        "name": "south-warehouse",
+        "bbox": [
+          1760,
+          160,
+          288,
+          128
+        ],
+        "position": [
+          1720,
+          120
+        ]
+      },
+      {
+        "id": "factory-entry",
+        "name": "factory-entry",
+        "bbox": [
+          2416,
+          32,
+          80,
+          64
+        ],
+        "position": [
+          2448,
+          120
+        ]
+      }
+    ],
+    "streamed_tiles": {
+      "resident_budget": 448,
+      "maximum_visible_tiles": 410,
+      "source_tiles": 827
+    },
+    "memory": {
+      "source_tiles": 827,
+      "resident_tiles": 448,
+      "resident_bytes": 14336,
+      "map_bytes": 25600,
+      "rom_graphics_bytes": 26464,
+      "limit": 640,
+      "lossy_tile_substitutions": 0
+    },
+    "segments": [
+      "A",
+      "B",
+      "B",
+      "B",
+      "C"
+    ],
+    "segment_size": [
+      512,
+      320
+    ],
+    "placements": [
+      {
+        "name": "arrival-workshop",
+        "canvas": [
+          128,
+          32,
+          128,
+          128
+        ]
+      },
+      {
+        "name": "south-workshop",
+        "canvas": [
+          672,
+          160,
+          128,
+          128
+        ]
+      },
+      {
+        "name": "loading-shed",
+        "canvas": [
+          1120,
+          32,
+          288,
+          128
+        ]
+      },
+      {
+        "name": "south-warehouse",
+        "canvas": [
+          1760,
+          160,
+          288,
+          128
+        ]
+      },
+      {
+        "name": "street-truck",
+        "canvas": [
+          400,
+          208,
+          96,
+          64
+        ]
+      },
+      {
+        "name": "loading-truck",
+        "canvas": [
+          1248,
+          224,
+          96,
+          64
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "path": "source/industrial-street-base.png",
+        "sha256": "828767b97eb350d67fe5cfc866ea12e1cd6ee3d729ed9c60e46484dc77945bed"
+      },
+      {
+        "path": "../phase07-urban-v2/modules/asphalt-repeat.png",
+        "sha256": "9aa2f5d4700749ce4293cf90aba2145296397fdae29e7f1dcbb65251b3d3e1b0"
+      },
+      {
+        "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/whole-workshop-rgba.png",
+        "sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437"
+      },
+      {
+        "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/whole-rust-truck-rgba.png",
+        "sha256": "154b01d908f76b9fc6006476e5f2d1c2072f941ddd06d5c7a8f9920c325ffaa3"
+      },
+      {
+        "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/factory-door-exact.png",
+        "sha256": "72e0db453d8f78cda4d8bcaec75f952238b0a0337ecd4159c75b4e22efb8c457"
+      },
+      {
+        "path": "../campaign-corridors-v3/corrections/9-guidebook/modules/left-wall.png",
+        "sha256": "2165de1c3f432218999ba74f7537e0af07b9828cb207817e95c2e16a758840e1"
+      }
+    ],
+    "native": {
+      "tiles": "native/tiles.bin",
+      "map": "native/map.bin",
+      "palette": "native/palette.bin"
+    },
+    "status": "integrated; native tests passed; user visual acceptance not claimed",
+    "background_tool": "built-in image_gen",
+    "props_reused_from": "art/campaign-corridors-v3/corrections/9-guidebook",
+    "path_length_px": 2576.0
+  },
+  "checks": {
+    "whole_native_scene_reviewed": true,
+    "A_B_B_B_C_background": true,
+    "identical_middle_modules": true,
+    "matching_seam_collars": true,
+    "no_internal_vertical_dividers": true,
+    "original_workshops_trucks_preserved": true,
+    "original_factory_entry_RGB_identical": true,
+    "three_primary_detours_required": true,
+    "no_straight_horizontal_traversal": true,
+    "minimum_main_passage_width_64px": true,
+    "route_16px_feet_plus_8px_margin": true,
+    "all_5728_walkable_positions_connected": true,
+    "109_camera_samples_per_region_exact_native_pixels": true,
+    "collision_and_world_bounds_ntsc_pal": true,
+    "pause_releases_and_restores_cache": true,
+    "controller_only_isolated_full_traversal": true,
+    "zero_streaming_faults": true,
+    "maximum_load_60_NTSC_50_PAL": true,
+    "sprite_limits_passed": true,
+    "factory10_11_native_data_unchanged": true,
+    "factory10_11_regressions": true,
+    "phase07_08_13A_13B_regressions": true,
+    "all19_selector_entries": true,
+    "generated_resources_check": true
+  },
+  "loads": {
+    "ntsc": [
+      {
+        "section": "arrival",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 73.88,
+        "sprite_limits": [
+          15,
+          6,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      },
+      {
+        "section": "loading",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 76.71,
+        "sprite_limits": [
+          13,
+          5,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      },
+      {
+        "section": "warehouse",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 73.05,
+        "sprite_limits": [
+          15,
+          6,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      }
+    ],
+    "pal": [
+      {
+        "section": "arrival",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 48.39,
+        "sprite_limits": [
+          15,
+          5,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      },
+      {
+        "section": "loading",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 50.78,
+        "sprite_limits": [
+          15,
+          5,
+          112
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      },
+      {
+        "section": "warehouse",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 48.44,
+        "sprite_limits": [
+          15,
+          7,
+          120
+        ],
+        "setup": "authored positions; real enemy AI; health protected; inactive shots replenished"
+      }
+    ]
+  },
+  "natural_combat": {
+    "ntsc": {
+      "seconds": 30.0,
+      "state": 1,
+      "hp": 60,
+      "peak_enemies": 3,
+      "game_fps": 60.0,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    },
+    "pal": {
+      "seconds": 27.62,
+      "state": 3,
+      "hp": 0,
+      "peak_enemies": 3,
+      "game_fps": 48.226,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    }
+  },
+  "reports": {
+    "factory-ntsc": "validation/factory-ntsc/report.json",
+    "factory-pal": "validation/factory-pal/report.json",
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json",
+    "phase07-ntsc": "validation/phase07-ntsc/report.json",
+    "phase07-pal": "validation/phase07-pal/report.json",
+    "phase08-ntsc": "validation/phase08-ntsc/report.json",
+    "phase08-pal": "validation/phase08-pal/report.json",
+    "selector-ntsc": "validation/selector-ntsc/report.json",
+    "selector-pal": "validation/selector-pal/report.json",
+    "union-ntsc": "validation/union-ntsc/report.json",
+    "union-pal": "validation/union-pal/report.json"
+  },
+  "limits": [
+    "A travessia de validação isola inimigos antes de começar; a execução usa somente controles, sem escrita de posição ou progresso. Inclui pequenas esperas para conferir a câmera;24,13s NTSC e28,88s PAL não são classificação de duração de uma partida humana.",
+    "A carga usa3inimigos com IA ativa,4tiros por grupo,20s em cada um de3trechos. Vida protegida e reposição somente dos tiros inativos.60/50FPS refere-se a esses cenários medidos.",
+    "Combate natural de até30s é amostra separada sem concessões de vida/IA. Em PAL termina em derrota aos27,62s, com48,226FPS médios. Não certifica dificuldade humana nem desempenho em qualquer situação. Hardware físico não testado.",
+    "A revisão mantém as silhuetas existentes e usa a base gerada pelo ImageGen integrado para os perímetros. O asfalto final vem da fase7; a textura de piso gerada foi rejeitada por excesso de repetição.",
+    "A imagem inteira e os elementos têm contornos completos. Construções podem sair naturalmente pelas bordas da câmera durante a rolagem; isso é distinto de fragmentos cortados no asset."
+  ],
+  "physical_hardware_tested": false,
+  "human_approval_claimed": false,
+  "performance_target_met_for_measured_load": true
+}

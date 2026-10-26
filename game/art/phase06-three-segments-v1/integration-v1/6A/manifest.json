@@ -1,0 +1,385 @@
+{
+  "phase": "6A",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    24,
+    80,
+    3047,
+    271
+  ],
+  "start": [
+    104,
+    192
+  ],
+  "solids": [
+    [
+      56,
+      80,
+      104,
+      88,
+      true
+    ],
+    [
+      2880,
+      80,
+      128,
+      64,
+      true
+    ],
+    [
+      320,
+      224,
+      32,
+      16,
+      true
+    ],
+    [
+      656,
+      112,
+      80,
+      48,
+      true
+    ],
+    [
+      880,
+      240,
+      32,
+      16,
+      true
+    ],
+    [
+      1168,
+      248,
+      48,
+      16,
+      false
+    ],
+    [
+      1376,
+      128,
+      32,
+      16,
+      true
+    ],
+    [
+      1672,
+      112,
+      80,
+      48,
+      true
+    ],
+    [
+      1968,
+      248,
+      48,
+      16,
+      false
+    ],
+    [
+      2184,
+      240,
+      32,
+      16,
+      true
+    ],
+    [
+      2368,
+      128,
+      40,
+      24,
+      false
+    ],
+    [
+      832,
+      80,
+      32,
+      32,
+      true
+    ],
+    [
+      832,
+      176,
+      32,
+      96,
+      true
+    ],
+    [
+      1856,
+      80,
+      32,
+      112,
+      true
+    ],
+    [
+      1856,
+      256,
+      32,
+      16,
+      true
+    ]
+  ],
+  "exit": [
+    2912,
+    144,
+    64,
+    48
+  ],
+  "gates": [
+    [
+      840,
+      112,
+      16,
+      64
+    ],
+    [
+      1864,
+      192,
+      16,
+      64
+    ]
+  ],
+  "valves": [],
+  "valve_approaches": [],
+  "gate_shot_approaches": [
+    [
+      760,
+      152
+    ],
+    [
+      1784,
+      232
+    ]
+  ],
+  "camera_player_y": 200,
+  "camera_south_start": 192,
+  "camera_interest": [
+    {
+      "name": "Entrada dos esgotos",
+      "bbox": [
+        56,
+        24,
+        102,
+        144
+      ],
+      "preferred_feet": [
+        104,
+        192
+      ]
+    },
+    {
+      "name": "Acesso ao abrigo",
+      "bbox": [
+        2880,
+        24,
+        128,
+        115
+      ],
+      "preferred_feet": [
+        2936,
+        176
+      ]
+    }
+  ],
+  "sources": [
+    "../../palette-preview/panorama-6B-estatico.png"
+  ],
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "status": "native_export_for_active_phase06",
+  "streamed_tiles": {
+    "source_count": 1095,
+    "resident_budget": 456,
+    "maximum_visible_tiles": 437,
+    "peak_cell": [
+      5,
+      3
+    ],
+    "window": [
+      41,
+      26
+    ]
+  },
+  "memory": {
+    "source_tiles": 1095,
+    "resident_budget": 456,
+    "maximum_visible_tiles": 437,
+    "source_graphics_rom_bytes": 35040,
+    "cache_heap_bytes": 5838,
+    "map_bytes": 30720,
+    "objective_tiles": 112
+  },
+  "objective_tiles": 112,
+  "sequence": [
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "route_points": [
+    [
+      112,
+      200
+    ],
+    [
+      568,
+      200
+    ],
+    [
+      568,
+      224
+    ],
+    [
+      816,
+      224
+    ],
+    [
+      816,
+      144
+    ],
+    [
+      904,
+      144
+    ],
+    [
+      1128,
+      144
+    ],
+    [
+      1128,
+      184
+    ],
+    [
+      1336,
+      184
+    ],
+    [
+      1592,
+      184
+    ],
+    [
+      1592,
+      224
+    ],
+    [
+      1840,
+      224
+    ],
+    [
+      1920,
+      224
+    ],
+    [
+      2088,
+      224
+    ],
+    [
+      2088,
+      184
+    ],
+    [
+      2536,
+      184
+    ],
+    [
+      2944,
+      184
+    ]
+  ],
+  "points": [
+    [
+      112,
+      200
+    ],
+    [
+      568,
+      200
+    ],
+    [
+      568,
+      224
+    ],
+    [
+      816,
+      224
+    ],
+    [
+      816,
+      144
+    ],
+    [
+      904,
+      144
+    ],
+    [
+      1128,
+      144
+    ],
+    [
+      1128,
+      184
+    ],
+    [
+      1336,
+      184
+    ],
+    [
+      1592,
+      184
+    ],
+    [
+      1592,
+      224
+    ],
+    [
+      1840,
+      224
+    ],
+    [
+      1920,
+      224
+    ],
+    [
+      2088,
+      224
+    ],
+    [
+      2088,
+      184
+    ],
+    [
+      2536,
+      184
+    ],
+    [
+      2944,
+      184
+    ]
+  ],
+  "pauses": [
+    2,
+    8,
+    14,
+    15
+  ],
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 7941,
+    "reachable_positions": 7941,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 3072
+  },
+  "gate_geometry_validation": {
+    "closed_gates_disconnect": true,
+    "first_open_second_still_blocks": true,
+    "both_open_connect": true,
+    "opening_height": 64
+  }
+}

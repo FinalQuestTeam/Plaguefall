@@ -1,10 +1,10 @@
 # Guia dos três blocos de cenário da fase 6
 
-A fase 6 será composta por três tipos de imagem: entrada dos esgotos, galeria repetível e saída para o abrigo do Último Chão. A montagem proposta mantém os 3.072 pixels de deslocamento e a escolta de Dinorah. As variantes 6A e 6B compartilham a arquitetura; os mecanismos e a distribuição dos obstáculos distinguem os percursos.
+A fase 6 é composta por três tipos de imagem: entrada dos esgotos, galeria repetível e saída para o abrigo do Último Chão. A montagem proposta mantém os 3.072 pixels de deslocamento e a escolta de Dinorah. As variantes 6A e 6B compartilham a arquitetura; os mecanismos e a distribuição dos obstáculos distinguem os percursos.
 
 [Representação visual dos três blocos](../../art/phase06-three-segments-v1/review.html): panorama completo, variação 6B, objetos, emendas e exploração de câmera.
 
-Esta especificação orienta a nova composição. O cenário atualmente integrado permanece como referência de materiais e escala até a produção e revisão do novo panorama.
+A composição foi integrada em 6A e 6B. A [revisão da ROM](../../art/phase06-three-segments-v1/integration-v1/review.html) reúne os panoramas nativos, as capturas e os limites medidos. A representação visual anterior permanece como registro da proposta.
 
 ## Montagem dos blocos
 
@@ -73,11 +73,15 @@ A escada, porta, batentes e patamar devem formar uma estrutura completa. O enqua
 
 ## Diferenças entre 6A e 6B
 
-Na **6A**, a evacuação completa conduz à travessia direta: obstáculos comuns e pontos de cobertura, com Dinorah indicando o caminho até os recursos da base. Não haverá portas fechadas ou válvulas desenhadas como objetivos obrigatórios nesta variante.
+Na **6A**, a evacuação completa conduz à escolta com dois portões verticais. Damião destrói cada folha com quatro tiros e espera 0,8 segundo pela queda. Os apoios de alvenaria fecham o restante da seção; os pontos da escolta levam Dinorah pelos vãos. Esta variante não carrega válvulas e não possui vapor de pressão.
 
 Na **6B**, as perdas civis permanecem na história e o ramal exige dois conjuntos de válvula e portão. Propor o primeiro dentro de B1 e o segundo dentro de B3, com todos os componentes afastados das emendas. Cada conjunto usa peças próprias sobre a mesma base de galeria; não vira um quarto tipo de bloco de 512 px.
 
 Cada portão precisa de batentes e paredes ligados aos limites visíveis, de modo que a folha realmente feche a passagem. Depois de aberto, sobra um vão de pelo menos 64 px para a escolta. Posicionar a válvula antes do bloqueio, com seu lado de operação protegido e um bolsão para Dinorah esperar fora do vapor e da animação de queda.
+
+Durante a operação da válvula, mostrar a barra sobre o objeto e o rótulo ABRINDO no HUD. Atirar interrompe o trabalho, que permanece salvo ao recuar ou pausar. A vida da Dinorah usa gráficos distintos para não sobrescrever a barra de progresso.
+
+A referência de destruição usa uma pequena placa com A + mira e quatro marcas que preenchem por impacto, dentro do enquadramento e abaixo do HUD. Na 6A aparece imediatamente; na 6B, depois de aliviar a pressão. Ao quarto impacto o botão desaparece; as marcas somem com o fim da queda. Os 45 tiles residentes de marcadores usam a reserva própria já existente, independente do cenário; são 21 tiles/672 bytes adicionais carregados.
 
 Preservar os verbos já implementados: aliviar a pressão, atingir a folha com quatro tiros e aguardar sua queda para atravessar. Tubos e bocal devem explicar visualmente a ligação entre válvula, vapor e portão. Os estados fechado, aliviado, danificado, caindo e aberto serão avaliados sobre a mesma composição.
 
@@ -97,11 +101,13 @@ Exportar as peças com transparência fora da silhueta, sombra inteira e âncora
 
 ## Memória e produção nativa
 
-O limite residente continua sendo 640 tiles, ou 20 KiB de VRAM para cenário e objetivos desse conjunto. Na 6B, os mecanismos existentes reservam 256 tiles; a base e os objetos estáticos devem caber nos 384 restantes. A meta para o kit comum é, portanto, até 384 tiles de cenário, validada depois da composição. A 6A atual usa 554 tiles e a 6B atual usa 368 de cenário mais 256 de objetivos; esses valores são referências da arte existente, não medições da proposta.
+O limite de cenário e objetivos continua sendo 640 tiles, ou 20 KiB de VRAM. A integração usa 456 posições de cache de cenário; a 6B acrescenta 112 tiles do portão vertical e 65 da válvula. A barra da válvula usa mais quatro tiles independentes da vida da Dinorah, totalizando 637 tiles / 20.384 bytes na 6B. A 6A usa 568 tiles, pois carrega somente o portão junto ao cenário. As seis poses dos mecanismos permanecem residentes. O portão vertical é compartilhado por 6A e 6B; as outras missões continuam com seu próprio material.
 
-Repetir concreto, alvenaria e canal economiza padrões. Repetir a imagem B não garante sozinho o orçamento: novos detalhes e sobreposições podem gerar tiles adicionais. Contar o atlas completo, preservar a paleta nativa e conferir a reconstrução exata. Simplificar materiais secundários se necessário; não trocar tiles por padrões apenas parecidos.
+Cada variante conserva 1.095 padrões exatos na ROM, em 35.040 bytes; uma janela conservadora de 41×26 tiles exige no máximo 437 padrões simultâneos. O cache carrega somente os padrões necessários, sem substituir pixels por aproximações. Seu controle usa 5.838 bytes de heap e é liberado durante a pausa, mantendo a restauração das mesmas posições de VRAM.
 
-Um mapa completo de 3072×320 com entradas de 16 bits ocupa 30.720 bytes na ROM. Repetir os módulos reaproveita gráficos, mas só reduzirá esses dados do mapa se a futura integração também consultar a composição por blocos. Não presumir essa otimização apenas pela existência de três PNGs. O cache de cenário da fase 3 não é uma exigência para esta proposta.
+O mapa completo de 3072×320 ocupa 30.720 bytes na ROM por variante. Repetir B reaproveita os padrões gráficos, mas o mapa continua exportado por inteiro. Cenário e mecanismos usam suas respectivas paletas nativas; a montagem completa da integração reconstrói ambas.
+
+A carga com três inimigos e quatro tiros em cada grupo foi medida em três trechos, com IA, animação, áudio e patrulha ativos. A revisão atual registrou 57,8–59,467 FPS em NTSC e 49,2–50 em PAL na 6A; na 6B, 55,6–59,267 em NTSC e 48,933–50 em PAL. Esses resultados incluem quedas e não autorizam afirmar 60/50 FPS fixos. A travessia inteira foi validada com combate isolado; pressão, vapor, tiros e queda dos dois portões foram testados separadamente com as interações reais.
 
 ## Entregas e revisão do conjunto
 

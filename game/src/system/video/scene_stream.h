@@ -9,5 +9,6 @@ u16 SCENESTREAM_attr(s16 col,s16 row);
 void SCENESTREAM_suspend(void);
 bool SCENESTREAM_resume(void);
 bool SCENESTREAM_heavyFrame(void);
+bool SCENESTREAM_active(void);
 extern volatile u16 sceneStreamFaults,sceneStreamPeak,sceneStreamUploads;
 #endif

@@ -1,17 +1,17 @@
 // Exact ROM patterns are cached only while visible below the24px WINDOW HUD.
-// No approximate pattern substitution. The640-slot scenery reservation is fixed.
+// No approximate pattern substitution. Each scene declares its resident budget.
 #include "system/video/scene_stream.h"
 #include "system/video/screens/loading.h"
 #include "system/video/screens/hud.h"
 #include "system/video/floor.h"
 #include "levels/courtyard_data.h"
-#define CAP COURTYARD_TILE_COUNT
+#define CAP capacity
 #define BASE (TILE_USER_INDEX+FLOOR_TILE_BASE)
 #define NONE 0xffff
 static const ArenaScene *streamScene;
 static u16 *persistent,*work,*owner,*location,*refs,*freeNext,*freePrev;
 static bool suspended;
-static u16 freeCount,freeHead,freeTail;
+static u16 capacity,freeCount,freeHead,freeTail;
 static s16 left=-1,right,top,bottom;
 static s16 lastPixelX,warmCol=-1,warmRow;
 static s8 warmDirection=1;
@@ -43,7 +43,8 @@ static bool allocateWork(void)
 bool SCENESTREAM_begin(const ArenaScene *scene)
 {
     SCENESTREAM_end();sceneStreamFaults=sceneStreamPeak=sceneStreamUploads=0;
-    streamScene=scene;
+    if(!scene->tileCount || scene->tileCount>COURTYARD_TILE_COUNT)return FALSE;
+    capacity=scene->tileCount;streamScene=scene;
     persistent=MEM_alloc(CAP*2);
     if(!persistent){sceneStreamFaults++;streamScene=NULL;return FALSE;}
     owner=persistent;memset(owner,255,CAP*2);left=-1;warmCol=-1;lastPixelX=-1;warmDirection=1;
@@ -143,6 +144,11 @@ static void writeColumn(s16 x,s16 t,s16 b)
     u16 *data=DMA_allocateAndQueueDma(DMA_VRAM,VDP_BG_B+(x&63)*2,32,128);
     if(!data){sceneStreamFaults++;return;}
     memset(data,0,64);
+    if(streamScene->streamOverlay) {
+        u16 *overlay=DMA_allocateAndQueueDma(DMA_VRAM,VDP_BG_A+(x&63)*2,32,128);
+        if(!overlay){sceneStreamFaults++;return;}
+        memset(overlay,0,64);
+    }
     const u16 *p=rowAt(t)+x;
     for(s16 y=t;y<=b;y++,p+=streamScene->cols)data[y&31]=TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,BASE+location[*p]);
 }
@@ -151,6 +157,11 @@ static void writeRow(s16 y,s16 l,s16 r)
     u16 *data=DMA_allocateAndQueueDma(DMA_VRAM,VDP_BG_B+(y&31)*128,64,2);
     if(!data){sceneStreamFaults++;return;}
     memset(data,0,128);
+    if(streamScene->streamOverlay) {
+        u16 *overlay=DMA_allocateAndQueueDma(DMA_VRAM,VDP_BG_A+(y&31)*128,64,2);
+        if(!overlay){sceneStreamFaults++;return;}
+        memset(overlay,0,128);
+    }
     for(s16 x=l;x<=r;x++)data[x&63]=attrAt(x,y);
 }
 static void warmAhead(void)
@@ -201,8 +212,8 @@ bool SCENESTREAM_move(s16 px,s16 py)
         cells(right+1,it,r-right,ih,TRUE,FALSE);
     }
     // Batch each entering strip. Patterns, map and camera commit together in
-    // VBlank; no per-cell VRAM port stalls during active display. BG_A was
-    // cleared by ARENA_draw and is unused by this scenery-only stream.
+    // VBlank; no per-cell VRAM port stalls during active display. Clear the
+    // same BG_A strips before mission mechanisms repaint their visible edges.
     if(initial) {
         for(s16 y=t;y<=b;y++)for(s16 x=l;x<=r;x++)VDP_setTileMapXY(BG_B,attrAt(x,y),x&63,y&31);
     } else {
@@ -225,3 +236,6 @@ u16 SCENESTREAM_attr(s16 col,s16 row)
     const u16 slot=location[streamScene->map[row*streamScene->cols+col]];
     return slot==NONE ? 0 : TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,BASE+slot);
 }
+
+bool SCENESTREAM_active(void)
+{return streamScene!=NULL;}

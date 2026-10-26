@@ -21,6 +21,7 @@
 
 #define SCENE_BASE (TILE_USER_INDEX + FLOOR_TILE_BASE)
 #define NPC_BAR_BASE (SCENE_BASE + COURTYARD_TILE_COUNT + HUD_OPAQUE_COUNT)
+#define WORK_BAR_BASE (SCENE_BASE + COURTYARD_TILE_COUNT - ARENA_WORK_BAR_TILE_COUNT)
 typedef char scene_vram_fits[(NPC_BAR_BASE + 4 <= 1440) ? 1 : -1];
 
 // Low evacuation belongings: solid for feet, below the projectile plane.
@@ -59,6 +60,7 @@ static s16 shotLeft,shotTop,shotRight,shotBottom;
 static const u16 emptyMapLine[64]={0};
 static bool npcVisible=TRUE;
 static u16 npcBarHp=0xFFFF, npcBarMaximum;
+static u16 workBarValue=0xFFFF,workBarMaximum;
 static void streamRow(u16 row,TransferMethod method,bool clearDecals);
 static void streamColumn(u16 col);
 static u16 mapCols(void){return scene->cols ? scene->cols : 64;}
@@ -161,22 +163,26 @@ void ARENA_showNpc(bool visible)
     }
 }
 
-u16 ARENA_npcBar(u16 hp,u16 maximum)
+static u16 drawBar(u16 value,u16 maximum,u16 base,u16 *previous,u16 *previousMaximum)
 {
-    if(hp!=npcBarHp || maximum!=npcBarMaximum) {
+    if(value!=*previous || maximum!=*previousMaximum) {
         if(DMA_getQueueTransferSize()+128+1024>DMA_TRANSFER_CAPACITY_NTSC ||
-           DMA_getQueueSize()+3>=DMA_getMaxQueueSize())return npcBarHp==0xFFFF ? 0 : NPC_BAR_BASE;
-        const u16 fill=maximum ? (u32)hp*30/maximum : 0;
+           DMA_getQueueSize()+3>=DMA_getMaxQueueSize())return *previous==0xFFFF ? 0 : base;
+        const u16 fill=maximum ? (u32)value*30/maximum : 0;
         u32 data[32]={0};
         for(u16 x=0;x<32;x++)for(u16 y=1;y<=5;y++) {
             const u16 color=(y==1 || y==5 || x==0 || x==31) ? 1 : x<=fill ? 4 : 11;
             data[(x/8)*8+y]|=(u32)color<<((7-(x&7))*4);
         }
-        LOADING_tiles(data,NPC_BAR_BASE,4,DMA_QUEUE_COPY);
-        npcBarHp=hp;npcBarMaximum=maximum;
+        LOADING_tiles(data,base,4,DMA_QUEUE_COPY);
+        *previous=value;*previousMaximum=maximum;
     }
-    return NPC_BAR_BASE;
+    return base;
 }
+u16 ARENA_npcBar(u16 hp,u16 maximum)
+{return drawBar(hp,maximum,NPC_BAR_BASE,&npcBarHp,&npcBarMaximum);}
+u16 ARENA_workBar(u16 value,u16 maximum)
+{return drawBar(value,maximum,WORK_BAR_BASE,&workBarValue,&workBarMaximum);}
 
 void ARENA_update(void)
 {
@@ -466,7 +472,7 @@ void ARENA_draw(void)
     const bool enabled=VDP_getEnable();
     LOADING_setEnable(FALSE);residentTop=-1;residentLeft=0;
     glowClock=0;glowCursor=0;glowPhase=0;glowUploading=FALSE;
-    npcVisible=TRUE;npcBarHp=0xFFFF;
+    npcVisible=TRUE;npcBarHp=workBarValue=0xFFFF;
     VDP_clearPlane(BG_A,TRUE);if(!LOADING_active())VDP_clearPlane(WINDOW,TRUE);
     VDP_loadFontData((const u32 *)intro_font,96,DMA);
     LOADING_setColor(1,0);VDP_setTextPriority(TRUE);

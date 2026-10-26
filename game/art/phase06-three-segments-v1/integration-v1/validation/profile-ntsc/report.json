@@ -1,0 +1,257 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "96a9d1485bd704979bba53c87b450ad134ba4f54bd4d76f31a9d4270f797c77e",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "96a9d1485bd704979bba53c87b450ad134ba4f54bd4d76f31a9d4270f797c77e",
+  "movieEnabled": false,
+  "checks": {
+    "06b-authored-cap-load": [
+      {
+        "section": "entrada",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 900,
+        "game_frames": 868,
+        "game_fps": 57.867,
+        "mean_cpu_pct": 85.14,
+        "p95_cpu_pct": 89.7,
+        "maximum_cpu_pct": 93.12,
+        "camera_range": [
+          108,
+          172
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          24,
+          12,
+          160
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            32
+          ]
+        ],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            868
+          ],
+          [
+            "AUDIO_frameEnd",
+            11
+          ],
+          [
+            "applyVoice.isra.0",
+            6
+          ],
+          [
+            "MUSIC_update",
+            3
+          ],
+          [
+            "SFX_update",
+            3
+          ],
+          [
+            "MARKERS_alert",
+            2
+          ],
+          [
+            "0x5dff6",
+            1
+          ],
+          [
+            "drawShots.constprop.0",
+            1
+          ],
+          [
+            "0x5df7a",
+            1
+          ],
+          [
+            "0x5dfa2",
+            1
+          ],
+          [
+            "0x5dff8",
+            1
+          ],
+          [
+            "MARKERS_destination",
+            1
+          ]
+        ]
+      },
+      {
+        "section": "meio",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 900,
+        "game_frames": 784,
+        "game_fps": 52.267,
+        "mean_cpu_pct": 88.76,
+        "p95_cpu_pct": 94.04,
+        "maximum_cpu_pct": 106.64,
+        "camera_range": [
+          1268,
+          1332
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          24,
+          11,
+          144
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            116
+          ]
+        ],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            787
+          ],
+          [
+            "MUSIC_update",
+            21
+          ],
+          [
+            "SPRITES_draw",
+            14
+          ],
+          [
+            "SPRITES_emit.part.0",
+            13
+          ],
+          [
+            "AUDIO_frameEnd",
+            13
+          ],
+          [
+            "DMA_queueDmaFast",
+            11
+          ],
+          [
+            "applyVoice.isra.0",
+            11
+          ],
+          [
+            "drawShots.constprop.0",
+            5
+          ],
+          [
+            "SFX_update",
+            5
+          ],
+          [
+            "0x5df9a",
+            4
+          ],
+          [
+            "0x5df7a",
+            2
+          ],
+          [
+            "MARKERS_alert",
+            2
+          ]
+        ]
+      },
+      {
+        "section": "portao",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "physical_frames": 900,
+        "game_frames": 811,
+        "game_fps": 54.067,
+        "mean_cpu_pct": 88.42,
+        "p95_cpu_pct": 101.32,
+        "maximum_cpu_pct": 114.6,
+        "camera_range": [
+          1588,
+          1652
+        ],
+        "retarget_values": 17,
+        "sprite_limits": [
+          23,
+          12,
+          152
+        ],
+        "active_AI_and_trajectories_retained": true,
+        "miss_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            89
+          ]
+        ],
+        "all_pc": [
+          [
+            "VDP_waitVBlank.constprop.0",
+            811
+          ],
+          [
+            "SPRITES_emit.part.0",
+            13
+          ],
+          [
+            "text",
+            12
+          ],
+          [
+            "AUDIO_frameEnd",
+            10
+          ],
+          [
+            "MUSIC_update",
+            9
+          ],
+          [
+            "applyVoice.isra.0",
+            6
+          ],
+          [
+            "drawShots.constprop.0",
+            5
+          ],
+          [
+            "DMA_queueDmaFast",
+            5
+          ],
+          [
+            "drawShots.constprop.1",
+            4
+          ],
+          [
+            "MARKERS_destination",
+            3
+          ],
+          [
+            "MARKERS_alert",
+            3
+          ],
+          [
+            "SPRITES_draw",
+            3
+          ]
+        ]
+      }
+    ],
+    "06b-natural-combat-smoke": {
+      "seconds": 24.53,
+      "state": 3,
+      "minimum_player_hp": 0,
+      "dinorah_hp": 68,
+      "maximum_enemies": 2,
+      "game_fps": 57.269,
+      "ram_health_AI_grants": false,
+      "scope": "stationary defense, not a complete combat escort or human difficulty approval"
+    }
+  },
+  "scope": "6A/6B controller entry, escort traversal and pause; RAM isolates contact/camera/mechanism cases. Exact visible VRAM checked against source patterns. Load retains native AI clocks and active trajectories. Natural combat has no RAM health/AI grants."
+}

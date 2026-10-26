@@ -5,72 +5,40 @@
       184
     ],
     [
-      320,
+      584,
       184
     ],
     [
-      320,
-      128
+      584,
+      120
     ],
     [
       848,
-      128
-    ],
-    [
-      1056,
-      128
-    ],
-    [
-      1056,
-      184
-    ],
-    [
-      1112,
-      184
-    ],
-    [
-      1112,
-      264
-    ],
-    [
-      1376,
-      264
-    ],
-    [
-      1552,
-      264
-    ],
-    [
-      1560,
-      264
-    ],
-    [
-      1560,
-      184
-    ],
-    [
-      1680,
-      184
-    ],
-    [
-      1680,
       120
     ],
     [
-      2048,
+      1032,
       120
     ],
     [
-      2160,
+      1032,
+      176
+    ],
+    [
+      1456,
+      176
+    ],
+    [
+      1640,
+      176
+    ],
+    [
+      1640,
       120
     ],
     [
-      2160,
-      128
-    ],
-    [
-      2424,
-      128
+      2112,
+      120
     ]
   ],
   "street_route": [
@@ -83,87 +51,55 @@
       192
     ],
     [
-      328,
+      592,
       192
     ],
     [
-      328,
-      136
+      592,
+      128
     ],
     [
       856,
-      136
-    ],
-    [
-      1064,
-      136
-    ],
-    [
-      1064,
-      192
-    ],
-    [
-      1120,
-      192
-    ],
-    [
-      1120,
-      272
-    ],
-    [
-      1384,
-      272
-    ],
-    [
-      1560,
-      272
-    ],
-    [
-      1568,
-      272
-    ],
-    [
-      1568,
-      192
-    ],
-    [
-      1688,
-      192
-    ],
-    [
-      1688,
       128
     ],
     [
-      2056,
+      1040,
       128
     ],
     [
-      2168,
+      1040,
+      184
+    ],
+    [
+      1464,
+      184
+    ],
+    [
+      1648,
+      184
+    ],
+    [
+      1648,
       128
     ],
     [
-      2168,
-      136
+      2120,
+      128
     ],
     [
-      2432,
-      136
-    ],
-    [
-      2432,
-      144
+      2456,
+      128
     ]
   ],
   "street_exit": [
-    2384,
-    112,
+    2400,
     96,
-    64
+    112,
+    80
   ],
   "street_finish": [
-    2424,
-    136
+    2448,
+    120
   ],
   "street_baseline_y": 184,
   "straight_street_path_blocked": true,
@@ -271,98 +207,44 @@
   ],
   "street_solids": [
     [
-      0,
-      32,
-      2560,
-      80
-    ],
-    [
-      0,
-      32,
-      16,
-      288
-    ],
-    [
-      2544,
-      32,
-      16,
-      288
-    ],
-    [
-      0,
-      304,
-      2560,
-      16
-    ],
-    [
-      352,
-      160,
-      16,
-      160
-    ],
-    [
-      816,
-      160,
-      16,
-      160
-    ],
-    [
-      1088,
-      224,
-      16,
-      96
-    ],
-    [
-      1584,
-      224,
-      16,
-      96
-    ],
-    [
-      1712,
-      160,
-      16,
-      160
-    ],
-    [
-      2112,
-      160,
-      16,
-      160
-    ],
-    [
       128,
       32,
       128,
       128
     ],
     [
-      640,
+      672,
       160,
       128,
       128
     ],
     [
-      448,
-      176,
+      1120,
+      32,
+      288,
+      128
+    ],
+    [
+      1760,
+      160,
+      288,
+      128
+    ],
+    [
+      400,
+      208,
       96,
       64
     ],
     [
-      1152,
-      32,
-      288,
-      128
-    ],
-    [
-      1728,
-      144,
-      288,
-      128
-    ],
-    [
       1248,
-      192,
+      224,
+      96,
+      64
+    ],
+    [
+      2256,
+      176,
       96,
       64
     ]
@@ -385,129 +267,84 @@
   ],
   "factory_min_y": 112,
   "factory_max_y": 271,
-  "street_min_y": 112,
-  "street_max_y": 303,
+  "street_min_y": 96,
+  "street_max_y": 287,
   "factory_reachable": 1644,
-  "street_reachable": 5508,
+  "street_reachable": 5611,
   "collision": "16px projected footprint flood reaches ten clutch approaches, three valve approaches and exit; field props block their full projected footprint to prevent standing inside background art; cabinets wholly behind walk boundary",
   "pipeline": "whole-scene-first",
   "minimum_bypass_width": 32,
-  "street_native_bank": "art/campaign-corridors-v3/corrections/9-guidebook/native",
+  "street_native_bank": "art/phase09-three-segments-v1/native",
   "street_camera_interest": [
     {
-      "id": "repair-workshop",
-      "name": "repair-workshop",
+      "id": "arrival-workshop",
+      "name": "arrival-workshop",
       "bbox": [
         128,
         32,
         128,
         128
       ],
-      "player_feet": [
-        184,
-        184
-      ],
       "position": [
-        184,
-        184
-      ],
-      "camera": [
-        32,
-        0
-      ],
-      "whole_below_HUD": true
+        88,
+        168
+      ]
     },
     {
       "id": "south-workshop",
       "name": "south-workshop",
       "bbox": [
-        640,
+        672,
         160,
         128,
         128
       ],
-      "player_feet": [
-        608,
-        272
-      ],
       "position": [
-        608,
-        272
-      ],
-      "camera": [
-        456,
-        72
-      ],
-      "whole_below_HUD": true
+        632,
+        120
+      ]
     },
     {
       "id": "loading-shed",
       "name": "loading-shed",
       "bbox": [
-        1152,
+        1120,
         32,
         288,
         128
       ],
-      "player_feet": [
-        1280,
-        168
-      ],
       "position": [
-        1280,
+        1080,
         168
-      ],
-      "camera": [
-        1128,
-        0
-      ],
-      "whole_below_HUD": true
+      ]
     },
     {
       "id": "south-warehouse",
       "name": "south-warehouse",
       "bbox": [
-        1728,
-        144,
+        1760,
+        160,
         288,
         128
       ],
-      "player_feet": [
-        1864,
-        280
-      ],
       "position": [
-        1864,
-        280
-      ],
-      "camera": [
-        1712,
-        80
-      ],
-      "whole_below_HUD": true
+        1720,
+        120
+      ]
     },
     {
       "id": "factory-entry",
       "name": "factory-entry",
       "bbox": [
-        2392,
-        48,
+        2416,
+        32,
         80,
         64
       ],
-      "player_feet": [
-        2456,
-        184
-      ],
       "position": [
-        2456,
-        184
-      ],
-      "camera": [
-        2240,
-        0
-      ],
-      "whole_below_HUD": true
+        2448,
+        120
+      ]
     }
   ]
 }

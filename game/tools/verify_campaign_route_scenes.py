@@ -15,12 +15,15 @@ for key,d in report.items():
  colors=np.array([[((v>>s)&7)*255//7 for s in (1,5,9)] for v in words],dtype=np.uint8)
  width,height=d['width'],d['height'];cols,rows=width//8,height//8
  m=np.array(struct.unpack('>'+str(cols*rows)+'H',(base/'map.bin').read_bytes())).reshape(rows,cols)
- assert (m&2047).max()<count<=d['tileBudget']
- decoded=tiles[m&2047].reshape(rows,cols,8,8).copy()
+ streamed=bool(d.get('streamed_tiles'))
+ assert (m if streamed else m&2047).max()<count
+ assert d['tiles']<=d['tileBudget']
+ if streamed:assert d['streamed_tiles']['maximum_visible_tiles']<=d['tiles']
+ decoded=tiles[m if streamed else m&2047].reshape(rows,cols,8,8).copy()
  for yy in range(rows):
   for xx in range(cols):
-   if m[yy,xx]&0x800:decoded[yy,xx]=decoded[yy,xx,:,::-1]
-   if m[yy,xx]&0x1000:decoded[yy,xx]=decoded[yy,xx,::-1,:]
+   if not streamed and m[yy,xx]&0x800:decoded[yy,xx]=decoded[yy,xx,:,::-1]
+   if not streamed and m[yy,xx]&0x1000:decoded[yy,xx]=decoded[yy,xx,::-1,:]
  native=colors[decoded.transpose(0,2,1,3).reshape(height,width)]
  expected=np.array(Image.open(G/d['art']['nativeImage']).convert('RGB'))
  assert np.array_equal(native,expected),(key,'native binary image mismatch')
@@ -36,6 +39,6 @@ for key,d in report.items():
    if p not in seen and free(*p):seen.add(p);queue.append(p)
  assert goal in seen,(key,'arrival disconnected')
  assert any(r[0]>2048 and r[1]>=top for r in solids)
- if key=='06b':
-  _,object_counts=packed_objectives();assert count+object_counts[3]+object_counts[4]<=640
+ if d.get('gates'):
+  _,object_counts=packed_objectives();assert d['tiles']+d.get('objective_tiles',object_counts[3]+object_counts[4] if key=='06b' else 0)<=640
  print(f'PASS {key}: {count} exact tiles,{d['width']}x{d['height']},16RGB333,zero pixel mismatches,{len(seen)} connected positions,arrival reachable')
