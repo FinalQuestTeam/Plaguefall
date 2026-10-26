@@ -3,6 +3,7 @@
 #include <genesis.h>
 
 typedef struct { s16 x, y, w, h; bool blocksShots; } ArenaRect;
+typedef struct { u16 sourceCount; } ArenaStream;
 typedef struct {
     u16 col, row, cols, rows;
     const u16 *floor;          // revealed when the mapped objective blinks/falls
@@ -23,6 +24,8 @@ typedef struct {
     u16 cameraPlayerY;         // zero = arena follow; corridors retain facade headroom
     const ArenaRect *cameraFocus;
     u8 cameraFocusCount;
+    const ArenaStream *stream; // optional exact ROM-to-visible640-tile cache
+    u16 cameraSouthStart;      // optional player Y where the southern reveal starts
 } ArenaScene;
 typedef struct {
     u16 width, height;

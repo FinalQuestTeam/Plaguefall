@@ -15,7 +15,7 @@ def png(path,w,h,rgb):
     path.write_bytes(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(rows))+chunk(b'IEND',b''))
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--build-dir',type=Path);parser.add_argument('--only-deaths',action='store_true');parser.add_argument('--only-death-rules',action='store_true');parser.add_argument('--only-santa',action='store_true');parser.add_argument('--only-routes',action='store_true');parser.add_argument('--only-terrain',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--pal',action='store_true');parser.add_argument('--movie',action='store_true');parser.add_argument('--output',type=Path);parser.add_argument('--build-dir',type=Path);parser.add_argument('--only-selector',action='store_true');parser.add_argument('--only-deaths',action='store_true');parser.add_argument('--only-death-rules',action='store_true');parser.add_argument('--only-santa',action='store_true');parser.add_argument('--only-routes',action='store_true');parser.add_argument('--only-terrain',action='store_true');args=parser.parse_args()
     fps=50 if args.pal else 60
     out=args.output or GAME/'art/training-v2/validation'/('pal' if args.pal else 'ntsc');out.mkdir(parents=True,exist_ok=True)
     build=args.build_dir or GAME/'out/release';rom=build/'rom.bin';original=rom.read_bytes();data=bytearray(original)
@@ -175,6 +175,69 @@ def main():
             report['checks'][label]={'passed':False,'error':repr(e)};report['failures'].append(label);shot('FAIL-'+label);print('FAIL',label,repr(e),flush=True)
         save()
     run(120);ui(3);run(4*fps);ui(5,3);ui(1);run(fps);shot('room-selector')
+    if args.only_selector:
+        report['method']='Controller input only, production ROM: all 19 campaign entries, branch flags, pause switching/restart/cancel, paging, technical rooms and normal new game. RAM is read only.'
+        phase_names=['1','2A','2B','3','4','5','6A','6B','7','8','9','10','11','12','13A','13B','14','15','16']
+        def enter_phase(node):
+            ui(1)
+            wait(lambda:state()==0 and u8('pendingLevel')==node,'prep-'+str(node),fps*20)
+            assert u8('testCampaignMode')==1
+            assert u8('campaignFlags')=={3:1,8:2,16:4}.get(node,0)
+            ui(1)
+            wait(lambda:state()==1 and u8('currentLevel')==node and not u8('transitioning'),'play-'+str(node),fps*20)
+            shot('phase-'+phase_names[node-1])
+            return {'node':node,'phase':phase_names[node-1],'flags':u8('campaignFlags')}
+        def choose_from_pause():
+            pause();ui(5,2);ui(1);run(12)
+        def all_entries():
+            ui(7);shot('campaign-selector-first')
+            for node in range(1,20):
+                if node>1:
+                    choose_from_pause();ui(5)
+                if node in (10,19):shot('campaign-selector-'+str(node))
+                details=enter_phase(node)
+                report['checks']['phase-'+phase_names[node-1]]={'passed':True,'details':details};save()
+            return '19 campaign variants loaded through the selector without RAM writes'
+        check('campaign-entries',all_entries)
+        if not report['failures']:
+            def paging_cancel_restart():
+                choose_from_pause() # at node 19
+                ui(8);shot('campaign-page-first') # C wraps to node 1
+                ui(8);shot('campaign-page-second') # node 10
+                ui(8);shot('campaign-page-last') # node 19
+                ui(4,8) # node 11 = phase 9
+                enter_phase(11)
+                old=(u8('currentLevel'),signed('hp'),signed('px'),signed('py'))
+                choose_from_pause();ui(8);ui(8);ui(0) # page twice, cancel with B
+                wait(lambda:state()==1,'cancel-selector')
+                assert (u8('currentLevel'),signed('hp'),signed('px'),signed('py'))==old
+                pause();shot('campaign-pause');ui(5);ui(1)
+                wait(lambda:state()==0 and u8('pendingLevel')==11,'restart-prep',fps*20)
+                assert signed('hp')==100
+                ui(1);wait(lambda:state()==1 and not u8('transitioning'),'restart-play',fps*20)
+                assert u8('currentLevel')==11
+                shot('phase-restarted')
+                return 'C page navigation, B cancel preserves the active phase; pause restart resets the same phase'
+            check('paging-cancel-restart',paging_cancel_restart)
+        if not report['failures']:
+            def technical_and_normal():
+                choose_from_pause();ui(7);shot('technical-selector');ui(5,5);ui(1)
+                wait(lambda:state()==1 and u8('currentLevel')==0 and u8('testStage')==6,'technical-load',fps*20)
+                assert u8('testCampaignMode')==0
+                shot('technical-load-room')
+                pause();ui(5,3);ui(1);ui(7);ui(1)
+                wait(lambda:state()==0 and u8('pendingLevel')==1,'return-to-campaign',fps*20)
+                ui(1);wait(lambda:state()==1 and not u8('transitioning'),'return-play',fps*20)
+                pause();ui(5,4);ui(1);ui(5);ui(1);run(fps)
+                ui(1);run(fps)
+                assert u8('testCampaignMode')==0
+                assert state() in (0,6),state()
+                shot('normal-new-game')
+                return 'Room 6 remains available, campaign can be reentered and normal new game clears test mode'
+            check('technical-and-normal',technical_and_normal)
+        report['passed']=not report['failures'];save();core.retro_unload_game();core.retro_deinit()
+        print(json.dumps({'passed':report['passed'],'failures':report['failures']}),flush=True)
+        raise SystemExit(0 if report['passed'] else 1)
     if args.only_death_rules:
         # Scroll to room 10; the suite now also contains eight mission prototypes.
         ui(5,9);shot('room-selector-10');ui(1)

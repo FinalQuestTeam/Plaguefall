@@ -29,9 +29,10 @@ static void drawSelection(void)
 {
     if(!currentLevel){TEST_pauseSelection(choice);return;}
     static const char *const options[]={"CONTINUAR","COMO JOGAR","VOLTAR AO TÍTULO"};
+    static const char *const testing[]={"CONTINUAR","REINICIAR FASE","TROCAR FASE","COMO JOGAR","VOLTAR AO TÍTULO"};
     char buf[32];
     PANEL_selection(17+choice*2);
-    for(u16 i=0;i<3;i++){sprintf(buf,"%c %s",i==choice ? '>' : ' ',options[i]);PANEL_text(buf,2,17+i*2,i==choice ? PANEL_LIGHT : PANEL_BODY);}
+    for(u16 i=0;i<(testCampaignMode ? 5 : 3);i++){sprintf(buf,"%c %s",i==choice ? '>' : ' ',testCampaignMode ? testing[i] : options[i]);PANEL_text(buf,2,17+i*2,i==choice ? PANEL_LIGHT : PANEL_BODY);}
 }
 static void drawMenu(void)
 {
@@ -71,7 +72,7 @@ static void drawMenu(void)
     else sprintf(buf,"ITEM SELECIONADO: %s (%u)",itemName(type),count);
     PANEL_text(buf,2,15,PANEL_BODY);
     drawSelection();
-    PANEL_text("CIMA/BAIXO: ESCOLHER",2,24,PANEL_BODY);
+    if(!testCampaignMode)PANEL_text("CIMA/BAIXO: ESCOLHER",2,24,PANEL_BODY);
     PANEL_right("A: CONFIRMAR   B/START: RETOMAR",26,PANEL_LIGHT);
 }
 static void drawExitSelection(void)
@@ -108,7 +109,7 @@ u8 PAUSE_update(u16 pressed)
         return PAUSE_STAY;
     }
     if(pressed&(BUTTON_B|BUTTON_START)){PANEL_end();return PAUSE_RESUME;}
-    const u8 options=currentLevel ? 3 : 6;
+    const u8 options=currentLevel ? (testCampaignMode ? 5 : 3) : 6;
     if(pressed&BUTTON_UP){choice=(choice+options-1)%options;drawSelection();}
     else if(pressed&BUTTON_DOWN){choice=(choice+1)%options;drawSelection();}
     else if(pressed&BUTTON_A)
@@ -120,7 +121,8 @@ u8 PAUSE_update(u16 pressed)
             else{pauseView=2;exitChoice=0;drawExit();}
             return PAUSE_STAY;
         }
-        if(choice==1){pauseView=1;HELP_open();}
+        if(testCampaignMode && choice<=2){PANEL_end();return choice==1 ? PAUSE_TEST_RESTART : PAUSE_TEST_ROOM;}
+        if(choice==(testCampaignMode ? 3 : 1)){pauseView=1;HELP_open();}
         else{pauseView=2;exitChoice=0;drawExit();}
     }
     return PAUSE_STAY;

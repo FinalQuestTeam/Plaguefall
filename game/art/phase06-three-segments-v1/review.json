@@ -1,0 +1,111 @@
+{
+  "status": "visual_proposal_reviewed_not_integrated",
+  "whole_scenes_reviewed": [
+    "6A",
+    "6B-closed",
+    "6B-open"
+  ],
+  "seams": [
+    {
+      "x": 512,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 1024,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 1536,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 2048,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 2560,
+      "matches_canonical_B_to_B_join": true
+    }
+  ],
+  "camera_views_reviewed": [
+    "entry",
+    "middle",
+    "arrival",
+    "southern boundary",
+    "first pressure assembly"
+  ],
+  "corrections": [
+    "Rejected diagonal stair; generated frontal staircase.",
+    "Replaced conspicuous generated floor repetition with native concrete material.",
+    "Uniform dark area behind the wall; complete wall panel scaled proportionally.",
+    "Representative middle camera moved to include the whole pump.",
+    "Restored existing cycle0 vertical gate; current shared export came from diagonal cycle2. Both gate placements verified pixel-for-pixel."
+  ],
+  "geometry_checks": {
+    "6A": {
+      "actor_feet": [
+        16,
+        16
+      ],
+      "extra_route_margin": 8,
+      "checked_8px_steps": 373,
+      "connected_free_positions": 8101
+    },
+    "6B": {
+      "actor_feet": [
+        16,
+        16
+      ],
+      "extra_route_margin": 8,
+      "checked_8px_steps": 387,
+      "connected_free_positions": 7941
+    }
+  },
+  "technical_status": "resident atlas exceeds static budget; optimization or section loading required before ROM integration",
+  "memory_counts": {
+    "6A": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 1093,
+      "scenery_only_4bpp_equivalent_bytes": 34976
+    },
+    "6B": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 1123,
+      "scenery_only_4bpp_equivalent_bytes": 35936
+    },
+    "6B-aberta": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 1127,
+      "scenery_only_4bpp_equivalent_bytes": 36064
+    },
+    "sem-objetos": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 883,
+      "scenery_only_4bpp_equivalent_bytes": 28256
+    },
+    "6B-sem-objetos": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 913,
+      "scenery_only_4bpp_equivalent_bytes": 29216
+    },
+    "6B-aberta-sem-objetos": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 917,
+      "scenery_only_4bpp_equivalent_bytes": 29344
+    }
+  },
+  "rom_unchanged_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf",
+  "generation_tool": "built-in image_gen.imagegen",
+  "prompts": "prompts/",
+  "gate_correction": {
+    "investigation": "gate-investigation.json",
+    "restored_source": "art/visual-composition-fixes-v1/objectives/cycle-0/gate.png",
+    "source_sha256": "c544f5433626411287ef8f868d2e2fddb3129bda90cb5e0d0989092b4aceb84c",
+    "north_support_x": 31,
+    "south_support_x": 31,
+    "both_placements_exact_pixels_checked": 818,
+    "new_art_generated": false,
+    "rotated_or_sheared": false,
+    "production_changed": false
+  }
+}

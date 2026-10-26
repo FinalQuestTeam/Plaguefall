@@ -1,0 +1,210 @@
+{
+  "passed": true,
+  "date": "2026-10-26",
+  "scope": "Vertical expansion of phases4/5 only. Full native scenes and production camera views reviewed; isolated maximum-cap vertical load patrol20s per phase/region. Controller collisions and full120s objective timer verified. Not a human difficulty certification.",
+  "rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf",
+  "rom_bytes": 2621440,
+  "rom": "../../out/release/Plaguefall.bin",
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "memory": {
+    "elf_text_bytes": 2512092,
+    "elf_data_bytes": 260,
+    "elf_bss_bytes": 19756,
+    "static_ram_bytes": 20016,
+    "extra_static_ram_bytes": 0,
+    "extra_map_rom_bytes": 3584,
+    "extra_scenery_vram_bytes": 0
+  },
+  "scenes": {
+    "04": {
+      "world_pixels": [
+        512,
+        448
+      ],
+      "bounds": [
+        32,
+        104,
+        479,
+        391
+      ],
+      "combat_height_before": 160,
+      "combat_height_after": 288,
+      "increase_percent": 80,
+      "geometry_validation": {
+        "footprint": 16,
+        "free_positions": 1680,
+        "reachable_positions": 1680,
+        "all_free_positions_connected": true
+      },
+      "tiles": 602,
+      "scenery_vram_bytes": 19264,
+      "extra_scenery_vram_bytes": 0,
+      "map_bytes": 7168,
+      "extra_map_rom_bytes": 2048,
+      "collision_faces_per_region": 12,
+      "camera_south_y": 224
+    },
+    "05": {
+      "world_pixels": [
+        384,
+        448
+      ],
+      "bounds": [
+        16,
+        112,
+        367,
+        399
+      ],
+      "combat_height_before": 160,
+      "combat_height_after": 288,
+      "increase_percent": 80,
+      "geometry_validation": {
+        "footprint": 16,
+        "free_positions": 1379,
+        "reachable_positions": 1379,
+        "all_free_positions_connected": true
+      },
+      "tiles": 631,
+      "scenery_vram_bytes": 20192,
+      "extra_scenery_vram_bytes": 0,
+      "map_bytes": 5376,
+      "extra_map_rom_bytes": 1536,
+      "collision_faces_per_region": 12,
+      "camera_south_y": 224,
+      "npc_position": [
+        176,
+        280
+      ],
+      "npc_footprint": [
+        176,
+        256,
+        40,
+        48
+      ],
+      "npc_map_restore": [
+        22,
+        30,
+        5,
+        8
+      ],
+      "npc_crown": [
+        194,
+        261
+      ]
+    }
+  },
+  "load": {
+    "ntsc": {
+      "04": {
+        "enemy_cap": 4,
+        "maximum_visible_enemies": 4,
+        "projectiles_per_pool_seeded_to_cap": 6,
+        "game_frames": 1200,
+        "physical_frames": 1200,
+        "observed_fps": 60.0,
+        "frames_without_game_update": 0,
+        "player_y_range": [
+          224,
+          336
+        ],
+        "camera_y_range": [
+          92,
+          204
+        ],
+        "maximum_sat_sprites_scanline_sprites_pixels": [
+          16,
+          6,
+          64
+        ],
+        "RAM_health_contact_isolation": true
+      },
+      "05": {
+        "enemy_cap": 3,
+        "maximum_visible_enemies": 3,
+        "projectiles_per_pool_seeded_to_cap": 6,
+        "game_frames": 1200,
+        "physical_frames": 1200,
+        "observed_fps": 60.0,
+        "frames_without_game_update": 0,
+        "player_y_range": [
+          224,
+          336
+        ],
+        "camera_y_range": [
+          92,
+          160
+        ],
+        "maximum_sat_sprites_scanline_sprites_pixels": [
+          16,
+          6,
+          88
+        ],
+        "RAM_health_contact_isolation": true
+      }
+    },
+    "pal": {
+      "04": {
+        "enemy_cap": 4,
+        "maximum_visible_enemies": 4,
+        "projectiles_per_pool_seeded_to_cap": 6,
+        "game_frames": 1000,
+        "physical_frames": 1000,
+        "observed_fps": 50.0,
+        "frames_without_game_update": 0,
+        "player_y_range": [
+          224,
+          336
+        ],
+        "camera_y_range": [
+          92,
+          204
+        ],
+        "maximum_sat_sprites_scanline_sprites_pixels": [
+          16,
+          6,
+          64
+        ],
+        "RAM_health_contact_isolation": true
+      },
+      "05": {
+        "enemy_cap": 3,
+        "maximum_visible_enemies": 3,
+        "projectiles_per_pool_seeded_to_cap": 6,
+        "game_frames": 1000,
+        "physical_frames": 1000,
+        "observed_fps": 50.0,
+        "frames_without_game_update": 0,
+        "player_y_range": [
+          224,
+          336
+        ],
+        "camera_y_range": [
+          92,
+          160
+        ],
+        "maximum_sat_sprites_scanline_sprites_pixels": [
+          16,
+          6,
+          88
+        ],
+        "RAM_health_contact_isolation": true
+      }
+    }
+  },
+  "reports": {
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json"
+  },
+  "automated_probe": "../../tools/test_phase45_vertical_emulator.py",
+  "automated_probe_sha256": "96d8cd91232946900642da5edb887cade65bd93596dbc39c9489d3724c9e486a",
+  "visual_review": {
+    "complete_scenes": "acceptable",
+    "native_camera_north_center_south": "acceptable",
+    "notes": [
+      "Whole existing modules/palettes retained; continuous sides and dedicated lower walls.",
+      "Santa moved16px further south during visual review so its crown is above the HUD at the southern camera limit.",
+      "Natural camera viewport clipping while traversing is distinct from fragmented source art."
+    ]
+  }
+}

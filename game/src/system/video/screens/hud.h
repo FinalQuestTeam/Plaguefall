@@ -25,5 +25,7 @@ void HUD_drawInventory(void);
 
 // como HUD_drawInventory, mas só redesenha quando o estado muda (uso por quadro)
 void HUD_drawInventoryIfDirty(void);
+// Sequential renderer scratch. Only borrow while HUD composition is suspended.
+void *HUD_pausedScratch(u16 bytes);
 
 #endif // HUD_H

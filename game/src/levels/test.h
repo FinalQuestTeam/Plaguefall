@@ -13,12 +13,14 @@ typedef struct {
 extern TestSettings testSettings[TEST_ROOMS];
 extern u32 testTicks;
 extern u8 testResult;
+// Campaign shortcuts use the real nodes; technical-room settings stay separate.
+extern bool testCampaignMode;
 u16 TEST_measuredFps(void);
 u16 TEST_peakCpu(void);
 void TEST_defaults(void);
 const char *TEST_name(u8 room);
 void TEST_goal(char *text);
-u8 TEST_chooseRoom(u8 initial);
+u8 TEST_chooseRoom(u8 initial); // 0 cancel; 1..TEST_ROOMS rooms; TEST_ROOMS+node campaign
 bool TEST_configure(void);
 void TEST_pauseDraw(u8 selection);
 void TEST_pauseSelection(u8 selection);

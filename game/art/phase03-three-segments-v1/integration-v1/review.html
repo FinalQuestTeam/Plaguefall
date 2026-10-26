@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fase 3 · Implementação na ROM</title>
+<style>
+:root{color-scheme:dark}body{margin:0;background:#131919;color:#e6d5ad;font:16px/1.5 system-ui}main{max-width:1300px;margin:auto;padding:28px}h1{font-size:30px;margin:0}h2{font-size:22px;margin-top:36px}p{max-width:90ch;color:#c8c4b5}a{color:#f3c776}nav{display:flex;gap:16px;flex-wrap:wrap}button{background:#354340;color:#fff4d5;border:1px solid #7d8e7b;padding:10px 16px;cursor:pointer;border-radius:5px}.scroll{overflow:auto;border:1px solid #687363;background:#080b0b}.panorama{display:block;width:5120px;height:640px;image-rendering:pixelated}.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}.shots img{width:100%;height:auto;image-rendering:pixelated;background:#080b0b}.shots figure{margin:0}.shots figcaption{padding:8px 0;color:#c8c4b5}.facts{display:flex;flex-wrap:wrap;gap:24px;padding:16px;background:#202b29}code{overflow-wrap:anywhere}pre{white-space:pre-wrap}#summary{max-width:none}small{color:#b6b6a5}
+</style><main>
+<h1>Fase 3 · Igreja → rua → galpão</h1>
+<p>Implementação nativa de 2560 × 320 pixels: início com a igreja original, três repetições da rua e chegada ao galpão. Carros, postes, caçamba, caixas e entulho compõem o cenário; as bases de 13 obstáculos têm colisão.</p>
+<nav><a href="../../../out/release/Plaguefall.bin">ROM atualizada</a><a href="#rom">Capturas da ROM</a><a href="manifest.json">Geometria e memória</a><a href="validation/ntsc/report.json">Testes NTSC</a><a href="validation/pal/report.json">Testes PAL</a></nav>
+<p>Para jogar: <strong>Fase Teste → Campanha → fase 3</strong>. A igreja muda conforme a consequência da bomba nas fases anteriores.</p>
+<div class="facts"><span>VRAM do cenário: <strong>20 KiB fixos</strong></span><span>16 cores do cenário original</span><span>Objetivo: chegar ao galpão</span></div>
+<h2 id="panorama">Cenário inteiro exportado para a ROM</h2>
+<p>Arraste a barra horizontal para examinar os cinco módulos em escala 2×. A faixa de vegetação usa pequenas repetições para respeitar a reserva de tiles; as construções e os objetos mantêm seus pixels.</p>
+<p><button id="intact">Igreja intacta</button> <button id="damaged">Igreja destruída</button> <a id="full" href="complete-native.png">Abrir imagem inteira</a></p>
+<div class="scroll"><img id="scene" class="panorama" src="complete-native.png" alt="Panorama inteiro da fase 3"></div>
+<h2 id="rom">Capturas reais do emulador</h2>
+<p><a href="#inferior">Ver a correção do limite inferior</a></p>
+<p>Imagens da ROM de produção em Genesis Plus GX. As capturas de composição isolam o combate; os relatórios identificam separadamente o percurso por controle, o combate nativo e a carga artificial nos limites da fase.</p>
+<div class="shots">
+<figure><img src="validation/ntsc/01-igreja-na-rom.png" alt="Entrada com igreja inteira"><figcaption>Entrada com a igreja inteira.</figcaption></figure>
+<figure><img src="validation/ntsc/camera-672.png" alt="Rua com carro e poste"><figcaption>Rua, carro e poste.</figcaption></figure>
+<figure><img src="validation/ntsc/camera-1400.png" alt="Rua com caçamba"><figcaption>Variação dos obstáculos na mesma base.</figcaption></figure>
+<figure><img src="validation/ntsc/camera-2304.png" alt="Galpão ao fim da rua"><figcaption>Chegada ao galpão.</figcaption></figure>
+<figure><img src="validation/ntsc/04-igreja-destruida-na-rom.png" alt="Igreja destruída conforme a história"><figcaption>Consequência persistente da bomba.</figcaption></figure>
+<figure><img src="validation/load-ntsc/3-native_cadence-steady.png" alt="Carga com quatro inimigos"><figcaption>Ensaio de carga com os limites autorais.</figcaption></figure>
+</div>
+<h2 id="inferior">Limite inferior da rua</h2>
+<p>A câmera acompanha a aproximação ao sul até mostrar o final da imagem, incluindo o muro e a vegetação de limite. A área caminhável termina antes do meio-fio; a decoração inferior permanece visível e não pode ser atravessada.</p>
+<div class="shots">
+<figure><img src="validation/ntsc/07-limite-inferior-igreja.png" alt="Limite inferior junto à igreja"><figcaption>Início da rua: limite inferior completo.</figcaption></figure>
+<figure><img src="validation/ntsc/07-limite-inferior-rua1.png" alt="Limite inferior no trecho central"><figcaption>Rua: Damião para antes do meio-fio.</figcaption></figure>
+<figure><img src="validation/ntsc/07-limite-inferior-galpao.png" alt="Limite inferior perto do galpão"><figcaption>Galpão: a decoração também aparece fora da área caminhável.</figcaption></figure>
+</div>
+<h2>Validação da entrega</h2><pre id="summary">Carregando resultados da ROM…</pre>
+<p><small>Testes em emulador. Não houve ensaio em console físico nem avaliação humana de dificuldade. As demais fases preservam suas fontes de cenário.</small></p>
+</main><script>
+for(const [id,file]of [['intact','complete-native.png'],['damaged','complete-damaged-native.png']])document.getElementById(id).onclick=()=>{document.getElementById('scene').src=file;document.getElementById('full').href=file;};
+fetch('delivery.json').then(r=>r.json()).then(d=>{document.getElementById('summary').textContent=d.summary+'\n\nROM SHA256: '+d.rom_sha256;}).catch(()=>document.getElementById('summary').textContent='Consulte os relatórios NTSC e PAL nos links acima.');
+</script></html>

@@ -212,6 +212,7 @@ static void startPhase(u8 level)
 // Training: directly selectable rooms, outside the campaign graph.
 static void startTest(u8 stage, bool retry)
 {
+    testCampaignMode=FALSE;
     const bool retryRules=retry && stage==TEST_RULE_ROOM;
     if(retryRules)DEATH_retry(TEST_ruleNode(),px,py);
     else DEATH_reset();
@@ -425,10 +426,26 @@ static void updatePlay(u16 joy, u16 pressed)
 
 static void resetCampaign(void)
 {
+    testCampaignMode=FALSE;
     CAMPAIGN_reset();
     DEATH_reset();
     PLAYER_fullHp();BOMB_reset();SHOTS_resetPower();SHOTS_resetChain();
     PLAYER_resetSpeed();INV_clear();ROUTEMAP_reset();STORYSCR_reset();STATS_reset();
+}
+
+static void startTestSelection(u8 selection)
+{
+    if(selection<=TEST_ROOMS){resetCampaign();startTest(selection,FALSE);return;}
+    const u8 node=selection-TEST_ROOMS;
+    if(node>NODE_COUNT)return;
+    resetCampaign();testCampaignMode=TRUE;
+    if(node==N_2B)campaignFlags|=CAMPAIGN_CHURCH_RUINED;
+    if(node==N_6B)campaignFlags|=CAMPAIGN_RESCUE_PARTIAL;
+    if(node==N_13B)campaignFlags|=CAMPAIGN_DINORAH_DEAD;
+    SPRITES_hide();SYS_doVBlankProcess();ENEMYGFX_reset();
+    MUSIC_selectTrack(GRAPH[node].def->musicTrack);
+    // Direct access keeps the mission guide and native countdown, skipping the arrival dialogue.
+    LOADING_workBegin();showPrep(node);LOADING_workEnd();
 }
 
 // ---------------------------------------------------------------------------
@@ -473,7 +490,7 @@ void FLOW_run(void)
         if (choice == TITLE_TEST) {
             TEST_defaults();const u8 room=TEST_chooseRoom(1);
             if(!room)continue;
-            startTest(room,FALSE);
+            startTestSelection(room);
         }
         else {LOADING_workBegin();gotoPrep(1);LOADING_workEnd();} // novo jogo
 
@@ -585,14 +602,17 @@ void FLOW_run(void)
                     const u8 action=PAUSE_update(pressed);
                     if(action==PAUSE_RESUME){state=ST_PLAY;if(!currentLevel)TEST_resume();}
                     else if(action==PAUSE_EXIT)backToTitle=TRUE;
-                    else if(action==PAUSE_TEST_RESTART)startTest(testStage,FALSE);
+                    else if(action==PAUSE_TEST_RESTART) {
+                        if(testCampaignMode)startTestSelection(TEST_ROOMS+currentLevel);
+                        else startTest(testStage,FALSE);
+                    }
                     else if(action==PAUSE_TEST_CONFIG) {
                         if(TEST_configure())startTest(testStage,FALSE);else{state=ST_PLAY;TEST_resume();}
                         prevJoy=JOY_readJoypad(JOY_1);
                     }
                     else if(action==PAUSE_TEST_ROOM) {
-                        const u8 room=TEST_chooseRoom(testStage);
-                        if(room)startTest(room,FALSE);else{state=ST_PLAY;TEST_resume();}
+                        const u8 room=TEST_chooseRoom(testCampaignMode ? TEST_ROOMS+currentLevel : testStage);
+                        if(room)startTestSelection(room);else{state=ST_PLAY;if(!currentLevel)TEST_resume();}
                         prevJoy=JOY_readJoypad(JOY_1);
                     }
                     SPRITES_hide();

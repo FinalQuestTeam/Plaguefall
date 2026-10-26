@@ -13,6 +13,7 @@
 #include "insects.h"
 #include "text_data.h"
 #include "enemies/enemies.h"
+#include "system/video/scene_stream.h"
 #define BASE (TILE_USER_INDEX + NUM_TILES)
 #define SCRATCH (BASE + PANEL_TILE_COUNT)
 #define SCRATCH_TILES 112
@@ -53,8 +54,9 @@ static void readWords(u16 addr,u16 *dest,u16 count,u32 command)
 bool PANEL_begin(void)
 {
     if(saved)return TRUE;
+    SCENESTREAM_suspend();
     u16 *memory=MEM_alloc(SAVE_WORDS*2);
-    if(!memory)return FALSE;
+    if(!memory){SCENESTREAM_resume();return FALSE;}
     displayAfterPage=VDP_getEnable();
     while(PAL_isDoingFade())SYS_doVBlankProcess();
     SPRITES_hide();SYS_doVBlankProcess();LOADING_setEnable(FALSE);
@@ -127,7 +129,7 @@ void PANEL_end(void)
     if(!LOADING_active()){VDP_setReg(17,oldWindowX);VDP_setReg(18,oldWindowY);}
     VDP_setAutoInc(oldAuto);
     VDP_setTextPlane(oldPlane);VDP_setTextPalette(oldPalette);VDP_setTextPriority(oldPriority);
-    MEM_free(saved);saved=NULL;selection=0;LOADING_setEnable(enabled);
+    MEM_free(saved);saved=NULL;selection=0;SCENESTREAM_resume();LOADING_setEnable(enabled);
 }
 static void artRows(u16 top,u16 count)
 {

@@ -1,0 +1,543 @@
+{
+  "phase": "3",
+  "status": "implemented_emulator_validated",
+  "size": [
+    2560,
+    320
+  ],
+  "bounds": [
+    16,
+    144,
+    2543,
+    263
+  ],
+  "start": [
+    264,
+    184
+  ],
+  "exit": [
+    2368,
+    144,
+    112,
+    80
+  ],
+  "solids": [
+    [
+      344,
+      232,
+      48,
+      16,
+      false
+    ],
+    [
+      440,
+      136,
+      16,
+      16,
+      false
+    ],
+    [
+      560,
+      136,
+      16,
+      16,
+      false
+    ],
+    [
+      656,
+      192,
+      64,
+      24,
+      true
+    ],
+    [
+      936,
+      256,
+      48,
+      16,
+      false
+    ],
+    [
+      1120,
+      256,
+      48,
+      16,
+      false
+    ],
+    [
+      1288,
+      136,
+      16,
+      16,
+      false
+    ],
+    [
+      1408,
+      184,
+      48,
+      16,
+      true
+    ],
+    [
+      1672,
+      248,
+      64,
+      24,
+      true
+    ],
+    [
+      1840,
+      136,
+      16,
+      16,
+      false
+    ],
+    [
+      1944,
+      176,
+      32,
+      16,
+      true
+    ],
+    [
+      2128,
+      224,
+      48,
+      16,
+      false
+    ],
+    [
+      2192,
+      136,
+      16,
+      16,
+      false
+    ]
+  ],
+  "camera_player_y": 240,
+  "camera_interest": [
+    {
+      "id": "church",
+      "name": "Igreja",
+      "bbox": [
+        32,
+        24,
+        232,
+        176
+      ],
+      "position": [
+        264,
+        184
+      ]
+    },
+    {
+      "id": "house-512-0",
+      "name": "Casas da rua",
+      "bbox": [
+        576,
+        24,
+        168,
+        104
+      ],
+      "position": [
+        656,
+        184
+      ],
+      "camera_focus": false
+    },
+    {
+      "id": "house-512-1",
+      "name": "Casas da rua",
+      "bbox": [
+        792,
+        24,
+        168,
+        104
+      ],
+      "position": [
+        872,
+        184
+      ],
+      "camera_focus": false
+    },
+    {
+      "id": "house-1024-0",
+      "name": "Casas da rua",
+      "bbox": [
+        1088,
+        24,
+        168,
+        104
+      ],
+      "position": [
+        1168,
+        184
+      ],
+      "camera_focus": false
+    },
+    {
+      "id": "house-1024-1",
+      "name": "Casas da rua",
+      "bbox": [
+        1304,
+        24,
+        168,
+        104
+      ],
+      "position": [
+        1384,
+        184
+      ],
+      "camera_focus": false
+    },
+    {
+      "id": "house-1536-0",
+      "name": "Casas da rua",
+      "bbox": [
+        1600,
+        24,
+        168,
+        104
+      ],
+      "position": [
+        1680,
+        184
+      ],
+      "camera_focus": false
+    },
+    {
+      "id": "house-1536-1",
+      "name": "Casas da rua",
+      "bbox": [
+        1816,
+        24,
+        168,
+        104
+      ],
+      "position": [
+        1896,
+        184
+      ],
+      "camera_focus": false
+    },
+    {
+      "id": "warehouse",
+      "name": "Galpão",
+      "bbox": [
+        2240,
+        24,
+        288,
+        176
+      ],
+      "position": [
+        2400,
+        184
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "../references/igreja-original.png"
+    },
+    {
+      "path": "../source/02-rua-repetivel.png"
+    },
+    {
+      "path": "../source/03-chegada-galpao.png"
+    },
+    {
+      "path": "../source/04-objetos-rua.png"
+    }
+  ],
+  "player_waypoints": [
+    [
+      264,
+      184
+    ],
+    [
+      408,
+      184
+    ],
+    [
+      560,
+      184
+    ],
+    [
+      560,
+      224
+    ],
+    [
+      792,
+      224
+    ],
+    [
+      1000,
+      224
+    ],
+    [
+      1000,
+      208
+    ],
+    [
+      1256,
+      208
+    ],
+    [
+      1472,
+      208
+    ],
+    [
+      1472,
+      232
+    ],
+    [
+      1600,
+      232
+    ],
+    [
+      1600,
+      184
+    ],
+    [
+      1832,
+      184
+    ],
+    [
+      1920,
+      184
+    ],
+    [
+      1920,
+      200
+    ],
+    [
+      2056,
+      200
+    ],
+    [
+      2056,
+      184
+    ],
+    [
+      2288,
+      184
+    ],
+    [
+      2416,
+      184
+    ],
+    [
+      2416,
+      168
+    ]
+  ],
+  "route_points": [
+    [
+      272,
+      192
+    ],
+    [
+      416,
+      192
+    ],
+    [
+      568,
+      192
+    ],
+    [
+      568,
+      232
+    ],
+    [
+      800,
+      232
+    ],
+    [
+      1008,
+      232
+    ],
+    [
+      1008,
+      216
+    ],
+    [
+      1264,
+      216
+    ],
+    [
+      1480,
+      216
+    ],
+    [
+      1480,
+      240
+    ],
+    [
+      1608,
+      240
+    ],
+    [
+      1608,
+      192
+    ],
+    [
+      1840,
+      192
+    ],
+    [
+      1928,
+      192
+    ],
+    [
+      1928,
+      208
+    ],
+    [
+      2064,
+      208
+    ],
+    [
+      2064,
+      192
+    ],
+    [
+      2296,
+      192
+    ],
+    [
+      2424,
+      192
+    ],
+    [
+      2424,
+      176
+    ]
+  ],
+  "points": [
+    [
+      272,
+      192
+    ],
+    [
+      416,
+      192
+    ],
+    [
+      568,
+      192
+    ],
+    [
+      568,
+      232
+    ],
+    [
+      800,
+      232
+    ],
+    [
+      1008,
+      232
+    ],
+    [
+      1008,
+      216
+    ],
+    [
+      1264,
+      216
+    ],
+    [
+      1480,
+      216
+    ],
+    [
+      1480,
+      240
+    ],
+    [
+      1608,
+      240
+    ],
+    [
+      1608,
+      192
+    ],
+    [
+      1840,
+      192
+    ],
+    [
+      1928,
+      192
+    ],
+    [
+      1928,
+      208
+    ],
+    [
+      2064,
+      208
+    ],
+    [
+      2064,
+      192
+    ],
+    [
+      2296,
+      192
+    ],
+    [
+      2424,
+      192
+    ],
+    [
+      2424,
+      176
+    ]
+  ],
+  "pauses": [],
+  "streamed_tiles": {
+    "source_count": 3070,
+    "damaged_source_count": 3086,
+    "maximum_visible_tiles": 640,
+    "resident_budget": 640,
+    "window": [
+      41,
+      26
+    ],
+    "map_encoding": "unflipped16bit source IDs; dynamic resident slots assigned only at runtime"
+  },
+  "memory": {
+    "scene_tiles": 640,
+    "source_tiles": 3070,
+    "damaged_source_tiles": 3086,
+    "maximum_visible_tiles": 640,
+    "states_resident_simultaneously": false,
+    "resident_graphics_bytes": 20480,
+    "cache_heap_bytes": {
+      "intact": 11260,
+      "damaged": 11292
+    },
+    "native_rom_bytes": 248256
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 4249,
+    "reachable_positions": 4249,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2347
+  },
+  "church_bbox": [
+    48,
+    24,
+    200,
+    112
+  ],
+  "church_original_bbox": [
+    16,
+    0,
+    200,
+    112
+  ],
+  "camera_south_start": 184
+}

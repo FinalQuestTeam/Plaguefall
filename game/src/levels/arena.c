@@ -17,6 +17,7 @@
 #include "courtyard.h"
 #include "intro_data.h" // same opaque 96-glyph font, shared by opening and HUD
 #include "levels/courtyard_data.h"
+#include "system/video/scene_stream.h"
 
 #define SCENE_BASE (TILE_USER_INDEX + FLOOR_TILE_BASE)
 #define NPC_BAR_BASE (SCENE_BASE + COURTYARD_TILE_COUNT + HUD_OPAQUE_COUNT)
@@ -54,6 +55,7 @@ static u32 collisionRows[COLLISION_WORDS],shotRows[COLLISION_WORDS];
 static u16 collisionStride;
 static bool hasShotSolids;
 static s16 solidLeft,solidTop,solidRight,solidBottom;
+static s16 shotLeft,shotTop,shotRight,shotBottom;
 static const u16 emptyMapLine[64]={0};
 static bool npcVisible=TRUE;
 static u16 npcBarHp=0xFFFF, npcBarMaximum;
@@ -73,10 +75,17 @@ void ARENA_configure(const ArenaDef *def)
         memset(collisionRows,0,sizeof collisionRows);memset(shotRows,0,sizeof shotRows);
         hasShotSolids=FALSE;
         solidLeft=solidTop=32767;solidRight=solidBottom=-32768;
+        shotLeft=shotTop=32767;shotRight=shotBottom=-32768;
         for(u16 i=0;i<def->solidCount;i++) {
             const ArenaRect *r=&def->solids[i];
-            if(r->blocksShots)hasShotSolids=TRUE;
             const s16 l=(r->x/8)*8,t=(r->y/8)*8,rr=((r->x+r->w)/8)*8,bb=((r->y+r->h)/8)*8;
+            if(r->blocksShots) {
+                hasShotSolids=TRUE;
+                if(l<shotLeft)shotLeft=l;
+                if(t<shotTop)shotTop=t;
+                if(rr>shotRight)shotRight=rr;
+                if(bb>shotBottom)shotBottom=bb;
+            }
             if(rr>l && bb>t) {
                 if(l<solidLeft)solidLeft=l;if(t<solidTop)solidTop=t;
                 if(rr>solidRight)solidRight=rr;if(bb>solidBottom)solidBottom=bb;
@@ -93,6 +102,7 @@ void ARENA_configure(const ArenaDef *def)
 }
 void ARENA_leave(void)
 {
+    SCENESTREAM_end();
     cameraTargetValid=FALSE;
     TERRAIN_clear();
     if(arenaActive) {
@@ -128,6 +138,7 @@ u16 ARENA_sceneTileCount(void){return scene ? scene->tileCount : 0;}
 u16 ARENA_backgroundAttr(s16 col,s16 row)
 {
     if(!scene || col<0 || row<0 || col>=mapCols() || row>=scene->rows)return 0;
+    if(scene->stream)return SCENESTREAM_attr(col,row);
     const u16 *map=arenaDamaged && scene->damaged ? scene->damaged : scene->map;
     return TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,SCENE_BASE+npcTile(col,row,map));
 }
@@ -200,7 +211,8 @@ static bool occupied(const u32 *rows,s16 x,s16 y,u16 w,u16 h)
     const u16 left=x>>3,right=(x+w-1)>>3,first=left>>5,last=right>>5;
     u32 a=occupiedLeft[left&31];const u32 b=occupiedRight[right&31];
     const u16 count=((y+h-1)>>3)-(y>>3)+1;
-    const u32 *line=rows+(y>>3)*collisionStride+first;
+    // Collision masks have at most512 words, so a16-bit offset is exact.
+    const u32 *line=rows+(u16)((y>>3)*collisionStride)+first;
     if(first==last) {
         a&=b;
         for(u16 row=0;row<count;row++,line+=collisionStride)if(*line&a)return TRUE;
@@ -227,7 +239,7 @@ bool ARENA_shotBlocked(s16 x,s16 y)
     if(!currentLevel && testStage>=OPS_FIRST_ROOM && OPS_shotBlocked(x,y,FALSE))return TRUE;
     if((u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-7) ||
        (u16)(y-arenaMinY+VIDEO_HEIGHT_OFFSET)>(u16)(arenaMaxY-arenaMinY+VIDEO_HEIGHT_OFFSET-7))return TRUE;
-    return hasShotSolids && occupied(shotRows,x,y,8,8);
+    return hasShotSolids && x<shotRight && x+8>shotLeft && y<shotBottom && y+8>shotTop && occupied(shotRows,x,y,8,8);
 }
 bool ARENA_playerShotBlocked(s16 x,s16 y)
 {
@@ -238,7 +250,7 @@ bool ARENA_playerShotBlocked(s16 x,s16 y)
     if(!currentLevel && testStage>=OPS_FIRST_ROOM && OPS_shotBlocked(x,y,TRUE))return TRUE;
     if((u16)(x-arenaMinX)>(u16)(arenaMaxX-arenaMinX-5) ||
        (u16)(y-arenaMinY+VIDEO_HEIGHT_OFFSET)>(u16)(arenaMaxY-arenaMinY+VIDEO_HEIGHT_OFFSET-5))return TRUE;
-    return hasShotSolids && occupied(shotRows,x,y,6,6);
+    return hasShotSolids && x<shotRight && x+6>shotLeft && y<shotBottom && y+6>shotTop && occupied(shotRows,x,y,6,6);
 }
 void ARENA_move(s32 *x,s32 *y,s16 dx,s16 dy,u16 size)
 {
@@ -315,6 +327,15 @@ void ARENA_camera(void)
             if(x>dinorahX-8)x=dinorahX-8;
         }
     }
+    if(scene->cameraSouthStart && py>(s16)scene->cameraSouthStart && world->height>224) {
+        // Frame decorative scenery beyond the walkable boundary as the
+        // player approaches it. Landmark headroom must not hide this edge.
+        const s16 span=arenaMaxY-15-scene->cameraSouthStart;
+        if(span>0) {
+            const s16 south=divu(mulu(py-scene->cameraSouthStart,world->height-224),span);
+            if(y<south)y=south;
+        }
+    }
     cameraPlayerX=px;cameraPlayerY=py;cameraFollowNpc=followNpc;
     cameraNpcX=dinorahX;cameraNpcY=dinorahY;cameraTargetX=x;cameraTargetY=y;cameraTargetValid=TRUE;
     }
@@ -329,6 +350,16 @@ void ARENA_camera(void)
         // viewport at the south wall. Far away, her HUD readout stays visible.
         const s16 playerMinimum=py+20-224;
         if(focusMax<playerMinimum)focusMax=playerMinimum;
+        // Expanded defense fields may frame the whole southern perimeter.
+        // Near the objective retain its headroom; further south follow the
+        // same boundary framing used by the street, with its HUD readout.
+        if(scene->cameraSouthStart && py>(s16)scene->cameraSouthStart) {
+            const s16 span=arenaMaxY-15-scene->cameraSouthStart;
+            if(span>0) {
+                const s16 south=divu(mulu(py-scene->cameraSouthStart,maxY),span);
+                if(focusMax<south)focusMax=south;
+            }
+        }
         if(focusMax>=0 && maxY>focusMax)maxY=focusMax;
     }
     if(x<0)x=0;
@@ -341,9 +372,10 @@ void ARENA_camera(void)
         if(x>cameraX+4)x=cameraX+4;else if(x<cameraX-4)x=cameraX-4;
         if(y>cameraY+4)y=cameraY+4;else if(y<cameraY-4)y=cameraY-4;
     }
+    if(scene->stream && !SCENESTREAM_move(x,y))return;
     cameraX=x;cameraY=y;
     const s16 top=y>>3,left=x>>3;
-    if(residentTop>=0 && (top!=residentTop || left!=residentLeft)) {
+    if(!scene->stream && residentTop>=0 && (top!=residentTop || left!=residentLeft)) {
         const s16 dy=top-residentTop,dx=left-residentLeft;
         if(dy>4 || dy< -4 || dx>4 || dx< -4) {
             LOADING_setEnable(FALSE);residentTop=top;residentLeft=left;
@@ -376,6 +408,7 @@ void ARENA_camera(void)
             VDP_setVerticalScrollVSync(BG_A,y);VDP_setVerticalScrollVSync(BG_B,y);
         }
     }
+    if(scene->stream){residentTop=top;residentLeft=left;}
 }
 static void streamRow(u16 row,TransferMethod method,bool clearDecals)
 {
@@ -438,11 +471,13 @@ void ARENA_draw(void)
     VDP_loadFontData((const u32 *)intro_font,96,DMA);
     LOADING_setColor(1,0);VDP_setTextPriority(TRUE);
     if(!LOADING_active())VDP_fillTileMapRect(WINDOW,TILE_ATTR_FULL(PAL0,TRUE,FALSE,FALSE,TILE_FONT_INDEX),0,0,40,1);
-    LOADING_tiles(scene->tiles,SCENE_BASE,scene->tileCount,DMA);
+    if(scene->stream) {
+        if(!SCENESTREAM_begin(scene)){LOADING_setEnable(enabled);return;}
+    } else LOADING_tiles(scene->tiles,SCENE_BASE,scene->tileCount,DMA);
     HUD_loadOpaqueIcons();
     LOADING_setColors(PAL3*16,scene->palette,16,DMA);
     ARENA_camera();residentTop=cameraY>>3;residentLeft=cameraX>>3;
-    for(u16 row=residentTop;row<residentTop+32;row++){streamRow(row,CPU,FALSE);LOADING_poll();}
+    if(!scene->stream)for(u16 row=residentTop;row<residentTop+32;row++){streamRow(row,CPU,FALSE);LOADING_poll();}
     HUD_begin();LOADING_setEnable(enabled);
 }
 void ARENA_damageChurch(void)

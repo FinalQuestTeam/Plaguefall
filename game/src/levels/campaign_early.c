@@ -28,7 +28,7 @@ const ArenaDef EARLY_ARENA02B={
 };
 static ArenaScene streetScene={
     .tiles=street_tiles,.map=street_map,.palette=street_palette,
-    .tileCount=sizeof(street_tiles)/32,.rows=40,.cols=320,.cameraPlayerY=200,.cameraFocus=streetCameraFocus,.cameraFocusCount=6
+    .tileCount=640,.rows=40,.cols=320,.cameraPlayerY=240,.cameraFocus=streetCameraFocus,.cameraFocusCount=2, .stream=&street_stream,.cameraSouthStart=184
 };
 #include "campaign_early_street_layout.inc"
 void EARLY_prepare(u8 node)
@@ -37,37 +37,43 @@ void EARLY_prepare(u8 node)
         const bool ruined=campaignFlags&CAMPAIGN_CHURCH_RUINED;
         streetScene.map=ruined ? street_damaged_map : street_map;
         streetScene.tiles=ruined ? street_damaged_tiles : street_tiles;
+#ifdef STREET_STREAMED
+        streetScene.tileCount=640;
+        streetScene.stream=ruined ? &street_damaged_stream : &street_stream;
+#else
         streetScene.tileCount=ruined ? sizeof(street_damaged_tiles)/32 : sizeof(street_tiles)/32;
+        streetScene.stream=NULL;
+#endif
     }
 }
 static const ArenaScene depotScene={
     .tiles=depot_tiles,.map=depot_map,.palette=depot_palette,
-    .tileCount=sizeof(depot_tiles)/32,.rows=40,.cols=64
+    .tileCount=sizeof(depot_tiles)/32,.rows=56,.cols=64
 };
 static const ArenaRect depotSolids[]={
-    {64,120,96,48,TRUE},
-    {336,168,96,48,TRUE},
-    {208,208,64,48,TRUE}
+    {64,152,96,48,TRUE},
+    {336,248,96,48,TRUE},
+    {208,320,64,48,TRUE}
 };
 const ArenaDef EARLY_ARENA04={
-    512,320,32,104,479,263,48,112,
+    512,448,32,104,479,391,48,112,
     depotSolids,sizeof(depotSolids)/sizeof(depotSolids[0]),&depotScene
 };
 // Preserve Santa's native floor restoration, contact footprint and crown flash.
 static const ArenaNpcVisual signalNpc={
-    22,20,5,8,earlyNpcFloor,{176,176,40,48,FALSE},194,181,EARLY_NPC_CROWN,112
+    22,30,5,8,earlyNpcFloor,{176,256,40,48,FALSE},194,261,EARLY_NPC_CROWN,192
 };
 static const ArenaScene signalScene={
     .tiles=signal_tiles,.map=signal_map,.damaged=signal_map,.palette=signal_palette,
-    .tileCount=sizeof(signal_tiles)/32,.rows=40,.cols=48,
-    .npcInMap=TRUE,.npcVisual=&signalNpc
+    .tileCount=sizeof(signal_tiles)/32,.rows=56,.cols=48,
+    .npcInMap=TRUE,.npcVisual=&signalNpc,.cameraSouthStart=304
 };
 static const ArenaRect signalSolids[]={
-    {176,176,40,48,FALSE},
-    {40,144,56,40,TRUE},
-    {304,224,40,40,FALSE}
+    {176,256,40,48,FALSE},
+    {40,176,56,40,TRUE},
+    {304,336,40,40,FALSE}
 };
 const ArenaDef EARLY_ARENA05={
-    384,320,16,112,367,271,64,232,
+    384,448,16,112,367,399,64,296,
     signalSolids,sizeof(signalSolids)/sizeof(signalSolids[0]),&signalScene
 };

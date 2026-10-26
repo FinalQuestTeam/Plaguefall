@@ -1,0 +1,133 @@
+{
+  "romSHA256": "1331c6058d784f534373827edbcad846a25460ab5dc6681fe266ed1fa5004c69",
+  "bootstrapSHA256": "f2b38b90303eb7c69515fab5b37ee86a4409e34a819402083a7ee6e27cead95e",
+  "region": "PAL",
+  "passed": true,
+  "requiredFPS": 50,
+  "physicalFramesPerCase": 1800,
+  "warmupSeconds": 4,
+  "shieldClock": "item",
+  "motion": "patrol",
+  "measuredPhases": [
+    "3"
+  ],
+  "policies": [
+    "native_cadence"
+  ],
+  "instrumentedTimingDiagnosticOnly": false,
+  "cases": [
+    {
+      "phase": "3",
+      "policy": "native_cadence",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "routeHUDValues": [
+        "000",
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006"
+      ],
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          264,
+          192
+        ],
+        [
+          304,
+          192
+        ],
+        [
+          344,
+          192
+        ],
+        [
+          384,
+          192
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 50.0,
+      "targetMet": true,
+      "meanCPULoadPct": 46.527,
+      "p95CPULoadPct": 55.322,
+      "maximumCPULoadPct": 59.131,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          32,
+          240
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "playerPositionRange": [
+        [
+          264,
+          408
+        ],
+        [
+          184,
+          184
+        ]
+      ],
+      "visibleEnemiesRange": [
+        3,
+        4
+      ],
+      "visibleProjectilesRange": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "satMaximumSampled": [
+        21,
+        11,
+        144
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "instrumented": false,
+      "profileSubTicks": {},
+      "phaseStayedActive": true,
+      "deathTailIncluded": false,
+      "streamFaults": 0,
+      "streamPeakTiles": 534,
+      "projectileSetup": "Replenished inactive records inside current viewport; active records retain native trajectory."
+    }
+  ],
+  "method": "Same production ROM and node snapshot per policy. Invulnerability and enemy HP isolate timing; Dinorah waits. Legacy resets complete records each VBlank; preserving policies retain AI/render clocks and velocities. No transition or death settling is included. Real controller patrol exercises camera streaming; not a complete route/difficulty playthrough.",
+  "geometrySnapshot": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/phase03-three-segments-v1/integration-v1/validation/geometry",
+  "status": "target-met"
+}

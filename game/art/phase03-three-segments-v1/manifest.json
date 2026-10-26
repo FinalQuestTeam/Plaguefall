@@ -1,0 +1,777 @@
+{
+  "status": "visual_proposal_not_integrated",
+  "phase": 3,
+  "world": [
+    2560,
+    320
+  ],
+  "sequence": [
+    "A",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "module": [
+    512,
+    320
+  ],
+  "church": {
+    "source": "references/igreja-original.png",
+    "position": [
+      48,
+      24
+    ],
+    "size": [
+      200,
+      112
+    ],
+    "exact_rendered_pixels": true,
+    "damaged_exact_rendered_pixels": true,
+    "palette_preview_exact": true
+  },
+  "repetition": {
+    "identical_base_B": true,
+    "props_vary": true
+  },
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      109,
+      109,
+      36
+    ],
+    [
+      36,
+      36,
+      72
+    ],
+    [
+      109,
+      72,
+      36
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      72,
+      109,
+      72
+    ],
+    [
+      145,
+      109,
+      72
+    ],
+    [
+      182,
+      145,
+      72
+    ],
+    [
+      182,
+      72,
+      36
+    ],
+    [
+      36,
+      72,
+      109
+    ],
+    [
+      218,
+      145,
+      72
+    ],
+    [
+      109,
+      36,
+      0
+    ],
+    [
+      218,
+      182,
+      109
+    ],
+    [
+      218,
+      218,
+      182
+    ],
+    [
+      72,
+      109,
+      145
+    ],
+    [
+      255,
+      255,
+      218
+    ]
+  ],
+  "objects": {
+    "van": {
+      "src": [
+        24,
+        224,
+        568,
+        424
+      ],
+      "size": [
+        80,
+        56
+      ],
+      "foot": [
+        8,
+        38,
+        64,
+        16
+      ],
+      "shots": true
+    },
+    "poste": {
+      "src": [
+        696,
+        24,
+        160,
+        624
+      ],
+      "size": [
+        16,
+        80
+      ],
+      "foot": [
+        2,
+        68,
+        12,
+        12
+      ],
+      "shots": false
+    },
+    "cacamba": {
+      "src": [
+        1016,
+        248,
+        512,
+        416
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "foot": [
+        4,
+        24,
+        40,
+        12
+      ],
+      "shots": true
+    },
+    "entulho": {
+      "src": [
+        24,
+        672,
+        528,
+        336
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "foot": [
+        6,
+        16,
+        36,
+        12
+      ],
+      "shots": false
+    },
+    "caixas": {
+      "src": [
+        592,
+        648,
+        432,
+        368
+      ],
+      "size": [
+        32,
+        32
+      ],
+      "foot": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "shots": true
+    },
+    "fragmentos": {
+      "src": [
+        1096,
+        736,
+        416,
+        272
+      ],
+      "size": [
+        24,
+        16
+      ],
+      "foot": null,
+      "shots": false
+    }
+  },
+  "placements": [
+    {
+      "asset": "entulho",
+      "x": 344,
+      "y": 216
+    },
+    {
+      "asset": "poste",
+      "x": 440,
+      "y": 72
+    },
+    {
+      "asset": "poste",
+      "x": 560,
+      "y": 72
+    },
+    {
+      "asset": "van",
+      "x": 648,
+      "y": 160
+    },
+    {
+      "asset": "fragmentos",
+      "x": 792,
+      "y": 220
+    },
+    {
+      "asset": "entulho",
+      "x": 936,
+      "y": 240
+    },
+    {
+      "asset": "entulho",
+      "x": 1120,
+      "y": 240
+    },
+    {
+      "asset": "poste",
+      "x": 1288,
+      "y": 72
+    },
+    {
+      "asset": "cacamba",
+      "x": 1408,
+      "y": 164
+    },
+    {
+      "asset": "fragmentos",
+      "x": 1480,
+      "y": 232
+    },
+    {
+      "asset": "van",
+      "x": 1664,
+      "y": 212
+    },
+    {
+      "asset": "poste",
+      "x": 1840,
+      "y": 72
+    },
+    {
+      "asset": "caixas",
+      "x": 1944,
+      "y": 160
+    },
+    {
+      "asset": "fragmentos",
+      "x": 1784,
+      "y": 236
+    },
+    {
+      "asset": "entulho",
+      "x": 2128,
+      "y": 208
+    },
+    {
+      "asset": "poste",
+      "x": 2192,
+      "y": 72
+    }
+  ],
+  "collision_proposal": [
+    {
+      "asset": "entulho",
+      "x": 344,
+      "y": 216,
+      "rect": [
+        350,
+        232,
+        36,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "poste",
+      "x": 440,
+      "y": 72,
+      "rect": [
+        442,
+        140,
+        12,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "poste",
+      "x": 560,
+      "y": 72,
+      "rect": [
+        562,
+        140,
+        12,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "van",
+      "x": 648,
+      "y": 160,
+      "rect": [
+        656,
+        198,
+        64,
+        16
+      ],
+      "blocksShots": true
+    },
+    {
+      "asset": "entulho",
+      "x": 936,
+      "y": 240,
+      "rect": [
+        942,
+        256,
+        36,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "entulho",
+      "x": 1120,
+      "y": 240,
+      "rect": [
+        1126,
+        256,
+        36,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "poste",
+      "x": 1288,
+      "y": 72,
+      "rect": [
+        1290,
+        140,
+        12,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "cacamba",
+      "x": 1408,
+      "y": 164,
+      "rect": [
+        1412,
+        188,
+        40,
+        12
+      ],
+      "blocksShots": true
+    },
+    {
+      "asset": "van",
+      "x": 1664,
+      "y": 212,
+      "rect": [
+        1672,
+        250,
+        64,
+        16
+      ],
+      "blocksShots": true
+    },
+    {
+      "asset": "poste",
+      "x": 1840,
+      "y": 72,
+      "rect": [
+        1842,
+        140,
+        12,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "caixas",
+      "x": 1944,
+      "y": 160,
+      "rect": [
+        1946,
+        178,
+        28,
+        12
+      ],
+      "blocksShots": true
+    },
+    {
+      "asset": "entulho",
+      "x": 2128,
+      "y": 208,
+      "rect": [
+        2134,
+        224,
+        36,
+        12
+      ],
+      "blocksShots": false
+    },
+    {
+      "asset": "poste",
+      "x": 2192,
+      "y": 72,
+      "rect": [
+        2194,
+        140,
+        12,
+        12
+      ],
+      "blocksShots": false
+    }
+  ],
+  "proposed_route": [
+    [
+      264,
+      184
+    ],
+    [
+      400,
+      184
+    ],
+    [
+      560,
+      224
+    ],
+    [
+      792,
+      224
+    ],
+    [
+      1000,
+      208
+    ],
+    [
+      1256,
+      208
+    ],
+    [
+      1472,
+      232
+    ],
+    [
+      1600,
+      184
+    ],
+    [
+      1832,
+      184
+    ],
+    [
+      2056,
+      184
+    ],
+    [
+      2288,
+      184
+    ],
+    [
+      2424,
+      176
+    ]
+  ],
+  "camera_samples": [
+    {
+      "x": 0,
+      "y": 0,
+      "file": "cameras/x0000-y0.png"
+    },
+    {
+      "x": 160,
+      "y": 0,
+      "file": "cameras/x0160-y0.png"
+    },
+    {
+      "x": 320,
+      "y": 0,
+      "file": "cameras/x0320-y0.png"
+    },
+    {
+      "x": 480,
+      "y": 0,
+      "file": "cameras/x0480-y0.png"
+    },
+    {
+      "x": 640,
+      "y": 0,
+      "file": "cameras/x0640-y0.png"
+    },
+    {
+      "x": 800,
+      "y": 0,
+      "file": "cameras/x0800-y0.png"
+    },
+    {
+      "x": 960,
+      "y": 0,
+      "file": "cameras/x0960-y0.png"
+    },
+    {
+      "x": 1120,
+      "y": 0,
+      "file": "cameras/x1120-y0.png"
+    },
+    {
+      "x": 1280,
+      "y": 0,
+      "file": "cameras/x1280-y0.png"
+    },
+    {
+      "x": 1440,
+      "y": 0,
+      "file": "cameras/x1440-y0.png"
+    },
+    {
+      "x": 1600,
+      "y": 0,
+      "file": "cameras/x1600-y0.png"
+    },
+    {
+      "x": 1760,
+      "y": 0,
+      "file": "cameras/x1760-y0.png"
+    },
+    {
+      "x": 1920,
+      "y": 0,
+      "file": "cameras/x1920-y0.png"
+    },
+    {
+      "x": 2080,
+      "y": 0,
+      "file": "cameras/x2080-y0.png"
+    },
+    {
+      "x": 2240,
+      "y": 0,
+      "file": "cameras/x2240-y0.png"
+    },
+    {
+      "x": 0,
+      "y": 48,
+      "file": "cameras/x0000-y48.png"
+    },
+    {
+      "x": 160,
+      "y": 48,
+      "file": "cameras/x0160-y48.png"
+    },
+    {
+      "x": 320,
+      "y": 48,
+      "file": "cameras/x0320-y48.png"
+    },
+    {
+      "x": 480,
+      "y": 48,
+      "file": "cameras/x0480-y48.png"
+    },
+    {
+      "x": 640,
+      "y": 48,
+      "file": "cameras/x0640-y48.png"
+    },
+    {
+      "x": 800,
+      "y": 48,
+      "file": "cameras/x0800-y48.png"
+    },
+    {
+      "x": 960,
+      "y": 48,
+      "file": "cameras/x0960-y48.png"
+    },
+    {
+      "x": 1120,
+      "y": 48,
+      "file": "cameras/x1120-y48.png"
+    },
+    {
+      "x": 1280,
+      "y": 48,
+      "file": "cameras/x1280-y48.png"
+    },
+    {
+      "x": 1440,
+      "y": 48,
+      "file": "cameras/x1440-y48.png"
+    },
+    {
+      "x": 1600,
+      "y": 48,
+      "file": "cameras/x1600-y48.png"
+    },
+    {
+      "x": 1760,
+      "y": 48,
+      "file": "cameras/x1760-y48.png"
+    },
+    {
+      "x": 1920,
+      "y": 48,
+      "file": "cameras/x1920-y48.png"
+    },
+    {
+      "x": 2080,
+      "y": 48,
+      "file": "cameras/x2080-y48.png"
+    },
+    {
+      "x": 2240,
+      "y": 48,
+      "file": "cameras/x2240-y48.png"
+    },
+    {
+      "x": 0,
+      "y": 96,
+      "file": "cameras/x0000-y96.png"
+    },
+    {
+      "x": 160,
+      "y": 96,
+      "file": "cameras/x0160-y96.png"
+    },
+    {
+      "x": 320,
+      "y": 96,
+      "file": "cameras/x0320-y96.png"
+    },
+    {
+      "x": 480,
+      "y": 96,
+      "file": "cameras/x0480-y96.png"
+    },
+    {
+      "x": 640,
+      "y": 96,
+      "file": "cameras/x0640-y96.png"
+    },
+    {
+      "x": 800,
+      "y": 96,
+      "file": "cameras/x0800-y96.png"
+    },
+    {
+      "x": 960,
+      "y": 96,
+      "file": "cameras/x0960-y96.png"
+    },
+    {
+      "x": 1120,
+      "y": 96,
+      "file": "cameras/x1120-y96.png"
+    },
+    {
+      "x": 1280,
+      "y": 96,
+      "file": "cameras/x1280-y96.png"
+    },
+    {
+      "x": 1440,
+      "y": 96,
+      "file": "cameras/x1440-y96.png"
+    },
+    {
+      "x": 1600,
+      "y": 96,
+      "file": "cameras/x1600-y96.png"
+    },
+    {
+      "x": 1760,
+      "y": 96,
+      "file": "cameras/x1760-y96.png"
+    },
+    {
+      "x": 1920,
+      "y": 96,
+      "file": "cameras/x1920-y96.png"
+    },
+    {
+      "x": 2080,
+      "y": 96,
+      "file": "cameras/x2080-y96.png"
+    },
+    {
+      "x": 2240,
+      "y": 96,
+      "file": "cameras/x2240-y96.png"
+    }
+  ],
+  "visual_memory": {
+    "rgb_intact": {
+      "colors": 122288,
+      "unique_unflipped_rgba_tiles": 3327,
+      "not_a_4bpp_budget": true
+    },
+    "rgb_damaged": {
+      "colors": 122288,
+      "unique_unflipped_rgba_tiles": 3343,
+      "not_a_4bpp_budget": true
+    },
+    "palette_intact": {
+      "colors": 16,
+      "unique_unflipped_rgba_tiles": 3084,
+      "not_a_4bpp_budget": true
+    },
+    "palette_damaged": {
+      "colors": 16,
+      "unique_unflipped_rgba_tiles": 3100,
+      "not_a_4bpp_budget": true
+    },
+    "target": {
+      "palette_colors": 16,
+      "resident_tiles": 640
+    },
+    "note": "Visual draft and same-palette preview. No exact640-tile atlas has been exported or accepted. The current tile count requires further optimization before integration."
+  },
+  "implementation_changed": false,
+  "generation_tool": "built-in image_gen.imagegen",
+  "assembly": "Node canvas scene renderer; original church copied at native scale. Props exported with hard alpha test184; no production asset overwritten."
+}

@@ -1,0 +1,85 @@
+{
+  "issue": "Preview imported current shared gate frames; current source is the diagonal cycle2 revision.",
+  "restored_source": "art/visual-composition-fixes-v1/objectives/cycle-0/gate.png",
+  "restored_source_sha256": "c544f5433626411287ef8f868d2e2fddb3129bda90cb5e0d0989092b4aceb84c",
+  "registration": "art/visual-composition-fixes-v1/objectives/cycle-0/gate-mount.json",
+  "original_exporter": "art/objective-sprites-v1/export.py",
+  "current_source": "art/objective-sprites-v1/source/gate.png",
+  "current_source_sha256": "23b42ff08500b74028d99c6c42d012119c81c6cb2d6563285564533d85a706c5",
+  "current_source_matches_cycle2": true,
+  "cycle2_prompt": "art/visual-composition-fixes-v1/routes/cycle-2/prompts/gate-orientation.txt",
+  "preview_closed": "references/gate-vertical-0.png",
+  "preview_folded": "references/gate-vertical-5.png",
+  "frames": [
+    {
+      "frame": 0,
+      "bbox": [
+        27,
+        1,
+        36,
+        63
+      ],
+      "top_support_center_x": 31.0,
+      "bottom_region_center_x": 31.0
+    },
+    {
+      "frame": 1,
+      "bbox": [
+        27,
+        1,
+        42,
+        63
+      ],
+      "top_support_center_x": 31.0,
+      "bottom_region_center_x": 31.0
+    },
+    {
+      "frame": 2,
+      "bbox": [
+        27,
+        1,
+        37,
+        63
+      ],
+      "top_support_center_x": 31.0,
+      "bottom_region_center_x": 31.0
+    },
+    {
+      "frame": 3,
+      "bbox": [
+        27,
+        2,
+        50,
+        63
+      ],
+      "top_support_center_x": 31.0,
+      "bottom_region_center_x": 31.0
+    },
+    {
+      "frame": 4,
+      "bbox": [
+        27,
+        2,
+        61,
+        63
+      ],
+      "top_support_center_x": 31.0,
+      "bottom_region_center_x": 43.5
+    },
+    {
+      "frame": 5,
+      "bbox": [
+        27,
+        2,
+        60,
+        63
+      ],
+      "top_support_center_x": 31.5,
+      "bottom_region_center_x": 43.0
+    }
+  ],
+  "generated_new_art": false,
+  "rotated_or_sheared": false,
+  "production_resources_changed": false,
+  "production_rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf"
+}

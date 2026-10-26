@@ -15,6 +15,7 @@
 #include "enemies/enemies.h"                     // ENEMIES_setAggroSplit (PROTEGER)
 #include "items/items.h"                        // ITEM_* (item alvo do COLETAR)
 #include "system/video/screens/hud.h"
+#include "system/video/scene_stream.h"
 #include "system/video/screens/hud_label_data.h"
 #include "system/video/sprites/tiles.h"
 
@@ -158,6 +159,9 @@ static void drawBaseHUD(u16 kills)
             const u16 arrow=MARKERS_hudArrow(r->x+r->w/2-px-8,r->y+r->h/2-py-8);
             const u16 sig=progress+((u16)(arrow-MARKER_HUD_E)<<8)+(cur->objective==OBJ_ESCORT ? dinorahHp*137+dinorahState*31 : 0);
             if(sig==hudLast)return;
+            // A route percentage can wait for the next light streaming frame.
+            // Keep combat/health immediate while dense scenery enters view.
+            if(cur->objective==OBJ_REACH && SCENESTREAM_heavyFrame())return;
             hudLast=sig;
             if(cur->objective==OBJ_REACH) {
                 objectiveNumber3(value,progress);HUD_drawObjective("SAÍDA",arrow,value,0,"");

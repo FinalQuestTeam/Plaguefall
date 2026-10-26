@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-25",
+  "local_links_exist": true,
+  "all_eight_visual_state_files_exist": true,
+  "church_identity": {
+    "source": "references/igreja-original.png",
+    "position": [
+      48,
+      16
+    ],
+    "size": [
+      200,
+      112
+    ],
+    "exact_rendered_pixels": true,
+    "damaged_exact_rendered_pixels": true,
+    "palette_preview_exact": true
+  },
+  "production_rom_unchanged": true,
+  "production_rom_sha256": "721552d7817e38796d5ab0adb541e83e5266576d329efced40ee8ac402c31eb3",
+  "scope": "Offline visual proposal; no game integration",
+  "artistic_review": {
+    "whole_panorama_reviewed": true,
+    "four_seams_reviewed": true,
+    "warehouse_roof_hud_adjusted": true,
+    "church_ground_integration_adjusted": true,
+    "human_approval_claimed": false,
+    "limits": [
+      "Dense background vegetation follows the first-phase reference and remains a visual choice for the user.",
+      "16-color preview still exceeds640 unique tiles; an atlas optimization pass is necessary before integration.",
+      "Vertical camera positions can show partial buildings naturally; source modules contain complete silhouettes."
+    ]
+  }
+}

@@ -177,275 +177,204 @@
     "height": 320,
     "bounds": [
       16,
-      80,
+      144,
       2543,
-      303
+      263
     ],
     "start": [
-      32,
+      264,
       184
     ],
     "solids": [
       [
-        352,
-        128,
+        344,
+        232,
+        48,
         16,
-        192,
-        true
+        false
+      ],
+      [
+        440,
+        136,
+        16,
+        16,
+        false
+      ],
+      [
+        560,
+        136,
+        16,
+        16,
+        false
       ],
       [
         656,
-        128,
-        16,
         192,
-        true
-      ],
-      [
-        352,
-        288,
-        320,
-        32,
-        true
-      ],
-      [
-        1648,
-        128,
-        16,
-        192,
-        true
-      ],
-      [
-        1984,
-        128,
-        16,
-        192,
-        true
-      ],
-      [
-        1648,
-        288,
-        352,
-        32,
-        true
-      ],
-      [
-        48,
-        32,
-        200,
-        112,
-        true
-      ],
-      [
-        416,
-        144,
-        192,
-        112,
-        true
-      ],
-      [
-        800,
-        32,
-        160,
-        112,
-        true
-      ],
-      [
-        1248,
-        32,
-        192,
-        112,
-        true
-      ],
-      [
-        1712,
-        144,
-        240,
-        112,
-        true
-      ],
-      [
-        2288,
-        32,
-        240,
-        128,
-        true
-      ],
-      [
-        1312,
-        160,
-        96,
-        56,
-        true
-      ],
-      [
-        2224,
-        176,
-        40,
-        40,
-        true
-      ],
-      [
-        0,
-        0,
-        320,
-        32,
-        true
-      ],
-      [
-        320,
-        0,
-        432,
-        32,
-        true
-      ],
-      [
-        752,
-        0,
-        256,
-        32,
-        true
-      ],
-      [
-        1008,
-        32,
-        192,
-        32,
-        true
-      ],
-      [
-        1200,
-        0,
-        352,
-        32,
-        true
-      ],
-      [
-        1552,
-        0,
-        496,
-        32,
-        true
-      ],
-      [
-        2048,
-        32,
-        128,
-        32,
-        true
-      ],
-      [
-        2176,
-        0,
-        384,
-        32,
-        true
-      ],
-      [
-        352,
-        128,
-        16,
-        32,
-        true
-      ],
-      [
-        608,
-        128,
         64,
-        32,
+        24,
         true
       ],
       [
-        1648,
-        128,
-        16,
-        32,
-        true
-      ],
-      [
-        1952,
-        128,
+        936,
+        256,
         48,
-        32,
+        16,
+        false
+      ],
+      [
+        1120,
+        256,
+        48,
+        16,
+        false
+      ],
+      [
+        1288,
+        136,
+        16,
+        16,
+        false
+      ],
+      [
+        1408,
+        184,
+        48,
+        16,
         true
+      ],
+      [
+        1672,
+        248,
+        64,
+        24,
+        true
+      ],
+      [
+        1840,
+        136,
+        16,
+        16,
+        false
+      ],
+      [
+        1944,
+        176,
+        32,
+        16,
+        true
+      ],
+      [
+        2128,
+        224,
+        48,
+        16,
+        false
+      ],
+      [
+        2192,
+        136,
+        16,
+        16,
+        false
       ]
     ],
     "exit": [
-      2384,
-      176,
+      2368,
+      144,
       112,
       80
     ],
     "traversal_points": [
       [
-        32,
+        264,
         184
       ],
       [
-        328,
+        408,
         184
       ],
       [
-        328,
-        96
+        560,
+        184
       ],
       [
-        696,
-        96
-      ],
-      [
-        696,
-        200
-      ],
-      [
-        1160,
-        200
-      ],
-      [
-        1160,
+        560,
         224
       ],
       [
-        1600,
+        792,
         224
       ],
       [
+        1000,
+        224
+      ],
+      [
+        1000,
+        208
+      ],
+      [
+        1256,
+        208
+      ],
+      [
+        1472,
+        208
+      ],
+      [
+        1472,
+        232
+      ],
+      [
         1600,
-        96
-      ],
-      [
-        2072,
-        96
-      ],
-      [
-        2072,
-        200
-      ],
-      [
-        2160,
-        200
-      ],
-      [
-        2160,
         232
       ],
       [
-        2432,
-        232
+        1600,
+        184
       ],
       [
-        2432,
+        1832,
+        184
+      ],
+      [
+        1920,
+        184
+      ],
+      [
+        1920,
         200
+      ],
+      [
+        2056,
+        200
+      ],
+      [
+        2056,
+        184
+      ],
+      [
+        2288,
+        184
+      ],
+      [
+        2416,
+        184
+      ],
+      [
+        2416,
+        168
       ]
     ],
     "geometry_validation": {
       "footprint": 16,
-      "free_positions": 6183,
-      "reachable_positions": 6183,
+      "free_positions": 4249,
+      "reachable_positions": 4249,
       "all_free_positions_connected": true,
-      "swept16pxSamples": 2926
+      "swept16pxSamples": 2347
     },
-    "tiles": 554,
-    "damaged_tiles": 570,
+    "tiles": 640,
+    "damaged_tiles": 3086,
     "objective": "reach",
     "enemy_cap": 4,
     "shot_cap": 6,
@@ -454,131 +383,171 @@
       1,
       0
     ],
-    "source": "art/campaign-corridors-v3/corrections/3-guidebook",
+    "source": "art/phase03-three-segments-v1/integration-v1",
     "phase": "3",
-    "status": "private_trial_only_requires_visual_review_and_real_ROM_tests",
+    "status": "implemented_emulator_validated",
     "route_points": [
       [
-        40,
+        272,
         192
       ],
       [
-        336,
+        416,
         192
       ],
       [
-        336,
-        104
+        568,
+        192
       ],
       [
-        704,
-        104
-      ],
-      [
-        704,
-        208
-      ],
-      [
-        1168,
-        208
-      ],
-      [
-        1168,
+        568,
         232
       ],
       [
-        1608,
+        800,
         232
       ],
       [
+        1008,
+        232
+      ],
+      [
+        1008,
+        216
+      ],
+      [
+        1264,
+        216
+      ],
+      [
+        1480,
+        216
+      ],
+      [
+        1480,
+        240
+      ],
+      [
         1608,
-        104
-      ],
-      [
-        2080,
-        104
-      ],
-      [
-        2080,
-        208
-      ],
-      [
-        2168,
-        208
-      ],
-      [
-        2168,
         240
       ],
       [
-        2440,
-        240
+        1608,
+        192
       ],
       [
-        2440,
+        1840,
+        192
+      ],
+      [
+        1928,
+        192
+      ],
+      [
+        1928,
         208
+      ],
+      [
+        2064,
+        208
+      ],
+      [
+        2064,
+        192
+      ],
+      [
+        2296,
+        192
+      ],
+      [
+        2424,
+        192
+      ],
+      [
+        2424,
+        176
       ]
     ],
     "player_waypoints": [
       [
-        32,
+        264,
         184
       ],
       [
-        328,
+        408,
         184
       ],
       [
-        328,
-        96
+        560,
+        184
       ],
       [
-        696,
-        96
-      ],
-      [
-        696,
-        200
-      ],
-      [
-        1160,
-        200
-      ],
-      [
-        1160,
+        560,
         224
       ],
       [
-        1600,
+        792,
         224
       ],
       [
+        1000,
+        224
+      ],
+      [
+        1000,
+        208
+      ],
+      [
+        1256,
+        208
+      ],
+      [
+        1472,
+        208
+      ],
+      [
+        1472,
+        232
+      ],
+      [
         1600,
-        96
-      ],
-      [
-        2072,
-        96
-      ],
-      [
-        2072,
-        200
-      ],
-      [
-        2160,
-        200
-      ],
-      [
-        2160,
         232
       ],
       [
-        2432,
-        232
+        1600,
+        184
       ],
       [
-        2432,
+        1832,
+        184
+      ],
+      [
+        1920,
+        184
+      ],
+      [
+        1920,
         200
+      ],
+      [
+        2056,
+        200
+      ],
+      [
+        2056,
+        184
+      ],
+      [
+        2288,
+        184
+      ],
+      [
+        2416,
+        184
+      ],
+      [
+        2416,
+        168
       ]
     ],
     "route_margin": 8,
@@ -592,150 +561,130 @@
       "all_samples_clear_with_margin": true,
       "movement": "axis-aligned segments; intermediate 8px samples validated"
     },
-    "camera_player_y": 200,
+    "camera_player_y": 240,
     "camera_interest": [
       {
-        "id": "church-48",
+        "id": "church",
+        "name": "Igreja",
         "bbox": [
-          48,
           32,
-          200,
-          112
-        ],
-        "player_feet": [
-          136,
+          24,
+          232,
           176
         ],
-        "camera": [
-          0,
-          8
-        ],
-        "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
         "position": [
-          136,
-          176
-        ],
-        "name": "church 48"
+          264,
+          184
+        ]
       },
       {
-        "id": "market-416",
+        "id": "house-512-0",
+        "name": "Casas da rua",
         "bbox": [
-          416,
-          144,
-          192,
-          112
+          576,
+          24,
+          168,
+          104
         ],
-        "player_feet": [
-          496,
-          264
-        ],
-        "camera": [
-          344,
-          96
-        ],
-        "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
         "position": [
-          496,
-          264
+          656,
+          184
         ],
-        "name": "market 416"
+        "camera_focus": false
       },
       {
-        "id": "house-800",
+        "id": "house-512-1",
+        "name": "Casas da rua",
         "bbox": [
-          800,
-          32,
-          160,
-          112
+          792,
+          24,
+          168,
+          104
         ],
-        "player_feet": [
-          872,
-          176
-        ],
-        "camera": [
-          720,
-          8
-        ],
-        "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
         "position": [
           872,
-          176
+          184
         ],
-        "name": "house 800"
+        "camera_focus": false
       },
       {
-        "id": "garage-1248",
+        "id": "house-1024-0",
+        "name": "Casas da rua",
         "bbox": [
-          1248,
-          32,
-          192,
-          112
+          1088,
+          24,
+          168,
+          104
         ],
-        "player_feet": [
-          1280,
-          160
-        ],
-        "camera": [
-          1128,
-          8
-        ],
-        "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
         "position": [
-          1280,
-          160
+          1168,
+          184
         ],
-        "name": "garage 1248"
+        "camera_focus": false
       },
       {
-        "id": "garage-1712",
+        "id": "house-1024-1",
+        "name": "Casas da rua",
         "bbox": [
-          1712,
-          144,
-          240,
-          112
+          1304,
+          24,
+          168,
+          104
         ],
-        "player_feet": [
-          1824,
-          264
-        ],
-        "camera": [
-          1672,
-          96
-        ],
-        "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
         "position": [
-          1824,
-          264
+          1384,
+          184
         ],
-        "name": "garage 1712"
+        "camera_focus": false
       },
       {
-        "id": "warehouse-2288",
+        "id": "house-1536-0",
+        "name": "Casas da rua",
         "bbox": [
-          2288,
-          32,
-          240,
-          128
+          1600,
+          24,
+          168,
+          104
         ],
-        "player_feet": [
-          2400,
-          176
+        "position": [
+          1680,
+          184
         ],
-        "camera": [
+        "camera_focus": false
+      },
+      {
+        "id": "house-1536-1",
+        "name": "Casas da rua",
+        "bbox": [
+          1816,
+          24,
+          168,
+          104
+        ],
+        "position": [
+          1896,
+          184
+        ],
+        "camera_focus": false
+      },
+      {
+        "id": "warehouse",
+        "name": "Galpão",
+        "bbox": [
           2240,
-          8
-        ],
-        "purpose": "Entire building silhouette, base and door visible below reserved HUD.",
-        "position": [
-          2400,
+          24,
+          288,
           176
         ],
-        "name": "warehouse 2288"
+        "position": [
+          2400,
+          184
+        ]
       }
     ],
     "church_bbox": [
       48,
-      32,
+      24,
       200,
       112
     ],
@@ -751,15 +700,10 @@
       "exact_pixels_both_states": true
     },
     "sources": [
-      "source/whole-folded-cycle3.png",
-      "source/truck-extracted.png",
-      "../../../campaign-pattern-v2/early/01-courtyard/complete-native.png",
-      "../../../campaign-pattern-v2/early/01-courtyard/damaged-native.png",
-      "../9-guidebook/modules/whole-workshop-rgba.png",
-      "../../../phase01-courtyard-v2/intact-native.png",
-      "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
-      "../../../campaign-pattern-v2/early/01-courtyard/modules/barrels.png",
-      "build.py"
+      "../references/igreja-original.png",
+      "../source/02-rua-repetivel.png",
+      "../source/03-chegada-galpao.png",
+      "../source/04-objetos-rua.png"
     ],
     "complete": "complete-native.png",
     "native": {
@@ -774,23 +718,26 @@
       "palette": "damaged-native/palette.bin"
     },
     "memory": {
-      "scene_tiles": 554,
-      "objective_tiles": 0,
-      "total_tiles": 570,
-      "budget": 640,
-      "free_tiles": 86,
-      "graphics_bytes": 17728,
-      "map_bytes": 25600,
-      "palette_bytes": 32,
-      "exact_hv_deduplication": true,
-      "pixel_exact_reassembly": true,
-      "lossy_pattern_replacements": 0,
-      "tile_sha256": "df13348ba21c875f418bb1046bc1845d2ee42357f5fb516e1e3fc96c401a1b6e",
-      "damaged_scene_tiles": 570,
-      "max_state_tiles": 570,
+      "scene_tiles": 640,
+      "source_tiles": 3070,
+      "damaged_source_tiles": 3086,
+      "maximum_visible_tiles": 640,
       "states_resident_simultaneously": false,
-      "background_tiles": 554,
-      "limit": 640
+      "resident_graphics_bytes": 20480,
+      "cache_heap_bytes": {
+        "intact": 11260,
+        "damaged": 11292
+      },
+      "native_rom_bytes": 248256,
+      "background_tiles": 640,
+      "objective_tiles": 0,
+      "total_tiles": 640,
+      "limit": 640,
+      "map_bytes": 25600,
+      "graphics_bytes": 20480,
+      "rom_graphics_bytes": 98240,
+      "map_stored_in_rom": true,
+      "damaged_scene_tiles": 640
     },
     "special_states": [
       {
@@ -1007,81 +954,105 @@
     },
     "points": [
       [
-        40,
+        272,
         192
       ],
       [
-        336,
+        416,
         192
       ],
       [
-        336,
-        104
+        568,
+        192
       ],
       [
-        704,
-        104
-      ],
-      [
-        704,
-        208
-      ],
-      [
-        1168,
-        208
-      ],
-      [
-        1168,
+        568,
         232
       ],
       [
-        1608,
+        800,
         232
       ],
       [
+        1008,
+        232
+      ],
+      [
+        1008,
+        216
+      ],
+      [
+        1264,
+        216
+      ],
+      [
+        1480,
+        216
+      ],
+      [
+        1480,
+        240
+      ],
+      [
         1608,
-        104
-      ],
-      [
-        2080,
-        104
-      ],
-      [
-        2080,
-        208
-      ],
-      [
-        2168,
-        208
-      ],
-      [
-        2168,
         240
       ],
       [
-        2440,
-        240
+        1608,
+        192
       ],
       [
-        2440,
+        1840,
+        192
+      ],
+      [
+        1928,
+        192
+      ],
+      [
+        1928,
         208
+      ],
+      [
+        2064,
+        208
+      ],
+      [
+        2064,
+        192
+      ],
+      [
+        2296,
+        192
+      ],
+      [
+        2424,
+        192
+      ],
+      [
+        2424,
+        176
       ]
     ],
     "pauses": [],
     "walkable": [
       16,
-      80,
+      144,
       2528,
-      224
+      120
     ],
     "tileBudget": 640,
-    "nativeTileSHA256": "df13348ba21c875f418bb1046bc1845d2ee42357f5fb516e1e3fc96c401a1b6e",
-    "native_bank": "art/campaign-corridors-v3/corrections/3-guidebook/native",
+    "nativeTileSHA256": "d0658a334deaf49bb1aee0aa61543ec4e9ba54c8995db99b13b2a0c3fb30a987",
+    "native_bank": "art/phase03-three-segments-v1/integration-v1/native",
     "geometry": {
-      "swept16pxSamples": 2926
+      "footprint": 16,
+      "free_positions": 4249,
+      "reachable_positions": 4249,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 2347
     },
-    "swept16pxSamples": 2926,
-    "native_image": "art/campaign-corridors-v3/corrections/3-guidebook/complete-native.png",
+    "swept16pxSamples": 2347,
+    "native_image": "art/phase03-three-segments-v1/integration-v1/complete-native.png",
     "packaging_validation": {
       "active_geometry_unchanged": true,
       "source_paths_resolve": true,
@@ -1191,20 +1162,33 @@
         "damaged_preview": "reviews/camera-warehouse-damaged.png",
         "camera_model": "Normal ARENA settled target; no interpolation, no ROM rendering."
       }
-    ]
+    ],
+    "streamed_tiles": {
+      "source_count": 3070,
+      "damaged_source_count": 3086,
+      "maximum_visible_tiles": 640,
+      "resident_budget": 640,
+      "window": [
+        41,
+        26
+      ],
+      "map_encoding": "unflipped16bit source IDs; dynamic resident slots assigned only at runtime"
+    },
+    "source_tiles": 3070,
+    "camera_south_start": 184
   },
   "04": {
     "size": [
       512,
-      320
+      448
     ],
     "width": 512,
-    "height": 320,
+    "height": 448,
     "bounds": [
       32,
       104,
       479,
-      263
+      391
     ],
     "start": [
       48,
@@ -1213,21 +1197,21 @@
     "solids": [
       [
         64,
-        120,
+        152,
         96,
         48,
         true
       ],
       [
         336,
-        168,
+        248,
         96,
         48,
         true
       ],
       [
         208,
-        208,
+        320,
         64,
         48,
         true
@@ -1237,8 +1221,8 @@
     "traversal_points": [],
     "geometry_validation": {
       "footprint": 16,
-      "free_positions": 800,
-      "reachable_positions": 800,
+      "free_positions": 1680,
+      "reachable_positions": 1680,
       "all_free_positions_connected": true
     },
     "tiles": 602,
@@ -1248,38 +1232,38 @@
   "05": {
     "size": [
       384,
-      320
+      448
     ],
     "width": 384,
-    "height": 320,
+    "height": 448,
     "bounds": [
       16,
       112,
       367,
-      271
+      399
     ],
     "start": [
       64,
-      232
+      296
     ],
     "solids": [
       [
         176,
-        176,
+        256,
         40,
         48,
         false
       ],
       [
         40,
-        144,
+        176,
         56,
         40,
         true
       ],
       [
         304,
-        224,
+        336,
         40,
         40,
         false
@@ -1289,8 +1273,8 @@
     "traversal_points": [],
     "geometry_validation": {
       "footprint": 16,
-      "free_positions": 691,
-      "reachable_positions": 691,
+      "free_positions": 1379,
+      "reachable_positions": 1379,
       "all_free_positions_connected": true
     },
     "tiles": 631,
@@ -1299,7 +1283,7 @@
     "npc_hp": 180,
     "npc_position": [
       176,
-      200
+      280
     ]
   }
 }

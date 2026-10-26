@@ -53,6 +53,7 @@ static u32 hudPixels[HUD_TILE_COUNT*8];
 // Shared scratch: composers run sequentially on the main thread. Keeping this
 // off the2.5KiB68000stack also protects the heap sentinel during interrupts.
 static u32 regionBefore[17*3*8];
+void *HUD_pausedScratch(u16 bytes){return bytes<=sizeof(regionBefore) ? regionBefore : NULL;}
 static u8 hudDirty[HUD_TILE_COUNT];
 static u8 inventoryTypes[INV_POS],inventoryCounts[INV_POS];
 static u8 inventorySelected,inventoryMode;

@@ -1,0 +1,173 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "rom_sha256": "721552d7817e38796d5ab0adb541e83e5266576d329efced40ee8ac402c31eb3",
+  "method": "Controller input only, production ROM: all 19 campaign entries, branch flags, pause switching/restart/cancel, paging, technical rooms and normal new game. RAM is read only.",
+  "checks": {
+    "phase-1": {
+      "passed": true,
+      "details": {
+        "node": 1,
+        "phase": "1",
+        "flags": 0
+      }
+    },
+    "phase-2A": {
+      "passed": true,
+      "details": {
+        "node": 2,
+        "phase": "2A",
+        "flags": 0
+      }
+    },
+    "phase-2B": {
+      "passed": true,
+      "details": {
+        "node": 3,
+        "phase": "2B",
+        "flags": 1
+      }
+    },
+    "phase-3": {
+      "passed": true,
+      "details": {
+        "node": 4,
+        "phase": "3",
+        "flags": 0
+      }
+    },
+    "phase-4": {
+      "passed": true,
+      "details": {
+        "node": 5,
+        "phase": "4",
+        "flags": 0
+      }
+    },
+    "phase-5": {
+      "passed": true,
+      "details": {
+        "node": 6,
+        "phase": "5",
+        "flags": 0
+      }
+    },
+    "phase-6A": {
+      "passed": true,
+      "details": {
+        "node": 7,
+        "phase": "6A",
+        "flags": 0
+      }
+    },
+    "phase-6B": {
+      "passed": true,
+      "details": {
+        "node": 8,
+        "phase": "6B",
+        "flags": 2
+      }
+    },
+    "phase-7": {
+      "passed": true,
+      "details": {
+        "node": 9,
+        "phase": "7",
+        "flags": 0
+      }
+    },
+    "phase-8": {
+      "passed": true,
+      "details": {
+        "node": 10,
+        "phase": "8",
+        "flags": 0
+      }
+    },
+    "phase-9": {
+      "passed": true,
+      "details": {
+        "node": 11,
+        "phase": "9",
+        "flags": 0
+      }
+    },
+    "phase-10": {
+      "passed": true,
+      "details": {
+        "node": 12,
+        "phase": "10",
+        "flags": 0
+      }
+    },
+    "phase-11": {
+      "passed": true,
+      "details": {
+        "node": 13,
+        "phase": "11",
+        "flags": 0
+      }
+    },
+    "phase-12": {
+      "passed": true,
+      "details": {
+        "node": 14,
+        "phase": "12",
+        "flags": 0
+      }
+    },
+    "phase-13A": {
+      "passed": true,
+      "details": {
+        "node": 15,
+        "phase": "13A",
+        "flags": 0
+      }
+    },
+    "phase-13B": {
+      "passed": true,
+      "details": {
+        "node": 16,
+        "phase": "13B",
+        "flags": 4
+      }
+    },
+    "phase-14": {
+      "passed": true,
+      "details": {
+        "node": 17,
+        "phase": "14",
+        "flags": 0
+      }
+    },
+    "phase-15": {
+      "passed": true,
+      "details": {
+        "node": 18,
+        "phase": "15",
+        "flags": 0
+      }
+    },
+    "phase-16": {
+      "passed": true,
+      "details": {
+        "node": 19,
+        "phase": "16",
+        "flags": 0
+      }
+    },
+    "campaign-entries": {
+      "passed": true,
+      "details": "19 campaign variants loaded through the selector without RAM writes"
+    },
+    "paging-cancel-restart": {
+      "passed": true,
+      "details": "C page navigation, B cancel preserves the active phase; pause restart resets the same phase"
+    },
+    "technical-and-normal": {
+      "passed": true,
+      "details": "Room 6 remains available, campaign can be reentered and normal new game clears test mode"
+    }
+  },
+  "failures": []
+}

@@ -9,6 +9,8 @@ Plaguefall se passa num Brasil futuro em que a promessa de conquistar o espaço 
 - [História completa e impactos das rotas](tratamento-proposto.md): roteiro de 23/10/2026, com as 16 fases por partida, diálogos, três bifurcações, participação final de Dinorah e oito combinações de encerramento.
 - [Storyboard visual da campanha](storyboard-campanha.md): começa com os 14 planos da animação existente e segue com sete pranchas de campanha, 28 quadros, falas e impactos; inclui PDF de 21 páginas.
 - [Guia de produção visual das fases](guia-producao-visual-fases.md): 19 fichas, inventário de recursos existentes e cinco kits com 30 famílias de elementos para aprovação antes da produção.
+- [Guia das imagens da fase 3](guia-imagens-fase03.md): início na igreja, rua repetível e chegada ao galpão; medidas, encaixes, objetos, memória e revisão antes de criar as imagens.
+- [Guia dos três blocos da fase 6](guia-imagens-fase06.md): entrada dos esgotos, galeria repetida quatro vezes e saída para o abrigo; composição compartilhada de 6A e 6B, escolta, mecanismos e orçamento de memória.
 - [Abertura](abertura.md): monólogo, encenação e adaptação para a tela atual.
 - [Storyboard do monólogo](storyboard-abertura-v2.md): 14 planos e 18 cartelas, falas, som, cortes e tempo de referência.
 - [Abertura animada](../../art/intro-monologo-v2/README.md): monólogo antes do menu, vídeo da ROM e música contínua desde o logo Plaguefall e somente START para pular.

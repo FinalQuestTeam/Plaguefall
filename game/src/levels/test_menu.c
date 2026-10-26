@@ -2,6 +2,8 @@
 #include "levels/test.h"
 #include "levels/operations.h"
 #include "levels/levels.h"
+#include "levels/graph.h"
+#include "system/video/screens/mission.h"
 #include "system/video/screens/panel.h"
 #include "system/audio/audio.h"
 #include "system/audio/music.h"
@@ -9,6 +11,7 @@
 #include "actors/player.h"
 #include "actors/bomb.h"
 #include "core/game.h"
+bool testCampaignMode;
 static const char *const names[TEST_ROOMS]={"GALERIA DE INIMIGOS","BANCADA DE ITENS","DEFESA DA SANTA","COLISÕES E PERIGOS","COMPORTAMENTO E CHEFE","CARGA E PERFORMANCE","DESLOCAMENTO","PROTEGER DINORAH","ANIMAÇÕES DE MORTE","REGRAS DE MORTE","DEMOLIÇÃO DOS NINHOS","RELIGAR A SUBESTAÇÃO","RECUPERAR CARREGAMENTO","CAÇAR TRANSMISSORES","SANGRAR A PRESSÃO","CORREDOR DE EVACUAÇÃO","ATRAIR O ENXAME","SEGURAR E ABANDONAR"};
 static const char *const goals[TEST_ROOMS]={
     "13 INIMIGOS: ANIMAÇÕES E MORTES.","DUMMY, OITO ITENS E ALVOS EM CADEIA.",
@@ -26,34 +29,53 @@ static void menuFrame(void)
 {
     AUDIO_frameBegin();MUSIC_update();SFX_update();AUDIO_frameEnd();SYS_doVBlankProcess();
 }
-static void roomPage(u8 selected,bool full)
+static void roomPage(u8 selected,bool campaign,bool full)
 {
+    const u8 count=campaign ? NODE_COUNT : TEST_ROOMS;
     const u8 first=selected>=9 ? selected-8 : 0;
     if(full) {
-        char right[16];sprintf(right,"%u SALAS",TEST_ROOMS);
-        PANEL_page("SALAS DE TESTE",right);
-        PANEL_text("A: ENTRAR    B/START: VOLTAR",2,26,PANEL_LIGHT);
+        char right[16];sprintf(right,"%u %s",count,campaign ? "FASES" : "SALAS");
+        PANEL_page(campaign ? "FASES DA CAMPANHA" : "SALAS DE TESTE",right);
+        PANEL_text("ESQ/DIR: CAMPANHA / SALAS",2,3,PANEL_ACCENT);
+        PANEL_text("A: ENTRAR  C: PÁGINA  B: VOLTAR",2,26,PANEL_LIGHT);
     }
     PANEL_selection(5+(selected-first)*2);
-    for(u16 i=first;i<TEST_ROOMS && i<first+9;i++) {
-        char text[40];sprintf(text,"%c %u. %s",i==selected ? '>' : ' ',i+1,names[i]);
-        VDP_clearText(2,5+(i-first)*2,36);
-        PANEL_text(text,2,5+(i-first)*2,i==selected ? PANEL_LIGHT : PANEL_BODY);
+    for(u16 row=0;row<9;row++) {
+        const u8 i=first+row;
+        VDP_clearText(2,5+row*2,36);
+        if(i>=count)continue;
+        char text[48];
+        if(campaign)sprintf(text,"%c %s. %s",i==selected ? '>' : ' ',GRAPH[i+1].name,MISSION_name(i+1));
+        else sprintf(text,"%c %u. %s",i==selected ? '>' : ' ',i+1,names[i]);
+        PANEL_text(text,2,5+row*2,i==selected ? PANEL_LIGHT : PANEL_BODY);
     }
     VDP_clearTextArea(2,23,36,2);
-    PANEL_wrap(goals[selected],2,23,36,1,PANEL_BODY);
+    if(campaign){char goal[64];MISSION_goal(goal,selected+1);PANEL_wrap(goal,2,23,36,1,PANEL_BODY);}
+    else PANEL_wrap(goals[selected],2,23,36,1,PANEL_BODY);
 }
 u8 TEST_chooseRoom(u8 initial)
 {
     AUDIO_silenceAll();if(!PANEL_begin())return 0;
-    u8 selected=(initial>=1 && initial<=TEST_ROOMS) ? initial-1 : 0;
-    roomPage(selected,TRUE);u16 previous=JOY_readJoypad(JOY_1);
+    bool campaign=initial>TEST_ROOMS && initial<=TEST_ROOMS+NODE_COUNT;
+    u8 rooms=(initial>=1 && initial<=TEST_ROOMS) ? initial-1 : 0;
+    u8 phases=campaign ? initial-TEST_ROOMS-1 : 0;
+    u8 selected=campaign ? phases : rooms;
+    roomPage(selected,campaign,TRUE);u16 previous=JOY_readJoypad(JOY_1);
     while(TRUE) {
         menuFrame();const u16 joy=JOY_readJoypad(JOY_1),pressed=joy&~previous;previous=joy;
         if(pressed&(BUTTON_B|BUTTON_START)){PANEL_end();return 0;}
-        if(pressed&BUTTON_A){PANEL_end();return selected+1;}
-        if(pressed&BUTTON_UP){selected=(selected+TEST_ROOMS-1)%TEST_ROOMS;roomPage(selected,FALSE);}
-        else if(pressed&BUTTON_DOWN){selected=(selected+1)%TEST_ROOMS;roomPage(selected,FALSE);}
+        if(pressed&BUTTON_A){PANEL_end();return selected+1+(campaign ? TEST_ROOMS : 0);}
+        if(pressed&(BUTTON_LEFT|BUTTON_RIGHT)) {
+            if(campaign)phases=selected;else rooms=selected;
+            campaign=!campaign;selected=campaign ? phases : rooms;
+            roomPage(selected,campaign,TRUE);continue;
+        }
+        const u8 count=campaign ? NODE_COUNT : TEST_ROOMS;
+        if(pressed&BUTTON_UP)selected=(selected+count-1)%count;
+        else if(pressed&BUTTON_DOWN)selected=(selected+1)%count;
+        else if(pressed&BUTTON_C)selected=selected+9<count ? selected+9 : 0;
+        else continue;
+        roomPage(selected,campaign,FALSE);
     }
 }
 void TEST_pauseSelection(u8 selected)

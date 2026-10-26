@@ -1,0 +1,1575 @@
+{
+  "status": "visual_proposal_not_integrated",
+  "world": [
+    3072,
+    320
+  ],
+  "module": [
+    512,
+    320
+  ],
+  "sequence": [
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "bounds": [
+    24,
+    80,
+    3047,
+    271
+  ],
+  "start": [
+    104,
+    192
+  ],
+  "exit": [
+    2912,
+    144,
+    64,
+    48
+  ],
+  "segments": {
+    "A": {
+      "file": "segments/A.png",
+      "landmark": [
+        56,
+        24,
+        102,
+        144
+      ]
+    },
+    "B": {
+      "file": "segments/B.png",
+      "repeat": 4
+    },
+    "C": {
+      "file": "segments/C.png",
+      "landmark": [
+        2880,
+        24,
+        128,
+        115
+      ]
+    }
+  },
+  "objects": {
+    "bomba": {
+      "foot": [
+        8,
+        24,
+        80,
+        43
+      ],
+      "shots": true
+    },
+    "caixas": {
+      "foot": [
+        2,
+        18,
+        28,
+        12
+      ],
+      "shots": true
+    },
+    "entulho": {
+      "foot": [
+        6,
+        16,
+        36,
+        12
+      ],
+      "shots": false
+    },
+    "barris": {
+      "foot": [
+        0,
+        16,
+        40,
+        24
+      ],
+      "shots": false
+    }
+  },
+  "placements": [
+    {
+      "asset": "caixas",
+      "x": 320,
+      "y": 208
+    },
+    {
+      "asset": "bomba",
+      "x": 648,
+      "y": 88
+    },
+    {
+      "asset": "caixas",
+      "x": 880,
+      "y": 224
+    },
+    {
+      "asset": "entulho",
+      "x": 1168,
+      "y": 232
+    },
+    {
+      "asset": "caixas",
+      "x": 1376,
+      "y": 112
+    },
+    {
+      "asset": "bomba",
+      "x": 1664,
+      "y": 88
+    },
+    {
+      "asset": "entulho",
+      "x": 1968,
+      "y": 232
+    },
+    {
+      "asset": "caixas",
+      "x": 2184,
+      "y": 224
+    },
+    {
+      "asset": "barris",
+      "x": 2368,
+      "y": 112
+    }
+  ],
+  "base_solids": [
+    [
+      56,
+      80,
+      102,
+      88,
+      true
+    ],
+    [
+      2880,
+      80,
+      128,
+      59,
+      true
+    ]
+  ],
+  "prop_solids": [
+    [
+      322,
+      226,
+      28,
+      12,
+      true
+    ],
+    [
+      656,
+      112,
+      80,
+      43,
+      true
+    ],
+    [
+      882,
+      242,
+      28,
+      12,
+      true
+    ],
+    [
+      1174,
+      248,
+      36,
+      12,
+      false
+    ],
+    [
+      1378,
+      130,
+      28,
+      12,
+      true
+    ],
+    [
+      1672,
+      112,
+      80,
+      43,
+      true
+    ],
+    [
+      1974,
+      248,
+      36,
+      12,
+      false
+    ],
+    [
+      2186,
+      242,
+      28,
+      12,
+      true
+    ],
+    [
+      2368,
+      128,
+      40,
+      24,
+      false
+    ]
+  ],
+  "pressure": {
+    "gates": [
+      [
+        832,
+        112,
+        32,
+        64
+      ],
+      [
+        1856,
+        192,
+        32,
+        64
+      ]
+    ],
+    "valves": [
+      [
+        792,
+        128
+      ],
+      [
+        1816,
+        208
+      ]
+    ],
+    "barriers": [
+      [
+        832,
+        80,
+        32,
+        32,
+        true
+      ],
+      [
+        832,
+        176,
+        32,
+        96,
+        true
+      ],
+      [
+        1856,
+        80,
+        32,
+        112,
+        true
+      ],
+      [
+        1856,
+        256,
+        32,
+        16,
+        true
+      ]
+    ],
+    "wait_points": [
+      [
+        752,
+        208
+      ],
+      [
+        1776,
+        144
+      ]
+    ],
+    "working_feet": [
+      [
+        784,
+        152
+      ],
+      [
+        1808,
+        232
+      ]
+    ],
+    "native_frames_reused": true,
+    "gate_source": "art/visual-composition-fixes-v1/objectives/cycle-0/gate.png",
+    "gate_source_sha256": "c544f5433626411287ef8f868d2e2fddb3129bda90cb5e0d0989092b4aceb84c",
+    "current_diagonal_export_reused": false,
+    "gate_support_centers": {
+      "north": 31,
+      "south": 31
+    },
+    "restored_gate_pixels_checked": 818
+  },
+  "routes": {
+    "6A": {
+      "points": [
+        [
+          112,
+          200
+        ],
+        [
+          568,
+          200
+        ],
+        [
+          568,
+          224
+        ],
+        [
+          1128,
+          224
+        ],
+        [
+          1128,
+          184
+        ],
+        [
+          1592,
+          184
+        ],
+        [
+          1592,
+          224
+        ],
+        [
+          2088,
+          224
+        ],
+        [
+          2088,
+          184
+        ],
+        [
+          2944,
+          184
+        ]
+      ],
+      "checked_8px_steps": 373,
+      "connected_free_positions": 8101,
+      "actor_feet": [
+        16,
+        16
+      ],
+      "extra_route_margin": 8
+    },
+    "6B": {
+      "points": [
+        [
+          112,
+          200
+        ],
+        [
+          568,
+          200
+        ],
+        [
+          568,
+          224
+        ],
+        [
+          792,
+          224
+        ],
+        [
+          792,
+          160
+        ],
+        [
+          816,
+          160
+        ],
+        [
+          816,
+          144
+        ],
+        [
+          1128,
+          144
+        ],
+        [
+          1128,
+          184
+        ],
+        [
+          1592,
+          184
+        ],
+        [
+          1592,
+          224
+        ],
+        [
+          1816,
+          224
+        ],
+        [
+          1816,
+          240
+        ],
+        [
+          1840,
+          240
+        ],
+        [
+          1840,
+          224
+        ],
+        [
+          2088,
+          224
+        ],
+        [
+          2088,
+          184
+        ],
+        [
+          2944,
+          184
+        ]
+      ],
+      "checked_8px_steps": 387,
+      "connected_free_positions": 7941,
+      "actor_feet": [
+        16,
+        16
+      ],
+      "extra_route_margin": 8
+    }
+  },
+  "seams": [
+    {
+      "x": 512,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 1024,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 1536,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 2048,
+      "matches_canonical_B_to_B_join": true
+    },
+    {
+      "x": 2560,
+      "matches_canonical_B_to_B_join": true
+    }
+  ],
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      0,
+      36,
+      72
+    ],
+    [
+      0,
+      72,
+      109
+    ],
+    [
+      36,
+      109,
+      145
+    ],
+    [
+      109,
+      145,
+      145
+    ],
+    [
+      145,
+      109,
+      72
+    ],
+    [
+      109,
+      109,
+      109
+    ],
+    [
+      145,
+      145,
+      145
+    ],
+    [
+      218,
+      218,
+      182
+    ],
+    [
+      109,
+      72,
+      36
+    ],
+    [
+      145,
+      109,
+      36
+    ],
+    [
+      182,
+      145,
+      72
+    ],
+    [
+      255,
+      218,
+      109
+    ],
+    [
+      36,
+      36,
+      72
+    ],
+    [
+      72,
+      72,
+      72
+    ]
+  ],
+  "memory_estimate": {
+    "6A": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 1093,
+      "scenery_only_4bpp_equivalent_bytes": 34976
+    },
+    "6B": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 1123,
+      "scenery_only_4bpp_equivalent_bytes": 35936
+    },
+    "6B-aberta": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 1127,
+      "scenery_only_4bpp_equivalent_bytes": 36064
+    },
+    "sem-objetos": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 883,
+      "scenery_only_4bpp_equivalent_bytes": 28256
+    },
+    "6B-sem-objetos": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 913,
+      "scenery_only_4bpp_equivalent_bytes": 29216
+    },
+    "6B-aberta-sem-objetos": {
+      "palette_colors": 16,
+      "unique_tiles_including_hv_reuse": 917,
+      "scenery_only_4bpp_equivalent_bytes": 29344
+    }
+  },
+  "memory_target": {
+    "scene_tiles_6A": 640,
+    "scene_tiles_6B": 384,
+    "mechanism_reserved_tiles_6B": 256,
+    "resident_total": 640,
+    "not_proven_by_RGB_proposal": true,
+    "full_map_bytes": 30720
+  },
+  "camera_samples": [
+    {
+      "variant": "6A",
+      "x": 0,
+      "y": 0,
+      "file": "cameras/6A-x0-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 0,
+      "y": 48,
+      "file": "cameras/6A-x0-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 0,
+      "y": 96,
+      "file": "cameras/6A-x0-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 160,
+      "y": 0,
+      "file": "cameras/6A-x160-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 160,
+      "y": 48,
+      "file": "cameras/6A-x160-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 160,
+      "y": 96,
+      "file": "cameras/6A-x160-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 320,
+      "y": 0,
+      "file": "cameras/6A-x320-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 320,
+      "y": 48,
+      "file": "cameras/6A-x320-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 320,
+      "y": 96,
+      "file": "cameras/6A-x320-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 480,
+      "y": 0,
+      "file": "cameras/6A-x480-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 480,
+      "y": 48,
+      "file": "cameras/6A-x480-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 480,
+      "y": 96,
+      "file": "cameras/6A-x480-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 640,
+      "y": 0,
+      "file": "cameras/6A-x640-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 640,
+      "y": 48,
+      "file": "cameras/6A-x640-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 640,
+      "y": 96,
+      "file": "cameras/6A-x640-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 800,
+      "y": 0,
+      "file": "cameras/6A-x800-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 800,
+      "y": 48,
+      "file": "cameras/6A-x800-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 800,
+      "y": 96,
+      "file": "cameras/6A-x800-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 960,
+      "y": 0,
+      "file": "cameras/6A-x960-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 960,
+      "y": 48,
+      "file": "cameras/6A-x960-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 960,
+      "y": 96,
+      "file": "cameras/6A-x960-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1120,
+      "y": 0,
+      "file": "cameras/6A-x1120-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1120,
+      "y": 48,
+      "file": "cameras/6A-x1120-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1120,
+      "y": 96,
+      "file": "cameras/6A-x1120-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1280,
+      "y": 0,
+      "file": "cameras/6A-x1280-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1280,
+      "y": 48,
+      "file": "cameras/6A-x1280-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1280,
+      "y": 96,
+      "file": "cameras/6A-x1280-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1440,
+      "y": 0,
+      "file": "cameras/6A-x1440-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1440,
+      "y": 48,
+      "file": "cameras/6A-x1440-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1440,
+      "y": 96,
+      "file": "cameras/6A-x1440-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1600,
+      "y": 0,
+      "file": "cameras/6A-x1600-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1600,
+      "y": 48,
+      "file": "cameras/6A-x1600-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1600,
+      "y": 96,
+      "file": "cameras/6A-x1600-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1760,
+      "y": 0,
+      "file": "cameras/6A-x1760-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1760,
+      "y": 48,
+      "file": "cameras/6A-x1760-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1760,
+      "y": 96,
+      "file": "cameras/6A-x1760-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1920,
+      "y": 0,
+      "file": "cameras/6A-x1920-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1920,
+      "y": 48,
+      "file": "cameras/6A-x1920-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 1920,
+      "y": 96,
+      "file": "cameras/6A-x1920-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2080,
+      "y": 0,
+      "file": "cameras/6A-x2080-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2080,
+      "y": 48,
+      "file": "cameras/6A-x2080-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2080,
+      "y": 96,
+      "file": "cameras/6A-x2080-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2240,
+      "y": 0,
+      "file": "cameras/6A-x2240-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2240,
+      "y": 48,
+      "file": "cameras/6A-x2240-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2240,
+      "y": 96,
+      "file": "cameras/6A-x2240-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2400,
+      "y": 0,
+      "file": "cameras/6A-x2400-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2400,
+      "y": 48,
+      "file": "cameras/6A-x2400-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2400,
+      "y": 96,
+      "file": "cameras/6A-x2400-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2560,
+      "y": 0,
+      "file": "cameras/6A-x2560-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2560,
+      "y": 48,
+      "file": "cameras/6A-x2560-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2560,
+      "y": 96,
+      "file": "cameras/6A-x2560-y96.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2720,
+      "y": 0,
+      "file": "cameras/6A-x2720-y0.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2720,
+      "y": 48,
+      "file": "cameras/6A-x2720-y48.png"
+    },
+    {
+      "variant": "6A",
+      "x": 2720,
+      "y": 96,
+      "file": "cameras/6A-x2720-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 0,
+      "y": 0,
+      "file": "cameras/6B-x0-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 0,
+      "y": 48,
+      "file": "cameras/6B-x0-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 0,
+      "y": 96,
+      "file": "cameras/6B-x0-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 160,
+      "y": 0,
+      "file": "cameras/6B-x160-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 160,
+      "y": 48,
+      "file": "cameras/6B-x160-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 160,
+      "y": 96,
+      "file": "cameras/6B-x160-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 320,
+      "y": 0,
+      "file": "cameras/6B-x320-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 320,
+      "y": 48,
+      "file": "cameras/6B-x320-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 320,
+      "y": 96,
+      "file": "cameras/6B-x320-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 480,
+      "y": 0,
+      "file": "cameras/6B-x480-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 480,
+      "y": 48,
+      "file": "cameras/6B-x480-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 480,
+      "y": 96,
+      "file": "cameras/6B-x480-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 640,
+      "y": 0,
+      "file": "cameras/6B-x640-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 640,
+      "y": 48,
+      "file": "cameras/6B-x640-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 640,
+      "y": 96,
+      "file": "cameras/6B-x640-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 800,
+      "y": 0,
+      "file": "cameras/6B-x800-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 800,
+      "y": 48,
+      "file": "cameras/6B-x800-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 800,
+      "y": 96,
+      "file": "cameras/6B-x800-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 960,
+      "y": 0,
+      "file": "cameras/6B-x960-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 960,
+      "y": 48,
+      "file": "cameras/6B-x960-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 960,
+      "y": 96,
+      "file": "cameras/6B-x960-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1120,
+      "y": 0,
+      "file": "cameras/6B-x1120-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1120,
+      "y": 48,
+      "file": "cameras/6B-x1120-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1120,
+      "y": 96,
+      "file": "cameras/6B-x1120-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1280,
+      "y": 0,
+      "file": "cameras/6B-x1280-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1280,
+      "y": 48,
+      "file": "cameras/6B-x1280-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1280,
+      "y": 96,
+      "file": "cameras/6B-x1280-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1440,
+      "y": 0,
+      "file": "cameras/6B-x1440-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1440,
+      "y": 48,
+      "file": "cameras/6B-x1440-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1440,
+      "y": 96,
+      "file": "cameras/6B-x1440-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1600,
+      "y": 0,
+      "file": "cameras/6B-x1600-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1600,
+      "y": 48,
+      "file": "cameras/6B-x1600-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1600,
+      "y": 96,
+      "file": "cameras/6B-x1600-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1760,
+      "y": 0,
+      "file": "cameras/6B-x1760-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1760,
+      "y": 48,
+      "file": "cameras/6B-x1760-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1760,
+      "y": 96,
+      "file": "cameras/6B-x1760-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1920,
+      "y": 0,
+      "file": "cameras/6B-x1920-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1920,
+      "y": 48,
+      "file": "cameras/6B-x1920-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 1920,
+      "y": 96,
+      "file": "cameras/6B-x1920-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2080,
+      "y": 0,
+      "file": "cameras/6B-x2080-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2080,
+      "y": 48,
+      "file": "cameras/6B-x2080-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2080,
+      "y": 96,
+      "file": "cameras/6B-x2080-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2240,
+      "y": 0,
+      "file": "cameras/6B-x2240-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2240,
+      "y": 48,
+      "file": "cameras/6B-x2240-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2240,
+      "y": 96,
+      "file": "cameras/6B-x2240-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2400,
+      "y": 0,
+      "file": "cameras/6B-x2400-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2400,
+      "y": 48,
+      "file": "cameras/6B-x2400-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2400,
+      "y": 96,
+      "file": "cameras/6B-x2400-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2560,
+      "y": 0,
+      "file": "cameras/6B-x2560-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2560,
+      "y": 48,
+      "file": "cameras/6B-x2560-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2560,
+      "y": 96,
+      "file": "cameras/6B-x2560-y96.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2720,
+      "y": 0,
+      "file": "cameras/6B-x2720-y0.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2720,
+      "y": 48,
+      "file": "cameras/6B-x2720-y48.png"
+    },
+    {
+      "variant": "6B",
+      "x": 2720,
+      "y": 96,
+      "file": "cameras/6B-x2720-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 0,
+      "y": 0,
+      "file": "cameras/6B-aberta-x0-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 0,
+      "y": 48,
+      "file": "cameras/6B-aberta-x0-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 0,
+      "y": 96,
+      "file": "cameras/6B-aberta-x0-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 160,
+      "y": 0,
+      "file": "cameras/6B-aberta-x160-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 160,
+      "y": 48,
+      "file": "cameras/6B-aberta-x160-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 160,
+      "y": 96,
+      "file": "cameras/6B-aberta-x160-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 320,
+      "y": 0,
+      "file": "cameras/6B-aberta-x320-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 320,
+      "y": 48,
+      "file": "cameras/6B-aberta-x320-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 320,
+      "y": 96,
+      "file": "cameras/6B-aberta-x320-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 480,
+      "y": 0,
+      "file": "cameras/6B-aberta-x480-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 480,
+      "y": 48,
+      "file": "cameras/6B-aberta-x480-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 480,
+      "y": 96,
+      "file": "cameras/6B-aberta-x480-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 640,
+      "y": 0,
+      "file": "cameras/6B-aberta-x640-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 640,
+      "y": 48,
+      "file": "cameras/6B-aberta-x640-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 640,
+      "y": 96,
+      "file": "cameras/6B-aberta-x640-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 800,
+      "y": 0,
+      "file": "cameras/6B-aberta-x800-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 800,
+      "y": 48,
+      "file": "cameras/6B-aberta-x800-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 800,
+      "y": 96,
+      "file": "cameras/6B-aberta-x800-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 960,
+      "y": 0,
+      "file": "cameras/6B-aberta-x960-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 960,
+      "y": 48,
+      "file": "cameras/6B-aberta-x960-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 960,
+      "y": 96,
+      "file": "cameras/6B-aberta-x960-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1120,
+      "y": 0,
+      "file": "cameras/6B-aberta-x1120-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1120,
+      "y": 48,
+      "file": "cameras/6B-aberta-x1120-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1120,
+      "y": 96,
+      "file": "cameras/6B-aberta-x1120-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1280,
+      "y": 0,
+      "file": "cameras/6B-aberta-x1280-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1280,
+      "y": 48,
+      "file": "cameras/6B-aberta-x1280-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1280,
+      "y": 96,
+      "file": "cameras/6B-aberta-x1280-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1440,
+      "y": 0,
+      "file": "cameras/6B-aberta-x1440-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1440,
+      "y": 48,
+      "file": "cameras/6B-aberta-x1440-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1440,
+      "y": 96,
+      "file": "cameras/6B-aberta-x1440-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1600,
+      "y": 0,
+      "file": "cameras/6B-aberta-x1600-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1600,
+      "y": 48,
+      "file": "cameras/6B-aberta-x1600-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1600,
+      "y": 96,
+      "file": "cameras/6B-aberta-x1600-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1760,
+      "y": 0,
+      "file": "cameras/6B-aberta-x1760-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1760,
+      "y": 48,
+      "file": "cameras/6B-aberta-x1760-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1760,
+      "y": 96,
+      "file": "cameras/6B-aberta-x1760-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1920,
+      "y": 0,
+      "file": "cameras/6B-aberta-x1920-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1920,
+      "y": 48,
+      "file": "cameras/6B-aberta-x1920-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 1920,
+      "y": 96,
+      "file": "cameras/6B-aberta-x1920-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2080,
+      "y": 0,
+      "file": "cameras/6B-aberta-x2080-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2080,
+      "y": 48,
+      "file": "cameras/6B-aberta-x2080-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2080,
+      "y": 96,
+      "file": "cameras/6B-aberta-x2080-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2240,
+      "y": 0,
+      "file": "cameras/6B-aberta-x2240-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2240,
+      "y": 48,
+      "file": "cameras/6B-aberta-x2240-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2240,
+      "y": 96,
+      "file": "cameras/6B-aberta-x2240-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2400,
+      "y": 0,
+      "file": "cameras/6B-aberta-x2400-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2400,
+      "y": 48,
+      "file": "cameras/6B-aberta-x2400-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2400,
+      "y": 96,
+      "file": "cameras/6B-aberta-x2400-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2560,
+      "y": 0,
+      "file": "cameras/6B-aberta-x2560-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2560,
+      "y": 48,
+      "file": "cameras/6B-aberta-x2560-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2560,
+      "y": 96,
+      "file": "cameras/6B-aberta-x2560-y96.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2720,
+      "y": 0,
+      "file": "cameras/6B-aberta-x2720-y0.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2720,
+      "y": 48,
+      "file": "cameras/6B-aberta-x2720-y48.png"
+    },
+    {
+      "variant": "6B-aberta",
+      "x": 2720,
+      "y": 96,
+      "file": "cameras/6B-aberta-x2720-y96.png"
+    }
+  ],
+  "source_generation": {
+    "tool": "built-in image_gen.imagegen",
+    "prompts": "prompts/",
+    "rejected": [
+      "source/01-acesso-escada.png: incompatible diagonal camera; replaced by frontal module"
+    ],
+    "generated_art_saved": "source/"
+  },
+  "assembly": "Node canvas: shared material strips, complete transparent landmarks, identical repeated B, native prop reuse, nearest scaling, alpha threshold184 and separate fixed16color palette preview.",
+  "implementation_changed": false,
+  "production_rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf"
+}

@@ -1,0 +1,123 @@
+{
+  "romSHA256": "318815e4281315cedcb820885471cbacc8f7aecd127244fffa606d35c7b86ffb",
+  "bootstrapSHA256": "f2b38b90303eb7c69515fab5b37ee86a4409e34a819402083a7ee6e27cead95e",
+  "region": "NTSC",
+  "passed": true,
+  "requiredFPS": 60,
+  "physicalFramesPerCase": 1800,
+  "warmupSeconds": 4,
+  "shieldClock": "item",
+  "motion": "static",
+  "measuredPhases": [
+    "3"
+  ],
+  "policies": [
+    "native_cadence"
+  ],
+  "instrumentedTimingDiagnosticOnly": false,
+  "cases": [
+    {
+      "phase": "3",
+      "policy": "native_cadence",
+      "roster": [
+        1,
+        0
+      ],
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "enemyPositionsAtSetup": [
+        [
+          264,
+          192
+        ],
+        [
+          304,
+          192
+        ],
+        [
+          344,
+          192
+        ],
+        [
+          384,
+          192
+        ]
+      ],
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "gameFPS": 60.0,
+      "targetMet": true,
+      "meanCPULoadPct": 66.711,
+      "p95CPULoadPct": 70.117,
+      "maximumCPULoadPct": 72.754,
+      "populationRange": [
+        4,
+        4
+      ],
+      "minimumShotsBeforeStep": [
+        6,
+        6
+      ],
+      "retargetValues": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "playerShotCachedPoseValues": [
+        1
+      ],
+      "cameraRange": [
+        [
+          112,
+          112
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "playerPositionRange": [
+        [
+          264,
+          264
+        ],
+        [
+          184,
+          184
+        ]
+      ],
+      "visibleEnemiesRange": [
+        4,
+        4
+      ],
+      "visibleProjectilesRange": [
+        [
+          1,
+          6
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "satMaximumSampled": [
+        21,
+        11,
+        144
+      ],
+      "nonUnitGameFrameSteps": [],
+      "dinorahStateTransitions": [],
+      "instrumented": false,
+      "profileSubTicks": {},
+      "phaseStayedActive": true,
+      "deathTailIncluded": false,
+      "streamFaults": 0,
+      "streamPeakTiles": 481,
+      "projectileSetup": "Replenished inactive records inside current viewport; active records retain native trajectory."
+    }
+  ],
+  "method": "Same production ROM and node snapshot per policy. Invulnerability and enemy HP isolate timing; Dinorah waits. Legacy resets complete records each VBlank; preserving policies retain AI/render clocks and velocities. No transition or death settling is included. Static camera load; not route difficulty.",
+  "status": "target-met"
+}

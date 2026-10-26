@@ -17,7 +17,7 @@ def active(phase=None):
 
 def read(phase):
     configuration=json.loads((ROOT/'active.json').read_text())
-    folder = ROOT / configuration.get('scene_folders',{}).get(phase,FOLDERS[phase])
+    folder = (ROOT / configuration.get('scene_folders',{}).get(phase,FOLDERS[phase])).resolve()
     d = json.loads((folder/'manifest.json').read_text())
     d.update(phase=phase, width=d['size'][0], height=d['size'][1])
     d['points'] = d.get('route_points', d.get('points'))
@@ -33,15 +33,21 @@ def read(phase):
     bank=folder/'native'
     tiles=(bank/'tiles.bin').read_bytes();mapping=(bank/'map.bin').read_bytes();palette=(bank/'palette.bin').read_bytes()
     assert len(tiles)%32==0 and len(mapping)==d['width']//8*d['height']//8*2 and len(palette)==32
-    d['tiles']=len(tiles)//32
+    streamed=bool(d.get('streamed_tiles'))
+    source_count=len(tiles)//32
+    if streamed:d['source_tiles']=source_count
+    d['tiles']=640 if streamed else source_count
     d['tileBudget']=384 if phase=='6B' else 640
     assert d['tiles']<=d['tileBudget']
     attrs=struct.unpack('>'+str(len(mapping)//2)+'H',mapping)
-    assert max(a&2047 for a in attrs)<d['tiles']
+    assert max(attrs if streamed else (a&2047 for a in attrs))<source_count
+    if streamed:assert d['streamed_tiles']['maximum_visible_tiles']<=640
     d['memory']=dict(d.get('memory',{}),scene_tiles=d['tiles'],background_tiles=d['tiles'],objective_tiles=256 if phase=='6B' else 0,total_tiles=d['tiles']+(256 if phase=='6B' else 0),limit=640,map_bytes=len(mapping),graphics_bytes=len(tiles))
+    if streamed:d['memory'].update(graphics_bytes=d['tiles']*32,rom_graphics_bytes=len(tiles),map_stored_in_rom=True)
     if phase=='3':
-        damaged=(folder/'damaged-native/tiles.bin').read_bytes();assert len(damaged)//32<=640
-        d['memory'].update(damaged_scene_tiles=len(damaged)//32,total_tiles=max(d['tiles'],len(damaged)//32),states_resident_simultaneously=False)
+        damaged=(folder/'damaged-native/tiles.bin').read_bytes()
+        if not streamed:assert len(damaged)//32<=640
+        d['memory'].update(damaged_scene_tiles=640 if streamed else len(damaged)//32,damaged_source_tiles=len(damaged)//32,total_tiles=max(d['tiles'],640 if streamed else len(damaged)//32),states_resident_simultaneously=False)
     d['nativeTileSHA256']=hashlib.sha256(tiles).hexdigest()
     d['native_bank']=str(bank.relative_to(GAME))
     d['camera_player_y']=d.get('camera_player_y',200 if phase=='12' else 184)
@@ -63,7 +69,8 @@ def array(name,kind,data):
     unit=4 if kind=='u32' else 2
     vals=struct.unpack('>'+str(len(data)//unit)+('I' if unit==4 else 'H'),data)
     lines=[','.join(('0x%08xUL'%v if unit==4 else str(v)) for v in vals[i:i+16])+',' for i in range(0,len(vals),16)]
-    return 'static const '+kind+' '+name+'[]={\n'+'\n'.join(lines)+'\n};\n'
+    alignment=' __attribute__((aligned(32)))' if kind=='u32' and name in ('street_tiles','street_damaged_tiles') else ''
+    return 'static const '+kind+' '+name+'[]'+alignment+'={\n'+'\n'.join(lines)+'\n};\n'
 
 def rects(name,solids):
     return 'static const ArenaRect '+name+'[]={'+','.join('{'+','.join(map(str,v[:4]))+(','+'TRUE' if v[4] else ',FALSE')+'}' for v in solids)+'};\n'
@@ -76,7 +83,7 @@ def route(name,pointsname,d):
             +'const RouteDef '+name+'={'+pointsname+','+str(len(d['points']))+',{'+','.join(map(str,d['exit']))+',FALSE}};\n')
 
 def camera(name,d):
-    boxes=[x['bbox']+[False] for x in d.get('camera_interest',[]) if x['bbox'][2]<=320 and x['bbox'][3]<=200]
+    boxes=[x['bbox']+[False] for x in d.get('camera_interest',[]) if x.get('camera_focus',True) and x['bbox'][2]<=320 and x['bbox'][3]<=200]
     if not boxes:return '', '.cameraFocus=NULL,.cameraFocusCount=0'
     return rects(name,boxes),f'.cameraFocus={name},.cameraFocusCount={len(boxes)}'
 
@@ -85,8 +92,10 @@ def early_files():
     damaged=p/'damaged-native'
     dt=(damaged/'tiles.bin').read_bytes();dm=(damaged/'map.bin').read_bytes()
     assert (damaged/'palette.bin').read_bytes()==palette
-    assert len(dt)//32<=640 and len(dm)==len(mapping)
+    streamed=bool(d.get('streamed_tiles'))
+    assert (streamed or len(dt)//32<=640) and len(dm)==len(mapping)
     code=array('street_tiles','u32',tiles)+array('street_palette','u16',palette)+array('street_map','u16',mapping)+array('street_damaged_tiles','u32',dt)+array('street_damaged_map','u16',dm)
+    if streamed:code+=f'#define STREET_STREAMED 1\nstatic const ArenaStream street_stream={{{len(tiles)//32}}};\nstatic const ArenaStream street_damaged_stream={{{len(dt)//32}}};\n'
     focus_code,focus_fields=camera('streetCameraFocus',d);code+=focus_code
     layout=rects('streetSolids',d['solids'])+arena('EARLY_ARENA03','streetScene','streetSolids',d)+route('EARLY_ROUTE03','streetPoints',d)
     files={GAME/'src/levels/campaign_early_street.inc':code.encode(),GAME/'src/levels/campaign_early_street_layout.inc':layout.encode()}
@@ -95,7 +104,7 @@ def early_files():
     text=c.read_text()
     start=text.index('static ArenaScene streetScene');end=text.index('};',start)+2
     block=('static ArenaScene streetScene={\n    .tiles=street_tiles,.map=street_map,.palette=street_palette,\n'
-           f'    .tileCount=sizeof(street_tiles)/32,.rows=40,.cols=320,.cameraPlayerY={d["camera_player_y"]},{focus_fields}\n'+'};')
+           f'    .tileCount={640 if streamed else "sizeof(street_tiles)/32"},.rows=40,.cols=320,.cameraPlayerY={d["camera_player_y"]},{focus_fields}'+(', .stream=&street_stream' if streamed else '')+(f',.cameraSouthStart={d["camera_south_start"]}' if d.get('camera_south_start') else '')+'\n'+'};')
     text=text[:start]+block+text[end:]
     files[c]=text.encode()
     for path,key in [(GAME/'art/campaign-pattern-v2/early/geometry.json','03'),(GAME/'art/campaign-early-v1/manifest.json','03')]:

@@ -1,0 +1,310 @@
+{
+  "passed": true,
+  "date": "2026-10-26",
+  "phase": 3,
+  "status": "implemented_emulator_validated",
+  "human_approval_claimed": false,
+  "rom_sha256": "1331c6058d784f534373827edbcad846a25460ab5dc6681fe266ed1fa5004c69",
+  "rom_bytes": 2621440,
+  "elf_sections": {
+    "text_bytes": 2508412,
+    "data_bytes": 260,
+    "bss_bytes": 19756,
+    "static_ram_bytes": 20016
+  },
+  "summary": "Limite inferior corrigido: a câmera percorre de y=0 a y=96 e revela toda a decoração até o final da imagem.\nDamião para antes do meio-fio; os pixels de y=264 a y=319 são visíveis e não caminháveis.\nOs cinco trechos passaram em NTSC/PAL, com conferência dos tiles até a última linha da imagem.\nPercurso, 51 enquadramentos, 39 faces de contato, tiros, variantes e pausas também passaram.\nCarga no trecho inicial: 60 FPS NTSC / 50 FPS PAL por 1.800 quadros, sem perdas. Cenário: 20 KiB de VRAM.\nPercurso com combate nativo: 59,738 FPS NTSC / 49,956 FPS PAL.",
+  "memory": {
+    "scene_tiles": 640,
+    "source_tiles": 3070,
+    "damaged_source_tiles": 3086,
+    "maximum_visible_tiles": 640,
+    "states_resident_simultaneously": false,
+    "resident_graphics_bytes": 20480,
+    "cache_heap_bytes": {
+      "intact": 11260,
+      "damaged": 11292
+    },
+    "native_rom_bytes": 248256
+  },
+  "camera_samples_per_region": 51,
+  "contact_faces_per_region": 39,
+  "native_combat": {
+    "ntsc": {
+      "outcome": "completed",
+      "minimum_hp": 84,
+      "maximum_enemies": 1,
+      "active_game_frames": 1139,
+      "physical_frames": 1144,
+      "observed_game_fps": 59.738,
+      "health_or_ai_RAM_grants": false,
+      "difficulty_human_reviewed": false
+    },
+    "pal": {
+      "outcome": "completed",
+      "minimum_hp": 84,
+      "maximum_enemies": 2,
+      "active_game_frames": 1135,
+      "physical_frames": 1136,
+      "observed_game_fps": 49.956,
+      "health_or_ai_RAM_grants": false,
+      "difficulty_human_reviewed": false
+    }
+  },
+  "load_scope": "First street section: controller patrol, four native enemies and six active projectiles per pool. HP, invulnerability and refilling inactive records are diagnostic RAM setup. Native AI clocks, audio and graphics are preserved. This is not a full-route maximum-load claim.",
+  "load": {
+    "ntsc": {
+      "gameFPS": 60.0,
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "visibleEnemiesRange": [
+        3,
+        4
+      ],
+      "visibleProjectilesRange": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "satMaximumSampled": [
+        21,
+        11,
+        144
+      ],
+      "streamFaults": 0,
+      "streamPeakTiles": 534,
+      "routeHUDValues": [
+        "000",
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006"
+      ]
+    },
+    "pal": {
+      "gameFPS": 50.0,
+      "physicalFrames": 1800,
+      "gameFrames": 1800,
+      "enemyCap": 4,
+      "shotCapPerPool": 6,
+      "visibleEnemiesRange": [
+        3,
+        4
+      ],
+      "visibleProjectilesRange": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "satMaximumSampled": [
+        21,
+        11,
+        144
+      ],
+      "streamFaults": 0,
+      "streamPeakTiles": 534,
+      "routeHUDValues": [
+        "000",
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006"
+      ]
+    }
+  },
+  "reports": {
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json",
+    "load-ntsc": "validation/load-ntsc/report.json",
+    "load-pal": "validation/load-pal/report.json",
+    "selector-ntsc": "validation/selector-ntsc/report.json",
+    "selector-pal": "validation/selector-pal/report.json"
+  },
+  "hardware_tested": false,
+  "difficulty_human_reviewed": false,
+  "remaining_limits": [
+    "O percurso com combate nativo perdeu cinco quadros físicos em NTSC e um em PAL. A carga sem perdas se aplica à patrulha inicial medida.",
+    "As construções saem naturalmente da câmera durante a rolagem; o panorama e as vistas de apresentação conservam as estruturas completas."
+  ],
+  "lower_border": {
+    "camera_range_y": [
+      0,
+      96
+    ],
+    "walkable_bottom_y": 263,
+    "decorative_y": [
+      264,
+      319
+    ],
+    "sections_tested": 5,
+    "reports": {
+      "ntsc": {
+        "views": [
+          {
+            "section": "igreja",
+            "player": [
+              264,
+              248
+            ],
+            "camera": [
+              32,
+              96
+            ],
+            "cells": 1000,
+            "resident": 205,
+            "peak": 637
+          },
+          {
+            "section": "rua1",
+            "player": [
+              800,
+              248
+            ],
+            "camera": [
+              648,
+              96
+            ],
+            "cells": 1000,
+            "resident": 253,
+            "peak": 637
+          },
+          {
+            "section": "rua2",
+            "player": [
+              1320,
+              248
+            ],
+            "camera": [
+              1168,
+              96
+            ],
+            "cells": 1000,
+            "resident": 215,
+            "peak": 637
+          },
+          {
+            "section": "rua3",
+            "player": [
+              1840,
+              248
+            ],
+            "camera": [
+              1688,
+              96
+            ],
+            "cells": 1000,
+            "resident": 245,
+            "peak": 637
+          },
+          {
+            "section": "galpao",
+            "player": [
+              2304,
+              248
+            ],
+            "camera": [
+              2208,
+              96
+            ],
+            "cells": 1000,
+            "resident": 170,
+            "peak": 637
+          }
+        ],
+        "nonwalkable_y": 264,
+        "last_world_row": 39
+      },
+      "pal": {
+        "views": [
+          {
+            "section": "igreja",
+            "player": [
+              264,
+              248
+            ],
+            "camera": [
+              32,
+              96
+            ],
+            "cells": 1000,
+            "resident": 205,
+            "peak": 637
+          },
+          {
+            "section": "rua1",
+            "player": [
+              800,
+              248
+            ],
+            "camera": [
+              648,
+              96
+            ],
+            "cells": 1000,
+            "resident": 253,
+            "peak": 637
+          },
+          {
+            "section": "rua2",
+            "player": [
+              1320,
+              248
+            ],
+            "camera": [
+              1168,
+              96
+            ],
+            "cells": 1000,
+            "resident": 215,
+            "peak": 637
+          },
+          {
+            "section": "rua3",
+            "player": [
+              1840,
+              248
+            ],
+            "camera": [
+              1688,
+              96
+            ],
+            "cells": 1000,
+            "resident": 245,
+            "peak": 637
+          },
+          {
+            "section": "galpao",
+            "player": [
+              2304,
+              248
+            ],
+            "camera": [
+              2208,
+              96
+            ],
+            "cells": 1000,
+            "resident": 170,
+            "peak": 637
+          }
+        ],
+        "nonwalkable_y": 264,
+        "last_world_row": 39
+      }
+    }
+  }
+}

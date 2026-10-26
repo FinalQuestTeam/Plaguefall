@@ -1,0 +1,10 @@
+Use case: stylized-concept. Asset type: transparent pixel-art PROP ATLAS for the same Plaguefall street. Genuine alpha background, no checkerboard.
+Reference1 is the existing church/courtyard, reference2 the new street, reference3 the original small van: preserve their native pixel scale, warm weathered16color-style palette, elevated60degree orthographic camera and lighting. No text or labels.
+Create ONE atlas on a 3-column by2-row invisible grid, native384x256 (cells128x128) or exact integer enlargement1536x1024. Place exactly SIX separate complete props, one per cell, fully inside with generous transparent margins, no touching or overlap:
+top-left: abandoned small weathered BLUE utility car/van, viewed like reference3 with roof visible, approximately80x48 native pixels, contact shadow included, no road or ground rectangle.
+top-middle: one simple upright streetlamp on small square concrete foot, dim/unlit lamp, complete crown, native16x80, rusty grey/olive metal.
+top-right: one small worn dark teal rubbish skip / dumpster, open top visible, native48x40, low compact body.
+bottom-left: low irregular pile of red bricks, cream plaster rubble and one small timber, native48x32, entire shadow included.
+bottom-middle: one group of two worn wooden shipping crates, native32x32, complete corners.
+bottom-right: a few small scattered red brick/plaster fragments, native24x16, low readable silhouette.
+Objects must look drawn for this EXACT existing Mega Drive game, hard native 1pixel detail, no anti-aliasing or painted smoothness, no characters, no logos, no gradient rimlight. Shadows subtle dark brown/olive matching sunlight, NEVER opaque orange ground tiles. Keep all canvas outside objects and their subtle contact shadows fully TRANSPARENT. Not a scene, not scenery walls, no extra variants.

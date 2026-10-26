@@ -70,11 +70,10 @@
     {
       "phase": "4",
       "structural_review": "aceitável",
-      "integrated_camera_review": "pendente",
+      "integrated_camera_review": "aceitável em NTSC/PAL; panoramas e câmeras norte/centro/sul",
       "observations": [
-        "Portão inteiro, janelas, vigas e paredes inferiores próprias caracterizam galpão.",
-        "Duas bancadas completas e um palete criam circulação para combate20.",
-        "Ruído do piso e grãos isolados dos recortes removidos na revisão."
+        "Galpão512×448; altura útil288px; paredes laterais e inferiores completas.",
+        "Duas bancadas e um palete redistribuídos; objetivo20 mantido; carga com patrulha vertical60/50FPS."
       ],
       "criteria": [
         "Silhuetas arquitetônicas completas",
@@ -82,16 +81,18 @@
         "Quatro regiões conectadas",
         "Circulação coerente com objetivo"
       ],
-      "automatic_tests_are_not_visual_approval": true
+      "automatic_tests_are_not_visual_approval": true,
+      "revision": "phase45-vertical-v1",
+      "rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf"
     },
     {
       "phase": "5",
       "structural_review": "aceitável",
-      "integrated_camera_review": "pendente",
+      "integrated_camera_review": "aceitável em NTSC/PAL; panoramas e câmeras norte/centro/sul",
       "observations": [
-        "Galpão externo com telhado completo, limites e cantos próprios.",
-        "Santa nativa central, suprimentos e barris nos flancos deixam aproximações de defesa.",
-        "Primeira fonte reprovada por parecer interior; fonte atual corrigida e layout recomposto."
+        "Pátio384×448; altura útil288px; Santa, suprimentos e barris redistribuídos.",
+        "Colisão, coroa e restauração de piso reposicionadas; rodapé e Santa visíveis ao sul.",
+        "Relógio completo120s e contato nativo verificados; carga com patrulha vertical60/50FPS."
       ],
       "criteria": [
         "Silhuetas arquitetônicas completas",
@@ -99,7 +100,9 @@
         "Quatro regiões conectadas",
         "Circulação coerente com objetivo"
       ],
-      "automatic_tests_are_not_visual_approval": true
+      "automatic_tests_are_not_visual_approval": true,
+      "revision": "phase45-vertical-v1",
+      "rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf"
     }
   ]
 }

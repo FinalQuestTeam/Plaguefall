@@ -1,150 +1,363 @@
 {
   "passed": true,
-  "date": "2026-10-23",
-  "revision": "Campanha completa com correções dos corredores e otimização de movimento, HUD e colisão",
+  "date": "2026-10-26",
+  "revision": "Fases 4 e 5: área de combate ampliada na vertical em 80%",
   "rom": "../out/release/Plaguefall.bin",
   "named_rom": "../out/release/Plaguefall.bin",
-  "rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
-  "rom_bytes": 2359296,
+  "rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf",
+  "rom_bytes": 2621440,
   "elf_sections": {
-    "text_bytes": 2339440,
-    "data_bytes": 248,
-    "bss_bytes": 19694,
-    "static_ram_bytes": 19942
+    "text_bytes": 2512092,
+    "data_bytes": 260,
+    "bss_bytes": 19756,
+    "static_ram_bytes": 20016
   },
   "emulator": "Genesis Plus GX",
   "physical_hardware_tested": false,
-  "human_approval_claimed": false,
-  "campaign": {
-    "versions": 19,
-    "stages_per_run": 16,
-    "independent_decisions": 3,
-    "endings": 8,
-    "functional_suites_passed": 10,
-    "regions": [
-      "NTSC",
-      "PAL"
-    ],
-    "camera_samples": 878,
-    "compiled_bank_comparisons": 18
+  "checks": {
+    "build": true,
+    "native_resources": true,
+    "package": true,
+    "phase45_functional_ntsc": true,
+    "phase45_functional_pal": true,
+    "phase45_exact_atlas_and_visible_maps": true,
+    "phase45_collision_faces_per_region": 24,
+    "phase45_perimeter_faces_per_region": 8,
+    "phase45_vertical_load_ntsc": true,
+    "phase45_vertical_load_pal": true,
+    "phase05_full120s_clock": true,
+    "phase05_relocated_npc_native_contact_and_floor": true,
+    "selector_ntsc": true,
+    "selector_pal": true,
+    "campaign_entries_per_region": 19,
+    "phase03_regression_ntsc": true,
+    "phase03_regression_pal": true
   },
-  "corridor_performance": {
-    "phases": [
-      "3",
-      "6A",
-      "6B",
-      "9",
-      "12"
-    ],
-    "total_measured_vblanks": 18000,
-    "lost_vblanks": 0,
-    "ntsc_fps": 60,
-    "pal_fps": 50,
-    "report": "../art/campaign-corridors-v3/corrections/performance/comparison-748849.json"
+  "reports": {
+    "phase45": "../art/phase45-vertical-v1/delivery.json",
+    "selector_ntsc": "../art/phase45-vertical-v1/validation/selector-ntsc/report.json",
+    "selector_pal": "../art/phase45-vertical-v1/validation/selector-pal/report.json",
+    "phase03_regression_ntsc": "../art/phase45-vertical-v1/validation/phase03-regression-ntsc/report.json",
+    "phase03_regression_pal": "../art/phase45-vertical-v1/validation/phase03-regression-pal/report.json"
   },
-  "acceptance": "../art/campaign-corridors-v3/corrections/delivery-candidate/acceptance.json",
-  "artistic_status": "reviewed_for_integration_with_reservations",
-  "limits": [
-    "Carga medida: primeiro trecho de cada corredor, movimento por controle, inimigos/tiros nos tetos, cadência nativa e escudo de 3 s. Invulnerabilidade/HP isolam custo; não é uma partida completa nem dificuldade humana.",
-    "Os 16 inimigos forçados das provas de sobrecarga excedem os tetos autorais; não entram no critério de 60/50 FPS.",
-    "Módulos e materiais se repetem; os panoramas e as câmeras foram avaliados separadamente do orçamento de tiles.",
-    "Capturas de composição suspendem combate e progresso porRAM; hardware físico não foi testado."
-  ],
+  "scope": "Vertical expansion of phases4/5 only. Full native scenes and production camera views reviewed; isolated maximum-cap vertical load patrol20s per phase/region. Controller collisions and full120s objective timer verified. Not a human difficulty certification. Publication verification also reran the19-entry selector and full phase3 functional/camera/cache/pause/controller suite in NTSC/PAL on this exact ROM. Phase6 three-block art and vertical gate restoration remain an isolated visual proposal.",
   "previous_revision": {
     "historical_only": true,
     "validation": {
       "passed": true,
-      "date": "2026-10-23",
-      "revision": "Campanha completa:19versões,16etapas,3decisões,8encerramentos",
+      "date": "2026-10-26",
+      "revision": "Fase 3: enquadramento do limite inferior e colisão antes do meio-fio",
       "rom": "../out/release/Plaguefall.bin",
       "named_rom": "../out/release/Plaguefall.bin",
-      "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
-      "rom_bytes": 2490368,
-      "text_bytes": 2367724,
-      "data_bytes": 228,
-      "bss_bytes": 19602,
-      "static_ram_bytes": 19830,
-      "native_checks_passed": true,
+      "rom_sha256": "1331c6058d784f534373827edbcad846a25460ab5dc6681fe266ed1fa5004c69",
+      "rom_bytes": 2621440,
+      "elf_sections": {
+        "text_bytes": 2508412,
+        "data_bytes": 260,
+        "bss_bytes": 19756,
+        "static_ram_bytes": 20016
+      },
       "emulator": "Genesis Plus GX",
       "physical_hardware_tested": false,
-      "objective_art": {
-        "new_assets": 10,
-        "authored_frames": 60,
-        "all_frames_distinct": true,
-        "generation": "built-in image_gen.imagegen",
-        "palette": "existing PAL1",
-        "tile_base": 817,
-        "maximum_resident_tiles": 480,
-        "vram_end_exclusive": 1297,
-        "checks_passed": 130,
-        "rooms": [
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18
-        ],
-        "animations_finish_after_result": true,
-        "pause_freezes_animations": true,
-        "frame_patterns_verified_in_vram": true,
-        "ground_tiles_verified_during_camera_motion": true,
-        "strict_fps_target_met_in_all_scenarios": false,
-        "reports": {
-          "ntsc": "../art/objective-sprites-v1/validation/mission-polish/ntsc/report.json",
-          "pal": "../art/objective-sprites-v1/validation/mission-polish/pal/report.json"
-        },
-        "validation_scope": "All eight rooms, both regions: 65 checks per region; controller completion, animation/VRAM/ground registration, pause, failure boundaries, normal/stress 30-second profiles.",
-        "resource_export_check_passed": true,
-        "gate_mount_verified": true,
-        "active_assets": 9,
-        "archived_assets": [
-          "refugee"
-        ],
-        "generator_pulses_after_completion": true,
-        "cargo_bag_collection_verified": true,
-        "dinorah_escort_route_verified": true,
-        "containment_retention_verified": true,
-        "enemy_caps": {
-          "16": 3,
-          "other_rooms": 4
-        },
-        "shot_cap_per_side": 6
+      "checks": {
+        "build": true,
+        "native_resources": true,
+        "phase03_functional_ntsc": true,
+        "phase03_functional_pal": true,
+        "phase03_load_ntsc": true,
+        "phase03_load_pal": true,
+        "selector_ntsc": true,
+        "selector_pal": true,
+        "campaign_entries_per_region": 19,
+        "visible640_tiles_and_pause": true,
+        "lower_border_five_sections_ntsc_pal": true
       },
-      "previous_validation": "../art/objective-sprites-v1/validation/mission-polish/previous-build-validation.json",
-      "original_escort_regression": {
-        "ntsc": "../art/objective-sprites-v1/validation/mission-polish/original-routes-ntsc/report.json",
-        "pal": "../art/objective-sprites-v1/validation/mission-polish/original-routes-pal/report.json"
+      "reports": {
+        "phase03": "../art/phase03-three-segments-v1/integration-v1/delivery.json"
       },
-      "campaign_v2": {
-        "status": "implemented-and-emulator-verified",
-        "date": "2026-10-23",
-        "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
-        "rom_bytes": 2490368,
-        "text_bytes": 2367724,
-        "data_bytes": 228,
-        "bss_bytes": 19602,
-        "static_ram_bytes": 19830,
-        "versions": 19,
-        "stages_per_run": 16,
-        "independent_decisions": 3,
-        "endings": 8,
-        "agent_workstreams": 5,
-        "emulator_suites_passed": 10,
-        "regions": [
-          "NTSC",
-          "PAL"
-        ],
-        "physical_hardware_tested": false,
-        "limitations": [
-          "FPS sob injeção contínua máxima não são fixos em60/50Hz.",
-          "Ensaios com RAM isolam colisão, objetivos e saturação; amostras de dificuldade usam controles e vida normal.",
-          "As escoltas completas foram percorridas com combate isolado; o teste do chefe aumentou somente a saúde inicial de Damião.",
-          "Amostras automatizadas não substituem uma campanha humana completa para ajustar dificuldade."
-        ],
-        "report": "../art/campaign-integrated-v1/summary.json"
+      "scope": "Only phase 3: southern camera framing and movement boundary. Five sections reveal the final decorative rows with real downward input; the player stops before the curb. Pixel/640-tile cache, pause, full route, projectiles, 39 contact faces, original church states, 19 selector entries and initial-section load were checked in NTSC/PAL.",
+      "native_combat": {
+        "ntsc": {
+          "outcome": "completed",
+          "minimum_hp": 84,
+          "maximum_enemies": 1,
+          "active_game_frames": 1139,
+          "physical_frames": 1144,
+          "observed_game_fps": 59.738,
+          "health_or_ai_RAM_grants": false,
+          "difficulty_human_reviewed": false
+        },
+        "pal": {
+          "outcome": "completed",
+          "minimum_hp": 84,
+          "maximum_enemies": 2,
+          "active_game_frames": 1135,
+          "physical_frames": 1136,
+          "observed_game_fps": 49.956,
+          "health_or_ai_RAM_grants": false,
+          "difficulty_human_reviewed": false
+        }
+      },
+      "load_first_section_fps": {
+        "ntsc": 60.0,
+        "pal": 50.0
+      },
+      "limits": [
+        "O percurso com combate nativo perdeu cinco quadros físicos em NTSC e um em PAL. A carga sem perdas se aplica à patrulha inicial medida.",
+        "As construções saem naturalmente da câmera durante a rolagem; o panorama e as vistas de apresentação conservam as estruturas completas."
+      ],
+      "previous_revision": {
+        "historical_only": true,
+        "validation": {
+          "passed": true,
+          "date": "2026-10-26",
+          "revision": "Fase 3: igreja original, rua modular, galpão e obstáculos com cache exato de cenário",
+          "rom": "../out/release/Plaguefall.bin",
+          "named_rom": "../out/release/Plaguefall.bin",
+          "rom_sha256": "83c2bcb69f17b3ed1649b1b52e00d4bf1c652195bec5735a82459ffc573682c8",
+          "rom_bytes": 2621440,
+          "elf_sections": {
+            "text_bytes": 2508316,
+            "data_bytes": 260,
+            "bss_bytes": 19756,
+            "static_ram_bytes": 20016
+          },
+          "emulator": "Genesis Plus GX",
+          "physical_hardware_tested": false,
+          "checks": {
+            "build": true,
+            "native_resources": true,
+            "phase03_functional_ntsc": true,
+            "phase03_functional_pal": true,
+            "phase03_load_ntsc": true,
+            "phase03_load_pal": true,
+            "selector_ntsc": true,
+            "selector_pal": true,
+            "campaign_entries_per_region": 19,
+            "visible640_tiles_and_pause": true,
+            "lower_border_five_sections_ntsc_pal": true
+          },
+          "reports": {
+            "phase03": "../art/phase03-three-segments-v1/integration-v1/delivery.json"
+          },
+          "scope": "Only phase 3 scenery was replaced. Checks cover actual VRAM pixels, original church continuity, full traversal, 13 props / 44 contact faces, projectiles, pause at entry and at 640 visible tiles, 19 selector entries and a 1,800-VBlank load patrol per region. Human difficulty and full-route maximum load were not validated.",
+          "native_combat": {
+            "ntsc": {
+              "outcome": "completed",
+              "minimum_hp": 84,
+              "maximum_enemies": 1,
+              "active_game_frames": 1139,
+              "physical_frames": 1142,
+              "observed_game_fps": 59.842,
+              "health_or_ai_RAM_grants": false,
+              "difficulty_human_reviewed": false
+            },
+            "pal": {
+              "outcome": "completed",
+              "minimum_hp": 100,
+              "maximum_enemies": 1,
+              "active_game_frames": 1135,
+              "physical_frames": 1136,
+              "observed_game_fps": 49.956,
+              "health_or_ai_RAM_grants": false,
+              "difficulty_human_reviewed": false
+            }
+          },
+          "load_first_section_fps": {
+            "ntsc": 60.0,
+            "pal": 50.0
+          },
+          "limits": [
+            "O percurso com combate nativo perdeu três quadros físicos em NTSC e um em PAL. O resultado de carga sem perdas se aplica à patrulha inicial medida.",
+            "As construções saem naturalmente da câmera durante a rolagem; o panorama e as vistas de apresentação conservam as estruturas completas."
+          ],
+          "previous_revision": {
+            "historical_only": true,
+            "validation": {
+              "passed": true,
+              "date": "2026-10-24",
+              "revision": "Seleção de testes com 19 versões da campanha e 18 salas técnicas",
+              "rom": "../out/release/Plaguefall.bin",
+              "named_rom": "../out/release/Plaguefall.bin",
+              "rom_sha256": "721552d7817e38796d5ab0adb541e83e5266576d329efced40ee8ac402c31eb3",
+              "rom_bytes": 2359296,
+              "elf_sections": {
+                "text_bytes": 2341192,
+                "data_bytes": 248,
+                "bss_bytes": 19698,
+                "static_ram_bytes": 19946
+              },
+              "emulator": "Genesis Plus GX",
+              "physical_hardware_tested": false,
+              "checks": {
+                "build": true,
+                "portuguese_text": true,
+                "selector_ntsc": true,
+                "selector_pal": true,
+                "campaign_entries_per_region": 19
+              },
+              "reports": {
+                "ntsc": "../art/test-selector-v1/validation/ntsc/report.json",
+                "pal": "../art/test-selector-v1/validation/pal/report.json"
+              },
+              "scope": "Menu e entrada das fases por controle, paginação, variantes, troca/reinício/cancelamento, salas técnicas e novo jogo. Campanha completa e carga não foram repetidas nesta revisão.",
+              "previous_revision": {
+                "historical_only": true,
+                "validation": {
+                  "passed": true,
+                  "date": "2026-10-23",
+                  "revision": "Campanha completa com correções dos corredores e otimização de movimento, HUD e colisão",
+                  "rom": "../out/release/Plaguefall.bin",
+                  "named_rom": "../out/release/Plaguefall.bin",
+                  "rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+                  "rom_bytes": 2359296,
+                  "elf_sections": {
+                    "text_bytes": 2339440,
+                    "data_bytes": 248,
+                    "bss_bytes": 19694,
+                    "static_ram_bytes": 19942
+                  },
+                  "emulator": "Genesis Plus GX",
+                  "physical_hardware_tested": false,
+                  "human_approval_claimed": false,
+                  "campaign": {
+                    "versions": 19,
+                    "stages_per_run": 16,
+                    "independent_decisions": 3,
+                    "endings": 8,
+                    "functional_suites_passed": 10,
+                    "regions": [
+                      "NTSC",
+                      "PAL"
+                    ],
+                    "camera_samples": 878,
+                    "compiled_bank_comparisons": 18
+                  },
+                  "corridor_performance": {
+                    "phases": [
+                      "3",
+                      "6A",
+                      "6B",
+                      "9",
+                      "12"
+                    ],
+                    "total_measured_vblanks": 18000,
+                    "lost_vblanks": 0,
+                    "ntsc_fps": 60,
+                    "pal_fps": 50,
+                    "report": "../art/campaign-corridors-v3/corrections/performance/comparison-748849.json"
+                  },
+                  "acceptance": "../art/campaign-corridors-v3/corrections/delivery-candidate/acceptance.json",
+                  "artistic_status": "reviewed_for_integration_with_reservations",
+                  "limits": [
+                    "Carga medida: primeiro trecho de cada corredor, movimento por controle, inimigos/tiros nos tetos, cadência nativa e escudo de 3 s. Invulnerabilidade/HP isolam custo; não é uma partida completa nem dificuldade humana.",
+                    "Os 16 inimigos forçados das provas de sobrecarga excedem os tetos autorais; não entram no critério de 60/50 FPS.",
+                    "Módulos e materiais se repetem; os panoramas e as câmeras foram avaliados separadamente do orçamento de tiles.",
+                    "Capturas de composição suspendem combate e progresso porRAM; hardware físico não foi testado."
+                  ],
+                  "previous_revision": {
+                    "historical_only": true,
+                    "validation": {
+                      "passed": true,
+                      "date": "2026-10-23",
+                      "revision": "Campanha completa:19versões,16etapas,3decisões,8encerramentos",
+                      "rom": "../out/release/Plaguefall.bin",
+                      "named_rom": "../out/release/Plaguefall.bin",
+                      "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+                      "rom_bytes": 2490368,
+                      "text_bytes": 2367724,
+                      "data_bytes": 228,
+                      "bss_bytes": 19602,
+                      "static_ram_bytes": 19830,
+                      "native_checks_passed": true,
+                      "emulator": "Genesis Plus GX",
+                      "physical_hardware_tested": false,
+                      "objective_art": {
+                        "new_assets": 10,
+                        "authored_frames": 60,
+                        "all_frames_distinct": true,
+                        "generation": "built-in image_gen.imagegen",
+                        "palette": "existing PAL1",
+                        "tile_base": 817,
+                        "maximum_resident_tiles": 480,
+                        "vram_end_exclusive": 1297,
+                        "checks_passed": 130,
+                        "rooms": [
+                          11,
+                          12,
+                          13,
+                          14,
+                          15,
+                          16,
+                          17,
+                          18
+                        ],
+                        "animations_finish_after_result": true,
+                        "pause_freezes_animations": true,
+                        "frame_patterns_verified_in_vram": true,
+                        "ground_tiles_verified_during_camera_motion": true,
+                        "strict_fps_target_met_in_all_scenarios": false,
+                        "reports": {
+                          "ntsc": "../art/objective-sprites-v1/validation/mission-polish/ntsc/report.json",
+                          "pal": "../art/objective-sprites-v1/validation/mission-polish/pal/report.json"
+                        },
+                        "validation_scope": "All eight rooms, both regions: 65 checks per region; controller completion, animation/VRAM/ground registration, pause, failure boundaries, normal/stress 30-second profiles.",
+                        "resource_export_check_passed": true,
+                        "gate_mount_verified": true,
+                        "active_assets": 9,
+                        "archived_assets": [
+                          "refugee"
+                        ],
+                        "generator_pulses_after_completion": true,
+                        "cargo_bag_collection_verified": true,
+                        "dinorah_escort_route_verified": true,
+                        "containment_retention_verified": true,
+                        "enemy_caps": {
+                          "16": 3,
+                          "other_rooms": 4
+                        },
+                        "shot_cap_per_side": 6
+                      },
+                      "previous_validation": "../art/objective-sprites-v1/validation/mission-polish/previous-build-validation.json",
+                      "original_escort_regression": {
+                        "ntsc": "../art/objective-sprites-v1/validation/mission-polish/original-routes-ntsc/report.json",
+                        "pal": "../art/objective-sprites-v1/validation/mission-polish/original-routes-pal/report.json"
+                      },
+                      "campaign_v2": {
+                        "status": "implemented-and-emulator-verified",
+                        "date": "2026-10-23",
+                        "rom_sha256": "ea9caca81c9baa64cd07d011f7b8ae234cb883b50a81c791fdcea179f23a558f",
+                        "rom_bytes": 2490368,
+                        "text_bytes": 2367724,
+                        "data_bytes": 228,
+                        "bss_bytes": 19602,
+                        "static_ram_bytes": 19830,
+                        "versions": 19,
+                        "stages_per_run": 16,
+                        "independent_decisions": 3,
+                        "endings": 8,
+                        "agent_workstreams": 5,
+                        "emulator_suites_passed": 10,
+                        "regions": [
+                          "NTSC",
+                          "PAL"
+                        ],
+                        "physical_hardware_tested": false,
+                        "limitations": [
+                          "FPS sob injeção contínua máxima não são fixos em60/50Hz.",
+                          "Ensaios com RAM isolam colisão, objetivos e saturação; amostras de dificuldade usam controles e vida normal.",
+                          "As escoltas completas foram percorridas com combate isolado; o teste do chefe aumentou somente a saúde inicial de Damião.",
+                          "Amostras automatizadas não substituem uma campanha humana completa para ajustar dificuldade."
+                        ],
+                        "report": "../art/campaign-integrated-v1/summary.json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
