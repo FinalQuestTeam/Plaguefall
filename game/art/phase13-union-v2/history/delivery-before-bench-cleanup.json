@@ -1,0 +1,545 @@
+{
+  "date": "2026-10-27",
+  "revision": "13A/13B: salão ampliado e câmera estável de Damião",
+  "status": "integrated-local; automated checks passed",
+  "passed": true,
+  "rom_sha256": "01eea0c34b900fa372607eb5698836654f23ef52568890c59ef5346220b30269",
+  "rom_bytes": 2752512,
+  "world": {
+    "phases": [
+      "13A",
+      "13B"
+    ],
+    "size": [
+      512,
+      576
+    ],
+    "bounds": [
+      24,
+      160,
+      487,
+      487
+    ],
+    "start": [
+      280,
+      168
+    ],
+    "solids": [
+      [
+        80,
+        328,
+        104,
+        16,
+        true
+      ],
+      [
+        216,
+        272,
+        104,
+        16,
+        true
+      ],
+      [
+        352,
+        392,
+        104,
+        16,
+        true
+      ]
+    ],
+    "targets": {
+      "13A": 30,
+      "13B": 45
+    },
+    "native_pixel_block": 1,
+    "camera_policy": "player-only body center; same stable follow as stages 1–12",
+    "camera_player_y": 0,
+    "camera_south_start": 0,
+    "palette": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        36,
+        36,
+        36
+      ],
+      [
+        72,
+        72,
+        72
+      ],
+      [
+        109,
+        109,
+        109
+      ],
+      [
+        145,
+        145,
+        145
+      ],
+      [
+        182,
+        182,
+        145
+      ],
+      [
+        218,
+        218,
+        182
+      ],
+      [
+        109,
+        72,
+        36
+      ],
+      [
+        145,
+        109,
+        72
+      ],
+      [
+        182,
+        145,
+        109
+      ],
+      [
+        109,
+        36,
+        36
+      ],
+      [
+        145,
+        72,
+        36
+      ],
+      [
+        0,
+        36,
+        72
+      ],
+      [
+        36,
+        72,
+        109
+      ],
+      [
+        72,
+        109,
+        145
+      ],
+      [
+        218,
+        182,
+        109
+      ]
+    ],
+    "complete_source_preserved": true,
+    "modules": [
+      [
+        "locker-window-left",
+        [
+          16,
+          0,
+          176,
+          128
+        ],
+        [
+          16,
+          0
+        ]
+      ],
+      [
+        "locker-window-right",
+        [
+          16,
+          0,
+          176,
+          128
+        ],
+        [
+          336,
+          0
+        ]
+      ],
+      [
+        "banner",
+        [
+          176,
+          0,
+          264,
+          128
+        ],
+        [
+          176,
+          0
+        ]
+      ],
+      [
+        "booth-beam",
+        [
+          256,
+          0,
+          384,
+          24
+        ],
+        [
+          256,
+          0
+        ]
+      ],
+      [
+        "pulpit",
+        [
+          256,
+          24,
+          384,
+          152
+        ],
+        [
+          256,
+          24
+        ]
+      ],
+      [
+        "corner-nw",
+        [
+          0,
+          0,
+          16,
+          128
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        "corner-ne",
+        [
+          496,
+          0,
+          512,
+          128
+        ],
+        [
+          496,
+          0
+        ]
+      ],
+      [
+        "corner-sw",
+        [
+          0,
+          296,
+          32,
+          384
+        ],
+        [
+          0,
+          488
+        ]
+      ],
+      [
+        "corner-se",
+        [
+          480,
+          296,
+          512,
+          384
+        ],
+        [
+          480,
+          488
+        ]
+      ],
+      [
+        "south-left",
+        [
+          32,
+          304,
+          208,
+          384
+        ],
+        [
+          32,
+          496
+        ]
+      ],
+      [
+        "south-right",
+        [
+          32,
+          304,
+          208,
+          384
+        ],
+        [
+          304,
+          496
+        ]
+      ],
+      [
+        "door",
+        [
+          208,
+          296,
+          304,
+          384
+        ],
+        [
+          208,
+          488
+        ]
+      ],
+      [
+        "bench-left",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          72,
+          304
+        ]
+      ],
+      [
+        "bench-center",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          208,
+          248
+        ]
+      ],
+      [
+        "bench-right",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          344,
+          368
+        ]
+      ]
+    ],
+    "logo": {
+      "box": [
+        196,
+        24,
+        48,
+        56
+      ],
+      "source": "../space-workers-union-logo-v1/logo-ste.png"
+    },
+    "dinorah": {
+      "sprite": "sprites/dinorah-room-32x48.png",
+      "box": [
+        300,
+        76,
+        32,
+        48
+      ],
+      "occluded_below_y": 108,
+      "protected_behind_counter": true,
+      "static_scene_character": false,
+      "hardware_sprite": true,
+      "palette": "PAL2; original actor palette",
+      "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+      "source_pose": 0,
+      "pixel_changes": 0
+    },
+    "memorial": {
+      "sprite": "sprites/dinorah-helmet-24x16.png",
+      "box": [
+        304,
+        92,
+        24,
+        16
+      ],
+      "portrait": false,
+      "candles": false,
+      "hardware_sprite": true,
+      "palette": "PAL2; original actor palette",
+      "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+      "crop": [
+        5,
+        12,
+        21,
+        24
+      ],
+      "pixel_changes": 0,
+      "description": "Original Dinorah headgear; not a newly invented hard hat"
+    },
+    "memory": {
+      "source_tiles": 1220,
+      "cache_tiles": 640,
+      "cache_vram_bytes": 20480,
+      "maximum_visible_patterns": 543,
+      "minimum_cache_spare": 97,
+      "viewport_peaks": [
+        {
+          "phase": "13A",
+          "patterns": 543,
+          "conservative_camera": [
+            184,
+            0
+          ]
+        },
+        {
+          "phase": "13B",
+          "patterns": 543,
+          "conservative_camera": [
+            184,
+            0
+          ]
+        }
+      ],
+      "cache_heap_bytes": 7560,
+      "graphics_rom_bytes": 39040,
+      "maps_rom_bytes": 18432,
+      "palette_bytes": 32,
+      "pixel_exact_reassembly": true,
+      "lossy_pattern_replacements": 0,
+      "additional_vram_bytes": 0,
+      "headgear_rom_bytes": 192,
+      "actor_frame_rom_bytes_added": 0,
+      "prop_uses_existing_dinorah_reservation": true
+    },
+    "sources": [
+      {
+        "path": "art/campaign-pattern-v2/resistance/source/13A-union.png",
+        "sha256": "926c9ffdc4da5d7a1d66b36b7053214d2a06ad4adc1ed8fdd910a049902c642c"
+      },
+      {
+        "path": "art/space-workers-union-logo-v1/logo-ste.png",
+        "sha256": "8ecc20cc6b665061d51ab7f3ad7bf1cfaac64f3080c6e4d57e64dae3f501140f"
+      },
+      {
+        "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+        "sha256": "349d914ebffb192aba1a03799b1bb74bc500ac29b26a076157026f51d4b3ddaf"
+      },
+      {
+        "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+        "sha256": "505427e182e8ec586a8d7a9ae76d809d14db5076ffb07b1212a35bc60cbcf6e3"
+      }
+    ],
+    "status": "integrated-local; awaiting visual review"
+  },
+  "previous_world": {
+    "size": [
+      512,
+      384
+    ],
+    "bounds": [
+      24,
+      160,
+      487,
+      295
+    ],
+    "combat_height": 136
+  },
+  "combat_height": 328,
+  "combat_height_increase_pct": 141.2,
+  "camera": {
+    "policy": "Same player-only body center as stages 1–12; extends ARENA_camera through N_13B",
+    "before_center_error_px": 37,
+    "after_center_error_px": 0,
+    "stationary_trials": 12,
+    "motion_trials": 52,
+    "motion_samples": 32789,
+    "clipped_samples": 0,
+    "stream_deferrals": 0,
+    "live_pixel_cells": 864068
+  },
+  "checks": {
+    "generated_resources_and_native_checks": true,
+    "connected_floor": true,
+    "whole_room_24_views_per_variant_per_region": true,
+    "bench_all_faces_and_four_boundaries": true,
+    "controller_only_navigation_after_setup": true,
+    "pause_and_selector_restart": true,
+    "canonical_props_and_PAL2": true,
+    "kill_targets_30_45_and_results": true,
+    "continue_to14": true
+  },
+  "performance": {
+    "ntsc": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 58.3,
+        "cache_peak": 414,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 58.6,
+        "cache_peak": 414,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          7,
+          120
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    },
+    "pal": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 49.7,
+        "cache_peak": 414,
+        "cache_faults": 0,
+        "sprite_limits": [
+          21,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 49.7,
+        "cache_peak": 414,
+        "cache_faults": 0,
+        "sprite_limits": [
+          21,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    }
+  },
+  "reports": {
+    "ntsc": "validation/spacious-ntsc/report.json",
+    "pal": "validation/spacious-pal/report.json",
+    "motion-ntsc": "validation/spacious-motion-ntsc/report.json",
+    "motion-pal": "validation/spacious-motion-pal/report.json",
+    "idle-ntsc": "validation/spacious-idle-ntsc/report.json",
+    "idle-pal": "validation/spacious-idle-pal/report.json"
+  },
+  "limitations": [
+    "Genesis Plus GX; hardware físico não testado.",
+    "Carga controlada: vida protegida e reposição de slots inativos de tiros; não certifica dificuldade humana.",
+    "Relatórios em outras pastas de validação documentam revisões anteriores."
+  ]
+}

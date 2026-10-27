@@ -5,8 +5,11 @@
 #include "system/video/campaign_ground_art.h"
 #include "system/video/sewer_gate_art.h"
 #include "system/video/phase08_transmitter.h"
+#include "system/video/phase14_generator.h"
+#include "system/video/phase15_radio.h"
 #include "system/video/scene_stream.h"
 #include "levels/graph.h"
+#include "levels/phase15_layout.h"
 #include "system/video/floor.h"
 #include "system/video/spritelist.h"
 #include "system/video/screens/loading.h"
@@ -30,9 +33,25 @@ static u8 drawnFrames[OBJECTIVE_VISUAL_CAP],drawnVisibility[OBJECTIVE_VISUAL_CAP
 static s16 lastCol,lastRow,lastRight,lastBottom;
 static bool dirty,campaignArt;
 static u16 idleClock;
+static u16 radioHitTimer;
+static bool drawnRadioHit;
+
+void OBJECTIVEGFX_radioHit(void){radioHitTimer=fps/2;dirty=TRUE;}
+u16 OBJECTIVEGFX_actorDepth(s16 x,s16 feetY,u16 width,u16 attr)
+{
+    attr&=0x7fff;
+    // The transparent radio is a high BG_A overlay. Actors on its front side
+    // retain foreground priority; those behind pass beneath its aerial.
+    if((currentLevel==N_15 || currentLevel==N_16) &&
+       feetY>=PHASE15_BASE_Y+PHASE15_BASE_H &&
+       x<PHASE15_RADIO_X+24 && x+width>PHASE15_RADIO_X-24)attr|=0x8000;
+    return attr;
+}
 
 static const CampaignGroundArt *packedArt(u8 art)
 {
+    if((currentLevel==N_14 || currentLevel==N_15 || currentLevel==N_16) && art==OART_GENERATOR)return &phase14GeneratorGround;
+    if((currentLevel==N_15 || currentLevel==N_16) && art==OART_RADIO)return &phase15RadioGround;
     if((currentLevel==N_6A || currentLevel==N_6B) && art==OART_GATE)return &sewerGateGround;
     return &campaignGroundArt[art];
 }
@@ -57,6 +76,7 @@ static void load(u8 art,u16 *cursor)
 }
 void OBJECTIVEGFX_start(u8 mission)
 {
+    radioHitTimer=0;drawnRadioHit=FALSE;
     campaignArt=FALSE;
     memset(objectiveVisuals,0,sizeof objectiveVisuals);
     memset(objectiveAnimationEvents,0,sizeof objectiveAnimationEvents);
@@ -72,6 +92,7 @@ void OBJECTIVEGFX_start(u8 mission)
 }
 bool OBJECTIVEGFX_startCampaign(u16 artMask)
 {
+    radioHitTimer=0;drawnRadioHit=FALSE;
     memset(objectiveVisuals,0,sizeof objectiveVisuals);
     memset(objectiveAnimationEvents,0,sizeof objectiveAnimationEvents);
     memset(objectiveAnimationFrameMask,0,sizeof objectiveAnimationFrameMask);
@@ -81,7 +102,8 @@ bool OBJECTIVEGFX_startCampaign(u16 artMask)
     u16 cursor=TILE_USER_INDEX+FLOOR_TILE_BASE+ARENA_sceneTileCount(),required=0;
     for(u8 i=0;i<OBJECTIVE_ART_COUNT;i++)if(artMask&(1u<<i))
         required+=currentLevel==N_8 && i==OART_TRANSMITTER ? PHASE08_TRANSMITTER_TILES : packedArt(i)->count ? packedArt(i)->count : objectiveArt[i].tiles*6;
-    const u16 workTiles=currentLevel==N_6B ? ARENA_WORK_BAR_TILE_COUNT : 0;
+    const u16 workTiles=currentLevel==N_14 ? ARENA_WORK_BAR_TILE_COUNT*ARENA_WORK_BAR_SLOT_COUNT :
+                        currentLevel==N_6B || currentLevel==N_11 ? ARENA_WORK_BAR_TILE_COUNT : 0;
     if(cursor+required>TILE_USER_INDEX+FLOOR_TILE_BASE+COURTYARD_TILE_COUNT-workTiles)return FALSE;
     const bool enabled=VDP_getEnable();VDP_setEnable(FALSE);
     for(u8 i=0;i<OBJECTIVE_ART_COUNT;i++)if(artMask&(1u<<i))load(i,&cursor);
@@ -120,6 +142,7 @@ void OBJECTIVEGFX_settle(u8 slot,u8 frame)
 }
 void OBJECTIVEGFX_update(void)
 {
+    if(radioHitTimer){const u16 previous=radioHitTimer--;if((previous&4)!=(radioHitTimer&4))dirty=TRUE;}
     if(++idleClock>=fps)idleClock=0;
     const u16 step=fps/5;
     for(u8 i=0;i<OBJECTIVE_VISUAL_CAP;i++) {
@@ -155,7 +178,10 @@ void OBJECTIVEGFX_update(void)
 }
 static void mapVisual(u8 slot,s16 clipLeft,s16 clipTop,s16 clipRight,s16 clipBottom)
 {
-    const ObjectiveVisual *v=&objectiveVisuals[slot];const ObjectiveArt *a=&objectiveArt[v->art];
+    const ObjectiveVisual *v=&objectiveVisuals[slot];
+    const bool nativeGenerator=campaignArt && (currentLevel==N_14 || currentLevel==N_15 || currentLevel==N_16) && v->art==OART_GENERATOR;
+    const bool nativeRadio=campaignArt && (currentLevel==N_15 || currentLevel==N_16) && v->art==OART_RADIO;
+    const ObjectiveArt *a=nativeGenerator ? &phase14GeneratorArt : nativeRadio ? &phase15RadioArt : &objectiveArt[v->art];
     const s16 x=v->x-a->width/2,y=v->y-a->height+8;
     const s16 col=x/8,row=y/8;
     const u8 width=a->width/8,height=a->height/8;
@@ -163,8 +189,8 @@ static void mapVisual(u8 slot,s16 clipLeft,s16 clipTop,s16 clipRight,s16 clipBot
     // clipped object cannot touch the ring, including when restoring it.
     if(campaignArt && (col+width<=clipLeft || col>=clipRight || row+height<=clipTop || row>=clipBottom))return;
     const u16 base=objectiveArtBases[v->art]+v->frame*a->tiles;
-    const u8 pal=v->mode==3 && (v->age&4) ? PAL0 : PAL1;
-    const bool foreground=v->art==OART_CAGE || (v->mode==1 && (v->art==OART_NEST || v->art==OART_TRAP));
+    const u8 pal=nativeGenerator ? PAL3 : nativeRadio ? PAL1 : v->mode==3 && (v->age&4) ? PAL0 : PAL1;
+    const bool foreground=nativeRadio || v->art==OART_CAGE || (v->mode==1 && (v->art==OART_NEST || v->art==OART_TRAP));
     for(u8 r=0;r<height;r++) {
         if(row+r<clipTop || row+r>=clipBottom)continue;
         s16 left=col,right=col+width;
@@ -173,13 +199,14 @@ static void mapVisual(u8 slot,s16 clipLeft,s16 clipTop,s16 clipRight,s16 clipBot
         u16 data[8];
         for(s16 c=left;c<right;c++) {
             const u16 local=(c-col)*height+r;
-            const bool ink=v->visible && ((campaignArt && (currentLevel==N_6A || currentLevel==N_6B) && v->art==OART_GATE) ? sewerGateVisible[v->frame*a->tiles+local] : objectiveTileVisible[(a->offset>>3)+v->frame*a->tiles+local]);
+            const bool ink=v->visible && (nativeGenerator ? phase14GeneratorVisible[v->frame*a->tiles+local] : nativeRadio ? phase15RadioVisible[v->frame*a->tiles+local] : (campaignArt && (currentLevel==N_6A || currentLevel==N_6B) && v->art==OART_GATE) ? sewerGateVisible[v->frame*a->tiles+local] : objectiveTileVisible[(a->offset>>3)+v->frame*a->tiles+local]);
             u16 tile=base+local;
             if(campaignArt && packedArt(v->art)->count) {
                 const u16 *indices=packedArt(v->art)->map;
                 tile=objectiveArtBases[v->art]+indices[v->frame*a->tiles+local];
             }
-            data[c-left]=ink ? TILE_ATTR_FULL(pal,foreground,FALSE,FALSE,tile) : (campaignArt ? (SCENESTREAM_active() ? 0 : ARENA_backgroundAttr(c,row+r)) : OPS_backgroundAttr(c,row+r));
+            const u8 rowPal=nativeRadio && r>=5 && (radioHitTimer&4) ? PAL0 : pal;
+            data[c-left]=ink ? TILE_ATTR_FULL(rowPal,foreground,FALSE,FALSE,tile) : (campaignArt ? (SCENESTREAM_active() ? 0 : ARENA_backgroundAttr(c,row+r)) : OPS_backgroundAttr(c,row+r));
         }
         VDP_setTileMapDataRow(BG_A,data,(row+r)&31,left&63,right-left,DMA_QUEUE_COPY);
     }
@@ -204,7 +231,8 @@ void OBJECTIVEGFX_ground(bool force)
     for(u8 i=0;i<OBJECTIVE_VISUAL_CAP;i++) {
         const ObjectiveVisual *v=&objectiveVisuals[i];
         if(!v->ground || !objectiveArtBases[v->art])continue;
-        const bool changed=drawnFrames[i]!=v->frame || drawnVisibility[i]!=v->visible;
+        const bool changed=drawnFrames[i]!=v->frame || drawnVisibility[i]!=v->visible ||
+                           (v->art==OART_RADIO && drawnRadioHit!=((radioHitTimer&4)!=0));
         if(force || changed || lastCol<0)mapVisual(i,col,row,right,bottom);
         else if(moved && v->visible) {
             // Streamed maps pin only visible patterns. Paint the same edges
@@ -216,6 +244,7 @@ void OBJECTIVEGFX_ground(bool force)
         }
         drawnFrames[i]=v->frame;drawnVisibility[i]=v->visible;
     }
+    drawnRadioHit=(radioHitTimer&4)!=0;
     lastCol=col;lastRow=row;lastRight=right;lastBottom=bottom;dirty=FALSE;
 }
 static void sprite(u16 *n,u8 art,u8 frame,s16 x,s16 y,u8 palette)

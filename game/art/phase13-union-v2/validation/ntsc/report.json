@@ -1,0 +1,272 @@
+{
+  "region": "NTSC",
+  "rom_sha256": "90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605",
+  "passed": true,
+  "nodes": {
+    "13A": {
+      "native_scene": {
+        "passed": true,
+        "atlas_bytes": 39040,
+        "cached": true,
+        "resident_tiles": 587,
+        "pixel_exact": true,
+        "hflip_vflip_supported": true,
+        "camera": [
+          128,
+          0
+        ],
+        "bg_a_clean": true,
+        "palette_zero_black": true
+      },
+      "entry": {
+        "passed": true,
+        "enemy_cap": 5,
+        "shot_cap": 6,
+        "width": 512
+      },
+      "kill_target": {
+        "passed": true,
+        "target": 30,
+        "setup": "RAM seeded kill counter boundary"
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              80,
+              264,
+              104,
+              16
+            ],
+            "face": "west",
+            "end_x": 63,
+            "passed": true
+          },
+          {
+            "solid": [
+              216,
+              208,
+              104,
+              16
+            ],
+            "face": "west",
+            "end_x": 199,
+            "passed": true
+          },
+          {
+            "solid": [
+              352,
+              264,
+              104,
+              16
+            ],
+            "face": "west",
+            "end_x": 335,
+            "passed": true
+          }
+        ],
+        "setup": "RAM positions at each wall; collision attempts use controller only"
+      },
+      "controller_bounds": {
+        "passed": true,
+        "probes": [
+          {
+            "edge": "left",
+            "position": [
+              24,
+              176
+            ],
+            "passed": true
+          },
+          {
+            "edge": "right",
+            "position": [
+              472,
+              176
+            ],
+            "passed": true
+          },
+          {
+            "edge": "top",
+            "position": [
+              80,
+              160
+            ],
+            "passed": true
+          },
+          {
+            "edge": "bottom",
+            "position": [
+              80,
+              280
+            ],
+            "passed": true
+          }
+        ],
+        "setup": "RAM seeds legal positions; controller pushes against each map boundary"
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 17.75,
+        "result": "defeat",
+        "initial_hp": 100,
+        "remaining_hp": 0,
+        "damage_net": 100,
+        "peak_enemies": 5,
+        "simulation_fps": 58.54,
+        "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+      },
+      "saturation": {
+        "passed": true,
+        "peak_enemies": 5,
+        "cap": 5,
+        "simulation_fps": 60.0,
+        "setup": "RAM seeded health; no shots fired; production reinforcements fill pool"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 50.28,
+        "cpu_peak_percent": 52.25,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      }
+    },
+    "13B": {
+      "native_scene": {
+        "passed": true,
+        "atlas_bytes": 39040,
+        "cached": true,
+        "resident_tiles": 587,
+        "pixel_exact": true,
+        "hflip_vflip_supported": true,
+        "camera": [
+          128,
+          0
+        ],
+        "bg_a_clean": true,
+        "palette_zero_black": true
+      },
+      "entry": {
+        "passed": true,
+        "enemy_cap": 5,
+        "shot_cap": 6,
+        "width": 512
+      },
+      "kill_target": {
+        "passed": true,
+        "target": 45,
+        "setup": "RAM seeded kill counter boundary"
+      },
+      "controller_collision": {
+        "passed": true,
+        "probes": [
+          {
+            "solid": [
+              80,
+              264,
+              104,
+              16
+            ],
+            "face": "west",
+            "end_x": 63,
+            "passed": true
+          },
+          {
+            "solid": [
+              216,
+              208,
+              104,
+              16
+            ],
+            "face": "west",
+            "end_x": 199,
+            "passed": true
+          },
+          {
+            "solid": [
+              352,
+              264,
+              104,
+              16
+            ],
+            "face": "west",
+            "end_x": 335,
+            "passed": true
+          }
+        ],
+        "setup": "RAM positions at each wall; collision attempts use controller only"
+      },
+      "controller_bounds": {
+        "passed": true,
+        "probes": [
+          {
+            "edge": "left",
+            "position": [
+              24,
+              176
+            ],
+            "passed": true
+          },
+          {
+            "edge": "right",
+            "position": [
+              472,
+              176
+            ],
+            "passed": true
+          },
+          {
+            "edge": "top",
+            "position": [
+              80,
+              160
+            ],
+            "passed": true
+          },
+          {
+            "edge": "bottom",
+            "position": [
+              80,
+              280
+            ],
+            "passed": true
+          }
+        ],
+        "setup": "RAM seeds legal positions; controller pushes against each map boundary"
+      },
+      "difficulty_sample": {
+        "controller_only": true,
+        "duration_seconds": 17.27,
+        "result": "defeat",
+        "initial_hp": 100,
+        "remaining_hp": 0,
+        "damage_net": 100,
+        "peak_enemies": 5,
+        "simulation_fps": 58.55,
+        "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+      },
+      "saturation": {
+        "passed": true,
+        "peak_enemies": 5,
+        "cap": 5,
+        "simulation_fps": 60.0,
+        "setup": "RAM seeded health; no shots fired; production reinforcements fill pool"
+      },
+      "visible_maximum_stress": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 49.99,
+        "cpu_peak_percent": 51.71,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      }
+    }
+  },
+  "method": "RAM seeds node entry and explicit isolated probes; objective execution uses controller input. Stress is RAM seeded, FPS measures simulation frames per VBlank."
+}

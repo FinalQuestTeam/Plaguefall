@@ -1,0 +1,24 @@
+{
+  "mode": "built-in image_gen",
+  "revision": "Coração de madeira substituído pelo coração metálico do logo, símbolo10 EX-VOTO; códigos compatíveis.",
+  "assets": [
+    {
+      "key": "heart",
+      "prompt": "Use case: precise-object-edit. Asset type: native Sega Mega Drive 32x32 game sprite source. Image 1 is the old wooden ex-voto sprite to REPLACE, image 2 is the actual PLAGUEFALL game logo and identity reference. Replace the wooden heart with ONLY the METALLIC HEART EMBLEM FROM IMAGE 2, excluding all lettering. Preserve its identity: patched riveted bronze and olive metal heart body, luminous orange-red vertical central split, gold cross above with short arched halo and three short gold circuit traces on each side. Aggressively simplify this specific logo heart into a readable 32x32 pixel-art icon, chunky pixels, 1 pixel cream edge highlights, dark navy outline, flat few-color clusters. Show the complete cross, full heart, and short side circuits, isolated centered with transparent margin. Draw at a 32x32 logical pixel grid enlarged cleanly for output. Existing game sprite palette: cream, mustard gold, rusty brown, brick red, olive, dark navy; no realistic fine textures. True transparent background. No wooden grain, no anatomical realism, no text, no letters, no frame, no cast shadow, no checkerboard. Keep the logo's heart recognizable.",
+      "paths": [
+        "game/art/sinal-ultimo-chao-v1/native/ex-voto-32.png",
+        "game/art/menu-logo-v1/originals/plaguefall-menu-native-v2.png"
+      ],
+      "transparent": true
+    },
+    {
+      "key": "atlas",
+      "prompt": "Use case: precise-object-edit. Image 1 is the existing PLAGUEFALL password alphabet concept sheet and is the edit target. Image 2 is the actual game logo and provides the replacement heart emblem. Change ONLY the wooden heart icon inside row 3 column 3, the cell labeled EX-VOTO, to the metallic heart emblem from image 2: patched bronze/olive riveted metal heart, vertical orange-red glowing split, gold cross with arched halo above and short gold circuit branches to both sides. Render it in the same pixel-art scale as the other concept sheet icons and fit entirely inside that existing cell. Remove wooden grain and wooden heart silhouette. Keep EX-VOTO label verbatim. Keep the sheet dimensions, all other fifteen icons including the STE sindicato emblem, every label, all frames, spacing, colors and title EXACTLY unchanged. Do not insert the PLAGUEFALL wordmark. Only this single heart is replaced.",
+      "paths": [
+        "game/art/sinal-ultimo-chao-v1/04-alfabeto-simbolos.png",
+        "game/art/menu-logo-v1/originals/plaguefall-menu-native-v2.png"
+      ],
+      "transparent": false
+    }
+  ]
+}

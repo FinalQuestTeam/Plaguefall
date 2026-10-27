@@ -1,0 +1,711 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "35b0230c734419820bfe4a84bc1d2ac7e65d53b59abf86e5673c97e2455694c5",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "35b0230c734419820bfe4a84bc1d2ac7e65d53b59abf86e5673c97e2455694c5",
+  "movieEnabled": false,
+  "checks": {
+    "entry-atlas-palette": {
+      "camera": [
+        40,
+        0
+      ],
+      "exact_cells": 1000
+    },
+    "whole-map-36-camera-views": [
+      {
+        "camera": [
+          48,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          48,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          0,
+          96
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          104,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          252,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          252,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          528,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          508,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          508,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          764,
+          0
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          764,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          764,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1040,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          1020,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1020,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1276,
+          0
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1276,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1276,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1552,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          1532,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1532,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1788,
+          0
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1788,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          1788,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          2064,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          2044,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          2044,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          2300,
+          0
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          2300,
+          8
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          2300,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          2672,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          2688,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          2556,
+          96
+        ],
+        "exact_cells": 1025
+      },
+      {
+        "camera": [
+          2728,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          2720,
+          0
+        ],
+        "exact_cells": 1000
+      },
+      {
+        "camera": [
+          2752,
+          96
+        ],
+        "exact_cells": 1000
+      }
+    ],
+    "six-whole-buildings-framed": [
+      {
+        "id": "factory-exit",
+        "camera": [
+          48,
+          0
+        ],
+        "whole_below_HUD": true
+      },
+      {
+        "id": "service-bay-1",
+        "camera": [
+          596,
+          0
+        ],
+        "whole_below_HUD": true
+      },
+      {
+        "id": "service-bay-2",
+        "camera": [
+          1108,
+          0
+        ],
+        "whole_below_HUD": true
+      },
+      {
+        "id": "service-bay-3",
+        "camera": [
+          1620,
+          0
+        ],
+        "whole_below_HUD": true
+      },
+      {
+        "id": "service-bay-4",
+        "camera": [
+          2132,
+          0
+        ],
+        "whole_below_HUD": true
+      },
+      {
+        "id": "union",
+        "camera": [
+          2704,
+          0
+        ],
+        "whole_below_HUD": true
+      }
+    ],
+    "architecture-eleven-props-and-world-bounds": {
+      "probes": [
+        [
+          16,
+          120,
+          4,
+          112
+        ],
+        [
+          40,
+          112,
+          7,
+          48
+        ],
+        [
+          376,
+          112,
+          6,
+          368
+        ],
+        [
+          64,
+          192,
+          4,
+          184
+        ],
+        [
+          664,
+          112,
+          7,
+          672
+        ],
+        [
+          856,
+          112,
+          6,
+          848
+        ],
+        [
+          688,
+          160,
+          4,
+          152
+        ],
+        [
+          1176,
+          112,
+          7,
+          1184
+        ],
+        [
+          1368,
+          112,
+          6,
+          1360
+        ],
+        [
+          1200,
+          160,
+          4,
+          152
+        ],
+        [
+          1688,
+          112,
+          7,
+          1696
+        ],
+        [
+          1880,
+          112,
+          6,
+          1872
+        ],
+        [
+          1712,
+          160,
+          4,
+          152
+        ],
+        [
+          2200,
+          112,
+          7,
+          2208
+        ],
+        [
+          2392,
+          112,
+          6,
+          2384
+        ],
+        [
+          2224,
+          160,
+          4,
+          152
+        ],
+        [
+          2696,
+          112,
+          7,
+          2704
+        ],
+        [
+          3032,
+          112,
+          6,
+          3024
+        ],
+        [
+          2720,
+          208,
+          4,
+          200
+        ],
+        [
+          376,
+          240,
+          7,
+          384
+        ],
+        [
+          440,
+          240,
+          6,
+          432
+        ],
+        [
+          400,
+          216,
+          5,
+          224
+        ],
+        [
+          392,
+          128,
+          7,
+          400
+        ],
+        [
+          464,
+          128,
+          6,
+          456
+        ],
+        [
+          416,
+          176,
+          4,
+          168
+        ],
+        [
+          696,
+          208,
+          7,
+          704
+        ],
+        [
+          824,
+          208,
+          6,
+          816
+        ],
+        [
+          720,
+          184,
+          5,
+          192
+        ],
+        [
+          904,
+          224,
+          7,
+          912
+        ],
+        [
+          976,
+          224,
+          6,
+          968
+        ],
+        [
+          928,
+          200,
+          5,
+          208
+        ],
+        [
+          928,
+          272,
+          4,
+          264
+        ],
+        [
+          1176,
+          240,
+          7,
+          1184
+        ],
+        [
+          1240,
+          240,
+          6,
+          1232
+        ],
+        [
+          1200,
+          216,
+          5,
+          224
+        ],
+        [
+          1384,
+          112,
+          7,
+          1392
+        ],
+        [
+          1512,
+          112,
+          6,
+          1504
+        ],
+        [
+          1408,
+          184,
+          4,
+          176
+        ],
+        [
+          1720,
+          208,
+          7,
+          1728
+        ],
+        [
+          1848,
+          208,
+          6,
+          1840
+        ],
+        [
+          1744,
+          184,
+          5,
+          192
+        ],
+        [
+          1960,
+          224,
+          7,
+          1968
+        ],
+        [
+          2032,
+          224,
+          6,
+          2024
+        ],
+        [
+          1984,
+          200,
+          5,
+          208
+        ],
+        [
+          1984,
+          272,
+          4,
+          264
+        ],
+        [
+          2200,
+          240,
+          7,
+          2208
+        ],
+        [
+          2264,
+          240,
+          6,
+          2256
+        ],
+        [
+          2224,
+          216,
+          5,
+          224
+        ],
+        [
+          2408,
+          112,
+          7,
+          2416
+        ],
+        [
+          2536,
+          112,
+          6,
+          2528
+        ],
+        [
+          2432,
+          184,
+          4,
+          176
+        ],
+        [
+          2584,
+          240,
+          7,
+          2592
+        ],
+        [
+          2648,
+          240,
+          6,
+          2640
+        ],
+        [
+          2608,
+          216,
+          5,
+          224
+        ]
+      ],
+      "edges": 4
+    },
+    "five-block-seams-crossable": true,
+    "pause-restores-atlas-map-palette": true,
+    "four-section-configured-live-load": [
+      {
+        "section": "departure",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 59.95,
+        "maximum_cpu_pct": 71.19,
+        "sprite_limits": [
+          11,
+          6,
+          120
+        ],
+        "setup": "live authored AI and player patrol; health protected; only inactive shots replenished; Dinorah paused for controlled scene load"
+      },
+      {
+        "section": "lower-truck",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 59.85,
+        "maximum_cpu_pct": 79.74,
+        "sprite_limits": [
+          18,
+          7,
+          112
+        ],
+        "setup": "live authored AI and player patrol; health protected; only inactive shots replenished; Dinorah paused for controlled scene load"
+      },
+      {
+        "section": "upper-truck",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 59.9,
+        "maximum_cpu_pct": 79.05,
+        "sprite_limits": [
+          18,
+          7,
+          96
+        ],
+        "setup": "live authored AI and player patrol; health protected; only inactive shots replenished; Dinorah paused for controlled scene load"
+      },
+      {
+        "section": "union",
+        "enemies": 3,
+        "shots_per_pool": 4,
+        "seconds": 20,
+        "game_fps": 59.95,
+        "maximum_cpu_pct": 73.88,
+        "sprite_limits": [
+          12,
+          4,
+          80
+        ],
+        "setup": "live authored AI and player patrol; health protected; only inactive shots replenished; Dinorah paused for controlled scene load"
+      }
+    ]
+  },
+  "scope": "36 actual camera pixel comparisons, six complete buildings framed, every legal collision face, five block seams, pause, and live configured3-enemy/4+4-shot pressure in4sections. Functional complete escort/death outcomes are in the separate shared escort suite."
+}

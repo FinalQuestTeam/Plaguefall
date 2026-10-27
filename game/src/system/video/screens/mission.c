@@ -87,15 +87,34 @@ const char *MISSION_name(u8 node){return node ? MISSION_COPY[node].name : "ÁREA
 void MISSION_goal(char *text,u8 node)
 {
     if(!node){TEST_goal(text);return;}
-    const LevelDef *def=node ? GRAPH[node].def : LEVEL_current();
-    if(node && GRAPH_isFinal(node))strcpy(text,"DERROTE O ESCORPIÃO.");
-    else if(def->objective==OBJ_PROTECT)sprintf(text,"PROTEJA O SINALIZADOR POR %u S.",def->objTarget);
-    else if(def->objective==OBJ_KILL)sprintf(text,"ELIMINE %u INIMIGOS.",def->killTarget);
-    else OBJECTIVE_prepText(text,def);
+    const LevelDef *def=GRAPH[node].def;
+    // Shared by preparation, its guide and pause. Counts come from the same
+    // definitions as gameplay; location and required actions are stage-specific.
+    switch(node)
+    {
+        case N_1:sprintf(text,"SOBREVIVA POR %u SEGUNDOS NO PÁTIO.",def->objTarget);break;
+        case N_2A:case N_2B:sprintf(text,"ELIMINE %u INSETOS PARA LIBERAR O PÁTIO.",def->killTarget);break;
+        case N_3:strcpy(text,"ATRAVESSE A RUA E CHEGUE AO GALPÃO.");break;
+        case N_4:sprintf(text,"ELIMINE %u INSETOS DENTRO DO GALPÃO.",def->killTarget);break;
+        case N_5:sprintf(text,"PROTEJA A SANTA E O COMUNICADOR POR %u SEGUNDOS.",def->objTarget);break;
+        case N_6A:strcpy(text,"ESCOLTE DINORAH ATÉ A SAÍDA. DESTRUA OS 2 PORTÕES.");break;
+        case N_6B:strcpy(text,"ESCOLTE DINORAH. ABRA AS 2 VÁLVULAS E DESTRUA OS 2 PORTÕES.");break;
+        case N_7:sprintf(text,"ABRA OS BAÚS E ENTREGUE AS %u CARGAS AO DEPÓSITO.",def->objTarget);break;
+        case N_8:sprintf(text,"DESTRUA OS %u TRANSMISSORES MARCADOS.",def->objTarget);break;
+        case N_9:strcpy(text,"ATRAVESSE A RUA INDUSTRIAL ATÉ A FÁBRICA.");break;
+        case N_10:sprintf(text,"DESTRUA OS %u NINHOS DE OVOS DA FÁBRICA.",def->objTarget);break;
+        case N_11:sprintf(text,"REAQUEÇA A FÁBRICA: ABRA AS %u VÁLVULAS.",def->objTarget);break;
+        case N_12:strcpy(text,"ESCOLTE DINORAH VIVA ATÉ O SINDICATO.");break;
+        case N_13A:case N_13B:sprintf(text,"ELIMINE %u INSETOS PARA LIBERAR O SINDICATO.",def->killTarget);break;
+        case N_14:sprintf(text,"LIGUE OS %u GERADORES DO ESTALEIRO.",def->objTarget);break;
+        case N_15:sprintf(text,"PROTEJA O NÚCLEO DO RÁDIO POR %u SEGUNDOS.",def->objTarget);break;
+        case N_16:strcpy(text,"DERROTE O ESCORPIÃO, QUE COORDENA O ENXAME.");break;
+        default:OBJECTIVE_prepText(text,def);break;
+    }
 }
 static void drawMission(void)
 {
-    char title[16],right[20],goal[48];
+    char title[16],right[20],goal[MISSION_GOAL_SIZE];
     const MissionCopy *copy=&MISSION_COPY[missionNode];
     sprintf(title,"FASE %s",GRAPH[missionNode].name);
     sprintf(right,"ETAPA %u/16",GRAPH[missionNode].mapCol+1);
@@ -112,7 +131,7 @@ static void drawMission(void)
 static void drawGuide(void)
 {
     u8 types[ENEMY_TYPES];const u8 count=guideEnemies(types);
-    char right[12],goal[48];sprintf(right,"%u/%u",guidePage+1,count+2);
+    char right[12],goal[MISSION_GOAL_SIZE];sprintf(right,"%u/%u",guidePage+1,count+2);
     page("GUIA DA FASE",right);
     const MissionCopy *copy=&MISSION_COPY[missionNode];
     if(guidePage==0)

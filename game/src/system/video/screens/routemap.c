@@ -198,6 +198,12 @@ void ROUTEMAP_markVisited(u8 n)
             if (GRAPH[lastVisited].exits[e].next == n) departedTo[lastVisited] = n;
     lastVisited = n;visited |= (u32)1 << n;
 }
+void ROUTEMAP_restore(u32 completedNodes)
+{
+    ROUTEMAP_reset();
+    for(u8 node=1;node<NODE_MAX;node++)
+        if(completedNodes&((u32)1<<node))ROUTEMAP_markVisited(node);
+}
 // Rasterize while the completed result/radio is still visible. The following
 // fade only uploads prepared tiles, instead of hiding a long CPU raster pass.
 void ROUTEMAP_prepare(u8 current,u8 next)

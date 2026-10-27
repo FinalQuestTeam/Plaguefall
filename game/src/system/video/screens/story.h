@@ -10,6 +10,7 @@
 // Cada cena toca UMA vez por run (bitmask interna).
 
 void STORYSCR_reset(void);              // novo jogo: zera as cenas já vistas
+void STORYSCR_restore(u32 completedNodes);
 
 // se o nó tem cena inédita no momento dado (ANTES/DEPOIS), desenha a tela,
 // marca como vista e devolve TRUE (entre no estado ST_STORY); senão FALSE

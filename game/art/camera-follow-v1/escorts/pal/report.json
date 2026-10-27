@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "8a50fb13942bb4d2e0144a66bc783f60905da2f753e0d70d9c982ec3a991b710",
+  "buildDirectory": "game/out/camera-validation",
+  "emulatedRomSHA256": "acef0e3b2029af942d9f6afeb57d6338cd3d1c3ada480e5fe9a67fc018187937",
+  "movieEnabled": false,
+  "checks": {
+    "06a-gate-1": {
+      "real_valve_work": false,
+      "real_player_projectiles": true,
+      "ram_writes_during_checks": 0
+    },
+    "06a-gate-2": {
+      "real_valve_work": false,
+      "real_player_projectiles": true,
+      "ram_writes_during_checks": 0
+    },
+    "06a-complete-escort": {
+      "passed": true,
+      "seconds": 87.8,
+      "fps": 49.99,
+      "live_pixel_cells": 102804,
+      "ram_writes_during_traversal": 0,
+      "gates_seeded_open": true,
+      "dinorah_hp": 100
+    },
+    "06b-gate-1": {
+      "real_valve_work": true,
+      "real_player_projectiles": true,
+      "ram_writes_during_checks": 0
+    },
+    "06b-gate-2": {
+      "real_valve_work": true,
+      "real_player_projectiles": true,
+      "ram_writes_during_checks": 0
+    },
+    "06b-complete-escort": {
+      "passed": true,
+      "seconds": 90.06,
+      "fps": 49.98,
+      "live_pixel_cells": 106076,
+      "ram_writes_during_traversal": 0,
+      "gates_seeded_open": true,
+      "dinorah_hp": 100
+    },
+    "12-complete-escort": {
+      "passed": true,
+      "seconds": 84.22,
+      "fps": 50.0,
+      "live_pixel_cells": 98618,
+      "ram_writes_during_traversal": 0,
+      "gates_seeded_open": false,
+      "dinorah_hp": 100
+    }
+  },
+  "scope": "Real gate shooting/valve work and full controller escorts in6A/6B/12; player-first camera and live background pixels. RAM setup precedes each guarded trial. Combat isolated and shield/ally protection prepared before play.",
+  "method": "Genesis Plus GX production ROM. RAM only before trials: node, speed bonus, protection, enemy isolation and starting position. Every measured sample is real controller movement, guarded against RAM writes. Full 32x48 sprite uses (px-8,py-31). Visible gameplay rectangle is x=0..319,y=24..223. Boundary-constrained centering is measured separately from avoidable framing error. No gameplay code or ROM modified.",
+  "stages": [],
+  "findings_are_not_test_failures": true
+}

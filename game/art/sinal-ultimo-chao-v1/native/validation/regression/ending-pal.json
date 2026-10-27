@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "b2b166823b7e6853af701fb307866da3169441e22a3905ae045252eef12b1d28",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "4747ac2bca13d15e6da7bf83d63499a8876d475555d16f635c934e4bd9c514af",
+  "movieEnabled": false,
+  "checks": {
+    "ending-0": {
+      "panels": [
+        "07A",
+        "07C",
+        "06C"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "ending-1": {
+      "panels": [
+        "07B",
+        "07C",
+        "06C"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "ending-2": {
+      "panels": [
+        "07A",
+        "07D",
+        "06C"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "ending-3": {
+      "panels": [
+        "07B",
+        "07D",
+        "06C"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "ending-4": {
+      "panels": [
+        "07A",
+        "07C",
+        "06D"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "ending-5": {
+      "panels": [
+        "07B",
+        "07C",
+        "06D"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "ending-6": {
+      "panels": [
+        "07A",
+        "07D",
+        "06D"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "ending-7": {
+      "panels": [
+        "07B",
+        "07D",
+        "06D"
+      ],
+      "native_patterns": true,
+      "captions": true,
+      "moving_particles": 12,
+      "victory_menu": true
+    },
+    "skip-all-eight-held-start-and-replay-reset": true
+  },
+  "scope": "All8 flags: production boss settlement, 3 storyboard slides, exact native patterns, Portuguese captions,12 moving particles, A/B/C ignored, START skip, held input guard, victory card, fresh phase1 on replay. RAM only seeds boss defeat and independent consequences."
+}

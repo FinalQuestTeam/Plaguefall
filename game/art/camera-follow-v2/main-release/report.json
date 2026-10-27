@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "date": "2026-10-26",
+  "revision": "Câmera estável v2 integrada à build principal",
+  "rom": "../../../out/release/Plaguefall.bin",
+  "rom_sha256": "2910b98fc856c9511a32a05b405a6119ed1f66fd62354ad852f33e3045dccf45",
+  "rom_bytes": 2752512,
+  "stationary_checks": 94,
+  "movement_checks": 12,
+  "clipped_samples": 0,
+  "max_stationary_camera_range": [
+    0,
+    0
+  ],
+  "max_center_error": 0,
+  "stream_deferrals": 0,
+  "live_pixel_cells": 734782,
+  "native_and_generated_checks_passed": true,
+  "package_rom_verified": true,
+  "reports": {
+    "idle_ntsc": "idle/ntsc/report.json",
+    "movement_ntsc": "movement/ntsc/report.json",
+    "idle_pal": "idle/pal/report.json",
+    "movement_pal": "movement/pal/report.json"
+  },
+  "scope": "Tests run against the exact rebuilt main ROM. All14 variants of stages1–12: five-second idle at entry/after stopping/resuming and landmark approaches. Six reported stages: controller reversals/vertical/diagonal motion inNTSC/PAL. Earlier364 motion trials belong to the separately hashedv2 candidate.",
+  "limits": [
+    "Maximum-load FPS was not rebenchmarked; no performance-fix claim.",
+    "Physical hardware and human difficulty are not certified."
+  ]
+}

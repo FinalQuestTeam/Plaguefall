@@ -1,0 +1,759 @@
+{
+  "phase": "12",
+  "size": [
+    3072,
+    320
+  ],
+  "bounds": [
+    16,
+    112,
+    3055,
+    287
+  ],
+  "start": [
+    48,
+    208
+  ],
+  "solids": [
+    [
+      0,
+      0,
+      3072,
+      112,
+      true
+    ],
+    [
+      64,
+      24,
+      304,
+      160,
+      true
+    ],
+    [
+      688,
+      24,
+      160,
+      128,
+      true
+    ],
+    [
+      1200,
+      24,
+      160,
+      128,
+      true
+    ],
+    [
+      1712,
+      24,
+      160,
+      128,
+      true
+    ],
+    [
+      2224,
+      24,
+      160,
+      128,
+      true
+    ],
+    [
+      2720,
+      24,
+      304,
+      176,
+      true
+    ],
+    [
+      400,
+      240,
+      32,
+      32,
+      true
+    ],
+    [
+      416,
+      128,
+      40,
+      40,
+      true
+    ],
+    [
+      720,
+      208,
+      96,
+      64,
+      true
+    ],
+    [
+      928,
+      224,
+      40,
+      40,
+      true
+    ],
+    [
+      1200,
+      240,
+      32,
+      32,
+      true
+    ],
+    [
+      1408,
+      112,
+      96,
+      64,
+      true
+    ],
+    [
+      1744,
+      208,
+      96,
+      64,
+      true
+    ],
+    [
+      1984,
+      224,
+      40,
+      40,
+      true
+    ],
+    [
+      2224,
+      240,
+      32,
+      32,
+      true
+    ],
+    [
+      2432,
+      112,
+      96,
+      64,
+      true
+    ],
+    [
+      2608,
+      240,
+      32,
+      32,
+      true
+    ]
+  ],
+  "exit": [
+    2800,
+    208,
+    160,
+    64
+  ],
+  "camera_player_y": 200,
+  "camera_south_start": 224,
+  "points": [
+    [
+      56,
+      216
+    ],
+    [
+      632,
+      216
+    ],
+    [
+      632,
+      176
+    ],
+    [
+      888,
+      176
+    ],
+    [
+      1016,
+      176
+    ],
+    [
+      1016,
+      224
+    ],
+    [
+      1400,
+      224
+    ],
+    [
+      1608,
+      224
+    ],
+    [
+      1608,
+      176
+    ],
+    [
+      1912,
+      176
+    ],
+    [
+      2040,
+      176
+    ],
+    [
+      2040,
+      224
+    ],
+    [
+      2584,
+      224
+    ],
+    [
+      2856,
+      224
+    ]
+  ],
+  "pauses": [
+    2,
+    8,
+    12
+  ],
+  "segments": [
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "segment_size": [
+    512,
+    320
+  ],
+  "placements": [
+    {
+      "id": "departure-crates",
+      "canvas": [
+        400,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        400,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "departure-barrels",
+      "canvas": [
+        416,
+        128,
+        40,
+        40
+      ],
+      "footprint": [
+        416,
+        128,
+        40,
+        40
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-lower-1",
+      "canvas": [
+        720,
+        208,
+        96,
+        64
+      ],
+      "footprint": [
+        720,
+        208,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "barrels-service-1",
+      "canvas": [
+        928,
+        224,
+        40,
+        40
+      ],
+      "footprint": [
+        928,
+        224,
+        40,
+        40
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "crates-service-2",
+      "canvas": [
+        1200,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        1200,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-upper-2",
+      "canvas": [
+        1408,
+        112,
+        96,
+        64
+      ],
+      "footprint": [
+        1408,
+        112,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-lower-3",
+      "canvas": [
+        1744,
+        208,
+        96,
+        64
+      ],
+      "footprint": [
+        1744,
+        208,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "barrels-service-3",
+      "canvas": [
+        1984,
+        224,
+        40,
+        40
+      ],
+      "footprint": [
+        1984,
+        224,
+        40,
+        40
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "crates-service-4",
+      "canvas": [
+        2224,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        2224,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-upper-4",
+      "canvas": [
+        2432,
+        112,
+        96,
+        64
+      ],
+      "footprint": [
+        2432,
+        112,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "arrival-crates",
+      "canvas": [
+        2608,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        2608,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    }
+  ],
+  "architecture": [
+    {
+      "id": "factory-exit",
+      "box": [
+        64,
+        24,
+        304,
+        160
+      ]
+    },
+    {
+      "id": "service-bay-1",
+      "box": [
+        688,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "service-bay-2",
+      "box": [
+        1200,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "service-bay-3",
+      "box": [
+        1712,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "service-bay-4",
+      "box": [
+        2224,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "union",
+      "box": [
+        2720,
+        24,
+        304,
+        176
+      ]
+    }
+  ],
+  "player_waypoints": [
+    [
+      48,
+      208
+    ],
+    [
+      624,
+      208
+    ],
+    [
+      624,
+      168
+    ],
+    [
+      880,
+      168
+    ],
+    [
+      1008,
+      168
+    ],
+    [
+      1008,
+      216
+    ],
+    [
+      1392,
+      216
+    ],
+    [
+      1600,
+      216
+    ],
+    [
+      1600,
+      168
+    ],
+    [
+      1904,
+      168
+    ],
+    [
+      2032,
+      168
+    ],
+    [
+      2032,
+      216
+    ],
+    [
+      2576,
+      216
+    ],
+    [
+      2848,
+      216
+    ]
+  ],
+  "route_points": [
+    [
+      56,
+      216
+    ],
+    [
+      632,
+      216
+    ],
+    [
+      632,
+      176
+    ],
+    [
+      888,
+      176
+    ],
+    [
+      1016,
+      176
+    ],
+    [
+      1016,
+      224
+    ],
+    [
+      1400,
+      224
+    ],
+    [
+      1608,
+      224
+    ],
+    [
+      1608,
+      176
+    ],
+    [
+      1912,
+      176
+    ],
+    [
+      2040,
+      176
+    ],
+    [
+      2040,
+      224
+    ],
+    [
+      2584,
+      224
+    ],
+    [
+      2856,
+      224
+    ]
+  ],
+  "point_semantics": "CENTERS; actor foot top-left=center-8",
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 6109,
+    "reachable_positions": 6109,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2997,
+    "extra_margin_pixels": 8,
+    "swept_margin_samples": 2997
+  },
+  "camera_interest": [
+    {
+      "id": "factory-exit",
+      "name": "factory-exit",
+      "bbox": [
+        64,
+        24,
+        304,
+        160
+      ],
+      "position": [
+        208,
+        200
+      ]
+    },
+    {
+      "id": "service-bay-1",
+      "name": "service-bay-1",
+      "bbox": [
+        688,
+        24,
+        160,
+        128
+      ],
+      "position": [
+        760,
+        168
+      ]
+    },
+    {
+      "id": "service-bay-2",
+      "name": "service-bay-2",
+      "bbox": [
+        1200,
+        24,
+        160,
+        128
+      ],
+      "position": [
+        1272,
+        168
+      ]
+    },
+    {
+      "id": "service-bay-3",
+      "name": "service-bay-3",
+      "bbox": [
+        1712,
+        24,
+        160,
+        128
+      ],
+      "position": [
+        1784,
+        168
+      ]
+    },
+    {
+      "id": "service-bay-4",
+      "name": "service-bay-4",
+      "bbox": [
+        2224,
+        24,
+        160,
+        128
+      ],
+      "position": [
+        2296,
+        168
+      ]
+    },
+    {
+      "id": "union",
+      "name": "union",
+      "bbox": [
+        2720,
+        24,
+        304,
+        176
+      ],
+      "position": [
+        2776,
+        216
+      ]
+    }
+  ],
+  "memory": {
+    "scene_tiles": 618,
+    "objective_tiles": 0,
+    "total_tiles": 618,
+    "budget": 640,
+    "free_tiles": 22,
+    "graphics_bytes": 19776,
+    "map_bytes": 30720,
+    "palette_bytes": 32,
+    "pixel_exact_reassembly": true,
+    "lossy_pattern_replacements": 0
+  },
+  "native": {
+    "tiles": "native/tiles.bin",
+    "map": "native/map.bin",
+    "palette": "native/palette.bin"
+  },
+  "sources": [
+    {
+      "path": "../campaign-corridors-v3/corrections/12-guidebook/modules/industrial-wall-source.png",
+      "sha256": "2c7cee1cee266e51ec28334ee245a8fb74e2fe801de5911395f128396624928e"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/12-guidebook/modules/header-source.png",
+      "sha256": "e0c7364b8958a9e76b7cde9a58121ba3d083d41735e95538f023566d5bf1fbe5"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/12-guidebook/modules/wall-source.png",
+      "sha256": "1587d9a6a04b47b49b9cdf4e1f55fbbb1d6c0140a9b189ef4003506cfe54dee5"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/12-guidebook/modules/post-source.png",
+      "sha256": "d5693375961ff43bf72a452a985bfc47e804bbcf55507f3192c25000e846c97d"
+    },
+    {
+      "path": "../phase07-urban-v2/modules/asphalt-repeat.png",
+      "sha256": "9aa2f5d4700749ce4293cf90aba2145296397fdae29e7f1dcbb65251b3d3e1b0"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/12-guidebook/modules/workshop-assembly-rgba.png",
+      "sha256": "4d89f822f9775917fdd3912cdd44049264fa974df848622f23a03cc1c267d9c2"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/12-guidebook/modules/annex-assembly-rgba.png",
+      "sha256": "e5cd5b361b51232dc7d949a36d4a045a6692d991aca657825d3b0e82af41d921"
+    },
+    {
+      "path": "../campaign-corridors-v3/corrections/12-guidebook/modules/union-assembly-rgba.png",
+      "sha256": "1cc10b4943bd5326e612ef94d5ad8af7eed4a38b324b5cbd4454b7cba334904d"
+    },
+    {
+      "path": "../phase09-three-segments-v1/objects/street-truck.png",
+      "sha256": "154b01d908f76b9fc6006476e5f2d1c2072f941ddd06d5c7a8f9920c325ffaa3"
+    },
+    {
+      "path": "../phase06-three-segments-v1/objects/barris.png",
+      "sha256": "da88091ce51c321931b6898ca66cec22515e8ca81e2a95f1df7dbc5ee964f66e"
+    },
+    {
+      "path": "../phase06-three-segments-v1/objects/caixas.png",
+      "sha256": "9073d0d4b59bf8be96862e13ef60c1f2044015ebf5b14c91548871267335af52"
+    },
+    {
+      "path": "../phase10-factory-v2/modules/left-boundary.png",
+      "sha256": "8f64ecd73b9f1aa39c85c5036e69bce2af0a30d945a2878dd9d73b18f79cde47"
+    },
+    {
+      "path": "source/service-workshop-redesign.png",
+      "sha256": "e4cee4ba81f5fe354efa5e7235ff1bcd72e41c2bc99e260073a2dcfa06a4b669"
+    },
+    {
+      "path": "source/union-ste-building-v4.png",
+      "sha256": "99f31be2f36abb446d580143f9e93a0fd0c3234884e177a9d7441d4c2e1f8123"
+    },
+    {
+      "path": "../space-workers-union-logo-v1/logo-ste.png",
+      "sha256": "8ecc20cc6b665061d51ab7f3ad7bf1cfaac64f3080c6e4d57e64dae3f501140f"
+    }
+  ],
+  "route_length_px": 2984.0,
+  "seams_pixel_identical": true,
+  "base_B_copies_identical": true,
+  "status": "integrated-local; user visual acceptance not claimed",
+  "art_method": "ImageGen service buildings and approved STE hall: repeated native roof materials, complete mirrored facade bays, central entrance and original STE logo; exact H/V deduplication",
+  "story": "Escort Dinorah from factory service exit to union rest room; success13A, escort death13B. No new gates or valve objective."
+}

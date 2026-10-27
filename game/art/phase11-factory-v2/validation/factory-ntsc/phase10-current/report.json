@@ -1,0 +1,246 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "25e90dd045309f276ff96b4e7150bc8be8b98eaf37f86dcbfef812be2127d9e7",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "25e90dd045309f276ff96b4e7150bc8be8b98eaf37f86dcbfef812be2127d9e7",
+  "movieEnabled": false,
+  "checks": {
+    "entry-native-pixels": {
+      "camera": [
+        0,
+        0
+      ],
+      "visible_patterns": 220,
+      "peak": 220,
+      "nests": 1
+    },
+    "full-map-scroll": {
+      "samples": 36,
+      "zero_pixel_mismatches": true
+    },
+    "six-prop-collisions-and-bounds": {
+      "probes": [
+        [
+          104,
+          224,
+          7,
+          112
+        ],
+        [
+          248,
+          224,
+          6,
+          240
+        ],
+        [
+          128,
+          200,
+          5,
+          208
+        ],
+        [
+          128,
+          280,
+          4,
+          272
+        ],
+        [
+          472,
+          192,
+          7,
+          480
+        ],
+        [
+          584,
+          192,
+          6,
+          576
+        ],
+        [
+          496,
+          168,
+          5,
+          176
+        ],
+        [
+          496,
+          280,
+          4,
+          272
+        ],
+        [
+          280,
+          320,
+          7,
+          288
+        ],
+        [
+          392,
+          320,
+          6,
+          384
+        ],
+        [
+          304,
+          296,
+          5,
+          304
+        ],
+        [
+          304,
+          392,
+          4,
+          384
+        ],
+        [
+          576,
+          352,
+          7,
+          584
+        ],
+        [
+          672,
+          352,
+          6,
+          664
+        ],
+        [
+          600,
+          328,
+          5,
+          336
+        ],
+        [
+          600,
+          424,
+          4,
+          416
+        ],
+        [
+          96,
+          408,
+          7,
+          104
+        ],
+        [
+          192,
+          408,
+          6,
+          184
+        ],
+        [
+          120,
+          384,
+          5,
+          392
+        ],
+        [
+          432,
+          416,
+          7,
+          440
+        ],
+        [
+          528,
+          416,
+          6,
+          520
+        ],
+        [
+          456,
+          392,
+          5,
+          400
+        ]
+      ],
+      "edges": 4
+    },
+    "ordinary-kill-counter-ignored": true,
+    "ten-controller-nest-destructions": {
+      "destroyed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ram_writes_during_run": 0,
+      "reinforcements_isolated": true,
+      "scroll_persistence": true,
+      "won": true
+    },
+    "bomb-affects-only-visible-nests": {
+      "mask": 1,
+      "expected": 1
+    },
+    "pause-restores-pixels-and-progress": {
+      "camera": [
+        240,
+        320
+      ],
+      "visible_patterns": 230,
+      "peak": 247,
+      "nests": 1
+    },
+    "maximum-configured-load": [
+      {
+        "section": "north",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 81.49,
+        "sprite_limits": [
+          20,
+          10,
+          128
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      },
+      {
+        "section": "machines",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 56.25,
+        "maximum_cpu_pct": 106.3,
+        "sprite_limits": [
+          20,
+          7,
+          128
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      },
+      {
+        "section": "south",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 82.67,
+        "sprite_limits": [
+          17,
+          8,
+          136
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      }
+    ],
+    "natural-combat": {
+      "seconds": 30.0,
+      "state": 1,
+      "hp": 60,
+      "peak_enemies": 4,
+      "game_fps": 59.8,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    }
+  },
+  "scope": "Factory phase10: industrial interior, six prop groups and ten scattered clutches. Controller entry, ten clutch destructions and movement; RAM isolates enemy pressure for functional checks. Exact visible VRAM and overlay pixels, cache, pause, collision. Native max4-enemy/6+6-projectile load retains AI/active trajectories. Natural combat sample has no RAM health or AI grants."
+}

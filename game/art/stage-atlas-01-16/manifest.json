@@ -1,0 +1,41 @@
+{
+  "html": "output/mapa-fases-01-16.html",
+  "rom_sha256": "856de009353a84f7564dc4d030a622e69ca2cfbc9b3ef86e87d502745d7e7601",
+  "phases": 16,
+  "variants": 19,
+  "emulator_stills": 277,
+  "self_contained": true,
+  "bytes": 5117502,
+  "evidence_stills": 38,
+  "comparison": {
+    "previous_rom": "1db99280f68527045781180de59e882638d7a24b5f1581e0d75260060e60aa85",
+    "added": [
+      "15",
+      "16"
+    ],
+    "updated": [
+      "13A",
+      "13B",
+      "14"
+    ],
+    "base_unchanged": [
+      "1",
+      "2A",
+      "2B",
+      "3",
+      "4",
+      "5",
+      "6A",
+      "6B",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ]
+  },
+  "functional_reports_checked": 8,
+  "captures": "captures/report.json",
+  "generated": "27/10/2026 às 01:40"
+}

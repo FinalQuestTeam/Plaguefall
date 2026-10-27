@@ -14,7 +14,11 @@
 #include "system/video/projection.h"
 #include "system/video/screens/hud.h"
 #include "system/video/sprites/tiles.h"
+#include "system/video/spritelist.h"
 #include "system/audio/sfx.h"
+#include "actors/dinorah.h"
+#include <dinorah.h>
+#include "levels/union_headgear.inc"
 CampaignResistanceState campaignResistance;
 #define sources PHASE07_SOURCES
 #define targets PHASE08_TARGETS
@@ -34,11 +38,17 @@ bool CAMPAIGN_RESISTANCE_blocked(s16 x,s16 y,u16 w,u16 h)
     return FALSE;
 }
 bool CAMPAIGN_RESISTANCE_managesSpawn(void){return CAMPAIGN_RESISTANCE_active();}
-bool CAMPAIGN_RESISTANCE_hideEnemy(u16 i){return currentLevel==N_8 && i<3 && !(campaignResistance.priorityDone&(1u<<i));}
+bool CAMPAIGN_RESISTANCE_priorityEnemy(u16 i){return currentLevel==N_8 && i<3 && !(campaignResistance.priorityDone&(1u<<i));}
 void CAMPAIGN_RESISTANCE_start(void)
 {
     memset(&campaignResistance,0,sizeof campaignResistance);campaignResistance.cargo=255;
     campaignResistance.spawnTimer=fps*3;lastHUD=65535;playerSlowPct=0;
+    // Protected room props reuse the escort's existing PAL2/VRAM reservation.
+    // S idle frame, first32px only: the counter occludes the lower body.
+    if(currentLevel==N_13A)
+        VDP_loadTileData((const u32 *)dinorah_frames+4*6*192,DINORAH_tile(),16,DMA);
+    else if(currentLevel==N_13B)
+        VDP_loadTileData(union_headgear,DINORAH_tile(),6,DMA);
     if(!CAMPAIGN_RESISTANCE_active())return;
     MARKERS_load();
     if(currentLevel==N_7){
@@ -107,6 +117,10 @@ u8 CAMPAIGN_RESISTANCE_update(void)
 }
 void CAMPAIGN_RESISTANCE_draw(u16 *n)
 {
+    if(currentLevel==N_13A)
+        SPRITES_emit(n,300,76,SPRITE_SIZE(4,4),TILE_ATTR_FULL(PAL2,TRUE,FALSE,FALSE,DINORAH_tile()));
+    else if(currentLevel==N_13B)
+        SPRITES_emit(n,304,92,SPRITE_SIZE(3,2),TILE_ATTR_FULL(PAL2,TRUE,FALSE,FALSE,DINORAH_tile()));
     if(!CAMPAIGN_RESISTANCE_active())return;
     if(currentLevel==N_7){
         for(u8 i=0;i<5;i++)if((campaignResistance.opened&(1u<<i)) && !(campaignResistance.taken&(1u<<i)) && objectiveVisuals[i].mode==2)

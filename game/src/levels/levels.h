@@ -62,6 +62,7 @@ typedef struct
     const RouteDef *route; // reach/escort authored route and visible destination
     const ArenaDef *arena;// NULL = arena classica; mapa com camera quando definido
     bool modularTerrain;   // lava/lama conectadas em PAL1, independentes do mapa
+    u8 enemyShotCap;       // override só dos inimigos; zero = usa shotCap
 } LevelDef;
 
 // uma fase por arquivo em levels/defs/ (level01.c .. level16.c); o grafo

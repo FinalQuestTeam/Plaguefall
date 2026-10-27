@@ -17,5 +17,5 @@ void CAMPAIGN_RESISTANCE_draw(u16 *count);
 bool CAMPAIGN_RESISTANCE_drawHUD(void);
 void CAMPAIGN_RESISTANCE_forceHUD(void);
 bool CAMPAIGN_RESISTANCE_prepText(char *buf,const LevelDef *def);
-bool CAMPAIGN_RESISTANCE_hideEnemy(u16 i);
+bool CAMPAIGN_RESISTANCE_priorityEnemy(u16 i);
 #endif

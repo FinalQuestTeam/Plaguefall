@@ -231,6 +231,18 @@ void PANEL_selection(u16 row)
     VDP_fillTileMapRect(BG_B,TILE_ATTR_FULL(PAL3,FALSE,FALSE,FALSE,TILE_SYSTEM_INDEX+PANEL_RUST_INDEX),1,row-1,38,2);
 }
 u16 PANEL_scratch(void){return missionMap ? MISSION_SCRATCH : SCRATCH;}
+void PANEL_icon32(const u32 *source,u16 x,u16 y,u16 slot)
+{
+    if(slot>=6 || x>36 || y>24)return;
+    const u16 tile=PANEL_scratch()+slot*16;
+    VDP_loadTileData(source,tile,16,DMA_QUEUE);
+    for(u16 col=0;col<4;col++)for(u16 row=0;row<4;row++)
+    {
+        const u16 attr=TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,tile+col*4+row);
+        if(missionMap)PANEL_radioCell(attr,x+col,y+row);
+        else VDP_setTileMapXY(BG_A,attr,x+col,y+row);
+    }
+}
 void PANEL_enemy(u8 type,u16 x,u16 y,u16 slot)
 {
     const u16 tile=SCRATCH+slot*16;

@@ -1,0 +1,165 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "6416685a881b55e6253f6bc2f2a53d91d86d8a583c128fb4e7052d2add318788",
+  "movieEnabled": false,
+  "checks": {
+    "all-current-campaign-result-captures": [
+      {
+        "node": "N_1",
+        "card_end": 1089,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_2A",
+        "card_end": 1089,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_2B",
+        "card_end": 1116,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_3",
+        "card_end": 1119,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_4",
+        "card_end": 1214,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_5",
+        "card_end": 955,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_6A",
+        "card_end": 995,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_6B",
+        "card_end": 995,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_7",
+        "card_end": 1227,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_8",
+        "card_end": 1227,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_9",
+        "card_end": 1047,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_10",
+        "card_end": 1065,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_11",
+        "card_end": 1065,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_12",
+        "card_end": 1052,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_13A",
+        "card_end": 1432,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_13B",
+        "card_end": 1432,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_14",
+        "card_end": 1181,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_15",
+        "card_end": 1181,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      },
+      {
+        "node": "N_16",
+        "card_end": 1181,
+        "defeat_card": true,
+        "retry_same_node": true,
+        "live_cache_released": true,
+        "reloaded_without_cache_faults": true
+      }
+    ]
+  },
+  "scope": "Every current campaign node: RAM sets node/zero health, production death settlement/result card and controller retry. Pattern writes stay below BG_B at tile1536; finished cache is freed; retry reloads the same phase and cache without faults. Card borrows/restores font tiles; source metadata is derived from the current graph."
+}

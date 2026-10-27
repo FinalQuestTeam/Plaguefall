@@ -1,0 +1,611 @@
+{
+  "date": "2026-10-27",
+  "revision": "13A/13B: limpeza do piso em volta dos três bancos",
+  "status": "integrated-local; automated checks passed",
+  "passed": true,
+  "rom_sha256": "cb7321abe8d139df3ba3a63d91139f812fdb398b96e61447b9b510881e43f7e1",
+  "rom_bytes": 2752512,
+  "cause": "Recortes retangulares dos bancos incluíam textura e sombras fragmentadas do piso original.",
+  "change": "Composição limitada à silhueta dos bancos, com piso uniforme ao redor e sombra de contato sólida.",
+  "world": {
+    "phases": [
+      "13A",
+      "13B"
+    ],
+    "size": [
+      512,
+      576
+    ],
+    "bounds": [
+      24,
+      160,
+      487,
+      487
+    ],
+    "start": [
+      280,
+      168
+    ],
+    "solids": [
+      [
+        80,
+        328,
+        104,
+        16,
+        true
+      ],
+      [
+        216,
+        272,
+        104,
+        16,
+        true
+      ],
+      [
+        352,
+        392,
+        104,
+        16,
+        true
+      ]
+    ],
+    "targets": {
+      "13A": 30,
+      "13B": 45
+    },
+    "native_pixel_block": 1,
+    "camera_policy": "player-only body center; same stable follow as stages 1–12",
+    "camera_player_y": 0,
+    "camera_south_start": 0,
+    "palette": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        36,
+        36,
+        36
+      ],
+      [
+        72,
+        72,
+        72
+      ],
+      [
+        109,
+        109,
+        109
+      ],
+      [
+        145,
+        145,
+        145
+      ],
+      [
+        182,
+        182,
+        145
+      ],
+      [
+        218,
+        218,
+        182
+      ],
+      [
+        109,
+        72,
+        36
+      ],
+      [
+        145,
+        109,
+        72
+      ],
+      [
+        182,
+        145,
+        109
+      ],
+      [
+        109,
+        36,
+        36
+      ],
+      [
+        145,
+        72,
+        36
+      ],
+      [
+        0,
+        36,
+        72
+      ],
+      [
+        36,
+        72,
+        109
+      ],
+      [
+        72,
+        109,
+        145
+      ],
+      [
+        218,
+        182,
+        109
+      ]
+    ],
+    "complete_source_preserved": true,
+    "modules": [
+      [
+        "locker-window-left",
+        [
+          16,
+          0,
+          176,
+          128
+        ],
+        [
+          16,
+          0
+        ]
+      ],
+      [
+        "locker-window-right",
+        [
+          16,
+          0,
+          176,
+          128
+        ],
+        [
+          336,
+          0
+        ]
+      ],
+      [
+        "banner",
+        [
+          176,
+          0,
+          264,
+          128
+        ],
+        [
+          176,
+          0
+        ]
+      ],
+      [
+        "booth-beam",
+        [
+          256,
+          0,
+          384,
+          24
+        ],
+        [
+          256,
+          0
+        ]
+      ],
+      [
+        "pulpit",
+        [
+          256,
+          24,
+          384,
+          152
+        ],
+        [
+          256,
+          24
+        ]
+      ],
+      [
+        "corner-nw",
+        [
+          0,
+          0,
+          16,
+          128
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        "corner-ne",
+        [
+          496,
+          0,
+          512,
+          128
+        ],
+        [
+          496,
+          0
+        ]
+      ],
+      [
+        "corner-sw",
+        [
+          0,
+          296,
+          32,
+          384
+        ],
+        [
+          0,
+          488
+        ]
+      ],
+      [
+        "corner-se",
+        [
+          480,
+          296,
+          512,
+          384
+        ],
+        [
+          480,
+          488
+        ]
+      ],
+      [
+        "south-left",
+        [
+          32,
+          304,
+          208,
+          384
+        ],
+        [
+          32,
+          496
+        ]
+      ],
+      [
+        "south-right",
+        [
+          32,
+          304,
+          208,
+          384
+        ],
+        [
+          304,
+          496
+        ]
+      ],
+      [
+        "door",
+        [
+          208,
+          296,
+          304,
+          384
+        ],
+        [
+          208,
+          488
+        ]
+      ],
+      [
+        "bench-left",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          72,
+          304
+        ]
+      ],
+      [
+        "bench-center",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          208,
+          248
+        ]
+      ],
+      [
+        "bench-right",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          344,
+          368
+        ]
+      ]
+    ],
+    "logo": {
+      "box": [
+        196,
+        24,
+        48,
+        56
+      ],
+      "source": "../space-workers-union-logo-v1/logo-ste.png"
+    },
+    "dinorah": {
+      "sprite": "sprites/dinorah-room-32x48.png",
+      "box": [
+        300,
+        76,
+        32,
+        48
+      ],
+      "occluded_below_y": 108,
+      "protected_behind_counter": true,
+      "static_scene_character": false,
+      "hardware_sprite": true,
+      "palette": "PAL2; original actor palette",
+      "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+      "source_pose": 0,
+      "pixel_changes": 0
+    },
+    "memorial": {
+      "sprite": "sprites/dinorah-helmet-24x16.png",
+      "box": [
+        304,
+        92,
+        24,
+        16
+      ],
+      "portrait": false,
+      "candles": false,
+      "hardware_sprite": true,
+      "palette": "PAL2; original actor palette",
+      "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+      "crop": [
+        5,
+        12,
+        21,
+        24
+      ],
+      "pixel_changes": 0,
+      "description": "Original Dinorah headgear; not a newly invented hard hat"
+    },
+    "memory": {
+      "source_tiles": 1183,
+      "cache_tiles": 640,
+      "cache_vram_bytes": 20480,
+      "maximum_visible_patterns": 543,
+      "minimum_cache_spare": 97,
+      "viewport_peaks": [
+        {
+          "phase": "13A",
+          "patterns": 543,
+          "conservative_camera": [
+            184,
+            0
+          ]
+        },
+        {
+          "phase": "13B",
+          "patterns": 543,
+          "conservative_camera": [
+            184,
+            0
+          ]
+        }
+      ],
+      "cache_heap_bytes": 7486,
+      "graphics_rom_bytes": 37856,
+      "maps_rom_bytes": 18432,
+      "palette_bytes": 32,
+      "pixel_exact_reassembly": true,
+      "lossy_pattern_replacements": 0,
+      "additional_vram_bytes": 0,
+      "headgear_rom_bytes": 192,
+      "actor_frame_rom_bytes_added": 0,
+      "prop_uses_existing_dinorah_reservation": true
+    },
+    "sources": [
+      {
+        "path": "art/campaign-pattern-v2/resistance/source/13A-union.png",
+        "sha256": "926c9ffdc4da5d7a1d66b36b7053214d2a06ad4adc1ed8fdd910a049902c642c"
+      },
+      {
+        "path": "art/space-workers-union-logo-v1/logo-ste.png",
+        "sha256": "8ecc20cc6b665061d51ab7f3ad7bf1cfaac64f3080c6e4d57e64dae3f501140f"
+      },
+      {
+        "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+        "sha256": "349d914ebffb192aba1a03799b1bb74bc500ac29b26a076157026f51d4b3ddaf"
+      },
+      {
+        "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+        "sha256": "505427e182e8ec586a8d7a9ae76d809d14db5076ffb07b1212a35bc60cbcf6e3"
+      }
+    ],
+    "status": "integrated-local; awaiting visual review",
+    "bench_composition": {
+      "source_floor_removed": true,
+      "outline": [
+        [
+          10,
+          10
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          110,
+          11
+        ],
+        [
+          110,
+          10
+        ],
+        [
+          116,
+          10
+        ],
+        [
+          117,
+          12
+        ],
+        [
+          117,
+          31
+        ],
+        [
+          116,
+          31
+        ],
+        [
+          116,
+          40
+        ],
+        [
+          109,
+          40
+        ],
+        [
+          109,
+          31
+        ],
+        [
+          18,
+          31
+        ],
+        [
+          18,
+          40
+        ],
+        [
+          10,
+          40
+        ]
+      ],
+      "contact_shadow": [
+        [
+          16,
+          30
+        ],
+        [
+          115,
+          30
+        ],
+        [
+          122,
+          36
+        ],
+        [
+          122,
+          41
+        ],
+        [
+          18,
+          41
+        ]
+      ],
+      "shadow_palette_index": 3,
+      "furniture_pixels_preserved": true,
+      "collision_changes": false
+    }
+  },
+  "checks": {
+    "generated_resources_and_native_checks": true,
+    "changes_confined_to_three_bench_crops": true,
+    "furniture_pixels_preserved": true,
+    "geometry_palette_and_characters_unchanged": true,
+    "whole_room_24_views_per_variant_per_region": true,
+    "bench_all_faces_and_four_boundaries": true,
+    "controller_only_navigation_after_setup": true,
+    "pause_and_exact_cache_restore": true,
+    "canonical_props_and_PAL2": true,
+    "kill_targets_30_45_and_results": true,
+    "continue_to14": true
+  },
+  "performance": {
+    "ntsc": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 59.05,
+        "cache_peak": 399,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 58.8,
+        "cache_peak": 399,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          9,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    },
+    "pal": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 49.7,
+        "cache_peak": 399,
+        "cache_faults": 0,
+        "sprite_limits": [
+          21,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 49.7,
+        "cache_peak": 399,
+        "cache_faults": 0,
+        "sprite_limits": [
+          21,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    }
+  },
+  "reports": {
+    "ntsc": "validation/bench-cleanup/ntsc/report.json",
+    "pal": "validation/bench-cleanup/pal/report.json"
+  },
+  "pixel_audit": "validation/bench-cleanup/pixel-audit.json",
+  "previous_revision_report": "history/delivery-before-bench-cleanup.json",
+  "limitations": [
+    "Genesis Plus GX; hardware físico não testado.",
+    "Carga controlada: vida protegida e reposição de slots inativos de tiros; não certifica dificuldade humana.",
+    "Relatórios em outras pastas de validação documentam revisões anteriores."
+  ]
+}

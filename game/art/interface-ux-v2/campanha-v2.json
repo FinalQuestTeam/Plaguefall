@@ -3,116 +3,116 @@
     {
       "id": "1",
       "name": "PÁTIO DA IGREJA",
-      "attention": "SEGURE O PÁTIO POR 90 SEGUNDOS.",
-      "route": "BOMBA DANIFICA A IGREJA."
+      "attention": "RESISTA ATÉ O TEMPO ACABAR. ELIMINAÇÕES NÃO ENCERRAM A FASE.",
+      "route": "USAR BOMBA DESTRÓI A IGREJA E MUDA A PRÓXIMA FASE."
     },
     {
       "id": "2A",
       "name": "IGREJA PRESERVADA",
-      "attention": "ELIMINE OS 15 INSETOS.",
-      "route": "CUIDADO COM O NOVO ATIRADOR."
+      "attention": "LIBERE O PÁTIO PRESERVADO ELIMINANDO OS INSETOS.",
+      "route": "MOVA-SE PARA DESVIAR DOS TIROS DO SERRA-PAU VERMELHO."
     },
     {
       "id": "2B",
       "name": "IGREJA DESTRUÍDA",
-      "attention": "ELIMINE OS 15 INSETOS.",
-      "route": "CONTORNE OS DESTROÇOS."
+      "attention": "LIBERE O PÁTIO EM RUÍNAS ELIMINANDO OS INSETOS.",
+      "route": "CONTORNE OS DESTROÇOS E DESVIE DOS TIROS."
     },
     {
       "id": "3",
       "name": "RUA ATÉ O GALPÃO",
-      "attention": "SIGA A SETA ATÉ A SAÍDA.",
-      "route": "ABRA CAMINHO PARA OS CIVIS."
+      "attention": "CHEGUE À SAÍDA NO FIM DA RUA. NÃO HÁ META DE ELIMINAÇÕES.",
+      "route": "SIGA A SETA ATÉ O GALPÃO E CONTORNE OS OBSTÁCULOS."
     },
     {
       "id": "4",
       "name": "INTERIOR DO GALPÃO",
-      "attention": "ELIMINE OS 20 INSETOS.",
-      "route": null
+      "attention": "LIBERE O INTERIOR DO GALPÃO ELIMINANDO OS INSETOS.",
+      "route": "MANTENHA ESPAÇO PARA DESVIAR DOS INSETOS E DOS TIROS."
     },
     {
       "id": "5",
       "name": "COMUNICADOR NA SANTA",
-      "attention": "PROTEJA A SANTA POR DOIS MINUTOS.",
-      "route": "SE CAIR, PARTE DOS CIVIS MORRE."
+      "attention": "MANTENHA A SANTA DE PÉ ATÉ TERMINAR A EVACUAÇÃO.",
+      "route": "SE A SANTA CAIR, O RESGATE SERÁ PARCIAL E A ROTA MUDA."
     },
     {
       "id": "6A",
       "name": "ESGOTOS",
-      "attention": "DESTRUA OS PORTÕES COM TIROS.",
-      "route": "ESCOLTE DINORAH ATÉ A SAÍDA."
+      "attention": "LEVE DINORAH VIVA ATÉ A SAÍDA. DÊ COBERTURA QUANDO ELA PARAR.",
+      "route": "DÊ 4 TIROS EM CADA PORTÃO. FIQUE PERTO DE DINORAH."
     },
     {
       "id": "6B",
       "name": "ESGOTOS SOB PRESSÃO",
-      "attention": "PARE SOB A VÁLVULA SEM ATIRAR.",
-      "route": "LIBERE A PRESSÃO. ATIRE NO PORTÃO."
+      "attention": "LEVE DINORAH VIVA À SAÍDA. LIBERE A PRESSÃO ANTES DE ATIRAR.",
+      "route": "PARE 1,5 S SOB CADA VÁLVULA SEM A. DÊ 4 TIROS EM CADA PORTÃO."
     },
     {
       "id": "7",
       "name": "ABRIGO ÚLTIMO CHÃO",
-      "attention": "PARE JUNTO DA CARGA SEM ATIRAR.",
-      "route": "LEVE UMA POR VEZ AO DEPÓSITO."
+      "attention": "ABRA CADA BAÚ, PEGUE A SACOLA E TRANSPORTE UMA POR VEZ.",
+      "route": "PARE SEM A DIANTE DO BAÚ. PEGUE A SACOLA E LEVE AO DEPÓSITO."
     },
     {
       "id": "8",
       "name": "TRANSMISSORES",
-      "attention": "DERRUBE OS TRÊS ALVOS PRIORITÁRIOS.",
-      "route": "CADA ALVO REDUZ OS REFORÇOS."
+      "attention": "SÓ OS TRANSMISSORES MARCADOS CONTAM PARA O OBJETIVO.",
+      "route": "CADA TRANSMISSOR DESTRUÍDO ATRASA OS REFORÇOS."
     },
     {
       "id": "9",
       "name": "CAMINHO DA FÁBRICA",
-      "attention": "SIGA A SETA ATÉ A FÁBRICA.",
-      "route": null
+      "attention": "CHEGUE À FÁBRICA NO FIM DA RUA. NÃO HÁ META DE ELIMINAÇÕES.",
+      "route": "SIGA A SETA E CONTORNE OS CAMINHÕES E AS OFICINAS."
     },
     {
       "id": "10",
       "name": "OVOS NA FÁBRICA",
-      "attention": "DESTRUA OS DEZ NINHOS DE OVOS.",
-      "route": null
+      "attention": "PROCURE TODOS OS NINHOS. ELIMINAR INSETOS NÃO CONTA.",
+      "route": "CADA NINHO RECEBE 3 TIROS. BOMBAS DESTROEM OS NINHOS NA TELA."
     },
     {
       "id": "11",
       "name": "VÁLVULAS DA FÁBRICA",
-      "attention": "REAQUEÇA A FÁBRICA.",
-      "route": "O CALOR VAI DISTRAIR O ENXAME."
+      "attention": "OPERE TODAS AS VÁLVULAS PARA REATIVAR O CALOR DA FÁBRICA.",
+      "route": "PARE 2,5 S JUNTO DE CADA VÁLVULA SEM ATIRAR."
     },
     {
       "id": "12",
       "name": "ESCOLTA AO SINDICATO",
-      "attention": "MANTENHA DINORAH SOB COBERTURA.",
-      "route": "A MORTE DELA É PERMANENTE."
+      "attention": "CHEGUE AO SINDICATO JUNTO DE DINORAH. DÊ COBERTURA A ELA.",
+      "route": "SE DINORAH CAIR, A CAMPANHA SEGUE SEM ELA PELA FASE 13B."
     },
     {
       "id": "13A",
       "name": "SALA DO SINDICATO",
-      "attention": "ELIMINE OS 30 INSETOS.",
-      "route": "DINORAH TRABALHA NO CONSOLE."
+      "attention": "LIBERE O SALÃO ENQUANTO DINORAH TRABALHA NO CONSOLE.",
+      "route": "AFASTE OS INSETOS E PROCURE ESPAÇO ENTRE OS TIROS."
     },
     {
       "id": "13B",
       "name": "SALA DO SINDICATO",
-      "attention": "ELIMINE OS 45 INSETOS.",
-      "route": null
+      "attention": "LIBERE O SALÃO DO SINDICATO SEM O APOIO DE DINORAH.",
+      "route": "ELIMINE OS INSETOS E CONTORNE OS BANCOS PARA DESVIAR."
     },
     {
       "id": "14",
       "name": "ENERGIA DO ESTALEIRO",
-      "attention": "LIGUE OS CINCO GERADORES.",
-      "route": null
+      "attention": "AO SE AFASTAR, A CARGA INCOMPLETA PERDE 10% POR SEGUNDO.",
+      "route": "FIQUE 10 S SEM A DIANTE DE CADA GERADOR."
     },
     {
       "id": "15",
       "name": "RÁDIO DE IGNIÇÃO",
-      "attention": "PROTEJA O RÁDIO POR DOIS MINUTOS.",
-      "route": "SE CAIR, REPITA A TENTATIVA."
+      "attention": "DEFENDA A BASE DO RÁDIO ATÉ COMPLETAR A IGNIÇÃO.",
+      "route": "INTERCEPTE OS INSETOS. SE O NÚCLEO CAIR, REPITA A FASE."
     },
     {
       "id": "16",
       "name": "ESCORPIÃO",
-      "attention": "DESVIE DOS TIROS E DOS LACAIOS.",
-      "route": null
+      "attention": "COM 12 DE VIDA, ELE FAZ DUAS INVESTIDAS E DEPOIS FICA VULNERÁVEL.",
+      "route": "DESVIE DOS LEQUES. APÓS AS DUAS INVESTIDAS, ATAQUE NA PAUSA."
     }
   ]
 }

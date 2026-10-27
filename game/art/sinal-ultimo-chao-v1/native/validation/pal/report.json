@@ -1,0 +1,1040 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "84569b175095220ff4710717f616c31102185b3373e73d3d51057bd8626d7f6d",
+  "method": "All password entry and resume navigation use controller input; RAM fixtures only accelerate victory, death and mid-attempt equipment for isolated checks.",
+  "checks": [
+    {
+      "name": "16 native32x32 sprites: ROM bytes, VRAM pixels, palette1 and wrap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Invalid code rejected; B cancels to title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "69 route/decision combinations restored through controller entry",
+      "passed": true,
+      "detail": [
+        {
+          "node": 1,
+          "flags": 0,
+          "power": 2,
+          "speed": 1,
+          "code": [
+            4,
+            9,
+            0,
+            1,
+            9,
+            2
+          ]
+        },
+        {
+          "node": 2,
+          "flags": 0,
+          "power": 3,
+          "speed": 2,
+          "code": [
+            5,
+            2,
+            0,
+            2,
+            5,
+            11
+          ]
+        },
+        {
+          "node": 3,
+          "flags": 1,
+          "power": 5,
+          "speed": 4,
+          "code": [
+            6,
+            4,
+            2,
+            3,
+            3,
+            11
+          ]
+        },
+        {
+          "node": 4,
+          "flags": 0,
+          "power": 5,
+          "speed": 4,
+          "code": [
+            6,
+            4,
+            0,
+            4,
+            12,
+            14
+          ]
+        },
+        {
+          "node": 4,
+          "flags": 1,
+          "power": 1,
+          "speed": 5,
+          "code": [
+            6,
+            8,
+            2,
+            4,
+            13,
+            2
+          ]
+        },
+        {
+          "node": 5,
+          "flags": 0,
+          "power": 1,
+          "speed": 5,
+          "code": [
+            6,
+            8,
+            0,
+            5,
+            3,
+            5
+          ]
+        },
+        {
+          "node": 5,
+          "flags": 1,
+          "power": 2,
+          "speed": 0,
+          "code": [
+            4,
+            1,
+            2,
+            5,
+            12,
+            6
+          ]
+        },
+        {
+          "node": 6,
+          "flags": 0,
+          "power": 2,
+          "speed": 0,
+          "code": [
+            4,
+            1,
+            0,
+            6,
+            2,
+            15
+          ]
+        },
+        {
+          "node": 6,
+          "flags": 1,
+          "power": 3,
+          "speed": 1,
+          "code": [
+            4,
+            10,
+            2,
+            6,
+            5,
+            8
+          ]
+        },
+        {
+          "node": 7,
+          "flags": 0,
+          "power": 3,
+          "speed": 1,
+          "code": [
+            4,
+            10,
+            0,
+            7,
+            11,
+            15
+          ]
+        },
+        {
+          "node": 7,
+          "flags": 1,
+          "power": 4,
+          "speed": 2,
+          "code": [
+            5,
+            3,
+            2,
+            7,
+            11,
+            5
+          ]
+        },
+        {
+          "node": 8,
+          "flags": 2,
+          "power": 1,
+          "speed": 4,
+          "code": [
+            6,
+            0,
+            4,
+            8,
+            7,
+            9
+          ]
+        },
+        {
+          "node": 8,
+          "flags": 3,
+          "power": 2,
+          "speed": 5,
+          "code": [
+            6,
+            9,
+            6,
+            8,
+            2,
+            4
+          ]
+        },
+        {
+          "node": 9,
+          "flags": 0,
+          "power": 5,
+          "speed": 3,
+          "code": [
+            5,
+            12,
+            0,
+            9,
+            11,
+            12
+          ]
+        },
+        {
+          "node": 9,
+          "flags": 1,
+          "power": 1,
+          "speed": 4,
+          "code": [
+            6,
+            0,
+            2,
+            9,
+            5,
+            9
+          ]
+        },
+        {
+          "node": 9,
+          "flags": 2,
+          "power": 2,
+          "speed": 5,
+          "code": [
+            6,
+            9,
+            4,
+            9,
+            12,
+            3
+          ]
+        },
+        {
+          "node": 9,
+          "flags": 3,
+          "power": 3,
+          "speed": 0,
+          "code": [
+            4,
+            2,
+            6,
+            9,
+            1,
+            10
+          ]
+        },
+        {
+          "node": 10,
+          "flags": 0,
+          "power": 1,
+          "speed": 4,
+          "code": [
+            6,
+            0,
+            0,
+            10,
+            11,
+            0
+          ]
+        },
+        {
+          "node": 10,
+          "flags": 1,
+          "power": 2,
+          "speed": 5,
+          "code": [
+            6,
+            9,
+            2,
+            10,
+            14,
+            13
+          ]
+        },
+        {
+          "node": 10,
+          "flags": 2,
+          "power": 3,
+          "speed": 0,
+          "code": [
+            4,
+            2,
+            4,
+            10,
+            15,
+            3
+          ]
+        },
+        {
+          "node": 10,
+          "flags": 3,
+          "power": 4,
+          "speed": 1,
+          "code": [
+            4,
+            11,
+            6,
+            10,
+            10,
+            14
+          ]
+        },
+        {
+          "node": 11,
+          "flags": 0,
+          "power": 2,
+          "speed": 5,
+          "code": [
+            6,
+            9,
+            0,
+            11,
+            0,
+            10
+          ]
+        },
+        {
+          "node": 11,
+          "flags": 1,
+          "power": 3,
+          "speed": 0,
+          "code": [
+            4,
+            2,
+            2,
+            11,
+            13,
+            3
+          ]
+        },
+        {
+          "node": 11,
+          "flags": 2,
+          "power": 4,
+          "speed": 1,
+          "code": [
+            4,
+            11,
+            4,
+            11,
+            4,
+            9
+          ]
+        },
+        {
+          "node": 11,
+          "flags": 3,
+          "power": 5,
+          "speed": 2,
+          "code": [
+            5,
+            4,
+            6,
+            11,
+            3,
+            13
+          ]
+        },
+        {
+          "node": 12,
+          "flags": 0,
+          "power": 3,
+          "speed": 0,
+          "code": [
+            4,
+            2,
+            0,
+            12,
+            2,
+            6
+          ]
+        },
+        {
+          "node": 12,
+          "flags": 1,
+          "power": 4,
+          "speed": 1,
+          "code": [
+            4,
+            11,
+            2,
+            12,
+            7,
+            11
+          ]
+        },
+        {
+          "node": 12,
+          "flags": 2,
+          "power": 5,
+          "speed": 2,
+          "code": [
+            5,
+            4,
+            4,
+            12,
+            12,
+            8
+          ]
+        },
+        {
+          "node": 12,
+          "flags": 3,
+          "power": 1,
+          "speed": 3,
+          "code": [
+            5,
+            8,
+            6,
+            12,
+            13,
+            4
+          ]
+        },
+        {
+          "node": 13,
+          "flags": 0,
+          "power": 4,
+          "speed": 1,
+          "code": [
+            4,
+            11,
+            0,
+            13,
+            9,
+            12
+          ]
+        },
+        {
+          "node": 13,
+          "flags": 1,
+          "power": 5,
+          "speed": 2,
+          "code": [
+            5,
+            4,
+            2,
+            13,
+            14,
+            8
+          ]
+        },
+        {
+          "node": 13,
+          "flags": 2,
+          "power": 1,
+          "speed": 3,
+          "code": [
+            5,
+            8,
+            4,
+            13,
+            3,
+            3
+          ]
+        },
+        {
+          "node": 13,
+          "flags": 3,
+          "power": 2,
+          "speed": 4,
+          "code": [
+            6,
+            1,
+            6,
+            13,
+            9,
+            7
+          ]
+        },
+        {
+          "node": 14,
+          "flags": 0,
+          "power": 5,
+          "speed": 2,
+          "code": [
+            5,
+            4,
+            0,
+            14,
+            0,
+            1
+          ]
+        },
+        {
+          "node": 14,
+          "flags": 1,
+          "power": 1,
+          "speed": 3,
+          "code": [
+            5,
+            8,
+            2,
+            14,
+            1,
+            13
+          ]
+        },
+        {
+          "node": 14,
+          "flags": 2,
+          "power": 2,
+          "speed": 4,
+          "code": [
+            6,
+            1,
+            4,
+            14,
+            7,
+            14
+          ]
+        },
+        {
+          "node": 14,
+          "flags": 3,
+          "power": 3,
+          "speed": 5,
+          "code": [
+            6,
+            10,
+            6,
+            14,
+            0,
+            9
+          ]
+        },
+        {
+          "node": 15,
+          "flags": 0,
+          "power": 1,
+          "speed": 3,
+          "code": [
+            5,
+            8,
+            0,
+            15,
+            15,
+            10
+          ]
+        },
+        {
+          "node": 15,
+          "flags": 1,
+          "power": 2,
+          "speed": 4,
+          "code": [
+            6,
+            1,
+            2,
+            15,
+            5,
+            14
+          ]
+        },
+        {
+          "node": 15,
+          "flags": 2,
+          "power": 3,
+          "speed": 5,
+          "code": [
+            6,
+            10,
+            4,
+            15,
+            14,
+            14
+          ]
+        },
+        {
+          "node": 15,
+          "flags": 3,
+          "power": 4,
+          "speed": 0,
+          "code": [
+            4,
+            3,
+            6,
+            15,
+            1,
+            13
+          ]
+        },
+        {
+          "node": 16,
+          "flags": 4,
+          "power": 1,
+          "speed": 2,
+          "code": [
+            5,
+            0,
+            9,
+            0,
+            8,
+            6
+          ]
+        },
+        {
+          "node": 16,
+          "flags": 5,
+          "power": 2,
+          "speed": 3,
+          "code": [
+            5,
+            9,
+            11,
+            0,
+            13,
+            11
+          ]
+        },
+        {
+          "node": 16,
+          "flags": 6,
+          "power": 3,
+          "speed": 4,
+          "code": [
+            6,
+            2,
+            13,
+            0,
+            9,
+            2
+          ]
+        },
+        {
+          "node": 16,
+          "flags": 7,
+          "power": 4,
+          "speed": 5,
+          "code": [
+            6,
+            11,
+            15,
+            0,
+            12,
+            15
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 0,
+          "power": 3,
+          "speed": 5,
+          "code": [
+            6,
+            10,
+            1,
+            1,
+            7,
+            3
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 1,
+          "power": 4,
+          "speed": 0,
+          "code": [
+            4,
+            3,
+            3,
+            1,
+            8,
+            0
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 2,
+          "power": 5,
+          "speed": 1,
+          "code": [
+            4,
+            12,
+            5,
+            1,
+            6,
+            4
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 3,
+          "power": 1,
+          "speed": 2,
+          "code": [
+            5,
+            0,
+            7,
+            1,
+            2,
+            15
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 4,
+          "power": 2,
+          "speed": 3,
+          "code": [
+            5,
+            9,
+            9,
+            1,
+            3,
+            12
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 5,
+          "power": 3,
+          "speed": 4,
+          "code": [
+            6,
+            2,
+            11,
+            1,
+            11,
+            2
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 6,
+          "power": 4,
+          "speed": 5,
+          "code": [
+            6,
+            11,
+            13,
+            1,
+            2,
+            8
+          ]
+        },
+        {
+          "node": 17,
+          "flags": 7,
+          "power": 5,
+          "speed": 0,
+          "code": [
+            4,
+            4,
+            15,
+            1,
+            10,
+            5
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 0,
+          "power": 4,
+          "speed": 0,
+          "code": [
+            4,
+            3,
+            1,
+            2,
+            6,
+            9
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 1,
+          "power": 5,
+          "speed": 1,
+          "code": [
+            4,
+            12,
+            3,
+            2,
+            4,
+            10
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 2,
+          "power": 1,
+          "speed": 2,
+          "code": [
+            5,
+            0,
+            5,
+            2,
+            12,
+            6
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 3,
+          "power": 2,
+          "speed": 3,
+          "code": [
+            5,
+            9,
+            7,
+            2,
+            9,
+            11
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 4,
+          "power": 3,
+          "speed": 4,
+          "code": [
+            6,
+            2,
+            9,
+            2,
+            5,
+            11
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 5,
+          "power": 4,
+          "speed": 5,
+          "code": [
+            6,
+            11,
+            11,
+            2,
+            0,
+            6
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 6,
+          "power": 5,
+          "speed": 0,
+          "code": [
+            4,
+            4,
+            13,
+            2,
+            4,
+            12
+          ]
+        },
+        {
+          "node": 18,
+          "flags": 7,
+          "power": 1,
+          "speed": 1,
+          "code": [
+            4,
+            8,
+            15,
+            2,
+            5,
+            0
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 0,
+          "power": 5,
+          "speed": 1,
+          "code": [
+            4,
+            12,
+            1,
+            3,
+            10,
+            13
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 1,
+          "power": 1,
+          "speed": 2,
+          "code": [
+            5,
+            0,
+            3,
+            3,
+            14,
+            6
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 2,
+          "power": 2,
+          "speed": 3,
+          "code": [
+            5,
+            9,
+            5,
+            3,
+            7,
+            12
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 3,
+          "power": 3,
+          "speed": 4,
+          "code": [
+            6,
+            2,
+            7,
+            3,
+            15,
+            2
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 4,
+          "power": 4,
+          "speed": 5,
+          "code": [
+            6,
+            11,
+            9,
+            3,
+            14,
+            1
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 5,
+          "power": 5,
+          "speed": 0,
+          "code": [
+            4,
+            4,
+            11,
+            3,
+            6,
+            12
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 6,
+          "power": 1,
+          "speed": 1,
+          "code": [
+            4,
+            8,
+            13,
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "node": 19,
+          "flags": 7,
+          "power": 2,
+          "speed": 2,
+          "code": [
+            5,
+            1,
+            15,
+            3,
+            11,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pause code available in all19 campaign nodes with frozen gameplay",
+      "passed": true,
+      "detail": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "name": "Pause code preserves gameplay, timers and original entry equipment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Victory resolves route and generates next checkpoint with earned upgrades",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Defeat retry retains entry code and opens mission without another code screen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Console reset clears borrowed screens and accepts previous continuation code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Fresh process then controller-only password entry restores prior session without SRAM",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

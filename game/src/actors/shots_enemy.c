@@ -11,10 +11,23 @@
 
 static s16 shotTargetX,shotTargetY;
 void SHOTS_enemyTarget(s16 x,s16 y){shotTargetX=x;shotTargetY=y;}
+static u16 enemyShotLimit(void)
+{
+    const LevelDef *def=LEVEL_current();
+    const u16 cap=currentLevel==0 ? TEST_shotLimit() : def->enemyShotCap ? def->enemyShotCap :
+                  def->shotCap ? def->shotCap : MAX_ESHOTS;
+    return min(cap,MAX_ESHOTS);
+}
+bool SHOTS_enemyHasRoom(u8 count)
+{
+    const u16 cap=enemyShotLimit();u16 available=0;
+    for(u16 i=0;i<cap;i++)if(!eshots[i].active)available++;
+    return available>=count;
+}
 // cria um projétil inimigo em (fx, fy) 26.6 com velocidade dada (26.6) e `dmg`
 static void spawnEShot(s32 fx, s32 fy, s32 vx, s32 vy, u8 dmg, u8 style)
 {
-    const u16 cap = currentLevel==0 ? TEST_shotLimit() : (LEVEL_current()->shotCap ? LEVEL_current()->shotCap : MAX_ESHOTS);
+    const u16 cap = enemyShotLimit();
     for (u16 i = 0; i < cap; i++)
     {
         if (eshots[i].active) continue;
@@ -50,7 +63,7 @@ void fireEnemyShot(s16 ex, s16 ey, u8 style)
     SFX_enemyShot();
 }
 
-void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg, u8 style)
+void fireEnemySpreadDmgWidth(s16 ex, s16 ey, u8 count, u8 dmg, u8 style, u8 divisor)
 {
     s16 dx = shotTargetX - (ex + 8);
     s16 dy = shotTargetY - (ey + 8);
@@ -61,12 +74,18 @@ void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg, u8 style)
     const s32 bvy = aimedVelocity(dy,dist);
     const s32 fx = (s32) (ex + 4) << 6, fy = (s32) (ey + 4) << 6;
 
-    // rotação aproximada por cisalhamento: ~18° por passo (k = s/3)
+    // Larger divisors close the fan; existing enemies keep their divisor3.
+    if(!divisor)divisor=3;
     const s16 half = count / 2;
     for (s16 s = -half; s <= half; s++)
-        spawnEShot(fx, fy, bvx - (bvy * s) / 3, bvy + (bvx * s) / 3, dmg, style);
+        spawnEShot(fx, fy, bvx - (bvy * s) / divisor, bvy + (bvx * s) / divisor, dmg, style);
 
     SFX_enemyShot();
+}
+
+void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg, u8 style)
+{
+    fireEnemySpreadDmgWidth(ex,ey,count,dmg,style,3);
 }
 
 void fireEnemySpread(s16 ex, s16 ey, u8 count, u8 style)

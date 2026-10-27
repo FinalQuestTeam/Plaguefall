@@ -1,0 +1,645 @@
+{
+  "date": "2026-10-26",
+  "revision": "Fases13A/13B: Dinorah e adereço originais, pixels e PAL2 preservados",
+  "status": "integrated-local; visual acceptance pending",
+  "rom_sha256": "90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605",
+  "rom_bytes": 2752512,
+  "world": {
+    "phases": [
+      "13A",
+      "13B"
+    ],
+    "size": [
+      512,
+      384
+    ],
+    "bounds": [
+      24,
+      160,
+      487,
+      295
+    ],
+    "start": [
+      280,
+      168
+    ],
+    "solids": [
+      [
+        80,
+        264,
+        104,
+        16,
+        true
+      ],
+      [
+        216,
+        208,
+        104,
+        16,
+        true
+      ],
+      [
+        352,
+        264,
+        104,
+        16,
+        true
+      ]
+    ],
+    "targets": {
+      "13A": 30,
+      "13B": 45
+    },
+    "native_pixel_block": 1,
+    "camera_player_y": 200,
+    "camera_south_start": 224,
+    "palette": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        36,
+        36,
+        36
+      ],
+      [
+        72,
+        72,
+        72
+      ],
+      [
+        109,
+        109,
+        109
+      ],
+      [
+        145,
+        145,
+        145
+      ],
+      [
+        182,
+        182,
+        145
+      ],
+      [
+        218,
+        218,
+        182
+      ],
+      [
+        109,
+        72,
+        36
+      ],
+      [
+        145,
+        109,
+        72
+      ],
+      [
+        182,
+        145,
+        109
+      ],
+      [
+        109,
+        36,
+        36
+      ],
+      [
+        145,
+        72,
+        36
+      ],
+      [
+        0,
+        36,
+        72
+      ],
+      [
+        36,
+        72,
+        109
+      ],
+      [
+        72,
+        109,
+        145
+      ],
+      [
+        218,
+        182,
+        109
+      ]
+    ],
+    "complete_source_preserved": true,
+    "modules": [
+      [
+        "locker-window-left",
+        [
+          16,
+          0,
+          176,
+          128
+        ],
+        [
+          16,
+          0
+        ]
+      ],
+      [
+        "locker-window-right",
+        [
+          16,
+          0,
+          176,
+          128
+        ],
+        [
+          336,
+          0
+        ]
+      ],
+      [
+        "banner",
+        [
+          176,
+          0,
+          264,
+          128
+        ],
+        [
+          176,
+          0
+        ]
+      ],
+      [
+        "booth-beam",
+        [
+          256,
+          0,
+          384,
+          24
+        ],
+        [
+          256,
+          0
+        ]
+      ],
+      [
+        "pulpit",
+        [
+          256,
+          24,
+          384,
+          152
+        ],
+        [
+          256,
+          24
+        ]
+      ],
+      [
+        "corner-nw",
+        [
+          0,
+          0,
+          16,
+          128
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        "corner-ne",
+        [
+          496,
+          0,
+          512,
+          128
+        ],
+        [
+          496,
+          0
+        ]
+      ],
+      [
+        "corner-sw",
+        [
+          0,
+          296,
+          32,
+          384
+        ],
+        [
+          0,
+          296
+        ]
+      ],
+      [
+        "corner-se",
+        [
+          480,
+          296,
+          512,
+          384
+        ],
+        [
+          480,
+          296
+        ]
+      ],
+      [
+        "south-left",
+        [
+          32,
+          304,
+          208,
+          384
+        ],
+        [
+          32,
+          304
+        ]
+      ],
+      [
+        "south-right",
+        [
+          32,
+          304,
+          208,
+          384
+        ],
+        [
+          304,
+          304
+        ]
+      ],
+      [
+        "door",
+        [
+          208,
+          296,
+          304,
+          384
+        ],
+        [
+          208,
+          296
+        ]
+      ],
+      [
+        "bench-left",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          72,
+          240
+        ]
+      ],
+      [
+        "bench-center",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          208,
+          184
+        ]
+      ],
+      [
+        "bench-right",
+        [
+          72,
+          240,
+          200,
+          288
+        ],
+        [
+          344,
+          240
+        ]
+      ]
+    ],
+    "logo": {
+      "box": [
+        196,
+        24,
+        48,
+        56
+      ],
+      "source": "../space-workers-union-logo-v1/logo-ste.png"
+    },
+    "dinorah": {
+      "sprite": "sprites/dinorah-room-32x48.png",
+      "box": [
+        300,
+        76,
+        32,
+        48
+      ],
+      "occluded_below_y": 108,
+      "protected_behind_counter": true,
+      "static_scene_character": false,
+      "hardware_sprite": true,
+      "palette": "PAL2; original actor palette",
+      "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+      "source_pose": 0,
+      "pixel_changes": 0
+    },
+    "memorial": {
+      "sprite": "sprites/dinorah-helmet-24x16.png",
+      "box": [
+        304,
+        92,
+        24,
+        16
+      ],
+      "portrait": false,
+      "candles": false,
+      "hardware_sprite": true,
+      "palette": "PAL2; original actor palette",
+      "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+      "crop": [
+        5,
+        12,
+        21,
+        24
+      ],
+      "pixel_changes": 0,
+      "description": "Original Dinorah headgear; not a newly invented hard hat"
+    },
+    "memory": {
+      "source_tiles": 1220,
+      "cache_tiles": 640,
+      "cache_vram_bytes": 20480,
+      "maximum_visible_patterns": 630,
+      "minimum_cache_spare": 10,
+      "viewport_peaks": [
+        {
+          "phase": "13A",
+          "patterns": 630,
+          "conservative_camera": [
+            184,
+            0
+          ]
+        },
+        {
+          "phase": "13B",
+          "patterns": 630,
+          "conservative_camera": [
+            184,
+            0
+          ]
+        }
+      ],
+      "cache_heap_bytes": 7560,
+      "graphics_rom_bytes": 39040,
+      "maps_rom_bytes": 12288,
+      "palette_bytes": 32,
+      "pixel_exact_reassembly": true,
+      "lossy_pattern_replacements": 0,
+      "additional_vram_bytes": 0,
+      "headgear_rom_bytes": 192,
+      "actor_frame_rom_bytes_added": 0,
+      "prop_uses_existing_dinorah_reservation": true
+    },
+    "sources": [
+      {
+        "path": "art/campaign-pattern-v2/resistance/source/13A-union.png",
+        "sha256": "926c9ffdc4da5d7a1d66b36b7053214d2a06ad4adc1ed8fdd910a049902c642c"
+      },
+      {
+        "path": "art/space-workers-union-logo-v1/logo-ste.png",
+        "sha256": "8ecc20cc6b665061d51ab7f3ad7bf1cfaac64f3080c6e4d57e64dae3f501140f"
+      },
+      {
+        "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+        "sha256": "349d914ebffb192aba1a03799b1bb74bc500ac29b26a076157026f51d4b3ddaf"
+      },
+      {
+        "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+        "sha256": "505427e182e8ec586a8d7a9ae76d809d14db5076ffb07b1212a35bc60cbcf6e3"
+      }
+    ],
+    "status": "integrated-local; awaiting visual review"
+  },
+  "elf_sections": {
+    "text_bytes": 2644648,
+    "data_bytes": 268,
+    "bss_bytes": 19775,
+    "static_ram_bytes": 20043
+  },
+  "checks": {
+    "original_interior_composition_preserved": true,
+    "structural_and_focal_native_1px_export": true,
+    "STE_logo_both_versions": true,
+    "canonical_Dinorah_pixels_and_palette_verified_in_VRAM": true,
+    "original_headgear_extract": true,
+    "no_additional_prop_VRAM": true,
+    "helmet_only_no_portrait_or_candles": true,
+    "identical_collision_and_30_45_kill_targets": true,
+    "exact_native_tile_reconstruction": true,
+    "whole_room_12_camera_views_each_NTSC_PAL": true,
+    "controller_only_navigation_after_setup": true,
+    "pause_resumes_exact_tile_cache": true,
+    "configured_five_enemy_six_plus_six_shots": true,
+    "sprite_scanline_limits_passed": true,
+    "result_complete_and_defeat_cards": true,
+    "continue14_and_map_font": true,
+    "all19_current_nodes_result_capture_and_retry_NTSC_PAL": true,
+    "phase12_13A_13B_transition_regression": true,
+    "generated_resources_and_native_checks_passed": true
+  },
+  "reports": {
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json",
+    "composition-ntsc": "validation/composition-ntsc/report.json",
+    "composition-pal": "validation/composition-pal/report.json",
+    "results-current-ntsc": "validation/results-current-ntsc/report.json",
+    "results-current-pal": "validation/results-current-pal/report.json",
+    "regression12-ntsc": "validation/regression12-ntsc/report.json",
+    "regression12-pal": "validation/regression12-pal/report.json"
+  },
+  "result_capture_fix": {
+    "description": "Release completed scenery cache before capture. Snapshot one background plane and allocate only referenced patterns. Result card temporarily borrows font tiles below BG_B/1536; RESULT_close restores the font. Clear unpopulated HUD-covered rows in the frozen result so stale map cells are not exposed.",
+    "pattern_end_tile_exclusive": 1536,
+    "diagnostic_fault_codes": {
+      "0": "ok",
+      "1": "allocation",
+      "2": "pattern capacity",
+      "3": "card allocation"
+    }
+  },
+  "physical_hardware_tested": false,
+  "human_difficulty_certified": false,
+  "moving_load": {
+    "ntsc": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 57.85,
+        "cache_peak": 618,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          11,
+          160
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 57.75,
+        "cache_peak": 618,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          11,
+          160
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    },
+    "pal": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 48.9,
+        "cache_peak": 618,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          11,
+          160
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 49.0,
+        "cache_peak": 618,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          11,
+          160
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    }
+  },
+  "stationary_load": {
+    "ntsc": {
+      "13A": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 50.28,
+        "cpu_peak_percent": 52.25,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      },
+      "13B": {
+        "passed": true,
+        "simulation_fps": 60.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 49.99,
+        "cpu_peak_percent": 51.71,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      }
+    },
+    "pal": {
+      "13A": {
+        "passed": true,
+        "simulation_fps": 50.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 24.37,
+        "cpu_peak_percent": 26.17,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      },
+      "13B": {
+        "passed": true,
+        "simulation_fps": 50.0,
+        "seeded_visible_enemies": 5,
+        "seeded_player_shots": 6,
+        "seeded_enemy_shots": 6,
+        "cpu_mean_percent": 24.07,
+        "cpu_peak_percent": 25.59,
+        "setup": "RAM seeds simultaneous horizontal formation and full configured shot pools eachframe; not ordinary gameplay"
+      }
+    }
+  },
+  "natural_combat_samples": {
+    "ntsc": {
+      "13A": {
+        "controller_only": true,
+        "duration_seconds": 17.75,
+        "result": "defeat",
+        "initial_hp": 100,
+        "remaining_hp": 0,
+        "damage_net": 100,
+        "peak_enemies": 5,
+        "simulation_fps": 58.54,
+        "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+      },
+      "13B": {
+        "controller_only": true,
+        "duration_seconds": 17.27,
+        "result": "defeat",
+        "initial_hp": 100,
+        "remaining_hp": 0,
+        "damage_net": 100,
+        "peak_enemies": 5,
+        "simulation_fps": 58.55,
+        "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+      }
+    },
+    "pal": {
+      "13A": {
+        "controller_only": true,
+        "duration_seconds": 20.0,
+        "result": "timeout",
+        "initial_hp": 100,
+        "remaining_hp": 50,
+        "damage_net": 50,
+        "peak_enemies": 5,
+        "simulation_fps": 49.95,
+        "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+      },
+      "13B": {
+        "controller_only": true,
+        "duration_seconds": 20.0,
+        "result": "timeout",
+        "initial_hp": 100,
+        "remaining_hp": 50,
+        "damage_net": 50,
+        "peak_enemies": 5,
+        "simulation_fps": 49.95,
+        "scope": "20s automated movement/fire pressure sample; not a human difficulty rating"
+      }
+    }
+  },
+  "limits": [
+    "Dinorah uses the exact original S idle pose in PAL2;13B uses headgear extracted from the original N pose. Hardware sprites reuse the existing escort reservation, with no additional VRAM; escort AI is inactive.",
+    "Scene source1220tiles in ROM; visible cache640tiles/20480bytes. Conservative viewport peak630, cache data7560bytes in heap plus allocator headers.",
+    "Stationary full configured formation60/50FPS; live moving camera/AI5enemy6+6shot pressure57.75–57.85NTSC and48.90–49.00PAL. Fixed60/50FPS is not guaranteed during movement.",
+    "Automated normal-health combat sample is not a difficulty approval; NTSC loses the attempt around19s, PAL survives20s with44HP.",
+    "Physical hardware not tested; no new GitHub publication."
+  ]
+}

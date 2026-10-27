@@ -1,0 +1,8 @@
+{
+  "historical_only": true,
+  "reason": "The old test_results_emulator.py assumes every offscreen/HUD-hidden map cell is preserved and card tiles stop at1440. It also names retired10A/10Bnodes. Its initial diagnostic failed at the deliberately cleared hidden HUD rows. Current replacement suite derives all19nodes from graph.h and validates result capture/retry, cache release and tile1536boundary in NTSC/PAL.",
+  "current_reports": [
+    "../validation/results-current-ntsc/report.json",
+    "../validation/results-current-pal/report.json"
+  ]
+}

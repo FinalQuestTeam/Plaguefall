@@ -617,20 +617,26 @@
         280,
         168
       ],
-      "complete": "art/campaign-pattern-v2/resistance/complete/13A-complete.png",
-      "background": "art/campaign-pattern-v2/resistance/native/union/alive-native.png",
+      "complete": "art/phase13-union-v2/13A-complete-native.png",
+      "background": "art/phase13-union-v2/native/alive-native.png",
       "special_states": [],
       "memory": {
-        "scene_tiles": 620,
+        "scene_tiles": 640,
         "reserved_objective_tiles": 0,
-        "total_reserved_tiles": 620,
+        "total_reserved_tiles": 640,
         "limit": 640,
-        "margin_tiles": 20,
-        "tile_bytes": 19840,
+        "margin_tiles": 0,
+        "tile_bytes": 20480,
         "map_bytes": 6144,
         "palette_bytes": 32,
         "exact_reconstruction": true,
-        "lossy_tile_replacements": 0
+        "lossy_tile_replacements": 0,
+        "source_tiles": 1220,
+        "source_graphics_rom_bytes": 39040,
+        "maximum_visible_patterns": 630,
+        "free_cache_slots_at_conservative_peak": 10,
+        "cache_heap_bytes": 7560,
+        "streamed": true
       },
       "source": "art/campaign-pattern-v2/resistance/source/13A-union.png",
       "source_sha256": "926c9ffdc4da5d7a1d66b36b7053214d2a06ad4adc1ed8fdd910a049902c642c",
@@ -641,46 +647,30 @@
           0
         ],
         "format": "RGB333",
-        "palette_file": "art/campaign-pattern-v2/resistance/native/union/palette.bin"
+        "palette_file": "art/phase13-union-v2/native/palette.bin"
       },
       "objects": [],
-      "layout": "art/campaign-pattern-v2/resistance/layouts/13A.png",
+      "layout": "art/phase13-union-v2/layouts/13A.png",
       "camera_previews": [
         {
-          "path": "art/campaign-pattern-v2/resistance/camera-previews/13A-0.png",
+          "path": "art/phase13-union-v2/validation/composition-ntsc/13A-entry.png",
           "camera": [
             128,
-            64
+            0
           ],
           "actor_ground_top_left": [
             280,
             168
           ],
-          "emulator_capture": false
+          "emulator_capture": true
         },
         {
-          "path": "art/campaign-pattern-v2/resistance/camera-previews/13A-1.png",
+          "path": "art/phase13-union-v2/validation/composition-ntsc/13A-view-456-280.png",
           "camera": [
-            96,
-            0
-          ],
-          "actor_ground_top_left": [
-            248,
+            192,
             160
           ],
-          "emulator_capture": false
-        },
-        {
-          "path": "art/campaign-pattern-v2/resistance/camera-previews/13A-2.png",
-          "camera": [
-            96,
-            160
-          ],
-          "actor_ground_top_left": [
-            248,
-            272
-          ],
-          "emulator_capture": false
+          "emulator_capture": true
         }
       ],
       "access": {
@@ -693,7 +683,7 @@
         "checks": [],
         "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
       },
-      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+      "runtime_verification": "Passed NTSC/PAL on ROM90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605; art/phase13-union-v2/delivery.json"
     },
     {
       "phase": "13B",
@@ -731,20 +721,26 @@
         280,
         168
       ],
-      "complete": "art/campaign-pattern-v2/resistance/complete/13B-complete.png",
-      "background": "art/campaign-pattern-v2/resistance/native/union/dead-native.png",
+      "complete": "art/phase13-union-v2/13B-complete-native.png",
+      "background": "art/phase13-union-v2/native/dead-native.png",
       "special_states": [],
       "memory": {
-        "scene_tiles": 620,
+        "scene_tiles": 640,
         "reserved_objective_tiles": 0,
-        "total_reserved_tiles": 620,
+        "total_reserved_tiles": 640,
         "limit": 640,
-        "margin_tiles": 20,
-        "tile_bytes": 19840,
+        "margin_tiles": 0,
+        "tile_bytes": 20480,
         "map_bytes": 6144,
         "palette_bytes": 32,
         "exact_reconstruction": true,
-        "lossy_tile_replacements": 0
+        "lossy_tile_replacements": 0,
+        "source_tiles": 1220,
+        "source_graphics_rom_bytes": 39040,
+        "maximum_visible_patterns": 630,
+        "free_cache_slots_at_conservative_peak": 10,
+        "cache_heap_bytes": 7560,
+        "streamed": true
       },
       "source": "art/campaign-pattern-v2/resistance/source/13B-union-memorial.png",
       "source_sha256": "09400961e6ed31a7f82ad07240c14b97c80e75d145ab60c7217daa723d4710cb",
@@ -755,46 +751,30 @@
           0
         ],
         "format": "RGB333",
-        "palette_file": "art/campaign-pattern-v2/resistance/native/union/palette.bin"
+        "palette_file": "art/phase13-union-v2/native/palette.bin"
       },
       "objects": [],
-      "layout": "art/campaign-pattern-v2/resistance/layouts/13B.png",
+      "layout": "art/phase13-union-v2/layouts/13B.png",
       "camera_previews": [
         {
-          "path": "art/campaign-pattern-v2/resistance/camera-previews/13B-0.png",
+          "path": "art/phase13-union-v2/validation/composition-ntsc/13B-entry.png",
           "camera": [
             128,
-            64
+            0
           ],
           "actor_ground_top_left": [
             280,
             168
           ],
-          "emulator_capture": false
+          "emulator_capture": true
         },
         {
-          "path": "art/campaign-pattern-v2/resistance/camera-previews/13B-1.png",
+          "path": "art/phase13-union-v2/validation/composition-ntsc/13B-view-456-280.png",
           "camera": [
-            96,
-            0
-          ],
-          "actor_ground_top_left": [
-            248,
+            192,
             160
           ],
-          "emulator_capture": false
-        },
-        {
-          "path": "art/campaign-pattern-v2/resistance/camera-previews/13B-2.png",
-          "camera": [
-            96,
-            160
-          ],
-          "actor_ground_top_left": [
-            248,
-            272
-          ],
-          "emulator_capture": false
+          "emulator_capture": true
         }
       ],
       "access": {
@@ -807,7 +787,7 @@
         "checks": [],
         "method": "Axis-aligned collision at runtime bounds and whole solids; dynamic case bases included until collection. This is geometry verification, not an emulator playtest."
       },
-      "runtime_verification": "Pending parent integrated build; no new ROM compiled in this subtask."
+      "runtime_verification": "Passed NTSC/PAL on ROM90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605; art/phase13-union-v2/delivery.json"
     }
   ]
 }

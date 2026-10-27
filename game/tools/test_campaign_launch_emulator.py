@@ -251,9 +251,16 @@ def main():
         if kind in palette_samples:assert cram==palette_samples[kind],('palette changed after isolated movement',kind)
         else:palette_samples[kind]=cram
         return {'passed':True,'atlas_bytes':len(expected),'visible_map_cells_checked':40*min(28,48-cy),'pixel_exact':True,'hflip_vflip_supported':True,'camera':[signed('cameraX'),signed('cameraY')],'bg_a_clean':True,'palette_zero_black':True}
-    for label,cap in [('14',4),('15',3),('16',4)]:
+    for stage in ['14','15']:
+        modular=out/('phase'+stage+'-modular')
+        command=[__import__('sys').executable,str(GAME/('tools/test_phase'+stage+'_shipyard_emulator.py')),'--output',str(modular),'--build-dir',str(build)]
+        if args.pal:command.append('--pal')
+        subprocess.run(command,check=True)
+        modular_report=json.loads((modular/'report.json').read_text())
+        report['nodes'][stage]={'modular_native_suite':{'passed':modular_report['passed'],'report':str(modular/'report.json')}}
+    for label,cap in [('16',4)]:
         node=node_ids['N_'+label];r={};report['nodes'][label]=r;base=enter(node);shot(label+'-entry')
-        if label=='14':scene_base=int.from_bytes(read(syms['objectiveArtBases'][0]+2,2),'big')-geom['normal_tiles']
+        scene_base=int.from_bytes(read(syms['objectiveArtBases'][0]+2,2),'big')-geom['fire_tiles' if label=='16' else 'normal_tiles']
         r['entry']={'passed':True,'enemy_cap':cap,'shot_cap':4,'world':[512,384]}
         r['native_scene']=native_scene_check('fire' if label=='16' else 'normal')
         r['objective_pixels']=objective_pixels()

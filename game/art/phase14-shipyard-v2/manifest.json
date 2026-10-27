@@ -1,0 +1,423 @@
+{
+  "size": [
+    512,
+    576
+  ],
+  "bounds": [
+    40,
+    128,
+    471,
+    511
+  ],
+  "start": [
+    48,
+    232
+  ],
+  "solids": [
+    [
+      200,
+      264,
+      112,
+      64
+    ],
+    [
+      248,
+      232,
+      16,
+      32
+    ],
+    [
+      216,
+      432,
+      80,
+      48
+    ],
+    [
+      48,
+      160,
+      32,
+      16
+    ],
+    [
+      432,
+      160,
+      32,
+      16
+    ],
+    [
+      384,
+      280,
+      32,
+      16
+    ],
+    [
+      400,
+      456,
+      32,
+      16
+    ],
+    [
+      80,
+      456,
+      32,
+      16
+    ]
+  ],
+  "points": [],
+  "machines": [
+    [
+      64,
+      168
+    ],
+    [
+      448,
+      168
+    ],
+    [
+      400,
+      288
+    ],
+    [
+      416,
+      464
+    ],
+    [
+      96,
+      464
+    ]
+  ],
+  "native_pixel_block": 1,
+  "station_position": [
+    192,
+    224
+  ],
+  "seams": [
+    {
+      "module": "left-boundary",
+      "axis": "vertical",
+      "matching_edge_pixels": true
+    },
+    {
+      "module": "right-boundary",
+      "axis": "vertical",
+      "matching_edge_pixels": true
+    },
+    {
+      "module": "lower-boundary",
+      "axis": "horizontal",
+      "matching_edge_pixels": true
+    },
+    {
+      "module": "iron-floor-plate",
+      "axis": "both",
+      "matching_edge_pixels": true
+    }
+  ],
+  "energy": {
+    "all_seven_nodes_connected": true,
+    "tile_count": 123,
+    "routes": [
+      {
+        "source": "station-1",
+        "target": "console",
+        "points": [
+          [
+            80,
+            160
+          ],
+          [
+            136,
+            160
+          ],
+          [
+            136,
+            288
+          ],
+          [
+            208,
+            288
+          ]
+        ]
+      },
+      {
+        "source": "station-2",
+        "target": "console",
+        "points": [
+          [
+            432,
+            160
+          ],
+          [
+            352,
+            160
+          ],
+          [
+            352,
+            272
+          ],
+          [
+            304,
+            272
+          ]
+        ]
+      },
+      {
+        "source": "station-3",
+        "target": "console",
+        "points": [
+          [
+            384,
+            280
+          ],
+          [
+            352,
+            280
+          ],
+          [
+            352,
+            304
+          ],
+          [
+            304,
+            304
+          ]
+        ]
+      },
+      {
+        "source": "console",
+        "target": "battery",
+        "points": [
+          [
+            256,
+            320
+          ],
+          [
+            256,
+            432
+          ]
+        ]
+      },
+      {
+        "source": "station-4",
+        "target": "battery",
+        "points": [
+          [
+            400,
+            456
+          ],
+          [
+            288,
+            456
+          ]
+        ]
+      },
+      {
+        "source": "station-5",
+        "target": "battery",
+        "points": [
+          [
+            112,
+            456
+          ],
+          [
+            224,
+            456
+          ]
+        ]
+      }
+    ],
+    "all_twelve_terminals_enter_opaque_equipment": true
+  },
+  "generator": {
+    "size": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "tiles": 53,
+    "tiles_per_frame": 36,
+    "palette": "PAL3",
+    "native_pixel_block": 1,
+    "lossy_tile_replacements": 0
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2192,
+    "reachable_positions": 2192,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  },
+  "generator_routes": [
+    [
+      [
+        48,
+        232
+      ],
+      [
+        56,
+        232
+      ],
+      [
+        56,
+        192
+      ]
+    ],
+    [
+      [
+        48,
+        232
+      ],
+      [
+        224,
+        232
+      ],
+      [
+        224,
+        208
+      ],
+      [
+        440,
+        208
+      ],
+      [
+        440,
+        192
+      ]
+    ],
+    [
+      [
+        48,
+        232
+      ],
+      [
+        224,
+        232
+      ],
+      [
+        224,
+        208
+      ],
+      [
+        360,
+        208
+      ],
+      [
+        360,
+        304
+      ],
+      [
+        392,
+        304
+      ],
+      [
+        392,
+        312
+      ]
+    ],
+    [
+      [
+        48,
+        232
+      ],
+      [
+        176,
+        232
+      ],
+      [
+        176,
+        336
+      ],
+      [
+        376,
+        336
+      ],
+      [
+        376,
+        480
+      ],
+      [
+        408,
+        480
+      ],
+      [
+        408,
+        488
+      ]
+    ],
+    [
+      [
+        48,
+        232
+      ],
+      [
+        56,
+        232
+      ],
+      [
+        56,
+        480
+      ],
+      [
+        88,
+        480
+      ],
+      [
+        88,
+        488
+      ]
+    ]
+  ],
+  "activation": {
+    "seconds": 10,
+    "decay_interval_seconds": 1,
+    "decay_work_seconds": 1,
+    "independent_bars": 5,
+    "completed_stations_do_not_decay": true
+  },
+  "floor": {
+    "module": "modules/iron-floor-plate.png",
+    "size": [
+      64,
+      64
+    ],
+    "material": "riveted iron",
+    "native_pixel_block": 1,
+    "seam_edges_identical": true
+  },
+  "memory": {
+    "source_tiles": 1190,
+    "cache_tiles": 480,
+    "maximum_visible_patterns": 472,
+    "maximum_camera": [
+      184,
+      0
+    ],
+    "objective_reserved_tiles": 73,
+    "progress_bar_tiles": 20,
+    "total_resident_tiles": 553,
+    "rom_graphics_bytes": 38080,
+    "generator_rom_bytes": 1696,
+    "map_bytes": 9216,
+    "heap_bytes": 6220,
+    "lossy_tile_replacements": 0,
+    "pixel_exact_reconstruction": true
+  },
+  "sources": [
+    {
+      "path": "art/campaign-pattern-v2/launch/source/14-16-shipyard.png",
+      "sha256": "9b33cba5cc877c1418c966298cbb1b1166617e9f1f4c384636704d375024ad77"
+    },
+    {
+      "path": "art/phase14-shipyard-v2/source/control-station.png",
+      "sha256": "db59ef990ad18a6897053f328aaf38576e9417739d8d744ee586d446afdb1ac8"
+    },
+    {
+      "path": "art/phase14-shipyard-v2/source/generator-native-grid.png",
+      "sha256": "6bea1d58159fe6c0d2b5d1fb0e3a553c2c5b6a78ab5aa3d44dc6c30f201cf023"
+    },
+    {
+      "path": "art/phase14-shipyard-v2/source/iron-floor-plate.png",
+      "sha256": "afb77420ed653e79c97f3662f2e97c4b3faa4b083dfc9e136dd392e0dd7a7b94"
+    }
+  ]
+}

@@ -1,0 +1,1142 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "2910b98fc856c9511a32a05b405a6119ed1f66fd62354ad852f33e3045dccf45",
+  "buildDirectory": "game/out/release",
+  "emulatedRomSHA256": "7f047dfecb1a824662b2d14348f922792d23339f06355888e3452ffe66b11099",
+  "movieEnabled": false,
+  "checks": {
+    "1-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "1-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "1-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "2A-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "2A-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "2A-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "2B-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "2B-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "2B-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "3-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        264,
+        184
+      ],
+      "first_camera": [
+        112,
+        53
+      ],
+      "last_camera": [
+        112,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "3-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        184
+      ],
+      "first_camera": [
+        142,
+        53
+      ],
+      "last_camera": [
+        142,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "3-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        184
+      ],
+      "first_camera": [
+        142,
+        53
+      ],
+      "last_camera": [
+        142,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    "3-landmark": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        144,
+        224
+      ],
+      "first_camera": [
+        0,
+        93
+      ],
+      "last_camera": [
+        0,
+        93
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "4-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    "4-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    "4-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    "5-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    "5-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    "5-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    "6A-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 126,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "6A-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "6A-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "6A-landmark": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 120,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "6B-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 126,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "6B-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "6B-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "6B-landmark": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 120,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "7-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "7-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "7-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "8-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "8-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "8-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "9-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "9-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "9-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "9-landmark": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        192,
+        184
+      ],
+      "first_camera": [
+        40,
+        53
+      ],
+      "last_camera": [
+        40,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "10-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        56,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "10-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "10-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "11-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        56,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "11-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "11-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "12-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 126,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "12-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "12-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    "12-landmark": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        216,
+        208
+      ],
+      "first_camera": [
+        64,
+        77
+      ],
+      "last_camera": [
+        64,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 3,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    }
+  },
+  "scope": "Stationary camera: first5s of controllable gameplay,5s after actual movement/stop and5s after pause/resume. Real moving escort, isolated enemies and pre-granted protection; no RAM writes during measured controller trials.",
+  "method": "Genesis Plus GX production ROM. RAM only before trials: node, speed bonus, protection, enemy isolation and starting position. Every measured sample is real controller movement, guarded against RAM writes. Full 32x48 sprite uses (px-8,py-31). Visible gameplay rectangle is x=0..319,y=24..223. Boundary-constrained centering is measured separately from avoidable framing error. No gameplay code or ROM modified.",
+  "stages": [],
+  "findings_are_not_test_failures": true
+}

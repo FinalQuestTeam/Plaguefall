@@ -1,0 +1,222 @@
+{
+  "passed": true,
+  "scenes": [
+    {
+      "index": 0,
+      "panel": "07A",
+      "source": "07-impactos-epilogo.png",
+      "box": [
+        0,
+        0,
+        763,
+        508
+      ],
+      "center": [
+        0.5,
+        0.05
+      ],
+      "captions": [
+        {
+          "seconds": 8,
+          "speaker": "Padre",
+          "text": "A igreja continua de pé. Agora precisamos fazer o bairro voltar a viver."
+        }
+      ],
+      "seconds": 8
+    },
+    {
+      "index": 1,
+      "panel": "07B",
+      "source": "07-impactos-epilogo.png",
+      "box": [
+        773,
+        0,
+        1536,
+        508
+      ],
+      "center": [
+        0.5,
+        0.05
+      ],
+      "captions": [
+        {
+          "seconds": 8,
+          "speaker": "Padre",
+          "text": "Primeiro, cuidar de quem voltou."
+        }
+      ],
+      "seconds": 8
+    },
+    {
+      "index": 2,
+      "panel": "07C",
+      "source": "07-impactos-epilogo.png",
+      "box": [
+        0,
+        518,
+        763,
+        1024
+      ],
+      "center": [
+        0.5,
+        0.2
+      ],
+      "captions": [
+        {
+          "seconds": 7,
+          "speaker": "Damião",
+          "text": "Todo mundo que saiu daquela igreja conseguiu voltar."
+        }
+      ],
+      "seconds": 7
+    },
+    {
+      "index": 3,
+      "panel": "07D",
+      "source": "07-impactos-epilogo.png",
+      "box": [
+        773,
+        518,
+        1536,
+        1024
+      ],
+      "center": [
+        0.5,
+        0.0
+      ],
+      "captions": [
+        {
+          "seconds": 7,
+          "speaker": "Damião",
+          "text": "Ainda vai faltar gente quando chamarem os nomes."
+        }
+      ],
+      "seconds": 7
+    },
+    {
+      "index": 4,
+      "panel": "06C",
+      "source": "06-escorpiao-dinorah.png",
+      "box": [
+        0,
+        518,
+        763,
+        1024
+      ],
+      "center": [
+        0.5,
+        0.25
+      ],
+      "captions": [
+        {
+          "seconds": 5,
+          "speaker": "Dinorah",
+          "text": "Agora dá trabalho reconstruir."
+        },
+        {
+          "seconds": 5,
+          "speaker": "Damião",
+          "text": "Quero ver você fugir do serviço."
+        }
+      ],
+      "seconds": 10
+    },
+    {
+      "index": 5,
+      "panel": "06D",
+      "source": "06-escorpiao-dinorah.png",
+      "box": [
+        773,
+        518,
+        1536,
+        1024
+      ],
+      "center": [
+        0.5,
+        0.55
+      ],
+      "captions": [
+        {
+          "seconds": 10,
+          "speaker": "Damião",
+          "text": "Ela devia estar aqui para ver."
+        }
+      ],
+      "seconds": 10
+    }
+  ],
+  "sequences": [
+    [
+      0,
+      2,
+      4
+    ],
+    [
+      1,
+      2,
+      4
+    ],
+    [
+      0,
+      3,
+      4
+    ],
+    [
+      1,
+      3,
+      4
+    ],
+    [
+      0,
+      2,
+      5
+    ],
+    [
+      1,
+      2,
+      5
+    ],
+    [
+      0,
+      3,
+      5
+    ],
+    [
+      1,
+      3,
+      5
+    ]
+  ],
+  "durations": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25
+  ],
+  "files": {
+    "res/ending/tiles.bin": {
+      "bytes": 177408,
+      "sha256": "485d2049aefb4bb473b80567f061cdf8c56b2fbf56a35a82ea3c0df1ec406020"
+    },
+    "res/ending/groups.bin": {
+      "bytes": 5544,
+      "sha256": "98f88b9e8c8de3022dea35aaa2d657f7f90ed12cef88c8909a6a076adb97069c"
+    },
+    "res/ending/palettes.bin": {
+      "bytes": 384,
+      "sha256": "9aa57556c378802c21cc58d2618c1e78dd486f3ea9d61766f62281fdf95aae85"
+    },
+    "res/ending_data.res": {
+      "bytes": 195,
+      "sha256": "b06a72c4dd977c5f8995a2ec7f4099b8faf19253037e6cc072d96823a5f166f0"
+    },
+    "src/system/video/screens/ending_shots.h": {
+      "bytes": 1153,
+      "sha256": "01c9b8b5b71536e51eb0357c8a22e83b1671e861a0f90724905ca5d98d04ab03"
+    }
+  }
+}

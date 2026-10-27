@@ -1,0 +1,1216 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "01eea0c34b900fa372607eb5698836654f23ef52568890c59ef5346220b30269",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "b83e15d054eb5bc6f8fe71df293c0af53989cc5bc82fb963074d2551302d728b",
+  "movieEnabled": false,
+  "checks": {},
+  "scope": "Dynamic camera audit, all 14 campaign variants of stages 1\u201312",
+  "method": "Genesis Plus GX production ROM. RAM only before trials: node, speed bonus, protection, enemy isolation and starting position. Every measured sample is real controller movement, guarded against RAM writes. Full 32x48 sprite uses (px-8,py-31). Visible gameplay rectangle is x=0..319,y=24..223. Boundary-constrained centering is measured separately from avoidable framing error. No gameplay code or ROM modified.",
+  "stages": [
+    {
+      "phase": "13A",
+      "node": 15,
+      "geometry": {
+        "width": 512,
+        "height": 576,
+        "bounds": [
+          24,
+          160,
+          487,
+          487
+        ],
+        "solids": [
+          [
+            80,
+            328,
+            104,
+            16
+          ],
+          [
+            216,
+            272,
+            104,
+            16
+          ],
+          [
+            352,
+            392,
+            104,
+            16
+          ]
+        ],
+        "anchor": 0,
+        "focus": [],
+        "south_start": 0,
+        "streamed": true
+      },
+      "trials": [
+        {
+          "trial": "traverse-speed0",
+          "samples": 1734,
+          "moving_samples": 1673,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 34.68,
+          "physical_seconds": 34.68,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              48,
+              322
+            ],
+            "camera": [
+              0,
+              191
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              40,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 40924,
+          "stream_deferrals": 0,
+          "navigation_failures": [],
+          "remaining_corners": 0
+        },
+        {
+          "trial": "west-reversals-speed0",
+          "samples": 312,
+          "moving_samples": 212,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              98,
+              312
+            ],
+            "camera": [
+              0,
+              181
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              90,
+              100,
+              32,
+              48
+            ],
+            "frame": 70
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "middle-reversals-speed0",
+          "samples": 312,
+          "moving_samples": 229,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              258,
+              320
+            ],
+            "camera": [
+              106,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7358,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "east-reversals-speed0",
+          "samples": 312,
+          "moving_samples": 229,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              418,
+              320
+            ],
+            "camera": [
+              192,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              218,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "traverse-speed60",
+          "samples": 1126,
+          "moving_samples": 1065,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 22.52,
+          "physical_seconds": 22.52,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              48,
+              323
+            ],
+            "camera": [
+              0,
+              192
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              40,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 27103,
+          "stream_deferrals": 0,
+          "navigation_failures": [],
+          "remaining_corners": 0
+        },
+        {
+          "trial": "west-reversals-speed60",
+          "samples": 312,
+          "moving_samples": 210,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              99,
+              312
+            ],
+            "camera": [
+              0,
+              181
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              91,
+              100,
+              32,
+              48
+            ],
+            "frame": 70
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "middle-reversals-speed60",
+          "samples": 312,
+          "moving_samples": 220,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              259,
+              320
+            ],
+            "camera": [
+              107,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7354,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "east-reversals-speed60",
+          "samples": 312,
+          "moving_samples": 222,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              419,
+              320
+            ],
+            "camera": [
+              192,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              219,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "traverse-speed100",
+          "samples": 912,
+          "moving_samples": 851,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 18.24,
+          "physical_seconds": 18.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              48,
+              324
+            ],
+            "camera": [
+              0,
+              193
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              40,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 21892,
+          "stream_deferrals": 0,
+          "navigation_failures": [],
+          "remaining_corners": 0
+        },
+        {
+          "trial": "west-reversals-speed100",
+          "samples": 312,
+          "moving_samples": 205,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              100,
+              312
+            ],
+            "camera": [
+              0,
+              181
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              92,
+              100,
+              32,
+              48
+            ],
+            "frame": 70
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 312,
+          "moving_samples": 214,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              260,
+              320
+            ],
+            "camera": [
+              108,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7410,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "east-reversals-speed100",
+          "samples": 312,
+          "moving_samples": 215,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              420,
+              320
+            ],
+            "camera": [
+              192,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              220,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7306,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "combat-speed100",
+          "samples": 1200,
+          "moving_samples": 783,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 24.0,
+          "physical_seconds": 24.0,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              284,
+              168
+            ],
+            "camera": [
+              132,
+              37
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 26
+          },
+          "end_state": 1,
+          "live_pixel_cells": 28158,
+          "stream_deferrals": 0
+        }
+      ],
+      "pause_resume": {
+        "passed": true,
+        "ram_writes_during_check": 0,
+        "live_pixels": true
+      },
+      "selector_restart": {
+        "passed": true,
+        "ram_writes_during_check": 0
+      }
+    },
+    {
+      "phase": "13B",
+      "node": 16,
+      "geometry": {
+        "width": 512,
+        "height": 576,
+        "bounds": [
+          24,
+          160,
+          487,
+          487
+        ],
+        "solids": [
+          [
+            80,
+            328,
+            104,
+            16
+          ],
+          [
+            216,
+            272,
+            104,
+            16
+          ],
+          [
+            352,
+            392,
+            104,
+            16
+          ]
+        ],
+        "anchor": 0,
+        "focus": [],
+        "south_start": 0,
+        "streamed": true
+      },
+      "trials": [
+        {
+          "trial": "traverse-speed0",
+          "samples": 1734,
+          "moving_samples": 1673,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 34.68,
+          "physical_seconds": 34.68,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              48,
+              322
+            ],
+            "camera": [
+              0,
+              191
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              40,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 40924,
+          "stream_deferrals": 0,
+          "navigation_failures": [],
+          "remaining_corners": 0
+        },
+        {
+          "trial": "west-reversals-speed0",
+          "samples": 312,
+          "moving_samples": 212,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              98,
+              312
+            ],
+            "camera": [
+              0,
+              181
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              90,
+              100,
+              32,
+              48
+            ],
+            "frame": 70
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "middle-reversals-speed0",
+          "samples": 312,
+          "moving_samples": 229,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              258,
+              320
+            ],
+            "camera": [
+              106,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7358,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "east-reversals-speed0",
+          "samples": 312,
+          "moving_samples": 229,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              418,
+              320
+            ],
+            "camera": [
+              192,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              218,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "traverse-speed60",
+          "samples": 1126,
+          "moving_samples": 1065,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 22.52,
+          "physical_seconds": 22.52,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              48,
+              323
+            ],
+            "camera": [
+              0,
+              192
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              40,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 27103,
+          "stream_deferrals": 0,
+          "navigation_failures": [],
+          "remaining_corners": 0
+        },
+        {
+          "trial": "west-reversals-speed60",
+          "samples": 312,
+          "moving_samples": 210,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              99,
+              312
+            ],
+            "camera": [
+              0,
+              181
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              91,
+              100,
+              32,
+              48
+            ],
+            "frame": 70
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "middle-reversals-speed60",
+          "samples": 312,
+          "moving_samples": 220,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              259,
+              320
+            ],
+            "camera": [
+              107,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7354,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "east-reversals-speed60",
+          "samples": 312,
+          "moving_samples": 222,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              419,
+              320
+            ],
+            "camera": [
+              192,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              219,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "traverse-speed100",
+          "samples": 912,
+          "moving_samples": 851,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 18.24,
+          "physical_seconds": 18.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              48,
+              324
+            ],
+            "camera": [
+              0,
+              193
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              40,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 21892,
+          "stream_deferrals": 0,
+          "navigation_failures": [],
+          "remaining_corners": 0
+        },
+        {
+          "trial": "west-reversals-speed100",
+          "samples": 312,
+          "moving_samples": 205,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              100,
+              312
+            ],
+            "camera": [
+              0,
+              181
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              92,
+              100,
+              32,
+              48
+            ],
+            "frame": 70
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7280,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 312,
+          "moving_samples": 214,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              260,
+              320
+            ],
+            "camera": [
+              108,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7410,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "east-reversals-speed100",
+          "samples": 312,
+          "moving_samples": 215,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.24,
+          "physical_seconds": 6.24,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              420,
+              320
+            ],
+            "camera": [
+              192,
+              189
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              220,
+              100,
+              32,
+              48
+            ],
+            "frame": 72
+          },
+          "end_state": 1,
+          "live_pixel_cells": 7306,
+          "stream_deferrals": 0
+        },
+        {
+          "trial": "combat-speed100",
+          "samples": 1200,
+          "moving_samples": 783,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 24.0,
+          "physical_seconds": 24.0,
+          "fps": 50.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              284,
+              168
+            ],
+            "camera": [
+              132,
+              37
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 26
+          },
+          "end_state": 1,
+          "live_pixel_cells": 28158,
+          "stream_deferrals": 0
+        }
+      ],
+      "pause_resume": {
+        "passed": true,
+        "ram_writes_during_check": 0,
+        "live_pixels": true
+      },
+      "selector_restart": {
+        "passed": true,
+        "ram_writes_during_check": 0
+      }
+    }
+  ],
+  "findings_are_not_test_failures": true
+}

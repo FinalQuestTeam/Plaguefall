@@ -38,7 +38,13 @@ python3 game/art/intro-monologo-v2/verify_pixels.py --capture-root game/art/text
 
 ## Testes
 
-As oito missões novas ficam exclusivamente nas salas de teste 11–18. `python3 game/tools/build_operations.py --check` confere os cenários; `arch -x86_64 /usr/bin/python3 game/tools/test_operations_emulator.py` executa navegação, conclusão por controle, limites, dificuldade por bot e medições de carga. Repita com `--pal`. [Regras, parâmetros e critérios de FPS](fases-experimentais.md).
+`python3 game/tools/build_signal_icons.py --check` confere os 16 sprites de 32×32 do sinal: transparência, paleta PAL1 existente, ordem de tiles e binário de 8192 bytes. O master criado com ImageGen e os PNGs indexados estão em `art/sinal-ultimo-chao-v1/native/`; `python3 game/tools/build_signal_icons.py` reproduz a conversão. A tela carrega seis símbolos por vez nos 96 tiles da reserva de scratch existente.
+
+`python3 game/tools/test_signal.py` verifica o codec C de produção com ASan/UBSan: 2070 combinações válidas, ausência de colisões, históricos das oito rotas e 186300 trocas de um símbolo rejeitadas. `arch -x86_64 /usr/bin/python3 game/tools/test_signal_emulator.py` verifica pixels reais na VRAM, entrada/cancelamento/correção, as 69 combinações de nó e decisões, equipamentos, história/mapa reconstruídos, consulta na pausa nas 19 fases, vitória/derrota e retomada em outro processo sem arquivo de save. As alterações de RAM declaradas aceleram somente vitória, morte e equipamento de uma tentativa; entrada de códigos e retomada usam o controle. Repita com `--pal`. Os relatórios e capturas ficam em `art/sinal-ultimo-chao-v1/native/validation/`.
+
+`arch -x86_64 /usr/bin/python3 game/tools/test_training_emulator.py --only-selector` verifica as 19 fases no seletor da campanha, variantes, paginação, reinício, troca, cancelamento e ausência de acesso às salas técnicas. Adicione `--pal` para PAL. Os demais modos dessa suíte documentam as salas técnicas anteriores.
+
+As antigas salas de teste 11–18 foram retiradas do seletor público; os seus cenários e ensaios permanecem como arquivo de desenvolvimento. `python3 game/tools/build_operations.py --check` confere os cenários; `game/tools/test_operations_emulator.py` documenta os ensaios históricos de navegação, conclusão por controle, limites, dificuldade por bot e medições de carga das salas retiradas. Repita com `--pal`. [Regras, parâmetros e critérios de FPS](fases-experimentais.md).
 
 `python3 game/tools/test_death_rules.py` executa os módulos reais de morte, jogador, tiros, bombas, inventário e itens com ASan/UBSan em 50/60 Hz. Verifica as 20 fases/rotas, a fotografia pré-morte, a remoção do piso 3, bônus finais condicionais, bolsa vazia, inventário cheio, perdas repetidas e recuperação sem duplicação, permanência por mais de 65.535 quadros e reposicionamento seguro. `python3 game/art/bolsa-recuperacao-v1/export.py --check` verifica o sprite 16×16 e o contorno claro. Ambos fazem parte de `check.py`.
 
@@ -54,17 +60,18 @@ As oito missões novas ficam exclusivamente nas salas de teste 11–18. `python3
 
 Os testes de integração usam o Genesis Plus GX instalado:
 
-`arch -x86_64 /usr/bin/python3 game/tools/test_menu_flicker_emulator.py` verifica a troca de seleção no título, salas de teste, configurações, pausa, confirmações, derrota e vitória. Compara cada quadro fora das linhas que podem mudar, detectando apagões e alterações indevidas no fundo; repita com `--pal`. As capturas de falha e o relatório ficam em `/private/tmp/plaguefall-menu-flicker/`. A navegação usa somente o controle; a preparação de derrota e final declara as alterações de RAM.
+`arch -x86_64 /usr/bin/python3 game/tools/test_ending_emulator.py --output game/art/ending-slides-v1/validation/ntsc` verifica os oito encerramentos ilustrados, as legendas nos pixels exibidos, os 12 sprites de partículas, os controles, a tela de vitória e o reinício da campanha. Repita com `--pal` e saída `validation/pal`. A RAM prepara a vitória do chefe e as três consequências; a sequência e a navegação usam o código de produção. [Roteiro e recursos](../art/ending-slides-v1/README.md).
+
+`arch -x86_64 /usr/bin/python3 game/tools/test_menu_flicker_emulator.py` verifica a troca de seleção no título, seletor da campanha, pausa, confirmações, derrota e vitória. Compara cada quadro fora das linhas que podem mudar, detectando apagões e alterações indevidas no fundo; repita com `--pal`. As capturas de falha e o relatório ficam em `/private/tmp/plaguefall-menu-flicker/`. A navegação usa somente o controle; a preparação de derrota e final declara as alterações de RAM.
 
 ```sh
 arch -x86_64 /usr/bin/python3 game/art/intro-monologo-v2/verify_emulator.py \
   --rom game/out/release/rom.bin --symbols game/out/release/rom.out \
   --output /private/tmp/plaguefall-intro-ntsc \
   --opening-audio /private/tmp/plaguefall-intro-ntsc/opening.wav
-arch -x86_64 /usr/bin/python3 game/art/gallery-v1/verify_music_tab.py \
-  --rom game/out/release/rom.bin --symbols game/out/release/rom.out \
-  --output /private/tmp/plaguefall-gallery-ntsc
 ```
+
+O menu Assets foi removido da ROM principal; os testes em `art/gallery-v1/` documentam a versão anterior.
 
 Repita com `--pal` e outro diretório de saída para a segunda região. `--movie` no teste da abertura grava o boot real. Os testes enviam comandos do controle e leem estado; não escrevem na RAM do jogo. Ajuste o interpretador e `--core` se o núcleo instalado tiver outra arquitetura.
 

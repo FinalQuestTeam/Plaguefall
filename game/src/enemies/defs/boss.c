@@ -1,6 +1,7 @@
 // CHEFE "Escorpiao" — inimigo bônus da última fase. Sprite dedicado 48x48
 // (INS_BOSS48, desenhado em 4 quadrantes); comportamento em enemy_boss.c.
-//   25 de vida · contato 20 · tiro 13 · invoca 2 lacaios/10 s · blindado 3 s/15 s
+//   25 de vida · contato20 · tiro13 · até2lacaios/10s · fase1:blindado3s/15s
+//   Aos12HP:fúria, duas investidas avisadas, recuperação1.2s e leques alternados.
 //   resistente à bomba · fase agressiva com investidas (dash)
 // timerA/B não são usados (o comportamento tem contador próprio).
 

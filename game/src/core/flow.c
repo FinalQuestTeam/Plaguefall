@@ -9,6 +9,7 @@
 #include "system/video/screens/title.h"
 #include "system/video/screens/splash.h"
 #include "system/video/screens/intro.h"
+#include "system/video/screens/ending.h"
 #include "system/video/screens/titlecard.h"
 #include "system/video/tilegen.h"
 #include "system/video/spritelist.h"
@@ -45,16 +46,17 @@
 #include "levels/campaign_resistance.h"
 #include "levels/campaign_launch.h"
 #include "core/campaign_state.h"
+#include "core/signal.h"
+#include "system/video/screens/signal.h"
 #include "enemies/enemies.h"
 #include "items/items.h"
 
 // estados do jogo (a tela-título/splash rodam antes)
-typedef enum { ST_PREP, ST_PLAY, ST_PAUSE, ST_OVER, ST_DONE, ST_MAP, ST_STORY, ST_END } GameState;
+typedef enum { ST_PREP, ST_PLAY, ST_PAUSE, ST_OVER, ST_DONE, ST_MAP, ST_STORY, ST_END, ST_SIGNAL } GameState;
 
 // para onde ir quando a cena de história terminar (ST_STORY)
 #define STORY_TO_PREP   0   // preparação do pendingLevel (cena de ANTES)
 #define STORY_TO_MAP    1   // mapa de rotas (cena de DEPOIS)
-#define STORY_TO_END    2   // tela de fim (cena após o chefe)
 
 bool bossDefeated;      // chefe morto (fase 16) — dispara a tela de fim
 
@@ -68,6 +70,7 @@ u16 ENEMY_CD;                   // 1 tiro inimigo a cada 2 s
 static GameState state;
 static u8 pendingLevel;         // nó do grafo mostrado na tela de preparação
 static u8 storyThen;            // STORY_TO_*: destino ao fim da cena de história
+static bool showEntrySignal;
 
 static u16 kills;
 static u16 spawnTimer;
@@ -132,7 +135,12 @@ static void showPrep(u8 level)
     SPRITES_hide();
     SYS_doVBlankProcess();      // aplica a lista vazia já neste quadro
 
-    if(PANEL_beginMission(NULL))MISSION_show(level);
+    if(PANEL_beginMission(NULL))
+    {
+        if(showEntrySignal && !testCampaignMode && SIGNALSCR_checkpoint())
+        {state=ST_SIGNAL;showEntrySignal=FALSE;}
+        else MISSION_show(level);
+    }
 }
 
 // mapa de rotas (após a fase concluída/história): destaca o pendingLevel
@@ -152,8 +160,10 @@ static void showMap(void)
 static void showEnd(void)
 {
     ARENA_leave();
-    // The final dialogue has released its full-screen panel. Rebuild only
-    // the empty native chamber, without respawning actors or resetting stats.
+    ENDING_run();
+    // The slideshow borrowed gameplay patterns. Restore them before the
+    // victory capture, without respawning actors or resetting consequences.
+    TILEGEN_init();ENEMYGFX_reset();
     VDP_clearPlane(BG_A,TRUE);FLOOR_clear();
     LEVEL_draw(currentLevel);FLOOR_draw(LEVEL_current()->floor);
     RESULT_victory();state = ST_END;
@@ -166,6 +176,14 @@ static void gotoPrep(u8 node)
     ARENA_leave();
     MUSIC_selectTrack(GRAPH[node].def->musicTrack);
     pendingLevel = node;
+    // Keep the entry checkpoint through deaths/retries. Pickups collected
+    // later in this attempt never leak into its password.
+    SignalProgress entry;
+    if(!testCampaignMode && (!SIGNAL_checkpoint(&entry) || entry.node!=node))
+    {
+        SIGNAL_capture(node,campaignFlags,SHOTS_power(),PLAYER_speedBonus()/PLAYER_SPEED_STEP);
+        showEntrySignal=TRUE;
+    }
     if (STORYSCR_start(node, ANTES)) { storyThen = STORY_TO_PREP; state = ST_STORY; }
     else showPrep(node);
 }
@@ -264,11 +282,10 @@ static void finishSettled(void)
     if(currentLevel && (kind==1 || kind==2 || kind==4))CAMPAIGN_record(currentLevel,kind==4);
     if(kind==2)
     {
-        LOADING_workBegin();
+        beginTransition();
         MUSIC_selectTrack(MUSIC_TRACK_ENTARDECER);
-        if(STORYSCR_start(currentLevel,DEPOIS)){storyThen=STORY_TO_END;state=ST_STORY;}
-        else showEnd();
-        LOADING_workEnd();
+        showEnd();
+        endTransition();
     }
     else if(kind==3)
     {
@@ -428,16 +445,30 @@ static void resetCampaign(void)
 {
     testCampaignMode=FALSE;
     CAMPAIGN_reset();
+    SIGNAL_reset();
+    showEntrySignal=FALSE;
     DEATH_reset();
     PLAYER_fullHp();BOMB_reset();SHOTS_resetPower();SHOTS_resetChain();
     PLAYER_resetSpeed();INV_clear();ROUTEMAP_reset();STORYSCR_reset();STATS_reset();
 }
 
-static void startTestSelection(u8 selection)
+static bool startTestSelection(u8 selection)
 {
-    if(selection<=TEST_ROOMS){resetCampaign();startTest(selection,FALSE);return;}
+    // Preview uses the production slideshow and returns to the same ending.
+    // No boss, mission guide or victory card is needed in this access path.
+    while(selection>=TEST_ENDING_FIRST && selection<TEST_ENDING_FIRST+TEST_ENDING_COUNT) {
+        resetCampaign();testCampaignMode=TRUE;
+        campaignFlags=selection-TEST_ENDING_FIRST;
+        beginTransition();ARENA_leave();SPRITES_hide();
+        MUSIC_selectTrack(MUSIC_TRACK_ENTARDECER);
+        ENDING_run();TILEGEN_init();ENEMYGFX_reset();
+        VDP_clearPlane(BG_A,TRUE);FLOOR_clear();endTransition();
+        selection=TEST_chooseRoom(selection);
+        if(!selection)return FALSE;
+    }
+    if(selection<=TEST_ROOMS){resetCampaign();startTest(selection,FALSE);return TRUE;}
     const u8 node=selection-TEST_ROOMS;
-    if(node>NODE_COUNT)return;
+    if(node>NODE_COUNT)return FALSE;
     resetCampaign();testCampaignMode=TRUE;
     if(node==N_2B)campaignFlags|=CAMPAIGN_CHURCH_RUINED;
     if(node==N_6B)campaignFlags|=CAMPAIGN_RESCUE_PARTIAL;
@@ -446,6 +477,7 @@ static void startTestSelection(u8 selection)
     MUSIC_selectTrack(GRAPH[node].def->musicTrack);
     // Direct access keeps the mission guide and native countdown, skipping the arrival dialogue.
     LOADING_workBegin();showPrep(node);LOADING_workEnd();
+    return TRUE;
 }
 
 // ---------------------------------------------------------------------------
@@ -487,10 +519,23 @@ void FLOW_run(void)
         VDP_setTextPalette(PAL0);
         resetCampaign();
 
-        if (choice == TITLE_TEST) {
-            TEST_defaults();const u8 room=TEST_chooseRoom(1);
+        if(choice==TITLE_CONTINUE)
+        {
+            SignalProgress saved;
+            if(!SIGNALSCR_read(&saved))continue;
+            campaignFlags=saved.flags;
+            for(u8 i=1;i<saved.power;i++)SHOTS_addPower();
+            for(u8 i=0;i<saved.speed;i++)PLAYER_addSpeed();
+            const u32 history=SIGNAL_history(&saved);
+            ROUTEMAP_restore(history);STORYSCR_restore(history);
+            SIGNAL_capture(saved.node,saved.flags,saved.power,saved.speed);
+            showEntrySignal=TRUE;
+            LOADING_workBegin();gotoPrep(saved.node);LOADING_workEnd();
+        }
+        else if (choice == TITLE_TEST) {
+            TEST_defaults();const u8 room=TEST_chooseRoom(TEST_ROOMS+N_1);
             if(!room)continue;
-            startTestSelection(room);
+            if(!startTestSelection(room))continue;
         }
         else {LOADING_workBegin();gotoPrep(1);LOADING_workEnd();} // novo jogo
 
@@ -516,6 +561,14 @@ void FLOW_run(void)
             const GameState frameState=state;
             switch (state)
             {
+                case ST_SIGNAL:
+                    if(pressed&(BUTTON_A|BUTTON_START))
+                    {
+                        MISSION_show(pendingLevel);state=ST_PREP;
+                        prevJoy=JOY_readJoypad(JOY_1);
+                    }
+                    SPRITES_hide();
+                    break;
                 case ST_PREP:
                     if (MISSION_update(pressed)){
                         beginContentTransition();SFX_silence();
@@ -612,7 +665,8 @@ void FLOW_run(void)
                     }
                     else if(action==PAUSE_TEST_ROOM) {
                         const u8 room=TEST_chooseRoom(testCampaignMode ? TEST_ROOMS+currentLevel : testStage);
-                        if(room)startTestSelection(room);else{state=ST_PLAY;if(!currentLevel)TEST_resume();}
+                        if(room){if(!startTestSelection(room))backToTitle=TRUE;}
+                        else{state=ST_PLAY;if(!currentLevel)TEST_resume();}
                         prevJoy=JOY_readJoypad(JOY_1);
                     }
                     SPRITES_hide();
@@ -671,8 +725,7 @@ void FLOW_run(void)
                         if(storyThen==STORY_TO_MAP)ROUTEMAP_prepare(currentLevel,pendingLevel);
                         beginTransition();STORYSCR_close();
                         if (storyThen == STORY_TO_PREP)     showPrep(pendingLevel);
-                        else if (storyThen == STORY_TO_MAP) showMap();
-                        else                                showEnd();
+                        else                               showMap();
                         endTransition();
                     }
                     SPRITES_hide();

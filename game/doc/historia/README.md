@@ -4,6 +4,7 @@ Plaguefall se passa num Brasil futuro em que a promessa de conquistar o espaço 
 
 ## Leitura
 
+- [História e falas em HTML](../../../output/historia-completa.html): leitura offline da abertura à vitória, com personagens, fases, busca, as oito rotas de encerramento e o roteiro literário integral. Atualize com `python3 game/tools/build_story_page.py`.
 - [Concept art dos cenários](../../art/concepts/fases-v1/README.md): 20 fases e um epílogo com estudos de elementos e narrativa ambiental.
 - [Auditoria de fases e saídas (21/10/2026)](auditoria-fases.md): registro da campanha anterior, com 20 nós e suas condições de saída.
 - [História completa e impactos das rotas](tratamento-proposto.md): roteiro de 23/10/2026, com as 16 fases por partida, diálogos, três bifurcações, participação final de Dinorah e oito combinações de encerramento.

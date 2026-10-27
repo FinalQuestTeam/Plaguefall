@@ -1,0 +1,597 @@
+Portuguese font: 96 tiles / 3072 bytes per variant; 12 accented glyphs; no extra VRAM.
+Floor: five pixel-identical variants, 80 native tiles, no runtime allocation.
+Text: compiled encoding, NFC, escapes, ASCII art, 12 distinct accents and both 96-tile font variants passed.
+Signal icons:16 x32x32, PAL1,256 ROM tiles/8192 bytes,96 visible VRAM tiles; verified.
+Signal: 2070 valid checkpoints, unique roundtrips, all8 histories, 186300 single-symbol errors rejected.
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/actor-deaths-v1/export.py:58: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  frame.putdata([0 if a<220 else min(range(1,16),key=lambda i:sum((p-PALETTE[i][k])**2 for k,p in enumerate((r,g,b)))) for r,g,b,a in cell.getdata()])
+Actor deaths verified: 8 frames, PAL2, 6144 ROM bytes
+{
+  "passed": true,
+  "storyboard": "art/storyboard-abertura-v2/storyboard.json",
+  "shots": 14,
+  "captions": 18,
+  "seconds": 101,
+  "image_size": [
+    336,
+    176
+  ],
+  "viewport": [
+    320,
+    176
+  ],
+  "frame_tiles": 924,
+  "frame_vram_bytes": 29568,
+  "palettes_per_shot": 2,
+  "caption_box": [
+    36,
+    4
+  ]
+}
+PASS: six epilogue panels, seven captions, eight independent endings [25, 25, 25, 25, 25, 25, 25, 25]
+{
+  "regions": 4,
+  "size": [
+    320,
+    160
+  ],
+  "tilesPerRegion": 800,
+  "artVRAMBytes": 25600,
+  "paletteBanksPerRegion": 2,
+  "onePalettePerTile": true,
+  "rgb333": true,
+  "lossyTileSubstitutions": 0,
+  "roundtripExact": true,
+  "sourceSHA256": "288b748679f27619324a47987f621151f47148d9bf9116a6bd55849c3177a065",
+  "files": {
+    "res/routemap/tiles.bin": {
+      "bytes": 102400,
+      "sha256": "b62020fc5a3346c8a0b2e2e8028752a4821b6c71fa20dc0aba7e43d08bbc7bc9"
+    },
+    "res/routemap/groups.bin": {
+      "bytes": 3200,
+      "sha256": "6a5a302d0ebe20eb1878dc54ae89ff67630f71805bd48d150b8d2ac5f8de5c7e"
+    },
+    "res/routemap/palettes.bin": {
+      "bytes": 256,
+      "sha256": "de97273400f77743064cbf3c08fb8261e4b47bcf58e996f3fff5d2ed7984fcc5"
+    },
+    "res/routemap_data.res": {
+      "bytes": 196,
+      "sha256": "290d36abb6ed0d43565be8ad87d0dfd0a6b570f9ee1079efd016f35e7919ad06"
+    }
+  }
+}
+Footer: 21 graph edges; 21 approved examples; all lines <=38 columns.
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:15: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  colors=list(dict.fromkeys(snap(p) for p in Image.open(ROOT/'source/painel-nativo.png').convert('RGB').getdata()))
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/interface-ux-v2/exportar.py:19: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  px=list(map(index,im.getdata()));tiles=[];lookup={};mapping=[]
+Interface: 545 tiles / 17440 bytes; 15 opaque colors; 19 mission records.
+sq_red: existing SE pose -> 30x28 inside 32x32
+sq_yellow: existing SE pose -> 30x23 inside 32x32
+sq_orange: existing SE pose -> 30x27 inside 32x32
+tri_red: existing SE pose -> 30x28 inside 32x32
+tri_yellow: existing SE pose -> 30x30 inside 32x32
+tri_purple: existing SE pose -> 30x30 inside 32x32
+tri_orange: existing SE pose -> 28x30 inside 32x32
+pen_red: existing SE pose -> 30x28 inside 32x32
+pen_yellow: existing SE pose -> 30x25 inside 32x32
+pen_orange: existing SE pose -> 30x29 inside 32x32
+Mission: 15 32x32 portraits (10 from original sources), 7680 ROM bytes; original insect palette.
+Portuguese font: 96 tiles / 3072 bytes per variant; 12 accented glyphs; no extra VRAM.
+{"radioTiles": 155, "countdownTiles": 180, "countdownBytes": 18816, "palettesAdded": 0}
+{"backgroundTiles": 114, "loadingTiles": 167, "shadowBytes": 5344, "nativeEnemyArtModified": false}
+HUD panel: 120 native tiles, existing object palette, opaque pixels.
+HUD escort labels: existing pixels, 2228 ROM bytes, no extra tiles or palettes.
+Training: native scene export verified.
+Eight operations: shared industrial tiles, matching solid geometry.
+Ten objective sprites, six authored frames each, production palette and fixed anchors.
+Campaign ground art exact reconstruction, six poses: [150, 65, 74, 65, 191, 86] tiles, 384 scenery tiles available.
+PASS phase 01 exact tiles; 1383 connected16px-foot positions
+PASS phase 02A exact tiles; 1383 connected16px-foot positions
+PASS phase 02B exact tiles; 1263 connected16px-foot positions
+PASS phase 03 exact tiles; 4249 connected16px-foot positions
+PASS phase 04 exact tiles; 1680 connected16px-foot positions
+PASS phase 05 exact tiles; 1379 connected16px-foot positions
+PASS church continuity, intact/damaged;640tile shared reservation; no fuzzy tile replacement
+PASS: 8 campaign paths, 3 consequences, Dinorah variants, retry boundaries
+PASS: 67 radio lines fit the native 26x4 panel
+PASS 50Hz pressure,4-shot gates,0.8s collapse-before-clear,read-only probes,persistent work,warning,safe pocket,reset,isolation
+PASS 60Hz pressure,4-shot gates,0.8s collapse-before-clear,read-only probes,persistent work,warning,safe pocket,reset,isolation
+6A 1095 source tiles; 437 visible /456; 17 NPC nodes; 7941 connected feet positions
+6B 1095 source tiles; 437 visible /456; 21 NPC nodes; 7941 connected feet positions
+{
+  "memory": {
+    "source_patterns": 978,
+    "source_graphics_bytes": 31296,
+    "map_bytes": 13056,
+    "scene_cache_slots": 560,
+    "cargo_tiles": 74,
+    "total_reserved_tiles": 634,
+    "resident_bytes": 20288,
+    "spare_tiles": 6,
+    "maximum_visible_patterns": 552,
+    "maximum_window_camera": [
+      0,
+      0
+    ],
+    "cache_heap_bytes": 6436,
+    "lossy_tile_replacements": 0
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2561,
+    "reachable_positions": 2561,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  }
+}
+{
+  "memory": {
+    "source_patterns": 978,
+    "source_graphics_bytes": 31296,
+    "map_bytes": 13056,
+    "scene_cache_slots": 560,
+    "cargo_tiles": 0,
+    "total_reserved_tiles": 636,
+    "resident_bytes": 20352,
+    "spare_tiles": 4,
+    "maximum_visible_patterns": 552,
+    "maximum_window_camera": [
+      0,
+      0
+    ],
+    "cache_heap_bytes": 6436,
+    "lossy_tile_replacements": 0,
+    "transmitter_tiles": 76
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2561,
+    "reachable_positions": 2561,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  }
+}
+{
+  "memory": {
+    "source_tiles": 827,
+    "resident_tiles": 448,
+    "resident_bytes": 14336,
+    "map_bytes": 25600,
+    "rom_graphics_bytes": 26464,
+    "limit": 640,
+    "lossy_tile_substitutions": 0
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 5611,
+    "reachable_positions": 5611,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2587,
+    "margin_pixels": 8,
+    "swept_margin_samples": 2587,
+    "minimum_authored_passage_width": 64
+  },
+  "streamed": {
+    "resident_budget": 448,
+    "maximum_visible_tiles": 410,
+    "source_tiles": 827
+  },
+  "path": [
+    [
+      48,
+      184
+    ],
+    [
+      288,
+      184
+    ],
+    [
+      584,
+      184
+    ],
+    [
+      584,
+      120
+    ],
+    [
+      848,
+      120
+    ],
+    [
+      1032,
+      120
+    ],
+    [
+      1032,
+      176
+    ],
+    [
+      1456,
+      176
+    ],
+    [
+      1640,
+      176
+    ],
+    [
+      1640,
+      120
+    ],
+    [
+      2112,
+      120
+    ],
+    [
+      2448,
+      120
+    ]
+  ]
+}
+{
+  "memory": {
+    "source_tiles": 1147,
+    "rom_graphics_bytes": 36704,
+    "map_bytes": 13056,
+    "cache_tiles": 320,
+    "maximum_visible_patterns": 303,
+    "nest_all_six_pose_tiles": 150,
+    "total_resident_tiles": 470,
+    "resident_bytes": 15040,
+    "heap_bytes": 4854,
+    "lossy_tile_replacements": 0
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 3277,
+    "reachable_positions": 3277,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  },
+  "maximum_nest_slots": 6
+}
+{
+  "memory": {
+    "source_tiles": 1147,
+    "rom_graphics_bytes": 36704,
+    "map_bytes": 13056,
+    "cache_tiles": 320,
+    "maximum_visible_patterns": 303,
+    "nest_all_six_pose_tiles": 0,
+    "total_resident_tiles": 389,
+    "resident_bytes": 12448,
+    "heap_bytes": 4854,
+    "lossy_tile_replacements": 0,
+    "valve_all_six_pose_tiles": 65,
+    "work_bar_tiles": 4
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 3277,
+    "reachable_positions": 3277,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2010
+  },
+  "route_length_px": 1992.0
+}
+{
+  "memory": {
+    "scene_tiles": 618,
+    "objective_tiles": 0,
+    "total_tiles": 618,
+    "budget": 640,
+    "free_tiles": 22,
+    "graphics_bytes": 19776,
+    "map_bytes": 30720,
+    "palette_bytes": 32,
+    "pixel_exact_reassembly": true,
+    "lossy_pattern_replacements": 0
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 6109,
+    "reachable_positions": 6109,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2997,
+    "extra_margin_pixels": 8,
+    "swept_margin_samples": 2997
+  },
+  "route": [
+    [
+      48,
+      208
+    ],
+    [
+      624,
+      208
+    ],
+    [
+      624,
+      168
+    ],
+    [
+      880,
+      168
+    ],
+    [
+      1008,
+      168
+    ],
+    [
+      1008,
+      216
+    ],
+    [
+      1392,
+      216
+    ],
+    [
+      1600,
+      216
+    ],
+    [
+      1600,
+      168
+    ],
+    [
+      1904,
+      168
+    ],
+    [
+      2032,
+      168
+    ],
+    [
+      2032,
+      216
+    ],
+    [
+      2576,
+      216
+    ],
+    [
+      2848,
+      216
+    ]
+  ],
+  "pauses": [
+    2,
+    8,
+    12
+  ]
+}
+{
+  "source_tiles": 1253,
+  "cache_tiles": 640,
+  "cache_vram_bytes": 20480,
+  "maximum_visible_patterns": 549,
+  "minimum_cache_spare": 91,
+  "viewport_peaks": [
+    {
+      "phase": "13A",
+      "patterns": 549,
+      "conservative_camera": [
+        184,
+        0
+      ]
+    },
+    {
+      "phase": "13B",
+      "patterns": 549,
+      "conservative_camera": [
+        184,
+        0
+      ]
+    }
+  ],
+  "cache_heap_bytes": 7626,
+  "graphics_rom_bytes": 40096,
+  "maps_rom_bytes": 18432,
+  "palette_bytes": 32,
+  "pixel_exact_reassembly": true,
+  "lossy_pattern_replacements": 0,
+  "additional_vram_bytes": 0,
+  "headgear_rom_bytes": 192,
+  "actor_frame_rom_bytes_added": 0,
+  "prop_uses_existing_dinorah_reservation": true
+}
+{
+  "source_tiles": 1190,
+  "cache_tiles": 480,
+  "maximum_visible_patterns": 472,
+  "maximum_camera": [
+    184,
+    0
+  ],
+  "objective_reserved_tiles": 73,
+  "progress_bar_tiles": 20,
+  "total_resident_tiles": 553,
+  "rom_graphics_bytes": 38080,
+  "generator_rom_bytes": 1696,
+  "map_bytes": 9216,
+  "heap_bytes": 6220,
+  "lossy_tile_replacements": 0,
+  "pixel_exact_reconstruction": true
+}
+{
+  "cache_tiles": 480,
+  "source_tiles": {
+    "normal": 1047,
+    "fire": 1047
+  },
+  "maximum_visible_patterns": {
+    "normal": 470,
+    "fire": 470
+  },
+  "generator_tiles": 53,
+  "radio_tiles": 45,
+  "total_resident_tiles": 578,
+  "heap_bytes": {
+    "normal": 5934,
+    "fire": 5934
+  },
+  "lossy_tile_replacements": 0
+}
+{
+  "source_tiles": 1047,
+  "cache_tiles": 480,
+  "maximum_visible_patterns": 470,
+  "generator_tiles": 53,
+  "radio_tiles": 45,
+  "total_resident_tiles": 578,
+  "heap_bytes": 5934,
+  "lossy_tile_replacements": 0,
+  "pixel_exact_reconstruction": true
+}
+{"06a": {"size": [3072, 320], "tiles": 456, "resident": 568, "routeSamples": 3072}, "06b": {"size": [3072, 320], "tiles": 456, "resident": 637, "routeSamples": 3108}, "12": {"size": [3072, 320], "tiles": 618, "resident": 618, "routeSamples": 2997}}
+PASS 06a: 1095 exact tiles,3072x320,16RGB333,zero pixel mismatches,7941 connected positions,arrival reachable
+PASS 06b: 1095 exact tiles,3072x320,16RGB333,zero pixel mismatches,7941 connected positions,arrival reachable
+PASS 12: 618 exact tiles,3072x320,16RGB333,zero pixel mismatches,6109 connected positions,arrival reachable
+Production corridor3 arrays and geometry match native source
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/build_campaign_factory.py:24: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=list(full.getdata())
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/tools/build_campaign_factory.py:40: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  w,h=im.size;p=bytes(im.getdata());tiles=[];lookup={};mapping=[];reused=0
+{
+  "factory": {
+    "scene_tiles": 460,
+    "scene_bytes": 14720,
+    "map_bytes": 7680,
+    "palette_bytes": 32,
+    "budget": 640,
+    "exact_reused_tiles": 3380,
+    "tile_decode_pixel_identical": true,
+    "palette0_black": true,
+    "palette_rgb333": true
+  },
+  "street": {
+    "scene_tiles": 613,
+    "scene_bytes": 19616,
+    "map_bytes": 20480,
+    "palette_bytes": 32,
+    "budget": 640,
+    "exact_reused_tiles": 9627,
+    "tile_decode_pixel_identical": true,
+    "palette0_black": true,
+    "palette_rgb333": true
+  },
+  "geometry_reachable": [
+    1644,
+    3302
+  ]
+}
+50Hz: all four diagonal idles, both release orders, stationary autofire and deliberate turns passed.
+60Hz: all four diagonal idles, both release orders, stationary autofire and deliberate turns passed.
+Camera follow:10s stationary focus,8directions, reversals,5s stops, stage reset and full-body bounds passed at50/60Hz.
+50Hz: complete volleys at powers 1..5, eight directions, all speed bonuses, caps 6/16/default, every pool occupancy and special charges passed.
+60Hz: complete volleys at powers 1..5, eight directions, all speed bonuses, caps 6/16/default, every pool occupancy and special charges passed.
+50Hz: phase threshold/latch, local flash, exact warnings and double dash,1.2s recovery, alternating full fans, no armor, two hunters and phase1 regression passed.
+60Hz: phase threshold/latch, local flash, exact warnings and double dash,1.2s recovery, alternating full fans, no armor, two hunters and phase1 regression passed.
+/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/bolsa-recuperacao-v1/export.py:48: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  assert native.size == (16, 16) and list(native.getdata()) == pixels
+Bornal: 16x16, 4 tiles / 128 bytes, 4 PAL1 colors, cream outline, alpha index 0.
+50Hz: bag in all 20 nodes, pre-death snapshot, no floor, conditional final rewards, empty bag, capped/partial pickup, replacement and safe placement passed.
+60Hz: bag in all 20 nodes, pre-death snapshot, no floor, conditional final rewards, empty bag, capped/partial pickup, replacement and safe placement passed.
+Shield on/off ROM banks in all 144 purple poses per region; 1248 gallery frames; all 13 actors in 8 directions at 50/60Hz; movement, ice, recoil, locked charges, retreat, aggro, DMA failure and mirroring passed.
+sq_red 16 4 3840
+sq_yellow 16 4 7680
+sq_purple 32 16 23040
+sq_orange 16 4 26880
+tri_red 16 4 30720
+tri_yellow 16 4 34560
+tri_purple 16 4 38400
+tri_orange 16 4 42240
+pen_red 24 9 50880
+pen_yellow 24 9 59520
+pen_purple 32 16 74880
+pen_orange 24 9 83520
+boss 48 36 118080
+Verified 118080 bytes
+shield_frames_sha256 3029faec5bef139c168a2b2f1166c0e1c425c9e91af72ac79cacf19abd021257
+{
+  "layout": {
+    "idle_source_poses": [
+      0,
+      2
+    ],
+    "run_source_poses": [
+      4,
+      6,
+      7,
+      9
+    ],
+    "canonical_directions": [
+      "N",
+      "NE",
+      "L",
+      "SE",
+      "S"
+    ],
+    "horizontal_mirrors": {
+      "SO": "SE",
+      "O": "L",
+      "NO": "NE"
+    },
+    "idle_step_fps_ratio": [
+      2,
+      5
+    ],
+    "run_step_fps_ratio": [
+      3,
+      20
+    ],
+    "enemy_art_directory": "art/cangaco-insects-sized-v3"
+  },
+  "actors": {
+    "insects": {
+      "characters": 13,
+      "canonical_frames": 390,
+      "rom_bytes": 118080,
+      "previous_rom_bytes": 499200,
+      "sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb"
+    },
+    "heroi": {
+      "characters": 1,
+      "canonical_frames": 30,
+      "rom_bytes": 23040,
+      "previous_rom_bytes": 38400,
+      "sha256": "815e8fa2930cd4fe099a8c7e0b90d4b22d3b8e5d097fdbf9b6419c32e466a995"
+    },
+    "dinorah_gallery": {
+      "canonical_frames": 10,
+      "rom_bytes": 7680,
+      "previous_rom_bytes": 23040,
+      "sha256": "12727ee6fffbb7533394a1f7c721da8b22e2f0034f5d9e5088352a8c9133983d"
+    }
+  }
+}
+
+{
+  "passed": true,
+  "scope": "native PNGs, all poses, palette, margins, ROM bytes and HFLIP mirrors; no legacy runtime harness",
+  "enemies": 13,
+  "directions": 104,
+  "frame_references": 624,
+  "canonical_frames": 390,
+  "raw_sha256": "733b9ebaddf61648efe69e544d58bddc0e93f8aecff6538f143455675546e9fb"
+}
+Terrain: 23 connected variants/material, native map textures, scene palette adaptation verified.
+PASS: connected rectangles/L shapes, material boundaries, world coordinates, transparent gaps, blood preservation scene palette remapping/transparency and PAL/NTSC animation/DMA backpressure.
+{"04": {"tiles": 448, "length": 2899, "seconds": 84.5}, "06b": {"tiles": 357, "length": 2351, "seconds": 69.3}}
+Baiao de Ferrugem / original: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / melancolico: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / sombrio: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / igreja: 16 bars, 128 steps; score verified.
+Baiao de Ferrugem / catalog / 4 tracks: 16 bars, 128 steps; score verified.
+O Sonho Atendido: continuous score, 4-second logo prelude + 101-second storyboard + 3-second tail; score verified.
+Exported 35 events; two seconds; four PSG voices.
+Exported 28 events; four-second approved game-over cue.
+PASS: 50/60 Hz timing (67 calm / 100 hot steps in 10s), loops, envelopes, SFX, four tracks, exact preview restoration, missed/duplicate VBlanks, clock wraparound, victory and game-over cues.
+PASS: 50/60 Hz timing (60 calm / 86 hot steps in 10s), loops, envelopes, SFX, four tracks, exact preview restoration, missed/duplicate VBlanks, clock wraparound, victory and game-over cues.
+PASS: 50/60 Hz timing (50 calm / 75 hot steps in 10s), loops, envelopes, SFX, four tracks, exact preview restoration, missed/duplicate VBlanks, clock wraparound, victory and game-over cues.
+60 Hz: continuous 106s, longest musical rest 4 frames.
+50 Hz: continuous 106s, longest musical rest 3 frames.
+PASS: continuous logo-to-intro score, independent VInt clock, no scene fades/restarts, START fade, callback teardown and untouched gameplay music.
+All generated resources and native audio/player checks passed.

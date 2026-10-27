@@ -1,0 +1,43 @@
+{
+  "size": [
+    32,
+    32
+  ],
+  "count": 16,
+  "tiles": 256,
+  "rom_bytes": 8192,
+  "vram_visible_tiles": 96,
+  "palette": "res/insects/palette.bin",
+  "source_sha256": "7dc670e57193a984a89ed41873a3d86f8b74ec7121d2f2a5c3bc197555bdbbd5",
+  "source_overrides": {
+    "ex-voto": {
+      "source": "source/heart-logo-master.png",
+      "sha256": "5cf636afa9831ec10a094242e11752d7038301b4d86d534bd4d60719b8f5b40b",
+      "reference": "../../menu-logo-v1/originals/plaguefall-menu-native-v2.png"
+    },
+    "radio": {
+      "source": "source/radio-master-v2.png",
+      "sha256": "00b863719851a66ea13d733ea19bb482d845f59ba0b3e7526a1c949da63130b1",
+      "sampling": "nearest",
+      "prompts": "../prompts-radio-v2.json"
+    }
+  },
+  "symbols": [
+    "mandacaru",
+    "engrenagem",
+    "santa",
+    "sauva",
+    "chapeu",
+    "radio",
+    "capela",
+    "mutuca",
+    "barro",
+    "foguete",
+    "ex-voto",
+    "escorpiao",
+    "cordel",
+    "alicate",
+    "sino",
+    "sindicato"
+  ]
+}

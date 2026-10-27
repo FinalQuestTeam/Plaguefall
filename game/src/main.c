@@ -6,7 +6,9 @@
 
 int main(bool hardReset)
 {
-    (void) hardReset;
+    // SGDK soft reset retains static pointers into panels/streaming caches.
+    // Start with clean RAM too: session continuation is provided by the code.
+    if(!hardReset)SYS_hardReset();
     FLOW_run();     // inicializa os subsistemas e roda o jogo (nunca retorna)
     return 0;
 }

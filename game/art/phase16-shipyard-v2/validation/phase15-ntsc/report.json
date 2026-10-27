@@ -1,0 +1,737 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "5a9af118d2cfa75d7f90e58cca1e2ee6cde790e01424b5f67e3e67a521eddabc",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "5a9af118d2cfa75d7f90e58cca1e2ee6cde790e01424b5f67e3e67a521eddabc",
+  "movieEnabled": false,
+  "checks": {
+    "shared-powered-equipment-native-entry": {
+      "kind": "normal",
+      "camera": [
+        0,
+        100
+      ],
+      "cells": 1040,
+      "overlay_cells": 58,
+      "visible_patterns": 199,
+      "cache_peak": 199,
+      "cache_faults": 0
+    },
+    "28-real-native-camera-views": [
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 468,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 40,
+        "visible_patterns": 261,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          124
+        ],
+        "cells": 1040,
+        "overlay_cells": 48,
+        "visible_patterns": 212,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          188
+        ],
+        "cells": 1040,
+        "overlay_cells": 24,
+        "visible_patterns": 212,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 58,
+        "visible_patterns": 272,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 284,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 392,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 449,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 40,
+        "visible_patterns": 249,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          124
+        ],
+        "cells": 1040,
+        "overlay_cells": 48,
+        "visible_patterns": 205,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          188
+        ],
+        "cells": 1040,
+        "overlay_cells": 24,
+        "visible_patterns": 206,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 58,
+        "visible_patterns": 265,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 270,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 374,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 17,
+        "visible_patterns": 396,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 51,
+        "visible_patterns": 219,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          116
+        ],
+        "cells": 1040,
+        "overlay_cells": 73,
+        "visible_patterns": 189,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          196
+        ],
+        "cells": 1040,
+        "overlay_cells": 58,
+        "visible_patterns": 194,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 76,
+        "visible_patterns": 246,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          144,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 230,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 322,
+        "cache_peak": 471,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 469,
+        "cache_peak": 472,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 68,
+        "visible_patterns": 264,
+        "cache_peak": 472,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          124
+        ],
+        "cells": 1040,
+        "overlay_cells": 82,
+        "visible_patterns": 217,
+        "cache_peak": 472,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          188
+        ],
+        "cells": 1040,
+        "overlay_cells": 58,
+        "visible_patterns": 217,
+        "cache_peak": 472,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 76,
+        "visible_patterns": 277,
+        "cache_peak": 472,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 285,
+        "cache_peak": 472,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 393,
+        "cache_peak": 472,
+        "cache_faults": 0
+      }
+    ],
+    "six-radio-states-native-pixels": [
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          204
+        ],
+        "cells": 1040,
+        "overlay_cells": 62,
+        "visible_patterns": 232,
+        "cache_peak": 232,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          204
+        ],
+        "cells": 1040,
+        "overlay_cells": 62,
+        "visible_patterns": 232,
+        "cache_peak": 232,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          204
+        ],
+        "cells": 1040,
+        "overlay_cells": 62,
+        "visible_patterns": 232,
+        "cache_peak": 232,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          204
+        ],
+        "cells": 1040,
+        "overlay_cells": 62,
+        "visible_patterns": 232,
+        "cache_peak": 232,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          204
+        ],
+        "cells": 1040,
+        "overlay_cells": 62,
+        "visible_patterns": 232,
+        "cache_peak": 232,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          204
+        ],
+        "cells": 1040,
+        "overlay_cells": 62,
+        "visible_patterns": 232,
+        "cache_peak": 232,
+        "cache_faults": 0
+      }
+    ],
+    "defense-timer-uses-real-game-updates": {
+      "elapsed_updates": 177,
+      "timer_decrement": 177
+    },
+    "controller-traversal-without-ram-writes": {
+      "kind": "normal",
+      "camera": [
+        0,
+        102
+      ],
+      "cells": 1040,
+      "overlay_cells": 58,
+      "visible_patterns": 199,
+      "cache_peak": 472,
+      "cache_faults": 0
+    },
+    "antenna-generator-battery-faces-and-four-bounds": [
+      [
+        176,
+        264,
+        7,
+        184
+      ],
+      [
+        320,
+        264,
+        6,
+        312
+      ],
+      [
+        200,
+        240,
+        5,
+        248
+      ],
+      [
+        200,
+        336,
+        4,
+        328
+      ],
+      [
+        224,
+        232,
+        7,
+        232
+      ],
+      [
+        272,
+        232,
+        6,
+        264
+      ],
+      [
+        248,
+        208,
+        5,
+        216
+      ],
+      [
+        192,
+        432,
+        7,
+        200
+      ],
+      [
+        304,
+        432,
+        6,
+        296
+      ],
+      [
+        216,
+        408,
+        5,
+        416
+      ],
+      [
+        216,
+        488,
+        4,
+        480
+      ],
+      [
+        88,
+        160,
+        6,
+        80
+      ],
+      [
+        48,
+        136,
+        5,
+        144
+      ],
+      [
+        48,
+        184,
+        4,
+        176
+      ],
+      [
+        408,
+        160,
+        7,
+        416
+      ],
+      [
+        432,
+        136,
+        5,
+        144
+      ],
+      [
+        432,
+        184,
+        4,
+        176
+      ],
+      [
+        360,
+        280,
+        7,
+        368
+      ],
+      [
+        424,
+        280,
+        6,
+        416
+      ],
+      [
+        384,
+        256,
+        5,
+        264
+      ],
+      [
+        384,
+        304,
+        4,
+        296
+      ],
+      [
+        376,
+        456,
+        7,
+        384
+      ],
+      [
+        440,
+        456,
+        6,
+        432
+      ],
+      [
+        400,
+        432,
+        5,
+        440
+      ],
+      [
+        400,
+        480,
+        4,
+        472
+      ],
+      [
+        56,
+        456,
+        7,
+        64
+      ],
+      [
+        120,
+        456,
+        6,
+        112
+      ],
+      [
+        80,
+        432,
+        5,
+        440
+      ],
+      [
+        80,
+        480,
+        4,
+        472
+      ]
+    ],
+    "antenna-damage-from-all-four-outside-edges": [
+      {
+        "edge": "west",
+        "damage": 12
+      },
+      {
+        "edge": "east",
+        "damage": 12
+      },
+      {
+        "edge": "north",
+        "damage": 12
+      },
+      {
+        "edge": "south",
+        "damage": 12
+      }
+    ],
+    "pause-preserves-defense-and-native-cache": {
+      "kind": "normal",
+      "camera": [
+        0,
+        100
+      ],
+      "cells": 1040,
+      "overlay_cells": 58,
+      "visible_patterns": 199,
+      "cache_peak": 199,
+      "cache_faults": 0
+    },
+    "ignition-pauses-live-combat": {
+      "kind": "fire",
+      "camera": [
+        0,
+        24
+      ],
+      "cells": 1000,
+      "overlay_cells": 34,
+      "visible_patterns": 372,
+      "cache_peak": 372,
+      "cache_faults": 0
+    },
+    "ignition-preserves-antenna-floor-and-equipment": {
+      "kind": "fire",
+      "camera": [
+        0,
+        100
+      ],
+      "cells": 1040,
+      "overlay_cells": 58,
+      "visible_patterns": 199,
+      "cache_peak": 378,
+      "cache_faults": 0
+    },
+    "retry-resets-ignition-and-timer": {
+      "kind": "normal",
+      "camera": [
+        0,
+        100
+      ],
+      "cells": 1040,
+      "overlay_cells": 58,
+      "visible_patterns": 199,
+      "cache_peak": 199,
+      "cache_faults": 0
+    },
+    "full120second-controller-free-hold-and-result": {
+      "seconds": 120,
+      "ram_writes_during_defense": 0,
+      "complete": true
+    },
+    "continues-to16": true,
+    "moving-three-enemy-four-plus-four-shot-load": [
+      {
+        "section": "engines",
+        "seconds": 20,
+        "game_fps": 56.9,
+        "cache_peak": 472,
+        "cache_faults": 0,
+        "sprite_limits": [
+          15,
+          6,
+          96
+        ]
+      },
+      {
+        "section": "antenna",
+        "seconds": 20,
+        "game_fps": 57.65,
+        "cache_peak": 393,
+        "cache_faults": 0,
+        "sprite_limits": [
+          14,
+          6,
+          80
+        ]
+      },
+      {
+        "section": "battery",
+        "seconds": 20,
+        "game_fps": 57.5,
+        "cache_peak": 393,
+        "cache_faults": 0,
+        "sprite_limits": [
+          14,
+          7,
+          120
+        ]
+      }
+    ]
+  },
+  "scope": "Phase15:shared phase14 floor/limits/generators, native antenna and6radio poses,28pixel-exact camera audits, controller traversal, collision/exterior damage, pause, ignition with frozen combat, normal retry, full120s defense/result/continue16 and three moving load sectors."
+}

@@ -1,0 +1,304 @@
+{
+  "date": "2026-10-27",
+  "revision": "13A/13B: recortes dos bancos limpos e sombras sobre o piso contínuo",
+  "status": "integrated-local; automated checks passed",
+  "passed": true,
+  "rom": "../../out/phase13-bench-fit/Plaguefall.bin",
+  "rom_sha256": "33151bb0e25db3027f78473ef64ef5f22a36152d03a2864e95b93b6d190d2682",
+  "rom_bytes": 2752512,
+  "change": "Piso contínuo sob os bancos. Recortes limitados à madeira e à armação, suporte direito limpo a partir do esquerdo espelhado e sombras novas que escurecem o ladrilho existente, preservando o quadriculado e suas juntas.",
+  "world": {
+    "phases": [
+      "13A",
+      "13B"
+    ],
+    "size": [
+      512,
+      576
+    ],
+    "bounds": [
+      24,
+      160,
+      487,
+      487
+    ],
+    "start": [
+      280,
+      168
+    ],
+    "solids": [
+      [
+        80,
+        328,
+        104,
+        16,
+        true
+      ],
+      [
+        216,
+        272,
+        104,
+        16,
+        true
+      ],
+      [
+        352,
+        392,
+        104,
+        16,
+        true
+      ]
+    ],
+    "targets": {
+      "13A": 30,
+      "13B": 45
+    }
+  },
+  "floor": {
+    "style": "worn gray checkerboard",
+    "cell_size": [
+      32,
+      32
+    ],
+    "repeat_size": [
+      64,
+      64
+    ],
+    "origin": [
+      16,
+      128
+    ],
+    "palette_indices": {
+      "light": 4,
+      "dark": 3,
+      "grout": 2
+    },
+    "module": "modules/floor-checker-64x64.png",
+    "mask": "modules/floor-checker-mask.png",
+    "native_pixel_block": 1,
+    "shared_between_variants": true,
+    "continuous_under_benches": true,
+    "collision_changes": false
+  },
+  "memory": {
+    "source_tiles": 1259,
+    "cache_tiles": 640,
+    "cache_vram_bytes": 20480,
+    "maximum_visible_patterns": 553,
+    "minimum_cache_spare": 87,
+    "viewport_peaks": [
+      {
+        "phase": "13A",
+        "patterns": 553,
+        "conservative_camera": [
+          184,
+          0
+        ]
+      },
+      {
+        "phase": "13B",
+        "patterns": 553,
+        "conservative_camera": [
+          184,
+          0
+        ]
+      }
+    ],
+    "cache_heap_bytes": 7638,
+    "graphics_rom_bytes": 40288,
+    "maps_rom_bytes": 18432,
+    "palette_bytes": 32,
+    "pixel_exact_reassembly": true,
+    "lossy_pattern_replacements": 0,
+    "additional_vram_bytes": 0,
+    "headgear_rom_bytes": 192,
+    "actor_frame_rom_bytes_added": 0,
+    "prop_uses_existing_dinorah_reservation": true
+  },
+  "pixel_audit": {
+    "passed": true,
+    "changed_pixels": 2111,
+    "outside_three_bench_crops_unchanged": true,
+    "geometry_and_palette_unchanged": true,
+    "variants_share_background": true,
+    "benches": [
+      {
+        "bench": "bench-left",
+        "continuous_floor_and_shadows_exact": true,
+        "seat_and_frame_pixels_preserved": true,
+        "source_matte_removed": true
+      },
+      {
+        "bench": "bench-center",
+        "continuous_floor_and_shadows_exact": true,
+        "seat_and_frame_pixels_preserved": true,
+        "source_matte_removed": true
+      },
+      {
+        "bench": "bench-right",
+        "continuous_floor_and_shadows_exact": true,
+        "seat_and_frame_pixels_preserved": true,
+        "source_matte_removed": true
+      }
+    ]
+  },
+  "checks": {
+    "generated_resources_and_native_checks": true,
+    "whole_room_24_views_per_variant_per_region": true,
+    "bench_all_faces_and_four_boundaries": true,
+    "controller_only_navigation_after_setup": true,
+    "pause_and_exact_cache_restore": true,
+    "canonical_props_and_PAL2": true,
+    "kill_targets_30_45_and_results": true,
+    "continue_to14": true,
+    "seat_and_frame_pixels_preserved": true,
+    "continuous_checker_floor_around_supports": true,
+    "source_floor_and_shadows_removed": true,
+    "new_floor_aware_shadows": true
+  },
+  "reports": {
+    "pixel_audit": "validation/bench-floor-fit/pixel-audit.json",
+    "ntsc": "validation/bench-floor-fit/ntsc/report.json",
+    "pal": "validation/bench-floor-fit/pal/report.json"
+  },
+  "load": {
+    "ntsc": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 58.7,
+        "cache_peak": 427,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          7,
+          120
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 58.8,
+        "cache_peak": 427,
+        "cache_faults": 0,
+        "sprite_limits": [
+          22,
+          8,
+          120
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    },
+    "pal": {
+      "13A": {
+        "seconds": 20,
+        "game_fps": 49.7,
+        "cache_peak": 410,
+        "cache_faults": 0,
+        "sprite_limits": [
+          21,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      },
+      "13B": {
+        "seconds": 20,
+        "game_fps": 49.7,
+        "cache_peak": 410,
+        "cache_faults": 0,
+        "sprite_limits": [
+          21,
+          8,
+          128
+        ],
+        "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+      }
+    }
+  },
+  "physical_hardware_tested": false,
+  "previous_revision": "history/before-bench-floor-fit/delivery.json",
+  "bench_composition": {
+    "source_floor_removed": true,
+    "source_shadows_removed": true,
+    "outline": [
+      [
+        11,
+        10
+      ],
+      [
+        15,
+        10
+      ],
+      [
+        15,
+        11
+      ],
+      [
+        109,
+        11
+      ],
+      [
+        109,
+        39
+      ],
+      [
+        102,
+        39
+      ],
+      [
+        102,
+        30
+      ],
+      [
+        17,
+        30
+      ],
+      [
+        17,
+        39
+      ],
+      [
+        10,
+        39
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        11,
+        11
+      ]
+    ],
+    "cast_shadow": [
+      [
+        14,
+        30
+      ],
+      [
+        108,
+        30
+      ],
+      [
+        116,
+        35
+      ],
+      [
+        116,
+        41
+      ],
+      [
+        18,
+        41
+      ]
+    ],
+    "silhouette_mask": "modules/bench-silhouette-mask.png",
+    "cast_shadow_mask": "modules/bench-cast-shadow-mask.png",
+    "contact_shadow_mask": "modules/bench-contact-shadow-mask.png",
+    "shadow_method": "darken underlying floor gray by one palette step; additional contact shade at feet",
+    "checker_seams_preserved_under_shadow": true,
+    "seat_and_frame_pixels_preserved": true,
+    "right_foot": "mirrored clean left support",
+    "collision_changes": false
+  }
+}

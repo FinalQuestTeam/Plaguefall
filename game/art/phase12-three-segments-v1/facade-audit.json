@@ -1,0 +1,23 @@
+{
+  "defects": [
+    "Original72x48window crop included external brick wall and a12px band of ground/vegetation.",
+    "Original40x40door crop included ground below the24px opening.",
+    "Original64x64sign included an unrelated lower foot, and overlaid the wall beside the entrance."
+  ],
+  "fix": [
+    "Continuous48pxplaster face and8pxbrick footing.",
+    "Two complete32x24windows from the service building art.",
+    "Complete24x40human door frame cropped without exterior ground.",
+    "48x56emblem board crop ends exactly at the120pxeave; original glyph pixels retained."
+  ],
+  "roof_outside_old_sign_region_pixel_identical": true,
+  "old_size": [
+    304,
+    176
+  ],
+  "new_size": [
+    304,
+    176
+  ],
+  "gameplay_geometry_changed": false
+}

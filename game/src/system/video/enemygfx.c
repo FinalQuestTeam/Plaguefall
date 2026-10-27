@@ -6,6 +6,7 @@
 #include "system/video/sprites/tiles.h"
 #include "system/video/sprites/training_target_data.h"
 #include "enemies/enemies.h"
+#include "enemies/enemy_boss.h"
 #include "actors/player.h"
 #include "core/game.h"
 #include "insects.h"
@@ -129,8 +130,9 @@ static u8 facing(const Enemy *e,const FrameSlot *s)
     // the same heading through its wind-up and the whole locked charge.
     if ((e->frozen || e->stun) && s->valid) return s->dir;
     const bool boss=e->type==ENEMY_BOSS;
-    const bool bossAttack=boss && !(divu(e->tA,4*fps)&1);
-    const bool charge=e->mode!=0 && (ENEMY_DEF(e)->color==COLOR_ORANGE || bossAttack);
+    const bool bossAttack=boss && ((e->tB&BOSS_FURY) ? e->mode<=BOSS_DASH : !(divu(e->tA,4*fps)&1));
+    const bool charge=boss ? bossAttack && (e->mode==BOSS_TELEGRAPH || e->mode==BOSS_DASH) :
+                            e->mode!=0 && ENEMY_DEF(e)->color==COLOR_ORANGE;
     if ((charge || (s->motion && (!boss || bossAttack))) && (e->vx || e->vy))
         return ENEMYGFX_faceDir(e->vx,e->vy);
     const s16 half=ENEMY_SIZE(e)/2;
@@ -158,7 +160,7 @@ void ENEMYGFX_prepare(u16 frame)
         // Hold movement briefly through subpixel steps below one pixel/frame.
         if (moved) s->motion=3;
         else if (s->motion) s->motion--;
-        if (e->frozen || (e->mode==1 &&
+        if (e->frozen || ENEMYBOSS_stationary(e) || (e->mode==1 &&
             (ENEMY_DEF(e)->color==COLOR_ORANGE || e->type==ENEMY_BOSS))) s->motion=0;
         s->wantedDir=facing(e,s);
         s->wantedPose=e->frozen ? 0 : s->motion ?

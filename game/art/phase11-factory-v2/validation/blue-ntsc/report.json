@@ -1,0 +1,267 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "f4f7b96e2b2e9c9445f6e01961a7ae053ed21c35f60fef41346bb4f0a7794b21",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "f4f7b96e2b2e9c9445f6e01961a7ae053ed21c35f60fef41346bb4f0a7794b21",
+  "movieEnabled": false,
+  "checks": {
+    "entry-native-pixels": {
+      "camera": [
+        0,
+        0
+      ],
+      "visible_patterns": 220,
+      "peak": 220,
+      "valves": 6
+    },
+    "full-map-scroll": {
+      "samples": 36,
+      "zero_pixel_mismatches": true
+    },
+    "six-prop-collisions-and-bounds": {
+      "probes": [
+        [
+          104,
+          224,
+          7,
+          112
+        ],
+        [
+          248,
+          224,
+          6,
+          240
+        ],
+        [
+          128,
+          200,
+          5,
+          208
+        ],
+        [
+          128,
+          280,
+          4,
+          272
+        ],
+        [
+          472,
+          192,
+          7,
+          480
+        ],
+        [
+          584,
+          192,
+          6,
+          576
+        ],
+        [
+          496,
+          168,
+          5,
+          176
+        ],
+        [
+          496,
+          280,
+          4,
+          272
+        ],
+        [
+          280,
+          320,
+          7,
+          288
+        ],
+        [
+          392,
+          320,
+          6,
+          384
+        ],
+        [
+          304,
+          296,
+          5,
+          304
+        ],
+        [
+          304,
+          392,
+          4,
+          384
+        ],
+        [
+          576,
+          352,
+          7,
+          584
+        ],
+        [
+          672,
+          352,
+          6,
+          664
+        ],
+        [
+          600,
+          328,
+          5,
+          336
+        ],
+        [
+          600,
+          424,
+          4,
+          416
+        ],
+        [
+          96,
+          408,
+          7,
+          104
+        ],
+        [
+          192,
+          408,
+          6,
+          184
+        ],
+        [
+          120,
+          384,
+          5,
+          392
+        ],
+        [
+          432,
+          416,
+          7,
+          440
+        ],
+        [
+          528,
+          416,
+          6,
+          520
+        ],
+        [
+          456,
+          392,
+          5,
+          400
+        ]
+      ],
+      "edges": 4
+    },
+    "fire-blocks-work-and-partial-work-survives-retreat-pause": {
+      "saved_frames": 74,
+      "bar": {
+        "sprites": [
+          {
+            "x": 96,
+            "y": 142,
+            "size": 12
+          }
+        ],
+        "pattern_sha": "b4f6437c31eb3f50b15d90d30271651aa5efdd585b8cdd767a485e776d67b00a"
+      },
+      "ram_writes_during_controls": 0
+    },
+    "six-controller-valve-operations": {
+      "mask": 63,
+      "done": 6,
+      "ram_writes_during_run": 0,
+      "combat_isolated": true,
+      "won": true
+    },
+    "sixth-valve-works-first": {
+      "mask": 32,
+      "done": 1,
+      "ram_writes_during_run": 0
+    },
+    "production-spawning-reaches-five": {
+      "peak": 5,
+      "seconds": 20,
+      "health_reseeded": true,
+      "spawn_logic_unmodified": true
+    },
+    "maximum-configured-load": [
+      {
+        "section": "north",
+        "enemies": 5,
+        "roster": [
+          4,
+          9,
+          10,
+          4,
+          9
+        ],
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 58.55,
+        "maximum_cpu_pct": 96.29,
+        "sprite_limits": [
+          21,
+          10,
+          160
+        ],
+        "setup": "authored roster with live AI; health protected; inactive shots replenished; valves remain functional"
+      },
+      {
+        "section": "machines",
+        "enemies": 5,
+        "roster": [
+          4,
+          9,
+          10,
+          4,
+          9
+        ],
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 48.5,
+        "maximum_cpu_pct": 107.76,
+        "sprite_limits": [
+          21,
+          7,
+          160
+        ],
+        "setup": "authored roster with live AI; health protected; inactive shots replenished; valves remain functional"
+      },
+      {
+        "section": "south",
+        "enemies": 5,
+        "roster": [
+          4,
+          9,
+          10,
+          4,
+          9
+        ],
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 83.5,
+        "sprite_limits": [
+          18,
+          10,
+          168
+        ],
+        "setup": "authored roster with live AI; health protected; inactive shots replenished; valves remain functional"
+      }
+    ],
+    "natural-combat": {
+      "seconds": 30.0,
+      "state": 1,
+      "hp": 54,
+      "peak_enemies": 5,
+      "game_fps": 59.267,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    }
+  },
+  "scope": "Factory phase11: industrial interior, six prop groups and six dispersed valve stations. Controller entry, six sustained valve interactions and movement; RAM isolates enemy pressure for functional checks. Exact visible VRAM and overlay pixels, cache, pause, collision. Native max5-enemy/6+6-projectile load retains AI/active trajectories. Natural combat sample has no RAM health or AI grants."
+}

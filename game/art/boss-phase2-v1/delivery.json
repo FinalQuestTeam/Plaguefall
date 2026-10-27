@@ -1,0 +1,286 @@
+{
+  "rom": "out/release/Plaguefall.bin",
+  "rom_sha256": "a5974952c03a5a134831ef1125a2cbd030e032c8927b581bccba1d0de35bd3cb",
+  "rom_bytes": 3014656,
+  "phase2_implemented": true,
+  "threshold_hp": 12,
+  "original_hp": 25,
+  "transition_seconds": 0.8,
+  "warnings_per_combo": 2,
+  "warning_seconds": 0.35,
+  "dash_seconds": 0.5,
+  "recovery_seconds": 1.2,
+  "ranged_seconds": 3,
+  "phase2_periodic_armor": false,
+  "max_live_hunters": 2,
+  "enemy_shot_cap": 10,
+  "player_shot_cap": 4,
+  "boss_volley": 5,
+  "damage": 13,
+  "generated_resources_and_native_checks": true,
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "fight_report": "validation/ntsc/report.json",
+      "mechanics_report": "validation/mechanics-ntsc/report.json",
+      "combat": {
+        "minimum_boss_hp": 1,
+        "defeated": true,
+        "game_fps": 59.027,
+        "cache_peak": 326,
+        "phase2_seen": true,
+        "ram_writes_during_combat": 0
+      },
+      "transition": {
+        "duration_updates": 48,
+        "bright": true,
+        "dark": true
+      },
+      "double_dash": {
+        "warnings": [
+          {
+            "updates": 21,
+            "locked_velocity": [
+              205,
+              33
+            ]
+          },
+          {
+            "updates": 21,
+            "locked_velocity": [
+              -212,
+              16
+            ]
+          }
+        ],
+        "charges": [
+          {
+            "updates": 30,
+            "position": [
+              274,
+              370
+            ]
+          },
+          {
+            "updates": 30,
+            "position": [
+              174,
+              377
+            ]
+          }
+        ]
+      },
+      "recovery": {
+        "updates": 72,
+        "hp": 11
+      },
+      "fans": [
+        {
+          "divisor": 2,
+          "velocities": [
+            [
+              148,
+              -96
+            ],
+            [
+              135,
+              -35
+            ],
+            [
+              122,
+              26
+            ],
+            [
+              109,
+              87
+            ],
+            [
+              96,
+              148
+            ]
+          ]
+        },
+        {
+          "divisor": 6,
+          "velocities": [
+            [
+              131,
+              -20
+            ],
+            [
+              127,
+              1
+            ],
+            [
+              124,
+              21
+            ],
+            [
+              121,
+              41
+            ],
+            [
+              117,
+              62
+            ]
+          ]
+        }
+      ],
+      "load": {
+        "seconds": 30,
+        "game_fps": 59.367,
+        "max_hunters": 2,
+        "max_enemy_shots": 8,
+        "sprite_limits": [
+          16,
+          8,
+          120
+        ],
+        "modes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "cache_peak": 393,
+        "ram_writes_during_load": 0
+      }
+    },
+    "pal": {
+      "passed": true,
+      "fight_report": "validation/pal/report.json",
+      "mechanics_report": "validation/mechanics-pal/report.json",
+      "combat": {
+        "minimum_boss_hp": 1,
+        "defeated": true,
+        "game_fps": 49.536,
+        "cache_peak": 326,
+        "phase2_seen": true,
+        "ram_writes_during_combat": 0
+      },
+      "transition": {
+        "duration_updates": 40,
+        "bright": true,
+        "dark": true
+      },
+      "double_dash": {
+        "warnings": [
+          {
+            "updates": 17,
+            "locked_velocity": [
+              205,
+              32
+            ]
+          },
+          {
+            "updates": 17,
+            "locked_velocity": [
+              -210,
+              23
+            ]
+          }
+        ],
+        "charges": [
+          {
+            "updates": 25,
+            "position": [
+              255,
+              366
+            ]
+          },
+          {
+            "updates": 25,
+            "position": [
+              173,
+              375
+            ]
+          }
+        ]
+      },
+      "recovery": {
+        "updates": 60,
+        "hp": 11
+      },
+      "fans": [
+        {
+          "divisor": 2,
+          "velocities": [
+            [
+              150,
+              -94
+            ],
+            [
+              136,
+              -33
+            ],
+            [
+              122,
+              28
+            ],
+            [
+              108,
+              89
+            ],
+            [
+              94,
+              150
+            ]
+          ]
+        },
+        {
+          "divisor": 6,
+          "velocities": [
+            [
+              131,
+              -16
+            ],
+            [
+              127,
+              5
+            ],
+            [
+              123,
+              25
+            ],
+            [
+              119,
+              45
+            ],
+            [
+              115,
+              66
+            ]
+          ]
+        }
+      ],
+      "load": {
+        "seconds": 30,
+        "game_fps": 49.833,
+        "max_hunters": 2,
+        "max_enemy_shots": 8,
+        "sprite_limits": [
+          16,
+          8,
+          120
+        ],
+        "modes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "cache_peak": 393,
+        "ram_writes_during_load": 0
+      }
+    }
+  },
+  "limits": [
+    "Genesis Plus GX; hardware físico não testado.",
+    "Carga: jogador protegido e chefe elevado para200HP uma vez após a transição;30s de controle sem novas escritas deRAM.",
+    "Vitória: chefe com25HP originais, jogador protegido uma vez; não certifica dificuldade humana."
+  ]
+}

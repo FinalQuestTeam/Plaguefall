@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "changes_confined_to_three_bench_crops": true,
+  "geometry_palette_and_characters_unchanged": true,
+  "benches": [
+    {
+      "module": "bench-left",
+      "changed_pixels": 1995,
+      "furniture_pixels_exact": true,
+      "exterior_matches_floor": true
+    },
+    {
+      "module": "bench-center",
+      "changed_pixels": 1995,
+      "furniture_pixels_exact": true,
+      "exterior_matches_floor": true
+    },
+    {
+      "module": "bench-right",
+      "changed_pixels": 1995,
+      "furniture_pixels_exact": true,
+      "exterior_matches_floor": true
+    }
+  ],
+  "source_tiles_before": 1220,
+  "source_tiles_after": 1183
+}

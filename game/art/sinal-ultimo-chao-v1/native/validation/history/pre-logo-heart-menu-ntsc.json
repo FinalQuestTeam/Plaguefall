@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "d03b58e0b5ca26305e45baa3fee8a6d39aee2033d55d791d469e7b76ac7b6894",
+  "checks": [
+    {
+      "name": "title-help-pages",
+      "frames": 360,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "title",
+      "frames": 75,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "campaign-selector",
+      "frames": 135,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "pause-help-pages",
+      "frames": 360,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "campaign-pause",
+      "frames": 75,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "pause-exit-confirmation",
+      "frames": 60,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "defeat",
+      "frames": 45,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "defeat-exit-confirmation",
+      "frames": 60,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    },
+    {
+      "name": "victory",
+      "frames": 60,
+      "unexpectedFrames": [],
+      "selectionChanged": true,
+      "passed": true
+    }
+  ],
+  "method": "Compare every rendered frame outside explicitly allowed changing tile rows. Controller-only navigation; RAM setup only for defeat and final."
+}

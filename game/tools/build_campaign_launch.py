@@ -53,10 +53,11 @@ for before,after in [('normal_tiles','normalTiles'),('normal_map','normalMap'),(
 for before,after in [('fire_tiles','fireTiles'),('fire_map','fireMap'),('fire_palette','firePalette')]:fc=fc.replace(before,after)
 solids=[[200,152,112,64],[248,136,16,16],[216,256,80,48],[56,128,24,16],[440,128,24,16],[392,200,24,16],[408,288,24,16],[88,288,24,16]]
 assert all(v%8==0 for r in solids for v in r)
-lines=['// Pattern v2: same architecture, machines and circulation across14/15/16.','#include "levels/campaign_launch.h"',nc,fc]
-for name,count in [('normal',ns['tiles']),('fire',fs['tiles'])]:lines+=['static const ArenaScene '+name+'Scene={.tiles='+name+'Tiles,.map='+name+'Map,.palette='+name+'Palette,.tileCount='+str(count)+',.rows=48,.cols=64};']
-lines+=['static ArenaScene radioScene={.tiles=normalTiles,.map=normalMap,.palette=normalPalette,.tileCount='+str(ns['tiles'])+',.rows=48,.cols=64};','bool CL_sceneReset(void){bool changed=radioScene.map!=normalMap;radioScene=normalScene;return changed;}','void CL_sceneFire(u16 row){if(row==8)radioScene=fireScene;}','static const ArenaRect solids[]={'+','.join('{'+','.join(map(str,r))+',TRUE}'for r in solids)+'};']
-for name,scene in [('POWER','normal'),('RADIO','radio'),('BOSS','fire')]:lines+=['const ArenaDef CAMPAIGN_LAUNCH_'+name+'={512,384,40,128,471,319,48,200,solids,8,&'+scene+'Scene};']
+lines=['// Shared modular shipyard architecture across14/15/16.','#include "levels/campaign_launch.h"',
+       '#include "levels/campaign_launch_phase14.inc"','#include "levels/campaign_launch_phase15.inc"',
+       '#include "levels/campaign_launch_phase16.inc"',
+       'bool CL_sceneReset(void){return CL15_sceneReset();}',
+       'void CL_sceneFire(u16 row){if(row==8)CL15_sceneFire();}']
 (G/'src/levels/campaign_launch_scenes.c').write_text('\n'.join(lines)+'\n')
 report={'normal_tiles':ns['tiles'],'fire_tiles':fs['tiles'],'normal_plus_objectives':ns['tiles']+151,'fire_plus_objectives':fs['tiles']+151,'tile_limit':640,'world':[512,384],'bounds':[40,128,471,319],'start':[48,200],'solids':solids,'machines':[[64,136],[448,136],[400,208],[416,296],[96,296]],'radio':[256,192],'protected_station_footprint':[200,152,112,64],'persistent_generators_in':['14','15','16'],'states_share_identical_pixels_outside_engines':True,'whole_sources_first':True,'pixel_exact_reassembly':True,'lossy_tile_replacements':0}
 (A/'geometry.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))

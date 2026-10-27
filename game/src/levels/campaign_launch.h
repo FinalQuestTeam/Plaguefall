@@ -1,7 +1,8 @@
 #ifndef CAMPAIGN_LAUNCH_H
 #define CAMPAIGN_LAUNCH_H
 #include "levels/levels.h"
-typedef struct {u16 work[5],left,clock;u8 powered,ignition;} CampaignLaunchState;
+#define CL_POWER_SECONDS 10
+typedef struct {u16 work[5],left,clock;u8 powered,ignition;u16 decay[5];} CampaignLaunchState;
 extern CampaignLaunchState campaignLaunch;
 extern const ArenaDef CAMPAIGN_LAUNCH_POWER,CAMPAIGN_LAUNCH_RADIO,CAMPAIGN_LAUNCH_BOSS;
 bool CL_active(void);

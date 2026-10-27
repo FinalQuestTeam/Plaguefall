@@ -17,6 +17,7 @@ def main():
 #include "levels/story.h"
 #include "core/stats.h"
 #include "core/campaign_state.h"
+#include "system/video/screens/ending.h"
 PhaseStats phaseStats;u16 STATS_seconds(void){return 999;}
 '''+ '\n'.join('const LevelDef '+n+'={0};' for n in defs)+'''
 int main(void){
@@ -38,9 +39,11 @@ int main(void){
    for(u8 i=0;i<s->count;i++)if(s->lines[i].portrait==P_DINORAH)speaks=true;
    assert(speaks==!(flags&4));
   }
-  const StoryEntry *end=STORY_find(N_16,DEPOIS);assert(end && end->count>=6);
-  bool din=false;for(u8 i=0;i<end->count;i++)din|=end->lines[i].portrait==P_DINORAH;
-  assert(din==!(flags&4));
+  assert(STORY_find(N_16,DEPOIS)==NULL); // the illustrated epilogue owns the ending
+  assert(ENDING_SLIDE_COUNT==3);
+  assert(ENDING_shot(campaignFlags,0)==((flags&1)?1:0));
+  assert(ENDING_shot(campaignFlags,1)==((flags&2)?3:2));
+  assert(ENDING_shot(campaignFlags,2)==((flags&4)?5:4));
  }
  CAMPAIGN_reset();CAMPAIGN_record(N_6B,true);assert(campaignFlags==0);
  assert(!GRAPH_hasFailExit(N_6A)&&!GRAPH_hasFailExit(N_6B));

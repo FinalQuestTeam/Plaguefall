@@ -4,11 +4,13 @@
 // em enemy_*.c; os dados de cada tipo (EnemyDef) em defs/*.c.
 
 #include "enemies/enemies.h"
+#include "enemies/enemy_boss.h"
 #include "actors/player.h"
 #include "actors/dinorah.h"
 #include "actors/shots.h"          // ICE_FREEZE_SEC / FIRE_BURN_SEC / FIRE_TICK_SEC
 #include "core/game.h"
 #include "levels/levels.h"
+#include "levels/campaign_resistance.h"
 #include "items/items.h"
 #include "system/video/chainfx.h"
 #include "system/video/blood.h"
@@ -204,6 +206,7 @@ __attribute__((noinline)) static void ENEMIES_separate(void)
     }
     for(Body *a=bodies;a<end;a++) {
         if((a->slot+tick)&3)continue;
+        if(ENEMYBOSS_stationary(&enemies[a->slot]))continue;
         s16 pushX=0,pushY=0;
         for(Body *b=bodies;b<end;b++) {
             if(a==b)continue;
@@ -243,6 +246,9 @@ void ENEMIES_knockbackFrom(Enemy *e, s16 fromX, s16 fromY)
 {
     const EnemyDef *def = ENEMY_DEF(e);
     if (def->speedFp == 0) return;
+    // Fury has its own warnings and recovery. Player contact cannot cancel
+    // the combo or push the boss out of its promised stationary opening.
+    if(e->type==ENEMY_BOSS && (e->tB&BOSS_FURY))return;
 
     const s16 half = ENEMY_SIZE(e) / 2;
     s16 dx = (e->x + half) - fromX;
@@ -352,6 +358,10 @@ u16 ENEMIES_killAll(void)
     for (u16 i = 0; i < MAX_ENEMIES; i++)
     {
         if (!enemies[i].active) continue;
+
+        // Mission transmitters survive bombs; ordinary Torreoes, including
+        // reinforcements reusing a completed target's slot, remain vulnerable.
+        if (CAMPAIGN_RESISTANCE_priorityEnemy(i)) continue;
 
         // CHEFE resiste à bomba: não morre; leva um dano fixo (se não blindado)
         if (enemies[i].type == ENEMY_BOSS)

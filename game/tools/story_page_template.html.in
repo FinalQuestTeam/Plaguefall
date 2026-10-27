@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="História e todas as falas de Plaguefall, da abertura ao encerramento, com fases, personagens e oito finais.">
+<title>Plaguefall — História completa e falas</title>
+<style>
+:root{color-scheme:light;--paper:#f5f1e8;--ink:#252c27;--muted:#62685f;--line:#d7d7c8;--rust:#ab452a;--green:#425d49;--white:#fffcf5;--sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:170px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 var(--sans)}a{color:var(--green);text-underline-offset:3px}button,input,select{font:inherit}button,select{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--rust);outline-offset:3px}button{border:1px solid var(--line);border-radius:4px;background:var(--white);color:var(--ink);padding:8px 13px}button:hover{border-color:var(--green)}[hidden]{display:none!important}.skip{position:absolute;top:-100px;left:20px;z-index:10;background:white;padding:10px}.skip:focus{top:10px}
+.masthead{background:#202b24;color:#f1ecd9;border-bottom:5px solid var(--rust)}.mast-inner{max-width:1440px;margin:auto;padding:40px 44px;display:flex;gap:50px;align-items:center}.eyebrow,.kicker{font:700 11px/1.5 var(--sans);letter-spacing:2px;text-transform:uppercase}.eyebrow{color:#c4bda5}.masthead h1{font:normal clamp(42px,6vw,78px)/.97 Georgia,serif;margin:14px 0 12px;letter-spacing:-3px}.masthead h1 span{font-style:italic;color:#e4ae78}.masthead p{max-width:600px;color:#d8dbce;font-size:15px}.hero-image{width:300px;flex-shrink:0;image-rendering:pixelated;border:1px solid #67715c;transform:rotate(-2deg)}.stats{display:flex;gap:28px;margin-top:23px;font-size:12px;color:#c7cdbd}.stats b{font:26px Georgia,serif;display:block;color:#f3ecd9}
+.toolbar{position:sticky;top:0;z-index:5;background:rgba(245,241,232,.98);border-bottom:1px solid var(--line);box-shadow:0 4px 16px #202b2408}.tools-inner{max-width:1440px;margin:auto;padding:12px 36px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}.view-buttons{display:flex;gap:3px}.view-buttons button[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}.search{flex:1;min-width:230px}.search input{width:100%;border:1px solid var(--line);border-radius:4px;padding:9px 12px;background:var(--white)}.route-tools{width:100%;display:flex;gap:15px;flex-wrap:wrap;align-items:center;font-size:12px}.route-tools label{display:flex;gap:7px;align-items:center}.route-tools select{max-width:200px;background:var(--white);border:1px solid var(--line);padding:5px 7px;border-radius:3px}.route-tools .scenario{font-weight:600}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.layout{display:grid;grid-template-columns:240px minmax(0,900px);gap:48px;max-width:1320px;margin:0 auto;padding:38px 40px}.sidebar{position:sticky;top:158px;align-self:start;max-height:calc(100vh - 180px);overflow:auto;padding-right:14px}.sidebar h2{font-size:10px;letter-spacing:2px;margin:0 0 18px;color:var(--muted);text-transform:uppercase}.sidebar a{display:block;text-decoration:none;border-left:1px solid var(--line);font-size:12px;padding:5px 0 5px 15px;color:var(--muted)}.sidebar a:hover,.sidebar a[aria-current]{color:var(--rust);border-color:var(--rust);background:#ab452a08}.sidebar .nav-act{font-size:10px;letter-spacing:1px;text-transform:uppercase;margin:16px 0 6px;font-weight:700}.sidebar .nav-num{display:inline-block;width:25px;color:var(--rust);font-weight:700}.sidebar .nav-extra{margin-top:18px;border-top:1px solid var(--line);padding-top:15px}
+main{min-width:0}.intro-note{margin:0 0 28px;color:var(--muted);font-size:13px;border-bottom:1px solid var(--line);padding-bottom:20px}.intro-note strong{color:var(--ink)}.scene{scroll-margin-top:170px;margin-bottom:42px}.scene-head{display:flex;gap:20px;align-items:baseline;border-top:2px solid var(--ink);padding-top:14px;margin-bottom:18px}.scene-number{color:var(--rust);font:italic 38px/1 Georgia,serif;min-width:46px}.scene-head h2{font:normal 30px/1.15 Georgia,serif;margin:3px 0 6px}.kicker{color:var(--muted);font-size:10px;letter-spacing:1.3px}.scene-head a{color:inherit;text-decoration:none}.scene-head a:hover{text-decoration:underline}.context{color:var(--muted);font-size:13px;margin-bottom:20px}.context p{margin:8px 0}.context strong{color:var(--ink)}.context-note{border-left:3px solid var(--line);padding-left:14px}.variant{margin:16px 0 24px;padding:21px 24px;background:var(--white);border:1px solid var(--line);border-radius:3px}.variant-head{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}.variant-head h3{font-size:13px;margin:0}.badge{color:var(--rust);font-size:10px;font-weight:700;letter-spacing:.6px}.line{display:grid;grid-template-columns:135px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid #deded34d}.line:last-child{border:0}.speaker{font-size:11px;line-height:1.5;font-weight:750;letter-spacing:.5px;color:var(--green)}.speaker small{display:block;font-size:9px;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:4px}.speaker.dinorah{color:#785c8c}.speaker.escorpiao{color:var(--rust)}.line p{margin:0;font:17px/1.6 Georgia,serif}.source{font:10px/1.5 ui-monospace,monospace;color:var(--muted);overflow-wrap:anywhere;margin-top:15px}.frame{width:155px;image-rendering:pixelated;float:right;margin:4px 0 12px 22px;border:1px solid var(--line)}.shot{clear:both;display:flow-root;margin:0 0 21px}.shot-title{font-size:11px;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--line)}.shot .line{grid-template-columns:135px minmax(0,1fr)}body.no-images .frame{display:none}.branch-note{padding:12px 16px;background:#e6e9dd;font-size:12px;border-left:3px solid var(--green);margin-top:18px}.common-note{padding:0 0 10px;color:var(--muted);font-size:13px}.ending-table button{white-space:nowrap;font-size:11px;padding:4px 8px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px}th{text-align:left;background:#e7e7dc;font-weight:650}td,th{padding:10px 12px;border:1px solid var(--line);vertical-align:top}.ending-table tr.selected td{background:#e3e9dc}.empty{padding:35px;border:1px dashed var(--line);color:var(--muted)}.status{font-size:11px;color:var(--muted);margin-left:auto}details{border:1px solid var(--line);padding:15px 20px;margin-bottom:28px;background:#efeee4}summary{cursor:pointer;font-size:13px;font-weight:650}.premise{font:16px/1.75 Georgia,serif}.document-section{margin-bottom:35px;border-top:2px solid var(--ink);padding-top:14px;scroll-margin-top:170px}.document-section h2{font:30px/1.2 Georgia,serif}.document-section h3{font:25px/1.25 Georgia,serif;margin-top:35px}.document-section h4{font:22px/1.25 Georgia,serif;margin-top:30px;color:var(--rust)}.document-section h5{font-size:15px;margin-top:25px}.document-section p,.document-section li{font:16px/1.8 Georgia,serif}.document-section blockquote{border-left:3px solid var(--rust);padding-left:20px;margin:20px 0;font:18px/1.8 Georgia,serif}.document-section p:has(>strong:first-child){color:#354b3b}.document-section pre{font:11px/1.7 ui-monospace,monospace;overflow:auto;background:#e8e8dd;padding:15px}.doc-alert{background:#e6e9dd;padding:15px 20px;font-size:13px;margin-bottom:26px}footer{border-top:1px solid var(--line);padding:25px 0;font-size:11px;color:var(--muted)}.line.match{background:#fff1c4}.source-list li{margin-bottom:8px}.source-list code{font-size:10px;overflow-wrap:anywhere}.back-top{font-size:11px;display:block;margin-top:14px}
+@media(min-width:1500px){.layout{max-width:1380px;gap:65px}}@media(max-width:1000px){.layout{grid-template-columns:180px minmax(0,1fr);gap:28px;padding:30px 24px}.mast-inner{padding:30px}.hero-image{width:230px}.line,.shot .line{grid-template-columns:105px 1fr;gap:12px}.tools-inner{padding:10px 24px}.sidebar{top:180px}.variant{padding:16px}}@media(max-width:720px){html{scroll-padding-top:240px}.mast-inner{padding:28px 22px;gap:15px}.hero-image{display:none}.masthead h1{font-size:52px}.layout{display:block;padding:24px 18px}.sidebar{position:static;max-height:none;padding:0;margin-bottom:26px}.sidebar nav{display:flex;gap:5px;overflow:auto;padding-bottom:10px}.sidebar a{border:1px solid var(--line);padding:6px 9px;white-space:nowrap}.sidebar .nav-act,.sidebar .nav-extra,.sidebar h2{display:none}.sidebar .nav-num{width:auto;margin-right:5px}.tools-inner{padding:10px 16px;gap:8px}.view-buttons{flex:1}.view-buttons button{font-size:12px;padding:8px}.search{flex-basis:100%;order:3}.route-tools{gap:8px}.route-tools label{font-size:11px;gap:4px}.route-tools select{max-width:135px;font-size:11px}.route-tools .scenario{width:100%}.scene-head h2{font-size:26px}.line,.shot .line{grid-template-columns:1fr;gap:6px}.speaker small{display:inline;margin-left:8px}.frame{width:115px;margin-left:12px}.status{font-size:10px}.stats{gap:25px}.scene{scroll-margin-top:240px}.variant-head{align-items:flex-start}.source{font-size:9px}.document-section{scroll-margin-top:240px}.variant{padding:15px}.print-label{display:none}}
+@media print{html{scroll-padding:0}body{background:white;color:black;font-size:11px}.toolbar,.sidebar,.hero-image,.skip,.back-top,.ending-table button{display:none!important}.masthead{background:white;color:black;border-bottom:2px solid black}.mast-inner{padding:0 0 15px}.masthead h1{font-size:36px;letter-spacing:-1px}.masthead h1 span,.masthead p,.stats,.stats b,.eyebrow{color:black}.masthead p{font-size:12px}.stats{margin-top:0}.stats b{display:inline;font-size:16px;margin-right:5px}.layout{display:block;padding:20px 0;max-width:none}.scene-head{break-after:avoid}.line{break-inside:avoid}.line p{font-size:12px}.variant{padding:10px;background:white}.scene{margin-bottom:25px}.frame{width:120px}.document-section p,.document-section li{font-size:12px}details:not([open]){display:none}.table-wrap{overflow:visible}.intro-note{font-size:10px}a{color:inherit;text-decoration:none}.source-list{font-size:8px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o roteiro</a>
+<header class="masthead" id="topo"><div class="mast-inner"><div><div class="eyebrow">Arquivo narrativo · São Jerônimo</div><h1>PLAGUEFALL<br><span>História &amp; falas.</span></h1><p>Do sonho de alcançar as estrelas à luta para voltar para casa. A história de Damião, organizada da abertura ao encerramento.</p><div class="stats"><span><b>16</b>etapas por partida</span><span><b>3</b>escolhas persistentes</span><span><b>8</b>encerramentos</span></div></div><img class="hero-image" id="heroImage" alt="Os foguetes e a infestação, em um quadro da abertura de Plaguefall."></div></header>
+<div class="toolbar"><div class="tools-inner">
+<div class="view-buttons" aria-label="Tipo de leitura"><button id="gameView" aria-pressed="true">Falas no jogo</button><button id="docView" aria-pressed="false">História completa</button></div>
+<label class="search"><span class="sr-only">Buscar texto ou personagem</span><input type="search" id="search" placeholder="Buscar fala, personagem ou fase…" autocomplete="off"></label>
+<button id="print" title="Imprimir a leitura atual ou salvar como PDF">Imprimir</button>
+<div class="route-tools" id="routeTools"><label class="scenario"><input id="allRoutes" type="checkbox" checked>Mostrar todas as rotas</label><label>Igreja <select id="church"><option value="intact">Preservada · 2A</option><option value="ruined">Destruída · 2B</option></select></label><label>Resgate <select id="rescue"><option value="all">Completo · 6A</option><option value="partial">Com perdas · 6B</option></select></label><label>Dinorah <select id="dinorah"><option value="alive">Viva · 13A</option><option value="dead">Morta · 13B</option></select></label><label><input id="showImages" type="checkbox" checked>Quadros</label><span class="status" id="status" role="status" aria-live="polite"></span></div>
+</div></div>
+<div class="layout"><aside class="sidebar"><h2>Ordem da história</h2><nav id="navigation" aria-label="Capítulos"></nav></aside><main id="conteudo" tabindex="-1">
+<div id="gameContent"><p class="intro-note"><strong>Transcrição do jogo atual.</strong> Cada fala identifica personagem, fase e momento. O texto mantém as maiúsculas e a pontuação dos arquivos do jogo. As três escolhas se somam no epílogo. Selecione uma combinação ou compare todas as variantes.</p><details><summary>O mundo e os personagens</summary><div class="premise" id="premise"></div></details><div id="scenes"></div><div class="empty" id="empty" hidden>Nenhum trecho encontrado. Experimente outra palavra ou ative todas as rotas.</div></div>
+<div id="docContent" hidden><div class="doc-alert"><strong>Roteiro literário integral · revisão de 23/10/2026.</strong> Inclui narração, encenação, falas, regras de continuidade e consequências. Este documento histórico contém falas e observações de implementação que diferem do código atual; a transcrição atual está em “Falas no jogo”. As escolhas dos filtros aplicam-se apenas à transcrição.</div><div id="documents"></div><div class="empty" id="docEmpty" hidden>Nenhum trecho encontrado no roteiro literário.</div></div>
+<footer><details><summary>Fontes e atualização</summary><p>Conteúdo extraído dos arquivos locais do projeto. Abertura: 18 cartelas / 14 planos / 101 s. Campanha: 67 falas / 24 cenas e variantes. Epílogo: 7 cartelas alternativas / 3 planos por partida / 25 s. Inclui a mensagem da tela de vitória.</p><ul class="source-list" id="sources"></ul><p>Para atualizar: <code>python3 game/tools/build_story_page.py</code>. O HTML funciona offline, sem bibliotecas ou recursos externos.</p></details><span>PLAGUEFALL · Arquivo de leitura · Contém todos os acontecimentos e finais da campanha.</span><a class="back-top" href="#topo">↑ Voltar ao início</a></footer>
+</main></div>
+<noscript>Ative JavaScript para ler este arquivo interativo. Os textos originais estão em game/doc/historia/tratamento-proposto.md e game/src/levels/story.c.</noscript>
+<script id="storyData" type="application/json"><!-- STORY_DATA --></script>
+<script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('storyData').textContent);
+const $=id=>document.getElementById(id);
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const labels={intact:'Igreja preservada',ruined:'Igreja destruída',all:'Resgate completo',partial:'Perdas civis',alive:'Dinorah viva',dead:'Dinorah morta'};
+let view='game';
+function stamp(seconds){return Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0')}
+function ruleAttrs(rule){return Object.entries(rule).map(([k,v])=>`data-${k}="${v}"`).join(' ')}
+function line(speaker,text,id,extra=''){
+ const key=norm(speaker).includes('dinorah')?'dinorah':norm(speaker).includes('escorpiao')?'escorpiao':'';
+ return `<div class="line" id="${id}"><div class="speaker ${key}">${escapeHTML(speaker)}<small>${escapeHTML(id)}${extra?' · '+escapeHTML(extra):''}</small></div><p>${escapeHTML(text)}</p></div>`;
+}
+function head(id,num,title,kicker){return `<div class="scene-head"><span class="scene-number">${num}</span><div><div class="kicker">${kicker}</div><h2><a href="#${id}">${title}</a></h2></div></div>`}
+function source(path){return `<div class="source">Fonte: ${escapeHTML(path)}</div>`}
+function init(){
+ $('heroImage').src=DATA.opening[5].image;
+ $('premise').innerHTML=DATA.premise;
+ let opening=`<section class="scene" id="abertura">${head('abertura','00','O sonho atendido','Abertura · antes do menu · 1min41s')}<p class="context">Damião conta o que esperava dos foguetes e o que voltou neles. O chamado do padre traz a história ao pátio da igreja. As marcações de tempo começam no primeiro plano do monólogo.</p>`;
+ for(const shot of DATA.opening){
+  opening+=`<div class="shot"><img class="frame" src="${shot.image}" alt="Plano ${shot.shot}: ${escapeHTML(shot.title)}" loading="lazy"><div class="shot-title">PLANO ${String(shot.shot).padStart(2,'0')} · ${escapeHTML(shot.title)}</div>`;
+  for(const c of shot.captions)opening+=line(c.speaker,c.text,'AB-'+String(c.caption).padStart(2,'0'),stamp(c.start_seconds)+' / '+c.seconds+' s');
+  opening+='</div>';
+ }
+ opening+=source('game/src/system/video/screens/intro_shots.h')+'<div class="branch-note">Depois da animação: menu → nova partida → chamada do padre → fase 1. A abertura toca uma vez por boot.</div></section>';
+ let scenes=opening;
+ for(let n=1;n<=16;n++){
+  const groups=DATA.groups.filter(g=>g.section==='fase-'+n).sort((a,b)=>(a.when==='DEPOIS')-(b.when==='DEPOIS'));
+  const title=groups.length>1&&[2,6,13].includes(n)?({2:'A igreja e os escombros',6:'Pelos esgotos',13:'A sala do sindicato'}[n]):groups[0].title;
+  const act=n<=5?'Ato I · A retirada':n<=11?'Ato II · O Último Chão':'Ato III · Queimar a origem';
+  scenes+=`<section class="scene" id="fase-${n}">${head('fase-'+n,String(n).padStart(2,'0'),escapeHTML(title),act)}`;
+  for(const g of groups){
+   const condition=Object.values(g.rule).map(x=>labels[x]).join(' · ');
+   const when=g.when==='DEPOIS'?'Depois do combate':'Antes do combate';
+   scenes+=`<article class="variant" ${ruleAttrs(g.rule)}><div class="variant-head"><h3>Fase ${g.phase} · ${when}</h3><span class="badge">${condition||'Todas as rotas'}</span></div>`;
+   if(g.when!=='DEPOIS')scenes+=`<div class="context">${g.context}</div>`;
+   for(const [i,l] of g.lines.entries())scenes+=line(l.speaker,l.text,'F'+g.phase+'-'+g.id+'-'+String(i+1).padStart(2,'0'));
+   scenes+=source('game/src/levels/story.c → '+g.id)+' </article>';
+  }
+  const branches={1:'Sem bomba → fase 2A, igreja preservada. Com bomba → fase 2B, igreja destruída. Todos deixam a igreja nas duas rotas.',5:'Sinal protegido por 120 s → 6A, resgate completo. Sinal destruído → 6B, perdas civis. Dinorah continua na operação nas duas rotas.',6:'As duas rotas se encontram na fase 7. A morte de Dinorah na fase 6 exige uma nova tentativa.',9:'Todos seguem para a fase 10. O dano sofrido nesta travessia não cria uma bifurcação.',12:'Dinorah chega viva → 13A. Dinorah morre, com Damião vivo → 13B e morte permanente. A morte de Damião exige uma nova tentativa.',13:'Depois da 13A, Dinorah participa pelo rádio a partir de uma posição protegida. Depois da 13B, Damião e o padre conduzem a operação.',14:'Os cinco geradores preparam a energia. A ignição é concluída na fase 15.',15:'A defesa do rádio termina antes do confronto com Escorpião. A perda do rádio exige uma nova tentativa.',16:'Escorpião derrotado → epílogo ilustrado → tela de vitória. Os três resultados anteriores permanecem.'};
+  if(branches[n])scenes+=`<div class="branch-note">${branches[n]}</div>`;
+  scenes+='</section>';
+ }
+ scenes+=`<section class="scene" id="encerramento">${head('encerramento','17','O que fica depois do fogo','Epílogo · depois de Escorpião · 25 segundos')}<p class="common-note">O encerramento exibe três planos, nesta ordem: igreja (8 s), resgate (7 s) e Dinorah (10 s). Cada plano preserva uma consequência independente.</p>`;
+ DATA.ending.forEach((shot,index)=>{
+  const condition=Object.values(shot.rule).map(x=>labels[x]).join('');
+  scenes+=`<article class="variant" ${ruleAttrs(shot.rule)}><div class="variant-head"><h3>Plano ${Math.floor(index/2)+1} · ${condition}</h3><span class="badge">Quadro ${shot.panel}</span></div><div class="shot"><img class="frame" src="${shot.image}" alt="Epílogo: ${condition}" loading="lazy">`;
+  shot.captions.forEach((c,i)=>scenes+=line(c.speaker==='Padre'?'Comando / Padre':c.speaker,c.text,'EP-'+shot.panel+'-'+(i+1),c.seconds+' s'));
+  scenes+='</div>'+source('game/src/system/video/screens/ending_shots.h')+'</article>';
+ });
+ scenes+='</section>';
+ scenes+=`<section class="scene" id="vitoria">${head('vitoria','18','De volta para casa','Tela de vitória · última mensagem')}<article class="variant">`;
+ DATA.victory.forEach((text,i)=>scenes+=line('Tela de vitória',text,'VIT-'+(i+1)));
+ scenes+=source('game/src/system/video/screens/result.c → resultKind == 3')+'</article></section>';
+ scenes+=`<section class="scene" id="oito-finais">${head('oito-finais','↳','As oito combinações','Compare os resultados')}<p class="context">Selecione “Ler esta rota” para ver a sequência correspondente, desde a abertura. A numeração segue o seletor de finais do jogo.</p><div class="table-wrap"><table class="ending-table"><thead><tr><th>Final</th><th>Igreja</th><th>Resgate</th><th>Dinorah</th><th>Leitura</th></tr></thead><tbody>`;
+ for(let flags=0;flags<8;flags++)scenes+=`<tr data-final="${flags}"><td>0${flags+1}</td><td>${flags&1?'Destruída':'Preservada'}</td><td>${flags&2?'Com perdas':'Completo'}</td><td>${flags&4?'Morta':'Viva'}</td><td><button data-route="${flags}">Ler esta rota<span class="sr-only"> ${flags+1}</span></button></td></tr>`;
+ scenes+='</tbody></table></div></section>';
+ $('scenes').innerHTML=scenes;
+ $('documents').innerHTML=DATA.documents.map(d=>`<section class="document-section" id="${d.id}">${d.html}</section>`).join('');
+ $('sources').innerHTML=DATA.sources.map(s=>`<li><a href="../game/${s.path}">${escapeHTML(s.path)}</a><br><code>SHA-256 ${s.sha256}</code></li>`).join('');
+ $('scenes').querySelectorAll('[data-route]').forEach(button=>button.addEventListener('click',()=>chooseRoute(Number(button.dataset.route))));
+ update();
+}
+function currentRoute(){return {church:$('church').value,rescue:$('rescue').value,dinorah:$('dinorah').value}}
+function matchesRule(element,route,all){return all||Object.entries(route).every(([key,value])=>!element.dataset[key]||element.dataset[key]===value)}
+function update(){
+ const query=norm($('search').value.trim()),route=currentRoute(),all=$('allRoutes').checked;
+ let visibleLines=0;
+ $('gameContent').hidden=view!=='game';$('docContent').hidden=view!=='doc';$('routeTools').hidden=view!=='game';
+ $('gameView').setAttribute('aria-pressed',String(view==='game'));$('docView').setAttribute('aria-pressed',String(view==='doc'));
+ $('scenes').querySelectorAll('.variant').forEach(el=>{el.hidden=!matchesRule(el,route,all)});
+ $('scenes').querySelectorAll('.scene').forEach(el=>{
+  // Include only route-visible variants in a scene's searchable text.
+  const candidates=el.querySelectorAll('.variant');
+  const active=[...candidates].filter(x=>!x.hidden);
+  const heading=el.querySelector('.scene-head').textContent;
+  const haystack=candidates.length?heading+' '+active.map(x=>x.textContent).join(' '):el.textContent;
+  el.hidden=(candidates.length>0&&!active.length)||(query&&!norm(haystack).includes(query));
+  el.querySelectorAll('.line').forEach(l=>{
+   l.classList.toggle('match',Boolean(query&&norm(l.textContent).includes(query)));
+   if(!el.hidden&&!l.closest('.variant[hidden]'))visibleLines++;
+  });
+ });
+ $('empty').hidden=[...$('scenes').children].some(el=>!el.hidden);
+ let docsShown=0;
+ DATA.documents.forEach(d=>{const el=$(d.id);el.hidden=Boolean(query&&!norm(d.raw).includes(query));if(!el.hidden)docsShown++});
+ $('docEmpty').hidden=docsShown>0;
+ $('status').textContent=visibleLines+' falas visíveis'+(all?' · todas as rotas':' · rota selecionada');
+ document.body.classList.toggle('no-images',!$('showImages').checked);
+ const flags=(route.church==='ruined'?1:0)|(route.rescue==='partial'?2:0)|(route.dinorah==='dead'?4:0);
+ $('scenes').querySelectorAll('[data-final]').forEach(row=>row.classList.toggle('selected',!all&&Number(row.dataset.final)===flags));
+ renderNavigation();
+}
+function renderNavigation(){
+ if(view==='doc'){
+  $('navigation').innerHTML=DATA.documents.filter(d=>!$(d.id).hidden).map(d=>`<a href="#${d.id}">${escapeHTML(d.title)}</a>`).join('');
+  return;
+ }
+ let nav='';
+ for(const section of $('scenes').children){
+  if(section.hidden)continue;
+  const number=section.querySelector('.scene-number').textContent;
+  const title=section.querySelector('h2').textContent;
+  const act={"fase-1":'I · A retirada',"fase-6":'II · O Último Chão',"fase-12":'III · Queimar a origem'}[section.id];
+  if(act)nav+=`<div class="nav-act">${act}</div>`;
+  nav+=`<a href="#${section.id}"><span class="nav-num">${escapeHTML(number)}</span>${escapeHTML(title)}</a>`;
+ }
+ $('navigation').innerHTML=nav;
+}
+function chooseRoute(flags){
+ $('church').value=flags&1?'ruined':'intact';$('rescue').value=flags&2?'partial':'all';$('dinorah').value=flags&4?'dead':'alive';
+ $('allRoutes').checked=false;$('search').value='';view='game';update();
+ location.hash='encerramento';$('encerramento').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('gameView').addEventListener('click',()=>{view='game';update()});
+$('docView').addEventListener('click',()=>{view='doc';update()});
+$('search').addEventListener('input',update);
+['allRoutes','showImages'].forEach(id=>$(id).addEventListener('change',update));
+['church','rescue','dinorah'].forEach(id=>$(id).addEventListener('change',()=>{$('allRoutes').checked=false;update()}));
+$('print').addEventListener('click',()=>window.print());
+init();
+// Deep links work when the generated content has been inserted.
+if(location.hash){const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target){if(target.closest('#docContent')){view='doc';update()}requestAnimationFrame(()=>target.scrollIntoView())}}
+</script>
+</body>
+</html>

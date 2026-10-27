@@ -1,0 +1,26 @@
+{
+  "status": "approved source; integrated in phases 15 and 16",
+  "native_size": [
+    48,
+    64
+  ],
+  "preview_scale": 8,
+  "rgba_colors_including_transparency": 15,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "generation": "built-in image_gen",
+  "export": "nearest-neighbor, hard alpha, 16-color indexed PNG",
+  "source_crop": {
+    "left": 182,
+    "top": 112,
+    "width": 722,
+    "height": 1215
+  },
+  "design": {
+    "protected_part": "radio core only",
+    "mast": "visual only; no intended collision or damage"
+  },
+  "integration_note": "build_phase15_shipyard.py maps this source to existing PAL1; 32x16 base only, shared with phase16."
+}

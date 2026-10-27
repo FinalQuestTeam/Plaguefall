@@ -100,50 +100,77 @@
       "phase": "10",
       "complete": "factory/cycle-2/10-complete.png",
       "bounds": [
-        16,
-        112,
-        751,
-        271
+        24,
+        128,
+        743,
+        479
       ],
       "size": [
         768,
-        320
+        544
       ],
       "start": [
-        48,
-        128
+        56,
+        160
       ],
       "solids": [
         [
           128,
-          192,
-          80,
-          32
+          224,
+          112,
+          48,
+          true
         ],
         [
-          576,
-          200,
-          40,
-          32
+          496,
+          192,
+          80,
+          80,
+          true
+        ],
+        [
+          304,
+          320,
+          80,
+          64,
+          true
+        ],
+        [
+          600,
+          352,
+          64,
+          64,
+          true
+        ],
+        [
+          120,
+          408,
+          64,
+          56,
+          true
+        ],
+        [
+          456,
+          416,
+          64,
+          56,
+          true
         ]
       ],
       "memory": {
-        "scene_tiles": 460,
-        "scene_bytes": 14720,
-        "map_bytes": 7680,
-        "palette_bytes": 32,
-        "budget": 640,
-        "exact_reused_tiles": 3380,
-        "tile_decode_pixel_identical": true,
-        "palette0_black": true,
-        "palette_rgb333": true,
-        "objective_all_states_tiles": 150,
-        "total_tiles": 610,
-        "total_vram_bytes": 19520,
-        "margin_tiles": 30
+        "source_tiles": 1147,
+        "rom_graphics_bytes": 36704,
+        "map_bytes": 13056,
+        "cache_tiles": 320,
+        "maximum_visible_patterns": 303,
+        "nest_all_six_pose_tiles": 150,
+        "total_resident_tiles": 470,
+        "resident_bytes": 15040,
+        "heap_bytes": 4854,
+        "lossy_tile_replacements": 0
       },
       "sources": [
-        "factory/source/factory-whole-cycle3.png"
+        "phase10-factory-v2/source/factory-whole.png"
       ],
       "special_states": {
         "destroyed": "factory/cycle-2/10-destroyed.png"
@@ -151,43 +178,43 @@
       "objectives": [
         [
           96,
+          192
+        ],
+        [
+          272,
+          280
+        ],
+        [
+          440,
           168
         ],
         [
-          96,
-          248
+          680,
+          208
         ],
         [
-          240,
-          168
+          368,
+          304
         ],
         [
-          240,
-          248
+          680,
+          336
         ],
         [
-          384,
-          168
+          200,
+          352
         ],
         [
-          384,
-          248
+          80,
+          448
         ],
         [
-          528,
-          168
+          416,
+          424
         ],
         [
-          528,
-          248
-        ],
-        [
-          672,
-          168
-        ],
-        [
-          672,
-          248
+          624,
+          464
         ]
       ],
       "logical_objectives": 10,
@@ -197,69 +224,110 @@
       "phase": "11",
       "complete": "factory/cycle-2/11-complete.png",
       "bounds": [
-        16,
-        112,
-        751,
-        271
+        24,
+        128,
+        743,
+        479
       ],
       "size": [
         768,
-        320
+        544
       ],
       "start": [
-        48,
-        128
+        56,
+        160
       ],
       "solids": [
         [
           128,
-          192,
-          80,
-          32
+          224,
+          112,
+          48,
+          true
         ],
         [
-          576,
-          200,
-          40,
-          32
+          496,
+          192,
+          80,
+          80,
+          true
+        ],
+        [
+          304,
+          320,
+          80,
+          64,
+          true
+        ],
+        [
+          600,
+          352,
+          64,
+          64,
+          true
+        ],
+        [
+          120,
+          408,
+          64,
+          56,
+          true
+        ],
+        [
+          456,
+          416,
+          64,
+          56,
+          true
         ]
       ],
       "memory": {
-        "scene_tiles": 460,
-        "scene_bytes": 14720,
-        "map_bytes": 7680,
-        "palette_bytes": 32,
-        "budget": 640,
-        "exact_reused_tiles": 3380,
-        "tile_decode_pixel_identical": true,
-        "palette0_black": true,
-        "palette_rgb333": true,
-        "objective_all_states_tiles": 65,
-        "total_tiles": 525,
-        "total_vram_bytes": 16800,
-        "margin_tiles": 115
+        "source_tiles": 1147,
+        "rom_graphics_bytes": 36704,
+        "map_bytes": 13056,
+        "cache_tiles": 320,
+        "maximum_visible_patterns": 303,
+        "nest_all_six_pose_tiles": 0,
+        "total_resident_tiles": 389,
+        "resident_bytes": 12448,
+        "heap_bytes": 4854,
+        "lossy_tile_replacements": 0,
+        "valve_all_six_pose_tiles": 65,
+        "work_bar_tiles": 4
       },
       "sources": [
-        "factory/source/factory-whole-cycle3.png"
+        "phase10-factory-v2/source/factory-whole.png"
       ],
       "special_states": {
         "open": "factory/cycle-2/11-open.png"
       },
       "objectives": [
         [
-          144,
-          104
+          112,
+          192
         ],
         [
-          432,
-          104
+          456,
+          176
         ],
         [
-          576,
-          104
+          648,
+          288
+        ],
+        [
+          248,
+          320
+        ],
+        [
+          88,
+          400
+        ],
+        [
+          560,
+          456
         ]
       ],
-      "logical_objectives": 3,
+      "logical_objectives": 6,
       "visible_nest_slots": null
     }
   ],

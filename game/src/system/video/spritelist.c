@@ -21,7 +21,9 @@
 #include "levels/operations.h"
 #include "levels/campaign_resistance.h"
 #include "levels/graph.h"
+#include "system/video/markers.h"
 #include "system/video/screens/hud.h"
+#include "system/video/objectivegfx.h"
 
 // Conservative 8px scanline bands. Each band reserves the full width of
 // every intersecting sprite, so real scanline limits can never be exceeded.
@@ -55,27 +57,29 @@ __attribute__((always_inline)) static inline void writeSprite(u16 n,s16 x,s16 y,
 }
 static bool emitSmall(u16 *n,s16 x,s16 y,u16 attr)
 {
+    attr=OBJECTIVEGFX_actorDepth(x,y+8+VIDEO_HEIGHT_OFFSET,8,attr);
     x-=cameraX;y-=cameraY;
     if(*n>=80 || x>=320 || x+8<=0 || y>=224 || y+8<=0)return FALSE;
     const u16 first=(y<0 ? 0 : y)>>3,last=(y+7>223 ? 223 : y+7)>>3;
     if(((u16)(bandLoad[first]+0x6c58u)|(u16)(bandLoad[last]+0x6c58u))&0x8080u)return FALSE;
     bandLoad[first]+=0x101;if(first!=last)bandLoad[last]+=0x101;
     widthBound++;
-    writeSprite(*n,x,y,SPRITE_SIZE(1,1),attr&0x7fff);(*n)++;return TRUE;
+    writeSprite(*n,x,y,SPRITE_SIZE(1,1),attr);(*n)++;return TRUE;
 }
 bool SPRITES_emit(u16 *n,s16 x,s16 y,u8 size,u16 attr)
 {
     if(!size)return emitSmall(n,x,y,attr);
-    x-=cameraX;y-=cameraY;
     const u16 w=(((size>>2)&3)+1)*8,h=((size&3)+1)*8;
+    attr=OBJECTIVEGFX_actorDepth(x,y+h+VIDEO_HEIGHT_OFFSET,w,attr);
+    x-=cameraX;y-=cameraY;
     if(!reserve(*n,x,y,w,h,1))return FALSE;
-    writeSprite(*n,x,y,size,attr&0x7fff);(*n)++;return TRUE;
+    writeSprite(*n,x,y,size,attr);(*n)++;return TRUE;
 }
 static bool emitActor(u16 *n,s16 x,s16 y,u16 attr)
 {
+    attr=OBJECTIVEGFX_actorDepth(x,y+47,32,attr);
     x-=cameraX;y-=cameraY;
     if(!reserve(*n,x,y,32,48,2))return FALSE;
-    attr&=0x7fff;
     writeSprite(*n,x,y,SPRITE_SIZE(4,4),attr);
     writeSprite(*n+1,x,y+32,SPRITE_SIZE(4,2),attr+16);
     *n+=2;return TRUE;
@@ -92,9 +96,10 @@ static u16 writeBoss(u16 n,s16 x,s16 y,u16 attr)
 }
 static bool emitBoss(u16 *n,s16 x,s16 y,u16 attr)
 {
+    attr=OBJECTIVEGFX_actorDepth(x,y+48+VIDEO_HEIGHT_OFFSET,48,attr);
     x-=cameraX;y-=cameraY;
     if(!reserve(*n,x,y,48,48,4))return FALSE;
-    *n=writeBoss(*n,x,y,attr&0x7fff);return TRUE;
+    *n=writeBoss(*n,x,y,attr);return TRUE;
 }
 static u16 finishSprites(u16 count){return count;}
 
@@ -114,7 +119,7 @@ __attribute__((noinline)) static u16 drawShots(u16 n,FShot *shot,u16 count,bool 
         bandLoad[first]+=0x101;if(first!=last)bandLoad[last]+=0x101;
         widthBound++;
         const u16 attr=table && shot->renderPose ? table[shot->renderPose] : COMBATGFX_cachedShotAttr(shot,enemy?(shot->mode?shot->mode:1):0);
-        sprite->y=y+128;sprite->size_link=++n;sprite->attribut=attr&0x7fff;sprite->x=x+128;sprite++;
+        sprite->y=y+128;sprite->size_link=++n;sprite->attribut=OBJECTIVEGFX_actorDepth(shot->x>>6,(shot->y>>6)+8,8,attr);sprite->x=x+128;sprite++;
 
     }
     return n;
@@ -148,6 +153,10 @@ void SPRITES_draw(void)
 
     if(!DINORAH_hidden() && dinorahY<py)
         emitActor(&n,dinorahX-8,dinorahY-31,TILE_ATTR_FULL(PAL2,TRUE,FALSE,DINORAH_flip(),DINORAH_tile()));
+    if(currentLevel>=N_1 && currentLevel<=N_12 && DINORAH_alive() &&
+       (dinorahX-8<cameraX || dinorahX+24>cameraX+320 ||
+        dinorahY-31<cameraY+HUD_HEIGHT || dinorahY+17>cameraY+224))
+        MARKERS_destination(&n,dinorahX+8,dinorahY+8);
     if (NPC_active() && ARENA_npcInMap())
     {
         // The mapped Santa is the one protected object. Its own image reacts
@@ -182,7 +191,7 @@ void SPRITES_draw(void)
     {
         const u16 i=(k+frame)&(MAX_ENEMIES-1);
         const Enemy *e=&enemies[i];
-        if (!e->active || CAMPAIGN_RESISTANCE_hideEnemy(i)) continue;
+        if (!e->active || CAMPAIGN_RESISTANCE_priorityEnemy(i)) continue;
         // Mission transmitters own their authored32px bodies and destruction.
         if(!currentLevel && testStage==14 && i<3 && !(operations.done&(1u<<i)))continue;
         const EnemyDef *d=ENEMY_DEF(e);

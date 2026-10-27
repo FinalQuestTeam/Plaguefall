@@ -1,0 +1,389 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605",
+  "movieEnabled": false,
+  "checks": {
+    "13A-native-entry": {
+      "camera": [
+        128,
+        0
+      ],
+      "cells": 1000,
+      "visible_patterns": 587,
+      "cache_peak": 587,
+      "cache_faults": 0
+    },
+    "13A-canonical-prop": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 16
+    },
+    "13A-whole-room12-views": [
+      {
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 576,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          16
+        ],
+        "cells": 1000,
+        "visible_patterns": 512,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 413,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 573,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          16
+        ],
+        "cells": 1000,
+        "visible_patterns": 510,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 397,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 587,
+        "cache_peak": 600,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          24
+        ],
+        "cells": 1000,
+        "visible_patterns": 486,
+        "cache_peak": 600,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 362,
+        "cache_peak": 600,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 605,
+        "cache_peak": 618,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          16
+        ],
+        "cells": 1000,
+        "visible_patterns": 543,
+        "cache_peak": 618,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 410,
+        "cache_peak": 618,
+        "cache_faults": 0
+      }
+    ],
+    "13A-controller-navigation": {
+      "ramWritesDuringTraversal": false,
+      "final_position": [
+        278,
+        170
+      ],
+      "pixels": {
+        "camera": [
+          126,
+          0
+        ],
+        "cells": 1025,
+        "visible_patterns": 587,
+        "cache_peak": 618,
+        "cache_faults": 0
+      }
+    },
+    "13A-pause-resumes-exact-cache": {
+      "camera": [
+        126,
+        0
+      ],
+      "cells": 1025,
+      "visible_patterns": 587,
+      "cache_peak": 618,
+      "cache_faults": 0
+    },
+    "13A-canonical-prop-after-pause": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 16
+    },
+    "13A-moving-five-enemy-six-plus-six-shot-load": {
+      "seconds": 20,
+      "game_fps": 57.85,
+      "cache_peak": 618,
+      "cache_faults": 0,
+      "sprite_limits": [
+        22,
+        11,
+        160
+      ],
+      "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+    },
+    "13A-kill-target-and-result-card": {
+      "target": 30,
+      "resultCardActive": true
+    },
+    "13A-continue14-and-correct-map-font": true,
+    "13A-defeat-card": true,
+    "13B-native-entry": {
+      "camera": [
+        128,
+        0
+      ],
+      "cells": 1000,
+      "visible_patterns": 587,
+      "cache_peak": 587,
+      "cache_faults": 0
+    },
+    "13B-canonical-prop": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 6
+    },
+    "13B-whole-room12-views": [
+      {
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 576,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          16
+        ],
+        "cells": 1000,
+        "visible_patterns": 512,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 413,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 573,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          16
+        ],
+        "cells": 1000,
+        "visible_patterns": 510,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 397,
+        "cache_peak": 598,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 587,
+        "cache_peak": 600,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          24
+        ],
+        "cells": 1000,
+        "visible_patterns": 486,
+        "cache_peak": 600,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 362,
+        "cache_peak": 600,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          0
+        ],
+        "cells": 1000,
+        "visible_patterns": 605,
+        "cache_peak": 618,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          16
+        ],
+        "cells": 1000,
+        "visible_patterns": 543,
+        "cache_peak": 618,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          160
+        ],
+        "cells": 1000,
+        "visible_patterns": 410,
+        "cache_peak": 618,
+        "cache_faults": 0
+      }
+    ],
+    "13B-controller-navigation": {
+      "ramWritesDuringTraversal": false,
+      "final_position": [
+        278,
+        170
+      ],
+      "pixels": {
+        "camera": [
+          126,
+          0
+        ],
+        "cells": 1025,
+        "visible_patterns": 587,
+        "cache_peak": 618,
+        "cache_faults": 0
+      }
+    },
+    "13B-pause-resumes-exact-cache": {
+      "camera": [
+        126,
+        0
+      ],
+      "cells": 1025,
+      "visible_patterns": 587,
+      "cache_peak": 618,
+      "cache_faults": 0
+    },
+    "13B-canonical-prop-after-pause": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 6
+    },
+    "13B-moving-five-enemy-six-plus-six-shot-load": {
+      "seconds": 20,
+      "game_fps": 57.75,
+      "cache_peak": 618,
+      "cache_faults": 0,
+      "sprite_limits": [
+        22,
+        11,
+        160
+      ],
+      "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+    },
+    "13B-kill-target-and-result-card": {
+      "target": 45,
+      "resultCardActive": true
+    },
+    "13B-continue14-and-correct-map-font": true,
+    "13B-defeat-card": true
+  },
+  "scope": "Both detailed union interiors:12 real camera pixel audits each, controller-only navigation after isolated setup, pause/cache restore, moving5-enemy/6+6-shot pressure,30/45kill boundaries and result cards. Canonical Dinorah pixels and PAL2 verified in VRAM. Protected prop uses existing escort reservation; escort AI remains inactive."
+}

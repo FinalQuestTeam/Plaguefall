@@ -1,0 +1,903 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "186425287d9f924fdbfeb09797b7e3b8b5f211e4a6e6ae04d5c367a593794ab2",
+  "buildDirectory": "game/out/phase13-north-fit",
+  "emulatedRomSHA256": "3fdfa6fa4aea2e1a7b6da1a23bcbe21c1828f6689fa84be683ae10b0972426c8",
+  "movieEnabled": false,
+  "checks": {
+    "13A-native-entry": {
+      "camera": [
+        128,
+        37
+      ],
+      "cells": 1040,
+      "visible_patterns": 380,
+      "cache_peak": 380,
+      "cache_faults": 0
+    },
+    "13A-canonical-prop": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 16
+    },
+    "13A-connected-floor": {
+      "footprint": 16,
+      "free_positions": 2154,
+      "reachable_positions": 2154,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 0
+    },
+    "13A-whole-room24-views": [
+      {
+        "camera": [
+          0,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 408,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 188,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          149
+        ],
+        "cells": 1040,
+        "visible_patterns": 122,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 122,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 137,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 312,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 400,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 182,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          149
+        ],
+        "cells": 1040,
+        "visible_patterns": 116,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 116,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 129,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 297,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 405,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 189,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          157
+        ],
+        "cells": 1040,
+        "visible_patterns": 104,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 118,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 130,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 315,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 423,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 207,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          149
+        ],
+        "cells": 1040,
+        "visible_patterns": 87,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 124,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 138,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 370,
+        "cache_peak": 423,
+        "cache_faults": 0
+      }
+    ],
+    "13A-controller-navigation": {
+      "ramWritesDuringTraversal": false,
+      "final_position": [
+        278,
+        170
+      ],
+      "pixels": {
+        "camera": [
+          126,
+          39
+        ],
+        "cells": 1066,
+        "visible_patterns": 380,
+        "cache_peak": 406,
+        "cache_faults": 0
+      }
+    },
+    "13A-pause-resumes-exact-cache": {
+      "camera": [
+        126,
+        39
+      ],
+      "cells": 1066,
+      "visible_patterns": 380,
+      "cache_peak": 406,
+      "cache_faults": 0
+    },
+    "13A-canonical-prop-after-pause": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 16
+    },
+    "13A-bench-faces-and-room-boundaries": [
+      {
+        "face": [
+          56,
+          328,
+          7
+        ],
+        "axis": "px",
+        "stopped": 64
+      },
+      {
+        "face": [
+          192,
+          328,
+          6
+        ],
+        "axis": "px",
+        "stopped": 184
+      },
+      {
+        "face": [
+          80,
+          304,
+          5
+        ],
+        "axis": "py",
+        "stopped": 312
+      },
+      {
+        "face": [
+          80,
+          352,
+          4
+        ],
+        "axis": "py",
+        "stopped": 344
+      },
+      {
+        "face": [
+          192,
+          272,
+          7
+        ],
+        "axis": "px",
+        "stopped": 200
+      },
+      {
+        "face": [
+          328,
+          272,
+          6
+        ],
+        "axis": "px",
+        "stopped": 320
+      },
+      {
+        "face": [
+          216,
+          248,
+          5
+        ],
+        "axis": "py",
+        "stopped": 256
+      },
+      {
+        "face": [
+          216,
+          296,
+          4
+        ],
+        "axis": "py",
+        "stopped": 288
+      },
+      {
+        "face": [
+          328,
+          392,
+          7
+        ],
+        "axis": "px",
+        "stopped": 336
+      },
+      {
+        "face": [
+          464,
+          392,
+          6
+        ],
+        "axis": "px",
+        "stopped": 456
+      },
+      {
+        "face": [
+          352,
+          368,
+          5
+        ],
+        "axis": "py",
+        "stopped": 376
+      },
+      {
+        "face": [
+          352,
+          416,
+          4
+        ],
+        "axis": "py",
+        "stopped": 408
+      },
+      {
+        "boundary": 6,
+        "axis": "px",
+        "stopped": 24
+      },
+      {
+        "boundary": 7,
+        "axis": "px",
+        "stopped": 472
+      },
+      {
+        "boundary": 4,
+        "axis": "py",
+        "stopped": 160
+      },
+      {
+        "boundary": 5,
+        "axis": "py",
+        "stopped": 472
+      }
+    ],
+    "13A-moving-five-enemy-six-plus-six-shot-load": {
+      "seconds": 20,
+      "game_fps": 49.7,
+      "cache_peak": 406,
+      "cache_faults": 0,
+      "sprite_limits": [
+        21,
+        8,
+        128
+      ],
+      "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+    },
+    "13A-kill-target-and-result-card": {
+      "target": 30,
+      "resultCardActive": true
+    },
+    "13A-continue14-and-correct-map-font": true,
+    "13A-defeat-card": true,
+    "13B-native-entry": {
+      "camera": [
+        128,
+        37
+      ],
+      "cells": 1040,
+      "visible_patterns": 380,
+      "cache_peak": 380,
+      "cache_faults": 0
+    },
+    "13B-canonical-prop": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 6
+    },
+    "13B-connected-floor": {
+      "footprint": 16,
+      "free_positions": 2154,
+      "reachable_positions": 2154,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 0
+    },
+    "13B-whole-room24-views": [
+      {
+        "camera": [
+          0,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 408,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 188,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          149
+        ],
+        "cells": 1040,
+        "visible_patterns": 122,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 122,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 137,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          0,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 312,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 400,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 182,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          149
+        ],
+        "cells": 1040,
+        "visible_patterns": 116,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 116,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 129,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          8,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 297,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 405,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 189,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          157
+        ],
+        "cells": 1040,
+        "visible_patterns": 104,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 118,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 130,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          128,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 315,
+        "cache_peak": 418,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          29
+        ],
+        "cells": 1040,
+        "visible_patterns": 423,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          85
+        ],
+        "cells": 1040,
+        "visible_patterns": 207,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          149
+        ],
+        "cells": 1040,
+        "visible_patterns": 87,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          213
+        ],
+        "cells": 1040,
+        "visible_patterns": 124,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          277
+        ],
+        "cells": 1040,
+        "visible_patterns": 138,
+        "cache_peak": 423,
+        "cache_faults": 0
+      },
+      {
+        "camera": [
+          192,
+          341
+        ],
+        "cells": 1040,
+        "visible_patterns": 370,
+        "cache_peak": 423,
+        "cache_faults": 0
+      }
+    ],
+    "13B-controller-navigation": {
+      "ramWritesDuringTraversal": false,
+      "final_position": [
+        278,
+        170
+      ],
+      "pixels": {
+        "camera": [
+          126,
+          39
+        ],
+        "cells": 1066,
+        "visible_patterns": 380,
+        "cache_peak": 406,
+        "cache_faults": 0
+      }
+    },
+    "13B-pause-resumes-exact-cache": {
+      "camera": [
+        126,
+        39
+      ],
+      "cells": 1066,
+      "visible_patterns": 380,
+      "cache_peak": 406,
+      "cache_faults": 0
+    },
+    "13B-canonical-prop-after-pause": {
+      "canonical_pixels_exact": true,
+      "palette": "original PAL2",
+      "extra_vram_bytes": 0,
+      "prop_tiles": 6
+    },
+    "13B-bench-faces-and-room-boundaries": [
+      {
+        "face": [
+          56,
+          328,
+          7
+        ],
+        "axis": "px",
+        "stopped": 64
+      },
+      {
+        "face": [
+          192,
+          328,
+          6
+        ],
+        "axis": "px",
+        "stopped": 184
+      },
+      {
+        "face": [
+          80,
+          304,
+          5
+        ],
+        "axis": "py",
+        "stopped": 312
+      },
+      {
+        "face": [
+          80,
+          352,
+          4
+        ],
+        "axis": "py",
+        "stopped": 344
+      },
+      {
+        "face": [
+          192,
+          272,
+          7
+        ],
+        "axis": "px",
+        "stopped": 200
+      },
+      {
+        "face": [
+          328,
+          272,
+          6
+        ],
+        "axis": "px",
+        "stopped": 320
+      },
+      {
+        "face": [
+          216,
+          248,
+          5
+        ],
+        "axis": "py",
+        "stopped": 256
+      },
+      {
+        "face": [
+          216,
+          296,
+          4
+        ],
+        "axis": "py",
+        "stopped": 288
+      },
+      {
+        "face": [
+          328,
+          392,
+          7
+        ],
+        "axis": "px",
+        "stopped": 336
+      },
+      {
+        "face": [
+          464,
+          392,
+          6
+        ],
+        "axis": "px",
+        "stopped": 456
+      },
+      {
+        "face": [
+          352,
+          368,
+          5
+        ],
+        "axis": "py",
+        "stopped": 376
+      },
+      {
+        "face": [
+          352,
+          416,
+          4
+        ],
+        "axis": "py",
+        "stopped": 408
+      },
+      {
+        "boundary": 6,
+        "axis": "px",
+        "stopped": 24
+      },
+      {
+        "boundary": 7,
+        "axis": "px",
+        "stopped": 472
+      },
+      {
+        "boundary": 4,
+        "axis": "py",
+        "stopped": 160
+      },
+      {
+        "boundary": 5,
+        "axis": "py",
+        "stopped": 472
+      }
+    ],
+    "13B-moving-five-enemy-six-plus-six-shot-load": {
+      "seconds": 20,
+      "game_fps": 49.7,
+      "cache_peak": 406,
+      "cache_faults": 0,
+      "sprite_limits": [
+        21,
+        8,
+        128
+      ],
+      "setup": "live AI/controller patrol; health protected; only inactive shot slots replenished"
+    },
+    "13B-kill-target-and-result-card": {
+      "target": 45,
+      "resultCardActive": true
+    },
+    "13B-continue14-and-correct-map-font": true,
+    "13B-defeat-card": true
+  },
+  "scope": "Both expanded union interiors:24 real camera pixel audits each, connected floor, bench faces and room edges, controller-only navigation after isolated setup, pause/cache restore, moving5-enemy/6+6-shot pressure,30/45kill boundaries and result cards. Canonical Dinorah pixels and PAL2 verified in VRAM. Protected prop uses existing escort reservation; escort AI remains inactive."
+}

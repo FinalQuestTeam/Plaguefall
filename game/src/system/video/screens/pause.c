@@ -19,6 +19,8 @@
 #include "levels/campaign_resistance.h"
 #include "levels/campaign_factory.h"
 #include "levels/campaign_launch.h"
+#include "levels/campaign_route_ops.h"
+#include "system/video/screens/signal.h"
 static u16 pauseKills;
 static u8 choice,pauseView,exitChoice;
 static const char *itemName(u8 item)
@@ -28,16 +30,16 @@ static const char *itemName(u8 item)
 static void drawSelection(void)
 {
     if(!currentLevel){TEST_pauseSelection(choice);return;}
-    static const char *const options[]={"CONTINUAR","COMO JOGAR","VOLTAR AO TÍTULO"};
+    static const char *const options[]={"CONTINUAR","COMO JOGAR","SINAL DE CONTINUAÇÃO","VOLTAR AO TÍTULO"};
     static const char *const testing[]={"CONTINUAR","REINICIAR FASE","TROCAR FASE","COMO JOGAR","VOLTAR AO TÍTULO"};
     char buf[32];
     PANEL_selection(17+choice*2);
-    for(u16 i=0;i<(testCampaignMode ? 5 : 3);i++){sprintf(buf,"%c %s",i==choice ? '>' : ' ',testCampaignMode ? testing[i] : options[i]);PANEL_text(buf,2,17+i*2,i==choice ? PANEL_LIGHT : PANEL_BODY);}
+    for(u16 i=0;i<(testCampaignMode ? 5 : 4);i++){sprintf(buf,"%c %s",i==choice ? '>' : ' ',testCampaignMode ? testing[i] : options[i]);PANEL_text(buf,2,17+i*2,i==choice ? PANEL_LIGHT : PANEL_BODY);}
 }
 static void drawMenu(void)
 {
     if(!currentLevel){TEST_pauseDraw(choice);return;}
-    char right[20],buf[64];
+    char right[20],buf[MISSION_GOAL_SIZE];
     if(currentLevel)sprintf(right,"FASE %s",GRAPH[currentLevel].name);
     else sprintf(right,"FASE TESTE %u",testStage);
     PANEL_page("PAUSADO",right);PANEL_text(MISSION_name(currentLevel),2,5,PANEL_ACCENT);
@@ -49,16 +51,28 @@ static void drawMenu(void)
         u16 life=0;for(u16 i=0;i<MAX_ENEMIES;i++)if(enemies[i].active && enemies[i].type==ENEMY_BOSS)life=enemies[i].hp;
         sprintf(buf,"ESCORPIÃO: %u DE %u DE VIDA",life,ENEMY_DEFS[ENEMY_BOSS]->hp);
     }
-    else if(def->objective==OBJ_REACH)sprintf(buf,"TRAVESSIA: %u%% / SIGA A SETA",OBJECTIVE_progress());
-    else if(def->objective==OBJ_ESCORT)sprintf(buf,"DINORAH: %u/100 / %s",dinorahHp,DINORAH_status());
-    else if(def->objective==OBJ_PROTECT)sprintf(buf,"FALTAM %u S / SINAL: %u DE %u",OBJECTIVE_secondsLeft(),npcHp<0 ? 0 : npcHp,npcHpMax);
+    // SGDK's formatter omits %%: supply the percent glyph as a string.
+    else if(def->objective==OBJ_REACH)sprintf(buf,"TRAVESSIA: %u%s / SIGA A SETA",OBJECTIVE_progress(),"%");
+    else if(CR_OPS_active())
+    {
+        const u8 blocked=CR_OPS_gateBlockMask();
+        const u8 gates=2-(blocked&1)-((blocked>>1)&1);
+        sprintf(buf,"DINORAH: %u/100 / PORTÕES: %u/2",dinorahHp,gates);
+        if(currentLevel==N_6B)
+        {
+            const u8 pressure=campaignRouteOps.pressureMask;
+            sprintf(buf+strlen(buf)," / VÁLVULAS: %u/2",(pressure&1)+((pressure>>1)&1));
+        }
+    }
+    else if(def->objective==OBJ_ESCORT)sprintf(buf,"DINORAH: %u/100 / ROTA: %u%s / %s",dinorahHp,OBJECTIVE_progress(),"%",DINORAH_status());
+    else if(def->objective==OBJ_PROTECT)sprintf(buf,"FALTAM %u S / SANTA: %u/%u",OBJECTIVE_secondsLeft(),npcHp<0 ? 0 : npcHp,npcHpMax);
     else if(def->objective==OBJ_SURVIVE)sprintf(buf,"FALTAM %u SEGUNDOS",OBJECTIVE_secondsLeft());
     else if(def->objective==OBJ_COLLECT)sprintf(buf,"COLETADOS: %u DE %u",OBJECTIVE_collected(),def->objTarget);
     else if(def->objective==OBJ_CARGO)sprintf(buf,"ENTREGAS: %u/5 / CARGA: %s",campaignResistance.delivered,campaignResistance.cargo==255 ? "VAZIA" : "CARREGANDO");
     else if(def->objective==OBJ_PRIORITY){u8 m=campaignResistance.priorityDone; sprintf(buf,"TRANSMISSORES: %u/3",(m&1)+((m>>1)&1)+((m>>2)&1));}
     else if(def->objective==OBJ_EGGS || def->objective==OBJ_VALVES)sprintf(buf,"%s: %u/%u",def->objective==OBJ_EGGS ? "NINHOS" : "VÁLVULAS",campaignFactory.done,def->objTarget);
     else if(def->objective==OBJ_POWER){u8 m=campaignLaunch.powered,n=0;while(m){n+=m&1;m>>=1;}sprintf(buf,"GERADORES: %u/5",n);}
-    else if(def->objective==OBJ_RADIO)sprintf(buf,"FALTAM %u S / RÁDIO: %d/100",(campaignLaunch.left+fps-1)/fps,npcHp<0 ? 0 : npcHp);
+    else if(def->objective==OBJ_RADIO)sprintf(buf,"FALTAM %u S / RÁDIO: %d/%u",(campaignLaunch.left+fps-1)/fps,npcHp<0 ? 0 : npcHp,npcHpMax);
     else sprintf(buf,"INIMIGOS: %u DE %u",pauseKills,def->killTarget);
     PANEL_wrap(buf,2,12,36,1,PANEL_BODY);
     sprintf(buf,"VIDA: %03u/100     BOMBAS: %u",hp<0 ? 0 : hp,BOMB_count());PANEL_text(buf,2,14,PANEL_BODY);
@@ -84,7 +98,10 @@ static void drawExitSelection(void)
 static void drawExit(void)
 {
     PANEL_page("SAIR DA PARTIDA?",NULL);
-    PANEL_text("O PROGRESSO DESTA PARTIDA",2,8,PANEL_BODY);PANEL_text("SERÁ PERDIDO.",2,10,PANEL_BODY);
+    if(testCampaignMode || !currentLevel)
+    {PANEL_text("O PROGRESSO DESTA PARTIDA",2,8,PANEL_BODY);PANEL_text("SERÁ PERDIDO.",2,10,PANEL_BODY);}
+    else
+    {PANEL_text("ANOTE O SINAL DE CONTINUAÇÃO",2,8,PANEL_BODY);PANEL_text("PARA RETOMAR DO INÍCIO DA FASE.",2,10,PANEL_BODY);}
     drawExitSelection();
     PANEL_text("CIMA/BAIXO: ESCOLHER",2,24,PANEL_BODY);
     PANEL_right("A: CONFIRMAR   B/START: CANCELAR",26,PANEL_LIGHT);
@@ -96,6 +113,11 @@ bool PAUSE_show(u16 kills)
 }
 u8 PAUSE_update(u16 pressed)
 {
+    if(pauseView==3)
+    {
+        if(pressed&(BUTTON_A|BUTTON_B|BUTTON_START)){pauseView=0;drawMenu();}
+        return PAUSE_STAY;
+    }
     if(pauseView==1){if(HELP_update(pressed)){pauseView=0;drawMenu();}return PAUSE_STAY;}
     if(pauseView==2)
     {
@@ -109,7 +131,7 @@ u8 PAUSE_update(u16 pressed)
         return PAUSE_STAY;
     }
     if(pressed&(BUTTON_B|BUTTON_START)){PANEL_end();return PAUSE_RESUME;}
-    const u8 options=currentLevel ? (testCampaignMode ? 5 : 3) : 6;
+    const u8 options=currentLevel ? (testCampaignMode ? 5 : 4) : 6;
     if(pressed&BUTTON_UP){choice=(choice+options-1)%options;drawSelection();}
     else if(pressed&BUTTON_DOWN){choice=(choice+1)%options;drawSelection();}
     else if(pressed&BUTTON_A)
@@ -123,6 +145,7 @@ u8 PAUSE_update(u16 pressed)
         }
         if(testCampaignMode && choice<=2){PANEL_end();return choice==1 ? PAUSE_TEST_RESTART : PAUSE_TEST_ROOM;}
         if(choice==(testCampaignMode ? 3 : 1)){pauseView=1;HELP_open();}
+        else if(!testCampaignMode && choice==2){if(SIGNALSCR_checkpoint())pauseView=3;}
         else{pauseView=2;exitChoice=0;drawExit();}
     }
     return PAUSE_STAY;

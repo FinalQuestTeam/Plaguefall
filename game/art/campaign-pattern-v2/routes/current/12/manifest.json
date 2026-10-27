@@ -6,7 +6,7 @@
   ],
   "bounds": [
     16,
-    96,
+    112,
     3055,
     287
   ],
@@ -18,128 +18,503 @@
     [
       0,
       0,
-      704,
-      96,
-      true
-    ],
-    [
-      704,
-      0,
-      640,
-      144,
-      true
-    ],
-    [
-      1344,
-      0,
-      864,
-      96,
-      true
-    ],
-    [
-      2208,
-      0,
-      864,
+      3072,
       112,
       true
     ],
     [
-      80,
-      32,
-      304,
-      160,
-      true
-    ],
-    [
-      432,
-      32,
-      160,
-      128,
-      true
-    ],
-    [
-      736,
-      32,
-      160,
-      128,
-      true
-    ],
-    [
-      1008,
-      200,
-      240,
-      112,
-      true
-    ],
-    [
-      1296,
-      32,
-      160,
-      128,
-      true
-    ],
-    [
-      1488,
+      64,
       24,
       304,
-      144,
+      160,
       true
     ],
     [
-      1760,
-      200,
-      240,
-      112,
-      true
-    ],
-    [
-      1984,
-      32,
+      688,
+      24,
       160,
       128,
       true
     ],
     [
-      2176,
-      32,
+      1200,
+      24,
       160,
       128,
       true
     ],
     [
-      2304,
-      200,
-      240,
-      112,
-      true
-    ],
-    [
-      2480,
-      32,
+      1712,
+      24,
       160,
       128,
       true
     ],
     [
-      2704,
+      2224,
+      24,
+      160,
+      128,
+      true
+    ],
+    [
+      2720,
       24,
       304,
       176,
       true
     ],
     [
-      224,
-      248,
-      72,
-      24,
+      400,
+      240,
+      32,
+      32,
       true
     ],
     [
-      2560,
-      248,
-      72,
-      24,
+      416,
+      128,
+      40,
+      40,
       true
+    ],
+    [
+      720,
+      208,
+      96,
+      64,
+      true
+    ],
+    [
+      928,
+      224,
+      40,
+      40,
+      true
+    ],
+    [
+      1200,
+      240,
+      32,
+      32,
+      true
+    ],
+    [
+      1408,
+      112,
+      96,
+      64,
+      true
+    ],
+    [
+      1744,
+      208,
+      96,
+      64,
+      true
+    ],
+    [
+      1984,
+      224,
+      40,
+      40,
+      true
+    ],
+    [
+      2224,
+      240,
+      32,
+      32,
+      true
+    ],
+    [
+      2432,
+      112,
+      96,
+      64,
+      true
+    ],
+    [
+      2608,
+      240,
+      32,
+      32,
+      true
+    ]
+  ],
+  "exit": [
+    2800,
+    208,
+    160,
+    64
+  ],
+  "camera_player_y": 200,
+  "camera_south_start": 224,
+  "points": [
+    [
+      56,
+      216
+    ],
+    [
+      632,
+      216
+    ],
+    [
+      632,
+      176
+    ],
+    [
+      888,
+      176
+    ],
+    [
+      1016,
+      176
+    ],
+    [
+      1016,
+      224
+    ],
+    [
+      1400,
+      224
+    ],
+    [
+      1608,
+      224
+    ],
+    [
+      1608,
+      176
+    ],
+    [
+      1912,
+      176
+    ],
+    [
+      2040,
+      176
+    ],
+    [
+      2040,
+      224
+    ],
+    [
+      2584,
+      224
+    ],
+    [
+      2856,
+      224
+    ]
+  ],
+  "pauses": [
+    2,
+    8,
+    12
+  ],
+  "segments": [
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "segment_size": [
+    512,
+    320
+  ],
+  "placements": [
+    {
+      "id": "departure-crates",
+      "canvas": [
+        400,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        400,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "departure-barrels",
+      "canvas": [
+        416,
+        128,
+        40,
+        40
+      ],
+      "footprint": [
+        416,
+        128,
+        40,
+        40
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-lower-1",
+      "canvas": [
+        720,
+        208,
+        96,
+        64
+      ],
+      "footprint": [
+        720,
+        208,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "barrels-service-1",
+      "canvas": [
+        928,
+        224,
+        40,
+        40
+      ],
+      "footprint": [
+        928,
+        224,
+        40,
+        40
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "crates-service-2",
+      "canvas": [
+        1200,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        1200,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-upper-2",
+      "canvas": [
+        1408,
+        112,
+        96,
+        64
+      ],
+      "footprint": [
+        1408,
+        112,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-lower-3",
+      "canvas": [
+        1744,
+        208,
+        96,
+        64
+      ],
+      "footprint": [
+        1744,
+        208,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "barrels-service-3",
+      "canvas": [
+        1984,
+        224,
+        40,
+        40
+      ],
+      "footprint": [
+        1984,
+        224,
+        40,
+        40
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "crates-service-4",
+      "canvas": [
+        2224,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        2224,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "truck-upper-4",
+      "canvas": [
+        2432,
+        112,
+        96,
+        64
+      ],
+      "footprint": [
+        2432,
+        112,
+        96,
+        64
+      ],
+      "blocks_shots": true
+    },
+    {
+      "id": "arrival-crates",
+      "canvas": [
+        2608,
+        240,
+        32,
+        32
+      ],
+      "footprint": [
+        2608,
+        240,
+        32,
+        32
+      ],
+      "blocks_shots": true
+    }
+  ],
+  "architecture": [
+    {
+      "id": "factory-exit",
+      "box": [
+        64,
+        24,
+        304,
+        160
+      ]
+    },
+    {
+      "id": "service-bay-1",
+      "box": [
+        688,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "service-bay-2",
+      "box": [
+        1200,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "service-bay-3",
+      "box": [
+        1712,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "service-bay-4",
+      "box": [
+        2224,
+        24,
+        160,
+        128
+      ]
+    },
+    {
+      "id": "union",
+      "box": [
+        2720,
+        24,
+        304,
+        176
+      ]
+    }
+  ],
+  "player_waypoints": [
+    [
+      48,
+      208
+    ],
+    [
+      624,
+      208
+    ],
+    [
+      624,
+      168
+    ],
+    [
+      880,
+      168
+    ],
+    [
+      1008,
+      168
+    ],
+    [
+      1008,
+      216
+    ],
+    [
+      1392,
+      216
+    ],
+    [
+      1600,
+      216
+    ],
+    [
+      1600,
+      168
+    ],
+    [
+      1904,
+      168
+    ],
+    [
+      2032,
+      168
+    ],
+    [
+      2032,
+      216
+    ],
+    [
+      2576,
+      216
+    ],
+    [
+      2848,
+      216
     ]
   ],
   "route_points": [
@@ -148,949 +523,276 @@
       216
     ],
     [
-      336,
+      632,
       216
     ],
     [
-      424,
-      232
+      632,
+      176
     ],
     [
-      592,
-      232
+      888,
+      176
     ],
     [
-      704,
-      232
+      1016,
+      176
     ],
     [
-      920,
-      232
-    ],
-    [
-      952,
-      184
-    ],
-    [
-      1264,
-      184
+      1016,
+      224
     ],
     [
       1400,
-      184
+      224
     ],
     [
-      1496,
-      184
+      1608,
+      224
     ],
     [
-      1784,
-      184
+      1608,
+      176
     ],
     [
-      2024,
-      184
+      1912,
+      176
     ],
     [
-      2104,
-      208
+      2040,
+      176
     ],
     [
-      2168,
-      208
+      2040,
+      224
     ],
     [
-      2280,
-      184
-    ],
-    [
-      2560,
-      184
-    ],
-    [
-      2600,
-      216
+      2584,
+      224
     ],
     [
       2856,
-      216
+      224
     ]
   ],
-  "point_semantics": "CENTERS; actor foot top-left=center−8",
-  "pauses": [
-    3,
-    7,
-    16
-  ],
-  "exit": [
-    2824,
-    192,
-    64,
-    64
-  ],
-  "camera_player_y": 200,
+  "point_semantics": "CENTERS; actor foot top-left=center-8",
+  "geometry_validation": {
+    "footprint": 16,
+    "free_positions": 6109,
+    "reachable_positions": 6109,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2997
+  },
   "camera_interest": [
     {
-      "id": "workshop",
+      "id": "factory-exit",
+      "name": "factory-exit",
       "bbox": [
-        80,
-        32,
+        64,
+        24,
         304,
         160
       ],
-      "center": [
-        232,
-        112
-      ],
-      "camera": [
-        72,
-        8
-      ],
       "position": [
-        224,
-        208
-      ],
-      "whole_inside_visible_world": true,
-      "name": "workshop"
-    },
-    {
-      "id": "covered-dock",
-      "bbox": [
-        1488,
-        24,
-        304,
-        144
-      ],
-      "center": [
-        1640,
-        96
-      ],
-      "camera": [
-        1480,
-        0
-      ],
-      "position": [
-        1624,
-        184
-      ],
-      "whole_inside_visible_world": true,
-      "name": "covered dock"
-    },
-    {
-      "id": "union-arrival",
-      "bbox": [
-        2704,
-        24,
-        304,
-        176
-      ],
-      "center": [
-        2856,
-        112
-      ],
-      "camera": [
-        2696,
-        0
-      ],
-      "position": [
-        2848,
+        208,
         200
-      ],
-      "whole_inside_visible_world": true,
-      "name": "union arrival"
+      ]
     },
     {
-      "id": "south-dock1",
+      "id": "service-bay-1",
+      "name": "service-bay-1",
       "bbox": [
-        1008,
-        200,
-        240,
-        112
-      ],
-      "center": [
-        1128,
-        256
-      ],
-      "camera": [
-        968,
-        88
-      ],
-      "position": [
-        1120,
-        176
-      ],
-      "whole_inside_visible_world": true,
-      "name": "south dock1"
-    },
-    {
-      "id": "south-dock2",
-      "bbox": [
-        1760,
-        200,
-        240,
-        112
-      ],
-      "center": [
-        1880,
-        256
-      ],
-      "camera": [
-        1720,
-        88
-      ],
-      "position": [
-        1880,
-        176
-      ],
-      "whole_inside_visible_world": true,
-      "name": "south dock2"
-    },
-    {
-      "id": "south-dock3",
-      "bbox": [
-        2304,
-        200,
-        240,
-        112
-      ],
-      "center": [
-        2424,
-        256
-      ],
-      "camera": [
-        2264,
-        88
-      ],
-      "position": [
-        2416,
-        176
-      ],
-      "whole_inside_visible_world": true,
-      "name": "south dock3"
-    },
-    {
-      "id": "service-annex1",
-      "bbox": [
-        432,
-        32,
+        688,
+        24,
         160,
         128
       ],
-      "center": [
-        512,
-        96
-      ],
-      "camera": [
-        352,
-        8
-      ],
       "position": [
-        496,
-        176
-      ],
-      "whole_inside_visible_world": true,
-      "name": "service annex1"
-    },
-    {
-      "id": "service-annex2",
-      "bbox": [
-        1296,
-        32,
-        160,
-        128
-      ],
-      "center": [
-        1376,
-        96
-      ],
-      "camera": [
-        1216,
-        8
-      ],
-      "position": [
-        1360,
-        176
-      ],
-      "whole_inside_visible_world": true,
-      "name": "service annex2"
-    },
-    {
-      "id": "service-annex3",
-      "bbox": [
-        1984,
-        32,
-        160,
-        128
-      ],
-      "center": [
-        2064,
-        96
-      ],
-      "camera": [
-        1904,
-        8
-      ],
-      "position": [
-        2048,
-        176
-      ],
-      "whole_inside_visible_world": true,
-      "name": "service annex3"
-    },
-    {
-      "id": "service-annex4",
-      "bbox": [
-        2480,
-        32,
-        160,
-        128
-      ],
-      "center": [
-        2560,
-        96
-      ],
-      "camera": [
-        2400,
-        8
-      ],
-      "position": [
-        2544,
+        760,
         168
+      ]
+    },
+    {
+      "id": "service-bay-2",
+      "name": "service-bay-2",
+      "bbox": [
+        1200,
+        24,
+        160,
+        128
       ],
-      "whole_inside_visible_world": true,
-      "name": "service annex4"
+      "position": [
+        1272,
+        168
+      ]
+    },
+    {
+      "id": "service-bay-3",
+      "name": "service-bay-3",
+      "bbox": [
+        1712,
+        24,
+        160,
+        128
+      ],
+      "position": [
+        1784,
+        168
+      ]
+    },
+    {
+      "id": "service-bay-4",
+      "name": "service-bay-4",
+      "bbox": [
+        2224,
+        24,
+        160,
+        128
+      ],
+      "position": [
+        2296,
+        168
+      ]
+    },
+    {
+      "id": "union",
+      "name": "union",
+      "bbox": [
+        2720,
+        24,
+        304,
+        176
+      ],
+      "position": [
+        2776,
+        216
+      ]
     }
   ],
-  "sources": [
-    "source/existing-workshop-rgba.png",
-    "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
-    "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-post.png",
-    "../../../campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png",
-    "../../../campaign-pattern-v2/early/01-courtyard/modules/bench.png",
-    "../../../phase04-tunnels-v1/map-native.png",
-    "../../../campaign-pattern-v2/early/01-courtyard/modules/floor.png",
-    "../../../phase01-courtyard-v2/intact-native.png",
-    "../../../phase01-courtyard-v2/intact-native.png",
-    "../../../phase01-courtyard-v2/intact-native.png",
-    "../../../phase01-courtyard-v2/intact-native.png",
-    "../../syndicate/12/modules/window.png",
-    "../../syndicate/12/modules/door.png",
-    "../../syndicate/12/modules/banner.png",
-    "../../syndicate/12/modules/vent.png",
-    "source/existing-workshop-rgba.png",
-    "../../../phase04-tunnels-v1/map-native.png",
-    "../../../campaign-pattern-v2/factory/modules/factory-supply-header.png",
-    "../../syndicate/12/source/native-clean-1px.png",
-    "../../syndicate/12/source/native-clean-1px.png",
-    "../../syndicate/12/source/native-clean-1px.png"
-  ],
   "memory": {
-    "scene_tiles": 508,
+    "scene_tiles": 618,
     "objective_tiles": 0,
-    "total_tiles": 508,
+    "total_tiles": 618,
     "budget": 640,
-    "free_tiles": 132,
-    "graphics_bytes": 16256,
+    "free_tiles": 22,
+    "graphics_bytes": 19776,
     "map_bytes": 30720,
     "palette_bytes": 32,
     "pixel_exact_reassembly": true,
     "lossy_pattern_replacements": 0,
-    "background_tiles": 508,
+    "background_tiles": 618,
     "limit": 640
   },
-  "modules": [
-    {
-      "id": "legacy-workshop",
-      "path": "source/existing-workshop-rgba.png",
-      "bbox_xyxy": null,
-      "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437",
-      "legacy_parent": "art/phase03-street-v2/source/street-kit.png; cell443,0,887,443; normalized whole128x128",
-      "game_path": "art/campaign-corridors-v3/corrections/12-guidebook/source/existing-workshop-rgba.png"
-    },
-    {
-      "id": "wall",
-      "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png",
-      "bbox_xyxy": null,
-      "source_sha256": "29fb39300488e1027e2e2c3bea18124d978dc84c1522e2418840c02ed0389f7f",
-      "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-wall.png"
-    },
-    {
-      "id": "post",
-      "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/lower-post.png",
-      "bbox_xyxy": null,
-      "source_sha256": "c02500aa5498e246da691df302252c6c2bc42e224aab99601116e1cadfe4ce3b",
-      "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/lower-post.png"
-    },
-    {
-      "id": "vegetation",
-      "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png",
-      "bbox_xyxy": null,
-      "source_sha256": "356a36dcf3d85c8232c8e2822aadb7d594c4a49152aa1835597a9c0b9fccca22",
-      "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/upper-vegetation.png"
-    },
-    {
-      "id": "bench",
-      "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/bench.png",
-      "bbox_xyxy": null,
-      "source_sha256": "c1a60e963fcc9a8215cf5fba8d471e5aa40e59c091468f2ade972d9e19ee438e",
-      "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/bench.png"
-    },
-    {
-      "id": "floor",
-      "path": "../../../phase04-tunnels-v1/map-native.png",
-      "bbox_xyxy": [
-        64,
-        112,
-        96,
-        144
-      ],
-      "source_sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd",
-      "game_path": "art/phase04-tunnels-v1/map-native.png"
-    },
-    {
-      "id": "rear-earth",
-      "path": "../../../campaign-pattern-v2/early/01-courtyard/modules/floor.png",
-      "bbox_xyxy": null,
-      "source_sha256": "c477c32780874f6dde7ce28d50172bbe46b1bc326a465e44bf565c3b5a376472",
-      "game_path": "art/campaign-pattern-v2/early/01-courtyard/modules/floor.png"
-    },
-    {
-      "id": "plaster-0-0",
-      "path": "../../../phase01-courtyard-v2/intact-native.png",
-      "bbox_xyxy": [
-        64,
-        80,
-        72,
-        88
-      ],
-      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
-      "game_path": "art/phase01-courtyard-v2/intact-native.png"
-    },
-    {
-      "id": "plaster-8-0",
-      "path": "../../../phase01-courtyard-v2/intact-native.png",
-      "bbox_xyxy": [
-        88,
-        80,
-        96,
-        88
-      ],
-      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
-      "game_path": "art/phase01-courtyard-v2/intact-native.png"
-    },
-    {
-      "id": "plaster-0-8",
-      "path": "../../../phase01-courtyard-v2/intact-native.png",
-      "bbox_xyxy": [
-        116,
-        76,
-        124,
-        84
-      ],
-      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
-      "game_path": "art/phase01-courtyard-v2/intact-native.png"
-    },
-    {
-      "id": "plaster-8-8",
-      "path": "../../../phase01-courtyard-v2/intact-native.png",
-      "bbox_xyxy": [
-        184,
-        72,
-        192,
-        80
-      ],
-      "source_sha256": "ed79c64102d16b5cebf3cbc9da2d7568d0ad2b0ac93786bd3d7e46b3e999fe8e",
-      "game_path": "art/phase01-courtyard-v2/intact-native.png"
-    },
-    {
-      "id": "window",
-      "path": "../../syndicate/12/modules/window.png",
-      "bbox_xyxy": null,
-      "source_sha256": "cf434666d3ca75c1de3a0f3b196fe8ac654905f742ebdc70d1cbae3a2709b4d9",
-      "game_path": "art/campaign-corridors-v3/syndicate/12/modules/window.png"
-    },
-    {
-      "id": "door",
-      "path": "../../syndicate/12/modules/door.png",
-      "bbox_xyxy": null,
-      "source_sha256": "b34e5d55933a80d2117e1b01617d0b6ef7f1c51795b1e91cb28525428ef1d4cc",
-      "game_path": "art/campaign-corridors-v3/syndicate/12/modules/door.png"
-    },
-    {
-      "id": "banner",
-      "path": "../../syndicate/12/modules/banner.png",
-      "bbox_xyxy": null,
-      "source_sha256": "ef9af69780c33a6ed0ecbdca905732d8b84b299cccdd5e9dbf49be04094824f3",
-      "game_path": "art/campaign-corridors-v3/syndicate/12/modules/banner.png"
-    },
-    {
-      "id": "vent",
-      "path": "../../syndicate/12/modules/vent.png",
-      "bbox_xyxy": null,
-      "source_sha256": "850d79063a45cfa1c2f2093cdb70dafd7502848dbdfa016637720aad5d30e3a6",
-      "game_path": "art/campaign-corridors-v3/syndicate/12/modules/vent.png"
-    },
-    {
-      "id": "whole-bay",
-      "path": "source/existing-workshop-rgba.png",
-      "bbox_xyxy": [
-        8,
-        64,
-        120,
-        128
-      ],
-      "source_sha256": "462ddc34ebec74b2ed239453ba8ea3a6fb3095724d3a1aed7dbd494c00f05437",
-      "game_path": "art/campaign-corridors-v3/corrections/12-guidebook/source/existing-workshop-rgba.png"
-    },
-    {
-      "id": "industrial-wall",
-      "path": "../../../phase04-tunnels-v1/map-native.png",
-      "bbox_xyxy": [
-        80,
-        0,
-        144,
-        80
-      ],
-      "source_sha256": "ff49792869fbd3f82698b0996392280c9a7b22c5f850fe5013485f3661074bcd",
-      "game_path": "art/phase04-tunnels-v1/map-native.png"
-    },
-    {
-      "id": "header",
-      "path": "../../../campaign-pattern-v2/factory/modules/factory-supply-header.png",
-      "bbox_xyxy": null,
-      "source_sha256": "86815237ac8181675bc93aa522070359b43c22fecfbba83e48defd820cd5747e",
-      "game_path": "art/campaign-pattern-v2/factory/modules/factory-supply-header.png"
-    },
-    {
-      "id": "steel-left",
-      "path": "../../syndicate/12/source/native-clean-1px.png",
-      "bbox_xyxy": [
-        672,
-        56,
-        696,
-        104
-      ],
-      "source_sha256": "b75e3d81670e59e7880bb41f9ca6f820f4c35bf3816dede19a4dac378a248dec",
-      "game_path": "art/campaign-corridors-v3/syndicate/12/source/native-clean-1px.png"
-    },
-    {
-      "id": "steel-run",
-      "path": "../../syndicate/12/source/native-clean-1px.png",
-      "bbox_xyxy": [
-        752,
-        56,
-        768,
-        104
-      ],
-      "source_sha256": "b75e3d81670e59e7880bb41f9ca6f820f4c35bf3816dede19a4dac378a248dec",
-      "game_path": "art/campaign-corridors-v3/syndicate/12/source/native-clean-1px.png"
-    },
-    {
-      "id": "steel-right",
-      "path": "../../syndicate/12/source/native-clean-1px.png",
-      "bbox_xyxy": [
-        880,
-        56,
-        904,
-        104
-      ],
-      "source_sha256": "b75e3d81670e59e7880bb41f9ca6f820f4c35bf3816dede19a4dac378a248dec",
-      "game_path": "art/campaign-corridors-v3/syndicate/12/source/native-clean-1px.png"
-    }
-  ],
-  "assemblies": [
-    {
-      "id": "workshop",
-      "size": [
-        304,
-        160
-      ],
-      "file": "modules/workshop-assembly-rgba.png",
-      "roof_height": 104
-    },
-    {
-      "id": "annex",
-      "size": [
-        160,
-        128
-      ],
-      "file": "modules/annex-assembly-rgba.png",
-      "roof_height": 88
-    },
-    {
-      "id": "covered",
-      "size": [
-        304,
-        144
-      ],
-      "file": "modules/covered-assembly-rgba.png",
-      "roof_height": 96
-    },
-    {
-      "id": "low-dock",
-      "size": [
-        240,
-        112
-      ],
-      "file": "modules/low-dock-assembly-rgba.png",
-      "roof_height": 72
-    },
-    {
-      "id": "union",
-      "size": [
-        304,
-        176
-      ],
-      "file": "modules/union-assembly-rgba.png",
-      "roof_height": 120
-    }
-  ],
-  "placements": [
-    [
-      "workshop",
-      80,
-      32
-    ],
-    [
-      "annex",
-      432,
-      32
-    ],
-    [
-      "annex",
-      736,
-      32
-    ],
-    [
-      "low-dock",
-      1008,
-      200
-    ],
-    [
-      "annex",
-      1296,
-      32
-    ],
-    [
-      "covered",
-      1488,
-      24
-    ],
-    [
-      "low-dock",
-      1760,
-      200
-    ],
-    [
-      "annex",
-      1984,
-      32
-    ],
-    [
-      "annex",
-      2176,
-      32
-    ],
-    [
-      "low-dock",
-      2304,
-      200
-    ],
-    [
-      "annex",
-      2480,
-      32
-    ],
-    [
-      "union",
-      2704,
-      24
-    ]
-  ],
-  "source_geometry": {
-    "principle": "Existing approved kit parts; whole roof canvases with native material runs, whole openings, original footings. No whole-building reshape.",
-    "active_geometry_origin": "art/campaign-corridors-v3/syndicate/12"
-  },
-  "geometry": {
-    "actor_footprint": [
-      16,
-      16
-    ],
-    "point_margin": 8,
-    "BFS_step": 8,
-    "connected_positions": 4904,
-    "all_points_reachable": true,
-    "swept16pxSamples": 2864,
-    "all_segments_collision_free": true,
-    "exit_reachable": true,
-    "open_depth": 192,
-    "service_neck_width": 32
-  },
-  "complete": "complete-native.png",
-  "layout": "layout.png",
   "native": {
     "tiles": "native/tiles.bin",
     "map": "native/map.bin",
     "palette": "native/palette.bin"
   },
-  "status": "isolated_candidate_requires_parent_and_user_review",
-  "style_changes": {
-    "roof_heights": {
-      "workshop": 104,
-      "annex": 88,
-      "covered": 96,
-      "low-dock": 72,
-      "union": 120
-    },
-    "method": "Whole roof canvases: original ridge/eave/caps plus repeated native material band; separate whole openings preserved. No whole-building reshape.",
-    "floor": "Existing phase04 tunnel32x32patch,1px grid, palette normalization only.",
-    "roof_materials": "Unionhall terracotta; all other families steel fine1px crops at y56..104 (back wall y40..56 excluded).",
-    "perimeter": "Existing R04 complete64x80industrial wall with shared factory10header at constant y40; wholly inside existing blocked perimeter.",
-    "geometry": "Bounds,solids,start,route,exit,pauses and camera metadata retained byte-for-byte as values."
-  },
-  "proposal_previews": [
-    {
-      "id": "entry",
-      "feet": [
-        224,
-        208
-      ],
-      "camera": [
-        64,
-        8
-      ],
-      "preview": "reviews/camera-entry.png",
-      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
-    },
-    {
-      "id": "service-bend",
-      "feet": [
-        1112,
-        176
-      ],
-      "camera": [
-        944,
-        88
-      ],
-      "preview": "reviews/camera-service-bend.png",
-      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
-    },
-    {
-      "id": "covered",
-      "feet": [
-        1624,
-        184
-      ],
-      "camera": [
-        1472,
-        0
-      ],
-      "preview": "reviews/camera-covered.png",
-      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
-    },
-    {
-      "id": "dock-and-annex",
-      "feet": [
-        2048,
-        176
-      ],
-      "camera": [
-        1880,
-        0
-      ],
-      "preview": "reviews/camera-dock-and-annex.png",
-      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
-    },
-    {
-      "id": "union",
-      "feet": [
-        2848,
-        200
-      ],
-      "camera": [
-        2688,
-        0
-      ],
-      "preview": "reviews/camera-union.png",
-      "camera_model": "current normal ARENA rules with close escort; offline target simulation only"
-    }
+  "sources": [
+    "../campaign-corridors-v3/corrections/12-guidebook/modules/industrial-wall-source.png",
+    "../campaign-corridors-v3/corrections/12-guidebook/modules/header-source.png",
+    "../campaign-corridors-v3/corrections/12-guidebook/modules/wall-source.png",
+    "../campaign-corridors-v3/corrections/12-guidebook/modules/post-source.png",
+    "../phase07-urban-v2/modules/asphalt-repeat.png",
+    "../campaign-corridors-v3/corrections/12-guidebook/modules/workshop-assembly-rgba.png",
+    "../campaign-corridors-v3/corrections/12-guidebook/modules/annex-assembly-rgba.png",
+    "../campaign-corridors-v3/corrections/12-guidebook/modules/union-assembly-rgba.png",
+    "../phase09-three-segments-v1/objects/street-truck.png",
+    "../phase06-three-segments-v1/objects/barris.png",
+    "../phase06-three-segments-v1/objects/caixas.png",
+    "../phase10-factory-v2/modules/left-boundary.png",
+    "source/service-workshop-redesign.png",
+    "source/union-ste-building-v4.png",
+    "../space-workers-union-logo-v1/logo-ste.png"
   ],
+  "route_length_px": 2984.0,
+  "seams_pixel_identical": true,
+  "base_B_copies_identical": true,
+  "status": "integrated-local; user visual acceptance not claimed",
+  "art_method": "ImageGen service buildings and approved STE hall: repeated native roof materials, complete mirrored facade bays, central entrance and original STE logo; exact H/V deduplication",
+  "story": "Escort Dinorah from factory service exit to union rest room; success13A, escort death13B. No new gates or valve objective.",
   "width": 3072,
   "height": 320,
-  "points": [
-    [
-      56,
-      216
-    ],
-    [
-      336,
-      216
-    ],
-    [
-      424,
-      232
-    ],
-    [
-      592,
-      232
-    ],
-    [
-      704,
-      232
-    ],
-    [
-      920,
-      232
-    ],
-    [
-      952,
-      184
-    ],
-    [
-      1264,
-      184
-    ],
-    [
-      1400,
-      184
-    ],
-    [
-      1496,
-      184
-    ],
-    [
-      1784,
-      184
-    ],
-    [
-      2024,
-      184
-    ],
-    [
-      2104,
-      208
-    ],
-    [
-      2168,
-      208
-    ],
-    [
-      2280,
-      184
-    ],
-    [
-      2560,
-      184
-    ],
-    [
-      2600,
-      216
-    ],
-    [
-      2856,
-      216
-    ]
-  ],
   "traversal_points": [
     [
       48,
       208
     ],
     [
-      328,
+      624,
       208
     ],
     [
-      416,
-      224
+      624,
+      168
     ],
     [
-      584,
-      224
+      880,
+      168
     ],
     [
-      696,
-      224
+      1008,
+      168
     ],
     [
-      912,
-      224
-    ],
-    [
-      944,
-      176
-    ],
-    [
-      1256,
-      176
+      1008,
+      216
     ],
     [
       1392,
-      176
+      216
     ],
     [
-      1488,
-      176
+      1600,
+      216
     ],
     [
-      1776,
-      176
+      1600,
+      168
     ],
     [
-      2016,
-      176
+      1904,
+      168
     ],
     [
-      2096,
-      200
+      2032,
+      168
     ],
     [
-      2160,
-      200
+      2032,
+      216
     ],
     [
-      2272,
-      176
-    ],
-    [
-      2552,
-      176
-    ],
-    [
-      2592,
-      208
+      2576,
+      216
     ],
     [
       2848,
-      208
+      216
     ]
   ],
   "walkable": [
     16,
-    96,
+    112,
     3040,
-    192
+    176
   ],
-  "tiles": 508,
+  "tiles": 618,
   "tileBudget": 640,
-  "nativeTileSHA256": "35f3f22983a4da92a770e1bf1d9c77d941b81664ffb0bb4e9b90062a50ec7a9c",
-  "native_bank": "art/campaign-corridors-v3/corrections/12-guidebook/native",
-  "geometry_validation": {
-    "footprint": 16,
-    "free_positions": 4904,
-    "reachable_positions": 4904,
-    "all_free_positions_connected": true,
-    "swept16pxSamples": 2864
+  "nativeTileSHA256": "1965796502fd34628783c46b0a812c98304526454d036c61c629f1cf41251bf8",
+  "native_bank": "art/phase12-three-segments-v1/native",
+  "geometry": {
+    "swept16pxSamples": 2997
   },
-  "swept16pxSamples": 2864,
-  "routeLengthPx": 2844.4,
-  "unopposedMinimumSeconds": 82.0,
+  "swept16pxSamples": 2997,
+  "routeLengthPx": 2984.0,
+  "unopposedMinimumSeconds": 85.9,
   "cap": 3,
   "spawn": 2,
   "art": {
-    "nativeImage": "art/campaign-corridors-v3/corrections/12-guidebook/complete-native.png",
+    "nativeImage": "art/phase12-three-segments-v1/complete-native.png",
     "method": "Whole scene first; complete modules; exact native export",
     "lossyTileReplacements": 0
   },
-  "source_directory": "art/campaign-corridors-v3/corrections/12-guidebook"
+  "source_directory": "art/phase12-three-segments-v1"
 }

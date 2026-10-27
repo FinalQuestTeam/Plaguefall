@@ -33,6 +33,8 @@ void OBJECTIVEGFX_settle(u8 slot,u8 frame);
 void OBJECTIVEGFX_update(void);
 void OBJECTIVEGFX_ground(bool force);
 void OBJECTIVEGFX_draw(u16 *count);
+void OBJECTIVEGFX_radioHit(void);
+u16 OBJECTIVEGFX_actorDepth(s16 x,s16 feetY,u16 width,u16 attr);
 void OBJECTIVEGFX_cargo(u16 *count,s16 x,s16 y);
 bool OBJECTIVEGFX_pending(void);
 #endif

@@ -1,6 +1,8 @@
 // Estaleiro: five persistent generators, radio hold, Scorpion launch apron.
 #include "levels/campaign_launch.h"
 #include "levels/graph.h"
+#include "levels/phase14_layout.h"
+#include "levels/phase15_layout.h"
 #include "core/game.h"
 #include "core/objective.h"
 #include "actors/npc.h"
@@ -15,7 +17,15 @@
 #include "system/video/flash.h"
 #include "enemies/enemies.h"
 CampaignLaunchState campaignLaunch;
-static const s16 machines[5][2]={{64,136},{448,136},{400,208},{416,296},{96,296}};
+static const s16 (*machinePositions(void))[2]
+{
+    return PHASE14_MACHINES;
+}
+static bool stationNearby(u8 i)
+{
+    const s16 (*positions)[2]=machinePositions();
+    return abs(px+8-positions[i][0])<=28 && py+8>=positions[i][1]+8 && py+8<=positions[i][1]+40;
+}
 static u16 lastHUD,lastHP;
 static u8 fireRow;
 static u16 radioInv;
@@ -36,32 +46,33 @@ static u8 poweredCount(void){u8 n=0;for(u8 i=0;i<5;i++)if(campaignLaunch.powered
 bool CL_active(void){return currentLevel==N_14 || currentLevel==N_15 || currentLevel==N_16;}
 static void installEquipment(bool powered,u8 radioPose)
 {
-    // All five physical cabinet bodies persist after the power mission. Both
-    // atlases plus the radio are reserved by each full-scene pack (151tiles).
+    const s16 (*positions)[2]=machinePositions();
+    // All three shipyard stages share native equipment and world anchors.
     OBJECTIVEGFX_startCampaign((1u<<OART_GENERATOR)|(radioPose<6 ? (1u<<OART_RADIO) : 0));
     for(u8 i=0;i<5;i++){
-        OBJECTIVEGFX_place(i,OART_GENERATOR,machines[i][0],machines[i][1],TRUE);
+        OBJECTIVEGFX_place(i,OART_GENERATOR,positions[i][0],positions[i][1],TRUE);
         if(powered)OBJECTIVEGFX_settle(i,3);
     }
     if(radioPose<6){
-        OBJECTIVEGFX_place(RADIO_SLOT,OART_RADIO,256,192,TRUE);
+        OBJECTIVEGFX_place(RADIO_SLOT,OART_RADIO,PHASE15_RADIO_X,PHASE15_RADIO_Y,TRUE);
         if(radioPose==4){objectiveVisuals[RADIO_SLOT].mode=4;objectiveVisuals[RADIO_SLOT].frame=4;}
         else OBJECTIVEGFX_prime(RADIO_SLOT,TRUE);
     }
 }
 static void updateRadioContact(void)
 {
-    // The raised desk is now a real solid. Contact is measured at its OUTSIDE
-    // edge so bugs never need to enter blocked floor to damage the equipment.
+    // Only the compact core's ground base is solid/vulnerable. The antenna
+    // above it never blocks movement or damages the objective on contact.
     bool contact=FALSE;if(radioInv)radioInv--;
     for(u8 i=0;i<MAX_ENEMIES;i++){
         Enemy *e=&enemies[i];if(!e->active || !ENEMY_DEF(e)->contactDmg)continue;
         const u16 size=ENEMY_SIZE(e);
-        if(e->x<313 && e->x+size>199 && e->y<217 && e->y+size>151){
-            contact=TRUE;ENEMIES_knockbackFrom(e,256,192);
+        if(e->x<PHASE15_BASE_X+PHASE15_BASE_W+1 && e->x+size>PHASE15_BASE_X-1 &&
+           e->y<PHASE15_BASE_Y+PHASE15_BASE_H+1 && e->y+size>PHASE15_BASE_Y-1){
+            contact=TRUE;ENEMIES_knockbackFrom(e,PHASE15_TARGET_X,PHASE15_TARGET_Y);
         }
     }
-    if(contact && !radioInv){npcHp-=12;if(npcHp<0)npcHp=0;radioInv=5*fps;FLASH_trigger();}
+    if(contact && !radioInv){npcHp-=12;if(npcHp<0)npcHp=0;radioInv=5*fps;OBJECTIVEGFX_radioHit();FLASH_trigger();}
 }
 void CL_start(void)
 {
@@ -72,11 +83,11 @@ void CL_start(void)
     if(currentLevel==N_14)installEquipment(FALSE,6);
     else if(currentLevel==N_15){
         campaignLaunch.powered=31;installEquipment(TRUE,2);
-        ENEMIES_setAggroSplit(3);NPC_spawn(244,180,100);campaignLaunch.left=120*fps;
+        ENEMIES_setAggroSplit(3);NPC_spawn(PHASE15_NPC_X,PHASE15_NPC_Y,100);campaignLaunch.left=120*fps;
     }else {
         campaignLaunch.powered=31;campaignLaunch.ignition=3;
-        // Same machinery and layout, with an inert damaged radio after ignition.
-        installEquipment(TRUE,4);
+        // Only the engine windows change; retain the powered stage15 equipment.
+        installEquipment(TRUE,2);
     }
     OBJECTIVEGFX_ground(TRUE);
 }
@@ -85,12 +96,23 @@ u8 CL_update(void)
     if(!CL_active())return OBJ_ONGOING;
     campaignLaunch.clock++;
     if(currentLevel==N_14){
+        const bool firing=JOY_readJoypad(JOY_1)&BUTTON_A;
         for(u8 i=0;i<5;i++)if(!(campaignLaunch.powered&(1u<<i))){
-            // Approach the front panel and release fire for0.6seconds.
-            const bool close=abs(px+8-machines[i][0])<=28 && py+8>=machines[i][1]+8 && py+8<=machines[i][1]+40;
-            OBJECTIVEGFX_prime(i,close);
-            if(close && !(JOY_readJoypad(JOY_1)&BUTTON_A)){
-                if(++campaignLaunch.work[i]>=fps*3/5){campaignLaunch.powered|=1u<<i;OBJECTIVEGFX_activate(i);sfxItemPickup();}
+            const bool close=stationNearby(i);
+            OBJECTIVEGFX_prime(i,close && !firing);
+            if(close){
+                campaignLaunch.decay[i]=0;
+                if(!firing && ++campaignLaunch.work[i]>=fps*CL_POWER_SECONDS){
+                    campaignLaunch.powered|=1u<<i;OBJECTIVEGFX_activate(i);sfxItemPickup();
+                }
+            }else if(campaignLaunch.work[i]){
+                // Each full second away removes one second of unfinished work.
+                if(++campaignLaunch.decay[i]>=fps){
+                    campaignLaunch.decay[i]=0;
+                    campaignLaunch.work[i]=campaignLaunch.work[i]>fps ? campaignLaunch.work[i]-fps : 0;
+                }
+            }else{
+                campaignLaunch.decay[i]=0;
             }
         }
         if(campaignLaunch.powered==31)return OBJ_WON;
@@ -125,7 +147,26 @@ u8 CL_update(void)
     OBJECTIVEGFX_update();OBJECTIVEGFX_ground(FALSE);return OBJ_ONGOING;
 }
 bool CL_target(s16 *x,s16 *y){if(currentLevel!=N_15 || !NPC_alive())return FALSE;*x=npcX+12;*y=npcY+12;return TRUE;}
-void CL_draw(u16 *n){if(CL_active())OBJECTIVEGFX_draw(n);}
+void CL_draw(u16 *n)
+{
+    if(!CL_active())return;
+    OBJECTIVEGFX_draw(n);
+    if(currentLevel==N_15){
+        const u16 bar=ARENA_npcBar(npcHp,npcHpMax);
+        if(bar)SPRITES_emit(n,PHASE15_BASE_X,PHASE15_BASE_Y+PHASE15_BASE_H+8,
+                           SPRITE_SIZE(4,1),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,bar));
+        return;
+    }
+    if(currentLevel!=N_14)return;
+    for(u8 i=0;i<5;i++)if(!(campaignLaunch.powered&(1u<<i)) &&
+                          (campaignLaunch.work[i] || stationNearby(i))){
+        const s16 x=PHASE14_MACHINES[i][0]-16,y=PHASE14_MACHINES[i][1]-48;
+        if(x+32<=cameraX || x>=cameraX+320 || y<cameraY+HUD_HEIGHT || y+8>cameraY+224)continue;
+        const u16 value=divu(campaignLaunch.work[i]*20,fps*CL_POWER_SECONDS)*5;
+        const u16 bar=ARENA_workBarAt(i,value,100);
+        if(bar)SPRITES_emit(n,x,y,SPRITE_SIZE(4,1),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,bar));
+    }
+}
 void CL_forceHUD(void){lastHUD=lastHP=65535;}
 bool CL_drawHUD(void)
 {
@@ -141,7 +182,7 @@ bool CL_drawHUD(void)
 }
 bool CL_prepText(char *buf,const LevelDef *def)
 {
-    if(def==&LEVEL14_def){strcpy(buf,"LIGUE AS 5 MÁQUINAS DE ENERGIA.");return TRUE;}
-    if(def==&LEVEL15_def){strcpy(buf,"PROTEJA O RÁDIO POR 120 SEGUNDOS.");return TRUE;}
+    if(def==&LEVEL14_def){strcpy(buf,"FIQUE 10s SEM ATIRAR EM CADA ESTAÇÃO.");return TRUE;}
+    if(def==&LEVEL15_def){strcpy(buf,"PROTEJA O NÚCLEO DO RÁDIO POR 120s.");return TRUE;}
     return FALSE;
 }

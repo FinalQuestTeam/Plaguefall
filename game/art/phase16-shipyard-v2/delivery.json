@@ -1,0 +1,68 @@
+{
+  "rom": "out/release/Plaguefall.bin",
+  "rom_sha256": "856de009353a84f7564dc4d030a622e69ca2cfbc9b3ef86e87d502745d7e7601",
+  "rom_bytes": 2883584,
+  "size": [
+    512,
+    576
+  ],
+  "memory": {
+    "source_tiles": 1047,
+    "cache_tiles": 480,
+    "maximum_visible_patterns": 470,
+    "generator_tiles": 53,
+    "radio_tiles": 45,
+    "total_resident_tiles": 578,
+    "heap_bytes": 5934,
+    "lossy_tile_replacements": 0,
+    "pixel_exact_reconstruction": true
+  },
+  "unchanged_outside_windows": true,
+  "generated_resources_and_native_checks": true,
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "report": "validation/ntsc/report.json",
+      "camera_views": 28,
+      "boss_combat": {
+        "minimum_boss_hp": 1,
+        "defeated": true,
+        "game_fps": 59.557,
+        "cache_peak": 326,
+        "ram_writes_during_combat": 0
+      },
+      "phase14_regression": {
+        "passed": true,
+        "report": "../phase15-shipyard-v2/validation/phase14-ntsc/report.json"
+      },
+      "phase15_regression": {
+        "passed": true,
+        "report": "../phase15-shipyard-v2/validation/ntsc/report.json"
+      }
+    },
+    "pal": {
+      "passed": true,
+      "report": "validation/pal/report.json",
+      "camera_views": 28,
+      "boss_combat": {
+        "minimum_boss_hp": 1,
+        "defeated": true,
+        "game_fps": 49.822,
+        "cache_peak": 326,
+        "ram_writes_during_combat": 0
+      },
+      "phase14_regression": {
+        "passed": true,
+        "report": "../phase15-shipyard-v2/validation/phase14-pal/report.json"
+      },
+      "phase15_regression": {
+        "passed": true,
+        "report": "../phase15-shipyard-v2/validation/pal/report.json"
+      }
+    }
+  },
+  "limits": [
+    "Genesis Plus GX; hardware físico não testado.",
+    "Combate por controle com vida e proteção do jogador elevadas uma vez por RAM; chefe original."
+  ]
+}

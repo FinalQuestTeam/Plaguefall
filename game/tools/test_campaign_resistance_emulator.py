@@ -216,6 +216,8 @@ def main():
     scene_path=build/'sources/campaign_resistance_scenes.c'
     if not scene_path.exists():scene_path=(build.parents[1]/'src/levels/campaign_resistance_scenes.c') if (build.parents[1]/'src/levels/campaign_resistance_scenes.c').exists() else GAME/'src/levels/campaign_resistance_scenes.c'
     scene_source=scene_path.read_text()
+    if '#include "levels/campaign_resistance_phase13.inc"' in scene_source:
+        scene_source+='\n'+(GAME/'src/levels/campaign_resistance_phase13.inc').read_text()
     palette_samples={}
     scene_base=785
     from campaign_objective_probe import inspect_objectives
@@ -223,14 +225,28 @@ def main():
     def native_scene_check(prefix,mapname):
         body=re.search(r'static const u16 '+prefix+'_'+mapname+r'\[\]=\{(.*?)\};',scene_source,re.S)[1]
         mp=[int(v,0) for v in re.findall(r'0x[0-9A-Fa-f]+|\b\d+\b',body)]
-        body=re.search(r'static const u32 '+prefix+r'_tiles\[\]=\{(.*?)\};',scene_source,re.S)[1]
+        body=re.search(r'static const u32 '+prefix+r'_tiles\[\][^{]*\{(.*?)\};',scene_source,re.S)[1]
         expected=b''.join(struct.pack('>I',int(v,16)) for v in re.findall(r'0x([0-9A-Fa-f]+)UL',body))
-        actual=bytes(vram[((scene_base*32+i)&65535)^1] for i in range(len(expected)))
-        assert actual==expected,('atlas mismatch',prefix)
-        cols=96 if prefix=='favela' else 64;cx=signed('cameraX')//8;cy=signed('cameraY')//8;errors=[]
-        for y in range(cy,min(cy+28,48)):
-            for x in range(cx,min(cx+40,cols)):
-                attr=vw(u16('bgb_addr')+((y&31)*64+(x&63))*2);want=0x6000|(scene_base+mp[y*cols+x])
+        cached=prefix=='union' and 'unionStream' in scene_source
+        if cached:
+            assert u16('sceneStreamFaults')==0 and u16('sceneStreamPeak')<=640,'union cache fault'
+            location=u32('location')&65535
+        else:
+            actual=bytes(vram[((scene_base*32+i)&65535)^1] for i in range(len(expected)))
+            assert actual==expected,('atlas mismatch',prefix)
+        cols=96 if prefix=='favela' else 64;cx=signed('cameraX')//8
+        cy=(signed('cameraY')+(24 if cached else 0))//8;errors=[];resident=set()
+        def expected_attr(col,row):
+            source=mp[row*cols+col]
+            if not cached:return 0x6000|(scene_base+source)
+            slot=int.from_bytes(read(location+source*2,2),'big');assert slot<640
+            actual=bytes(vram[(((scene_base+slot)*32+i)&65535)^1] for i in range(32))
+            assert actual==expected[source*32:(source+1)*32],('union cached pixels',col,row)
+            resident.add(slot);return 0x6000|(scene_base+slot)
+        end_row=min((signed('cameraY')+223)//8+1,48);end_col=min((signed('cameraX')+319)//8+1,cols)
+        for y in range(cy,end_row):
+            for x in range(cx,end_col):
+                attr=vw(u16('bgb_addr')+((y&31)*64+(x&63))*2);want=expected_attr(x,y)
                 if attr!=want:errors.append((x,y,attr,want))
         assert not errors,('native map/flip mismatch',prefix,errors[:4])
         # Outside current ground objects/labels, BG_A must be transparent or an
@@ -241,17 +257,17 @@ def main():
             if not ground or not visible:continue
             for gy in range((oy-32+8)//8-1,(oy-32+8)//8+4):
                 for gx in range((ox-16)//8,(ox-16)//8+4):excluded.add((gx,gy))
-        for y in range(cy,min(cy+28,48)):
-            for x in range(cx,min(cx+40,cols)):
+        for y in range(cy,end_row):
+            for x in range(cx,end_col):
                 if (x,y) in excluded:continue
                 attr=vw(u16('bga_addr')+((y&31)*64+(x&63))*2)
-                want=0x6000|(scene_base+mp[y*cols+x])
+                want=expected_attr(x,y)
                 assert attr==0 or attr==want,('BG_A scroll ghost',prefix,x,y,attr,want)
         cram=bytes((C.c_ubyte*128).in_dll(core,'cram'))[96:128]
         assert cram[:2]==b'\0\0','scene palette0 is not literal black'
         if prefix in palette_samples:assert cram==palette_samples[prefix],('palette changed after isolated movement',prefix)
         else:palette_samples[prefix]=cram
-        return {'passed':True,'atlas_bytes':len(expected),'pixel_exact':True,'hflip_vflip_supported':True,'camera':[signed('cameraX'),signed('cameraY')],'bg_a_clean':True,'palette_zero_black':True}
+        return {'passed':True,'atlas_bytes':len(expected),'cached':cached,'resident_tiles':len(resident) if cached else len(expected)//32,'pixel_exact':True,'hflip_vflip_supported':True,'camera':[signed('cameraX'),signed('cameraY')],'bg_a_clean':True,'palette_zero_black':True}
     for label in ('7','8','13A','13B'):
         if label not in args.phases.split(','):continue
         if label in ('7','8'):continue  # Streamed urban stages have dedicated native suites below.

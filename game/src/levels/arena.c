@@ -2,6 +2,7 @@
 #include "system/video/screens/loading.h"
 // Per-stage worlds, 64x32 VDP ring. Only newly exposed rows/columns are transferred.
 #include "levels/arena.h"
+#include "levels/camera_follow.h"
 #include "levels/operations.h"
 #include "levels/graph.h"
 #include "levels/campaign_route_ops.h"
@@ -60,7 +61,7 @@ static s16 shotLeft,shotTop,shotRight,shotBottom;
 static const u16 emptyMapLine[64]={0};
 static bool npcVisible=TRUE;
 static u16 npcBarHp=0xFFFF, npcBarMaximum;
-static u16 workBarValue=0xFFFF,workBarMaximum;
+static u16 workBarValue[ARENA_WORK_BAR_SLOT_COUNT],workBarMaximum[ARENA_WORK_BAR_SLOT_COUNT];
 static void streamRow(u16 row,TransferMethod method,bool clearDecals);
 static void streamColumn(u16 col);
 static u16 mapCols(void){return scene->cols ? scene->cols : 64;}
@@ -182,7 +183,13 @@ static u16 drawBar(u16 value,u16 maximum,u16 base,u16 *previous,u16 *previousMax
 u16 ARENA_npcBar(u16 hp,u16 maximum)
 {return drawBar(hp,maximum,NPC_BAR_BASE,&npcBarHp,&npcBarMaximum);}
 u16 ARENA_workBar(u16 value,u16 maximum)
-{return drawBar(value,maximum,WORK_BAR_BASE,&workBarValue,&workBarMaximum);}
+{return ARENA_workBarAt(0,value,maximum);}
+u16 ARENA_workBarAt(u8 slot,u16 value,u16 maximum)
+{
+    if(slot>=ARENA_WORK_BAR_SLOT_COUNT)return 0;
+    return drawBar(value,maximum,WORK_BAR_BASE-slot*ARENA_WORK_BAR_TILE_COUNT,
+                   &workBarValue[slot],&workBarMaximum[slot]);
+}
 
 void ARENA_update(void)
 {
@@ -281,8 +288,13 @@ void ARENA_camera(void)
 {
     if(!arenaActive)return;
     const s16 oldX=cameraX,oldY=cameraY;
+    const bool playerFollow=currentLevel>=N_1 && currentLevel<=N_13B;
     const bool followNpc=DINORAH_alive() && abs(px-dinorahX)<200 && abs(py-dinorahY)<120;
     s16 x,y;
+    if(playerFollow) {
+        CAMERAFOLLOW_target(world,px,py,&x,&y);
+        cameraTargetX=x;cameraTargetY=y;
+    } else {
     if(cameraTargetValid && cameraPlayerX==px && cameraPlayerY==py && cameraFollowNpc==followNpc &&
        (!followNpc || (cameraNpcX==dinorahX && cameraNpcY==dinorahY))) {
         x=cameraTargetX;y=cameraTargetY;
@@ -345,12 +357,13 @@ void ARENA_camera(void)
     cameraPlayerX=px;cameraPlayerY=py;cameraFollowNpc=followNpc;
     cameraNpcX=dinorahX;cameraNpcY=dinorahY;cameraTargetX=x;cameraTargetY=y;cameraTargetValid=TRUE;
     }
+    }
     CL_camera(&x,&y);
     const s16 maxX=world->width>320 ? world->width-320 : 0;
     s16 maxY=world->height>224 ? world->height-224 : 0;
     // This defense arena fits the player feet and the objective marker in
     // one view. Keep the Santa below the fixed HUD even at the south wall.
-    if(scene->npcVisual) {
+    if(!playerFollow && scene->npcVisual) {
         s16 focusMax=scene->npcVisual->focusTop-HUD_HEIGHT-8;
         // Prefer headroom for the Santa, but never strand Damião below the
         // viewport at the south wall. Far away, her HUD readout stays visible.
@@ -375,8 +388,18 @@ void ARENA_camera(void)
     // Keep the streaming window continuous when escort focus changes or an
     // actor falls. At most one new tile per axis; no blank-screen reload.
     if(residentTop>=0) {
-        if(x>cameraX+4)x=cameraX+4;else if(x<cameraX-4)x=cameraX-4;
-        if(y>cameraY+4)y=cameraY+4;else if(y<cameraY-4)y=cameraY-4;
+        // Only player displacement changes the target. The player's maximum
+        // speed is4px per axis; no idle pan creates a catch-up correction.
+        const s16 step=4;
+        if(x>cameraX+step)x=cameraX+step;else if(x<cameraX-step)x=cameraX-step;
+        if(y>cameraY+step)y=cameraY+step;else if(y<cameraY-step)y=cameraY-step;
+        if(playerFollow) {
+            CAMERAFOLLOW_safe(world,px,py,&x,&y);
+            // Artificial/teleport repositioning must not invalidate the
+            // streaming overlap. Normal controller movement is already safe.
+            if(x>cameraX+step)x=cameraX+step;else if(x<cameraX-step)x=cameraX-step;
+            if(y>cameraY+step)y=cameraY+step;else if(y<cameraY-step)y=cameraY-step;
+        }
     }
     if(scene->stream && !SCENESTREAM_move(x,y))return;
     cameraX=x;cameraY=y;
@@ -472,7 +495,8 @@ void ARENA_draw(void)
     const bool enabled=VDP_getEnable();
     LOADING_setEnable(FALSE);residentTop=-1;residentLeft=0;
     glowClock=0;glowCursor=0;glowPhase=0;glowUploading=FALSE;
-    npcVisible=TRUE;npcBarHp=workBarValue=0xFFFF;
+    npcVisible=TRUE;npcBarHp=0xFFFF;
+    for(u8 i=0;i<ARENA_WORK_BAR_SLOT_COUNT;i++)workBarValue[i]=0xFFFF;
     VDP_clearPlane(BG_A,TRUE);if(!LOADING_active())VDP_clearPlane(WINDOW,TRUE);
     VDP_loadFontData((const u32 *)intro_font,96,DMA);
     LOADING_setColor(1,0);VDP_setTextPriority(TRUE);

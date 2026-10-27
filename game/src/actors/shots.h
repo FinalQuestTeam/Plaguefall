@@ -69,8 +69,10 @@ void SHOTS_updateEnemy(void);
 // dispara projétil(is) inimigo(s) mirado(s) no jogador — usado pelos comportamentos
 // style1..4 identifies the firing species; stored in mode for enemy shots only.
 void SHOTS_enemyTarget(s16 x,s16 y);
+bool SHOTS_enemyHasRoom(u8 count); // reserva lógica: evita leques incompletos do chefe
 void fireEnemyShot(s16 ex, s16 ey, u8 style);
 void fireEnemySpread(s16 ex, s16 ey, u8 count, u8 style);
 void fireEnemySpreadDmg(s16 ex, s16 ey, u8 count, u8 dmg, u8 style);
+void fireEnemySpreadDmgWidth(s16 ex, s16 ey, u8 count, u8 dmg, u8 style, u8 divisor);
 
 #endif // SHOTS_H

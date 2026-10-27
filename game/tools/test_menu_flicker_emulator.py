@@ -151,40 +151,35 @@ def main():
         print(('PASS' if check['passed'] else 'FAIL'),label,'frames',frames,'unexpected',bad,flush=True)
         (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
     def help_navigation(label):
-        assert 'COMO JOGAR' in textrow(2) and '1/6' in textrow(2),textrow(2)
+        assert 'COMO JOGAR' in textrow(2) and '1/8' in textrow(2),textrow(2)
         overlay=bytes(vram[0xe000:0xf000])
-        navigation(label,[7]*6+[6]*6+[1]*6,{2}|set(range(5,24)),keep_background=True)
-        assert '1/6' in textrow(2),textrow(2)
+        navigation(label,[7]*8+[6]*8+[1]*8,{2}|set(range(5,24)),keep_background=True)
+        assert '1/8' in textrow(2),textrow(2)
         assert bytes(vram[0xe000:0xf000])==overlay,'help left stale text or icons after wrapping'
     try:
         run(120);press(3);run(fps*4)
-        press(5);press(1);wait(lambda:'1/6' in textrow(2),'title-help');run(2);help_navigation('title-help-pages')
+        press(5);press(1);wait(lambda:'1/8' in textrow(2),'title-help');run(2);help_navigation('title-help-pages')
         press(0);wait(lambda:'NOVO JOGO' in textrow(12),'title-after-help');run(fps);press(4)
         navigation('title',[5,5,5,5,4],set(range(12,19)))
-        # Cursor ends at test rooms (UP from new game).
+        # Cursor ends at the campaign selector (UP from new game).
         press(1);run(fps)
-        assert 'SALAS DE TESTE' in textrow(2),textrow(2)
-        navigation('room-selector',[5]*8+[4],set(range(5,24)))
-        press(5);press(1);wait(lambda:state()==1 and u8('testStage')==1,'training');run(fps)
-        training=snap()
-        press(3);wait(lambda:state()==2,'training-pause');run(10)
-        navigation('training-pause',[5]*6+[4],set(range(12,24)))
-        # Wrap back to continue, then choose configuration.
-        press(5);press(5);press(1);run(15)
-        assert 'CONFIGURAR TESTE' in textrow(2),textrow(2)
-        navigation('training-settings',[5]*6+[4,7,6],set(range(5,18)))
-        press(0);wait(lambda:state()==1,'cancel-config');run(10)
-        # Campaign pause and its confirmation.
-        restore(training);press(3);run(10);press(4);press(1);run(10);press(5);press(1);run(fps*2)
+        assert 'FASES DA CAMPANHA' in textrow(2),textrow(2)
+        navigation('campaign-selector',[5]*8+[4],set(range(4,24)))
+        press(0);run(fps)
+        assert 'NOVO JOGO' in textrow(12),textrow(12)
+        press(4);press(1);run(fps)
+        assert 'FASES DA CAMPANHA' in textrow(2),textrow(2)
+        press(3);run(fps)
         assert 'NOVO JOGO' in textrow(12),textrow(12)
         press(1);wait(lambda:state()==6,'campaign-story');run(fps);press(3)
+        wait(lambda:state()==8,'entry-code');press(1)
         wait(lambda:state()==0 and 'A: COMEÇAR' in textrow(26),'briefing')
         briefing=snap();press(1);wait(lambda:state()==1,'campaign');run(fps*4)
         campaign=snap();press(3);wait(lambda:state()==2,'campaign-pause');run(10)
-        press(5);press(1);wait(lambda:'1/6' in textrow(2),'pause-help');run(2);help_navigation('pause-help-pages')
+        press(5);press(1);wait(lambda:'1/8' in textrow(2),'pause-help');run(2);help_navigation('pause-help-pages')
         press(0);run(2);assert state()==2 and 'PAUSADO' in textrow(2),textrow(2)
         press(4)
-        navigation('campaign-pause',[5,5,5,4],set(range(16,22)))
+        navigation('campaign-pause',[5,5,5,5,4],set(range(16,24)))
         press(1);run(10);assert 'SAIR DA PARTIDA?' in textrow(2),textrow(2)
         navigation('pause-exit-confirmation',[5,5,4,4],set(range(15,20)))
         restore(campaign)
@@ -197,10 +192,11 @@ def main():
         press(1);run(10);assert u8('exitView')==1
         navigation('defeat-exit-confirmation',[5,5,4,4],set(range(14,19)))
         # Final uses production entry; only phase and boss completion are seeded.
-        restore(briefing);allow_writes=True;write(syms['pendingLevel'][0],bytes([20]));allow_writes=False
+        restore(briefing);allow_writes=True;write(syms['pendingLevel'][0],bytes([19]));allow_writes=False
         press(1);wait(lambda:state()==1,'final-stage');run(fps*4)
         allow_writes=True;write(syms['bossDefeated'][0],b'\1');allow_writes=False
-        wait(lambda:state()==6,'final-dialogue');run(fps);press(3)
+        # The epilogue now plays illustrated slides inside the transition.
+        run(fps*2);press(3)
         wait(lambda:state()==7 and u8('resultActive')==1,'victory');run(fps)
         navigation('victory',[5,5,4,4],set(range(15,20)))
         report['passed']=all(c['passed'] for c in report['checks'])

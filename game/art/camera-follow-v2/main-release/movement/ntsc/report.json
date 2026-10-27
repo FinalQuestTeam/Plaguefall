@@ -1,0 +1,933 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "2910b98fc856c9511a32a05b405a6119ed1f66fd62354ad852f33e3045dccf45",
+  "buildDirectory": "game/out/release",
+  "emulatedRomSHA256": "2910b98fc856c9511a32a05b405a6119ed1f66fd62354ad852f33e3045dccf45",
+  "movieEnabled": false,
+  "checks": {},
+  "scope": "Dynamic camera audit, all 14 campaign variants of stages 1\u201312",
+  "method": "Genesis Plus GX production ROM. RAM only before trials: node, speed bonus, protection, enemy isolation and starting position. Every measured sample is real controller movement, guarded against RAM writes. Full 32x48 sprite uses (px-8,py-31). Visible gameplay rectangle is x=0..319,y=24..223. Boundary-constrained centering is measured separately from avoidable framing error. No gameplay code or ROM modified.",
+  "stages": [
+    {
+      "phase": "3",
+      "node": 4,
+      "geometry": {
+        "width": 2560,
+        "height": 320,
+        "bounds": [
+          16,
+          144,
+          2543,
+          263
+        ],
+        "solids": [
+          [
+            344,
+            232,
+            48,
+            16
+          ],
+          [
+            440,
+            136,
+            16,
+            16
+          ],
+          [
+            560,
+            136,
+            16,
+            16
+          ],
+          [
+            656,
+            192,
+            64,
+            24
+          ],
+          [
+            936,
+            256,
+            48,
+            16
+          ],
+          [
+            1120,
+            256,
+            48,
+            16
+          ],
+          [
+            1288,
+            136,
+            16,
+            16
+          ],
+          [
+            1408,
+            184,
+            48,
+            16
+          ],
+          [
+            1672,
+            248,
+            64,
+            24
+          ],
+          [
+            1840,
+            136,
+            16,
+            16
+          ],
+          [
+            1944,
+            176,
+            32,
+            16
+          ],
+          [
+            2128,
+            224,
+            48,
+            16
+          ],
+          [
+            2192,
+            136,
+            16,
+            16
+          ]
+        ],
+        "anchor": 240,
+        "focus": [
+          [
+            32,
+            24,
+            232,
+            176
+          ],
+          [
+            2240,
+            24,
+            288,
+            176
+          ]
+        ],
+        "south_start": 184,
+        "streamed": true
+      },
+      "trials": [
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 373,
+          "moving_samples": 252,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.22,
+          "physical_seconds": 6.33,
+          "fps": 58.89,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              1284,
+              200
+            ],
+            "camera": [
+              1132,
+              69
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 292
+          },
+          "end_state": 1,
+          "live_pixel_cells": 9372,
+          "stream_deferrals": 0
+        }
+      ]
+    },
+    {
+      "phase": "5",
+      "node": 6,
+      "geometry": {
+        "width": 384,
+        "height": 448,
+        "bounds": [
+          16,
+          112,
+          367,
+          399
+        ],
+        "solids": [
+          [
+            176,
+            256,
+            40,
+            48
+          ],
+          [
+            40,
+            176,
+            56,
+            40
+          ],
+          [
+            304,
+            336,
+            40,
+            40
+          ]
+        ],
+        "anchor": 0,
+        "focus": [],
+        "south_start": 304,
+        "streamed": false
+      },
+      "trials": [
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 380,
+          "moving_samples": 259,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.33,
+          "physical_seconds": 6.33,
+          "fps": 60.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              196,
+              240
+            ],
+            "camera": [
+              44,
+              109
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 52
+          },
+          "end_state": 1,
+          "live_pixel_cells": 9091,
+          "stream_deferrals": 0
+        }
+      ]
+    },
+    {
+      "phase": "6A",
+      "node": 7,
+      "geometry": {
+        "width": 3072,
+        "height": 320,
+        "bounds": [
+          24,
+          80,
+          3047,
+          271
+        ],
+        "solids": [
+          [
+            56,
+            80,
+            104,
+            88
+          ],
+          [
+            2880,
+            80,
+            128,
+            64
+          ],
+          [
+            320,
+            224,
+            32,
+            16
+          ],
+          [
+            656,
+            112,
+            80,
+            48
+          ],
+          [
+            880,
+            240,
+            32,
+            16
+          ],
+          [
+            1168,
+            248,
+            48,
+            16
+          ],
+          [
+            1376,
+            128,
+            32,
+            16
+          ],
+          [
+            1672,
+            112,
+            80,
+            48
+          ],
+          [
+            1968,
+            248,
+            48,
+            16
+          ],
+          [
+            2184,
+            240,
+            32,
+            16
+          ],
+          [
+            2368,
+            128,
+            40,
+            24
+          ],
+          [
+            832,
+            80,
+            32,
+            32
+          ],
+          [
+            832,
+            176,
+            32,
+            96
+          ],
+          [
+            1856,
+            80,
+            32,
+            112
+          ],
+          [
+            1856,
+            256,
+            32,
+            16
+          ]
+        ],
+        "anchor": 200,
+        "focus": [
+          [
+            56,
+            24,
+            102,
+            144
+          ],
+          [
+            2880,
+            24,
+            128,
+            115
+          ]
+        ],
+        "south_start": 192,
+        "streamed": true,
+        "gates_seeded_open_before_trials": true
+      },
+      "trials": [
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 380,
+          "moving_samples": 279,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.33,
+          "physical_seconds": 6.33,
+          "fps": 60.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              1540,
+              176
+            ],
+            "camera": [
+              1388,
+              45
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 385
+          },
+          "end_state": 1,
+          "live_pixel_cells": 9412,
+          "stream_deferrals": 0
+        }
+      ]
+    },
+    {
+      "phase": "6B",
+      "node": 8,
+      "geometry": {
+        "width": 3072,
+        "height": 320,
+        "bounds": [
+          24,
+          80,
+          3047,
+          271
+        ],
+        "solids": [
+          [
+            56,
+            80,
+            104,
+            88
+          ],
+          [
+            2880,
+            80,
+            128,
+            64
+          ],
+          [
+            320,
+            224,
+            32,
+            16
+          ],
+          [
+            656,
+            112,
+            80,
+            48
+          ],
+          [
+            880,
+            240,
+            32,
+            16
+          ],
+          [
+            1168,
+            248,
+            48,
+            16
+          ],
+          [
+            1376,
+            128,
+            32,
+            16
+          ],
+          [
+            1672,
+            112,
+            80,
+            48
+          ],
+          [
+            1968,
+            248,
+            48,
+            16
+          ],
+          [
+            2184,
+            240,
+            32,
+            16
+          ],
+          [
+            2368,
+            128,
+            40,
+            24
+          ],
+          [
+            832,
+            80,
+            32,
+            32
+          ],
+          [
+            832,
+            176,
+            32,
+            96
+          ],
+          [
+            1856,
+            80,
+            32,
+            112
+          ],
+          [
+            1856,
+            256,
+            32,
+            16
+          ]
+        ],
+        "anchor": 200,
+        "focus": [
+          [
+            56,
+            24,
+            102,
+            144
+          ],
+          [
+            2880,
+            24,
+            128,
+            115
+          ]
+        ],
+        "south_start": 192,
+        "streamed": true,
+        "gates_seeded_open_before_trials": true
+      },
+      "trials": [
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 380,
+          "moving_samples": 279,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.33,
+          "physical_seconds": 6.33,
+          "fps": 60.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              1540,
+              176
+            ],
+            "camera": [
+              1388,
+              45
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 385
+          },
+          "end_state": 1,
+          "live_pixel_cells": 9412,
+          "stream_deferrals": 0
+        }
+      ]
+    },
+    {
+      "phase": "9",
+      "node": 11,
+      "geometry": {
+        "width": 2560,
+        "height": 320,
+        "bounds": [
+          16,
+          96,
+          2543,
+          287
+        ],
+        "solids": [
+          [
+            128,
+            32,
+            128,
+            128
+          ],
+          [
+            672,
+            160,
+            128,
+            128
+          ],
+          [
+            1120,
+            32,
+            288,
+            128
+          ],
+          [
+            1760,
+            160,
+            288,
+            128
+          ],
+          [
+            400,
+            208,
+            96,
+            64
+          ],
+          [
+            1248,
+            224,
+            96,
+            64
+          ],
+          [
+            2256,
+            176,
+            96,
+            64
+          ]
+        ],
+        "anchor": 184,
+        "focus": [
+          [
+            128,
+            32,
+            128,
+            128
+          ],
+          [
+            672,
+            160,
+            128,
+            128
+          ],
+          [
+            1120,
+            32,
+            288,
+            128
+          ],
+          [
+            1760,
+            160,
+            288,
+            128
+          ],
+          [
+            2416,
+            32,
+            80,
+            64
+          ]
+        ],
+        "south_start": 216,
+        "streamed": true
+      },
+      "trials": [
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 380,
+          "moving_samples": 231,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.33,
+          "physical_seconds": 6.33,
+          "fps": 60.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 2,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              1284,
+              192
+            ],
+            "camera": [
+              1132,
+              61
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 321
+          },
+          "end_state": 1,
+          "live_pixel_cells": 9438,
+          "stream_deferrals": 0
+        }
+      ]
+    },
+    {
+      "phase": "12",
+      "node": 14,
+      "geometry": {
+        "width": 3072,
+        "height": 320,
+        "bounds": [
+          16,
+          112,
+          3055,
+          287
+        ],
+        "solids": [
+          [
+            0,
+            0,
+            3072,
+            112
+          ],
+          [
+            64,
+            24,
+            304,
+            160
+          ],
+          [
+            688,
+            24,
+            160,
+            128
+          ],
+          [
+            1200,
+            24,
+            160,
+            128
+          ],
+          [
+            1712,
+            24,
+            160,
+            128
+          ],
+          [
+            2224,
+            24,
+            160,
+            128
+          ],
+          [
+            2720,
+            24,
+            304,
+            176
+          ],
+          [
+            400,
+            240,
+            32,
+            32
+          ],
+          [
+            416,
+            128,
+            40,
+            40
+          ],
+          [
+            720,
+            208,
+            96,
+            64
+          ],
+          [
+            928,
+            224,
+            40,
+            40
+          ],
+          [
+            1200,
+            240,
+            32,
+            32
+          ],
+          [
+            1408,
+            112,
+            96,
+            64
+          ],
+          [
+            1744,
+            208,
+            96,
+            64
+          ],
+          [
+            1984,
+            224,
+            40,
+            40
+          ],
+          [
+            2224,
+            240,
+            32,
+            32
+          ],
+          [
+            2432,
+            112,
+            96,
+            64
+          ],
+          [
+            2608,
+            240,
+            32,
+            32
+          ]
+        ],
+        "anchor": 200,
+        "focus": [
+          [
+            64,
+            24,
+            304,
+            160
+          ],
+          [
+            688,
+            24,
+            160,
+            128
+          ],
+          [
+            1200,
+            24,
+            160,
+            128
+          ],
+          [
+            1712,
+            24,
+            160,
+            128
+          ],
+          [
+            2224,
+            24,
+            160,
+            128
+          ],
+          [
+            2720,
+            24,
+            304,
+            176
+          ]
+        ],
+        "south_start": 224,
+        "streamed": false
+      },
+      "trials": [
+        {
+          "trial": "middle-reversals-speed100",
+          "samples": 380,
+          "moving_samples": 277,
+          "ram_writes_during_trial": 0,
+          "simulated_seconds": 6.33,
+          "physical_seconds": 6.33,
+          "fps": 60.0,
+          "max_error_x": 0,
+          "max_error_y": 0,
+          "moving_p95_error_x": 0,
+          "moving_p95_error_y": 0,
+          "clipped_samples": 0,
+          "target_jumps_over12": 0,
+          "escort_switches": 0,
+          "landmark_switches": 0,
+          "possible_stream_holds": 0,
+          "worst": {
+            "position": [
+              1540,
+              200
+            ],
+            "camera": [
+              1388,
+              69
+            ],
+            "error": [
+              0,
+              0
+            ],
+            "sprite": [
+              144,
+              100,
+              32,
+              48
+            ],
+            "frame": 385
+          },
+          "end_state": 1,
+          "live_pixel_cells": 9372,
+          "stream_deferrals": 0
+        }
+      ]
+    }
+  ],
+  "findings_are_not_test_failures": true
+}

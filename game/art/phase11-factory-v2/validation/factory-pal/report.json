@@ -1,0 +1,28 @@
+{
+  "region": "PAL",
+  "rom_sha256": "25e90dd045309f276ff96b4e7150bc8be8b98eaf37f86dcbfef812be2127d9e7",
+  "passed": true,
+  "nodes": {
+    "9": {
+      "dedicated_native_suite": {
+        "passed": true,
+        "report": "phase9-current/report.json"
+      }
+    },
+    "10": {
+      "dedicated_native_suite": {
+        "passed": true,
+        "report": "phase10-current/report.json"
+      }
+    },
+    "11": {
+      "dedicated_native_suite": {
+        "passed": true,
+        "report": "phase11-current/report.json"
+      }
+    }
+  },
+  "method": "RAM seeds node entry and explicit isolated probes; objective execution uses controller input. Stress is RAM seeded, FPS measures simulation frames per VBlank.",
+  "scene_export_sha256": "70a530c2519a5151906dfb79e63fdace8cde0dd9cf5f8678a4c9039f3c971391",
+  "geometry_sha256": "75732c8d9632997ae444fef2d775156900693e8a070ca705bafe26e347d57e45"
+}

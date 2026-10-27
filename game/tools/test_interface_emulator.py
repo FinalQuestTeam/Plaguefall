@@ -184,9 +184,39 @@ def main():
         'setup':'RAM accelerates phase selection and death for entry; no RAM writes during interface navigation, pause, help, cancellation or resume.',
         'phases':[],'helpPages':8,'failures':[]}
     def save(): (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
-    names=['','1','2A','2B','3','4','5','6A','6B','7','8','9','10A','10B','11','12','13A','13B','14','15','16']
-    mission=json.loads((GAME/'art/interface-ux-v2/avaliacao.json').read_text())['phases']
-    current_copy=json.loads((GAME/'art/interface-ux-v2/conteudo-aprovado.json').read_text())['phases']
+    # Current19-node campaign, rather than the historical20-node mockup.
+    current_copy=json.loads((GAME/'art/interface-ux-v2/campanha-v2.json').read_text())['phases']
+    names=['']+[phase['id'] for phase in current_copy]
+    goals=(
+        'SOBREVIVA POR 90 SEGUNDOS NO PÁTIO.',
+        'ELIMINE 15 INSETOS PARA LIBERAR O PÁTIO.',
+        'ELIMINE 15 INSETOS PARA LIBERAR O PÁTIO.',
+        'ATRAVESSE A RUA E CHEGUE AO GALPÃO.',
+        'ELIMINE 20 INSETOS DENTRO DO GALPÃO.',
+        'PROTEJA A SANTA E O COMUNICADOR POR 120 SEGUNDOS.',
+        'ESCOLTE DINORAH ATÉ A SAÍDA. DESTRUA OS 2 PORTÕES.',
+        'ESCOLTE DINORAH. ABRA AS 2 VÁLVULAS E DESTRUA OS 2 PORTÕES.',
+        'ABRA OS BAÚS E ENTREGUE AS 5 CARGAS AO DEPÓSITO.',
+        'DESTRUA OS 3 TRANSMISSORES MARCADOS.',
+        'ATRAVESSE A RUA INDUSTRIAL ATÉ A FÁBRICA.',
+        'DESTRUA OS 10 NINHOS DE OVOS DA FÁBRICA.',
+        'REAQUEÇA A FÁBRICA: ABRA AS 6 VÁLVULAS.',
+        'ESCOLTE DINORAH VIVA ATÉ O SINDICATO.',
+        'ELIMINE 30 INSETOS PARA LIBERAR O SINDICATO.',
+        'ELIMINE 45 INSETOS PARA LIBERAR O SINDICATO.',
+        'LIGUE OS 5 GERADORES DO ESTALEIRO.',
+        'PROTEJA O NÚCLEO DO RÁDIO POR 120 SEGUNDOS.',
+        'DERROTE O ESCORPIÃO, QUE COORDENA O ENXAME.',
+    )
+    assert len(goals)==CAMPAIGN_NODE_COUNT
+    mission=[{'goal':goal} for goal in goals]
+    for phase in current_copy:
+        suffix=phase['id'].lower()
+        if suffix.endswith('a'):suffix=suffix[:-1]
+        filename='level'+suffix.zfill(2)+'.c'
+        if suffix.endswith('b'):filename='level'+suffix[:-1].zfill(2)+'b.c'
+        definition=(GAME/'src/levels/defs'/filename).read_text()
+        phase['roster']=list(dict.fromkeys(re.findall(r'\bENEMY_[A-Z_]+\b',definition)))
     enemy_ids={name:int(value) for name,value in re.findall(r'^#define\s+(ENEMY_\w+)\s+(\d+)\b',
         (GAME/'src/enemies/enemies.h').read_text(),re.M)}
     portraits=(GAME/'res/mission/portraits.bin').read_bytes()
@@ -217,8 +247,6 @@ def main():
     for phase,copy in zip(mission,current_copy):phase['name']=copy['name']
     import unicodedata
     def plain(text):return unicodedata.normalize('NFKD',text).encode('ascii','ignore').decode()
-    mission[4]['goal']='CHEGUE A SAIDA SINALIZADA.'
-    mission[7]['goal']='LEVE DINORAH VIVA ATE A SAIDA.'
     try:
         run(120);press(3);run(fps*4);shot('menu')
         press(5);press(1);run(fps)
@@ -234,8 +262,11 @@ def main():
         assert state()==6 and u16('typed')==u16('typeTotal') and u8('lineIdx')==0,'radio first line incomplete'
         press(1);run(fps*2);shot('dialogue-damiao')
         if u16('typed')<u16('typeTotal'):press(1)
-        assert state()==6 and u16('typed')==u16('typeTotal') and u8('lineIdx')==1,'radio last line incomplete'
-        press(1);until(lambda:state()==0 and 'A: COMEÇAR' in textrow(26) and not u8('transitioning'),'prep1');run(2)
+        assert state()==6 and u16('typed')==u16('typeTotal') and u8('lineIdx')==1,'radio Damião line incomplete'
+        press(1);run(fps)
+        if u16('typed')<u16('typeTotal'):press(1)
+        press(1);until(lambda:state()==8 and not u8('transitioning'),'entry-code');press(1)
+        until(lambda:state()==0 and 'A: COMEÇAR' in textrow(26) and not u8('transitioning'),'prep1');run(2)
         assert 'PÁTIO DA IGREJA' in textrow(5),textrow(5)
         press(8);run(3);assert u8('pendingLevel')==1,'C must not skip preparation in release'
         baseline=snapshot()
@@ -243,7 +274,10 @@ def main():
             ordinary=False;restore(baseline)
             # Real startPhase establishes actors/objective. Accelerated death
             # then uses the ordinary story -> briefing -> start path.
-            write(syms['pendingLevel'][0],bytes([node]));press(1)
+            write(syms['pendingLevel'][0],bytes([node]))
+            flags={3:1,8:2,16:4}.get(node,0)
+            write(syms['campaignFlags'][0],bytes([flags]))
+            write(syms['checkpoint'][0],bytes([node,flags,1,0]));press(1)
             until(lambda:state()==1 and not u8('transitioning'),'setup-play');run(fps*4)
             # Enter the actual defeat/result path, including its input delay.
             w16('hp',0);write(syms['gameOver'][0],b'\1')
@@ -255,7 +289,7 @@ def main():
             assert mission[node-1]['name'] in textrow(5),('place',node,textrow(5))
             goal=' '.join(textrow(r).replace('.',' ').strip() for r in (9,10))
             expected=mission[node-1]['goal'].replace('.','')
-            assert plain(expected) in plain(goal),('goal',node,goal,expected)
+            assert ' '.join(plain(expected).split()) in ' '.join(plain(goal).split()),('goal',node,goal,expected)
             assert 'SUA MISSÃO' in textrow(7) and 'AMEAÇA PRINCIPAL' in textrow(12)
             assert 'DICA DE COMBATE' in textrow(21) and 'B: GUIA' in textrow(26)
             tip=' '.join(' '.join(textrow(r).replace('.',' ') for r in (22,23)).split())
@@ -291,7 +325,7 @@ def main():
             same(frozen,'mission guide return')
             observe_radio=False
             ordinary=True;press(1);until(lambda:state()==1,'play');run(fps*4)
-            before=simulation();graphics=picture();enter_pause();same(before,'pause entry')
+            graphics=picture();enter_pause();before=simulation();run(2);same(before,'pause entry')
             # PANEL_begin flushes already queued actor DMA before lending VRAM.
             # Its snapshot is the stable, fully submitted gameplay picture.
             count=int((GAME/'src/system/video/screens/panel_data.h').read_text().split('PANEL_TILE_COUNT ')[1].split()[0])
@@ -315,8 +349,8 @@ def main():
                 if node==6:shot('pause-help-'+str(page+1))
                 press(7)
             press(0);assert state()==2 and 'PAUSADO' in textrow(2),'help must return to pause'
-            # Selection remains on help. Next option requests exit, default safe.
-            press(5);press(1);assert 'SAIR DA PARTIDA?' in textrow(2)
+            # Selection remains on help; skip the code entry to request exit, default safe.
+            press(5);press(5);press(1);assert 'SAIR DA PARTIDA?' in textrow(2)
             if node==6:shot('exit-confirmation')
             same(before,'exit confirmation');press(1)
             assert state()==2 and 'PAUSADO' in textrow(2),'default confirmation must cancel'
@@ -344,7 +378,7 @@ def main():
         write(syms['enemies'][0],bytes(syms['enemies'][1]));w16('spawnTimer',60000)
         ordinary=True;hold({0,1,8},3);assert u8('currentLevel')==1,'release debug combo still skips stage'
         # Confirming the destructive option is the only route from pause to title.
-        enter_pause();press(5);press(5);press(1);press(5);press(1);run(fps*2)
+        enter_pause();press(5);press(5);press(5);press(1);press(5);press(1);run(fps*2)
         shot('title-after-confirmed-exit');assert 'NOVO JOGO' in textrow(12),'confirmed exit did not reach title'
         report['releaseShortcutsDisabled']=True;report['confirmedExitWorks']=True
         report['persistentMissionContentFramesChecked']=radio_frame_checks

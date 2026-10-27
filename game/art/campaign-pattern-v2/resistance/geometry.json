@@ -1,6 +1,8 @@
 {
   "favela_tiles": 492,
-  "union_tiles": 620,
+  "union_tiles": 640,
+  "union_source_tiles": 1253,
+  "union_scene": "../phase13-union-v2/manifest.json",
   "favela_bounds": [
     40,
     160,
@@ -11,7 +13,7 @@
     24,
     160,
     487,
-    295
+    487
   ],
   "favela_solids": [
     [
@@ -69,19 +71,19 @@
   "union_solids": [
     [
       80,
-      264,
+      328,
       104,
       16
     ],
     [
       216,
-      208,
+      272,
       104,
       16
     ],
     [
       352,
-      264,
+      392,
       104,
       16
     ]
@@ -133,7 +135,7 @@
     ],
     "13A/13B": [
       512,
-      384
+      576
     ]
   },
   "whole_source_first": true,

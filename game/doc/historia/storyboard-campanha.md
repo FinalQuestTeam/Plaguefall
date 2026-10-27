@@ -532,6 +532,8 @@ A: alto à esquerda. B: alto à direita. C: embaixo à esquerda. D: embaixo à d
 
 ## Composição dos encerramentos
 
+Esta composição está integrada à ROM como [sequência de três slides](../../art/ending-slides-v1/README.md): 8 segundos para a igreja, 7 para a população e 10 para Dinorah. Os quadros têm fades, legendas e partículas como na introdução; START pula para a tela de vitória. As oito combinações foram verificadas em NTSC/PAL.
+
 | Igreja | Resgate | Dinorah | Quadros |
 |---|---|---|---|
 | Preservada | Completo | Viva | 07A + 07C + 06C |

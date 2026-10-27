@@ -13,6 +13,7 @@ static char wrapBuf[4][27];
 static u8 radioRemote;
 static u16 typed,typeTotal;
 void STORYSCR_reset(void){seen[0]=seen[1]=0;}
+void STORYSCR_restore(u32 completedNodes){seen[0]=seen[1]=completedNodes;}
 static void wrapText(const char *text)
 {
     wrapLines=0;typeTotal=0;

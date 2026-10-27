@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "region": "PAL",
+  "romSHA256": "a5974952c03a5a134831ef1125a2cbd030e032c8927b581bccba1d0de35bd3cb",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "880f31521d6d63e250712c9c8482d8e40af4ad5e309ca193e87f6b36f7910573",
+  "movieEnabled": false,
+  "checks": {
+    "real-hit-at12hp-triggers-once-with-stationary-local-flash": {
+      "duration_updates": 40,
+      "bright": true,
+      "dark": true
+    },
+    "two-reaimed-charges-each-with-locked-stationary-warning": {
+      "warnings": [
+        {
+          "updates": 17,
+          "locked_velocity": [
+            205,
+            32
+          ]
+        },
+        {
+          "updates": 17,
+          "locked_velocity": [
+            -210,
+            23
+          ]
+        }
+      ],
+      "charges": [
+        {
+          "updates": 25,
+          "position": [
+            255,
+            366
+          ]
+        },
+        {
+          "updates": 25,
+          "position": [
+            173,
+            375
+          ]
+        }
+      ]
+    },
+    "exact1.2second-stationary-recovery-takes-real-projectile-damage": {
+      "updates": 60,
+      "hp": 11
+    },
+    "alternating-wide-and-narrow-complete-five-shot-fans": [
+      {
+        "divisor": 2,
+        "velocities": [
+          [
+            150,
+            -94
+          ],
+          [
+            136,
+            -33
+          ],
+          [
+            122,
+            28
+          ],
+          [
+            108,
+            89
+          ],
+          [
+            94,
+            150
+          ]
+        ]
+      },
+      {
+        "divisor": 6,
+        "velocities": [
+          [
+            131,
+            -16
+          ],
+          [
+            127,
+            5
+          ],
+          [
+            123,
+            25
+          ],
+          [
+            119,
+            45
+          ],
+          [
+            115,
+            66
+          ]
+        ]
+      }
+    ],
+    "periodic-armor-stays-off-and-boss-remains-damageable": true,
+    "fury-alternation-waits-for-whole-fan-without-skipping-pattern": true,
+    "summons-never-exceed-two-live-hunters-and-refill-one-vacancy": true,
+    "contact-and-minion-separation-cannot-cancel-recovery": true,
+    "pause-freezes-fury-state-and-resumes-same-phase": true,
+    "defeat-retry-clears-fury-and-restores25hp": true,
+    "30second-moving-fury-load-with-two-hunters-and-full-shot-pools": {
+      "seconds": 30,
+      "game_fps": 49.833,
+      "max_hunters": 2,
+      "max_enemy_shots": 8,
+      "sprite_limits": [
+        16,
+        8,
+        120
+      ],
+      "modes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "cache_peak": 393,
+      "ram_writes_during_load": 0
+    }
+  },
+  "scope": "Boss phase2 real-ROM isolated probes: real damage threshold, local flash, double locked charges, vulnerable recovery, wide/narrow complete fans, no armor, two hunters, contact, pause and retry. RAM prepares isolated situations; production AI/physics/damage execute."
+}

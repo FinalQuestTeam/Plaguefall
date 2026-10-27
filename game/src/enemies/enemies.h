@@ -162,7 +162,8 @@ u16 ENEMIES_update(void);
 // retorna ENEMY_HIT_NONE / ENEMY_HIT_DAMAGED / ENEMY_HIT_KILLED
 u16 ENEMIES_damageBox(s16 x, s16 y, s16 w, s16 h, u8 status);
 
-// mata todos os inimigos ativos (bomba); sem drop de itens;
+// bomba: mata os comuns, preserva os transmissores de objetivo e poupa o chefe;
+// sem drop de itens;
 // retorna quantos morreram
 u16 ENEMIES_killAll(void);
 

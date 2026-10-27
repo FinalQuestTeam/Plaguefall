@@ -1,0 +1,234 @@
+{
+  "rom": "out/release/Plaguefall.bin",
+  "rom_sha256": "856de009353a84f7564dc4d030a622e69ca2cfbc9b3ef86e87d502745d7e7601",
+  "rom_bytes": 2883584,
+  "size": [
+    512,
+    576
+  ],
+  "memory": {
+    "cache_tiles": 480,
+    "source_tiles": {
+      "normal": 1047,
+      "fire": 1047
+    },
+    "maximum_visible_patterns": {
+      "normal": 470,
+      "fire": 470
+    },
+    "generator_tiles": 53,
+    "radio_tiles": 45,
+    "total_resident_tiles": 578,
+    "heap_bytes": {
+      "normal": 5934,
+      "fire": 5934
+    },
+    "lossy_tile_replacements": 0
+  },
+  "objective_seconds": 120,
+  "generators_powered_on_entry": true,
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "report": "validation/ntsc/report.json",
+      "camera_views": 28,
+      "load": [
+        {
+          "section": "engines",
+          "seconds": 20,
+          "game_fps": 54.15,
+          "cache_peak": 470,
+          "cache_faults": 0,
+          "sprite_limits": [
+            16,
+            6,
+            104
+          ]
+        },
+        {
+          "section": "antenna",
+          "seconds": 20,
+          "game_fps": 57.05,
+          "cache_peak": 393,
+          "cache_faults": 0,
+          "sprite_limits": [
+            16,
+            6,
+            96
+          ]
+        },
+        {
+          "section": "battery",
+          "seconds": 20,
+          "game_fps": 56.2,
+          "cache_peak": 470,
+          "cache_faults": 0,
+          "sprite_limits": [
+            16,
+            6,
+            96
+          ]
+        }
+      ],
+      "full_defense": {
+        "seconds": 120,
+        "ram_writes_during_defense": 0,
+        "complete": true
+      },
+      "phase14_regression": {
+        "passed": true,
+        "report": "validation/phase14-ntsc/report.json"
+      },
+      "phase16_regression": {
+        "passed": true,
+        "report": "../phase16-shipyard-v2/validation/ntsc/report.json"
+      },
+      "core_collision_and_feedback": {
+        "antenna-damage-from-all-four-outside-edges": [
+          {
+            "edge": "west",
+            "damage": 12
+          },
+          {
+            "edge": "east",
+            "damage": 12
+          },
+          {
+            "edge": "north",
+            "damage": 12
+          },
+          {
+            "edge": "south",
+            "damage": 12
+          }
+        ],
+        "mast-does-not-block-player": {
+          "x": 332,
+          "hp": 100
+        },
+        "mast-and-removed-console-never-receive-damage": true,
+        "actor-depth-under-mast-and-in-front-of-core": [
+          {
+            "position": [
+              248,
+              280
+            ],
+            "foreground": false
+          },
+          {
+            "position": [
+              248,
+              320
+            ],
+            "foreground": true
+          }
+        ],
+        "core-flashes-locally-after-damage": [
+          0,
+          1
+        ]
+      }
+    },
+    "pal": {
+      "passed": true,
+      "report": "validation/pal/report.json",
+      "camera_views": 28,
+      "load": [
+        {
+          "section": "engines",
+          "seconds": 20,
+          "game_fps": 47.75,
+          "cache_peak": 289,
+          "cache_faults": 0,
+          "sprite_limits": [
+            15,
+            5,
+            112
+          ]
+        },
+        {
+          "section": "antenna",
+          "seconds": 20,
+          "game_fps": 48.95,
+          "cache_peak": 393,
+          "cache_faults": 0,
+          "sprite_limits": [
+            16,
+            6,
+            96
+          ]
+        },
+        {
+          "section": "battery",
+          "seconds": 20,
+          "game_fps": 48.15,
+          "cache_peak": 393,
+          "cache_faults": 0,
+          "sprite_limits": [
+            16,
+            6,
+            136
+          ]
+        }
+      ],
+      "full_defense": {
+        "seconds": 120,
+        "ram_writes_during_defense": 0,
+        "complete": true
+      },
+      "phase14_regression": {
+        "passed": true,
+        "report": "validation/phase14-pal/report.json"
+      },
+      "phase16_regression": {
+        "passed": true,
+        "report": "../phase16-shipyard-v2/validation/pal/report.json"
+      },
+      "core_collision_and_feedback": {
+        "antenna-damage-from-all-four-outside-edges": [
+          {
+            "edge": "west",
+            "damage": 12
+          },
+          {
+            "edge": "east",
+            "damage": 12
+          },
+          {
+            "edge": "north",
+            "damage": 12
+          },
+          {
+            "edge": "south",
+            "damage": 12
+          }
+        ],
+        "mast-does-not-block-player": {
+          "x": 312,
+          "hp": 100
+        },
+        "mast-and-removed-console-never-receive-damage": true,
+        "actor-depth-under-mast-and-in-front-of-core": [
+          {
+            "position": [
+              248,
+              280
+            ],
+            "foreground": false
+          },
+          {
+            "position": [
+              248,
+              320
+            ],
+            "foreground": true
+          }
+        ],
+        "core-flashes-locally-after-damage": [
+          0,
+          1
+        ]
+      }
+    }
+  }
+}

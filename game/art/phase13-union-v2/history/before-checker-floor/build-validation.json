@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "date": "2026-10-27",
+  "revision": "13A/13B: limpeza do piso em volta dos três bancos",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "cb7321abe8d139df3ba3a63d91139f812fdb398b96e61447b9b510881e43f7e1",
+  "rom_bytes": 2752512,
+  "elf_sections": {
+    "text_bytes": 2690600,
+    "data_bytes": 264,
+    "bss_bytes": 19726,
+    "static_ram_bytes": 19990
+  },
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "generated_resources_and_native_checks": true,
+    "changes_confined_to_three_bench_crops": true,
+    "furniture_pixels_preserved": true,
+    "geometry_palette_and_characters_unchanged": true,
+    "whole_room_24_views_per_variant_per_region": true,
+    "bench_all_faces_and_four_boundaries": true,
+    "controller_only_navigation_after_setup": true,
+    "pause_and_exact_cache_restore": true,
+    "canonical_props_and_PAL2": true,
+    "kill_targets_30_45_and_results": true,
+    "continue_to14": true
+  },
+  "reports": {
+    "phase13": "../art/phase13-union-v2/delivery.json"
+  },
+  "scope": "Limpeza dos recortes dos três bancos compartilhados pelas fases13A/13B; cenário e colisões verificados emNTSC/PAL.",
+  "limits": [
+    "Genesis Plus GX; hardware físico não testado.",
+    "Carga controlada: vida protegida e reposição de slots inativos de tiros; não certifica dificuldade humana.",
+    "Relatórios em outras pastas de validação documentam revisões anteriores."
+  ],
+  "previous_revision_report": "../art/phase13-union-v2/history/build-validation-before-bench-cleanup.json"
+}

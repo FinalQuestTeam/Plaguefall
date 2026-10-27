@@ -1,0 +1,71 @@
+{
+  "rom_sha256": "80b2ca65e7af3a780cbcdd41372cbc2d6679839e7f1177aa66f94f8a18722bc2",
+  "video": "todos-os-finais.mp4",
+  "source": "Genesis Plus GX, production ROM, controller-only test selector",
+  "chapters": [
+    {
+      "final": 1,
+      "flags": 0,
+      "conditions": "IGREJA PRESERVADA | POPULAÇÃO SALVA | DINORAH VIVA",
+      "start_seconds": 0.0,
+      "seconds": 26.1,
+      "video": "final-01.mp4"
+    },
+    {
+      "final": 2,
+      "flags": 1,
+      "conditions": "IGREJA EM RUÍNAS | POPULAÇÃO SALVA | DINORAH VIVA",
+      "start_seconds": 26.1,
+      "seconds": 26.1,
+      "video": "final-02.mp4"
+    },
+    {
+      "final": 3,
+      "flags": 2,
+      "conditions": "IGREJA PRESERVADA | POPULAÇÃO COM PERDAS | DINORAH VIVA",
+      "start_seconds": 52.2,
+      "seconds": 26.1,
+      "video": "final-03.mp4"
+    },
+    {
+      "final": 4,
+      "flags": 3,
+      "conditions": "IGREJA EM RUÍNAS | POPULAÇÃO COM PERDAS | DINORAH VIVA",
+      "start_seconds": 78.3,
+      "seconds": 26.1,
+      "video": "final-04.mp4"
+    },
+    {
+      "final": 5,
+      "flags": 4,
+      "conditions": "IGREJA PRESERVADA | POPULAÇÃO SALVA | DINORAH MORTA",
+      "start_seconds": 104.4,
+      "seconds": 26.1,
+      "video": "final-05.mp4"
+    },
+    {
+      "final": 6,
+      "flags": 5,
+      "conditions": "IGREJA EM RUÍNAS | POPULAÇÃO SALVA | DINORAH MORTA",
+      "start_seconds": 130.5,
+      "seconds": 26.1,
+      "video": "final-06.mp4"
+    },
+    {
+      "final": 7,
+      "flags": 6,
+      "conditions": "IGREJA PRESERVADA | POPULAÇÃO COM PERDAS | DINORAH MORTA",
+      "start_seconds": 156.6,
+      "seconds": 26.1,
+      "video": "final-07.mp4"
+    },
+    {
+      "final": 8,
+      "flags": 7,
+      "conditions": "IGREJA EM RUÍNAS | POPULAÇÃO COM PERDAS | DINORAH MORTA",
+      "start_seconds": 182.7,
+      "seconds": 26.1,
+      "video": "final-08.mp4"
+    }
+  ]
+}

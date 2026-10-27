@@ -22,6 +22,7 @@ __pycache__/
 
 # Reproducible emulator captures and temporary comparison builds.
 # Final campaign evidence remains bundled with the reviewed candidate.
+/game/art/**/telemetry.csv
 /game/art/**/*.mp4
 /game/art/**/validation/**/*.png
 /game/art/**/validation/**/*.bin

@@ -1,0 +1,97 @@
+{
+  "rom": "out/release/Plaguefall.bin",
+  "rom_sha256": "80b2ca65e7af3a780cbcdd41372cbc2d6679839e7f1177aa66f94f8a18722bc2",
+  "rom_bytes": 3014656,
+  "enemy_shot_cap": 10,
+  "player_shot_cap": 4,
+  "boss_volley": 5,
+  "damage": 13,
+  "generated_resources_and_native_checks": true,
+  "phase2_implemented": false,
+  "regions": {
+    "ntsc": {
+      "report": "validation/ntsc/report.json",
+      "passed": true,
+      "checks": {
+        "five-distinct-symmetric-boss-projectiles": {
+          "count": 5,
+          "damage": 13,
+          "velocities": [
+            [
+              137,
+              -62
+            ],
+            [
+              130,
+              -21
+            ],
+            [
+              124,
+              20
+            ],
+            [
+              118,
+              61
+            ],
+            [
+              111,
+              102
+            ]
+          ]
+        },
+        "two-five-shot-fans-fit-without-overwrite": true,
+        "full-pool-waits-and-retries-without-clipped-fan-or-erasing-shots": true,
+        "player-retains-four-shot-pool": true,
+        "controller-boss-combat": {
+          "minimum_boss_hp": 1,
+          "defeated": true,
+          "game_fps": 59.557,
+          "cache_peak": 326,
+          "ram_writes_during_combat": 0
+        }
+      }
+    },
+    "pal": {
+      "report": "validation/pal/report.json",
+      "passed": true,
+      "checks": {
+        "five-distinct-symmetric-boss-projectiles": {
+          "count": 5,
+          "damage": 13,
+          "velocities": [
+            [
+              137,
+              -62
+            ],
+            [
+              130,
+              -21
+            ],
+            [
+              124,
+              20
+            ],
+            [
+              118,
+              61
+            ],
+            [
+              111,
+              102
+            ]
+          ]
+        },
+        "two-five-shot-fans-fit-without-overwrite": true,
+        "full-pool-waits-and-retries-without-clipped-fan-or-erasing-shots": true,
+        "player-retains-four-shot-pool": true,
+        "controller-boss-combat": {
+          "minimum_boss_hp": 1,
+          "defeated": true,
+          "game_fps": 49.822,
+          "cache_peak": 326,
+          "ram_writes_during_combat": 0
+        }
+      }
+    }
+  }
+}

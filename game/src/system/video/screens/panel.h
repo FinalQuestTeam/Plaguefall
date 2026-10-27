@@ -21,5 +21,7 @@ void PANEL_right(const char *text, u16 y, u16 palette);
 void PANEL_wrap(const char *text, u16 x, u16 y, u16 width, u16 step, u16 palette);
 void PANEL_selection(u16 row);
 void PANEL_enemy(u8 type, u16 x, u16 y, u16 slot);
+// Six 32x32 symbols share the existing 112-tile scratch loan, PAL1.
+void PANEL_icon32(const u32 *source,u16 x,u16 y,u16 slot);
 u16 PANEL_scratch(void);
 #endif

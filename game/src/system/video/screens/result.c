@@ -7,10 +7,12 @@
 #include "system/video/screens/result_font.h"
 #include "system/video/screens/panel_data.h"
 #include "system/video/screens/mission.h"
+#include "system/video/screens/hud.h"
 #include "system/video/spritelist.h"
 #include "system/video/tilegen.h"
 #include "system/video/floor.h"
 #include "system/video/enemygfx.h"
+#include "system/video/scene_stream.h"
 #include "system/video/sprites/tiles.h"
 #include "core/game.h"
 #include "actors/dinorah.h"
@@ -23,19 +25,23 @@
 #include "system/audio/sfx.h"
 #include "system/audio/music.h"
 #include "interface_data.h"
-#define BG_CAP (1440 - FIRST - CARD_MAX_TILES)
+// Result text is rasterized into the card. It can borrow the font's96 tiles
+// until RESULT_close restores them. BG_B begins at0xc000 (tile1536).
+#define RESULT_PATTERN_END 1536
+#define BG_CAP (RESULT_PATTERN_END - FIRST - CARD_MAX_TILES)
 #define CARD_W 32
 #define CARD_MAX_H 23
 #define CARD_MAX_TILES (CARD_W*CARD_MAX_H)
 #define MAP_WORDS (64*32)
 #define FIRST (TILE_USER_INDEX + NUM_TILES)
-typedef char result_vram_fits[(FIRST+BG_CAP+CARD_MAX_TILES<=1440)?1:-1];
+typedef char result_vram_fits[(FIRST+BG_CAP+CARD_MAX_TILES<=RESULT_PATTERN_END)?1:-1];
 static bool resultActive,armed;
 static bool cardVisible;
 static u8 resultKind,choice,exitView,exitChoice;
 static u16 age,resultKills,cardBase,cardTop,cardHeight;
 static u16 resultPalette[64];
 static u32 *card;
+volatile u16 resultCaptureFault,resultCaptureTileCount;
 
 static void readVRAM(u16 address,u16 *dest,u16 words)
 {
@@ -53,47 +59,63 @@ static void readVRAM(u16 address,u16 *dest,u16 words)
 }
 static bool begin(void)
 {
-    // Temporary capture peaks at ~31 KiB; it is freed before the 23 KiB card.
-    u16 *maps=MEM_alloc(MAP_WORDS*4);
+    resultCaptureFault=0;resultCaptureTileCount=0;
+    // Gameplay is finished. Freeze its VRAM pixels and release the live tile
+    // cache before allocating capture scratch; retries reload the arena.
+    SCENESTREAM_end();
+    // Snapshot one background map. Inspect procedural BG_A floor rows in
+    // small stack chunks rather than retaining a second4KiB plane in heap.
+    u16 *maps=MEM_alloc(MAP_WORDS*2);
     u16 *lookup=MEM_alloc(2048*2);
-    u16 *patterns=MEM_alloc(BG_CAP*32);
-    if(!maps || !lookup || !patterns)
-    {if(maps)MEM_free(maps);if(lookup)MEM_free(lookup);if(patterns)MEM_free(patterns);return FALSE;}
+    if(!maps || !lookup)
+    {resultCaptureFault=1;if(maps)MEM_free(maps);if(lookup)MEM_free(lookup);return FALSE;}
     SPRITES_hide();SYS_doVBlankProcess();
     PAL_getColors(0,resultPalette,64);
-    readVRAM(VDP_BG_A,maps,MAP_WORDS);readVRAM(VDP_BG_B,maps+MAP_WORDS,MAP_WORDS);
+    readVRAM(VDP_BG_B,maps,MAP_WORDS);
     memset(lookup,0xff,2048*2);
-    // Mapped arenas use only BG_B scenery and screen-space WINDOW HUD.
-    // Their BG_A holds transient blood decals; clear those when hiding actors.
-    if(!arenaActive)for(u16 i=64;i<MAP_WORDS;i++)
+    // The live WINDOW HUD hides these rows. A streamed scene deliberately
+    // does not populate them, so never expose their stale map cells when
+    // the result turns WINDOW off. Clear the intersecting tile rows.
+    if(arenaActive)for(u16 row=(u16)cameraY>>3;row<=((u16)cameraY+HUD_HEIGHT-1)>>3;row++)
+        memset(maps+(row&31)*64,0,128);
+    if(!arenaActive)for(u16 row=1;row<32;row++)
     {
-        const u16 tile=maps[i]&0x7ff;
-        if(tile==TILE_USER_INDEX+TILE_WALL || tile==TILE_USER_INDEX+TILE_LAVA || tile==TILE_USER_INDEX+TILE_MUD)
-            maps[MAP_WORDS+i]=maps[i];
+        u16 foreground[64];readVRAM(VDP_BG_A+row*128,foreground,64);
+        for(u16 col=0;col<64;col++)
+        {
+            const u16 tile=foreground[col]&0x7ff;
+            if(tile==TILE_USER_INDEX+TILE_WALL || tile==TILE_USER_INDEX+TILE_LAVA || tile==TILE_USER_INDEX+TILE_MUD)
+                maps[row*64+col]=foreground[col];
+        }
     }
-    memset(maps,0,MAP_WORDS*2);
     u16 count=0;
-    for(u16 i=0;i<MAP_WORDS*2;i++)
+    for(u16 i=0;i<MAP_WORDS;i++)
     {
-        u16 attr=maps[i],tile=attr&0x7ff;
+        const u16 attr=maps[i],tile=attr&0x7ff;
         if(!tile){maps[i]=0;continue;}
         if(lookup[tile]==0xffff)
         {
             if(count==BG_CAP)
-            {MEM_free(maps);MEM_free(lookup);MEM_free(patterns);return FALSE;}
-            readVRAM(tile*32,patterns+count*16,16);lookup[tile]=FIRST+count++;
+            {resultCaptureFault=2;resultCaptureTileCount=count;MEM_free(maps);MEM_free(lookup);return FALSE;}
+            lookup[tile]=FIRST+count++;
         }
         maps[i]=(attr&0xf800)|lookup[tile];
-        if((i&31)==0)LOADING_poll();
     }
+    resultCaptureTileCount=count;
+    // Allocate only patterns actually referenced, after counting. Read them
+    // all before relocation can overwrite their old VRAM addresses.
+    u16 *patterns=MEM_alloc(count*32);
+    if(!patterns){resultCaptureFault=1;MEM_free(maps);MEM_free(lookup);return FALSE;}
+    for(u16 tile=0;tile<2048;tile++)if(lookup[tile]!=0xffff)
+        readVRAM(tile*32,patterns+(lookup[tile]-FIRST)*16,16);
     LOADING_tiles((const u32 *)patterns,FIRST,count,DMA);
-    VDP_setTileMapData(VDP_BG_A,maps,0,MAP_WORDS,2,CPU);
-    VDP_setTileMapData(VDP_BG_B,maps+MAP_WORDS,0,MAP_WORDS,2,CPU);
+    VDP_clearPlane(BG_A,TRUE);
+    VDP_setTileMapData(VDP_BG_B,maps,0,MAP_WORDS,2,CPU);
     VDP_setHorizontalScroll(BG_A,0);VDP_setVerticalScroll(BG_A,0);VDP_setWindowOff();
     cardBase=FIRST+count;
     MEM_free(patterns);MEM_free(lookup);MEM_free(maps);
     card=MEM_alloc(CARD_MAX_TILES*32);
-    if(!card)return FALSE;
+    if(!card){resultCaptureFault=3;return FALSE;}
     PAL_setColors(PAL2*16,(const u16 *)interface_palette,16,DMA);
     cardVisible=FALSE;choice=exitView=exitChoice=0;age=0;armed=FALSE;
     return TRUE;

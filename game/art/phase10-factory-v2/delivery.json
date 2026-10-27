@@ -1,0 +1,421 @@
+{
+  "date": "2026-10-26",
+  "revision": "Fase10: fábrica detalhada, seis grupos de props e dez ovos distribuídos",
+  "status": "integrated-local; user visual acceptance not claimed",
+  "rom_sha256": "f7716cb329bee0dee223e2249cfac3ff5fb54e9d6bcb1b8bedd6b798f388beed",
+  "rom_bytes": 2752512,
+  "world": {
+    "size": [
+      768,
+      544
+    ],
+    "width": 768,
+    "height": 544,
+    "bounds": [
+      24,
+      128,
+      743,
+      479
+    ],
+    "start": [
+      56,
+      160
+    ],
+    "solids": [
+      [
+        128,
+        224,
+        112,
+        48,
+        true
+      ],
+      [
+        496,
+        192,
+        80,
+        80,
+        true
+      ],
+      [
+        304,
+        320,
+        80,
+        64,
+        true
+      ],
+      [
+        600,
+        352,
+        64,
+        64,
+        true
+      ],
+      [
+        120,
+        408,
+        64,
+        56,
+        true
+      ],
+      [
+        456,
+        416,
+        64,
+        56,
+        true
+      ]
+    ],
+    "points": [],
+    "eggs": [
+      [
+        96,
+        192
+      ],
+      [
+        272,
+        280
+      ],
+      [
+        440,
+        168
+      ],
+      [
+        680,
+        208
+      ],
+      [
+        368,
+        304
+      ],
+      [
+        680,
+        336
+      ],
+      [
+        200,
+        352
+      ],
+      [
+        80,
+        448
+      ],
+      [
+        416,
+        424
+      ],
+      [
+        624,
+        464
+      ]
+    ],
+    "geometry": {
+      "footprint": 16,
+      "free_positions": 3277,
+      "reachable_positions": 3277,
+      "all_free_positions_connected": true,
+      "swept16pxSamples": 0
+    },
+    "egg_approaches": [
+      [
+        [
+          152,
+          184
+        ],
+        [
+          48,
+          184
+        ],
+        [
+          136,
+          184
+        ]
+      ],
+      [
+        [
+          328,
+          272
+        ],
+        [
+          312,
+          272
+        ]
+      ],
+      [
+        [
+          368,
+          160
+        ],
+        [
+          496,
+          160
+        ],
+        [
+          392,
+          160
+        ],
+        [
+          480,
+          160
+        ]
+      ],
+      [
+        [
+          608,
+          200
+        ],
+        [
+          632,
+          200
+        ],
+        [
+          720,
+          200
+        ]
+      ],
+      [
+        [
+          296,
+          296
+        ],
+        [
+          424,
+          296
+        ],
+        [
+          320,
+          296
+        ],
+        [
+          408,
+          296
+        ]
+      ],
+      [
+        [
+          608,
+          328
+        ],
+        [
+          632,
+          328
+        ],
+        [
+          720,
+          328
+        ]
+      ],
+      [
+        [
+          128,
+          344
+        ],
+        [
+          256,
+          344
+        ],
+        [
+          152,
+          344
+        ],
+        [
+          240,
+          344
+        ]
+      ],
+      [
+        [
+          32,
+          440
+        ]
+      ],
+      [
+        [
+          344,
+          416
+        ],
+        [
+          368,
+          416
+        ]
+      ],
+      [
+        [
+          552,
+          456
+        ],
+        [
+          680,
+          456
+        ],
+        [
+          576,
+          456
+        ],
+        [
+          664,
+          456
+        ]
+      ]
+    ],
+    "maximum_requested_nest_slots": 6,
+    "memory": {
+      "source_tiles": 1147,
+      "rom_graphics_bytes": 36704,
+      "map_bytes": 13056,
+      "cache_tiles": 320,
+      "maximum_visible_patterns": 303,
+      "nest_all_six_pose_tiles": 150,
+      "total_resident_tiles": 470,
+      "resident_bytes": 15040,
+      "heap_bytes": 4854,
+      "lossy_tile_replacements": 0
+    }
+  },
+  "checks": {
+    "whole_scene_reviewed": true,
+    "six_complete_prop_groups": true,
+    "ten_scattered_nests": true,
+    "native_1px_material_detail": true,
+    "all_3277_walkable_positions_connected": true,
+    "all_ten_nests_controller_destroyed_ntsc_pal": true,
+    "destroyed_state_persists_after_scrolling": true,
+    "bomb_only_visible_targets": true,
+    "kills_ignored_for_objective": true,
+    "six_prop_collisions_and_bounds": true,
+    "exact_visible_scene_and_nest_pixels": true,
+    "all_six_nest_frames_resident": true,
+    "pause_frees_cache_and_restores_progress": true,
+    "maximum_six_requested_slots_of_seven": true,
+    "zero_streaming_faults": true,
+    "sprite_scanline_limits_passed": true,
+    "phase9_and_phase11_regressions": true,
+    "generated_resource_checks_passed": true
+  },
+  "loads": {
+    "ntsc": [
+      {
+        "section": "north",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 81.54,
+        "sprite_limits": [
+          20,
+          10,
+          128
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      },
+      {
+        "section": "machines",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 56.25,
+        "maximum_cpu_pct": 106.3,
+        "sprite_limits": [
+          20,
+          7,
+          128
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      },
+      {
+        "section": "south",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 60.0,
+        "maximum_cpu_pct": 82.67,
+        "sprite_limits": [
+          17,
+          8,
+          136
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      }
+    ],
+    "pal": [
+      {
+        "section": "north",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 56.2,
+        "sprite_limits": [
+          20,
+          10,
+          160
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      },
+      {
+        "section": "machines",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 49.55,
+        "maximum_cpu_pct": 76.56,
+        "sprite_limits": [
+          20,
+          9,
+          120
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      },
+      {
+        "section": "south",
+        "enemies": 4,
+        "shots_per_pool": 6,
+        "seconds": 20,
+        "game_fps": 50.0,
+        "maximum_cpu_pct": 58.74,
+        "sprite_limits": [
+          17,
+          8,
+          136
+        ],
+        "setup": "real enemy AI; health protected; inactive shots replenished; nests remain active targets"
+      }
+    ]
+  },
+  "natural_combat": {
+    "ntsc": {
+      "seconds": 30.0,
+      "state": 1,
+      "hp": 60,
+      "peak_enemies": 4,
+      "game_fps": 59.8,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    },
+    "pal": {
+      "seconds": 30.0,
+      "state": 1,
+      "hp": 80,
+      "peak_enemies": 4,
+      "game_fps": 49.967,
+      "ram_grants": false,
+      "human_difficulty_certified": false
+    }
+  },
+  "reports": {
+    "ntsc": "validation/ntsc/report.json",
+    "pal": "validation/pal/report.json",
+    "factory-ntsc": "validation/factory-ntsc/report.json",
+    "factory-pal": "validation/factory-pal/report.json"
+  },
+  "limits": [
+    "O teste de conclusão isola inimigos e tiros antes do percurso; depois usa somente controles para circular e disparar. Nenhuma posição, HP de ovo ou progresso foi escrito durante as dez destruições.",
+    "Carga de quatro inimigos com IA ativa e6+6tiros,20s em cada um de três trechos. Vida protegida, reposição apenas dos tiros inativos. NTSC56,25–60FPS;PAL49,55–50FPS. As metas fixas não foram atingidas em todos os trechos.",
+    "Combate natural de30s sem concessões de vida/IA:59,8FPS e60HP em NTSC;49,967FPS e80HP em PAL. É uma amostra automática, não uma certificação de dificuldade humana. Hardware físico não testado.",
+    "O fundo é montado com módulos completos de uma nova imagem-fonte, textura de piso repetível e paleta16cores. Isso aumenta o detalhe da arte em pixels nativos; não altera a resolução de saída320×224 do console.",
+    "O commit5ad7f971 das fases6–9 foi publicado no GitHub com autorização explícita. Esta revisão da fase10 permanece local para avaliação."
+  ],
+  "performance_target_met": false,
+  "physical_hardware_tested": false,
+  "human_difficulty_certified": false,
+  "published_previous_commit": "5ad7f971aef05f0dbc7a45993197d2ce778c7019"
+}

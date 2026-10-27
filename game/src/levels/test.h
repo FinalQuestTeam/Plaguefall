@@ -4,6 +4,9 @@
 #define TEST_ROOMS 18
 #define TEST_DEATH_ROOM 9
 #define TEST_RULE_ROOM 10
+#define TEST_ENDING_COUNT 8
+// Expanded where graph.h is also included, after the campaign node IDs.
+#define TEST_ENDING_FIRST (TEST_ROOMS + NODE_COUNT + 1)
 typedef struct {
     u8 animation,direction,slow,selected,repeat;
     u8 dummyHp,chain,restock,initialHp;
@@ -20,7 +23,7 @@ u16 TEST_peakCpu(void);
 void TEST_defaults(void);
 const char *TEST_name(u8 room);
 void TEST_goal(char *text);
-u8 TEST_chooseRoom(u8 initial); // 0 cancel; 1..TEST_ROOMS rooms; TEST_ROOMS+node campaign
+u8 TEST_chooseRoom(u8 initial); // 0 cancel; TEST_ROOMS+node; TEST_ENDING_FIRST+flags
 bool TEST_configure(void);
 void TEST_pauseDraw(u8 selection);
 void TEST_pauseSelection(u8 selection);

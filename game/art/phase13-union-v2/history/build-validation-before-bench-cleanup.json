@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "date": "2026-10-27",
+  "revision": "13A/13B: salão ampliado e câmera estável de Damião",
+  "rom": "../out/release/Plaguefall.bin",
+  "named_rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "01eea0c34b900fa372607eb5698836654f23ef52568890c59ef5346220b30269",
+  "rom_bytes": 2752512,
+  "elf_sections": {
+    "text_bytes": 2645416,
+    "data_bytes": 264,
+    "bss_bytes": 19726,
+    "static_ram_bytes": 19990
+  },
+  "emulator": "Genesis Plus GX",
+  "physical_hardware_tested": false,
+  "checks": {
+    "generated_resources_and_native_checks": true,
+    "connected_floor": true,
+    "whole_room_24_views_per_variant_per_region": true,
+    "bench_all_faces_and_four_boundaries": true,
+    "controller_only_navigation_after_setup": true,
+    "pause_and_selector_restart": true,
+    "canonical_props_and_PAL2": true,
+    "kill_targets_30_45_and_results": true,
+    "continue_to14": true
+  },
+  "camera": {
+    "policy": "Same player-only body center as stages 1–12; extends ARENA_camera through N_13B",
+    "before_center_error_px": 37,
+    "after_center_error_px": 0,
+    "stationary_trials": 12,
+    "motion_trials": 52,
+    "motion_samples": 32789,
+    "clipped_samples": 0,
+    "stream_deferrals": 0,
+    "live_pixel_cells": 864068
+  },
+  "reports": {
+    "phase13": "../art/phase13-union-v2/delivery.json"
+  },
+  "scope": "Fases13A/13B: mundo512x576, limites24/160–487/487, bancos redistribuídos e câmera estável das fases1–12. Testes atuais cobrem as duas variantes emNTSC/PAL.",
+  "limits": [
+    "Genesis Plus GX; hardware físico não testado.",
+    "Carga controlada: vida protegida e reposição de slots inativos de tiros; não certifica dificuldade humana.",
+    "Relatórios em outras pastas de validação documentam revisões anteriores."
+  ],
+  "previous_revision_report": "../art/phase13-union-v2/history/build-validation-before-spacious.json"
+}

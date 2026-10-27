@@ -1,0 +1,329 @@
+{
+  "size": [
+    768,
+    544
+  ],
+  "width": 768,
+  "height": 544,
+  "bounds": [
+    24,
+    128,
+    743,
+    479
+  ],
+  "start": [
+    56,
+    160
+  ],
+  "solids": [
+    [
+      128,
+      224,
+      112,
+      48,
+      true
+    ],
+    [
+      496,
+      192,
+      80,
+      80,
+      true
+    ],
+    [
+      304,
+      320,
+      80,
+      64,
+      true
+    ],
+    [
+      600,
+      352,
+      64,
+      64,
+      true
+    ],
+    [
+      120,
+      408,
+      64,
+      56,
+      true
+    ],
+    [
+      456,
+      416,
+      64,
+      56,
+      true
+    ]
+  ],
+  "valves": [
+    [
+      112,
+      192
+    ],
+    [
+      456,
+      176
+    ],
+    [
+      648,
+      288
+    ],
+    [
+      248,
+      320
+    ],
+    [
+      88,
+      400
+    ],
+    [
+      560,
+      456
+    ]
+  ],
+  "valve_count": 6,
+  "enemy_cap": 5,
+  "shot_cap": 6,
+  "spawn_seconds": 2,
+  "work_seconds": 2.5,
+  "points": [
+    [
+      64,
+      168
+    ],
+    [
+      112,
+      168
+    ],
+    [
+      112,
+      208
+    ],
+    [
+      456,
+      208
+    ],
+    [
+      456,
+      192
+    ],
+    [
+      480,
+      192
+    ],
+    [
+      480,
+      288
+    ],
+    [
+      648,
+      288
+    ],
+    [
+      648,
+      304
+    ],
+    [
+      248,
+      304
+    ],
+    [
+      248,
+      336
+    ],
+    [
+      88,
+      336
+    ],
+    [
+      88,
+      416
+    ],
+    [
+      104,
+      416
+    ],
+    [
+      104,
+      392
+    ],
+    [
+      288,
+      392
+    ],
+    [
+      288,
+      400
+    ],
+    [
+      560,
+      400
+    ],
+    [
+      560,
+      464
+    ]
+  ],
+  "valve_approaches": [
+    [
+      104,
+      200
+    ],
+    [
+      448,
+      184
+    ],
+    [
+      640,
+      296
+    ],
+    [
+      240,
+      328
+    ],
+    [
+      80,
+      408
+    ],
+    [
+      552,
+      456
+    ]
+  ],
+  "player_route": [
+    [
+      56,
+      160
+    ],
+    [
+      104,
+      160
+    ],
+    [
+      104,
+      200
+    ],
+    [
+      448,
+      200
+    ],
+    [
+      448,
+      184
+    ],
+    [
+      472,
+      184
+    ],
+    [
+      472,
+      280
+    ],
+    [
+      640,
+      280
+    ],
+    [
+      640,
+      296
+    ],
+    [
+      240,
+      296
+    ],
+    [
+      240,
+      328
+    ],
+    [
+      80,
+      328
+    ],
+    [
+      80,
+      408
+    ],
+    [
+      96,
+      408
+    ],
+    [
+      96,
+      384
+    ],
+    [
+      280,
+      384
+    ],
+    [
+      280,
+      392
+    ],
+    [
+      552,
+      392
+    ],
+    [
+      552,
+      456
+    ]
+  ],
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 3277,
+    "reachable_positions": 3277,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 2010
+  },
+  "memory": {
+    "source_tiles": 1147,
+    "rom_graphics_bytes": 36704,
+    "map_bytes": 13056,
+    "cache_tiles": 320,
+    "maximum_visible_patterns": 303,
+    "nest_all_six_pose_tiles": 0,
+    "total_resident_tiles": 389,
+    "resident_bytes": 12448,
+    "heap_bytes": 4854,
+    "lossy_tile_replacements": 0,
+    "valve_all_six_pose_tiles": 65,
+    "work_bar_tiles": 4
+  },
+  "background_pixel_identical_to_phase10": false,
+  "background_indices_identical_to_phase10": true,
+  "shared_ROM_patterns": "phase10Tiles",
+  "shared_ROM_map": "phase10Map",
+  "palette_only_variant": true,
+  "art_newly_generated": false,
+  "props_count": 6,
+  "eggs_return": false,
+  "route_length_px": 1992.0,
+  "palette_changed_slots": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "palette_words": [
+    0,
+    546,
+    1602,
+    1092,
+    2148,
+    1672,
+    2184,
+    2764,
+    1568,
+    2114,
+    2658,
+    3200,
+    1090,
+    1638,
+    2182,
+    1124
+  ]
+}

@@ -8,6 +8,7 @@
 // Borrows BG_A/B, palettes and animation tiles until ROUTEMAP_release().
 
 void ROUTEMAP_reset(void);              // novo jogo: zera o caminho percorrido
+void ROUTEMAP_restore(u32 completedNodes);
 void ROUTEMAP_markVisited(u8 n);        // início de fase: marca o nó no caminho
 void ROUTEMAP_prepare(u8 currentNode,u8 nextNode);
 void ROUTEMAP_show(u8 currentNode, u8 nextNode);

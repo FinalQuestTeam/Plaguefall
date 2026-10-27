@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "b2b166823b7e6853af701fb307866da3169441e22a3905ae045252eef12b1d28",
+  "method": "All password entry and resume navigation use controller input; RAM fixtures only accelerate victory, death and mid-attempt equipment for isolated checks.",
+  "checks": [
+    {
+      "name": "16 native32x32 sprites: ROM bytes, VRAM pixels, palette1 and wrap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "All16 symbols captured in the actual code screen; controller input only",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "captures": [
+    {
+      "file": "sprites-no-jogo-01.png",
+      "symbol_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "file": "sprites-no-jogo-02.png",
+      "symbol_indices": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "file": "sprites-no-jogo-03.png",
+      "symbol_indices": [
+        12,
+        13,
+        14,
+        15,
+        5,
+        10
+      ]
+    }
+  ]
+}

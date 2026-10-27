@@ -216,8 +216,8 @@ def main():
                 checked+=1;flipped+=bool(attr&0x1800)
                 if actual!=wanted:errors.append([col,row,actual,wanted])
         return {'passed':not differing and not errors and palette_zero==0,'palette_index_zero_black':palette_zero==0,'scene_tiles':tilesize//32,'atlas_bytes_compared':tilesize,'atlas_differing_tiles':differing[:16],'visible_cells_checked':checked,'visible_flipped_cells':flipped,'tilemap_errors':errors[:16],'camera':[signed('cameraX'),signed('cameraY')],'method':'exact ROM-to-VRAM comparison of scene atlas and BG_B H/V attributes; palette index0 must be black because it is transparent on hardware'}
-    for label,cap,shotcap in [('9',3,4),('10',4,6),('11',3,6)]:
-        if label=='9':continue  # Current streamed street has its dedicated suite below.
+    for label,cap,shotcap in [('9',3,4),('10',4,6),('11',5,6)]:
+        if label in ('9','10','11'):continue  # Streamed stages have dedicated native suites below.
         node=node_ids['N_'+label];r={};report['nodes'][label]=r
         base=enter(node);shot(label+'-entry')
         r['entry']={'passed':True,'enemy_cap':cap,'shot_cap':shotcap,'width':2560 if label=='9' else 768}
@@ -326,12 +326,13 @@ def main():
     report['passed']=all(v.get('passed',True) for node in report['nodes'].values() for v in node.values());save();print(json.dumps(report,indent=2))
     core.retro_unload_game();core.retro_deinit()
     import sys
-    target=out/'phase09-current'
-    command=[sys.executable,str(GAME/'tools/test_phase09_stream_emulator.py'),'--output',str(target),'--build-dir',str(build)]
-    if args.pal:command.append('--pal')
-    result=subprocess.run(command,check=False)
-    native=json.loads((target/'report.json').read_text()) if (target/'report.json').exists() else {}
-    report['nodes']['9']={'dedicated_native_suite':{'passed':result.returncode==0 and native.get('passed') is True,'report':'phase09-current/report.json'}}
-    report['passed']=report['passed'] and report['nodes']['9']['dedicated_native_suite']['passed'];save()
+    for phase,script in [('9','test_phase09_stream_emulator.py'),('10','test_phase10_factory_emulator.py'),('11','test_phase11_factory_emulator.py')]:
+        target=out/('phase'+phase+'-current')
+        command=[sys.executable,str(GAME/'tools'/script),'--output',str(target),'--build-dir',str(build)]
+        if args.pal:command.append('--pal')
+        result=subprocess.run(command,check=False)
+        native=json.loads((target/'report.json').read_text()) if (target/'report.json').exists() else {}
+        report['nodes'][phase]={'dedicated_native_suite':{'passed':result.returncode==0 and native.get('passed') is True,'report':target.name+'/report.json'}}
+        report['passed']=report['passed'] and report['nodes'][phase]['dedicated_native_suite']['passed'];save()
     if not report['passed']:raise SystemExit(1)
 if __name__=='__main__':main()

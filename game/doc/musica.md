@@ -122,9 +122,9 @@ As três versões têm partituras, gravações e ROMs separadas:
 
 `python3 game/tools/compose_music.py --variant sombrio` exporta somente Breu; acrescente `--check` para conferir sua partitura. Os arquivos e as ROMs das duas versões anteriores foram mantidos sem alterações. A reprodução e a captura da terceira estão documentadas no [pacote de Breu](../art/audio-baiao-sombrio-v1/README.md).
 
-## Audição no jogo — terceira aba de ASSETS
+## Audição — arquivo da antiga galeria ASSETS
 
-A ROM atual inclui as quatro partituras simultaneamente: Baião de Ferrugem, Entardecer, Breu e Ladainha de Ferro. Na galeria, ESQ/DIR percorre Damião, Dinorah e Músicas. Na terceira aba, CIMA/BAIXO escolhe a faixa e inicia sua reprodução; A pausa/retoma e C alterna calma/combate. B ou START sai. A audição não escolhe uma nova trilha permanente para a campanha.
+A ROM atual inclui as quatro partituras simultaneamente: Baião de Ferrugem, Entardecer, Breu e Ladainha de Ferro. O menu Assets foi removido; a descrição e os testes abaixo documentam a galeria anterior. Na galeria, ESQ/DIR percorre Damião, Dinorah e Músicas. Na terceira aba, CIMA/BAIXO escolhe a faixa e inicia sua reprodução; A pausa/retoma e C alterna calma/combate. B ou START sai. A audição não escolhe uma nova trilha permanente para a campanha.
 
 O catálogo `song_catalog_data.h` deriva das quatro partituras. `python3 game/tools/compose_music.py --catalog` o exporta e `--catalog --check` verifica a reprodução exata. Exportar uma partitura individual também atualiza o catálogo, sem reescrever as outras partituras individuais.
 
@@ -134,7 +134,7 @@ O motor seleciona os dados, o andamento e o vibrato de cada faixa em tempo de ex
 
 [Ladainha de Ferro](../art/audio-igreja-v1/README.md) é uma composição original inspirada na sonoridade de igreja: frases lentas que sugerem canto, harmonia sustentada com articulação de órgão, baixo pedal e notas agudas como sinos. O tom é Ré menor, com Dm–Bb–Gm–A7 e resolução final em Dm. O andamento padrão vai de aproximadamente 64,3 a 90 BPM; as curvas próprias de fase continuam valendo. Os acentos de combate mantêm o caráter industrial do jogo.
 
-A faixa usa somente síntese PSG, sem amostras de órgão, sinos ou reverberação, e não cita um hino existente. Sua partitura fica em `song_data_church.h`, exportada com `python3 game/tools/compose_music.py --variant igreja`. Ela aparece como quarta entrada em **ASSETS → MÚSICAS**; as três partituras e os pacotes de gravação anteriores foram preservados.
+A faixa usa somente síntese PSG, sem amostras de órgão, sinos ou reverberação, e não cita um hino existente. Sua partitura fica em `song_data_church.h`, exportada com `python3 game/tools/compose_music.py --variant igreja`. Ela aparecia como quarta entrada em **ASSETS → MÚSICAS**; as três partituras e os pacotes de gravação anteriores foram preservados.
 
 ## Trilha da abertura — O Sonho Atendido
 

@@ -1,9 +1,9 @@
 #ifndef CAMPAIGN_FACTORY_H
 #define CAMPAIGN_FACTORY_H
 #include "levels/levels.h"
-typedef struct { u16 destroyed,opened,work[3],clock; u8 hp[10],slots[7],done,artReady; } CampaignFactoryState;
+typedef struct { u16 destroyed,opened,work[6],clock; u8 hp[10],slots[7],done,artReady; } CampaignFactoryState;
 extern CampaignFactoryState campaignFactory;
-extern const ArenaDef CF_STREET,CF_FACTORY;
+extern const ArenaDef CF_STREET,CF_FACTORY,CF_FACTORY_NEST,CF_FACTORY_REHEAT;
 extern const RouteDef CF_ROUTE09;
 bool CF_active(void);
 void CF_start(void);

@@ -11,4 +11,5 @@ bool SCENESTREAM_resume(void);
 bool SCENESTREAM_heavyFrame(void);
 bool SCENESTREAM_active(void);
 extern volatile u16 sceneStreamFaults,sceneStreamPeak,sceneStreamUploads;
+extern volatile u16 sceneStreamDeferrals;
 #endif

@@ -1,0 +1,341 @@
+{
+  "rom": "out/release/Plaguefall.bin",
+  "rom_sha256": "f84b9b50815ca381b9b72dbef173fc6279672fa9736f5064874f9b56ba39a597",
+  "rom_bytes": 2752512,
+  "size": [
+    512,
+    576
+  ],
+  "memory": {
+    "source_tiles": 1190,
+    "cache_tiles": 480,
+    "maximum_visible_patterns": 472,
+    "maximum_camera": [
+      184,
+      0
+    ],
+    "objective_reserved_tiles": 73,
+    "progress_bar_tiles": 20,
+    "total_resident_tiles": 553,
+    "rom_graphics_bytes": 38080,
+    "generator_rom_bytes": 1696,
+    "map_bytes": 9216,
+    "heap_bytes": 6220,
+    "lossy_tile_replacements": 0,
+    "pixel_exact_reconstruction": true
+  },
+  "energy": {
+    "all_seven_nodes_connected": true,
+    "tile_count": 123,
+    "routes": [
+      {
+        "source": "station-1",
+        "target": "console",
+        "points": [
+          [
+            80,
+            160
+          ],
+          [
+            136,
+            160
+          ],
+          [
+            136,
+            288
+          ],
+          [
+            208,
+            288
+          ]
+        ]
+      },
+      {
+        "source": "station-2",
+        "target": "console",
+        "points": [
+          [
+            432,
+            160
+          ],
+          [
+            352,
+            160
+          ],
+          [
+            352,
+            272
+          ],
+          [
+            304,
+            272
+          ]
+        ]
+      },
+      {
+        "source": "station-3",
+        "target": "console",
+        "points": [
+          [
+            384,
+            280
+          ],
+          [
+            352,
+            280
+          ],
+          [
+            352,
+            304
+          ],
+          [
+            304,
+            304
+          ]
+        ]
+      },
+      {
+        "source": "console",
+        "target": "battery",
+        "points": [
+          [
+            256,
+            320
+          ],
+          [
+            256,
+            432
+          ]
+        ]
+      },
+      {
+        "source": "station-4",
+        "target": "battery",
+        "points": [
+          [
+            400,
+            456
+          ],
+          [
+            288,
+            456
+          ]
+        ]
+      },
+      {
+        "source": "station-5",
+        "target": "battery",
+        "points": [
+          [
+            112,
+            456
+          ],
+          [
+            224,
+            456
+          ]
+        ]
+      }
+    ],
+    "all_twelve_terminals_enter_opaque_equipment": true
+  },
+  "generator": {
+    "size": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "tiles": 53,
+    "tiles_per_frame": 36,
+    "palette": "PAL3",
+    "native_pixel_block": 1,
+    "lossy_tile_replacements": 0
+  },
+  "activation": {
+    "seconds": 10,
+    "decay_interval_seconds": 1,
+    "decay_work_seconds": 1,
+    "independent_bars": 5,
+    "completed_stations_do_not_decay": true
+  },
+  "floor": {
+    "module": "modules/iron-floor-plate.png",
+    "size": [
+      64,
+      64
+    ],
+    "material": "riveted iron",
+    "native_pixel_block": 1,
+    "seam_edges_identical": true
+  },
+  "regions": {
+    "ntsc": {
+      "passed": true,
+      "report": "validation/ntsc/report.json",
+      "load": {
+        "seconds": 20,
+        "game_fps": 57.3,
+        "cache_peak": 472,
+        "cache_faults": 0,
+        "sprite_limits": [
+          17,
+          7,
+          112
+        ]
+      },
+      "camera_views": 28,
+      "six_native_generator_poses": true,
+      "activation_checks": {
+        "exact-activation-duration": {
+          "required_updates": 600,
+          "before_last_update": {
+            "x": 48,
+            "y": 120,
+            "size": 12,
+            "base": 1421,
+            "work_frames": 599,
+            "percent": 95,
+            "pattern_sha": "889e2db153ba7e44895dcbb1cb7057a73ff5dd9b39fb954a156b9e654b34707b"
+          },
+          "completed_work": 600
+        },
+        "completed-station-never-decays": true,
+        "away-progress-and-timer-freeze-during-pause": {
+          "paused_work": 90,
+          "paused_decay_clock": 2
+        },
+        "decay-every-full-second-with-zero-clamp": {
+          "interval_updates": 60,
+          "removed_work_updates": 60,
+          "first_reduction": {
+            "x": 48,
+            "y": 120,
+            "size": 12,
+            "base": 1421,
+            "work_frames": 90,
+            "percent": 15,
+            "pattern_sha": "57550f13298f210ae8aa66e71c449715dedc0bc728982a7b512d2e268af83198"
+          },
+          "final_work": 0
+        },
+        "return-resumes-stored-progress": {
+          "x": 48,
+          "y": 120,
+          "size": 12,
+          "base": 1421,
+          "work_frames": 180,
+          "percent": 30,
+          "pattern_sha": "97f10528e7021929dd1d60b3317848405102f93020f0ca8f3b2a521b90e1ecf4"
+        },
+        "independent-station-bars-and-decay-clocks": [
+          {
+            "x": 384,
+            "y": 240,
+            "size": 12,
+            "base": 1413,
+            "work_frames": 120,
+            "percent": 20,
+            "pattern_sha": "f7885302e6bbcd178d97db9b36f3ff3b27404bfce37a70dd7f717848917d2fda"
+          },
+          {
+            "x": 400,
+            "y": 416,
+            "size": 12,
+            "base": 1409,
+            "work_frames": 240,
+            "percent": 40,
+            "pattern_sha": "b4f6437c31eb3f50b15d90d30271651aa5efdd585b8cdd767a485e776d67b00a"
+          }
+        ]
+      },
+      "launch_14_15_16_regression": {
+        "passed": true,
+        "report": "validation/launch-ntsc/report.json"
+      }
+    },
+    "pal": {
+      "passed": true,
+      "report": "validation/pal/report.json",
+      "load": {
+        "seconds": 20,
+        "game_fps": 49.5,
+        "cache_peak": 314,
+        "cache_faults": 0,
+        "sprite_limits": [
+          16,
+          7,
+          128
+        ]
+      },
+      "camera_views": 28,
+      "six_native_generator_poses": true,
+      "activation_checks": {
+        "exact-activation-duration": {
+          "required_updates": 500,
+          "before_last_update": {
+            "x": 48,
+            "y": 120,
+            "size": 12,
+            "base": 1421,
+            "work_frames": 499,
+            "percent": 95,
+            "pattern_sha": "889e2db153ba7e44895dcbb1cb7057a73ff5dd9b39fb954a156b9e654b34707b"
+          },
+          "completed_work": 500
+        },
+        "completed-station-never-decays": true,
+        "away-progress-and-timer-freeze-during-pause": {
+          "paused_work": 75,
+          "paused_decay_clock": 2
+        },
+        "decay-every-full-second-with-zero-clamp": {
+          "interval_updates": 50,
+          "removed_work_updates": 50,
+          "first_reduction": {
+            "x": 48,
+            "y": 120,
+            "size": 12,
+            "base": 1421,
+            "work_frames": 75,
+            "percent": 15,
+            "pattern_sha": "57550f13298f210ae8aa66e71c449715dedc0bc728982a7b512d2e268af83198"
+          },
+          "final_work": 0
+        },
+        "return-resumes-stored-progress": {
+          "x": 48,
+          "y": 120,
+          "size": 12,
+          "base": 1421,
+          "work_frames": 150,
+          "percent": 30,
+          "pattern_sha": "97f10528e7021929dd1d60b3317848405102f93020f0ca8f3b2a521b90e1ecf4"
+        },
+        "independent-station-bars-and-decay-clocks": [
+          {
+            "x": 384,
+            "y": 240,
+            "size": 12,
+            "base": 1413,
+            "work_frames": 100,
+            "percent": 20,
+            "pattern_sha": "f7885302e6bbcd178d97db9b36f3ff3b27404bfce37a70dd7f717848917d2fda"
+          },
+          {
+            "x": 400,
+            "y": 416,
+            "size": 12,
+            "base": 1409,
+            "work_frames": 200,
+            "percent": 40,
+            "pattern_sha": "b4f6437c31eb3f50b15d90d30271651aa5efdd585b8cdd767a485e776d67b00a"
+          }
+        ]
+      },
+      "launch_14_15_16_regression": {
+        "passed": true,
+        "report": "validation/launch-pal/report.json"
+      }
+    }
+  }
+}

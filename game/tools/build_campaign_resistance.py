@@ -53,39 +53,16 @@ depot=module(fd,(40,192,176,312),'depot-complete','favela');paste_prop(fav,depot
 barrier=module(fd,(240,208,400,256),'barricade-complete-with-shadow','favela')
 for xy in [(240,208),(440,256)]:paste_prop(fav,barrier,xy,{4,5},[(8,8,136,40)])
 fav.save(A/'07-08-background-composed.png')
-# New union room with complete exterior quadrants and an intact booth bevel.
-uq=quant(Image.open(A/'source/13A-union.png'),(512,384),UC,4);ud=quant(Image.open(A/'source/13A-union.png'),(512,384),UC,2);ud.save(A/'union-detail-whole-quantized.png');mq=quant(Image.open(A/'source/13B-union-memorial.png'),(512,384),UC,1)
-uq.save(A/'union-whole-quantized.png');mq.save(A/'memorial-whole-quantized.png')
-room=tilefloor(uq,(192,144,193,145),(512,384),UC)
-# Whole rear bays and independent singular booth/banner.
-bay=module(ud,(16,0,176,128),'locker-window-bay','union')
-room.paste(bay,(16,0));room.paste(bay,(336,0))
-room.paste(module(uq,(176,0,264,128),'union-banner-bay','union'),(176,0))
-room.paste(module(uq,(256,0,384,24),'upper-beam-complete','union'),(256,0))
-room.paste(module(ud,(256,24,384,152),'booth-complete','union'),(256,24))
-side=module(uq,(0,128,16,192),'side-middle','union')
-for y in range(128,320,64):room.paste(side,(0,y));room.paste(side,(496,y))
-for name,box,xy in [('nw',(0,0,16,128),(0,0)),('ne',(496,0,512,128),(496,0)),('sw',(0,296,32,384),(0,296)),('se',(480,296,512,384),(480,296))]:room.paste(module(uq,box,'corner-'+name,'union'),xy)
-lower=module(uq,(32,304,208,384),'lower-bay-complete','union')
-room.paste(lower,(32,304));room.paste(lower,(304,304));room.paste(module(uq,(208,296,304,384),'lower-door-complete','union'),(208,296))
-bench=module(ud,(72,240,200,288),'bench-complete-shadow','union')
-for xy in [(72,240),(208,184),(344,240)]:room.paste(bench,xy)
-# Canonical Dinorah is behind the wooden counter: entire figure composited,
-# then original foreground ledge/front restored to occlude waist/legs.
-din=Image.open(G/'art/objetivos-travessia-escolta-v1/assets/dinorah.png').convert('RGBA').crop((32,0,64,48))
-alive=room.convert('RGBA');alive.alpha_composite(din,(300,72));alive=quant(alive,(512,384),UC,1)
-alive.paste(room.crop((256,108,384,152)),(256,108))
-dead=room.copy();dead.paste(mq.crop((272,72,368,112)),(272,72));dead.paste(room.crop((256,112,384,152)),(256,112))
-alive.save(A/'13A-background-composed.png');dead.save(A/'13B-background-composed.png')
+# Detailed interior now has its own reproducible export and exact tile cache.
+from build_phase13_union import export as export_union
+union_report=export_union()
 fc,fs=P.pack({'map':fav},FC,A/'native/favela','favela',544)
-uc,us=P.pack({'alive':alive,'dead':dead},UC,A/'native/union','union',640)
-fsol=[[40,208,112,104],[248,224,136,24],[448,272,136,24]];cargoSol=[[216,184,32,8],[376,184,32,8],[536,184,32,8],[200,304,32,8],[608,312,32,8]];usol=[[80,264,104,16],[216,208,104,16],[352,264,104,16]]
+fsol=[[40,208,112,104],[248,224,136,24],[448,272,136,24]];cargoSol=[[216,184,32,8],[376,184,32,8],[536,184,32,8],[200,304,32,8],[608,312,32,8]];usol=[r[:4] for r in union_report['solids']]
 assert all(v%8==0 for r in fsol+usol for v in r)
-lines=['// Pattern v2, complete authored modules and exact tile reconstruction.','#include "levels/campaign_resistance.h"',fc,uc]
+lines=['// Pattern v2, complete authored modules and exact tile reconstruction.','#include "levels/campaign_resistance.h"',fc,'#include "levels/campaign_resistance_phase13.inc"']
 lines+=['static const ArenaScene favScene={.tiles=favela_tiles,.map=favela_map,.palette=favela_palette,.tileCount='+str(fs['tiles'])+',.rows=48,.cols=96};']
-for name,mp in [('alive','union_alive'),('dead','union_dead')]:lines+=['static const ArenaScene '+name+'Scene={.tiles=union_tiles,.map='+mp+',.palette=union_palette,.tileCount='+str(us['tiles'])+',.rows=48,.cols=64};']
-for name,sol in [('favela',fsol),('union',usol)]:lines+=['static const ArenaRect '+name+'Solids[]={'+','.join('{'+','.join(map(str,r))+',TRUE}'for r in sol)+'};']
-lines+=['#include "levels/campaign_resistance_phase07.inc"','#include "levels/campaign_resistance_phase08.inc"','const ArenaDef CAMPAIGN_RESISTANCE_UNION_ALIVE={512,384,24,160,487,295,280,168,unionSolids,3,&aliveScene};','const ArenaDef CAMPAIGN_RESISTANCE_UNION_DEAD={512,384,24,160,487,295,280,168,unionSolids,3,&deadScene};']
+for name,sol in [('favela',fsol)]:lines+=['static const ArenaRect '+name+'Solids[]={'+','.join('{'+','.join(map(str,r))+',TRUE}'for r in sol)+'};']
+lines+=['#include "levels/campaign_resistance_phase07.inc"','#include "levels/campaign_resistance_phase08.inc"']
 (G/'src/levels/campaign_resistance_scenes.c').write_text('\n'.join(lines)+'\n')
-report={'favela_tiles':fs['tiles'],'union_tiles':us['tiles'],'favela_bounds':[40,160,727,335],'union_bounds':[24,160,487,295],'favela_solids':fsol,'cargo_solids':cargoSol,'cargo_solids_dynamic_until_collected':True,'union_solids':usol,'cargo':[[232,184],[392,184],[552,184],[216,304],[624,312]],'depot':[104,328],'transmitters':[[200,176],[416,304],[664,232]],'worlds':{'7/8':[768,384],'13A/13B':[512,384]},'whole_source_first':True,'pixel_exact_reassembly':True,'lossy_tile_replacements':0,'dinorah_occluded_below_y':108,'source_favela_crop':[0,128,src.width,src.height],'roof_and_prop_extents_review_required':True}
+report={'favela_tiles':fs['tiles'],'union_tiles':union_report['memory']['cache_tiles'],'union_source_tiles':union_report['memory']['source_tiles'],'union_scene':'../phase13-union-v2/manifest.json','favela_bounds':[40,160,727,335],'union_bounds':union_report['bounds'],'favela_solids':fsol,'cargo_solids':cargoSol,'cargo_solids_dynamic_until_collected':True,'union_solids':usol,'cargo':[[232,184],[392,184],[552,184],[216,304],[624,312]],'depot':[104,328],'transmitters':[[200,176],[416,304],[664,232]],'worlds':{'7/8':[768,384],'13A/13B':union_report['size']},'whole_source_first':True,'pixel_exact_reassembly':True,'lossy_tile_replacements':0,'dinorah_occluded_below_y':108,'source_favela_crop':[0,128,src.width,src.height],'roof_and_prop_extents_review_required':True}
 (A/'geometry.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))

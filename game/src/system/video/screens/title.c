@@ -1,14 +1,13 @@
-// Tela inicial: título + menu (Novo Jogo / Fase Teste / Como Jogar), modo normal
+// Tela inicial: título + menu (Novo Jogo / ajuda / código / Fase Teste), modo normal
 // do VDP. A música já toca aqui. A opção Como Jogar abre a tela de explicação e
-// volta ao menu; só Novo Jogo e Fase Teste são devolvidas ao main.
+// volta ao menu; as outras ações são devolvidas ao fluxo.
 //
 // O fundo é a splash de art/title-caatinga-v1 em char-map, no BG_B;
-// o menu fica no BG_A por cima. As telas de ajuda/assets escondem a arte
+// o menu fica no BG_A por cima. A tela de ajuda esconde a arte
 // (texto sobre fundo limpo) e ela volta ao retornar ao menu.
 
 #include "system/video/screens/title.h"
 #include "system/video/screens/help.h"
-#include "system/video/screens/chardemo.h"
 #include "system/video/titlebg.h"
 #include "system/audio/music.h"
 #include "system/audio/audio.h"
@@ -24,9 +23,9 @@
 
 static const u16 menuRows[MENU_N]    = { ROW_0, ROW_1, ROW_2, ROW_3 };
 static const char *const menuText[MENU_N] =
-    { "NOVO JOGO", "COMO JOGAR", "ASSETS", "FASE TESTE" };
+    { "NOVO JOGO", "COMO JOGAR", "SINTONIZAR", "FASE TESTE" };
 static const u8 menuAction[MENU_N]   =
-    { TITLE_NEW_GAME, TITLE_HELP, TITLE_CHARS, TITLE_TEST };
+    { TITLE_NEW_GAME, TITLE_HELP, TITLE_CONTINUE, TITLE_TEST };
 
 static void drawSelection(u8 selected)
 {
@@ -85,13 +84,12 @@ u8 TITLE_run(void)
             if (pressed & (BUTTON_START | BUTTON_A))
             {
                 const u8 act = menuAction[sel];
-                if (act != TITLE_HELP && act != TITLE_CHARS)
+                if (act != TITLE_HELP)
                     break;                          // Novo Jogo / Fase Teste
 
-                TITLEBG_clear();                    // texto dessas telas sem a arte atrás
-                TITLEBG_release();                  // elas usam a VRAM/paletas do jogo
-                if (act == TITLE_HELP) HELP_run();  // Como Jogar: explica e volta
-                else                   CHARDEMO_run(); // Assets: personagens e músicas
+                TITLEBG_clear();                    // texto da ajuda sem a arte atrás
+                TITLEBG_release();                  // ajuda usa a VRAM/paletas do jogo
+                HELP_run();                         // Como Jogar: explica e volta
                 TITLEBG_load();                     // repinta a arte por cima de novo
                 TITLEBG_draw();
                 drawMenu(sel);

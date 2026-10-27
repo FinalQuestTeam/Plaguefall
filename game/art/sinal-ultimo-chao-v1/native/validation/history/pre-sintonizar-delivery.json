@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "date": "2026-10-27",
+  "revision": "Rádio redesenhado para legibilidade em32x32: alto-falante, visor e botões separados",
+  "rom": "game/out/release/Plaguefall.bin",
+  "rom_sha256": "b64af33d1cdb614fdc92de1ad865cdae70723916d85de1b64d5f703728b4a76a",
+  "rom_bytes": 3014656,
+  "elf_sections": {
+    "text_bytes": 3006608,
+    "data_bytes": 264,
+    "bss_bytes": 19782,
+    "static_ram_bytes": 20046
+  },
+  "emulator": "Genesis Plus GX",
+  "regions": [
+    "NTSC",
+    "PAL"
+  ],
+  "physical_hardware_tested": false,
+  "codec": {
+    "symbols": 16,
+    "positions": 6,
+    "format_bits": 24,
+    "version": 1,
+    "crc": "CRC-8/0x07, init A7, big-endian16-bit payload",
+    "valid_checkpoints_tested": 2070,
+    "single_symbol_errors_rejected": 186300,
+    "story_node_flag_combinations_per_region": 69,
+    "unsupported_versions_and_reserved_values_rejected": true
+  },
+  "sprites": {
+    "count": 16,
+    "dimensions": [
+      32,
+      32
+    ],
+    "palette": "existing PAL1",
+    "rom_bytes": 8192,
+    "visible_vram_tiles": 96,
+    "additional_sprite_objects": 0,
+    "art_generation": "built-in ImageGen",
+    "prompts": "../prompts.json",
+    "heart_source": "../source/heart-logo-master.png",
+    "heart_prompt_set": "../../prompts-coracao-logo.json",
+    "heart_reference": "../../../menu-logo-v1/originals/plaguefall-menu-native-v2.png",
+    "unchanged_symbol_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "radio_source": "../source/radio-master-v2.png",
+    "radio_prompt_set": "../../prompts-radio-v2.json",
+    "radio_preview": "../radio-preview.png",
+    "radio_conversion": "nearest-neighbor, existing PAL1"
+  },
+  "resume": {
+    "point": "start of phase",
+    "preserved": [
+      "node/branch",
+      "three campaign consequences",
+      "shot power",
+      "speed upgrades",
+      "reconstructed map/history"
+    ],
+    "hp": 100,
+    "bombs": 2,
+    "inventory": "empty",
+    "temporary_effects": "cleared",
+    "sram_required": false
+  },
+  "checks": {
+    "generated_signal_resources": true,
+    "asan_ubsan_codec": true,
+    "all16_sprite_pixels_verified_in_vram": true,
+    "all19_nodes_and69_valid_flag_combinations": true,
+    "pause_code_in_all19_nodes": true,
+    "victory_generates_next_checkpoint": true,
+    "retry_preserves_entry_checkpoint": true,
+    "console_reset_and_new_process_resume": true,
+    "named_rom_packaging": true,
+    "only_symbol5_changed": true,
+    "existing_password_format_preserved": true
+  },
+  "reports": {
+    "signal_ntsc": "ntsc/report.json",
+    "signal_pal": "pal/report.json",
+    "captures": "radio-v2/report.json"
+  },
+  "limits": [
+    "Emulator validation; physical cartridge not tested.",
+    "Victory/death/equipment fixtures use declared RAM setup; code entry and resume use controller input.",
+    "Passwords are reusable phase-entry checkpoints; position, enemy state, inventory and mid-phase pickups are not stored."
+  ],
+  "previous_revision_report": "history/pre-radio-v2-delivery.json"
+}

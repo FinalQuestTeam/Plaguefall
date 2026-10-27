@@ -1,0 +1,5097 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "1db99280f68527045781180de59e882638d7a24b5f1581e0d75260060e60aa85",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/art/stage-atlas-01-14/build-snapshot",
+  "emulatedRomSHA256": "1db99280f68527045781180de59e882638d7a24b5f1581e0d75260060e60aa85",
+  "movieEnabled": false,
+  "checks": {},
+  "scope": "Visual inventory: stages 1\u201314, all A/B variants",
+  "stages": [
+    {
+      "id": "1",
+      "node": 1,
+      "geometry": {
+        "width": 512,
+        "height": 384,
+        "bounds": [
+          24,
+          128,
+          487,
+          351
+        ],
+        "start": [
+          256,
+          160
+        ],
+        "solids": [
+          [
+            88,
+            184,
+            72,
+            40,
+            false
+          ],
+          [
+            136,
+            288,
+            72,
+            40,
+            false
+          ],
+          [
+            392,
+            264,
+            40,
+            40,
+            false
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdf4a6",
+        "map_address": "0x164600",
+        "tiles_address": "0x15f600",
+        "source_patterns": 640,
+        "resident_tile_budget": 640,
+        "streamed": false,
+        "map_sha256": "30ede3da55f040243da5720d6d80d8aba974485799cca4b6c3d5f68393aabf4d",
+        "palette": [
+          0,
+          546,
+          1058,
+          1602,
+          2148,
+          1124,
+          614,
+          582,
+          1128,
+          1162,
+          1708,
+          1164,
+          586,
+          38,
+          2764,
+          3310
+        ]
+      },
+      "entry": "1/entry.png",
+      "map": "1/map.png",
+      "views": [
+        {
+          "file": "1/view-entry.png",
+          "camera": [
+            104,
+            29
+          ],
+          "player": [
+            256,
+            160
+          ],
+          "frame": 22,
+          "current_node": 1,
+          "stream_faults": 0
+        },
+        {
+          "file": "1/view-0-0.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            152,
+            128
+          ],
+          "frame": 48,
+          "current_node": 1,
+          "stream_faults": 0
+        },
+        {
+          "file": "1/view-1-0.png",
+          "camera": [
+            192,
+            0
+          ],
+          "player": [
+            344,
+            128
+          ],
+          "frame": 44,
+          "current_node": 1,
+          "stream_faults": 0
+        },
+        {
+          "file": "1/view-0-1.png",
+          "camera": [
+            8,
+            77
+          ],
+          "player": [
+            160,
+            208
+          ],
+          "frame": 46,
+          "current_node": 1,
+          "stream_faults": 0
+        },
+        {
+          "file": "1/view-1-1.png",
+          "camera": [
+            192,
+            77
+          ],
+          "player": [
+            344,
+            208
+          ],
+          "frame": 44,
+          "current_node": 1,
+          "stream_faults": 0
+        },
+        {
+          "file": "1/view-0-2.png",
+          "camera": [
+            0,
+            141
+          ],
+          "player": [
+            152,
+            272
+          ],
+          "frame": 50,
+          "current_node": 1,
+          "stream_faults": 0
+        },
+        {
+          "file": "1/view-1-2.png",
+          "camera": [
+            192,
+            157
+          ],
+          "player": [
+            344,
+            288
+          ],
+          "frame": 54,
+          "current_node": 1,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "2A",
+      "node": 2,
+      "geometry": {
+        "width": 512,
+        "height": 384,
+        "bounds": [
+          24,
+          128,
+          487,
+          351
+        ],
+        "start": [
+          256,
+          160
+        ],
+        "solids": [
+          [
+            88,
+            184,
+            72,
+            40,
+            false
+          ],
+          [
+            136,
+            288,
+            72,
+            40,
+            false
+          ],
+          [
+            392,
+            264,
+            40,
+            40,
+            false
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdf4a6",
+        "map_address": "0x164600",
+        "tiles_address": "0x15f600",
+        "source_patterns": 640,
+        "resident_tile_budget": 640,
+        "streamed": false,
+        "map_sha256": "30ede3da55f040243da5720d6d80d8aba974485799cca4b6c3d5f68393aabf4d",
+        "palette": [
+          0,
+          546,
+          1058,
+          1602,
+          2148,
+          1124,
+          614,
+          582,
+          1128,
+          1162,
+          1708,
+          1164,
+          586,
+          38,
+          2764,
+          3310
+        ]
+      },
+      "entry": "2A/entry.png",
+      "map": "2A/map.png",
+      "views": [
+        {
+          "file": "2A/view-entry.png",
+          "camera": [
+            104,
+            29
+          ],
+          "player": [
+            256,
+            160
+          ],
+          "frame": 22,
+          "current_node": 2,
+          "stream_faults": 0
+        },
+        {
+          "file": "2A/view-0-0.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            152,
+            128
+          ],
+          "frame": 48,
+          "current_node": 2,
+          "stream_faults": 0
+        },
+        {
+          "file": "2A/view-1-0.png",
+          "camera": [
+            192,
+            0
+          ],
+          "player": [
+            344,
+            128
+          ],
+          "frame": 44,
+          "current_node": 2,
+          "stream_faults": 0
+        },
+        {
+          "file": "2A/view-0-1.png",
+          "camera": [
+            8,
+            77
+          ],
+          "player": [
+            160,
+            208
+          ],
+          "frame": 46,
+          "current_node": 2,
+          "stream_faults": 0
+        },
+        {
+          "file": "2A/view-1-1.png",
+          "camera": [
+            192,
+            77
+          ],
+          "player": [
+            344,
+            208
+          ],
+          "frame": 44,
+          "current_node": 2,
+          "stream_faults": 0
+        },
+        {
+          "file": "2A/view-0-2.png",
+          "camera": [
+            0,
+            141
+          ],
+          "player": [
+            152,
+            272
+          ],
+          "frame": 50,
+          "current_node": 2,
+          "stream_faults": 0
+        },
+        {
+          "file": "2A/view-1-2.png",
+          "camera": [
+            192,
+            157
+          ],
+          "player": [
+            344,
+            288
+          ],
+          "frame": 54,
+          "current_node": 2,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "2B",
+      "node": 3,
+      "geometry": {
+        "width": 512,
+        "height": 384,
+        "bounds": [
+          24,
+          128,
+          487,
+          351
+        ],
+        "start": [
+          256,
+          160
+        ],
+        "solids": [
+          [
+            88,
+            184,
+            72,
+            40,
+            false
+          ],
+          [
+            136,
+            288,
+            72,
+            40,
+            false
+          ],
+          [
+            392,
+            264,
+            40,
+            40,
+            false
+          ],
+          [
+            168,
+            152,
+            56,
+            32,
+            false
+          ],
+          [
+            280,
+            216,
+            56,
+            32,
+            false
+          ],
+          [
+            72,
+            248,
+            56,
+            32,
+            false
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdf436",
+        "map_address": "0xd8800",
+        "tiles_address": "0xda000",
+        "source_patterns": 603,
+        "resident_tile_budget": 603,
+        "streamed": false,
+        "map_sha256": "cf1eada2d65591e8bd84b50ee9f161c4ebd4774289a007b9741e1db034b8d512",
+        "palette": [
+          0,
+          546,
+          1058,
+          1602,
+          2148,
+          1124,
+          614,
+          582,
+          1128,
+          1162,
+          1708,
+          1164,
+          586,
+          38,
+          2764,
+          3310
+        ]
+      },
+      "entry": "2B/entry.png",
+      "map": "2B/map.png",
+      "views": [
+        {
+          "file": "2B/view-entry.png",
+          "camera": [
+            104,
+            29
+          ],
+          "player": [
+            256,
+            160
+          ],
+          "frame": 22,
+          "current_node": 3,
+          "stream_faults": 0
+        },
+        {
+          "file": "2B/view-0-0.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            152,
+            128
+          ],
+          "frame": 48,
+          "current_node": 3,
+          "stream_faults": 0
+        },
+        {
+          "file": "2B/view-1-0.png",
+          "camera": [
+            192,
+            0
+          ],
+          "player": [
+            344,
+            128
+          ],
+          "frame": 44,
+          "current_node": 3,
+          "stream_faults": 0
+        },
+        {
+          "file": "2B/view-0-1.png",
+          "camera": [
+            8,
+            77
+          ],
+          "player": [
+            160,
+            208
+          ],
+          "frame": 46,
+          "current_node": 3,
+          "stream_faults": 0
+        },
+        {
+          "file": "2B/view-1-1.png",
+          "camera": [
+            192,
+            77
+          ],
+          "player": [
+            344,
+            208
+          ],
+          "frame": 44,
+          "current_node": 3,
+          "stream_faults": 0
+        },
+        {
+          "file": "2B/view-0-2.png",
+          "camera": [
+            0,
+            141
+          ],
+          "player": [
+            152,
+            272
+          ],
+          "frame": 50,
+          "current_node": 3,
+          "stream_faults": 0
+        },
+        {
+          "file": "2B/view-1-2.png",
+          "camera": [
+            192,
+            157
+          ],
+          "player": [
+            344,
+            288
+          ],
+          "frame": 54,
+          "current_node": 3,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "3",
+      "node": 4,
+      "geometry": {
+        "width": 2560,
+        "height": 320,
+        "bounds": [
+          16,
+          144,
+          2543,
+          263
+        ],
+        "start": [
+          264,
+          184
+        ],
+        "solids": [
+          [
+            344,
+            232,
+            48,
+            16,
+            false
+          ],
+          [
+            440,
+            136,
+            16,
+            16,
+            false
+          ],
+          [
+            560,
+            136,
+            16,
+            16,
+            false
+          ],
+          [
+            656,
+            192,
+            64,
+            24,
+            true
+          ],
+          [
+            936,
+            256,
+            48,
+            16,
+            false
+          ],
+          [
+            1120,
+            256,
+            48,
+            16,
+            false
+          ],
+          [
+            1288,
+            136,
+            16,
+            16,
+            false
+          ],
+          [
+            1408,
+            184,
+            48,
+            16,
+            true
+          ],
+          [
+            1672,
+            248,
+            64,
+            24,
+            true
+          ],
+          [
+            1840,
+            136,
+            16,
+            16,
+            false
+          ],
+          [
+            1944,
+            176,
+            32,
+            16,
+            true
+          ],
+          [
+            2128,
+            224,
+            48,
+            16,
+            false
+          ],
+          [
+            2192,
+            136,
+            16,
+            16,
+            false
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xe0ff0000",
+        "map_address": "0xba402",
+        "tiles_address": "0xc0820",
+        "source_patterns": 3070,
+        "resident_tile_budget": 640,
+        "streamed": true,
+        "map_sha256": "a64c400be70c2f88c8de27983ac44f76bcb10144994ab478da4dcd6cb5848fbe",
+        "palette": [
+          0,
+          614,
+          1058,
+          582,
+          546,
+          1124,
+          1128,
+          1162,
+          586,
+          1602,
+          1164,
+          38,
+          1708,
+          2764,
+          2148,
+          3310
+        ]
+      },
+      "entry": "3/entry.png",
+      "map": "3/map.png",
+      "views": [
+        {
+          "file": "3/view-entry.png",
+          "camera": [
+            112,
+            53
+          ],
+          "player": [
+            264,
+            184
+          ],
+          "frame": 21,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-0-0.png",
+          "camera": [
+            0,
+            13
+          ],
+          "player": [
+            152,
+            144
+          ],
+          "frame": 49,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-1-0.png",
+          "camera": [
+            224,
+            13
+          ],
+          "player": [
+            376,
+            144
+          ],
+          "frame": 49,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-2-0.png",
+          "camera": [
+            448,
+            13
+          ],
+          "player": [
+            600,
+            144
+          ],
+          "frame": 105,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-3-0.png",
+          "camera": [
+            672,
+            13
+          ],
+          "player": [
+            824,
+            144
+          ],
+          "frame": 161,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-4-0.png",
+          "camera": [
+            896,
+            13
+          ],
+          "player": [
+            1048,
+            144
+          ],
+          "frame": 217,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-5-0.png",
+          "camera": [
+            1120,
+            13
+          ],
+          "player": [
+            1272,
+            144
+          ],
+          "frame": 273,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-6-0.png",
+          "camera": [
+            1344,
+            13
+          ],
+          "player": [
+            1496,
+            144
+          ],
+          "frame": 329,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-7-0.png",
+          "camera": [
+            1568,
+            13
+          ],
+          "player": [
+            1720,
+            144
+          ],
+          "frame": 385,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-8-0.png",
+          "camera": [
+            1792,
+            13
+          ],
+          "player": [
+            1944,
+            144
+          ],
+          "frame": 441,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-9-0.png",
+          "camera": [
+            2016,
+            13
+          ],
+          "player": [
+            2168,
+            144
+          ],
+          "frame": 497,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-10-0.png",
+          "camera": [
+            2128,
+            13
+          ],
+          "player": [
+            2280,
+            144
+          ],
+          "frame": 525,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-0-1.png",
+          "camera": [
+            0,
+            93
+          ],
+          "player": [
+            152,
+            224
+          ],
+          "frame": 49,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-1-1.png",
+          "camera": [
+            224,
+            85
+          ],
+          "player": [
+            376,
+            216
+          ],
+          "frame": 49,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-2-1.png",
+          "camera": [
+            448,
+            93
+          ],
+          "player": [
+            600,
+            224
+          ],
+          "frame": 105,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-3-1.png",
+          "camera": [
+            672,
+            93
+          ],
+          "player": [
+            824,
+            224
+          ],
+          "frame": 161,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-4-1.png",
+          "camera": [
+            896,
+            93
+          ],
+          "player": [
+            1048,
+            224
+          ],
+          "frame": 217,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-5-1.png",
+          "camera": [
+            1120,
+            93
+          ],
+          "player": [
+            1272,
+            224
+          ],
+          "frame": 273,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-6-1.png",
+          "camera": [
+            1344,
+            93
+          ],
+          "player": [
+            1496,
+            224
+          ],
+          "frame": 329,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-7-1.png",
+          "camera": [
+            1568,
+            93
+          ],
+          "player": [
+            1720,
+            224
+          ],
+          "frame": 385,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-8-1.png",
+          "camera": [
+            1792,
+            93
+          ],
+          "player": [
+            1944,
+            224
+          ],
+          "frame": 441,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-9-1.png",
+          "camera": [
+            2024,
+            93
+          ],
+          "player": [
+            2176,
+            224
+          ],
+          "frame": 499,
+          "current_node": 4,
+          "stream_faults": 0
+        },
+        {
+          "file": "3/view-10-1.png",
+          "camera": [
+            2128,
+            93
+          ],
+          "player": [
+            2280,
+            224
+          ],
+          "frame": 525,
+          "current_node": 4,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "4",
+      "node": 5,
+      "geometry": {
+        "width": 512,
+        "height": 448,
+        "bounds": [
+          32,
+          104,
+          479,
+          391
+        ],
+        "start": [
+          48,
+          112
+        ],
+        "solids": [
+          [
+            64,
+            152,
+            96,
+            48,
+            true
+          ],
+          [
+            336,
+            248,
+            96,
+            48,
+            true
+          ],
+          [
+            208,
+            320,
+            64,
+            48,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdf2ea",
+        "map_address": "0xb3c8c",
+        "tiles_address": "0xb588c",
+        "source_patterns": 602,
+        "resident_tile_budget": 602,
+        "streamed": false,
+        "map_sha256": "5bcd63ddb99bf5a48a50576dcd902fc9a3cd19fbc20f0370da2eca6d00de0f95",
+        "palette": [
+          0,
+          2220,
+          1162,
+          2184,
+          1672,
+          1160,
+          2182,
+          1130,
+          1640,
+          1638,
+          582,
+          1092,
+          1090,
+          546,
+          2,
+          0
+        ]
+      },
+      "entry": "4/entry.png",
+      "map": "4/map.png",
+      "views": [
+        {
+          "file": "4/view-entry.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            48,
+            112
+          ],
+          "frame": 22,
+          "current_node": 5,
+          "stream_faults": 0
+        },
+        {
+          "file": "4/view-1-0.png",
+          "camera": [
+            192,
+            0
+          ],
+          "player": [
+            344,
+            128
+          ],
+          "frame": 70,
+          "current_node": 5,
+          "stream_faults": 0
+        },
+        {
+          "file": "4/view-0-1.png",
+          "camera": [
+            0,
+            109
+          ],
+          "player": [
+            152,
+            240
+          ],
+          "frame": 50,
+          "current_node": 5,
+          "stream_faults": 0
+        },
+        {
+          "file": "4/view-1-1.png",
+          "camera": [
+            192,
+            101
+          ],
+          "player": [
+            344,
+            232
+          ],
+          "frame": 70,
+          "current_node": 5,
+          "stream_faults": 0
+        },
+        {
+          "file": "4/view-0-2.png",
+          "camera": [
+            0,
+            221
+          ],
+          "player": [
+            152,
+            352
+          ],
+          "frame": 78,
+          "current_node": 5,
+          "stream_faults": 0
+        },
+        {
+          "file": "4/view-1-2.png",
+          "camera": [
+            192,
+            221
+          ],
+          "player": [
+            344,
+            352
+          ],
+          "frame": 78,
+          "current_node": 5,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "5",
+      "node": 6,
+      "geometry": {
+        "width": 384,
+        "height": 448,
+        "bounds": [
+          16,
+          112,
+          367,
+          399
+        ],
+        "start": [
+          64,
+          296
+        ],
+        "solids": [
+          [
+            176,
+            256,
+            40,
+            48,
+            false
+          ],
+          [
+            40,
+            176,
+            56,
+            40,
+            true
+          ],
+          [
+            304,
+            336,
+            40,
+            40,
+            false
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdf298",
+        "map_address": "0xad88c",
+        "tiles_address": "0xaed8c",
+        "source_patterns": 631,
+        "resident_tile_budget": 631,
+        "streamed": false,
+        "map_sha256": "97141375fffe0608f4a697aed968d7f2d3653e36ee71a732daa1af69169810fa",
+        "palette": [
+          0,
+          546,
+          1058,
+          1602,
+          2148,
+          1124,
+          1638,
+          582,
+          2184,
+          1162,
+          1708,
+          654,
+          586,
+          38,
+          2764,
+          3310
+        ]
+      },
+      "entry": "5/entry.png",
+      "map": "5/map.png",
+      "views": [
+        {
+          "file": "5/view-entry.png",
+          "camera": [
+            0,
+            165
+          ],
+          "player": [
+            64,
+            296
+          ],
+          "frame": 21,
+          "current_node": 6,
+          "stream_faults": 0
+        },
+        {
+          "file": "5/view-0-0.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            152,
+            128
+          ],
+          "frame": 64,
+          "current_node": 6,
+          "stream_faults": 0
+        },
+        {
+          "file": "5/view-1-0.png",
+          "camera": [
+            64,
+            0
+          ],
+          "player": [
+            216,
+            128
+          ],
+          "frame": 64,
+          "current_node": 6,
+          "stream_faults": 0
+        },
+        {
+          "file": "5/view-0-1.png",
+          "camera": [
+            0,
+            109
+          ],
+          "player": [
+            152,
+            240
+          ],
+          "frame": 36,
+          "current_node": 6,
+          "stream_faults": 0
+        },
+        {
+          "file": "5/view-1-1.png",
+          "camera": [
+            64,
+            109
+          ],
+          "player": [
+            216,
+            240
+          ],
+          "frame": 38,
+          "current_node": 6,
+          "stream_faults": 0
+        },
+        {
+          "file": "5/view-0-2.png",
+          "camera": [
+            0,
+            221
+          ],
+          "player": [
+            152,
+            352
+          ],
+          "frame": 36,
+          "current_node": 6,
+          "stream_faults": 0
+        },
+        {
+          "file": "5/view-1-2.png",
+          "camera": [
+            64,
+            221
+          ],
+          "player": [
+            216,
+            352
+          ],
+          "frame": 38,
+          "current_node": 6,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "6A",
+      "node": 7,
+      "geometry": {
+        "width": 3072,
+        "height": 320,
+        "bounds": [
+          24,
+          80,
+          3047,
+          271
+        ],
+        "start": [
+          104,
+          192
+        ],
+        "solids": [
+          [
+            56,
+            80,
+            104,
+            88,
+            true
+          ],
+          [
+            2880,
+            80,
+            128,
+            64,
+            true
+          ],
+          [
+            320,
+            224,
+            32,
+            16,
+            true
+          ],
+          [
+            656,
+            112,
+            80,
+            48,
+            true
+          ],
+          [
+            880,
+            240,
+            32,
+            16,
+            true
+          ],
+          [
+            1168,
+            248,
+            48,
+            16,
+            false
+          ],
+          [
+            1376,
+            128,
+            32,
+            16,
+            true
+          ],
+          [
+            1672,
+            112,
+            80,
+            48,
+            true
+          ],
+          [
+            1968,
+            248,
+            48,
+            16,
+            false
+          ],
+          [
+            2184,
+            240,
+            32,
+            16,
+            true
+          ],
+          [
+            2368,
+            128,
+            40,
+            24,
+            false
+          ],
+          [
+            832,
+            80,
+            32,
+            32,
+            true
+          ],
+          [
+            832,
+            176,
+            32,
+            96,
+            true
+          ],
+          [
+            1856,
+            80,
+            32,
+            112,
+            true
+          ],
+          [
+            1856,
+            256,
+            32,
+            16,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdf168",
+        "map_address": "0x138780",
+        "tiles_address": "0x12fea0",
+        "source_patterns": 1095,
+        "resident_tile_budget": 456,
+        "streamed": true,
+        "map_sha256": "22517f1d266944be7461db61807768594d3f46034adba79d4b83ea91de5eac8f",
+        "palette": [
+          0,
+          546,
+          1056,
+          1600,
+          2146,
+          2182,
+          1128,
+          1638,
+          2184,
+          2764,
+          582,
+          616,
+          1162,
+          1742,
+          1058,
+          1092
+        ]
+      },
+      "entry": "6A/entry.png",
+      "map": "6A/map.png",
+      "views": [
+        {
+          "file": "6A/view-entry.png",
+          "camera": [
+            0,
+            61
+          ],
+          "player": [
+            104,
+            192
+          ],
+          "frame": 22,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-0-0.png",
+          "camera": [
+            8,
+            0
+          ],
+          "player": [
+            160,
+            128
+          ],
+          "frame": 38,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-1-0.png",
+          "camera": [
+            232,
+            0
+          ],
+          "player": [
+            384,
+            128
+          ],
+          "frame": 80,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-2-0.png",
+          "camera": [
+            456,
+            0
+          ],
+          "player": [
+            608,
+            128
+          ],
+          "frame": 136,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-3-0.png",
+          "camera": [
+            688,
+            0
+          ],
+          "player": [
+            840,
+            128
+          ],
+          "frame": 194,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-4-0.png",
+          "camera": [
+            920,
+            0
+          ],
+          "player": [
+            1072,
+            128
+          ],
+          "frame": 252,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-5-0.png",
+          "camera": [
+            1144,
+            0
+          ],
+          "player": [
+            1296,
+            128
+          ],
+          "frame": 308,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-6-0.png",
+          "camera": [
+            1376,
+            0
+          ],
+          "player": [
+            1528,
+            128
+          ],
+          "frame": 366,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-7-0.png",
+          "camera": [
+            1608,
+            0
+          ],
+          "player": [
+            1760,
+            128
+          ],
+          "frame": 424,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-8-0.png",
+          "camera": [
+            1832,
+            0
+          ],
+          "player": [
+            1984,
+            128
+          ],
+          "frame": 480,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-9-0.png",
+          "camera": [
+            2064,
+            0
+          ],
+          "player": [
+            2216,
+            128
+          ],
+          "frame": 538,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-10-0.png",
+          "camera": [
+            2296,
+            0
+          ],
+          "player": [
+            2448,
+            128
+          ],
+          "frame": 596,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-11-0.png",
+          "camera": [
+            2520,
+            0
+          ],
+          "player": [
+            2672,
+            128
+          ],
+          "frame": 652,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-12-0.png",
+          "camera": [
+            2752,
+            13
+          ],
+          "player": [
+            2904,
+            144
+          ],
+          "frame": 710,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-0-1.png",
+          "camera": [
+            0,
+            93
+          ],
+          "player": [
+            152,
+            224
+          ],
+          "frame": 30,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-1-1.png",
+          "camera": [
+            232,
+            93
+          ],
+          "player": [
+            384,
+            224
+          ],
+          "frame": 80,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-2-1.png",
+          "camera": [
+            456,
+            93
+          ],
+          "player": [
+            608,
+            224
+          ],
+          "frame": 136,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-3-1.png",
+          "camera": [
+            664,
+            93
+          ],
+          "player": [
+            816,
+            224
+          ],
+          "frame": 188,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-4-1.png",
+          "camera": [
+            920,
+            93
+          ],
+          "player": [
+            1072,
+            224
+          ],
+          "frame": 252,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-5-1.png",
+          "camera": [
+            1144,
+            93
+          ],
+          "player": [
+            1296,
+            224
+          ],
+          "frame": 308,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-6-1.png",
+          "camera": [
+            1376,
+            93
+          ],
+          "player": [
+            1528,
+            224
+          ],
+          "frame": 366,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-7-1.png",
+          "camera": [
+            1608,
+            93
+          ],
+          "player": [
+            1760,
+            224
+          ],
+          "frame": 424,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-8-1.png",
+          "camera": [
+            1832,
+            93
+          ],
+          "player": [
+            1984,
+            224
+          ],
+          "frame": 480,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-9-1.png",
+          "camera": [
+            2064,
+            93
+          ],
+          "player": [
+            2216,
+            224
+          ],
+          "frame": 538,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-10-1.png",
+          "camera": [
+            2296,
+            93
+          ],
+          "player": [
+            2448,
+            224
+          ],
+          "frame": 596,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-11-1.png",
+          "camera": [
+            2520,
+            93
+          ],
+          "player": [
+            2672,
+            224
+          ],
+          "frame": 652,
+          "current_node": 7,
+          "stream_faults": 0
+        },
+        {
+          "file": "6A/view-12-1.png",
+          "camera": [
+            2752,
+            93
+          ],
+          "player": [
+            2904,
+            224
+          ],
+          "frame": 710,
+          "current_node": 7,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "6B",
+      "node": 8,
+      "geometry": {
+        "width": 3072,
+        "height": 320,
+        "bounds": [
+          24,
+          80,
+          3047,
+          271
+        ],
+        "start": [
+          104,
+          192
+        ],
+        "solids": [
+          [
+            56,
+            80,
+            104,
+            88,
+            true
+          ],
+          [
+            2880,
+            80,
+            128,
+            64,
+            true
+          ],
+          [
+            320,
+            224,
+            32,
+            16,
+            true
+          ],
+          [
+            656,
+            112,
+            80,
+            48,
+            true
+          ],
+          [
+            880,
+            240,
+            32,
+            16,
+            true
+          ],
+          [
+            1168,
+            248,
+            48,
+            16,
+            false
+          ],
+          [
+            1376,
+            128,
+            32,
+            16,
+            true
+          ],
+          [
+            1672,
+            112,
+            80,
+            48,
+            true
+          ],
+          [
+            1968,
+            248,
+            48,
+            16,
+            false
+          ],
+          [
+            2184,
+            240,
+            32,
+            16,
+            true
+          ],
+          [
+            2368,
+            128,
+            40,
+            24,
+            false
+          ],
+          [
+            832,
+            80,
+            32,
+            32,
+            true
+          ],
+          [
+            832,
+            176,
+            32,
+            96,
+            true
+          ],
+          [
+            1856,
+            80,
+            32,
+            112,
+            true
+          ],
+          [
+            1856,
+            256,
+            32,
+            16,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdf020",
+        "map_address": "0x148880",
+        "tiles_address": "0x13ffa0",
+        "source_patterns": 1095,
+        "resident_tile_budget": 456,
+        "streamed": true,
+        "map_sha256": "22517f1d266944be7461db61807768594d3f46034adba79d4b83ea91de5eac8f",
+        "palette": [
+          0,
+          546,
+          1056,
+          1600,
+          2146,
+          2182,
+          1128,
+          1638,
+          2184,
+          2764,
+          582,
+          616,
+          1162,
+          1742,
+          1058,
+          1092
+        ]
+      },
+      "entry": "6B/entry.png",
+      "map": "6B/map.png",
+      "views": [
+        {
+          "file": "6B/view-entry.png",
+          "camera": [
+            0,
+            61
+          ],
+          "player": [
+            104,
+            192
+          ],
+          "frame": 22,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-0-0.png",
+          "camera": [
+            8,
+            0
+          ],
+          "player": [
+            160,
+            128
+          ],
+          "frame": 38,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-1-0.png",
+          "camera": [
+            232,
+            0
+          ],
+          "player": [
+            384,
+            128
+          ],
+          "frame": 80,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-2-0.png",
+          "camera": [
+            456,
+            0
+          ],
+          "player": [
+            608,
+            128
+          ],
+          "frame": 136,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-3-0.png",
+          "camera": [
+            688,
+            0
+          ],
+          "player": [
+            840,
+            128
+          ],
+          "frame": 194,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-4-0.png",
+          "camera": [
+            920,
+            0
+          ],
+          "player": [
+            1072,
+            128
+          ],
+          "frame": 252,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-5-0.png",
+          "camera": [
+            1144,
+            0
+          ],
+          "player": [
+            1296,
+            128
+          ],
+          "frame": 308,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-6-0.png",
+          "camera": [
+            1376,
+            0
+          ],
+          "player": [
+            1528,
+            128
+          ],
+          "frame": 366,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-7-0.png",
+          "camera": [
+            1608,
+            0
+          ],
+          "player": [
+            1760,
+            128
+          ],
+          "frame": 424,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-8-0.png",
+          "camera": [
+            1832,
+            0
+          ],
+          "player": [
+            1984,
+            128
+          ],
+          "frame": 480,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-9-0.png",
+          "camera": [
+            2064,
+            0
+          ],
+          "player": [
+            2216,
+            128
+          ],
+          "frame": 538,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-10-0.png",
+          "camera": [
+            2296,
+            0
+          ],
+          "player": [
+            2448,
+            128
+          ],
+          "frame": 596,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-11-0.png",
+          "camera": [
+            2520,
+            0
+          ],
+          "player": [
+            2672,
+            128
+          ],
+          "frame": 652,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-12-0.png",
+          "camera": [
+            2752,
+            13
+          ],
+          "player": [
+            2904,
+            144
+          ],
+          "frame": 710,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-0-1.png",
+          "camera": [
+            0,
+            93
+          ],
+          "player": [
+            152,
+            224
+          ],
+          "frame": 30,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-1-1.png",
+          "camera": [
+            232,
+            93
+          ],
+          "player": [
+            384,
+            224
+          ],
+          "frame": 80,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-2-1.png",
+          "camera": [
+            456,
+            93
+          ],
+          "player": [
+            608,
+            224
+          ],
+          "frame": 136,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-3-1.png",
+          "camera": [
+            664,
+            93
+          ],
+          "player": [
+            816,
+            224
+          ],
+          "frame": 188,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-4-1.png",
+          "camera": [
+            920,
+            93
+          ],
+          "player": [
+            1072,
+            224
+          ],
+          "frame": 252,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-5-1.png",
+          "camera": [
+            1144,
+            93
+          ],
+          "player": [
+            1296,
+            224
+          ],
+          "frame": 308,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-6-1.png",
+          "camera": [
+            1376,
+            93
+          ],
+          "player": [
+            1528,
+            224
+          ],
+          "frame": 366,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-7-1.png",
+          "camera": [
+            1608,
+            93
+          ],
+          "player": [
+            1760,
+            224
+          ],
+          "frame": 424,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-8-1.png",
+          "camera": [
+            1832,
+            93
+          ],
+          "player": [
+            1984,
+            224
+          ],
+          "frame": 480,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-9-1.png",
+          "camera": [
+            2064,
+            93
+          ],
+          "player": [
+            2216,
+            224
+          ],
+          "frame": 538,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-10-1.png",
+          "camera": [
+            2296,
+            93
+          ],
+          "player": [
+            2448,
+            224
+          ],
+          "frame": 596,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-11-1.png",
+          "camera": [
+            2520,
+            93
+          ],
+          "player": [
+            2672,
+            224
+          ],
+          "frame": 652,
+          "current_node": 8,
+          "stream_faults": 0
+        },
+        {
+          "file": "6B/view-12-1.png",
+          "camera": [
+            2752,
+            93
+          ],
+          "player": [
+            2904,
+            224
+          ],
+          "frame": 710,
+          "current_node": 8,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "7",
+      "node": 9,
+      "geometry": {
+        "width": 768,
+        "height": 544,
+        "bounds": [
+          32,
+          176,
+          735,
+          479
+        ],
+        "start": [
+          64,
+          192
+        ],
+        "solids": [
+          [
+            48,
+            256,
+            112,
+            104,
+            true
+          ],
+          [
+            472,
+            256,
+            104,
+            88,
+            true
+          ],
+          [
+            256,
+            352,
+            104,
+            88,
+            true
+          ],
+          [
+            608,
+            176,
+            104,
+            64,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdefc4",
+        "map_address": "0xa2ae2",
+        "tiles_address": "0xa5de2",
+        "source_patterns": 978,
+        "resident_tile_budget": 560,
+        "streamed": true,
+        "map_sha256": "4c3c8919b8f9338c545f63ea617a5e93fc6a146ed0cbca9266bd8513a66d2a99",
+        "palette": [
+          0,
+          546,
+          1092,
+          1638,
+          2184,
+          2764,
+          3822,
+          582,
+          1128,
+          586,
+          38,
+          1602,
+          2148,
+          1162,
+          1124,
+          2730
+        ]
+      },
+      "entry": "7/entry.png",
+      "map": "7/map.png",
+      "views": [
+        {
+          "file": "7/view-entry.png",
+          "camera": [
+            0,
+            61
+          ],
+          "player": [
+            64,
+            192
+          ],
+          "frame": 22,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-0-0.png",
+          "camera": [
+            0,
+            45
+          ],
+          "player": [
+            152,
+            176
+          ],
+          "frame": 26,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-1-0.png",
+          "camera": [
+            224,
+            45
+          ],
+          "player": [
+            376,
+            176
+          ],
+          "frame": 78,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-2-0.png",
+          "camera": [
+            440,
+            45
+          ],
+          "player": [
+            592,
+            176
+          ],
+          "frame": 132,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-0-1.png",
+          "camera": [
+            0,
+            109
+          ],
+          "player": [
+            152,
+            240
+          ],
+          "frame": 34,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-1-1.png",
+          "camera": [
+            224,
+            109
+          ],
+          "player": [
+            376,
+            240
+          ],
+          "frame": 78,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-2-1.png",
+          "camera": [
+            448,
+            109
+          ],
+          "player": [
+            600,
+            240
+          ],
+          "frame": 134,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-0-2.png",
+          "camera": [
+            8,
+            213
+          ],
+          "player": [
+            160,
+            344
+          ],
+          "frame": 60,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-1-2.png",
+          "camera": [
+            224,
+            213
+          ],
+          "player": [
+            376,
+            344
+          ],
+          "frame": 78,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-2-2.png",
+          "camera": [
+            448,
+            213
+          ],
+          "player": [
+            600,
+            344
+          ],
+          "frame": 134,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-0-3.png",
+          "camera": [
+            0,
+            317
+          ],
+          "player": [
+            152,
+            448
+          ],
+          "frame": 86,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-1-3.png",
+          "camera": [
+            224,
+            317
+          ],
+          "player": [
+            376,
+            448
+          ],
+          "frame": 86,
+          "current_node": 9,
+          "stream_faults": 0
+        },
+        {
+          "file": "7/view-2-3.png",
+          "camera": [
+            448,
+            317
+          ],
+          "player": [
+            600,
+            448
+          ],
+          "frame": 134,
+          "current_node": 9,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "8",
+      "node": 10,
+      "geometry": {
+        "width": 768,
+        "height": 544,
+        "bounds": [
+          32,
+          176,
+          735,
+          479
+        ],
+        "start": [
+          64,
+          192
+        ],
+        "solids": [
+          [
+            48,
+            256,
+            112,
+            104,
+            true
+          ],
+          [
+            472,
+            256,
+            104,
+            88,
+            true
+          ],
+          [
+            256,
+            352,
+            104,
+            88,
+            true
+          ],
+          [
+            608,
+            176,
+            104,
+            64,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdef90",
+        "map_address": "0xa2ae2",
+        "tiles_address": "0xa5de2",
+        "source_patterns": 978,
+        "resident_tile_budget": 560,
+        "streamed": true,
+        "map_sha256": "4c3c8919b8f9338c545f63ea617a5e93fc6a146ed0cbca9266bd8513a66d2a99",
+        "palette": [
+          0,
+          546,
+          1092,
+          1638,
+          2184,
+          2764,
+          3822,
+          582,
+          1128,
+          586,
+          38,
+          1602,
+          2148,
+          1162,
+          1124,
+          2730
+        ]
+      },
+      "entry": "8/entry.png",
+      "map": "8/map.png",
+      "views": [
+        {
+          "file": "8/view-entry.png",
+          "camera": [
+            0,
+            61
+          ],
+          "player": [
+            64,
+            192
+          ],
+          "frame": 22,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-0-0.png",
+          "camera": [
+            0,
+            45
+          ],
+          "player": [
+            152,
+            176
+          ],
+          "frame": 25,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-1-0.png",
+          "camera": [
+            224,
+            45
+          ],
+          "player": [
+            376,
+            176
+          ],
+          "frame": 78,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-2-0.png",
+          "camera": [
+            440,
+            45
+          ],
+          "player": [
+            592,
+            176
+          ],
+          "frame": 132,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-0-1.png",
+          "camera": [
+            0,
+            109
+          ],
+          "player": [
+            152,
+            240
+          ],
+          "frame": 34,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-1-1.png",
+          "camera": [
+            224,
+            109
+          ],
+          "player": [
+            376,
+            240
+          ],
+          "frame": 78,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-2-1.png",
+          "camera": [
+            448,
+            109
+          ],
+          "player": [
+            600,
+            240
+          ],
+          "frame": 134,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-0-2.png",
+          "camera": [
+            8,
+            213
+          ],
+          "player": [
+            160,
+            344
+          ],
+          "frame": 60,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-1-2.png",
+          "camera": [
+            224,
+            213
+          ],
+          "player": [
+            376,
+            344
+          ],
+          "frame": 78,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-2-2.png",
+          "camera": [
+            448,
+            213
+          ],
+          "player": [
+            600,
+            344
+          ],
+          "frame": 134,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-0-3.png",
+          "camera": [
+            0,
+            317
+          ],
+          "player": [
+            152,
+            448
+          ],
+          "frame": 86,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-1-3.png",
+          "camera": [
+            224,
+            317
+          ],
+          "player": [
+            376,
+            448
+          ],
+          "frame": 86,
+          "current_node": 10,
+          "stream_faults": 0
+        },
+        {
+          "file": "8/view-2-3.png",
+          "camera": [
+            448,
+            317
+          ],
+          "player": [
+            600,
+            448
+          ],
+          "frame": 134,
+          "current_node": 10,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "9",
+      "node": 11,
+      "geometry": {
+        "width": 2560,
+        "height": 320,
+        "bounds": [
+          16,
+          96,
+          2543,
+          287
+        ],
+        "start": [
+          48,
+          184
+        ],
+        "solids": [
+          [
+            128,
+            32,
+            128,
+            128,
+            true
+          ],
+          [
+            672,
+            160,
+            128,
+            128,
+            true
+          ],
+          [
+            1120,
+            32,
+            288,
+            128,
+            true
+          ],
+          [
+            1760,
+            160,
+            288,
+            128,
+            true
+          ],
+          [
+            400,
+            208,
+            96,
+            64,
+            true
+          ],
+          [
+            1248,
+            224,
+            96,
+            64,
+            true
+          ],
+          [
+            2256,
+            176,
+            96,
+            64,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdeece",
+        "map_address": "0x95f54",
+        "tiles_address": "0x9c360",
+        "source_patterns": 827,
+        "resident_tile_budget": 448,
+        "streamed": true,
+        "map_sha256": "3a7ccaf388a1354c83d06e869eb1871767af5b67f5e6cb9464b7a60acfad9bc0",
+        "palette": [
+          0,
+          546,
+          1602,
+          1092,
+          2148,
+          1672,
+          2184,
+          2764,
+          1164,
+          584,
+          618,
+          140,
+          1090,
+          1638,
+          1162,
+          1124
+        ]
+      },
+      "entry": "9/entry.png",
+      "map": "9/map.png",
+      "views": [
+        {
+          "file": "9/view-entry.png",
+          "camera": [
+            0,
+            53
+          ],
+          "player": [
+            48,
+            184
+          ],
+          "frame": 22,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-0-0.png",
+          "camera": [
+            0,
+            29
+          ],
+          "player": [
+            152,
+            160
+          ],
+          "frame": 28,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-1-0.png",
+          "camera": [
+            224,
+            0
+          ],
+          "player": [
+            376,
+            128
+          ],
+          "frame": 78,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-2-0.png",
+          "camera": [
+            448,
+            0
+          ],
+          "player": [
+            600,
+            128
+          ],
+          "frame": 134,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-3-0.png",
+          "camera": [
+            672,
+            0
+          ],
+          "player": [
+            824,
+            128
+          ],
+          "frame": 190,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-4-0.png",
+          "camera": [
+            896,
+            0
+          ],
+          "player": [
+            1048,
+            128
+          ],
+          "frame": 246,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-5-0.png",
+          "camera": [
+            1120,
+            29
+          ],
+          "player": [
+            1272,
+            160
+          ],
+          "frame": 302,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-6-0.png",
+          "camera": [
+            1344,
+            0
+          ],
+          "player": [
+            1496,
+            128
+          ],
+          "frame": 358,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-7-0.png",
+          "camera": [
+            1568,
+            0
+          ],
+          "player": [
+            1720,
+            128
+          ],
+          "frame": 414,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-8-0.png",
+          "camera": [
+            1792,
+            0
+          ],
+          "player": [
+            1944,
+            128
+          ],
+          "frame": 470,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-9-0.png",
+          "camera": [
+            2016,
+            0
+          ],
+          "player": [
+            2168,
+            128
+          ],
+          "frame": 526,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-10-0.png",
+          "camera": [
+            2128,
+            0
+          ],
+          "player": [
+            2280,
+            128
+          ],
+          "frame": 554,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-0-1.png",
+          "camera": [
+            0,
+            93
+          ],
+          "player": [
+            152,
+            224
+          ],
+          "frame": 32,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-1-1.png",
+          "camera": [
+            224,
+            93
+          ],
+          "player": [
+            376,
+            224
+          ],
+          "frame": 78,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-2-1.png",
+          "camera": [
+            448,
+            93
+          ],
+          "player": [
+            600,
+            224
+          ],
+          "frame": 134,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-3-1.png",
+          "camera": [
+            672,
+            93
+          ],
+          "player": [
+            824,
+            224
+          ],
+          "frame": 190,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-4-1.png",
+          "camera": [
+            896,
+            93
+          ],
+          "player": [
+            1048,
+            224
+          ],
+          "frame": 246,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-5-1.png",
+          "camera": [
+            1120,
+            77
+          ],
+          "player": [
+            1272,
+            208
+          ],
+          "frame": 302,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-6-1.png",
+          "camera": [
+            1344,
+            93
+          ],
+          "player": [
+            1496,
+            224
+          ],
+          "frame": 358,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-7-1.png",
+          "camera": [
+            1568,
+            93
+          ],
+          "player": [
+            1720,
+            224
+          ],
+          "frame": 414,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-8-1.png",
+          "camera": [
+            1792,
+            13
+          ],
+          "player": [
+            1944,
+            144
+          ],
+          "frame": 470,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-9-1.png",
+          "camera": [
+            2016,
+            93
+          ],
+          "player": [
+            2168,
+            224
+          ],
+          "frame": 526,
+          "current_node": 11,
+          "stream_faults": 0
+        },
+        {
+          "file": "9/view-10-1.png",
+          "camera": [
+            2128,
+            96
+          ],
+          "player": [
+            2280,
+            240
+          ],
+          "frame": 554,
+          "current_node": 11,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "10",
+      "node": 12,
+      "geometry": {
+        "width": 768,
+        "height": 544,
+        "bounds": [
+          24,
+          128,
+          743,
+          479
+        ],
+        "start": [
+          56,
+          160
+        ],
+        "solids": [
+          [
+            128,
+            224,
+            112,
+            48,
+            true
+          ],
+          [
+            496,
+            192,
+            80,
+            80,
+            true
+          ],
+          [
+            304,
+            320,
+            80,
+            64,
+            true
+          ],
+          [
+            600,
+            352,
+            64,
+            64,
+            true
+          ],
+          [
+            120,
+            408,
+            64,
+            56,
+            true
+          ],
+          [
+            456,
+            416,
+            64,
+            56,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdee5e",
+        "map_address": "0x89ca0",
+        "tiles_address": "0x8cfa0",
+        "source_patterns": 1147,
+        "resident_tile_budget": 320,
+        "streamed": true,
+        "map_sha256": "4f4876e2659d9a3147379d0f6db66eb70fd3b3d9fd71418d9b37b950d3cd26ac",
+        "palette": [
+          0,
+          546,
+          1602,
+          1092,
+          2148,
+          1672,
+          2184,
+          2764,
+          38,
+          584,
+          618,
+          140,
+          1090,
+          1638,
+          2182,
+          1124
+        ]
+      },
+      "entry": "10/entry.png",
+      "map": "10/map.png",
+      "views": [
+        {
+          "file": "10/view-entry.png",
+          "camera": [
+            0,
+            29
+          ],
+          "player": [
+            56,
+            160
+          ],
+          "frame": 22,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-0-0.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            152,
+            128
+          ],
+          "frame": 30,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-1-0.png",
+          "camera": [
+            224,
+            0
+          ],
+          "player": [
+            376,
+            128
+          ],
+          "frame": 78,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-2-0.png",
+          "camera": [
+            448,
+            0
+          ],
+          "player": [
+            600,
+            128
+          ],
+          "frame": 134,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-0-1.png",
+          "camera": [
+            0,
+            77
+          ],
+          "player": [
+            152,
+            208
+          ],
+          "frame": 34,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-1-1.png",
+          "camera": [
+            224,
+            109
+          ],
+          "player": [
+            376,
+            240
+          ],
+          "frame": 78,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-2-1.png",
+          "camera": [
+            448,
+            109
+          ],
+          "player": [
+            600,
+            240
+          ],
+          "frame": 134,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-0-2.png",
+          "camera": [
+            0,
+            213
+          ],
+          "player": [
+            152,
+            344
+          ],
+          "frame": 68,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-1-2.png",
+          "camera": [
+            232,
+            213
+          ],
+          "player": [
+            384,
+            344
+          ],
+          "frame": 80,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-2-2.png",
+          "camera": [
+            448,
+            205
+          ],
+          "player": [
+            600,
+            336
+          ],
+          "frame": 134,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-0-3.png",
+          "camera": [
+            0,
+            320
+          ],
+          "player": [
+            152,
+            464
+          ],
+          "frame": 95,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-1-3.png",
+          "camera": [
+            224,
+            317
+          ],
+          "player": [
+            376,
+            448
+          ],
+          "frame": 94,
+          "current_node": 12,
+          "stream_faults": 0
+        },
+        {
+          "file": "10/view-2-3.png",
+          "camera": [
+            448,
+            317
+          ],
+          "player": [
+            600,
+            448
+          ],
+          "frame": 134,
+          "current_node": 12,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "11",
+      "node": 13,
+      "geometry": {
+        "width": 768,
+        "height": 544,
+        "bounds": [
+          24,
+          128,
+          743,
+          479
+        ],
+        "start": [
+          56,
+          160
+        ],
+        "solids": [
+          [
+            128,
+            224,
+            112,
+            48,
+            true
+          ],
+          [
+            496,
+            192,
+            80,
+            80,
+            true
+          ],
+          [
+            304,
+            320,
+            80,
+            64,
+            true
+          ],
+          [
+            600,
+            352,
+            64,
+            64,
+            true
+          ],
+          [
+            120,
+            408,
+            64,
+            56,
+            true
+          ],
+          [
+            456,
+            416,
+            64,
+            56,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdee2a",
+        "map_address": "0x89ca0",
+        "tiles_address": "0x8cfa0",
+        "source_patterns": 1147,
+        "resident_tile_budget": 320,
+        "streamed": true,
+        "map_sha256": "4f4876e2659d9a3147379d0f6db66eb70fd3b3d9fd71418d9b37b950d3cd26ac",
+        "palette": [
+          0,
+          546,
+          1602,
+          1092,
+          2148,
+          1672,
+          2184,
+          2764,
+          1568,
+          2114,
+          2658,
+          3200,
+          1090,
+          1638,
+          2182,
+          1124
+        ]
+      },
+      "entry": "11/entry.png",
+      "map": "11/map.png",
+      "views": [
+        {
+          "file": "11/view-entry.png",
+          "camera": [
+            0,
+            29
+          ],
+          "player": [
+            56,
+            160
+          ],
+          "frame": 22,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-0-0.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            152,
+            128
+          ],
+          "frame": 30,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-1-0.png",
+          "camera": [
+            224,
+            0
+          ],
+          "player": [
+            376,
+            128
+          ],
+          "frame": 78,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-2-0.png",
+          "camera": [
+            448,
+            0
+          ],
+          "player": [
+            600,
+            128
+          ],
+          "frame": 134,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-0-1.png",
+          "camera": [
+            0,
+            77
+          ],
+          "player": [
+            152,
+            208
+          ],
+          "frame": 34,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-1-1.png",
+          "camera": [
+            224,
+            109
+          ],
+          "player": [
+            376,
+            240
+          ],
+          "frame": 78,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-2-1.png",
+          "camera": [
+            448,
+            109
+          ],
+          "player": [
+            600,
+            240
+          ],
+          "frame": 134,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-0-2.png",
+          "camera": [
+            0,
+            213
+          ],
+          "player": [
+            152,
+            344
+          ],
+          "frame": 68,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-1-2.png",
+          "camera": [
+            232,
+            213
+          ],
+          "player": [
+            384,
+            344
+          ],
+          "frame": 80,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-2-2.png",
+          "camera": [
+            448,
+            205
+          ],
+          "player": [
+            600,
+            336
+          ],
+          "frame": 134,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-0-3.png",
+          "camera": [
+            0,
+            320
+          ],
+          "player": [
+            152,
+            464
+          ],
+          "frame": 95,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-1-3.png",
+          "camera": [
+            224,
+            317
+          ],
+          "player": [
+            376,
+            448
+          ],
+          "frame": 94,
+          "current_node": 13,
+          "stream_faults": 0
+        },
+        {
+          "file": "11/view-2-3.png",
+          "camera": [
+            448,
+            317
+          ],
+          "player": [
+            600,
+            448
+          ],
+          "frame": 134,
+          "current_node": 13,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "12",
+      "node": 14,
+      "geometry": {
+        "width": 3072,
+        "height": 320,
+        "bounds": [
+          16,
+          112,
+          3055,
+          287
+        ],
+        "start": [
+          48,
+          208
+        ],
+        "solids": [
+          [
+            0,
+            0,
+            3072,
+            112,
+            true
+          ],
+          [
+            64,
+            24,
+            304,
+            160,
+            true
+          ],
+          [
+            688,
+            24,
+            160,
+            128,
+            true
+          ],
+          [
+            1200,
+            24,
+            160,
+            128,
+            true
+          ],
+          [
+            1712,
+            24,
+            160,
+            128,
+            true
+          ],
+          [
+            2224,
+            24,
+            160,
+            128,
+            true
+          ],
+          [
+            2720,
+            24,
+            304,
+            176,
+            true
+          ],
+          [
+            400,
+            240,
+            32,
+            32,
+            true
+          ],
+          [
+            416,
+            128,
+            40,
+            40,
+            true
+          ],
+          [
+            720,
+            208,
+            96,
+            64,
+            true
+          ],
+          [
+            928,
+            224,
+            40,
+            40,
+            true
+          ],
+          [
+            1200,
+            240,
+            32,
+            32,
+            true
+          ],
+          [
+            1408,
+            112,
+            96,
+            64,
+            true
+          ],
+          [
+            1744,
+            208,
+            96,
+            64,
+            true
+          ],
+          [
+            1984,
+            224,
+            40,
+            40,
+            true
+          ],
+          [
+            2224,
+            240,
+            32,
+            32,
+            true
+          ],
+          [
+            2432,
+            112,
+            96,
+            64,
+            true
+          ],
+          [
+            2608,
+            240,
+            32,
+            32,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdecee",
+        "map_address": "0x154de0",
+        "tiles_address": "0x1500a0",
+        "source_patterns": 618,
+        "resident_tile_budget": 618,
+        "streamed": false,
+        "map_sha256": "0b24ae23a1392ef338dd036b1d9cc359e415bd100647477c00b8ed42aba60bda",
+        "palette": [
+          0,
+          2764,
+          1708,
+          1162,
+          1128,
+          582,
+          586,
+          550,
+          546,
+          1092,
+          1638,
+          2184,
+          1058,
+          1602,
+          2148,
+          1124
+        ]
+      },
+      "entry": "12/entry.png",
+      "map": "12/map.png",
+      "views": [
+        {
+          "file": "12/view-entry.png",
+          "camera": [
+            0,
+            77
+          ],
+          "player": [
+            48,
+            208
+          ],
+          "frame": 22,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-0-0.png",
+          "camera": [
+            0,
+            53
+          ],
+          "player": [
+            152,
+            184
+          ],
+          "frame": 28,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-1-0.png",
+          "camera": [
+            232,
+            0
+          ],
+          "player": [
+            384,
+            128
+          ],
+          "frame": 80,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-2-0.png",
+          "camera": [
+            456,
+            0
+          ],
+          "player": [
+            608,
+            128
+          ],
+          "frame": 136,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-3-0.png",
+          "camera": [
+            696,
+            0
+          ],
+          "player": [
+            848,
+            128
+          ],
+          "frame": 196,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-4-0.png",
+          "camera": [
+            920,
+            0
+          ],
+          "player": [
+            1072,
+            128
+          ],
+          "frame": 252,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-5-0.png",
+          "camera": [
+            1144,
+            21
+          ],
+          "player": [
+            1296,
+            152
+          ],
+          "frame": 308,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-6-0.png",
+          "camera": [
+            1376,
+            0
+          ],
+          "player": [
+            1528,
+            128
+          ],
+          "frame": 366,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-7-0.png",
+          "camera": [
+            1608,
+            21
+          ],
+          "player": [
+            1760,
+            152
+          ],
+          "frame": 424,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-8-0.png",
+          "camera": [
+            1832,
+            0
+          ],
+          "player": [
+            1984,
+            128
+          ],
+          "frame": 480,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-9-0.png",
+          "camera": [
+            2056,
+            0
+          ],
+          "player": [
+            2208,
+            128
+          ],
+          "frame": 536,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-10-0.png",
+          "camera": [
+            2264,
+            0
+          ],
+          "player": [
+            2416,
+            128
+          ],
+          "frame": 588,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-11-0.png",
+          "camera": [
+            2520,
+            0
+          ],
+          "player": [
+            2672,
+            128
+          ],
+          "frame": 652,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-12-0.png",
+          "camera": [
+            2752,
+            69
+          ],
+          "player": [
+            2904,
+            200
+          ],
+          "frame": 710,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-0-1.png",
+          "camera": [
+            0,
+            93
+          ],
+          "player": [
+            152,
+            224
+          ],
+          "frame": 26,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-1-1.png",
+          "camera": [
+            232,
+            93
+          ],
+          "player": [
+            384,
+            224
+          ],
+          "frame": 80,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-2-1.png",
+          "camera": [
+            456,
+            93
+          ],
+          "player": [
+            608,
+            224
+          ],
+          "frame": 136,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-3-1.png",
+          "camera": [
+            688,
+            93
+          ],
+          "player": [
+            840,
+            224
+          ],
+          "frame": 194,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-4-1.png",
+          "camera": [
+            920,
+            93
+          ],
+          "player": [
+            1072,
+            224
+          ],
+          "frame": 252,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-5-1.png",
+          "camera": [
+            1144,
+            93
+          ],
+          "player": [
+            1296,
+            224
+          ],
+          "frame": 308,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-6-1.png",
+          "camera": [
+            1376,
+            93
+          ],
+          "player": [
+            1528,
+            224
+          ],
+          "frame": 366,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-7-1.png",
+          "camera": [
+            1576,
+            93
+          ],
+          "player": [
+            1728,
+            224
+          ],
+          "frame": 416,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-8-1.png",
+          "camera": [
+            1816,
+            93
+          ],
+          "player": [
+            1968,
+            224
+          ],
+          "frame": 476,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-9-1.png",
+          "camera": [
+            2064,
+            93
+          ],
+          "player": [
+            2216,
+            224
+          ],
+          "frame": 538,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-10-1.png",
+          "camera": [
+            2296,
+            93
+          ],
+          "player": [
+            2448,
+            224
+          ],
+          "frame": 596,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-11-1.png",
+          "camera": [
+            2520,
+            93
+          ],
+          "player": [
+            2672,
+            224
+          ],
+          "frame": 652,
+          "current_node": 14,
+          "stream_faults": 0
+        },
+        {
+          "file": "12/view-12-1.png",
+          "camera": [
+            2752,
+            93
+          ],
+          "player": [
+            2904,
+            224
+          ],
+          "frame": 710,
+          "current_node": 14,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "13A",
+      "node": 15,
+      "geometry": {
+        "width": 512,
+        "height": 576,
+        "bounds": [
+          24,
+          160,
+          487,
+          487
+        ],
+        "start": [
+          280,
+          168
+        ],
+        "solids": [
+          [
+            80,
+            328,
+            104,
+            16,
+            true
+          ],
+          [
+            216,
+            272,
+            104,
+            16,
+            true
+          ],
+          [
+            352,
+            392,
+            104,
+            16,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdec9c",
+        "map_address": "0x7de22",
+        "tiles_address": "0x80240",
+        "source_patterns": 1231,
+        "resident_tile_budget": 640,
+        "streamed": true,
+        "map_sha256": "935fb55fba84aa4c6ee77046200777535684d9a4591fc25861bf44372ccb4486",
+        "palette": [
+          0,
+          546,
+          1092,
+          1638,
+          2184,
+          2218,
+          2764,
+          582,
+          1128,
+          1674,
+          550,
+          584,
+          1056,
+          1602,
+          2148,
+          1708
+        ]
+      },
+      "entry": "13A/entry.png",
+      "map": "13A/map.png",
+      "views": [
+        {
+          "file": "13A/view-entry.png",
+          "camera": [
+            128,
+            37
+          ],
+          "player": [
+            280,
+            168
+          ],
+          "frame": 22,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-0-0.png",
+          "camera": [
+            0,
+            29
+          ],
+          "player": [
+            152,
+            160
+          ],
+          "frame": 54,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-1-0.png",
+          "camera": [
+            192,
+            29
+          ],
+          "player": [
+            344,
+            160
+          ],
+          "frame": 38,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-0-1.png",
+          "camera": [
+            0,
+            117
+          ],
+          "player": [
+            152,
+            248
+          ],
+          "frame": 54,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-1-1.png",
+          "camera": [
+            192,
+            117
+          ],
+          "player": [
+            344,
+            248
+          ],
+          "frame": 42,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-0-2.png",
+          "camera": [
+            0,
+            237
+          ],
+          "player": [
+            152,
+            368
+          ],
+          "frame": 72,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-1-2.png",
+          "camera": [
+            192,
+            237
+          ],
+          "player": [
+            344,
+            368
+          ],
+          "frame": 72,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-0-3.png",
+          "camera": [
+            0,
+            341
+          ],
+          "player": [
+            152,
+            472
+          ],
+          "frame": 98,
+          "current_node": 15,
+          "stream_faults": 0
+        },
+        {
+          "file": "13A/view-1-3.png",
+          "camera": [
+            192,
+            341
+          ],
+          "player": [
+            344,
+            472
+          ],
+          "frame": 98,
+          "current_node": 15,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "13B",
+      "node": 16,
+      "geometry": {
+        "width": 512,
+        "height": 576,
+        "bounds": [
+          24,
+          160,
+          487,
+          487
+        ],
+        "start": [
+          280,
+          168
+        ],
+        "solids": [
+          [
+            80,
+            328,
+            104,
+            16,
+            true
+          ],
+          [
+            216,
+            272,
+            104,
+            16,
+            true
+          ],
+          [
+            352,
+            392,
+            104,
+            16,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdec68",
+        "map_address": "0x7ba00",
+        "tiles_address": "0x80240",
+        "source_patterns": 1231,
+        "resident_tile_budget": 640,
+        "streamed": true,
+        "map_sha256": "935fb55fba84aa4c6ee77046200777535684d9a4591fc25861bf44372ccb4486",
+        "palette": [
+          0,
+          546,
+          1092,
+          1638,
+          2184,
+          2218,
+          2764,
+          582,
+          1128,
+          1674,
+          550,
+          584,
+          1056,
+          1602,
+          2148,
+          1708
+        ]
+      },
+      "entry": "13B/entry.png",
+      "map": "13B/map.png",
+      "views": [
+        {
+          "file": "13B/view-entry.png",
+          "camera": [
+            128,
+            37
+          ],
+          "player": [
+            280,
+            168
+          ],
+          "frame": 22,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-0-0.png",
+          "camera": [
+            0,
+            29
+          ],
+          "player": [
+            152,
+            160
+          ],
+          "frame": 54,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-1-0.png",
+          "camera": [
+            192,
+            29
+          ],
+          "player": [
+            344,
+            160
+          ],
+          "frame": 38,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-0-1.png",
+          "camera": [
+            0,
+            117
+          ],
+          "player": [
+            152,
+            248
+          ],
+          "frame": 54,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-1-1.png",
+          "camera": [
+            192,
+            117
+          ],
+          "player": [
+            344,
+            248
+          ],
+          "frame": 42,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-0-2.png",
+          "camera": [
+            0,
+            237
+          ],
+          "player": [
+            152,
+            368
+          ],
+          "frame": 72,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-1-2.png",
+          "camera": [
+            192,
+            237
+          ],
+          "player": [
+            344,
+            368
+          ],
+          "frame": 72,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-0-3.png",
+          "camera": [
+            0,
+            341
+          ],
+          "player": [
+            152,
+            472
+          ],
+          "frame": 98,
+          "current_node": 16,
+          "stream_faults": 0
+        },
+        {
+          "file": "13B/view-1-3.png",
+          "camera": [
+            192,
+            341
+          ],
+          "player": [
+            344,
+            472
+          ],
+          "frame": 98,
+          "current_node": 16,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    },
+    {
+      "id": "14",
+      "node": 17,
+      "geometry": {
+        "width": 512,
+        "height": 576,
+        "bounds": [
+          40,
+          128,
+          471,
+          511
+        ],
+        "start": [
+          48,
+          232
+        ],
+        "solids": [
+          [
+            200,
+            264,
+            112,
+            64,
+            true
+          ],
+          [
+            248,
+            232,
+            16,
+            32,
+            true
+          ],
+          [
+            216,
+            432,
+            80,
+            48,
+            true
+          ],
+          [
+            48,
+            160,
+            32,
+            16,
+            true
+          ],
+          [
+            432,
+            160,
+            32,
+            16,
+            true
+          ],
+          [
+            384,
+            280,
+            32,
+            16,
+            true
+          ],
+          [
+            400,
+            456,
+            32,
+            16,
+            true
+          ],
+          [
+            80,
+            456,
+            32,
+            16,
+            true
+          ]
+        ]
+      },
+      "source": {
+        "scene_address": "0xdebe4",
+        "map_address": "0x70660",
+        "tiles_address": "0x72a60",
+        "source_patterns": 1149,
+        "resident_tile_budget": 448,
+        "streamed": true,
+        "map_sha256": "bb9ca37b98b72c7e2a9d6b0748e78ba05006ceca00dee9bbf19d21d14f933545",
+        "palette": [
+          0,
+          546,
+          1056,
+          1602,
+          1092,
+          1638,
+          2184,
+          2764,
+          582,
+          1128,
+          650,
+          686,
+          1742,
+          2148,
+          2218,
+          1708
+        ]
+      },
+      "entry": "14/entry.png",
+      "map": "14/map.png",
+      "views": [
+        {
+          "file": "14/view-entry.png",
+          "camera": [
+            0,
+            100
+          ],
+          "player": [
+            48,
+            232
+          ],
+          "frame": 22,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-0-0.png",
+          "camera": [
+            0,
+            0
+          ],
+          "player": [
+            152,
+            128
+          ],
+          "frame": 47,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-1-0.png",
+          "camera": [
+            192,
+            0
+          ],
+          "player": [
+            344,
+            128
+          ],
+          "frame": 70,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-0-1.png",
+          "camera": [
+            0,
+            116
+          ],
+          "player": [
+            152,
+            248
+          ],
+          "frame": 26,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-1-1.png",
+          "camera": [
+            192,
+            116
+          ],
+          "player": [
+            344,
+            248
+          ],
+          "frame": 70,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-0-2.png",
+          "camera": [
+            0,
+            236
+          ],
+          "player": [
+            152,
+            368
+          ],
+          "frame": 56,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-1-2.png",
+          "camera": [
+            192,
+            236
+          ],
+          "player": [
+            344,
+            368
+          ],
+          "frame": 70,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-0-3.png",
+          "camera": [
+            0,
+            348
+          ],
+          "player": [
+            152,
+            480
+          ],
+          "frame": 84,
+          "current_node": 17,
+          "stream_faults": 0
+        },
+        {
+          "file": "14/view-1-3.png",
+          "camera": [
+            192,
+            348
+          ],
+          "player": [
+            344,
+            480
+          ],
+          "frame": 84,
+          "current_node": 17,
+          "stream_faults": 0
+        }
+      ],
+      "entered": true
+    }
+  ],
+  "method": "Genesis Plus GX, unmodified production ROM, NTSC. RAM setup selects each node, protects actors and positions the player before each still. Each view restores the same entry state. Not a controller traversal, completion test or FPS benchmark. Full base maps are decoded from the live ArenaScene ROM pointers; dynamic objects and HUD are visible in emulator stills."
+}

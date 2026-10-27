@@ -16,6 +16,7 @@ static s16 left=-1,right,top,bottom;
 static s16 lastPixelX,warmCol=-1,warmRow;
 static s8 warmDirection=1;
 volatile u16 sceneStreamFaults,sceneStreamPeak,sceneStreamUploads;
+volatile u16 sceneStreamDeferrals;
 static const u16 *rowAt(s16 y)
 {
     // The exported map contains12800 cells. Narrow before pointer arithmetic
@@ -42,7 +43,7 @@ static bool allocateWork(void)
 }
 bool SCENESTREAM_begin(const ArenaScene *scene)
 {
-    SCENESTREAM_end();sceneStreamFaults=sceneStreamPeak=sceneStreamUploads=0;
+    SCENESTREAM_end();sceneStreamFaults=sceneStreamPeak=sceneStreamUploads=sceneStreamDeferrals=0;
     if(!scene->tileCount || scene->tileCount>COURTYARD_TILE_COUNT)return FALSE;
     capacity=scene->tileCount;streamScene=scene;
     persistent=MEM_alloc(CAP*2);
@@ -196,12 +197,15 @@ bool SCENESTREAM_move(s16 px,s16 py)
     if(l==left && r==right && t==top && b==bottom){warmAhead();return TRUE;}
     const bool initial=left<0;
     const u16 entering=initial ? (r-l+1)*(b-t+1) : differenceCells(l,r,t,b,left,right,top,bottom);
-    if(!initial && (DMA_getQueueSize()+entering+10>DMA_getMaxQueueSize() || DMA_getQueueTransferSize()+entering*32+1024>DMA_TRANSFER_CAPACITY_NTSC))return FALSE;
+    if(!initial && (DMA_getQueueSize()+entering+10>DMA_getMaxQueueSize() || DMA_getQueueTransferSize()+entering*32+1024>DMA_TRANSFER_CAPACITY_NTSC)) {
+        if(sceneStreamDeferrals<65535)sceneStreamDeferrals++;
+        return FALSE;
+    }
     if(initial)cells(l,t,r-l+1,b-t+1,TRUE,TRUE);
     else {
         const s16 it=t>top?t:top,ib=b<bottom?b:bottom,ih=ib-it+1;
         // Only the entering/leaving strips are traversed. The camera moves
-        // at most4px per frame, so the previous and next rectangles overlap.
+        // at most8px per frame, so the previous and next rectangles overlap.
         cells(left,top,right-left+1,t-top,FALSE,FALSE);
         cells(left,b+1,right-left+1,bottom-b,FALSE,FALSE);
         cells(left,it,l-left,ih,FALSE,FALSE);

@@ -1,0 +1,563 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "856de009353a84f7564dc4d030a622e69ca2cfbc9b3ef86e87d502745d7e7601",
+  "buildDirectory": "game/art/stage-atlas-01-16/build-snapshot",
+  "emulatedRomSHA256": "856de009353a84f7564dc4d030a622e69ca2cfbc9b3ef86e87d502745d7e7601",
+  "movieEnabled": false,
+  "checks": {
+    "original-boss-spawns-in-shared-room": true,
+    "shared-powered-native-equipment-entry": {
+      "kind": "normal",
+      "camera": [
+        0,
+        100
+      ],
+      "cells": 1040,
+      "overlay_cells": 63,
+      "visible_patterns": 81,
+      "cache_peak": 81,
+      "cache_faults": 0
+    },
+    "28-real-native-camera-views": [
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 468,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 45,
+        "visible_patterns": 214,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          124
+        ],
+        "cells": 1040,
+        "overlay_cells": 53,
+        "visible_patterns": 82,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          188
+        ],
+        "cells": 1040,
+        "overlay_cells": 29,
+        "visible_patterns": 82,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 58,
+        "visible_patterns": 168,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 284,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          0,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 392,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 449,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 45,
+        "visible_patterns": 202,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          124
+        ],
+        "cells": 1040,
+        "overlay_cells": 53,
+        "visible_patterns": 75,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          188
+        ],
+        "cells": 1040,
+        "overlay_cells": 29,
+        "visible_patterns": 75,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 58,
+        "visible_patterns": 161,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 270,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          8,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 374,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 17,
+        "visible_patterns": 396,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 56,
+        "visible_patterns": 172,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          124
+        ],
+        "cells": 1040,
+        "overlay_cells": 75,
+        "visible_patterns": 59,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          188
+        ],
+        "cells": 1040,
+        "overlay_cells": 63,
+        "visible_patterns": 58,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 76,
+        "visible_patterns": 142,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          144,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 230,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          128,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 322,
+        "cache_peak": 469,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          0
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 469,
+        "cache_peak": 470,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          60
+        ],
+        "cells": 1040,
+        "overlay_cells": 73,
+        "visible_patterns": 217,
+        "cache_peak": 470,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          124
+        ],
+        "cells": 1040,
+        "overlay_cells": 87,
+        "visible_patterns": 87,
+        "cache_peak": 470,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          188
+        ],
+        "cells": 1040,
+        "overlay_cells": 63,
+        "visible_patterns": 87,
+        "cache_peak": 470,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          252
+        ],
+        "cells": 1040,
+        "overlay_cells": 76,
+        "visible_patterns": 173,
+        "cache_peak": 470,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          316
+        ],
+        "cells": 1040,
+        "overlay_cells": 34,
+        "visible_patterns": 285,
+        "cache_peak": 470,
+        "cache_faults": 0
+      },
+      {
+        "kind": "normal",
+        "camera": [
+          192,
+          352
+        ],
+        "cells": 1000,
+        "overlay_cells": 34,
+        "visible_patterns": 393,
+        "cache_peak": 470,
+        "cache_faults": 0
+      }
+    ],
+    "controller-traversal-without-ram-writes": {
+      "kind": "normal",
+      "camera": [
+        0,
+        102
+      ],
+      "cells": 1040,
+      "overlay_cells": 63,
+      "visible_patterns": 81,
+      "cache_peak": 470,
+      "cache_faults": 0
+    },
+    "shared-equipment-faces-and-four-bounds": [
+      [
+        216,
+        304,
+        7,
+        224
+      ],
+      [
+        280,
+        304,
+        6,
+        272
+      ],
+      [
+        240,
+        280,
+        5,
+        288
+      ],
+      [
+        240,
+        328,
+        4,
+        320
+      ],
+      [
+        192,
+        432,
+        7,
+        200
+      ],
+      [
+        304,
+        432,
+        6,
+        296
+      ],
+      [
+        216,
+        408,
+        5,
+        416
+      ],
+      [
+        216,
+        488,
+        4,
+        480
+      ],
+      [
+        88,
+        160,
+        6,
+        80
+      ],
+      [
+        48,
+        136,
+        5,
+        144
+      ],
+      [
+        48,
+        184,
+        4,
+        176
+      ],
+      [
+        408,
+        160,
+        7,
+        416
+      ],
+      [
+        432,
+        136,
+        5,
+        144
+      ],
+      [
+        432,
+        184,
+        4,
+        176
+      ],
+      [
+        360,
+        280,
+        7,
+        368
+      ],
+      [
+        424,
+        280,
+        6,
+        416
+      ],
+      [
+        384,
+        256,
+        5,
+        264
+      ],
+      [
+        384,
+        304,
+        4,
+        296
+      ],
+      [
+        376,
+        456,
+        7,
+        384
+      ],
+      [
+        440,
+        456,
+        6,
+        432
+      ],
+      [
+        400,
+        432,
+        5,
+        440
+      ],
+      [
+        400,
+        480,
+        4,
+        472
+      ],
+      [
+        56,
+        456,
+        7,
+        64
+      ],
+      [
+        120,
+        456,
+        6,
+        112
+      ],
+      [
+        80,
+        432,
+        5,
+        440
+      ],
+      [
+        80,
+        480,
+        4,
+        472
+      ]
+    ],
+    "pause-restores-native-windows-and-cache": {
+      "kind": "normal",
+      "camera": [
+        0,
+        100
+      ],
+      "cells": 1040,
+      "overlay_cells": 63,
+      "visible_patterns": 81,
+      "cache_peak": 81,
+      "cache_faults": 0
+    },
+    "retry-keeps-new-windows-and-respawns-boss": {
+      "kind": "normal",
+      "camera": [
+        0,
+        100
+      ],
+      "cells": 1040,
+      "overlay_cells": 63,
+      "visible_patterns": 81,
+      "cache_peak": 81,
+      "cache_faults": 0
+    },
+    "controller-boss-combat": {
+      "minimum_boss_hp": 1,
+      "defeated": true,
+      "game_fps": 59.557,
+      "cache_peak": 326,
+      "ram_writes_during_combat": 0
+    }
+  },
+  "scope": "Phase16: original boss and AI; phase15 room/equipment/collisions; native144x80 engine interiors;28pixel-exact camera views; controller traversal, collisions, pause, defeat/retry and boss damage."
+}

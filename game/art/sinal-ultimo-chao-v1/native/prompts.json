@@ -1,0 +1,22 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit / game sprite recreation. The supplied image is the approved sixteen-symbol password alphabet for the Sega Mega Drive game PLAGUEFALL. Recreate the SAME sixteen pictograms as a PRODUCTION SPRITE ATLAS on a completely transparent background. Exactly FOUR COLUMNS and FOUR ROWS of equal square cells, no padding outside, no text, no frames, no grid, no numbers, no shadows outside objects. Each cell represents one native 32x32 sprite drawn with deliberately chunky pixel clusters and enlarged by nearest-neighbor for the output. Leave at least 3 native transparent pixels around each icon within its cell. Align all object centers on the exact regular cell grid. Make silhouettes legible at only 32x32 pixels: simplify interior details aggressively, use solid shapes and 1-pixel cream edge highlights, dark navy outlines, 3 or 4 shades per material, 15 opaque colors total plus transparency for the entire sheet. No antialiasing, no smooth shading, no fine noise. Palette similar to this game's existing native sprites: pale cream, mustard gold, rusty brown, brick red, steel gray, blue, olive green, dark navy. Preserve the reference reading order EXACTLY: row 1 mandacaru branching cactus, rusty gear, Nossa Senhora Aparecida dark blue mantle and gold crown, red leafcutter ant; row 2 cangaceiro leather hat, WIDE horizontal olive two-way radio with amber display and aerial, whitewashed chapel with blue door and cross, stout dark blue horsefly; row 3 cracked red earth clod, silver/copper rocket, carved wooden heart ex-voto, yellow scorpion; row 4 cream cordel booklet, horizontal steel pliers with brown handles, bronze bell, existing STE union emblem. For the last badge preserve red cogwheel, navy field, cream rocket-wrench and blue orbital curve; use only tiny STE block letters if they remain legible at32px, otherwise prioritize recognizable rocket-wrench crest, no invented lettering. All16 objects must be separate non-touching opaque sprites surrounded by real transparency. This is sprite artwork for an actual 16-bit game, not a high-resolution concept mockup.",
+  "revisions": [
+    {
+      "symbol": "ex-voto",
+      "index": 10,
+      "source": "source/heart-logo-master.png",
+      "prompts": "../prompts-coracao-logo.json",
+      "mode": "built-in image_gen",
+      "description": "Coração metálico do logo substitui o coração de madeira; os outros15 sprites são preservados."
+    },
+    {
+      "symbol": "radio",
+      "index": 5,
+      "source": "source/radio-master-v2.png",
+      "prompts": "../prompts-radio-v2.json",
+      "mode": "built-in image_gen",
+      "description": "Desenho frontal para32x32, alto-falante separado, visor contrastante e dois botões; conversão nearest-neighbor."
+    }
+  ]
+}

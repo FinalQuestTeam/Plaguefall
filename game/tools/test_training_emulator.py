@@ -118,6 +118,9 @@ def main():
                 result[(y*w+x)*3:(y*w+x+1)*3]=bytes((r,g,b))
         return bytes(result)
     def shot(name):png(out/(name+'.png'),w,h,rgb())
+    def textrow(row):
+        return ''.join(chr((vw(0xe000+(row*64+x)*2)&0x7ff)-1440+32)
+            if 1440<=(vw(0xe000+(row*64+x)*2)&0x7ff)<1536 else '.' for x in range(40))
 
     def setkeys(keys,n=1):
         buttons.clear();buttons.update(keys);run(n)
@@ -174,9 +177,9 @@ def main():
         except Exception as e:
             report['checks'][label]={'passed':False,'error':repr(e)};report['failures'].append(label);shot('FAIL-'+label);print('FAIL',label,repr(e),flush=True)
         save()
-    run(120);ui(3);run(4*fps);ui(5,3);ui(1);run(fps);shot('room-selector')
+    run(120);ui(3);run(4*fps);ui(4);ui(1);run(fps);shot('room-selector')
     if args.only_selector:
-        report['method']='Controller input only, production ROM: all 19 campaign entries, branch flags, pause switching/restart/cancel, paging, technical rooms and normal new game. RAM is read only.'
+        report['method']='Controller input only, production ROM: all 19 campaign entries, branch flags, pause switching/restart/cancel, paging, endings tab navigation and normal new game. RAM is read only.'
         phase_names=['1','2A','2B','3','4','5','6A','6B','7','8','9','10','11','12','13A','13B','14','15','16']
         def enter_phase(node):
             ui(1)
@@ -190,7 +193,8 @@ def main():
         def choose_from_pause():
             pause();ui(5,2);ui(1);run(12)
         def all_entries():
-            ui(7);shot('campaign-selector-first')
+            assert 'FASES DA CAMPANHA' in textrow(2),textrow(2)
+            shot('campaign-selector-first')
             for node in range(1,20):
                 if node>1:
                     choose_from_pause();ui(5)
@@ -220,21 +224,30 @@ def main():
                 return 'C page navigation, B cancel preserves the active phase; pause restart resets the same phase'
             check('paging-cancel-restart',paging_cancel_restart)
         if not report['failures']:
-            def technical_and_normal():
-                choose_from_pause();ui(7);shot('technical-selector');ui(5,5);ui(1)
-                wait(lambda:state()==1 and u8('currentLevel')==0 and u8('testStage')==6,'technical-load',fps*20)
-                assert u8('testCampaignMode')==0
-                shot('technical-load-room')
-                pause();ui(5,3);ui(1);ui(7);ui(1)
-                wait(lambda:state()==0 and u8('pendingLevel')==1,'return-to-campaign',fps*20)
-                ui(1);wait(lambda:state()==1 and not u8('transitioning'),'return-play',fps*20)
+            def campaign_only_and_normal():
+                choose_from_pause()
+                assert 'FASES DA CAMPANHA' in textrow(2),textrow(2)
+                ui(7);assert 'FINAIS DA CAMPANHA' in textrow(2),textrow(2)
+                ui(6);assert 'FASES DA CAMPANHA' in textrow(2),textrow(2)
+                shot('campaign-only-selector')
+                ui(0);wait(lambda:state()==1,'cancel-campaign-only')
+                assert u8('currentLevel')==11 and u8('testCampaignMode')==1
                 pause();ui(5,4);ui(1);ui(5);ui(1);run(fps)
+                assert 'NOVO JOGO' in textrow(12),textrow(12)
+                ui(4);ui(1);run(fps)
+                assert 'FASES DA CAMPANHA' in textrow(2),textrow(2)
+                ui(3);run(fps)
+                assert 'NOVO JOGO' in textrow(12),textrow(12)
+                ui(4);ui(1);run(fps)
+                assert 'FASES DA CAMPANHA' in textrow(2),textrow(2)
+                ui(0);run(fps)
+                assert 'NOVO JOGO' in textrow(12),textrow(12)
                 ui(1);run(fps)
                 assert u8('testCampaignMode')==0
-                assert state() in (0,6),state()
+                assert state() in (0,6,8),state()
                 shot('normal-new-game')
-                return 'Room 6 remains available, campaign can be reentered and normal new game clears test mode'
-            check('technical-and-normal',technical_and_normal)
+                return '19 campaign stages and an endings tab; technical rooms stay hidden; B/START cancel; normal new game clears test mode'
+            check('campaign-only-and-normal',campaign_only_and_normal)
         report['passed']=not report['failures'];save();core.retro_unload_game();core.retro_deinit()
         print(json.dumps({'passed':report['passed'],'failures':report['failures']}),flush=True)
         raise SystemExit(0 if report['passed'] else 1)

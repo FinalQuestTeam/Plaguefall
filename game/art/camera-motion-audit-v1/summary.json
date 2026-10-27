@@ -1,0 +1,1576 @@
+{
+  "rom_sha256": "40820b0b1d7d0263697b61be877ca3afc9c16d6f26f09eb56366c12a135f9e36",
+  "phases": 14,
+  "regions": 2,
+  "trials": 364,
+  "samples": 252436,
+  "emulated_seconds": 4611.4,
+  "baseline_clipped_samples": 1741,
+  "model_clipped_samples": 0,
+  "model_max_error": 0,
+  "model_scope": "Offline geometric replay of measured player positions with a clamped body-centered target, initialization at the target, and the existing4px/tick cap. Not an emulator test of modified production code; no DMA/VRAM/FPS claim. No escort or landmark bias in this baseline model.",
+  "measurements": [
+    {
+      "phase": "1",
+      "region": "ntsc",
+      "samples": 7456,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 124.24,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1189,
+        "moving_samples": 1137,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 19.82,
+        "physical_seconds": 19.82,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            242
+          ],
+          "camera": [
+            0,
+            110
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            40,
+            101,
+            32,
+            48
+          ],
+          "frame": 65
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "2A",
+      "region": "ntsc",
+      "samples": 7456,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 124.24,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1189,
+        "moving_samples": 1137,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 19.82,
+        "physical_seconds": 19.82,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            242
+          ],
+          "camera": [
+            0,
+            110
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            40,
+            101,
+            32,
+            48
+          ],
+          "frame": 65
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "2B",
+      "region": "ntsc",
+      "samples": 7545,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 125.72,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1230,
+        "moving_samples": 1173,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 20.5,
+        "physical_seconds": 20.5,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            242
+          ],
+          "camera": [
+            0,
+            110
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            40,
+            101,
+            32,
+            48
+          ],
+          "frame": 65
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "3",
+      "region": "ntsc",
+      "samples": 10336,
+      "max_error_x": 144,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 118,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 172.95,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 2548,
+        "moving_samples": 2485,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 42.47,
+        "physical_seconds": 42.58,
+        "fps": 59.84,
+        "max_error_x": 144,
+        "max_error_y": 53,
+        "moving_p95_error_x": 78,
+        "moving_p95_error_y": 47,
+        "clipped_samples": 0,
+        "target_jumps_over12": 13,
+        "escort_switches": 0,
+        "landmark_switches": 4,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            2216,
+            178
+          ],
+          "camera": [
+            2208,
+            0
+          ],
+          "error": [
+            -144,
+            47
+          ],
+          "sprite": [
+            0,
+            147,
+            32,
+            48
+          ],
+          "frame": 1366
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "4",
+      "region": "ntsc",
+      "samples": 8166,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 136.07,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1519,
+        "moving_samples": 1461,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 25.32,
+        "physical_seconds": 25.32,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            56,
+            250
+          ],
+          "camera": [
+            0,
+            118
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            48,
+            101,
+            32,
+            48
+          ],
+          "frame": 68
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "5",
+      "region": "ntsc",
+      "samples": 7856,
+      "max_error_x": 0,
+      "max_error_y": 64,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 131.29,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1386,
+        "moving_samples": 1329,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 23.1,
+        "physical_seconds": 23.1,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 64,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 59,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            40,
+            356
+          ],
+          "camera": [
+            0,
+            160
+          ],
+          "error": [
+            0,
+            64
+          ],
+          "sprite": [
+            32,
+            165,
+            32,
+            48
+          ],
+          "frame": 96
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "6A",
+      "region": "ntsc",
+      "samples": 12168,
+      "max_error_x": 100,
+      "max_error_y": 61,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 63,
+      "escort_switches": 12,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 203.26,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 3407,
+        "moving_samples": 3337,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 56.78,
+        "physical_seconds": 56.82,
+        "fps": 59.96,
+        "max_error_x": 99,
+        "max_error_y": 61,
+        "moving_p95_error_x": 26,
+        "moving_p95_error_y": 56,
+        "clipped_samples": 0,
+        "target_jumps_over12": 2,
+        "escort_switches": 2,
+        "landmark_switches": 2,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            302,
+            202
+          ],
+          "camera": [
+            51,
+            15
+          ],
+          "error": [
+            99,
+            56
+          ],
+          "sprite": [
+            243,
+            156,
+            32,
+            48
+          ],
+          "frame": 218
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "6B",
+      "region": "ntsc",
+      "samples": 12157,
+      "max_error_x": 100,
+      "max_error_y": 61,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 63,
+      "escort_switches": 12,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 203.29,
+      "worst": {
+        "trial": "combat-speed100",
+        "samples": 1406,
+        "moving_samples": 843,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 23.43,
+        "physical_seconds": 24.0,
+        "fps": 58.58,
+        "max_error_x": 100,
+        "max_error_y": 61,
+        "moving_p95_error_x": 99,
+        "moving_p95_error_y": 61,
+        "clipped_samples": 0,
+        "target_jumps_over12": 13,
+        "escort_switches": 6,
+        "landmark_switches": 6,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            436,
+            168
+          ],
+          "camera": [
+            184,
+            0
+          ],
+          "error": [
+            100,
+            37
+          ],
+          "sprite": [
+            244,
+            137,
+            32,
+            48
+          ],
+          "frame": 576
+        },
+        "end_state": 1
+      }
+    },
+    {
+      "phase": "7",
+      "region": "ntsc",
+      "samples": 8693,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 145.15,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1775,
+        "moving_samples": 1713,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 29.58,
+        "physical_seconds": 29.58,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            56,
+            370
+          ],
+          "camera": [
+            0,
+            186
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            48,
+            153,
+            32,
+            48
+          ],
+          "frame": 83
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "8",
+      "region": "ntsc",
+      "samples": 8644,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 144.46,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1754,
+        "moving_samples": 1697,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 29.23,
+        "physical_seconds": 29.23,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            56,
+            370
+          ],
+          "camera": [
+            0,
+            186
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            48,
+            153,
+            32,
+            48
+          ],
+          "frame": 83
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "9",
+      "region": "ntsc",
+      "samples": 11203,
+      "max_error_x": 144,
+      "max_error_y": 77,
+      "clips": 16,
+      "longest_clipping_run": 11,
+      "target_jumps": 68,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 186.7,
+      "worst": {
+        "trial": "traverse-speed100",
+        "samples": 1517,
+        "moving_samples": 1451,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 25.28,
+        "physical_seconds": 25.28,
+        "fps": 60.0,
+        "max_error_x": 144,
+        "max_error_y": 77,
+        "moving_p95_error_x": 144,
+        "moving_p95_error_y": 61,
+        "clipped_samples": 11,
+        "target_jumps_over12": 18,
+        "escort_switches": 0,
+        "landmark_switches": 20,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            1160,
+            216
+          ],
+          "camera": [
+            1088,
+            8
+          ],
+          "error": [
+            -80,
+            77
+          ],
+          "sprite": [
+            64,
+            177,
+            32,
+            48
+          ],
+          "frame": 398
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "10",
+      "region": "ntsc",
+      "samples": 9324,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 155.72,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 2070,
+        "moving_samples": 2001,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 34.5,
+        "physical_seconds": 34.5,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            306
+          ],
+          "camera": [
+            0,
+            122
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            40,
+            153,
+            32,
+            48
+          ],
+          "frame": 69
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "11",
+      "region": "ntsc",
+      "samples": 9334,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 155.74,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 2070,
+        "moving_samples": 2001,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 34.5,
+        "physical_seconds": 34.5,
+        "fps": 60.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            306
+          ],
+          "camera": [
+            0,
+            122
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            40,
+            153,
+            32,
+            48
+          ],
+          "frame": 69
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "12",
+      "region": "ntsc",
+      "samples": 11871,
+      "max_error_x": 144,
+      "max_error_y": 85,
+      "clips": 861,
+      "longest_clipping_run": 176,
+      "target_jumps": 78,
+      "escort_switches": 8,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 197.81,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 3260,
+        "moving_samples": 3189,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 54.33,
+        "physical_seconds": 54.33,
+        "fps": 60.0,
+        "max_error_x": 144,
+        "max_error_y": 85,
+        "moving_p95_error_x": 78,
+        "moving_p95_error_y": 85,
+        "clipped_samples": 303,
+        "target_jumps_over12": 18,
+        "escort_switches": 2,
+        "landmark_switches": 20,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            2712,
+            210
+          ],
+          "camera": [
+            2704,
+            0
+          ],
+          "error": [
+            -144,
+            79
+          ],
+          "sprite": [
+            0,
+            179,
+            32,
+            48
+          ],
+          "frame": 1735
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "1",
+      "region": "pal",
+      "samples": 6589,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 131.78,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1184,
+        "moving_samples": 1137,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 23.68,
+        "physical_seconds": 23.68,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            242
+          ],
+          "camera": [
+            0,
+            110
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            40,
+            101,
+            32,
+            48
+          ],
+          "frame": 60
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "2A",
+      "region": "pal",
+      "samples": 6589,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 131.78,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1184,
+        "moving_samples": 1137,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 23.68,
+        "physical_seconds": 23.68,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            242
+          ],
+          "camera": [
+            0,
+            110
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            40,
+            101,
+            32,
+            48
+          ],
+          "frame": 60
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "2B",
+      "region": "pal",
+      "samples": 6678,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 133.56,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1225,
+        "moving_samples": 1173,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 24.5,
+        "physical_seconds": 24.5,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            242
+          ],
+          "camera": [
+            0,
+            110
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            40,
+            101,
+            32,
+            48
+          ],
+          "frame": 60
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "3",
+      "region": "pal",
+      "samples": 9482,
+      "max_error_x": 144,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 112,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 189.72,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 2543,
+        "moving_samples": 2485,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 50.86,
+        "physical_seconds": 50.86,
+        "fps": 50.0,
+        "max_error_x": 144,
+        "max_error_y": 53,
+        "moving_p95_error_x": 78,
+        "moving_p95_error_y": 47,
+        "clipped_samples": 0,
+        "target_jumps_over12": 13,
+        "escort_switches": 0,
+        "landmark_switches": 4,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            2216,
+            178
+          ],
+          "camera": [
+            2208,
+            0
+          ],
+          "error": [
+            -144,
+            47
+          ],
+          "sprite": [
+            0,
+            147,
+            32,
+            48
+          ],
+          "frame": 1361
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "4",
+      "region": "pal",
+      "samples": 7299,
+      "max_error_x": 0,
+      "max_error_y": 1,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 145.98,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1514,
+        "moving_samples": 1461,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 30.28,
+        "physical_seconds": 30.28,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 1,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 1,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            56,
+            250
+          ],
+          "camera": [
+            0,
+            118
+          ],
+          "error": [
+            0,
+            1
+          ],
+          "sprite": [
+            48,
+            101,
+            32,
+            48
+          ],
+          "frame": 63
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "5",
+      "region": "pal",
+      "samples": 7006,
+      "max_error_x": 0,
+      "max_error_y": 64,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 140.24,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1381,
+        "moving_samples": 1329,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 27.62,
+        "physical_seconds": 27.62,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 64,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 59,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            40,
+            356
+          ],
+          "camera": [
+            0,
+            160
+          ],
+          "error": [
+            0,
+            64
+          ],
+          "sprite": [
+            32,
+            165,
+            32,
+            48
+          ],
+          "frame": 92
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "6A",
+      "region": "pal",
+      "samples": 11325,
+      "max_error_x": 100,
+      "max_error_y": 61,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 62,
+      "escort_switches": 11,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 226.5,
+      "worst": {
+        "trial": "combat-speed100",
+        "samples": 1200,
+        "moving_samples": 725,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 24.0,
+        "physical_seconds": 24.0,
+        "fps": 50.0,
+        "max_error_x": 100,
+        "max_error_y": 61,
+        "moving_p95_error_x": 100,
+        "moving_p95_error_y": 61,
+        "clipped_samples": 0,
+        "target_jumps_over12": 12,
+        "escort_switches": 5,
+        "landmark_switches": 6,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            344,
+            192
+          ],
+          "camera": [
+            92,
+            0
+          ],
+          "error": [
+            100,
+            61
+          ],
+          "sprite": [
+            244,
+            161,
+            32,
+            48
+          ],
+          "frame": 85
+        },
+        "end_state": 1
+      }
+    },
+    {
+      "phase": "6B",
+      "region": "pal",
+      "samples": 11324,
+      "max_error_x": 100,
+      "max_error_y": 61,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 62,
+      "escort_switches": 11,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 226.5,
+      "worst": {
+        "trial": "combat-speed100",
+        "samples": 1199,
+        "moving_samples": 725,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 23.98,
+        "physical_seconds": 24.0,
+        "fps": 49.96,
+        "max_error_x": 100,
+        "max_error_y": 61,
+        "moving_p95_error_x": 100,
+        "moving_p95_error_y": 61,
+        "clipped_samples": 0,
+        "target_jumps_over12": 12,
+        "escort_switches": 5,
+        "landmark_switches": 6,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            344,
+            192
+          ],
+          "camera": [
+            92,
+            0
+          ],
+          "error": [
+            100,
+            61
+          ],
+          "sprite": [
+            244,
+            161,
+            32,
+            48
+          ],
+          "frame": 85
+        },
+        "end_state": 1
+      }
+    },
+    {
+      "phase": "7",
+      "region": "pal",
+      "samples": 7844,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 156.88,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1770,
+        "moving_samples": 1713,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 35.4,
+        "physical_seconds": 35.4,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            56,
+            370
+          ],
+          "camera": [
+            0,
+            186
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            48,
+            153,
+            32,
+            48
+          ],
+          "frame": 78
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "8",
+      "region": "pal",
+      "samples": 7795,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 155.9,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 1749,
+        "moving_samples": 1697,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 34.98,
+        "physical_seconds": 34.98,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            56,
+            370
+          ],
+          "camera": [
+            0,
+            186
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            48,
+            153,
+            32,
+            48
+          ],
+          "frame": 78
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "9",
+      "region": "pal",
+      "samples": 10336,
+      "max_error_x": 144,
+      "max_error_y": 77,
+      "clips": 12,
+      "longest_clipping_run": 11,
+      "target_jumps": 62,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 206.72,
+      "worst": {
+        "trial": "traverse-speed100",
+        "samples": 1512,
+        "moving_samples": 1451,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 30.24,
+        "physical_seconds": 30.24,
+        "fps": 50.0,
+        "max_error_x": 144,
+        "max_error_y": 77,
+        "moving_p95_error_x": 144,
+        "moving_p95_error_y": 61,
+        "clipped_samples": 11,
+        "target_jumps_over12": 18,
+        "escort_switches": 0,
+        "landmark_switches": 20,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            1160,
+            216
+          ],
+          "camera": [
+            1088,
+            8
+          ],
+          "error": [
+            -80,
+            77
+          ],
+          "sprite": [
+            64,
+            177,
+            32,
+            48
+          ],
+          "frame": 393
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "10",
+      "region": "pal",
+      "samples": 8478,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 169.56,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 2065,
+        "moving_samples": 2001,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 41.3,
+        "physical_seconds": 41.3,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            306
+          ],
+          "camera": [
+            0,
+            122
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            40,
+            153,
+            32,
+            48
+          ],
+          "frame": 64
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "11",
+      "region": "pal",
+      "samples": 8478,
+      "max_error_x": 0,
+      "max_error_y": 53,
+      "clips": 0,
+      "longest_clipping_run": 0,
+      "target_jumps": 0,
+      "escort_switches": 0,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 169.56,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 2065,
+        "moving_samples": 2001,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 41.3,
+        "physical_seconds": 41.3,
+        "fps": 50.0,
+        "max_error_x": 0,
+        "max_error_y": 53,
+        "moving_p95_error_x": 0,
+        "moving_p95_error_y": 53,
+        "clipped_samples": 0,
+        "target_jumps_over12": 0,
+        "escort_switches": 0,
+        "landmark_switches": 0,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            48,
+            306
+          ],
+          "camera": [
+            0,
+            122
+          ],
+          "error": [
+            0,
+            53
+          ],
+          "sprite": [
+            40,
+            153,
+            32,
+            48
+          ],
+          "frame": 64
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    },
+    {
+      "phase": "12",
+      "region": "pal",
+      "samples": 11004,
+      "max_error_x": 144,
+      "max_error_y": 85,
+      "clips": 852,
+      "longest_clipping_run": 176,
+      "target_jumps": 74,
+      "escort_switches": 8,
+      "model_clips": 0,
+      "model_max_error": 0,
+      "seconds": 220.07999999999998,
+      "worst": {
+        "trial": "traverse-speed0",
+        "samples": 3255,
+        "moving_samples": 3189,
+        "ram_writes_during_trial": 0,
+        "simulated_seconds": 65.1,
+        "physical_seconds": 65.1,
+        "fps": 50.0,
+        "max_error_x": 144,
+        "max_error_y": 85,
+        "moving_p95_error_x": 78,
+        "moving_p95_error_y": 85,
+        "clipped_samples": 303,
+        "target_jumps_over12": 18,
+        "escort_switches": 2,
+        "landmark_switches": 20,
+        "possible_stream_holds": 0,
+        "worst": {
+          "position": [
+            2712,
+            210
+          ],
+          "camera": [
+            2704,
+            0
+          ],
+          "error": [
+            -144,
+            79
+          ],
+          "sprite": [
+            0,
+            179,
+            32,
+            48
+          ],
+          "frame": 1730
+        },
+        "end_state": 1,
+        "navigation_failures": [],
+        "remaining_corners": 0
+      }
+    }
+  ]
+}

@@ -241,6 +241,28 @@ def main():
     files[A/'review-manifest.json']=json.dumps(dict(phases=phases,visual_status='Candidatos nativos revistos inteiros e em 9 câmeras por fase; aguardam revisão integrada de movimento/HUD, sem aprovação automática por memória',geometry='factory/geometry.json'),indent=2)+'\n'
     from campaign_corridors import factory_override
     factory_override(files)
+    files[G/'src/levels/campaign_factory_scenes.c']+='\n#include "levels/campaign_factory_phase10.inc"\n'
+    phase10root=G/'art/phase10-factory-v2'
+    phase10=json.loads((phase10root/'manifest.json').read_text())
+    for target in (A/'geometry.json',LEGACY/'geometry.json'):
+        doc=json.loads(files[target]);doc.update(eggs=phase10['eggs'],phase10=phase10,phase10_art='art/phase10-factory-v2/review.html')
+        files[target]=json.dumps(doc,indent=2)+'\n'
+    files[A/'cycle-2/10-complete.png']=Image.open(phase10root/'complete-with-eggs.png')
+    files[A/'cycle-2/10-destroyed.png']=compose_objectives(Image.open(phase10root/'complete-native.png'),'nest',phase10['eggs'],3)
+    doc=json.loads(files[A/'review-manifest.json']);row=next(r for r in doc['phases'] if r['phase']=='10')
+    row.update(size=phase10['size'],bounds=phase10['bounds'],start=phase10['start'],solids=phase10['solids'],objectives=phase10['eggs'],memory=phase10['memory'],sources=['phase10-factory-v2/source/factory-whole.png'])
+    files[A/'review-manifest.json']=json.dumps(doc,indent=2)+'\n'
+    files[G/'src/levels/campaign_factory_scenes.c']+='\n#include "levels/campaign_factory_phase11.inc"\n'
+    phase11root=G/'art/phase11-factory-v2'
+    phase11=json.loads((phase11root/'manifest.json').read_text())
+    for target in (A/'geometry.json',LEGACY/'geometry.json'):
+        doc=json.loads(files[target]);doc.update(valves=phase11['valves'],valve_approaches=phase11['valve_approaches'],phase11=phase11,phase11_art='art/phase11-factory-v2/review.html')
+        files[target]=json.dumps(doc,indent=2)+'\n'
+    files[A/'cycle-2/11-complete.png']=Image.open(phase11root/'complete-with-valves.png')
+    files[A/'cycle-2/11-open.png']=compose_objectives(Image.open(phase11root/'complete-background.png'),'valve',phase11['valves'],3)
+    doc=json.loads(files[A/'review-manifest.json']);row=next(r for r in doc['phases'] if r['phase']=='11')
+    row.update(size=phase11['size'],bounds=phase11['bounds'],start=phase11['start'],solids=phase11['solids'],objectives=phase11['valves'],logical_objectives=6,memory=phase11['memory'],sources=['phase10-factory-v2/source/factory-whole.png'])
+    files[A/'review-manifest.json']=json.dumps(doc,indent=2)+'\n'
     for path,data in files.items():
         if isinstance(data,Image.Image):buf=io.BytesIO();data.save(buf,format='PNG');data=buf.getvalue()
         elif isinstance(data,str):data=data.encode()

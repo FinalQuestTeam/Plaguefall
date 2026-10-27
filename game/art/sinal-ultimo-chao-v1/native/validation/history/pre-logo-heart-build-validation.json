@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "date": "2026-10-27",
+  "revision": "Sinal do Último Chão: continuação por seis símbolos sem SRAM",
+  "rom": "../out/release/Plaguefall.bin",
+  "rom_sha256": "d03b58e0b5ca26305e45baa3fee8a6d39aee2033d55d791d469e7b76ac7b6894",
+  "rom_bytes": 3014656,
+  "elf_sections": {
+    "text_bytes": 3006608,
+    "data_bytes": 264,
+    "bss_bytes": 19782,
+    "static_ram_bytes": 20046
+  },
+  "emulator": "Genesis Plus GX",
+  "regions": [
+    "NTSC",
+    "PAL"
+  ],
+  "physical_hardware_tested": false,
+  "codec": {
+    "symbols": 16,
+    "positions": 6,
+    "format_bits": 24,
+    "version": 1,
+    "crc": "CRC-8/0x07, init A7, big-endian16-bit payload",
+    "valid_checkpoints_tested": 2070,
+    "single_symbol_errors_rejected": 186300,
+    "story_node_flag_combinations_per_region": 69,
+    "unsupported_versions_and_reserved_values_rejected": true
+  },
+  "sprites": {
+    "count": 16,
+    "dimensions": [
+      32,
+      32
+    ],
+    "palette": "existing PAL1",
+    "rom_bytes": 8192,
+    "visible_vram_tiles": 96,
+    "additional_sprite_objects": 0,
+    "art_generation": "built-in ImageGen",
+    "prompts": "../art/sinal-ultimo-chao-v1/native/prompts.json"
+  },
+  "resume": {
+    "point": "start of phase",
+    "preserved": [
+      "node/branch",
+      "three campaign consequences",
+      "shot power",
+      "speed upgrades",
+      "reconstructed map/history"
+    ],
+    "hp": 100,
+    "bombs": 2,
+    "inventory": "empty",
+    "temporary_effects": "cleared",
+    "sram_required": false
+  },
+  "checks": {
+    "generated_resources_and_native_suite": true,
+    "asan_ubsan_codec": true,
+    "all16_sprite_pixels_verified_in_vram": true,
+    "all19_nodes_and69_valid_flag_combinations": true,
+    "pause_code_in_all19_nodes": true,
+    "victory_generates_next_checkpoint": true,
+    "retry_preserves_entry_checkpoint": true,
+    "console_reset_and_new_process_resume": true,
+    "all8_endings": true,
+    "menu_flicker_1230_frames_per_region": true,
+    "all19_mission_pause_help_vram_restores": true,
+    "campaign_selector": true,
+    "named_rom_packaging": true
+  },
+  "reports": {
+    "signal_delivery": "../art/sinal-ultimo-chao-v1/native/validation/delivery.json"
+  },
+  "native_suite_log": "../art/sinal-ultimo-chao-v1/native/validation/native-checks.txt",
+  "limits": [
+    "Emulator validation; physical cartridge not tested.",
+    "Victory/death/equipment fixtures use declared RAM setup; code entry and resume use controller input.",
+    "Passwords are reusable phase-entry checkpoints; position, enemy state, inventory and mid-phase pickups are not stored."
+  ],
+  "named_rom": "../out/release/Plaguefall.bin",
+  "previous_revision_report": "../art/sinal-ultimo-chao-v1/native/validation/history/pre-signal-build-validation.json",
+  "scope": "Continuação por símbolos, sprites nativos32x32, restauração de escolhas/equipamento e regressões de menus, interface, seletor e oito finais em NTSC/PAL."
+}

@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "01eea0c34b900fa372607eb5698836654f23ef52568890c59ef5346220b30269",
+  "buildDirectory": "/private/tmp/phase13-final-build",
+  "emulatedRomSHA256": "01eea0c34b900fa372607eb5698836654f23ef52568890c59ef5346220b30269",
+  "movieEnabled": false,
+  "checks": {
+    "13A-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        280,
+        168
+      ],
+      "first_camera": [
+        128,
+        37
+      ],
+      "last_camera": [
+        128,
+        37
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    "13A-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        318,
+        168
+      ],
+      "first_camera": [
+        166,
+        37
+      ],
+      "last_camera": [
+        166,
+        37
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    "13A-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        318,
+        168
+      ],
+      "first_camera": [
+        166,
+        37
+      ],
+      "last_camera": [
+        166,
+        37
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    "13B-entry": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        280,
+        168
+      ],
+      "first_camera": [
+        128,
+        37
+      ],
+      "last_camera": [
+        128,
+        37
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    "13B-stop": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        318,
+        168
+      ],
+      "first_camera": [
+        166,
+        37
+      ],
+      "last_camera": [
+        166,
+        37
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    "13B-resume": {
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        318,
+        168
+      ],
+      "first_camera": [
+        166,
+        37
+      ],
+      "last_camera": [
+        166,
+        37
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    }
+  },
+  "scope": "Stationary camera: first5s of controllable gameplay,5s after actual movement/stop and5s after pause/resume. Real moving escort, isolated enemies and pre-granted protection; no RAM writes during measured controller trials.",
+  "method": "Genesis Plus GX production ROM. RAM only before trials: node, speed bonus, protection, enemy isolation and starting position. Every measured sample is real controller movement, guarded against RAM writes. Full 32x48 sprite uses (px-8,py-31). Visible gameplay rectangle is x=0..319,y=24..223. Boundary-constrained centering is measured separately from avoidable framing error. No gameplay code or ROM modified.",
+  "stages": [],
+  "findings_are_not_test_failures": true
+}

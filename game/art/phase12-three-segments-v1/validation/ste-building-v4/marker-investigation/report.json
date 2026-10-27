@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "42c959eed7284b967c03ba14f4c7e8c96da4a4e516b4868ba9e4bbb58690ccd8",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "42c959eed7284b967c03ba14f4c7e8c96da4a4e516b4868ba9e4bbb58690ccd8",
+  "movieEnabled": false,
+  "checks": {
+    "same-position-blink-and-visible": {
+      "before": {
+        "position": [
+          2776,
+          208
+        ],
+        "player": [
+          2880,
+          208
+        ],
+        "camera": [
+          2712,
+          65
+        ],
+        "state": 2,
+        "hp": 100,
+        "invincibilityFrames": 59596,
+        "hiddenByBlink": true
+      },
+      "after": {
+        "position": [
+          2776,
+          208
+        ],
+        "invincibilityFrames": 0,
+        "hp": 100
+      },
+      "explanation": "Test invincibility hides the body on alternating frames while her health bar and pause/wait alert remain visible over the facade. Her collision footprint is on the street, y208, south of building bottom200."
+    },
+    "indicators-follow-NPC-not-building": {
+      "escortY": 256,
+      "buildingBottomY": 200
+    }
+  }
+}

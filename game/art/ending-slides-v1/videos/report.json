@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "80b2ca65e7af3a780cbcdd41372cbc2d6679839e7f1177aa66f94f8a18722bc2",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "80b2ca65e7af3a780cbcdd41372cbc2d6679839e7f1177aa66f94f8a18722bc2",
+  "movieEnabled": true,
+  "checks": {
+    "final-01": {
+      "flags": 0,
+      "panels": [
+        "07A",
+        "07C",
+        "06C"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-01.mp4"
+    },
+    "final-02": {
+      "flags": 1,
+      "panels": [
+        "07B",
+        "07C",
+        "06C"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-02.mp4"
+    },
+    "final-03": {
+      "flags": 2,
+      "panels": [
+        "07A",
+        "07D",
+        "06C"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-03.mp4"
+    },
+    "final-04": {
+      "flags": 3,
+      "panels": [
+        "07B",
+        "07D",
+        "06C"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-04.mp4"
+    },
+    "final-05": {
+      "flags": 4,
+      "panels": [
+        "07A",
+        "07C",
+        "06D"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-05.mp4"
+    },
+    "final-06": {
+      "flags": 5,
+      "panels": [
+        "07B",
+        "07C",
+        "06D"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-06.mp4"
+    },
+    "final-07": {
+      "flags": 6,
+      "panels": [
+        "07A",
+        "07D",
+        "06D"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-07.mp4"
+    },
+    "final-08": {
+      "flags": 7,
+      "panels": [
+        "07B",
+        "07D",
+        "06D"
+      ],
+      "seconds": 26.1,
+      "returned_to_same_selection": true,
+      "movie": "final-08.mp4"
+    },
+    "controller-only-wrap-tabs-held-start-cancel-and-new-game": true
+  },
+  "game_ram_writes": 0,
+  "scope": "Controller-only: title > test > endings, all8 complete previews, ordered artwork, captions,25s duration, selection restored, tab/wrap navigation, START skip/held guard, cancel to title and normal campaign reset."
+}

@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "date": "2026-10-27",
+  "rom": "../../out/release/Plaguefall.bin",
+  "rom_sha256": "80b2ca65e7af3a780cbcdd41372cbc2d6679839e7f1177aa66f94f8a18722bc2",
+  "rom_bytes": 3014656,
+  "elf_sections": {
+    "text": 2987248,
+    "data": 264,
+    "bss": 19764
+  },
+  "slides_per_ending": 3,
+  "seconds": 25,
+  "alternatives": 8,
+  "reports": {
+    "campaign_ntsc": "validation/ntsc/report.json",
+    "campaign_pal": "validation/pal/report.json",
+    "selector_ntsc": "videos/report.json",
+    "selector_pal": "validation/selector-pal/report.json",
+    "phases_ntsc": "validation/phases-ntsc/report.json",
+    "phases_pal": "validation/phases-pal/report.json"
+  },
+  "video": "videos/todos-os-finais.mp4",
+  "video_seconds": 208.8,
+  "video_source": "Controller-only access to all8 endings in the production ROM",
+  "checks": [
+    "eight campaign endings in NTSC/PAL",
+    "native artwork and exact visible caption pixels",
+    "12 moving particles",
+    "held START skip guard",
+    "production victory menu and replay reset",
+    "controller-only direct selector: all8 previews in NTSC/PAL",
+    "return to same ending selection",
+    "phase/end tabs, wrapping, cancel and new game reset",
+    "regression: all19 phases, pause, restart, paging and cancellation in NTSC/PAL",
+    "eight full videos with audio plus labeled compilation and chapters"
+  ],
+  "physical_hardware_tested": false
+}

@@ -1,5 +1,8 @@
 // Persistent logical objectives; only visible clutches occupy animation slots.
 #include "levels/campaign_factory.h"
+#include "levels/arena.h"
+#include "levels/phase10_layout.h"
+#include "levels/phase11_layout.h"
 #include "levels/graph.h"
 #include "core/game.h"
 #include "core/objective.h"
@@ -11,10 +14,9 @@
 #include "system/video/sprites/tiles.h"
 #include "system/audio/sfx.h"
 CampaignFactoryState campaignFactory;
-static const s16 eggs[10][2]={{96,168},{96,248},{240,168},{240,248},{384,168},{384,248},{528,168},{528,248},{672,168},{672,248}};
-// Controls are mounted in the northern service recess. Actors approach from y112.
-static const s16 valves[3][2]={{144,104},{432,104},{576,104}};
-static const s16 stationMonitors[3][2]={{180,88},{468,88},{612,88}};
+#define eggs PHASE10_EGGS
+#define valves PHASE11_VALVES
+static u8 activeValve=255;
 static u16 lastHUD;
 bool CF_active(void){return currentLevel==N_10 || currentLevel==N_11;}
 static bool visible(u8 i){return eggs[i][0]>=cameraX-24 && eggs[i][0]<cameraX+344 && eggs[i][1]>=cameraY+8 && eggs[i][1]<cameraY+272;}
@@ -38,12 +40,12 @@ static void mapEggs(void)
 }
 void CF_start(void)
 {
-    memset(&campaignFactory,0,sizeof campaignFactory);memset(campaignFactory.slots,255,sizeof campaignFactory.slots);lastHUD=65535;
+    memset(&campaignFactory,0,sizeof campaignFactory);memset(campaignFactory.slots,255,sizeof campaignFactory.slots);lastHUD=65535;activeValve=255;
     if(!CF_active())return;
     memset(campaignFactory.hp,3,sizeof campaignFactory.hp);MARKERS_load();
     campaignFactory.artReady=OBJECTIVEGFX_startCampaign(1u<<(currentLevel==N_10 ? OART_NEST : OART_VALVE));
     if(currentLevel==N_10)mapEggs();
-    else for(u8 i=0;i<3;i++)OBJECTIVEGFX_place(i,OART_VALVE,valves[i][0],valves[i][1],TRUE);
+    else for(u8 i=0;i<PHASE11_VALVE_COUNT;i++)OBJECTIVEGFX_place(i,OART_VALVE,valves[i][0],valves[i][1],TRUE);
     OBJECTIVEGFX_ground(TRUE);
 }
 static void destroy(u8 i)
@@ -72,16 +74,19 @@ u8 CF_update(void)
     if(!CF_active())return OBJ_ONGOING;
     campaignFactory.clock++;OBJECTIVEGFX_update();
     if(currentLevel==N_10)mapEggs();
-    else for(u8 i=0;i<3;i++)if(!(campaignFactory.opened&(1u<<i))){
-        const bool working=abs(px+8-valves[i][0])<=26 && abs(py+8-valves[i][1])<=26 && !(JOY_readJoypad(JOY_1)&BUTTON_A);
+    else {activeValve=255;for(u8 i=0;i<PHASE11_VALVE_COUNT;i++)if(!(campaignFactory.opened&(1u<<i))){
+        const bool nearby=abs(px+8-valves[i][0])<=26 && abs(py+8-valves[i][1])<=26;
+        const bool working=nearby && !(JOY_readJoypad(JOY_1)&BUTTON_A);
+        if(nearby)activeValve=i;
         OBJECTIVEGFX_prime(i,working);
         // Work survives retreat, but only proximity advances the operation.
-        if(working && ++campaignFactory.work[i]>=fps*3/2){
+        if(working && ++campaignFactory.work[i]>=PHASE11_WORK_FRAMES){
             campaignFactory.opened|=1u<<i;campaignFactory.done++;OBJECTIVEGFX_activate(i);sfxItemPickup();
+            activeValve=255;
         }
-    }
+    }}
     OBJECTIVEGFX_ground(FALSE);
-    return campaignFactory.done==(currentLevel==N_10 ? 10 : 3) ? OBJ_WON : OBJ_ONGOING;
+    return campaignFactory.done==(currentLevel==N_10 ? 10 : PHASE11_VALVE_COUNT) ? OBJ_WON : OBJ_ONGOING;
 }
 void CF_draw(u16 *n)
 {
@@ -89,23 +94,27 @@ void CF_draw(u16 *n)
     OBJECTIVEGFX_draw(n);
     if(currentLevel==N_10){for(u8 i=0;i<10;i++)if(campaignFactory.hp[i]){MARKERS_destination(n,eggs[i][0],eggs[i][1]);break;}}
     else {
-        // Each completed pressure station powers its attached control screen.
-        for(u8 i=0;i<3;i++)if(campaignFactory.opened&(1u<<i))
-            SPRITES_emit(n,stationMonitors[i][0]-4,stationMonitors[i][1]-4,SPRITE_SIZE(1,1),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_BOLT));
-        for(u8 i=0;i<3;i++)if(!(campaignFactory.opened&(1u<<i))){MARKERS_destination(n,valves[i][0],valves[i][1]);break;}
+        for(u8 i=0;i<PHASE11_VALVE_COUNT;i++)if(campaignFactory.opened&(1u<<i))
+            SPRITES_emit(n,valves[i][0]+12,valves[i][1]-24,SPRITE_SIZE(1,1),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,TILE_USER_INDEX+TILE_BOLT));
+        if(activeValve<PHASE11_VALVE_COUNT && campaignFactory.work[activeValve]) {
+            const u16 progress=divu(campaignFactory.work[activeValve]*20,PHASE11_WORK_FRAMES)*5;
+            const u16 bar=ARENA_workBar(progress,100);
+            if(bar)SPRITES_emit(n,valves[activeValve][0]-16,valves[activeValve][1]-36,SPRITE_SIZE(4,1),TILE_ATTR_FULL(PAL1,TRUE,FALSE,FALSE,bar));
+        }
+        for(u8 i=0;i<PHASE11_VALVE_COUNT;i++)if(!(campaignFactory.opened&(1u<<i))){MARKERS_destination(n,valves[i][0],valves[i][1]);break;}
     }
 }
 void CF_forceHUD(void){lastHUD=65535;if(CF_active() && campaignFactory.artReady)OBJECTIVEGFX_ground(TRUE);}
 bool CF_drawHUD(void)
 {
     if(!CF_active())return FALSE;
-    if(lastHUD!=campaignFactory.done){char text[12];lastHUD=campaignFactory.done;sprintf(text,"%u/%u",campaignFactory.done,currentLevel==N_10 ? 10 : 3);
+    if(lastHUD!=campaignFactory.done){char text[12];lastHUD=campaignFactory.done;sprintf(text,"%u/%u",campaignFactory.done,currentLevel==N_10 ? 10 : PHASE11_VALVE_COUNT);
         HUD_drawObjective(currentLevel==N_10 ? "OVOS" : "VÁLVULAS",TILE_SKULL,text,0,"");}
     return TRUE;
 }
 bool CF_prepText(char *buf,const LevelDef *def)
 {
     if(def==&LEVEL10_def){strcpy(buf,"DESTRUA OS 10 NINHOS DE OVOS.");return TRUE;}
-    if(def==&LEVEL11_def){strcpy(buf,"LIBERE 3 VÁLVULAS. SOLTE A.");return TRUE;}
+    if(def==&LEVEL11_def){strcpy(buf,"LIBERE 6 VÁLVULAS. SOLTE A.");return TRUE;}
     return FALSE;
 }

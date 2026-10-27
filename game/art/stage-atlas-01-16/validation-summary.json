@@ -1,0 +1,56 @@
+{
+  "rom_sha256": "856de009353a84f7564dc4d030a622e69ca2cfbc9b3ef86e87d502745d7e7601",
+  "functional_runs": [
+    {
+      "phase": 13,
+      "region": "ntsc",
+      "passed": true,
+      "checks": 24
+    },
+    {
+      "phase": 13,
+      "region": "pal",
+      "passed": true,
+      "checks": 24
+    },
+    {
+      "phase": 14,
+      "region": "ntsc",
+      "passed": true,
+      "checks": 19
+    },
+    {
+      "phase": 14,
+      "region": "pal",
+      "passed": true,
+      "checks": 19
+    },
+    {
+      "phase": 15,
+      "region": "ntsc",
+      "passed": true,
+      "checks": 18
+    },
+    {
+      "phase": 15,
+      "region": "pal",
+      "passed": true,
+      "checks": 18
+    },
+    {
+      "phase": 16,
+      "region": "ntsc",
+      "passed": true,
+      "checks": 8
+    },
+    {
+      "phase": 16,
+      "region": "pal",
+      "passed": true,
+      "checks": 8
+    }
+  ],
+  "total_checks": 138,
+  "all_passed": true,
+  "rom_is_current_release": true
+}

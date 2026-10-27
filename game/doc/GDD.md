@@ -189,7 +189,7 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 
 ### Fluxo geral
 
-1. **Splash** (logo FinalQuest) → **monólogo animado** (14 quadros e 18 cartelas, uma vez por boot, somente START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**).
+1. **Splash** (logo FinalQuest) → **monólogo animado** (14 quadros e 18 cartelas, uma vez por boot, somente START pula) → **Tela-título** (splash da caatinga + menu: **NOVO JOGO / COMO JOGAR / FASE TESTE**).
 2. **Preparação** (`ST_PREP`) → A para começar.
 3. **3 → 2 → 1** em um pequeno instrumento sobre o cenário (3 s congelado) → **VAI!**, com movimento e tiro liberados no zero. A etiqueta permanece 21 quadros em NTSC ou 18 em PAL; não estende o congelamento. Soltar A durante a contagem arma o disparo, sem deixar a confirmação do menu disparar sozinha.
 4. Meta atingida → `ST_DONE` → história do DEPOIS (se houver) → **mapa de rotas** (`ST_MAP`) → história do ANTES do nó destino (se houver) → preparação da próxima (decidida pelas condições de saída do grafo). Morte → `ST_OVER` → recomeça a mesma fase. Objetivo falhado em nó **com rota de falha** (`OBJ_FALHOU`) → "SINAL PERDIDO / A MISSAO CONTINUA" → segue pela rota de falha (sem game over).
@@ -207,6 +207,8 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 
 ### Persistência
 
+- **Entre sessões, sem SRAM:** o **Sinal do Último Chão** usa seis símbolos de um alfabeto de 16 sprites de 32×32, incluindo o emblema STE do sindicato. O jogador fotografa/anota a sequência exibida na entrada da fase ou na pausa e usa **Sintonizar** no título. Preserva nó A/B, três consequências narrativas e melhorias de tiro/velocidade do começo da fase. Ao carregar: 100 HP, duas bombas, inventário vazio e efeitos temporários zerados; objetivo, inimigos e posição recomeçam. O caminho e as cenas já concluídas são reconstruídos. A pausa consulta o checkpoint original, sem incorporar coletas posteriores. A derrota mantém esse código e sua repetição normal não exibe novamente a tela do sinal. Os códigos podem ser reutilizados.
+- **Formato do sinal:** seis nibbles, 24 bits: versão de 2 bits (`1`), velocidade em 3 bits (0–5 melhorias), potência menos um em 3 bits (0–4), consequências em 3 bits, nó em 5 bits (1–19) e CRC-8 de 8 bits (polinômio `0x07`, inicial `0xA7`, dois bytes do payload, mais significativo primeiro). A ordem dos símbolos é parte do formato e não deve ser alterada sem migração/versão. Código malformado, versão desconhecida e consequências incompatíveis com o nó são recusados. Fase Teste não produz códigos da campanha.
 - **Entre fases**: HP, cargas de bomba, itens do inventário e bônus acumulados (leque de balas, velocidade) **persistem**.
 - **Na derrota**: tentar novamente é a seleção inicial; START repete diretamente, A confirma a seleção e voltar ao título exige confirmação. A vida volta a 100 e o equipamento ao básico, em todas as etapas, até recolher a bolsa. `DEATH_capture` fotografa melhorias, inventário/cargas, bombas, modo de tiro e escudo ao entrar na derrota; `DEATH_retry` reinicia e `DEATH_startPhase` emite uma bolsa. As rotas A/B seguem a etapa correspondente.
 - **Etapas 1–5**: o bornal devolve todas as melhorias de tiro/velocidade, bombas, itens/cargas, modo de tiro e tempo restante de escudo existentes na morte.
@@ -220,8 +222,8 @@ Máquina de estados em `core/flow.c` (a tela-título roda antes do laço, em `ti
 
 - **Splash** (`splash.c`): logo [FinalQuest redesenhado](../art/finalquest-logo-v2/README.md), em192×128 centralizado; fades de0,2s,1s de exibição e possibilidade de pular.
 - **Monólogo animado** (`intro.c`): [14 quadros e 18 cartelas do storyboard](../art/intro-monologo-v2/README.md) entre FinalQuest e o menu, 101 segundos de exibição, com as trocas de imagem. Texto branco centralizado em até36×4, fundo preto com transição suave desde a arte, fades visuais e música contínua desde o logo Plaguefall. Sem nome, contador ou instruções na tela. O enquadramento é fixo;12 partículas de poeira, brasa e fuligem usam posições fracionárias e até1 pixel de deslocamento por frame. Usa924 tiles para a imagem mais3 para partículas, antes da inicialização dos recursos da arena. O último quadro dura6s; as trocas de cartela nos planos 08, 11, 12 e 13 conservam a imagem e a música; o fundo do menu já fica empacotado na ROM para evitar a montagem pixel a pixel no fim. A, B e C são ignorados; somente START pula. Não se repete ao voltar ao título. A conversa antes da fase 1 mantém apenas o chamado do padre e a resposta de Damião.
-- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Damião, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / ASSETS / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. O tema Baião de Ferrugem toca em sua versão calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar, inclusive após a galeria.
-- **Assets** (`chardemo.c`): [três abas — Damião, Dinorah e Músicas](../art/gallery-v1/README.md). Os personagens têm oito direções e dois quadros de repouso. ESQ/DIR muda de aba; B/START volta ao menu, e A também sai nas abas dos personagens. Em MÚSICAS, CIMA/BAIXO escolhe entre Baião de Ferrugem, Entardecer, Breu e Ladainha de Ferro; A pausa/retoma e C alterna calma/combate. A faixa selecionada toca em loop; sair da audição restaura a música e a curva anteriores. As quatro partituras coexistem na ROM. As poses usam240 tiles do cache existente dos inimigos e PAL2; a aba musical esconde os sprites e usa somente texto.
+- **Título** (`title.c`): [splash art da caatinga](../art/title-caatinga-v1/README.md), com Damião, Dinorah, padre Comando sem chapéu e insetos biomecânicos. Imagem320×224 em `titlebg_data.h`, duas paletas de16 cores por tile; mesmo espaço temporário de1120 tiles. Menu à esquerda: **NOVO JOGO / COMO JOGAR / FASE TESTE**, todo o texto branco, com cursor `>` para a seleção. O tema Baião de Ferrugem toca em sua versão calma aqui (ver Áudio). O backdrop preto é restaurado ao entrar.
+- **Galeria de assets removida do menu:** fontes e relatórios históricos permanecem em [gallery-v1](../art/gallery-v1/README.md).
 - **Como Jogar** (`help.c`): **8 páginas** navegáveis com ESQ/DIR ou A; B/START voltam ao título ou à pausa de origem. Controles, itens diretos, inventário, cores/famílias dos inimigos, habilidades das saúvas, missões/rotas, bolsa em todas as derrotas, recuperação pré-morte e regras por trecho da campanha. A última página mostra o sprite real do bornal.
 
 ## HUD da resistência (24 px)
@@ -356,19 +358,26 @@ Velocidade em unidades 26.6 por frame (`ENEMY_SPEED_FP` = 40 ≈ 0,63 px/frame).
 
 ## O chefe: Escorpião (`enemy_boss.c`)
 
-Escorpião **48×48** (ID `boss`; quatro peças de32×32,32×16,16×32 e16×16). Aparece na **fase 16** (e na arena de teste, estágio 3). Contador mestre `tA` dirige todos os ciclos:
+Escorpião **48×48** (ID `boss`; quatro peças de32×32,32×16,16×32 e16×16). Aparece na **fase 16** e nas salas técnicas que usam o comportamento real. Tem duas fases: a segunda começa uma única vez ao chegar a **12 de vida ou menos**, inclusive ao saltar esse valor por dano. O contador `tA` controla a primeira fase e as invocações; flags em `tB` mantêm a segunda fase e a alternância dos ataques, sem ampliar a estrutura do inimigo.
 
 | Mecânica | Valor |
 |---|---|
 | Vida | 25 tiros |
 | Dano de contato | 20 · Dano do tiro: **13** |
-| **Blindagem cíclica** | invulnerável **3 s a cada 15 s** (12 s vulnerável); mesmo escudo flutuante dos roxos, sem ocultar o corpo |
-| **Invocação** | 2 Caçadores a cada **10 s** |
-| **Alternância de modo** | a cada **4 s**: agressivo ↔ à distância |
-| Modo agressivo | aproxima e usa **dash** (telegrafa e investe a `BOSS_DASH_FP` = 210) |
-| Modo à distância | **recua** do jogador e dispara **leque de 5 tiros** (dano 13) a cada ~1,2 s |
+| **Blindagem cíclica** | Somente na primeira fase: invulnerável **3 s a cada 15 s**, com escudo visível. Removida na segunda fase. |
+| **Invocação** | Tenta preencher até **2 Caçadores vivos** a cada **10 s**, nas duas fases. Não acumula um terceiro. A fase 16 permite chefe + dois lacaios. |
+| **Alternância da primeira fase** | A cada **4 s**: agressivo ↔ à distância. |
+| Primeira fase agressiva | Aproxima, prepara a investida por ~0,3 s e avança em linha reta por ~0,5 s, com direção travada e velocidade210 em ponto fixo. |
+| Primeira fase à distância | Recua e dispara **leque de 5 tiros**, dano13, a cada ~1,2 s. |
+| **Transição aos12HP** | Parada de **0,8 s**, brilho somente no corpo e sinal sonoro. A mudança fica registrada até morte/reinício; não repete durante a luta. |
+| **Segunda fase: investidas** | Aproxima por0,6 s e faz **duas investidas de0,5 s**. Cada uma tem aviso de~0,35 s, com direção travada; a segunda mira novamente antes de começar. |
+| **Segunda fase: contra-ataque** | Após a segunda investida, permanece parado, sem atirar e vulnerável por **1,2 s**. Contato com o jogador e separação dos lacaios não interrompem essa janela. |
+| **Segunda fase: disparos** | Recua por3 s, alternando leques de5 mais abertos e mais fechados, dano13 e cadência~1,2 s. Depois repete o ciclo de investidas. |
+| **Pools de tiros** | Até10 projéteis inimigos e4 do jogador na fase16. O chefe aguarda cinco vagas antes de disparar; não apaga tiros ativos, não corta o leque e não pula a alternância enquanto espera. |
 | Resistência à bomba | sofre 4 (nunca morre por bomba; 0 se blindado) |
 | Ao morrer | poça de sangue, drop garantido, `bossDefeated` → tela de fim |
+
+As duas fases usam os sprites atuais de48×48, oito direções, repouso/movimento e morte. O aviso mantém a orientação da investida; no recuo, o chefe continua encarando Damião. Pausa congela os temporizadores e reinício restaura25HP e a primeira fase. [Implementação e validação NTSC/PAL](../art/boss-phase2-v1/README.md).
 
 ## Mecânicas comuns (engine `enemies.c`)
 
@@ -462,9 +471,13 @@ O **`FLOOR_MIX`** desenha dois chões na mesma fase: como o BG_B só tem uma pal
 
 Na preparação/pausa, os inimigos do roster aparecem como **sprites reais** alinhados pela base (`LEVEL_drawInfo` → `ENEMYGFX_drawOnMap`); o chefe (48 px) não é mostrado ali.
 
-## Fase teste (sandbox, opção do menu)
+## Fase Teste — seletor da campanha
 
-Seis salas selecionadas diretamente pelo menu **FASE TESTE**, sem portas entre arenas. **START** abre pausa com continuar, configurar, reiniciar, trocar sala, ajuda e título. As configurações são locais ao treino e não alteram as fases da campanha.
+O menu **FASE TESTE** oferece as 19 versões reais da campanha e os oito encerramentos. Esquerda/direita alternam as abas de fases e finais. Cima/baixo escolhem, C avança nove posições nas fases, A entra ou reproduz, e B/START voltam. Uma prévia de final retorna ao mesmo item ao terminar ou pular com START. A pausa permite reiniciar a fase ou trocar a seleção. As salas técnicas de validação foram retiradas do seletor.
+
+### Arquivo do antigo sandbox
+
+As antigas salas técnicas eram selecionadas pelo menu **FASE TESTE**, sem portas entre arenas. **START** abre pausa com continuar, configurar, reiniciar, trocar sala, ajuda e título. As configurações são locais ao treino e não alteram as fases da campanha.
 
 | Sala | Objetivo e controles de ensaio |
 |---|---|
@@ -545,10 +558,10 @@ Os demais elementos continuam procedurais por char-maps.
   As três vistas ocidentais usam apenas HFLIP. Frente e costas são distintas.
 - BOSS_ROT: 72 tiles reservados aos dois retratos de história, separados do cache.
 - herogfx.c: Damião 32×48 em duas peças, um frame de 24 tiles dentro da reserva existente de 48 tiles, PAL2. Cinco vistas desenhadas e três por HFLIP; repouso de dois frames e corrida de quatro. Até 768 bytes adicionais de DMA por quadro, com prioridade sobre os inimigos.
-- O gerador e os nove mechs antigos foram removidos do runtime. A tela ASSETS usa os sprites atuais de Damião e Dinorah.
+- O gerador e os nove mechs antigos foram removidos do runtime. A antiga tela ASSETS foi retirada do menu inicial.
 - floor.c: 80 tiles no BG_B, PAL3. Cenário e projeção de mapa ainda são os anteriores.
 
-**Build atual:** ROM de1179648 bytes (1152 KiB), com cabeçalho para cartucho linear de2 MiB. A [validação consolidada](build-validation.json) registra hash, memória estática e testes da ROM principal.
+**Build atual:** ROM de3.014.656 bytes (2944 KiB), com cabeçalho para cartucho linear de4 MiB. A continuação usa códigos, sem gravar no cartucho. A [validação do sinal](../art/sinal-ultimo-chao-v1/native/validation/delivery.json) registra a ROM e os testes atuais desta integração; relatórios anteriores identificam suas respectivas builds.
 [Compilação e testes da abertura](../art/intro-monologo-v2/build-validation.json). A auditoria anterior dos inimigos
 observou47332 bytes de heap livre; esse número pertence àquela build. Os tiles de gameplay terminam no byte27488,
 a fonte começa no byte 46080 e há 18592 bytes de intervalo livre.

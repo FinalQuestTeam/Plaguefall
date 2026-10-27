@@ -29,6 +29,15 @@ def main():
  constants=f'#ifndef PANEL_DATA_H\n#define PANEL_DATA_H\n#define PANEL_TILE_COUNT {len(tiles)}\n#define PANEL_RUST_INDEX {rust}\n#endif\n'
  outputs[GAME/'src/system/video/screens/panel_data.h']=constants.encode()
  phases=json.loads((ROOT/'campanha-v2.json').read_text())['phases']
+ # Match the native panel's available rows, including the two-row combat tip.
+ nodes=re.findall(r'\bN_\d+[AB]?\b',(GAME/'src/levels/graph.h').read_text().split('typedef enum',1)[1])
+ assert [f'N_{p["id"]}' for p in phases]==nodes,'Mission copy must cover the current campaign graph in order'
+ for p in phases:
+  for field,rows in (('name',1),('attention',3),('route',2)):
+   value=p[field]
+   if value:
+    assert value==value.upper() and encode(value),(p['id'],field)
+    assert len(textwrap.wrap(value,36,break_long_words=False,break_on_hyphens=False))<=rows,(p['id'],field,'clipped')
  header='#ifndef MISSION_COPY_H\n#define MISSION_COPY_H\ntypedef struct { const char *name, *attention, *route; } MissionCopy;\nstatic const MissionCopy MISSION_COPY[NODE_MAX] = {\n'
  for p in phases:
   header+=f'    [N_{p["id"]}] = {{ {json.dumps(p["name"],ensure_ascii=False)}, {json.dumps(p["attention"],ensure_ascii=False)}, {json.dumps(p["route"],ensure_ascii=False) if p["route"] else "NULL"} }},\n'

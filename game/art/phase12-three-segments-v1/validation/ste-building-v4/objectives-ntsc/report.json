@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "region": "NTSC",
+  "romSHA256": "42c959eed7284b967c03ba14f4c7e8c96da4a4e516b4868ba9e4bbb58690ccd8",
+  "buildDirectory": "/Users/fabiocantarimmelo/Workspace/RedRex/MegaDrive/game/out/release",
+  "emulatedRomSHA256": "42c959eed7284b967c03ba14f4c7e8c96da4a4e516b4868ba9e4bbb58690ccd8",
+  "movieEnabled": false,
+  "checks": {
+    "player-alone-at-union": {
+      "stillPlaying": true,
+      "kills": 1000
+    },
+    "Dinorah-arrived-player-too-far": {
+      "stillPlaying": true,
+      "kills": 1000
+    },
+    "both-outside-arrival-zone": {
+      "stillPlaying": true,
+      "kills": 1000
+    },
+    "arrival-hold-reset-on-leaving": {
+      "requiredGameFrames": 24,
+      "region": "NTSC"
+    },
+    "alive-arrival-resolves13A": {
+      "nextNode": 15,
+      "dinorahDeadFlag": false
+    },
+    "escort-death-resolves13B": {
+      "nextNode": 16,
+      "dinorahDeadFlag": true
+    },
+    "Dami\u00e3o-death-priority-over-arrival-and-branch": {
+      "gameOver": true
+    }
+  },
+  "scope": "Phase12 objective conditions and actual result-to-route transitions. Isolated RAM setup for positions, health and enemies; objective checks and branch resolution run in production code. Not a normal combat completion."
+}

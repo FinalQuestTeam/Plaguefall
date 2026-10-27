@@ -1736,3 +1736,7 @@ static const ArenaRect streetSolids[]={{128,32,128,128,TRUE},{672,160,128,128,TR
 const ArenaDef CF_STREET={2560,320,16,96,2543,287,48,184,streetSolids,7,&streetScene};
 static const RoutePoint points09[]={{56,192,0},{296,192,0},{592,192,0},{592,128,0},{856,128,0},{1040,128,0},{1040,184,0},{1464,184,0},{1648,184,0},{1648,128,0},{2120,128,0},{2456,128,0}};
 const RouteDef CF_ROUTE09={points09,12,{2400,96,112,80,FALSE}};
+
+#include "levels/campaign_factory_phase10.inc"
+
+#include "levels/campaign_factory_phase11.inc"

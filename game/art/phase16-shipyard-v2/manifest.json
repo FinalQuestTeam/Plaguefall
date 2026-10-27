@@ -1,0 +1,161 @@
+{
+  "size": [
+    512,
+    576
+  ],
+  "bounds": [
+    40,
+    128,
+    471,
+    511
+  ],
+  "start": [
+    48,
+    232
+  ],
+  "solids": [
+    [
+      240,
+      304,
+      32,
+      16
+    ],
+    [
+      216,
+      432,
+      80,
+      48
+    ],
+    [
+      48,
+      160,
+      32,
+      16
+    ],
+    [
+      432,
+      160,
+      32,
+      16
+    ],
+    [
+      384,
+      280,
+      32,
+      16
+    ],
+    [
+      400,
+      456,
+      32,
+      16
+    ],
+    [
+      80,
+      456,
+      32,
+      16
+    ]
+  ],
+  "points": [],
+  "machines": [
+    [
+      64,
+      168
+    ],
+    [
+      448,
+      168
+    ],
+    [
+      400,
+      288
+    ],
+    [
+      416,
+      464
+    ],
+    [
+      96,
+      464
+    ]
+  ],
+  "radio": [
+    256,
+    312
+  ],
+  "radio_art": {
+    "size": [
+      48,
+      64
+    ],
+    "frames": 6,
+    "tiles": 45,
+    "palette": "PAL1"
+  },
+  "antenna_position": [
+    232,
+    256
+  ],
+  "generators_powered_on_entry": true,
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2324,
+    "reachable_positions": 2324,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  },
+  "window": {
+    "size": [
+      144,
+      80
+    ],
+    "positions": [
+      [
+        56,
+        16,
+        200,
+        96
+      ],
+      [
+        320,
+        16,
+        464,
+        96
+      ]
+    ],
+    "native_pixel_block": 1,
+    "palette_colors": 16,
+    "tile_size": [
+      8,
+      8
+    ]
+  },
+  "unchanged_outside_windows": true,
+  "shared_equipment": "phase15 native generator and radio overlays",
+  "memory": {
+    "source_tiles": 1047,
+    "cache_tiles": 480,
+    "maximum_visible_patterns": 470,
+    "generator_tiles": 53,
+    "radio_tiles": 45,
+    "total_resident_tiles": 578,
+    "heap_bytes": 5934,
+    "lossy_tile_replacements": 0,
+    "pixel_exact_reconstruction": true
+  },
+  "sources": [
+    {
+      "path": "art/phase16-shipyard-v2/source/engine-window.png",
+      "sha256": "aeede46124e17d10baf06668ad6f6bd281506744cefe48250f727e146098a47b"
+    },
+    {
+      "path": "art/phase15-shipyard-v2/normal-native.png",
+      "sha256": "dba3a10772a8e818aa416a912bf36458f6bf02731abc6ffe968afcf71e533396"
+    },
+    {
+      "path": "art/phase15-shipyard-v2/manifest.json",
+      "sha256": "434f42b6ddb05b95bb146708082c167736729af204ccff17556261ed54a75837"
+    }
+  ]
+}

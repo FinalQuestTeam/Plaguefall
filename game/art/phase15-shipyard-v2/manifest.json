@@ -1,0 +1,288 @@
+{
+  "size": [
+    512,
+    576
+  ],
+  "bounds": [
+    40,
+    128,
+    471,
+    511
+  ],
+  "start": [
+    48,
+    232
+  ],
+  "solids": [
+    [
+      240,
+      304,
+      32,
+      16
+    ],
+    [
+      216,
+      432,
+      80,
+      48
+    ],
+    [
+      48,
+      160,
+      32,
+      16
+    ],
+    [
+      432,
+      160,
+      32,
+      16
+    ],
+    [
+      384,
+      280,
+      32,
+      16
+    ],
+    [
+      400,
+      456,
+      32,
+      16
+    ],
+    [
+      80,
+      456,
+      32,
+      16
+    ]
+  ],
+  "points": [],
+  "machines": [
+    [
+      64,
+      168
+    ],
+    [
+      448,
+      168
+    ],
+    [
+      400,
+      288
+    ],
+    [
+      416,
+      464
+    ],
+    [
+      96,
+      464
+    ]
+  ],
+  "antenna_position": [
+    232,
+    256
+  ],
+  "radio": [
+    256,
+    312
+  ],
+  "protected_station_footprint": [
+    240,
+    304,
+    32,
+    16
+  ],
+  "target": [
+    256,
+    312
+  ],
+  "mast_has_collision": false,
+  "mast_receives_damage": false,
+  "objective_seconds": 120,
+  "generators_powered_on_entry": true,
+  "native_pixel_block": 1,
+  "energy": {
+    "all_seven_nodes_connected": true,
+    "tile_count": 141,
+    "routes": [
+      {
+        "source": "station-1",
+        "target": "console",
+        "points": [
+          [
+            80,
+            160
+          ],
+          [
+            136,
+            160
+          ],
+          [
+            136,
+            304
+          ],
+          [
+            240,
+            304
+          ]
+        ]
+      },
+      {
+        "source": "station-2",
+        "target": "console",
+        "points": [
+          [
+            432,
+            160
+          ],
+          [
+            352,
+            160
+          ],
+          [
+            352,
+            304
+          ],
+          [
+            264,
+            304
+          ]
+        ]
+      },
+      {
+        "source": "station-3",
+        "target": "console",
+        "points": [
+          [
+            384,
+            280
+          ],
+          [
+            352,
+            280
+          ],
+          [
+            352,
+            312
+          ],
+          [
+            264,
+            312
+          ]
+        ]
+      },
+      {
+        "source": "console",
+        "target": "battery",
+        "points": [
+          [
+            256,
+            312
+          ],
+          [
+            256,
+            432
+          ]
+        ]
+      },
+      {
+        "source": "station-4",
+        "target": "battery",
+        "points": [
+          [
+            400,
+            456
+          ],
+          [
+            288,
+            456
+          ]
+        ]
+      },
+      {
+        "source": "station-5",
+        "target": "battery",
+        "points": [
+          [
+            112,
+            456
+          ],
+          [
+            224,
+            456
+          ]
+        ]
+      }
+    ],
+    "console_role": "protected radio core",
+    "all_antenna_terminals_enter_opaque_equipment": true
+  },
+  "geometry": {
+    "footprint": 16,
+    "free_positions": 2324,
+    "reachable_positions": 2324,
+    "all_free_positions_connected": true,
+    "swept16pxSamples": 0
+  },
+  "generator": {
+    "size": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "tiles": 53,
+    "tiles_per_frame": 36,
+    "palette": "PAL3",
+    "native_pixel_block": 1,
+    "lossy_tile_replacements": 0
+  },
+  "radio_art": {
+    "size": [
+      48,
+      64
+    ],
+    "frames": 6,
+    "tiles": 45,
+    "palette": "PAL1"
+  },
+  "memory": {
+    "cache_tiles": 480,
+    "source_tiles": {
+      "normal": 1047,
+      "fire": 1047
+    },
+    "maximum_visible_patterns": {
+      "normal": 470,
+      "fire": 470
+    },
+    "generator_tiles": 53,
+    "radio_tiles": 45,
+    "total_resident_tiles": 578,
+    "heap_bytes": {
+      "normal": 5934,
+      "fire": 5934
+    },
+    "lossy_tile_replacements": 0
+  },
+  "ignition_changes_only_engine_interiors": true,
+  "sources": [
+    {
+      "path": "art/phase14-shipyard-v2/manifest.json",
+      "sha256": "fe1e579f886fc5146a6f7ddf3e6ac285e1283a10a922883453878e3759862dce"
+    },
+    {
+      "path": "art/phase15-radio-core-proposal-v1/radio-core-native-48x64.png",
+      "sha256": "2c2d58f59ce716f4cbffe8b89d022eb6b343b93f4964dbd0fcb19a3457c11d13"
+    },
+    {
+      "path": "res/insects/palette.bin",
+      "sha256": "afbfa1d64495be5a475cf2e4528a7e7565fd426081c9fa7a35cdf3e15d4bc288"
+    },
+    {
+      "path": "art/campaign-pattern-v2/launch/source/15-16-shipyard-ignition.png",
+      "sha256": "33c6ab980c48b9fe430e809d90fb36a9f84f652244b6a51c1681700b77aef73e"
+    }
+  ]
+}

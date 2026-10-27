@@ -1,0 +1,393 @@
+{
+  "title": "Plaguefall — câmera v1 para validação",
+  "rom_sha256": "8a50fb13942bb4d2e0144a66bc783f60905da2f753e0d70d9c982ec3a991b710",
+  "rom_bytes": 2752512,
+  "rom": "Plaguefall.bin",
+  "motion_trials": 364,
+  "samples": 252447,
+  "live_pixel_cells": 5959749,
+  "clipped_samples": 0,
+  "stream_faults": 0,
+  "stream_deferrals": 0,
+  "lifecycle_checks": 62,
+  "full_escorts": 6,
+  "gate_checks": 8,
+  "changes": [
+    "Body-centered player follow throughout stages1–12 and their A/B variants",
+    "Landmark/escort/Santa composition only after250ms stationary, capped at16px X /12px Y and eased1px/tick",
+    "Landmark selection uses80px retention and12px hysteresis; escort weight varies continuously by distance",
+    "Full32x48 body plus8px margin where map bounds permit, before target and after camera approach",
+    "Normal camera follows<=4px/axis; composition unwind can use5px, with an8px hard streaming ceiling",
+    "Offscreen living Dinorah receives an edge direction marker",
+    "Streaming deferral instrumentation; map/pattern/scroll remain committed together inVBlank"
+  ],
+  "limitations": [
+    "Factory load probes show FPS regressions in some sectors; this is a camera validation candidate, not a performance-approved release.",
+    "CPU/visible content differ with the camera window. Measurements do not isolate the exact source of the factory regressions.",
+    "Full escort movement seeds sewer gates open; each actual valve/gate interaction is tested separately. Scenario setup uses RAM before guarded controller trials."
+  ],
+  "measurements": [
+    {
+      "region": "ntsc",
+      "phase": "1",
+      "samples": 7456,
+      "live_pixel_cells": 178951,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "2A",
+      "samples": 7456,
+      "live_pixel_cells": 178951,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "2B",
+      "samples": 7545,
+      "live_pixel_cells": 180166,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "3",
+      "samples": 10325,
+      "live_pixel_cells": 246761,
+      "stream_deferrals": 0,
+      "max_error_x": 15,
+      "max_error_y": 12
+    },
+    {
+      "region": "ntsc",
+      "phase": "4",
+      "samples": 8166,
+      "live_pixel_cells": 194197,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "5",
+      "samples": 7847,
+      "live_pixel_cells": 178996,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 12
+    },
+    {
+      "region": "ntsc",
+      "phase": "6A",
+      "samples": 12184,
+      "live_pixel_cells": 288125,
+      "stream_deferrals": 0,
+      "max_error_x": 16,
+      "max_error_y": 12
+    },
+    {
+      "region": "ntsc",
+      "phase": "6B",
+      "samples": 12182,
+      "live_pixel_cells": 288125,
+      "stream_deferrals": 0,
+      "max_error_x": 16,
+      "max_error_y": 12
+    },
+    {
+      "region": "ntsc",
+      "phase": "7",
+      "samples": 8699,
+      "live_pixel_cells": 210091,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "8",
+      "samples": 8652,
+      "live_pixel_cells": 208932,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "9",
+      "samples": 11199,
+      "live_pixel_cells": 264403,
+      "stream_deferrals": 0,
+      "max_error_x": 12,
+      "max_error_y": 12
+    },
+    {
+      "region": "ntsc",
+      "phase": "10",
+      "samples": 9333,
+      "live_pixel_cells": 222281,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "11",
+      "samples": 9308,
+      "live_pixel_cells": 223452,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "12",
+      "samples": 11871,
+      "live_pixel_cells": 283322,
+      "stream_deferrals": 0,
+      "max_error_x": 16,
+      "max_error_y": 12
+    },
+    {
+      "region": "pal",
+      "phase": "1",
+      "samples": 6589,
+      "live_pixel_cells": 154019,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "2A",
+      "samples": 6589,
+      "live_pixel_cells": 154019,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "2B",
+      "samples": 6678,
+      "live_pixel_cells": 156702,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "3",
+      "samples": 9483,
+      "live_pixel_cells": 223963,
+      "stream_deferrals": 0,
+      "max_error_x": 16,
+      "max_error_y": 12
+    },
+    {
+      "region": "pal",
+      "phase": "4",
+      "samples": 7299,
+      "live_pixel_cells": 170332,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "5",
+      "samples": 7005,
+      "live_pixel_cells": 157101,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 12
+    },
+    {
+      "region": "pal",
+      "phase": "6A",
+      "samples": 11325,
+      "live_pixel_cells": 264765,
+      "stream_deferrals": 0,
+      "max_error_x": 16,
+      "max_error_y": 12
+    },
+    {
+      "region": "pal",
+      "phase": "6B",
+      "samples": 11325,
+      "live_pixel_cells": 264765,
+      "stream_deferrals": 0,
+      "max_error_x": 16,
+      "max_error_y": 12
+    },
+    {
+      "region": "pal",
+      "phase": "7",
+      "samples": 7844,
+      "live_pixel_cells": 186065,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "8",
+      "samples": 7795,
+      "live_pixel_cells": 185012,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "9",
+      "samples": 10336,
+      "live_pixel_cells": 240937,
+      "stream_deferrals": 0,
+      "max_error_x": 8,
+      "max_error_y": 12
+    },
+    {
+      "region": "pal",
+      "phase": "10",
+      "samples": 8474,
+      "live_pixel_cells": 198359,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "11",
+      "samples": 8478,
+      "live_pixel_cells": 198378,
+      "stream_deferrals": 0,
+      "max_error_x": 0,
+      "max_error_y": 0
+    },
+    {
+      "region": "pal",
+      "phase": "12",
+      "samples": 11004,
+      "live_pixel_cells": 258579,
+      "stream_deferrals": 0,
+      "max_error_x": 16,
+      "max_error_y": 12
+    }
+  ],
+  "performance": [
+    {
+      "phase": "10",
+      "region": "ntsc",
+      "section": "north",
+      "fps": 49.95,
+      "reference_fps": 60.0,
+      "enemies": 4,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "10",
+      "region": "ntsc",
+      "section": "machines",
+      "fps": 53.7,
+      "reference_fps": 56.25,
+      "enemies": 4,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "10",
+      "region": "ntsc",
+      "section": "south",
+      "fps": 60.0,
+      "reference_fps": 60.0,
+      "enemies": 4,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "10",
+      "region": "pal",
+      "section": "north",
+      "fps": 49.85,
+      "reference_fps": null,
+      "enemies": 4,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "10",
+      "region": "pal",
+      "section": "machines",
+      "fps": 48.25,
+      "reference_fps": null,
+      "enemies": 4,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "10",
+      "region": "pal",
+      "section": "south",
+      "fps": 50.0,
+      "reference_fps": null,
+      "enemies": 4,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "11",
+      "region": "ntsc",
+      "section": "north",
+      "fps": 48.4,
+      "reference_fps": 58.55,
+      "enemies": 5,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "11",
+      "region": "ntsc",
+      "section": "machines",
+      "fps": 50.15,
+      "reference_fps": 48.5,
+      "enemies": 5,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "11",
+      "region": "ntsc",
+      "section": "south",
+      "fps": 60.0,
+      "reference_fps": 60.0,
+      "enemies": 5,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "11",
+      "region": "pal",
+      "section": "north",
+      "fps": 49.85,
+      "reference_fps": null,
+      "enemies": 5,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "11",
+      "region": "pal",
+      "section": "machines",
+      "fps": 49.75,
+      "reference_fps": null,
+      "enemies": 5,
+      "shots_per_pool": 6
+    },
+    {
+      "phase": "11",
+      "region": "pal",
+      "section": "south",
+      "fps": 50.0,
+      "reference_fps": null,
+      "enemies": 5,
+      "shots_per_pool": 6
+    }
+  ]
+}

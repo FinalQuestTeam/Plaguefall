@@ -6,16 +6,18 @@
     "9",
     "12"
   ],
-  "state": "phase03-phase06-and-phase09-three-segments-integrated",
-  "rom_sha256": "37bf6f1866028c5affc90b43f93ec09099cb76eb8cd20cd33b5c778b23b78635",
-  "published_rom_sha256": "c12217f9f5e8611c625e0a45d7356470f35a936111415ac5a6ce70d1d903f8cf",
+  "state": "phase03-phase06-phase09-and-phase12-three-segments-integrated",
+  "rom_sha256": "90b39eff7c05f6a72164e083044def885dbd96cc82c10a1ec51761a29f3c3605",
+  "published_rom_sha256": "37bf6f1866028c5affc90b43f93ec09099cb76eb8cd20cd33b5c778b23b78635",
   "scene_folders": {
     "3": "../phase03-three-segments-v1/integration-v1",
     "6A": "../phase06-three-segments-v1/integration-v1/6A",
     "6B": "../phase06-three-segments-v1/integration-v1/6B",
     "9": "../phase09-three-segments-v1",
-    "12": "corrections/12-guidebook"
+    "12": "../phase12-three-segments-v1"
   },
   "replaces_rejected_rom_sha256": "0844f1322795eee56efa76752a7dd2d2744c78705aac5339921679f1879ff779",
-  "previous_published_rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77"
+  "previous_published_rom_sha256": "748849ea836635630f8a595634a34c21323fe1bc24df115ff6629f1babac6c77",
+  "published_commit": "5ad7f971aef05f0dbc7a45993197d2ce778c7019",
+  "union_interior_scene_folder": "../phase13-union-v2"
 }

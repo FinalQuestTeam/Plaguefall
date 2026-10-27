@@ -1,0 +1,664 @@
+{
+  "phases": [
+    "13A",
+    "13B"
+  ],
+  "size": [
+    512,
+    576
+  ],
+  "bounds": [
+    24,
+    160,
+    487,
+    487
+  ],
+  "start": [
+    280,
+    168
+  ],
+  "solids": [
+    [
+      80,
+      328,
+      104,
+      16,
+      true
+    ],
+    [
+      216,
+      272,
+      104,
+      16,
+      true
+    ],
+    [
+      352,
+      392,
+      104,
+      16,
+      true
+    ]
+  ],
+  "targets": {
+    "13A": 30,
+    "13B": 45
+  },
+  "native_pixel_block": 1,
+  "camera_policy": "player-only body center; same stable follow as stages 1–12",
+  "camera_player_y": 0,
+  "camera_south_start": 0,
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      36,
+      36,
+      36
+    ],
+    [
+      72,
+      72,
+      72
+    ],
+    [
+      109,
+      109,
+      109
+    ],
+    [
+      145,
+      145,
+      145
+    ],
+    [
+      182,
+      182,
+      145
+    ],
+    [
+      218,
+      218,
+      182
+    ],
+    [
+      109,
+      72,
+      36
+    ],
+    [
+      145,
+      109,
+      72
+    ],
+    [
+      182,
+      145,
+      109
+    ],
+    [
+      109,
+      36,
+      36
+    ],
+    [
+      145,
+      72,
+      36
+    ],
+    [
+      0,
+      36,
+      72
+    ],
+    [
+      36,
+      72,
+      109
+    ],
+    [
+      72,
+      109,
+      145
+    ],
+    [
+      218,
+      182,
+      109
+    ]
+  ],
+  "complete_source_preserved": true,
+  "modules": [
+    [
+      "locker-window-left",
+      [
+        16,
+        0,
+        176,
+        128
+      ],
+      [
+        16,
+        0
+      ]
+    ],
+    [
+      "locker-window-right",
+      [
+        16,
+        0,
+        176,
+        128
+      ],
+      [
+        336,
+        0
+      ]
+    ],
+    [
+      "banner",
+      [
+        176,
+        0,
+        264,
+        128
+      ],
+      [
+        176,
+        0
+      ]
+    ],
+    [
+      "booth-beam",
+      [
+        256,
+        0,
+        384,
+        24
+      ],
+      [
+        256,
+        0
+      ]
+    ],
+    [
+      "pulpit",
+      [
+        256,
+        24,
+        384,
+        152
+      ],
+      [
+        256,
+        24
+      ]
+    ],
+    [
+      "corner-nw",
+      [
+        0,
+        0,
+        16,
+        128
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      "corner-ne",
+      [
+        496,
+        0,
+        512,
+        128
+      ],
+      [
+        496,
+        0
+      ]
+    ],
+    [
+      "corner-sw",
+      [
+        0,
+        296,
+        32,
+        384
+      ],
+      [
+        0,
+        488
+      ]
+    ],
+    [
+      "corner-se",
+      [
+        480,
+        296,
+        512,
+        384
+      ],
+      [
+        480,
+        488
+      ]
+    ],
+    [
+      "south-left",
+      [
+        32,
+        304,
+        208,
+        384
+      ],
+      [
+        32,
+        496
+      ]
+    ],
+    [
+      "south-right",
+      [
+        32,
+        304,
+        208,
+        384
+      ],
+      [
+        304,
+        496
+      ]
+    ],
+    [
+      "door",
+      [
+        208,
+        296,
+        304,
+        384
+      ],
+      [
+        208,
+        488
+      ]
+    ],
+    [
+      "bench-left",
+      [
+        72,
+        240,
+        200,
+        288
+      ],
+      [
+        72,
+        304
+      ]
+    ],
+    [
+      "bench-center",
+      [
+        72,
+        240,
+        200,
+        288
+      ],
+      [
+        208,
+        248
+      ]
+    ],
+    [
+      "bench-right",
+      [
+        72,
+        240,
+        200,
+        288
+      ],
+      [
+        344,
+        368
+      ]
+    ]
+  ],
+  "logo": {
+    "box": [
+      196,
+      24,
+      48,
+      56
+    ],
+    "source": "../space-workers-union-logo-v1/logo-ste.png"
+  },
+  "dinorah": {
+    "sprite": "sprites/dinorah-room-32x48.png",
+    "box": [
+      300,
+      76,
+      32,
+      48
+    ],
+    "occluded_below_y": 108,
+    "protected_behind_counter": true,
+    "static_scene_character": false,
+    "hardware_sprite": true,
+    "palette": "PAL2; original actor palette",
+    "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+    "source_pose": 0,
+    "pixel_changes": 0
+  },
+  "memorial": {
+    "sprite": "sprites/dinorah-helmet-24x16.png",
+    "box": [
+      304,
+      92,
+      24,
+      16
+    ],
+    "portrait": false,
+    "candles": false,
+    "hardware_sprite": true,
+    "palette": "PAL2; original actor palette",
+    "source": "cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+    "crop": [
+      5,
+      12,
+      21,
+      24
+    ],
+    "pixel_changes": 0,
+    "description": "Original Dinorah headgear; not a newly invented hard hat"
+  },
+  "memory": {
+    "source_tiles": 1253,
+    "cache_tiles": 640,
+    "cache_vram_bytes": 20480,
+    "maximum_visible_patterns": 549,
+    "minimum_cache_spare": 91,
+    "viewport_peaks": [
+      {
+        "phase": "13A",
+        "patterns": 549,
+        "conservative_camera": [
+          184,
+          0
+        ]
+      },
+      {
+        "phase": "13B",
+        "patterns": 549,
+        "conservative_camera": [
+          184,
+          0
+        ]
+      }
+    ],
+    "cache_heap_bytes": 7626,
+    "graphics_rom_bytes": 40096,
+    "maps_rom_bytes": 18432,
+    "palette_bytes": 32,
+    "pixel_exact_reassembly": true,
+    "lossy_pattern_replacements": 0,
+    "additional_vram_bytes": 0,
+    "headgear_rom_bytes": 192,
+    "actor_frame_rom_bytes_added": 0,
+    "prop_uses_existing_dinorah_reservation": true
+  },
+  "sources": [
+    {
+      "path": "art/campaign-pattern-v2/resistance/source/13A-union.png",
+      "sha256": "926c9ffdc4da5d7a1d66b36b7053214d2a06ad4adc1ed8fdd910a049902c642c"
+    },
+    {
+      "path": "art/space-workers-union-logo-v1/logo-ste.png",
+      "sha256": "8ecc20cc6b665061d51ab7f3ad7bf1cfaac64f3080c6e4d57e64dae3f501140f"
+    },
+    {
+      "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_S.png",
+      "sha256": "349d914ebffb192aba1a03799b1bb74bc500ac29b26a076157026f51d4b3ddaf"
+    },
+    {
+      "path": "art/cangaco-parceira-iso60-v1/parceira/directions/parceira_N.png",
+      "sha256": "505427e182e8ec586a8d7a9ae76d809d14db5076ffb07b1212a35bc60cbcf6e3"
+    }
+  ],
+  "status": "integrated-local; awaiting visual review",
+  "bench_composition": {
+    "source_floor_removed": true,
+    "source_shadows_removed": true,
+    "outline": [
+      [
+        11,
+        10
+      ],
+      [
+        15,
+        10
+      ],
+      [
+        15,
+        11
+      ],
+      [
+        109,
+        11
+      ],
+      [
+        109,
+        39
+      ],
+      [
+        102,
+        39
+      ],
+      [
+        102,
+        30
+      ],
+      [
+        17,
+        30
+      ],
+      [
+        17,
+        39
+      ],
+      [
+        10,
+        39
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        11,
+        11
+      ]
+    ],
+    "cast_shadow": [
+      [
+        14,
+        30
+      ],
+      [
+        108,
+        30
+      ],
+      [
+        116,
+        35
+      ],
+      [
+        116,
+        41
+      ],
+      [
+        18,
+        41
+      ]
+    ],
+    "silhouette_mask": "modules/bench-silhouette-mask.png",
+    "cast_shadow_mask": "modules/bench-cast-shadow-mask.png",
+    "contact_shadow_mask": "modules/bench-contact-shadow-mask.png",
+    "shadow_method": "darken underlying floor gray by one palette step; additional contact shade at feet",
+    "checker_seams_preserved_under_shadow": true,
+    "seat_and_frame_pixels_preserved": true,
+    "right_foot": "mirrored clean left support",
+    "collision_changes": false
+  },
+  "floor": {
+    "style": "worn gray checkerboard",
+    "cell_size": [
+      32,
+      32
+    ],
+    "repeat_size": [
+      64,
+      64
+    ],
+    "origin": [
+      16,
+      128
+    ],
+    "palette_indices": {
+      "light": 4,
+      "dark": 3,
+      "grout": 2
+    },
+    "module": "modules/floor-checker-64x64.png",
+    "mask": "modules/floor-checker-mask.png",
+    "native_pixel_block": 1,
+    "shared_between_variants": true,
+    "continuous_under_benches": true,
+    "collision_changes": false
+  },
+  "north_composition": {
+    "old_floor_and_baked_shadows_removed": true,
+    "cleanup_box": [
+      16,
+      112,
+      496,
+      156
+    ],
+    "fixture_rectangles": [
+      [
+        16,
+        112,
+        22,
+        115
+      ],
+      [
+        23,
+        112,
+        26,
+        113
+      ],
+      [
+        45,
+        112,
+        46,
+        116
+      ],
+      [
+        47,
+        112,
+        155,
+        118
+      ],
+      [
+        156,
+        112,
+        158,
+        115
+      ],
+      [
+        176,
+        112,
+        189,
+        113
+      ],
+      [
+        190,
+        112,
+        247,
+        112
+      ],
+      [
+        248,
+        112,
+        257,
+        114
+      ],
+      [
+        365,
+        112,
+        366,
+        116
+      ],
+      [
+        367,
+        112,
+        475,
+        118
+      ],
+      [
+        476,
+        112,
+        478,
+        115
+      ]
+    ],
+    "counter_outline": [
+      [
+        258,
+        112
+      ],
+      [
+        372,
+        112
+      ],
+      [
+        372,
+        136
+      ],
+      [
+        369,
+        140
+      ],
+      [
+        265,
+        140
+      ],
+      [
+        259,
+        137
+      ],
+      [
+        259,
+        133
+      ],
+      [
+        258,
+        132
+      ]
+    ],
+    "floor_mask": "modules/north-floor-mask.png",
+    "cast_shadow_mask": "modules/north-cast-shadow-mask.png",
+    "contact_shadow_mask": "modules/north-contact-shadow-mask.png",
+    "shadow_offset": [
+      3,
+      4
+    ],
+    "checker_origin_unchanged": true,
+    "fixture_pixels_preserved": true,
+    "collision_changes": false
+  }
+}

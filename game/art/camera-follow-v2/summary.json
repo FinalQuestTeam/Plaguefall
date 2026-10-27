@@ -1,0 +1,2835 @@
+{
+  "title": "Plaguefall — câmera estável v2",
+  "rom_sha256": "48da1643291f13c813d054ea7371a88d1fd2823d57ce788d0838325c4e16543a",
+  "rom_bytes": 2752512,
+  "motion_trials": 364,
+  "stationary_trials": 94,
+  "motion_samples": 252455,
+  "live_pixel_cells": 6594019,
+  "clipped_samples": 0,
+  "max_center_error": 0,
+  "stationary_camera_range": [
+    0,
+    0
+  ],
+  "stream_deferrals": 0,
+  "full_escorts": 6,
+  "gate_checks": 8,
+  "baseline_rom_sha256": "8a50fb13942bb4d2e0144a66bc783f60905da2f753e0d70d9c982ec3a991b710",
+  "changes": [
+    "Remove all idle landmark/Santa/escort composition in stages1–12 and their A/B variants",
+    "Stateless target depends only on player body position and map bounds",
+    "Restore4px per-axis camera limit; no delayed bias to unwind",
+    "Retain full-body safety, HUD clearance, offscreen escort marker and atomic VBlank streaming"
+  ],
+  "limitations": [
+    "Factory maximum-load FPS fromv1 has not been rebenchmarked forv2; this change does not claim to fix that issue.",
+    "Test scenarios isolate enemies and prepare protection before guarded controller trials. Full sewer escorts seed gates open; actual gate/valve interactions are checked separately."
+  ],
+  "phases": [
+    {
+      "region": "ntsc",
+      "phase": "1",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "2A",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "2B",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "3",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "4",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "5",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "6A",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "6B",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "7",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "8",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "9",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "10",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "11",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "ntsc",
+      "phase": "12",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "1",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "2A",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "2B",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "3",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "4",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "5",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "6A",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "6B",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "7",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "8",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "9",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "10",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "11",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "region": "pal",
+      "phase": "12",
+      "max_error": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    }
+  ],
+  "stationary_checks": [
+    {
+      "region": "ntsc",
+      "name": "1-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "1-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        160
+      ],
+      "first_camera": [
+        142,
+        29
+      ],
+      "last_camera": [
+        142,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "1-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        160
+      ],
+      "first_camera": [
+        142,
+        29
+      ],
+      "last_camera": [
+        142,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "2A-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "2A-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        160
+      ],
+      "first_camera": [
+        142,
+        29
+      ],
+      "last_camera": [
+        142,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "2A-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        160
+      ],
+      "first_camera": [
+        142,
+        29
+      ],
+      "last_camera": [
+        142,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "2B-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "2B-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        160
+      ],
+      "first_camera": [
+        142,
+        29
+      ],
+      "last_camera": [
+        142,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "2B-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        160
+      ],
+      "first_camera": [
+        142,
+        29
+      ],
+      "last_camera": [
+        142,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "3-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        264,
+        184
+      ],
+      "first_camera": [
+        112,
+        53
+      ],
+      "last_camera": [
+        112,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "3-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        300,
+        184
+      ],
+      "first_camera": [
+        148,
+        53
+      ],
+      "last_camera": [
+        148,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "3-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        300,
+        184
+      ],
+      "first_camera": [
+        148,
+        53
+      ],
+      "last_camera": [
+        148,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7462,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "3-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        144,
+        224
+      ],
+      "first_camera": [
+        0,
+        93
+      ],
+      "last_camera": [
+        0,
+        93
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "4-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7000,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "4-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7000,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "4-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7000,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "5-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7000,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "5-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        100,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7000,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "5-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        100,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7000,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6A-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6A-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        142,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 143,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6A-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        142,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6A-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 129,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6B-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6B-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        142,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 143,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6B-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        142,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "6B-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 129,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "7-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "7-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        102,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "7-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        102,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "8-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "8-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        102,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "8-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        102,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "9-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "9-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "9-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "9-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        192,
+        184
+      ],
+      "first_camera": [
+        40,
+        53
+      ],
+      "last_camera": [
+        40,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "10-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        56,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "10-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "10-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "11-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        56,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "11-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "11-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "12-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "12-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 143,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "12-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "ntsc",
+      "name": "12-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        216,
+        208
+      ],
+      "first_camera": [
+        64,
+        77
+      ],
+      "last_camera": [
+        64,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 8,
+      "live_pixel_cells": 7280,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "1-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "1-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "1-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "2A-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "2A-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "2A-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "2B-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        256,
+        160
+      ],
+      "first_camera": [
+        104,
+        29
+      ],
+      "last_camera": [
+        104,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "2B-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "2B-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        286,
+        160
+      ],
+      "first_camera": [
+        134,
+        29
+      ],
+      "last_camera": [
+        134,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "3-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        264,
+        184
+      ],
+      "first_camera": [
+        112,
+        53
+      ],
+      "last_camera": [
+        112,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "3-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        184
+      ],
+      "first_camera": [
+        142,
+        53
+      ],
+      "last_camera": [
+        142,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "3-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        294,
+        184
+      ],
+      "first_camera": [
+        142,
+        53
+      ],
+      "last_camera": [
+        142,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6396,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "3-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        144,
+        224
+      ],
+      "first_camera": [
+        0,
+        93
+      ],
+      "last_camera": [
+        0,
+        93
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "4-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "4-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "4-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        112
+      ],
+      "first_camera": [
+        0,
+        0
+      ],
+      "last_camera": [
+        0,
+        0
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "5-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "5-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "5-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        296
+      ],
+      "first_camera": [
+        0,
+        165
+      ],
+      "last_camera": [
+        0,
+        165
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6000,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6A-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 126,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6A-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6A-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6A-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 120,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6B-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 126,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6B-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6B-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        134,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "6B-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        104,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 120,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "7-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "7-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "7-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "8-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        64,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "8-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "8-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        94,
+        192
+      ],
+      "first_camera": [
+        0,
+        61
+      ],
+      "last_camera": [
+        0,
+        61
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "9-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "9-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "9-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        184
+      ],
+      "first_camera": [
+        0,
+        53
+      ],
+      "last_camera": [
+        0,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "9-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        192,
+        184
+      ],
+      "first_camera": [
+        40,
+        53
+      ],
+      "last_camera": [
+        40,
+        53
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "10-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        56,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "10-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "10-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "11-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        56,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "11-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "11-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        86,
+        160
+      ],
+      "first_camera": [
+        0,
+        29
+      ],
+      "last_camera": [
+        0,
+        29
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "12-entry",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        48,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 126,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "12-stop",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 134,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "12-resume",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        78,
+        208
+      ],
+      "first_camera": [
+        0,
+        77
+      ],
+      "last_camera": [
+        0,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 1,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    },
+    {
+      "region": "pal",
+      "name": "12-landmark",
+      "passed": true,
+      "camera_range": [
+        0,
+        0
+      ],
+      "max_center_error": 0,
+      "position": [
+        216,
+        208
+      ],
+      "first_camera": [
+        64,
+        77
+      ],
+      "last_camera": [
+        64,
+        77
+      ],
+      "seconds": 5,
+      "escort_positions": 3,
+      "live_pixel_cells": 6240,
+      "ram_writes": 0
+    }
+  ],
+  "escort_checks": [
+    {
+      "region": "ntsc",
+      "checks": {
+        "06a-gate-1": {
+          "real_valve_work": false,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06a-gate-2": {
+          "real_valve_work": false,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06a-complete-escort": {
+          "passed": true,
+          "seconds": 89.67,
+          "fps": 59.91,
+          "live_pixel_cells": 126074,
+          "ram_writes_during_traversal": 0,
+          "gates_seeded_open": true,
+          "dinorah_hp": 100
+        },
+        "06b-gate-1": {
+          "real_valve_work": true,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06b-gate-2": {
+          "real_valve_work": true,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06b-complete-escort": {
+          "passed": true,
+          "seconds": 89.13,
+          "fps": 59.91,
+          "live_pixel_cells": 125186,
+          "ram_writes_during_traversal": 0,
+          "gates_seeded_open": true,
+          "dinorah_hp": 100
+        },
+        "12-complete-escort": {
+          "passed": true,
+          "seconds": 86.0,
+          "fps": 60.0,
+          "live_pixel_cells": 120900,
+          "ram_writes_during_traversal": 0,
+          "gates_seeded_open": false,
+          "dinorah_hp": 100
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "checks": {
+        "06a-gate-1": {
+          "real_valve_work": false,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06a-gate-2": {
+          "real_valve_work": false,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06a-complete-escort": {
+          "passed": true,
+          "seconds": 87.8,
+          "fps": 49.99,
+          "live_pixel_cells": 102856,
+          "ram_writes_during_traversal": 0,
+          "gates_seeded_open": true,
+          "dinorah_hp": 100
+        },
+        "06b-gate-1": {
+          "real_valve_work": true,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06b-gate-2": {
+          "real_valve_work": true,
+          "real_player_projectiles": true,
+          "ram_writes_during_checks": 0
+        },
+        "06b-complete-escort": {
+          "passed": true,
+          "seconds": 90.06,
+          "fps": 49.98,
+          "live_pixel_cells": 106076,
+          "ram_writes_during_traversal": 0,
+          "gates_seeded_open": true,
+          "dinorah_hp": 100
+        },
+        "12-complete-escort": {
+          "passed": true,
+          "seconds": 84.22,
+          "fps": 50.0,
+          "live_pixel_cells": 98644,
+          "ram_writes_during_traversal": 0,
+          "gates_seeded_open": false,
+          "dinorah_hp": 100
+        }
+      }
+    }
+  ]
+}

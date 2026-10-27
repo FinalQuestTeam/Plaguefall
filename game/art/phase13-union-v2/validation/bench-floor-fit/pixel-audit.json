@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "changed_pixels": 2111,
+  "outside_three_bench_crops_unchanged": true,
+  "geometry_and_palette_unchanged": true,
+  "variants_share_background": true,
+  "benches": [
+    {
+      "bench": "bench-left",
+      "continuous_floor_and_shadows_exact": true,
+      "seat_and_frame_pixels_preserved": true,
+      "source_matte_removed": true
+    },
+    {
+      "bench": "bench-center",
+      "continuous_floor_and_shadows_exact": true,
+      "seat_and_frame_pixels_preserved": true,
+      "source_matte_removed": true
+    },
+    {
+      "bench": "bench-right",
+      "continuous_floor_and_shadows_exact": true,
+      "seat_and_frame_pixels_preserved": true,
+      "source_matte_removed": true
+    }
+  ]
+}

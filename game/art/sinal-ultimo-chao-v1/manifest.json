@@ -1,0 +1,25 @@
+{
+  "title": "Sinal do Último Chão",
+  "status": "Pranchas conceituais; implementação nativa integrada à ROM em native/.",
+  "generator": "built-in image_gen",
+  "files": [
+    "01-guardar-sinal.png",
+    "02-inserir-codigo.png",
+    "03-confirmar-retomada.png",
+    "04-alfabeto-simbolos.png"
+  ],
+  "prompt_file": "prompts-coracao-logo.json",
+  "previous_prompt_file": "prompts-sindicato.json",
+  "revision": "Coração de madeira substituído pelo coração metálico do logo em EX-VOTO, índice10 preservado.",
+  "union_symbol_reference": "../space-workers-union-logo-v1/logo-ste.png",
+  "native_implementation": {
+    "sprites": "native/atlas-128.png",
+    "validation": "native/validation/delivery.json",
+    "prompts": "native/prompts.json",
+    "heart_prompts": "prompts-coracao-logo.json",
+    "radio_prompts": "prompts-radio-v2.json",
+    "radio_revision": "Rádio redesenhado para legibilidade nativa em32x32; índice5 preservado.",
+    "menu_label": "Sintonizar"
+  },
+  "heart_reference": "../menu-logo-v1/originals/plaguefall-menu-native-v2.png"
+}
